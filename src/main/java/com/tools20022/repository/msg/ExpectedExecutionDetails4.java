@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintDateElementRule#forExpectedExecutionDetails4
+ * ConstraintDateElementRule.forExpectedExecutionDetails4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,16 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * ExpectedExecutionDetails2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ExpectedExecutionDetails4", propOrder = {"expectedTradeDateTime", "expectedCashSettlementDate"})
 public class ExpectedExecutionDetails4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "XpctdTradDtTm")
 	protected DateAndDateTimeChoice expectedTradeDateTime;
 	/**
-	 * Expected date or expected date and time at which a price will be applied
-	 * according to the terms of the prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +130,10 @@ public class ExpectedExecutionDetails4 {
 	 * ExpectedExecutionDetails2.mmExpectedTradeDateTime}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedTradeDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExpectedExecutionDetails4, Optional<DateAndDateTimeChoice>> mmExpectedTradeDateTime = new MMMessageAttribute<ExpectedExecutionDetails4, Optional<DateAndDateTimeChoice>>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> ExpectedExecutionDetails4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ExpectedExecutionDetails4.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdTradDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,11 +144,22 @@ public class ExpectedExecutionDetails4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public Optional<DateAndDateTimeChoice> getValue(ExpectedExecutionDetails4 obj) {
+			return obj.getExpectedTradeDateTime();
+		}
+
+		@Override
+		public void setValue(ExpectedExecutionDetails4 obj, Optional<DateAndDateTimeChoice> value) {
+			obj.setExpectedTradeDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpctdCshSttlmDt")
 	protected ISODate expectedCashSettlementDate;
 	/**
-	 * Date of a payment, for example, a prepayment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +186,7 @@ public class ExpectedExecutionDetails4 {
 	 * name} = "ExpectedCashSettlementDate"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Date of a payment, for example, a prepayment date. "</li>
+	 * definition} = "Date of a payment, for example, a prepayment date."</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -174,28 +194,39 @@ public class ExpectedExecutionDetails4 {
 	 * ExpectedExecutionDetails2.mmExpectedCashSettlementDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedCashSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExpectedExecutionDetails4, Optional<ISODate>> mmExpectedCashSettlementDate = new MMMessageAttribute<ExpectedExecutionDetails4, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Obligation.mmRequestedSettlementDate;
-			componentContext_lazy = () -> ExpectedExecutionDetails4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ExpectedExecutionDetails4.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdCshSttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExpectedCashSettlementDate";
-			definition = "Date of a payment, for example, a prepayment date. ";
+			definition = "Date of a payment, for example, a prepayment date.";
 			previousVersion_lazy = () -> ExpectedExecutionDetails2.mmExpectedCashSettlementDate;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public Optional<ISODate> getValue(ExpectedExecutionDetails4 obj) {
+			return obj.getExpectedCashSettlementDate();
+		}
+
+		@Override
+		public void setValue(ExpectedExecutionDetails4 obj, Optional<ISODate> value) {
+			obj.setExpectedCashSettlementDate(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ExpectedExecutionDetails4.mmExpectedTradeDateTime, ExpectedExecutionDetails4.mmExpectedCashSettlementDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ExpectedExecutionDetails4.mmExpectedTradeDateTime, com.tools20022.repository.msg.ExpectedExecutionDetails4.mmExpectedCashSettlementDate);
 				trace_lazy = () -> InvestmentFundOrderExecution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintDateElementRule.forExpectedExecutionDetails4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExpectedExecutionDetails4";
 				definition = "Expected trade date and expected settlement date of the order execution.";
@@ -205,21 +236,21 @@ public class ExpectedExecutionDetails4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "XpctdTradDtTm")
-	public DateAndDateTimeChoice getExpectedTradeDateTime() {
-		return expectedTradeDateTime;
+	public Optional<DateAndDateTimeChoice> getExpectedTradeDateTime() {
+		return expectedTradeDateTime == null ? Optional.empty() : Optional.of(expectedTradeDateTime);
 	}
 
-	public void setExpectedTradeDateTime(DateAndDateTimeChoice expectedTradeDateTime) {
+	public ExpectedExecutionDetails4 setExpectedTradeDateTime(DateAndDateTimeChoice expectedTradeDateTime) {
 		this.expectedTradeDateTime = expectedTradeDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdCshSttlmDt")
-	public ISODate getExpectedCashSettlementDate() {
-		return expectedCashSettlementDate;
+	public Optional<ISODate> getExpectedCashSettlementDate() {
+		return expectedCashSettlementDate == null ? Optional.empty() : Optional.of(expectedCashSettlementDate);
 	}
 
-	public void setExpectedCashSettlementDate(ISODate expectedCashSettlementDate) {
+	public ExpectedExecutionDetails4 setExpectedCashSettlementDate(ISODate expectedCashSettlementDate) {
 		this.expectedCashSettlementDate = expectedCashSettlementDate;
+		return this;
 	}
 }

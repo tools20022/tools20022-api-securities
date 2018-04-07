@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.AdditionalReference2;
 import com.tools20022.repository.msg.CustodyStatementOfHoldings2;
 import com.tools20022.repository.msg.MessageIdentification1;
 import com.tools20022.repository.msg.Pagination;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -90,16 +91,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CustodyStatementOfHoldingsCancellationV02", propOrder = {"messageIdentification", "previousReference", "relatedReference", "messagePagination", "statementToBeCancelled"})
 public class CustodyStatementOfHoldingsCancellationV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies a message from a business application
-	 * standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,7 +123,7 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,18 +134,21 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustodyStatementOfHoldingsCancellationV02.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(CustodyStatementOfHoldingsCancellationV02 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(CustodyStatementOfHoldingsCancellationV02 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "PrvsRef")
 	protected AdditionalReference2 previousReference;
 	/**
-	 * Reference to a linked message that was previously sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +169,7 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 	 * definition} = "Reference to a linked message that was previously sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPreviousReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Optional<AdditionalReference2>> mmPreviousReference = new MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Optional<AdditionalReference2>>() {
 		{
 			xmlTag = "PrvsRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,18 +180,21 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 			complexType_lazy = () -> AdditionalReference2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustodyStatementOfHoldingsCancellationV02.class.getMethod("getPreviousReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference2> getValue(CustodyStatementOfHoldingsCancellationV02 obj) {
+			return obj.getPreviousReference();
+		}
+
+		@Override
+		public void setValue(CustodyStatementOfHoldingsCancellationV02 obj, Optional<AdditionalReference2> value) {
+			obj.setPreviousReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RltdRef")
 	protected AdditionalReference2 relatedReference;
 	/**
-	 * Reference to a linked message that was previously received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +216,7 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 	 * "Reference to a linked message that was previously received."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRelatedReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Optional<AdditionalReference2>> mmRelatedReference = new MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Optional<AdditionalReference2>>() {
 		{
 			xmlTag = "RltdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,20 +227,21 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 			complexType_lazy = () -> AdditionalReference2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustodyStatementOfHoldingsCancellationV02.class.getMethod("getRelatedReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference2> getValue(CustodyStatementOfHoldingsCancellationV02 obj) {
+			return obj.getRelatedReference();
+		}
+
+		@Override
+		public void setValue(CustodyStatementOfHoldingsCancellationV02 obj, Optional<AdditionalReference2> value) {
+			obj.setRelatedReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MsgPgntn", required = true)
 	protected Pagination messagePagination;
 	/**
-	 * Number used to sequence pages when it is not possible for data to be
-	 * conveyed in a single message and the data has to be split across several
-	 * pages (messages).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,7 +263,7 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessagePagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Pagination> mmMessagePagination = new MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Pagination>() {
 		{
 			xmlTag = "MsgPgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -266,18 +274,21 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustodyStatementOfHoldingsCancellationV02.class.getMethod("getMessagePagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Pagination getValue(CustodyStatementOfHoldingsCancellationV02 obj) {
+			return obj.getMessagePagination();
+		}
+
+		@Override
+		public void setValue(CustodyStatementOfHoldingsCancellationV02 obj, Pagination value) {
+			obj.setMessagePagination(value);
 		}
 	};
+	@XmlElement(name = "StmtToBeCanc")
 	protected CustodyStatementOfHoldings2 statementToBeCancelled;
 	/**
-	 * The Custody Statement of Holdings message to cancel.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,7 +309,7 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 	 * definition} = "The Custody Statement of Holdings message to cancel."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatementToBeCancelled = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Optional<CustodyStatementOfHoldings2>> mmStatementToBeCancelled = new MMMessageBuildingBlock<CustodyStatementOfHoldingsCancellationV02, Optional<CustodyStatementOfHoldings2>>() {
 		{
 			xmlTag = "StmtToBeCanc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -309,12 +320,14 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 			complexType_lazy = () -> CustodyStatementOfHoldings2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CustodyStatementOfHoldingsCancellationV02.class.getMethod("getStatementToBeCancelled", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CustodyStatementOfHoldings2> getValue(CustodyStatementOfHoldingsCancellationV02 obj) {
+			return obj.getStatementToBeCancelled();
+		}
+
+		@Override
+		public void setValue(CustodyStatementOfHoldingsCancellationV02 obj, Optional<CustodyStatementOfHoldings2> value) {
+			obj.setStatementToBeCancelled(value.orElse(null));
 		}
 	};
 
@@ -348,52 +361,52 @@ public class CustodyStatementOfHoldingsCancellationV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public CustodyStatementOfHoldingsCancellationV02 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PrvsRef")
-	public AdditionalReference2 getPreviousReference() {
-		return previousReference;
+	public Optional<AdditionalReference2> getPreviousReference() {
+		return previousReference == null ? Optional.empty() : Optional.of(previousReference);
 	}
 
-	public void setPreviousReference(AdditionalReference2 previousReference) {
+	public CustodyStatementOfHoldingsCancellationV02 setPreviousReference(AdditionalReference2 previousReference) {
 		this.previousReference = previousReference;
+		return this;
 	}
 
-	@XmlElement(name = "RltdRef")
-	public AdditionalReference2 getRelatedReference() {
-		return relatedReference;
+	public Optional<AdditionalReference2> getRelatedReference() {
+		return relatedReference == null ? Optional.empty() : Optional.of(relatedReference);
 	}
 
-	public void setRelatedReference(AdditionalReference2 relatedReference) {
+	public CustodyStatementOfHoldingsCancellationV02 setRelatedReference(AdditionalReference2 relatedReference) {
 		this.relatedReference = relatedReference;
+		return this;
 	}
 
-	@XmlElement(name = "MsgPgntn", required = true)
 	public Pagination getMessagePagination() {
 		return messagePagination;
 	}
 
-	public void setMessagePagination(Pagination messagePagination) {
-		this.messagePagination = messagePagination;
+	public CustodyStatementOfHoldingsCancellationV02 setMessagePagination(Pagination messagePagination) {
+		this.messagePagination = Objects.requireNonNull(messagePagination);
+		return this;
 	}
 
-	@XmlElement(name = "StmtToBeCanc")
-	public CustodyStatementOfHoldings2 getStatementToBeCancelled() {
-		return statementToBeCancelled;
+	public Optional<CustodyStatementOfHoldings2> getStatementToBeCancelled() {
+		return statementToBeCancelled == null ? Optional.empty() : Optional.of(statementToBeCancelled);
 	}
 
-	public void setStatementToBeCancelled(CustodyStatementOfHoldings2 statementToBeCancelled) {
+	public CustodyStatementOfHoldingsCancellationV02 setStatementToBeCancelled(CustodyStatementOfHoldings2 statementToBeCancelled) {
 		this.statementToBeCancelled = statementToBeCancelled;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:semt.004.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.004.001.02")
 	static public class Document {
 		@XmlElement(name = "CtdyStmtOfHldgsCxlV02", required = true)
 		public CustodyStatementOfHoldingsCancellationV02 messageBody;

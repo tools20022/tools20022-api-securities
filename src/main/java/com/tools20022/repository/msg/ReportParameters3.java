@@ -33,6 +33,8 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -78,8 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintReportNumberRule#forReportParameters3
+ * ConstraintReportNumberRule.forReportParameters3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -91,15 +101,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the parameters of the report."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportParameters3", propOrder = {"reportIdentification", "reportDateAndTime", "reportCurrency", "calculationDateAndTime", "frequency", "reportNumber"})
 public class ReportParameters3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptId", required = true)
 	protected Max35Text reportIdentification;
 	/**
-	 * Unique identification of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,9 +135,9 @@ public class ReportParameters3 {
 	 * definition} = "Unique identification of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters3, Max35Text> mmReportIdentification = new MMMessageAttribute<ReportParameters3, Max35Text>() {
 		{
-			componentContext_lazy = () -> ReportParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "RptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,11 +147,22 @@ public class ReportParameters3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ReportParameters3 obj) {
+			return obj.getReportIdentification();
+		}
+
+		@Override
+		public void setValue(ReportParameters3 obj, Max35Text value) {
+			obj.setReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "RptDtAndTm", required = true)
 	protected DateAndDateTimeChoice reportDateAndTime;
 	/**
-	 * Date (and time) and time of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,9 +188,9 @@ public class ReportParameters3 {
 	 * definition} = "Date (and time) and time of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportDateAndTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters3, DateAndDateTimeChoice> mmReportDateAndTime = new MMMessageAttribute<ReportParameters3, DateAndDateTimeChoice>() {
 		{
-			componentContext_lazy = () -> ReportParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "RptDtAndTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,11 +200,22 @@ public class ReportParameters3 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(ReportParameters3 obj) {
+			return obj.getReportDateAndTime();
+		}
+
+		@Override
+		public void setValue(ReportParameters3 obj, DateAndDateTimeChoice value) {
+			obj.setReportDateAndTime(value);
+		}
 	};
+	@XmlElement(name = "RptCcy", required = true)
 	protected CurrencyCode reportCurrency;
 	/**
-	 * Currency used for the calculation of the margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,9 +240,9 @@ public class ReportParameters3 {
 	 * definition} = "Currency used for the calculation of the margin."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters3, CurrencyCode> mmReportCurrency = new MMMessageAttribute<ReportParameters3, CurrencyCode>() {
 		{
-			componentContext_lazy = () -> ReportParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "RptCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,11 +252,22 @@ public class ReportParameters3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		@Override
+		public CurrencyCode getValue(ReportParameters3 obj) {
+			return obj.getReportCurrency();
+		}
+
+		@Override
+		public void setValue(ReportParameters3 obj, CurrencyCode value) {
+			obj.setReportCurrency(value);
+		}
 	};
+	@XmlElement(name = "ClctnDtAndTm", required = true)
 	protected ISODateTime calculationDateAndTime;
 	/**
-	 * Date of calculation of the margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,9 +292,9 @@ public class ReportParameters3 {
 	 * definition} = "Date of calculation of the margin."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculationDateAndTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters3, ISODateTime> mmCalculationDateAndTime = new MMMessageAttribute<ReportParameters3, ISODateTime>() {
 		{
-			componentContext_lazy = () -> ReportParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "ClctnDtAndTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -260,11 +304,22 @@ public class ReportParameters3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(ReportParameters3 obj) {
+			return obj.getCalculationDateAndTime();
+		}
+
+		@Override
+		public void setValue(ReportParameters3 obj, ISODateTime value) {
+			obj.setCalculationDateAndTime(value);
+		}
 	};
+	@XmlElement(name = "Frqcy", required = true)
 	protected EventFrequency6Code frequency;
 	/**
-	 * Frequency of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,9 +345,9 @@ public class ReportParameters3 {
 	 * definition} = "Frequency of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFrequency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters3, EventFrequency6Code> mmFrequency = new MMMessageAttribute<ReportParameters3, EventFrequency6Code>() {
 		{
-			componentContext_lazy = () -> ReportParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "Frqcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,11 +357,22 @@ public class ReportParameters3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> EventFrequency6Code.mmObject();
 		}
+
+		@Override
+		public EventFrequency6Code getValue(ReportParameters3 obj) {
+			return obj.getFrequency();
+		}
+
+		@Override
+		public void setValue(ReportParameters3 obj, EventFrequency6Code value) {
+			obj.setFrequency(value);
+		}
 	};
+	@XmlElement(name = "RptNb")
 	protected Exact5NumericText reportNumber;
 	/**
-	 * Sequential number of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,9 +398,9 @@ public class ReportParameters3 {
 	 * definition} = "Sequential number of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters3, Optional<Exact5NumericText>> mmReportNumber = new MMMessageAttribute<ReportParameters3, Optional<Exact5NumericText>>() {
 		{
-			componentContext_lazy = () -> ReportParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "RptNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -344,15 +410,27 @@ public class ReportParameters3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact5NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Exact5NumericText> getValue(ReportParameters3 obj) {
+			return obj.getReportNumber();
+		}
+
+		@Override
+		public void setValue(ReportParameters3 obj, Optional<Exact5NumericText> value) {
+			obj.setReportNumber(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportParameters3.mmReportIdentification, ReportParameters3.mmReportDateAndTime, ReportParameters3.mmReportCurrency, ReportParameters3.mmCalculationDateAndTime,
-						ReportParameters3.mmFrequency, ReportParameters3.mmReportNumber);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportParameters3.mmReportIdentification, com.tools20022.repository.msg.ReportParameters3.mmReportDateAndTime,
+						com.tools20022.repository.msg.ReportParameters3.mmReportCurrency, com.tools20022.repository.msg.ReportParameters3.mmCalculationDateAndTime, com.tools20022.repository.msg.ReportParameters3.mmFrequency,
+						com.tools20022.repository.msg.ReportParameters3.mmReportNumber);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MarginReportV02.mmReportParameters);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintReportNumberRule.forReportParameters3);
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -368,57 +446,57 @@ public class ReportParameters3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptId", required = true)
 	public Max35Text getReportIdentification() {
 		return reportIdentification;
 	}
 
-	public void setReportIdentification(Max35Text reportIdentification) {
-		this.reportIdentification = reportIdentification;
+	public ReportParameters3 setReportIdentification(Max35Text reportIdentification) {
+		this.reportIdentification = Objects.requireNonNull(reportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RptDtAndTm", required = true)
 	public DateAndDateTimeChoice getReportDateAndTime() {
 		return reportDateAndTime;
 	}
 
-	public void setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
-		this.reportDateAndTime = reportDateAndTime;
+	public ReportParameters3 setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
+		this.reportDateAndTime = Objects.requireNonNull(reportDateAndTime);
+		return this;
 	}
 
-	@XmlElement(name = "RptCcy", required = true)
 	public CurrencyCode getReportCurrency() {
 		return reportCurrency;
 	}
 
-	public void setReportCurrency(CurrencyCode reportCurrency) {
-		this.reportCurrency = reportCurrency;
+	public ReportParameters3 setReportCurrency(CurrencyCode reportCurrency) {
+		this.reportCurrency = Objects.requireNonNull(reportCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "ClctnDtAndTm", required = true)
 	public ISODateTime getCalculationDateAndTime() {
 		return calculationDateAndTime;
 	}
 
-	public void setCalculationDateAndTime(ISODateTime calculationDateAndTime) {
-		this.calculationDateAndTime = calculationDateAndTime;
+	public ReportParameters3 setCalculationDateAndTime(ISODateTime calculationDateAndTime) {
+		this.calculationDateAndTime = Objects.requireNonNull(calculationDateAndTime);
+		return this;
 	}
 
-	@XmlElement(name = "Frqcy", required = true)
 	public EventFrequency6Code getFrequency() {
 		return frequency;
 	}
 
-	public void setFrequency(EventFrequency6Code frequency) {
-		this.frequency = frequency;
+	public ReportParameters3 setFrequency(EventFrequency6Code frequency) {
+		this.frequency = Objects.requireNonNull(frequency);
+		return this;
 	}
 
-	@XmlElement(name = "RptNb")
-	public Exact5NumericText getReportNumber() {
-		return reportNumber;
+	public Optional<Exact5NumericText> getReportNumber() {
+		return reportNumber == null ? Optional.empty() : Optional.of(reportNumber);
 	}
 
-	public void setReportNumber(Exact5NumericText reportNumber) {
+	public ReportParameters3 setReportNumber(Exact5NumericText reportNumber) {
 		this.reportNumber = reportNumber;
+		return this;
 	}
 }

@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -28,8 +30,13 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlternatePartyIdentification5;
+import com.tools20022.repository.msg.PartyTextInformation5;
+import com.tools20022.repository.msg.SecuritiesAccount3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +84,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,17 +98,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ConfirmationPartyDetails6", propOrder = {"identification", "safekeepingAccount", "cashDetails", "alternateIdentification", "processingIdentification", "additionalInformation", "partyCapacity",
 		"investorProtectionAssociationMembership"})
 public class ConfirmationPartyDetails6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected PartyIdentification32Choice identification;
 	/**
-	 * Unique and unambiguous identifier for an organisation that is allocated
-	 * by an institution, eg, Dun &amp; Bradstreet Identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,6 +129,9 @@ public class ConfirmationPartyDetails6 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Id"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 448, FIXSynonym: 447</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -134,12 +144,13 @@ public class ConfirmationPartyDetails6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails6, PartyIdentification32Choice> mmIdentification = new MMMessageAttribute<ConfirmationPartyDetails6, PartyIdentification32Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "448"), new FIXSynonym(this, "447"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identifier for an organisation that is allocated by an institution, eg, Dun & Bradstreet Identification.";
@@ -147,11 +158,22 @@ public class ConfirmationPartyDetails6 {
 			minOccurs = 1;
 			complexType_lazy = () -> PartyIdentification32Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification32Choice getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, PartyIdentification32Choice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "SfkpgAcct")
 	protected SecuritiesAccount3 safekeepingAccount;
 	/**
-	 * Account to or from which a securities entry is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -180,10 +202,10 @@ public class ConfirmationPartyDetails6 {
 	 * definition} = "Account to or from which a securities entry is made."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSafekeepingAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ConfirmationPartyDetails6, Optional<SecuritiesAccount3>> mmSafekeepingAccount = new MMMessageAssociationEnd<ConfirmationPartyDetails6, Optional<SecuritiesAccount3>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesAccount.mmObject();
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,14 +214,24 @@ public class ConfirmationPartyDetails6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount3.mmObject();
+			type_lazy = () -> SecuritiesAccount3.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesAccount3> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getSafekeepingAccount();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<SecuritiesAccount3> value) {
+			obj.setSafekeepingAccount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CshDtls")
 	protected AccountIdentification3Choice cashDetails;
 	/**
-	 * Business relationship between two entities; one entity is the account
-	 * owner, the other entity is the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -231,10 +263,10 @@ public class ConfirmationPartyDetails6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ConfirmationPartyDetails6, Optional<AccountIdentification3Choice>> mmCashDetails = new MMMessageAssociationEnd<ConfirmationPartyDetails6, Optional<AccountIdentification3Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "CshDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -245,11 +277,22 @@ public class ConfirmationPartyDetails6 {
 			isComposite = true;
 			type_lazy = () -> AccountIdentification3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AccountIdentification3Choice> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getCashDetails();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<AccountIdentification3Choice> value) {
+			obj.setCashDetails(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AltrnId")
 	protected AlternatePartyIdentification5 alternateIdentification;
 	/**
-	 * Alternate identification for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,10 +323,10 @@ public class ConfirmationPartyDetails6 {
 	 * definition} = "Alternate identification for a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlternateIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails6, Optional<AlternatePartyIdentification5>> mmAlternateIdentification = new MMMessageAttribute<ConfirmationPartyDetails6, Optional<AlternatePartyIdentification5>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "AltrnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -291,13 +334,24 @@ public class ConfirmationPartyDetails6 {
 			definition = "Alternate identification for a party.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AlternatePartyIdentification5.mmObject();
+			complexType_lazy = () -> AlternatePartyIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<AlternatePartyIdentification5> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getAlternateIdentification();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<AlternatePartyIdentification5> value) {
+			obj.setAlternateIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrcgId")
 	protected Max35Text processingIdentification;
 	/**
-	 * Unambiguous identification of the transaction for the party identified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,6 +366,9 @@ public class ConfirmationPartyDetails6 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PrcgId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C::PROC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -324,11 +381,12 @@ public class ConfirmationPartyDetails6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProcessingIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails6, Optional<Max35Text>> mmProcessingIdentification = new MMMessageAttribute<ConfirmationPartyDetails6, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "PrcgId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C::PROC"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProcessingIdentification";
 			definition = "Unambiguous identification of the transaction for the party identified.";
@@ -336,11 +394,22 @@ public class ConfirmationPartyDetails6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getProcessingIdentification();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<Max35Text> value) {
+			obj.setProcessingIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected PartyTextInformation5 additionalInformation;
 	/**
-	 * Provides additional information to a party identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,10 +441,10 @@ public class ConfirmationPartyDetails6 {
 	 * "Provides additional information to a party identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails6, Optional<PartyTextInformation5>> mmAdditionalInformation = new MMMessageAttribute<ConfirmationPartyDetails6, Optional<PartyTextInformation5>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -383,15 +452,24 @@ public class ConfirmationPartyDetails6 {
 			definition = "Provides additional information to a party identification.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyTextInformation5.mmObject();
+			complexType_lazy = () -> PartyTextInformation5.mmObject();
+		}
+
+		@Override
+		public Optional<PartyTextInformation5> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<PartyTextInformation5> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PtyCpcty")
 	protected TradingPartyCapacity2Choice partyCapacity;
 	/**
-	 * Capacity of customer placing the order. Primarily used by futures
-	 * exchanges to indicate the CTI code (customer type indicator) as required
-	 * by the US CFTC (Commodity Futures Trading Commission).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -412,6 +490,9 @@ public class ConfirmationPartyDetails6 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PtyCpcty"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 528</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -424,12 +505,13 @@ public class ConfirmationPartyDetails6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartyCapacity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails6, Optional<TradingPartyCapacity2Choice>> mmPartyCapacity = new MMMessageAttribute<ConfirmationPartyDetails6, Optional<TradingPartyCapacity2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> TradePartyRole.mmTradingPartyCapacity;
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "PtyCpcty";
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "528"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartyCapacity";
 			definition = "Capacity of customer placing the order. Primarily used by futures exchanges to indicate the CTI code (customer type indicator) as required by the US CFTC (Commodity Futures Trading Commission).";
@@ -437,12 +519,22 @@ public class ConfirmationPartyDetails6 {
 			minOccurs = 0;
 			complexType_lazy = () -> TradingPartyCapacity2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TradingPartyCapacity2Choice> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getPartyCapacity();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<TradingPartyCapacity2Choice> value) {
+			obj.setPartyCapacity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InvstrPrtcnAssoctnMmbsh")
 	protected YesNoIndicator investorProtectionAssociationMembership;
 	/**
-	 * Indicates whether the confirmation party is a member of the investor
-	 * protection association required, eg, as per regulation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,10 +567,10 @@ public class ConfirmationPartyDetails6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInvestorProtectionAssociationMembership = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails6, Optional<YesNoIndicator>> mmInvestorProtectionAssociationMembership = new MMMessageAttribute<ConfirmationPartyDetails6, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> InvestorRole.mmInvestorProtectionAssociationMembership;
-			componentContext_lazy = () -> ConfirmationPartyDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "InvstrPrtcnAssoctnMmbsh";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -488,16 +580,27 @@ public class ConfirmationPartyDetails6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(ConfirmationPartyDetails6 obj) {
+			return obj.getInvestorProtectionAssociationMembership();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails6 obj, Optional<YesNoIndicator> value) {
+			obj.setInvestorProtectionAssociationMembership(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ConfirmationPartyDetails6.mmIdentification, ConfirmationPartyDetails6.mmSafekeepingAccount, ConfirmationPartyDetails6.mmCashDetails,
-						ConfirmationPartyDetails6.mmAlternateIdentification, ConfirmationPartyDetails6.mmProcessingIdentification, ConfirmationPartyDetails6.mmAdditionalInformation, ConfirmationPartyDetails6.mmPartyCapacity,
-						ConfirmationPartyDetails6.mmInvestorProtectionAssociationMembership);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ConfirmationPartyDetails6.mmIdentification, com.tools20022.repository.msg.ConfirmationPartyDetails6.mmSafekeepingAccount,
+						com.tools20022.repository.msg.ConfirmationPartyDetails6.mmCashDetails, com.tools20022.repository.msg.ConfirmationPartyDetails6.mmAlternateIdentification,
+						com.tools20022.repository.msg.ConfirmationPartyDetails6.mmProcessingIdentification, com.tools20022.repository.msg.ConfirmationPartyDetails6.mmAdditionalInformation,
+						com.tools20022.repository.msg.ConfirmationPartyDetails6.mmPartyCapacity, com.tools20022.repository.msg.ConfirmationPartyDetails6.mmInvestorProtectionAssociationMembership);
 				trace_lazy = () -> TradePartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConfirmationPartyDetails6";
 				definition = "Parties used for acting parties that apply either to the whole message or to individual sides.";
@@ -506,75 +609,75 @@ public class ConfirmationPartyDetails6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PartyIdentification32Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PartyIdentification32Choice identification) {
-		this.identification = identification;
+	public ConfirmationPartyDetails6 setIdentification(PartyIdentification32Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgAcct")
-	public SecuritiesAccount3 getSafekeepingAccount() {
-		return safekeepingAccount;
+	public Optional<SecuritiesAccount3> getSafekeepingAccount() {
+		return safekeepingAccount == null ? Optional.empty() : Optional.of(safekeepingAccount);
 	}
 
-	public void setSafekeepingAccount(com.tools20022.repository.msg.SecuritiesAccount3 safekeepingAccount) {
+	public ConfirmationPartyDetails6 setSafekeepingAccount(SecuritiesAccount3 safekeepingAccount) {
 		this.safekeepingAccount = safekeepingAccount;
+		return this;
 	}
 
-	@XmlElement(name = "CshDtls")
-	public AccountIdentification3Choice getCashDetails() {
-		return cashDetails;
+	public Optional<AccountIdentification3Choice> getCashDetails() {
+		return cashDetails == null ? Optional.empty() : Optional.of(cashDetails);
 	}
 
-	public void setCashDetails(AccountIdentification3Choice cashDetails) {
+	public ConfirmationPartyDetails6 setCashDetails(AccountIdentification3Choice cashDetails) {
 		this.cashDetails = cashDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AltrnId")
-	public AlternatePartyIdentification5 getAlternateIdentification() {
-		return alternateIdentification;
+	public Optional<AlternatePartyIdentification5> getAlternateIdentification() {
+		return alternateIdentification == null ? Optional.empty() : Optional.of(alternateIdentification);
 	}
 
-	public void setAlternateIdentification(com.tools20022.repository.msg.AlternatePartyIdentification5 alternateIdentification) {
+	public ConfirmationPartyDetails6 setAlternateIdentification(AlternatePartyIdentification5 alternateIdentification) {
 		this.alternateIdentification = alternateIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "PrcgId")
-	public Max35Text getProcessingIdentification() {
-		return processingIdentification;
+	public Optional<Max35Text> getProcessingIdentification() {
+		return processingIdentification == null ? Optional.empty() : Optional.of(processingIdentification);
 	}
 
-	public void setProcessingIdentification(Max35Text processingIdentification) {
+	public ConfirmationPartyDetails6 setProcessingIdentification(Max35Text processingIdentification) {
 		this.processingIdentification = processingIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public PartyTextInformation5 getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<PartyTextInformation5> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(com.tools20022.repository.msg.PartyTextInformation5 additionalInformation) {
+	public ConfirmationPartyDetails6 setAdditionalInformation(PartyTextInformation5 additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 
-	@XmlElement(name = "PtyCpcty")
-	public TradingPartyCapacity2Choice getPartyCapacity() {
-		return partyCapacity;
+	public Optional<TradingPartyCapacity2Choice> getPartyCapacity() {
+		return partyCapacity == null ? Optional.empty() : Optional.of(partyCapacity);
 	}
 
-	public void setPartyCapacity(TradingPartyCapacity2Choice partyCapacity) {
+	public ConfirmationPartyDetails6 setPartyCapacity(TradingPartyCapacity2Choice partyCapacity) {
 		this.partyCapacity = partyCapacity;
+		return this;
 	}
 
-	@XmlElement(name = "InvstrPrtcnAssoctnMmbsh")
-	public YesNoIndicator getInvestorProtectionAssociationMembership() {
-		return investorProtectionAssociationMembership;
+	public Optional<YesNoIndicator> getInvestorProtectionAssociationMembership() {
+		return investorProtectionAssociationMembership == null ? Optional.empty() : Optional.of(investorProtectionAssociationMembership);
 	}
 
-	public void setInvestorProtectionAssociationMembership(YesNoIndicator investorProtectionAssociationMembership) {
+	public ConfirmationPartyDetails6 setInvestorProtectionAssociationMembership(YesNoIndicator investorProtectionAssociationMembership) {
 		this.investorProtectionAssociationMembership = investorProtectionAssociationMembership;
+		return this;
 	}
 }

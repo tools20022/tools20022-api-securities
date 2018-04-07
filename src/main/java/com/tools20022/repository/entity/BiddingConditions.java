@@ -23,11 +23,13 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the conditions under which securities can be acquired as part of a
@@ -151,8 +153,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -170,8 +172,8 @@ public class BiddingConditions {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate proposedRate;
 	/**
-	 * Rate proposed in a remarketing of variable rate notes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +208,7 @@ public class BiddingConditions {
 	 * definition} = "Rate proposed in a remarketing of variable rate notes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProposedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, PercentageRate> mmProposedRate = new MMBusinessAttribute<BiddingConditions, PercentageRate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionElection3.mmProposedRate, CorporateActionRate71.mmProposedRate);
 			isDerived = false;
@@ -219,18 +221,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getProposedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(BiddingConditions obj) {
+			return obj.getProposedRate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, PercentageRate value) {
+			obj.setProposedRate(value);
 		}
 	};
 	protected PercentageRate oversubscriptionRate;
 	/**
-	 * Rate of allowed over-subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +266,7 @@ public class BiddingConditions {
 	 * definition} = "Rate of allowed over-subscription."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOversubscriptionRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, PercentageRate> mmOversubscriptionRate = new MMBusinessAttribute<BiddingConditions, PercentageRate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionRate71.mmOversubscriptionRate);
 			isDerived = false;
@@ -275,20 +279,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getOversubscriptionRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(BiddingConditions obj) {
+			return obj.getOversubscriptionRate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, PercentageRate value) {
+			obj.setOversubscriptionRate(value);
 		}
 	};
 	protected Max350Text informationToComplyWith;
 	/**
-	 * Provides information conditions to the account owner that are to be
-	 * complied with, eg, not open to US/Canadian residents, QIB or SIL to be
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,7 +340,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInformationToComplyWith = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, Max350Text> mmInformationToComplyWith = new MMBusinessAttribute<BiddingConditions, Max350Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionNarrative1.mmInformationToComplyWith, CorporateActionNarrative2.mmInformationToComplyWith, CorporateActionNarrative27.mmInformationToComplyWith,
 					CorporateActionNarrative28.mmInformationToComplyWith, CorporateActionNarrative29.mmInformationToComplyWith, CorporateActionNarrative32.mmInformationToComplyWith);
@@ -350,18 +354,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getInformationToComplyWith", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(BiddingConditions obj) {
+			return obj.getInformationToComplyWith();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, Max350Text value) {
+			obj.setInformationToComplyWith(value);
 		}
 	};
 	protected ISODateTime subscriptionCostDebitDate;
 	/**
-	 * Date by which cash must be in place in order to take part in the event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -375,11 +381,11 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate4#mmSubscriptionCostDebitDate
 	 * CorporateActionDate4.mmSubscriptionCostDebitDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate46#mmSubscriptionCostDebitDate
-	 * CorporateActionDate46.mmSubscriptionCostDebitDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate60#mmSubscriptionCostDebitDate
+	 * CorporateActionDate60.mmSubscriptionCostDebitDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate48#mmSubscriptionCostDebitDate
-	 * CorporateActionDate48.mmSubscriptionCostDebitDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate64#mmSubscriptionCostDebitDate
+	 * CorporateActionDate64.mmSubscriptionCostDebitDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -400,9 +406,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubscriptionCostDebitDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, ISODateTime> mmSubscriptionCostDebitDate = new MMBusinessAttribute<BiddingConditions, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionDate4.mmSubscriptionCostDebitDate, CorporateActionDate46.mmSubscriptionCostDebitDate, CorporateActionDate48.mmSubscriptionCostDebitDate);
+			derivation_lazy = () -> Arrays.asList(CorporateActionDate4.mmSubscriptionCostDebitDate, CorporateActionDate60.mmSubscriptionCostDebitDate, CorporateActionDate64.mmSubscriptionCostDebitDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -413,21 +419,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getSubscriptionCostDebitDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(BiddingConditions obj) {
+			return obj.getSubscriptionCostDebitDate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, ISODateTime value) {
+			obj.setSubscriptionCostDebitDate(value);
 		}
 	};
 	protected RateAndAmount maximumAllowedOverSubscription;
 	/**
-	 * A maximum percentage of shares available through the over subscription
-	 * privilege, usually a percentage of the basic subscription shares, eg, an
-	 * account owner subscribing to 100 shares may over subscribe to a maximum
-	 * of 50 additional shares when the over subscription maximum is 50%.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -449,14 +454,14 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate2#mmMaximumAllowedOversubscription
 	 * CorporateActionRate2.mmMaximumAllowedOversubscription}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate82#mmMaximumAllowedOversubscriptionRate
-	 * CorporateActionRate82.mmMaximumAllowedOversubscriptionRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate86#mmMaximumAllowedOversubscriptionRate
+	 * CorporateActionRate86.mmMaximumAllowedOversubscriptionRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate80#mmMaximumAllowedOversubscriptionRate
-	 * CorporateActionRate80.mmMaximumAllowedOversubscriptionRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate87#mmMaximumAllowedOversubscriptionRate
+	 * CorporateActionRate87.mmMaximumAllowedOversubscriptionRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate81#mmMaximumAllowedOversubscriptionRate
-	 * CorporateActionRate81.mmMaximumAllowedOversubscriptionRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate88#mmMaximumAllowedOversubscriptionRate
+	 * CorporateActionRate88.mmMaximumAllowedOversubscriptionRate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -477,10 +482,10 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMaximumAllowedOverSubscription = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, RateAndAmount> mmMaximumAllowedOverSubscription = new MMBusinessAssociationEnd<BiddingConditions, RateAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmMaximumAllowedOversubscription, CorporateActionRate82.mmMaximumAllowedOversubscriptionRate, CorporateActionRate80.mmMaximumAllowedOversubscriptionRate,
-					CorporateActionRate81.mmMaximumAllowedOversubscriptionRate);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmMaximumAllowedOversubscription, CorporateActionRate86.mmMaximumAllowedOversubscriptionRate, CorporateActionRate87.mmMaximumAllowedOversubscriptionRate,
+					CorporateActionRate88.mmMaximumAllowedOversubscriptionRate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -488,15 +493,25 @@ public class BiddingConditions {
 			definition = "A maximum percentage of shares available through the over subscription privilege, usually a percentage of the basic subscription shares, eg, an account owner subscribing to 100 shares may over subscribe to a maximum of 50 additional shares when the over subscription maximum is 50%.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmMaximumAllowedBiddingConditions;
+			opposite_lazy = () -> RateAndAmount.mmMaximumAllowedBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(BiddingConditions obj) {
+			return obj.getMaximumAllowedOverSubscription();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, RateAndAmount value) {
+			obj.setMaximumAllowedOverSubscription(value);
 		}
 	};
 	protected PercentageRate prorationRate;
 	/**
-	 * Proportionate allocation used for the offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -511,14 +526,14 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate2#mmProration
 	 * CorporateActionRate2.mmProration}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate82#mmProrationRate
-	 * CorporateActionRate82.mmProrationRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate86#mmProrationRate
+	 * CorporateActionRate86.mmProrationRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate80#mmProrationRate
-	 * CorporateActionRate80.mmProrationRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate87#mmProrationRate
+	 * CorporateActionRate87.mmProrationRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate81#mmProrationRate
-	 * CorporateActionRate81.mmProrationRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate88#mmProrationRate
+	 * CorporateActionRate88.mmProrationRate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -537,9 +552,9 @@ public class BiddingConditions {
 	 * definition} = "Proportionate allocation used for the offer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProrationRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, PercentageRate> mmProrationRate = new MMBusinessAttribute<BiddingConditions, PercentageRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmProration, CorporateActionRate82.mmProrationRate, CorporateActionRate80.mmProrationRate, CorporateActionRate81.mmProrationRate);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmProration, CorporateActionRate86.mmProrationRate, CorporateActionRate87.mmProrationRate, CorporateActionRate88.mmProrationRate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -550,19 +565,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getProrationRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(BiddingConditions obj) {
+			return obj.getProrationRate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, PercentageRate value) {
+			obj.setProrationRate(value);
 		}
 	};
 	protected RateAndAmount applicableRate;
 	/**
-	 * Rate applicable to the event announced, eg, redemption rate for a
-	 * redemption event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -584,17 +600,17 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate2#mmApplicableRate
 	 * CorporateActionRate2.mmApplicableRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate69#mmApplicableRate
-	 * CorporateActionRate69.mmApplicableRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.RateDetails31#mmApplicableRate
+	 * RateDetails31.mmApplicableRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate72#mmApplicableRate
-	 * CorporateActionRate72.mmApplicableRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.RateDetails32#mmApplicableRate
+	 * RateDetails32.mmApplicableRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RateDetails26#mmApplicableRate
-	 * RateDetails26.mmApplicableRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate90#mmApplicableRate
+	 * CorporateActionRate90.mmApplicableRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RateDetails27#mmApplicableRate
-	 * RateDetails27.mmApplicableRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate89#mmApplicableRate
+	 * CorporateActionRate89.mmApplicableRate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -615,9 +631,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmApplicableRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, RateAndAmount> mmApplicableRate = new MMBusinessAssociationEnd<BiddingConditions, RateAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmApplicableRate, CorporateActionRate69.mmApplicableRate, CorporateActionRate72.mmApplicableRate, RateDetails26.mmApplicableRate, RateDetails27.mmApplicableRate);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmApplicableRate, RateDetails31.mmApplicableRate, RateDetails32.mmApplicableRate, CorporateActionRate90.mmApplicableRate, CorporateActionRate89.mmApplicableRate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -625,17 +641,25 @@ public class BiddingConditions {
 			definition = "Rate applicable to the event announced, eg, redemption rate for a redemption event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmRateBiddingConditions;
+			opposite_lazy = () -> RateAndAmount.mmRateBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(BiddingConditions obj) {
+			return obj.getApplicableRate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, RateAndAmount value) {
+			obj.setApplicableRate(value);
 		}
 	};
 	protected SecuritiesQuantity frontEndOddLotQuantity;
 	/**
-	 * Specifies that if an order is prorated holders of odd lots who tender
-	 * their full position will not have tendered position prorated but rather
-	 * accepted in full.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -679,7 +703,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFrontEndOddLotQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity> mmFrontEndOddLotQuantity = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmFrontEndOddLotSecuritiesQuantity, SecuritiesOption51.mmFrontEndOddLotQuantity);
 			isDerived = false;
@@ -689,16 +713,25 @@ public class BiddingConditions {
 			definition = "Specifies that if an order is prorated holders of odd lots who tender their full position will not have tendered position prorated but rather accepted in full.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmFrontEndOddLotBiddingConditions;
+			opposite_lazy = () -> SecuritiesQuantity.mmFrontEndOddLotBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(BiddingConditions obj) {
+			return obj.getFrontEndOddLotQuantity();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesQuantity value) {
+			obj.setFrontEndOddLotQuantity(value);
 		}
 	};
 	protected SecuritiesQuantity backEndOddLotQuantity;
 	/**
-	 * Represents the presence of a back end odd lot provision and the quantity
-	 * of equity required after proration to be eligible for this privilege.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -742,7 +775,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBackEndOddLotQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity> mmBackEndOddLotQuantity = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmBackEndOddLotSecuritiesQuantity, SecuritiesOption51.mmBackEndOddLotQuantity);
 			isDerived = false;
@@ -752,17 +785,25 @@ public class BiddingConditions {
 			definition = "Represents the presence of a back end odd lot provision and the quantity of equity required after proration to be eligible for this privilege.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmBackEndOddLotBiddingConditions;
+			opposite_lazy = () -> SecuritiesQuantity.mmBackEndOddLotBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(BiddingConditions obj) {
+			return obj.getBackEndOddLotQuantity();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesQuantity value) {
+			obj.setBackEndOddLotQuantity(value);
 		}
 	};
 	protected PercentageRate transformationRate;
 	/**
-	 * Rate used to determine the cash consideration split across outturn
-	 * settlement transactions that are the result of a transformation of the
-	 * parent transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -774,8 +815,8 @@ public class BiddingConditions {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate69#mmTransformationRate
-	 * CorporateActionRate69.mmTransformationRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate89#mmTransformationRate
+	 * CorporateActionRate89.mmTransformationRate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -796,9 +837,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransformationRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, PercentageRate> mmTransformationRate = new MMBusinessAttribute<BiddingConditions, PercentageRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate69.mmTransformationRate);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate89.mmTransformationRate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -809,19 +850,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getTransformationRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(BiddingConditions obj) {
+			return obj.getTransformationRate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, PercentageRate value) {
+			obj.setTransformationRate(value);
 		}
 	};
 	protected ISODateTime prorationDate;
 	/**
-	 * Date (and time) at which an issuer will determine the proration
-	 * amount/quantity of an offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -835,8 +877,8 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate2#mmProrationDate
 	 * CorporateActionDate2.mmProrationDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate44#mmProrationDate
-	 * CorporateActionDate44.mmProrationDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionDate61#mmProrationDate
+	 * CorporateActionDate61.mmProrationDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -857,9 +899,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProrationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, ISODateTime> mmProrationDate = new MMBusinessAttribute<BiddingConditions, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionDate2.mmProrationDate, CorporateActionDate44.mmProrationDate);
+			derivation_lazy = () -> Arrays.asList(CorporateActionDate2.mmProrationDate, CorporateActionDate61.mmProrationDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -870,19 +912,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getProrationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(BiddingConditions obj) {
+			return obj.getProrationDate();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, ISODateTime value) {
+			obj.setProrationDate(value);
 		}
 	};
 	protected DateTimePeriod compulsoryPurchasePeriod;
 	/**
-	 * Period during a take-over where any outstanding equity must be purchased
-	 * by the take-over company.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -904,8 +947,8 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod1#mmCompulsoryPurchasePeriod
 	 * CorporateActionPeriod1.mmCompulsoryPurchasePeriod}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod10#mmCompulsoryPurchasePeriod
-	 * CorporateActionPeriod10.mmCompulsoryPurchasePeriod}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod14#mmCompulsoryPurchasePeriod
+	 * CorporateActionPeriod14.mmCompulsoryPurchasePeriod}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -926,9 +969,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCompulsoryPurchasePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, DateTimePeriod> mmCompulsoryPurchasePeriod = new MMBusinessAssociationEnd<BiddingConditions, DateTimePeriod>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionPeriod1.mmCompulsoryPurchasePeriod, CorporateActionPeriod10.mmCompulsoryPurchasePeriod);
+			derivation_lazy = () -> Arrays.asList(CorporateActionPeriod1.mmCompulsoryPurchasePeriod, CorporateActionPeriod14.mmCompulsoryPurchasePeriod);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -936,16 +979,25 @@ public class BiddingConditions {
 			definition = "Period during a take-over where any outstanding equity must be purchased by the take-over company.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmBiddingConditions;
+			opposite_lazy = () -> DateTimePeriod.mmBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(BiddingConditions obj) {
+			return obj.getCompulsoryPurchasePeriod();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, DateTimePeriod value) {
+			obj.setCompulsoryPurchasePeriod(value);
 		}
 	};
 	protected PercentageRate percentageSought;
 	/**
-	 * Percentage of securities the offeror/issuer will purchase or redeem under
-	 * the terms of the event. This can be a number or the term "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -960,8 +1012,8 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate1#mmPercentageSought
 	 * CorporateActionRate1.mmPercentageSought}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate66#mmPercentageSought
-	 * CorporateActionRate66.mmPercentageSought}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate91#mmPercentageSought
+	 * CorporateActionRate91.mmPercentageSought}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -982,9 +1034,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPercentageSought = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, PercentageRate> mmPercentageSought = new MMBusinessAttribute<BiddingConditions, PercentageRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate1.mmPercentageSought, CorporateActionRate66.mmPercentageSought);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate1.mmPercentageSought, CorporateActionRate91.mmPercentageSought);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -995,18 +1047,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getPercentageSought", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(BiddingConditions obj) {
+			return obj.getPercentageSought();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, PercentageRate value) {
+			obj.setPercentageSought(value);
 		}
 	};
 	protected CurrencyAndAmount bidInterval;
 	/**
-	 * Acceptable price increment used for submitting a bid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1021,8 +1075,8 @@ public class BiddingConditions {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate1#mmBidInterval
 	 * CorporateActionRate1.mmBidInterval}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate66#mmBidInterval
-	 * CorporateActionRate66.mmBidInterval}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate91#mmBidInterval
+	 * CorporateActionRate91.mmBidInterval}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1041,9 +1095,9 @@ public class BiddingConditions {
 	 * definition} = "Acceptable price increment used for submitting a bid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBidInterval = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, CurrencyAndAmount> mmBidInterval = new MMBusinessAttribute<BiddingConditions, CurrencyAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate1.mmBidInterval, CorporateActionRate66.mmBidInterval);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate1.mmBidInterval, CorporateActionRate91.mmBidInterval);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1054,19 +1108,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getBidInterval", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(BiddingConditions obj) {
+			return obj.getBidInterval();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, CurrencyAndAmount value) {
+			obj.setBidInterval(value);
 		}
 	};
 	protected SecuritiesPricing maximumPrice;
 	/**
-	 * Maximum or cap price at which a holder can bid, e.g. on a Dutch auction
-	 * offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1110,7 +1165,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMaximumPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesPricing> mmMaximumPrice = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesPricing>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionPrice2.mmMaximumPrice, CorporateActionPrice57.mmMaximumPrice);
 			isDerived = false;
@@ -1120,16 +1175,25 @@ public class BiddingConditions {
 			definition = "Maximum or cap price at which a holder can bid, e.g. on a Dutch auction offer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmMaximumPriceBiddingConditions;
+			opposite_lazy = () -> SecuritiesPricing.mmMaximumPriceBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(BiddingConditions obj) {
+			return obj.getMaximumPrice();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesPricing value) {
+			obj.setMaximumPrice(value);
 		}
 	};
 	protected SecuritiesPricing minimumPrice;
 	/**
-	 * Minimum or floor price at which a holder can bid, e.g. on a Dutch auction
-	 * offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1173,7 +1237,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMinimumPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesPricing> mmMinimumPrice = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesPricing>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionPrice2.mmMinimumPrice, CorporateActionPrice57.mmMinimumPrice);
 			isDerived = false;
@@ -1183,16 +1247,25 @@ public class BiddingConditions {
 			definition = "Minimum or floor price at which a holder can bid, e.g. on a Dutch auction offer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmMinimumPriceBiddingConditions;
+			opposite_lazy = () -> SecuritiesPricing.mmMinimumPriceBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(BiddingConditions obj) {
+			return obj.getMinimumPrice();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesPricing value) {
+			obj.setMinimumPrice(value);
 		}
 	};
 	protected SecuritiesQuantity maximumQuantity;
 	/**
-	 * Maximum number of securities the offeror is requesting to complete the
-	 * event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1233,7 +1306,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMaximumQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity> mmMaximumQuantity = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionQuantity7.mmMaximumQuantity);
 			isDerived = false;
@@ -1243,17 +1316,25 @@ public class BiddingConditions {
 			definition = "Maximum number of securities the offeror is requesting to complete the event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumQuantityBiddingConditions;
+			opposite_lazy = () -> SecuritiesQuantity.mmMaximumQuantityBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(BiddingConditions obj) {
+			return obj.getMaximumQuantity();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesQuantity value) {
+			obj.setMaximumQuantity(value);
 		}
 	};
 	protected SecuritiesQuantity minimumQuantitySought;
 	/**
-	 * Minimum quantity of securities the offeror/issuer will purchase or redeem
-	 * under the terms of the event. This can be a number or the term
-	 * "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1294,7 +1375,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMinimumQuantitySought = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity> mmMinimumQuantitySought = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionQuantity7.mmMinimumQuantitySought);
 			isDerived = false;
@@ -1304,16 +1385,25 @@ public class BiddingConditions {
 			definition = "Minimum quantity of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityBiddingConditions;
+			opposite_lazy = () -> SecuritiesQuantity.mmMinimumQuantityBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(BiddingConditions obj) {
+			return obj.getMinimumQuantitySought();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesQuantity value) {
+			obj.setMinimumQuantitySought(value);
 		}
 	};
 	protected SecuritiesQuantity baseDenomination;
 	/**
-	 * The minimum integral amount of securities that each account owner must
-	 * have remaining after the called amounts are applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1337,6 +1427,9 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionQuantity7#mmBaseDenomination
 	 * CorporateActionQuantity7.mmBaseDenomination}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionQuantity9#mmBaseDenomination
+	 * CorporateActionQuantity9.mmBaseDenomination}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1357,9 +1450,9 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBaseDenomination = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity> mmBaseDenomination = new MMBusinessAssociationEnd<BiddingConditions, SecuritiesQuantity>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmBaseDenomination, CorporateActionQuantity7.mmBaseDenomination);
+			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmBaseDenomination, CorporateActionQuantity7.mmBaseDenomination, CorporateActionQuantity9.mmBaseDenomination);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1367,15 +1460,25 @@ public class BiddingConditions {
 			definition = "The minimum integral amount of securities that each account owner must have remaining after the called amounts are applied.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmBiddingConditions;
+			opposite_lazy = () -> SecuritiesQuantity.mmBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(BiddingConditions obj) {
+			return obj.getBaseDenomination();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, SecuritiesQuantity value) {
+			obj.setBaseDenomination(value);
 		}
 	};
 	protected CorporateActionCalculationMethodCode calculationMethod;
 	/**
-	 * The method of calculation of drawings and partial redemptions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1408,7 +1511,7 @@ public class BiddingConditions {
 	 * "The method of calculation of drawings and partial redemptions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, CorporateActionCalculationMethodCode> mmCalculationMethod = new MMBusinessAttribute<BiddingConditions, CorporateActionCalculationMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmCalculationMethod);
 			isDerived = false;
@@ -1421,19 +1524,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> CorporateActionCalculationMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getCalculationMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionCalculationMethodCode getValue(BiddingConditions obj) {
+			return obj.getCalculationMethod();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, CorporateActionCalculationMethodCode value) {
+			obj.setCalculationMethod(value);
 		}
 	};
 	protected CurrencyAndAmount additionalSubscriptionCost;
 	/**
-	 * Additional costs - coming on top of the subscription costs - which the
-	 * subscriber should pay as per the subscription process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1467,7 +1571,7 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAdditionalSubscriptionCost = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BiddingConditions, CurrencyAndAmount> mmAdditionalSubscriptionCost = new MMBusinessAttribute<BiddingConditions, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionAmounts1.mmAdditionalSubscriptionCost);
 			isDerived = false;
@@ -1480,18 +1584,20 @@ public class BiddingConditions {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BiddingConditions.class.getMethod("getAdditionalSubscriptionCost", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(BiddingConditions obj) {
+			return obj.getAdditionalSubscriptionCost();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, CurrencyAndAmount value) {
+			obj.setAdditionalSubscriptionCost(value);
 		}
 	};
 	protected CorporateActionEvent event;
 	/**
-	 * Event to which the bidding conditions apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1523,7 +1629,7 @@ public class BiddingConditions {
 	 * definition} = "Event to which the bidding conditions apply."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BiddingConditions, Optional<CorporateActionEvent>> mmEvent = new MMBusinessAssociationEnd<BiddingConditions, Optional<CorporateActionEvent>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
@@ -1532,25 +1638,32 @@ public class BiddingConditions {
 			definition = "Event to which the bidding conditions apply.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmBiddingConditions;
+			opposite_lazy = () -> CorporateActionEvent.mmBiddingConditions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEvent> getValue(BiddingConditions obj) {
+			return obj.getEvent();
+		}
+
+		@Override
+		public void setValue(BiddingConditions obj, Optional<CorporateActionEvent> value) {
+			obj.setEvent(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BiddingConditions";
 				definition = "Specifies the conditions under which securities can be acquired as part of a corporate action.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmMaximumPriceBiddingConditions, com.tools20022.repository.entity.SecuritiesPricing.mmMinimumPriceBiddingConditions,
-						com.tools20022.repository.entity.DateTimePeriod.mmBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.mmBackEndOddLotBiddingConditions,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumQuantityBiddingConditions,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmFrontEndOddLotBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityBiddingConditions,
-						com.tools20022.repository.entity.CorporateActionEvent.mmBiddingConditions, com.tools20022.repository.entity.RateAndAmount.mmMaximumAllowedBiddingConditions,
-						com.tools20022.repository.entity.RateAndAmount.mmRateBiddingConditions);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmMaximumPriceBiddingConditions, SecuritiesPricing.mmMinimumPriceBiddingConditions, DateTimePeriod.mmBiddingConditions,
+						SecuritiesQuantity.mmBackEndOddLotBiddingConditions, SecuritiesQuantity.mmBiddingConditions, SecuritiesQuantity.mmMaximumQuantityBiddingConditions, SecuritiesQuantity.mmFrontEndOddLotBiddingConditions,
+						SecuritiesQuantity.mmMinimumQuantityBiddingConditions, CorporateActionEvent.mmBiddingConditions, RateAndAmount.mmMaximumAllowedBiddingConditions, RateAndAmount.mmRateBiddingConditions);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BiddingConditions.mmProposedRate, com.tools20022.repository.entity.BiddingConditions.mmOversubscriptionRate,
 						com.tools20022.repository.entity.BiddingConditions.mmInformationToComplyWith, com.tools20022.repository.entity.BiddingConditions.mmSubscriptionCostDebitDate,
 						com.tools20022.repository.entity.BiddingConditions.mmMaximumAllowedOverSubscription, com.tools20022.repository.entity.BiddingConditions.mmProrationRate,
@@ -1575,175 +1688,197 @@ public class BiddingConditions {
 		return proposedRate;
 	}
 
-	public void setProposedRate(PercentageRate proposedRate) {
-		this.proposedRate = proposedRate;
+	public BiddingConditions setProposedRate(PercentageRate proposedRate) {
+		this.proposedRate = Objects.requireNonNull(proposedRate);
+		return this;
 	}
 
 	public PercentageRate getOversubscriptionRate() {
 		return oversubscriptionRate;
 	}
 
-	public void setOversubscriptionRate(PercentageRate oversubscriptionRate) {
-		this.oversubscriptionRate = oversubscriptionRate;
+	public BiddingConditions setOversubscriptionRate(PercentageRate oversubscriptionRate) {
+		this.oversubscriptionRate = Objects.requireNonNull(oversubscriptionRate);
+		return this;
 	}
 
 	public Max350Text getInformationToComplyWith() {
 		return informationToComplyWith;
 	}
 
-	public void setInformationToComplyWith(Max350Text informationToComplyWith) {
-		this.informationToComplyWith = informationToComplyWith;
+	public BiddingConditions setInformationToComplyWith(Max350Text informationToComplyWith) {
+		this.informationToComplyWith = Objects.requireNonNull(informationToComplyWith);
+		return this;
 	}
 
 	public ISODateTime getSubscriptionCostDebitDate() {
 		return subscriptionCostDebitDate;
 	}
 
-	public void setSubscriptionCostDebitDate(ISODateTime subscriptionCostDebitDate) {
-		this.subscriptionCostDebitDate = subscriptionCostDebitDate;
+	public BiddingConditions setSubscriptionCostDebitDate(ISODateTime subscriptionCostDebitDate) {
+		this.subscriptionCostDebitDate = Objects.requireNonNull(subscriptionCostDebitDate);
+		return this;
 	}
 
 	public RateAndAmount getMaximumAllowedOverSubscription() {
 		return maximumAllowedOverSubscription;
 	}
 
-	public void setMaximumAllowedOverSubscription(com.tools20022.repository.entity.RateAndAmount maximumAllowedOverSubscription) {
-		this.maximumAllowedOverSubscription = maximumAllowedOverSubscription;
+	public BiddingConditions setMaximumAllowedOverSubscription(RateAndAmount maximumAllowedOverSubscription) {
+		this.maximumAllowedOverSubscription = Objects.requireNonNull(maximumAllowedOverSubscription);
+		return this;
 	}
 
 	public PercentageRate getProrationRate() {
 		return prorationRate;
 	}
 
-	public void setProrationRate(PercentageRate prorationRate) {
-		this.prorationRate = prorationRate;
+	public BiddingConditions setProrationRate(PercentageRate prorationRate) {
+		this.prorationRate = Objects.requireNonNull(prorationRate);
+		return this;
 	}
 
 	public RateAndAmount getApplicableRate() {
 		return applicableRate;
 	}
 
-	public void setApplicableRate(com.tools20022.repository.entity.RateAndAmount applicableRate) {
-		this.applicableRate = applicableRate;
+	public BiddingConditions setApplicableRate(RateAndAmount applicableRate) {
+		this.applicableRate = Objects.requireNonNull(applicableRate);
+		return this;
 	}
 
 	public SecuritiesQuantity getFrontEndOddLotQuantity() {
 		return frontEndOddLotQuantity;
 	}
 
-	public void setFrontEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity frontEndOddLotQuantity) {
-		this.frontEndOddLotQuantity = frontEndOddLotQuantity;
+	public BiddingConditions setFrontEndOddLotQuantity(SecuritiesQuantity frontEndOddLotQuantity) {
+		this.frontEndOddLotQuantity = Objects.requireNonNull(frontEndOddLotQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getBackEndOddLotQuantity() {
 		return backEndOddLotQuantity;
 	}
 
-	public void setBackEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity backEndOddLotQuantity) {
-		this.backEndOddLotQuantity = backEndOddLotQuantity;
+	public BiddingConditions setBackEndOddLotQuantity(SecuritiesQuantity backEndOddLotQuantity) {
+		this.backEndOddLotQuantity = Objects.requireNonNull(backEndOddLotQuantity);
+		return this;
 	}
 
 	public PercentageRate getTransformationRate() {
 		return transformationRate;
 	}
 
-	public void setTransformationRate(PercentageRate transformationRate) {
-		this.transformationRate = transformationRate;
+	public BiddingConditions setTransformationRate(PercentageRate transformationRate) {
+		this.transformationRate = Objects.requireNonNull(transformationRate);
+		return this;
 	}
 
 	public ISODateTime getProrationDate() {
 		return prorationDate;
 	}
 
-	public void setProrationDate(ISODateTime prorationDate) {
-		this.prorationDate = prorationDate;
+	public BiddingConditions setProrationDate(ISODateTime prorationDate) {
+		this.prorationDate = Objects.requireNonNull(prorationDate);
+		return this;
 	}
 
 	public DateTimePeriod getCompulsoryPurchasePeriod() {
 		return compulsoryPurchasePeriod;
 	}
 
-	public void setCompulsoryPurchasePeriod(com.tools20022.repository.entity.DateTimePeriod compulsoryPurchasePeriod) {
-		this.compulsoryPurchasePeriod = compulsoryPurchasePeriod;
+	public BiddingConditions setCompulsoryPurchasePeriod(DateTimePeriod compulsoryPurchasePeriod) {
+		this.compulsoryPurchasePeriod = Objects.requireNonNull(compulsoryPurchasePeriod);
+		return this;
 	}
 
 	public PercentageRate getPercentageSought() {
 		return percentageSought;
 	}
 
-	public void setPercentageSought(PercentageRate percentageSought) {
-		this.percentageSought = percentageSought;
+	public BiddingConditions setPercentageSought(PercentageRate percentageSought) {
+		this.percentageSought = Objects.requireNonNull(percentageSought);
+		return this;
 	}
 
 	public CurrencyAndAmount getBidInterval() {
 		return bidInterval;
 	}
 
-	public void setBidInterval(CurrencyAndAmount bidInterval) {
-		this.bidInterval = bidInterval;
+	public BiddingConditions setBidInterval(CurrencyAndAmount bidInterval) {
+		this.bidInterval = Objects.requireNonNull(bidInterval);
+		return this;
 	}
 
 	public SecuritiesPricing getMaximumPrice() {
 		return maximumPrice;
 	}
 
-	public void setMaximumPrice(com.tools20022.repository.entity.SecuritiesPricing maximumPrice) {
-		this.maximumPrice = maximumPrice;
+	public BiddingConditions setMaximumPrice(SecuritiesPricing maximumPrice) {
+		this.maximumPrice = Objects.requireNonNull(maximumPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getMinimumPrice() {
 		return minimumPrice;
 	}
 
-	public void setMinimumPrice(com.tools20022.repository.entity.SecuritiesPricing minimumPrice) {
-		this.minimumPrice = minimumPrice;
+	public BiddingConditions setMinimumPrice(SecuritiesPricing minimumPrice) {
+		this.minimumPrice = Objects.requireNonNull(minimumPrice);
+		return this;
 	}
 
 	public SecuritiesQuantity getMaximumQuantity() {
 		return maximumQuantity;
 	}
 
-	public void setMaximumQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumQuantity) {
-		this.maximumQuantity = maximumQuantity;
+	public BiddingConditions setMaximumQuantity(SecuritiesQuantity maximumQuantity) {
+		this.maximumQuantity = Objects.requireNonNull(maximumQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumQuantitySought() {
 		return minimumQuantitySought;
 	}
 
-	public void setMinimumQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantitySought) {
-		this.minimumQuantitySought = minimumQuantitySought;
+	public BiddingConditions setMinimumQuantitySought(SecuritiesQuantity minimumQuantitySought) {
+		this.minimumQuantitySought = Objects.requireNonNull(minimumQuantitySought);
+		return this;
 	}
 
 	public SecuritiesQuantity getBaseDenomination() {
 		return baseDenomination;
 	}
 
-	public void setBaseDenomination(com.tools20022.repository.entity.SecuritiesQuantity baseDenomination) {
-		this.baseDenomination = baseDenomination;
+	public BiddingConditions setBaseDenomination(SecuritiesQuantity baseDenomination) {
+		this.baseDenomination = Objects.requireNonNull(baseDenomination);
+		return this;
 	}
 
 	public CorporateActionCalculationMethodCode getCalculationMethod() {
 		return calculationMethod;
 	}
 
-	public void setCalculationMethod(CorporateActionCalculationMethodCode calculationMethod) {
-		this.calculationMethod = calculationMethod;
+	public BiddingConditions setCalculationMethod(CorporateActionCalculationMethodCode calculationMethod) {
+		this.calculationMethod = Objects.requireNonNull(calculationMethod);
+		return this;
 	}
 
 	public CurrencyAndAmount getAdditionalSubscriptionCost() {
 		return additionalSubscriptionCost;
 	}
 
-	public void setAdditionalSubscriptionCost(CurrencyAndAmount additionalSubscriptionCost) {
-		this.additionalSubscriptionCost = additionalSubscriptionCost;
+	public BiddingConditions setAdditionalSubscriptionCost(CurrencyAndAmount additionalSubscriptionCost) {
+		this.additionalSubscriptionCost = Objects.requireNonNull(additionalSubscriptionCost);
+		return this;
 	}
 
-	public CorporateActionEvent getEvent() {
-		return event;
+	public Optional<CorporateActionEvent> getEvent() {
+		return event == null ? Optional.empty() : Optional.of(event);
 	}
 
-	public void setEvent(com.tools20022.repository.entity.CorporateActionEvent event) {
+	public BiddingConditions setEvent(CorporateActionEvent event) {
 		this.event = event;
+		return this;
 	}
 }

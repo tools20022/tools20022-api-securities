@@ -37,52 +37,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#Provincial
- * TaxType17Code.mmProvincial}</li>
+ * TaxType17Code.Provincial}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#NationalTax
- * TaxType17Code.mmNationalTax}</li>
+ * TaxType17Code.NationalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#StateTax
- * TaxType17Code.mmStateTax}</li>
+ * TaxType17Code.StateTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#WithholdingTax
- * TaxType17Code.mmWithholdingTax}</li>
+ * TaxType17Code.WithholdingTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#CapitalGainTax
- * TaxType17Code.mmCapitalGainTax}</li>
+ * TaxType17Code.CapitalGainTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#CapitalLossCredit
- * TaxType17Code.mmCapitalLossCredit}</li>
+ * TaxType17Code.CapitalLossCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#InterimProfitTax
- * TaxType17Code.mmInterimProfitTax}</li>
+ * TaxType17Code.InterimProfitTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#StampDuty
- * TaxType17Code.mmStampDuty}</li>
+ * TaxType17Code.StampDuty}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#WealthTax
- * TaxType17Code.mmWealthTax}</li>
+ * TaxType17Code.WealthTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#InheritanceTax
- * TaxType17Code.mmInheritanceTax}</li>
+ * TaxType17Code.InheritanceTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#SolidaritySurcharge
- * TaxType17Code.mmSolidaritySurcharge}</li>
+ * TaxType17Code.SolidaritySurcharge}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#TaxCredit
- * TaxType17Code.mmTaxCredit}</li>
+ * TaxType17Code.TaxCredit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType17Code#GiftTax
- * TaxType17Code.mmGiftTax}</li>
+ * TaxType17Code.GiftTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#ConsumptionTax
- * TaxType17Code.mmConsumptionTax}</li>
+ * TaxType17Code.ConsumptionTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#EUTaxRetention
- * TaxType17Code.mmEUTaxRetention}</li>
+ * TaxType17Code.EUTaxRetention}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#Aktiengewinn1
- * TaxType17Code.mmAktiengewinn1}</li>
+ * TaxType17Code.Aktiengewinn1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#Aktiengewinn2
- * TaxType17Code.mmAktiengewinn2}</li>
+ * TaxType17Code.Aktiengewinn2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType17Code#Zwischengewinn
- * TaxType17Code.mmZwischengewinn}</li>
+ * TaxType17Code.Zwischengewinn}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -90,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -546,7 +546,7 @@ public class TaxType17Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxType17Code";
 				definition = "Specifies the type of tax.";

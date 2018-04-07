@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,25 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPartialHoldingUnits1Rule#forBlockedHoldingDetails2
+ * ConstraintPartialHoldingUnits1Rule.forBlockedHoldingDetails2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPartialHoldingUnits2Rule#forBlockedHoldingDetails2
+ * ConstraintPartialHoldingUnits2Rule.forBlockedHoldingDetails2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPartialHoldingUnits3Rule#forBlockedHoldingDetails2
+ * ConstraintPartialHoldingUnits3Rule.forBlockedHoldingDetails2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintHoldingCertificateNumberRule#forBlockedHoldingDetails2
+ * ConstraintHoldingCertificateNumberRule.forBlockedHoldingDetails2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +91,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information about a blocked holding."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BlockedHoldingDetails2", propOrder = {"blockedHolding", "partialHoldingUnits", "holdingCertificateNumber"})
 public class BlockedHoldingDetails2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BlckdHldg", required = true)
 	protected Holding1Code blockedHolding;
 	/**
-	 * Specifies how the blocked account holding is defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +130,10 @@ public class BlockedHoldingDetails2 {
 	 * definition} = "Specifies how the blocked account holding is defined."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBlockedHolding = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BlockedHoldingDetails2, Holding1Code> mmBlockedHolding = new MMMessageAttribute<BlockedHoldingDetails2, Holding1Code>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentFundClass.mmObject();
-			componentContext_lazy = () -> BlockedHoldingDetails2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BlockedHoldingDetails2.mmObject();
 			isDerived = false;
 			xmlTag = "BlckdHldg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,12 +143,22 @@ public class BlockedHoldingDetails2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Holding1Code.mmObject();
 		}
+
+		@Override
+		public Holding1Code getValue(BlockedHoldingDetails2 obj) {
+			return obj.getBlockedHolding();
+		}
+
+		@Override
+		public void setValue(BlockedHoldingDetails2 obj, Holding1Code value) {
+			obj.setBlockedHolding(value);
+		}
 	};
+	@XmlElement(name = "PrtlHldgUnits")
 	protected DecimalNumber partialHoldingUnits;
 	/**
-	 * When an account is blocked at the level of fund or security, partially,
-	 * this is the number of units blocked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,10 +191,10 @@ public class BlockedHoldingDetails2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartialHoldingUnits = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BlockedHoldingDetails2, Optional<DecimalNumber>> mmPartialHoldingUnits = new MMMessageAttribute<BlockedHoldingDetails2, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmUnit;
-			componentContext_lazy = () -> BlockedHoldingDetails2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BlockedHoldingDetails2.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlHldgUnits";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,12 +204,22 @@ public class BlockedHoldingDetails2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(BlockedHoldingDetails2 obj) {
+			return obj.getPartialHoldingUnits();
+		}
+
+		@Override
+		public void setValue(BlockedHoldingDetails2 obj, Optional<DecimalNumber> value) {
+			obj.setPartialHoldingUnits(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "HldgCertNb")
 	protected Max35Text holdingCertificateNumber;
 	/**
-	 * When an account is blocked at the level of fund or security, this
-	 * specifies the certificate number of the blocked units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,10 +251,10 @@ public class BlockedHoldingDetails2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHoldingCertificateNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BlockedHoldingDetails2, Optional<Max35Text>> mmHoldingCertificateNumber = new MMMessageAttribute<BlockedHoldingDetails2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> BlockedHoldingDetails2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BlockedHoldingDetails2.mmObject();
 			isDerived = false;
 			xmlTag = "HldgCertNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,14 +264,28 @@ public class BlockedHoldingDetails2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(BlockedHoldingDetails2 obj) {
+			return obj.getHoldingCertificateNumber();
+		}
+
+		@Override
+		public void setValue(BlockedHoldingDetails2 obj, Optional<Max35Text> value) {
+			obj.setHoldingCertificateNumber(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BlockedHoldingDetails2.mmBlockedHolding, BlockedHoldingDetails2.mmPartialHoldingUnits, BlockedHoldingDetails2.mmHoldingCertificateNumber);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BlockedHoldingDetails2.mmBlockedHolding, com.tools20022.repository.msg.BlockedHoldingDetails2.mmPartialHoldingUnits,
+						com.tools20022.repository.msg.BlockedHoldingDetails2.mmHoldingCertificateNumber);
 				trace_lazy = () -> InvestmentFundClass.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintPartialHoldingUnits1Rule.forBlockedHoldingDetails2,
+						com.tools20022.repository.constraints.ConstraintPartialHoldingUnits2Rule.forBlockedHoldingDetails2, com.tools20022.repository.constraints.ConstraintPartialHoldingUnits3Rule.forBlockedHoldingDetails2,
+						com.tools20022.repository.constraints.ConstraintHoldingCertificateNumberRule.forBlockedHoldingDetails2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BlockedHoldingDetails2";
 				definition = "Information about a blocked holding.";
@@ -240,30 +294,30 @@ public class BlockedHoldingDetails2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BlckdHldg", required = true)
 	public Holding1Code getBlockedHolding() {
 		return blockedHolding;
 	}
 
-	public void setBlockedHolding(Holding1Code blockedHolding) {
-		this.blockedHolding = blockedHolding;
+	public BlockedHoldingDetails2 setBlockedHolding(Holding1Code blockedHolding) {
+		this.blockedHolding = Objects.requireNonNull(blockedHolding);
+		return this;
 	}
 
-	@XmlElement(name = "PrtlHldgUnits")
-	public DecimalNumber getPartialHoldingUnits() {
-		return partialHoldingUnits;
+	public Optional<DecimalNumber> getPartialHoldingUnits() {
+		return partialHoldingUnits == null ? Optional.empty() : Optional.of(partialHoldingUnits);
 	}
 
-	public void setPartialHoldingUnits(DecimalNumber partialHoldingUnits) {
+	public BlockedHoldingDetails2 setPartialHoldingUnits(DecimalNumber partialHoldingUnits) {
 		this.partialHoldingUnits = partialHoldingUnits;
+		return this;
 	}
 
-	@XmlElement(name = "HldgCertNb")
-	public Max35Text getHoldingCertificateNumber() {
-		return holdingCertificateNumber;
+	public Optional<Max35Text> getHoldingCertificateNumber() {
+		return holdingCertificateNumber == null ? Optional.empty() : Optional.of(holdingCertificateNumber);
 	}
 
-	public void setHoldingCertificateNumber(Max35Text holdingCertificateNumber) {
+	public BlockedHoldingDetails2 setHoldingCertificateNumber(Max35Text holdingCertificateNumber) {
 		this.holdingCertificateNumber = holdingCertificateNumber;
+		return this;
 	}
 }

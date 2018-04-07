@@ -38,30 +38,30 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Bankruptcy
- * BlockedReason2Code.mmBankruptcy}</li>
+ * BlockedReason2Code.Bankruptcy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Commitment
- * BlockedReason2Code.mmCommitment}</li>
+ * BlockedReason2Code.Commitment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Confiscation
- * BlockedReason2Code.mmConfiscation}</li>
+ * BlockedReason2Code.Confiscation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#MortisCausa
- * BlockedReason2Code.mmMortisCausa}</li>
+ * BlockedReason2Code.MortisCausa}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#PendingComplianceVerification
- * BlockedReason2Code.mmPendingComplianceVerification}</li>
+ * BlockedReason2Code.PendingComplianceVerification}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Pledged
- * BlockedReason2Code.mmPledged}</li>
+ * BlockedReason2Code.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Reregistration
- * BlockedReason2Code.mmReregistration}</li>
+ * BlockedReason2Code.Reregistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Sanctions
- * BlockedReason2Code.mmSanctions}</li>
+ * BlockedReason2Code.Sanctions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BlockedReason2Code#Transfer
- * BlockedReason2Code.mmTransfer}</li>
+ * BlockedReason2Code.Transfer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -70,8 +70,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -310,7 +310,7 @@ public class BlockedReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BlockedReason2Code";
 				definition = "Specifies the reason an account is blocked.";

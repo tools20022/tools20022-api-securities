@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,18 +60,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "ProcessingStatus1FormatChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of formats to  express the processing status."</li>
+ * definition} = "Choice of formats to express the processing status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProcessingStatus1FormatChoice", propOrder = {"code", "proprietary"})
 public class ProcessingStatus1FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ProcessingStatus1Code code;
 	/**
-	 * Standard code to specify the processing status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class ProcessingStatus1FormatChoice {
 	 * definition} = "Standard code to specify the processing status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProcessingStatus1FormatChoice, ProcessingStatus1Code> mmCode = new MMMessageAttribute<ProcessingStatus1FormatChoice, ProcessingStatus1Code>() {
 		{
-			componentContext_lazy = () -> ProcessingStatus1FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus1FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +110,22 @@ public class ProcessingStatus1FormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ProcessingStatus1Code.mmObject();
 		}
+
+		@Override
+		public ProcessingStatus1Code getValue(ProcessingStatus1FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus1FormatChoice obj, ProcessingStatus1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the processing status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,51 +148,61 @@ public class ProcessingStatus1FormatChoice {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Proprietary code to  express the processing status."</li>
+	 * definition} = "Proprietary code to express the processing status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProcessingStatus1FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<ProcessingStatus1FormatChoice, GenericIdentification13>() {
 		{
-			componentContext_lazy = () -> ProcessingStatus1FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus1FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express the processing status.";
+			definition = "Proprietary code to express the processing status.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(ProcessingStatus1FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus1FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProcessingStatus1FormatChoice.mmCode, ProcessingStatus1FormatChoice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ProcessingStatus1FormatChoice.mmCode, com.tools20022.repository.choice.ProcessingStatus1FormatChoice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessingStatus1FormatChoice";
-				definition = "Choice of formats to  express the processing status.";
+				definition = "Choice of formats to express the processing status.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ProcessingStatus1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ProcessingStatus1Code code) {
-		this.code = code;
+	public ProcessingStatus1FormatChoice setCode(ProcessingStatus1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public ProcessingStatus1FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

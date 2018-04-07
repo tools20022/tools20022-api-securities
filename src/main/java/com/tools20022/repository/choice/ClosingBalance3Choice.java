@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of final and intermediary balances."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ClosingBalance3Choice", propOrder = {"finalClosingBalance", "intermediaryClosingBalance"})
 public class ClosingBalance3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FnlClsgBal")
 	protected FinancialInstrumentQuantity1 finalClosingBalance;
 	/**
-	 * Closing balance of the financial instrument in the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class ClosingBalance3Choice {
 	 * "Closing balance of the financial instrument in the statement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinalClosingBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClosingBalance3Choice, Optional<FinancialInstrumentQuantity1>> mmFinalClosingBalance = new MMMessageAttribute<ClosingBalance3Choice, Optional<FinancialInstrumentQuantity1>>() {
 		{
-			componentContext_lazy = () -> ClosingBalance3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClosingBalance3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "FnlClsgBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,12 +110,22 @@ public class ClosingBalance3Choice {
 			minOccurs = 0;
 			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(ClosingBalance3Choice obj) {
+			return obj.getFinalClosingBalance();
+		}
+
+		@Override
+		public void setValue(ClosingBalance3Choice obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setFinalClosingBalance(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IntrmyClsgBal")
 	protected FinancialInstrumentQuantity1 intermediaryClosingBalance;
 	/**
-	 * Closing Balance of this page only. Must be the intermediary opening
-	 * balance of the next page (part of the same statement).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,9 +153,9 @@ public class ClosingBalance3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntermediaryClosingBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClosingBalance3Choice, Optional<FinancialInstrumentQuantity1>> mmIntermediaryClosingBalance = new MMMessageAttribute<ClosingBalance3Choice, Optional<FinancialInstrumentQuantity1>>() {
 		{
-			componentContext_lazy = () -> ClosingBalance3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClosingBalance3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntrmyClsgBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,13 +165,23 @@ public class ClosingBalance3Choice {
 			minOccurs = 0;
 			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(ClosingBalance3Choice obj) {
+			return obj.getIntermediaryClosingBalance();
+		}
+
+		@Override
+		public void setValue(ClosingBalance3Choice obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setIntermediaryClosingBalance(value.orElse(null));
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ClosingBalance3Choice.mmFinalClosingBalance, ClosingBalance3Choice.mmIntermediaryClosingBalance);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ClosingBalance3Choice.mmFinalClosingBalance, com.tools20022.repository.choice.ClosingBalance3Choice.mmIntermediaryClosingBalance);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClosingBalance3Choice";
 				definition = "Choice of final and intermediary balances.";
@@ -168,21 +190,21 @@ public class ClosingBalance3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FnlClsgBal")
-	public FinancialInstrumentQuantity1 getFinalClosingBalance() {
-		return finalClosingBalance;
+	public Optional<FinancialInstrumentQuantity1> getFinalClosingBalance() {
+		return finalClosingBalance == null ? Optional.empty() : Optional.of(finalClosingBalance);
 	}
 
-	public void setFinalClosingBalance(FinancialInstrumentQuantity1 finalClosingBalance) {
+	public ClosingBalance3Choice setFinalClosingBalance(FinancialInstrumentQuantity1 finalClosingBalance) {
 		this.finalClosingBalance = finalClosingBalance;
+		return this;
 	}
 
-	@XmlElement(name = "IntrmyClsgBal")
-	public FinancialInstrumentQuantity1 getIntermediaryClosingBalance() {
-		return intermediaryClosingBalance;
+	public Optional<FinancialInstrumentQuantity1> getIntermediaryClosingBalance() {
+		return intermediaryClosingBalance == null ? Optional.empty() : Optional.of(intermediaryClosingBalance);
 	}
 
-	public void setIntermediaryClosingBalance(FinancialInstrumentQuantity1 intermediaryClosingBalance) {
+	public ClosingBalance3Choice setIntermediaryClosingBalance(FinancialInstrumentQuantity1 intermediaryClosingBalance) {
 		this.intermediaryClosingBalance = intermediaryClosingBalance;
+		return this;
 	}
 }

@@ -25,8 +25,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.SafekeepingPlace;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintParty1Rule#forSafekeepingPlaceAsCodeAndPartyIdentification
+ * ConstraintParty1Rule.forSafekeepingPlaceAsCodeAndPartyIdentification}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Identification of the place of safekeeping expressed as a code and a BIC."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SafekeepingPlaceAsCodeAndPartyIdentification", propOrder = {"placeSafekeeping", "narrative", "party"})
 public class SafekeepingPlaceAsCodeAndPartyIdentification {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PlcSfkpg", required = true)
 	protected SafekeepingPlace1Code placeSafekeeping;
 	/**
-	 * Place of safekeeping as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,9 +117,9 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 	 * definition} = "Place of safekeeping as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPlaceSafekeeping = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceAsCodeAndPartyIdentification, SafekeepingPlace1Code> mmPlaceSafekeeping = new MMMessageAttribute<SafekeepingPlaceAsCodeAndPartyIdentification, SafekeepingPlace1Code>() {
 		{
-			componentContext_lazy = () -> SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
 			isDerived = false;
 			xmlTag = "PlcSfkpg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,11 +129,22 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 			minOccurs = 1;
 			simpleType_lazy = () -> SafekeepingPlace1Code.mmObject();
 		}
+
+		@Override
+		public SafekeepingPlace1Code getValue(SafekeepingPlaceAsCodeAndPartyIdentification obj) {
+			return obj.getPlaceSafekeeping();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceAsCodeAndPartyIdentification obj, SafekeepingPlace1Code value) {
+			obj.setPlaceSafekeeping(value);
+		}
 	};
+	@XmlElement(name = "Nrrtv")
 	protected Max35Text narrative;
 	/**
-	 * Additional information about the place of safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,9 +169,9 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 	 * definition} = "Additional information about the place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNarrative = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceAsCodeAndPartyIdentification, Optional<Max35Text>> mmNarrative = new MMMessageAttribute<SafekeepingPlaceAsCodeAndPartyIdentification, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
 			isDerived = false;
 			xmlTag = "Nrrtv";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,11 +181,22 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SafekeepingPlaceAsCodeAndPartyIdentification obj) {
+			return obj.getNarrative();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceAsCodeAndPartyIdentification obj, Optional<Max35Text> value) {
+			obj.setNarrative(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Pty")
 	protected PartyIdentification3 party;
 	/**
-	 * Place of safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,10 +227,10 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 	 * definition} = "Place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceAsCodeAndPartyIdentification, Optional<PartyIdentification3>> mmParty = new MMMessageAttribute<SafekeepingPlaceAsCodeAndPartyIdentification, Optional<PartyIdentification3>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,16 +238,28 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 			definition = "Place of safekeeping.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification3.mmObject();
+			complexType_lazy = () -> PartyIdentification3.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification3> getValue(SafekeepingPlaceAsCodeAndPartyIdentification obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceAsCodeAndPartyIdentification obj, Optional<PartyIdentification3> value) {
+			obj.setParty(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SafekeepingPlaceAsCodeAndPartyIdentification.mmPlaceSafekeeping, SafekeepingPlaceAsCodeAndPartyIdentification.mmNarrative, SafekeepingPlaceAsCodeAndPartyIdentification.mmParty);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification.mmPlaceSafekeeping,
+						com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification.mmNarrative, com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification.mmParty);
 				trace_lazy = () -> SafekeepingPlace.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintParty1Rule.forSafekeepingPlaceAsCodeAndPartyIdentification);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlaceAsCodeAndPartyIdentification";
 				definition = "Identification of the place of safekeeping expressed as a code and a BIC.";
@@ -222,30 +268,30 @@ public class SafekeepingPlaceAsCodeAndPartyIdentification {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PlcSfkpg", required = true)
 	public SafekeepingPlace1Code getPlaceSafekeeping() {
 		return placeSafekeeping;
 	}
 
-	public void setPlaceSafekeeping(SafekeepingPlace1Code placeSafekeeping) {
-		this.placeSafekeeping = placeSafekeeping;
+	public SafekeepingPlaceAsCodeAndPartyIdentification setPlaceSafekeeping(SafekeepingPlace1Code placeSafekeeping) {
+		this.placeSafekeeping = Objects.requireNonNull(placeSafekeeping);
+		return this;
 	}
 
-	@XmlElement(name = "Nrrtv")
-	public Max35Text getNarrative() {
-		return narrative;
+	public Optional<Max35Text> getNarrative() {
+		return narrative == null ? Optional.empty() : Optional.of(narrative);
 	}
 
-	public void setNarrative(Max35Text narrative) {
+	public SafekeepingPlaceAsCodeAndPartyIdentification setNarrative(Max35Text narrative) {
 		this.narrative = narrative;
+		return this;
 	}
 
-	@XmlElement(name = "Pty")
-	public PartyIdentification3 getParty() {
-		return party;
+	public Optional<PartyIdentification3> getParty() {
+		return party == null ? Optional.empty() : Optional.of(party);
 	}
 
-	public void setParty(com.tools20022.repository.msg.PartyIdentification3 party) {
+	public SafekeepingPlaceAsCodeAndPartyIdentification setParty(PartyIdentification3 party) {
 		this.party = party;
+		return this;
 	}
 }

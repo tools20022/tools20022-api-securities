@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSubAccount1Rule#forDetailedInstructionStatus11
+ * ConstraintSubAccount1Rule.forDetailedInstructionStatus11}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Status applying to individual instructions of a MeetingInstruction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DetailedInstructionStatus11", propOrder = {"instructionIdentification", "accountIdentification", "subAccountIdentification", "instructionStatus"})
 public class DetailedInstructionStatus11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InstrId", required = true)
 	protected Max35Text instructionIdentification;
 	/**
-	 * Identifies the detailed instruction within an instruction message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,9 +121,9 @@ public class DetailedInstructionStatus11 {
 	 * "Identifies the detailed instruction within an instruction message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedInstructionStatus11, Max35Text> mmInstructionIdentification = new MMMessageAttribute<DetailedInstructionStatus11, Max35Text>() {
 		{
-			componentContext_lazy = () -> DetailedInstructionStatus11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedInstructionStatus11.mmObject();
 			isDerived = false;
 			xmlTag = "InstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +133,22 @@ public class DetailedInstructionStatus11 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(DetailedInstructionStatus11 obj) {
+			return obj.getInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(DetailedInstructionStatus11 obj, Max35Text value) {
+			obj.setInstructionIdentification(value);
+		}
 	};
+	@XmlElement(name = "AcctId")
 	protected Max35Text accountIdentification;
 	/**
-	 * Identifies the safekeeping account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,10 +178,10 @@ public class DetailedInstructionStatus11 {
 	 * definition} = "Identifies the safekeeping account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedInstructionStatus11, Optional<Max35Text>> mmAccountIdentification = new MMMessageAttribute<DetailedInstructionStatus11, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmNumber;
-			componentContext_lazy = () -> DetailedInstructionStatus11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedInstructionStatus11.mmObject();
 			isDerived = false;
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,11 +191,22 @@ public class DetailedInstructionStatus11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DetailedInstructionStatus11 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(DetailedInstructionStatus11 obj, Optional<Max35Text> value) {
+			obj.setAccountIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SubAcctId")
 	protected Max35Text subAccountIdentification;
 	/**
-	 * Identifies the subaccount of the safekeeping account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,10 +236,10 @@ public class DetailedInstructionStatus11 {
 	 * definition} = "Identifies the subaccount of the safekeeping account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSubAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedInstructionStatus11, Optional<Max35Text>> mmSubAccountIdentification = new MMMessageAttribute<DetailedInstructionStatus11, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmNumber;
-			componentContext_lazy = () -> DetailedInstructionStatus11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedInstructionStatus11.mmObject();
 			isDerived = false;
 			xmlTag = "SubAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,11 +249,22 @@ public class DetailedInstructionStatus11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DetailedInstructionStatus11 obj) {
+			return obj.getSubAccountIdentification();
+		}
+
+		@Override
+		public void setValue(DetailedInstructionStatus11 obj, Optional<Max35Text> value) {
+			obj.setSubAccountIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InstrSts", required = true)
 	protected InstructionStatus6Choice instructionStatus;
 	/**
-	 * Status applying to individual instructions of a MeetingInstruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -251,10 +295,10 @@ public class DetailedInstructionStatus11 {
 	 * "Status applying to individual instructions of a MeetingInstruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInstructionStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DetailedInstructionStatus11, InstructionStatus6Choice> mmInstructionStatus = new MMMessageAssociationEnd<DetailedInstructionStatus11, InstructionStatus6Choice>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmInstructionProcessingStatus;
-			componentContext_lazy = () -> DetailedInstructionStatus11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedInstructionStatus11.mmObject();
 			isDerived = false;
 			xmlTag = "InstrSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -265,15 +309,26 @@ public class DetailedInstructionStatus11 {
 			isComposite = true;
 			type_lazy = () -> InstructionStatus6Choice.mmObject();
 		}
+
+		@Override
+		public InstructionStatus6Choice getValue(DetailedInstructionStatus11 obj) {
+			return obj.getInstructionStatus();
+		}
+
+		@Override
+		public void setValue(DetailedInstructionStatus11 obj, InstructionStatus6Choice value) {
+			obj.setInstructionStatus(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DetailedInstructionStatus11.mmInstructionIdentification, DetailedInstructionStatus11.mmAccountIdentification, DetailedInstructionStatus11.mmSubAccountIdentification,
-						DetailedInstructionStatus11.mmInstructionStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DetailedInstructionStatus11.mmInstructionIdentification, com.tools20022.repository.msg.DetailedInstructionStatus11.mmAccountIdentification,
+						com.tools20022.repository.msg.DetailedInstructionStatus11.mmSubAccountIdentification, com.tools20022.repository.msg.DetailedInstructionStatus11.mmInstructionStatus);
 				trace_lazy = () -> MeetingStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSubAccount1Rule.forDetailedInstructionStatus11);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DetailedInstructionStatus11";
 				definition = "Status applying to individual instructions of a MeetingInstruction.";
@@ -282,39 +337,39 @@ public class DetailedInstructionStatus11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InstrId", required = true)
 	public Max35Text getInstructionIdentification() {
 		return instructionIdentification;
 	}
 
-	public void setInstructionIdentification(Max35Text instructionIdentification) {
-		this.instructionIdentification = instructionIdentification;
+	public DetailedInstructionStatus11 setInstructionIdentification(Max35Text instructionIdentification) {
+		this.instructionIdentification = Objects.requireNonNull(instructionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AcctId")
-	public Max35Text getAccountIdentification() {
-		return accountIdentification;
+	public Optional<Max35Text> getAccountIdentification() {
+		return accountIdentification == null ? Optional.empty() : Optional.of(accountIdentification);
 	}
 
-	public void setAccountIdentification(Max35Text accountIdentification) {
+	public DetailedInstructionStatus11 setAccountIdentification(Max35Text accountIdentification) {
 		this.accountIdentification = accountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "SubAcctId")
-	public Max35Text getSubAccountIdentification() {
-		return subAccountIdentification;
+	public Optional<Max35Text> getSubAccountIdentification() {
+		return subAccountIdentification == null ? Optional.empty() : Optional.of(subAccountIdentification);
 	}
 
-	public void setSubAccountIdentification(Max35Text subAccountIdentification) {
+	public DetailedInstructionStatus11 setSubAccountIdentification(Max35Text subAccountIdentification) {
 		this.subAccountIdentification = subAccountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "InstrSts", required = true)
 	public InstructionStatus6Choice getInstructionStatus() {
 		return instructionStatus;
 	}
 
-	public void setInstructionStatus(InstructionStatus6Choice instructionStatus) {
-		this.instructionStatus = instructionStatus;
+	public DetailedInstructionStatus11 setInstructionStatus(InstructionStatus6Choice instructionStatus) {
+		this.instructionStatus = Objects.requireNonNull(instructionStatus);
+		return this;
 	}
 }

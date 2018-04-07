@@ -24,11 +24,13 @@ import com.tools20022.repository.choice.MarginTerms1Choice;
 import com.tools20022.repository.codeset.ExposureTypeCode;
 import com.tools20022.repository.codeset.RoundingMethodCode;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.entity.CollateralAgreement;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the terms used to calculate a risk exposure and its coverage.
@@ -104,8 +106,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -122,9 +124,8 @@ public class ExposureTerm {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExposureTypeCode exposureType;
 	/**
-	 * Specifies the underlying business area/type of trade causing the
-	 * collateral movement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,23 +152,23 @@ public class ExposureTerm {
 	 * ExposureType16Choice.mmProprietary}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Obligation4#mmExposureType
 	 * Obligation4.mmExposureType}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails128#mmExposureType
-	 * SettlementDetails128.mmExposureType}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails120#mmExposureType
-	 * SettlementDetails120.mmExposureType}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails119#mmExposureType
-	 * SettlementDetails119.mmExposureType}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails122#mmExposureType
-	 * SettlementDetails122.mmExposureType}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails121#mmExposureType
-	 * SettlementDetails121.mmExposureType}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Obligation5#mmExposureType
 	 * Obligation5.mmExposureType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmExposureType
+	 * SettlementDetails142.mmExposureType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails144#mmExposureType
+	 * SettlementDetails144.mmExposureType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails145#mmExposureType
+	 * SettlementDetails145.mmExposureType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails146#mmExposureType
+	 * SettlementDetails146.mmExposureType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails143#mmExposureType
+	 * SettlementDetails143.mmExposureType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -187,10 +188,10 @@ public class ExposureTerm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExposureType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExposureTerm, ExposureTypeCode> mmExposureType = new MMBusinessAttribute<ExposureTerm, ExposureTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ExposureType9Choice.mmCode, ExposureType9Choice.mmProprietary, Summary1.mmExposureType, ExposureType16Choice.mmCode, ExposureType16Choice.mmProprietary, Obligation4.mmExposureType,
-					SettlementDetails128.mmExposureType, SettlementDetails120.mmExposureType, SettlementDetails119.mmExposureType, SettlementDetails122.mmExposureType, SettlementDetails121.mmExposureType, Obligation5.mmExposureType);
+					Obligation5.mmExposureType, SettlementDetails142.mmExposureType, SettlementDetails144.mmExposureType, SettlementDetails145.mmExposureType, SettlementDetails146.mmExposureType, SettlementDetails143.mmExposureType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -201,20 +202,20 @@ public class ExposureTerm {
 			simpleType_lazy = () -> ExposureTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExposureTerm.class.getMethod("getExposureType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExposureTypeCode getValue(ExposureTerm obj) {
+			return obj.getExposureType();
+		}
+
+		@Override
+		public void setValue(ExposureTerm obj, ExposureTypeCode value) {
+			obj.setExposureType(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount minimumTransferAmount;
 	/**
-	 * Minimum amount to pay/receive as specified in the agreement in the base
-	 * currency (to avoid the need to transfer an inconveniently small amount of
-	 * variation margin).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,7 +254,7 @@ public class ExposureTerm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumTransferAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExposureTerm, ActiveCurrencyAndAmount> mmMinimumTransferAmount = new MMBusinessAttribute<ExposureTerm, ActiveCurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin1.mmMinimumTransferAmount, SegregatedIndependentAmountMargin1.mmMinimumTransferAmount, SummaryAmounts1.mmMinimumTransferAmount);
 			isDerived = false;
@@ -266,19 +267,20 @@ public class ExposureTerm {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExposureTerm.class.getMethod("getMinimumTransferAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(ExposureTerm obj) {
+			return obj.getMinimumTransferAmount();
+		}
+
+		@Override
+		public void setValue(ExposureTerm obj, ActiveCurrencyAndAmount value) {
+			obj.setMinimumTransferAmount(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount roundingAmount;
 	/**
-	 * Amount specified to avoid the need to transfer uneven amounts of
-	 * collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,7 +319,7 @@ public class ExposureTerm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRoundingAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExposureTerm, ActiveCurrencyAndAmount> mmRoundingAmount = new MMBusinessAttribute<ExposureTerm, ActiveCurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin1.mmRoundingAmount, SegregatedIndependentAmountMargin1.mmRoundingAmount, SummaryAmounts1.mmRoundingAmount);
 			isDerived = false;
@@ -330,21 +332,20 @@ public class ExposureTerm {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExposureTerm.class.getMethod("getRoundingAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(ExposureTerm obj) {
+			return obj.getRoundingAmount();
+		}
+
+		@Override
+		public void setValue(ExposureTerm obj, ActiveCurrencyAndAmount value) {
+			obj.setRoundingAmount(value);
 		}
 	};
 	protected RoundingMethodCode roundingMethod;
 	/**
-	 * Defines how the rounding amount is applied in the calculation to avoid
-	 * the need to transfer uneven amounts of collateral. For example, should
-	 * the amount of collateral required be rounded up, down, to the closer
-	 * integral multiple specified or not rounded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,7 +381,7 @@ public class ExposureTerm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRoundingMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExposureTerm, RoundingMethodCode> mmRoundingMethod = new MMBusinessAttribute<ExposureTerm, RoundingMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin1.mmRoundingMethod, SegregatedIndependentAmountMargin1.mmRoundingMethod);
 			isDerived = false;
@@ -393,18 +394,20 @@ public class ExposureTerm {
 			simpleType_lazy = () -> RoundingMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExposureTerm.class.getMethod("getRoundingMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RoundingMethodCode getValue(ExposureTerm obj) {
+			return obj.getRoundingMethod();
+		}
+
+		@Override
+		public void setValue(ExposureTerm obj, RoundingMethodCode value) {
+			obj.setRoundingMethod(value);
 		}
 	};
 	protected CollateralAgreement relatedCollateralAgreement;
 	/**
-	 * Agreement in which the exposure terms are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -434,7 +437,7 @@ public class ExposureTerm {
 	 * definition} = "Agreement in which the exposure terms are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCollateralAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ExposureTerm, Optional<CollateralAgreement>> mmRelatedCollateralAgreement = new MMBusinessAssociationEnd<ExposureTerm, Optional<CollateralAgreement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExposureTerm.mmObject();
@@ -443,16 +446,25 @@ public class ExposureTerm {
 			definition = "Agreement in which the exposure terms are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmExposureTerm;
+			opposite_lazy = () -> CollateralAgreement.mmExposureTerm;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
+			type_lazy = () -> CollateralAgreement.mmObject();
+		}
+
+		@Override
+		public Optional<CollateralAgreement> getValue(ExposureTerm obj) {
+			return obj.getRelatedCollateralAgreement();
+		}
+
+		@Override
+		public void setValue(ExposureTerm obj, Optional<CollateralAgreement> value) {
+			obj.setRelatedCollateralAgreement(value.orElse(null));
 		}
 	};
 	protected ActiveCurrencyAndAmount minimumRequirementDeposit;
 	/**
-	 * Minimum requirement for a participant if their requirement falls below a
-	 * specific amount set by the central counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -488,7 +500,7 @@ public class ExposureTerm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumRequirementDeposit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ExposureTerm, ActiveCurrencyAndAmount> mmMinimumRequirementDeposit = new MMBusinessAttribute<ExposureTerm, ActiveCurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarginCalculation1.mmMinimumRequirementDeposit, MarginCalculation2.mmMinimumRequirementDeposit);
 			isDerived = false;
@@ -501,23 +513,25 @@ public class ExposureTerm {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ExposureTerm.class.getMethod("getMinimumRequirementDeposit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(ExposureTerm obj) {
+			return obj.getMinimumRequirementDeposit();
+		}
+
+		@Override
+		public void setValue(ExposureTerm obj, ActiveCurrencyAndAmount value) {
+			obj.setMinimumRequirementDeposit(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExposureTerm";
 				definition = "Specifies the terms used to calculate a risk exposure and its coverage.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralAgreement.mmExposureTerm);
+				associationDomain_lazy = () -> Arrays.asList(CollateralAgreement.mmExposureTerm);
 				derivationElement_lazy = () -> Arrays.asList(MarginTerms1Choice.mmMarginDetails);
 				subType_lazy = () -> Arrays.asList(IndependentAmountTerm.mmObject(), VariationMarginTerm.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExposureTerm.mmExposureType, com.tools20022.repository.entity.ExposureTerm.mmMinimumTransferAmount,
@@ -538,47 +552,53 @@ public class ExposureTerm {
 		return exposureType;
 	}
 
-	public void setExposureType(ExposureTypeCode exposureType) {
-		this.exposureType = exposureType;
+	public ExposureTerm setExposureType(ExposureTypeCode exposureType) {
+		this.exposureType = Objects.requireNonNull(exposureType);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMinimumTransferAmount() {
 		return minimumTransferAmount;
 	}
 
-	public void setMinimumTransferAmount(ActiveCurrencyAndAmount minimumTransferAmount) {
-		this.minimumTransferAmount = minimumTransferAmount;
+	public ExposureTerm setMinimumTransferAmount(ActiveCurrencyAndAmount minimumTransferAmount) {
+		this.minimumTransferAmount = Objects.requireNonNull(minimumTransferAmount);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getRoundingAmount() {
 		return roundingAmount;
 	}
 
-	public void setRoundingAmount(ActiveCurrencyAndAmount roundingAmount) {
-		this.roundingAmount = roundingAmount;
+	public ExposureTerm setRoundingAmount(ActiveCurrencyAndAmount roundingAmount) {
+		this.roundingAmount = Objects.requireNonNull(roundingAmount);
+		return this;
 	}
 
 	public RoundingMethodCode getRoundingMethod() {
 		return roundingMethod;
 	}
 
-	public void setRoundingMethod(RoundingMethodCode roundingMethod) {
-		this.roundingMethod = roundingMethod;
+	public ExposureTerm setRoundingMethod(RoundingMethodCode roundingMethod) {
+		this.roundingMethod = Objects.requireNonNull(roundingMethod);
+		return this;
 	}
 
-	public CollateralAgreement getRelatedCollateralAgreement() {
-		return relatedCollateralAgreement;
+	public Optional<CollateralAgreement> getRelatedCollateralAgreement() {
+		return relatedCollateralAgreement == null ? Optional.empty() : Optional.of(relatedCollateralAgreement);
 	}
 
-	public void setRelatedCollateralAgreement(com.tools20022.repository.entity.CollateralAgreement relatedCollateralAgreement) {
+	public ExposureTerm setRelatedCollateralAgreement(CollateralAgreement relatedCollateralAgreement) {
 		this.relatedCollateralAgreement = relatedCollateralAgreement;
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMinimumRequirementDeposit() {
 		return minimumRequirementDeposit;
 	}
 
-	public void setMinimumRequirementDeposit(ActiveCurrencyAndAmount minimumRequirementDeposit) {
-		this.minimumRequirementDeposit = minimumRequirementDeposit;
+	public ExposureTerm setMinimumRequirementDeposit(ActiveCurrencyAndAmount minimumRequirementDeposit) {
+		this.minimumRequirementDeposit = Objects.requireNonNull(minimumRequirementDeposit);
+		return this;
 	}
 }

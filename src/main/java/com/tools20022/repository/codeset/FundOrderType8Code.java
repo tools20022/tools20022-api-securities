@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#BedAndBreakfast
- * FundOrderType8Code.mmBedAndBreakfast}</li>
+ * FundOrderType8Code.BedAndBreakfast}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#InvestmentPlan
- * FundOrderType8Code.mmInvestmentPlan}</li>
+ * FundOrderType8Code.InvestmentPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#PreAdvice
- * FundOrderType8Code.mmPreAdvice}</li>
+ * FundOrderType8Code.PreAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#RegularSavingsPlan
- * FundOrderType8Code.mmRegularSavingsPlan}</li>
+ * FundOrderType8Code.RegularSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#RegularSavingsPlanUpdate
- * FundOrderType8Code.mmRegularSavingsPlanUpdate}</li>
+ * FundOrderType8Code.RegularSavingsPlanUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#ReinvestmentOfDividend
- * FundOrderType8Code.mmReinvestmentOfDividend}</li>
+ * FundOrderType8Code.ReinvestmentOfDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#StaffOrder
- * FundOrderType8Code.mmStaffOrder}</li>
+ * FundOrderType8Code.StaffOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType8Code#Withdrawal
- * FundOrderType8Code.mmWithdrawal}</li>
+ * FundOrderType8Code.Withdrawal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -284,7 +284,7 @@ public class FundOrderType8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundOrderType8Code";
 				definition = "Specifies the category of the investment fund order.";

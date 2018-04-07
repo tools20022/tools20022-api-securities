@@ -22,13 +22,11 @@ import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
-import com.tools20022.repository.entity.Adjustment;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Amount of money associated with a service.
@@ -146,6 +144,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.SwitchLegReferences2#mmRepairedFee
  * SwitchLegReferences2.mmRepairedFee}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Fee4#mmDiscountDetails
+ * Fee4.mmDiscountDetails}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -169,17 +169,17 @@ import java.util.List;
  * <li>{@linkplain com.tools20022.repository.choice.ChargePaymentMethod1Choice
  * ChargePaymentMethod1Choice}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Charge26 Charge26}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Charge29 Charge29}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Fee3 Fee3}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Fee2 Fee2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Fee1 Fee1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Fee4 Fee4}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -195,8 +195,8 @@ public class Charges extends Adjustment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ChargeTypeCode chargeType;
 	/**
-	 * Type of service for which a charge is asked or paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,8 +227,6 @@ public class Charges extends Adjustment {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.ChargeType4Choice#mmProprietary
 	 * ChargeType4Choice.mmProprietary}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Charge29#mmType
-	 * Charge29.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.ChargeType5Choice#mmCode
 	 * ChargeType5Choice.mmCode}</li>
@@ -238,6 +236,13 @@ public class Charges extends Adjustment {
 	 * <li>{@linkplain com.tools20022.repository.msg.Fee3#mmType Fee3.mmType}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Fee2#mmType Fee2.mmType}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Fee1#mmType Fee1.mmType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.ChargeType6Choice#mmCode
+	 * ChargeType6Choice.mmCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.ChargeType6Choice#mmProprietary
+	 * ChargeType6Choice.mmProprietary}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Fee4#mmType Fee4.mmType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -255,10 +260,10 @@ public class Charges extends Adjustment {
 	 * definition} = "Type of service for which a charge is asked or paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmChargeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, ChargeTypeCode> mmChargeType = new MMBusinessAttribute<Charges, ChargeTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Charge15.mmType, Charge15.mmExtendedType, ChargeType2FormatChoice.mmCode, ChargeType2FormatChoice.mmProprietary, Charges1.mmType, Charge26.mmType, ChargeType4Choice.mmCode,
-					ChargeType4Choice.mmProprietary, Charge29.mmType, ChargeType5Choice.mmCode, ChargeType5Choice.mmProprietary, Fee3.mmType, Fee2.mmType, Fee1.mmType);
+					ChargeType4Choice.mmProprietary, ChargeType5Choice.mmCode, ChargeType5Choice.mmProprietary, Fee3.mmType, Fee2.mmType, Fee1.mmType, ChargeType6Choice.mmCode, ChargeType6Choice.mmProprietary, Fee4.mmType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -269,18 +274,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> ChargeTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getChargeType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ChargeTypeCode getValue(Charges obj) {
+			return obj.getChargeType();
+		}
+
+		@Override
+		public void setValue(Charges obj, ChargeTypeCode value) {
+			obj.setChargeType(value);
 		}
 	};
 	protected CalculationBasisCode calculationBasis;
 	/**
-	 * Calculation basis for the charge or fee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,7 +321,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Calculation basis for the charge or fee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, CalculationBasisCode> mmCalculationBasis = new MMBusinessAttribute<Charges, CalculationBasisCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Charge15.mmCalculationBasis, Charge15.mmExtendedCalculationBasis);
 			isDerived = false;
@@ -327,19 +334,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> CalculationBasisCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getCalculationBasis", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CalculationBasisCode getValue(Charges obj) {
+			return obj.getCalculationBasis();
+		}
+
+		@Override
+		public void setValue(Charges obj, CalculationBasisCode value) {
+			obj.setCalculationBasis(value);
 		}
 	};
 	protected ChargeBearerTypeCode bearerType;
 	/**
-	 * Specifies which party/parties will bear the charges associated with the
-	 * processing of the payment transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -350,8 +358,8 @@ public class Charges extends Adjustment {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.Charge29#mmChargeBearer
-	 * Charge29.mmChargeBearer}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Fee4#mmChargeBearer
+	 * Fee4.mmChargeBearer}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -371,9 +379,9 @@ public class Charges extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBearerType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, ChargeBearerTypeCode> mmBearerType = new MMBusinessAttribute<Charges, ChargeBearerTypeCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Charge29.mmChargeBearer);
+			derivation_lazy = () -> Arrays.asList(Fee4.mmChargeBearer);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -384,18 +392,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> ChargeBearerTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getBearerType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ChargeBearerTypeCode getValue(Charges obj) {
+			return obj.getBearerType();
+		}
+
+		@Override
+		public void setValue(Charges obj, ChargeBearerTypeCode value) {
+			obj.setBearerType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CashAccount> chargesDebitAccount;
+	protected List<CashAccount> chargesDebitAccount;
 	/**
-	 * Account from which a charge is debited.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -433,7 +443,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Account from which a charge is debited."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmChargesDebitAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, List<CashAccount>> mmChargesDebitAccount = new MMBusinessAssociationEnd<Charges, List<CashAccount>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Account8Choice.mmChargesAccount);
 			isDerived = false;
@@ -442,15 +452,25 @@ public class Charges extends Adjustment {
 			name = "ChargesDebitAccount";
 			definition = "Account from which a charge is debited.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmCharges;
+			opposite_lazy = () -> CashAccount.mmCharges;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+			type_lazy = () -> CashAccount.mmObject();
+		}
+
+		@Override
+		public List<CashAccount> getValue(Charges obj) {
+			return obj.getChargesDebitAccount();
+		}
+
+		@Override
+		public void setValue(Charges obj, List<CashAccount> value) {
+			obj.setChargesDebitAccount(value);
 		}
 	};
 	protected CashEntry cashEntry;
 	/**
-	 * Entry which contains the charges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -480,7 +500,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Entry which contains the charges."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, com.tools20022.repository.entity.CashEntry> mmCashEntry = new MMBusinessAssociationEnd<Charges, com.tools20022.repository.entity.CashEntry>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -493,11 +513,21 @@ public class Charges extends Adjustment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.CashEntry getValue(Charges obj) {
+			return obj.getCashEntry();
+		}
+
+		@Override
+		public void setValue(Charges obj, com.tools20022.repository.entity.CashEntry value) {
+			obj.setCashEntry(value);
+		}
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether a charge is a credit or a debit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -520,7 +550,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Indicates whether a charge is a credit or a debit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, DebitCreditCode> mmCreditDebitIndicator = new MMBusinessAttribute<Charges, DebitCreditCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -532,19 +562,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getCreditDebitIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(Charges obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(Charges obj, DebitCreditCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 	protected CurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum amount of money asked or paid for the charge for example
-	 * depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -569,7 +600,7 @@ public class Charges extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, CurrencyAndAmount> mmMaximumAmount = new MMBusinessAttribute<Charges, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -581,18 +612,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getMaximumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Charges obj) {
+			return obj.getMaximumAmount();
+		}
+
+		@Override
+		public void setValue(Charges obj, CurrencyAndAmount value) {
+			obj.setMaximumAmount(value);
 		}
 	};
 	protected InvestmentFundTransaction investmentFundTransaction;
 	/**
-	 * Investment fund transaction for which charges are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -624,7 +657,7 @@ public class Charges extends Adjustment {
 	 * "Investment fund transaction for which charges are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, Optional<InvestmentFundTransaction>> mmInvestmentFundTransaction = new MMBusinessAssociationEnd<Charges, Optional<InvestmentFundTransaction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -637,11 +670,21 @@ public class Charges extends Adjustment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 		}
+
+		@Override
+		public Optional<InvestmentFundTransaction> getValue(Charges obj) {
+			return obj.getInvestmentFundTransaction();
+		}
+
+		@Override
+		public void setValue(Charges obj, Optional<InvestmentFundTransaction> value) {
+			obj.setInvestmentFundTransaction(value.orElse(null));
+		}
 	};
 	protected LineItem logisticsChargeLineItem;
 	/**
-	 * Specifies the line item to which the logistics charge applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -671,7 +714,7 @@ public class Charges extends Adjustment {
 	 * "Specifies the line item to which the logistics charge applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLogisticsChargeLineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, Optional<LineItem>> mmLogisticsChargeLineItem = new MMBusinessAssociationEnd<Charges, Optional<LineItem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -684,11 +727,21 @@ public class Charges extends Adjustment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 		}
+
+		@Override
+		public Optional<LineItem> getValue(Charges obj) {
+			return obj.getLogisticsChargeLineItem();
+		}
+
+		@Override
+		public void setValue(Charges obj, Optional<LineItem> value) {
+			obj.setLogisticsChargeLineItem(value.orElse(null));
+		}
 	};
 	protected Transport transport;
 	/**
-	 * Specifies the transport process to which the charges apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -719,7 +772,7 @@ public class Charges extends Adjustment {
 	 * "Specifies the transport process to which the charges apply."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, Optional<Transport>> mmTransport = new MMBusinessAssociationEnd<Charges, Optional<Transport>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -732,11 +785,21 @@ public class Charges extends Adjustment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 		}
+
+		@Override
+		public Optional<Transport> getValue(Charges obj) {
+			return obj.getTransport();
+		}
+
+		@Override
+		public void setValue(Charges obj, Optional<Transport> value) {
+			obj.setTransport(value.orElse(null));
+		}
 	};
 	protected AccountService services;
 	/**
-	 * Account services for which account administration charges are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -768,7 +831,7 @@ public class Charges extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, Optional<AccountService>> mmServices = new MMBusinessAssociationEnd<Charges, Optional<AccountService>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -777,15 +840,25 @@ public class Charges extends Adjustment {
 			definition = "Account services for which account administration charges are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountService.mmAccountAdministrationCharge;
+			opposite_lazy = () -> AccountService.mmAccountAdministrationCharge;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
+			type_lazy = () -> AccountService.mmObject();
+		}
+
+		@Override
+		public Optional<AccountService> getValue(Charges obj) {
+			return obj.getServices();
+		}
+
+		@Override
+		public void setValue(Charges obj, Optional<AccountService> value) {
+			obj.setServices(value.orElse(null));
 		}
 	};
 	protected Undertaking relatedUndertaking;
 	/**
-	 * Undertaking for which charges are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -815,7 +888,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Undertaking for which charges are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedUndertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, Undertaking> mmRelatedUndertaking = new MMBusinessAssociationEnd<Charges, Undertaking>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -824,15 +897,25 @@ public class Charges extends Adjustment {
 			definition = "Undertaking for which charges are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmCharges;
+			opposite_lazy = () -> Undertaking.mmCharges;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
+			type_lazy = () -> Undertaking.mmObject();
+		}
+
+		@Override
+		public Undertaking getValue(Charges obj) {
+			return obj.getRelatedUndertaking();
+		}
+
+		@Override
+		public void setValue(Charges obj, Undertaking value) {
+			obj.setRelatedUndertaking(value);
 		}
 	};
 	protected LineItem lineItem;
 	/**
-	 * Line item for which charges are specified
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -861,7 +944,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Line item for which charges are specified"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, com.tools20022.repository.entity.LineItem> mmLineItem = new MMBusinessAssociationEnd<Charges, com.tools20022.repository.entity.LineItem>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -874,11 +957,21 @@ public class Charges extends Adjustment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.LineItem getValue(Charges obj) {
+			return obj.getLineItem();
+		}
+
+		@Override
+		public void setValue(Charges obj, com.tools20022.repository.entity.LineItem value) {
+			obj.setLineItem(value);
+		}
 	};
 	protected LineItem netPriceChargeLineItem;
 	/**
-	 * Specifies the line item to which the net price charge applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -908,7 +1001,7 @@ public class Charges extends Adjustment {
 	 * "Specifies the line item to which the net price charge applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetPriceChargeLineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, Optional<LineItem>> mmNetPriceChargeLineItem = new MMBusinessAssociationEnd<Charges, Optional<LineItem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -921,11 +1014,21 @@ public class Charges extends Adjustment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
 		}
+
+		@Override
+		public Optional<LineItem> getValue(Charges obj) {
+			return obj.getNetPriceChargeLineItem();
+		}
+
+		@Override
+		public void setValue(Charges obj, Optional<LineItem> value) {
+			obj.setNetPriceChargeLineItem(value.orElse(null));
+		}
 	};
 	protected CurrencyAndAmount baseAmount;
 	/**
-	 * Amount on which the charges are calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -948,7 +1051,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Amount on which the charges are calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBaseAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, CurrencyAndAmount> mmBaseAmount = new MMBusinessAttribute<Charges, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -960,19 +1063,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getBaseAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Charges obj) {
+			return obj.getBaseAmount();
+		}
+
+		@Override
+		public void setValue(Charges obj, CurrencyAndAmount value) {
+			obj.setBaseAmount(value);
 		}
 	};
 	protected PercentageRate maximumRate;
 	/**
-	 * Maximum rate used to calculate the amount of the charge or fee for
-	 * example depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -997,7 +1101,7 @@ public class Charges extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, PercentageRate> mmMaximumRate = new MMBusinessAttribute<Charges, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -1009,19 +1113,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getMaximumRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Charges obj) {
+			return obj.getMaximumRate();
+		}
+
+		@Override
+		public void setValue(Charges obj, PercentageRate value) {
+			obj.setMaximumRate(value);
 		}
 	};
 	protected PercentageRate minimumRate;
 	/**
-	 * Minimum rate used to calculate the amount of the charge or fee for
-	 * example depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1046,7 +1151,7 @@ public class Charges extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, PercentageRate> mmMinimumRate = new MMBusinessAttribute<Charges, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -1058,19 +1163,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getMinimumRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Charges obj) {
+			return obj.getMinimumRate();
+		}
+
+		@Override
+		public void setValue(Charges obj, PercentageRate value) {
+			obj.setMinimumRate(value);
 		}
 	};
 	protected CurrencyAndAmount minimumAmount;
 	/**
-	 * Minimum amount of money asked or paid for the charge for example
-	 * depending on the type of investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1095,7 +1201,7 @@ public class Charges extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, CurrencyAndAmount> mmMinimumAmount = new MMBusinessAttribute<Charges, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -1107,18 +1213,20 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getMinimumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Charges obj) {
+			return obj.getMinimumAmount();
+		}
+
+		@Override
+		public void setValue(Charges obj, CurrencyAndAmount value) {
+			obj.setMinimumAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InterestCalculation> relatedInterest;
+	protected List<InterestCalculation> relatedInterest;
 	/**
-	 * Interest on which charges are applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1148,7 +1256,7 @@ public class Charges extends Adjustment {
 	 * definition} = "Interest on which charges are applied."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Charges, List<InterestCalculation>> mmRelatedInterest = new MMBusinessAssociationEnd<Charges, List<InterestCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
@@ -1156,15 +1264,25 @@ public class Charges extends Adjustment {
 			name = "RelatedInterest";
 			definition = "Interest on which charges are applied.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmCharges;
+			opposite_lazy = () -> InterestCalculation.mmCharges;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
+			type_lazy = () -> InterestCalculation.mmObject();
+		}
+
+		@Override
+		public List<InterestCalculation> getValue(Charges obj) {
+			return obj.getRelatedInterest();
+		}
+
+		@Override
+		public void setValue(Charges obj, List<InterestCalculation> value) {
+			obj.setRelatedInterest(value);
 		}
 	};
 	protected ChargePaymentMethodCode chargePaymentMethod;
 	/**
-	 * Specifies how charges are paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1182,14 +1300,11 @@ public class Charges extends Adjustment {
 	 * {@linkplain com.tools20022.repository.choice.ChargePaymentMethod1Choice#mmProprietary
 	 * ChargePaymentMethod1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer31#mmTransferExpensesPaymentType
-	 * Transfer31.mmTransferExpensesPaymentType}</li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer35#mmTransferExpensesPaymentType
+	 * Transfer35.mmTransferExpensesPaymentType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer30#mmTransferExpensesPaymentType
-	 * Transfer30.mmTransferExpensesPaymentType}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer33#mmTransferExpensesPaymentType
-	 * Transfer33.mmTransferExpensesPaymentType}</li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer34#mmTransferExpensesPaymentType
+	 * Transfer34.mmTransferExpensesPaymentType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1207,10 +1322,9 @@ public class Charges extends Adjustment {
 	 * definition} = "Specifies how charges are paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmChargePaymentMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Charges, ChargePaymentMethodCode> mmChargePaymentMethod = new MMBusinessAttribute<Charges, ChargePaymentMethodCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ChargePaymentMethod1Choice.mmCode, ChargePaymentMethod1Choice.mmProprietary, Transfer31.mmTransferExpensesPaymentType, Transfer30.mmTransferExpensesPaymentType,
-					Transfer33.mmTransferExpensesPaymentType);
+			derivation_lazy = () -> Arrays.asList(ChargePaymentMethod1Choice.mmCode, ChargePaymentMethod1Choice.mmProprietary, Transfer35.mmTransferExpensesPaymentType, Transfer34.mmTransferExpensesPaymentType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1221,28 +1335,29 @@ public class Charges extends Adjustment {
 			simpleType_lazy = () -> ChargePaymentMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Charges.class.getMethod("getChargePaymentMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ChargePaymentMethodCode getValue(Charges obj) {
+			return obj.getChargePaymentMethod();
+		}
+
+		@Override
+		public void setValue(Charges obj, ChargePaymentMethodCode value) {
+			obj.setChargePaymentMethod(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Charges";
 				definition = "Amount of money associated with a service.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCharges, com.tools20022.repository.entity.AccountService.mmAccountAdministrationCharge,
-						com.tools20022.repository.entity.CashEntry.mmCharges, com.tools20022.repository.entity.InvestmentFundTransaction.mmTransactionCharge, com.tools20022.repository.entity.InterestCalculation.mmCharges,
-						com.tools20022.repository.entity.Undertaking.mmCharges, com.tools20022.repository.entity.LineItem.mmLogisticsCharge, com.tools20022.repository.entity.LineItem.mmCharges,
-						com.tools20022.repository.entity.LineItem.mmNetPriceCharge, com.tools20022.repository.entity.Transport.mmTransportCharges);
+				associationDomain_lazy = () -> Arrays.asList(CashAccount.mmCharges, AccountService.mmAccountAdministrationCharge, com.tools20022.repository.entity.CashEntry.mmCharges,
+						com.tools20022.repository.entity.InvestmentFundTransaction.mmTransactionCharge, InterestCalculation.mmCharges, Undertaking.mmCharges, com.tools20022.repository.entity.LineItem.mmLogisticsCharge,
+						com.tools20022.repository.entity.LineItem.mmCharges, com.tools20022.repository.entity.LineItem.mmNetPriceCharge, com.tools20022.repository.entity.Transport.mmTransportCharges);
 				derivationElement_lazy = () -> Arrays.asList(CashMovement1.mmCharges, IndividualOrderStatusAndReason7.mmRepairedFee, TotalFeesAndTaxes40.mmTotalFees, TotalFeesAndTaxes40.mmIndividualFee, Fee2.mmDiscountDetails,
-						Fee1.mmDiscountDetails, SwitchLegReferences2.mmRepairedFee);
+						Fee1.mmDiscountDetails, SwitchLegReferences2.mmRepairedFee, Fee4.mmDiscountDetails);
 				subType_lazy = () -> Arrays.asList(SecuritiesRelatedFees.mmObject(), CorporateActionFeesAndCharges.mmObject());
 				superType_lazy = () -> Adjustment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Charges.mmChargeType, com.tools20022.repository.entity.Charges.mmCalculationBasis, com.tools20022.repository.entity.Charges.mmBearerType,
@@ -1252,8 +1367,8 @@ public class Charges extends Adjustment {
 						com.tools20022.repository.entity.Charges.mmLineItem, com.tools20022.repository.entity.Charges.mmNetPriceChargeLineItem, com.tools20022.repository.entity.Charges.mmBaseAmount,
 						com.tools20022.repository.entity.Charges.mmMaximumRate, com.tools20022.repository.entity.Charges.mmMinimumRate, com.tools20022.repository.entity.Charges.mmMinimumAmount,
 						com.tools20022.repository.entity.Charges.mmRelatedInterest, com.tools20022.repository.entity.Charges.mmChargePaymentMethod);
-				derivationComponent_lazy = () -> Arrays.asList(Charge15.mmObject(), ChargeType2FormatChoice.mmObject(), Charges1.mmObject(), ChargePaymentMethod1Choice.mmObject(), Charge26.mmObject(), Charge29.mmObject(), Fee3.mmObject(),
-						Fee2.mmObject(), Fee1.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(Charge15.mmObject(), ChargeType2FormatChoice.mmObject(), Charges1.mmObject(), ChargePaymentMethod1Choice.mmObject(), Charge26.mmObject(), Fee3.mmObject(), Fee2.mmObject(),
+						Fee1.mmObject(), Fee4.mmObject());
 			}
 
 			@Override
@@ -1268,159 +1383,179 @@ public class Charges extends Adjustment {
 		return chargeType;
 	}
 
-	public void setChargeType(ChargeTypeCode chargeType) {
-		this.chargeType = chargeType;
+	public Charges setChargeType(ChargeTypeCode chargeType) {
+		this.chargeType = Objects.requireNonNull(chargeType);
+		return this;
 	}
 
 	public CalculationBasisCode getCalculationBasis() {
 		return calculationBasis;
 	}
 
-	public void setCalculationBasis(CalculationBasisCode calculationBasis) {
-		this.calculationBasis = calculationBasis;
+	public Charges setCalculationBasis(CalculationBasisCode calculationBasis) {
+		this.calculationBasis = Objects.requireNonNull(calculationBasis);
+		return this;
 	}
 
 	public ChargeBearerTypeCode getBearerType() {
 		return bearerType;
 	}
 
-	public void setBearerType(ChargeBearerTypeCode bearerType) {
-		this.bearerType = bearerType;
+	public Charges setBearerType(ChargeBearerTypeCode bearerType) {
+		this.bearerType = Objects.requireNonNull(bearerType);
+		return this;
 	}
 
 	public List<CashAccount> getChargesDebitAccount() {
-		return chargesDebitAccount;
+		return chargesDebitAccount == null ? chargesDebitAccount = new ArrayList<>() : chargesDebitAccount;
 	}
 
-	public void setChargesDebitAccount(List<com.tools20022.repository.entity.CashAccount> chargesDebitAccount) {
-		this.chargesDebitAccount = chargesDebitAccount;
+	public Charges setChargesDebitAccount(List<CashAccount> chargesDebitAccount) {
+		this.chargesDebitAccount = Objects.requireNonNull(chargesDebitAccount);
+		return this;
 	}
 
 	public CashEntry getCashEntry() {
 		return cashEntry;
 	}
 
-	public void setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
-		this.cashEntry = cashEntry;
+	public Charges setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
+		this.cashEntry = Objects.requireNonNull(cashEntry);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Charges setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(CurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public Charges setMaximumAmount(CurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 
-	public InvestmentFundTransaction getInvestmentFundTransaction() {
-		return investmentFundTransaction;
+	public Optional<InvestmentFundTransaction> getInvestmentFundTransaction() {
+		return investmentFundTransaction == null ? Optional.empty() : Optional.of(investmentFundTransaction);
 	}
 
-	public void setInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundTransaction investmentFundTransaction) {
+	public Charges setInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundTransaction investmentFundTransaction) {
 		this.investmentFundTransaction = investmentFundTransaction;
+		return this;
 	}
 
-	public LineItem getLogisticsChargeLineItem() {
-		return logisticsChargeLineItem;
+	public Optional<LineItem> getLogisticsChargeLineItem() {
+		return logisticsChargeLineItem == null ? Optional.empty() : Optional.of(logisticsChargeLineItem);
 	}
 
-	public void setLogisticsChargeLineItem(com.tools20022.repository.entity.LineItem logisticsChargeLineItem) {
+	public Charges setLogisticsChargeLineItem(com.tools20022.repository.entity.LineItem logisticsChargeLineItem) {
 		this.logisticsChargeLineItem = logisticsChargeLineItem;
+		return this;
 	}
 
-	public Transport getTransport() {
-		return transport;
+	public Optional<Transport> getTransport() {
+		return transport == null ? Optional.empty() : Optional.of(transport);
 	}
 
-	public void setTransport(com.tools20022.repository.entity.Transport transport) {
+	public Charges setTransport(com.tools20022.repository.entity.Transport transport) {
 		this.transport = transport;
+		return this;
 	}
 
-	public AccountService getServices() {
-		return services;
+	public Optional<AccountService> getServices() {
+		return services == null ? Optional.empty() : Optional.of(services);
 	}
 
-	public void setServices(com.tools20022.repository.entity.AccountService services) {
+	public Charges setServices(AccountService services) {
 		this.services = services;
+		return this;
 	}
 
 	public Undertaking getRelatedUndertaking() {
 		return relatedUndertaking;
 	}
 
-	public void setRelatedUndertaking(com.tools20022.repository.entity.Undertaking relatedUndertaking) {
-		this.relatedUndertaking = relatedUndertaking;
+	public Charges setRelatedUndertaking(Undertaking relatedUndertaking) {
+		this.relatedUndertaking = Objects.requireNonNull(relatedUndertaking);
+		return this;
 	}
 
 	public LineItem getLineItem() {
 		return lineItem;
 	}
 
-	public void setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
-		this.lineItem = lineItem;
+	public Charges setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
+		this.lineItem = Objects.requireNonNull(lineItem);
+		return this;
 	}
 
-	public LineItem getNetPriceChargeLineItem() {
-		return netPriceChargeLineItem;
+	public Optional<LineItem> getNetPriceChargeLineItem() {
+		return netPriceChargeLineItem == null ? Optional.empty() : Optional.of(netPriceChargeLineItem);
 	}
 
-	public void setNetPriceChargeLineItem(com.tools20022.repository.entity.LineItem netPriceChargeLineItem) {
+	public Charges setNetPriceChargeLineItem(com.tools20022.repository.entity.LineItem netPriceChargeLineItem) {
 		this.netPriceChargeLineItem = netPriceChargeLineItem;
+		return this;
 	}
 
 	public CurrencyAndAmount getBaseAmount() {
 		return baseAmount;
 	}
 
-	public void setBaseAmount(CurrencyAndAmount baseAmount) {
-		this.baseAmount = baseAmount;
+	public Charges setBaseAmount(CurrencyAndAmount baseAmount) {
+		this.baseAmount = Objects.requireNonNull(baseAmount);
+		return this;
 	}
 
 	public PercentageRate getMaximumRate() {
 		return maximumRate;
 	}
 
-	public void setMaximumRate(PercentageRate maximumRate) {
-		this.maximumRate = maximumRate;
+	public Charges setMaximumRate(PercentageRate maximumRate) {
+		this.maximumRate = Objects.requireNonNull(maximumRate);
+		return this;
 	}
 
 	public PercentageRate getMinimumRate() {
 		return minimumRate;
 	}
 
-	public void setMinimumRate(PercentageRate minimumRate) {
-		this.minimumRate = minimumRate;
+	public Charges setMinimumRate(PercentageRate minimumRate) {
+		this.minimumRate = Objects.requireNonNull(minimumRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumAmount() {
 		return minimumAmount;
 	}
 
-	public void setMinimumAmount(CurrencyAndAmount minimumAmount) {
-		this.minimumAmount = minimumAmount;
+	public Charges setMinimumAmount(CurrencyAndAmount minimumAmount) {
+		this.minimumAmount = Objects.requireNonNull(minimumAmount);
+		return this;
 	}
 
 	public List<InterestCalculation> getRelatedInterest() {
-		return relatedInterest;
+		return relatedInterest == null ? relatedInterest = new ArrayList<>() : relatedInterest;
 	}
 
-	public void setRelatedInterest(List<com.tools20022.repository.entity.InterestCalculation> relatedInterest) {
-		this.relatedInterest = relatedInterest;
+	public Charges setRelatedInterest(List<InterestCalculation> relatedInterest) {
+		this.relatedInterest = Objects.requireNonNull(relatedInterest);
+		return this;
 	}
 
 	public ChargePaymentMethodCode getChargePaymentMethod() {
 		return chargePaymentMethod;
 	}
 
-	public void setChargePaymentMethod(ChargePaymentMethodCode chargePaymentMethod) {
-		this.chargePaymentMethod = chargePaymentMethod;
+	public Charges setChargePaymentMethod(ChargePaymentMethodCode chargePaymentMethod) {
+		this.chargePaymentMethod = Objects.requireNonNull(chargePaymentMethod);
+		return this;
 	}
 }

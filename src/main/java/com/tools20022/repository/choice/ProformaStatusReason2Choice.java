@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification36;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,10 +62,6 @@ import javax.xml.bind.annotation.XmlType;
  * "ProformaStatusReason2Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Choice of formats for a proforma reason code."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.choice.EnabledStatusReason2Choice
- * EnabledStatusReason2Choice}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -72,17 +69,22 @@ import javax.xml.bind.annotation.XmlType;
  * ClosedStatusReason2Choice}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.choice.EnabledStatusReason2Choice
+ * EnabledStatusReason2Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProformaStatusReason2Choice", propOrder = {"code", "proprietary"})
 public class ProformaStatusReason2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ProformaStatusReason1Code code;
 	/**
-	 * Reason for the enabled account status expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,11 +109,6 @@ public class ProformaStatusReason2Choice {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Reason for the enabled account status expressed as a code."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.choice.EnabledStatusReason2Choice#mmCode
-	 * EnabledStatusReason2Choice.mmCode}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -120,11 +117,16 @@ public class ProformaStatusReason2Choice {
 	 * ClosedStatusReason2Choice.mmCode}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.choice.EnabledStatusReason2Choice#mmCode
+	 * EnabledStatusReason2Choice.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProformaStatusReason2Choice, ProformaStatusReason1Code> mmCode = new MMMessageAttribute<ProformaStatusReason2Choice, ProformaStatusReason1Code>() {
 		{
-			componentContext_lazy = () -> ProformaStatusReason2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProformaStatusReason2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,11 +138,22 @@ public class ProformaStatusReason2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ProformaStatusReason1Code.mmObject();
 		}
+
+		@Override
+		public ProformaStatusReason1Code getValue(ProformaStatusReason2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ProformaStatusReason2Choice obj, ProformaStatusReason1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification36 proprietary;
 	/**
-	 * Reason for the enabled account status expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -164,11 +177,6 @@ public class ProformaStatusReason2Choice {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Reason for the enabled account status expressed as a proprietary code."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.choice.EnabledStatusReason2Choice#mmProprietary
-	 * EnabledStatusReason2Choice.mmProprietary}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -177,11 +185,16 @@ public class ProformaStatusReason2Choice {
 	 * ClosedStatusReason2Choice.mmProprietary}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.choice.EnabledStatusReason2Choice#mmProprietary
+	 * EnabledStatusReason2Choice.mmProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProformaStatusReason2Choice, GenericIdentification36> mmProprietary = new MMMessageAssociationEnd<ProformaStatusReason2Choice, GenericIdentification36>() {
 		{
-			componentContext_lazy = () -> ProformaStatusReason2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProformaStatusReason2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,13 +207,23 @@ public class ProformaStatusReason2Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification36.mmObject();
 		}
+
+		@Override
+		public GenericIdentification36 getValue(ProformaStatusReason2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ProformaStatusReason2Choice obj, GenericIdentification36 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProformaStatusReason2Choice.mmCode, ProformaStatusReason2Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ProformaStatusReason2Choice.mmCode, com.tools20022.repository.choice.ProformaStatusReason2Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProformaStatusReason2Choice";
 				definition = "Choice of formats for a proforma reason code.";
@@ -211,21 +234,21 @@ public class ProformaStatusReason2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ProformaStatusReason1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ProformaStatusReason1Code code) {
-		this.code = code;
+	public ProformaStatusReason2Choice setCode(ProformaStatusReason1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification36 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification36 proprietary) {
-		this.proprietary = proprietary;
+	public ProformaStatusReason2Choice setProprietary(GenericIdentification36 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

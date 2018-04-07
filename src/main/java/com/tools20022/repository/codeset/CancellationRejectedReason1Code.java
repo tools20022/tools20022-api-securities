@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Specifies the reason for a cancellation rejected status
+ * Specifies the reason for a cancellation rejected status.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -38,10 +38,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationRejectedReason1Code#CutOffTime
- * CancellationRejectedReason1Code.mmCutOffTime}</li>
+ * CancellationRejectedReason1Code.CutOffTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancellationRejectedReason1Code#AlreadyExecuted
- * CancellationRejectedReason1Code.mmAlreadyExecuted}</li>
+ * CancellationRejectedReason1Code.AlreadyExecuted}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -50,8 +50,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -65,7 +65,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "CancellationRejectedReason1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Specifies the reason for a cancellation rejected status"</li>
+ * definition} = "Specifies the reason for a cancellation rejected status."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -128,11 +128,11 @@ public class CancellationRejectedReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CUTO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancellationRejectedReason1Code";
-				definition = "Specifies the reason for a cancellation rejected status";
+				definition = "Specifies the reason for a cancellation rejected status.";
 				trace_lazy = () -> RejectedStatusReasonCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CancellationRejectedReason1Code.CutOffTime, com.tools20022.repository.codeset.CancellationRejectedReason1Code.AlreadyExecuted);
 			}

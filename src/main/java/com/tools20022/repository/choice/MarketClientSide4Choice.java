@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -24,8 +25,12 @@ import com.tools20022.repository.codeset.MarketClientSideCode;
 import com.tools20022.repository.entity.SecuritiesSettlement;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,27 +56,36 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = September 9, 2017</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "MarketClientSide4Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Choice of format for the market/client side information."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.MarketClientSide6Choice
+ * MarketClientSide6Choice}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarketClientSide4Choice", propOrder = {"code", "proprietary"})
 public class MarketClientSide4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected MarketClientSideCode code;
 	/**
-	 * Market side or a client side information expressed as an ISO 20022 code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -92,6 +106,9 @@ public class MarketClientSide4Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Cd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::MACL//4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -102,26 +119,47 @@ public class MarketClientSide4Choice {
 	 * definition} =
 	 * "Market side or a client side information expressed as an ISO 20022 code."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.MarketClientSide6Choice#mmCode
+	 * MarketClientSide6Choice.mmCode}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketClientSide4Choice, MarketClientSideCode> mmCode = new MMMessageAttribute<MarketClientSide4Choice, MarketClientSideCode>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmMarketClientSide;
-			componentContext_lazy = () -> MarketClientSide4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarketClientSide4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::MACL//4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Market side or a client side information expressed as an ISO 20022 code.";
+			nextVersions_lazy = () -> Arrays.asList(MarketClientSide6Choice.mmCode);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> MarketClientSideCode.mmObject();
 		}
+
+		@Override
+		public MarketClientSideCode getValue(MarketClientSide4Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MarketClientSide4Choice obj, MarketClientSideCode value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Market side or a client side information expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,6 +180,9 @@ public class MarketClientSide4Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::MACL/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -152,51 +193,79 @@ public class MarketClientSide4Choice {
 	 * definition} =
 	 * "Market side or a client side information expressed as a proprietary code."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.MarketClientSide6Choice#mmProprietary
+	 * MarketClientSide6Choice.mmProprietary}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketClientSide4Choice, GenericIdentification30> mmProprietary = new MMMessageAttribute<MarketClientSide4Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmMarketClientSide;
-			componentContext_lazy = () -> MarketClientSide4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarketClientSide4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::MACL/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Market side or a client side information expressed as a proprietary code.";
+			nextVersions_lazy = () -> Arrays.asList(MarketClientSide6Choice.mmProprietary);
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
+		}
+
+		@Override
+		public GenericIdentification30 getValue(MarketClientSide4Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MarketClientSide4Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarketClientSide4Choice.mmCode, MarketClientSide4Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MarketClientSide4Choice.mmCode, com.tools20022.repository.choice.MarketClientSide4Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("September 9, 2017");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "MarketClientSide4Choice";
 				definition = "Choice of format for the market/client side information.";
+				nextVersions_lazy = () -> Arrays.asList(MarketClientSide6Choice.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public MarketClientSideCode getCode() {
 		return code;
 	}
 
-	public void setCode(MarketClientSideCode code) {
-		this.code = code;
+	public MarketClientSide4Choice setCode(MarketClientSideCode code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public MarketClientSide4Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

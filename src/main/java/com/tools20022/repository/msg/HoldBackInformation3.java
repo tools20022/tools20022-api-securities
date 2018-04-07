@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -33,6 +34,8 @@ import com.tools20022.repository.entity.LocalName;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * HoldBackInformation2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "HoldBackInformation3", propOrder = {"type", "amount", "expectedReleaseDate", "financialInstrumentIdentification", "financialInstrumentName", "redemptionCompletion"})
 public class HoldBackInformation3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected GateHoldBack1Code type;
 	/**
-	 * Type of gating or a hold back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,9 +130,9 @@ public class HoldBackInformation3 {
 	 * HoldBackInformation2.mmType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldBackInformation3, GateHoldBack1Code> mmType = new MMMessageAttribute<HoldBackInformation3, GateHoldBack1Code>() {
 		{
-			componentContext_lazy = () -> HoldBackInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldBackInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,11 +143,22 @@ public class HoldBackInformation3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> GateHoldBack1Code.mmObject();
 		}
+
+		@Override
+		public GateHoldBack1Code getValue(HoldBackInformation3 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(HoldBackInformation3 obj, GateHoldBack1Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Amt")
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Value of the redemption amount subject to gating or a hold back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,10 +195,10 @@ public class HoldBackInformation3 {
 	 * HoldBackInformation2.mmAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldBackInformation3, Optional<ActiveCurrencyAndAmount>> mmAmount = new MMMessageAttribute<HoldBackInformation3, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmHoldBackAmount;
-			componentContext_lazy = () -> HoldBackInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldBackInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,12 +209,22 @@ public class HoldBackInformation3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(HoldBackInformation3 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(HoldBackInformation3 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpctdRlsDt")
 	protected ISODate expectedReleaseDate;
 	/**
-	 * Date on which the gated amount or hold back amount is expected to be
-	 * released.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,10 +261,10 @@ public class HoldBackInformation3 {
 	 * HoldBackInformation2.mmExpectedReleaseDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedReleaseDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldBackInformation3, Optional<ISODate>> mmExpectedReleaseDate = new MMMessageAttribute<HoldBackInformation3, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmHoldBackReleaseDate;
-			componentContext_lazy = () -> HoldBackInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldBackInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdRlsDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,11 +275,22 @@ public class HoldBackInformation3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(HoldBackInformation3 obj) {
+			return obj.getExpectedReleaseDate();
+		}
+
+		@Override
+		public void setValue(HoldBackInformation3 obj, Optional<ISODate> value) {
+			obj.setExpectedReleaseDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FinInstrmId")
 	protected SecurityIdentification25Choice financialInstrumentIdentification;
 	/**
-	 * New identification of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -289,10 +325,10 @@ public class HoldBackInformation3 {
 	 * HoldBackInformation2.mmFinancialInstrumentIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HoldBackInformation3, Optional<SecurityIdentification25Choice>> mmFinancialInstrumentIdentification = new MMMessageAssociationEnd<HoldBackInformation3, Optional<SecurityIdentification25Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmInvestmentFundClass;
-			componentContext_lazy = () -> HoldBackInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldBackInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -304,11 +340,22 @@ public class HoldBackInformation3 {
 			isComposite = true;
 			type_lazy = () -> SecurityIdentification25Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SecurityIdentification25Choice> getValue(HoldBackInformation3 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(HoldBackInformation3 obj, Optional<SecurityIdentification25Choice> value) {
+			obj.setFinancialInstrumentIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FinInstrmNm")
 	protected Max350Text financialInstrumentName;
 	/**
-	 * New name of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,6 +375,9 @@ public class HoldBackInformation3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "FinInstrmNm"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70a::FIAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -343,12 +393,13 @@ public class HoldBackInformation3 {
 	 * HoldBackInformation2.mmFinancialInstrumentName}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinancialInstrumentName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldBackInformation3, Optional<Max350Text>> mmFinancialInstrumentName = new MMMessageAttribute<HoldBackInformation3, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> LocalName.mmFullName;
-			componentContext_lazy = () -> HoldBackInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldBackInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmNm";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70a::FIAN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialInstrumentName";
 			definition = "New name of the security.";
@@ -357,12 +408,22 @@ public class HoldBackInformation3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(HoldBackInformation3 obj) {
+			return obj.getFinancialInstrumentName();
+		}
+
+		@Override
+		public void setValue(HoldBackInformation3 obj, Optional<Max350Text> value) {
+			obj.setFinancialInstrumentName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RedCmpltn")
 	protected RedemptionCompletion1Code redemptionCompletion;
 	/**
-	 * Specifies whether or not additional redemption order instructions are
-	 * required in order for the redemption to be completed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -386,7 +447,7 @@ public class HoldBackInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies whether or not additional redemption order instructions are required in order for the redemption to be completed. "
+	 * "Specifies whether or not additional redemption order instructions are required in order for the redemption to be completed."
 	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
@@ -395,28 +456,39 @@ public class HoldBackInformation3 {
 	 * HoldBackInformation2.mmRedemptionCompletion}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRedemptionCompletion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldBackInformation3, Optional<RedemptionCompletion1Code>> mmRedemptionCompletion = new MMMessageAttribute<HoldBackInformation3, Optional<RedemptionCompletion1Code>>() {
 		{
-			componentContext_lazy = () -> HoldBackInformation3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldBackInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "RedCmpltn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RedemptionCompletion";
-			definition = "Specifies whether or not additional redemption order instructions are required in order for the redemption to be completed. ";
+			definition = "Specifies whether or not additional redemption order instructions are required in order for the redemption to be completed.";
 			previousVersion_lazy = () -> HoldBackInformation2.mmRedemptionCompletion;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> RedemptionCompletion1Code.mmObject();
+		}
+
+		@Override
+		public Optional<RedemptionCompletion1Code> getValue(HoldBackInformation3 obj) {
+			return obj.getRedemptionCompletion();
+		}
+
+		@Override
+		public void setValue(HoldBackInformation3 obj, Optional<RedemptionCompletion1Code> value) {
+			obj.setRedemptionCompletion(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(HoldBackInformation3.mmType, HoldBackInformation3.mmAmount, HoldBackInformation3.mmExpectedReleaseDate, HoldBackInformation3.mmFinancialInstrumentIdentification,
-						HoldBackInformation3.mmFinancialInstrumentName, HoldBackInformation3.mmRedemptionCompletion);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.HoldBackInformation3.mmType, com.tools20022.repository.msg.HoldBackInformation3.mmAmount,
+						com.tools20022.repository.msg.HoldBackInformation3.mmExpectedReleaseDate, com.tools20022.repository.msg.HoldBackInformation3.mmFinancialInstrumentIdentification,
+						com.tools20022.repository.msg.HoldBackInformation3.mmFinancialInstrumentName, com.tools20022.repository.msg.HoldBackInformation3.mmRedemptionCompletion);
 				trace_lazy = () -> InvestmentFundClass.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldBackInformation3";
 				definition = "Information about hold back and gating.";
@@ -426,57 +498,57 @@ public class HoldBackInformation3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public GateHoldBack1Code getType() {
 		return type;
 	}
 
-	public void setType(GateHoldBack1Code type) {
-		this.type = type;
+	public HoldBackInformation3 setType(GateHoldBack1Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Amt")
-	public ActiveCurrencyAndAmount getAmount() {
-		return amount;
+	public Optional<ActiveCurrencyAndAmount> getAmount() {
+		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
+	public HoldBackInformation3 setAmount(ActiveCurrencyAndAmount amount) {
 		this.amount = amount;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdRlsDt")
-	public ISODate getExpectedReleaseDate() {
-		return expectedReleaseDate;
+	public Optional<ISODate> getExpectedReleaseDate() {
+		return expectedReleaseDate == null ? Optional.empty() : Optional.of(expectedReleaseDate);
 	}
 
-	public void setExpectedReleaseDate(ISODate expectedReleaseDate) {
+	public HoldBackInformation3 setExpectedReleaseDate(ISODate expectedReleaseDate) {
 		this.expectedReleaseDate = expectedReleaseDate;
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmId")
-	public SecurityIdentification25Choice getFinancialInstrumentIdentification() {
-		return financialInstrumentIdentification;
+	public Optional<SecurityIdentification25Choice> getFinancialInstrumentIdentification() {
+		return financialInstrumentIdentification == null ? Optional.empty() : Optional.of(financialInstrumentIdentification);
 	}
 
-	public void setFinancialInstrumentIdentification(SecurityIdentification25Choice financialInstrumentIdentification) {
+	public HoldBackInformation3 setFinancialInstrumentIdentification(SecurityIdentification25Choice financialInstrumentIdentification) {
 		this.financialInstrumentIdentification = financialInstrumentIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmNm")
-	public Max350Text getFinancialInstrumentName() {
-		return financialInstrumentName;
+	public Optional<Max350Text> getFinancialInstrumentName() {
+		return financialInstrumentName == null ? Optional.empty() : Optional.of(financialInstrumentName);
 	}
 
-	public void setFinancialInstrumentName(Max350Text financialInstrumentName) {
+	public HoldBackInformation3 setFinancialInstrumentName(Max350Text financialInstrumentName) {
 		this.financialInstrumentName = financialInstrumentName;
+		return this;
 	}
 
-	@XmlElement(name = "RedCmpltn")
-	public RedemptionCompletion1Code getRedemptionCompletion() {
-		return redemptionCompletion;
+	public Optional<RedemptionCompletion1Code> getRedemptionCompletion() {
+		return redemptionCompletion == null ? Optional.empty() : Optional.of(redemptionCompletion);
 	}
 
-	public void setRedemptionCompletion(RedemptionCompletion1Code redemptionCompletion) {
+	public HoldBackInformation3 setRedemptionCompletion(RedemptionCompletion1Code redemptionCompletion) {
 		this.redemptionCompletion = redemptionCompletion;
+		return this;
 	}
 }

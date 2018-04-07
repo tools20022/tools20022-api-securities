@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PhysicalDelivery;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NameAndAddress4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Parameters of a physical delivery."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DeliveryParameters3", propOrder = {"address", "issuedCertificateNumber"})
 public class DeliveryParameters3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Adr", required = true)
 	protected NameAndAddress4 address;
 	/**
-	 * Address for physical delivery.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,10 +106,10 @@ public class DeliveryParameters3 {
 	 * definition} = "Address for physical delivery."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DeliveryParameters3, NameAndAddress4> mmAddress = new MMMessageAttribute<DeliveryParameters3, NameAndAddress4>() {
 		{
 			businessElementTrace_lazy = () -> PhysicalDelivery.mmAddress;
-			componentContext_lazy = () -> DeliveryParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveryParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "Adr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,13 +117,24 @@ public class DeliveryParameters3 {
 			definition = "Address for physical delivery.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.NameAndAddress4.mmObject();
+			complexType_lazy = () -> NameAndAddress4.mmObject();
+		}
+
+		@Override
+		public NameAndAddress4 getValue(DeliveryParameters3 obj) {
+			return obj.getAddress();
+		}
+
+		@Override
+		public void setValue(DeliveryParameters3 obj, NameAndAddress4 value) {
+			obj.setAddress(value);
 		}
 	};
+	@XmlElement(name = "IssdCertNb")
 	protected Max35Text issuedCertificateNumber;
 	/**
-	 * Certificate representing a security that is delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,10 +164,10 @@ public class DeliveryParameters3 {
 	 * definition} = "Certificate representing a security that is delivered."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuedCertificateNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DeliveryParameters3, Optional<Max35Text>> mmIssuedCertificateNumber = new MMMessageAttribute<DeliveryParameters3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PhysicalDelivery.mmIssuedCertificateNumber;
-			componentContext_lazy = () -> DeliveryParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveryParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "IssdCertNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,14 +177,24 @@ public class DeliveryParameters3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DeliveryParameters3 obj) {
+			return obj.getIssuedCertificateNumber();
+		}
+
+		@Override
+		public void setValue(DeliveryParameters3 obj, Optional<Max35Text> value) {
+			obj.setIssuedCertificateNumber(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DeliveryParameters3.mmAddress, DeliveryParameters3.mmIssuedCertificateNumber);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DeliveryParameters3.mmAddress, com.tools20022.repository.msg.DeliveryParameters3.mmIssuedCertificateNumber);
 				trace_lazy = () -> PhysicalDelivery.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryParameters3";
 				definition = "Parameters of a physical delivery.";
@@ -178,21 +203,21 @@ public class DeliveryParameters3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Adr", required = true)
 	public NameAndAddress4 getAddress() {
 		return address;
 	}
 
-	public void setAddress(com.tools20022.repository.msg.NameAndAddress4 address) {
-		this.address = address;
+	public DeliveryParameters3 setAddress(NameAndAddress4 address) {
+		this.address = Objects.requireNonNull(address);
+		return this;
 	}
 
-	@XmlElement(name = "IssdCertNb")
-	public Max35Text getIssuedCertificateNumber() {
-		return issuedCertificateNumber;
+	public Optional<Max35Text> getIssuedCertificateNumber() {
+		return issuedCertificateNumber == null ? Optional.empty() : Optional.of(issuedCertificateNumber);
 	}
 
-	public void setIssuedCertificateNumber(Max35Text issuedCertificateNumber) {
+	public DeliveryParameters3 setIssuedCertificateNumber(Max35Text issuedCertificateNumber) {
 		this.issuedCertificateNumber = issuedCertificateNumber;
+		return this;
 	}
 }

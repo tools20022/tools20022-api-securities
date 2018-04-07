@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ShortLong1Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Amount2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TotalVariationMargin1", propOrder = {"shortLongIndicator", "amountDetails"})
 public class TotalVariationMargin1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ShrtLngInd")
 	protected ShortLong1Code shortLongIndicator;
 	/**
-	 * Specifies whether the variation margin position is short or long, that
-	 * is, wether the balance is a negative or positive balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +105,9 @@ public class TotalVariationMargin1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmShortLongIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TotalVariationMargin1, Optional<ShortLong1Code>> mmShortLongIndicator = new MMMessageAttribute<TotalVariationMargin1, Optional<ShortLong1Code>>() {
 		{
-			componentContext_lazy = () -> TotalVariationMargin1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalVariationMargin1.mmObject();
 			isDerived = false;
 			xmlTag = "ShrtLngInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,12 +117,22 @@ public class TotalVariationMargin1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ShortLong1Code.mmObject();
 		}
+
+		@Override
+		public Optional<ShortLong1Code> getValue(TotalVariationMargin1 obj) {
+			return obj.getShortLongIndicator();
+		}
+
+		@Override
+		public void setValue(TotalVariationMargin1 obj, Optional<ShortLong1Code> value) {
+			obj.setShortLongIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AmtDtls", required = true)
 	protected Amount2 amountDetails;
 	/**
-	 * Provides the variation margin amount in the reporting currency and
-	 * optionally in the original currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -144,9 +157,9 @@ public class TotalVariationMargin1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAmountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TotalVariationMargin1, Amount2> mmAmountDetails = new MMMessageAssociationEnd<TotalVariationMargin1, Amount2>() {
 		{
-			componentContext_lazy = () -> TotalVariationMargin1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalVariationMargin1.mmObject();
 			isDerived = false;
 			xmlTag = "AmtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,15 +168,25 @@ public class TotalVariationMargin1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Amount2.mmObject();
+			type_lazy = () -> Amount2.mmObject();
+		}
+
+		@Override
+		public Amount2 getValue(TotalVariationMargin1 obj) {
+			return obj.getAmountDetails();
+		}
+
+		@Override
+		public void setValue(TotalVariationMargin1 obj, Amount2 value) {
+			obj.setAmountDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TotalVariationMargin1.mmShortLongIndicator, TotalVariationMargin1.mmAmountDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TotalVariationMargin1.mmShortLongIndicator, com.tools20022.repository.msg.TotalVariationMargin1.mmAmountDetails);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TotalVariationMargin1";
 				definition = "Margin required to cover the risk because of the price fluctuations occurred on the unsettled exposures towards the central counterparty.";
@@ -172,21 +195,21 @@ public class TotalVariationMargin1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ShrtLngInd")
-	public ShortLong1Code getShortLongIndicator() {
-		return shortLongIndicator;
+	public Optional<ShortLong1Code> getShortLongIndicator() {
+		return shortLongIndicator == null ? Optional.empty() : Optional.of(shortLongIndicator);
 	}
 
-	public void setShortLongIndicator(ShortLong1Code shortLongIndicator) {
+	public TotalVariationMargin1 setShortLongIndicator(ShortLong1Code shortLongIndicator) {
 		this.shortLongIndicator = shortLongIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "AmtDtls", required = true)
 	public Amount2 getAmountDetails() {
 		return amountDetails;
 	}
 
-	public void setAmountDetails(com.tools20022.repository.msg.Amount2 amountDetails) {
-		this.amountDetails = amountDetails;
+	public TotalVariationMargin1 setAmountDetails(Amount2 amountDetails) {
+		this.amountDetails = Objects.requireNonNull(amountDetails);
+		return this;
 	}
 }

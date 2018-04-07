@@ -38,97 +38,97 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Abstain
- * CorporateActionOptionTypeCode.mmAbstain}</li>
+ * CorporateActionOptionTypeCode.Abstain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#VoteAgainst
- * CorporateActionOptionTypeCode.mmVoteAgainst}</li>
+ * CorporateActionOptionTypeCode.VoteAgainst}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Attach
- * CorporateActionOptionTypeCode.mmAttach}</li>
+ * CorporateActionOptionTypeCode.Attach}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#BearerShareExchange
- * CorporateActionOptionTypeCode.mmBearerShareExchange}</li>
+ * CorporateActionOptionTypeCode.BearerShareExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#BonusSharePlan
- * CorporateActionOptionTypeCode.mmBonusSharePlan}</li>
+ * CorporateActionOptionTypeCode.BonusSharePlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#BuyUp
- * CorporateActionOptionTypeCode.mmBuyUp}</li>
+ * CorporateActionOptionTypeCode.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#CashAndSecurities
- * CorporateActionOptionTypeCode.mmCashAndSecurities}</li>
+ * CorporateActionOptionTypeCode.CashAndSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Cash
- * CorporateActionOptionTypeCode.mmCash}</li>
+ * CorporateActionOptionTypeCode.Cash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#ConsentAndExchange
- * CorporateActionOptionTypeCode.mmConsentAndExchange}</li>
+ * CorporateActionOptionTypeCode.ConsentAndExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#ConsentAndTender
- * CorporateActionOptionTypeCode.mmConsentAndTender}</li>
+ * CorporateActionOptionTypeCode.ConsentAndTender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#ConsentDenied
- * CorporateActionOptionTypeCode.mmConsentDenied}</li>
+ * CorporateActionOptionTypeCode.ConsentDenied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Convert
- * CorporateActionOptionTypeCode.mmConvert}</li>
+ * CorporateActionOptionTypeCode.Convert}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#ConsentGranted
- * CorporateActionOptionTypeCode.mmConsentGranted}</li>
+ * CorporateActionOptionTypeCode.ConsentGranted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Detached
- * CorporateActionOptionTypeCode.mmDetached}</li>
+ * CorporateActionOptionTypeCode.Detached}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Exercise
- * CorporateActionOptionTypeCode.mmExercise}</li>
+ * CorporateActionOptionTypeCode.Exercise}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Lapse
- * CorporateActionOptionTypeCode.mmLapse}</li>
+ * CorporateActionOptionTypeCode.Lapse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#VoteWithManagement
- * CorporateActionOptionTypeCode.mmVoteWithManagement}</li>
+ * CorporateActionOptionTypeCode.VoteWithManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Retain
- * CorporateActionOptionTypeCode.mmRetain}</li>
+ * CorporateActionOptionTypeCode.Retain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#NoAction
- * CorporateActionOptionTypeCode.mmNoAction}</li>
+ * CorporateActionOptionTypeCode.NoAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#ProposedRate
- * CorporateActionOptionTypeCode.mmProposedRate}</li>
+ * CorporateActionOptionTypeCode.ProposedRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Oversubscribe
- * CorporateActionOptionTypeCode.mmOversubscribe}</li>
+ * CorporateActionOptionTypeCode.Oversubscribe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#ProxyCard
- * CorporateActionOptionTypeCode.mmProxyCard}</li>
+ * CorporateActionOptionTypeCode.ProxyCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#RegisteredShareExchange
- * CorporateActionOptionTypeCode.mmRegisteredShareExchange}</li>
+ * CorporateActionOptionTypeCode.RegisteredShareExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#RegulationsExchange
- * CorporateActionOptionTypeCode.mmRegulationsExchange}</li>
+ * CorporateActionOptionTypeCode.RegulationsExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#SecuritiesOption
- * CorporateActionOptionTypeCode.mmSecuritiesOption}</li>
+ * CorporateActionOptionTypeCode.SecuritiesOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#SellEntitlement
- * CorporateActionOptionTypeCode.mmSellEntitlement}</li>
+ * CorporateActionOptionTypeCode.SellEntitlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#SplitInstruction
- * CorporateActionOptionTypeCode.mmSplitInstruction}</li>
+ * CorporateActionOptionTypeCode.SplitInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Rule144A
- * CorporateActionOptionTypeCode.mmRule144A}</li>
+ * CorporateActionOptionTypeCode.Rule144A}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#NonQualifiedInvestor
- * CorporateActionOptionTypeCode.mmNonQualifiedInvestor}</li>
+ * CorporateActionOptionTypeCode.NonQualifiedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#Other
- * CorporateActionOptionTypeCode.mmOther}</li>
+ * CorporateActionOptionTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOptionTypeCode#QualifiedInvestor
- * CorporateActionOptionTypeCode.mmQualifiedInvestor}</li>
+ * CorporateActionOptionTypeCode.QualifiedInvestor}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -142,8 +142,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1145,7 +1145,7 @@ public class CorporateActionOptionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ABST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionOptionTypeCode";

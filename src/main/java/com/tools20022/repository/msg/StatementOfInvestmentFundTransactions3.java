@@ -24,9 +24,9 @@ import com.tools20022.repository.area.semt.StatementOfInvestmentFundTransactions
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.InvestmentAccount;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +74,17 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTransactionOnAccountOrSubAccountDetailsRule#forStatementOfInvestmentFundTransactions3
+ * ConstraintTransactionOnAccountOrSubAccountDetailsRule.
+ * forStatementOfInvestmentFundTransactions3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,16 +96,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Information about a statement of investment fund transactions."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StatementOfInvestmentFundTransactions3", propOrder = {"statementGeneralDetails", "investmentAccountDetails", "transactionOnAccount", "subAccountDetails", "extension"})
 public class StatementOfInvestmentFundTransactions3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StmtGnlDtls")
 	protected Statement8 statementGeneralDetails;
 	/**
-	 * General information related to the investment fund statement of
-	 * transactions that is being cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -121,9 +130,9 @@ public class StatementOfInvestmentFundTransactions3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStatementGeneralDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, Optional<Statement8>> mmStatementGeneralDetails = new MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, Optional<Statement8>>() {
 		{
-			componentContext_lazy = () -> StatementOfInvestmentFundTransactions3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmObject();
 			isDerived = false;
 			xmlTag = "StmtGnlDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,14 +141,24 @@ public class StatementOfInvestmentFundTransactions3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Statement8.mmObject();
+			type_lazy = () -> Statement8.mmObject();
+		}
+
+		@Override
+		public Optional<Statement8> getValue(StatementOfInvestmentFundTransactions3 obj) {
+			return obj.getStatementGeneralDetails();
+		}
+
+		@Override
+		public void setValue(StatementOfInvestmentFundTransactions3 obj, Optional<Statement8> value) {
+			obj.setStatementGeneralDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "InvstmtAcctDtls")
 	protected InvestmentAccount43 investmentAccountDetails;
 	/**
-	 * Information related to an investment account of the statement that is
-	 * being cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -170,10 +189,10 @@ public class StatementOfInvestmentFundTransactions3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvestmentAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, Optional<InvestmentAccount43>> mmInvestmentAccountDetails = new MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, Optional<InvestmentAccount43>>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentAccount.mmObject();
-			componentContext_lazy = () -> StatementOfInvestmentFundTransactions3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmObject();
 			isDerived = false;
 			xmlTag = "InvstmtAcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,14 +201,24 @@ public class StatementOfInvestmentFundTransactions3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccount43.mmObject();
+			type_lazy = () -> InvestmentAccount43.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentAccount43> getValue(StatementOfInvestmentFundTransactions3 obj) {
+			return obj.getInvestmentAccountDetails();
+		}
+
+		@Override
+		public void setValue(StatementOfInvestmentFundTransactions3 obj, Optional<InvestmentAccount43> value) {
+			obj.setInvestmentAccountDetails(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentFundTransactionsByFund3> transactionOnAccount;
+	@XmlElement(name = "TxOnAcct")
+	protected List<InvestmentFundTransactionsByFund3> transactionOnAccount;
 	/**
-	 * Creation/cancellation of investment units on the books of the fund or its
-	 * designated agent, as a result of executing an investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -221,10 +250,10 @@ public class StatementOfInvestmentFundTransactions3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionOnAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, List<InvestmentFundTransactionsByFund3>> mmTransactionOnAccount = new MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, List<InvestmentFundTransactionsByFund3>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentAccount.mmInvestmentFundTransaction;
-			componentContext_lazy = () -> StatementOfInvestmentFundTransactions3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmObject();
 			isDerived = false;
 			xmlTag = "TxOnAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -232,13 +261,24 @@ public class StatementOfInvestmentFundTransactions3 {
 			definition = "Creation/cancellation of investment units on the books of the fund or its designated agent, as a result of executing an investment fund order.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransactionsByFund3.mmObject();
+			type_lazy = () -> InvestmentFundTransactionsByFund3.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFundTransactionsByFund3> getValue(StatementOfInvestmentFundTransactions3 obj) {
+			return obj.getTransactionOnAccount();
+		}
+
+		@Override
+		public void setValue(StatementOfInvestmentFundTransactions3 obj, List<InvestmentFundTransactionsByFund3> value) {
+			obj.setTransactionOnAccount(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.SubAccountIdentification36> subAccountDetails;
+	@XmlElement(name = "SubAcctDtls")
+	protected List<SubAccountIdentification36> subAccountDetails;
 	/**
-	 * Sub-account of the safekeeping or investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -268,10 +308,10 @@ public class StatementOfInvestmentFundTransactions3 {
 	 * definition} = "Sub-account of the safekeeping or investment account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, List<SubAccountIdentification36>> mmSubAccountDetails = new MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, List<SubAccountIdentification36>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> StatementOfInvestmentFundTransactions3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmObject();
 			isDerived = false;
 			xmlTag = "SubAcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,14 +319,24 @@ public class StatementOfInvestmentFundTransactions3 {
 			definition = "Sub-account of the safekeeping or investment account.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SubAccountIdentification36.mmObject();
+			type_lazy = () -> SubAccountIdentification36.mmObject();
+		}
+
+		@Override
+		public List<SubAccountIdentification36> getValue(StatementOfInvestmentFundTransactions3 obj) {
+			return obj.getSubAccountDetails();
+		}
+
+		@Override
+		public void setValue(StatementOfInvestmentFundTransactions3 obj, List<SubAccountIdentification36> value) {
+			obj.setSubAccountDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Extension1> extension;
+	@XmlElement(name = "Xtnsn")
+	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -311,9 +361,9 @@ public class StatementOfInvestmentFundTransactions3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExtension = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, List<Extension1>> mmExtension = new MMMessageAssociationEnd<StatementOfInvestmentFundTransactions3, List<Extension1>>() {
 		{
-			componentContext_lazy = () -> StatementOfInvestmentFundTransactions3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmObject();
 			isDerived = false;
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -321,18 +371,30 @@ public class StatementOfInvestmentFundTransactions3 {
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Extension1.mmObject();
+			type_lazy = () -> Extension1.mmObject();
+		}
+
+		@Override
+		public List<Extension1> getValue(StatementOfInvestmentFundTransactions3 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(StatementOfInvestmentFundTransactions3 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StatementOfInvestmentFundTransactions3.mmStatementGeneralDetails, StatementOfInvestmentFundTransactions3.mmInvestmentAccountDetails,
-						StatementOfInvestmentFundTransactions3.mmTransactionOnAccount, StatementOfInvestmentFundTransactions3.mmSubAccountDetails, StatementOfInvestmentFundTransactions3.mmExtension);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmStatementGeneralDetails,
+						com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmInvestmentAccountDetails, com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmTransactionOnAccount,
+						com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmSubAccountDetails, com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3.mmExtension);
 				messageBuildingBlock_lazy = () -> Arrays.asList(StatementOfInvestmentFundTransactionsCancellationV03.mmStatementToBeCancelled);
 				trace_lazy = () -> InvestmentAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintTransactionOnAccountOrSubAccountDetailsRule.forStatementOfInvestmentFundTransactions3);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementOfInvestmentFundTransactions3";
 				definition = "Information about a statement of investment fund transactions.";
@@ -341,48 +403,48 @@ public class StatementOfInvestmentFundTransactions3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StmtGnlDtls")
-	public Statement8 getStatementGeneralDetails() {
-		return statementGeneralDetails;
+	public Optional<Statement8> getStatementGeneralDetails() {
+		return statementGeneralDetails == null ? Optional.empty() : Optional.of(statementGeneralDetails);
 	}
 
-	public void setStatementGeneralDetails(com.tools20022.repository.msg.Statement8 statementGeneralDetails) {
+	public StatementOfInvestmentFundTransactions3 setStatementGeneralDetails(Statement8 statementGeneralDetails) {
 		this.statementGeneralDetails = statementGeneralDetails;
+		return this;
 	}
 
-	@XmlElement(name = "InvstmtAcctDtls")
-	public InvestmentAccount43 getInvestmentAccountDetails() {
-		return investmentAccountDetails;
+	public Optional<InvestmentAccount43> getInvestmentAccountDetails() {
+		return investmentAccountDetails == null ? Optional.empty() : Optional.of(investmentAccountDetails);
 	}
 
-	public void setInvestmentAccountDetails(com.tools20022.repository.msg.InvestmentAccount43 investmentAccountDetails) {
+	public StatementOfInvestmentFundTransactions3 setInvestmentAccountDetails(InvestmentAccount43 investmentAccountDetails) {
 		this.investmentAccountDetails = investmentAccountDetails;
+		return this;
 	}
 
-	@XmlElement(name = "TxOnAcct")
 	public List<InvestmentFundTransactionsByFund3> getTransactionOnAccount() {
-		return transactionOnAccount;
+		return transactionOnAccount == null ? transactionOnAccount = new ArrayList<>() : transactionOnAccount;
 	}
 
-	public void setTransactionOnAccount(List<com.tools20022.repository.msg.InvestmentFundTransactionsByFund3> transactionOnAccount) {
-		this.transactionOnAccount = transactionOnAccount;
+	public StatementOfInvestmentFundTransactions3 setTransactionOnAccount(List<InvestmentFundTransactionsByFund3> transactionOnAccount) {
+		this.transactionOnAccount = Objects.requireNonNull(transactionOnAccount);
+		return this;
 	}
 
-	@XmlElement(name = "SubAcctDtls")
 	public List<SubAccountIdentification36> getSubAccountDetails() {
-		return subAccountDetails;
+		return subAccountDetails == null ? subAccountDetails = new ArrayList<>() : subAccountDetails;
 	}
 
-	public void setSubAccountDetails(List<com.tools20022.repository.msg.SubAccountIdentification36> subAccountDetails) {
-		this.subAccountDetails = subAccountDetails;
+	public StatementOfInvestmentFundTransactions3 setSubAccountDetails(List<SubAccountIdentification36> subAccountDetails) {
+		this.subAccountDetails = Objects.requireNonNull(subAccountDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<com.tools20022.repository.msg.Extension1> extension) {
-		this.extension = extension;
+	public StatementOfInvestmentFundTransactions3 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 }

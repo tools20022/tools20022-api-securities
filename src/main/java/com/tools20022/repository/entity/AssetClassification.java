@@ -25,11 +25,15 @@ import com.tools20022.repository.choice.EquityDerivative3Choice;
 import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.codeset.ProductTypeCode;
 import com.tools20022.repository.datatype.CFIOct2015Identifier;
+import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.entity.AssetClassStrategy;
+import com.tools20022.repository.entity.Scheme;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Other classification type of the security, ie, other than ISO 10962.
@@ -92,8 +96,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,10 +114,8 @@ public class AssetClassification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CFIOct2015Identifier classificationType;
 	/**
-	 * Classification type of the financial instrument, as per the ISO
-	 * Classification of Financial Instrument (CFI) codification, for example,
-	 * common share with voting rights, fully paid, or registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,6 +177,12 @@ public class AssetClassification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes80#mmClassificationType
 	 * FinancialInstrumentAttributes80.mmClassificationType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes91#mmClassificationType
+	 * FinancialInstrumentAttributes91.mmClassificationType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes92#mmClassificationType
+	 * FinancialInstrumentAttributes92.mmClassificationType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -195,13 +203,14 @@ public class AssetClassification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClassificationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetClassification, CFIOct2015Identifier> mmClassificationType = new MMBusinessAttribute<AssetClassification, CFIOct2015Identifier>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ClassificationType1Choice.mmClassificationFinancialInstrument, ClassificationType1Choice.mmAlternateClassification, ClassificationType30Choice.mmClassificationFinancialInstrument,
 					ClassificationType30Choice.mmAlternateClassification, FinancialInstrumentAttributes44.mmClassificationType, FinancialInstrumentAttributes63.mmClassificationType, FinancialInstrumentAttributes64.mmClassificationType,
 					ClassificationType32Choice.mmClassificationFinancialInstrument, ClassificationType32Choice.mmAlternateClassification, CollateralValuation7.mmType, SecurityInstrumentDescription9.mmClassificationType,
 					SecurityInstrumentDescription11.mmClassificationType, TransparencyDataReport11.mmFinancialInstrumentClassification, TransparencyDataReport10.mmFinancialInstrumentClassification,
-					FinancialInstrumentAttributes79.mmClassificationType, FinancialInstrumentAttributes81.mmClassificationType, FinancialInstrumentAttributes80.mmClassificationType);
+					FinancialInstrumentAttributes79.mmClassificationType, FinancialInstrumentAttributes81.mmClassificationType, FinancialInstrumentAttributes80.mmClassificationType, FinancialInstrumentAttributes91.mmClassificationType,
+					FinancialInstrumentAttributes92.mmClassificationType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -212,18 +221,20 @@ public class AssetClassification {
 			simpleType_lazy = () -> CFIOct2015Identifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetClassification.class.getMethod("getClassificationType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CFIOct2015Identifier getValue(AssetClassification obj) {
+			return obj.getClassificationType();
+		}
+
+		@Override
+		public void setValue(AssetClassification obj, CFIOct2015Identifier value) {
+			obj.setClassificationType(value);
 		}
 	};
 	protected Asset asset;
 	/**
-	 * Asset for which classification information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,7 +264,7 @@ public class AssetClassification {
 	 * definition} = "Asset for which classification information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetClassification, Optional<Asset>> mmAsset = new MMBusinessAssociationEnd<AssetClassification, Optional<Asset>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
@@ -262,15 +273,25 @@ public class AssetClassification {
 			definition = "Asset for which classification information is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmAssetClassification;
+			opposite_lazy = () -> Asset.mmAssetClassification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+			type_lazy = () -> Asset.mmObject();
+		}
+
+		@Override
+		public Optional<Asset> getValue(AssetClassification obj) {
+			return obj.getAsset();
+		}
+
+		@Override
+		public void setValue(AssetClassification obj, Optional<Asset> value) {
+			obj.setAsset(value.orElse(null));
 		}
 	};
 	protected LanguageCode language;
 	/**
-	 * Language in which the asset classification is expressed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -293,7 +314,7 @@ public class AssetClassification {
 	 * definition} = "Language in which the asset classification is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetClassification, LanguageCode> mmLanguage = new MMBusinessAttribute<AssetClassification, LanguageCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
@@ -305,18 +326,20 @@ public class AssetClassification {
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetClassification.class.getMethod("getLanguage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LanguageCode getValue(AssetClassification obj) {
+			return obj.getLanguage();
+		}
+
+		@Override
+		public void setValue(AssetClassification obj, LanguageCode value) {
+			obj.setLanguage(value);
 		}
 	};
 	protected Scheme assetClassScheme;
 	/**
-	 * Information regarding the entity that assigns the asset classification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,7 +371,7 @@ public class AssetClassification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetClassScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetClassification, Scheme> mmAssetClassScheme = new MMBusinessAssociationEnd<AssetClassification, Scheme>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
@@ -357,15 +380,25 @@ public class AssetClassification {
 			definition = "Information regarding the entity that assigns the asset classification.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmAssetClassification;
+			opposite_lazy = () -> Scheme.mmAssetClassification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
+			type_lazy = () -> Scheme.mmObject();
+		}
+
+		@Override
+		public Scheme getValue(AssetClassification obj) {
+			return obj.getAssetClassScheme();
+		}
+
+		@Override
+		public void setValue(AssetClassification obj, Scheme value) {
+			obj.setAssetClassScheme(value);
 		}
 	};
 	protected ProductTypeCode productType;
 	/**
-	 * Identifies the product type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -414,7 +447,7 @@ public class AssetClassification {
 	 * definition} = "Identifies the product type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProductType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetClassification, ProductTypeCode> mmProductType = new MMBusinessAttribute<AssetClassification, ProductTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransparencyDataReport10.mmDerivativeContractType, DebtInstrument5.mmType, EquityDerivative3Choice.mmBasket, EquityDerivative3Choice.mmIndex, EquityDerivative3Choice.mmSingleName,
 					EquityDerivative3Choice.mmOther, UnsecuredMarketTransaction4.mmInstrumentType);
@@ -428,18 +461,20 @@ public class AssetClassification {
 			simpleType_lazy = () -> ProductTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetClassification.class.getMethod("getProductType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ProductTypeCode getValue(AssetClassification obj) {
+			return obj.getProductType();
+		}
+
+		@Override
+		public void setValue(AssetClassification obj, ProductTypeCode value) {
+			obj.setProductType(value);
 		}
 	};
 	protected AssetClassStrategy strategy;
 	/**
-	 * Strategy related to a class of assets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -470,7 +505,7 @@ public class AssetClassification {
 	 * definition} = "Strategy related to a class of assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetClassification, Optional<AssetClassStrategy>> mmStrategy = new MMBusinessAssociationEnd<AssetClassification, Optional<AssetClassStrategy>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
@@ -479,21 +514,30 @@ public class AssetClassification {
 			definition = "Strategy related to a class of assets.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmAssetClass;
+			opposite_lazy = () -> AssetClassStrategy.mmAssetClass;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmObject();
+			type_lazy = () -> AssetClassStrategy.mmObject();
+		}
+
+		@Override
+		public Optional<AssetClassStrategy> getValue(AssetClassification obj) {
+			return obj.getStrategy();
+		}
+
+		@Override
+		public void setValue(AssetClassification obj, Optional<AssetClassStrategy> value) {
+			obj.setStrategy(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassification";
 				definition = "Other classification type of the security, ie, other than ISO 10962.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmAssetClassification, com.tools20022.repository.entity.Scheme.mmAssetClassification,
-						com.tools20022.repository.entity.AssetClassStrategy.mmAssetClass);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmAssetClassification, Scheme.mmAssetClassification, AssetClassStrategy.mmAssetClass);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassification.mmClassificationType, com.tools20022.repository.entity.AssetClassification.mmAsset,
 						com.tools20022.repository.entity.AssetClassification.mmLanguage, com.tools20022.repository.entity.AssetClassification.mmAssetClassScheme, com.tools20022.repository.entity.AssetClassification.mmProductType,
 						com.tools20022.repository.entity.AssetClassification.mmStrategy);
@@ -512,47 +556,53 @@ public class AssetClassification {
 		return classificationType;
 	}
 
-	public void setClassificationType(CFIOct2015Identifier classificationType) {
-		this.classificationType = classificationType;
+	public AssetClassification setClassificationType(CFIOct2015Identifier classificationType) {
+		this.classificationType = Objects.requireNonNull(classificationType);
+		return this;
 	}
 
-	public Asset getAsset() {
-		return asset;
+	public Optional<Asset> getAsset() {
+		return asset == null ? Optional.empty() : Optional.of(asset);
 	}
 
-	public void setAsset(com.tools20022.repository.entity.Asset asset) {
+	public AssetClassification setAsset(Asset asset) {
 		this.asset = asset;
+		return this;
 	}
 
 	public LanguageCode getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(LanguageCode language) {
-		this.language = language;
+	public AssetClassification setLanguage(LanguageCode language) {
+		this.language = Objects.requireNonNull(language);
+		return this;
 	}
 
 	public Scheme getAssetClassScheme() {
 		return assetClassScheme;
 	}
 
-	public void setAssetClassScheme(com.tools20022.repository.entity.Scheme assetClassScheme) {
-		this.assetClassScheme = assetClassScheme;
+	public AssetClassification setAssetClassScheme(Scheme assetClassScheme) {
+		this.assetClassScheme = Objects.requireNonNull(assetClassScheme);
+		return this;
 	}
 
 	public ProductTypeCode getProductType() {
 		return productType;
 	}
 
-	public void setProductType(ProductTypeCode productType) {
-		this.productType = productType;
+	public AssetClassification setProductType(ProductTypeCode productType) {
+		this.productType = Objects.requireNonNull(productType);
+		return this;
 	}
 
-	public AssetClassStrategy getStrategy() {
-		return strategy;
+	public Optional<AssetClassStrategy> getStrategy() {
+		return strategy == null ? Optional.empty() : Optional.of(strategy);
 	}
 
-	public void setStrategy(com.tools20022.repository.entity.AssetClassStrategy strategy) {
+	public AssetClassification setStrategy(AssetClassStrategy strategy) {
 		this.strategy = strategy;
+		return this;
 	}
 }

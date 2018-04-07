@@ -26,12 +26,15 @@ import com.tools20022.repository.codeset.ShareRankingCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.entity.ProceedsDefinition;
+import com.tools20022.repository.entity.QuantityRatio;
+import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * The definition of the securities proceeds for a corporate action in generic
@@ -184,8 +187,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,8 +206,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity securitiesQuantity;
 	/**
-	 * The quantity of financial instruments that is posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,14 +229,17 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.SecurityOption1#mmSecuritiesQuantity
 	 * SecurityOption1.mmSecuritiesQuantity}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption130#mmSecuritiesQuantity
-	 * CorporateActionOption130.mmSecuritiesQuantity}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption141#mmStatusQuantity
+	 * CorporateActionOption141.mmStatusQuantity}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption131#mmSecuritiesQuantityOrInstructedAmount
-	 * CorporateActionOption131.mmSecuritiesQuantityOrInstructedAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption138#mmSecuritiesQuantity
+	 * CorporateActionOption138.mmSecuritiesQuantity}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption129#mmSecuritiesQuantity
-	 * CorporateActionOption129.mmSecuritiesQuantity}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption142#mmSecuritiesQuantityOrInstructedAmount
+	 * CorporateActionOption142.mmSecuritiesQuantityOrInstructedAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption139#mmSecuritiesQuantity
+	 * CorporateActionOption139.mmSecuritiesQuantity}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -252,10 +258,10 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "The quantity of financial instruments that is posted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmSecuritiesQuantity = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
-			derivation_lazy = () -> Arrays.asList(SecurityOption1.mmSecuritiesQuantity, CorporateActionOption130.mmSecuritiesQuantity, CorporateActionOption131.mmSecuritiesQuantityOrInstructedAmount,
-					CorporateActionOption129.mmSecuritiesQuantity);
+			derivation_lazy = () -> Arrays.asList(SecurityOption1.mmSecuritiesQuantity, CorporateActionOption141.mmStatusQuantity, CorporateActionOption138.mmSecuritiesQuantity,
+					CorporateActionOption142.mmSecuritiesQuantityOrInstructedAmount, CorporateActionOption139.mmSecuritiesQuantity);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -267,13 +273,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setSecuritiesQuantity(value);
+		}
 	};
 	protected SecuritiesQuantity conditionalQuantity;
 	/**
-	 * Minimum quantity of securities to be accepted (used in the framework of
-	 * conditional privilege on election). In case of proration, if this minimum
-	 * quantity is not reached then the instruction is void.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -292,8 +306,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SecuritiesOption54#mmConditionalQuantity
-	 * SecuritiesOption54.mmConditionalQuantity}</li>
+	 * {@linkplain com.tools20022.repository.msg.SecuritiesOption52#mmConditionalQuantity
+	 * SecuritiesOption52.mmConditionalQuantity}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -314,9 +328,9 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmConditionalQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmConditionalQuantity = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
-			derivation_lazy = () -> Arrays.asList(SecuritiesOption54.mmConditionalQuantity);
+			derivation_lazy = () -> Arrays.asList(SecuritiesOption52.mmConditionalQuantity);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -328,12 +342,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getConditionalQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setConditionalQuantity(value);
+		}
 	};
 	protected SecuritiesQuantity overAndAboveNormalEnsuredEntitlementQuantity;
 	/**
-	 * Quantity instructed to be received over and above normal ensured
-	 * entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,7 +389,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOverAndAboveNormalEnsuredEntitlementQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmOverAndAboveNormalEnsuredEntitlementQuantity = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
@@ -379,12 +402,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getOverAndAboveNormalEnsuredEntitlementQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setOverAndAboveNormalEnsuredEntitlementQuantity(value);
+		}
 	};
 	protected SecuritiesQuantity quantityToReceive;
 	/**
-	 * Quantity of the benefits that the account owner wants to receive, for
-	 * example, as a result of dividend reinvestment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,7 +449,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuantityToReceive = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmQuantityToReceive = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
@@ -430,11 +462,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getQuantityToReceive();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setQuantityToReceive(value);
+		}
 	};
 	protected SecuritiesQuantity statusQuantity;
 	/**
-	 * Quantity of securities that has been assigned the status indicated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -449,14 +491,6 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
 	 * type} = {@linkplain com.tools20022.repository.entity.SecuritiesQuantity
 	 * SecuritiesQuantity}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
-	 * derivation} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption116#mmStatusQuantity
-	 * CorporateActionOption116.mmStatusQuantity}</li>
-	 * </ul>
-	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -474,9 +508,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * "Quantity of securities that has been assigned the status indicated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStatusQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmStatusQuantity = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionOption116.mmStatusQuantity);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -488,12 +521,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getStatusQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setStatusQuantity(value);
+		}
 	};
 	protected DateTimePeriod parallelTradingPeriod;
 	/**
-	 * Period during which both old and new equity may be traded simultaneously,
-	 * eg, consolidation of equity or splitting of equity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,14 +554,14 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod7#mmParallelTradingPeriod
-	 * CorporateActionPeriod7.mmParallelTradingPeriod}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod2#mmParallelTradingPeriod
 	 * CorporateActionPeriod2.mmParallelTradingPeriod}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod11#mmParallelTradingPeriod
-	 * CorporateActionPeriod11.mmParallelTradingPeriod}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod12#mmParallelTradingPeriod
+	 * CorporateActionPeriod12.mmParallelTradingPeriod}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionPeriod13#mmParallelTradingPeriod
+	 * CorporateActionPeriod13.mmParallelTradingPeriod}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -540,9 +582,9 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmParallelTradingPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, DateTimePeriod> mmParallelTradingPeriod = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, DateTimePeriod>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionPeriod7.mmParallelTradingPeriod, CorporateActionPeriod2.mmParallelTradingPeriod, CorporateActionPeriod11.mmParallelTradingPeriod);
+			derivation_lazy = () -> Arrays.asList(CorporateActionPeriod2.mmParallelTradingPeriod, CorporateActionPeriod12.mmParallelTradingPeriod, CorporateActionPeriod13.mmParallelTradingPeriod);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -550,16 +592,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Period during which both old and new equity may be traded simultaneously, eg, consolidation of equity or splitting of equity.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmParallelTradingProceedsDefinition;
+			opposite_lazy = () -> DateTimePeriod.mmParallelTradingProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getParallelTradingPeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, DateTimePeriod value) {
+			obj.setParallelTradingPeriod(value);
 		}
 	};
 	protected QuantityRatio additionalQuantityForSubscribedResultantSecurities;
 	/**
-	 * Quantity of additional intermediate securities/new equities awarded for a
-	 * given quantity of securities derived from subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -586,12 +637,12 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.SecurityOption1#mmAdditionalQuantityForSubscribedResultantSecurities
 	 * SecurityOption1.mmAdditionalQuantityForSubscribedResultantSecurities}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate69#mmAdditionalQuantityForSubscribedResultantSecurities
-	 * CorporateActionRate69.
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate90#mmAdditionalQuantityForSubscribedResultantSecurities
+	 * CorporateActionRate90.
 	 * mmAdditionalQuantityForSubscribedResultantSecurities}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate72#mmAdditionalQuantityForSubscribedResultantSecurities
-	 * CorporateActionRate72.
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate89#mmAdditionalQuantityForSubscribedResultantSecurities
+	 * CorporateActionRate89.
 	 * mmAdditionalQuantityForSubscribedResultantSecurities}</li>
 	 * </ul>
 	 * </li>
@@ -613,10 +664,10 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAdditionalQuantityForSubscribedResultantSecurities = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio> mmAdditionalQuantityForSubscribedResultantSecurities = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmAdditionalQuantityForSubscribedResultantSecurities, SecurityOption1.mmAdditionalQuantityForSubscribedResultantSecurities,
-					CorporateActionRate69.mmAdditionalQuantityForSubscribedResultantSecurities, CorporateActionRate72.mmAdditionalQuantityForSubscribedResultantSecurities);
+					CorporateActionRate90.mmAdditionalQuantityForSubscribedResultantSecurities, CorporateActionRate89.mmAdditionalQuantityForSubscribedResultantSecurities);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -624,18 +675,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Quantity of additional intermediate securities/new equities awarded for a given quantity of securities derived from subscription.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmAdditionalQuantityForResultantSecuritiesProceedsDefinition;
+			opposite_lazy = () -> QuantityRatio.mmAdditionalQuantityForResultantSecuritiesProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
+			type_lazy = () -> QuantityRatio.mmObject();
+		}
+
+		@Override
+		public QuantityRatio getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getAdditionalQuantityForSubscribedResultantSecurities();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, QuantityRatio value) {
+			obj.setAdditionalQuantityForSubscribedResultantSecurities(value);
 		}
 	};
 	protected QuantityRatio additionalQuantityForExistingSecurities;
 	/**
-	 * Quantity of additional securities for a given quantity of underlying
-	 * securities where underlying securities are not exchanged or debited, eg,
-	 * 1 for 1: 1 new equity credited for every 1 underlying equity = 2
-	 * resulting equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -661,11 +719,11 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.SecurityOption1#mmAdditionalQuantityForExistingSecurities
 	 * SecurityOption1.mmAdditionalQuantityForExistingSecurities}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate69#mmAdditionalQuantityForExistingSecurities
-	 * CorporateActionRate69.mmAdditionalQuantityForExistingSecurities}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate90#mmAdditionalQuantityForExistingSecurities
+	 * CorporateActionRate90.mmAdditionalQuantityForExistingSecurities}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate72#mmAdditionalQuantityForExistingSecurities
-	 * CorporateActionRate72.mmAdditionalQuantityForExistingSecurities}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate89#mmAdditionalQuantityForExistingSecurities
+	 * CorporateActionRate89.mmAdditionalQuantityForExistingSecurities}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -686,10 +744,10 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAdditionalQuantityForExistingSecurities = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio> mmAdditionalQuantityForExistingSecurities = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmAdditionalQuantityForExistingSecurities, SecurityOption1.mmAdditionalQuantityForExistingSecurities, CorporateActionRate69.mmAdditionalQuantityForExistingSecurities,
-					CorporateActionRate72.mmAdditionalQuantityForExistingSecurities);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmAdditionalQuantityForExistingSecurities, SecurityOption1.mmAdditionalQuantityForExistingSecurities, CorporateActionRate90.mmAdditionalQuantityForExistingSecurities,
+					CorporateActionRate89.mmAdditionalQuantityForExistingSecurities);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -697,18 +755,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Quantity of additional securities for a given quantity of underlying securities where underlying securities are not exchanged or debited, eg, 1 for 1: 1 new equity credited for every 1 underlying equity = 2 resulting equities.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition;
+			opposite_lazy = () -> QuantityRatio.mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
+			type_lazy = () -> QuantityRatio.mmObject();
+		}
+
+		@Override
+		public QuantityRatio getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getAdditionalQuantityForExistingSecurities();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, QuantityRatio value) {
+			obj.setAdditionalQuantityForExistingSecurities(value);
 		}
 	};
 	protected QuantityRatio newToOld;
 	/**
-	 * Quantity of new securities for a given quantity of underlying securities,
-	 * where the underlying securities will be exchanged or debited, eg, 2 for
-	 * 1: 2 new equities credited for every 1 underlying equity debited = 2
-	 * resulting equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -730,11 +795,11 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate2#mmNewToOld
 	 * CorporateActionRate2.mmNewToOld}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate69#mmNewToOld
-	 * CorporateActionRate69.mmNewToOld}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate90#mmNewToOld
+	 * CorporateActionRate90.mmNewToOld}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate72#mmNewToOld
-	 * CorporateActionRate72.mmNewToOld}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate89#mmNewToOld
+	 * CorporateActionRate89.mmNewToOld}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -755,9 +820,9 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNewToOld = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio> mmNewToOld = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmNewToOld, CorporateActionRate69.mmNewToOld, CorporateActionRate72.mmNewToOld);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmNewToOld, CorporateActionRate90.mmNewToOld, CorporateActionRate89.mmNewToOld);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -765,16 +830,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Quantity of new securities for a given quantity of underlying securities, where the underlying securities will be exchanged or debited, eg, 2 for 1: 2 new equities credited for every 1 underlying equity debited = 2 resulting equities.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmNewToOldProceedsDefinition;
+			opposite_lazy = () -> QuantityRatio.mmNewToOldProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
+			type_lazy = () -> QuantityRatio.mmObject();
+		}
+
+		@Override
+		public QuantityRatio getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getNewToOld();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, QuantityRatio value) {
+			obj.setNewToOld(value);
 		}
 	};
 	protected QuantityRatio newSecuritiesToUnderlyingSecurities;
 	/**
-	 * Quantity of new equities that will be derived by the exercise of a given
-	 * quantity of intermediate securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -815,7 +889,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNewSecuritiesToUnderlyingSecurities = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio> mmNewSecuritiesToUnderlyingSecurities = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmNewSecuritiesToUnderlyingSecurities);
 			isDerived = false;
@@ -825,15 +899,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Quantity of new equities that will be derived by the exercise of a given quantity of intermediate securities.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmNewToUnderlyingProceedsDefinition;
+			opposite_lazy = () -> QuantityRatio.mmNewToUnderlyingProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
+			type_lazy = () -> QuantityRatio.mmObject();
+		}
+
+		@Override
+		public QuantityRatio getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getNewSecuritiesToUnderlyingSecurities();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, QuantityRatio value) {
+			obj.setNewSecuritiesToUnderlyingSecurities(value);
 		}
 	};
 	protected CurrencyAndAmount reinvestmentAmount;
 	/**
-	 * Amount of money reinvested in additional securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -848,14 +932,14 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts1#mmReinvestmentAmount
 	 * CorporateActionAmounts1.mmReinvestmentAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts37#mmReinvestmentAmount
-	 * CorporateActionAmounts37.mmReinvestmentAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts42#mmReinvestmentAmount
+	 * CorporateActionAmounts42.mmReinvestmentAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts36#mmReinvestmentAmount
-	 * CorporateActionAmounts36.mmReinvestmentAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts43#mmReinvestmentAmount
+	 * CorporateActionAmounts43.mmReinvestmentAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts38#mmReinvestmentAmount
-	 * CorporateActionAmounts38.mmReinvestmentAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionAmounts44#mmReinvestmentAmount
+	 * CorporateActionAmounts44.mmReinvestmentAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -874,9 +958,9 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Amount of money reinvested in additional securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReinvestmentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesProceedsDefinition, CurrencyAndAmount> mmReinvestmentAmount = new MMBusinessAttribute<SecuritiesProceedsDefinition, CurrencyAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionAmounts1.mmReinvestmentAmount, CorporateActionAmounts37.mmReinvestmentAmount, CorporateActionAmounts36.mmReinvestmentAmount, CorporateActionAmounts38.mmReinvestmentAmount);
+			derivation_lazy = () -> Arrays.asList(CorporateActionAmounts1.mmReinvestmentAmount, CorporateActionAmounts42.mmReinvestmentAmount, CorporateActionAmounts43.mmReinvestmentAmount, CorporateActionAmounts44.mmReinvestmentAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -887,19 +971,20 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesProceedsDefinition.class.getMethod("getReinvestmentAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getReinvestmentAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, CurrencyAndAmount value) {
+			obj.setReinvestmentAmount(value);
 		}
 	};
 	protected IntermediateSecurityDistributionTypeCode intermediateSecuritiesDistributionType;
 	/**
-	 * Type of intermediate securities distribution, eg, stock dividend, reverse
-	 * right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -923,9 +1008,6 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption1#mmIntermediateSecuritiesDistributionType
 	 * CorporateActionOption1.mmIntermediateSecuritiesDistributionType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateAction31#mmIntermediateSecuritiesDistributionType
-	 * CorporateAction31.mmIntermediateSecuritiesDistributionType}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.IntermediateSecuritiesDistributionTypeFormat16Choice#mmCode
 	 * IntermediateSecuritiesDistributionTypeFormat16Choice.mmCode}</li>
 	 * <li>
@@ -938,12 +1020,15 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.choice.IntermediateSecuritiesDistributionTypeFormat15Choice#mmProprietary
 	 * IntermediateSecuritiesDistributionTypeFormat15Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionGeneralInformation111#mmIntermediateSecuritiesDistributionType
-	 * CorporateActionGeneralInformation111.
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionGeneralInformation126#mmIntermediateSecuritiesDistributionType
+	 * CorporateActionGeneralInformation126.
 	 * mmIntermediateSecuritiesDistributionType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption129#mmIntermediateSecuritiesDistributionType
-	 * CorporateActionOption129.mmIntermediateSecuritiesDistributionType}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateAction41#mmIntermediateSecuritiesDistributionType
+	 * CorporateAction41.mmIntermediateSecuritiesDistributionType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption139#mmIntermediateSecuritiesDistributionType
+	 * CorporateActionOption139.mmIntermediateSecuritiesDistributionType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -964,12 +1049,12 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIntermediateSecuritiesDistributionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesProceedsDefinition, IntermediateSecurityDistributionTypeCode> mmIntermediateSecuritiesDistributionType = new MMBusinessAttribute<SecuritiesProceedsDefinition, IntermediateSecurityDistributionTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IntermediateSecurityDistributionType1FormatChoice.mmCode, IntermediateSecurityDistributionType1FormatChoice.mmProprietary, CorporateAction2.mmIntermediateSecuritiesDistributionType,
-					CorporateActionOption1.mmIntermediateSecuritiesDistributionType, CorporateAction31.mmIntermediateSecuritiesDistributionType, IntermediateSecuritiesDistributionTypeFormat16Choice.mmCode,
-					IntermediateSecuritiesDistributionTypeFormat16Choice.mmProprietary, IntermediateSecuritiesDistributionTypeFormat15Choice.mmCode, IntermediateSecuritiesDistributionTypeFormat15Choice.mmProprietary,
-					CorporateActionGeneralInformation111.mmIntermediateSecuritiesDistributionType, CorporateActionOption129.mmIntermediateSecuritiesDistributionType);
+					CorporateActionOption1.mmIntermediateSecuritiesDistributionType, IntermediateSecuritiesDistributionTypeFormat16Choice.mmCode, IntermediateSecuritiesDistributionTypeFormat16Choice.mmProprietary,
+					IntermediateSecuritiesDistributionTypeFormat15Choice.mmCode, IntermediateSecuritiesDistributionTypeFormat15Choice.mmProprietary, CorporateActionGeneralInformation126.mmIntermediateSecuritiesDistributionType,
+					CorporateAction41.mmIntermediateSecuritiesDistributionType, CorporateActionOption139.mmIntermediateSecuritiesDistributionType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -980,18 +1065,20 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			simpleType_lazy = () -> IntermediateSecurityDistributionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesProceedsDefinition.class.getMethod("getIntermediateSecuritiesDistributionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IntermediateSecurityDistributionTypeCode getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getIntermediateSecuritiesDistributionType();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, IntermediateSecurityDistributionTypeCode value) {
+			obj.setIntermediateSecuritiesDistributionType(value);
 		}
 	};
 	protected SecuritiesQuantity boardLotSecuritiesQuantity;
 	/**
-	 * Quantity of equity that makes up a board lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1039,7 +1126,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Quantity of equity that makes up a board lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBoardLotSecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmBoardLotSecuritiesQuantity = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmNewBoardLotSecuritiesQuantity, SecurityOption1.mmNewBoardLotSecuritiesQuantity, SecuritiesOption51.mmNewBoardLotQuantity, CorporateActionQuantity7.mmNewBoardLotQuantity);
 			isDerived = false;
@@ -1053,12 +1140,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getBoardLotSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setBoardLotSecuritiesQuantity(value);
+		}
 	};
 	protected SecuritiesQuantity newDenominationSecuritiesQuantity;
 	/**
-	 * New denomination of the financial instrument following, eg, an increase
-	 * or decrease in nominal value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1108,7 +1204,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNewDenominationSecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity> mmNewDenominationSecuritiesQuantity = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateAction2.mmNewDenominationSecuritiesQuantity, SecurityOption1.mmNewDenominationSecuritiesQuantity, SecuritiesOption51.mmNewDenominationQuantity,
 					CorporateActionQuantity7.mmNewDenominationQuantity);
@@ -1123,12 +1219,21 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesQuantity getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getNewDenominationSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, com.tools20022.repository.entity.SecuritiesQuantity value) {
+			obj.setNewDenominationSecuritiesQuantity(value);
+		}
 	};
 	protected QuantityRatio intermediateSecuritiesToUnderlyingRatio;
 	/**
-	 * Quantity of intermediate securities awarded for a given quantity of
-	 * underlying security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1147,8 +1252,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes68#mmIntermediateSecuritiesToUnderlyingRatio
-	 * FinancialInstrumentAttributes68.mmIntermediateSecuritiesToUnderlyingRatio
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes93#mmIntermediateSecuritiesToUnderlyingRatio
+	 * FinancialInstrumentAttributes93.mmIntermediateSecuritiesToUnderlyingRatio
 	 * }</li>
 	 * </ul>
 	 * </li>
@@ -1170,9 +1275,9 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIntermediateSecuritiesToUnderlyingRatio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio> mmIntermediateSecuritiesToUnderlyingRatio = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, QuantityRatio>() {
 		{
-			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes68.mmIntermediateSecuritiesToUnderlyingRatio);
+			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes93.mmIntermediateSecuritiesToUnderlyingRatio);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1180,16 +1285,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Quantity of intermediate securities awarded for a given quantity of underlying security.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmIntermediateSecuritiesProceedsDefinition;
+			opposite_lazy = () -> QuantityRatio.mmIntermediateSecuritiesProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
+			type_lazy = () -> QuantityRatio.mmObject();
+		}
+
+		@Override
+		public QuantityRatio getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getIntermediateSecuritiesToUnderlyingRatio();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, QuantityRatio value) {
+			obj.setIntermediateSecuritiesToUnderlyingRatio(value);
 		}
 	};
 	protected PercentageRate reinvestmentDiscountToMarket;
 	/**
-	 * Rate of discount for securities purchased through a reinvestment scheme
-	 * as compared to the current market price of security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1204,8 +1318,8 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate1#mmReinvestmentDiscountToMarket
 	 * CorporateActionRate1.mmReinvestmentDiscountToMarket}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate66#mmReinvestmentDiscountRateToMarket
-	 * CorporateActionRate66.mmReinvestmentDiscountRateToMarket}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate91#mmReinvestmentDiscountRateToMarket
+	 * CorporateActionRate91.mmReinvestmentDiscountRateToMarket}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1226,9 +1340,9 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReinvestmentDiscountToMarket = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesProceedsDefinition, PercentageRate> mmReinvestmentDiscountToMarket = new MMBusinessAttribute<SecuritiesProceedsDefinition, PercentageRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate1.mmReinvestmentDiscountToMarket, CorporateActionRate66.mmReinvestmentDiscountRateToMarket);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate1.mmReinvestmentDiscountToMarket, CorporateActionRate91.mmReinvestmentDiscountRateToMarket);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1239,19 +1353,20 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesProceedsDefinition.class.getMethod("getReinvestmentDiscountToMarket", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getReinvestmentDiscountToMarket();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, PercentageRate value) {
+			obj.setReinvestmentDiscountToMarket(value);
 		}
 	};
 	protected ISODateTime redemptionDate;
 	/**
-	 * Date on which the securities will be redeemed (early) for payment of
-	 * principal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1284,7 +1399,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRedemptionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesProceedsDefinition, ISODateTime> mmRedemptionDate = new MMBusinessAttribute<SecuritiesProceedsDefinition, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionDate2.mmRedemptionDate);
 			isDerived = false;
@@ -1297,18 +1412,20 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesProceedsDefinition.class.getMethod("getRedemptionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getRedemptionDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, ISODateTime value) {
+			obj.setRedemptionDate(value);
 		}
 	};
 	protected DateTimePeriod assentedLinePeriod;
 	/**
-	 * Period during which the assented line is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1347,7 +1464,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Period during which the assented line is available."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssentedLinePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, DateTimePeriod> mmAssentedLinePeriod = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, DateTimePeriod>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionPeriod2.mmAssentedLinePeriod);
 			isDerived = false;
@@ -1357,16 +1474,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Period during which the assented line is available.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmAssentedLinePeriodProceedsDefinition;
+			opposite_lazy = () -> DateTimePeriod.mmAssentedLinePeriodProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getAssentedLinePeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, DateTimePeriod value) {
+			obj.setAssentedLinePeriod(value);
 		}
 	};
 	protected DateTimePeriod sellThruIssuerPeriod;
 	/**
-	 * Period (last day included) during which an account owner can surrender or
-	 * sell securities to the issuer and receive the sale proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1407,7 +1533,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSellThruIssuerPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesProceedsDefinition, DateTimePeriod> mmSellThruIssuerPeriod = new MMBusinessAssociationEnd<SecuritiesProceedsDefinition, DateTimePeriod>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionPeriod2.mmSellThruIssuerPeriod);
 			isDerived = false;
@@ -1417,15 +1543,25 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			definition = "Period (last day included) during which an account owner can surrender or sell securities to the issuer and receive the sale proceeds.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmSellThruIssuerProceedsDefinition;
+			opposite_lazy = () -> DateTimePeriod.mmSellThruIssuerProceedsDefinition;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getSellThruIssuerPeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, DateTimePeriod value) {
+			obj.setSellThruIssuerPeriod(value);
 		}
 	};
 	protected ShareRankingCode shareRanking;
 	/**
-	 * Specifies whether the shares are ranking for dividend or pari passu.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1458,7 +1594,7 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 	 * "Specifies whether the shares are ranking for dividend or pari passu."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmShareRanking = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesProceedsDefinition, ShareRankingCode> mmShareRanking = new MMBusinessAttribute<SecuritiesProceedsDefinition, ShareRankingCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SecurityOption1.mmShareRanking);
 			isDerived = false;
@@ -1471,30 +1607,31 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 			simpleType_lazy = () -> ShareRankingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesProceedsDefinition.class.getMethod("getShareRanking", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ShareRankingCode getValue(SecuritiesProceedsDefinition obj) {
+			return obj.getShareRanking();
+		}
+
+		@Override
+		public void setValue(SecuritiesProceedsDefinition obj, ShareRankingCode value) {
+			obj.setShareRanking(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesProceedsDefinition";
 				definition = "The definition of the securities proceeds for a corporate action in generic terms; that is, before applying it to specific securities holding. An example would be the definition of a  bonus rights issue where all the information will be given in general on a per share basis.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmParallelTradingProceedsDefinition, com.tools20022.repository.entity.DateTimePeriod.mmAssentedLinePeriodProceedsDefinition,
-						com.tools20022.repository.entity.DateTimePeriod.mmSellThruIssuerProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesProceedsDefinition,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmConditionalQuantitySecuritiesProceeds, com.tools20022.repository.entity.SecuritiesQuantity.mmOverAndAboveQuantitySecuritiesProceeds,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmExpectedQuantitySecuritiesProceeds, com.tools20022.repository.entity.SecuritiesQuantity.mmStatusRelatedSecuritiesProceeds,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmBoardLotSecuritiesProceeds, com.tools20022.repository.entity.SecuritiesQuantity.mmNewDenominationSecuritiesProceeds,
-						com.tools20022.repository.entity.QuantityRatio.mmAdditionalQuantityForResultantSecuritiesProceedsDefinition,
-						com.tools20022.repository.entity.QuantityRatio.mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.mmNewToOldProceedsDefinition,
-						com.tools20022.repository.entity.QuantityRatio.mmNewToUnderlyingProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.mmIntermediateSecuritiesProceedsDefinition);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmParallelTradingProceedsDefinition, DateTimePeriod.mmAssentedLinePeriodProceedsDefinition, DateTimePeriod.mmSellThruIssuerProceedsDefinition,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesProceedsDefinition, com.tools20022.repository.entity.SecuritiesQuantity.mmConditionalQuantitySecuritiesProceeds,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmOverAndAboveQuantitySecuritiesProceeds, com.tools20022.repository.entity.SecuritiesQuantity.mmExpectedQuantitySecuritiesProceeds,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmStatusRelatedSecuritiesProceeds, com.tools20022.repository.entity.SecuritiesQuantity.mmBoardLotSecuritiesProceeds,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmNewDenominationSecuritiesProceeds, QuantityRatio.mmAdditionalQuantityForResultantSecuritiesProceedsDefinition,
+						QuantityRatio.mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition, QuantityRatio.mmNewToOldProceedsDefinition, QuantityRatio.mmNewToUnderlyingProceedsDefinition,
+						QuantityRatio.mmIntermediateSecuritiesProceedsDefinition);
 				superType_lazy = () -> ProceedsDefinition.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmSecuritiesQuantity, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmConditionalQuantity,
 						com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmOverAndAboveNormalEnsuredEntitlementQuantity, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmQuantityToReceive,
@@ -1523,159 +1660,179 @@ public class SecuritiesProceedsDefinition extends ProceedsDefinition {
 		return securitiesQuantity;
 	}
 
-	public void setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
-		this.securitiesQuantity = securitiesQuantity;
+	public SecuritiesProceedsDefinition setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
+		this.securitiesQuantity = Objects.requireNonNull(securitiesQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getConditionalQuantity() {
 		return conditionalQuantity;
 	}
 
-	public void setConditionalQuantity(com.tools20022.repository.entity.SecuritiesQuantity conditionalQuantity) {
-		this.conditionalQuantity = conditionalQuantity;
+	public SecuritiesProceedsDefinition setConditionalQuantity(com.tools20022.repository.entity.SecuritiesQuantity conditionalQuantity) {
+		this.conditionalQuantity = Objects.requireNonNull(conditionalQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getOverAndAboveNormalEnsuredEntitlementQuantity() {
 		return overAndAboveNormalEnsuredEntitlementQuantity;
 	}
 
-	public void setOverAndAboveNormalEnsuredEntitlementQuantity(com.tools20022.repository.entity.SecuritiesQuantity overAndAboveNormalEnsuredEntitlementQuantity) {
-		this.overAndAboveNormalEnsuredEntitlementQuantity = overAndAboveNormalEnsuredEntitlementQuantity;
+	public SecuritiesProceedsDefinition setOverAndAboveNormalEnsuredEntitlementQuantity(com.tools20022.repository.entity.SecuritiesQuantity overAndAboveNormalEnsuredEntitlementQuantity) {
+		this.overAndAboveNormalEnsuredEntitlementQuantity = Objects.requireNonNull(overAndAboveNormalEnsuredEntitlementQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getQuantityToReceive() {
 		return quantityToReceive;
 	}
 
-	public void setQuantityToReceive(com.tools20022.repository.entity.SecuritiesQuantity quantityToReceive) {
-		this.quantityToReceive = quantityToReceive;
+	public SecuritiesProceedsDefinition setQuantityToReceive(com.tools20022.repository.entity.SecuritiesQuantity quantityToReceive) {
+		this.quantityToReceive = Objects.requireNonNull(quantityToReceive);
+		return this;
 	}
 
 	public SecuritiesQuantity getStatusQuantity() {
 		return statusQuantity;
 	}
 
-	public void setStatusQuantity(com.tools20022.repository.entity.SecuritiesQuantity statusQuantity) {
-		this.statusQuantity = statusQuantity;
+	public SecuritiesProceedsDefinition setStatusQuantity(com.tools20022.repository.entity.SecuritiesQuantity statusQuantity) {
+		this.statusQuantity = Objects.requireNonNull(statusQuantity);
+		return this;
 	}
 
 	public DateTimePeriod getParallelTradingPeriod() {
 		return parallelTradingPeriod;
 	}
 
-	public void setParallelTradingPeriod(com.tools20022.repository.entity.DateTimePeriod parallelTradingPeriod) {
-		this.parallelTradingPeriod = parallelTradingPeriod;
+	public SecuritiesProceedsDefinition setParallelTradingPeriod(DateTimePeriod parallelTradingPeriod) {
+		this.parallelTradingPeriod = Objects.requireNonNull(parallelTradingPeriod);
+		return this;
 	}
 
 	public QuantityRatio getAdditionalQuantityForSubscribedResultantSecurities() {
 		return additionalQuantityForSubscribedResultantSecurities;
 	}
 
-	public void setAdditionalQuantityForSubscribedResultantSecurities(com.tools20022.repository.entity.QuantityRatio additionalQuantityForSubscribedResultantSecurities) {
-		this.additionalQuantityForSubscribedResultantSecurities = additionalQuantityForSubscribedResultantSecurities;
+	public SecuritiesProceedsDefinition setAdditionalQuantityForSubscribedResultantSecurities(QuantityRatio additionalQuantityForSubscribedResultantSecurities) {
+		this.additionalQuantityForSubscribedResultantSecurities = Objects.requireNonNull(additionalQuantityForSubscribedResultantSecurities);
+		return this;
 	}
 
 	public QuantityRatio getAdditionalQuantityForExistingSecurities() {
 		return additionalQuantityForExistingSecurities;
 	}
 
-	public void setAdditionalQuantityForExistingSecurities(com.tools20022.repository.entity.QuantityRatio additionalQuantityForExistingSecurities) {
-		this.additionalQuantityForExistingSecurities = additionalQuantityForExistingSecurities;
+	public SecuritiesProceedsDefinition setAdditionalQuantityForExistingSecurities(QuantityRatio additionalQuantityForExistingSecurities) {
+		this.additionalQuantityForExistingSecurities = Objects.requireNonNull(additionalQuantityForExistingSecurities);
+		return this;
 	}
 
 	public QuantityRatio getNewToOld() {
 		return newToOld;
 	}
 
-	public void setNewToOld(com.tools20022.repository.entity.QuantityRatio newToOld) {
-		this.newToOld = newToOld;
+	public SecuritiesProceedsDefinition setNewToOld(QuantityRatio newToOld) {
+		this.newToOld = Objects.requireNonNull(newToOld);
+		return this;
 	}
 
 	public QuantityRatio getNewSecuritiesToUnderlyingSecurities() {
 		return newSecuritiesToUnderlyingSecurities;
 	}
 
-	public void setNewSecuritiesToUnderlyingSecurities(com.tools20022.repository.entity.QuantityRatio newSecuritiesToUnderlyingSecurities) {
-		this.newSecuritiesToUnderlyingSecurities = newSecuritiesToUnderlyingSecurities;
+	public SecuritiesProceedsDefinition setNewSecuritiesToUnderlyingSecurities(QuantityRatio newSecuritiesToUnderlyingSecurities) {
+		this.newSecuritiesToUnderlyingSecurities = Objects.requireNonNull(newSecuritiesToUnderlyingSecurities);
+		return this;
 	}
 
 	public CurrencyAndAmount getReinvestmentAmount() {
 		return reinvestmentAmount;
 	}
 
-	public void setReinvestmentAmount(CurrencyAndAmount reinvestmentAmount) {
-		this.reinvestmentAmount = reinvestmentAmount;
+	public SecuritiesProceedsDefinition setReinvestmentAmount(CurrencyAndAmount reinvestmentAmount) {
+		this.reinvestmentAmount = Objects.requireNonNull(reinvestmentAmount);
+		return this;
 	}
 
 	public IntermediateSecurityDistributionTypeCode getIntermediateSecuritiesDistributionType() {
 		return intermediateSecuritiesDistributionType;
 	}
 
-	public void setIntermediateSecuritiesDistributionType(IntermediateSecurityDistributionTypeCode intermediateSecuritiesDistributionType) {
-		this.intermediateSecuritiesDistributionType = intermediateSecuritiesDistributionType;
+	public SecuritiesProceedsDefinition setIntermediateSecuritiesDistributionType(IntermediateSecurityDistributionTypeCode intermediateSecuritiesDistributionType) {
+		this.intermediateSecuritiesDistributionType = Objects.requireNonNull(intermediateSecuritiesDistributionType);
+		return this;
 	}
 
 	public SecuritiesQuantity getBoardLotSecuritiesQuantity() {
 		return boardLotSecuritiesQuantity;
 	}
 
-	public void setBoardLotSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity boardLotSecuritiesQuantity) {
-		this.boardLotSecuritiesQuantity = boardLotSecuritiesQuantity;
+	public SecuritiesProceedsDefinition setBoardLotSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity boardLotSecuritiesQuantity) {
+		this.boardLotSecuritiesQuantity = Objects.requireNonNull(boardLotSecuritiesQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getNewDenominationSecuritiesQuantity() {
 		return newDenominationSecuritiesQuantity;
 	}
 
-	public void setNewDenominationSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity newDenominationSecuritiesQuantity) {
-		this.newDenominationSecuritiesQuantity = newDenominationSecuritiesQuantity;
+	public SecuritiesProceedsDefinition setNewDenominationSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity newDenominationSecuritiesQuantity) {
+		this.newDenominationSecuritiesQuantity = Objects.requireNonNull(newDenominationSecuritiesQuantity);
+		return this;
 	}
 
 	public QuantityRatio getIntermediateSecuritiesToUnderlyingRatio() {
 		return intermediateSecuritiesToUnderlyingRatio;
 	}
 
-	public void setIntermediateSecuritiesToUnderlyingRatio(com.tools20022.repository.entity.QuantityRatio intermediateSecuritiesToUnderlyingRatio) {
-		this.intermediateSecuritiesToUnderlyingRatio = intermediateSecuritiesToUnderlyingRatio;
+	public SecuritiesProceedsDefinition setIntermediateSecuritiesToUnderlyingRatio(QuantityRatio intermediateSecuritiesToUnderlyingRatio) {
+		this.intermediateSecuritiesToUnderlyingRatio = Objects.requireNonNull(intermediateSecuritiesToUnderlyingRatio);
+		return this;
 	}
 
 	public PercentageRate getReinvestmentDiscountToMarket() {
 		return reinvestmentDiscountToMarket;
 	}
 
-	public void setReinvestmentDiscountToMarket(PercentageRate reinvestmentDiscountToMarket) {
-		this.reinvestmentDiscountToMarket = reinvestmentDiscountToMarket;
+	public SecuritiesProceedsDefinition setReinvestmentDiscountToMarket(PercentageRate reinvestmentDiscountToMarket) {
+		this.reinvestmentDiscountToMarket = Objects.requireNonNull(reinvestmentDiscountToMarket);
+		return this;
 	}
 
 	public ISODateTime getRedemptionDate() {
 		return redemptionDate;
 	}
 
-	public void setRedemptionDate(ISODateTime redemptionDate) {
-		this.redemptionDate = redemptionDate;
+	public SecuritiesProceedsDefinition setRedemptionDate(ISODateTime redemptionDate) {
+		this.redemptionDate = Objects.requireNonNull(redemptionDate);
+		return this;
 	}
 
 	public DateTimePeriod getAssentedLinePeriod() {
 		return assentedLinePeriod;
 	}
 
-	public void setAssentedLinePeriod(com.tools20022.repository.entity.DateTimePeriod assentedLinePeriod) {
-		this.assentedLinePeriod = assentedLinePeriod;
+	public SecuritiesProceedsDefinition setAssentedLinePeriod(DateTimePeriod assentedLinePeriod) {
+		this.assentedLinePeriod = Objects.requireNonNull(assentedLinePeriod);
+		return this;
 	}
 
 	public DateTimePeriod getSellThruIssuerPeriod() {
 		return sellThruIssuerPeriod;
 	}
 
-	public void setSellThruIssuerPeriod(com.tools20022.repository.entity.DateTimePeriod sellThruIssuerPeriod) {
-		this.sellThruIssuerPeriod = sellThruIssuerPeriod;
+	public SecuritiesProceedsDefinition setSellThruIssuerPeriod(DateTimePeriod sellThruIssuerPeriod) {
+		this.sellThruIssuerPeriod = Objects.requireNonNull(sellThruIssuerPeriod);
+		return this;
 	}
 
 	public ShareRankingCode getShareRanking() {
 		return shareRanking;
 	}
 
-	public void setShareRanking(ShareRankingCode shareRanking) {
-		this.shareRanking = shareRanking;
+	public SecuritiesProceedsDefinition setShareRanking(ShareRankingCode shareRanking) {
+		this.shareRanking = Objects.requireNonNull(shareRanking);
+		return this;
 	}
 }

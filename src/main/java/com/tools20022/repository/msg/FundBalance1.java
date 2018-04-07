@@ -25,8 +25,10 @@ import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.FundsCashFlow;
 import com.tools20022.repository.entity.InvestmentFundOrderExecution;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Balances of units and cash derived from investment fund orders."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FundBalance1", propOrder = {"totalUnitsFromUnitOrders", "totalUnitsFromCashOrders", "totalCashFromUnitOrders", "totalCashFromCashOrders"})
 public class FundBalance1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TtlUnitsFrUnitOrdrs")
 	protected FinancialInstrumentQuantity1 totalUnitsFromUnitOrders;
 	/**
-	 * Total number of units from orders placed in units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -111,10 +114,10 @@ public class FundBalance1 {
 	 * definition} = "Total number of units from orders placed in units."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTotalUnitsFromUnitOrders = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundBalance1, Optional<FinancialInstrumentQuantity1>> mmTotalUnitsFromUnitOrders = new MMMessageAssociationEnd<FundBalance1, Optional<FinancialInstrumentQuantity1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmUnitsNumber;
-			componentContext_lazy = () -> FundBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlUnitsFrUnitOrdrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,13 +126,24 @@ public class FundBalance1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentQuantity1.mmObject();
+			type_lazy = () -> FinancialInstrumentQuantity1.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(FundBalance1 obj) {
+			return obj.getTotalUnitsFromUnitOrders();
+		}
+
+		@Override
+		public void setValue(FundBalance1 obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setTotalUnitsFromUnitOrders(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TtlUnitsFrCshOrdrs")
 	protected FinancialInstrumentQuantity1 totalUnitsFromCashOrders;
 	/**
-	 * Number of units derived from orders placed in cash.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,10 +172,10 @@ public class FundBalance1 {
 	 * definition} = "Number of units derived from orders placed in cash."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTotalUnitsFromCashOrders = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundBalance1, Optional<FinancialInstrumentQuantity1>> mmTotalUnitsFromCashOrders = new MMMessageAssociationEnd<FundBalance1, Optional<FinancialInstrumentQuantity1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmUnitsNumber;
-			componentContext_lazy = () -> FundBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlUnitsFrCshOrdrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,13 +184,24 @@ public class FundBalance1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentQuantity1.mmObject();
+			type_lazy = () -> FinancialInstrumentQuantity1.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(FundBalance1 obj) {
+			return obj.getTotalUnitsFromCashOrders();
+		}
+
+		@Override
+		public void setValue(FundBalance1 obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setTotalUnitsFromCashOrders(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TtlCshFrUnitOrdrs")
 	protected ActiveOrHistoricCurrencyAndAmount totalCashFromUnitOrders;
 	/**
-	 * Total amount of cash derived from orders placed as units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,10 +232,10 @@ public class FundBalance1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalCashFromUnitOrders = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundBalance1, Optional<ActiveOrHistoricCurrencyAndAmount>> mmTotalCashFromUnitOrders = new MMMessageAttribute<FundBalance1, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmExecutedAmount;
-			componentContext_lazy = () -> FundBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlCshFrUnitOrdrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,11 +245,22 @@ public class FundBalance1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(FundBalance1 obj) {
+			return obj.getTotalCashFromUnitOrders();
+		}
+
+		@Override
+		public void setValue(FundBalance1 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setTotalCashFromUnitOrders(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlCshFrCshOrdrs")
 	protected ActiveOrHistoricCurrencyAndAmount totalCashFromCashOrders;
 	/**
-	 * Total amount of cash from orders placed in cash.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,10 +290,10 @@ public class FundBalance1 {
 	 * definition} = "Total amount of cash from orders placed in cash."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalCashFromCashOrders = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundBalance1, Optional<ActiveOrHistoricCurrencyAndAmount>> mmTotalCashFromCashOrders = new MMMessageAttribute<FundBalance1, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmExecutedAmount;
-			componentContext_lazy = () -> FundBalance1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundBalance1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlCshFrCshOrdrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,14 +303,25 @@ public class FundBalance1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(FundBalance1 obj) {
+			return obj.getTotalCashFromCashOrders();
+		}
+
+		@Override
+		public void setValue(FundBalance1 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setTotalCashFromCashOrders(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FundBalance1.mmTotalUnitsFromUnitOrders, FundBalance1.mmTotalUnitsFromCashOrders, FundBalance1.mmTotalCashFromUnitOrders, FundBalance1.mmTotalCashFromCashOrders);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FundBalance1.mmTotalUnitsFromUnitOrders, com.tools20022.repository.msg.FundBalance1.mmTotalUnitsFromCashOrders,
+						com.tools20022.repository.msg.FundBalance1.mmTotalCashFromUnitOrders, com.tools20022.repository.msg.FundBalance1.mmTotalCashFromCashOrders);
 				trace_lazy = () -> FundsCashFlow.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundBalance1";
 				definition = "Balances of units and cash derived from investment fund orders.";
@@ -283,39 +330,39 @@ public class FundBalance1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TtlUnitsFrUnitOrdrs")
-	public FinancialInstrumentQuantity1 getTotalUnitsFromUnitOrders() {
-		return totalUnitsFromUnitOrders;
+	public Optional<FinancialInstrumentQuantity1> getTotalUnitsFromUnitOrders() {
+		return totalUnitsFromUnitOrders == null ? Optional.empty() : Optional.of(totalUnitsFromUnitOrders);
 	}
 
-	public void setTotalUnitsFromUnitOrders(com.tools20022.repository.msg.FinancialInstrumentQuantity1 totalUnitsFromUnitOrders) {
+	public FundBalance1 setTotalUnitsFromUnitOrders(FinancialInstrumentQuantity1 totalUnitsFromUnitOrders) {
 		this.totalUnitsFromUnitOrders = totalUnitsFromUnitOrders;
+		return this;
 	}
 
-	@XmlElement(name = "TtlUnitsFrCshOrdrs")
-	public FinancialInstrumentQuantity1 getTotalUnitsFromCashOrders() {
-		return totalUnitsFromCashOrders;
+	public Optional<FinancialInstrumentQuantity1> getTotalUnitsFromCashOrders() {
+		return totalUnitsFromCashOrders == null ? Optional.empty() : Optional.of(totalUnitsFromCashOrders);
 	}
 
-	public void setTotalUnitsFromCashOrders(com.tools20022.repository.msg.FinancialInstrumentQuantity1 totalUnitsFromCashOrders) {
+	public FundBalance1 setTotalUnitsFromCashOrders(FinancialInstrumentQuantity1 totalUnitsFromCashOrders) {
 		this.totalUnitsFromCashOrders = totalUnitsFromCashOrders;
+		return this;
 	}
 
-	@XmlElement(name = "TtlCshFrUnitOrdrs")
-	public ActiveOrHistoricCurrencyAndAmount getTotalCashFromUnitOrders() {
-		return totalCashFromUnitOrders;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getTotalCashFromUnitOrders() {
+		return totalCashFromUnitOrders == null ? Optional.empty() : Optional.of(totalCashFromUnitOrders);
 	}
 
-	public void setTotalCashFromUnitOrders(ActiveOrHistoricCurrencyAndAmount totalCashFromUnitOrders) {
+	public FundBalance1 setTotalCashFromUnitOrders(ActiveOrHistoricCurrencyAndAmount totalCashFromUnitOrders) {
 		this.totalCashFromUnitOrders = totalCashFromUnitOrders;
+		return this;
 	}
 
-	@XmlElement(name = "TtlCshFrCshOrdrs")
-	public ActiveOrHistoricCurrencyAndAmount getTotalCashFromCashOrders() {
-		return totalCashFromCashOrders;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getTotalCashFromCashOrders() {
+		return totalCashFromCashOrders == null ? Optional.empty() : Optional.of(totalCashFromCashOrders);
 	}
 
-	public void setTotalCashFromCashOrders(ActiveOrHistoricCurrencyAndAmount totalCashFromCashOrders) {
+	public FundBalance1 setTotalCashFromCashOrders(ActiveOrHistoricCurrencyAndAmount totalCashFromCashOrders) {
 		this.totalCashFromCashOrders = totalCashFromCashOrders;
+		return this;
 	}
 }

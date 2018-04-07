@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -39,37 +40,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByYourself
- * CancelledStatusReasonCode.mmCancelledByYourself}</li>
+ * CancelledStatusReasonCode.CancelledByYourself}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledBySystem
- * CancelledStatusReasonCode.mmCancelledBySystem}</li>
+ * CancelledStatusReasonCode.CancelledBySystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByAgent
- * CancelledStatusReasonCode.mmCancelledByAgent}</li>
+ * CancelledStatusReasonCode.CancelledByAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#Other
- * CancelledStatusReasonCode.mmOther}</li>
+ * CancelledStatusReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByHub
- * CancelledStatusReasonCode.mmCancelledByHub}</li>
+ * CancelledStatusReasonCode.CancelledByHub}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByInstructingParty
- * CancelledStatusReasonCode.mmCancelledByInstructingParty}</li>
+ * CancelledStatusReasonCode.CancelledByInstructingParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#EndOfLife
- * CancelledStatusReasonCode.mmEndOfLife}</li>
+ * CancelledStatusReasonCode.EndOfLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByOther
- * CancelledStatusReasonCode.mmCancelledByOther}</li>
+ * CancelledStatusReasonCode.CancelledByOther}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByTransferAgent
- * CancelledStatusReasonCode.mmCancelledByTransferAgent}</li>
+ * CancelledStatusReasonCode.CancelledByTransferAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByClient
- * CancelledStatusReasonCode.mmCancelledByClient}</li>
+ * CancelledStatusReasonCode.CancelledByClient}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReasonCode#CancelledByIntermediary
- * CancelledStatusReasonCode.mmCancelledByIntermediary}</li>
+ * CancelledStatusReasonCode.CancelledByIntermediary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -86,8 +87,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -121,6 +122,9 @@ public class CancelledStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CANI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::CAND//CANI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -133,6 +137,7 @@ public class CancelledStatusReasonCode extends MMCode {
 	 */
 	public static final CancelledStatusReasonCode CancelledByYourself = new CancelledStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::CAND//CANI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelledByYourself";
 			definition = "Transaction is cancelled by yourself.";
@@ -151,6 +156,9 @@ public class CancelledStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CANS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::CAND//CANS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -163,6 +171,7 @@ public class CancelledStatusReasonCode extends MMCode {
 	 */
 	public static final CancelledStatusReasonCode CancelledBySystem = new CancelledStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::CAND//CANS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelledBySystem";
 			definition = "Transaction is cancelled by the system.";
@@ -181,6 +190,9 @@ public class CancelledStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CSUB"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::CAND//CSUB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -193,6 +205,7 @@ public class CancelledStatusReasonCode extends MMCode {
 	 */
 	public static final CancelledStatusReasonCode CancelledByAgent = new CancelledStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::CAND//CSUB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelledByAgent";
 			definition = "Transaction is cancelled by the agent.";
@@ -211,6 +224,9 @@ public class CancelledStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OTHR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::CAND//NARR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -223,6 +239,7 @@ public class CancelledStatusReasonCode extends MMCode {
 	 */
 	public static final CancelledStatusReasonCode Other = new CancelledStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::CAND//NARR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Other (see additional information).";
@@ -454,7 +471,7 @@ public class CancelledStatusReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CANI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancelledStatusReasonCode";

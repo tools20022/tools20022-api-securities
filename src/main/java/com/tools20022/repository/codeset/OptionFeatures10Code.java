@@ -38,40 +38,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#AccountServicerOption
- * OptionFeatures10Code.mmAccountServicerOption}</li>
+ * OptionFeatures10Code.AccountServicerOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#BeneficiaryOwnerInstruction
- * OptionFeatures10Code.mmBeneficiaryOwnerInstruction}</li>
+ * OptionFeatures10Code.BeneficiaryOwnerInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#Conditional
- * OptionFeatures10Code.mmConditional}</li>
+ * OptionFeatures10Code.Conditional}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#MaximumCash
- * OptionFeatures10Code.mmMaximumCash}</li>
+ * OptionFeatures10Code.MaximumCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#MaximumSecurities
- * OptionFeatures10Code.mmMaximumSecurities}</li>
+ * OptionFeatures10Code.MaximumSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#NoServiceOffered
- * OptionFeatures10Code.mmNoServiceOffered}</li>
+ * OptionFeatures10Code.NoServiceOffered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#OddLotPreference
- * OptionFeatures10Code.mmOddLotPreference}</li>
+ * OptionFeatures10Code.OddLotPreference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#OptionApplicability
- * OptionFeatures10Code.mmOptionApplicability}</li>
+ * OptionFeatures10Code.OptionApplicability}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#PreviousInstructionInvalidity
- * OptionFeatures10Code.mmPreviousInstructionInvalidity}</li>
+ * OptionFeatures10Code.PreviousInstructionInvalidity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#Proration
- * OptionFeatures10Code.mmProration}</li>
+ * OptionFeatures10Code.Proration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#ReducedWithholdingTax
- * OptionFeatures10Code.mmReducedWithholdingTax}</li>
+ * OptionFeatures10Code.ReducedWithholdingTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures10Code#InstructCashAmount
- * OptionFeatures10Code.mmInstructCashAmount}</li>
+ * OptionFeatures10Code.InstructCashAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -393,7 +393,7 @@ public class OptionFeatures10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionFeatures10Code";
 				definition = "Specifies the features that may apply to a corporate action option.";

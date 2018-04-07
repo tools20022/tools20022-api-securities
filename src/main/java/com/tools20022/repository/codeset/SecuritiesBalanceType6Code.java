@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType6Code#Available
- * SecuritiesBalanceType6Code.mmAvailable}</li>
+ * SecuritiesBalanceType6Code.Available}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType6Code#Restricted
- * SecuritiesBalanceType6Code.mmRestricted}</li>
+ * SecuritiesBalanceType6Code.Restricted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType6Code#TotalEntitled
- * SecuritiesBalanceType6Code.mmTotalEntitled}</li>
+ * SecuritiesBalanceType6Code.TotalEntitled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType6Code#ReservedForDistribution
- * SecuritiesBalanceType6Code.mmReservedForDistribution}</li>
+ * SecuritiesBalanceType6Code.ReservedForDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType6Code#ReservedForRemoval
- * SecuritiesBalanceType6Code.mmReservedForRemoval}</li>
+ * SecuritiesBalanceType6Code.ReservedForRemoval}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class SecuritiesBalanceType6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AVLB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType6Code";

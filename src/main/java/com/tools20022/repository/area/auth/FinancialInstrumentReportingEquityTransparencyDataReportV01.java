@@ -25,10 +25,11 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.SecuritiesMarketReportHeader1;
 import com.tools20022.repository.msg.SupplementaryData1;
 import com.tools20022.repository.msg.TransparencyDataReport11;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -78,16 +79,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingEquityTransparencyDataReportV01", propOrder = {"reportHeader", "equityTransparencyData", "supplementaryData"})
 public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptHdr", required = true)
 	protected SecuritiesMarketReportHeader1 reportHeader;
 	/**
-	 * Header information related to the global report, common to all reference
-	 * data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +111,7 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingEquityTransparencyDataReportV01, SecuritiesMarketReportHeader1> mmReportHeader = new MMMessageBuildingBlock<FinancialInstrumentReportingEquityTransparencyDataReportV01, SecuritiesMarketReportHeader1>() {
 		{
 			xmlTag = "RptHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,19 +122,21 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 			complexType_lazy = () -> SecuritiesMarketReportHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingEquityTransparencyDataReportV01.class.getMethod("getReportHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesMarketReportHeader1 getValue(FinancialInstrumentReportingEquityTransparencyDataReportV01 obj) {
+			return obj.getReportHeader();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingEquityTransparencyDataReportV01 obj, SecuritiesMarketReportHeader1 value) {
+			obj.setReportHeader(value);
 		}
 	};
+	@XmlElement(name = "EqtyTrnsprncyData", required = true)
 	protected List<TransparencyDataReport11> equityTransparencyData;
 	/**
-	 * Details the equity transparency qualitative data reported by a trading
-	 * venue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,7 +159,7 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmEquityTransparencyData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingEquityTransparencyDataReportV01, List<TransparencyDataReport11>> mmEquityTransparencyData = new MMMessageBuildingBlock<FinancialInstrumentReportingEquityTransparencyDataReportV01, List<TransparencyDataReport11>>() {
 		{
 			xmlTag = "EqtyTrnsprncyData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,19 +169,21 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 			complexType_lazy = () -> TransparencyDataReport11.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingEquityTransparencyDataReportV01.class.getMethod("getEquityTransparencyData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<TransparencyDataReport11> getValue(FinancialInstrumentReportingEquityTransparencyDataReportV01 obj) {
+			return obj.getEquityTransparencyData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingEquityTransparencyDataReportV01 obj, List<TransparencyDataReport11> value) {
+			obj.setEquityTransparencyData(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,7 +206,7 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingEquityTransparencyDataReportV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingEquityTransparencyDataReportV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,12 +216,14 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingEquityTransparencyDataReportV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingEquityTransparencyDataReportV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingEquityTransparencyDataReportV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -250,34 +257,34 @@ public class FinancialInstrumentReportingEquityTransparencyDataReportV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptHdr", required = true)
 	public SecuritiesMarketReportHeader1 getReportHeader() {
 		return reportHeader;
 	}
 
-	public void setReportHeader(SecuritiesMarketReportHeader1 reportHeader) {
-		this.reportHeader = reportHeader;
+	public FinancialInstrumentReportingEquityTransparencyDataReportV01 setReportHeader(SecuritiesMarketReportHeader1 reportHeader) {
+		this.reportHeader = Objects.requireNonNull(reportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "EqtyTrnsprncyData", required = true)
 	public List<TransparencyDataReport11> getEquityTransparencyData() {
-		return equityTransparencyData;
+		return equityTransparencyData == null ? equityTransparencyData = new ArrayList<>() : equityTransparencyData;
 	}
 
-	public void setEquityTransparencyData(List<TransparencyDataReport11> equityTransparencyData) {
-		this.equityTransparencyData = equityTransparencyData;
+	public FinancialInstrumentReportingEquityTransparencyDataReportV01 setEquityTransparencyData(List<TransparencyDataReport11> equityTransparencyData) {
+		this.equityTransparencyData = Objects.requireNonNull(equityTransparencyData);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingEquityTransparencyDataReportV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.032.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.032.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgEqtyTrnsprncyDataRpt", required = true)
 		public FinancialInstrumentReportingEquityTransparencyDataReportV01 messageBody;

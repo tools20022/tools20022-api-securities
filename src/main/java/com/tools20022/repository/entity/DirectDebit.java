@@ -22,13 +22,14 @@ import com.tools20022.repository.choice.PaymentInstrument18Choice;
 import com.tools20022.repository.choice.PaymentInstrument20Choice;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.DirectDebitMandate;
 import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.DirectDebitMandate5;
 import com.tools20022.repository.msg.DirectDebitMandate6;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Payment, initiated by the creditor, to debit a debtor's account in favour of
@@ -95,8 +96,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -114,10 +115,8 @@ public class DirectDebit extends IndividualPayment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text registrationIdentification;
 	/**
-	 * Reference assigned to a creditor by its financial institution, or
-	 * relevant authority, authorising the creditor to take part in a direct
-	 * debit scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +151,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegistrationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebit, Max35Text> mmRegistrationIdentification = new MMBusinessAttribute<DirectDebit, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DirectDebitMandate5.mmRegistrationIdentification, DirectDebitMandate6.mmRegistrationIdentification);
 			isDerived = false;
@@ -165,19 +164,20 @@ public class DirectDebit extends IndividualPayment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebit.class.getMethod("getRegistrationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(DirectDebit obj) {
+			return obj.getRegistrationIdentification();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, Max35Text value) {
+			obj.setRegistrationIdentification(value);
 		}
 	};
 	protected DirectDebitMandate directDebitMandate;
 	/**
-	 * Set of elements providing information specific to the direct debit
-	 * mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +209,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDirectDebitMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DirectDebit, com.tools20022.repository.entity.DirectDebitMandate> mmDirectDebitMandate = new MMBusinessAssociationEnd<DirectDebit, com.tools20022.repository.entity.DirectDebitMandate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebit.mmObject();
@@ -222,14 +222,21 @@ public class DirectDebit extends IndividualPayment {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.DirectDebitMandate getValue(DirectDebit obj) {
+			return obj.getDirectDebitMandate();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, com.tools20022.repository.entity.DirectDebitMandate value) {
+			obj.setDirectDebitMandate(value);
+		}
 	};
 	protected Max35Text preNotificationIdentification;
 	/**
-	 * Unique and unambiguous identification of the pre-notification which is
-	 * sent separately from the direct debit instruction. Usage: the direct
-	 * debit pre-notification is used to reconcile separately sent collection
-	 * information with the direct debit transaction information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,7 +260,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreNotificationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebit, Max35Text> mmPreNotificationIdentification = new MMBusinessAttribute<DirectDebit, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebit.mmObject();
@@ -265,20 +272,20 @@ public class DirectDebit extends IndividualPayment {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebit.class.getMethod("getPreNotificationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(DirectDebit obj) {
+			return obj.getPreNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, Max35Text value) {
+			obj.setPreNotificationIdentification(value);
 		}
 	};
 	protected ISODate preNotificationDate;
 	/**
-	 * Date on which the creditor notifies the debtor about the amount and date
-	 * on which the direct debit instruction will be presented to the debtor's
-	 * agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,7 +309,7 @@ public class DirectDebit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreNotificationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebit, ISODate> mmPreNotificationDate = new MMBusinessAttribute<DirectDebit, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebit.mmObject();
@@ -314,19 +321,21 @@ public class DirectDebit extends IndividualPayment {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebit.class.getMethod("getPreNotificationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(DirectDebit obj) {
+			return obj.getPreNotificationDate();
+		}
+
+		@Override
+		public void setValue(DirectDebit obj, ISODate value) {
+			obj.setPreNotificationDate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DirectDebit";
 				definition = "Payment, initiated by the creditor, to debit a debtor's account in favour of the creditor. A direct debit can be pre-authorised or not. In most countries, authorisation is in the form of a mandate between the debtor and creditor.";
@@ -350,31 +359,35 @@ public class DirectDebit extends IndividualPayment {
 		return registrationIdentification;
 	}
 
-	public void setRegistrationIdentification(Max35Text registrationIdentification) {
-		this.registrationIdentification = registrationIdentification;
+	public DirectDebit setRegistrationIdentification(Max35Text registrationIdentification) {
+		this.registrationIdentification = Objects.requireNonNull(registrationIdentification);
+		return this;
 	}
 
 	public DirectDebitMandate getDirectDebitMandate() {
 		return directDebitMandate;
 	}
 
-	public void setDirectDebitMandate(com.tools20022.repository.entity.DirectDebitMandate directDebitMandate) {
-		this.directDebitMandate = directDebitMandate;
+	public DirectDebit setDirectDebitMandate(com.tools20022.repository.entity.DirectDebitMandate directDebitMandate) {
+		this.directDebitMandate = Objects.requireNonNull(directDebitMandate);
+		return this;
 	}
 
 	public Max35Text getPreNotificationIdentification() {
 		return preNotificationIdentification;
 	}
 
-	public void setPreNotificationIdentification(Max35Text preNotificationIdentification) {
-		this.preNotificationIdentification = preNotificationIdentification;
+	public DirectDebit setPreNotificationIdentification(Max35Text preNotificationIdentification) {
+		this.preNotificationIdentification = Objects.requireNonNull(preNotificationIdentification);
+		return this;
 	}
 
 	public ISODate getPreNotificationDate() {
 		return preNotificationDate;
 	}
 
-	public void setPreNotificationDate(ISODate preNotificationDate) {
-		this.preNotificationDate = preNotificationDate;
+	public DirectDebit setPreNotificationDate(ISODate preNotificationDate) {
+		this.preNotificationDate = Objects.requireNonNull(preNotificationDate);
+		return this;
 	}
 }

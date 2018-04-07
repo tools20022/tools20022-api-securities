@@ -28,10 +28,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.AccountIdentification26;
 import com.tools20022.repository.msg.EffectiveDate1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -111,16 +109,17 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StandingSettlementInstructionCancellationV01", propOrder = {"messageReferenceIdentification", "effectiveDateDetails", "accountIdentification", "marketIdentification", "settlementDetails", "previousMessageReference",
 		"supplementaryData"})
 public class StandingSettlementInstructionCancellationV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgRefId", required = true)
 	protected Max35Text messageReferenceIdentification;
 	/**
-	 * Reference of this message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,7 +139,7 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * definition} = "Reference of this message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageReferenceIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, Max35Text> mmMessageReferenceIdentification = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, Max35Text>() {
 		{
 			xmlTag = "MsgRefId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -151,18 +150,21 @@ public class StandingSettlementInstructionCancellationV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getMessageReferenceIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getMessageReferenceIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, Max35Text value) {
+			obj.setMessageReferenceIdentification(value);
 		}
 	};
+	@XmlElement(name = "FctvDtDtls")
 	protected EffectiveDate1 effectiveDateDetails;
 	/**
-	 * Date on which the SSI is effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,7 +184,7 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * definition} = "Date on which the SSI is effective."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmEffectiveDateDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, Optional<EffectiveDate1>> mmEffectiveDateDetails = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, Optional<EffectiveDate1>>() {
 		{
 			xmlTag = "FctvDtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -193,21 +195,21 @@ public class StandingSettlementInstructionCancellationV01 {
 			complexType_lazy = () -> EffectiveDate1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getEffectiveDateDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<EffectiveDate1> getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getEffectiveDateDetails();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, Optional<EffectiveDate1> value) {
+			obj.setEffectiveDateDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AcctId", required = true)
 	protected List<AccountIdentification26> accountIdentification;
 	/**
-	 * Unique and unambiguous master identification known to the sender (or its
-	 * authorised agent) and receiver (or its authorised agent), below which the
-	 * SSI will be lodged. This may be an account number or reference to a fund.<br>
-	 * If no account or reference is available then “NONREF” must be specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,7 +232,7 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, List<AccountIdentification26>> mmAccountIdentification = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, List<AccountIdentification26>>() {
 		{
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -240,18 +242,21 @@ public class StandingSettlementInstructionCancellationV01 {
 			complexType_lazy = () -> AccountIdentification26.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getAccountIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AccountIdentification26> getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, List<AccountIdentification26> value) {
+			obj.setAccountIdentification(value);
 		}
 	};
+	@XmlElement(name = "MktId", required = true)
 	protected MarketIdentificationOrCashPurpose1Choice marketIdentification;
 	/**
-	 * Identifies the market for the standing settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -270,33 +275,35 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Identifies the market for the standing settlement instruction. "</li>
+	 * "Identifies the market for the standing settlement instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarketIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, MarketIdentificationOrCashPurpose1Choice> mmMarketIdentification = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, MarketIdentificationOrCashPurpose1Choice>() {
 		{
 			xmlTag = "MktId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketIdentification";
-			definition = "Identifies the market for the standing settlement instruction. ";
+			definition = "Identifies the market for the standing settlement instruction.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MarketIdentificationOrCashPurpose1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getMarketIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarketIdentificationOrCashPurpose1Choice getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getMarketIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, MarketIdentificationOrCashPurpose1Choice value) {
+			obj.setMarketIdentification(value);
 		}
 	};
+	@XmlElement(name = "SttlmDtls", required = true)
 	protected PartyOrCurrency1Choice settlementDetails;
 	/**
-	 * Settlement information that helps to identify the standing settlement
-	 * instruction for which the cancellation is sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,33 +322,36 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Settlement information that helps to identify the standing settlement  instruction for which the cancellation is sent."
+	 * "Settlement information that helps to identify the standing settlement instruction for which the cancellation is sent."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSettlementDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, PartyOrCurrency1Choice> mmSettlementDetails = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, PartyOrCurrency1Choice>() {
 		{
 			xmlTag = "SttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementDetails";
-			definition = "Settlement information that helps to identify the standing settlement  instruction for which the cancellation is sent.";
+			definition = "Settlement information that helps to identify the standing settlement instruction for which the cancellation is sent.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> PartyOrCurrency1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getSettlementDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartyOrCurrency1Choice getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getSettlementDetails();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, PartyOrCurrency1Choice value) {
+			obj.setSettlementDetails(value);
 		}
 	};
+	@XmlElement(name = "PrvsMsgRef", required = true)
 	protected Max35Text previousMessageReference;
 	/**
-	 * Reference to a linked message that was previously sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,7 +371,7 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * definition} = "Reference to a linked message that was previously sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPreviousMessageReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, Max35Text> mmPreviousMessageReference = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, Max35Text>() {
 		{
 			xmlTag = "PrvsMsgRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -372,19 +382,21 @@ public class StandingSettlementInstructionCancellationV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getPreviousMessageReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getPreviousMessageReference();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, Max35Text value) {
+			obj.setPreviousMessageReference(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,7 +419,7 @@ public class StandingSettlementInstructionCancellationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<StandingSettlementInstructionCancellationV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -417,12 +429,14 @@ public class StandingSettlementInstructionCancellationV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionCancellationV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(StandingSettlementInstructionCancellationV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionCancellationV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -457,70 +471,70 @@ public class StandingSettlementInstructionCancellationV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgRefId", required = true)
 	public Max35Text getMessageReferenceIdentification() {
 		return messageReferenceIdentification;
 	}
 
-	public void setMessageReferenceIdentification(Max35Text messageReferenceIdentification) {
-		this.messageReferenceIdentification = messageReferenceIdentification;
+	public StandingSettlementInstructionCancellationV01 setMessageReferenceIdentification(Max35Text messageReferenceIdentification) {
+		this.messageReferenceIdentification = Objects.requireNonNull(messageReferenceIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "FctvDtDtls")
-	public EffectiveDate1 getEffectiveDateDetails() {
-		return effectiveDateDetails;
+	public Optional<EffectiveDate1> getEffectiveDateDetails() {
+		return effectiveDateDetails == null ? Optional.empty() : Optional.of(effectiveDateDetails);
 	}
 
-	public void setEffectiveDateDetails(EffectiveDate1 effectiveDateDetails) {
+	public StandingSettlementInstructionCancellationV01 setEffectiveDateDetails(EffectiveDate1 effectiveDateDetails) {
 		this.effectiveDateDetails = effectiveDateDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AcctId", required = true)
 	public List<AccountIdentification26> getAccountIdentification() {
-		return accountIdentification;
+		return accountIdentification == null ? accountIdentification = new ArrayList<>() : accountIdentification;
 	}
 
-	public void setAccountIdentification(List<AccountIdentification26> accountIdentification) {
-		this.accountIdentification = accountIdentification;
+	public StandingSettlementInstructionCancellationV01 setAccountIdentification(List<AccountIdentification26> accountIdentification) {
+		this.accountIdentification = Objects.requireNonNull(accountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "MktId", required = true)
 	public MarketIdentificationOrCashPurpose1Choice getMarketIdentification() {
 		return marketIdentification;
 	}
 
-	public void setMarketIdentification(MarketIdentificationOrCashPurpose1Choice marketIdentification) {
-		this.marketIdentification = marketIdentification;
+	public StandingSettlementInstructionCancellationV01 setMarketIdentification(MarketIdentificationOrCashPurpose1Choice marketIdentification) {
+		this.marketIdentification = Objects.requireNonNull(marketIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmDtls", required = true)
 	public PartyOrCurrency1Choice getSettlementDetails() {
 		return settlementDetails;
 	}
 
-	public void setSettlementDetails(PartyOrCurrency1Choice settlementDetails) {
-		this.settlementDetails = settlementDetails;
+	public StandingSettlementInstructionCancellationV01 setSettlementDetails(PartyOrCurrency1Choice settlementDetails) {
+		this.settlementDetails = Objects.requireNonNull(settlementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "PrvsMsgRef", required = true)
 	public Max35Text getPreviousMessageReference() {
 		return previousMessageReference;
 	}
 
-	public void setPreviousMessageReference(Max35Text previousMessageReference) {
-		this.previousMessageReference = previousMessageReference;
+	public StandingSettlementInstructionCancellationV01 setPreviousMessageReference(Max35Text previousMessageReference) {
+		this.previousMessageReference = Objects.requireNonNull(previousMessageReference);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public StandingSettlementInstructionCancellationV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:reda.059.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.059.001.01")
 	static public class Document {
 		@XmlElement(name = "StgSttlmInstrCxl", required = true)
 		public StandingSettlementInstructionCancellationV01 messageBody;

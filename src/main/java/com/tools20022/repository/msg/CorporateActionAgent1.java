@@ -25,8 +25,11 @@ import com.tools20022.repository.choice.PartyIdentification2Choice;
 import com.tools20022.repository.entity.CorporateActionAgent;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NameAndAddress5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the agent."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionAgent1", propOrder = {"agentIdentification", "agentRole", "contactPerson"})
 public class CorporateActionAgent1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AgtId", required = true)
 	protected PartyIdentification2Choice agentIdentification;
 	/**
-	 * Identification of the agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +113,10 @@ public class CorporateActionAgent1 {
 	 * definition} = "Identification of the agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAgentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionAgent1, PartyIdentification2Choice> mmAgentIdentification = new MMMessageAttribute<CorporateActionAgent1, PartyIdentification2Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CorporateActionAgent1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionAgent1.mmObject();
 			isDerived = false;
 			xmlTag = "AgtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +126,22 @@ public class CorporateActionAgent1 {
 			minOccurs = 1;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification2Choice getValue(CorporateActionAgent1 obj) {
+			return obj.getAgentIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionAgent1 obj, PartyIdentification2Choice value) {
+			obj.setAgentIdentification(value);
+		}
 	};
+	@XmlElement(name = "AgtRole", required = true)
 	protected AgentRole1FormatChoice agentRole;
 	/**
-	 * Role played by the agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +172,10 @@ public class CorporateActionAgent1 {
 	 * definition} = "Role played by the agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAgentRole = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionAgent1, AgentRole1FormatChoice> mmAgentRole = new MMMessageAttribute<CorporateActionAgent1, AgentRole1FormatChoice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionAgent.mmAgentRole;
-			componentContext_lazy = () -> CorporateActionAgent1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionAgent1.mmObject();
 			isDerived = false;
 			xmlTag = "AgtRole";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +185,22 @@ public class CorporateActionAgent1 {
 			minOccurs = 1;
 			complexType_lazy = () -> AgentRole1FormatChoice.mmObject();
 		}
+
+		@Override
+		public AgentRole1FormatChoice getValue(CorporateActionAgent1 obj) {
+			return obj.getAgentRole();
+		}
+
+		@Override
+		public void setValue(CorporateActionAgent1 obj, AgentRole1FormatChoice value) {
+			obj.setAgentRole(value);
+		}
 	};
+	@XmlElement(name = "CtctPrsn")
 	protected NameAndAddress5 contactPerson;
 	/**
-	 * Contact person at the agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,10 +230,10 @@ public class CorporateActionAgent1 {
 	 * definition} = "Contact person at the agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContactPerson = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionAgent1, Optional<NameAndAddress5>> mmContactPerson = new MMMessageAttribute<CorporateActionAgent1, Optional<NameAndAddress5>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CorporateActionAgent1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionAgent1.mmObject();
 			isDerived = false;
 			xmlTag = "CtctPrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,16 +241,27 @@ public class CorporateActionAgent1 {
 			definition = "Contact person at the agent.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.NameAndAddress5.mmObject();
+			complexType_lazy = () -> NameAndAddress5.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress5> getValue(CorporateActionAgent1 obj) {
+			return obj.getContactPerson();
+		}
+
+		@Override
+		public void setValue(CorporateActionAgent1 obj, Optional<NameAndAddress5> value) {
+			obj.setContactPerson(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionAgent1.mmAgentIdentification, CorporateActionAgent1.mmAgentRole, CorporateActionAgent1.mmContactPerson);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionAgent1.mmAgentIdentification, com.tools20022.repository.msg.CorporateActionAgent1.mmAgentRole,
+						com.tools20022.repository.msg.CorporateActionAgent1.mmContactPerson);
 				trace_lazy = () -> CorporateActionAgent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionAgent1";
 				definition = "Provides information about the agent.";
@@ -233,30 +270,30 @@ public class CorporateActionAgent1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AgtId", required = true)
 	public PartyIdentification2Choice getAgentIdentification() {
 		return agentIdentification;
 	}
 
-	public void setAgentIdentification(PartyIdentification2Choice agentIdentification) {
-		this.agentIdentification = agentIdentification;
+	public CorporateActionAgent1 setAgentIdentification(PartyIdentification2Choice agentIdentification) {
+		this.agentIdentification = Objects.requireNonNull(agentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AgtRole", required = true)
 	public AgentRole1FormatChoice getAgentRole() {
 		return agentRole;
 	}
 
-	public void setAgentRole(AgentRole1FormatChoice agentRole) {
-		this.agentRole = agentRole;
+	public CorporateActionAgent1 setAgentRole(AgentRole1FormatChoice agentRole) {
+		this.agentRole = Objects.requireNonNull(agentRole);
+		return this;
 	}
 
-	@XmlElement(name = "CtctPrsn")
-	public NameAndAddress5 getContactPerson() {
-		return contactPerson;
+	public Optional<NameAndAddress5> getContactPerson() {
+		return contactPerson == null ? Optional.empty() : Optional.of(contactPerson);
 	}
 
-	public void setContactPerson(com.tools20022.repository.msg.NameAndAddress5 contactPerson) {
+	public CorporateActionAgent1 setContactPerson(NameAndAddress5 contactPerson) {
 		this.contactPerson = contactPerson;
+		return this;
 	}
 }

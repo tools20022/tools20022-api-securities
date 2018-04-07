@@ -26,10 +26,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.BuyIn3;
 import com.tools20022.repository.msg.SettlementObligation7;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -88,16 +86,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BuyInResponseV03", propOrder = {"transactionIdentification", "buyInResponseDetails", "originalSettlementObligationDetails", "supplementaryData"})
 public class BuyInResponseV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId")
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the instructing
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,7 +117,7 @@ public class BuyInResponseV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BuyInResponseV03, Optional<Max35Text>> mmTransactionIdentification = new MMMessageBuildingBlock<BuyInResponseV03, Optional<Max35Text>>() {
 		{
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,19 +128,21 @@ public class BuyInResponseV03 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyInResponseV03.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Max35Text> getValue(BuyInResponseV03 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(BuyInResponseV03 obj, Optional<Max35Text> value) {
+			obj.setTransactionIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "BuyInRspnDtls", required = true)
 	protected BuyIn3 buyInResponseDetails;
 	/**
-	 * Provides response details such as a request for delay and the number of
-	 * days associated to that request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,7 +163,7 @@ public class BuyInResponseV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmBuyInResponseDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BuyInResponseV03, BuyIn3> mmBuyInResponseDetails = new MMMessageBuildingBlock<BuyInResponseV03, BuyIn3>() {
 		{
 			xmlTag = "BuyInRspnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,19 +174,21 @@ public class BuyInResponseV03 {
 			complexType_lazy = () -> BuyIn3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyInResponseV03.class.getMethod("getBuyInResponseDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BuyIn3 getValue(BuyInResponseV03 obj) {
+			return obj.getBuyInResponseDetails();
+		}
+
+		@Override
+		public void setValue(BuyInResponseV03 obj, BuyIn3 value) {
+			obj.setBuyInResponseDetails(value);
 		}
 	};
+	@XmlElement(name = "OrgnlSttlmOblgtnDtls")
 	protected SettlementObligation7 originalSettlementObligationDetails;
 	/**
-	 * Provides details about the original settlement obligation that did not
-	 * settle and for which the buy in process will be launched.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +211,7 @@ public class BuyInResponseV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOriginalSettlementObligationDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BuyInResponseV03, Optional<SettlementObligation7>> mmOriginalSettlementObligationDetails = new MMMessageBuildingBlock<BuyInResponseV03, Optional<SettlementObligation7>>() {
 		{
 			xmlTag = "OrgnlSttlmOblgtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,19 +222,21 @@ public class BuyInResponseV03 {
 			complexType_lazy = () -> SettlementObligation7.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyInResponseV03.class.getMethod("getOriginalSettlementObligationDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SettlementObligation7> getValue(BuyInResponseV03 obj) {
+			return obj.getOriginalSettlementObligationDetails();
+		}
+
+		@Override
+		public void setValue(BuyInResponseV03 obj, Optional<SettlementObligation7> value) {
+			obj.setOriginalSettlementObligationDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,26 +255,28 @@ public class BuyInResponseV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<BuyInResponseV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<BuyInResponseV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BuyInResponseV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(BuyInResponseV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(BuyInResponseV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -303,43 +309,43 @@ public class BuyInResponseV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId")
-	public Max35Text getTransactionIdentification() {
-		return transactionIdentification;
+	public Optional<Max35Text> getTransactionIdentification() {
+		return transactionIdentification == null ? Optional.empty() : Optional.of(transactionIdentification);
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
+	public BuyInResponseV03 setTransactionIdentification(Max35Text transactionIdentification) {
 		this.transactionIdentification = transactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "BuyInRspnDtls", required = true)
 	public BuyIn3 getBuyInResponseDetails() {
 		return buyInResponseDetails;
 	}
 
-	public void setBuyInResponseDetails(BuyIn3 buyInResponseDetails) {
-		this.buyInResponseDetails = buyInResponseDetails;
+	public BuyInResponseV03 setBuyInResponseDetails(BuyIn3 buyInResponseDetails) {
+		this.buyInResponseDetails = Objects.requireNonNull(buyInResponseDetails);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlSttlmOblgtnDtls")
-	public SettlementObligation7 getOriginalSettlementObligationDetails() {
-		return originalSettlementObligationDetails;
+	public Optional<SettlementObligation7> getOriginalSettlementObligationDetails() {
+		return originalSettlementObligationDetails == null ? Optional.empty() : Optional.of(originalSettlementObligationDetails);
 	}
 
-	public void setOriginalSettlementObligationDetails(SettlementObligation7 originalSettlementObligationDetails) {
+	public BuyInResponseV03 setOriginalSettlementObligationDetails(SettlementObligation7 originalSettlementObligationDetails) {
 		this.originalSettlementObligationDetails = originalSettlementObligationDetails;
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public BuyInResponseV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:secl.008.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:secl.008.001.03")
 	static public class Document {
 		@XmlElement(name = "BuyInRspn", required = true)
 		public BuyInResponseV03 messageBody;

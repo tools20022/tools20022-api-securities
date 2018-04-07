@@ -38,40 +38,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#ReverseRights
- * IntermediateSecurityDistributionType1Code.mmReverseRights}</li>
+ * IntermediateSecurityDistributionType1Code.ReverseRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#BonusRights
- * IntermediateSecurityDistributionType1Code.mmBonusRights}</li>
+ * IntermediateSecurityDistributionType1Code.BonusRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#DividendReinvestment
- * IntermediateSecurityDistributionType1Code.mmDividendReinvestment}</li>
+ * IntermediateSecurityDistributionType1Code.DividendReinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#CashDividend
- * IntermediateSecurityDistributionType1Code.mmCashDividend}</li>
+ * IntermediateSecurityDistributionType1Code.CashDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#DividendOption
- * IntermediateSecurityDistributionType1Code.mmDividendOption}</li>
+ * IntermediateSecurityDistributionType1Code.DividendOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#SubscriptionRights
- * IntermediateSecurityDistributionType1Code.mmSubscriptionRights}</li>
+ * IntermediateSecurityDistributionType1Code.SubscriptionRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#OpenOfferRights
- * IntermediateSecurityDistributionType1Code.mmOpenOfferRights}</li>
+ * IntermediateSecurityDistributionType1Code.OpenOfferRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#ScripDividendOrPayment
- * IntermediateSecurityDistributionType1Code.mmScripDividendOrPayment}</li>
+ * IntermediateSecurityDistributionType1Code.ScripDividendOrPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#StockDividend
- * IntermediateSecurityDistributionType1Code.mmStockDividend}</li>
+ * IntermediateSecurityDistributionType1Code.StockDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#InterestPayment
- * IntermediateSecurityDistributionType1Code.mmInterestPayment}</li>
+ * IntermediateSecurityDistributionType1Code.InterestPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#LiquidationDividendOrPayment
- * IntermediateSecurityDistributionType1Code.mmLiquidationDividendOrPayment}</li>
+ * IntermediateSecurityDistributionType1Code.LiquidationDividendOrPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionType1Code#SpinOff
- * IntermediateSecurityDistributionType1Code.mmSpinOff}</li>
+ * IntermediateSecurityDistributionType1Code.SpinOff}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -398,7 +398,7 @@ public class IntermediateSecurityDistributionType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BIDS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IntermediateSecurityDistributionType1Code";

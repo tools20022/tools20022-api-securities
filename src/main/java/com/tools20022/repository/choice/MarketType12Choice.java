@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -29,6 +30,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the market type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarketType12Choice", propOrder = {"code", "proprietary"})
 public class MarketType12Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected MarketType2Code code;
 	/**
-	 * Market type expressed as an ISO 20022 code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,6 +101,9 @@ public class MarketType12Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Cd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::4!c//4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -108,12 +114,13 @@ public class MarketType12Choice {
 	 * definition} = "Market type expressed as an ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketType12Choice, MarketType2Code> mmCode = new MMMessageAttribute<MarketType12Choice, MarketType2Code>() {
 		{
 			businessElementTrace_lazy = () -> TradingMarket.mmType;
-			componentContext_lazy = () -> MarketType12Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarketType12Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::4!c//4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Market type expressed as an ISO 20022 code.";
@@ -121,11 +128,22 @@ public class MarketType12Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> MarketType2Code.mmObject();
 		}
+
+		@Override
+		public MarketType2Code getValue(MarketType12Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MarketType12Choice obj, MarketType2Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification38 proprietary;
 	/**
-	 * Market type expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,6 +164,9 @@ public class MarketType12Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::4!c/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -156,12 +177,13 @@ public class MarketType12Choice {
 	 * definition} = "Market type expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketType12Choice, GenericIdentification38> mmProprietary = new MMMessageAttribute<MarketType12Choice, GenericIdentification38>() {
 		{
 			businessElementTrace_lazy = () -> TradingMarket.mmType;
-			componentContext_lazy = () -> MarketType12Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarketType12Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::4!c/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Market type expressed as a proprietary code.";
@@ -169,14 +191,24 @@ public class MarketType12Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification38.mmObject();
 		}
+
+		@Override
+		public GenericIdentification38 getValue(MarketType12Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MarketType12Choice obj, GenericIdentification38 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarketType12Choice.mmCode, MarketType12Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MarketType12Choice.mmCode, com.tools20022.repository.choice.MarketType12Choice.mmProprietary);
 				trace_lazy = () -> TradingMarket.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -192,21 +224,21 @@ public class MarketType12Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public MarketType2Code getCode() {
 		return code;
 	}
 
-	public void setCode(MarketType2Code code) {
-		this.code = code;
+	public MarketType12Choice setCode(MarketType2Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification38 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification38 proprietary) {
-		this.proprietary = proprietary;
+	public MarketType12Choice setProprietary(GenericIdentification38 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

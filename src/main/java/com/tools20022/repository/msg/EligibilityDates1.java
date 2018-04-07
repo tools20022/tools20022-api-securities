@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.MeetingNotice;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,16 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Dates determining the entitlement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "EligibilityDates1", propOrder = "entitlementFixingDate")
 public class EligibilityDates1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "EntitlmntFxgDt", required = true)
 	protected ISODate entitlementFixingDate;
 	/**
-	 * Date at which the positions are struck to note which parties will receive
-	 * the entitlement, e.g. record date, book close date...
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,32 +111,42 @@ public class EligibilityDates1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Date at which the positions are struck to note which parties will receive the entitlement, e.g. record date, book close date..."
+	 * "Date at which the positions are struck to note which parties will receive the entitlement, e.g. record date, book close date."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEntitlementFixingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EligibilityDates1, ISODate> mmEntitlementFixingDate = new MMMessageAttribute<EligibilityDates1, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> MeetingEntitlement.mmEntitlementFixingDate;
-			componentContext_lazy = () -> EligibilityDates1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EligibilityDates1.mmObject();
 			isDerived = false;
 			xmlTag = "EntitlmntFxgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EntitlementFixingDate";
-			definition = "Date at which the positions are struck to note which parties will receive the entitlement, e.g. record date, book close date...";
+			definition = "Date at which the positions are struck to note which parties will receive the entitlement, e.g. record date, book close date.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		@Override
+		public ISODate getValue(EligibilityDates1 obj) {
+			return obj.getEntitlementFixingDate();
+		}
+
+		@Override
+		public void setValue(EligibilityDates1 obj, ISODate value) {
+			obj.setEntitlementFixingDate(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(EligibilityDates1.mmEntitlementFixingDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EligibilityDates1.mmEntitlementFixingDate);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingEntitlementNotificationV05.mmEligibility);
 				trace_lazy = () -> MeetingNotice.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EligibilityDates1";
 				definition = "Dates determining the entitlement.";
@@ -144,12 +155,12 @@ public class EligibilityDates1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "EntitlmntFxgDt", required = true)
 	public ISODate getEntitlementFixingDate() {
 		return entitlementFixingDate;
 	}
 
-	public void setEntitlementFixingDate(ISODate entitlementFixingDate) {
-		this.entitlementFixingDate = entitlementFixingDate;
+	public EligibilityDates1 setEntitlementFixingDate(ISODate entitlementFixingDate) {
+		this.entitlementFixingDate = Objects.requireNonNull(entitlementFixingDate);
+		return this;
 	}
 }

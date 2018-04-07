@@ -39,49 +39,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#AccountServicerDeadlineMissed
- * RejectionReason1Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason1Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#MarketDeadlineMissed
- * RejectionReason1Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason1Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#QuantityRejection
- * RejectionReason1Code.mmQuantityRejection}</li>
+ * RejectionReason1Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#InsufficientTresholdPosition
- * RejectionReason1Code.mmInsufficientTresholdPosition}</li>
+ * RejectionReason1Code.InsufficientTresholdPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#LackofSecurities
- * RejectionReason1Code.mmLackofSecurities}</li>
+ * RejectionReason1Code.LackofSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#SafekeepingAccountRejection
- * RejectionReason1Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason1Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#RejectedByIssuerOrRegistrar
- * RejectionReason1Code.mmRejectedByIssuerOrRegistrar}</li>
+ * RejectionReason1Code.RejectedByIssuerOrRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#UnrecognizedIdentification
- * RejectionReason1Code.mmUnrecognizedIdentification}</li>
+ * RejectionReason1Code.UnrecognizedIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#InvalidReference
- * RejectionReason1Code.mmInvalidReference}</li>
+ * RejectionReason1Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#ProxyCardDiscrepancy
- * RejectionReason1Code.mmProxyCardDiscrepancy}</li>
+ * RejectionReason1Code.ProxyCardDiscrepancy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#PartialVoteNotAllowed
- * RejectionReason1Code.mmPartialVoteNotAllowed}</li>
+ * RejectionReason1Code.PartialVoteNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#SplitVoteNotAllowed
- * RejectionReason1Code.mmSplitVoteNotAllowed}</li>
+ * RejectionReason1Code.SplitVoteNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#MissingOrInvalidPOA
- * RejectionReason1Code.mmMissingOrInvalidPOA}</li>
+ * RejectionReason1Code.MissingOrInvalidPOA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#RegistrationDiscrepancy
- * RejectionReason1Code.mmRegistrationDiscrepancy}</li>
+ * RejectionReason1Code.RegistrationDiscrepancy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason1Code#InvalidSecurity
- * RejectionReason1Code.mmInvalidSecurity}</li>
+ * RejectionReason1Code.InvalidSecurity}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -90,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -482,7 +482,7 @@ public class RejectionReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason1Code";

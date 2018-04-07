@@ -39,177 +39,177 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingMoney
- * FailingReason1Code.mmAwaitingMoney}</li>
+ * FailingReason1Code.AwaitingMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#BuyInProcedure
- * FailingReason1Code.mmBuyInProcedure}</li>
+ * FailingReason1Code.BuyInProcedure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CounterpartyTooLateForSettlement
- * FailingReason1Code.mmCounterpartyTooLateForSettlement}</li>
+ * FailingReason1Code.CounterpartyTooLateForSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AccountServicerDeadlineMissed
- * FailingReason1Code.mmAccountServicerDeadlineMissed}</li>
+ * FailingReason1Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CancellationConfirmationRequested
- * FailingReason1Code.mmCancellationConfirmationRequested}</li>
+ * FailingReason1Code.CancellationConfirmationRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingSecurities
- * FailingReason1Code.mmAwaitingSecurities}</li>
+ * FailingReason1Code.AwaitingSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#UnderObjection
- * FailingReason1Code.mmUnderObjection}</li>
+ * FailingReason1Code.UnderObjection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingSecuritiesFromCounterparty
- * FailingReason1Code.mmAwaitingSecuritiesFromCounterparty}</li>
+ * FailingReason1Code.AwaitingSecuritiesFromCounterparty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#PhysicalDeliveryDelay
- * FailingReason1Code.mmPhysicalDeliveryDelay}</li>
+ * FailingReason1Code.PhysicalDeliveryDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#ConfirmationDiscrepency
- * FailingReason1Code.mmConfirmationDiscrepency}</li>
+ * FailingReason1Code.ConfirmationDiscrepency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingDocumentsOrEndorsementsFromYou
- * FailingReason1Code.mmAwaitingDocumentsOrEndorsementsFromYou}</li>
+ * FailingReason1Code.AwaitingDocumentsOrEndorsementsFromYou}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#MoneySecuritiesTooLateForSettlement
- * FailingReason1Code.mmMoneySecuritiesTooLateForSettlement}</li>
+ * FailingReason1Code.MoneySecuritiesTooLateForSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingDocumentsOrEndorsementsFromCounterparty
- * FailingReason1Code.mmAwaitingDocumentsOrEndorsementsFromCounterparty}</li>
+ * FailingReason1Code.AwaitingDocumentsOrEndorsementsFromCounterparty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AccountBlocked
- * FailingReason1Code.mmAccountBlocked}</li>
+ * FailingReason1Code.AccountBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#EnquirySent
- * FailingReason1Code.mmEnquirySent}</li>
+ * FailingReason1Code.EnquirySent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#NewIssues
- * FailingReason1Code.mmNewIssues}</li>
+ * FailingReason1Code.NewIssues}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CounterpartyInsufficientSecurities
- * FailingReason1Code.mmCounterpartyInsufficientSecurities}</li>
+ * FailingReason1Code.CounterpartyInsufficientSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#MultipleSettlementAmount
- * FailingReason1Code.mmMultipleSettlementAmount}</li>
+ * FailingReason1Code.MultipleSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#GlobalFormSecurities
- * FailingReason1Code.mmGlobalFormSecurities}</li>
+ * FailingReason1Code.GlobalFormSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#YourInstructionOnHold
- * FailingReason1Code.mmYourInstructionOnHold}</li>
+ * FailingReason1Code.YourInstructionOnHold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#TradeSettlesInPartials
- * FailingReason1Code.mmTradeSettlesInPartials}</li>
+ * FailingReason1Code.TradeSettlesInPartials}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#NoForeignExchangeInstruction
- * FailingReason1Code.mmNoForeignExchangeInstruction}</li>
+ * FailingReason1Code.NoForeignExchangeInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CounterpartyInsufficientMoney
- * FailingReason1Code.mmCounterpartyInsufficientMoney}</li>
+ * FailingReason1Code.CounterpartyInsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CollateralShortage
- * FailingReason1Code.mmCollateralShortage}</li>
+ * FailingReason1Code.CollateralShortage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#SecuritiesPledgedAsCollateral
- * FailingReason1Code.mmSecuritiesPledgedAsCollateral}</li>
+ * FailingReason1Code.SecuritiesPledgedAsCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#RefusedDepositForIssueOfDepositaryReceipts
- * FailingReason1Code.mmRefusedDepositForIssueOfDepositaryReceipts}</li>
+ * FailingReason1Code.RefusedDepositForIssueOfDepositaryReceipts}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#MaximumForeignLimitReached
- * FailingReason1Code.mmMaximumForeignLimitReached}</li>
+ * FailingReason1Code.MaximumForeignLimitReached}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#IncomeAdjustementRequired
- * FailingReason1Code.mmIncomeAdjustementRequired}</li>
+ * FailingReason1Code.IncomeAdjustementRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#PendingLinkedInstruction
- * FailingReason1Code.mmPendingLinkedInstruction}</li>
+ * FailingReason1Code.PendingLinkedInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#LackOfSecurities
- * FailingReason1Code.mmLackOfSecurities}</li>
+ * FailingReason1Code.LackOfSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#SecuritiesLoanedOut
- * FailingReason1Code.mmSecuritiesLoanedOut}</li>
+ * FailingReason1Code.SecuritiesLoanedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#InsufficientMoney
- * FailingReason1Code.mmInsufficientMoney}</li>
+ * FailingReason1Code.InsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#ConfirmationNotReceived
- * FailingReason1Code.mmConfirmationNotReceived}</li>
+ * FailingReason1Code.ConfirmationNotReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#NotInGoodOrder
- * FailingReason1Code.mmNotInGoodOrder}</li>
+ * FailingReason1Code.NotInGoodOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#LackOfStampDutyInformation
- * FailingReason1Code.mmLackOfStampDutyInformation}</li>
+ * FailingReason1Code.LackOfStampDutyInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#ProcessingBatchDifference
- * FailingReason1Code.mmProcessingBatchDifference}</li>
+ * FailingReason1Code.ProcessingBatchDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingNextSettlementCycle
- * FailingReason1Code.mmAwaitingNextSettlementCycle}</li>
+ * FailingReason1Code.AwaitingNextSettlementCycle}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#SecuritiesBlocked
- * FailingReason1Code.mmSecuritiesBlocked}</li>
+ * FailingReason1Code.SecuritiesBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CounterpartyInReceivership
- * FailingReason1Code.mmCounterpartyInReceivership}</li>
+ * FailingReason1Code.CounterpartyInReceivership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#MinimumSettlementAmount
- * FailingReason1Code.mmMinimumSettlementAmount}</li>
+ * FailingReason1Code.MinimumSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#StatusReasonInvestigation
- * FailingReason1Code.mmStatusReasonInvestigation}</li>
+ * FailingReason1Code.StatusReasonInvestigation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailingReason1Code#Other
- * FailingReason1Code.mmOther}</li>
+ * FailingReason1Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#PhysicalSecuritiesVerification
- * FailingReason1Code.mmPhysicalSecuritiesVerification}</li>
+ * FailingReason1Code.PhysicalSecuritiesVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#BeneficialOwnershipDisagreement
- * FailingReason1Code.mmBeneficialOwnershipDisagreement}</li>
+ * FailingReason1Code.BeneficialOwnershipDisagreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#BothInstructionsOnHold
- * FailingReason1Code.mmBothInstructionsOnHold}</li>
+ * FailingReason1Code.BothInstructionsOnHold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#ClearingHouseTrade
- * FailingReason1Code.mmClearingHouseTrade}</li>
+ * FailingReason1Code.ClearingHouseTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#UnavailableDeliverableDenominatedQuantity
- * FailingReason1Code.mmUnavailableDeliverableDenominatedQuantity}</li>
+ * FailingReason1Code.UnavailableDeliverableDenominatedQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#NaturalDisaster
- * FailingReason1Code.mmNaturalDisaster}</li>
+ * FailingReason1Code.NaturalDisaster}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CounterpartyReturnedShares
- * FailingReason1Code.mmCounterpartyReturnedShares}</li>
+ * FailingReason1Code.CounterpartyReturnedShares}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#SecuritiesFrozenAtCSD
- * FailingReason1Code.mmSecuritiesFrozenAtCSD}</li>
+ * FailingReason1Code.SecuritiesFrozenAtCSD}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#AwaitingOtherTransaction
- * FailingReason1Code.mmAwaitingOtherTransaction}</li>
+ * FailingReason1Code.AwaitingOtherTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#MarketDeadlineMissed
- * FailingReason1Code.mmMarketDeadlineMissed}</li>
+ * FailingReason1Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#InsufficientCentralBankLiquidity
- * FailingReason1Code.mmInsufficientCentralBankLiquidity}</li>
+ * FailingReason1Code.InsufficientCentralBankLiquidity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CounterpartyInstructionOnHold
- * FailingReason1Code.mmCounterpartyInstructionOnHold}</li>
+ * FailingReason1Code.CounterpartyInstructionOnHold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#CertificatesRejected
- * FailingReason1Code.mmCertificatesRejected}</li>
+ * FailingReason1Code.CertificatesRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#SettlementSystemMethodModified
- * FailingReason1Code.mmSettlementSystemMethodModified}</li>
+ * FailingReason1Code.SettlementSystemMethodModified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#WrongCertificatesNumbers
- * FailingReason1Code.mmWrongCertificatesNumbers}</li>
+ * FailingReason1Code.WrongCertificatesNumbers}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailingReason1Code#SystemOnHold
- * FailingReason1Code.mmSystemOnHold}</li>
+ * FailingReason1Code.SystemOnHold}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -218,8 +218,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1651,7 +1651,7 @@ public class FailingReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AWMO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailingReason1Code";

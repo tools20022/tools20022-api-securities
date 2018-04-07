@@ -32,6 +32,8 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +76,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -94,15 +96,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportParameters2", propOrder = {"reportIdentification", "reportDateAndTime", "frequency", "reportCurrency", "calculationDate"})
 public class ReportParameters2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptId", required = true)
 	protected Max35Text reportIdentification;
 	/**
-	 * Unique identification of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,9 +138,9 @@ public class ReportParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters2, Max35Text> mmReportIdentification = new MMMessageAttribute<ReportParameters2, Max35Text>() {
 		{
-			componentContext_lazy = () -> ReportParameters2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters2.mmObject();
 			isDerived = false;
 			xmlTag = "RptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -148,11 +151,22 @@ public class ReportParameters2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ReportParameters2 obj) {
+			return obj.getReportIdentification();
+		}
+
+		@Override
+		public void setValue(ReportParameters2 obj, Max35Text value) {
+			obj.setReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "RptDtAndTm", required = true)
 	protected DateAndDateTimeChoice reportDateAndTime;
 	/**
-	 * Date (and time) at which the report was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,9 +200,9 @@ public class ReportParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportDateAndTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters2, DateAndDateTimeChoice> mmReportDateAndTime = new MMMessageAttribute<ReportParameters2, DateAndDateTimeChoice>() {
 		{
-			componentContext_lazy = () -> ReportParameters2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters2.mmObject();
 			isDerived = false;
 			xmlTag = "RptDtAndTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,11 +213,22 @@ public class ReportParameters2 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(ReportParameters2 obj) {
+			return obj.getReportDateAndTime();
+		}
+
+		@Override
+		public void setValue(ReportParameters2 obj, DateAndDateTimeChoice value) {
+			obj.setReportDateAndTime(value);
+		}
 	};
+	@XmlElement(name = "Frqcy", required = true)
 	protected EventFrequency6Code frequency;
 	/**
-	 * Frequency of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,9 +262,9 @@ public class ReportParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFrequency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters2, EventFrequency6Code> mmFrequency = new MMMessageAttribute<ReportParameters2, EventFrequency6Code>() {
 		{
-			componentContext_lazy = () -> ReportParameters2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters2.mmObject();
 			isDerived = false;
 			xmlTag = "Frqcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,11 +275,22 @@ public class ReportParameters2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> EventFrequency6Code.mmObject();
 		}
+
+		@Override
+		public EventFrequency6Code getValue(ReportParameters2 obj) {
+			return obj.getFrequency();
+		}
+
+		@Override
+		public void setValue(ReportParameters2 obj, EventFrequency6Code value) {
+			obj.setFrequency(value);
+		}
 	};
+	@XmlElement(name = "RptCcy", required = true)
 	protected CurrencyCode reportCurrency;
 	/**
-	 * Indicates the currency used for the calculation of the guarantee fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,9 +324,9 @@ public class ReportParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters2, CurrencyCode> mmReportCurrency = new MMMessageAttribute<ReportParameters2, CurrencyCode>() {
 		{
-			componentContext_lazy = () -> ReportParameters2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters2.mmObject();
 			isDerived = false;
 			xmlTag = "RptCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -301,11 +337,22 @@ public class ReportParameters2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		@Override
+		public CurrencyCode getValue(ReportParameters2 obj) {
+			return obj.getReportCurrency();
+		}
+
+		@Override
+		public void setValue(ReportParameters2 obj, CurrencyCode value) {
+			obj.setReportCurrency(value);
+		}
 	};
+	@XmlElement(name = "ClctnDt")
 	protected ISODateTime calculationDate;
 	/**
-	 * Indicates the date of calculation of the deficit (if any).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -339,9 +386,9 @@ public class ReportParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculationDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters2, Optional<ISODateTime>> mmCalculationDate = new MMMessageAttribute<ReportParameters2, Optional<ISODateTime>>() {
 		{
-			componentContext_lazy = () -> ReportParameters2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters2.mmObject();
 			isDerived = false;
 			xmlTag = "ClctnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -352,15 +399,25 @@ public class ReportParameters2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(ReportParameters2 obj) {
+			return obj.getCalculationDate();
+		}
+
+		@Override
+		public void setValue(ReportParameters2 obj, Optional<ISODateTime> value) {
+			obj.setCalculationDate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportParameters2.mmReportIdentification, ReportParameters2.mmReportDateAndTime, ReportParameters2.mmFrequency, ReportParameters2.mmReportCurrency,
-						ReportParameters2.mmCalculationDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportParameters2.mmReportIdentification, com.tools20022.repository.msg.ReportParameters2.mmReportDateAndTime,
+						com.tools20022.repository.msg.ReportParameters2.mmFrequency, com.tools20022.repository.msg.ReportParameters2.mmReportCurrency, com.tools20022.repository.msg.ReportParameters2.mmCalculationDate);
 				messageBuildingBlock_lazy = () -> Arrays.asList(DefaultFundContributionReportV02.mmReportParameters);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -377,48 +434,48 @@ public class ReportParameters2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptId", required = true)
 	public Max35Text getReportIdentification() {
 		return reportIdentification;
 	}
 
-	public void setReportIdentification(Max35Text reportIdentification) {
-		this.reportIdentification = reportIdentification;
+	public ReportParameters2 setReportIdentification(Max35Text reportIdentification) {
+		this.reportIdentification = Objects.requireNonNull(reportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RptDtAndTm", required = true)
 	public DateAndDateTimeChoice getReportDateAndTime() {
 		return reportDateAndTime;
 	}
 
-	public void setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
-		this.reportDateAndTime = reportDateAndTime;
+	public ReportParameters2 setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
+		this.reportDateAndTime = Objects.requireNonNull(reportDateAndTime);
+		return this;
 	}
 
-	@XmlElement(name = "Frqcy", required = true)
 	public EventFrequency6Code getFrequency() {
 		return frequency;
 	}
 
-	public void setFrequency(EventFrequency6Code frequency) {
-		this.frequency = frequency;
+	public ReportParameters2 setFrequency(EventFrequency6Code frequency) {
+		this.frequency = Objects.requireNonNull(frequency);
+		return this;
 	}
 
-	@XmlElement(name = "RptCcy", required = true)
 	public CurrencyCode getReportCurrency() {
 		return reportCurrency;
 	}
 
-	public void setReportCurrency(CurrencyCode reportCurrency) {
-		this.reportCurrency = reportCurrency;
+	public ReportParameters2 setReportCurrency(CurrencyCode reportCurrency) {
+		this.reportCurrency = Objects.requireNonNull(reportCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "ClctnDt")
-	public ISODateTime getCalculationDate() {
-		return calculationDate;
+	public Optional<ISODateTime> getCalculationDate() {
+		return calculationDate == null ? Optional.empty() : Optional.of(calculationDate);
 	}
 
-	public void setCalculationDate(ISODateTime calculationDate) {
+	public ReportParameters2 setCalculationDate(ISODateTime calculationDate) {
 		this.calculationDate = calculationDate;
+		return this;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for an in repair status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InRepairStatusReason5Choice", propOrder = {"code", "proprietary"})
 public class InRepairStatusReason5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected InRepairStatusReason1Code code;
 	/**
-	 * In repair reason expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +104,9 @@ public class InRepairStatusReason5Choice {
 	 * ConditionallyAcceptedStatusReason3Choice.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InRepairStatusReason5Choice, InRepairStatusReason1Code> mmCode = new MMMessageAttribute<InRepairStatusReason5Choice, InRepairStatusReason1Code>() {
 		{
-			componentContext_lazy = () -> InRepairStatusReason5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InRepairStatusReason5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +117,22 @@ public class InRepairStatusReason5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> InRepairStatusReason1Code.mmObject();
 		}
+
+		@Override
+		public InRepairStatusReason1Code getValue(InRepairStatusReason5Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InRepairStatusReason5Choice obj, InRepairStatusReason1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification1 proprietary;
 	/**
-	 * In repair reason expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,9 +161,9 @@ public class InRepairStatusReason5Choice {
 	 * ConditionallyAcceptedStatusReason3Choice.mmProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InRepairStatusReason5Choice, GenericIdentification1> mmProprietary = new MMMessageAssociationEnd<InRepairStatusReason5Choice, GenericIdentification1>() {
 		{
-			componentContext_lazy = () -> InRepairStatusReason5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InRepairStatusReason5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,13 +175,23 @@ public class InRepairStatusReason5Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification1.mmObject();
 		}
+
+		@Override
+		public GenericIdentification1 getValue(InRepairStatusReason5Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(InRepairStatusReason5Choice obj, GenericIdentification1 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InRepairStatusReason5Choice.mmCode, InRepairStatusReason5Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InRepairStatusReason5Choice.mmCode, com.tools20022.repository.choice.InRepairStatusReason5Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InRepairStatusReason5Choice";
 				definition = "Choice of formats for an in repair status.";
@@ -177,21 +200,21 @@ public class InRepairStatusReason5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public InRepairStatusReason1Code getCode() {
 		return code;
 	}
 
-	public void setCode(InRepairStatusReason1Code code) {
-		this.code = code;
+	public InRepairStatusReason5Choice setCode(InRepairStatusReason1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification1 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification1 proprietary) {
-		this.proprietary = proprietary;
+	public InRepairStatusReason5Choice setProprietary(GenericIdentification1 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,18 +60,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "PriceValueType6FormatChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of formats to  express  the value of a price."</li>
+ * definition} = "Choice of formats to express the value of a price."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PriceValueType6FormatChoice", propOrder = {"code", "proprietary"})
 public class PriceValueType6FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected PriceValueType6Code code;
 	/**
-	 * Standard code to specify the value of a price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -93,26 +95,37 @@ public class PriceValueType6FormatChoice {
 	 * name} = "Code"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Standard code to  specify the value of a price."</li>
+	 * definition} = "Standard code to specify the value of a price."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PriceValueType6FormatChoice, PriceValueType6Code> mmCode = new MMMessageAttribute<PriceValueType6FormatChoice, PriceValueType6Code>() {
 		{
-			componentContext_lazy = () -> PriceValueType6FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PriceValueType6FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
-			definition = "Standard code to  specify the value of a price.";
+			definition = "Standard code to specify the value of a price.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PriceValueType6Code.mmObject();
 		}
+
+		@Override
+		public PriceValueType6Code getValue(PriceValueType6FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(PriceValueType6FormatChoice obj, PriceValueType6Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the value of a price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,51 +148,61 @@ public class PriceValueType6FormatChoice {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Proprietary code to  express  the value of a price."</li>
+	 * definition} = "Proprietary code to express the value of a price."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PriceValueType6FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<PriceValueType6FormatChoice, GenericIdentification13>() {
 		{
-			componentContext_lazy = () -> PriceValueType6FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PriceValueType6FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express  the value of a price.";
+			definition = "Proprietary code to express the value of a price.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(PriceValueType6FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(PriceValueType6FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PriceValueType6FormatChoice.mmCode, PriceValueType6FormatChoice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PriceValueType6FormatChoice.mmCode, com.tools20022.repository.choice.PriceValueType6FormatChoice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceValueType6FormatChoice";
-				definition = "Choice of formats to  express  the value of a price.";
+				definition = "Choice of formats to express the value of a price.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public PriceValueType6Code getCode() {
 		return code;
 	}
 
-	public void setCode(PriceValueType6Code code) {
-		this.code = code;
+	public PriceValueType6FormatChoice setCode(PriceValueType6Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public PriceValueType6FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

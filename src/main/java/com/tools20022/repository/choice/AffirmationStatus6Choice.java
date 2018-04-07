@@ -21,12 +21,15 @@ import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.setr.SecuritiesTradeConfirmationStatusAdviceV02;
+import com.tools20022.repository.choice.AffirmationReason1Choice;
 import com.tools20022.repository.entity.SecuritiesTradeStatus;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ProprietaryReason1;
 import com.tools20022.repository.msg.ProprietaryStatusAndReason1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of status for the affirmation."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AffirmationStatus6Choice", propOrder = {"affirmed", "unaffirmed", "proprietaryStatus"})
 public class AffirmationStatus6Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Affrmd", required = true)
 	protected ProprietaryReason1 affirmed;
 	/**
-	 * Status of affirmation of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -116,10 +120,10 @@ public class AffirmationStatus6Choice {
 	 * definition} = "Status of affirmation of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAffirmed = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AffirmationStatus6Choice, ProprietaryReason1> mmAffirmed = new MMMessageAssociationEnd<AffirmationStatus6Choice, ProprietaryReason1>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatus.mmAffirmationStatus;
-			componentContext_lazy = () -> AffirmationStatus6Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AffirmationStatus6Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Affrmd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,11 +134,22 @@ public class AffirmationStatus6Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(AffirmationStatus6Choice obj) {
+			return obj.getAffirmed();
+		}
+
+		@Override
+		public void setValue(AffirmationStatus6Choice obj, ProprietaryReason1 value) {
+			obj.setAffirmed(value);
+		}
 	};
+	@XmlElement(name = "Uaffrmd", required = true)
 	protected AffirmationReason1Choice unaffirmed;
 	/**
-	 * Trade has been unaffirmed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -164,10 +179,10 @@ public class AffirmationStatus6Choice {
 	 * definition} = "Trade has been unaffirmed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUnaffirmed = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AffirmationStatus6Choice, AffirmationReason1Choice> mmUnaffirmed = new MMMessageAssociationEnd<AffirmationStatus6Choice, AffirmationReason1Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatus.mmAffirmationStatus;
-			componentContext_lazy = () -> AffirmationStatus6Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AffirmationStatus6Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Uaffrmd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,14 +191,24 @@ public class AffirmationStatus6Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.AffirmationReason1Choice.mmObject();
+			type_lazy = () -> AffirmationReason1Choice.mmObject();
+		}
+
+		@Override
+		public AffirmationReason1Choice getValue(AffirmationStatus6Choice obj) {
+			return obj.getUnaffirmed();
+		}
+
+		@Override
+		public void setValue(AffirmationStatus6Choice obj, AffirmationReason1Choice value) {
+			obj.setUnaffirmed(value);
 		}
 	};
+	@XmlElement(name = "PrtrySts")
 	protected ProprietaryStatusAndReason1 proprietaryStatus;
 	/**
-	 * Provides a proprietary status and a proprietary reason of the affirmation
-	 * of the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -215,10 +240,10 @@ public class AffirmationStatus6Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietaryStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AffirmationStatus6Choice, Optional<ProprietaryStatusAndReason1>> mmProprietaryStatus = new MMMessageAssociationEnd<AffirmationStatus6Choice, Optional<ProprietaryStatusAndReason1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatus.mmAffirmationStatus;
-			componentContext_lazy = () -> AffirmationStatus6Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AffirmationStatus6Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtrySts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,15 +254,26 @@ public class AffirmationStatus6Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryStatusAndReason1.mmObject();
 		}
+
+		@Override
+		public Optional<ProprietaryStatusAndReason1> getValue(AffirmationStatus6Choice obj) {
+			return obj.getProprietaryStatus();
+		}
+
+		@Override
+		public void setValue(AffirmationStatus6Choice obj, Optional<ProprietaryStatusAndReason1> value) {
+			obj.setProprietaryStatus(value.orElse(null));
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AffirmationStatus6Choice.mmAffirmed, AffirmationStatus6Choice.mmUnaffirmed, AffirmationStatus6Choice.mmProprietaryStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AffirmationStatus6Choice.mmAffirmed, com.tools20022.repository.choice.AffirmationStatus6Choice.mmUnaffirmed,
+						com.tools20022.repository.choice.AffirmationStatus6Choice.mmProprietaryStatus);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationStatusAdviceV02.mmAffirmationStatus);
 				trace_lazy = () -> SecuritiesTradeStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AffirmationStatus6Choice";
 				definition = "Choice of status for the affirmation.";
@@ -246,30 +282,30 @@ public class AffirmationStatus6Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Affrmd", required = true)
 	public ProprietaryReason1 getAffirmed() {
 		return affirmed;
 	}
 
-	public void setAffirmed(ProprietaryReason1 affirmed) {
-		this.affirmed = affirmed;
+	public AffirmationStatus6Choice setAffirmed(ProprietaryReason1 affirmed) {
+		this.affirmed = Objects.requireNonNull(affirmed);
+		return this;
 	}
 
-	@XmlElement(name = "Uaffrmd", required = true)
 	public AffirmationReason1Choice getUnaffirmed() {
 		return unaffirmed;
 	}
 
-	public void setUnaffirmed(com.tools20022.repository.choice.AffirmationReason1Choice unaffirmed) {
-		this.unaffirmed = unaffirmed;
+	public AffirmationStatus6Choice setUnaffirmed(AffirmationReason1Choice unaffirmed) {
+		this.unaffirmed = Objects.requireNonNull(unaffirmed);
+		return this;
 	}
 
-	@XmlElement(name = "PrtrySts")
-	public ProprietaryStatusAndReason1 getProprietaryStatus() {
-		return proprietaryStatus;
+	public Optional<ProprietaryStatusAndReason1> getProprietaryStatus() {
+		return proprietaryStatus == null ? Optional.empty() : Optional.of(proprietaryStatus);
 	}
 
-	public void setProprietaryStatus(ProprietaryStatusAndReason1 proprietaryStatus) {
+	public AffirmationStatus6Choice setProprietaryStatus(ProprietaryStatusAndReason1 proprietaryStatus) {
 		this.proprietaryStatus = proprietaryStatus;
+		return this;
 	}
 }

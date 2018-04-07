@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReason2Code#Quorum
- * MeetingCancellationReason2Code.mmQuorum}</li>
+ * MeetingCancellationReason2Code.Quorum}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReason2Code#Processing
- * MeetingCancellationReason2Code.mmProcessing}</li>
+ * MeetingCancellationReason2Code.Processing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReason2Code#Withdrawal
- * MeetingCancellationReason2Code.mmWithdrawal}</li>
+ * MeetingCancellationReason2Code.Withdrawal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -155,7 +155,7 @@ public class MeetingCancellationReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("QORM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingCancellationReason2Code";

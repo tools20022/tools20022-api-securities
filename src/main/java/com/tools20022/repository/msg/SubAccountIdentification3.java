@@ -28,9 +28,12 @@ import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AggregateBalanceInformation3;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +77,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,16 +89,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Account to or from which a securities entry is made."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SubAccountIdentification3", propOrder = {"identification", "fungibleIndicator", "activityIndicator", "balanceForSubAccount"})
 public class SubAccountIdentification3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected AccountIdentificationFormatChoice identification;
 	/**
-	 * Unique and unambiguous identification for the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,10 +131,10 @@ public class SubAccountIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubAccountIdentification3, AccountIdentificationFormatChoice> mmIdentification = new MMMessageAttribute<SubAccountIdentification3, AccountIdentificationFormatChoice>() {
 		{
 			businessComponentTrace_lazy = () -> AccountIdentification.mmObject();
-			componentContext_lazy = () -> SubAccountIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccountIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,12 +144,22 @@ public class SubAccountIdentification3 {
 			minOccurs = 1;
 			complexType_lazy = () -> AccountIdentificationFormatChoice.mmObject();
 		}
+
+		@Override
+		public AccountIdentificationFormatChoice getValue(SubAccountIdentification3 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SubAccountIdentification3 obj, AccountIdentificationFormatChoice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "FngbInd", required = true)
 	protected YesNoIndicator fungibleIndicator;
 	/**
-	 * Indicates whether the securities in the account are fungible, ie,
-	 * interchangeable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,10 +192,10 @@ public class SubAccountIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFungibleIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubAccountIdentification3, YesNoIndicator> mmFungibleIndicator = new MMMessageAttribute<SubAccountIdentification3, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmFungibleIndicator;
-			componentContext_lazy = () -> SubAccountIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccountIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "FngbInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,11 +205,22 @@ public class SubAccountIdentification3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(SubAccountIdentification3 obj) {
+			return obj.getFungibleIndicator();
+		}
+
+		@Override
+		public void setValue(SubAccountIdentification3 obj, YesNoIndicator value) {
+			obj.setFungibleIndicator(value);
+		}
 	};
+	@XmlElement(name = "ActvtyInd", required = true)
 	protected YesNoIndicator activityIndicator;
 	/**
-	 * Indicates whether there is activity reported in the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,9 +247,9 @@ public class SubAccountIdentification3 {
 	 * "Indicates whether there is activity reported in the statement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmActivityIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubAccountIdentification3, YesNoIndicator> mmActivityIndicator = new MMMessageAttribute<SubAccountIdentification3, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> SubAccountIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccountIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "ActvtyInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,12 +259,22 @@ public class SubAccountIdentification3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(SubAccountIdentification3 obj) {
+			return obj.getActivityIndicator();
+		}
+
+		@Override
+		public void setValue(SubAccountIdentification3 obj, YesNoIndicator value) {
+			obj.setActivityIndicator(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.AggregateBalanceInformation3> balanceForSubAccount;
+	@XmlElement(name = "BalForSubAcct")
+	protected List<AggregateBalanceInformation3> balanceForSubAccount;
 	/**
-	 * Net position of a segregated holding, in a single security, within the
-	 * overall position held in a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -272,10 +306,10 @@ public class SubAccountIdentification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceForSubAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SubAccountIdentification3, List<AggregateBalanceInformation3>> mmBalanceForSubAccount = new MMMessageAssociationEnd<SubAccountIdentification3, List<AggregateBalanceInformation3>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBalance;
-			componentContext_lazy = () -> SubAccountIdentification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccountIdentification3.mmObject();
 			isDerived = false;
 			xmlTag = "BalForSubAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,18 +317,28 @@ public class SubAccountIdentification3 {
 			definition = "Net position of a segregated holding, in a single security, within the overall position held in a securities account.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AggregateBalanceInformation3.mmObject();
+			type_lazy = () -> AggregateBalanceInformation3.mmObject();
+		}
+
+		@Override
+		public List<AggregateBalanceInformation3> getValue(SubAccountIdentification3 obj) {
+			return obj.getBalanceForSubAccount();
+		}
+
+		@Override
+		public void setValue(SubAccountIdentification3 obj, List<AggregateBalanceInformation3> value) {
+			obj.setBalanceForSubAccount(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SubAccountIdentification3.mmIdentification, SubAccountIdentification3.mmFungibleIndicator, SubAccountIdentification3.mmActivityIndicator,
-						SubAccountIdentification3.mmBalanceForSubAccount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SubAccountIdentification3.mmIdentification, com.tools20022.repository.msg.SubAccountIdentification3.mmFungibleIndicator,
+						com.tools20022.repository.msg.SubAccountIdentification3.mmActivityIndicator, com.tools20022.repository.msg.SubAccountIdentification3.mmBalanceForSubAccount);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountingStatementOfHoldingsV02.mmSubAccountDetails);
 				trace_lazy = () -> AccountIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SubAccountIdentification3";
 				definition = "Account to or from which a securities entry is made.";
@@ -303,39 +347,39 @@ public class SubAccountIdentification3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public AccountIdentificationFormatChoice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(AccountIdentificationFormatChoice identification) {
-		this.identification = identification;
+	public SubAccountIdentification3 setIdentification(AccountIdentificationFormatChoice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "FngbInd", required = true)
 	public YesNoIndicator getFungibleIndicator() {
 		return fungibleIndicator;
 	}
 
-	public void setFungibleIndicator(YesNoIndicator fungibleIndicator) {
-		this.fungibleIndicator = fungibleIndicator;
+	public SubAccountIdentification3 setFungibleIndicator(YesNoIndicator fungibleIndicator) {
+		this.fungibleIndicator = Objects.requireNonNull(fungibleIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "ActvtyInd", required = true)
 	public YesNoIndicator getActivityIndicator() {
 		return activityIndicator;
 	}
 
-	public void setActivityIndicator(YesNoIndicator activityIndicator) {
-		this.activityIndicator = activityIndicator;
+	public SubAccountIdentification3 setActivityIndicator(YesNoIndicator activityIndicator) {
+		this.activityIndicator = Objects.requireNonNull(activityIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "BalForSubAcct")
 	public List<AggregateBalanceInformation3> getBalanceForSubAccount() {
-		return balanceForSubAccount;
+		return balanceForSubAccount == null ? balanceForSubAccount = new ArrayList<>() : balanceForSubAccount;
 	}
 
-	public void setBalanceForSubAccount(List<com.tools20022.repository.msg.AggregateBalanceInformation3> balanceForSubAccount) {
-		this.balanceForSubAccount = balanceForSubAccount;
+	public SubAccountIdentification3 setBalanceForSubAccount(List<AggregateBalanceInformation3> balanceForSubAccount) {
+		this.balanceForSubAccount = Objects.requireNonNull(balanceForSubAccount);
+		return this;
 	}
 }

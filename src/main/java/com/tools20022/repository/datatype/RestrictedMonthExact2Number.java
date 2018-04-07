@@ -19,13 +19,14 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMQuantity;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.datatype.RestrictedMonthExact2Number.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Two digit restricted list for use representing calendar months.
@@ -41,8 +42,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -62,47 +63,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "Two digit restricted list for use representing calendar months."</li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class RestrictedMonthExact2Number {
 
 	final static private AtomicReference<MMQuantity> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected BigDecimal value;
 
 	final static public MMQuantity mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMQuantity() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("01", "04", "12");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RestrictedMonthExact2Number";
 				definition = "Two digit restricted list for use representing calendar months.";
-				pattern = "[0-9]{2,2}";
 				minInclusive = "1";
 				maxInclusive = "12";
 				totalDigits = 2;
 				fractionDigits = 0;
+				pattern = "[0-9]{2,2}";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public RestrictedMonthExact2Number() {
 	}
 
 	public RestrictedMonthExact2Number(BigDecimal value) {
 		this.value = value;
 	}
 
-	public BigDecimal toBigDecimal() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
-	protected static class InternalXmlAdapter extends XmlAdapter<BigDecimal, RestrictedMonthExact2Number> {
-		@Override
-		public RestrictedMonthExact2Number unmarshal(BigDecimal value) {
-			return new RestrictedMonthExact2Number(value);
-		}
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
 
-		@Override
-		public BigDecimal marshal(RestrictedMonthExact2Number typedData) {
-			return typedData.value;
-		}
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

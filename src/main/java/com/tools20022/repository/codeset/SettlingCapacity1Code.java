@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity1Code#SettlingCustodian
- * SettlingCapacity1Code.mmSettlingCustodian}</li>
+ * SettlingCapacity1Code.SettlingCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity1Code#SettlingAgent
- * SettlingCapacity1Code.mmSettlingAgent}</li>
+ * SettlingCapacity1Code.SettlingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity1Code#SettlingPrincipal
- * SettlingCapacity1Code.mmSettlingPrincipal}</li>
+ * SettlingCapacity1Code.SettlingPrincipal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,7 +156,7 @@ public class SettlingCapacity1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CUST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlingCapacity1Code";

@@ -38,23 +38,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#Pairoff
- * RepurchaseType10Code.mmPairoff}</li>
+ * RepurchaseType10Code.Pairoff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#RepoContractRollover
- * RepurchaseType10Code.mmRepoContractRollover}</li>
+ * RepurchaseType10Code.RepoContractRollover}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#RepoRate
- * RepurchaseType10Code.mmRepoRate}</li>
+ * RepurchaseType10Code.RepoRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#RepurchaseCall
- * RepurchaseType10Code.mmRepurchaseCall}</li>
+ * RepurchaseType10Code.RepurchaseCall}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#Swap
- * RepurchaseType10Code.mmSwap}</li>
+ * RepurchaseType10Code.Swap}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#TopUp
- * RepurchaseType10Code.mmTopUp}</li>
+ * RepurchaseType10Code.TopUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType10Code#Withdrawal
- * RepurchaseType10Code.mmWithdrawal}</li>
+ * RepurchaseType10Code.Withdrawal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -255,7 +255,7 @@ public class RepurchaseType10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepurchaseType10Code";
 				definition = "Specifies the type of repurchase transaction.";

@@ -31,9 +31,13 @@ import com.tools20022.repository.entity.CorporateActionDistribution;
 import com.tools20022.repository.entity.CorporateActionOption;
 import com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashMovement1;
+import com.tools20022.repository.msg.SecurityMovement1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -88,8 +92,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintMovementRule#forGlobalDistributionRequest1
+ * ConstraintMovementRule.forGlobalDistributionRequest1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,15 +112,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the global distribution."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "GlobalDistributionRequest1", propOrder = {"preadviceIndicator", "optionNumber", "optionType", "recordDate", "paymentDate", "securitiesMovement", "cashMovement"})
 public class GlobalDistributionRequest1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PradvcInd", required = true)
 	protected YesNoIndicator preadviceIndicator;
 	/**
-	 * Indicates wether is message is an advice or pre-advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,9 +147,9 @@ public class GlobalDistributionRequest1 {
 	 * definition} = "Indicates wether is message is an advice or pre-advice."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPreadviceIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GlobalDistributionRequest1, YesNoIndicator> mmPreadviceIndicator = new MMMessageAttribute<GlobalDistributionRequest1, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "PradvcInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -146,11 +159,22 @@ public class GlobalDistributionRequest1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(GlobalDistributionRequest1 obj) {
+			return obj.getPreadviceIndicator();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, YesNoIndicator value) {
+			obj.setPreadviceIndicator(value);
+		}
 	};
+	@XmlElement(name = "OptnNb", required = true)
 	protected Exact3NumericText optionNumber;
 	/**
-	 * Number identifying the available corporate action options.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,10 +206,10 @@ public class GlobalDistributionRequest1 {
 	 * "Number identifying the available corporate action options."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOptionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GlobalDistributionRequest1, Exact3NumericText> mmOptionNumber = new MMMessageAttribute<GlobalDistributionRequest1, Exact3NumericText>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionNumber;
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "OptnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -195,11 +219,22 @@ public class GlobalDistributionRequest1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
+
+		@Override
+		public Exact3NumericText getValue(GlobalDistributionRequest1 obj) {
+			return obj.getOptionNumber();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, Exact3NumericText value) {
+			obj.setOptionNumber(value);
+		}
 	};
+	@XmlElement(name = "OptnTp", required = true)
 	protected CorporateActionOption1FormatChoice optionType;
 	/**
-	 * Specifies the corporate action options available to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,10 +266,10 @@ public class GlobalDistributionRequest1 {
 	 * "Specifies the corporate action options available to the account owner."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOptionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GlobalDistributionRequest1, CorporateActionOption1FormatChoice> mmOptionType = new MMMessageAttribute<GlobalDistributionRequest1, CorporateActionOption1FormatChoice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionType;
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "OptnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -244,12 +279,22 @@ public class GlobalDistributionRequest1 {
 			minOccurs = 1;
 			complexType_lazy = () -> CorporateActionOption1FormatChoice.mmObject();
 		}
+
+		@Override
+		public CorporateActionOption1FormatChoice getValue(GlobalDistributionRequest1 obj) {
+			return obj.getOptionType();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, CorporateActionOption1FormatChoice value) {
+			obj.setOptionType(value);
+		}
 	};
+	@XmlElement(name = "RcrdDt", required = true)
 	protected DateFormat4Choice recordDate;
 	/**
-	 * Date on which the holders of securities are/will be recorded for the
-	 * income being paid or for entitlement to the rights or offer/privilege.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,10 +327,10 @@ public class GlobalDistributionRequest1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRecordDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GlobalDistributionRequest1, DateFormat4Choice> mmRecordDate = new MMMessageAttribute<GlobalDistributionRequest1, DateFormat4Choice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDeadline.mmRecordDate;
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "RcrdDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -295,11 +340,22 @@ public class GlobalDistributionRequest1 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public DateFormat4Choice getValue(GlobalDistributionRequest1 obj) {
+			return obj.getRecordDate();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, DateFormat4Choice value) {
+			obj.setRecordDate(value);
+		}
 	};
+	@XmlElement(name = "PmtDt", required = true)
 	protected DateFormat4Choice paymentDate;
 	/**
-	 * Date on which securities/cash will be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,10 +386,10 @@ public class GlobalDistributionRequest1 {
 	 * definition} = "Date on which securities/cash will be paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GlobalDistributionRequest1, DateFormat4Choice> mmPaymentDate = new MMMessageAttribute<GlobalDistributionRequest1, DateFormat4Choice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDistribution.mmMovementDate;
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "PmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -343,11 +399,22 @@ public class GlobalDistributionRequest1 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public DateFormat4Choice getValue(GlobalDistributionRequest1 obj) {
+			return obj.getPaymentDate();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, DateFormat4Choice value) {
+			obj.setPaymentDate(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.SecurityMovement1> securitiesMovement;
+	@XmlElement(name = "SctiesMvmnt")
+	protected List<SecurityMovement1> securitiesMovement;
 	/**
-	 * Provides information about the securities movement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -376,10 +443,10 @@ public class GlobalDistributionRequest1 {
 	 * definition} = "Provides information about the securities movement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesMovement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<GlobalDistributionRequest1, List<SecurityMovement1>> mmSecuritiesMovement = new MMMessageAssociationEnd<GlobalDistributionRequest1, List<SecurityMovement1>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement;
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesMvmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -387,13 +454,24 @@ public class GlobalDistributionRequest1 {
 			definition = "Provides information about the securities movement.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecurityMovement1.mmObject();
+			type_lazy = () -> SecurityMovement1.mmObject();
+		}
+
+		@Override
+		public List<SecurityMovement1> getValue(GlobalDistributionRequest1 obj) {
+			return obj.getSecuritiesMovement();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, List<SecurityMovement1> value) {
+			obj.setSecuritiesMovement(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CashMovement1> cashMovement;
+	@XmlElement(name = "CshMvmnt")
+	protected List<CashMovement1> cashMovement;
 	/**
-	 * Provides information about the cash movement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -422,10 +500,10 @@ public class GlobalDistributionRequest1 {
 	 * definition} = "Provides information about the cash movement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashMovement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<GlobalDistributionRequest1, List<CashMovement1>> mmCashMovement = new MMMessageAssociationEnd<GlobalDistributionRequest1, List<CashMovement1>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmCashProceedsMovement;
-			componentContext_lazy = () -> GlobalDistributionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GlobalDistributionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "CshMvmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -433,18 +511,30 @@ public class GlobalDistributionRequest1 {
 			definition = "Provides information about the cash movement.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashMovement1.mmObject();
+			type_lazy = () -> CashMovement1.mmObject();
+		}
+
+		@Override
+		public List<CashMovement1> getValue(GlobalDistributionRequest1 obj) {
+			return obj.getCashMovement();
+		}
+
+		@Override
+		public void setValue(GlobalDistributionRequest1 obj, List<CashMovement1> value) {
+			obj.setCashMovement(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GlobalDistributionRequest1.mmPreadviceIndicator, GlobalDistributionRequest1.mmOptionNumber, GlobalDistributionRequest1.mmOptionType, GlobalDistributionRequest1.mmRecordDate,
-						GlobalDistributionRequest1.mmPaymentDate, GlobalDistributionRequest1.mmSecuritiesMovement, GlobalDistributionRequest1.mmCashMovement);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GlobalDistributionRequest1.mmPreadviceIndicator, com.tools20022.repository.msg.GlobalDistributionRequest1.mmOptionNumber,
+						com.tools20022.repository.msg.GlobalDistributionRequest1.mmOptionType, com.tools20022.repository.msg.GlobalDistributionRequest1.mmRecordDate, com.tools20022.repository.msg.GlobalDistributionRequest1.mmPaymentDate,
+						com.tools20022.repository.msg.GlobalDistributionRequest1.mmSecuritiesMovement, com.tools20022.repository.msg.GlobalDistributionRequest1.mmCashMovement);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCAGlobalDistributionAuthorisationRequestV01.mmGlobalDistributionDetails);
 				trace_lazy = () -> CorporateActionDistribution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintMovementRule.forGlobalDistributionRequest1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GlobalDistributionRequest1";
 				definition = "Provides information about the global distribution.";
@@ -453,66 +543,66 @@ public class GlobalDistributionRequest1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PradvcInd", required = true)
 	public YesNoIndicator getPreadviceIndicator() {
 		return preadviceIndicator;
 	}
 
-	public void setPreadviceIndicator(YesNoIndicator preadviceIndicator) {
-		this.preadviceIndicator = preadviceIndicator;
+	public GlobalDistributionRequest1 setPreadviceIndicator(YesNoIndicator preadviceIndicator) {
+		this.preadviceIndicator = Objects.requireNonNull(preadviceIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "OptnNb", required = true)
 	public Exact3NumericText getOptionNumber() {
 		return optionNumber;
 	}
 
-	public void setOptionNumber(Exact3NumericText optionNumber) {
-		this.optionNumber = optionNumber;
+	public GlobalDistributionRequest1 setOptionNumber(Exact3NumericText optionNumber) {
+		this.optionNumber = Objects.requireNonNull(optionNumber);
+		return this;
 	}
 
-	@XmlElement(name = "OptnTp", required = true)
 	public CorporateActionOption1FormatChoice getOptionType() {
 		return optionType;
 	}
 
-	public void setOptionType(CorporateActionOption1FormatChoice optionType) {
-		this.optionType = optionType;
+	public GlobalDistributionRequest1 setOptionType(CorporateActionOption1FormatChoice optionType) {
+		this.optionType = Objects.requireNonNull(optionType);
+		return this;
 	}
 
-	@XmlElement(name = "RcrdDt", required = true)
 	public DateFormat4Choice getRecordDate() {
 		return recordDate;
 	}
 
-	public void setRecordDate(DateFormat4Choice recordDate) {
-		this.recordDate = recordDate;
+	public GlobalDistributionRequest1 setRecordDate(DateFormat4Choice recordDate) {
+		this.recordDate = Objects.requireNonNull(recordDate);
+		return this;
 	}
 
-	@XmlElement(name = "PmtDt", required = true)
 	public DateFormat4Choice getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(DateFormat4Choice paymentDate) {
-		this.paymentDate = paymentDate;
+	public GlobalDistributionRequest1 setPaymentDate(DateFormat4Choice paymentDate) {
+		this.paymentDate = Objects.requireNonNull(paymentDate);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesMvmnt")
 	public List<SecurityMovement1> getSecuritiesMovement() {
-		return securitiesMovement;
+		return securitiesMovement == null ? securitiesMovement = new ArrayList<>() : securitiesMovement;
 	}
 
-	public void setSecuritiesMovement(List<com.tools20022.repository.msg.SecurityMovement1> securitiesMovement) {
-		this.securitiesMovement = securitiesMovement;
+	public GlobalDistributionRequest1 setSecuritiesMovement(List<SecurityMovement1> securitiesMovement) {
+		this.securitiesMovement = Objects.requireNonNull(securitiesMovement);
+		return this;
 	}
 
-	@XmlElement(name = "CshMvmnt")
 	public List<CashMovement1> getCashMovement() {
-		return cashMovement;
+		return cashMovement == null ? cashMovement = new ArrayList<>() : cashMovement;
 	}
 
-	public void setCashMovement(List<com.tools20022.repository.msg.CashMovement1> cashMovement) {
-		this.cashMovement = cashMovement;
+	public GlobalDistributionRequest1 setCashMovement(List<CashMovement1> cashMovement) {
+		this.cashMovement = Objects.requireNonNull(cashMovement);
+		return this;
 	}
 }

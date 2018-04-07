@@ -19,14 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
+import com.tools20022.repository.codeset.CreditQualityCode;
 import com.tools20022.repository.codeset.MoneyLaunderingCheckCode;
-import com.tools20022.repository.entity.RolePlayer;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Entity involved in an activity.
@@ -62,6 +61,8 @@ import java.util.List;
  * Party.mmLocation}</li>
  * <li>{@linkplain com.tools20022.repository.entity.Party#mmCloseLinkSecurity
  * Party.mmCloseLinkSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmCreditQuality
+ * Party.mmCreditQuality}</li>
  * </ul>
  * </li>
  * <li>
@@ -117,8 +118,6 @@ import java.util.List;
  * TradingPartyCapacity1Choice}</li>
  * <li>{@linkplain com.tools20022.repository.choice.TradingPartyCapacity2Choice
  * TradingPartyCapacity2Choice}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Counterparty9Choice
- * Counterparty9Choice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount108
  * PartyIdentificationAndAccount108}</li>
@@ -128,20 +127,22 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.CountryAndResidentialStatusType2
  * CountryAndResidentialStatusType2}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount125
- * PartyIdentificationAndAccount125}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Party33Choice Party33Choice}
  * </li>
  * <li>{@linkplain com.tools20022.repository.choice.Party32Choice Party32Choice}
  * </li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount156
+ * PartyIdentificationAndAccount156}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Counterparty11Choice
+ * Counterparty11Choice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -157,8 +158,8 @@ public class Party extends RolePlayer {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.ContactPoint> contactPoint;
 	/**
-	 * Number, physical or virtual address, used for communication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,7 +213,7 @@ public class Party extends RolePlayer {
 	 * "Number, physical or virtual address, used for communication."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmContactPoint = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, List<ContactPoint>> mmContactPoint = new MMBusinessAssociationEnd<Party, List<ContactPoint>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LocalMarketAnnex2.mmLocalOrderDesk, FundProcessingPassport1.mmFundManagementCompany, PartyTextInformation1.mmPartyContactDetails, PartyTextInformation2.mmPartyContactDetails,
 					PartyTextInformation5.mmPartyContactDetails, PartyIdentification42.mmContactDetails);
@@ -226,11 +227,21 @@ public class Party extends RolePlayer {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
 		}
+
+		@Override
+		public List<ContactPoint> getValue(Party obj) {
+			return obj.getContactPoint();
+		}
+
+		@Override
+		public void setValue(Party obj, List<ContactPoint> value) {
+			obj.setContactPoint(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.PartyIdentificationInformation> identification;
+	protected List<PartyIdentificationInformation> identification;
 	/**
-	 * Specific identification assigned to a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -644,12 +655,6 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementParties36#mmParty5
 	 * SettlementParties36.mmParty5}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.StandingSettlementInstruction11#mmVendor
-	 * StandingSettlementInstruction11.mmVendor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount39#mmAccountOwner
-	 * QuantityAndAccount39.mmAccountOwner}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.CashParties26#mmDebtor
 	 * CashParties26.mmDebtor}</li>
 	 * <li>
@@ -670,9 +675,6 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.Intermediary32#mmIdentification
 	 * Intermediary32.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount41#mmAccountOwner
-	 * QuantityAndAccount41.mmAccountOwner}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount40#mmAccountOwner
 	 * QuantityAndAccount40.mmAccountOwner}</li>
 	 * <li>
@@ -689,17 +691,11 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.CashParties25#mmCreditorAgent
 	 * CashParties25.mmCreditorAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount42#mmAccountOwner
-	 * QuantityAndAccount42.mmAccountOwner}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.TransactionDetails74#mmInvestor
 	 * TransactionDetails74.mmInvestor}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.TransactionDetails82#mmInvestor
 	 * TransactionDetails82.mmInvestor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionDetails76#mmAccountOwner
-	 * TransactionDetails76.mmAccountOwner}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount38#mmAccountOwner
 	 * QuantityAndAccount38.mmAccountOwner}</li>
@@ -713,26 +709,8 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.TransactionDetails80#mmInvestor
 	 * TransactionDetails80.mmInvestor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.Counterparty9Choice#mmSeller
-	 * Counterparty9Choice.mmSeller}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.Counterparty9Choice#mmBuyer
-	 * Counterparty9Choice.mmBuyer}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ForeignExchangeTerms22#mmQuotingInstitution
 	 * ForeignExchangeTerms22.mmQuotingInstitution}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementParties39#mmParty2
-	 * SettlementParties39.mmParty2}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementParties39#mmParty3
-	 * SettlementParties39.mmParty3}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementParties39#mmParty4
-	 * SettlementParties39.mmParty4}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementParties39#mmParty5
-	 * SettlementParties39.mmParty5}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementParties40#mmDepository
 	 * SettlementParties40.mmDepository}</li>
@@ -751,9 +729,6 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementParties40#mmParty5
 	 * SettlementParties40.mmParty5}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount43#mmAccountOwner
-	 * QuantityAndAccount43.mmAccountOwner}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount108#mmIdentification
 	 * PartyIdentificationAndAccount108.mmIdentification}</li>
@@ -798,17 +773,11 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.OtherParties28#mmTripartyAgent
 	 * OtherParties28.mmTripartyAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount44#mmAccountOwner
-	 * QuantityAndAccount44.mmAccountOwner}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AccountAndBalance34#mmAccountOwner
 	 * AccountAndBalance34.mmAccountOwner}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AccountAndBalance35#mmAccountOwner
 	 * AccountAndBalance35.mmAccountOwner}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption116#mmAccountOwner
-	 * CorporateActionOption116.mmAccountOwner}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AccountIdentification31#mmAccountOwner
 	 * AccountIdentification31.mmAccountOwner}</li>
@@ -842,137 +811,11 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionNarrative26#mmOfferor
 	 * CorporateActionNarrative26.mmOfferor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Organisation21#mmIdentification
-	 * Organisation21.mmIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Intermediary36#mmIdentification
 	 * Intermediary36.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Intermediary34#mmIdentification
-	 * Intermediary34.mmIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmOwnerIdentification
-	 * InvestmentAccount54.mmOwnerIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmAccountServicer
-	 * InvestmentAccount54.mmAccountServicer}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer31#mmReceivingAgentDetails
-	 * Transfer31.mmReceivingAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer31#mmDeliveringAgentDetails
-	 * Transfer31.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer30#mmReceivingAgentDetails
-	 * Transfer30.mmReceivingAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer30#mmDeliveringAgentDetails
-	 * Transfer30.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmOwnerIdentification
-	 * InvestmentAccount56.mmOwnerIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmAccountServicer
-	 * InvestmentAccount56.mmAccountServicer}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer32#mmReceivingAgentDetails
-	 * Transfer32.mmReceivingAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer32#mmDeliveringAgentDetails
-	 * Transfer32.mmDeliveringAgentDetails}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AdditionalReference7#mmReferenceIssuer
 	 * AdditionalReference7.mmReferenceIssuer}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CancellationStatusAndReason3#mmStatusInitiator
-	 * CancellationStatusAndReason3.mmStatusInitiator}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer33#mmReceivingAgentDetails
-	 * Transfer33.mmReceivingAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer33#mmDeliveringAgentDetails
-	 * Transfer33.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferStatusAndReason4#mmStatusInitiator
-	 * TransferStatusAndReason4.mmStatusInitiator}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount14#mmDeliverersCustodianDetails
-	 * DeliveringPartiesAndAccount14.mmDeliverersCustodianDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount14#mmDeliverersIntermediary1Details
-	 * DeliveringPartiesAndAccount14.mmDeliverersIntermediary1Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount14#mmDeliverersIntermediary2Details
-	 * DeliveringPartiesAndAccount14.mmDeliverersIntermediary2Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount14#mmDeliveringAgentDetails
-	 * DeliveringPartiesAndAccount14.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount14#mmPlaceOfSettlementDetails
-	 * DeliveringPartiesAndAccount14.mmPlaceOfSettlementDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount13#mmDeliverersCustodianDetails
-	 * DeliveringPartiesAndAccount13.mmDeliverersCustodianDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount13#mmDeliverersIntermediary1Details
-	 * DeliveringPartiesAndAccount13.mmDeliverersIntermediary1Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount13#mmDeliverersIntermediary2Details
-	 * DeliveringPartiesAndAccount13.mmDeliverersIntermediary2Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount13#mmDeliveringAgentDetails
-	 * DeliveringPartiesAndAccount13.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount13#mmPlaceOfSettlementDetails
-	 * DeliveringPartiesAndAccount13.mmPlaceOfSettlementDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount14#mmReceiversCustodianDetails
-	 * ReceivingPartiesAndAccount14.mmReceiversCustodianDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount14#mmReceiversIntermediary1Details
-	 * ReceivingPartiesAndAccount14.mmReceiversIntermediary1Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount14#mmReceiversIntermediary2Details
-	 * ReceivingPartiesAndAccount14.mmReceiversIntermediary2Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount14#mmReceivingAgentDetails
-	 * ReceivingPartiesAndAccount14.mmReceivingAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount14#mmPlaceOfSettlementDetails
-	 * ReceivingPartiesAndAccount14.mmPlaceOfSettlementDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount55#mmOwnerIdentification
-	 * InvestmentAccount55.mmOwnerIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount55#mmAccountServicer
-	 * InvestmentAccount55.mmAccountServicer}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ForeignExchangeTerms26#mmQuotingInstitution
-	 * ForeignExchangeTerms26.mmQuotingInstitution}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Tax28#mmRecipientIdentification
-	 * Tax28.mmRecipientIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Commission23#mmRecipientIdentification
-	 * Commission23.mmRecipientIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Charge29#mmRecipientIdentification
-	 * Charge29.mmRecipientIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount13#mmReceiversCustodianDetails
-	 * ReceivingPartiesAndAccount13.mmReceiversCustodianDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount13#mmReceiversIntermediary1Details
-	 * ReceivingPartiesAndAccount13.mmReceiversIntermediary1Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount13#mmReceiversIntermediary2Details
-	 * ReceivingPartiesAndAccount13.mmReceiversIntermediary2Details}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount13#mmReceivingAgentDetails
-	 * ReceivingPartiesAndAccount13.mmReceivingAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount13#mmPlaceOfSettlementDetails
-	 * ReceivingPartiesAndAccount13.mmPlaceOfSettlementDetails}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DirectDebitMandate5#mmDebtor
 	 * DirectDebitMandate5.mmDebtor}</li>
@@ -986,17 +829,8 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.Intermediary33#mmIdentification
 	 * Intermediary33.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount125#mmPartyIdentification
-	 * PartyIdentificationAndAccount125.mmPartyIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount125#mmPlaceOfSettlement
-	 * PartyIdentificationAndAccount125.mmPlaceOfSettlement}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Account20#mmAccountServicer
 	 * Account20.mmAccountServicer}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Intermediary35#mmIdentification
-	 * Intermediary35.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PaymentCard18#mmCardIssuerIdentification
 	 * PaymentCard18.mmCardIssuerIdentification}</li>
@@ -1006,23 +840,6 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CashAccount33#mmAccountServicer
 	 * CashAccount33.mmAccountServicer}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument48#mmDeliveringAgentDetails
-	 * FinancialInstrument48.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmOwnerIdentification
-	 * InvestmentAccount57.mmOwnerIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmAccountServicer
-	 * InvestmentAccount57.mmAccountServicer}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.ISATransfer24#mmTransferee
-	 * ISATransfer24.mmTransferee}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument47#mmDeliveringAgentDetails
-	 * FinancialInstrument47.mmDeliveringAgentDetails}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument46#mmDeliveringAgentDetails
-	 * FinancialInstrument46.mmDeliveringAgentDetails}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Obligation4#mmPartyA
 	 * Obligation4.mmPartyA}</li>
 	 * <li>
@@ -1242,21 +1059,6 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.AdditionalReference9#mmReferenceIssuer
 	 * AdditionalReference9.mmReferenceIssuer}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountIdentification40#mmAccountOwner
-	 * AccountIdentification40.mmAccountOwner}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SubAccountIdentification49#mmAccountOwner
-	 * SubAccountIdentification49.mmAccountOwner}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionDetails97#mmAccountOwner
-	 * TransactionDetails97.mmAccountOwner}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionDetails97#mmInvestor
-	 * TransactionDetails97.mmInvestor}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionDetails97#mmQualifiedForeignIntermediary
-	 * TransactionDetails97.mmQualifiedForeignIntermediary}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.IntraPositionDetails39#mmAccountOwner
 	 * IntraPositionDetails39.mmAccountOwner}</li>
 	 * <li>
@@ -1284,6 +1086,216 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Obligation5#mmServicingPartyB
 	 * Obligation5.mmServicingPartyB}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation31#mmIdentification
+	 * Organisation31.mmIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Intermediary41#mmIdentification
+	 * Intermediary41.mmIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransferStatusAndReason5#mmStatusInitiator
+	 * TransferStatusAndReason5.mmStatusInitiator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmOwnerIdentification
+	 * InvestmentAccount66.mmOwnerIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmAccountServicer
+	 * InvestmentAccount66.mmAccountServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer35#mmReceivingAgentDetails
+	 * Transfer35.mmReceivingAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer35#mmDeliveringAgentDetails
+	 * Transfer35.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmOwnerIdentification
+	 * InvestmentAccount67.mmOwnerIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmAccountServicer
+	 * InvestmentAccount67.mmAccountServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer34#mmReceivingAgentDetails
+	 * Transfer34.mmReceivingAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer34#mmDeliveringAgentDetails
+	 * Transfer34.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CancellationStatusAndReason4#mmStatusInitiator
+	 * CancellationStatusAndReason4.mmStatusInitiator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount18#mmDeliverersCustodianDetails
+	 * DeliveringPartiesAndAccount18.mmDeliverersCustodianDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount18#mmDeliverersIntermediary1Details
+	 * DeliveringPartiesAndAccount18.mmDeliverersIntermediary1Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount18#mmDeliverersIntermediary2Details
+	 * DeliveringPartiesAndAccount18.mmDeliverersIntermediary2Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount18#mmDeliveringAgentDetails
+	 * DeliveringPartiesAndAccount18.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount18#mmPlaceOfSettlementDetails
+	 * DeliveringPartiesAndAccount18.mmPlaceOfSettlementDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount17#mmDeliverersCustodianDetails
+	 * DeliveringPartiesAndAccount17.mmDeliverersCustodianDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount17#mmDeliverersIntermediary1Details
+	 * DeliveringPartiesAndAccount17.mmDeliverersIntermediary1Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount17#mmDeliverersIntermediary2Details
+	 * DeliveringPartiesAndAccount17.mmDeliverersIntermediary2Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount17#mmDeliveringAgentDetails
+	 * DeliveringPartiesAndAccount17.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DeliveringPartiesAndAccount17#mmPlaceOfSettlementDetails
+	 * DeliveringPartiesAndAccount17.mmPlaceOfSettlementDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount65#mmOwnerIdentification
+	 * InvestmentAccount65.mmOwnerIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount65#mmAccountServicer
+	 * InvestmentAccount65.mmAccountServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument60#mmDeliveringAgentDetails
+	 * FinancialInstrument60.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount156#mmPartyIdentification
+	 * PartyIdentificationAndAccount156.mmPartyIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentificationAndAccount156#mmPlaceOfSettlement
+	 * PartyIdentificationAndAccount156.mmPlaceOfSettlement}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount17#mmReceiversCustodianDetails
+	 * ReceivingPartiesAndAccount17.mmReceiversCustodianDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount17#mmReceiversIntermediary1Details
+	 * ReceivingPartiesAndAccount17.mmReceiversIntermediary1Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount17#mmReceiversIntermediary2Details
+	 * ReceivingPartiesAndAccount17.mmReceiversIntermediary2Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount17#mmReceivingAgentDetails
+	 * ReceivingPartiesAndAccount17.mmReceivingAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount17#mmPlaceOfSettlementDetails
+	 * ReceivingPartiesAndAccount17.mmPlaceOfSettlementDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount18#mmReceiversCustodianDetails
+	 * ReceivingPartiesAndAccount18.mmReceiversCustodianDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount18#mmReceiversIntermediary1Details
+	 * ReceivingPartiesAndAccount18.mmReceiversIntermediary1Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount18#mmReceiversIntermediary2Details
+	 * ReceivingPartiesAndAccount18.mmReceiversIntermediary2Details}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount18#mmReceivingAgentDetails
+	 * ReceivingPartiesAndAccount18.mmReceivingAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount18#mmPlaceOfSettlementDetails
+	 * ReceivingPartiesAndAccount18.mmPlaceOfSettlementDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument61#mmDeliveringAgentDetails
+	 * FinancialInstrument61.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument65#mmDeliveringAgentDetails
+	 * FinancialInstrument65.mmDeliveringAgentDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Account25#mmAccountServicer
+	 * Account25.mmAccountServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Fee4#mmRecipientIdentification
+	 * Fee4.mmRecipientIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Intermediary42#mmIdentification
+	 * Intermediary42.mmIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmOwnerIdentification
+	 * InvestmentAccount68.mmOwnerIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmAccountServicer
+	 * InvestmentAccount68.mmAccountServicer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.StandingSettlementInstruction14#mmVendor
+	 * StandingSettlementInstruction14.mmVendor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties62#mmDepository
+	 * SettlementParties62.mmDepository}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties62#mmParty1
+	 * SettlementParties62.mmParty1}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties62#mmParty2
+	 * SettlementParties62.mmParty2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties62#mmParty3
+	 * SettlementParties62.mmParty3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties62#mmParty4
+	 * SettlementParties62.mmParty4}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties62#mmParty5
+	 * SettlementParties62.mmParty5}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SubAccountIdentification51#mmAccountOwner
+	 * SubAccountIdentification51.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount64#mmAccountOwner
+	 * QuantityAndAccount64.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionDetails105#mmAccountOwner
+	 * TransactionDetails105.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionDetails105#mmInvestor
+	 * TransactionDetails105.mmInvestor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionDetails105#mmQualifiedForeignIntermediary
+	 * TransactionDetails105.mmQualifiedForeignIntermediary}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount63#mmAccountOwner
+	 * QuantityAndAccount63.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties63#mmParty2
+	 * SettlementParties63.mmParty2}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties63#mmParty3
+	 * SettlementParties63.mmParty3}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties63#mmParty4
+	 * SettlementParties63.mmParty4}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementParties63#mmParty5
+	 * SettlementParties63.mmParty5}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.Counterparty11Choice#mmSeller
+	 * Counterparty11Choice.mmSeller}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.Counterparty11Choice#mmBuyer
+	 * Counterparty11Choice.mmBuyer}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionDetails106#mmAccountOwner
+	 * TransactionDetails106.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionDetails107#mmInvestor
+	 * TransactionDetails107.mmInvestor}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount65#mmAccountOwner
+	 * QuantityAndAccount65.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount66#mmAccountOwner
+	 * QuantityAndAccount66.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.QuantityAndAccount68#mmAccountOwner
+	 * QuantityAndAccount68.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption141#mmAccountOwner
+	 * CorporateActionOption141.mmAccountOwner}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AccountIdentification43#mmAccountOwner
+	 * AccountIdentification43.mmAccountOwner}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1301,7 +1313,7 @@ public class Party extends RolePlayer {
 	 * definition} = "Specific identification assigned to a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, List<PartyIdentificationInformation>> mmIdentification = new MMBusinessAssociationEnd<Party, List<PartyIdentificationInformation>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AdditionalReference2.mmReferenceIssuer, AdditionalReference3.mmReferenceIssuer, FundParameters4.mmFundManagementCompany, Cheque4.mmPayeeIdentification,
 					PriceValuation4.mmFundManagementCompany, Account7.mmAccountServicer, Intermediary11.mmIdentification, DeliveryParameters4.mmNameAndAddress, SafekeepingPlaceAsCodeAndPartyIdentification.mmParty,
@@ -1330,34 +1342,19 @@ public class Party extends RolePlayer {
 					NonGuaranteedTrade3.mmTradeCounterpartyClearingMemberIdentification, DeliveringPartiesAndAccount11.mmDepository, DeliveringPartiesAndAccount11.mmParty1, DeliveringPartiesAndAccount11.mmParty2,
 					AdditionalReference6.mmReferenceIssuer, OtherParties27.mmInvestor, OtherParties27.mmQualifiedForeignIntermediary, OtherParties27.mmStockExchange, OtherParties27.mmTradeRegulator, OtherParties27.mmTripartyAgent,
 					OtherParties27.mmBroker, SettlementParties36.mmDepository, SettlementParties36.mmParty1, SettlementParties36.mmParty2, SettlementParties36.mmParty3, SettlementParties36.mmParty4, SettlementParties36.mmParty5,
-					StandingSettlementInstruction11.mmVendor, QuantityAndAccount39.mmAccountOwner, CashParties26.mmDebtor, CashParties26.mmDebtorAgent, CashParties26.mmCreditor, CashParties26.mmCreditorAgent, CashParties26.mmIntermediary,
-					SubAccountIdentification42.mmAccountOwner, Intermediary32.mmIdentification, QuantityAndAccount41.mmAccountOwner, QuantityAndAccount40.mmAccountOwner, TransactionDetails81.mmInvestor, CashParties25.mmDebtor,
-					CashParties25.mmDebtorAgent, CashParties25.mmCreditor, CashParties25.mmCreditorAgent, QuantityAndAccount42.mmAccountOwner, TransactionDetails74.mmInvestor, TransactionDetails82.mmInvestor,
-					TransactionDetails76.mmAccountOwner, QuantityAndAccount38.mmAccountOwner, SubAccountIdentification43.mmAccountOwner, TransactionDetails80.mmAccountOwner, TransactionDetails80.mmInvestor, Counterparty9Choice.mmSeller,
-					Counterparty9Choice.mmBuyer, ForeignExchangeTerms22.mmQuotingInstitution, SettlementParties39.mmParty2, SettlementParties39.mmParty3, SettlementParties39.mmParty4, SettlementParties39.mmParty5,
-					SettlementParties40.mmDepository, SettlementParties40.mmParty1, SettlementParties40.mmParty2, SettlementParties40.mmParty3, SettlementParties40.mmParty4, SettlementParties40.mmParty5,
-					QuantityAndAccount43.mmAccountOwner, PartyIdentificationAndAccount108.mmIdentification, PartyIdentificationAndAccount108.mmAlternateIdentification, PartyIdentificationAndAccount109.mmIdentification,
+					CashParties26.mmDebtor, CashParties26.mmDebtorAgent, CashParties26.mmCreditor, CashParties26.mmCreditorAgent, CashParties26.mmIntermediary, SubAccountIdentification42.mmAccountOwner, Intermediary32.mmIdentification,
+					QuantityAndAccount40.mmAccountOwner, TransactionDetails81.mmInvestor, CashParties25.mmDebtor, CashParties25.mmDebtorAgent, CashParties25.mmCreditor, CashParties25.mmCreditorAgent, TransactionDetails74.mmInvestor,
+					TransactionDetails82.mmInvestor, QuantityAndAccount38.mmAccountOwner, SubAccountIdentification43.mmAccountOwner, TransactionDetails80.mmAccountOwner, TransactionDetails80.mmInvestor,
+					ForeignExchangeTerms22.mmQuotingInstitution, SettlementParties40.mmDepository, SettlementParties40.mmParty1, SettlementParties40.mmParty2, SettlementParties40.mmParty3, SettlementParties40.mmParty4,
+					SettlementParties40.mmParty5, PartyIdentificationAndAccount108.mmIdentification, PartyIdentificationAndAccount108.mmAlternateIdentification, PartyIdentificationAndAccount109.mmIdentification,
 					PartyIdentificationAndAccount109.mmAlternateIdentification, OtherParties26.mmInvestor, OtherParties26.mmStockExchange, OtherParties26.mmTradeRegulator, Account18.mmAccountServicer, Linkages36.mmReferenceOwner,
 					Linkages37.mmReferenceOwner, OtherParties28.mmInvestor, OtherParties28.mmQualifiedForeignIntermediary, OtherParties28.mmStockExchange, OtherParties28.mmTradeRegulator, OtherParties28.mmTripartyAgent,
-					QuantityAndAccount44.mmAccountOwner, AccountAndBalance34.mmAccountOwner, AccountAndBalance35.mmAccountOwner, CorporateActionOption116.mmAccountOwner, AccountIdentification31.mmAccountOwner,
-					SettlementParties42.mmDepository, SettlementParties42.mmParty1, SettlementParties42.mmParty2, SettlementParties42.mmParty3, CashParties28.mmCreditor, CashParties28.mmCreditorAgent,
-					CashParties28.mmMarketClaimCounterparty, AccountAndBalance33.mmAccountOwner, AccountIdentification32.mmAccountOwner, CorporateActionNarrative26.mmOfferor, Organisation21.mmIdentification,
-					Intermediary36.mmIdentification, Intermediary34.mmIdentification, InvestmentAccount54.mmOwnerIdentification, InvestmentAccount54.mmAccountServicer, Transfer31.mmReceivingAgentDetails,
-					Transfer31.mmDeliveringAgentDetails, Transfer30.mmReceivingAgentDetails, Transfer30.mmDeliveringAgentDetails, InvestmentAccount56.mmOwnerIdentification, InvestmentAccount56.mmAccountServicer,
-					Transfer32.mmReceivingAgentDetails, Transfer32.mmDeliveringAgentDetails, AdditionalReference7.mmReferenceIssuer, CancellationStatusAndReason3.mmStatusInitiator, Transfer33.mmReceivingAgentDetails,
-					Transfer33.mmDeliveringAgentDetails, TransferStatusAndReason4.mmStatusInitiator, DeliveringPartiesAndAccount14.mmDeliverersCustodianDetails, DeliveringPartiesAndAccount14.mmDeliverersIntermediary1Details,
-					DeliveringPartiesAndAccount14.mmDeliverersIntermediary2Details, DeliveringPartiesAndAccount14.mmDeliveringAgentDetails, DeliveringPartiesAndAccount14.mmPlaceOfSettlementDetails,
-					DeliveringPartiesAndAccount13.mmDeliverersCustodianDetails, DeliveringPartiesAndAccount13.mmDeliverersIntermediary1Details, DeliveringPartiesAndAccount13.mmDeliverersIntermediary2Details,
-					DeliveringPartiesAndAccount13.mmDeliveringAgentDetails, DeliveringPartiesAndAccount13.mmPlaceOfSettlementDetails, ReceivingPartiesAndAccount14.mmReceiversCustodianDetails,
-					ReceivingPartiesAndAccount14.mmReceiversIntermediary1Details, ReceivingPartiesAndAccount14.mmReceiversIntermediary2Details, ReceivingPartiesAndAccount14.mmReceivingAgentDetails,
-					ReceivingPartiesAndAccount14.mmPlaceOfSettlementDetails, InvestmentAccount55.mmOwnerIdentification, InvestmentAccount55.mmAccountServicer, ForeignExchangeTerms26.mmQuotingInstitution, Tax28.mmRecipientIdentification,
-					Commission23.mmRecipientIdentification, Charge29.mmRecipientIdentification, ReceivingPartiesAndAccount13.mmReceiversCustodianDetails, ReceivingPartiesAndAccount13.mmReceiversIntermediary1Details,
-					ReceivingPartiesAndAccount13.mmReceiversIntermediary2Details, ReceivingPartiesAndAccount13.mmReceivingAgentDetails, ReceivingPartiesAndAccount13.mmPlaceOfSettlementDetails, DirectDebitMandate5.mmDebtor,
-					DirectDebitMandate5.mmCreditor, InvestmentAccount53.mmAccountServicer, Intermediary33.mmIdentification, PartyIdentificationAndAccount125.mmPartyIdentification, PartyIdentificationAndAccount125.mmPlaceOfSettlement,
-					Account20.mmAccountServicer, Intermediary35.mmIdentification, PaymentCard18.mmCardIssuerIdentification, CashAccount33.mmAccountOwner, CashAccount33.mmAccountServicer, FinancialInstrument48.mmDeliveringAgentDetails,
-					InvestmentAccount57.mmOwnerIdentification, InvestmentAccount57.mmAccountServicer, ISATransfer24.mmTransferee, FinancialInstrument47.mmDeliveringAgentDetails, FinancialInstrument46.mmDeliveringAgentDetails,
-					Obligation4.mmPartyA, Obligation4.mmServicingPartyA, Obligation4.mmPartyB, Obligation4.mmServicingPartyB, OtherCollateral7.mmIssuer, OtherCollateral6.mmIssuer, OtherCollateral5.mmIssuer,
-					ReceivingPartiesAndAccount15.mmDepository, DeliveringPartiesAndAccount15.mmDepository, DeliveringPartiesAndAccount15.mmParty1, DeliveringPartiesAndAccount15.mmParty2, InvestmentAccount61.mmAccountServicer,
+					AccountAndBalance34.mmAccountOwner, AccountAndBalance35.mmAccountOwner, AccountIdentification31.mmAccountOwner, SettlementParties42.mmDepository, SettlementParties42.mmParty1, SettlementParties42.mmParty2,
+					SettlementParties42.mmParty3, CashParties28.mmCreditor, CashParties28.mmCreditorAgent, CashParties28.mmMarketClaimCounterparty, AccountAndBalance33.mmAccountOwner, AccountIdentification32.mmAccountOwner,
+					CorporateActionNarrative26.mmOfferor, Intermediary36.mmIdentification, AdditionalReference7.mmReferenceIssuer, DirectDebitMandate5.mmDebtor, DirectDebitMandate5.mmCreditor, InvestmentAccount53.mmAccountServicer,
+					Intermediary33.mmIdentification, Account20.mmAccountServicer, PaymentCard18.mmCardIssuerIdentification, CashAccount33.mmAccountOwner, CashAccount33.mmAccountServicer, Obligation4.mmPartyA, Obligation4.mmServicingPartyA,
+					Obligation4.mmPartyB, Obligation4.mmServicingPartyB, OtherCollateral7.mmIssuer, OtherCollateral6.mmIssuer, OtherCollateral5.mmIssuer, ReceivingPartiesAndAccount15.mmDepository,
+					DeliveringPartiesAndAccount15.mmDepository, DeliveringPartiesAndAccount15.mmParty1, DeliveringPartiesAndAccount15.mmParty2, InvestmentAccount61.mmAccountServicer,
 					IndividualOrderConfirmationStatusAndReason2.mmStatusInitiator, AdditionalReference8.mmReferenceIssuer, SafekeepingAccount7.mmAccountOwner, InvestmentAccount63.mmAccountServicer, InvestmentAccount62.mmAccountServicer,
 					AccountSubLevel15.mmAccountOwner, AccountSubLevel15.mmAccountServicer, AccountSubLevel16.mmAccountOwner, AccountSubLevel16.mmAccountServicer, InvestmentAccount58.mmOwnerIdentification,
 					InvestmentAccount58.mmAccountServicer, AccountSubLevel18.mmAccountOwner, AccountSubLevel18.mmAccountServicer, AccountSubLevel19.mmAccountOwner, AccountSubLevel19.mmAccountServicer,
@@ -1371,25 +1368,49 @@ public class Party extends RolePlayer {
 					DeliveringPartiesAndAccount16.mmDeliverersCustodianDetails, DeliveringPartiesAndAccount16.mmDeliverersIntermediary1Details, DeliveringPartiesAndAccount16.mmDeliverersIntermediary2Details,
 					DeliveringPartiesAndAccount16.mmDeliveringAgentDetails, AccountSubLevel13.mmAccountOwner, AccountSubLevel13.mmAccountServicer, AccountSubLevel14.mmAccountOwner, AccountSubLevel14.mmAccountServicer,
 					CreditTransfer8.mmDebtor, CreditTransfer8.mmDebtorAgent, CreditTransfer8.mmCreditor, Account22.mmAccountServicer, DirectDebitMandate6.mmDebtor, DirectDebitMandate6.mmCreditor, AdditionalReference9.mmReferenceIssuer,
-					AccountIdentification40.mmAccountOwner, SubAccountIdentification49.mmAccountOwner, TransactionDetails97.mmAccountOwner, TransactionDetails97.mmInvestor, TransactionDetails97.mmQualifiedForeignIntermediary,
 					IntraPositionDetails39.mmAccountOwner, AdditionalInformation13.mmInvestor, AdditionalInformation13.mmDeliveringParty1, AdditionalInformation13.mmReceivingParty1, SecuritiesFinancingTransactionDetails35.mmAccountOwner,
-					SecuritiesFinancingTransactionDetails35.mmInvestor, Obligation5.mmPartyA, Obligation5.mmServicingPartyA, Obligation5.mmPartyB, Obligation5.mmServicingPartyB);
+					SecuritiesFinancingTransactionDetails35.mmInvestor, Obligation5.mmPartyA, Obligation5.mmServicingPartyA, Obligation5.mmPartyB, Obligation5.mmServicingPartyB, Organisation31.mmIdentification,
+					Intermediary41.mmIdentification, TransferStatusAndReason5.mmStatusInitiator, InvestmentAccount66.mmOwnerIdentification, InvestmentAccount66.mmAccountServicer, Transfer35.mmReceivingAgentDetails,
+					Transfer35.mmDeliveringAgentDetails, InvestmentAccount67.mmOwnerIdentification, InvestmentAccount67.mmAccountServicer, Transfer34.mmReceivingAgentDetails, Transfer34.mmDeliveringAgentDetails,
+					CancellationStatusAndReason4.mmStatusInitiator, DeliveringPartiesAndAccount18.mmDeliverersCustodianDetails, DeliveringPartiesAndAccount18.mmDeliverersIntermediary1Details,
+					DeliveringPartiesAndAccount18.mmDeliverersIntermediary2Details, DeliveringPartiesAndAccount18.mmDeliveringAgentDetails, DeliveringPartiesAndAccount18.mmPlaceOfSettlementDetails,
+					DeliveringPartiesAndAccount17.mmDeliverersCustodianDetails, DeliveringPartiesAndAccount17.mmDeliverersIntermediary1Details, DeliveringPartiesAndAccount17.mmDeliverersIntermediary2Details,
+					DeliveringPartiesAndAccount17.mmDeliveringAgentDetails, DeliveringPartiesAndAccount17.mmPlaceOfSettlementDetails, InvestmentAccount65.mmOwnerIdentification, InvestmentAccount65.mmAccountServicer,
+					FinancialInstrument60.mmDeliveringAgentDetails, PartyIdentificationAndAccount156.mmPartyIdentification, PartyIdentificationAndAccount156.mmPlaceOfSettlement, ReceivingPartiesAndAccount17.mmReceiversCustodianDetails,
+					ReceivingPartiesAndAccount17.mmReceiversIntermediary1Details, ReceivingPartiesAndAccount17.mmReceiversIntermediary2Details, ReceivingPartiesAndAccount17.mmReceivingAgentDetails,
+					ReceivingPartiesAndAccount17.mmPlaceOfSettlementDetails, ReceivingPartiesAndAccount18.mmReceiversCustodianDetails, ReceivingPartiesAndAccount18.mmReceiversIntermediary1Details,
+					ReceivingPartiesAndAccount18.mmReceiversIntermediary2Details, ReceivingPartiesAndAccount18.mmReceivingAgentDetails, ReceivingPartiesAndAccount18.mmPlaceOfSettlementDetails,
+					FinancialInstrument61.mmDeliveringAgentDetails, FinancialInstrument65.mmDeliveringAgentDetails, Account25.mmAccountServicer, Fee4.mmRecipientIdentification, Intermediary42.mmIdentification,
+					InvestmentAccount68.mmOwnerIdentification, InvestmentAccount68.mmAccountServicer, StandingSettlementInstruction14.mmVendor, SettlementParties62.mmDepository, SettlementParties62.mmParty1, SettlementParties62.mmParty2,
+					SettlementParties62.mmParty3, SettlementParties62.mmParty4, SettlementParties62.mmParty5, SubAccountIdentification51.mmAccountOwner, QuantityAndAccount64.mmAccountOwner, TransactionDetails105.mmAccountOwner,
+					TransactionDetails105.mmInvestor, TransactionDetails105.mmQualifiedForeignIntermediary, QuantityAndAccount63.mmAccountOwner, SettlementParties63.mmParty2, SettlementParties63.mmParty3, SettlementParties63.mmParty4,
+					SettlementParties63.mmParty5, Counterparty11Choice.mmSeller, Counterparty11Choice.mmBuyer, TransactionDetails106.mmAccountOwner, TransactionDetails107.mmInvestor, QuantityAndAccount65.mmAccountOwner,
+					QuantityAndAccount66.mmAccountOwner, QuantityAndAccount68.mmAccountOwner, CorporateActionOption141.mmAccountOwner, AccountIdentification43.mmAccountOwner);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Specific identification assigned to a party.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedParty;
+			opposite_lazy = () -> PartyIdentificationInformation.mmIdentifiedParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
+			type_lazy = () -> PartyIdentificationInformation.mmObject();
+		}
+
+		@Override
+		public List<PartyIdentificationInformation> getValue(Party obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Party obj, List<PartyIdentificationInformation> value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected MoneyLaunderingCheckCode moneyLaunderingCheck;
 	/**
-	 * Status of an identity check to prevent money laundering. This includes
-	 * the counter-terrorism check.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1431,7 +1452,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMoneyLaunderingCheck = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Party, MoneyLaunderingCheckCode> mmMoneyLaunderingCheck = new MMBusinessAttribute<Party, MoneyLaunderingCheckCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MoneyLaunderingCheck1Choice.mmCode, MoneyLaunderingCheck1Choice.mmProprietary, InvestmentAccountOwnershipInformation15.mmMoneyLaunderingCheck,
 					InvestmentAccountOwnershipInformation14.mmMoneyLaunderingCheck);
@@ -1445,19 +1466,20 @@ public class Party extends RolePlayer {
 			simpleType_lazy = () -> MoneyLaunderingCheckCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Party.class.getMethod("getMoneyLaunderingCheck", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MoneyLaunderingCheckCode getValue(Party obj) {
+			return obj.getMoneyLaunderingCheck();
+		}
+
+		@Override
+		public void setValue(Party obj, MoneyLaunderingCheckCode value) {
+			obj.setMoneyLaunderingCheck(value);
 		}
 	};
 	protected Tax taxationConditions;
 	/**
-	 * Taxation parameters which apply to an individual person or to an
-	 * organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1482,6 +1504,8 @@ public class Party extends RolePlayer {
 	 * Tax30.mmCountry}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Tax31#mmCountry
 	 * Tax31.mmCountry}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Tax34#mmCountry
+	 * Tax34.mmCountry}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1501,9 +1525,9 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxationConditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, Tax> mmTaxationConditions = new MMBusinessAssociationEnd<Party, Tax>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Tax17.mmCountry, Tax32.mmCountry, Tax30.mmCountry, Tax31.mmCountry);
+			derivation_lazy = () -> Arrays.asList(Tax17.mmCountry, Tax32.mmCountry, Tax30.mmCountry, Tax31.mmCountry, Tax34.mmCountry);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1511,16 +1535,25 @@ public class Party extends RolePlayer {
 			definition = "Taxation parameters which apply to an individual person or to an organisation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmTaxableParty;
+			opposite_lazy = () -> Tax.mmTaxableParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(Party obj) {
+			return obj.getTaxationConditions();
+		}
+
+		@Override
+		public void setValue(Party obj, Tax value) {
+			obj.setTaxationConditions(value);
 		}
 	};
 	protected Location domicile;
 	/**
-	 * Location in which a person is permanently domiciled (the place of a
-	 * person's permanent home).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1562,7 +1595,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDomicile = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location> mmDomicile = new MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BeneficialOwner1.mmDomicileCountry, BeneficialOwner2.mmDomicileCountry);
 			isDerived = false;
@@ -1576,12 +1609,21 @@ public class Party extends RolePlayer {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Location getValue(Party obj) {
+			return obj.getDomicile();
+		}
+
+		@Override
+		public void setValue(Party obj, com.tools20022.repository.entity.Location value) {
+			obj.setDomicile(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.Location> residence;
 	/**
-	 * Location from which the affairs of a company are directed or location in
-	 * which a person resides (the place of a person's home).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1612,7 +1654,7 @@ public class Party extends RolePlayer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResidence = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, List<Location>> mmResidence = new MMBusinessAssociationEnd<Party, List<Location>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -1624,11 +1666,21 @@ public class Party extends RolePlayer {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 		}
+
+		@Override
+		public List<Location> getValue(Party obj) {
+			return obj.getResidence();
+		}
+
+		@Override
+		public void setValue(Party obj, List<Location> value) {
+			obj.setResidence(value);
+		}
 	};
 	protected PowerOfAttorney powerOfAttorney;
 	/**
-	 * Power of attorney which is held by the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1658,7 +1710,7 @@ public class Party extends RolePlayer {
 	 * definition} = "Power of attorney which is held by the party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPowerOfAttorney = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, Optional<PowerOfAttorney>> mmPowerOfAttorney = new MMBusinessAssociationEnd<Party, Optional<PowerOfAttorney>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -1671,11 +1723,21 @@ public class Party extends RolePlayer {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PowerOfAttorney.mmObject();
 		}
+
+		@Override
+		public Optional<PowerOfAttorney> getValue(Party obj) {
+			return obj.getPowerOfAttorney();
+		}
+
+		@Override
+		public void setValue(Party obj, Optional<PowerOfAttorney> value) {
+			obj.setPowerOfAttorney(value.orElse(null));
+		}
 	};
 	protected Location location;
 	/**
-	 * Location of the taxable party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1704,7 +1766,7 @@ public class Party extends RolePlayer {
 	 * definition} = "Location of the taxable party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location> mmLocation = new MMBusinessAssociationEnd<Party, com.tools20022.repository.entity.Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -1717,11 +1779,21 @@ public class Party extends RolePlayer {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Location getValue(Party obj) {
+			return obj.getLocation();
+		}
+
+		@Override
+		public void setValue(Party obj, com.tools20022.repository.entity.Location value) {
+			obj.setLocation(value);
+		}
 	};
 	protected Security closeLinkSecurity;
 	/**
-	 * Security for which a close link with a party is identified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1751,7 +1823,7 @@ public class Party extends RolePlayer {
 	 * "Security for which a close link with a party is identified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCloseLinkSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Party, Security> mmCloseLinkSecurity = new MMBusinessAssociationEnd<Party, Security>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
@@ -1760,30 +1832,89 @@ public class Party extends RolePlayer {
 			definition = "Security for which a close link with a party is identified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmCloseLink;
+			opposite_lazy = () -> Security.mmCloseLink;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Security getValue(Party obj) {
+			return obj.getCloseLinkSecurity();
+		}
+
+		@Override
+		public void setValue(Party obj, Security value) {
+			obj.setCloseLinkSecurity(value);
+		}
+	};
+	protected CreditQualityCode creditQuality;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.codeset.CreditQualityCode
+	 * CreditQualityCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} = {@linkplain com.tools20022.repository.entity.Party
+	 * Party}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CreditQuality"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Credit quality for the clearing member."</li>
+	 * </ul>
+	 */
+	public static final MMBusinessAttribute<Party, CreditQualityCode> mmCreditQuality = new MMBusinessAttribute<Party, CreditQualityCode>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "CreditQuality";
+			definition = "Credit quality for the clearing member.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			simpleType_lazy = () -> CreditQualityCode.mmObject();
+		}
+
+		@Override
+		public CreditQualityCode getValue(Party obj) {
+			return obj.getCreditQuality();
+		}
+
+		@Override
+		public void setValue(Party obj, CreditQualityCode value) {
+			obj.setCreditQuality(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Party";
 				definition = "Entity involved in an activity.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmCloseLink, com.tools20022.repository.entity.ContactPoint.mmRelatedParty,
-						com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedParty, com.tools20022.repository.entity.Location.mmDomiciledParty, com.tools20022.repository.entity.Location.mmParty,
-						com.tools20022.repository.entity.Location.mmTaxableParty, com.tools20022.repository.entity.Tax.mmTaxableParty, com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedParty);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmCloseLink, com.tools20022.repository.entity.ContactPoint.mmRelatedParty, PartyIdentificationInformation.mmIdentifiedParty,
+						com.tools20022.repository.entity.Location.mmDomiciledParty, com.tools20022.repository.entity.Location.mmParty, com.tools20022.repository.entity.Location.mmTaxableParty, Tax.mmTaxableParty,
+						com.tools20022.repository.entity.PowerOfAttorney.mmAuthorisedParty);
 				derivationElement_lazy = () -> Arrays.asList(Report5.mmNonClearingMember, InvestmentAccountOwnershipInformation15.mmParty, InvestmentAccountOwnershipInformation14.mmParty);
 				subType_lazy = () -> Arrays.asList(Organisation.mmObject(), Person.mmObject());
 				superType_lazy = () -> RolePlayer.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Party.mmContactPoint, com.tools20022.repository.entity.Party.mmIdentification, com.tools20022.repository.entity.Party.mmMoneyLaunderingCheck,
 						com.tools20022.repository.entity.Party.mmTaxationConditions, com.tools20022.repository.entity.Party.mmDomicile, com.tools20022.repository.entity.Party.mmResidence,
-						com.tools20022.repository.entity.Party.mmPowerOfAttorney, com.tools20022.repository.entity.Party.mmLocation, com.tools20022.repository.entity.Party.mmCloseLinkSecurity);
-				derivationComponent_lazy = () -> Arrays.asList(TradingPartyCapacity1Choice.mmObject(), TradingPartyCapacity2Choice.mmObject(), Counterparty9Choice.mmObject(), PartyIdentificationAndAccount108.mmObject(),
-						PartyIdentificationAndAccount109.mmObject(), CountryAndResidentialStatusType2.mmObject(), PartyIdentificationAndAccount125.mmObject(), Party33Choice.mmObject(), Party32Choice.mmObject());
+						com.tools20022.repository.entity.Party.mmPowerOfAttorney, com.tools20022.repository.entity.Party.mmLocation, com.tools20022.repository.entity.Party.mmCloseLinkSecurity,
+						com.tools20022.repository.entity.Party.mmCreditQuality);
+				derivationComponent_lazy = () -> Arrays.asList(TradingPartyCapacity1Choice.mmObject(), TradingPartyCapacity2Choice.mmObject(), PartyIdentificationAndAccount108.mmObject(), PartyIdentificationAndAccount109.mmObject(),
+						CountryAndResidentialStatusType2.mmObject(), Party33Choice.mmObject(), Party32Choice.mmObject(), PartyIdentificationAndAccount156.mmObject(), Counterparty11Choice.mmObject());
 			}
 
 			@Override
@@ -1795,74 +1926,92 @@ public class Party extends RolePlayer {
 	}
 
 	public List<ContactPoint> getContactPoint() {
-		return contactPoint;
+		return contactPoint == null ? contactPoint = new ArrayList<>() : contactPoint;
 	}
 
-	public void setContactPoint(List<com.tools20022.repository.entity.ContactPoint> contactPoint) {
-		this.contactPoint = contactPoint;
+	public Party setContactPoint(List<com.tools20022.repository.entity.ContactPoint> contactPoint) {
+		this.contactPoint = Objects.requireNonNull(contactPoint);
+		return this;
 	}
 
 	public List<PartyIdentificationInformation> getIdentification() {
-		return identification;
+		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public void setIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> identification) {
-		this.identification = identification;
+	public Party setIdentification(List<PartyIdentificationInformation> identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public MoneyLaunderingCheckCode getMoneyLaunderingCheck() {
 		return moneyLaunderingCheck;
 	}
 
-	public void setMoneyLaunderingCheck(MoneyLaunderingCheckCode moneyLaunderingCheck) {
-		this.moneyLaunderingCheck = moneyLaunderingCheck;
+	public Party setMoneyLaunderingCheck(MoneyLaunderingCheckCode moneyLaunderingCheck) {
+		this.moneyLaunderingCheck = Objects.requireNonNull(moneyLaunderingCheck);
+		return this;
 	}
 
 	public Tax getTaxationConditions() {
 		return taxationConditions;
 	}
 
-	public void setTaxationConditions(com.tools20022.repository.entity.Tax taxationConditions) {
-		this.taxationConditions = taxationConditions;
+	public Party setTaxationConditions(Tax taxationConditions) {
+		this.taxationConditions = Objects.requireNonNull(taxationConditions);
+		return this;
 	}
 
 	public Location getDomicile() {
 		return domicile;
 	}
 
-	public void setDomicile(com.tools20022.repository.entity.Location domicile) {
-		this.domicile = domicile;
+	public Party setDomicile(com.tools20022.repository.entity.Location domicile) {
+		this.domicile = Objects.requireNonNull(domicile);
+		return this;
 	}
 
 	public List<Location> getResidence() {
-		return residence;
+		return residence == null ? residence = new ArrayList<>() : residence;
 	}
 
-	public void setResidence(List<com.tools20022.repository.entity.Location> residence) {
-		this.residence = residence;
+	public Party setResidence(List<com.tools20022.repository.entity.Location> residence) {
+		this.residence = Objects.requireNonNull(residence);
+		return this;
 	}
 
-	public PowerOfAttorney getPowerOfAttorney() {
-		return powerOfAttorney;
+	public Optional<PowerOfAttorney> getPowerOfAttorney() {
+		return powerOfAttorney == null ? Optional.empty() : Optional.of(powerOfAttorney);
 	}
 
-	public void setPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney powerOfAttorney) {
+	public Party setPowerOfAttorney(com.tools20022.repository.entity.PowerOfAttorney powerOfAttorney) {
 		this.powerOfAttorney = powerOfAttorney;
+		return this;
 	}
 
 	public Location getLocation() {
 		return location;
 	}
 
-	public void setLocation(com.tools20022.repository.entity.Location location) {
-		this.location = location;
+	public Party setLocation(com.tools20022.repository.entity.Location location) {
+		this.location = Objects.requireNonNull(location);
+		return this;
 	}
 
 	public Security getCloseLinkSecurity() {
 		return closeLinkSecurity;
 	}
 
-	public void setCloseLinkSecurity(com.tools20022.repository.entity.Security closeLinkSecurity) {
-		this.closeLinkSecurity = closeLinkSecurity;
+	public Party setCloseLinkSecurity(Security closeLinkSecurity) {
+		this.closeLinkSecurity = Objects.requireNonNull(closeLinkSecurity);
+		return this;
+	}
+
+	public CreditQualityCode getCreditQuality() {
+		return creditQuality;
+	}
+
+	public Party setCreditQuality(CreditQualityCode creditQuality) {
+		this.creditQuality = Objects.requireNonNull(creditQuality);
+		return this;
 	}
 }

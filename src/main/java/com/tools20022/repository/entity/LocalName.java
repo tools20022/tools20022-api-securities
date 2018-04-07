@@ -21,11 +21,13 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Name of the security.
@@ -61,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,8 +80,8 @@ public class LocalName {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max350Text fullName;
 	/**
-	 * Name of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,21 +110,6 @@ public class LocalName {
 	 * <li>{@linkplain com.tools20022.repository.msg.Fund1#mmName Fund1.mmName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Fund3#mmName Fund3.mmName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Fund4#mmName Fund4.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument50#mmName
-	 * FinancialInstrument50.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument49#mmName
-	 * FinancialInstrument49.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument48#mmName
-	 * FinancialInstrument48.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument47#mmName
-	 * FinancialInstrument47.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument46#mmName
-	 * FinancialInstrument46.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SecurityInstrumentDescription9#mmFullName
 	 * SecurityInstrumentDescription9.mmFullName}</li>
@@ -156,6 +143,21 @@ public class LocalName {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.HoldBackInformation3#mmFinancialInstrumentName
 	 * HoldBackInformation3.mmFinancialInstrumentName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument60#mmName
+	 * FinancialInstrument60.mmName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument64#mmName
+	 * FinancialInstrument64.mmName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument63#mmName
+	 * FinancialInstrument63.mmName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument61#mmName
+	 * FinancialInstrument61.mmName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument65#mmName
+	 * FinancialInstrument65.mmName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -173,13 +175,13 @@ public class LocalName {
 	 * definition} = "Name of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFullName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LocalName, Max350Text> mmFullName = new MMBusinessAttribute<LocalName, Max350Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SecurityIdentification1.mmName, FinancialInstrument17.mmName, FinancialInstrument8.mmName, FinancialInstrument13.mmName, FinancialInstrument9.mmName, Fund2.mmName, Fund1.mmName,
-					Fund3.mmName, Fund4.mmName, FinancialInstrument50.mmName, FinancialInstrument49.mmName, FinancialInstrument48.mmName, FinancialInstrument47.mmName, FinancialInstrument46.mmName,
-					SecurityInstrumentDescription9.mmFullName, SecurityInstrumentDescription11.mmFullName, FinancialInstrument57.mmName, FinancialInstrument56.mmName, HoldBackInformation2.mmFinancialInstrumentName,
-					FinancialInstrument55.mmName, TransparencyDataReport11.mmFullName, TransparencyDataReport12.mmFullName, TransparencyDataReport10.mmFullName, TransparencyDataReport14.mmFullName,
-					HoldBackInformation3.mmFinancialInstrumentName);
+					Fund3.mmName, Fund4.mmName, SecurityInstrumentDescription9.mmFullName, SecurityInstrumentDescription11.mmFullName, FinancialInstrument57.mmName, FinancialInstrument56.mmName,
+					HoldBackInformation2.mmFinancialInstrumentName, FinancialInstrument55.mmName, TransparencyDataReport11.mmFullName, TransparencyDataReport12.mmFullName, TransparencyDataReport10.mmFullName,
+					TransparencyDataReport14.mmFullName, HoldBackInformation3.mmFinancialInstrumentName, FinancialInstrument60.mmName, FinancialInstrument64.mmName, FinancialInstrument63.mmName, FinancialInstrument61.mmName,
+					FinancialInstrument65.mmName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -190,18 +192,20 @@ public class LocalName {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LocalName.class.getMethod("getFullName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(LocalName obj) {
+			return obj.getFullName();
+		}
+
+		@Override
+		public void setValue(LocalName obj, Max350Text value) {
+			obj.setFullName(value);
 		}
 	};
 	protected SecuritiesIdentification relatedSecurity;
 	/**
-	 * Identification which contains a name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,7 +236,7 @@ public class LocalName {
 	 * definition} = "Identification which contains a name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LocalName, Optional<SecuritiesIdentification>> mmRelatedSecurity = new MMBusinessAssociationEnd<LocalName, Optional<SecuritiesIdentification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
@@ -241,15 +245,25 @@ public class LocalName {
 			definition = "Identification which contains a name.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmName;
+			opposite_lazy = () -> SecuritiesIdentification.mmName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			type_lazy = () -> SecuritiesIdentification.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesIdentification> getValue(LocalName obj) {
+			return obj.getRelatedSecurity();
+		}
+
+		@Override
+		public void setValue(LocalName obj, Optional<SecuritiesIdentification> value) {
+			obj.setRelatedSecurity(value.orElse(null));
 		}
 	};
 	protected Max35Text shortName;
 	/**
-	 * Short name of the security
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,21 +273,6 @@ public class LocalName {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument50#mmShortName
-	 * FinancialInstrument50.mmShortName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument49#mmShortName
-	 * FinancialInstrument49.mmShortName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument48#mmShortName
-	 * FinancialInstrument48.mmShortName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument47#mmShortName
-	 * FinancialInstrument47.mmShortName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument46#mmShortName
-	 * FinancialInstrument46.mmShortName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SecurityInstrumentDescription9#mmShortName
 	 * SecurityInstrumentDescription9.mmShortName}</li>
@@ -286,6 +285,21 @@ public class LocalName {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument55#mmShortName
 	 * FinancialInstrument55.mmShortName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument60#mmShortName
+	 * FinancialInstrument60.mmShortName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument64#mmShortName
+	 * FinancialInstrument64.mmShortName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument63#mmShortName
+	 * FinancialInstrument63.mmShortName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument61#mmShortName
+	 * FinancialInstrument61.mmShortName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument65#mmShortName
+	 * FinancialInstrument65.mmShortName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -303,10 +317,10 @@ public class LocalName {
 	 * definition} = "Short name of the security"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmShortName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LocalName, Max35Text> mmShortName = new MMBusinessAttribute<LocalName, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(FinancialInstrument50.mmShortName, FinancialInstrument49.mmShortName, FinancialInstrument48.mmShortName, FinancialInstrument47.mmShortName, FinancialInstrument46.mmShortName,
-					SecurityInstrumentDescription9.mmShortName, FinancialInstrument57.mmShortName, FinancialInstrument56.mmShortName, FinancialInstrument55.mmShortName);
+			derivation_lazy = () -> Arrays.asList(SecurityInstrumentDescription9.mmShortName, FinancialInstrument57.mmShortName, FinancialInstrument56.mmShortName, FinancialInstrument55.mmShortName, FinancialInstrument60.mmShortName,
+					FinancialInstrument64.mmShortName, FinancialInstrument63.mmShortName, FinancialInstrument61.mmShortName, FinancialInstrument65.mmShortName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -317,18 +331,20 @@ public class LocalName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LocalName.class.getMethod("getShortName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(LocalName obj) {
+			return obj.getShortName();
+		}
+
+		@Override
+		public void setValue(LocalName obj, Max35Text value) {
+			obj.setShortName(value);
 		}
 	};
 	protected LanguageCode language;
 	/**
-	 * Language in which the security name is expressed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -350,7 +366,7 @@ public class LocalName {
 	 * definition} = "Language in which the security name is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LocalName, LanguageCode> mmLanguage = new MMBusinessAttribute<LocalName, LanguageCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
@@ -362,23 +378,25 @@ public class LocalName {
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LocalName.class.getMethod("getLanguage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LanguageCode getValue(LocalName obj) {
+			return obj.getLanguage();
+		}
+
+		@Override
+		public void setValue(LocalName obj, LanguageCode value) {
+			obj.setLanguage(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocalName";
 				definition = "Name of the security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.mmName);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesIdentification.mmName);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LocalName.mmFullName, com.tools20022.repository.entity.LocalName.mmRelatedSecurity, com.tools20022.repository.entity.LocalName.mmShortName,
 						com.tools20022.repository.entity.LocalName.mmLanguage);
 			}
@@ -395,31 +413,35 @@ public class LocalName {
 		return fullName;
 	}
 
-	public void setFullName(Max350Text fullName) {
-		this.fullName = fullName;
+	public LocalName setFullName(Max350Text fullName) {
+		this.fullName = Objects.requireNonNull(fullName);
+		return this;
 	}
 
-	public SecuritiesIdentification getRelatedSecurity() {
-		return relatedSecurity;
+	public Optional<SecuritiesIdentification> getRelatedSecurity() {
+		return relatedSecurity == null ? Optional.empty() : Optional.of(relatedSecurity);
 	}
 
-	public void setRelatedSecurity(com.tools20022.repository.entity.SecuritiesIdentification relatedSecurity) {
+	public LocalName setRelatedSecurity(SecuritiesIdentification relatedSecurity) {
 		this.relatedSecurity = relatedSecurity;
+		return this;
 	}
 
 	public Max35Text getShortName() {
 		return shortName;
 	}
 
-	public void setShortName(Max35Text shortName) {
-		this.shortName = shortName;
+	public LocalName setShortName(Max35Text shortName) {
+		this.shortName = Objects.requireNonNull(shortName);
+		return this;
 	}
 
 	public LanguageCode getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(LanguageCode language) {
-		this.language = language;
+	public LocalName setLanguage(LanguageCode language) {
+		this.language = Objects.requireNonNull(language);
+		return this;
 	}
 }

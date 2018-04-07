@@ -23,9 +23,14 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Collateral;
 import com.tools20022.repository.entity.CollateralProposal;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashCollateralResponse2;
+import com.tools20022.repository.msg.OtherCollateralResponse2;
+import com.tools20022.repository.msg.SecuritiesCollateralResponse1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCollateralResponsePresenceRule#forCollateralResponse2
+ * ConstraintCollateralResponsePresenceRule.forCollateralResponse2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralResponse2", propOrder = {"securitiesCollateralResponse", "cashCollateralResponse", "otherCollateralResponse"})
 public class CollateralResponse2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.SecuritiesCollateralResponse1> securitiesCollateralResponse;
+	@XmlElement(name = "SctiesCollRspn")
+	protected List<SecuritiesCollateralResponse1> securitiesCollateralResponse;
 	/**
-	 * Provides details on the securities collateral proposal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -110,10 +124,10 @@ public class CollateralResponse2 {
 	 * definition} = "Provides details on the securities collateral proposal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesCollateralResponse = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CollateralResponse2, List<SecuritiesCollateralResponse1>> mmSecuritiesCollateralResponse = new MMMessageAssociationEnd<CollateralResponse2, List<SecuritiesCollateralResponse1>>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmStatus;
-			componentContext_lazy = () -> CollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesCollRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,13 +135,24 @@ public class CollateralResponse2 {
 			definition = "Provides details on the securities collateral proposal.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecuritiesCollateralResponse1.mmObject();
+			type_lazy = () -> SecuritiesCollateralResponse1.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesCollateralResponse1> getValue(CollateralResponse2 obj) {
+			return obj.getSecuritiesCollateralResponse();
+		}
+
+		@Override
+		public void setValue(CollateralResponse2 obj, List<SecuritiesCollateralResponse1> value) {
+			obj.setSecuritiesCollateralResponse(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CashCollateralResponse2> cashCollateralResponse;
+	@XmlElement(name = "CshCollRspn")
+	protected List<CashCollateralResponse2> cashCollateralResponse;
 	/**
-	 * Provides details on the cash collateral proposal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,10 +182,10 @@ public class CollateralResponse2 {
 	 * definition} = "Provides details on the cash collateral proposal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashCollateralResponse = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CollateralResponse2, List<CashCollateralResponse2>> mmCashCollateralResponse = new MMMessageAssociationEnd<CollateralResponse2, List<CashCollateralResponse2>>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmStatus;
-			componentContext_lazy = () -> CollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "CshCollRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,13 +193,24 @@ public class CollateralResponse2 {
 			definition = "Provides details on the cash collateral proposal.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
+			type_lazy = () -> CashCollateralResponse2.mmObject();
+		}
+
+		@Override
+		public List<CashCollateralResponse2> getValue(CollateralResponse2 obj) {
+			return obj.getCashCollateralResponse();
+		}
+
+		@Override
+		public void setValue(CollateralResponse2 obj, List<CashCollateralResponse2> value) {
+			obj.setCashCollateralResponse(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.OtherCollateralResponse2> otherCollateralResponse;
+	@XmlElement(name = "OthrCollRspn")
+	protected List<OtherCollateralResponse2> otherCollateralResponse;
 	/**
-	 * Provides details on other collateral proposal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -204,10 +240,10 @@ public class CollateralResponse2 {
 	 * definition} = "Provides details on other collateral proposal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherCollateralResponse = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CollateralResponse2, List<OtherCollateralResponse2>> mmOtherCollateralResponse = new MMMessageAssociationEnd<CollateralResponse2, List<OtherCollateralResponse2>>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmStatus;
-			componentContext_lazy = () -> CollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "OthrCollRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,16 +251,28 @@ public class CollateralResponse2 {
 			definition = "Provides details on other collateral proposal.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OtherCollateralResponse2.mmObject();
+			type_lazy = () -> OtherCollateralResponse2.mmObject();
+		}
+
+		@Override
+		public List<OtherCollateralResponse2> getValue(CollateralResponse2 obj) {
+			return obj.getOtherCollateralResponse();
+		}
+
+		@Override
+		public void setValue(CollateralResponse2 obj, List<OtherCollateralResponse2> value) {
+			obj.setOtherCollateralResponse(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralResponse2.mmSecuritiesCollateralResponse, CollateralResponse2.mmCashCollateralResponse, CollateralResponse2.mmOtherCollateralResponse);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralResponse2.mmSecuritiesCollateralResponse, com.tools20022.repository.msg.CollateralResponse2.mmCashCollateralResponse,
+						com.tools20022.repository.msg.CollateralResponse2.mmOtherCollateralResponse);
 				trace_lazy = () -> CollateralProposal.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCollateralResponsePresenceRule.forCollateralResponse2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralResponse2";
 				definition = "Provides additional information on the collateral proposal(s), that is either in cash, securities or other types.";
@@ -233,30 +281,30 @@ public class CollateralResponse2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctiesCollRspn")
 	public List<SecuritiesCollateralResponse1> getSecuritiesCollateralResponse() {
-		return securitiesCollateralResponse;
+		return securitiesCollateralResponse == null ? securitiesCollateralResponse = new ArrayList<>() : securitiesCollateralResponse;
 	}
 
-	public void setSecuritiesCollateralResponse(List<com.tools20022.repository.msg.SecuritiesCollateralResponse1> securitiesCollateralResponse) {
-		this.securitiesCollateralResponse = securitiesCollateralResponse;
+	public CollateralResponse2 setSecuritiesCollateralResponse(List<SecuritiesCollateralResponse1> securitiesCollateralResponse) {
+		this.securitiesCollateralResponse = Objects.requireNonNull(securitiesCollateralResponse);
+		return this;
 	}
 
-	@XmlElement(name = "CshCollRspn")
 	public List<CashCollateralResponse2> getCashCollateralResponse() {
-		return cashCollateralResponse;
+		return cashCollateralResponse == null ? cashCollateralResponse = new ArrayList<>() : cashCollateralResponse;
 	}
 
-	public void setCashCollateralResponse(List<com.tools20022.repository.msg.CashCollateralResponse2> cashCollateralResponse) {
-		this.cashCollateralResponse = cashCollateralResponse;
+	public CollateralResponse2 setCashCollateralResponse(List<CashCollateralResponse2> cashCollateralResponse) {
+		this.cashCollateralResponse = Objects.requireNonNull(cashCollateralResponse);
+		return this;
 	}
 
-	@XmlElement(name = "OthrCollRspn")
 	public List<OtherCollateralResponse2> getOtherCollateralResponse() {
-		return otherCollateralResponse;
+		return otherCollateralResponse == null ? otherCollateralResponse = new ArrayList<>() : otherCollateralResponse;
 	}
 
-	public void setOtherCollateralResponse(List<com.tools20022.repository.msg.OtherCollateralResponse2> otherCollateralResponse) {
-		this.otherCollateralResponse = otherCollateralResponse;
+	public CollateralResponse2 setOtherCollateralResponse(List<OtherCollateralResponse2> otherCollateralResponse) {
+		this.otherCollateralResponse = Objects.requireNonNull(otherCollateralResponse);
+		return this;
 	}
 }

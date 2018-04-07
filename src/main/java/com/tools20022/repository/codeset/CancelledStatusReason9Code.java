@@ -39,31 +39,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#CancelledByYourself
- * CancelledStatusReason9Code.mmCancelledByYourself}</li>
+ * CancelledStatusReason9Code.CancelledByYourself}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#CancelledBySystem
- * CancelledStatusReason9Code.mmCancelledBySystem}</li>
+ * CancelledStatusReason9Code.CancelledBySystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#CancelledByAgent
- * CancelledStatusReason9Code.mmCancelledByAgent}</li>
+ * CancelledStatusReason9Code.CancelledByAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#EndOfLife
- * CancelledStatusReason9Code.mmEndOfLife}</li>
+ * CancelledStatusReason9Code.EndOfLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#CancelledDueToTransformation
- * CancelledStatusReason9Code.mmCancelledDueToTransformation}</li>
+ * CancelledStatusReason9Code.CancelledDueToTransformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#CancelledSplitPartialSettlement
- * CancelledStatusReason9Code.mmCancelledSplitPartialSettlement}</li>
+ * CancelledStatusReason9Code.CancelledSplitPartialSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#CancelledDueToCorporateAction
- * CancelledStatusReason9Code.mmCancelledDueToCorporateAction}</li>
+ * CancelledStatusReason9Code.CancelledDueToCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#SecuritiesNoLongerEligible
- * CancelledStatusReason9Code.mmSecuritiesNoLongerEligible}</li>
+ * CancelledStatusReason9Code.SecuritiesNoLongerEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CancelledStatusReason9Code#Other
- * CancelledStatusReason9Code.mmOther}</li>
+ * CancelledStatusReason9Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -328,7 +328,7 @@ public class CancelledStatusReason9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CANI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancelledStatusReason9Code";

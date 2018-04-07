@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason8Code#CutOffTime
- * RejectedStatusReason8Code.mmCutOffTime}</li>
+ * RejectedStatusReason8Code.CutOffTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason8Code#NotAllowedToCancel
- * RejectedStatusReason8Code.mmNotAllowedToCancel}</li>
+ * RejectedStatusReason8Code.NotAllowedToCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason8Code#NotCompliantWithSLA
- * RejectedStatusReason8Code.mmNotCompliantWithSLA}</li>
+ * RejectedStatusReason8Code.NotCompliantWithSLA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason8Code#LegallyImpossible
- * RejectedStatusReason8Code.mmLegallyImpossible}</li>
+ * RejectedStatusReason8Code.LegallyImpossible}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class RejectedStatusReason8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CUTO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectedStatusReason8Code";

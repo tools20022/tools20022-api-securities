@@ -20,12 +20,13 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.SafekeepingPlaceCode;
-import com.tools20022.repository.entity.SecuritiesPartyRole;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Organisation used as the safekeeping place for the securities.
@@ -118,20 +119,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.msg.HoldingBalance7#mmSafekeepingPlace
  * HoldingBalance7.mmSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.QuantityAndAccount39#mmSafekeepingPlace
- * QuantityAndAccount39.mmSafekeepingPlace}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.AggregateBalanceInformation30#mmSafekeepingPlace
  * AggregateBalanceInformation30.mmSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.QuantityAndAccount41#mmSafekeepingPlace
- * QuantityAndAccount41.mmSafekeepingPlace}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.QuantityAndAccount40#mmSafekeepingPlace
  * QuantityAndAccount40.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.QuantityAndAccount42#mmSafekeepingPlace
- * QuantityAndAccount42.mmSafekeepingPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.QuantityAndAccount38#mmSafekeepingPlace
  * QuantityAndAccount38.mmSafekeepingPlace}</li>
@@ -141,9 +133,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.msg.AggregateBalancePerSafekeepingPlace28#mmSafekeepingPlace
  * AggregateBalancePerSafekeepingPlace28.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.QuantityAndAccount43#mmSafekeepingPlace
- * QuantityAndAccount43.mmSafekeepingPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.AggregateBalancePerSafekeepingPlace29#mmSafekeepingPlace
  * AggregateBalancePerSafekeepingPlace29.mmSafekeepingPlace}</li>
@@ -160,32 +149,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.choice.SafekeepingPlaceFormat10Choice#mmTypeAndIdentification
  * SafekeepingPlaceFormat10Choice.mmTypeAndIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.QuantityAndAccount45#mmSafekeepingPlace
- * QuantityAndAccount45.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.QuantityAndAccount44#mmSafekeepingPlace
- * QuantityAndAccount44.mmSafekeepingPlace}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.AccountAndBalance34#mmSafekeepingPlace
  * AccountAndBalance34.mmSafekeepingPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.AccountAndBalance35#mmSafekeepingPlace
  * AccountAndBalance35.mmSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CorporateActionOption116#mmSafekeepingPlace
- * CorporateActionOption116.mmSafekeepingPlace}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.AccountAndBalance33#mmSafekeepingPlace
  * AccountAndBalance33.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmSafekeepingPlace
- * InvestmentAccount54.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmSafekeepingPlace
- * InvestmentAccount56.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmSafekeepingPlace
- * InvestmentAccount57.mmSafekeepingPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.OtherCollateral7#mmSafekeepingPlace
  * OtherCollateral7.mmSafekeepingPlace}</li>
@@ -205,35 +176,65 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.msg.SecuritiesCollateral7#mmSafekeepingPlace
  * SecuritiesCollateral7.mmSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AccountIdentification40#mmSafekeepingPlace
- * AccountIdentification40.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.SecuritiesOption60#mmSafekeepingPlace
- * SecuritiesOption60.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.SecuritiesOption59#mmSafekeepingPlace
- * SecuritiesOption59.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.FinancialInstrumentDetails25#mmSafekeepingPlace
- * FinancialInstrumentDetails25.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionDetails97#mmSafekeepingPlace
- * TransactionDetails97.mmSafekeepingPlace}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.SecuritiesFinancingTransactionDetails35#mmSafekeepingPlace
  * SecuritiesFinancingTransactionDetails35.mmSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionDetails96#mmSafekeepingPlace
- * TransactionDetails96.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.IntraPositionDetails40#mmSafekeepingPlace
- * IntraPositionDetails40.mmSafekeepingPlace}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionDetails95#mmSafekeepingPlace
- * TransactionDetails95.mmSafekeepingPlace}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.SecuritiesCollateral8#mmSafekeepingPlace
  * SecuritiesCollateral8.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmSafekeepingPlace
+ * InvestmentAccount66.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmSafekeepingPlace
+ * InvestmentAccount67.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmSafekeepingPlace
+ * InvestmentAccount68.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.FinancialInstrumentDetails28#mmSafekeepingPlace
+ * FinancialInstrumentDetails28.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.QuantityAndAccount64#mmSafekeepingPlace
+ * QuantityAndAccount64.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionDetails105#mmSafekeepingPlace
+ * TransactionDetails105.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.QuantityAndAccount63#mmSafekeepingPlace
+ * QuantityAndAccount63.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionDetails104#mmSafekeepingPlace
+ * TransactionDetails104.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionDetails103#mmSafekeepingPlace
+ * TransactionDetails103.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.IntraPositionDetails45#mmSafekeepingPlace
+ * IntraPositionDetails45.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.QuantityAndAccount65#mmSafekeepingPlace
+ * QuantityAndAccount65.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.QuantityAndAccount66#mmSafekeepingPlace
+ * QuantityAndAccount66.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.QuantityAndAccount67#mmSafekeepingPlace
+ * QuantityAndAccount67.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.QuantityAndAccount68#mmSafekeepingPlace
+ * QuantityAndAccount68.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CorporateActionOption141#mmSafekeepingPlace
+ * CorporateActionOption141.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.AccountIdentification43#mmSafekeepingPlace
+ * AccountIdentification43.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SecuritiesOption64#mmSafekeepingPlace
+ * SecuritiesOption64.mmSafekeepingPlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SecuritiesOption65#mmSafekeepingPlace
+ * SecuritiesOption65.mmSafekeepingPlace}</li>
  * </ul>
  * </li>
  * <li>
@@ -274,8 +275,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -292,8 +293,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SafekeepingPlaceCode safekeepingPlaceType;
 	/**
-	 * Place of safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -337,7 +338,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSafekeepingPlaceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SafekeepingPlace, SafekeepingPlaceCode> mmSafekeepingPlaceType = new MMBusinessAttribute<SafekeepingPlace, SafekeepingPlaceCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SafekeepingPlaceTypeAndAnyBICIdentifier1.mmSafekeepingPlaceType, SafekeepingPlaceTypeAndText2.mmSafekeepingPlaceType, SafekeepingPlaceTypeAndText1.mmSafekeepingPlaceType,
 					SafekeepingPlaceTypeAndText6.mmSafekeepingPlaceType, SafekeepingPlaceTypeAndText8.mmSafekeepingPlaceType);
@@ -351,18 +352,20 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			simpleType_lazy = () -> SafekeepingPlaceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SafekeepingPlace.class.getMethod("getSafekeepingPlaceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SafekeepingPlaceCode getValue(SafekeepingPlace obj) {
+			return obj.getSafekeepingPlaceType();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, SafekeepingPlaceCode value) {
+			obj.setSafekeepingPlaceType(value);
 		}
 	};
 	protected Country country;
 	/**
-	 * Country where the financial instruments are/will be safekept.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,7 +413,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Country where the financial instruments are/will be safekept."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.Country> mmCountry = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.Country>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SafekeepingPlaceFormat2Choice.mmCountry, SafekeepingPlaceFormat7Choice.mmCountry, SafekeepingPlaceFormat8Choice.mmCountry, SafekeepingPlaceFormat10Choice.mmCountry);
 			isDerived = true;
@@ -424,12 +427,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Country getValue(SafekeepingPlace obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.Country value) {
+			obj.setCountry(value);
+		}
 	};
 	protected SecuritiesAccount relatedSecuritiesAccount;
 	/**
-	 * Account at the safekeeping place where financial instruments are
-	 * safekept.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -462,7 +474,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount> mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -475,11 +487,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesAccount getValue(SafekeepingPlace obj) {
+			return obj.getRelatedSecuritiesAccount();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.SecuritiesAccount value) {
+			obj.setRelatedSecuritiesAccount(value);
+		}
 	};
 	protected SecuritiesBalance securitiesBalance;
 	/**
-	 * Balance which is held at a safekeeping place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -510,7 +532,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Balance which is held at a safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, Optional<SecuritiesBalance>> mmSecuritiesBalance = new MMBusinessAssociationEnd<SafekeepingPlace, Optional<SecuritiesBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -523,11 +545,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesBalance> getValue(SafekeepingPlace obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, Optional<SecuritiesBalance> value) {
+			obj.setSecuritiesBalance(value.orElse(null));
+		}
 	};
 	protected SecuritiesSettlement securitiesSettlement;
 	/**
-	 * Specifies the settlement operation which uses the safekeeping place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,7 +592,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Specifies the settlement operation which uses the safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesSettlement> mmSecuritiesSettlement = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -573,12 +605,22 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesSettlement getValue(SafekeepingPlace obj) {
+			return obj.getSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.SecuritiesSettlement value) {
+			obj.setSecuritiesSettlement(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlace";
 				definition = "Organisation used as the safekeeping place for the securities.";
@@ -587,15 +629,15 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 				derivationElement_lazy = () -> Arrays.asList(SafekeepingPlaceFormat2Choice.mmIdentification, SafekeepingPlaceFormat2Choice.mmTypeAndIdentification, SafekeepingPlaceFormatChoice.mmIdentification,
 						AggregateBalancePerSafekeepingPlace4.mmSafekeepingPlace, AggregateBalanceInformation3.mmSafekeepingPlace, AggregateBalancePerSafekeepingPlace3.mmSafekeepingPlace, AggregateBalanceInformation4.mmSafekeepingPlace,
 						FinancialInstrumentDescription3.mmSafekeepingPlace, SafekeepingPlaceFormat7Choice.mmIdentification, SafekeepingPlaceFormat7Choice.mmTypeAndIdentification, HoldingBalance8.mmSafekeepingPlace,
-						HoldingBalance7.mmSafekeepingPlace, QuantityAndAccount39.mmSafekeepingPlace, AggregateBalanceInformation30.mmSafekeepingPlace, QuantityAndAccount41.mmSafekeepingPlace, QuantityAndAccount40.mmSafekeepingPlace,
-						QuantityAndAccount42.mmSafekeepingPlace, QuantityAndAccount38.mmSafekeepingPlace, AggregateBalanceInformation31.mmSafekeepingPlace, AggregateBalancePerSafekeepingPlace28.mmSafekeepingPlace,
-						QuantityAndAccount43.mmSafekeepingPlace, AggregateBalancePerSafekeepingPlace29.mmSafekeepingPlace, SafekeepingPlaceFormat8Choice.mmIdentification, SafekeepingPlaceFormat8Choice.mmTypeAndIdentification,
-						SafekeepingPlaceFormat10Choice.mmIdentification, SafekeepingPlaceFormat10Choice.mmTypeAndIdentification, QuantityAndAccount45.mmSafekeepingPlace, QuantityAndAccount44.mmSafekeepingPlace,
-						AccountAndBalance34.mmSafekeepingPlace, AccountAndBalance35.mmSafekeepingPlace, CorporateActionOption116.mmSafekeepingPlace, AccountAndBalance33.mmSafekeepingPlace, InvestmentAccount54.mmSafekeepingPlace,
-						InvestmentAccount56.mmSafekeepingPlace, InvestmentAccount57.mmSafekeepingPlace, OtherCollateral7.mmSafekeepingPlace, OtherCollateral6.mmSafekeepingPlace, SecuritiesCollateral6.mmSafekeepingPlace,
-						SecuritiesCollateral5.mmSafekeepingPlace, OtherCollateral5.mmSafekeepingPlace, SecuritiesCollateral7.mmSafekeepingPlace, AccountIdentification40.mmSafekeepingPlace, SecuritiesOption60.mmSafekeepingPlace,
-						SecuritiesOption59.mmSafekeepingPlace, FinancialInstrumentDetails25.mmSafekeepingPlace, TransactionDetails97.mmSafekeepingPlace, SecuritiesFinancingTransactionDetails35.mmSafekeepingPlace,
-						TransactionDetails96.mmSafekeepingPlace, IntraPositionDetails40.mmSafekeepingPlace, TransactionDetails95.mmSafekeepingPlace, SecuritiesCollateral8.mmSafekeepingPlace);
+						HoldingBalance7.mmSafekeepingPlace, AggregateBalanceInformation30.mmSafekeepingPlace, QuantityAndAccount40.mmSafekeepingPlace, QuantityAndAccount38.mmSafekeepingPlace,
+						AggregateBalanceInformation31.mmSafekeepingPlace, AggregateBalancePerSafekeepingPlace28.mmSafekeepingPlace, AggregateBalancePerSafekeepingPlace29.mmSafekeepingPlace, SafekeepingPlaceFormat8Choice.mmIdentification,
+						SafekeepingPlaceFormat8Choice.mmTypeAndIdentification, SafekeepingPlaceFormat10Choice.mmIdentification, SafekeepingPlaceFormat10Choice.mmTypeAndIdentification, AccountAndBalance34.mmSafekeepingPlace,
+						AccountAndBalance35.mmSafekeepingPlace, AccountAndBalance33.mmSafekeepingPlace, OtherCollateral7.mmSafekeepingPlace, OtherCollateral6.mmSafekeepingPlace, SecuritiesCollateral6.mmSafekeepingPlace,
+						SecuritiesCollateral5.mmSafekeepingPlace, OtherCollateral5.mmSafekeepingPlace, SecuritiesCollateral7.mmSafekeepingPlace, SecuritiesFinancingTransactionDetails35.mmSafekeepingPlace,
+						SecuritiesCollateral8.mmSafekeepingPlace, InvestmentAccount66.mmSafekeepingPlace, InvestmentAccount67.mmSafekeepingPlace, InvestmentAccount68.mmSafekeepingPlace, FinancialInstrumentDetails28.mmSafekeepingPlace,
+						QuantityAndAccount64.mmSafekeepingPlace, TransactionDetails105.mmSafekeepingPlace, QuantityAndAccount63.mmSafekeepingPlace, TransactionDetails104.mmSafekeepingPlace, TransactionDetails103.mmSafekeepingPlace,
+						IntraPositionDetails45.mmSafekeepingPlace, QuantityAndAccount65.mmSafekeepingPlace, QuantityAndAccount66.mmSafekeepingPlace, QuantityAndAccount67.mmSafekeepingPlace, QuantityAndAccount68.mmSafekeepingPlace,
+						CorporateActionOption141.mmSafekeepingPlace, AccountIdentification43.mmSafekeepingPlace, SecuritiesOption64.mmSafekeepingPlace, SecuritiesOption65.mmSafekeepingPlace);
 				superType_lazy = () -> SecuritiesPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SafekeepingPlace.mmSafekeepingPlaceType, com.tools20022.repository.entity.SafekeepingPlace.mmCountry,
 						com.tools20022.repository.entity.SafekeepingPlace.mmRelatedSecuritiesAccount, com.tools20022.repository.entity.SafekeepingPlace.mmSecuritiesBalance,
@@ -617,39 +659,44 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 		return safekeepingPlaceType;
 	}
 
-	public void setSafekeepingPlaceType(SafekeepingPlaceCode safekeepingPlaceType) {
-		this.safekeepingPlaceType = safekeepingPlaceType;
+	public SafekeepingPlace setSafekeepingPlaceType(SafekeepingPlaceCode safekeepingPlaceType) {
+		this.safekeepingPlaceType = Objects.requireNonNull(safekeepingPlaceType);
+		return this;
 	}
 
 	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
-		this.country = country;
+	public SafekeepingPlace setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
 	public SecuritiesAccount getRelatedSecuritiesAccount() {
 		return relatedSecuritiesAccount;
 	}
 
-	public void setRelatedSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount relatedSecuritiesAccount) {
-		this.relatedSecuritiesAccount = relatedSecuritiesAccount;
+	public SafekeepingPlace setRelatedSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount relatedSecuritiesAccount) {
+		this.relatedSecuritiesAccount = Objects.requireNonNull(relatedSecuritiesAccount);
+		return this;
 	}
 
-	public SecuritiesBalance getSecuritiesBalance() {
-		return securitiesBalance;
+	public Optional<SecuritiesBalance> getSecuritiesBalance() {
+		return securitiesBalance == null ? Optional.empty() : Optional.of(securitiesBalance);
 	}
 
-	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+	public SafekeepingPlace setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
 		this.securitiesBalance = securitiesBalance;
+		return this;
 	}
 
 	public SecuritiesSettlement getSecuritiesSettlement() {
 		return securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public SafekeepingPlace setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 }

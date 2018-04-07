@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -25,6 +26,7 @@ import com.tools20022.repository.datatype.Exact5NumericText;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -48,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,15 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of 3 and 5 exact numeric number."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "Number3Choice", propOrder = {"short", "long"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "Number3Choice", propOrder = {"short_", "long_"})
 public class Number3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Shrt", required = true)
 	protected Exact3NumericText short_;
 	/**
-	 * Number of maximum 3 numeric text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -84,6 +87,9 @@ public class Number3Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Shrt"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13A:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -94,11 +100,12 @@ public class Number3Choice {
 	 * definition} = "Number of maximum 3 numeric text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmShort = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Number3Choice, Exact3NumericText> mmShort = new MMMessageAttribute<Number3Choice, Exact3NumericText>() {
 		{
-			componentContext_lazy = () -> Number3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Number3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Shrt";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13A:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Short";
 			definition = "Number of maximum 3 numeric text.";
@@ -106,12 +113,22 @@ public class Number3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
+
+		@Override
+		public Exact3NumericText getValue(Number3Choice obj) {
+			return obj.getShort();
+		}
+
+		@Override
+		public void setValue(Number3Choice obj, Exact3NumericText value) {
+			obj.setShort(value);
+		}
 	};
+	@XmlElement(name = "Lng", required = true)
 	protected Exact5NumericText long_;
 	/**
-	 * Number of maximum 5 numeric text. Is only to be used in a delta
-	 * statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,6 +144,9 @@ public class Number3Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Lng"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13B:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -139,11 +159,12 @@ public class Number3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLong = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Number3Choice, Exact5NumericText> mmLong = new MMMessageAttribute<Number3Choice, Exact5NumericText>() {
 		{
-			componentContext_lazy = () -> Number3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Number3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Lng";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13B:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Long";
 			definition = "Number of maximum 5 numeric text. Is only to be used in a delta statement.";
@@ -151,13 +172,23 @@ public class Number3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact5NumericText.mmObject();
 		}
+
+		@Override
+		public Exact5NumericText getValue(Number3Choice obj) {
+			return obj.getLong();
+		}
+
+		@Override
+		public void setValue(Number3Choice obj, Exact5NumericText value) {
+			obj.setLong(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Number3Choice.mmShort, Number3Choice.mmLong);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Number3Choice.mmShort, com.tools20022.repository.choice.Number3Choice.mmLong);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Number3Choice";
 				definition = "Choice of 3 and 5 exact numeric number.";
@@ -166,21 +197,21 @@ public class Number3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Shrt", required = true)
 	public Exact3NumericText getShort() {
 		return short_;
 	}
 
-	public void setShort(Exact3NumericText short_) {
-		this.short_ = short_;
+	public Number3Choice setShort(Exact3NumericText short_) {
+		this.short_ = Objects.requireNonNull(short_);
+		return this;
 	}
 
-	@XmlElement(name = "Lng", required = true)
 	public Exact5NumericText getLong() {
 		return long_;
 	}
 
-	public void setLong(Exact5NumericText long_) {
-		this.long_ = long_;
+	public Number3Choice setLong(Exact5NumericText long_) {
+		this.long_ = Objects.requireNonNull(long_);
+		return this;
 	}
 }

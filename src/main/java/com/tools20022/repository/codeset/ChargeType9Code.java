@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#ManagementFee
- * ChargeType9Code.mmManagementFee}</li>
+ * ChargeType9Code.ManagementFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#BackEndLoad
- * ChargeType9Code.mmBackEndLoad}</li>
+ * ChargeType9Code.BackEndLoad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#FrontEndLoad
- * ChargeType9Code.mmFrontEndLoad}</li>
+ * ChargeType9Code.FrontEndLoad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#AdvisoryFee
- * ChargeType9Code.mmAdvisoryFee}</li>
+ * ChargeType9Code.AdvisoryFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType9Code#CustodyFee
- * ChargeType9Code.mmCustodyFee}</li>
+ * ChargeType9Code.CustodyFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#PublicationFee
- * ChargeType9Code.mmPublicationFee}</li>
+ * ChargeType9Code.PublicationFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#AccountingFee
- * ChargeType9Code.mmAccountingFee}</li>
+ * ChargeType9Code.AccountingFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType9Code#Equalisation
- * ChargeType9Code.mmEqualisation}</li>
+ * ChargeType9Code.Equalisation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType9Code#Penalty
- * ChargeType9Code.mmPenalty}</li>
+ * ChargeType9Code.Penalty}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -315,7 +315,7 @@ public class ChargeType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MANF");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeType9Code";

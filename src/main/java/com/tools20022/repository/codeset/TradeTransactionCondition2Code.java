@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialCumCoupon
- * TradeTransactionCondition2Code.mmSpecialCumCoupon}</li>
+ * TradeTransactionCondition2Code.SpecialCumCoupon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialExCoupon
- * TradeTransactionCondition2Code.mmSpecialExCoupon}</li>
+ * TradeTransactionCondition2Code.SpecialExCoupon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialExBonus
- * TradeTransactionCondition2Code.mmSpecialExBonus}</li>
+ * TradeTransactionCondition2Code.SpecialExBonus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialCumBonus
- * TradeTransactionCondition2Code.mmSpecialCumBonus}</li>
+ * TradeTransactionCondition2Code.SpecialCumBonus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialCumRights
- * TradeTransactionCondition2Code.mmSpecialCumRights}</li>
+ * TradeTransactionCondition2Code.SpecialCumRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialExRights
- * TradeTransactionCondition2Code.mmSpecialExRights}</li>
+ * TradeTransactionCondition2Code.SpecialExRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialCumCapitalRepayments
- * TradeTransactionCondition2Code.mmSpecialCumCapitalRepayments}</li>
+ * TradeTransactionCondition2Code.SpecialCumCapitalRepayments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialExCapitalRepayments
- * TradeTransactionCondition2Code.mmSpecialExCapitalRepayments}</li>
+ * TradeTransactionCondition2Code.SpecialExCapitalRepayments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#CashSettlement
- * TradeTransactionCondition2Code.mmCashSettlement}</li>
+ * TradeTransactionCondition2Code.CashSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialPrice
- * TradeTransactionCondition2Code.mmSpecialPrice}</li>
+ * TradeTransactionCondition2Code.SpecialPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialCumDividend
- * TradeTransactionCondition2Code.mmSpecialCumDividend}</li>
+ * TradeTransactionCondition2Code.SpecialCumDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#SpecialExDividend
- * TradeTransactionCondition2Code.mmSpecialExDividend}</li>
+ * TradeTransactionCondition2Code.SpecialExDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeTransactionCondition2Code#GuaranteedDelivery
- * TradeTransactionCondition2Code.mmGuaranteedDelivery}</li>
+ * TradeTransactionCondition2Code.GuaranteedDelivery}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -426,7 +426,7 @@ public class TradeTransactionCondition2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SPCC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeTransactionCondition2Code";

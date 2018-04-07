@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Daily
- * FrequencyGranularityTypeCode.mmDaily}</li>
+ * FrequencyGranularityTypeCode.Daily}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfMonth
- * FrequencyGranularityTypeCode.mmEndOfMonth}</li>
+ * FrequencyGranularityTypeCode.EndOfMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Weekly
- * FrequencyGranularityTypeCode.mmWeekly}</li>
+ * FrequencyGranularityTypeCode.Weekly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfWeek
- * FrequencyGranularityTypeCode.mmEndOfWeek}</li>
+ * FrequencyGranularityTypeCode.EndOfWeek}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfDay
- * FrequencyGranularityTypeCode.mmEndOfDay}</li>
+ * FrequencyGranularityTypeCode.EndOfDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Monthly
- * FrequencyGranularityTypeCode.mmMonthly}</li>
+ * FrequencyGranularityTypeCode.Monthly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Quarterly
- * FrequencyGranularityTypeCode.mmQuarterly}</li>
+ * FrequencyGranularityTypeCode.Quarterly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfQuarter
- * FrequencyGranularityTypeCode.mmEndOfQuarter}</li>
+ * FrequencyGranularityTypeCode.EndOfQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Yearly
- * FrequencyGranularityTypeCode.mmYearly}</li>
+ * FrequencyGranularityTypeCode.Yearly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Semiannually
- * FrequencyGranularityTypeCode.mmSemiannually}</li>
+ * FrequencyGranularityTypeCode.Semiannually}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfSemester
- * FrequencyGranularityTypeCode.mmEndOfSemester}</li>
+ * FrequencyGranularityTypeCode.EndOfSemester}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfFortnight
- * FrequencyGranularityTypeCode.mmEndOfFortnight}</li>
+ * FrequencyGranularityTypeCode.EndOfFortnight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#Fortnightly
- * FrequencyGranularityTypeCode.mmFortnightly}</li>
+ * FrequencyGranularityTypeCode.Fortnightly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityTypeCode#EndOfYear
- * FrequencyGranularityTypeCode.mmEndOfYear}</li>
+ * FrequencyGranularityTypeCode.EndOfYear}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -91,8 +91,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -157,14 +157,14 @@ public class FrequencyGranularityTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Event takes place at the end of each month or period of one  month."</li>
+	 * "Event takes place at the end of each month or period of one month."</li>
 	 * </ul>
 	 */
 	public static final FrequencyGranularityTypeCode EndOfMonth = new FrequencyGranularityTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndOfMonth";
-			definition = "Event takes place at the end of each month or period of one  month.";
+			definition = "Event takes place at the end of each month or period of one month.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyGranularityTypeCode.mmObject();
 			codeName = "EMON";
 		}
@@ -542,7 +542,7 @@ public class FrequencyGranularityTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FrequencyGranularityTypeCode";
 				definition = "Specifies the granularity of the frequency used for the reporting.";

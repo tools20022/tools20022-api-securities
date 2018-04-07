@@ -27,9 +27,10 @@ import com.tools20022.repository.choice.AccountParties10Choice;
 import com.tools20022.repository.choice.RegisteredShareholderName1Choice;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ExtendedParty11;
+import com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -102,8 +103,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -114,16 +115,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information about a party's account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountParties15", propOrder = {"principalAccountParty", "secondaryOwner", "beneficiary", "powerOfAttorney", "legalGuardian", "custodianForMinor", "successorOnDeath", "administrator", "otherParty", "granter", "settlor",
 		"seniorManagingOfficial", "protector", "registeredShareholderName"})
 public class AccountParties15 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PrncplAcctPty", required = true)
 	protected AccountParties10Choice principalAccountParty;
 	/**
-	 * Main party associated with the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +156,10 @@ public class AccountParties15 {
 	 * definition} = "Main party associated with the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPrincipalAccountParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountParties15, AccountParties10Choice> mmPrincipalAccountParty = new MMMessageAttribute<AccountParties15, AccountParties10Choice>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "PrncplAcctPty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,12 +169,22 @@ public class AccountParties15 {
 			minOccurs = 1;
 			complexType_lazy = () -> AccountParties10Choice.mmObject();
 		}
+
+		@Override
+		public AccountParties10Choice getValue(AccountParties15 obj) {
+			return obj.getPrincipalAccountParty();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, AccountParties10Choice value) {
+			obj.setPrincipalAccountParty(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> secondaryOwner;
+	@XmlElement(name = "ScndryOwnr")
+	protected List<InvestmentAccountOwnershipInformation14> secondaryOwner;
 	/**
-	 * Entity that is not the primary owner when the ownership of the investment
-	 * account is split among several owners.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -204,10 +216,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecondaryOwner = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmSecondaryOwner = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> SecondaryOwner.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "ScndryOwnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,15 +227,24 @@ public class AccountParties15 {
 			definition = "Entity that is not the primary owner when the ownership of the investment account is split among several owners.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getSecondaryOwner();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setSecondaryOwner(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> beneficiary;
+	@XmlElement(name = "Bnfcry")
+	protected List<InvestmentAccountOwnershipInformation14> beneficiary;
 	/**
-	 * Ultimate party that is entitled to either receive the benefits of the
-	 * ownership of a financial instrument, or to be paid/credited as a result
-	 * of a transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -255,10 +276,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBeneficiary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmBeneficiary = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> BeneficialOwner.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "Bnfcry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -266,14 +287,24 @@ public class AccountParties15 {
 			definition = "Ultimate party that is entitled to either receive the benefits of the ownership of a financial instrument, or to be paid/credited as a result of a transfer.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getBeneficiary();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setBeneficiary(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> powerOfAttorney;
+	@XmlElement(name = "PwrOfAttny")
+	protected List<InvestmentAccountOwnershipInformation14> powerOfAttorney;
 	/**
-	 * Entity that was given the authority by another entity to act on its
-	 * behalf.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -305,10 +336,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPowerOfAttorney = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmPowerOfAttorney = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> MandateHolder.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "PwrOfAttny";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -316,14 +347,24 @@ public class AccountParties15 {
 			definition = "Entity that was given the authority by another entity to act on its behalf.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getPowerOfAttorney();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setPowerOfAttorney(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> legalGuardian;
+	@XmlElement(name = "LglGuardn")
+	protected List<InvestmentAccountOwnershipInformation14> legalGuardian;
 	/**
-	 * Entity that has been appointed by a legal authority to act on behalf of a
-	 * person judged to be incapacitated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -355,10 +396,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLegalGuardian = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmLegalGuardian = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> LegalGuardianRole.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "LglGuardn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -366,15 +407,24 @@ public class AccountParties15 {
 			definition = "Entity that has been appointed by a legal authority to act on behalf of a person judged to be incapacitated.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getLegalGuardian();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setLegalGuardian(value);
 		}
 	};
+	@XmlElement(name = "CtdnForMnr")
 	protected InvestmentAccountOwnershipInformation14 custodianForMinor;
 	/**
-	 * Entity that holds shares/units on behalf of a legal minor. Although the
-	 * account is registered under the name of the minor, the custodian retains
-	 * control of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -406,10 +456,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCustodianForMinor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, Optional<InvestmentAccountOwnershipInformation14>> mmCustodianForMinor = new MMMessageAssociationEnd<AccountParties15, Optional<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> CustodianForMinor.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "CtdnForMnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -418,14 +468,24 @@ public class AccountParties15 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getCustodianForMinor();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, Optional<InvestmentAccountOwnershipInformation14> value) {
+			obj.setCustodianForMinor(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> successorOnDeath;
+	@XmlElement(name = "SucssrOnDth")
+	protected List<InvestmentAccountOwnershipInformation14> successorOnDeath;
 	/**
-	 * Deceased's estate, or successor, to whom the respective percentage of
-	 * ownership will be transferred upon the death of one of the owners.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -457,10 +517,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSuccessorOnDeath = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmSuccessorOnDeath = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> SuccessorOnDeath.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "SucssrOnDth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -469,14 +529,24 @@ public class AccountParties15 {
 			maxOccurs = 5;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getSuccessorOnDeath();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setSuccessorOnDeath(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> administrator;
+	@XmlElement(name = "Admstr")
+	protected List<InvestmentAccountOwnershipInformation14> administrator;
 	/**
-	 * Entity that has been appointed by a legal authority to act on behalf of a
-	 * person or organisation that has gone bankrupt.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -508,10 +578,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAdministrator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmAdministrator = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> AdministratorRole.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "Admstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -519,13 +589,24 @@ public class AccountParties15 {
 			definition = "Entity that has been appointed by a legal authority to act on behalf of a person or organisation that has gone bankrupt.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getAdministrator();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setAdministrator(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.ExtendedParty11> otherParty;
+	@XmlElement(name = "OthrPty")
+	protected List<ExtendedParty11> otherParty;
 	/**
-	 * Other type of party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -554,10 +635,10 @@ public class AccountParties15 {
 	 * definition} = "Other type of party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<ExtendedParty11>> mmOtherParty = new MMMessageAssociationEnd<AccountParties15, List<ExtendedParty11>>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "OthrPty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -565,13 +646,24 @@ public class AccountParties15 {
 			definition = "Other type of party.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ExtendedParty11.mmObject();
+			type_lazy = () -> ExtendedParty11.mmObject();
+		}
+
+		@Override
+		public List<ExtendedParty11> getValue(AccountParties15 obj) {
+			return obj.getOtherParty();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<ExtendedParty11> value) {
+			obj.setOtherParty(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> granter;
+	@XmlElement(name = "Grntr")
+	protected List<InvestmentAccountOwnershipInformation14> granter;
 	/**
-	 * Granter role in the hedge funds industry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -600,10 +692,10 @@ public class AccountParties15 {
 	 * definition} = "Granter role in the hedge funds industry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGranter = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmGranter = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> Grantor.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "Grntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -612,13 +704,24 @@ public class AccountParties15 {
 			maxOccurs = 5;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getGranter();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setGranter(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> settlor;
+	@XmlElement(name = "Sttlr")
+	protected List<InvestmentAccountOwnershipInformation14> settlor;
 	/**
-	 * Entity that creates a trust or contributes assets to the trust.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -648,10 +751,10 @@ public class AccountParties15 {
 	 * "Entity that creates a trust or contributes assets to the trust."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmSettlor = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessComponentTrace_lazy = () -> Settlor.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "Sttlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -660,17 +763,24 @@ public class AccountParties15 {
 			maxOccurs = 5;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getSettlor();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setSettlor(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> seniorManagingOfficial;
+	@XmlElement(name = "SnrMggOffcl")
+	protected List<InvestmentAccountOwnershipInformation14> seniorManagingOfficial;
 	/**
-	 * Party that makes, or participates in the making of, decisions that affect
-	 * the whole, or a substantial part, of the business of a customer of a
-	 * reporting entity or that has the capacity to affect significantly the
-	 * financial standing of a customer of a reporting entity. Typically, this
-	 * is a controlling person of a corporate (ownership type CORP).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -702,10 +812,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSeniorManagingOfficial = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmSeniorManagingOfficial = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessElementTrace_lazy = () -> Role.mmContactPersonRole;
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "SnrMggOffcl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -713,16 +823,24 @@ public class AccountParties15 {
 			definition = "Party that makes, or participates in the making of, decisions that affect the whole, or a substantial part, of the business of a customer of a reporting entity or that has the capacity to affect significantly the financial standing of a customer of a reporting entity. Typically, this is a controlling person of a corporate (ownership type CORP).";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getSeniorManagingOfficial();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setSeniorManagingOfficial(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> protector;
+	@XmlElement(name = "Prtctr")
+	protected List<InvestmentAccountOwnershipInformation14> protector;
 	/**
-	 * Person appointed under the trust instrument to direct or restrain the
-	 * trustees in relation to their administration of the trust. Typically,
-	 * this is a controlling person of a trust (ownership type TRUS) or other
-	 * non-individual organisation (ownership type ONIS).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -754,10 +872,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProtector = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>> mmProtector = new MMMessageAssociationEnd<AccountParties15, List<InvestmentAccountOwnershipInformation14>>() {
 		{
 			businessElementTrace_lazy = () -> Role.mmContactPersonRole;
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "Prtctr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -765,14 +883,24 @@ public class AccountParties15 {
 			definition = "Person appointed under the trust instrument to direct or restrain the trustees in relation to their administration of the trust. Typically, this is a controlling person of a trust (ownership type TRUS) or other non-individual organisation (ownership type ONIS).";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccountOwnershipInformation14> getValue(AccountParties15 obj) {
+			return obj.getProtector();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, List<InvestmentAccountOwnershipInformation14> value) {
+			obj.setProtector(value);
 		}
 	};
+	@XmlElement(name = "RegdShrhldrNm")
 	protected RegisteredShareholderName1Choice registeredShareholderName;
 	/**
-	 * Party that registers its name with the issuer and the name used for the
-	 * registration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -803,10 +931,10 @@ public class AccountParties15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRegisteredShareholderName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountParties15, Optional<RegisteredShareholderName1Choice>> mmRegisteredShareholderName = new MMMessageAssociationEnd<AccountParties15, Optional<RegisteredShareholderName1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> RolePlayer.mmObject();
-			componentContext_lazy = () -> AccountParties15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountParties15.mmObject();
 			isDerived = false;
 			xmlTag = "RegdShrhldrNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -817,17 +945,29 @@ public class AccountParties15 {
 			isComposite = true;
 			type_lazy = () -> RegisteredShareholderName1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RegisteredShareholderName1Choice> getValue(AccountParties15 obj) {
+			return obj.getRegisteredShareholderName();
+		}
+
+		@Override
+		public void setValue(AccountParties15 obj, Optional<RegisteredShareholderName1Choice> value) {
+			obj.setRegisteredShareholderName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountParties15.mmPrincipalAccountParty, AccountParties15.mmSecondaryOwner, AccountParties15.mmBeneficiary, AccountParties15.mmPowerOfAttorney, AccountParties15.mmLegalGuardian,
-						AccountParties15.mmCustodianForMinor, AccountParties15.mmSuccessorOnDeath, AccountParties15.mmAdministrator, AccountParties15.mmOtherParty, AccountParties15.mmGranter, AccountParties15.mmSettlor,
-						AccountParties15.mmSeniorManagingOfficial, AccountParties15.mmProtector, AccountParties15.mmRegisteredShareholderName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountParties15.mmPrincipalAccountParty, com.tools20022.repository.msg.AccountParties15.mmSecondaryOwner,
+						com.tools20022.repository.msg.AccountParties15.mmBeneficiary, com.tools20022.repository.msg.AccountParties15.mmPowerOfAttorney, com.tools20022.repository.msg.AccountParties15.mmLegalGuardian,
+						com.tools20022.repository.msg.AccountParties15.mmCustodianForMinor, com.tools20022.repository.msg.AccountParties15.mmSuccessorOnDeath, com.tools20022.repository.msg.AccountParties15.mmAdministrator,
+						com.tools20022.repository.msg.AccountParties15.mmOtherParty, com.tools20022.repository.msg.AccountParties15.mmGranter, com.tools20022.repository.msg.AccountParties15.mmSettlor,
+						com.tools20022.repository.msg.AccountParties15.mmSeniorManagingOfficial, com.tools20022.repository.msg.AccountParties15.mmProtector, com.tools20022.repository.msg.AccountParties15.mmRegisteredShareholderName);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountDetailsConfirmationV07.mmAccountParties, AccountOpeningInstructionV07.mmAccountParties);
 				trace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountParties15";
 				definition = "Information about a party's account.";
@@ -836,129 +976,129 @@ public class AccountParties15 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PrncplAcctPty", required = true)
 	public AccountParties10Choice getPrincipalAccountParty() {
 		return principalAccountParty;
 	}
 
-	public void setPrincipalAccountParty(AccountParties10Choice principalAccountParty) {
-		this.principalAccountParty = principalAccountParty;
+	public AccountParties15 setPrincipalAccountParty(AccountParties10Choice principalAccountParty) {
+		this.principalAccountParty = Objects.requireNonNull(principalAccountParty);
+		return this;
 	}
 
-	@XmlElement(name = "ScndryOwnr")
 	public List<InvestmentAccountOwnershipInformation14> getSecondaryOwner() {
-		return secondaryOwner;
+		return secondaryOwner == null ? secondaryOwner = new ArrayList<>() : secondaryOwner;
 	}
 
-	public void setSecondaryOwner(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> secondaryOwner) {
-		this.secondaryOwner = secondaryOwner;
+	public AccountParties15 setSecondaryOwner(List<InvestmentAccountOwnershipInformation14> secondaryOwner) {
+		this.secondaryOwner = Objects.requireNonNull(secondaryOwner);
+		return this;
 	}
 
-	@XmlElement(name = "Bnfcry")
 	public List<InvestmentAccountOwnershipInformation14> getBeneficiary() {
-		return beneficiary;
+		return beneficiary == null ? beneficiary = new ArrayList<>() : beneficiary;
 	}
 
-	public void setBeneficiary(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> beneficiary) {
-		this.beneficiary = beneficiary;
+	public AccountParties15 setBeneficiary(List<InvestmentAccountOwnershipInformation14> beneficiary) {
+		this.beneficiary = Objects.requireNonNull(beneficiary);
+		return this;
 	}
 
-	@XmlElement(name = "PwrOfAttny")
 	public List<InvestmentAccountOwnershipInformation14> getPowerOfAttorney() {
-		return powerOfAttorney;
+		return powerOfAttorney == null ? powerOfAttorney = new ArrayList<>() : powerOfAttorney;
 	}
 
-	public void setPowerOfAttorney(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> powerOfAttorney) {
-		this.powerOfAttorney = powerOfAttorney;
+	public AccountParties15 setPowerOfAttorney(List<InvestmentAccountOwnershipInformation14> powerOfAttorney) {
+		this.powerOfAttorney = Objects.requireNonNull(powerOfAttorney);
+		return this;
 	}
 
-	@XmlElement(name = "LglGuardn")
 	public List<InvestmentAccountOwnershipInformation14> getLegalGuardian() {
-		return legalGuardian;
+		return legalGuardian == null ? legalGuardian = new ArrayList<>() : legalGuardian;
 	}
 
-	public void setLegalGuardian(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> legalGuardian) {
-		this.legalGuardian = legalGuardian;
+	public AccountParties15 setLegalGuardian(List<InvestmentAccountOwnershipInformation14> legalGuardian) {
+		this.legalGuardian = Objects.requireNonNull(legalGuardian);
+		return this;
 	}
 
-	@XmlElement(name = "CtdnForMnr")
-	public InvestmentAccountOwnershipInformation14 getCustodianForMinor() {
-		return custodianForMinor;
+	public Optional<InvestmentAccountOwnershipInformation14> getCustodianForMinor() {
+		return custodianForMinor == null ? Optional.empty() : Optional.of(custodianForMinor);
 	}
 
-	public void setCustodianForMinor(com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14 custodianForMinor) {
+	public AccountParties15 setCustodianForMinor(InvestmentAccountOwnershipInformation14 custodianForMinor) {
 		this.custodianForMinor = custodianForMinor;
+		return this;
 	}
 
-	@XmlElement(name = "SucssrOnDth")
 	public List<InvestmentAccountOwnershipInformation14> getSuccessorOnDeath() {
-		return successorOnDeath;
+		return successorOnDeath == null ? successorOnDeath = new ArrayList<>() : successorOnDeath;
 	}
 
-	public void setSuccessorOnDeath(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> successorOnDeath) {
-		this.successorOnDeath = successorOnDeath;
+	public AccountParties15 setSuccessorOnDeath(List<InvestmentAccountOwnershipInformation14> successorOnDeath) {
+		this.successorOnDeath = Objects.requireNonNull(successorOnDeath);
+		return this;
 	}
 
-	@XmlElement(name = "Admstr")
 	public List<InvestmentAccountOwnershipInformation14> getAdministrator() {
-		return administrator;
+		return administrator == null ? administrator = new ArrayList<>() : administrator;
 	}
 
-	public void setAdministrator(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> administrator) {
-		this.administrator = administrator;
+	public AccountParties15 setAdministrator(List<InvestmentAccountOwnershipInformation14> administrator) {
+		this.administrator = Objects.requireNonNull(administrator);
+		return this;
 	}
 
-	@XmlElement(name = "OthrPty")
 	public List<ExtendedParty11> getOtherParty() {
-		return otherParty;
+		return otherParty == null ? otherParty = new ArrayList<>() : otherParty;
 	}
 
-	public void setOtherParty(List<com.tools20022.repository.msg.ExtendedParty11> otherParty) {
-		this.otherParty = otherParty;
+	public AccountParties15 setOtherParty(List<ExtendedParty11> otherParty) {
+		this.otherParty = Objects.requireNonNull(otherParty);
+		return this;
 	}
 
-	@XmlElement(name = "Grntr")
 	public List<InvestmentAccountOwnershipInformation14> getGranter() {
-		return granter;
+		return granter == null ? granter = new ArrayList<>() : granter;
 	}
 
-	public void setGranter(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> granter) {
-		this.granter = granter;
+	public AccountParties15 setGranter(List<InvestmentAccountOwnershipInformation14> granter) {
+		this.granter = Objects.requireNonNull(granter);
+		return this;
 	}
 
-	@XmlElement(name = "Sttlr")
 	public List<InvestmentAccountOwnershipInformation14> getSettlor() {
-		return settlor;
+		return settlor == null ? settlor = new ArrayList<>() : settlor;
 	}
 
-	public void setSettlor(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> settlor) {
-		this.settlor = settlor;
+	public AccountParties15 setSettlor(List<InvestmentAccountOwnershipInformation14> settlor) {
+		this.settlor = Objects.requireNonNull(settlor);
+		return this;
 	}
 
-	@XmlElement(name = "SnrMggOffcl")
 	public List<InvestmentAccountOwnershipInformation14> getSeniorManagingOfficial() {
-		return seniorManagingOfficial;
+		return seniorManagingOfficial == null ? seniorManagingOfficial = new ArrayList<>() : seniorManagingOfficial;
 	}
 
-	public void setSeniorManagingOfficial(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> seniorManagingOfficial) {
-		this.seniorManagingOfficial = seniorManagingOfficial;
+	public AccountParties15 setSeniorManagingOfficial(List<InvestmentAccountOwnershipInformation14> seniorManagingOfficial) {
+		this.seniorManagingOfficial = Objects.requireNonNull(seniorManagingOfficial);
+		return this;
 	}
 
-	@XmlElement(name = "Prtctr")
 	public List<InvestmentAccountOwnershipInformation14> getProtector() {
-		return protector;
+		return protector == null ? protector = new ArrayList<>() : protector;
 	}
 
-	public void setProtector(List<com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14> protector) {
-		this.protector = protector;
+	public AccountParties15 setProtector(List<InvestmentAccountOwnershipInformation14> protector) {
+		this.protector = Objects.requireNonNull(protector);
+		return this;
 	}
 
-	@XmlElement(name = "RegdShrhldrNm")
-	public RegisteredShareholderName1Choice getRegisteredShareholderName() {
-		return registeredShareholderName;
+	public Optional<RegisteredShareholderName1Choice> getRegisteredShareholderName() {
+		return registeredShareholderName == null ? Optional.empty() : Optional.of(registeredShareholderName);
 	}
 
-	public void setRegisteredShareholderName(RegisteredShareholderName1Choice registeredShareholderName) {
+	public AccountParties15 setRegisteredShareholderName(RegisteredShareholderName1Choice registeredShareholderName) {
 		this.registeredShareholderName = registeredShareholderName;
+		return this;
 	}
 }

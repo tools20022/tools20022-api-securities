@@ -29,6 +29,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -69,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,19 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesIndexReport1", propOrder = {"technicalRecordIdentification", "requestingEntity", "index", "validityPeriod"})
 public class SecuritiesIndexReport1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TechRcrdId")
 	protected Max35Text technicalRecordIdentification;
 	/**
-	 * Unique identifier of a record in a message used as part of error
-	 * management and feedback messages.<br>
-	 * <br>
-	 * Usage:<br>
-	 * This identification will be used in the status advice sent back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,9 +121,9 @@ public class SecuritiesIndexReport1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTechnicalRecordIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesIndexReport1, Optional<Max35Text>> mmTechnicalRecordIdentification = new MMMessageAttribute<SecuritiesIndexReport1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SecuritiesIndexReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesIndexReport1.mmObject();
 			isDerived = false;
 			xmlTag = "TechRcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,12 +133,22 @@ public class SecuritiesIndexReport1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecuritiesIndexReport1 obj) {
+			return obj.getTechnicalRecordIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesIndexReport1 obj, Optional<Max35Text> value) {
+			obj.setTechnicalRecordIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RqstngNtty")
 	protected CountryCode requestingEntity;
 	/**
-	 * Country code of the entity that wishes to express an interest in
-	 * receiving transaction reports for the requested indexes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,9 +175,9 @@ public class SecuritiesIndexReport1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestingEntity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesIndexReport1, Optional<CountryCode>> mmRequestingEntity = new MMMessageAttribute<SecuritiesIndexReport1, Optional<CountryCode>>() {
 		{
-			componentContext_lazy = () -> SecuritiesIndexReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesIndexReport1.mmObject();
 			isDerived = false;
 			xmlTag = "RqstngNtty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,11 +187,22 @@ public class SecuritiesIndexReport1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(SecuritiesIndexReport1 obj) {
+			return obj.getRequestingEntity();
+		}
+
+		@Override
+		public void setValue(SecuritiesIndexReport1 obj, Optional<CountryCode> value) {
+			obj.setRequestingEntity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Indx", required = true)
 	protected FinancialInstrument46Choice index;
 	/**
-	 * Details the index that is being requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -207,9 +227,9 @@ public class SecuritiesIndexReport1 {
 	 * definition} = "Details the index that is being requested."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndex = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesIndexReport1, FinancialInstrument46Choice> mmIndex = new MMMessageAssociationEnd<SecuritiesIndexReport1, FinancialInstrument46Choice>() {
 		{
-			componentContext_lazy = () -> SecuritiesIndexReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesIndexReport1.mmObject();
 			isDerived = false;
 			xmlTag = "Indx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,12 +240,22 @@ public class SecuritiesIndexReport1 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrument46Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrument46Choice getValue(SecuritiesIndexReport1 obj) {
+			return obj.getIndex();
+		}
+
+		@Override
+		public void setValue(SecuritiesIndexReport1 obj, FinancialInstrument46Choice value) {
+			obj.setIndex(value);
+		}
 	};
+	@XmlElement(name = "VldtyPrd")
 	protected Period4Choice validityPeriod;
 	/**
-	 * Date when the national competent authority last expressed its interest in
-	 * this index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -251,9 +281,9 @@ public class SecuritiesIndexReport1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmValidityPeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesIndexReport1, Optional<Period4Choice>> mmValidityPeriod = new MMMessageAssociationEnd<SecuritiesIndexReport1, Optional<Period4Choice>>() {
 		{
-			componentContext_lazy = () -> SecuritiesIndexReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesIndexReport1.mmObject();
 			isDerived = false;
 			xmlTag = "VldtyPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -264,14 +294,25 @@ public class SecuritiesIndexReport1 {
 			isComposite = true;
 			type_lazy = () -> Period4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<Period4Choice> getValue(SecuritiesIndexReport1 obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesIndexReport1 obj, Optional<Period4Choice> value) {
+			obj.setValidityPeriod(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesIndexReport1.mmTechnicalRecordIdentification, SecuritiesIndexReport1.mmRequestingEntity, SecuritiesIndexReport1.mmIndex, SecuritiesIndexReport1.mmValidityPeriod);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesIndexReport1.mmTechnicalRecordIdentification, com.tools20022.repository.msg.SecuritiesIndexReport1.mmRequestingEntity,
+						com.tools20022.repository.msg.SecuritiesIndexReport1.mmIndex, com.tools20022.repository.msg.SecuritiesIndexReport1.mmValidityPeriod);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FinancialInstrumentReportingReferenceDataIndexReportV01.mmIndexData);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesIndexReport1";
 				definition = "Provides details on the securities index request operations for national competent authorities.";
@@ -280,39 +321,39 @@ public class SecuritiesIndexReport1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TechRcrdId")
-	public Max35Text getTechnicalRecordIdentification() {
-		return technicalRecordIdentification;
+	public Optional<Max35Text> getTechnicalRecordIdentification() {
+		return technicalRecordIdentification == null ? Optional.empty() : Optional.of(technicalRecordIdentification);
 	}
 
-	public void setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
+	public SecuritiesIndexReport1 setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
 		this.technicalRecordIdentification = technicalRecordIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "RqstngNtty")
-	public CountryCode getRequestingEntity() {
-		return requestingEntity;
+	public Optional<CountryCode> getRequestingEntity() {
+		return requestingEntity == null ? Optional.empty() : Optional.of(requestingEntity);
 	}
 
-	public void setRequestingEntity(CountryCode requestingEntity) {
+	public SecuritiesIndexReport1 setRequestingEntity(CountryCode requestingEntity) {
 		this.requestingEntity = requestingEntity;
+		return this;
 	}
 
-	@XmlElement(name = "Indx", required = true)
 	public FinancialInstrument46Choice getIndex() {
 		return index;
 	}
 
-	public void setIndex(FinancialInstrument46Choice index) {
-		this.index = index;
+	public SecuritiesIndexReport1 setIndex(FinancialInstrument46Choice index) {
+		this.index = Objects.requireNonNull(index);
+		return this;
 	}
 
-	@XmlElement(name = "VldtyPrd")
-	public Period4Choice getValidityPeriod() {
-		return validityPeriod;
+	public Optional<Period4Choice> getValidityPeriod() {
+		return validityPeriod == null ? Optional.empty() : Optional.of(validityPeriod);
 	}
 
-	public void setValidityPeriod(Period4Choice validityPeriod) {
+	public SecuritiesIndexReport1 setValidityPeriod(Period4Choice validityPeriod) {
 		this.validityPeriod = validityPeriod;
+		return this;
 	}
 }

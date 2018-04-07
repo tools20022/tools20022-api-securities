@@ -19,11 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Order placed by an investor to buy or sell an asset at a price specified or
@@ -65,8 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +85,8 @@ public class Order {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Trade trade;
 	/**
-	 * Agreement between two parties to buy and sell assets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +114,7 @@ public class Order {
 	 * definition} = "Agreement between two parties to buy and sell assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Order, Trade> mmTrade = new MMBusinessAssociationEnd<Order, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
@@ -122,17 +123,25 @@ public class Order {
 			definition = "Agreement between two parties to buy and sell assets.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmOrder;
+			opposite_lazy = () -> Trade.mmOrder;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(Order obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(Order obj, Trade value) {
+			obj.setTrade(value);
 		}
 	};
 	protected Max35Text masterIdentification;
 	/**
-	 * Unique and unambiguous identifier for a group of individual orders, as
-	 * assigned by the instructing party. This identifier links the individual
-	 * orders together.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,41 +155,11 @@ public class Order {
 	 * {@linkplain com.tools20022.repository.msg.InvestmentFundOrder4#mmMasterReference
 	 * InvestmentFundOrder4.mmMasterReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferReference7#mmMasterReference
-	 * TransferReference7.mmMasterReference}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentFundTransaction4#mmMasterReference
 	 * InvestmentFundTransaction4.mmMasterReference}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Identification15#mmMasterIdentification
 	 * Identification15.mmMasterIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CancellationStatusAndReason3#mmMasterReference
-	 * CancellationStatusAndReason3.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.MessageAndBusinessReference8#mmMasterReference
-	 * MessageAndBusinessReference8.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferStatusAndReason4#mmMasterReference
-	 * TransferStatusAndReason4.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferOut17#mmMasterReference
-	 * TransferOut17.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferReference9#mmMasterReference
-	 * TransferReference9.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferIn14#mmMasterReference
-	 * TransferIn14.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferReference10#mmMasterReference
-	 * TransferReference10.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferIn15#mmMasterReference
-	 * TransferIn15.mmMasterReference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransferOut16#mmMasterReference
-	 * TransferOut16.mmMasterReference}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.IndividualOrderConfirmationStatusAndReason2#mmMasterReference
 	 * IndividualOrderConfirmationStatusAndReason2.mmMasterReference}</li>
@@ -232,6 +211,15 @@ public class Order {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentFundOrder8#mmMasterReference
 	 * InvestmentFundOrder8.mmMasterReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TransferStatusAndReason5#mmMasterReference
+	 * TransferStatusAndReason5.mmMasterReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CancellationStatusAndReason4#mmMasterReference
+	 * CancellationStatusAndReason4.mmMasterReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.MessageAndBusinessReference11#mmMasterReference
+	 * MessageAndBusinessReference11.mmMasterReference}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -251,15 +239,14 @@ public class Order {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMasterIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Order, Max35Text> mmMasterIdentification = new MMBusinessAttribute<Order, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(InvestmentFundOrder4.mmMasterReference, TransferReference7.mmMasterReference, InvestmentFundTransaction4.mmMasterReference, Identification15.mmMasterIdentification,
-					CancellationStatusAndReason3.mmMasterReference, MessageAndBusinessReference8.mmMasterReference, TransferStatusAndReason4.mmMasterReference, TransferOut17.mmMasterReference, TransferReference9.mmMasterReference,
-					TransferIn14.mmMasterReference, TransferReference10.mmMasterReference, TransferIn15.mmMasterReference, TransferOut16.mmMasterReference, IndividualOrderConfirmationStatusAndReason2.mmMasterReference,
+			derivation_lazy = () -> Arrays.asList(InvestmentFundOrder4.mmMasterReference, InvestmentFundTransaction4.mmMasterReference, Identification15.mmMasterIdentification, IndividualOrderConfirmationStatusAndReason2.mmMasterReference,
 					SwitchExecution7.mmMasterReference, SubscriptionBulkOrder5.mmMasterReference, RedemptionBulkExecution5.mmMasterReference, RedemptionMultipleExecution5.mmMasterReference, RedemptionMultipleOrder6.mmMasterReference,
 					SubscriptionMultipleOrder6.mmMasterReference, SubscriptionBulkExecution4.mmMasterReference, SwitchOrder7.mmMasterReference, RedemptionBulkOrder6.mmMasterReference, SubscriptionMultipleExecution5.mmMasterReference,
 					IndividualOrderStatusAndReason7.mmMasterReference, SwitchOrderStatusAndReason2.mmMasterReference, OrderStatusAndReason10.mmMasterReference, OrderStatusAndReason9.mmMasterReference,
-					IndividualOrderStatusAndReason8.mmMasterReference, InvestmentFundOrder8.mmMasterReference);
+					IndividualOrderStatusAndReason8.mmMasterReference, InvestmentFundOrder8.mmMasterReference, TransferStatusAndReason5.mmMasterReference, CancellationStatusAndReason4.mmMasterReference,
+					MessageAndBusinessReference11.mmMasterReference);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -270,23 +257,25 @@ public class Order {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Order.class.getMethod("getMasterIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Order obj) {
+			return obj.getMasterIdentification();
+		}
+
+		@Override
+		public void setValue(Order obj, Max35Text value) {
+			obj.setMasterIdentification(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Order";
 				definition = "Order placed by an investor to buy or sell an asset at a price specified or not.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmOrder);
+				associationDomain_lazy = () -> Arrays.asList(Trade.mmOrder);
 				subType_lazy = () -> Arrays.asList(SecuritiesOrder.mmObject(), PurchaseOrder.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Order.mmTrade, com.tools20022.repository.entity.Order.mmMasterIdentification);
 			}
@@ -303,15 +292,17 @@ public class Order {
 		return trade;
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
-		this.trade = trade;
+	public Order setTrade(Trade trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 
 	public Max35Text getMasterIdentification() {
 		return masterIdentification;
 	}
 
-	public void setMasterIdentification(Max35Text masterIdentification) {
-		this.masterIdentification = masterIdentification;
+	public Order setMasterIdentification(Max35Text masterIdentification) {
+		this.masterIdentification = Objects.requireNonNull(masterIdentification);
+		return this;
 	}
 }

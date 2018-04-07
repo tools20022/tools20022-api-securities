@@ -39,10 +39,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionStatementReportingTypeCode#MultipleAccounts
- * CorporateActionStatementReportingTypeCode.mmMultipleAccounts}</li>
+ * CorporateActionStatementReportingTypeCode.MultipleAccounts}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionStatementReportingTypeCode#MultipleEvents
- * CorporateActionStatementReportingTypeCode.mmMultipleEvents}</li>
+ * CorporateActionStatementReportingTypeCode.MultipleEvents}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -72,7 +72,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "CorporateActionStatementReportingTypeCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Type of statement reporting on account holdings  for corporate action events eg. reporting on multiple accounts or multiple events."
+ * "Type of statement reporting on account holdings for corporate action events eg. reporting on multiple accounts or multiple events."
  * </li>
  * </ul>
  */
@@ -150,11 +150,11 @@ public class CorporateActionStatementReportingTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MASE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStatementReportingTypeCode";
-				definition = "Type of statement reporting on account holdings  for corporate action events eg. reporting on multiple accounts or multiple events.";
+				definition = "Type of statement reporting on account holdings for corporate action events eg. reporting on multiple accounts or multiple events.";
 				derivation_lazy = () -> Arrays.asList(CorporateActionStatementReportingType1Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CorporateActionStatementReportingTypeCode.MultipleAccounts, com.tools20022.repository.codeset.CorporateActionStatementReportingTypeCode.MultipleEvents);
 			}

@@ -24,10 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.CollateralManagementLatestVersion;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -101,16 +99,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestPaymentResponseV04", propOrder = {"transactionIdentification", "obligation", "agreement", "interestDueToA", "interestDueToB", "interestResponse", "supplementaryData"})
 public class InterestPaymentResponseV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as know by the instructing
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,7 +130,7 @@ public class InterestPaymentResponseV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, Max35Text> mmTransactionIdentification = new MMMessageBuildingBlock<InterestPaymentResponseV04, Max35Text>() {
 		{
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,20 +141,21 @@ public class InterestPaymentResponseV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InterestPaymentResponseV04 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "Oblgtn", required = true)
 	protected Obligation4 obligation;
 	/**
-	 * Provides information like the identification of the party or parties
-	 * associated with the collateral agreement, the exposure type and the
-	 * valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,7 +177,7 @@ public class InterestPaymentResponseV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmObligation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, Obligation4> mmObligation = new MMMessageBuildingBlock<InterestPaymentResponseV04, Obligation4>() {
 		{
 			xmlTag = "Oblgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,18 +188,21 @@ public class InterestPaymentResponseV04 {
 			complexType_lazy = () -> Obligation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getObligation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Obligation4 getValue(InterestPaymentResponseV04 obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, Obligation4 value) {
+			obj.setObligation(value);
 		}
 	};
+	@XmlElement(name = "Agrmt", required = true)
 	protected Agreement4 agreement;
 	/**
-	 * Agreement details for the over the counter market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,7 +222,7 @@ public class InterestPaymentResponseV04 {
 	 * definition} = "Agreement details for the over the counter market."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, Agreement4> mmAgreement = new MMMessageBuildingBlock<InterestPaymentResponseV04, Agreement4>() {
 		{
 			xmlTag = "Agrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -231,18 +233,21 @@ public class InterestPaymentResponseV04 {
 			complexType_lazy = () -> Agreement4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getAgreement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Agreement4 getValue(InterestPaymentResponseV04 obj) {
+			return obj.getAgreement();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, Agreement4 value) {
+			obj.setAgreement(value);
 		}
 	};
+	@XmlElement(name = "IntrstDueToA")
 	protected InterestAmount2 interestDueToA;
 	/**
-	 * Provides details on the interest amount due to party A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +267,7 @@ public class InterestPaymentResponseV04 {
 	 * definition} = "Provides details on the interest amount due to party A."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInterestDueToA = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, Optional<InterestAmount2>> mmInterestDueToA = new MMMessageBuildingBlock<InterestPaymentResponseV04, Optional<InterestAmount2>>() {
 		{
 			xmlTag = "IntrstDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -273,18 +278,21 @@ public class InterestPaymentResponseV04 {
 			complexType_lazy = () -> InterestAmount2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getInterestDueToA", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<InterestAmount2> getValue(InterestPaymentResponseV04 obj) {
+			return obj.getInterestDueToA();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, Optional<InterestAmount2> value) {
+			obj.setInterestDueToA(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "IntrstDueToB")
 	protected InterestAmount2 interestDueToB;
 	/**
-	 * Provides details on the interest amount due to party B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,7 +312,7 @@ public class InterestPaymentResponseV04 {
 	 * definition} = "Provides details on the interest amount due to party B."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInterestDueToB = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, Optional<InterestAmount2>> mmInterestDueToB = new MMMessageBuildingBlock<InterestPaymentResponseV04, Optional<InterestAmount2>>() {
 		{
 			xmlTag = "IntrstDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -315,18 +323,21 @@ public class InterestPaymentResponseV04 {
 			complexType_lazy = () -> InterestAmount2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getInterestDueToB", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<InterestAmount2> getValue(InterestPaymentResponseV04 obj) {
+			return obj.getInterestDueToB();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, Optional<InterestAmount2> value) {
+			obj.setInterestDueToB(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "IntrstRspn", required = true)
 	protected InterestResponse1 interestResponse;
 	/**
-	 * Provides details on the response to the interest payment request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -348,7 +359,7 @@ public class InterestPaymentResponseV04 {
 	 * "Provides details on the response to the interest payment request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInterestResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, InterestResponse1> mmInterestResponse = new MMMessageBuildingBlock<InterestPaymentResponseV04, InterestResponse1>() {
 		{
 			xmlTag = "IntrstRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -359,19 +370,21 @@ public class InterestPaymentResponseV04 {
 			complexType_lazy = () -> InterestResponse1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getInterestResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InterestResponse1 getValue(InterestPaymentResponseV04 obj) {
+			return obj.getInterestResponse();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, InterestResponse1 value) {
+			obj.setInterestResponse(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -394,7 +407,7 @@ public class InterestPaymentResponseV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<InterestPaymentResponseV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<InterestPaymentResponseV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -404,12 +417,14 @@ public class InterestPaymentResponseV04 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InterestPaymentResponseV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(InterestPaymentResponseV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(InterestPaymentResponseV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -444,70 +459,70 @@ public class InterestPaymentResponseV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public InterestPaymentResponseV04 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Oblgtn", required = true)
 	public Obligation4 getObligation() {
 		return obligation;
 	}
 
-	public void setObligation(Obligation4 obligation) {
-		this.obligation = obligation;
+	public InterestPaymentResponseV04 setObligation(Obligation4 obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 
-	@XmlElement(name = "Agrmt", required = true)
 	public Agreement4 getAgreement() {
 		return agreement;
 	}
 
-	public void setAgreement(Agreement4 agreement) {
-		this.agreement = agreement;
+	public InterestPaymentResponseV04 setAgreement(Agreement4 agreement) {
+		this.agreement = Objects.requireNonNull(agreement);
+		return this;
 	}
 
-	@XmlElement(name = "IntrstDueToA")
-	public InterestAmount2 getInterestDueToA() {
-		return interestDueToA;
+	public Optional<InterestAmount2> getInterestDueToA() {
+		return interestDueToA == null ? Optional.empty() : Optional.of(interestDueToA);
 	}
 
-	public void setInterestDueToA(InterestAmount2 interestDueToA) {
+	public InterestPaymentResponseV04 setInterestDueToA(InterestAmount2 interestDueToA) {
 		this.interestDueToA = interestDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "IntrstDueToB")
-	public InterestAmount2 getInterestDueToB() {
-		return interestDueToB;
+	public Optional<InterestAmount2> getInterestDueToB() {
+		return interestDueToB == null ? Optional.empty() : Optional.of(interestDueToB);
 	}
 
-	public void setInterestDueToB(InterestAmount2 interestDueToB) {
+	public InterestPaymentResponseV04 setInterestDueToB(InterestAmount2 interestDueToB) {
 		this.interestDueToB = interestDueToB;
+		return this;
 	}
 
-	@XmlElement(name = "IntrstRspn", required = true)
 	public InterestResponse1 getInterestResponse() {
 		return interestResponse;
 	}
 
-	public void setInterestResponse(InterestResponse1 interestResponse) {
-		this.interestResponse = interestResponse;
+	public InterestPaymentResponseV04 setInterestResponse(InterestResponse1 interestResponse) {
+		this.interestResponse = Objects.requireNonNull(interestResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public InterestPaymentResponseV04 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:colr.014.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.014.001.04")
 	static public class Document {
 		@XmlElement(name = "IntrstPmtRspn", required = true)
 		public InterestPaymentResponseV04 messageBody;

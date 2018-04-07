@@ -25,6 +25,17 @@ class ListBuilderForGeneratedRepository_06 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
+		list.add((T) PriceMethod1Code.mmObject());
+		list.add((T) CurrencyAndAmount.mmObject());
+		list.add((T) ActiveCurrencyAndAmount.mmObject());
+		list.add((T) DecimalNumber.mmObject());
+		list.add((T) AddressTypeCode.mmObject());
+		list.add((T) AddressType2Code.mmObject());
+		list.add((T) Max16Text.mmObject());
+		list.add((T) PhoneNumber.mmObject());
+		list.add((T) Max256Text.mmObject());
+		list.add((T) BICFIIdentifier.mmObject());
+		list.add((T) BICIdentifier.mmObject());
 		list.add((T) SignatureTypeCode.mmObject());
 		list.add((T) SignatureType1Code.mmObject());
 		list.add((T) ISOTime.mmObject());
@@ -229,7 +240,7 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) PendingFailingSettlementCode.mmObject());
 		list.add((T) PendingSettlementStatusReasonCode.mmObject());
 		list.add((T) PaymentPurposeCode.mmObject());
-		list.add((T) UnmatchedStatusReasonCode.mmObject());
+		list.add((T) TransferUnmatchedReasonCode.mmObject());
 		list.add((T) CancelledStatusReasonV2Code.mmObject());
 		list.add((T) PendingFailingReasonCode.mmObject());
 		list.add((T) Max15NumericText.mmObject());
@@ -238,14 +249,11 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) ChargeBearerTypeCode.mmObject());
 		list.add((T) ChargeBearerCode.mmObject());
 		list.add((T) ChargeBearer1Code.mmObject());
-		list.add((T) TypeOfPrice12Code.mmObject());
 		list.add((T) InvestmentFundRole2Code.mmObject());
 		list.add((T) BeneficiaryCertificationCompletionCode.mmObject());
 		list.add((T) BeneficiaryCertificationCompletion1Code.mmObject());
 		list.add((T) ChargeType12Code.mmObject());
 		list.add((T) CommissionTypeV2Code.mmObject());
-		list.add((T) CommissionType7Code.mmObject());
-		list.add((T) TaxationBasis4Code.mmObject());
 		list.add((T) HoldingsPlanTypeCode.mmObject());
 		list.add((T) HoldingsPlanType1Code.mmObject());
 		list.add((T) StampDutyTypeCode.mmObject());
@@ -358,9 +366,6 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) SettlementStandingInstructionDatabase1Code.mmObject());
 		list.add((T) TypeOfIdentificationCode.mmObject());
 		list.add((T) TypeOfIdentification1Code.mmObject());
-		list.add((T) RestrictedFINDecimalNumber.mmObject());
-		list.add((T) RestrictedFINImpliedCurrencyAndAmount.mmObject());
-		list.add((T) RestrictedFINActiveCurrencyAndAmount.mmObject());
 		list.add((T) TransferReasonCode.mmObject());
 		list.add((T) TransferReason1Code.mmObject());
 		list.add((T) BusinessFlowTypeCode.mmObject());
@@ -412,8 +417,6 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) EventFrequency4Code.mmObject());
 		list.add((T) StatementUpdateTypeV2Code.mmObject());
 		list.add((T) StatementUpdateType1Code.mmObject());
-		list.add((T) CorporateActionReferenceDateCode.mmObject());
-		list.add((T) CorporateActionDeadline1Code.mmObject());
 		list.add((T) CorporateActionOption7Code.mmObject());
 		list.add((T) CorporateActionInstructionProcessingStatusCode.mmObject());
 		list.add((T) AdditionalBusinessProcessCode.mmObject());
@@ -428,7 +431,6 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) RateType7Code.mmObject());
 		list.add((T) NetDividendRateType1Code.mmObject());
 		list.add((T) RateTypeCode.mmObject());
-		list.add((T) RateType3Code.mmObject());
 		list.add((T) FractionDispositionType1Code.mmObject());
 		list.add((T) PaymentCode.mmObject());
 		list.add((T) Payment1Code.mmObject());
@@ -441,10 +443,6 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) RateValueType7Code.mmObject());
 		list.add((T) AmountPriceType2Code.mmObject());
 		list.add((T) FractionDispositionType11Code.mmObject());
-		list.add((T) GrossDividendRateType3Code.mmObject());
-		list.add((T) NetDividendRateType3Code.mmObject());
-		list.add((T) GrossDividendRateType2Code.mmObject());
-		list.add((T) NetDividendRateType2Code.mmObject());
 		list.add((T) CorporateActionPreliminaryAdviceTypeCode.mmObject());
 		list.add((T) CorporateActionPreliminaryAdviceType1Code.mmObject());
 		list.add((T) CorporateActionReversalReasonCode.mmObject());
@@ -525,6 +523,8 @@ class ListBuilderForGeneratedRepository_06 {
 		list.add((T) LegalFrameworkCode.mmObject());
 		list.add((T) LegalFramework1Code.mmObject());
 		list.add((T) Exact4NumericText.mmObject());
+		list.add((T) BlockTradeCode.mmObject());
+		list.add((T) BlockTrade1Code.mmObject());
 		ListBuilderForGeneratedRepository_07.addElems(list);
 		return list;
 	}

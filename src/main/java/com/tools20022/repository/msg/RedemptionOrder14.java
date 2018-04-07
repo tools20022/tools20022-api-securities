@@ -26,9 +26,9 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -139,8 +139,22 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails1Rule#forRedemptionOrder14
+ * ConstraintPhysicalDeliveryDetails1Rule.forRedemptionOrder14}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails2Rule#forRedemptionOrder14
+ * ConstraintPhysicalDeliveryDetails2Rule.forRedemptionOrder14}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintRequestedSettlementCurrencyRule#forRedemptionOrder14
+ * ConstraintRequestedSettlementCurrencyRule.forRedemptionOrder14}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -153,7 +167,7 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RedemptionOrder14", propOrder = {"orderReference", "clientReference", "orderType", "financialInstrumentDetails", "subAccountForHolding", "amountOrUnitsOrPercentage", "rounding", "settlementAmount", "cashSettlementDate",
 		"settlementMethod", "foreignExchangeDetails", "incomePreference", "group1Or2Units", "transactionOverhead", "settlementAndCustodyDetails", "physicalDeliveryIndicator", "physicalDeliveryDetails", "requestedSettlementCurrency",
 		"requestedNAVCurrency", "cashSettlementDetails", "nonStandardSettlementInformation", "staffClientBreakdown", "financialAdvice", "negotiatedTrade", "relatedPartyDetails", "equalisation", "customerConductClassification",
@@ -161,11 +175,11 @@ import javax.xml.bind.annotation.XmlType;
 public class RedemptionOrder14 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrdrRef", required = true)
 	protected Max35Text orderReference;
 	/**
-	 * Unique and unambiguous identifier for the order, as assigned by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,10 +211,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Max35Text> mmOrderReference = new MMMessageAttribute<RedemptionOrder14, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmIdentification;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,13 +224,22 @@ public class RedemptionOrder14 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(RedemptionOrder14 obj) {
+			return obj.getOrderReference();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Max35Text value) {
+			obj.setOrderReference(value);
+		}
 	};
+	@XmlElement(name = "ClntRef")
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of the order. This
-	 * reference can typically be used in a hub scenario to give the reference
-	 * of the order as assigned by the underlying client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,10 +271,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<Max35Text>> mmClientReference = new MMMessageAttribute<RedemptionOrder14, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmClientReference;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "ClntRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -261,11 +284,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(RedemptionOrder14 obj) {
+			return obj.getClientReference();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<Max35Text> value) {
+			obj.setClientReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrTp")
 	protected List<FundOrderType4Choice> orderType;
 	/**
-	 * Category of the investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -295,10 +329,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Category of the investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrderType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, List<FundOrderType4Choice>> mmOrderType = new MMMessageAssociationEnd<RedemptionOrder14, List<FundOrderType4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderType;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -309,11 +343,22 @@ public class RedemptionOrder14 {
 			isComposite = true;
 			type_lazy = () -> FundOrderType4Choice.mmObject();
 		}
+
+		@Override
+		public List<FundOrderType4Choice> getValue(RedemptionOrder14 obj) {
+			return obj.getOrderType();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, List<FundOrderType4Choice> value) {
+			obj.setOrderType(value);
+		}
 	};
+	@XmlElement(name = "FinInstrmDtls", required = true)
 	protected FinancialInstrument57 financialInstrumentDetails;
 	/**
-	 * Investment fund class related to the order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -342,10 +387,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Investment fund class related to the order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, FinancialInstrument57> mmFinancialInstrumentDetails = new MMMessageAssociationEnd<RedemptionOrder14, FinancialInstrument57>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmInvestmentFundClass;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,13 +399,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FinancialInstrument57.mmObject();
+			type_lazy = () -> FinancialInstrument57.mmObject();
+		}
+
+		@Override
+		public FinancialInstrument57 getValue(RedemptionOrder14 obj) {
+			return obj.getFinancialInstrumentDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, FinancialInstrument57 value) {
+			obj.setFinancialInstrumentDetails(value);
 		}
 	};
+	@XmlElement(name = "SubAcctForHldg")
 	protected SubAccount6 subAccountForHolding;
 	/**
-	 * Subdivision of the account used to segregate specific holdings.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -390,10 +446,10 @@ public class RedemptionOrder14 {
 	 * "Subdivision of the account used to segregate specific holdings."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubAccountForHolding = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<SubAccount6>> mmSubAccountForHolding = new MMMessageAssociationEnd<RedemptionOrder14, Optional<SubAccount6>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmSubAccount;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "SubAcctForHldg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -402,14 +458,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SubAccount6.mmObject();
+			type_lazy = () -> SubAccount6.mmObject();
+		}
+
+		@Override
+		public Optional<SubAccount6> getValue(RedemptionOrder14 obj) {
+			return obj.getSubAccountForHolding();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<SubAccount6> value) {
+			obj.setSubAccountForHolding(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AmtOrUnitsOrPctg", required = true)
 	protected FinancialInstrumentQuantity28Choice amountOrUnitsOrPercentage;
 	/**
-	 * Amount of money or the number of units or percentage to be redeemed for
-	 * the redemption order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -441,10 +507,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAmountOrUnitsOrPercentage = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, FinancialInstrumentQuantity28Choice> mmAmountOrUnitsOrPercentage = new MMMessageAssociationEnd<RedemptionOrder14, FinancialInstrumentQuantity28Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmOrderedQuantity;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "AmtOrUnitsOrPctg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -455,11 +521,22 @@ public class RedemptionOrder14 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity28Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity28Choice getValue(RedemptionOrder14 obj) {
+			return obj.getAmountOrUnitsOrPercentage();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, FinancialInstrumentQuantity28Choice value) {
+			obj.setAmountOrUnitsOrPercentage(value);
+		}
 	};
+	@XmlElement(name = "Rndg")
 	protected RoundingDirection2Code rounding;
 	/**
-	 * Indicates the rounding direction applied to nearest unit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -491,10 +568,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRounding = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<RoundingDirection2Code>> mmRounding = new MMMessageAttribute<RedemptionOrder14, Optional<RoundingDirection2Code>>() {
 		{
 			businessElementTrace_lazy = () -> RoundingParameters.mmRoundingDirection;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "Rndg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -504,12 +581,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> RoundingDirection2Code.mmObject();
 		}
+
+		@Override
+		public Optional<RoundingDirection2Code> getValue(RedemptionOrder14 obj) {
+			return obj.getRounding();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<RoundingDirection2Code> value) {
+			obj.setRounding(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttlmAmt")
 	protected ActiveCurrencyAndAmount settlementAmount;
 	/**
-	 * Total amount of money paid /to be paid or received in exchange for the
-	 * financial instrument in the individual order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,10 +629,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<ActiveCurrencyAndAmount>> mmSettlementAmount = new MMMessageAttribute<RedemptionOrder14, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementAmount;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -555,11 +642,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(RedemptionOrder14 obj) {
+			return obj.getSettlementAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setSettlementAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CshSttlmDt")
 	protected ISODate cashSettlementDate;
 	/**
-	 * Date on which cash is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -589,10 +687,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Date on which cash is available."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<ISODate>> mmCashSettlementDate = new MMMessageAttribute<RedemptionOrder14, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "CshSttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -602,11 +700,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(RedemptionOrder14 obj) {
+			return obj.getCashSettlementDate();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<ISODate> value) {
+			obj.setCashSettlementDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttlmMtd")
 	protected DeliveryReceiptType2Code settlementMethod;
 	/**
-	 * Method by which the transaction is settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,10 +746,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Method by which the transaction is settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<DeliveryReceiptType2Code>> mmSettlementMethod = new MMMessageAttribute<RedemptionOrder14, Optional<DeliveryReceiptType2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementType;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -650,23 +759,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DeliveryReceiptType2Code.mmObject();
 		}
+
+		@Override
+		public Optional<DeliveryReceiptType2Code> getValue(RedemptionOrder14 obj) {
+			return obj.getSettlementMethod();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<DeliveryReceiptType2Code> value) {
+			obj.setSettlementMethod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FXDtls")
 	protected ForeignExchangeTerms32 foreignExchangeDetails;
 	/**
-	 * Information needed to process a currency exchange or conversion.<br>
-	 * How the exchange rate is expressed determines which currency is the Unit
-	 * Currency and Quoted Currency. If the amounts concerned are EUR 1000 and
-	 * USD 1300, the exchange rate may be expressed as per either of the
-	 * following examples:<br>
-	 * EXAMPLE 1 <br>
-	 * UnitCurrency EUR<br>
-	 * QuotedCurrency USD<br>
-	 * ExchangeRate 1.300<br>
-	 * EXAMPLE 2<br>
-	 * UnitCurrency USD<br>
-	 * QuotedCurrency EUR<br>
-	 * ExchangeRate 0.769
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -693,30 +801,40 @@ public class RedemptionOrder14 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency  EUR\r\nQuotedCurrency  USD\r\nExchangeRate  1.300\r\nEXAMPLE 2\r\nUnitCurrency  USD\r\nQuotedCurrency  EUR\r\nExchangeRate  0.769"
+	 * "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency EUR\r\nQuotedCurrency USD\r\nExchangeRate 1.300\r\nEXAMPLE 2\r\nUnitCurrency USD\r\nQuotedCurrency EUR\r\nExchangeRate 0.769."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForeignExchangeDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<ForeignExchangeTerms32>> mmForeignExchangeDetails = new MMMessageAssociationEnd<RedemptionOrder14, Optional<ForeignExchangeTerms32>>() {
 		{
 			businessElementTrace_lazy = () -> ForeignExchangeTrade.mmAgreedRate;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "FXDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForeignExchangeDetails";
-			definition = "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency  EUR\r\nQuotedCurrency  USD\r\nExchangeRate  1.300\r\nEXAMPLE 2\r\nUnitCurrency  USD\r\nQuotedCurrency  EUR\r\nExchangeRate  0.769";
+			definition = "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency EUR\r\nQuotedCurrency USD\r\nExchangeRate 1.300\r\nEXAMPLE 2\r\nUnitCurrency USD\r\nQuotedCurrency EUR\r\nExchangeRate 0.769.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ForeignExchangeTerms32.mmObject();
+			type_lazy = () -> ForeignExchangeTerms32.mmObject();
+		}
+
+		@Override
+		public Optional<ForeignExchangeTerms32> getValue(RedemptionOrder14 obj) {
+			return obj.getForeignExchangeDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<ForeignExchangeTerms32> value) {
+			obj.setForeignExchangeDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "IncmPref")
 	protected IncomePreference1Code incomePreference;
 	/**
-	 * Dividend option chosen by the account owner based on the options offered
-	 * in the prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -749,10 +867,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncomePreference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<IncomePreference1Code>> mmIncomePreference = new MMMessageAttribute<RedemptionOrder14, Optional<IncomePreference1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentAccountService.mmIncomePreference;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "IncmPref";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -762,13 +880,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> IncomePreference1Code.mmObject();
 		}
+
+		@Override
+		public Optional<IncomePreference1Code> getValue(RedemptionOrder14 obj) {
+			return obj.getIncomePreference();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<IncomePreference1Code> value) {
+			obj.setIncomePreference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Grp1Or2Units")
 	protected UKTaxGroupUnit1Code group1Or2Units;
 	/**
-	 * Tax group to which the purchased investment fund units belong. The
-	 * investor indicates to the intermediary operating pooled nominees, which
-	 * type of unit is to be sold.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -801,10 +928,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGroup1Or2Units = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<UKTaxGroupUnit1Code>> mmGroup1Or2Units = new MMMessageAttribute<RedemptionOrder14, Optional<UKTaxGroupUnit1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmGroup1Or2Units;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "Grp1Or2Units";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -814,11 +941,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> UKTaxGroupUnit1Code.mmObject();
 		}
+
+		@Override
+		public Optional<UKTaxGroupUnit1Code> getValue(RedemptionOrder14 obj) {
+			return obj.getGroup1Or2Units();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<UKTaxGroupUnit1Code> value) {
+			obj.setGroup1Or2Units(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxOvrhd")
 	protected FeeAndTax1 transactionOverhead;
 	/**
-	 * Fees (charges/commission) and tax to be applied to the gross amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -847,10 +985,10 @@ public class RedemptionOrder14 {
 	 * "Fees (charges/commission) and tax to be applied to the gross amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionOverhead = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<FeeAndTax1>> mmTransactionOverhead = new MMMessageAssociationEnd<RedemptionOrder14, Optional<FeeAndTax1>>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentFundTax.mmObject();
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "TxOvrhd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -859,13 +997,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FeeAndTax1.mmObject();
+			type_lazy = () -> FeeAndTax1.mmObject();
+		}
+
+		@Override
+		public Optional<FeeAndTax1> getValue(RedemptionOrder14 obj) {
+			return obj.getTransactionOverhead();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<FeeAndTax1> value) {
+			obj.setTransactionOverhead(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SttlmAndCtdyDtls")
 	protected FundSettlementParameters12 settlementAndCustodyDetails;
 	/**
-	 * Parameters used to execute the settlement of an investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -896,10 +1045,10 @@ public class RedemptionOrder14 {
 	 * "Parameters used to execute the settlement of an investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementAndCustodyDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<FundSettlementParameters12>> mmSettlementAndCustodyDetails = new MMMessageAssociationEnd<RedemptionOrder14, Optional<FundSettlementParameters12>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmSecuritiesSettlement;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAndCtdyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -908,13 +1057,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FundSettlementParameters12.mmObject();
+			type_lazy = () -> FundSettlementParameters12.mmObject();
+		}
+
+		@Override
+		public Optional<FundSettlementParameters12> getValue(RedemptionOrder14 obj) {
+			return obj.getSettlementAndCustodyDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<FundSettlementParameters12> value) {
+			obj.setSettlementAndCustodyDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PhysDlvryInd", required = true)
 	protected YesNoIndicator physicalDeliveryIndicator;
 	/**
-	 * Indicates whether the financial instrument is to be physically delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -942,9 +1102,9 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPhysicalDeliveryIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, YesNoIndicator> mmPhysicalDeliveryIndicator = new MMMessageAttribute<RedemptionOrder14, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "PhysDlvryInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -954,11 +1114,22 @@ public class RedemptionOrder14 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(RedemptionOrder14 obj) {
+			return obj.getPhysicalDeliveryIndicator();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, YesNoIndicator value) {
+			obj.setPhysicalDeliveryIndicator(value);
+		}
 	};
+	@XmlElement(name = "PhysDlvryDtls")
 	protected DeliveryParameters3 physicalDeliveryDetails;
 	/**
-	 * Information related to the physical delivery of the securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -988,10 +1159,10 @@ public class RedemptionOrder14 {
 	 * "Information related to the physical delivery of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPhysicalDeliveryDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<DeliveryParameters3>> mmPhysicalDeliveryDetails = new MMMessageAssociationEnd<RedemptionOrder14, Optional<DeliveryParameters3>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmPhysicalDelivery;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "PhysDlvryDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1000,13 +1171,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DeliveryParameters3.mmObject();
+			type_lazy = () -> DeliveryParameters3.mmObject();
+		}
+
+		@Override
+		public Optional<DeliveryParameters3> getValue(RedemptionOrder14 obj) {
+			return obj.getPhysicalDeliveryDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<DeliveryParameters3> value) {
+			obj.setPhysicalDeliveryDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ReqdSttlmCcy")
 	protected ActiveCurrencyCode requestedSettlementCurrency;
 	/**
-	 * Currency requested for settlement of cash proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1037,10 +1219,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Currency requested for settlement of cash proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedSettlementCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<ActiveCurrencyCode>> mmRequestedSettlementCurrency = new MMMessageAttribute<RedemptionOrder14, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmRequestedSettlementCurrency;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdSttlmCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1050,13 +1232,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(RedemptionOrder14 obj) {
+			return obj.getRequestedSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setRequestedSettlementCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ReqdNAVCcy")
 	protected ActiveOrHistoricCurrencyCode requestedNAVCurrency;
 	/**
-	 * Currency to be used for pricing the fund. This currency must be among the
-	 * set of currencies in which the price may be expressed, as stated in the
-	 * prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1089,10 +1280,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedNAVCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<ActiveOrHistoricCurrencyCode>> mmRequestedNAVCurrency = new MMMessageAttribute<RedemptionOrder14, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmRequestedNAVCurrency;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdNAVCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1102,11 +1293,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(RedemptionOrder14 obj) {
+			return obj.getRequestedNAVCurrency();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setRequestedNAVCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CshSttlmDtls")
 	protected PaymentTransaction72 cashSettlementDetails;
 	/**
-	 * Payment process for the transfer of cash from the debtor to the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1137,10 +1339,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashSettlementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<PaymentTransaction72>> mmCashSettlementDetails = new MMMessageAssociationEnd<RedemptionOrder14, Optional<PaymentTransaction72>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPaymentOffset;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "CshSttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1149,14 +1351,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PaymentTransaction72.mmObject();
+			type_lazy = () -> PaymentTransaction72.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentTransaction72> getValue(RedemptionOrder14 obj) {
+			return obj.getCashSettlementDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<PaymentTransaction72> value) {
+			obj.setCashSettlementDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NonStdSttlmInf")
 	protected Max350Text nonStandardSettlementInformation;
 	/**
-	 * Additional specific settlement information for non-regulated traded
-	 * funds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1188,10 +1400,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNonStandardSettlementInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<Max350Text>> mmNonStandardSettlementInformation = new MMMessageAttribute<RedemptionOrder14, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmNonStandardSettlementInformation;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "NonStdSttlmInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1201,11 +1413,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(RedemptionOrder14 obj) {
+			return obj.getNonStandardSettlementInformation();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<Max350Text> value) {
+			obj.setNonStandardSettlementInformation(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2> staffClientBreakdown;
+	@XmlElement(name = "StffClntBrkdwn")
+	protected List<InvestmentFundsOrderBreakdown2> staffClientBreakdown;
 	/**
-	 * Breakdown of the net amount per type of order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1235,10 +1458,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Breakdown of the net amount per type of order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStaffClientBreakdown = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, List<InvestmentFundsOrderBreakdown2>> mmStaffClientBreakdown = new MMMessageAssociationEnd<RedemptionOrder14, List<InvestmentFundsOrderBreakdown2>>() {
 		{
 			businessComponentTrace_lazy = () -> RedemptionOrder.mmObject();
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "StffClntBrkdwn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1247,14 +1470,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 4;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2.mmObject();
+			type_lazy = () -> InvestmentFundsOrderBreakdown2.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFundsOrderBreakdown2> getValue(RedemptionOrder14 obj) {
+			return obj.getStaffClientBreakdown();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, List<InvestmentFundsOrderBreakdown2> value) {
+			obj.setStaffClientBreakdown(value);
 		}
 	};
+	@XmlElement(name = "FinAdvc")
 	protected FinancialAdvice1Code financialAdvice;
 	/**
-	 * Specifies if advice has been received from an independent financial
-	 * advisor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1287,10 +1520,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinancialAdvice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<FinancialAdvice1Code>> mmFinancialAdvice = new MMMessageAttribute<RedemptionOrder14, Optional<FinancialAdvice1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmFinancialAdvice;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "FinAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1300,11 +1533,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> FinancialAdvice1Code.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialAdvice1Code> getValue(RedemptionOrder14 obj) {
+			return obj.getFinancialAdvice();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<FinancialAdvice1Code> value) {
+			obj.setFinancialAdvice(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NgtdTrad")
 	protected NegotiatedTrade1Code negotiatedTrade;
 	/**
-	 * Specifies whether the trade is negotiated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1335,10 +1579,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Specifies whether the trade is negotiated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNegotiatedTrade = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<NegotiatedTrade1Code>> mmNegotiatedTrade = new MMMessageAttribute<RedemptionOrder14, Optional<NegotiatedTrade1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmNegotiatedTrade;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "NgtdTrad";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1348,11 +1592,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> NegotiatedTrade1Code.mmObject();
 		}
+
+		@Override
+		public Optional<NegotiatedTrade1Code> getValue(RedemptionOrder14 obj) {
+			return obj.getNegotiatedTrade();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<NegotiatedTrade1Code> value) {
+			obj.setNegotiatedTrade(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.Intermediary40> relatedPartyDetails;
+	@XmlElement(name = "RltdPtyDtls")
+	protected List<Intermediary40> relatedPartyDetails;
 	/**
-	 * Party related to the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1381,10 +1636,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Party related to the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRelatedPartyDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, List<Intermediary40>> mmRelatedPartyDetails = new MMMessageAssociationEnd<RedemptionOrder14, List<Intermediary40>>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradePartyRole;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "RltdPtyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1393,14 +1648,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 10;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Intermediary40.mmObject();
+			type_lazy = () -> Intermediary40.mmObject();
+		}
+
+		@Override
+		public List<Intermediary40> getValue(RedemptionOrder14 obj) {
+			return obj.getRelatedPartyDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, List<Intermediary40> value) {
+			obj.setRelatedPartyDetails(value);
 		}
 	};
+	@XmlElement(name = "Equlstn")
 	protected Equalisation1 equalisation;
 	/**
-	 * Part of an investor's retained subscription amount that is returned by
-	 * the fund in order to reimburse preliminary incentive/performance fees.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1431,10 +1696,10 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEqualisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<Equalisation1>> mmEqualisation = new MMMessageAssociationEnd<RedemptionOrder14, Optional<Equalisation1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmEqualisation;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "Equlstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1443,14 +1708,24 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Equalisation1.mmObject();
+			type_lazy = () -> Equalisation1.mmObject();
+		}
+
+		@Override
+		public Optional<Equalisation1> getValue(RedemptionOrder14 obj) {
+			return obj.getEqualisation();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<Equalisation1> value) {
+			obj.setEqualisation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CstmrCndctClssfctn")
 	protected CustomerConductClassification1Choice customerConductClassification;
 	/**
-	 * Assessment of the customer’s behaviour at the time of the account opening
-	 * application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1478,9 +1753,9 @@ public class RedemptionOrder14 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCustomerConductClassification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<CustomerConductClassification1Choice>> mmCustomerConductClassification = new MMMessageAttribute<RedemptionOrder14, Optional<CustomerConductClassification1Choice>>() {
 		{
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "CstmrCndctClssfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1490,12 +1765,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			complexType_lazy = () -> CustomerConductClassification1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<CustomerConductClassification1Choice> getValue(RedemptionOrder14 obj) {
+			return obj.getCustomerConductClassification();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<CustomerConductClassification1Choice> value) {
+			obj.setCustomerConductClassification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxChanlTp")
 	protected TransactionChannelType1Choice transactionChannelType;
 	/**
-	 * Means by which the investor or account owner submits the open account
-	 * form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1523,29 +1808,40 @@ public class RedemptionOrder14 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Means by which the investor or account owner submits the open account form. "
+	 * "Means by which the investor or account owner submits the open account form."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionChannelType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<TransactionChannelType1Choice>> mmTransactionChannelType = new MMMessageAssociationEnd<RedemptionOrder14, Optional<TransactionChannelType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTransactionChannel;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "TxChanlTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionChannelType";
-			definition = "Means by which the investor or account owner submits the open account form. ";
+			definition = "Means by which the investor or account owner submits the open account form.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> TransactionChannelType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TransactionChannelType1Choice> getValue(RedemptionOrder14 obj) {
+			return obj.getTransactionChannelType();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<TransactionChannelType1Choice> value) {
+			obj.setTransactionChannelType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SgntrTp")
 	protected SignatureType1Choice signatureType;
 	/**
-	 * Type of signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1576,10 +1872,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Type of signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSignatureType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionOrder14, Optional<SignatureType1Choice>> mmSignatureType = new MMMessageAttribute<RedemptionOrder14, Optional<SignatureType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmSignatureRequired;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "SgntrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1589,11 +1885,22 @@ public class RedemptionOrder14 {
 			minOccurs = 0;
 			complexType_lazy = () -> SignatureType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SignatureType1Choice> getValue(RedemptionOrder14 obj) {
+			return obj.getSignatureType();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<SignatureType1Choice> value) {
+			obj.setSignatureType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrWvrDtls")
 	protected OrderWaiver1 orderWaiverDetails;
 	/**
-	 * Information about a non-standard order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1622,10 +1929,10 @@ public class RedemptionOrder14 {
 	 * definition} = "Information about a non-standard order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrderWaiverDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionOrder14, Optional<OrderWaiver1>> mmOrderWaiverDetails = new MMMessageAssociationEnd<RedemptionOrder14, Optional<OrderWaiver1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderWaiverReason;
-			componentContext_lazy = () -> RedemptionOrder14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionOrder14.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrWvrDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1634,22 +1941,39 @@ public class RedemptionOrder14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OrderWaiver1.mmObject();
+			type_lazy = () -> OrderWaiver1.mmObject();
+		}
+
+		@Override
+		public Optional<OrderWaiver1> getValue(RedemptionOrder14 obj) {
+			return obj.getOrderWaiverDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder14 obj, Optional<OrderWaiver1> value) {
+			obj.setOrderWaiverDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RedemptionOrder14.mmOrderReference, RedemptionOrder14.mmClientReference, RedemptionOrder14.mmOrderType, RedemptionOrder14.mmFinancialInstrumentDetails,
-						RedemptionOrder14.mmSubAccountForHolding, RedemptionOrder14.mmAmountOrUnitsOrPercentage, RedemptionOrder14.mmRounding, RedemptionOrder14.mmSettlementAmount, RedemptionOrder14.mmCashSettlementDate,
-						RedemptionOrder14.mmSettlementMethod, RedemptionOrder14.mmForeignExchangeDetails, RedemptionOrder14.mmIncomePreference, RedemptionOrder14.mmGroup1Or2Units, RedemptionOrder14.mmTransactionOverhead,
-						RedemptionOrder14.mmSettlementAndCustodyDetails, RedemptionOrder14.mmPhysicalDeliveryIndicator, RedemptionOrder14.mmPhysicalDeliveryDetails, RedemptionOrder14.mmRequestedSettlementCurrency,
-						RedemptionOrder14.mmRequestedNAVCurrency, RedemptionOrder14.mmCashSettlementDetails, RedemptionOrder14.mmNonStandardSettlementInformation, RedemptionOrder14.mmStaffClientBreakdown,
-						RedemptionOrder14.mmFinancialAdvice, RedemptionOrder14.mmNegotiatedTrade, RedemptionOrder14.mmRelatedPartyDetails, RedemptionOrder14.mmEqualisation, RedemptionOrder14.mmCustomerConductClassification,
-						RedemptionOrder14.mmTransactionChannelType, RedemptionOrder14.mmSignatureType, RedemptionOrder14.mmOrderWaiverDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RedemptionOrder14.mmOrderReference, com.tools20022.repository.msg.RedemptionOrder14.mmClientReference,
+						com.tools20022.repository.msg.RedemptionOrder14.mmOrderType, com.tools20022.repository.msg.RedemptionOrder14.mmFinancialInstrumentDetails, com.tools20022.repository.msg.RedemptionOrder14.mmSubAccountForHolding,
+						com.tools20022.repository.msg.RedemptionOrder14.mmAmountOrUnitsOrPercentage, com.tools20022.repository.msg.RedemptionOrder14.mmRounding, com.tools20022.repository.msg.RedemptionOrder14.mmSettlementAmount,
+						com.tools20022.repository.msg.RedemptionOrder14.mmCashSettlementDate, com.tools20022.repository.msg.RedemptionOrder14.mmSettlementMethod, com.tools20022.repository.msg.RedemptionOrder14.mmForeignExchangeDetails,
+						com.tools20022.repository.msg.RedemptionOrder14.mmIncomePreference, com.tools20022.repository.msg.RedemptionOrder14.mmGroup1Or2Units, com.tools20022.repository.msg.RedemptionOrder14.mmTransactionOverhead,
+						com.tools20022.repository.msg.RedemptionOrder14.mmSettlementAndCustodyDetails, com.tools20022.repository.msg.RedemptionOrder14.mmPhysicalDeliveryIndicator,
+						com.tools20022.repository.msg.RedemptionOrder14.mmPhysicalDeliveryDetails, com.tools20022.repository.msg.RedemptionOrder14.mmRequestedSettlementCurrency,
+						com.tools20022.repository.msg.RedemptionOrder14.mmRequestedNAVCurrency, com.tools20022.repository.msg.RedemptionOrder14.mmCashSettlementDetails,
+						com.tools20022.repository.msg.RedemptionOrder14.mmNonStandardSettlementInformation, com.tools20022.repository.msg.RedemptionOrder14.mmStaffClientBreakdown,
+						com.tools20022.repository.msg.RedemptionOrder14.mmFinancialAdvice, com.tools20022.repository.msg.RedemptionOrder14.mmNegotiatedTrade, com.tools20022.repository.msg.RedemptionOrder14.mmRelatedPartyDetails,
+						com.tools20022.repository.msg.RedemptionOrder14.mmEqualisation, com.tools20022.repository.msg.RedemptionOrder14.mmCustomerConductClassification,
+						com.tools20022.repository.msg.RedemptionOrder14.mmTransactionChannelType, com.tools20022.repository.msg.RedemptionOrder14.mmSignatureType, com.tools20022.repository.msg.RedemptionOrder14.mmOrderWaiverDetails);
 				trace_lazy = () -> RedemptionOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails1Rule.forRedemptionOrder14,
+						com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails2Rule.forRedemptionOrder14, com.tools20022.repository.constraints.ConstraintRequestedSettlementCurrencyRule.forRedemptionOrder14);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RedemptionOrder14";
 				definition = "Instruction from an investor to sell investment fund units back to the fund.";
@@ -1658,273 +1982,273 @@ public class RedemptionOrder14 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrdrRef", required = true)
 	public Max35Text getOrderReference() {
 		return orderReference;
 	}
 
-	public void setOrderReference(Max35Text orderReference) {
-		this.orderReference = orderReference;
+	public RedemptionOrder14 setOrderReference(Max35Text orderReference) {
+		this.orderReference = Objects.requireNonNull(orderReference);
+		return this;
 	}
 
-	@XmlElement(name = "ClntRef")
-	public Max35Text getClientReference() {
-		return clientReference;
+	public Optional<Max35Text> getClientReference() {
+		return clientReference == null ? Optional.empty() : Optional.of(clientReference);
 	}
 
-	public void setClientReference(Max35Text clientReference) {
+	public RedemptionOrder14 setClientReference(Max35Text clientReference) {
 		this.clientReference = clientReference;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrTp")
 	public List<FundOrderType4Choice> getOrderType() {
-		return orderType;
+		return orderType == null ? orderType = new ArrayList<>() : orderType;
 	}
 
-	public void setOrderType(List<FundOrderType4Choice> orderType) {
-		this.orderType = orderType;
+	public RedemptionOrder14 setOrderType(List<FundOrderType4Choice> orderType) {
+		this.orderType = Objects.requireNonNull(orderType);
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmDtls", required = true)
 	public FinancialInstrument57 getFinancialInstrumentDetails() {
 		return financialInstrumentDetails;
 	}
 
-	public void setFinancialInstrumentDetails(com.tools20022.repository.msg.FinancialInstrument57 financialInstrumentDetails) {
-		this.financialInstrumentDetails = financialInstrumentDetails;
+	public RedemptionOrder14 setFinancialInstrumentDetails(FinancialInstrument57 financialInstrumentDetails) {
+		this.financialInstrumentDetails = Objects.requireNonNull(financialInstrumentDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SubAcctForHldg")
-	public SubAccount6 getSubAccountForHolding() {
-		return subAccountForHolding;
+	public Optional<SubAccount6> getSubAccountForHolding() {
+		return subAccountForHolding == null ? Optional.empty() : Optional.of(subAccountForHolding);
 	}
 
-	public void setSubAccountForHolding(com.tools20022.repository.msg.SubAccount6 subAccountForHolding) {
+	public RedemptionOrder14 setSubAccountForHolding(SubAccount6 subAccountForHolding) {
 		this.subAccountForHolding = subAccountForHolding;
+		return this;
 	}
 
-	@XmlElement(name = "AmtOrUnitsOrPctg", required = true)
 	public FinancialInstrumentQuantity28Choice getAmountOrUnitsOrPercentage() {
 		return amountOrUnitsOrPercentage;
 	}
 
-	public void setAmountOrUnitsOrPercentage(FinancialInstrumentQuantity28Choice amountOrUnitsOrPercentage) {
-		this.amountOrUnitsOrPercentage = amountOrUnitsOrPercentage;
+	public RedemptionOrder14 setAmountOrUnitsOrPercentage(FinancialInstrumentQuantity28Choice amountOrUnitsOrPercentage) {
+		this.amountOrUnitsOrPercentage = Objects.requireNonNull(amountOrUnitsOrPercentage);
+		return this;
 	}
 
-	@XmlElement(name = "Rndg")
-	public RoundingDirection2Code getRounding() {
-		return rounding;
+	public Optional<RoundingDirection2Code> getRounding() {
+		return rounding == null ? Optional.empty() : Optional.of(rounding);
 	}
 
-	public void setRounding(RoundingDirection2Code rounding) {
+	public RedemptionOrder14 setRounding(RoundingDirection2Code rounding) {
 		this.rounding = rounding;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAmt")
-	public ActiveCurrencyAndAmount getSettlementAmount() {
-		return settlementAmount;
+	public Optional<ActiveCurrencyAndAmount> getSettlementAmount() {
+		return settlementAmount == null ? Optional.empty() : Optional.of(settlementAmount);
 	}
 
-	public void setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
+	public RedemptionOrder14 setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
 		this.settlementAmount = settlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "CshSttlmDt")
-	public ISODate getCashSettlementDate() {
-		return cashSettlementDate;
+	public Optional<ISODate> getCashSettlementDate() {
+		return cashSettlementDate == null ? Optional.empty() : Optional.of(cashSettlementDate);
 	}
 
-	public void setCashSettlementDate(ISODate cashSettlementDate) {
+	public RedemptionOrder14 setCashSettlementDate(ISODate cashSettlementDate) {
 		this.cashSettlementDate = cashSettlementDate;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmMtd")
-	public DeliveryReceiptType2Code getSettlementMethod() {
-		return settlementMethod;
+	public Optional<DeliveryReceiptType2Code> getSettlementMethod() {
+		return settlementMethod == null ? Optional.empty() : Optional.of(settlementMethod);
 	}
 
-	public void setSettlementMethod(DeliveryReceiptType2Code settlementMethod) {
+	public RedemptionOrder14 setSettlementMethod(DeliveryReceiptType2Code settlementMethod) {
 		this.settlementMethod = settlementMethod;
+		return this;
 	}
 
-	@XmlElement(name = "FXDtls")
-	public ForeignExchangeTerms32 getForeignExchangeDetails() {
-		return foreignExchangeDetails;
+	public Optional<ForeignExchangeTerms32> getForeignExchangeDetails() {
+		return foreignExchangeDetails == null ? Optional.empty() : Optional.of(foreignExchangeDetails);
 	}
 
-	public void setForeignExchangeDetails(com.tools20022.repository.msg.ForeignExchangeTerms32 foreignExchangeDetails) {
+	public RedemptionOrder14 setForeignExchangeDetails(ForeignExchangeTerms32 foreignExchangeDetails) {
 		this.foreignExchangeDetails = foreignExchangeDetails;
+		return this;
 	}
 
-	@XmlElement(name = "IncmPref")
-	public IncomePreference1Code getIncomePreference() {
-		return incomePreference;
+	public Optional<IncomePreference1Code> getIncomePreference() {
+		return incomePreference == null ? Optional.empty() : Optional.of(incomePreference);
 	}
 
-	public void setIncomePreference(IncomePreference1Code incomePreference) {
+	public RedemptionOrder14 setIncomePreference(IncomePreference1Code incomePreference) {
 		this.incomePreference = incomePreference;
+		return this;
 	}
 
-	@XmlElement(name = "Grp1Or2Units")
-	public UKTaxGroupUnit1Code getGroup1Or2Units() {
-		return group1Or2Units;
+	public Optional<UKTaxGroupUnit1Code> getGroup1Or2Units() {
+		return group1Or2Units == null ? Optional.empty() : Optional.of(group1Or2Units);
 	}
 
-	public void setGroup1Or2Units(UKTaxGroupUnit1Code group1Or2Units) {
+	public RedemptionOrder14 setGroup1Or2Units(UKTaxGroupUnit1Code group1Or2Units) {
 		this.group1Or2Units = group1Or2Units;
+		return this;
 	}
 
-	@XmlElement(name = "TxOvrhd")
-	public FeeAndTax1 getTransactionOverhead() {
-		return transactionOverhead;
+	public Optional<FeeAndTax1> getTransactionOverhead() {
+		return transactionOverhead == null ? Optional.empty() : Optional.of(transactionOverhead);
 	}
 
-	public void setTransactionOverhead(com.tools20022.repository.msg.FeeAndTax1 transactionOverhead) {
+	public RedemptionOrder14 setTransactionOverhead(FeeAndTax1 transactionOverhead) {
 		this.transactionOverhead = transactionOverhead;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAndCtdyDtls")
-	public FundSettlementParameters12 getSettlementAndCustodyDetails() {
-		return settlementAndCustodyDetails;
+	public Optional<FundSettlementParameters12> getSettlementAndCustodyDetails() {
+		return settlementAndCustodyDetails == null ? Optional.empty() : Optional.of(settlementAndCustodyDetails);
 	}
 
-	public void setSettlementAndCustodyDetails(com.tools20022.repository.msg.FundSettlementParameters12 settlementAndCustodyDetails) {
+	public RedemptionOrder14 setSettlementAndCustodyDetails(FundSettlementParameters12 settlementAndCustodyDetails) {
 		this.settlementAndCustodyDetails = settlementAndCustodyDetails;
+		return this;
 	}
 
-	@XmlElement(name = "PhysDlvryInd", required = true)
 	public YesNoIndicator getPhysicalDeliveryIndicator() {
 		return physicalDeliveryIndicator;
 	}
 
-	public void setPhysicalDeliveryIndicator(YesNoIndicator physicalDeliveryIndicator) {
-		this.physicalDeliveryIndicator = physicalDeliveryIndicator;
+	public RedemptionOrder14 setPhysicalDeliveryIndicator(YesNoIndicator physicalDeliveryIndicator) {
+		this.physicalDeliveryIndicator = Objects.requireNonNull(physicalDeliveryIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "PhysDlvryDtls")
-	public DeliveryParameters3 getPhysicalDeliveryDetails() {
-		return physicalDeliveryDetails;
+	public Optional<DeliveryParameters3> getPhysicalDeliveryDetails() {
+		return physicalDeliveryDetails == null ? Optional.empty() : Optional.of(physicalDeliveryDetails);
 	}
 
-	public void setPhysicalDeliveryDetails(com.tools20022.repository.msg.DeliveryParameters3 physicalDeliveryDetails) {
+	public RedemptionOrder14 setPhysicalDeliveryDetails(DeliveryParameters3 physicalDeliveryDetails) {
 		this.physicalDeliveryDetails = physicalDeliveryDetails;
+		return this;
 	}
 
-	@XmlElement(name = "ReqdSttlmCcy")
-	public ActiveCurrencyCode getRequestedSettlementCurrency() {
-		return requestedSettlementCurrency;
+	public Optional<ActiveCurrencyCode> getRequestedSettlementCurrency() {
+		return requestedSettlementCurrency == null ? Optional.empty() : Optional.of(requestedSettlementCurrency);
 	}
 
-	public void setRequestedSettlementCurrency(ActiveCurrencyCode requestedSettlementCurrency) {
+	public RedemptionOrder14 setRequestedSettlementCurrency(ActiveCurrencyCode requestedSettlementCurrency) {
 		this.requestedSettlementCurrency = requestedSettlementCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "ReqdNAVCcy")
-	public ActiveOrHistoricCurrencyCode getRequestedNAVCurrency() {
-		return requestedNAVCurrency;
+	public Optional<ActiveOrHistoricCurrencyCode> getRequestedNAVCurrency() {
+		return requestedNAVCurrency == null ? Optional.empty() : Optional.of(requestedNAVCurrency);
 	}
 
-	public void setRequestedNAVCurrency(ActiveOrHistoricCurrencyCode requestedNAVCurrency) {
+	public RedemptionOrder14 setRequestedNAVCurrency(ActiveOrHistoricCurrencyCode requestedNAVCurrency) {
 		this.requestedNAVCurrency = requestedNAVCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "CshSttlmDtls")
-	public PaymentTransaction72 getCashSettlementDetails() {
-		return cashSettlementDetails;
+	public Optional<PaymentTransaction72> getCashSettlementDetails() {
+		return cashSettlementDetails == null ? Optional.empty() : Optional.of(cashSettlementDetails);
 	}
 
-	public void setCashSettlementDetails(com.tools20022.repository.msg.PaymentTransaction72 cashSettlementDetails) {
+	public RedemptionOrder14 setCashSettlementDetails(PaymentTransaction72 cashSettlementDetails) {
 		this.cashSettlementDetails = cashSettlementDetails;
+		return this;
 	}
 
-	@XmlElement(name = "NonStdSttlmInf")
-	public Max350Text getNonStandardSettlementInformation() {
-		return nonStandardSettlementInformation;
+	public Optional<Max350Text> getNonStandardSettlementInformation() {
+		return nonStandardSettlementInformation == null ? Optional.empty() : Optional.of(nonStandardSettlementInformation);
 	}
 
-	public void setNonStandardSettlementInformation(Max350Text nonStandardSettlementInformation) {
+	public RedemptionOrder14 setNonStandardSettlementInformation(Max350Text nonStandardSettlementInformation) {
 		this.nonStandardSettlementInformation = nonStandardSettlementInformation;
+		return this;
 	}
 
-	@XmlElement(name = "StffClntBrkdwn")
 	public List<InvestmentFundsOrderBreakdown2> getStaffClientBreakdown() {
-		return staffClientBreakdown;
+		return staffClientBreakdown == null ? staffClientBreakdown = new ArrayList<>() : staffClientBreakdown;
 	}
 
-	public void setStaffClientBreakdown(List<com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2> staffClientBreakdown) {
-		this.staffClientBreakdown = staffClientBreakdown;
+	public RedemptionOrder14 setStaffClientBreakdown(List<InvestmentFundsOrderBreakdown2> staffClientBreakdown) {
+		this.staffClientBreakdown = Objects.requireNonNull(staffClientBreakdown);
+		return this;
 	}
 
-	@XmlElement(name = "FinAdvc")
-	public FinancialAdvice1Code getFinancialAdvice() {
-		return financialAdvice;
+	public Optional<FinancialAdvice1Code> getFinancialAdvice() {
+		return financialAdvice == null ? Optional.empty() : Optional.of(financialAdvice);
 	}
 
-	public void setFinancialAdvice(FinancialAdvice1Code financialAdvice) {
+	public RedemptionOrder14 setFinancialAdvice(FinancialAdvice1Code financialAdvice) {
 		this.financialAdvice = financialAdvice;
+		return this;
 	}
 
-	@XmlElement(name = "NgtdTrad")
-	public NegotiatedTrade1Code getNegotiatedTrade() {
-		return negotiatedTrade;
+	public Optional<NegotiatedTrade1Code> getNegotiatedTrade() {
+		return negotiatedTrade == null ? Optional.empty() : Optional.of(negotiatedTrade);
 	}
 
-	public void setNegotiatedTrade(NegotiatedTrade1Code negotiatedTrade) {
+	public RedemptionOrder14 setNegotiatedTrade(NegotiatedTrade1Code negotiatedTrade) {
 		this.negotiatedTrade = negotiatedTrade;
+		return this;
 	}
 
-	@XmlElement(name = "RltdPtyDtls")
 	public List<Intermediary40> getRelatedPartyDetails() {
-		return relatedPartyDetails;
+		return relatedPartyDetails == null ? relatedPartyDetails = new ArrayList<>() : relatedPartyDetails;
 	}
 
-	public void setRelatedPartyDetails(List<com.tools20022.repository.msg.Intermediary40> relatedPartyDetails) {
-		this.relatedPartyDetails = relatedPartyDetails;
+	public RedemptionOrder14 setRelatedPartyDetails(List<Intermediary40> relatedPartyDetails) {
+		this.relatedPartyDetails = Objects.requireNonNull(relatedPartyDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Equlstn")
-	public Equalisation1 getEqualisation() {
-		return equalisation;
+	public Optional<Equalisation1> getEqualisation() {
+		return equalisation == null ? Optional.empty() : Optional.of(equalisation);
 	}
 
-	public void setEqualisation(com.tools20022.repository.msg.Equalisation1 equalisation) {
+	public RedemptionOrder14 setEqualisation(Equalisation1 equalisation) {
 		this.equalisation = equalisation;
+		return this;
 	}
 
-	@XmlElement(name = "CstmrCndctClssfctn")
-	public CustomerConductClassification1Choice getCustomerConductClassification() {
-		return customerConductClassification;
+	public Optional<CustomerConductClassification1Choice> getCustomerConductClassification() {
+		return customerConductClassification == null ? Optional.empty() : Optional.of(customerConductClassification);
 	}
 
-	public void setCustomerConductClassification(CustomerConductClassification1Choice customerConductClassification) {
+	public RedemptionOrder14 setCustomerConductClassification(CustomerConductClassification1Choice customerConductClassification) {
 		this.customerConductClassification = customerConductClassification;
+		return this;
 	}
 
-	@XmlElement(name = "TxChanlTp")
-	public TransactionChannelType1Choice getTransactionChannelType() {
-		return transactionChannelType;
+	public Optional<TransactionChannelType1Choice> getTransactionChannelType() {
+		return transactionChannelType == null ? Optional.empty() : Optional.of(transactionChannelType);
 	}
 
-	public void setTransactionChannelType(TransactionChannelType1Choice transactionChannelType) {
+	public RedemptionOrder14 setTransactionChannelType(TransactionChannelType1Choice transactionChannelType) {
 		this.transactionChannelType = transactionChannelType;
+		return this;
 	}
 
-	@XmlElement(name = "SgntrTp")
-	public SignatureType1Choice getSignatureType() {
-		return signatureType;
+	public Optional<SignatureType1Choice> getSignatureType() {
+		return signatureType == null ? Optional.empty() : Optional.of(signatureType);
 	}
 
-	public void setSignatureType(SignatureType1Choice signatureType) {
+	public RedemptionOrder14 setSignatureType(SignatureType1Choice signatureType) {
 		this.signatureType = signatureType;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrWvrDtls")
-	public OrderWaiver1 getOrderWaiverDetails() {
-		return orderWaiverDetails;
+	public Optional<OrderWaiver1> getOrderWaiverDetails() {
+		return orderWaiverDetails == null ? Optional.empty() : Optional.of(orderWaiverDetails);
 	}
 
-	public void setOrderWaiverDetails(com.tools20022.repository.msg.OrderWaiver1 orderWaiverDetails) {
+	public RedemptionOrder14 setOrderWaiverDetails(OrderWaiver1 orderWaiverDetails) {
 		this.orderWaiverDetails = orderWaiverDetails;
+		return this;
 	}
 }

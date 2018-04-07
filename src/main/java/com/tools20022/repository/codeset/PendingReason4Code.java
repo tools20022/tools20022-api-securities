@@ -39,18 +39,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason4Code#NotDelivered
- * PendingReason4Code.mmNotDelivered}</li>
+ * PendingReason4Code.NotDelivered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason4Code#NoPayment
- * PendingReason4Code.mmNoPayment}</li>
+ * PendingReason4Code.NoPayment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PendingReason4Code#Other
- * PendingReason4Code.mmOther}</li>
+ * PendingReason4Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason4Code#SentToTaxAuthorities
- * PendingReason4Code.mmSentToTaxAuthorities}</li>
+ * PendingReason4Code.SentToTaxAuthorities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason4Code#ValidForTaxAuthorities
- * PendingReason4Code.mmValidForTaxAuthorities}</li>
+ * PendingReason4Code.ValidForTaxAuthorities}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -211,7 +211,7 @@ public class PendingReason4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NSEC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingReason4Code";

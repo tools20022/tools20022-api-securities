@@ -38,65 +38,65 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Basket
- * UnderlyingTypeV2Code.mmBasket}</li>
+ * UnderlyingTypeV2Code.Basket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Bond
- * UnderlyingTypeV2Code.mmBond}</li>
+ * UnderlyingTypeV2Code.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#BondFuture
- * UnderlyingTypeV2Code.mmBondFuture}</li>
+ * UnderlyingTypeV2Code.BondFuture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Commodity
- * UnderlyingTypeV2Code.mmCommodity}</li>
+ * UnderlyingTypeV2Code.Commodity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Currency
- * UnderlyingTypeV2Code.mmCurrency}</li>
+ * UnderlyingTypeV2Code.Currency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#DividendIndex
- * UnderlyingTypeV2Code.mmDividendIndex}</li>
+ * UnderlyingTypeV2Code.DividendIndex}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Equity
- * UnderlyingTypeV2Code.mmEquity}</li>
+ * UnderlyingTypeV2Code.Equity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#ExchangeTradedFund
- * UnderlyingTypeV2Code.mmExchangeTradedFund}</li>
+ * UnderlyingTypeV2Code.ExchangeTradedFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Future
- * UnderlyingTypeV2Code.mmFuture}</li>
+ * UnderlyingTypeV2Code.Future}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#FutureOnEquity
- * UnderlyingTypeV2Code.mmFutureOnEquity}</li>
+ * UnderlyingTypeV2Code.FutureOnEquity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Index
- * UnderlyingTypeV2Code.mmIndex}</li>
+ * UnderlyingTypeV2Code.Index}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Interest
- * UnderlyingTypeV2Code.mmInterest}</li>
+ * UnderlyingTypeV2Code.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Option
- * UnderlyingTypeV2Code.mmOption}</li>
+ * UnderlyingTypeV2Code.Option}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#OptionOnEquity
- * UnderlyingTypeV2Code.mmOptionOnEquity}</li>
+ * UnderlyingTypeV2Code.OptionOnEquity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Other
- * UnderlyingTypeV2Code.mmOther}</li>
+ * UnderlyingTypeV2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#PreciousMetal
- * UnderlyingTypeV2Code.mmPreciousMetal}</li>
+ * UnderlyingTypeV2Code.PreciousMetal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Share
- * UnderlyingTypeV2Code.mmShare}</li>
+ * UnderlyingTypeV2Code.Share}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#StockDividend
- * UnderlyingTypeV2Code.mmStockDividend}</li>
+ * UnderlyingTypeV2Code.StockDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#StockIndex
- * UnderlyingTypeV2Code.mmStockIndex}</li>
+ * UnderlyingTypeV2Code.StockIndex}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#Swap
- * UnderlyingTypeV2Code.mmSwap}</li>
+ * UnderlyingTypeV2Code.Swap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#VolatilityIndex
- * UnderlyingTypeV2Code.mmVolatilityIndex}</li>
+ * UnderlyingTypeV2Code.VolatilityIndex}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingTypeV2Code#InterestRateFutureFRA
- * UnderlyingTypeV2Code.mmInterestRateFutureFRA}</li>
+ * UnderlyingTypeV2Code.InterestRateFutureFRA}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -111,8 +111,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -797,7 +797,7 @@ public class UnderlyingTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingTypeV2Code";
 				definition = "Specifies the underlying financial instrument.";

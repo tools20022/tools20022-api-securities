@@ -24,12 +24,15 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Person;
+import com.tools20022.repository.entity.PrivateCertificate;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information to support Know Your Customer (KYC) processes.
@@ -88,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,9 +108,8 @@ public class PersonProfile {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ProvidedCode foreignStatusCertification;
 	/**
-	 * Specifies if documentary evidence has been provided for the foreign
-	 * resident.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,7 +134,7 @@ public class PersonProfile {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmForeignStatusCertification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, ProvidedCode> mmForeignStatusCertification = new MMBusinessAttribute<PersonProfile, ProvidedCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
@@ -144,18 +146,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> ProvidedCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getForeignStatusCertification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ProvidedCode getValue(PersonProfile obj) {
+			return obj.getForeignStatusCertification();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, ProvidedCode value) {
+			obj.setForeignStatusCertification(value);
 		}
 	};
 	protected YesNoIndicator employeeTerminationIndicator;
 	/**
-	 * Indicates if the employment of the person has been terminated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,7 +184,7 @@ public class PersonProfile {
 	 * "Indicates if the employment of the person has been terminated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEmployeeTerminationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, YesNoIndicator> mmEmployeeTerminationIndicator = new MMBusinessAttribute<PersonProfile, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
@@ -192,20 +196,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getEmployeeTerminationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(PersonProfile obj) {
+			return obj.getEmployeeTerminationIndicator();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, YesNoIndicator value) {
+			obj.setEmployeeTerminationIndicator(value);
 		}
 	};
 	protected KnowYourCustomerCheckTypeCode knowYourCustomerCheckType;
 	/**
-	 * Specifies the type of due diligence checks carried out on a party. For
-	 * definitions of ordinary, simple and enhanced know your customer checks,
-	 * local market regulations should be consulted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,7 +249,7 @@ public class PersonProfile {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmKnowYourCustomerCheckType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, KnowYourCustomerCheckTypeCode> mmKnowYourCustomerCheckType = new MMBusinessAttribute<PersonProfile, KnowYourCustomerCheckTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(KYCCheckType1Choice.mmCode, KYCCheckType1Choice.mmProprietary, PartyProfileInformation5.mmKnowYourCustomerCheckType);
 			isDerived = false;
@@ -258,18 +262,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> KnowYourCustomerCheckTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getKnowYourCustomerCheckType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public KnowYourCustomerCheckTypeCode getValue(PersonProfile obj) {
+			return obj.getKnowYourCustomerCheckType();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, KnowYourCustomerCheckTypeCode value) {
+			obj.setKnowYourCustomerCheckType(value);
 		}
 	};
 	protected RiskLevelCode riskLevel;
 	/**
-	 * Specifies the customer’s money laundering risk.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -293,7 +299,7 @@ public class PersonProfile {
 	 * definition} = "Specifies the customer’s money laundering risk."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRiskLevel = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, RiskLevelCode> mmRiskLevel = new MMBusinessAttribute<PersonProfile, RiskLevelCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
@@ -305,18 +311,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> RiskLevelCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getRiskLevel", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RiskLevelCode getValue(PersonProfile obj) {
+			return obj.getRiskLevel();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, RiskLevelCode value) {
+			obj.setRiskLevel(value);
 		}
 	};
 	protected Person person;
 	/**
-	 * Person for which the profile parameters are described.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -346,7 +354,7 @@ public class PersonProfile {
 	 * definition} = "Person for which the profile parameters are described."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PersonProfile, Person> mmPerson = new MMBusinessAssociationEnd<PersonProfile, Person>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
@@ -355,19 +363,25 @@ public class PersonProfile {
 			definition = "Person for which the profile parameters are described.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmPersonProfile;
+			opposite_lazy = () -> Person.mmPersonProfile;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
+			type_lazy = () -> Person.mmObject();
+		}
+
+		@Override
+		public Person getValue(PersonProfile obj) {
+			return obj.getPerson();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, Person value) {
+			obj.setPerson(value);
 		}
 	};
 	protected PoliticalExposureTypeCode politicalExposureType;
 	/**
-	 * Specifies if due diligence checks on the political exposure of the
-	 * investor have been carried out and whether these checks are national or
-	 * foreign. (A politically exposed person is someone who has been entrusted
-	 * with a prominent public function, or an individual who is closely related
-	 * to such a person.)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,7 +424,7 @@ public class PersonProfile {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPoliticalExposureType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, PoliticalExposureTypeCode> mmPoliticalExposureType = new MMBusinessAttribute<PersonProfile, PoliticalExposureTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PoliticalExposureType1Choice.mmCode, PoliticalExposureType1Choice.mmProprietary, IndividualPerson33.mmPoliticallyExposedPersonType, IndividualPerson34.mmPoliticallyExposedPersonType);
 			isDerived = false;
@@ -423,19 +437,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> PoliticalExposureTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getPoliticalExposureType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PoliticalExposureTypeCode getValue(PersonProfile obj) {
+			return obj.getPoliticalExposureType();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, PoliticalExposureTypeCode value) {
+			obj.setPoliticalExposureType(value);
 		}
 	};
 	protected ConductClassificationCode customerConductClassification;
 	/**
-	 * Assessment of the customer’s behaviour at the time of the account opening
-	 * application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -461,7 +476,7 @@ public class PersonProfile {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCustomerConductClassification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, ConductClassificationCode> mmCustomerConductClassification = new MMBusinessAttribute<PersonProfile, ConductClassificationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
@@ -473,18 +488,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> ConductClassificationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getCustomerConductClassification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ConductClassificationCode getValue(PersonProfile obj) {
+			return obj.getCustomerConductClassification();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, ConductClassificationCode value) {
+			obj.setCustomerConductClassification(value);
 		}
 	};
 	protected YesNoIndicator familyMedicalInsuranceIndicator;
 	/**
-	 * Indicates if the person has family medical insurance coverage available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -510,7 +527,7 @@ public class PersonProfile {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFamilyMedicalInsuranceIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, YesNoIndicator> mmFamilyMedicalInsuranceIndicator = new MMBusinessAttribute<PersonProfile, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
@@ -522,18 +539,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getFamilyMedicalInsuranceIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(PersonProfile obj) {
+			return obj.getFamilyMedicalInsuranceIndicator();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, YesNoIndicator value) {
+			obj.setFamilyMedicalInsuranceIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PrivateCertificate> profileCertification;
+	protected List<PrivateCertificate> profileCertification;
 	/**
-	 * Information to support the Know Your Customer processes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -576,7 +595,7 @@ public class PersonProfile {
 	 * definition} = "Information to support the Know Your Customer processes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProfileCertification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PersonProfile, List<PrivateCertificate>> mmProfileCertification = new MMBusinessAssociationEnd<PersonProfile, List<PrivateCertificate>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccountOwnershipInformation15.mmModifiedInvestorProfileValidation, InvestmentAccountOwnershipInformation14.mmInvestorProfileValidation);
 			isDerived = false;
@@ -585,15 +604,25 @@ public class PersonProfile {
 			name = "ProfileCertification";
 			definition = "Information to support the Know Your Customer processes.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmPerson;
+			opposite_lazy = () -> PrivateCertificate.mmPerson;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
+			type_lazy = () -> PrivateCertificate.mmObject();
+		}
+
+		@Override
+		public List<PrivateCertificate> getValue(PersonProfile obj) {
+			return obj.getProfileCertification();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, List<PrivateCertificate> value) {
+			obj.setProfileCertification(value);
 		}
 	};
 	protected Max140Text sourceOfWealth;
 	/**
-	 * Indicates the main sources of the money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -624,7 +653,7 @@ public class PersonProfile {
 	 * definition} = "Indicates the main sources of the money."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSourceOfWealth = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, Max140Text> mmSourceOfWealth = new MMBusinessAttribute<PersonProfile, Max140Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyProfileInformation5.mmSourceOfWealth);
 			isDerived = false;
@@ -637,18 +666,20 @@ public class PersonProfile {
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getSourceOfWealth", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max140Text getValue(PersonProfile obj) {
+			return obj.getSourceOfWealth();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, Max140Text value) {
+			obj.setSourceOfWealth(value);
 		}
 	};
 	protected Max35Text salaryRange;
 	/**
-	 * Specifies the level of salary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -679,7 +710,7 @@ public class PersonProfile {
 	 * definition} = "Specifies the level of salary."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSalaryRange = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonProfile, Max35Text> mmSalaryRange = new MMBusinessAttribute<PersonProfile, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PartyProfileInformation5.mmSalaryRange);
 			isDerived = false;
@@ -692,23 +723,25 @@ public class PersonProfile {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonProfile.class.getMethod("getSalaryRange", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonProfile obj) {
+			return obj.getSalaryRange();
+		}
+
+		@Override
+		public void setValue(PersonProfile obj, Max35Text value) {
+			obj.setSalaryRange(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonProfile";
 				definition = "Information to support Know Your Customer (KYC) processes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Person.mmPersonProfile, com.tools20022.repository.entity.PrivateCertificate.mmPerson);
+				associationDomain_lazy = () -> Arrays.asList(Person.mmPersonProfile, PrivateCertificate.mmPerson);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonProfile.mmForeignStatusCertification, com.tools20022.repository.entity.PersonProfile.mmEmployeeTerminationIndicator,
 						com.tools20022.repository.entity.PersonProfile.mmKnowYourCustomerCheckType, com.tools20022.repository.entity.PersonProfile.mmRiskLevel, com.tools20022.repository.entity.PersonProfile.mmPerson,
 						com.tools20022.repository.entity.PersonProfile.mmPoliticalExposureType, com.tools20022.repository.entity.PersonProfile.mmCustomerConductClassification,
@@ -728,87 +761,98 @@ public class PersonProfile {
 		return foreignStatusCertification;
 	}
 
-	public void setForeignStatusCertification(ProvidedCode foreignStatusCertification) {
-		this.foreignStatusCertification = foreignStatusCertification;
+	public PersonProfile setForeignStatusCertification(ProvidedCode foreignStatusCertification) {
+		this.foreignStatusCertification = Objects.requireNonNull(foreignStatusCertification);
+		return this;
 	}
 
 	public YesNoIndicator getEmployeeTerminationIndicator() {
 		return employeeTerminationIndicator;
 	}
 
-	public void setEmployeeTerminationIndicator(YesNoIndicator employeeTerminationIndicator) {
-		this.employeeTerminationIndicator = employeeTerminationIndicator;
+	public PersonProfile setEmployeeTerminationIndicator(YesNoIndicator employeeTerminationIndicator) {
+		this.employeeTerminationIndicator = Objects.requireNonNull(employeeTerminationIndicator);
+		return this;
 	}
 
 	public KnowYourCustomerCheckTypeCode getKnowYourCustomerCheckType() {
 		return knowYourCustomerCheckType;
 	}
 
-	public void setKnowYourCustomerCheckType(KnowYourCustomerCheckTypeCode knowYourCustomerCheckType) {
-		this.knowYourCustomerCheckType = knowYourCustomerCheckType;
+	public PersonProfile setKnowYourCustomerCheckType(KnowYourCustomerCheckTypeCode knowYourCustomerCheckType) {
+		this.knowYourCustomerCheckType = Objects.requireNonNull(knowYourCustomerCheckType);
+		return this;
 	}
 
 	public RiskLevelCode getRiskLevel() {
 		return riskLevel;
 	}
 
-	public void setRiskLevel(RiskLevelCode riskLevel) {
-		this.riskLevel = riskLevel;
+	public PersonProfile setRiskLevel(RiskLevelCode riskLevel) {
+		this.riskLevel = Objects.requireNonNull(riskLevel);
+		return this;
 	}
 
 	public Person getPerson() {
 		return person;
 	}
 
-	public void setPerson(com.tools20022.repository.entity.Person person) {
-		this.person = person;
+	public PersonProfile setPerson(Person person) {
+		this.person = Objects.requireNonNull(person);
+		return this;
 	}
 
 	public PoliticalExposureTypeCode getPoliticalExposureType() {
 		return politicalExposureType;
 	}
 
-	public void setPoliticalExposureType(PoliticalExposureTypeCode politicalExposureType) {
-		this.politicalExposureType = politicalExposureType;
+	public PersonProfile setPoliticalExposureType(PoliticalExposureTypeCode politicalExposureType) {
+		this.politicalExposureType = Objects.requireNonNull(politicalExposureType);
+		return this;
 	}
 
 	public ConductClassificationCode getCustomerConductClassification() {
 		return customerConductClassification;
 	}
 
-	public void setCustomerConductClassification(ConductClassificationCode customerConductClassification) {
-		this.customerConductClassification = customerConductClassification;
+	public PersonProfile setCustomerConductClassification(ConductClassificationCode customerConductClassification) {
+		this.customerConductClassification = Objects.requireNonNull(customerConductClassification);
+		return this;
 	}
 
 	public YesNoIndicator getFamilyMedicalInsuranceIndicator() {
 		return familyMedicalInsuranceIndicator;
 	}
 
-	public void setFamilyMedicalInsuranceIndicator(YesNoIndicator familyMedicalInsuranceIndicator) {
-		this.familyMedicalInsuranceIndicator = familyMedicalInsuranceIndicator;
+	public PersonProfile setFamilyMedicalInsuranceIndicator(YesNoIndicator familyMedicalInsuranceIndicator) {
+		this.familyMedicalInsuranceIndicator = Objects.requireNonNull(familyMedicalInsuranceIndicator);
+		return this;
 	}
 
 	public List<PrivateCertificate> getProfileCertification() {
-		return profileCertification;
+		return profileCertification == null ? profileCertification = new ArrayList<>() : profileCertification;
 	}
 
-	public void setProfileCertification(List<com.tools20022.repository.entity.PrivateCertificate> profileCertification) {
-		this.profileCertification = profileCertification;
+	public PersonProfile setProfileCertification(List<PrivateCertificate> profileCertification) {
+		this.profileCertification = Objects.requireNonNull(profileCertification);
+		return this;
 	}
 
 	public Max140Text getSourceOfWealth() {
 		return sourceOfWealth;
 	}
 
-	public void setSourceOfWealth(Max140Text sourceOfWealth) {
-		this.sourceOfWealth = sourceOfWealth;
+	public PersonProfile setSourceOfWealth(Max140Text sourceOfWealth) {
+		this.sourceOfWealth = Objects.requireNonNull(sourceOfWealth);
+		return this;
 	}
 
 	public Max35Text getSalaryRange() {
 		return salaryRange;
 	}
 
-	public void setSalaryRange(Max35Text salaryRange) {
-		this.salaryRange = salaryRange;
+	public PersonProfile setSalaryRange(Max35Text salaryRange) {
+		this.salaryRange = Objects.requireNonNull(salaryRange);
+		return this;
 	}
 }

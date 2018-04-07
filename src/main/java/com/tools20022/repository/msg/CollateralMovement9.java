@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralMovement9", propOrder = {"collateralType", "date"})
 public class CollateralMovement9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CollTp", required = true)
 	protected CollateralType1Code collateralType;
 	/**
-	 * Specifies the type of collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +110,10 @@ public class CollateralMovement9 {
 	 * definition} = "Specifies the type of collateral."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralMovement9, CollateralType1Code> mmCollateralType = new MMMessageAttribute<CollateralMovement9, CollateralType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmCollateralType;
-			componentContext_lazy = () -> CollateralMovement9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralMovement9.mmObject();
 			isDerived = false;
 			xmlTag = "CollTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +123,22 @@ public class CollateralMovement9 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CollateralType1Code.mmObject();
 		}
+
+		@Override
+		public CollateralType1Code getValue(CollateralMovement9 obj) {
+			return obj.getCollateralType();
+		}
+
+		@Override
+		public void setValue(CollateralMovement9 obj, CollateralType1Code value) {
+			obj.setCollateralType(value);
+		}
 	};
+	@XmlElement(name = "Dt")
 	protected ISODate date;
 	/**
-	 * Date by which the collateral movement must be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +168,10 @@ public class CollateralMovement9 {
 	 * definition} = "Date by which the collateral movement must be executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralMovement9, Optional<ISODate>> mmDate = new MMMessageAttribute<CollateralMovement9, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Obligation.mmRequestedSettlementDate;
-			componentContext_lazy = () -> CollateralMovement9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralMovement9.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,14 +181,24 @@ public class CollateralMovement9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(CollateralMovement9 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(CollateralMovement9 obj, Optional<ISODate> value) {
+			obj.setDate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralMovement9.mmCollateralType, CollateralMovement9.mmDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralMovement9.mmCollateralType, com.tools20022.repository.msg.CollateralMovement9.mmDate);
 				trace_lazy = () -> Collateral.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralMovement9";
 				definition = "Specifies the type of collateral that will be delivered and the date to be reported.";
@@ -183,21 +207,21 @@ public class CollateralMovement9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CollTp", required = true)
 	public CollateralType1Code getCollateralType() {
 		return collateralType;
 	}
 
-	public void setCollateralType(CollateralType1Code collateralType) {
-		this.collateralType = collateralType;
+	public CollateralMovement9 setCollateralType(CollateralType1Code collateralType) {
+		this.collateralType = Objects.requireNonNull(collateralType);
+		return this;
 	}
 
-	@XmlElement(name = "Dt")
-	public ISODate getDate() {
-		return date;
+	public Optional<ISODate> getDate() {
+		return date == null ? Optional.empty() : Optional.of(date);
 	}
 
-	public void setDate(ISODate date) {
+	public CollateralMovement9 setDate(ISODate date) {
 		this.date = date;
+		return this;
 	}
 }

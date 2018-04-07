@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for the commission type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CommissionType5Choice", propOrder = {"code", "proprietary"})
 public class CommissionType5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CommissionType6Code code;
 	/**
-	 * Commission type expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,9 +102,9 @@ public class CommissionType5Choice {
 	 * definition} = "Commission type expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommissionType5Choice, CommissionType6Code> mmCode = new MMMessageAttribute<CommissionType5Choice, CommissionType6Code>() {
 		{
-			componentContext_lazy = () -> CommissionType5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CommissionType5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,11 +114,22 @@ public class CommissionType5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CommissionType6Code.mmObject();
 		}
+
+		@Override
+		public CommissionType6Code getValue(CommissionType5Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CommissionType5Choice obj, CommissionType6Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Commission type expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,10 +160,10 @@ public class CommissionType5Choice {
 	 * definition} = "Commission type expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommissionType5Choice, GenericIdentification47> mmProprietary = new MMMessageAttribute<CommissionType5Choice, GenericIdentification47>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmAutomaticBorrowing;
-			componentContext_lazy = () -> CommissionType5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CommissionType5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,14 +173,24 @@ public class CommissionType5Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification47.mmObject();
 		}
+
+		@Override
+		public GenericIdentification47 getValue(CommissionType5Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CommissionType5Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CommissionType5Choice.mmCode, CommissionType5Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CommissionType5Choice.mmCode, com.tools20022.repository.choice.CommissionType5Choice.mmProprietary);
 				trace_lazy = () -> Commission.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommissionType5Choice";
 				definition = "Choice of formats for the commission type.";
@@ -176,21 +199,21 @@ public class CommissionType5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CommissionType6Code getCode() {
 		return code;
 	}
 
-	public void setCode(CommissionType6Code code) {
-		this.code = code;
+	public CommissionType5Choice setCode(CommissionType6Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public CommissionType5Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

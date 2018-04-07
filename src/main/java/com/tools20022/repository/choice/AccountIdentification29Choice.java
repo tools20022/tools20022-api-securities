@@ -17,18 +17,21 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.seev.CorporateActionCancellationAdviceV07;
-import com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceCancellationAdviceV07;
+import com.tools20022.repository.area.seev.CorporateActionCancellationAdviceV08;
+import com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceCancellationAdviceV08;
 import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AccountIdentification10;
 import com.tools20022.repository.msg.AccountIdentification31;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,19 +63,19 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionCancellationAdviceV07#mmAccountsDetails
- * CorporateActionCancellationAdviceV07.mmAccountsDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceCancellationAdviceV07#mmAccountDetails
- * CorporateActionMovementPreliminaryAdviceCancellationAdviceV07.
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceCancellationAdviceV08#mmAccountDetails
+ * CorporateActionMovementPreliminaryAdviceCancellationAdviceV08.
  * mmAccountDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionCancellationAdviceV08#mmAccountsDetails
+ * CorporateActionCancellationAdviceV08.mmAccountsDetails}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +88,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountIdentification29Choice", propOrder = {"forAllAccounts", "accountsList"})
 public class AccountIdentification29Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ForAllAccts", required = true)
 	protected AccountIdentification10 forAllAccounts;
 	/**
-	 * All safekeeping accounts that own underlying financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,6 +117,9 @@ public class AccountIdentification29Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "ForAllAccts"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :97C::SAFE//GENR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -124,12 +131,13 @@ public class AccountIdentification29Choice {
 	 * "All safekeeping accounts that own underlying financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForAllAccounts = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountIdentification29Choice, AccountIdentification10> mmForAllAccounts = new MMMessageAssociationEnd<AccountIdentification29Choice, AccountIdentification10>() {
 		{
 			businessComponentTrace_lazy = () -> AccountIdentification.mmObject();
-			componentContext_lazy = () -> AccountIdentification29Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AccountIdentification29Choice.mmObject();
 			isDerived = false;
 			xmlTag = "ForAllAccts";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":97C::SAFE//GENR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForAllAccounts";
 			definition = "All safekeeping accounts that own underlying financial instrument.";
@@ -138,12 +146,22 @@ public class AccountIdentification29Choice {
 			isComposite = true;
 			type_lazy = () -> AccountIdentification10.mmObject();
 		}
+
+		@Override
+		public AccountIdentification10 getValue(AccountIdentification29Choice obj) {
+			return obj.getForAllAccounts();
+		}
+
+		@Override
+		public void setValue(AccountIdentification29Choice obj, AccountIdentification10 value) {
+			obj.setForAllAccounts(value);
+		}
 	};
+	@XmlElement(name = "AcctsList", required = true)
 	protected List<AccountIdentification31> accountsList;
 	/**
-	 * Selected safekeeping accounts list to which the corporate action event
-	 * applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -163,6 +181,9 @@ public class AccountIdentification29Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "AcctsList"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :16R::ACCTINFO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -175,12 +196,13 @@ public class AccountIdentification29Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountsList = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountIdentification29Choice, List<AccountIdentification31>> mmAccountsList = new MMMessageAssociationEnd<AccountIdentification29Choice, List<AccountIdentification31>>() {
 		{
 			businessComponentTrace_lazy = () -> AccountIdentification.mmObject();
-			componentContext_lazy = () -> AccountIdentification29Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AccountIdentification29Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AcctsList";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":16R::ACCTINFO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountsList";
 			definition = "Selected safekeeping accounts list to which the corporate action event applies.";
@@ -188,15 +210,25 @@ public class AccountIdentification29Choice {
 			isComposite = true;
 			type_lazy = () -> AccountIdentification31.mmObject();
 		}
+
+		@Override
+		public List<AccountIdentification31> getValue(AccountIdentification29Choice obj) {
+			return obj.getAccountsList();
+		}
+
+		@Override
+		public void setValue(AccountIdentification29Choice obj, List<AccountIdentification31> value) {
+			obj.setAccountsList(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountIdentification29Choice.mmForAllAccounts, AccountIdentification29Choice.mmAccountsList);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionCancellationAdviceV07.mmAccountsDetails, CorporateActionMovementPreliminaryAdviceCancellationAdviceV07.mmAccountDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AccountIdentification29Choice.mmForAllAccounts, com.tools20022.repository.choice.AccountIdentification29Choice.mmAccountsList);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionMovementPreliminaryAdviceCancellationAdviceV08.mmAccountDetails, CorporateActionCancellationAdviceV08.mmAccountsDetails);
 				trace_lazy = () -> AccountIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountIdentification29Choice";
 				definition = "Choice between all accounts (GENR - General in ISO 15022) or one or more selected accounts.";
@@ -205,21 +237,21 @@ public class AccountIdentification29Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ForAllAccts", required = true)
 	public AccountIdentification10 getForAllAccounts() {
 		return forAllAccounts;
 	}
 
-	public void setForAllAccounts(AccountIdentification10 forAllAccounts) {
-		this.forAllAccounts = forAllAccounts;
+	public AccountIdentification29Choice setForAllAccounts(AccountIdentification10 forAllAccounts) {
+		this.forAllAccounts = Objects.requireNonNull(forAllAccounts);
+		return this;
 	}
 
-	@XmlElement(name = "AcctsList", required = true)
 	public List<AccountIdentification31> getAccountsList() {
-		return accountsList;
+		return accountsList == null ? accountsList = new ArrayList<>() : accountsList;
 	}
 
-	public void setAccountsList(List<AccountIdentification31> accountsList) {
-		this.accountsList = accountsList;
+	public AccountIdentification29Choice setAccountsList(List<AccountIdentification31> accountsList) {
+		this.accountsList = Objects.requireNonNull(accountsList);
+		return this;
 	}
 }

@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.RegistrarRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OrganisationIdentification5", propOrder = {"registrationNumber", "registerName"})
 public class OrganisationIdentification5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RegnNb", required = true)
 	protected Max35Text registrationNumber;
 	/**
-	 * Name of the register of legal entities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +106,9 @@ public class OrganisationIdentification5 {
 	 * definition} = "Name of the register of legal entities."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegistrationNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OrganisationIdentification5, Max35Text> mmRegistrationNumber = new MMMessageAttribute<OrganisationIdentification5, Max35Text>() {
 		{
-			componentContext_lazy = () -> OrganisationIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OrganisationIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "RegnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +118,22 @@ public class OrganisationIdentification5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(OrganisationIdentification5 obj) {
+			return obj.getRegistrationNumber();
+		}
+
+		@Override
+		public void setValue(OrganisationIdentification5 obj, Max35Text value) {
+			obj.setRegistrationNumber(value);
+		}
 	};
+	@XmlElement(name = "RegrNm")
 	protected Max35Text registerName;
 	/**
-	 * Name of the register managed by a registration authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +164,10 @@ public class OrganisationIdentification5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisterName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OrganisationIdentification5, Optional<Max35Text>> mmRegisterName = new MMMessageAttribute<OrganisationIdentification5, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> RegistrarRole.mmRegisterName;
-			componentContext_lazy = () -> OrganisationIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OrganisationIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "RegrNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,14 +177,24 @@ public class OrganisationIdentification5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(OrganisationIdentification5 obj) {
+			return obj.getRegisterName();
+		}
+
+		@Override
+		public void setValue(OrganisationIdentification5 obj, Optional<Max35Text> value) {
+			obj.setRegisterName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OrganisationIdentification5.mmRegistrationNumber, OrganisationIdentification5.mmRegisterName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OrganisationIdentification5.mmRegistrationNumber, com.tools20022.repository.msg.OrganisationIdentification5.mmRegisterName);
 				trace_lazy = () -> OrganisationIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrganisationIdentification5";
 				definition = "Official identification of an organisation (legal entity) in a specific register.";
@@ -179,21 +203,21 @@ public class OrganisationIdentification5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RegnNb", required = true)
 	public Max35Text getRegistrationNumber() {
 		return registrationNumber;
 	}
 
-	public void setRegistrationNumber(Max35Text registrationNumber) {
-		this.registrationNumber = registrationNumber;
+	public OrganisationIdentification5 setRegistrationNumber(Max35Text registrationNumber) {
+		this.registrationNumber = Objects.requireNonNull(registrationNumber);
+		return this;
 	}
 
-	@XmlElement(name = "RegrNm")
-	public Max35Text getRegisterName() {
-		return registerName;
+	public Optional<Max35Text> getRegisterName() {
+		return registerName == null ? Optional.empty() : Optional.of(registerName);
 	}
 
-	public void setRegisterName(Max35Text registerName) {
+	public OrganisationIdentification5 setRegisterName(Max35Text registerName) {
 		this.registerName = registerName;
+		return this;
 	}
 }

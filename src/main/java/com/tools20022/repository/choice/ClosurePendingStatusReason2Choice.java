@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification36;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * ClosedStatusReason2Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ClosurePendingStatusReason2Choice", propOrder = {"code", "proprietary"})
 public class ClosurePendingStatusReason2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ClosurePendingStatusReason1Code code;
 	/**
-	 * Reason for the closure pending status expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,9 +109,9 @@ public class ClosurePendingStatusReason2Choice {
 	 * ClosedStatusReason2Choice.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClosurePendingStatusReason2Choice, ClosurePendingStatusReason1Code> mmCode = new MMMessageAttribute<ClosurePendingStatusReason2Choice, ClosurePendingStatusReason1Code>() {
 		{
-			componentContext_lazy = () -> ClosurePendingStatusReason2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClosurePendingStatusReason2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +122,22 @@ public class ClosurePendingStatusReason2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ClosurePendingStatusReason1Code.mmObject();
 		}
+
+		@Override
+		public ClosurePendingStatusReason1Code getValue(ClosurePendingStatusReason2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ClosurePendingStatusReason2Choice obj, ClosurePendingStatusReason1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification36 proprietary;
 	/**
-	 * Reason for the closure pending status expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -155,9 +168,9 @@ public class ClosurePendingStatusReason2Choice {
 	 * ClosedStatusReason2Choice.mmProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ClosurePendingStatusReason2Choice, GenericIdentification36> mmProprietary = new MMMessageAssociationEnd<ClosurePendingStatusReason2Choice, GenericIdentification36>() {
 		{
-			componentContext_lazy = () -> ClosurePendingStatusReason2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClosurePendingStatusReason2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,13 +182,23 @@ public class ClosurePendingStatusReason2Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification36.mmObject();
 		}
+
+		@Override
+		public GenericIdentification36 getValue(ClosurePendingStatusReason2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ClosurePendingStatusReason2Choice obj, GenericIdentification36 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ClosurePendingStatusReason2Choice.mmCode, ClosurePendingStatusReason2Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ClosurePendingStatusReason2Choice.mmCode, com.tools20022.repository.choice.ClosurePendingStatusReason2Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClosurePendingStatusReason2Choice";
 				definition = "Choice of formats for a closure pending reason code.";
@@ -185,21 +208,21 @@ public class ClosurePendingStatusReason2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ClosurePendingStatusReason1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ClosurePendingStatusReason1Code code) {
-		this.code = code;
+	public ClosurePendingStatusReason2Choice setCode(ClosurePendingStatusReason1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification36 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification36 proprietary) {
-		this.proprietary = proprietary;
+	public ClosurePendingStatusReason2Choice setProprietary(GenericIdentification36 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

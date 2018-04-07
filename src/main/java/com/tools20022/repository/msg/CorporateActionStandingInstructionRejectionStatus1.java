@@ -26,9 +26,8 @@ import com.tools20022.repository.entity.CorporateActionStatus;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides reason of the rejection of a standing instruction request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionStandingInstructionRejectionStatus1", propOrder = {"reason", "additionalInformation"})
 public class CorporateActionStandingInstructionRejectionStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rsn", required = true)
 	protected List<RejectionReason20FormatChoice> reason;
 	/**
-	 * The rejection reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +109,10 @@ public class CorporateActionStandingInstructionRejectionStatus1 {
 	 * definition} = "The rejection reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionRejectionStatus1, List<RejectionReason20FormatChoice>> mmReason = new MMMessageAttribute<CorporateActionStandingInstructionRejectionStatus1, List<RejectionReason20FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> CorporateActionStandingInstructionRejectionStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionRejectionStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +121,22 @@ public class CorporateActionStandingInstructionRejectionStatus1 {
 			minOccurs = 1;
 			complexType_lazy = () -> RejectionReason20FormatChoice.mmObject();
 		}
+
+		@Override
+		public List<RejectionReason20FormatChoice> getValue(CorporateActionStandingInstructionRejectionStatus1 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionRejectionStatus1 obj, List<RejectionReason20FormatChoice> value) {
+			obj.setReason(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,10 +166,10 @@ public class CorporateActionStandingInstructionRejectionStatus1 {
 	 * definition} = "Additional information about the status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionRejectionStatus1, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<CorporateActionStandingInstructionRejectionStatus1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
-			componentContext_lazy = () -> CorporateActionStandingInstructionRejectionStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionRejectionStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +179,25 @@ public class CorporateActionStandingInstructionRejectionStatus1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionStandingInstructionRejectionStatus1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionRejectionStatus1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionStandingInstructionRejectionStatus1.mmReason, CorporateActionStandingInstructionRejectionStatus1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionStandingInstructionRejectionStatus1.mmReason,
+						com.tools20022.repository.msg.CorporateActionStandingInstructionRejectionStatus1.mmAdditionalInformation);
 				trace_lazy = () -> CorporateActionStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStandingInstructionRejectionStatus1";
 				definition = "Provides reason of the rejection of a standing instruction request.";
@@ -184,21 +206,21 @@ public class CorporateActionStandingInstructionRejectionStatus1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public List<RejectionReason20FormatChoice> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<RejectionReason20FormatChoice> reason) {
-		this.reason = reason;
+	public CorporateActionStandingInstructionRejectionStatus1 setReason(List<RejectionReason20FormatChoice> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public CorporateActionStandingInstructionRejectionStatus1 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

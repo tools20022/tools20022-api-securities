@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the settlement capacity information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SettlingCapacity7Choice", propOrder = {"code", "proprietary"})
 public class SettlingCapacity7Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected SettlingCapacity2Code code;
 	/**
-	 * Settlement capacity expressed as an ISO 20022 code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class SettlingCapacity7Choice {
 	 * definition} = "Settlement capacity expressed as an ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlingCapacity7Choice, SettlingCapacity2Code> mmCode = new MMMessageAttribute<SettlingCapacity7Choice, SettlingCapacity2Code>() {
 		{
-			componentContext_lazy = () -> SettlingCapacity7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SettlingCapacity7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +110,22 @@ public class SettlingCapacity7Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> SettlingCapacity2Code.mmObject();
 		}
+
+		@Override
+		public SettlingCapacity2Code getValue(SettlingCapacity7Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(SettlingCapacity7Choice obj, SettlingCapacity2Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Settlement capacity expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,9 +151,9 @@ public class SettlingCapacity7Choice {
 	 * definition} = "Settlement capacity expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlingCapacity7Choice, GenericIdentification30> mmProprietary = new MMMessageAttribute<SettlingCapacity7Choice, GenericIdentification30>() {
 		{
-			componentContext_lazy = () -> SettlingCapacity7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SettlingCapacity7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,13 +163,23 @@ public class SettlingCapacity7Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(SettlingCapacity7Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(SettlingCapacity7Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SettlingCapacity7Choice.mmCode, SettlingCapacity7Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.SettlingCapacity7Choice.mmCode, com.tools20022.repository.choice.SettlingCapacity7Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlingCapacity7Choice";
 				definition = "Choice of format for the settlement capacity information.";
@@ -165,21 +188,21 @@ public class SettlingCapacity7Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public SettlingCapacity2Code getCode() {
 		return code;
 	}
 
-	public void setCode(SettlingCapacity2Code code) {
-		this.code = code;
+	public SettlingCapacity7Choice setCode(SettlingCapacity2Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public SettlingCapacity7Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

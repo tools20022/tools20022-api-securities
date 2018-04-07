@@ -37,47 +37,47 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Agency
- * ProductTypeV2Code.mmAgency}</li>
+ * ProductTypeV2Code.Agency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Commodity
- * ProductTypeV2Code.mmCommodity}</li>
+ * ProductTypeV2Code.Commodity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Corporate
- * ProductTypeV2Code.mmCorporate}</li>
+ * ProductTypeV2Code.Corporate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Currency
- * ProductTypeV2Code.mmCurrency}</li>
+ * ProductTypeV2Code.Currency}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Equity
- * ProductTypeV2Code.mmEquity}</li>
+ * ProductTypeV2Code.Equity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Government
- * ProductTypeV2Code.mmGovernment}</li>
+ * ProductTypeV2Code.Government}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Loan
- * ProductTypeV2Code.mmLoan}</li>
+ * ProductTypeV2Code.Loan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#MoneyMarket
- * ProductTypeV2Code.mmMoneyMarket}</li>
+ * ProductTypeV2Code.MoneyMarket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Mortgage
- * ProductTypeV2Code.mmMortgage}</li>
+ * ProductTypeV2Code.Mortgage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Municipal
- * ProductTypeV2Code.mmMunicipal}</li>
+ * ProductTypeV2Code.Municipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Financing
- * ProductTypeV2Code.mmFinancing}</li>
+ * ProductTypeV2Code.Financing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Property
- * ProductTypeV2Code.mmProperty}</li>
+ * ProductTypeV2Code.Property}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Swap
- * ProductTypeV2Code.mmSwap}</li>
+ * ProductTypeV2Code.Swap}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Other
- * ProductTypeV2Code.mmOther}</li>
+ * ProductTypeV2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#InterestRate
- * ProductTypeV2Code.mmInterestRate}</li>
+ * ProductTypeV2Code.InterestRate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#Credit
- * ProductTypeV2Code.mmCredit}</li>
+ * ProductTypeV2Code.Credit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductTypeV2Code#EmissionAllowance
- * ProductTypeV2Code.mmEmissionAllowance}</li>
+ * ProductTypeV2Code.EmissionAllowance}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -90,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -604,7 +604,7 @@ public class ProductTypeV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Identifies categories of instruments related to Emission Allowance
+	 * Identifies categories of instruments related to Emission Allowance.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -622,14 +622,14 @@ public class ProductTypeV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Identifies categories of instruments related to Emission Allowance"</li>
+	 * "Identifies categories of instruments related to Emission Allowance."</li>
 	 * </ul>
 	 */
 	public static final ProductTypeV2Code EmissionAllowance = new ProductTypeV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EmissionAllowance";
-			definition = "Identifies categories of instruments related to Emission Allowance";
+			definition = "Identifies categories of instruments related to Emission Allowance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ProductTypeV2Code.mmObject();
 			codeName = "EMAL";
 		}
@@ -642,7 +642,7 @@ public class ProductTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AGEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductTypeV2Code";

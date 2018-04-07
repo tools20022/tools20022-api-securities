@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheck1Code#Passed
- * MoneyLaunderingCheck1Code.mmPassed}</li>
+ * MoneyLaunderingCheck1Code.Passed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheck1Code#NotChecked
- * MoneyLaunderingCheck1Code.mmNotChecked}</li>
+ * MoneyLaunderingCheck1Code.NotChecked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheck1Code#ExemptBelowLimit
- * MoneyLaunderingCheck1Code.mmExemptBelowLimit}</li>
+ * MoneyLaunderingCheck1Code.ExemptBelowLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheck1Code#ClientMoneyTypeExempt
- * MoneyLaunderingCheck1Code.mmClientMoneyTypeExempt}</li>
+ * MoneyLaunderingCheck1Code.ClientMoneyTypeExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheck1Code#AuthorisedCredit
- * MoneyLaunderingCheck1Code.mmAuthorisedCredit}</li>
+ * MoneyLaunderingCheck1Code.AuthorisedCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheck1Code#PostalOrElectronicPaymentExempt
- * MoneyLaunderingCheck1Code.mmPostalOrElectronicPaymentExempt}</li>
+ * MoneyLaunderingCheck1Code.PostalOrElectronicPaymentExempt}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -237,7 +237,7 @@ public class MoneyLaunderingCheck1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PASS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoneyLaunderingCheck1Code";

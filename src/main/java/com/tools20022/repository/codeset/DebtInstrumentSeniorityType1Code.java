@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityType1Code#SubordinatedDebt
- * DebtInstrumentSeniorityType1Code.mmSubordinatedDebt}</li>
+ * DebtInstrumentSeniorityType1Code.SubordinatedDebt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityType1Code#SeniorDebt
- * DebtInstrumentSeniorityType1Code.mmSeniorDebt}</li>
+ * DebtInstrumentSeniorityType1Code.SeniorDebt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityType1Code#MezzanineDebt
- * DebtInstrumentSeniorityType1Code.mmMezzanineDebt}</li>
+ * DebtInstrumentSeniorityType1Code.MezzanineDebt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityType1Code#JuniorDebt
- * DebtInstrumentSeniorityType1Code.mmJuniorDebt}</li>
+ * DebtInstrumentSeniorityType1Code.JuniorDebt}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class DebtInstrumentSeniorityType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebtInstrumentSeniorityType1Code";
 				definition = "Specifies the seniority type of a specific debt instrument.";

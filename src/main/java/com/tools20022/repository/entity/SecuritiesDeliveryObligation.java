@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.NettingEligibility3Choice;
 import com.tools20022.repository.choice.NettingEligibility4Choice;
@@ -24,13 +25,11 @@ import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.SettlementDateCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.YesNoIndicator;
-import com.tools20022.repository.entity.Obligation;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Obligation for one party to deliver securities to another party.
@@ -123,8 +122,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -141,9 +140,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator cCPEligibility;
 	/**
-	 * Specifies whether the settlement transaction is CCP (Central
-	 * Counterparty) eligible.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,35 +156,38 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails43#mmCCPEligibility
 	 * SettlementDetails43.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails96#mmCCPEligibility
-	 * SettlementDetails96.mmCCPEligibility}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails97#mmCCPEligibility
 	 * SettlementDetails97.mmCCPEligibility}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails98#mmCCPEligibility
 	 * SettlementDetails98.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails128#mmCCPEligibility
-	 * SettlementDetails128.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails147#mmCCPEligibility
+	 * SettlementDetails147.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails120#mmCCPEligibility
-	 * SettlementDetails120.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmCCPEligibility
+	 * SettlementDetails142.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails119#mmCCPEligibility
-	 * SettlementDetails119.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails144#mmCCPEligibility
+	 * SettlementDetails144.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails126#mmCCPEligibility
-	 * SettlementDetails126.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails148#mmCCPEligibility
+	 * SettlementDetails148.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails122#mmCCPEligibility
-	 * SettlementDetails122.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails145#mmCCPEligibility
+	 * SettlementDetails145.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails127#mmCCPEligibility
-	 * SettlementDetails127.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails146#mmCCPEligibility
+	 * SettlementDetails146.mmCCPEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails121#mmCCPEligibility
-	 * SettlementDetails121.mmCCPEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails143#mmCCPEligibility
+	 * SettlementDetails143.mmCCPEligibility}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails149#mmCCPEligibility
+	 * SettlementDetails149.mmCCPEligibility}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails150#mmCCPEligibility
+	 * SettlementDetails150.mmCCPEligibility}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -207,11 +208,11 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCCPEligibility = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesDeliveryObligation, YesNoIndicator> mmCCPEligibility = new MMBusinessAttribute<SecuritiesDeliveryObligation, YesNoIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(SettlementDetails43.mmCCPEligibility, SettlementDetails96.mmCCPEligibility, SettlementDetails97.mmCCPEligibility, SettlementDetails98.mmCCPEligibility,
-					SettlementDetails128.mmCCPEligibility, SettlementDetails120.mmCCPEligibility, SettlementDetails119.mmCCPEligibility, SettlementDetails126.mmCCPEligibility, SettlementDetails122.mmCCPEligibility,
-					SettlementDetails127.mmCCPEligibility, SettlementDetails121.mmCCPEligibility);
+			derivation_lazy = () -> Arrays.asList(SettlementDetails43.mmCCPEligibility, SettlementDetails97.mmCCPEligibility, SettlementDetails98.mmCCPEligibility, SettlementDetails147.mmCCPEligibility,
+					SettlementDetails142.mmCCPEligibility, SettlementDetails144.mmCCPEligibility, SettlementDetails148.mmCCPEligibility, SettlementDetails145.mmCCPEligibility, SettlementDetails146.mmCCPEligibility,
+					SettlementDetails143.mmCCPEligibility, SettlementDetails149.mmCCPEligibility, SettlementDetails150.mmCCPEligibility);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -222,18 +223,20 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesDeliveryObligation.class.getMethod("getCCPEligibility", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getCCPEligibility();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, YesNoIndicator value) {
+			obj.setCCPEligibility(value);
 		}
 	};
 	protected YesNoIndicator nettingEligibility;
 	/**
-	 * Specifies whether the settlement transaction is eligible for netting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,9 +254,6 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails43#mmNettingEligibility
 	 * SettlementDetails43.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails96#mmNettingEligibility
-	 * SettlementDetails96.mmNettingEligibility}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails97#mmNettingEligibility
 	 * SettlementDetails97.mmNettingEligibility}</li>
 	 * <li>
@@ -263,26 +263,32 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails98#mmNettingEligibility
 	 * SettlementDetails98.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails128#mmNettingEligibility
-	 * SettlementDetails128.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails147#mmNettingEligibility
+	 * SettlementDetails147.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails120#mmNettingEligibility
-	 * SettlementDetails120.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmNettingEligibility
+	 * SettlementDetails142.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails119#mmNettingEligibility
-	 * SettlementDetails119.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails144#mmNettingEligibility
+	 * SettlementDetails144.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails126#mmNettingEligibility
-	 * SettlementDetails126.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails148#mmNettingEligibility
+	 * SettlementDetails148.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails122#mmNettingEligibility
-	 * SettlementDetails122.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails145#mmNettingEligibility
+	 * SettlementDetails145.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails127#mmNettingEligibility
-	 * SettlementDetails127.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails146#mmNettingEligibility
+	 * SettlementDetails146.mmNettingEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails121#mmNettingEligibility
-	 * SettlementDetails121.mmNettingEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails143#mmNettingEligibility
+	 * SettlementDetails143.mmNettingEligibility}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails149#mmNettingEligibility
+	 * SettlementDetails149.mmNettingEligibility}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails150#mmNettingEligibility
+	 * SettlementDetails150.mmNettingEligibility}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -302,11 +308,11 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * "Specifies whether the settlement transaction is eligible for netting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNettingEligibility = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesDeliveryObligation, YesNoIndicator> mmNettingEligibility = new MMBusinessAttribute<SecuritiesDeliveryObligation, YesNoIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(NettingEligibility3Choice.mmIndicator, SettlementDetails43.mmNettingEligibility, SettlementDetails96.mmNettingEligibility, SettlementDetails97.mmNettingEligibility,
-					NettingEligibility4Choice.mmIndicator, SettlementDetails98.mmNettingEligibility, SettlementDetails128.mmNettingEligibility, SettlementDetails120.mmNettingEligibility, SettlementDetails119.mmNettingEligibility,
-					SettlementDetails126.mmNettingEligibility, SettlementDetails122.mmNettingEligibility, SettlementDetails127.mmNettingEligibility, SettlementDetails121.mmNettingEligibility);
+			derivation_lazy = () -> Arrays.asList(NettingEligibility3Choice.mmIndicator, SettlementDetails43.mmNettingEligibility, SettlementDetails97.mmNettingEligibility, NettingEligibility4Choice.mmIndicator,
+					SettlementDetails98.mmNettingEligibility, SettlementDetails147.mmNettingEligibility, SettlementDetails142.mmNettingEligibility, SettlementDetails144.mmNettingEligibility, SettlementDetails148.mmNettingEligibility,
+					SettlementDetails145.mmNettingEligibility, SettlementDetails146.mmNettingEligibility, SettlementDetails143.mmNettingEligibility, SettlementDetails149.mmNettingEligibility, SettlementDetails150.mmNettingEligibility);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -317,31 +323,26 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesDeliveryObligation.class.getMethod("getNettingEligibility", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getNettingEligibility();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, YesNoIndicator value) {
+			obj.setNettingEligibility(value);
 		}
 	};
 	protected ISODateTime transferInstructionDate;
 	/**
-	 * Date at which the instructing party places the transfer instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODateTime
 	 * ISODateTime}</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
-	 * derivation} =
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.Transfer32#mmTransferDate
-	 * Transfer32.mmTransferDate}</li>
-	 * </ul>
-	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -359,9 +360,8 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * "Date at which the instructing party places the transfer instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransferInstructionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesDeliveryObligation, ISODateTime> mmTransferInstructionDate = new MMBusinessAttribute<SecuritiesDeliveryObligation, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Transfer32.mmTransferDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -372,18 +372,20 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesDeliveryObligation.class.getMethod("getTransferInstructionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getTransferInstructionDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, ISODateTime value) {
+			obj.setTransferInstructionDate(value);
 		}
 	};
 	protected CurrencyCode transferCurrency;
 	/**
-	 * Identifies the currency to be used to transfer the holdings.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -394,20 +396,17 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer31#mmTransferCurrency
-	 * Transfer31.mmTransferCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer35#mmTransferCurrency
+	 * Transfer35.mmTransferCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer30#mmTransferCurrency
-	 * Transfer30.mmTransferCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.Transfer34#mmTransferCurrency
+	 * Transfer34.mmTransferCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Transfer33#mmTransferCurrency
-	 * Transfer33.mmTransferCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument60#mmTransferCurrency
+	 * FinancialInstrument60.mmTransferCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument48#mmTransferCurrency
-	 * FinancialInstrument48.mmTransferCurrency}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument46#mmTransferCurrency
-	 * FinancialInstrument46.mmTransferCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrument65#mmTransferCurrency
+	 * FinancialInstrument65.mmTransferCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -427,9 +426,9 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * "Identifies the currency to be used to transfer the holdings."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransferCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesDeliveryObligation, CurrencyCode> mmTransferCurrency = new MMBusinessAttribute<SecuritiesDeliveryObligation, CurrencyCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Transfer31.mmTransferCurrency, Transfer30.mmTransferCurrency, Transfer33.mmTransferCurrency, FinancialInstrument48.mmTransferCurrency, FinancialInstrument46.mmTransferCurrency);
+			derivation_lazy = () -> Arrays.asList(Transfer35.mmTransferCurrency, Transfer34.mmTransferCurrency, FinancialInstrument60.mmTransferCurrency, FinancialInstrument65.mmTransferCurrency);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -440,19 +439,20 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesDeliveryObligation.class.getMethod("getTransferCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getTransferCurrency();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, CurrencyCode value) {
+			obj.setTransferCurrency(value);
 		}
 	};
 	protected CorporateActionProceedsDeliveryInstruction relatedCorporateAction;
 	/**
-	 * Corporate action processes which are the source of the securities
-	 * delivery obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -486,7 +486,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesDeliveryObligation, Optional<CorporateActionProceedsDeliveryInstruction>> mmRelatedCorporateAction = new MMBusinessAssociationEnd<SecuritiesDeliveryObligation, Optional<CorporateActionProceedsDeliveryInstruction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
@@ -495,15 +495,25 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			definition = "Corporate action processes which are the source of the securities delivery obligation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement;
+			opposite_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
+			type_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionProceedsDeliveryInstruction> getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getRelatedCorporateAction();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, Optional<CorporateActionProceedsDeliveryInstruction> value) {
+			obj.setRelatedCorporateAction(value.orElse(null));
 		}
 	};
 	protected CollateralMovement relatedCollateralMovement;
 	/**
-	 * Collateral movement which is the source of the obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -535,7 +545,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * "Collateral movement which is the source of the obligation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesDeliveryObligation, CollateralMovement> mmRelatedCollateralMovement = new MMBusinessAssociationEnd<SecuritiesDeliveryObligation, CollateralMovement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
@@ -544,15 +554,25 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			definition = "Collateral movement which is the source of the obligation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmSecuritiesCollateralMovement;
+			opposite_lazy = () -> CollateralMovement.mmSecuritiesCollateralMovement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
+			type_lazy = () -> CollateralMovement.mmObject();
+		}
+
+		@Override
+		public CollateralMovement getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getRelatedCollateralMovement();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, CollateralMovement value) {
+			obj.setRelatedCollateralMovement(value);
 		}
 	};
 	protected SecuritiesTradeExecution securitiesTradeExecution;
 	/**
-	 * Specifies the trade which originates the delivery obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -585,7 +605,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * "Specifies the trade which originates the delivery obligation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesTradeExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesDeliveryObligation, com.tools20022.repository.entity.SecuritiesTradeExecution> mmSecuritiesTradeExecution = new MMBusinessAssociationEnd<SecuritiesDeliveryObligation, com.tools20022.repository.entity.SecuritiesTradeExecution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
@@ -598,12 +618,21 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesTradeExecution getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getSecuritiesTradeExecution();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, com.tools20022.repository.entity.SecuritiesTradeExecution value) {
+			obj.setSecuritiesTradeExecution(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.PortfolioTransfer> relatedPortfolioTransfer;
+	protected List<PortfolioTransfer> relatedPortfolioTransfer;
 	/**
-	 * Portfolio transfer which is the source of the securities delivery
-	 * obligation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -636,7 +665,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPortfolioTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesDeliveryObligation, List<PortfolioTransfer>> mmRelatedPortfolioTransfer = new MMBusinessAssociationEnd<SecuritiesDeliveryObligation, List<PortfolioTransfer>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
@@ -644,17 +673,25 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			name = "RelatedPortfolioTransfer";
 			definition = "Portfolio transfer which is the source of the securities delivery obligation.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmSecuritiesDeliveryObligation;
+			opposite_lazy = () -> PortfolioTransfer.mmSecuritiesDeliveryObligation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
+			type_lazy = () -> PortfolioTransfer.mmObject();
+		}
+
+		@Override
+		public List<PortfolioTransfer> getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getRelatedPortfolioTransfer();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, List<PortfolioTransfer> value) {
+			obj.setRelatedPortfolioTransfer(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesTransfer> securitiesTransfer;
 	/**
-	 * Completion of a securities settlement instruction, wherein securities are
-	 * delivered/debited from a securities account and received/credited to the
-	 * designated securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -695,7 +732,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesDeliveryObligation, List<SecuritiesTransfer>> mmSecuritiesTransfer = new MMBusinessAssociationEnd<SecuritiesDeliveryObligation, List<SecuritiesTransfer>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionElection3.mmSecuritiesMovementDetails);
 			isDerived = false;
@@ -708,12 +745,21 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 		}
+
+		@Override
+		public List<SecuritiesTransfer> getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getSecuritiesTransfer();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, List<SecuritiesTransfer> value) {
+			obj.setSecuritiesTransfer(value);
+		}
 	};
 	protected YesNoIndicator settlementInstructionGeneration;
 	/**
-	 * Specifies whether the ETC provider should generate settlement
-	 * instructions or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -739,7 +785,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementInstructionGeneration = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesDeliveryObligation, YesNoIndicator> mmSettlementInstructionGeneration = new MMBusinessAttribute<SecuritiesDeliveryObligation, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
@@ -751,19 +797,20 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesDeliveryObligation.class.getMethod("getSettlementInstructionGeneration", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getSettlementInstructionGeneration();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, YesNoIndicator value) {
+			obj.setSettlementInstructionGeneration(value);
 		}
 	};
 	protected SettlementDateCode settlementDateCode;
 	/**
-	 * Requested date of trade settlement, in coded form, for example, trade
-	 * date +1).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -777,6 +824,9 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation
 	 * SecuritiesDeliveryObligation}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 63</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -789,10 +839,11 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementDateCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesDeliveryObligation, com.tools20022.repository.codeset.SettlementDateCode> mmSettlementDateCode = new MMBusinessAttribute<SecuritiesDeliveryObligation, com.tools20022.repository.codeset.SettlementDateCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "63"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDateCode";
 			definition = "Requested date of trade settlement, in coded form, for example, trade date +1).";
@@ -801,19 +852,20 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			simpleType_lazy = () -> com.tools20022.repository.codeset.SettlementDateCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesDeliveryObligation.class.getMethod("getSettlementDateCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public com.tools20022.repository.codeset.SettlementDateCode getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getSettlementDateCode();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, com.tools20022.repository.codeset.SettlementDateCode value) {
+			obj.setSettlementDateCode(value);
 		}
 	};
 	protected SecuritiesLending securitiesLending;
 	/**
-	 * Securities lending process which covers the delivery of securities by the
-	 * seller.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -846,7 +898,7 @@ public class SecuritiesDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesLending = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesDeliveryObligation, com.tools20022.repository.entity.SecuritiesLending> mmSecuritiesLending = new MMBusinessAssociationEnd<SecuritiesDeliveryObligation, com.tools20022.repository.entity.SecuritiesLending>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
@@ -859,18 +911,28 @@ public class SecuritiesDeliveryObligation extends Obligation {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesLending getValue(SecuritiesDeliveryObligation obj) {
+			return obj.getSecuritiesLending();
+		}
+
+		@Override
+		public void setValue(SecuritiesDeliveryObligation obj, com.tools20022.repository.entity.SecuritiesLending value) {
+			obj.setSecuritiesLending(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesDeliveryObligation";
 				definition = "Obligation for one party to deliver securities to another party.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTransfer.mmSecuritiesDeliveryObligation, com.tools20022.repository.entity.PortfolioTransfer.mmSecuritiesDeliveryObligation,
-						com.tools20022.repository.entity.SecuritiesTradeExecution.mmSecuritiesDeliveryObligation, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement,
-						com.tools20022.repository.entity.SecuritiesLending.mmSecuritiesDeliveryObligation, com.tools20022.repository.entity.CollateralMovement.mmSecuritiesCollateralMovement);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTransfer.mmSecuritiesDeliveryObligation, PortfolioTransfer.mmSecuritiesDeliveryObligation,
+						com.tools20022.repository.entity.SecuritiesTradeExecution.mmSecuritiesDeliveryObligation, CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement,
+						com.tools20022.repository.entity.SecuritiesLending.mmSecuritiesDeliveryObligation, CollateralMovement.mmSecuritiesCollateralMovement);
 				superType_lazy = () -> Obligation.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmCCPEligibility, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmNettingEligibility,
 						com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmTransferInstructionDate, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmTransferCurrency,
@@ -893,95 +955,107 @@ public class SecuritiesDeliveryObligation extends Obligation {
 		return cCPEligibility;
 	}
 
-	public void setCCPEligibility(YesNoIndicator cCPEligibility) {
-		this.cCPEligibility = cCPEligibility;
+	public SecuritiesDeliveryObligation setCCPEligibility(YesNoIndicator cCPEligibility) {
+		this.cCPEligibility = Objects.requireNonNull(cCPEligibility);
+		return this;
 	}
 
 	public YesNoIndicator getNettingEligibility() {
 		return nettingEligibility;
 	}
 
-	public void setNettingEligibility(YesNoIndicator nettingEligibility) {
-		this.nettingEligibility = nettingEligibility;
+	public SecuritiesDeliveryObligation setNettingEligibility(YesNoIndicator nettingEligibility) {
+		this.nettingEligibility = Objects.requireNonNull(nettingEligibility);
+		return this;
 	}
 
 	public ISODateTime getTransferInstructionDate() {
 		return transferInstructionDate;
 	}
 
-	public void setTransferInstructionDate(ISODateTime transferInstructionDate) {
-		this.transferInstructionDate = transferInstructionDate;
+	public SecuritiesDeliveryObligation setTransferInstructionDate(ISODateTime transferInstructionDate) {
+		this.transferInstructionDate = Objects.requireNonNull(transferInstructionDate);
+		return this;
 	}
 
 	public CurrencyCode getTransferCurrency() {
 		return transferCurrency;
 	}
 
-	public void setTransferCurrency(CurrencyCode transferCurrency) {
-		this.transferCurrency = transferCurrency;
+	public SecuritiesDeliveryObligation setTransferCurrency(CurrencyCode transferCurrency) {
+		this.transferCurrency = Objects.requireNonNull(transferCurrency);
+		return this;
 	}
 
-	public CorporateActionProceedsDeliveryInstruction getRelatedCorporateAction() {
-		return relatedCorporateAction;
+	public Optional<CorporateActionProceedsDeliveryInstruction> getRelatedCorporateAction() {
+		return relatedCorporateAction == null ? Optional.empty() : Optional.of(relatedCorporateAction);
 	}
 
-	public void setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedCorporateAction) {
+	public SecuritiesDeliveryObligation setRelatedCorporateAction(CorporateActionProceedsDeliveryInstruction relatedCorporateAction) {
 		this.relatedCorporateAction = relatedCorporateAction;
+		return this;
 	}
 
 	public CollateralMovement getRelatedCollateralMovement() {
 		return relatedCollateralMovement;
 	}
 
-	public void setRelatedCollateralMovement(com.tools20022.repository.entity.CollateralMovement relatedCollateralMovement) {
-		this.relatedCollateralMovement = relatedCollateralMovement;
+	public SecuritiesDeliveryObligation setRelatedCollateralMovement(CollateralMovement relatedCollateralMovement) {
+		this.relatedCollateralMovement = Objects.requireNonNull(relatedCollateralMovement);
+		return this;
 	}
 
 	public SecuritiesTradeExecution getSecuritiesTradeExecution() {
 		return securitiesTradeExecution;
 	}
 
-	public void setSecuritiesTradeExecution(com.tools20022.repository.entity.SecuritiesTradeExecution securitiesTradeExecution) {
-		this.securitiesTradeExecution = securitiesTradeExecution;
+	public SecuritiesDeliveryObligation setSecuritiesTradeExecution(com.tools20022.repository.entity.SecuritiesTradeExecution securitiesTradeExecution) {
+		this.securitiesTradeExecution = Objects.requireNonNull(securitiesTradeExecution);
+		return this;
 	}
 
 	public List<PortfolioTransfer> getRelatedPortfolioTransfer() {
-		return relatedPortfolioTransfer;
+		return relatedPortfolioTransfer == null ? relatedPortfolioTransfer = new ArrayList<>() : relatedPortfolioTransfer;
 	}
 
-	public void setRelatedPortfolioTransfer(List<com.tools20022.repository.entity.PortfolioTransfer> relatedPortfolioTransfer) {
-		this.relatedPortfolioTransfer = relatedPortfolioTransfer;
+	public SecuritiesDeliveryObligation setRelatedPortfolioTransfer(List<PortfolioTransfer> relatedPortfolioTransfer) {
+		this.relatedPortfolioTransfer = Objects.requireNonNull(relatedPortfolioTransfer);
+		return this;
 	}
 
 	public List<SecuritiesTransfer> getSecuritiesTransfer() {
-		return securitiesTransfer;
+		return securitiesTransfer == null ? securitiesTransfer = new ArrayList<>() : securitiesTransfer;
 	}
 
-	public void setSecuritiesTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> securitiesTransfer) {
-		this.securitiesTransfer = securitiesTransfer;
+	public SecuritiesDeliveryObligation setSecuritiesTransfer(List<com.tools20022.repository.entity.SecuritiesTransfer> securitiesTransfer) {
+		this.securitiesTransfer = Objects.requireNonNull(securitiesTransfer);
+		return this;
 	}
 
 	public YesNoIndicator getSettlementInstructionGeneration() {
 		return settlementInstructionGeneration;
 	}
 
-	public void setSettlementInstructionGeneration(YesNoIndicator settlementInstructionGeneration) {
-		this.settlementInstructionGeneration = settlementInstructionGeneration;
+	public SecuritiesDeliveryObligation setSettlementInstructionGeneration(YesNoIndicator settlementInstructionGeneration) {
+		this.settlementInstructionGeneration = Objects.requireNonNull(settlementInstructionGeneration);
+		return this;
 	}
 
 	public SettlementDateCode getSettlementDateCode() {
 		return settlementDateCode;
 	}
 
-	public void setSettlementDateCode(com.tools20022.repository.codeset.SettlementDateCode settlementDateCode) {
-		this.settlementDateCode = settlementDateCode;
+	public SecuritiesDeliveryObligation setSettlementDateCode(com.tools20022.repository.codeset.SettlementDateCode settlementDateCode) {
+		this.settlementDateCode = Objects.requireNonNull(settlementDateCode);
+		return this;
 	}
 
 	public SecuritiesLending getSecuritiesLending() {
 		return securitiesLending;
 	}
 
-	public void setSecuritiesLending(com.tools20022.repository.entity.SecuritiesLending securitiesLending) {
-		this.securitiesLending = securitiesLending;
+	public SecuritiesDeliveryObligation setSecuritiesLending(com.tools20022.repository.entity.SecuritiesLending securitiesLending) {
+		this.securitiesLending = Objects.requireNonNull(securitiesLending);
+		return this;
 	}
 }

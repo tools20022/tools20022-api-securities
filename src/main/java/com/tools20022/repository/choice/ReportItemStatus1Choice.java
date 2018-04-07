@@ -27,9 +27,11 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ReportItemStatus1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -69,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides acceptance status of the holding item."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportItemStatus1Choice", propOrder = {"accepted", "acceptedWithException", "rejected"})
 public class ReportItemStatus1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Accptd", required = true)
 	protected NoReasonCode accepted;
 	/**
-	 * Statement is accepted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +122,10 @@ public class ReportItemStatus1Choice {
 	 * definition} = "Statement is accepted."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccepted = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportItemStatus1Choice, NoReasonCode> mmAccepted = new MMMessageAttribute<ReportItemStatus1Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmAcknowledgedAcceptedReason;
-			componentContext_lazy = () -> ReportItemStatus1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReportItemStatus1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Accptd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,11 +135,22 @@ public class ReportItemStatus1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(ReportItemStatus1Choice obj) {
+			return obj.getAccepted();
+		}
+
+		@Override
+		public void setValue(ReportItemStatus1Choice obj, NoReasonCode value) {
+			obj.setAccepted(value);
+		}
 	};
+	@XmlElement(name = "AccptdWthXcptn", required = true)
 	protected List<ReportItemStatus1> acceptedWithException;
 	/**
-	 * Statement is accepted with an exception/s.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,27 +176,38 @@ public class ReportItemStatus1Choice {
 	 * name} = "AcceptedWithException"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Statement is accepted  with an exception/s."</li>
+	 * definition} = "Statement is accepted with an exception/s."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAcceptedWithException = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ReportItemStatus1Choice, List<ReportItemStatus1>> mmAcceptedWithException = new MMMessageAssociationEnd<ReportItemStatus1Choice, List<ReportItemStatus1>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> ReportItemStatus1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReportItemStatus1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AccptdWthXcptn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedWithException";
-			definition = "Statement is accepted  with an exception/s.";
+			definition = "Statement is accepted with an exception/s.";
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> ReportItemStatus1.mmObject();
 		}
+
+		@Override
+		public List<ReportItemStatus1> getValue(ReportItemStatus1Choice obj) {
+			return obj.getAcceptedWithException();
+		}
+
+		@Override
+		public void setValue(ReportItemStatus1Choice obj, List<ReportItemStatus1> value) {
+			obj.setAcceptedWithException(value);
+		}
 	};
+	@XmlElement(name = "Rjctd", required = true)
 	protected ReportItemStatus1 rejected;
 	/**
-	 * Statement is rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -211,10 +236,10 @@ public class ReportItemStatus1Choice {
 	 * definition} = "Statement is rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRejected = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ReportItemStatus1Choice, ReportItemStatus1> mmRejected = new MMMessageAssociationEnd<ReportItemStatus1Choice, ReportItemStatus1>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmTransactionProcessingStatus;
-			componentContext_lazy = () -> ReportItemStatus1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReportItemStatus1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rjctd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,15 +250,26 @@ public class ReportItemStatus1Choice {
 			isComposite = true;
 			type_lazy = () -> ReportItemStatus1.mmObject();
 		}
+
+		@Override
+		public ReportItemStatus1 getValue(ReportItemStatus1Choice obj) {
+			return obj.getRejected();
+		}
+
+		@Override
+		public void setValue(ReportItemStatus1Choice obj, ReportItemStatus1 value) {
+			obj.setRejected(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportItemStatus1Choice.mmAccepted, ReportItemStatus1Choice.mmAcceptedWithException, ReportItemStatus1Choice.mmRejected);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ReportItemStatus1Choice.mmAccepted, com.tools20022.repository.choice.ReportItemStatus1Choice.mmAcceptedWithException,
+						com.tools20022.repository.choice.ReportItemStatus1Choice.mmRejected);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesBalanceTransparencyReportStatusAdviceV01.mmStatus);
 				trace_lazy = () -> Status.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportItemStatus1Choice";
 				definition = "Provides acceptance status of the holding item.";
@@ -242,30 +278,30 @@ public class ReportItemStatus1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Accptd", required = true)
 	public NoReasonCode getAccepted() {
 		return accepted;
 	}
 
-	public void setAccepted(NoReasonCode accepted) {
-		this.accepted = accepted;
+	public ReportItemStatus1Choice setAccepted(NoReasonCode accepted) {
+		this.accepted = Objects.requireNonNull(accepted);
+		return this;
 	}
 
-	@XmlElement(name = "AccptdWthXcptn", required = true)
 	public List<ReportItemStatus1> getAcceptedWithException() {
-		return acceptedWithException;
+		return acceptedWithException == null ? acceptedWithException = new ArrayList<>() : acceptedWithException;
 	}
 
-	public void setAcceptedWithException(List<ReportItemStatus1> acceptedWithException) {
-		this.acceptedWithException = acceptedWithException;
+	public ReportItemStatus1Choice setAcceptedWithException(List<ReportItemStatus1> acceptedWithException) {
+		this.acceptedWithException = Objects.requireNonNull(acceptedWithException);
+		return this;
 	}
 
-	@XmlElement(name = "Rjctd", required = true)
 	public ReportItemStatus1 getRejected() {
 		return rejected;
 	}
 
-	public void setRejected(ReportItemStatus1 rejected) {
-		this.rejected = rejected;
+	public ReportItemStatus1Choice setRejected(ReportItemStatus1 rejected) {
+		this.rejected = Objects.requireNonNull(rejected);
+		return this;
 	}
 }

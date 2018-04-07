@@ -40,49 +40,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#BuyUp
- * FractionDispositionTypeV2Code.mmBuyUp}</li>
+ * FractionDispositionTypeV2Code.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#CashInLieuOfFraction
- * FractionDispositionTypeV2Code.mmCashInLieuOfFraction}</li>
+ * FractionDispositionTypeV2Code.CashInLieuOfFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#Full
- * FractionDispositionTypeV2Code.mmFull}</li>
+ * FractionDispositionTypeV2Code.Full}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#NoFraction
- * FractionDispositionTypeV2Code.mmNoFraction}</li>
+ * FractionDispositionTypeV2Code.NoFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#ProRate
- * FractionDispositionTypeV2Code.mmProRate}</li>
+ * FractionDispositionTypeV2Code.ProRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#RoundUp
- * FractionDispositionTypeV2Code.mmRoundUp}</li>
+ * FractionDispositionTypeV2Code.RoundUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#RoundDown
- * FractionDispositionTypeV2Code.mmRoundDown}</li>
+ * FractionDispositionTypeV2Code.RoundDown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#RoundToNearest
- * FractionDispositionTypeV2Code.mmRoundToNearest}</li>
+ * FractionDispositionTypeV2Code.RoundToNearest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#IssueFraction
- * FractionDispositionTypeV2Code.mmIssueFraction}</li>
+ * FractionDispositionTypeV2Code.IssueFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#DiscussFirst
- * FractionDispositionTypeV2Code.mmDiscussFirst}</li>
+ * FractionDispositionTypeV2Code.DiscussFirst}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#Specific
- * FractionDispositionTypeV2Code.mmSpecific}</li>
+ * FractionDispositionTypeV2Code.Specific}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#Standard
- * FractionDispositionTypeV2Code.mmStandard}</li>
+ * FractionDispositionTypeV2Code.Standard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#Retain
- * FractionDispositionTypeV2Code.mmRetain}</li>
+ * FractionDispositionTypeV2Code.Retain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#Expire
- * FractionDispositionTypeV2Code.mmExpire}</li>
+ * FractionDispositionTypeV2Code.Expire}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionTypeV2Code#Unknown
- * FractionDispositionTypeV2Code.mmUnknown}</li>
+ * FractionDispositionTypeV2Code.Unknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -105,8 +105,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -608,7 +608,7 @@ public class FractionDispositionTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FractionDispositionTypeV2Code";

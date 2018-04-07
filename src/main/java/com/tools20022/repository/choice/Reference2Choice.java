@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -92,8 +93,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,17 +107,18 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Reference2Choice", propOrder = {"marginCallRequestIdentification", "marginCallResponseIdentification", "collateralProposalIdentification", "collateralProposalResponseIdentification", "disputeNotificationIdentification",
 		"collateralSubstitutionRequestIdentification", "collateralSubstitutionResponseIdentification", "collateralSubstitutionConfirmationIdentification", "interestPaymentRequestIdentification", "interestPaymentResponseIdentification",
 		"interestPaymentStatementIdentification"})
 public class Reference2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MrgnCallReqId", required = true)
 	protected Max35Text marginCallRequestIdentification;
 	/**
-	 * Unique identifier of the margin call request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,9 +143,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the margin call request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMarginCallRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmMarginCallRequestIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnCallReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,11 +155,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getMarginCallRequestIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setMarginCallRequestIdentification(value);
+		}
 	};
+	@XmlElement(name = "MrgnCallRspnId", required = true)
 	protected Max35Text marginCallResponseIdentification;
 	/**
-	 * Unique identifier of the margin call response.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,9 +195,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the margin call response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMarginCallResponseIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmMarginCallResponseIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnCallRspnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,11 +207,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getMarginCallResponseIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setMarginCallResponseIdentification(value);
+		}
 	};
+	@XmlElement(name = "CollPrpslId", required = true)
 	protected Max35Text collateralProposalIdentification;
 	/**
-	 * Unique identifier of the collateral proposal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,9 +247,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the collateral proposal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralProposalIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmCollateralProposalIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CollPrpslId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,11 +259,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getCollateralProposalIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setCollateralProposalIdentification(value);
+		}
 	};
+	@XmlElement(name = "CollPrpslRspnId", required = true)
 	protected Max35Text collateralProposalResponseIdentification;
 	/**
-	 * Unique identifier of the collateral proposal response.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,9 +299,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the collateral proposal response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralProposalResponseIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmCollateralProposalResponseIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CollPrpslRspnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -276,11 +311,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getCollateralProposalResponseIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setCollateralProposalResponseIdentification(value);
+		}
 	};
+	@XmlElement(name = "DsptNtfctnId", required = true)
 	protected Max35Text disputeNotificationIdentification;
 	/**
-	 * Unique identifier of the dispute notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,9 +351,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the dispute notification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDisputeNotificationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmDisputeNotificationIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DsptNtfctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -317,18 +363,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getDisputeNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setDisputeNotificationIdentification(value);
+		}
 	};
+	@XmlElement(name = "CollSbstitnReqId", required = true)
 	protected Max35Text collateralSubstitutionRequestIdentification;
 	/**
-	 * Choice between the identification of the MarginCallRequest message, the
-	 * MarginCallResponse message, the CollateralProposal message, the
-	 * CollateralProposalResponse message, the CollateralSubstitutionRequest
-	 * message, the CollateralSubstitutionResponse message, the
-	 * CollateralSubstitutionConfirmation message, the InterestPaymentRequest
-	 * message, the InterestPaymentResponse message, the
-	 * InterestPaymentStatement message or the MarginCallDisputeNotification
-	 * message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -355,9 +405,9 @@ public class Reference2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -367,11 +417,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getCollateralSubstitutionRequestIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setCollateralSubstitutionRequestIdentification(value);
+		}
 	};
+	@XmlElement(name = "CollSbstitnRspnId", required = true)
 	protected Max35Text collateralSubstitutionResponseIdentification;
 	/**
-	 * Unique identifier of the collateral substitution response.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -397,9 +458,9 @@ public class Reference2Choice {
 	 * "Unique identifier of the collateral substitution response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionResponseIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmCollateralSubstitutionResponseIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnRspnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -409,11 +470,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getCollateralSubstitutionResponseIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setCollateralSubstitutionResponseIdentification(value);
+		}
 	};
+	@XmlElement(name = "CollSbstitnConfId", required = true)
 	protected Max35Text collateralSubstitutionConfirmationIdentification;
 	/**
-	 * Unique identifier of the collateral substitution confirmation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -439,9 +511,9 @@ public class Reference2Choice {
 	 * "Unique identifier of the collateral substitution confirmation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionConfirmationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmCollateralSubstitutionConfirmationIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnConfId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -451,11 +523,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getCollateralSubstitutionConfirmationIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setCollateralSubstitutionConfirmationIdentification(value);
+		}
 	};
+	@XmlElement(name = "IntrstPmtReqId", required = true)
 	protected Max35Text interestPaymentRequestIdentification;
 	/**
-	 * Unique identifier of the interest payment request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -480,9 +563,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the interest payment request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestPaymentRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmInterestPaymentRequestIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstPmtReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -492,11 +575,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getInterestPaymentRequestIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setInterestPaymentRequestIdentification(value);
+		}
 	};
+	@XmlElement(name = "IntrstPmtRspnId", required = true)
 	protected Max35Text interestPaymentResponseIdentification;
 	/**
-	 * Unique identifier of the interest payment response.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -521,9 +615,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the interest payment response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestPaymentResponseIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmInterestPaymentResponseIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstPmtRspnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -533,11 +627,22 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getInterestPaymentResponseIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setInterestPaymentResponseIdentification(value);
+		}
 	};
+	@XmlElement(name = "IntrstPmtStmtId", required = true)
 	protected Max35Text interestPaymentStatementIdentification;
 	/**
-	 * Unique identifier of the interest payment statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,9 +667,9 @@ public class Reference2Choice {
 	 * definition} = "Unique identifier of the interest payment statement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestPaymentStatementIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Reference2Choice, Max35Text> mmInterestPaymentStatementIdentification = new MMMessageAttribute<Reference2Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> Reference2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Reference2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstPmtStmtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -574,17 +679,29 @@ public class Reference2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Reference2Choice obj) {
+			return obj.getInterestPaymentStatementIdentification();
+		}
+
+		@Override
+		public void setValue(Reference2Choice obj, Max35Text value) {
+			obj.setInterestPaymentStatementIdentification(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Reference2Choice.mmMarginCallRequestIdentification, Reference2Choice.mmMarginCallResponseIdentification, Reference2Choice.mmCollateralProposalIdentification,
-						Reference2Choice.mmCollateralProposalResponseIdentification, Reference2Choice.mmDisputeNotificationIdentification, Reference2Choice.mmCollateralSubstitutionRequestIdentification,
-						Reference2Choice.mmCollateralSubstitutionResponseIdentification, Reference2Choice.mmCollateralSubstitutionConfirmationIdentification, Reference2Choice.mmInterestPaymentRequestIdentification,
-						Reference2Choice.mmInterestPaymentResponseIdentification, Reference2Choice.mmInterestPaymentStatementIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Reference2Choice.mmMarginCallRequestIdentification, com.tools20022.repository.choice.Reference2Choice.mmMarginCallResponseIdentification,
+						com.tools20022.repository.choice.Reference2Choice.mmCollateralProposalIdentification, com.tools20022.repository.choice.Reference2Choice.mmCollateralProposalResponseIdentification,
+						com.tools20022.repository.choice.Reference2Choice.mmDisputeNotificationIdentification, com.tools20022.repository.choice.Reference2Choice.mmCollateralSubstitutionRequestIdentification,
+						com.tools20022.repository.choice.Reference2Choice.mmCollateralSubstitutionResponseIdentification, com.tools20022.repository.choice.Reference2Choice.mmCollateralSubstitutionConfirmationIdentification,
+						com.tools20022.repository.choice.Reference2Choice.mmInterestPaymentRequestIdentification, com.tools20022.repository.choice.Reference2Choice.mmInterestPaymentResponseIdentification,
+						com.tools20022.repository.choice.Reference2Choice.mmInterestPaymentStatementIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(CollateralManagementCancellationRequestV04.mmReference);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reference2Choice";
 				definition = "Choice between the identification of the MarginCallRequest message, the MarginCallResponse message, the CollateralProposal message, the CollateralProposalResponse message, the CollateralSubstitutionRequest message, the CollateralSubstitutionResponse message, the CollateralSubstitutionConfirmation message, the InterestPaymentRequest message, the InterestPaymentResponse message, the InterestPaymentStatement message or the MarginCallDisputeNotification message.";
@@ -593,102 +710,102 @@ public class Reference2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MrgnCallReqId", required = true)
 	public Max35Text getMarginCallRequestIdentification() {
 		return marginCallRequestIdentification;
 	}
 
-	public void setMarginCallRequestIdentification(Max35Text marginCallRequestIdentification) {
-		this.marginCallRequestIdentification = marginCallRequestIdentification;
+	public Reference2Choice setMarginCallRequestIdentification(Max35Text marginCallRequestIdentification) {
+		this.marginCallRequestIdentification = Objects.requireNonNull(marginCallRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "MrgnCallRspnId", required = true)
 	public Max35Text getMarginCallResponseIdentification() {
 		return marginCallResponseIdentification;
 	}
 
-	public void setMarginCallResponseIdentification(Max35Text marginCallResponseIdentification) {
-		this.marginCallResponseIdentification = marginCallResponseIdentification;
+	public Reference2Choice setMarginCallResponseIdentification(Max35Text marginCallResponseIdentification) {
+		this.marginCallResponseIdentification = Objects.requireNonNull(marginCallResponseIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CollPrpslId", required = true)
 	public Max35Text getCollateralProposalIdentification() {
 		return collateralProposalIdentification;
 	}
 
-	public void setCollateralProposalIdentification(Max35Text collateralProposalIdentification) {
-		this.collateralProposalIdentification = collateralProposalIdentification;
+	public Reference2Choice setCollateralProposalIdentification(Max35Text collateralProposalIdentification) {
+		this.collateralProposalIdentification = Objects.requireNonNull(collateralProposalIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CollPrpslRspnId", required = true)
 	public Max35Text getCollateralProposalResponseIdentification() {
 		return collateralProposalResponseIdentification;
 	}
 
-	public void setCollateralProposalResponseIdentification(Max35Text collateralProposalResponseIdentification) {
-		this.collateralProposalResponseIdentification = collateralProposalResponseIdentification;
+	public Reference2Choice setCollateralProposalResponseIdentification(Max35Text collateralProposalResponseIdentification) {
+		this.collateralProposalResponseIdentification = Objects.requireNonNull(collateralProposalResponseIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "DsptNtfctnId", required = true)
 	public Max35Text getDisputeNotificationIdentification() {
 		return disputeNotificationIdentification;
 	}
 
-	public void setDisputeNotificationIdentification(Max35Text disputeNotificationIdentification) {
-		this.disputeNotificationIdentification = disputeNotificationIdentification;
+	public Reference2Choice setDisputeNotificationIdentification(Max35Text disputeNotificationIdentification) {
+		this.disputeNotificationIdentification = Objects.requireNonNull(disputeNotificationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CollSbstitnReqId", required = true)
 	public Max35Text getCollateralSubstitutionRequestIdentification() {
 		return collateralSubstitutionRequestIdentification;
 	}
 
-	public void setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
-		this.collateralSubstitutionRequestIdentification = collateralSubstitutionRequestIdentification;
+	public Reference2Choice setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
+		this.collateralSubstitutionRequestIdentification = Objects.requireNonNull(collateralSubstitutionRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CollSbstitnRspnId", required = true)
 	public Max35Text getCollateralSubstitutionResponseIdentification() {
 		return collateralSubstitutionResponseIdentification;
 	}
 
-	public void setCollateralSubstitutionResponseIdentification(Max35Text collateralSubstitutionResponseIdentification) {
-		this.collateralSubstitutionResponseIdentification = collateralSubstitutionResponseIdentification;
+	public Reference2Choice setCollateralSubstitutionResponseIdentification(Max35Text collateralSubstitutionResponseIdentification) {
+		this.collateralSubstitutionResponseIdentification = Objects.requireNonNull(collateralSubstitutionResponseIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CollSbstitnConfId", required = true)
 	public Max35Text getCollateralSubstitutionConfirmationIdentification() {
 		return collateralSubstitutionConfirmationIdentification;
 	}
 
-	public void setCollateralSubstitutionConfirmationIdentification(Max35Text collateralSubstitutionConfirmationIdentification) {
-		this.collateralSubstitutionConfirmationIdentification = collateralSubstitutionConfirmationIdentification;
+	public Reference2Choice setCollateralSubstitutionConfirmationIdentification(Max35Text collateralSubstitutionConfirmationIdentification) {
+		this.collateralSubstitutionConfirmationIdentification = Objects.requireNonNull(collateralSubstitutionConfirmationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "IntrstPmtReqId", required = true)
 	public Max35Text getInterestPaymentRequestIdentification() {
 		return interestPaymentRequestIdentification;
 	}
 
-	public void setInterestPaymentRequestIdentification(Max35Text interestPaymentRequestIdentification) {
-		this.interestPaymentRequestIdentification = interestPaymentRequestIdentification;
+	public Reference2Choice setInterestPaymentRequestIdentification(Max35Text interestPaymentRequestIdentification) {
+		this.interestPaymentRequestIdentification = Objects.requireNonNull(interestPaymentRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "IntrstPmtRspnId", required = true)
 	public Max35Text getInterestPaymentResponseIdentification() {
 		return interestPaymentResponseIdentification;
 	}
 
-	public void setInterestPaymentResponseIdentification(Max35Text interestPaymentResponseIdentification) {
-		this.interestPaymentResponseIdentification = interestPaymentResponseIdentification;
+	public Reference2Choice setInterestPaymentResponseIdentification(Max35Text interestPaymentResponseIdentification) {
+		this.interestPaymentResponseIdentification = Objects.requireNonNull(interestPaymentResponseIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "IntrstPmtStmtId", required = true)
 	public Max35Text getInterestPaymentStatementIdentification() {
 		return interestPaymentStatementIdentification;
 	}
 
-	public void setInterestPaymentStatementIdentification(Max35Text interestPaymentStatementIdentification) {
-		this.interestPaymentStatementIdentification = interestPaymentStatementIdentification;
+	public Reference2Choice setInterestPaymentStatementIdentification(Max35Text interestPaymentStatementIdentification) {
+		this.interestPaymentStatementIdentification = Objects.requireNonNull(interestPaymentStatementIdentification);
+		return this;
 	}
 }

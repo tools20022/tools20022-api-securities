@@ -26,8 +26,12 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlternateIdentification4;
+import com.tools20022.repository.msg.PartyIdentification100;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +77,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,16 +93,16 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.msg.BeneficialOwner1 BeneficialOwner1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BeneficialOwner2", propOrder = {"beneficialOwnerIdentification", "additionalIdentification", "nationality", "domicileCountry", "nonDomicileCountry", "certificationIndicator", "certificationType", "declarationDetails"})
 public class BeneficialOwner2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BnfclOwnrId", required = true)
 	protected PartyIdentification100 beneficialOwnerIdentification;
 	/**
-	 * Identification of the party that is the beneficial owner of the specified
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,10 +140,10 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmBeneficialOwnerIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBeneficialOwnerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, PartyIdentification100> mmBeneficialOwnerIdentification = new MMMessageAttribute<BeneficialOwner2, PartyIdentification100>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "BnfclOwnrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -148,14 +152,24 @@ public class BeneficialOwner2 {
 			previousVersion_lazy = () -> BeneficialOwner1.mmBeneficialOwnerIdentification;
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification100.mmObject();
+			complexType_lazy = () -> PartyIdentification100.mmObject();
+		}
+
+		@Override
+		public PartyIdentification100 getValue(BeneficialOwner2 obj) {
+			return obj.getBeneficialOwnerIdentification();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, PartyIdentification100 value) {
+			obj.setBeneficialOwnerIdentification(value);
 		}
 	};
+	@XmlElement(name = "AddtlId")
 	protected AlternateIdentification4 additionalIdentification;
 	/**
-	 * Additional identification of the party that is the beneficial owner of
-	 * the specified financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,10 +207,10 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmAdditionalIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<AlternateIdentification4>> mmAdditionalIdentification = new MMMessageAttribute<BeneficialOwner2, Optional<AlternateIdentification4>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,13 +219,24 @@ public class BeneficialOwner2 {
 			previousVersion_lazy = () -> BeneficialOwner1.mmAdditionalIdentification;
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
+			complexType_lazy = () -> AlternateIdentification4.mmObject();
+		}
+
+		@Override
+		public Optional<AlternateIdentification4> getValue(BeneficialOwner2 obj) {
+			return obj.getAdditionalIdentification();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<AlternateIdentification4> value) {
+			obj.setAdditionalIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Ntlty")
 	protected CountryCode nationality;
 	/**
-	 * Nationality of the beneficial owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,10 +271,10 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmNationality}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNationality = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<CountryCode>> mmNationality = new MMMessageAttribute<BeneficialOwner2, Optional<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "Ntlty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -260,12 +285,22 @@ public class BeneficialOwner2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(BeneficialOwner2 obj) {
+			return obj.getNationality();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<CountryCode> value) {
+			obj.setNationality(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DmclCtry")
 	protected CountryCode domicileCountry;
 	/**
-	 * Country in which the person is permanently domiciled (the place of a
-	 * person's permanent home).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,10 +337,10 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmDomicileCountry}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDomicileCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<CountryCode>> mmDomicileCountry = new MMMessageAttribute<BeneficialOwner2, Optional<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmDomicile;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "DmclCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -316,14 +351,22 @@ public class BeneficialOwner2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(BeneficialOwner2 obj) {
+			return obj.getDomicileCountry();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<CountryCode> value) {
+			obj.setDomicileCountry(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NonDmclCtry")
 	protected CountryCode nonDomicileCountry;
 	/**
-	 * Country for which the holder of the financial instrument must specify
-	 * that it is not domiciled. (The holder must certify, in line with the
-	 * terms of the corporate action, that it is not domiciled in the country
-	 * indicated.)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,7 +394,7 @@ public class BeneficialOwner2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Country for which the holder of the financial instrument must specify that it is not domiciled. (The holder must certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.)"
+	 * "Country for which the holder of the financial instrument must specify that it is not domiciled. (The holder must certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.)."
 	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
@@ -360,27 +403,36 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmNonDomicileCountry}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNonDomicileCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<CountryCode>> mmNonDomicileCountry = new MMMessageAttribute<BeneficialOwner2, Optional<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> BeneficialOwner.mmNonDomicileCountry;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "NonDmclCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonDomicileCountry";
-			definition = "Country for which the holder of the financial instrument must specify that it is not domiciled. (The holder must certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.)";
+			definition = "Country for which the holder of the financial instrument must specify that it is not domiciled. (The holder must certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.).";
 			previousVersion_lazy = () -> BeneficialOwner1.mmNonDomicileCountry;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(BeneficialOwner2 obj) {
+			return obj.getNonDomicileCountry();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<CountryCode> value) {
+			obj.setNonDomicileCountry(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CertfctnInd")
 	protected YesNoIndicator certificationIndicator;
 	/**
-	 * Indicates whether certification is required from the account owner. (Yes
-	 * means that certification is required. No means certification is not
-	 * required.)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -409,7 +461,7 @@ public class BeneficialOwner2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Indicates whether certification is required from the account owner. (Yes means that certification is required. No means certification is not required.)"
+	 * "Indicates whether certification is required from the account owner. (Yes means that certification is required. No means certification is not required.)."
 	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
@@ -418,25 +470,36 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmCertificationIndicator}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificationIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<YesNoIndicator>> mmCertificationIndicator = new MMMessageAttribute<BeneficialOwner2, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> BeneficialOwner.mmCertificationIndicator;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "CertfctnInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CertificationIndicator";
-			definition = "Indicates whether certification is required from the account owner. (Yes means that certification is required. No means certification is not required.)";
+			definition = "Indicates whether certification is required from the account owner. (Yes means that certification is required. No means certification is not required.).";
 			previousVersion_lazy = () -> BeneficialOwner1.mmCertificationIndicator;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(BeneficialOwner2 obj) {
+			return obj.getCertificationIndicator();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<YesNoIndicator> value) {
+			obj.setCertificationIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CertfctnTp")
 	protected BeneficiaryCertificationType9Choice certificationType;
 	/**
-	 * Type of beneficial owner certification that is required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -472,10 +535,10 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmCertificationType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<BeneficiaryCertificationType9Choice>> mmCertificationType = new MMMessageAttribute<BeneficialOwner2, Optional<BeneficiaryCertificationType9Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BeneficialOwner.mmCertificationType;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "CertfctnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -486,12 +549,22 @@ public class BeneficialOwner2 {
 			minOccurs = 0;
 			complexType_lazy = () -> BeneficiaryCertificationType9Choice.mmObject();
 		}
+
+		@Override
+		public Optional<BeneficiaryCertificationType9Choice> getValue(BeneficialOwner2 obj) {
+			return obj.getCertificationType();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<BeneficiaryCertificationType9Choice> value) {
+			obj.setCertificationType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DclrtnDtls")
 	protected Max350Text declarationDetails;
 	/**
-	 * Declaration details related to the financial instrument, for example,
-	 * beneficial ownership.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -528,10 +601,10 @@ public class BeneficialOwner2 {
 	 * BeneficialOwner1.mmDeclarationDetails}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDeclarationDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BeneficialOwner2, Optional<Max350Text>> mmDeclarationDetails = new MMMessageAttribute<BeneficialOwner2, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmDeclarationDetails;
-			componentContext_lazy = () -> BeneficialOwner2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BeneficialOwner2.mmObject();
 			isDerived = false;
 			xmlTag = "DclrtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -542,15 +615,26 @@ public class BeneficialOwner2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(BeneficialOwner2 obj) {
+			return obj.getDeclarationDetails();
+		}
+
+		@Override
+		public void setValue(BeneficialOwner2 obj, Optional<Max350Text> value) {
+			obj.setDeclarationDetails(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BeneficialOwner2.mmBeneficialOwnerIdentification, BeneficialOwner2.mmAdditionalIdentification, BeneficialOwner2.mmNationality, BeneficialOwner2.mmDomicileCountry,
-						BeneficialOwner2.mmNonDomicileCountry, BeneficialOwner2.mmCertificationIndicator, BeneficialOwner2.mmCertificationType, BeneficialOwner2.mmDeclarationDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BeneficialOwner2.mmBeneficialOwnerIdentification, com.tools20022.repository.msg.BeneficialOwner2.mmAdditionalIdentification,
+						com.tools20022.repository.msg.BeneficialOwner2.mmNationality, com.tools20022.repository.msg.BeneficialOwner2.mmDomicileCountry, com.tools20022.repository.msg.BeneficialOwner2.mmNonDomicileCountry,
+						com.tools20022.repository.msg.BeneficialOwner2.mmCertificationIndicator, com.tools20022.repository.msg.BeneficialOwner2.mmCertificationType, com.tools20022.repository.msg.BeneficialOwner2.mmDeclarationDetails);
 				trace_lazy = () -> BeneficialOwner.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BeneficialOwner2";
 				definition = "Provides information about the beneficial owner of the securities.";
@@ -560,75 +644,75 @@ public class BeneficialOwner2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BnfclOwnrId", required = true)
 	public PartyIdentification100 getBeneficialOwnerIdentification() {
 		return beneficialOwnerIdentification;
 	}
 
-	public void setBeneficialOwnerIdentification(com.tools20022.repository.msg.PartyIdentification100 beneficialOwnerIdentification) {
-		this.beneficialOwnerIdentification = beneficialOwnerIdentification;
+	public BeneficialOwner2 setBeneficialOwnerIdentification(PartyIdentification100 beneficialOwnerIdentification) {
+		this.beneficialOwnerIdentification = Objects.requireNonNull(beneficialOwnerIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlId")
-	public AlternateIdentification4 getAdditionalIdentification() {
-		return additionalIdentification;
+	public Optional<AlternateIdentification4> getAdditionalIdentification() {
+		return additionalIdentification == null ? Optional.empty() : Optional.of(additionalIdentification);
 	}
 
-	public void setAdditionalIdentification(com.tools20022.repository.msg.AlternateIdentification4 additionalIdentification) {
+	public BeneficialOwner2 setAdditionalIdentification(AlternateIdentification4 additionalIdentification) {
 		this.additionalIdentification = additionalIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Ntlty")
-	public CountryCode getNationality() {
-		return nationality;
+	public Optional<CountryCode> getNationality() {
+		return nationality == null ? Optional.empty() : Optional.of(nationality);
 	}
 
-	public void setNationality(CountryCode nationality) {
+	public BeneficialOwner2 setNationality(CountryCode nationality) {
 		this.nationality = nationality;
+		return this;
 	}
 
-	@XmlElement(name = "DmclCtry")
-	public CountryCode getDomicileCountry() {
-		return domicileCountry;
+	public Optional<CountryCode> getDomicileCountry() {
+		return domicileCountry == null ? Optional.empty() : Optional.of(domicileCountry);
 	}
 
-	public void setDomicileCountry(CountryCode domicileCountry) {
+	public BeneficialOwner2 setDomicileCountry(CountryCode domicileCountry) {
 		this.domicileCountry = domicileCountry;
+		return this;
 	}
 
-	@XmlElement(name = "NonDmclCtry")
-	public CountryCode getNonDomicileCountry() {
-		return nonDomicileCountry;
+	public Optional<CountryCode> getNonDomicileCountry() {
+		return nonDomicileCountry == null ? Optional.empty() : Optional.of(nonDomicileCountry);
 	}
 
-	public void setNonDomicileCountry(CountryCode nonDomicileCountry) {
+	public BeneficialOwner2 setNonDomicileCountry(CountryCode nonDomicileCountry) {
 		this.nonDomicileCountry = nonDomicileCountry;
+		return this;
 	}
 
-	@XmlElement(name = "CertfctnInd")
-	public YesNoIndicator getCertificationIndicator() {
-		return certificationIndicator;
+	public Optional<YesNoIndicator> getCertificationIndicator() {
+		return certificationIndicator == null ? Optional.empty() : Optional.of(certificationIndicator);
 	}
 
-	public void setCertificationIndicator(YesNoIndicator certificationIndicator) {
+	public BeneficialOwner2 setCertificationIndicator(YesNoIndicator certificationIndicator) {
 		this.certificationIndicator = certificationIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "CertfctnTp")
-	public BeneficiaryCertificationType9Choice getCertificationType() {
-		return certificationType;
+	public Optional<BeneficiaryCertificationType9Choice> getCertificationType() {
+		return certificationType == null ? Optional.empty() : Optional.of(certificationType);
 	}
 
-	public void setCertificationType(BeneficiaryCertificationType9Choice certificationType) {
+	public BeneficialOwner2 setCertificationType(BeneficiaryCertificationType9Choice certificationType) {
 		this.certificationType = certificationType;
+		return this;
 	}
 
-	@XmlElement(name = "DclrtnDtls")
-	public Max350Text getDeclarationDetails() {
-		return declarationDetails;
+	public Optional<Max350Text> getDeclarationDetails() {
+		return declarationDetails == null ? Optional.empty() : Optional.of(declarationDetails);
 	}
 
-	public void setDeclarationDetails(Max350Text declarationDetails) {
+	public BeneficialOwner2 setDeclarationDetails(Max350Text declarationDetails) {
 		this.declarationDetails = declarationDetails;
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,15 +39,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyle7Code#American
- * OptionStyle7Code.mmAmerican}</li>
+ * OptionStyle7Code.American}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyle7Code#Asian
- * OptionStyle7Code.mmAsian}</li>
+ * OptionStyle7Code.Asian}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyle7Code#Bermudan
- * OptionStyle7Code.mmBermudan}</li>
+ * OptionStyle7Code.Bermudan}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyle7Code#European
- * OptionStyle7Code.mmEuropean}</li>
+ * OptionStyle7Code.European}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionStyle7Code#Other
- * OptionStyle7Code.mmOther}</li>
+ * OptionStyle7Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,7 +66,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "OptionStyle7Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies how an option  for a derivative or securities derivative can be exercised."
+ * "Specifies how an option for a derivative or securities derivative can be exercised."
  * </li>
  * </ul>
  */
@@ -82,6 +83,9 @@ public class OptionStyle7Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.OptionStyle7Code
 	 * OptionStyle7Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :12a::OPST//AMER</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -91,6 +95,7 @@ public class OptionStyle7Code extends MMCode {
 	 */
 	public static final OptionStyle7Code American = new OptionStyle7Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":12a::OPST//AMER"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "American";
 			owner_lazy = () -> com.tools20022.repository.codeset.OptionStyle7Code.mmObject();
@@ -154,6 +159,9 @@ public class OptionStyle7Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.OptionStyle7Code
 	 * OptionStyle7Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :12a::OPST//EURO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -163,6 +171,7 @@ public class OptionStyle7Code extends MMCode {
 	 */
 	public static final OptionStyle7Code European = new OptionStyle7Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":12a::OPST//EURO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "European";
 			owner_lazy = () -> com.tools20022.repository.codeset.OptionStyle7Code.mmObject();
@@ -201,10 +210,10 @@ public class OptionStyle7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionStyle7Code";
-				definition = "Specifies how an option  for a derivative or securities derivative can be exercised.";
+				definition = "Specifies how an option for a derivative or securities derivative can be exercised.";
 				trace_lazy = () -> OptionStyleCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OptionStyle7Code.American, com.tools20022.repository.codeset.OptionStyle7Code.Asian, com.tools20022.repository.codeset.OptionStyle7Code.Bermudan,
 						com.tools20022.repository.codeset.OptionStyle7Code.European, com.tools20022.repository.codeset.OptionStyle7Code.Other);

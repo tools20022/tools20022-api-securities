@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForInstrument
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForInstrument}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForHeadquarter
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForHeadquarter}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForHeadquarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#AdHocRequest
- * AuthorityExchangeReasonCode.mmAdHocRequest}</li>
+ * AuthorityExchangeReasonCode.AdHocRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#Other
- * AuthorityExchangeReasonCode.mmOther}</li>
+ * AuthorityExchangeReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForDirectUnderlying
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForDirectUnderlying}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForDirectUnderlying}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForBasketConstituent
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForBasketConstituent}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForBasketConstituent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForBuyerBranch
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForBuyerBranch}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForBuyerBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForSellerBranch
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForSellerBranch}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForSellerBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForMembershipBranch
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForMembershipBranch}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForMembershipBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForDecisionMakingBranch
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForDecisionMakingBranch}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForDecisionMakingBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForExecutingBranch
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForExecutingBranch}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForExecutingBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForTradingVenue
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForTradingVenue}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForTradingVenue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReasonCode#CompetentAuthorityForIndex
- * AuthorityExchangeReasonCode.mmCompetentAuthorityForIndex}</li>
+ * AuthorityExchangeReasonCode.CompetentAuthorityForIndex}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -88,8 +88,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -504,7 +504,7 @@ public class AuthorityExchangeReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthorityExchangeReasonCode";
 				definition = "Specifies the reason for the exchange with the national competent authority.";

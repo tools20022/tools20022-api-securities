@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
@@ -26,9 +27,11 @@ import com.tools20022.repository.entity.CorporateActionStatusReason;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PendingCancellationStatusReason7;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PendingCancellationStatus7Choice", propOrder = {"notSpecifiedReason", "reason"})
 public class PendingCancellationStatus7Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NotSpcfdRsn", required = true)
 	protected NoReasonCode notSpecifiedReason;
 	/**
-	 * Reason not specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,6 +105,9 @@ public class PendingCancellationStatus7Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "NotSpcfdRsn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B: not present</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -111,12 +118,13 @@ public class PendingCancellationStatus7Choice {
 	 * definition} = "Reason not specified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PendingCancellationStatus7Choice, NoReasonCode> mmNotSpecifiedReason = new MMMessageAttribute<PendingCancellationStatus7Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmNoSpecifiedReason;
-			componentContext_lazy = () -> PendingCancellationStatus7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PendingCancellationStatus7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NotSpcfdRsn";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B: not present"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotSpecifiedReason";
 			definition = "Reason not specified.";
@@ -124,11 +132,22 @@ public class PendingCancellationStatus7Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(PendingCancellationStatus7Choice obj) {
+			return obj.getNotSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(PendingCancellationStatus7Choice obj, NoReasonCode value) {
+			obj.setNotSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected List<PendingCancellationStatusReason7> reason;
 	/**
-	 * Reason for the pending cancellation status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,6 +167,9 @@ public class PendingCancellationStatus7Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Rsn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::CANP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -158,12 +180,13 @@ public class PendingCancellationStatus7Choice {
 	 * definition} = "Reason for the pending cancellation status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PendingCancellationStatus7Choice, List<PendingCancellationStatusReason7>> mmReason = new MMMessageAssociationEnd<PendingCancellationStatus7Choice, List<PendingCancellationStatusReason7>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmPendingReason;
-			componentContext_lazy = () -> PendingCancellationStatus7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PendingCancellationStatus7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::CANP"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reason";
 			definition = "Reason for the pending cancellation status.";
@@ -171,14 +194,24 @@ public class PendingCancellationStatus7Choice {
 			isComposite = true;
 			type_lazy = () -> PendingCancellationStatusReason7.mmObject();
 		}
+
+		@Override
+		public List<PendingCancellationStatusReason7> getValue(PendingCancellationStatus7Choice obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(PendingCancellationStatus7Choice obj, List<PendingCancellationStatusReason7> value) {
+			obj.setReason(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PendingCancellationStatus7Choice.mmNotSpecifiedReason, PendingCancellationStatus7Choice.mmReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PendingCancellationStatus7Choice.mmNotSpecifiedReason, com.tools20022.repository.choice.PendingCancellationStatus7Choice.mmReason);
 				trace_lazy = () -> CorporateActionStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingCancellationStatus7Choice";
 				definition = "Choice between a reason or no reason for the corporate action instruction cancellation pending cancellation status.";
@@ -187,21 +220,21 @@ public class PendingCancellationStatus7Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NotSpcfdRsn", required = true)
 	public NoReasonCode getNotSpecifiedReason() {
 		return notSpecifiedReason;
 	}
 
-	public void setNotSpecifiedReason(NoReasonCode notSpecifiedReason) {
-		this.notSpecifiedReason = notSpecifiedReason;
+	public PendingCancellationStatus7Choice setNotSpecifiedReason(NoReasonCode notSpecifiedReason) {
+		this.notSpecifiedReason = Objects.requireNonNull(notSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public List<PendingCancellationStatusReason7> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<PendingCancellationStatusReason7> reason) {
-		this.reason = reason;
+	public PendingCancellationStatus7Choice setReason(List<PendingCancellationStatusReason7> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 }

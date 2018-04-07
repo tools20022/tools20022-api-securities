@@ -39,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#DefeasedSecurityIndicator
- * NewSecuritiesIssuanceType5Code.mmDefeasedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType5Code.DefeasedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#ExistingIssue
- * NewSecuritiesIssuanceType5Code.mmExistingIssue}</li>
+ * NewSecuritiesIssuanceType5Code.ExistingIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#NewIssue
- * NewSecuritiesIssuanceType5Code.mmNewIssue}</li>
+ * NewSecuritiesIssuanceType5Code.NewIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#NonDefeasedSecurityIndicator
- * NewSecuritiesIssuanceType5Code.mmNonDefeasedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType5Code.NonDefeasedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#Unknown
- * NewSecuritiesIssuanceType5Code.mmUnknown}</li>
+ * NewSecuritiesIssuanceType5Code.Unknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#NonRefundedSecurityIndicator
- * NewSecuritiesIssuanceType5Code.mmNonRefundedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType5Code.NonRefundedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType5Code#RefundedSecurityIndicator
- * NewSecuritiesIssuanceType5Code.mmRefundedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType5Code.RefundedSecurityIndicator}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -260,7 +260,7 @@ public class NewSecuritiesIssuanceType5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NewSecuritiesIssuanceType5Code";
 				definition = "Specifies the type of securities proceeds; whether they are newly issued or not, defeased or non-defeased.";

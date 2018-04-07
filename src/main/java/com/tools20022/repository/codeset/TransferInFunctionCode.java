@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferInFunctionCode#AdviceAndRequest
- * TransferInFunctionCode.mmAdviceAndRequest}</li>
+ * TransferInFunctionCode.AdviceAndRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferInFunctionCode#Instruction
- * TransferInFunctionCode.mmInstruction}</li>
+ * TransferInFunctionCode.Instruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferInFunctionCode#Advice
- * TransferInFunctionCode.mmAdvice}</li>
+ * TransferInFunctionCode.Advice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferInFunctionCode#Confirmation
- * TransferInFunctionCode.mmConfirmation}</li>
+ * TransferInFunctionCode.Confirmation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -213,7 +213,7 @@ public class TransferInFunctionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransferInFunctionCode";
 				definition = "Specifies the function of the transfer in.";

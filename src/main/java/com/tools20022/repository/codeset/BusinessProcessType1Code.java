@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#TripartiteCentralMatching
- * BusinessProcessType1Code.mmTripartiteCentralMatching}</li>
+ * BusinessProcessType1Code.TripartiteCentralMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#NotCoveredByInvestmentInstructions
- * BusinessProcessType1Code.mmNotCoveredByInvestmentInstructions}</li>
+ * BusinessProcessType1Code.NotCoveredByInvestmentInstructions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#PreAccepted
- * BusinessProcessType1Code.mmPreAccepted}</li>
+ * BusinessProcessType1Code.PreAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#Reversal
- * BusinessProcessType1Code.mmReversal}</li>
+ * BusinessProcessType1Code.Reversal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#OwnAccountTradeType
- * BusinessProcessType1Code.mmOwnAccountTradeType}</li>
+ * BusinessProcessType1Code.OwnAccountTradeType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#ThroughType
- * BusinessProcessType1Code.mmThroughType}</li>
+ * BusinessProcessType1Code.ThroughType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#BillateralCentralMatching
- * BusinessProcessType1Code.mmBillateralCentralMatching}</li>
+ * BusinessProcessType1Code.BillateralCentralMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BusinessProcessType1Code#DuplexType
- * BusinessProcessType1Code.mmDuplexType}</li>
+ * BusinessProcessType1Code.DuplexType}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -291,7 +291,7 @@ public class BusinessProcessType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ISUP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessProcessType1Code";

@@ -38,24 +38,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#DissenterRights
- * OfferTypeV2Code.mmDissenterRights}</li>
+ * OfferTypeV2Code.DissenterRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#RestrictionExchange
- * OfferTypeV2Code.mmRestrictionExchange}</li>
+ * OfferTypeV2Code.RestrictionExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#FirstComeFirstServed
- * OfferTypeV2Code.mmFirstComeFirstServed}</li>
+ * OfferTypeV2Code.FirstComeFirstServed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#FinalOffer
- * OfferTypeV2Code.mmFinalOffer}</li>
+ * OfferTypeV2Code.FinalOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#MiniOddLotOffer
- * OfferTypeV2Code.mmMiniOddLotOffer}</li>
+ * OfferTypeV2Code.MiniOddLotOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#PartialOffer
- * OfferTypeV2Code.mmPartialOffer}</li>
+ * OfferTypeV2Code.PartialOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#SqueezeOutBid
- * OfferTypeV2Code.mmSqueezeOutBid}</li>
+ * OfferTypeV2Code.SqueezeOutBid}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -331,7 +331,7 @@ public class OfferTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DISS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OfferTypeV2Code";

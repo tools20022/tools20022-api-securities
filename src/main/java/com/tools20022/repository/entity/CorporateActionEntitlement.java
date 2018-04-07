@@ -19,12 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.CorporateActionServicing;
+import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Rights entitled to the account owner based on the terms of the corporate
@@ -121,18 +121,18 @@ import java.util.List;
  * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails31
  * CorporateActionBalanceDetails31}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30
- * CorporateActionBalanceDetails30}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails29
  * CorporateActionBalanceDetails29}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37
+ * CorporateActionBalanceDetails37}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -148,11 +148,10 @@ import java.util.List;
 public class CorporateActionEntitlement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.SecuritiesBalance> eligibleBalance;
+	protected List<SecuritiesBalance> eligibleBalance;
 	/**
-	 * Total balance of securities eligible for this corporate action event. The
-	 * entitlement calculation is based on this balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,20 +170,20 @@ public class CorporateActionEntitlement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption116#mmTotalEligibleBalance
-	 * CorporateActionOption116.mmTotalEligibleBalance}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails32#mmTotalEligibleBalance
 	 * CorporateActionBalanceDetails32.mmTotalEligibleBalance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails31#mmTotalEligibleBalance
 	 * CorporateActionBalanceDetails31.mmTotalEligibleBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmTotalEligibleBalance
-	 * CorporateActionBalanceDetails30.mmTotalEligibleBalance}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails29#mmTotalEligibleBalance
 	 * CorporateActionBalanceDetails29.mmTotalEligibleBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption141#mmTotalEligibleBalance
+	 * CorporateActionOption141.mmTotalEligibleBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmTotalEligibleBalance
+	 * CorporateActionBalanceDetails37.mmTotalEligibleBalance}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -205,25 +204,35 @@ public class CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEligibleBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>> mmEligibleBalance = new MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionOption116.mmTotalEligibleBalance, CorporateActionBalanceDetails32.mmTotalEligibleBalance, CorporateActionBalanceDetails31.mmTotalEligibleBalance,
-					CorporateActionBalanceDetails30.mmTotalEligibleBalance, CorporateActionBalanceDetails29.mmTotalEligibleBalance);
+			derivation_lazy = () -> Arrays.asList(CorporateActionBalanceDetails32.mmTotalEligibleBalance, CorporateActionBalanceDetails31.mmTotalEligibleBalance, CorporateActionBalanceDetails29.mmTotalEligibleBalance,
+					CorporateActionOption141.mmTotalEligibleBalance, CorporateActionBalanceDetails37.mmTotalEligibleBalance);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligibleBalance";
 			definition = "Total balance of securities eligible for this corporate action event. The entitlement calculation is based on this balance.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmEligibleBalanceRelatedEntitlement;
+			opposite_lazy = () -> SecuritiesBalance.mmEligibleBalanceRelatedEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(CorporateActionEntitlement obj) {
+			return obj.getEligibleBalance();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, List<SecuritiesBalance> value) {
+			obj.setEligibleBalance(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance;
+	protected List<SecuritiesBalance> securitiesBalance;
 	/**
-	 * Specifies any type of balance related to a corporate action entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,48 +338,6 @@ public class CorporateActionEntitlement {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails31#mmUnaffectedBalance
 	 * CorporateActionBalanceDetails31.mmUnaffectedBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmBlockedBalance
-	 * CorporateActionBalanceDetails30.mmBlockedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmBorrowedBalance
-	 * CorporateActionBalanceDetails30.mmBorrowedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmCollateralInBalance
-	 * CorporateActionBalanceDetails30.mmCollateralInBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmCollateralOutBalance
-	 * CorporateActionBalanceDetails30.mmCollateralOutBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmOnLoanBalance
-	 * CorporateActionBalanceDetails30.mmOnLoanBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmOutForRegistrationBalance
-	 * CorporateActionBalanceDetails30.mmOutForRegistrationBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmSettlementPositionBalance
-	 * CorporateActionBalanceDetails30.mmSettlementPositionBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmStreetPositionBalance
-	 * CorporateActionBalanceDetails30.mmStreetPositionBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmTradeDatePositionBalance
-	 * CorporateActionBalanceDetails30.mmTradeDatePositionBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmInTransshipmentBalance
-	 * CorporateActionBalanceDetails30.mmInTransshipmentBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmRegisteredBalance
-	 * CorporateActionBalanceDetails30.mmRegisteredBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmObligatedBalance
-	 * CorporateActionBalanceDetails30.mmObligatedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmPendingDeliveryBalance
-	 * CorporateActionBalanceDetails30.mmPendingDeliveryBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmPendingReceiptBalance
-	 * CorporateActionBalanceDetails30.mmPendingReceiptBalance}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails29#mmBlockedBalance
 	 * CorporateActionBalanceDetails29.mmBlockedBalance}</li>
 	 * <li>
@@ -418,6 +385,48 @@ public class CorporateActionEntitlement {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails29#mmUnaffectedBalance
 	 * CorporateActionBalanceDetails29.mmUnaffectedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmBlockedBalance
+	 * CorporateActionBalanceDetails37.mmBlockedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmBorrowedBalance
+	 * CorporateActionBalanceDetails37.mmBorrowedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmCollateralInBalance
+	 * CorporateActionBalanceDetails37.mmCollateralInBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmCollateralOutBalance
+	 * CorporateActionBalanceDetails37.mmCollateralOutBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmOnLoanBalance
+	 * CorporateActionBalanceDetails37.mmOnLoanBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmOutForRegistrationBalance
+	 * CorporateActionBalanceDetails37.mmOutForRegistrationBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmSettlementPositionBalance
+	 * CorporateActionBalanceDetails37.mmSettlementPositionBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmStreetPositionBalance
+	 * CorporateActionBalanceDetails37.mmStreetPositionBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmTradeDatePositionBalance
+	 * CorporateActionBalanceDetails37.mmTradeDatePositionBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmInTransshipmentBalance
+	 * CorporateActionBalanceDetails37.mmInTransshipmentBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmRegisteredBalance
+	 * CorporateActionBalanceDetails37.mmRegisteredBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmObligatedBalance
+	 * CorporateActionBalanceDetails37.mmObligatedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmPendingDeliveryBalance
+	 * CorporateActionBalanceDetails37.mmPendingDeliveryBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmPendingReceiptBalance
+	 * CorporateActionBalanceDetails37.mmPendingReceiptBalance}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -438,7 +447,7 @@ public class CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>> mmSecuritiesBalance = new MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionBalanceDetails32.mmBlockedBalance, CorporateActionBalanceDetails32.mmBorrowedBalance, CorporateActionBalanceDetails32.mmCollateralInBalance,
 					CorporateActionBalanceDetails32.mmCollateralOutBalance, CorporateActionBalanceDetails32.mmOnLoanBalance, CorporateActionBalanceDetails32.mmPendingDeliveryBalance, CorporateActionBalanceDetails32.mmPendingReceiptBalance,
@@ -448,31 +457,40 @@ public class CorporateActionEntitlement {
 					CorporateActionBalanceDetails31.mmCollateralOutBalance, CorporateActionBalanceDetails31.mmOnLoanBalance, CorporateActionBalanceDetails31.mmPendingDeliveryBalance, CorporateActionBalanceDetails31.mmPendingReceiptBalance,
 					CorporateActionBalanceDetails31.mmOutForRegistrationBalance, CorporateActionBalanceDetails31.mmSettlementPositionBalance, CorporateActionBalanceDetails31.mmStreetPositionBalance,
 					CorporateActionBalanceDetails31.mmTradeDatePositionBalance, CorporateActionBalanceDetails31.mmInTransshipmentBalance, CorporateActionBalanceDetails31.mmRegisteredBalance,
-					CorporateActionBalanceDetails31.mmAffectedBalance, CorporateActionBalanceDetails31.mmUnaffectedBalance, CorporateActionBalanceDetails30.mmBlockedBalance, CorporateActionBalanceDetails30.mmBorrowedBalance,
-					CorporateActionBalanceDetails30.mmCollateralInBalance, CorporateActionBalanceDetails30.mmCollateralOutBalance, CorporateActionBalanceDetails30.mmOnLoanBalance,
-					CorporateActionBalanceDetails30.mmOutForRegistrationBalance, CorporateActionBalanceDetails30.mmSettlementPositionBalance, CorporateActionBalanceDetails30.mmStreetPositionBalance,
-					CorporateActionBalanceDetails30.mmTradeDatePositionBalance, CorporateActionBalanceDetails30.mmInTransshipmentBalance, CorporateActionBalanceDetails30.mmRegisteredBalance,
-					CorporateActionBalanceDetails30.mmObligatedBalance, CorporateActionBalanceDetails30.mmPendingDeliveryBalance, CorporateActionBalanceDetails30.mmPendingReceiptBalance, CorporateActionBalanceDetails29.mmBlockedBalance,
-					CorporateActionBalanceDetails29.mmBorrowedBalance, CorporateActionBalanceDetails29.mmCollateralInBalance, CorporateActionBalanceDetails29.mmCollateralOutBalance, CorporateActionBalanceDetails29.mmOnLoanBalance,
-					CorporateActionBalanceDetails29.mmPendingDeliveryBalance, CorporateActionBalanceDetails29.mmPendingReceiptBalance, CorporateActionBalanceDetails29.mmOutForRegistrationBalance,
-					CorporateActionBalanceDetails29.mmSettlementPositionBalance, CorporateActionBalanceDetails29.mmStreetPositionBalance, CorporateActionBalanceDetails29.mmTradeDatePositionBalance,
-					CorporateActionBalanceDetails29.mmInTransshipmentBalance, CorporateActionBalanceDetails29.mmRegisteredBalance, CorporateActionBalanceDetails29.mmObligatedBalance, CorporateActionBalanceDetails29.mmAffectedBalance,
-					CorporateActionBalanceDetails29.mmUnaffectedBalance);
+					CorporateActionBalanceDetails31.mmAffectedBalance, CorporateActionBalanceDetails31.mmUnaffectedBalance, CorporateActionBalanceDetails29.mmBlockedBalance, CorporateActionBalanceDetails29.mmBorrowedBalance,
+					CorporateActionBalanceDetails29.mmCollateralInBalance, CorporateActionBalanceDetails29.mmCollateralOutBalance, CorporateActionBalanceDetails29.mmOnLoanBalance, CorporateActionBalanceDetails29.mmPendingDeliveryBalance,
+					CorporateActionBalanceDetails29.mmPendingReceiptBalance, CorporateActionBalanceDetails29.mmOutForRegistrationBalance, CorporateActionBalanceDetails29.mmSettlementPositionBalance,
+					CorporateActionBalanceDetails29.mmStreetPositionBalance, CorporateActionBalanceDetails29.mmTradeDatePositionBalance, CorporateActionBalanceDetails29.mmInTransshipmentBalance,
+					CorporateActionBalanceDetails29.mmRegisteredBalance, CorporateActionBalanceDetails29.mmObligatedBalance, CorporateActionBalanceDetails29.mmAffectedBalance, CorporateActionBalanceDetails29.mmUnaffectedBalance,
+					CorporateActionBalanceDetails37.mmBlockedBalance, CorporateActionBalanceDetails37.mmBorrowedBalance, CorporateActionBalanceDetails37.mmCollateralInBalance, CorporateActionBalanceDetails37.mmCollateralOutBalance,
+					CorporateActionBalanceDetails37.mmOnLoanBalance, CorporateActionBalanceDetails37.mmOutForRegistrationBalance, CorporateActionBalanceDetails37.mmSettlementPositionBalance,
+					CorporateActionBalanceDetails37.mmStreetPositionBalance, CorporateActionBalanceDetails37.mmTradeDatePositionBalance, CorporateActionBalanceDetails37.mmInTransshipmentBalance,
+					CorporateActionBalanceDetails37.mmRegisteredBalance, CorporateActionBalanceDetails37.mmObligatedBalance, CorporateActionBalanceDetails37.mmPendingDeliveryBalance, CorporateActionBalanceDetails37.mmPendingReceiptBalance);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Specifies any type of balance related to a corporate action entitlement.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmCorporateActionEntitlement;
+			opposite_lazy = () -> SecuritiesBalance.mmCorporateActionEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(CorporateActionEntitlement obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, List<SecuritiesBalance> value) {
+			obj.setSecuritiesBalance(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesBalance> instructedBalance;
+	protected List<SecuritiesBalance> instructedBalance;
 	/**
-	 * Balance of instructed position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -491,29 +509,29 @@ public class CorporateActionEntitlement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption116#mmInstructedBalance
-	 * CorporateActionOption116.mmInstructedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes68#mmInstructedBalance
-	 * FinancialInstrumentAttributes68.mmInstructedBalance}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption120#mmInstructedQuantity
 	 * CorporateActionOption120.mmInstructedQuantity}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InstructedCorporateActionOption6#mmInstructedBalance
-	 * InstructedCorporateActionOption6.mmInstructedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmTotalInstructedBalanceDetails
-	 * CorporateActionBalanceDetails30.mmTotalInstructedBalanceDetails}</li>
+	 * {@linkplain com.tools20022.repository.msg.SecuritiesOption52#mmInstructedQuantity
+	 * SecuritiesOption52.mmInstructedQuantity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails29#mmInstructedBalance
 	 * CorporateActionBalanceDetails29.mmInstructedBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InstructedBalanceDetails5#mmTotalInstructedBalance
-	 * InstructedBalanceDetails5.mmTotalInstructedBalance}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption141#mmInstructedBalance
+	 * CorporateActionOption141.mmInstructedBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SecuritiesOption54#mmInstructedQuantity
-	 * SecuritiesOption54.mmInstructedQuantity}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmTotalInstructedBalanceDetails
+	 * CorporateActionBalanceDetails37.mmTotalInstructedBalanceDetails}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InstructedCorporateActionOption8#mmInstructedBalance
+	 * InstructedCorporateActionOption8.mmInstructedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InstructedBalanceDetails7#mmTotalInstructedBalance
+	 * InstructedBalanceDetails7.mmTotalInstructedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes93#mmInstructedBalance
+	 * FinancialInstrumentAttributes93.mmInstructedBalance}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -532,26 +550,36 @@ public class CorporateActionEntitlement {
 	 * definition} = "Balance of  instructed position."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInstructedBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>> mmInstructedBalance = new MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionOption116.mmInstructedBalance, FinancialInstrumentAttributes68.mmInstructedBalance, CorporateActionOption120.mmInstructedQuantity,
-					InstructedCorporateActionOption6.mmInstructedBalance, CorporateActionBalanceDetails30.mmTotalInstructedBalanceDetails, CorporateActionBalanceDetails29.mmInstructedBalance,
-					InstructedBalanceDetails5.mmTotalInstructedBalance, SecuritiesOption54.mmInstructedQuantity);
+			derivation_lazy = () -> Arrays.asList(CorporateActionOption120.mmInstructedQuantity, SecuritiesOption52.mmInstructedQuantity, CorporateActionBalanceDetails29.mmInstructedBalance, CorporateActionOption141.mmInstructedBalance,
+					CorporateActionBalanceDetails37.mmTotalInstructedBalanceDetails, InstructedCorporateActionOption8.mmInstructedBalance, InstructedBalanceDetails7.mmTotalInstructedBalance,
+					FinancialInstrumentAttributes93.mmInstructedBalance);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructedBalance";
 			definition = "Balance of  instructed position.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmInstructedBalanceRelatedEntitlement;
+			opposite_lazy = () -> SecuritiesBalance.mmInstructedBalanceRelatedEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(CorporateActionEntitlement obj) {
+			return obj.getInstructedBalance();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, List<SecuritiesBalance> value) {
+			obj.setInstructedBalance(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesBalance> uninstructedBalance;
+	protected List<SecuritiesBalance> uninstructedBalance;
 	/**
-	 * Balance of uninstructed position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -570,17 +598,17 @@ public class CorporateActionEntitlement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption116#mmUninstructedBalance
-	 * CorporateActionOption116.mmUninstructedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes68#mmUninstructedBalance
-	 * FinancialInstrumentAttributes68.mmUninstructedBalance}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails30#mmUninstructedBalance
-	 * CorporateActionBalanceDetails30.mmUninstructedBalance}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails29#mmUninstructedBalance
 	 * CorporateActionBalanceDetails29.mmUninstructedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionOption141#mmUninstructedBalance
+	 * CorporateActionOption141.mmUninstructedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionBalanceDetails37#mmUninstructedBalance
+	 * CorporateActionBalanceDetails37.mmUninstructedBalance}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes93#mmUninstructedBalance
+	 * FinancialInstrumentAttributes93.mmUninstructedBalance}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -599,27 +627,35 @@ public class CorporateActionEntitlement {
 	 * definition} = "Balance of uninstructed position."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmUninstructedBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>> mmUninstructedBalance = new MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionOption116.mmUninstructedBalance, FinancialInstrumentAttributes68.mmUninstructedBalance, CorporateActionBalanceDetails30.mmUninstructedBalance,
-					CorporateActionBalanceDetails29.mmUninstructedBalance);
+			derivation_lazy = () -> Arrays.asList(CorporateActionBalanceDetails29.mmUninstructedBalance, CorporateActionOption141.mmUninstructedBalance, CorporateActionBalanceDetails37.mmUninstructedBalance,
+					FinancialInstrumentAttributes93.mmUninstructedBalance);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UninstructedBalance";
 			definition = "Balance of uninstructed position.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmUninstructedBalanceRelatedEntitlement;
+			opposite_lazy = () -> SecuritiesBalance.mmUninstructedBalanceRelatedEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(CorporateActionEntitlement obj) {
+			return obj.getUninstructedBalance();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, List<SecuritiesBalance> value) {
+			obj.setUninstructedBalance(value);
 		}
 	};
 	protected YesNoIndicator eligibleBalanceIndicator;
 	/**
-	 * Indicates whether the eligible balance is final except for a voluntary
-	 * corporate action event where it can represent the current eligible
-	 * balance when communicated before expiration date of that event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -653,7 +689,7 @@ public class CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEligibleBalanceIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionEntitlement, YesNoIndicator> mmEligibleBalanceIndicator = new MMBusinessAttribute<CorporateActionEntitlement, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionNotification5.mmEligibleBalanceIndicator);
 			isDerived = false;
@@ -666,19 +702,20 @@ public class CorporateActionEntitlement {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEntitlement.class.getMethod("getEligibleBalanceIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(CorporateActionEntitlement obj) {
+			return obj.getEligibleBalanceIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, YesNoIndicator value) {
+			obj.setEligibleBalanceIndicator(value);
 		}
 	};
 	protected CorporateActionServicing relatedServicing;
 	/**
-	 * Process which groups the activities related to corporate action
-	 * servicing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -712,7 +749,7 @@ public class CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionEntitlement, Optional<CorporateActionServicing>> mmRelatedServicing = new MMBusinessAssociationEnd<CorporateActionEntitlement, Optional<CorporateActionServicing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
@@ -721,16 +758,25 @@ public class CorporateActionEntitlement {
 			definition = "Process which groups the activities related to corporate action servicing.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionEntitlement;
+			opposite_lazy = () -> CorporateActionServicing.mmCorporateActionEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
+			type_lazy = () -> CorporateActionServicing.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionServicing> getValue(CorporateActionEntitlement obj) {
+			return obj.getRelatedServicing();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, Optional<CorporateActionServicing> value) {
+			obj.setRelatedServicing(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesBalance> notEligibleBalance;
+	protected List<SecuritiesBalance> notEligibleBalance;
 	/**
-	 * Total balance of securities which are not eligible for this corporate
-	 * action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -763,7 +809,7 @@ public class CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNotEligibleBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>> mmNotEligibleBalance = new MMBusinessAssociationEnd<CorporateActionEntitlement, List<SecuritiesBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
@@ -771,22 +817,31 @@ public class CorporateActionEntitlement {
 			name = "NotEligibleBalance";
 			definition = "Total balance of securities which are not eligible for this corporate action event.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmNotEligibleBalanceRelatedEntitlement;
+			opposite_lazy = () -> SecuritiesBalance.mmNotEligibleBalanceRelatedEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
+			type_lazy = () -> SecuritiesBalance.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesBalance> getValue(CorporateActionEntitlement obj) {
+			return obj.getNotEligibleBalance();
+		}
+
+		@Override
+		public void setValue(CorporateActionEntitlement obj, List<SecuritiesBalance> value) {
+			obj.setNotEligibleBalance(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEntitlement";
 				definition = "Rights entitled to the account owner based on the terms of the corporate action event and the balance of underlying securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesBalance.mmEligibleBalanceRelatedEntitlement, com.tools20022.repository.entity.SecuritiesBalance.mmCorporateActionEntitlement,
-						com.tools20022.repository.entity.SecuritiesBalance.mmInstructedBalanceRelatedEntitlement, com.tools20022.repository.entity.SecuritiesBalance.mmUninstructedBalanceRelatedEntitlement,
-						com.tools20022.repository.entity.SecuritiesBalance.mmNotEligibleBalanceRelatedEntitlement, com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionEntitlement);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesBalance.mmEligibleBalanceRelatedEntitlement, SecuritiesBalance.mmCorporateActionEntitlement, SecuritiesBalance.mmInstructedBalanceRelatedEntitlement,
+						SecuritiesBalance.mmUninstructedBalanceRelatedEntitlement, SecuritiesBalance.mmNotEligibleBalanceRelatedEntitlement, CorporateActionServicing.mmCorporateActionEntitlement);
 				derivationElement_lazy = () -> Arrays.asList(EntitlementAdvice1.mmAccountAndDistributionDetails);
 				subType_lazy = () -> Arrays.asList(CorporateActionCashEntitlement.mmObject(), CorporateActionSecuritiesEntitlement.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionEntitlement.mmEligibleBalance, com.tools20022.repository.entity.CorporateActionEntitlement.mmSecuritiesBalance,
@@ -794,7 +849,7 @@ public class CorporateActionEntitlement {
 						com.tools20022.repository.entity.CorporateActionEntitlement.mmEligibleBalanceIndicator, com.tools20022.repository.entity.CorporateActionEntitlement.mmRelatedServicing,
 						com.tools20022.repository.entity.CorporateActionEntitlement.mmNotEligibleBalance);
 				derivationComponent_lazy = () -> Arrays.asList(Entitlement1.mmObject(), EntitlementAdvice1.mmObject(), CorporateActionBalanceDetails32.mmObject(), CorporateActionBalanceDetails31.mmObject(),
-						CorporateActionBalanceDetails30.mmObject(), CorporateActionBalanceDetails29.mmObject());
+						CorporateActionBalanceDetails29.mmObject(), CorporateActionBalanceDetails37.mmObject());
 			}
 
 			@Override
@@ -806,58 +861,65 @@ public class CorporateActionEntitlement {
 	}
 
 	public List<SecuritiesBalance> getEligibleBalance() {
-		return eligibleBalance;
+		return eligibleBalance == null ? eligibleBalance = new ArrayList<>() : eligibleBalance;
 	}
 
-	public void setEligibleBalance(List<com.tools20022.repository.entity.SecuritiesBalance> eligibleBalance) {
-		this.eligibleBalance = eligibleBalance;
+	public CorporateActionEntitlement setEligibleBalance(List<SecuritiesBalance> eligibleBalance) {
+		this.eligibleBalance = Objects.requireNonNull(eligibleBalance);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getSecuritiesBalance() {
-		return securitiesBalance;
+		return securitiesBalance == null ? securitiesBalance = new ArrayList<>() : securitiesBalance;
 	}
 
-	public void setSecuritiesBalance(List<com.tools20022.repository.entity.SecuritiesBalance> securitiesBalance) {
-		this.securitiesBalance = securitiesBalance;
+	public CorporateActionEntitlement setSecuritiesBalance(List<SecuritiesBalance> securitiesBalance) {
+		this.securitiesBalance = Objects.requireNonNull(securitiesBalance);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getInstructedBalance() {
-		return instructedBalance;
+		return instructedBalance == null ? instructedBalance = new ArrayList<>() : instructedBalance;
 	}
 
-	public void setInstructedBalance(List<com.tools20022.repository.entity.SecuritiesBalance> instructedBalance) {
-		this.instructedBalance = instructedBalance;
+	public CorporateActionEntitlement setInstructedBalance(List<SecuritiesBalance> instructedBalance) {
+		this.instructedBalance = Objects.requireNonNull(instructedBalance);
+		return this;
 	}
 
 	public List<SecuritiesBalance> getUninstructedBalance() {
-		return uninstructedBalance;
+		return uninstructedBalance == null ? uninstructedBalance = new ArrayList<>() : uninstructedBalance;
 	}
 
-	public void setUninstructedBalance(List<com.tools20022.repository.entity.SecuritiesBalance> uninstructedBalance) {
-		this.uninstructedBalance = uninstructedBalance;
+	public CorporateActionEntitlement setUninstructedBalance(List<SecuritiesBalance> uninstructedBalance) {
+		this.uninstructedBalance = Objects.requireNonNull(uninstructedBalance);
+		return this;
 	}
 
 	public YesNoIndicator getEligibleBalanceIndicator() {
 		return eligibleBalanceIndicator;
 	}
 
-	public void setEligibleBalanceIndicator(YesNoIndicator eligibleBalanceIndicator) {
-		this.eligibleBalanceIndicator = eligibleBalanceIndicator;
+	public CorporateActionEntitlement setEligibleBalanceIndicator(YesNoIndicator eligibleBalanceIndicator) {
+		this.eligibleBalanceIndicator = Objects.requireNonNull(eligibleBalanceIndicator);
+		return this;
 	}
 
-	public CorporateActionServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<CorporateActionServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+	public CorporateActionEntitlement setRelatedServicing(CorporateActionServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 
 	public List<SecuritiesBalance> getNotEligibleBalance() {
-		return notEligibleBalance;
+		return notEligibleBalance == null ? notEligibleBalance = new ArrayList<>() : notEligibleBalance;
 	}
 
-	public void setNotEligibleBalance(List<com.tools20022.repository.entity.SecuritiesBalance> notEligibleBalance) {
-		this.notEligibleBalance = notEligibleBalance;
+	public CorporateActionEntitlement setNotEligibleBalance(List<SecuritiesBalance> notEligibleBalance) {
+		this.notEligibleBalance = Objects.requireNonNull(notEligibleBalance);
+		return this;
 	}
 }

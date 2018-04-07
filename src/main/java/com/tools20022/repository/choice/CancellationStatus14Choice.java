@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
@@ -26,9 +27,11 @@ import com.tools20022.repository.entity.SecuritiesTradeStatusReason;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CancellationReason9;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies whether the status is provided with a reason or not."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CancellationStatus14Choice", propOrder = {"noSpecifiedReason", "reason"})
 public class CancellationStatus14Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoSpcfdRsn", required = true)
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * Indicates that there is no reason available or to report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,6 +103,9 @@ public class CancellationStatus14Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "NoSpcfdRsn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B: not present</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -110,12 +117,13 @@ public class CancellationStatus14Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CancellationStatus14Choice, NoReasonCode> mmNoSpecifiedReason = new MMMessageAttribute<CancellationStatus14Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmNoSpecifiedReason;
-			componentContext_lazy = () -> CancellationStatus14Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CancellationStatus14Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoSpcfdRsn";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B: not present"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoSpecifiedReason";
 			definition = "Indicates that there is no reason available or to report.";
@@ -123,11 +131,22 @@ public class CancellationStatus14Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(CancellationStatus14Choice obj) {
+			return obj.getNoSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(CancellationStatus14Choice obj, NoReasonCode value) {
+			obj.setNoSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected List<CancellationReason9> reason;
 	/**
-	 * Specifies the reason of the cancellation status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -146,6 +165,9 @@ public class CancellationStatus14Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Rsn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -156,12 +178,13 @@ public class CancellationStatus14Choice {
 	 * definition} = "Specifies the reason of the cancellation status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CancellationStatus14Choice, List<CancellationReason9>> mmReason = new MMMessageAssociationEnd<CancellationStatus14Choice, List<CancellationReason9>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmCancellationReason;
-			componentContext_lazy = () -> CancellationStatus14Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CancellationStatus14Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reason";
 			definition = "Specifies the reason of the cancellation status.";
@@ -169,14 +192,24 @@ public class CancellationStatus14Choice {
 			isComposite = true;
 			type_lazy = () -> CancellationReason9.mmObject();
 		}
+
+		@Override
+		public List<CancellationReason9> getValue(CancellationStatus14Choice obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(CancellationStatus14Choice obj, List<CancellationReason9> value) {
+			obj.setReason(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CancellationStatus14Choice.mmNoSpecifiedReason, CancellationStatus14Choice.mmReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CancellationStatus14Choice.mmNoSpecifiedReason, com.tools20022.repository.choice.CancellationStatus14Choice.mmReason);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancellationStatus14Choice";
 				definition = "Specifies whether the status is provided with a reason or not.";
@@ -185,21 +218,21 @@ public class CancellationStatus14Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoSpcfdRsn", required = true)
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public CancellationStatus14Choice setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public List<CancellationReason9> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<CancellationReason9> reason) {
-		this.reason = reason;
+	public CancellationStatus14Choice setReason(List<CancellationReason9> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 }

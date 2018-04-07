@@ -23,9 +23,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.DisputeResolutionType2Choice;
 import com.tools20022.repository.entity.DisputeManagement;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Dispute1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "VariationMarginDispute1", propOrder = {"disputeDetails", "resolutionTypeDetails"})
 public class VariationMarginDispute1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DsptDtls", required = true)
 	protected Dispute1 disputeDetails;
 	/**
-	 * Details of the disputed instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -105,10 +109,10 @@ public class VariationMarginDispute1 {
 	 * definition} = "Details of the disputed instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDisputeDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VariationMarginDispute1, Dispute1> mmDisputeDetails = new MMMessageAssociationEnd<VariationMarginDispute1, Dispute1>() {
 		{
 			businessComponentTrace_lazy = () -> DisputeManagement.mmObject();
-			componentContext_lazy = () -> VariationMarginDispute1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VariationMarginDispute1.mmObject();
 			isDerived = false;
 			xmlTag = "DsptDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,14 +121,24 @@ public class VariationMarginDispute1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Dispute1.mmObject();
+			type_lazy = () -> Dispute1.mmObject();
+		}
+
+		@Override
+		public Dispute1 getValue(VariationMarginDispute1 obj) {
+			return obj.getDisputeDetails();
+		}
+
+		@Override
+		public void setValue(VariationMarginDispute1 obj, Dispute1 value) {
+			obj.setDisputeDetails(value);
 		}
 	};
+	@XmlElement(name = "RsltnTpDtls")
 	protected List<DisputeResolutionType2Choice> resolutionTypeDetails;
 	/**
-	 * Specifies the type of dispute that is to be resolved regarding the
-	 * disputed collateral amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -156,10 +170,10 @@ public class VariationMarginDispute1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmResolutionTypeDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VariationMarginDispute1, List<DisputeResolutionType2Choice>> mmResolutionTypeDetails = new MMMessageAssociationEnd<VariationMarginDispute1, List<DisputeResolutionType2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> DisputeManagement.mmDisputeResolutionType;
-			componentContext_lazy = () -> VariationMarginDispute1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VariationMarginDispute1.mmObject();
 			isDerived = false;
 			xmlTag = "RsltnTpDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,14 +183,24 @@ public class VariationMarginDispute1 {
 			isComposite = true;
 			type_lazy = () -> DisputeResolutionType2Choice.mmObject();
 		}
+
+		@Override
+		public List<DisputeResolutionType2Choice> getValue(VariationMarginDispute1 obj) {
+			return obj.getResolutionTypeDetails();
+		}
+
+		@Override
+		public void setValue(VariationMarginDispute1 obj, List<DisputeResolutionType2Choice> value) {
+			obj.setResolutionTypeDetails(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(VariationMarginDispute1.mmDisputeDetails, VariationMarginDispute1.mmResolutionTypeDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.VariationMarginDispute1.mmDisputeDetails, com.tools20022.repository.msg.VariationMarginDispute1.mmResolutionTypeDetails);
 				trace_lazy = () -> DisputeManagement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VariationMarginDispute1";
 				definition = "Provides for the variation margin, the dispute details like the dispute amount or the dispute date and the resolution type details.";
@@ -185,21 +209,21 @@ public class VariationMarginDispute1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DsptDtls", required = true)
 	public Dispute1 getDisputeDetails() {
 		return disputeDetails;
 	}
 
-	public void setDisputeDetails(com.tools20022.repository.msg.Dispute1 disputeDetails) {
-		this.disputeDetails = disputeDetails;
+	public VariationMarginDispute1 setDisputeDetails(Dispute1 disputeDetails) {
+		this.disputeDetails = Objects.requireNonNull(disputeDetails);
+		return this;
 	}
 
-	@XmlElement(name = "RsltnTpDtls")
 	public List<DisputeResolutionType2Choice> getResolutionTypeDetails() {
-		return resolutionTypeDetails;
+		return resolutionTypeDetails == null ? resolutionTypeDetails = new ArrayList<>() : resolutionTypeDetails;
 	}
 
-	public void setResolutionTypeDetails(List<DisputeResolutionType2Choice> resolutionTypeDetails) {
-		this.resolutionTypeDetails = resolutionTypeDetails;
+	public VariationMarginDispute1 setResolutionTypeDetails(List<DisputeResolutionType2Choice> resolutionTypeDetails) {
+		this.resolutionTypeDetails = Objects.requireNonNull(resolutionTypeDetails);
+		return this;
 	}
 }

@@ -25,8 +25,11 @@ import com.tools20022.repository.datatype.ISINOct2015Identifier;
 import com.tools20022.repository.entity.CreditDefaultSwap;
 import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CreditDefaultSwapSingleName2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidISINRule#forCreditDefaultSwapDerivative4
+ * ConstraintValidISINRule.forCreditDefaultSwapDerivative4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,16 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CreditDefaultSwapDerivative4", propOrder = {"underlyingNameIdentification", "obligationIdentification", "singleName"})
 public class CreditDefaultSwapDerivative4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "UndrlygNmId")
 	protected ISINOct2015Identifier underlyingNameIdentification;
 	/**
-	 * Derivative on a credit default swap with the ISIN code of the underlying
-	 * swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,10 +126,10 @@ public class CreditDefaultSwapDerivative4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnderlyingNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CreditDefaultSwapDerivative4, Optional<ISINOct2015Identifier>> mmUnderlyingNameIdentification = new MMMessageAttribute<CreditDefaultSwapDerivative4, Optional<ISINOct2015Identifier>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> CreditDefaultSwapDerivative4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CreditDefaultSwapDerivative4.mmObject();
 			isDerived = false;
 			xmlTag = "UndrlygNmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,12 +139,22 @@ public class CreditDefaultSwapDerivative4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public Optional<ISINOct2015Identifier> getValue(CreditDefaultSwapDerivative4 obj) {
+			return obj.getUnderlyingNameIdentification();
+		}
+
+		@Override
+		public void setValue(CreditDefaultSwapDerivative4 obj, Optional<ISINOct2015Identifier> value) {
+			obj.setUnderlyingNameIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OblgtnId", required = true)
 	protected ISINOct2015Identifier obligationIdentification;
 	/**
-	 * Identification of the reference obligation for a derivative on a credit
-	 * default swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,10 +187,10 @@ public class CreditDefaultSwapDerivative4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmObligationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CreditDefaultSwapDerivative4, ISINOct2015Identifier> mmObligationIdentification = new MMMessageAttribute<CreditDefaultSwapDerivative4, ISINOct2015Identifier>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> CreditDefaultSwapDerivative4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CreditDefaultSwapDerivative4.mmObject();
 			isDerived = false;
 			xmlTag = "OblgtnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,12 +200,22 @@ public class CreditDefaultSwapDerivative4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public ISINOct2015Identifier getValue(CreditDefaultSwapDerivative4 obj) {
+			return obj.getObligationIdentification();
+		}
+
+		@Override
+		public void setValue(CreditDefaultSwapDerivative4 obj, ISINOct2015Identifier value) {
+			obj.setObligationIdentification(value);
+		}
 	};
+	@XmlElement(name = "SnglNm", required = true)
 	protected CreditDefaultSwapSingleName2 singleName;
 	/**
-	 * Describes the single name specific details the derivative is being made
-	 * on.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -216,10 +247,10 @@ public class CreditDefaultSwapDerivative4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSingleName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CreditDefaultSwapDerivative4, CreditDefaultSwapSingleName2> mmSingleName = new MMMessageAssociationEnd<CreditDefaultSwapDerivative4, CreditDefaultSwapSingleName2>() {
 		{
 			businessComponentTrace_lazy = () -> CreditDefaultSwap.mmObject();
-			componentContext_lazy = () -> CreditDefaultSwapDerivative4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CreditDefaultSwapDerivative4.mmObject();
 			isDerived = false;
 			xmlTag = "SnglNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,16 +259,28 @@ public class CreditDefaultSwapDerivative4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CreditDefaultSwapSingleName2.mmObject();
+			type_lazy = () -> CreditDefaultSwapSingleName2.mmObject();
+		}
+
+		@Override
+		public CreditDefaultSwapSingleName2 getValue(CreditDefaultSwapDerivative4 obj) {
+			return obj.getSingleName();
+		}
+
+		@Override
+		public void setValue(CreditDefaultSwapDerivative4 obj, CreditDefaultSwapSingleName2 value) {
+			obj.setSingleName(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CreditDefaultSwapDerivative4.mmUnderlyingNameIdentification, CreditDefaultSwapDerivative4.mmObligationIdentification, CreditDefaultSwapDerivative4.mmSingleName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CreditDefaultSwapDerivative4.mmUnderlyingNameIdentification, com.tools20022.repository.msg.CreditDefaultSwapDerivative4.mmObligationIdentification,
+						com.tools20022.repository.msg.CreditDefaultSwapDerivative4.mmSingleName);
 				trace_lazy = () -> CreditDefaultSwap.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidISINRule.forCreditDefaultSwapDerivative4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditDefaultSwapDerivative4";
 				definition = "Credit default swap derivative specific for reporting derivatives on a single name.";
@@ -246,30 +289,30 @@ public class CreditDefaultSwapDerivative4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "UndrlygNmId")
-	public ISINOct2015Identifier getUnderlyingNameIdentification() {
-		return underlyingNameIdentification;
+	public Optional<ISINOct2015Identifier> getUnderlyingNameIdentification() {
+		return underlyingNameIdentification == null ? Optional.empty() : Optional.of(underlyingNameIdentification);
 	}
 
-	public void setUnderlyingNameIdentification(ISINOct2015Identifier underlyingNameIdentification) {
+	public CreditDefaultSwapDerivative4 setUnderlyingNameIdentification(ISINOct2015Identifier underlyingNameIdentification) {
 		this.underlyingNameIdentification = underlyingNameIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OblgtnId", required = true)
 	public ISINOct2015Identifier getObligationIdentification() {
 		return obligationIdentification;
 	}
 
-	public void setObligationIdentification(ISINOct2015Identifier obligationIdentification) {
-		this.obligationIdentification = obligationIdentification;
+	public CreditDefaultSwapDerivative4 setObligationIdentification(ISINOct2015Identifier obligationIdentification) {
+		this.obligationIdentification = Objects.requireNonNull(obligationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SnglNm", required = true)
 	public CreditDefaultSwapSingleName2 getSingleName() {
 		return singleName;
 	}
 
-	public void setSingleName(com.tools20022.repository.msg.CreditDefaultSwapSingleName2 singleName) {
-		this.singleName = singleName;
+	public CreditDefaultSwapDerivative4 setSingleName(CreditDefaultSwapSingleName2 singleName) {
+		this.singleName = Objects.requireNonNull(singleName);
+		return this;
 	}
 }

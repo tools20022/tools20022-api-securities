@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification38;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestComputationMethod2Choice", propOrder = {"code", "proprietary"})
 public class InterestComputationMethod2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected InterestComputationMethod1Code code;
 	/**
-	 * Code is used to determine the interest computation method.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +112,10 @@ public class InterestComputationMethod2Choice {
 	 * "Code is used to determine the interest computation method."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestComputationMethod2Choice, InterestComputationMethod1Code> mmCode = new MMMessageAttribute<InterestComputationMethod2Choice, InterestComputationMethod1Code>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmDayCountBasis;
-			componentContext_lazy = () -> InterestComputationMethod2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InterestComputationMethod2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +125,22 @@ public class InterestComputationMethod2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> InterestComputationMethod1Code.mmObject();
 		}
+
+		@Override
+		public InterestComputationMethod1Code getValue(InterestComputationMethod2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InterestComputationMethod2Choice obj, InterestComputationMethod1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification38 proprietary;
 	/**
-	 * Interest computation method is determined using a data source scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,10 +171,10 @@ public class InterestComputationMethod2Choice {
 	 * "Interest computation method is determined using a data source scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InterestComputationMethod2Choice, GenericIdentification38> mmProprietary = new MMMessageAssociationEnd<InterestComputationMethod2Choice, GenericIdentification38>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmDayCountBasis;
-			componentContext_lazy = () -> InterestComputationMethod2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InterestComputationMethod2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,14 +185,24 @@ public class InterestComputationMethod2Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification38.mmObject();
 		}
+
+		@Override
+		public GenericIdentification38 getValue(InterestComputationMethod2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(InterestComputationMethod2Choice obj, GenericIdentification38 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestComputationMethod2Choice.mmCode, InterestComputationMethod2Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InterestComputationMethod2Choice.mmCode, com.tools20022.repository.choice.InterestComputationMethod2Choice.mmProprietary);
 				trace_lazy = () -> InterestCalculation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestComputationMethod2Choice";
 				definition = "Choice between a code or a data source scheme to determine the interest computation method.";
@@ -188,21 +211,21 @@ public class InterestComputationMethod2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public InterestComputationMethod1Code getCode() {
 		return code;
 	}
 
-	public void setCode(InterestComputationMethod1Code code) {
-		this.code = code;
+	public InterestComputationMethod2Choice setCode(InterestComputationMethod1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification38 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification38 proprietary) {
-		this.proprietary = proprietary;
+	public InterestComputationMethod2Choice setProprietary(GenericIdentification38 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

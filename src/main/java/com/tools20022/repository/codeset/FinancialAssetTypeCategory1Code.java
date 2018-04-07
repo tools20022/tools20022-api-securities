@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategory1Code#Equities
- * FinancialAssetTypeCategory1Code.mmEquities}</li>
+ * FinancialAssetTypeCategory1Code.Equities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategory1Code#DebtInstruments
- * FinancialAssetTypeCategory1Code.mmDebtInstruments}</li>
+ * FinancialAssetTypeCategory1Code.DebtInstruments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategory1Code#Entitlements
- * FinancialAssetTypeCategory1Code.mmEntitlements}</li>
+ * FinancialAssetTypeCategory1Code.Entitlements}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategory1Code#Derivatives
- * FinancialAssetTypeCategory1Code.mmDerivatives}</li>
+ * FinancialAssetTypeCategory1Code.Derivatives}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategory1Code#MoneyMarket
- * FinancialAssetTypeCategory1Code.mmMoneyMarket}</li>
+ * FinancialAssetTypeCategory1Code.MoneyMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategory1Code#Others
- * FinancialAssetTypeCategory1Code.mmOthers}</li>
+ * FinancialAssetTypeCategory1Code.Others}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class FinancialAssetTypeCategory1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EQTY");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialAssetTypeCategory1Code";

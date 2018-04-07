@@ -27,6 +27,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,30 +55,6 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.metamodel.MMMessageComponentType#getMessageBuildingBlock
  * messageBuildingBlock} =
  * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV07#mmCopyDetails
- * ReversalOfTransferOutConfirmationV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV07#mmCopyDetails
- * TransferOutCancellationRequestV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV07#mmCopyDetails
- * TransferInConfirmationV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV07#mmCopyDetails
- * TransferOutConfirmationV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV07#mmCopyDetails
- * TransferInCancellationRequestV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV07#mmCopyDetails
- * TransferOutInstructionV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV07#mmCopyDetails
- * TransferInInstructionV07.mmCopyDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV07#mmCopyDetails
- * ReversalOfTransferInConfirmationV07.mmCopyDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.setr.SubscriptionBulkOrderConfirmationV04#mmCopyDetails
  * SubscriptionBulkOrderConfirmationV04.mmCopyDetails}</li>
@@ -137,13 +115,37 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.setr.SubscriptionOrderV04#mmCopyDetails
  * SubscriptionOrderV04.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV08#mmCopyDetails
+ * ReversalOfTransferOutConfirmationV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV08#mmCopyDetails
+ * TransferInConfirmationV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV08#mmCopyDetails
+ * TransferOutCancellationRequestV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV08#mmCopyDetails
+ * TransferInInstructionV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV08#mmCopyDetails
+ * TransferOutConfirmationV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV08#mmCopyDetails
+ * TransferInCancellationRequestV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV08#mmCopyDetails
+ * TransferOutInstructionV08.mmCopyDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV08#mmCopyDetails
+ * ReversalOfTransferInConfirmationV08.mmCopyDetails}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -155,15 +157,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Information provided when the message is a copy of a previous message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CopyInformation4", propOrder = {"copyIndicator", "originalReceiver"})
 public class CopyInformation4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CpyInd", required = true)
 	protected YesNoIndicator copyIndicator;
 	/**
-	 * Indicates whether the message is a copy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,9 +192,9 @@ public class CopyInformation4 {
 	 * definition} = "Indicates whether the message is a copy."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCopyIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CopyInformation4, YesNoIndicator> mmCopyIndicator = new MMMessageAttribute<CopyInformation4, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> CopyInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CopyInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "CpyInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,11 +204,22 @@ public class CopyInformation4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(CopyInformation4 obj) {
+			return obj.getCopyIndicator();
+		}
+
+		@Override
+		public void setValue(CopyInformation4 obj, YesNoIndicator value) {
+			obj.setCopyIndicator(value);
+		}
 	};
+	@XmlElement(name = "OrgnlRcvr")
 	protected AnyBICIdentifier originalReceiver;
 	/**
-	 * Original receiver of the message, if this message is a copy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,9 +246,9 @@ public class CopyInformation4 {
 	 * "Original receiver of the message, if this message is a copy."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalReceiver = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CopyInformation4, Optional<AnyBICIdentifier>> mmOriginalReceiver = new MMMessageAttribute<CopyInformation4, Optional<AnyBICIdentifier>>() {
 		{
-			componentContext_lazy = () -> CopyInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CopyInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlRcvr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -244,21 +258,31 @@ public class CopyInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<AnyBICIdentifier> getValue(CopyInformation4 obj) {
+			return obj.getOriginalReceiver();
+		}
+
+		@Override
+		public void setValue(CopyInformation4 obj, Optional<AnyBICIdentifier> value) {
+			obj.setOriginalReceiver(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CopyInformation4.mmCopyIndicator, CopyInformation4.mmOriginalReceiver);
-				messageBuildingBlock_lazy = () -> Arrays.asList(ReversalOfTransferOutConfirmationV07.mmCopyDetails, TransferOutCancellationRequestV07.mmCopyDetails, TransferInConfirmationV07.mmCopyDetails,
-						TransferOutConfirmationV07.mmCopyDetails, TransferInCancellationRequestV07.mmCopyDetails, TransferOutInstructionV07.mmCopyDetails, TransferInInstructionV07.mmCopyDetails,
-						ReversalOfTransferInConfirmationV07.mmCopyDetails, SubscriptionBulkOrderConfirmationV04.mmCopyDetails, RedemptionBulkOrderV04.mmCopyDetails, SubscriptionBulkOrderCancellationRequestV04.mmCopyDetails,
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CopyInformation4.mmCopyIndicator, com.tools20022.repository.msg.CopyInformation4.mmOriginalReceiver);
+				messageBuildingBlock_lazy = () -> Arrays.asList(SubscriptionBulkOrderConfirmationV04.mmCopyDetails, RedemptionBulkOrderV04.mmCopyDetails, SubscriptionBulkOrderCancellationRequestV04.mmCopyDetails,
 						RedemptionOrderV04.mmCopyDetails, SubscriptionOrderCancellationRequestV04.mmCopyDetails, RedemptionBulkOrderConfirmationCancellationInstructionV02.mmCopyDetails, RedemptionBulkOrderConfirmationV04.mmCopyDetails,
 						RedemptionBulkOrderCancellationRequestV04.mmCopyDetails, SwitchOrderConfirmationV04.mmCopyDetails, SubscriptionOrderConfirmationV04.mmCopyDetails,
 						SubscriptionOrderConfirmationCancellationInstructionV02.mmCopyDetails, SwitchOrderCancellationRequestV04.mmCopyDetails, SwitchOrderV04.mmCopyDetails,
 						RedemptionOrderConfirmationCancellationInstructionV02.mmCopyDetails, RedemptionOrderConfirmationV04.mmCopyDetails, SubscriptionBulkOrderConfirmationCancellationInstructionV02.mmCopyDetails,
-						RedemptionOrderCancellationRequestV04.mmCopyDetails, SubscriptionBulkOrderV04.mmCopyDetails, SwitchOrderConfirmationCancellationInstructionV02.mmCopyDetails, SubscriptionOrderV04.mmCopyDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+						RedemptionOrderCancellationRequestV04.mmCopyDetails, SubscriptionBulkOrderV04.mmCopyDetails, SwitchOrderConfirmationCancellationInstructionV02.mmCopyDetails, SubscriptionOrderV04.mmCopyDetails,
+						ReversalOfTransferOutConfirmationV08.mmCopyDetails, TransferInConfirmationV08.mmCopyDetails, TransferOutCancellationRequestV08.mmCopyDetails, TransferInInstructionV08.mmCopyDetails,
+						TransferOutConfirmationV08.mmCopyDetails, TransferInCancellationRequestV08.mmCopyDetails, TransferOutInstructionV08.mmCopyDetails, ReversalOfTransferInConfirmationV08.mmCopyDetails);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CopyInformation4";
 				definition = "Information provided when the message is a copy of a previous message.";
@@ -267,21 +291,21 @@ public class CopyInformation4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CpyInd", required = true)
 	public YesNoIndicator getCopyIndicator() {
 		return copyIndicator;
 	}
 
-	public void setCopyIndicator(YesNoIndicator copyIndicator) {
-		this.copyIndicator = copyIndicator;
+	public CopyInformation4 setCopyIndicator(YesNoIndicator copyIndicator) {
+		this.copyIndicator = Objects.requireNonNull(copyIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlRcvr")
-	public AnyBICIdentifier getOriginalReceiver() {
-		return originalReceiver;
+	public Optional<AnyBICIdentifier> getOriginalReceiver() {
+		return originalReceiver == null ? Optional.empty() : Optional.of(originalReceiver);
 	}
 
-	public void setOriginalReceiver(AnyBICIdentifier originalReceiver) {
+	public CopyInformation4 setOriginalReceiver(AnyBICIdentifier originalReceiver) {
 		this.originalReceiver = originalReceiver;
+		return this;
 	}
 }

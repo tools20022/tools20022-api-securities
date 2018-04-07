@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Option;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,17 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the details for a call/put option."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Option12", propOrder = {"type", "dateOrPeriod"})
 public class Option12 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected OptionType1Code type;
 	/**
-	 * Identifies whether the instrument has a call option or a put option. If
-	 * the instrument contains both options, i.e. a call and a put, both the
-	 * call option and the put option have to be reported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +106,10 @@ public class Option12 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Option12, OptionType1Code> mmType = new MMMessageAttribute<Option12, OptionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Option.mmOptionType;
-			componentContext_lazy = () -> Option12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Option12.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +119,22 @@ public class Option12 {
 			minOccurs = 1;
 			simpleType_lazy = () -> OptionType1Code.mmObject();
 		}
+
+		@Override
+		public OptionType1Code getValue(Option12 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Option12 obj, OptionType1Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "DtOrPrd", required = true)
 	protected OptionDateOrPeriod1Choice dateOrPeriod;
 	/**
-	 * Provides the exercise date or notice period for a call/put option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,9 +159,9 @@ public class Option12 {
 	 * "Provides the exercise date or notice period for a call/put option."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDateOrPeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Option12, OptionDateOrPeriod1Choice> mmDateOrPeriod = new MMMessageAssociationEnd<Option12, OptionDateOrPeriod1Choice>() {
 		{
-			componentContext_lazy = () -> Option12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Option12.mmObject();
 			isDerived = false;
 			xmlTag = "DtOrPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,14 +172,24 @@ public class Option12 {
 			isComposite = true;
 			type_lazy = () -> OptionDateOrPeriod1Choice.mmObject();
 		}
+
+		@Override
+		public OptionDateOrPeriod1Choice getValue(Option12 obj) {
+			return obj.getDateOrPeriod();
+		}
+
+		@Override
+		public void setValue(Option12 obj, OptionDateOrPeriod1Choice value) {
+			obj.setDateOrPeriod(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Option12.mmType, Option12.mmDateOrPeriod);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Option12.mmType, com.tools20022.repository.msg.Option12.mmDateOrPeriod);
 				trace_lazy = () -> Option.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Option12";
 				definition = "Provides the details for a call/put option.";
@@ -177,21 +198,21 @@ public class Option12 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public OptionType1Code getType() {
 		return type;
 	}
 
-	public void setType(OptionType1Code type) {
-		this.type = type;
+	public Option12 setType(OptionType1Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "DtOrPrd", required = true)
 	public OptionDateOrPeriod1Choice getDateOrPeriod() {
 		return dateOrPeriod;
 	}
 
-	public void setDateOrPeriod(OptionDateOrPeriod1Choice dateOrPeriod) {
-		this.dateOrPeriod = dateOrPeriod;
+	public Option12 setDateOrPeriod(OptionDateOrPeriod1Choice dateOrPeriod) {
+		this.dateOrPeriod = Objects.requireNonNull(dateOrPeriod);
+		return this;
 	}
 }

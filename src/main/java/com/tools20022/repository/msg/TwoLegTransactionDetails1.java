@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -33,9 +34,12 @@ import com.tools20022.repository.entity.SecuritiesTrade;
 import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.entity.TradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.AmountAndDirection29;
+import com.tools20022.repository.msg.AmountAndDirection5;
+import com.tools20022.repository.msg.OtherAmounts16;
+import com.tools20022.repository.msg.Price4;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -100,8 +104,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,16 +117,17 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies the details of the first leg in a two leg transaction process."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TwoLegTransactionDetails1", propOrder = {"tradeDate", "openingLegIdentification", "closingLegIdentification", "grossTradeAmount", "otherAmounts", "secondLegNarrative", "endPrice", "closingDate", "closingSettlementAmount",
 		"processingDate", "twoLegTransactionType"})
 public class TwoLegTransactionDetails1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TradDt")
 	protected TradeDate1Choice tradeDate;
 	/**
-	 * Specifies the date/time on which the trade was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,10 +158,10 @@ public class TwoLegTransactionDetails1 {
 	 * definition} = "Specifies the date/time on which the trade was executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTradeDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<TradeDate1Choice>> mmTradeDate = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<TradeDate1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "TradDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,12 +171,22 @@ public class TwoLegTransactionDetails1 {
 			minOccurs = 0;
 			complexType_lazy = () -> TradeDate1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TradeDate1Choice> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getTradeDate();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<TradeDate1Choice> value) {
+			obj.setTradeDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OpngLegId")
 	protected Max35Text openingLegIdentification;
 	/**
-	 * Unambiguous identification of the reference assigned in the first leg of
-	 * the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,10 +218,10 @@ public class TwoLegTransactionDetails1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOpeningLegIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<Max35Text>> mmOpeningLegIdentification = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmIdentification;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "OpngLegId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,12 +231,22 @@ public class TwoLegTransactionDetails1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getOpeningLegIdentification();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<Max35Text> value) {
+			obj.setOpeningLegIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClsgLegId")
 	protected Max35Text closingLegIdentification;
 	/**
-	 * Unambiguous identification of the second leg of the transaction as known
-	 * by the account owner (or the instructing party acting on its behalf).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,10 +278,10 @@ public class TwoLegTransactionDetails1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClosingLegIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<Max35Text>> mmClosingLegIdentification = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmIdentification;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "ClsgLegId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -266,11 +291,22 @@ public class TwoLegTransactionDetails1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getClosingLegIdentification();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<Max35Text> value) {
+			obj.setClosingLegIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrssTradAmt")
 	protected AmountAndDirection29 grossTradeAmount;
 	/**
-	 * Principal amount of a trade (price multiplied by quantity).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,10 +338,10 @@ public class TwoLegTransactionDetails1 {
 	 * "Principal amount of a trade (price multiplied by quantity)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGrossTradeAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<AmountAndDirection29>> mmGrossTradeAmount = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<AmountAndDirection29>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTrade.mmTradeAmount;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "GrssTradAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -313,13 +349,24 @@ public class TwoLegTransactionDetails1 {
 			definition = "Principal amount of a trade (price multiplied by quantity).";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection29.mmObject();
+			complexType_lazy = () -> AmountAndDirection29.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection29> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getGrossTradeAmount();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<AmountAndDirection29> value) {
+			obj.setGrossTradeAmount(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.OtherAmounts16> otherAmounts;
+	@XmlElement(name = "OthrAmts")
+	protected List<OtherAmounts16> otherAmounts;
 	/**
-	 * Identifies other amounts pertaining to the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -348,10 +395,10 @@ public class TwoLegTransactionDetails1 {
 	 * definition} = "Identifies other amounts pertaining to the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherAmounts = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TwoLegTransactionDetails1, List<OtherAmounts16>> mmOtherAmounts = new MMMessageAssociationEnd<TwoLegTransactionDetails1, List<OtherAmounts16>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesFinancing.mmObject();
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "OthrAmts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -359,13 +406,24 @@ public class TwoLegTransactionDetails1 {
 			definition = "Identifies other amounts pertaining to the transaction.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OtherAmounts16.mmObject();
+			type_lazy = () -> OtherAmounts16.mmObject();
+		}
+
+		@Override
+		public List<OtherAmounts16> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getOtherAmounts();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, List<OtherAmounts16> value) {
+			obj.setOtherAmounts(value);
 		}
 	};
+	@XmlElement(name = "ScndLegNrrtv")
 	protected Max140Text secondLegNarrative;
 	/**
-	 * Provides additional information about the second leg in narrative form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -392,9 +450,9 @@ public class TwoLegTransactionDetails1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecondLegNarrative = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<Max140Text>> mmSecondLegNarrative = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<Max140Text>>() {
 		{
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "ScndLegNrrtv";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -404,11 +462,22 @@ public class TwoLegTransactionDetails1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getSecondLegNarrative();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<Max140Text> value) {
+			obj.setSecondLegNarrative(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EndPric")
 	protected Price4 endPrice;
 	/**
-	 * Negotiated fixed price of the security to buy it back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -437,10 +506,10 @@ public class TwoLegTransactionDetails1 {
 	 * definition} = "Negotiated fixed price of the security to buy it back."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndPrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<Price4>> mmEndPrice = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<Price4>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmEndPrice;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "EndPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -448,13 +517,24 @@ public class TwoLegTransactionDetails1 {
 			definition = "Negotiated fixed price of the security to buy it back.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Price4.mmObject();
+			complexType_lazy = () -> Price4.mmObject();
+		}
+
+		@Override
+		public Optional<Price4> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getEndPrice();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<Price4> value) {
+			obj.setEndPrice(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ClsgDt")
 	protected ClosingDate1Choice closingDate;
 	/**
-	 * Closing date/time or maturity date/time of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -473,6 +553,9 @@ public class TwoLegTransactionDetails1 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "ClsgDt"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 917</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -484,12 +567,13 @@ public class TwoLegTransactionDetails1 {
 	 * "Closing date/time or maturity date/time of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosingDate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TwoLegTransactionDetails1, Optional<ClosingDate1Choice>> mmClosingDate = new MMMessageAssociationEnd<TwoLegTransactionDetails1, Optional<ClosingDate1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmTerminationDateTime;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "ClsgDt";
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "917"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosingDate";
 			definition = "Closing date/time or maturity date/time of the transaction.";
@@ -498,13 +582,22 @@ public class TwoLegTransactionDetails1 {
 			isComposite = true;
 			type_lazy = () -> ClosingDate1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ClosingDate1Choice> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getClosingDate();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<ClosingDate1Choice> value) {
+			obj.setClosingDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClsgSttlmAmt")
 	protected AmountAndDirection5 closingSettlementAmount;
 	/**
-	 * Total amount of money to be paid or received in exchange for the
-	 * securities. The amount includes the principal with any commissions and
-	 * fees or accrued interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -531,29 +624,40 @@ public class TwoLegTransactionDetails1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Total amount of money to be paid or received in exchange for the securities.  The amount includes the principal with any commissions and fees or accrued interest."
+	 * "Total amount of money to be paid or received in exchange for the securities. The amount includes the principal with any commissions and fees or accrued interest."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosingSettlementAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TwoLegTransactionDetails1, Optional<AmountAndDirection5>> mmClosingSettlementAmount = new MMMessageAssociationEnd<TwoLegTransactionDetails1, Optional<AmountAndDirection5>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmTerminationTransactionAmount;
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "ClsgSttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosingSettlementAmount";
-			definition = "Total amount of money to be paid or received in exchange for the securities.  The amount includes the principal with any commissions and fees or accrued interest.";
+			definition = "Total amount of money to be paid or received in exchange for the securities. The amount includes the principal with any commissions and fees or accrued interest.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection5.mmObject();
+			type_lazy = () -> AmountAndDirection5.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection5> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getClosingSettlementAmount();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<AmountAndDirection5> value) {
+			obj.setClosingSettlementAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrcgDt")
 	protected TradeDate4Choice processingDate;
 	/**
-	 * Processing date of the trading session.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -579,9 +683,9 @@ public class TwoLegTransactionDetails1 {
 	 * definition} = "Processing date of the trading session."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProcessingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TwoLegTransactionDetails1, Optional<TradeDate4Choice>> mmProcessingDate = new MMMessageAttribute<TwoLegTransactionDetails1, Optional<TradeDate4Choice>>() {
 		{
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "PrcgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -591,11 +695,22 @@ public class TwoLegTransactionDetails1 {
 			minOccurs = 0;
 			complexType_lazy = () -> TradeDate4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TradeDate4Choice> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getProcessingDate();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<TradeDate4Choice> value) {
+			obj.setProcessingDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TwoLegTxTp")
 	protected TwoLegTransactionType1Choice twoLegTransactionType;
 	/**
-	 * Specifies the type of the second leg transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -625,10 +740,10 @@ public class TwoLegTransactionDetails1 {
 	 * definition} = "Specifies the type of the second leg transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTwoLegTransactionType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TwoLegTransactionDetails1, Optional<TwoLegTransactionType1Choice>> mmTwoLegTransactionType = new MMMessageAssociationEnd<TwoLegTransactionDetails1, Optional<TwoLegTransactionType1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesFinancing.mmObject();
-			componentContext_lazy = () -> TwoLegTransactionDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TwoLegTransactionDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "TwoLegTxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -639,17 +754,30 @@ public class TwoLegTransactionDetails1 {
 			isComposite = true;
 			type_lazy = () -> TwoLegTransactionType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TwoLegTransactionType1Choice> getValue(TwoLegTransactionDetails1 obj) {
+			return obj.getTwoLegTransactionType();
+		}
+
+		@Override
+		public void setValue(TwoLegTransactionDetails1 obj, Optional<TwoLegTransactionType1Choice> value) {
+			obj.setTwoLegTransactionType(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TwoLegTransactionDetails1.mmTradeDate, TwoLegTransactionDetails1.mmOpeningLegIdentification, TwoLegTransactionDetails1.mmClosingLegIdentification,
-						TwoLegTransactionDetails1.mmGrossTradeAmount, TwoLegTransactionDetails1.mmOtherAmounts, TwoLegTransactionDetails1.mmSecondLegNarrative, TwoLegTransactionDetails1.mmEndPrice, TwoLegTransactionDetails1.mmClosingDate,
-						TwoLegTransactionDetails1.mmClosingSettlementAmount, TwoLegTransactionDetails1.mmProcessingDate, TwoLegTransactionDetails1.mmTwoLegTransactionType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TwoLegTransactionDetails1.mmTradeDate, com.tools20022.repository.msg.TwoLegTransactionDetails1.mmOpeningLegIdentification,
+						com.tools20022.repository.msg.TwoLegTransactionDetails1.mmClosingLegIdentification, com.tools20022.repository.msg.TwoLegTransactionDetails1.mmGrossTradeAmount,
+						com.tools20022.repository.msg.TwoLegTransactionDetails1.mmOtherAmounts, com.tools20022.repository.msg.TwoLegTransactionDetails1.mmSecondLegNarrative,
+						com.tools20022.repository.msg.TwoLegTransactionDetails1.mmEndPrice, com.tools20022.repository.msg.TwoLegTransactionDetails1.mmClosingDate,
+						com.tools20022.repository.msg.TwoLegTransactionDetails1.mmClosingSettlementAmount, com.tools20022.repository.msg.TwoLegTransactionDetails1.mmProcessingDate,
+						com.tools20022.repository.msg.TwoLegTransactionDetails1.mmTwoLegTransactionType);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationV03.mmTwoLegTransactionDetails);
 				trace_lazy = () -> SecuritiesFinancing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TwoLegTransactionDetails1";
 				definition = "Specifies the details of the first leg in a two leg transaction process.";
@@ -658,102 +786,102 @@ public class TwoLegTransactionDetails1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TradDt")
-	public TradeDate1Choice getTradeDate() {
-		return tradeDate;
+	public Optional<TradeDate1Choice> getTradeDate() {
+		return tradeDate == null ? Optional.empty() : Optional.of(tradeDate);
 	}
 
-	public void setTradeDate(TradeDate1Choice tradeDate) {
+	public TwoLegTransactionDetails1 setTradeDate(TradeDate1Choice tradeDate) {
 		this.tradeDate = tradeDate;
+		return this;
 	}
 
-	@XmlElement(name = "OpngLegId")
-	public Max35Text getOpeningLegIdentification() {
-		return openingLegIdentification;
+	public Optional<Max35Text> getOpeningLegIdentification() {
+		return openingLegIdentification == null ? Optional.empty() : Optional.of(openingLegIdentification);
 	}
 
-	public void setOpeningLegIdentification(Max35Text openingLegIdentification) {
+	public TwoLegTransactionDetails1 setOpeningLegIdentification(Max35Text openingLegIdentification) {
 		this.openingLegIdentification = openingLegIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ClsgLegId")
-	public Max35Text getClosingLegIdentification() {
-		return closingLegIdentification;
+	public Optional<Max35Text> getClosingLegIdentification() {
+		return closingLegIdentification == null ? Optional.empty() : Optional.of(closingLegIdentification);
 	}
 
-	public void setClosingLegIdentification(Max35Text closingLegIdentification) {
+	public TwoLegTransactionDetails1 setClosingLegIdentification(Max35Text closingLegIdentification) {
 		this.closingLegIdentification = closingLegIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "GrssTradAmt")
-	public AmountAndDirection29 getGrossTradeAmount() {
-		return grossTradeAmount;
+	public Optional<AmountAndDirection29> getGrossTradeAmount() {
+		return grossTradeAmount == null ? Optional.empty() : Optional.of(grossTradeAmount);
 	}
 
-	public void setGrossTradeAmount(com.tools20022.repository.msg.AmountAndDirection29 grossTradeAmount) {
+	public TwoLegTransactionDetails1 setGrossTradeAmount(AmountAndDirection29 grossTradeAmount) {
 		this.grossTradeAmount = grossTradeAmount;
+		return this;
 	}
 
-	@XmlElement(name = "OthrAmts")
 	public List<OtherAmounts16> getOtherAmounts() {
-		return otherAmounts;
+		return otherAmounts == null ? otherAmounts = new ArrayList<>() : otherAmounts;
 	}
 
-	public void setOtherAmounts(List<com.tools20022.repository.msg.OtherAmounts16> otherAmounts) {
-		this.otherAmounts = otherAmounts;
+	public TwoLegTransactionDetails1 setOtherAmounts(List<OtherAmounts16> otherAmounts) {
+		this.otherAmounts = Objects.requireNonNull(otherAmounts);
+		return this;
 	}
 
-	@XmlElement(name = "ScndLegNrrtv")
-	public Max140Text getSecondLegNarrative() {
-		return secondLegNarrative;
+	public Optional<Max140Text> getSecondLegNarrative() {
+		return secondLegNarrative == null ? Optional.empty() : Optional.of(secondLegNarrative);
 	}
 
-	public void setSecondLegNarrative(Max140Text secondLegNarrative) {
+	public TwoLegTransactionDetails1 setSecondLegNarrative(Max140Text secondLegNarrative) {
 		this.secondLegNarrative = secondLegNarrative;
+		return this;
 	}
 
-	@XmlElement(name = "EndPric")
-	public Price4 getEndPrice() {
-		return endPrice;
+	public Optional<Price4> getEndPrice() {
+		return endPrice == null ? Optional.empty() : Optional.of(endPrice);
 	}
 
-	public void setEndPrice(com.tools20022.repository.msg.Price4 endPrice) {
+	public TwoLegTransactionDetails1 setEndPrice(Price4 endPrice) {
 		this.endPrice = endPrice;
+		return this;
 	}
 
-	@XmlElement(name = "ClsgDt")
-	public ClosingDate1Choice getClosingDate() {
-		return closingDate;
+	public Optional<ClosingDate1Choice> getClosingDate() {
+		return closingDate == null ? Optional.empty() : Optional.of(closingDate);
 	}
 
-	public void setClosingDate(ClosingDate1Choice closingDate) {
+	public TwoLegTransactionDetails1 setClosingDate(ClosingDate1Choice closingDate) {
 		this.closingDate = closingDate;
+		return this;
 	}
 
-	@XmlElement(name = "ClsgSttlmAmt")
-	public AmountAndDirection5 getClosingSettlementAmount() {
-		return closingSettlementAmount;
+	public Optional<AmountAndDirection5> getClosingSettlementAmount() {
+		return closingSettlementAmount == null ? Optional.empty() : Optional.of(closingSettlementAmount);
 	}
 
-	public void setClosingSettlementAmount(com.tools20022.repository.msg.AmountAndDirection5 closingSettlementAmount) {
+	public TwoLegTransactionDetails1 setClosingSettlementAmount(AmountAndDirection5 closingSettlementAmount) {
 		this.closingSettlementAmount = closingSettlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "PrcgDt")
-	public TradeDate4Choice getProcessingDate() {
-		return processingDate;
+	public Optional<TradeDate4Choice> getProcessingDate() {
+		return processingDate == null ? Optional.empty() : Optional.of(processingDate);
 	}
 
-	public void setProcessingDate(TradeDate4Choice processingDate) {
+	public TwoLegTransactionDetails1 setProcessingDate(TradeDate4Choice processingDate) {
 		this.processingDate = processingDate;
+		return this;
 	}
 
-	@XmlElement(name = "TwoLegTxTp")
-	public TwoLegTransactionType1Choice getTwoLegTransactionType() {
-		return twoLegTransactionType;
+	public Optional<TwoLegTransactionType1Choice> getTwoLegTransactionType() {
+		return twoLegTransactionType == null ? Optional.empty() : Optional.of(twoLegTransactionType);
 	}
 
-	public void setTwoLegTransactionType(TwoLegTransactionType1Choice twoLegTransactionType) {
+	public TwoLegTransactionDetails1 setTwoLegTransactionType(TwoLegTransactionType1Choice twoLegTransactionType) {
 		this.twoLegTransactionType = twoLegTransactionType;
+		return this;
 	}
 }

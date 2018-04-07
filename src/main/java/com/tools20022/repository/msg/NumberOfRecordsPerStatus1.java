@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NumberOfRecordsPerStatus1", propOrder = {"detailedNumberOfRecords", "detailedStatus"})
 public class NumberOfRecordsPerStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DtldNbOfRcrds", required = true)
 	protected Max15NumericText detailedNumberOfRecords;
 	/**
-	 * Number of individual records contained in the message, detailed per
-	 * status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +103,9 @@ public class NumberOfRecordsPerStatus1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDetailedNumberOfRecords = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberOfRecordsPerStatus1, Max15NumericText> mmDetailedNumberOfRecords = new MMMessageAttribute<NumberOfRecordsPerStatus1, Max15NumericText>() {
 		{
-			componentContext_lazy = () -> NumberOfRecordsPerStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NumberOfRecordsPerStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "DtldNbOfRcrds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +115,22 @@ public class NumberOfRecordsPerStatus1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
+
+		@Override
+		public Max15NumericText getValue(NumberOfRecordsPerStatus1 obj) {
+			return obj.getDetailedNumberOfRecords();
+		}
+
+		@Override
+		public void setValue(NumberOfRecordsPerStatus1 obj, Max15NumericText value) {
+			obj.setDetailedNumberOfRecords(value);
+		}
 	};
+	@XmlElement(name = "DtldSts", required = true)
 	protected ReportingRecordStatus1Code detailedStatus;
 	/**
-	 * Common transaction status for all individual records reported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,9 +157,9 @@ public class NumberOfRecordsPerStatus1 {
 	 * "Common transaction status for all individual records reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDetailedStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberOfRecordsPerStatus1, ReportingRecordStatus1Code> mmDetailedStatus = new MMMessageAttribute<NumberOfRecordsPerStatus1, ReportingRecordStatus1Code>() {
 		{
-			componentContext_lazy = () -> NumberOfRecordsPerStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NumberOfRecordsPerStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "DtldSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,13 +169,23 @@ public class NumberOfRecordsPerStatus1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ReportingRecordStatus1Code.mmObject();
 		}
+
+		@Override
+		public ReportingRecordStatus1Code getValue(NumberOfRecordsPerStatus1 obj) {
+			return obj.getDetailedStatus();
+		}
+
+		@Override
+		public void setValue(NumberOfRecordsPerStatus1 obj, ReportingRecordStatus1Code value) {
+			obj.setDetailedStatus(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NumberOfRecordsPerStatus1.mmDetailedNumberOfRecords, NumberOfRecordsPerStatus1.mmDetailedStatus);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NumberOfRecordsPerStatus1.mmDetailedNumberOfRecords, com.tools20022.repository.msg.NumberOfRecordsPerStatus1.mmDetailedStatus);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NumberOfRecordsPerStatus1";
 				definition = "Provides detailed information on the number of transactions that are reported with a specific transaction status.";
@@ -172,21 +194,21 @@ public class NumberOfRecordsPerStatus1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DtldNbOfRcrds", required = true)
 	public Max15NumericText getDetailedNumberOfRecords() {
 		return detailedNumberOfRecords;
 	}
 
-	public void setDetailedNumberOfRecords(Max15NumericText detailedNumberOfRecords) {
-		this.detailedNumberOfRecords = detailedNumberOfRecords;
+	public NumberOfRecordsPerStatus1 setDetailedNumberOfRecords(Max15NumericText detailedNumberOfRecords) {
+		this.detailedNumberOfRecords = Objects.requireNonNull(detailedNumberOfRecords);
+		return this;
 	}
 
-	@XmlElement(name = "DtldSts", required = true)
 	public ReportingRecordStatus1Code getDetailedStatus() {
 		return detailedStatus;
 	}
 
-	public void setDetailedStatus(ReportingRecordStatus1Code detailedStatus) {
-		this.detailedStatus = detailedStatus;
+	public NumberOfRecordsPerStatus1 setDetailedStatus(ReportingRecordStatus1Code detailedStatus) {
+		this.detailedStatus = Objects.requireNonNull(detailedStatus);
+		return this;
 	}
 }

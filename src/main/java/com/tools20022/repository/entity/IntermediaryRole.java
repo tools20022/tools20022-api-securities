@@ -55,32 +55,32 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.Intermediary32#mmRole
  * Intermediary32.mmRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmIntermediaryInformation
- * InvestmentAccount54.mmIntermediaryInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ReceiveInformation17#mmIntermediaryInformation
- * ReceiveInformation17.mmIntermediaryInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ReceiveInformation16#mmIntermediaryInformation
- * ReceiveInformation16.mmIntermediaryInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmIntermediaryInformation
- * InvestmentAccount56.mmIntermediaryInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.DeliverInformation16#mmIntermediaryInformation
- * DeliverInformation16.mmIntermediaryInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.DeliverInformation17#mmIntermediaryInformation
- * DeliverInformation17.mmIntermediaryInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmIntermediaryInformation
- * InvestmentAccount57.mmIntermediaryInformation}</li>
- * <li>
  * {@linkplain com.tools20022.repository.msg.AggregateHoldingBalance3#mmAgent
  * AggregateHoldingBalance3.mmAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.InvestmentAccount64#mmIntermediary
  * InvestmentAccount64.mmIntermediary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReceiveInformation18#mmIntermediaryInformation
+ * ReceiveInformation18.mmIntermediaryInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmIntermediaryInformation
+ * InvestmentAccount66.mmIntermediaryInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmIntermediaryInformation
+ * InvestmentAccount67.mmIntermediaryInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DeliverInformation19#mmIntermediaryInformation
+ * DeliverInformation19.mmIntermediaryInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReceiveInformation19#mmIntermediaryInformation
+ * ReceiveInformation19.mmIntermediaryInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DeliverInformation18#mmIntermediaryInformation
+ * DeliverInformation18.mmIntermediaryInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmIntermediaryInformation
+ * InvestmentAccount68.mmIntermediaryInformation}</li>
  * </ul>
  * </li>
  * <li>
@@ -91,16 +91,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.Intermediary27 Intermediary27}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Intermediary32 Intermediary32}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Intermediary36 Intermediary36}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Intermediary34 Intermediary34}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Intermediary33 Intermediary33}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Intermediary35 Intermediary35}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Intermediary41 Intermediary41}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Intermediary42 Intermediary42}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -120,16 +120,16 @@ public class IntermediaryRole extends AccountPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IntermediaryRole";
 				definition = "Party that provides services relating to financial products to investors, for example, advice on products and placement of orders.";
 				derivationElement_lazy = () -> Arrays.asList(Intermediary11.mmRole, Intermediary11.mmExtendedRole, SafekeepingAccount2.mmIntermediaryInformation, InvestmentAccount43.mmIntermediaryInformation, Intermediary32.mmRole,
-						InvestmentAccount54.mmIntermediaryInformation, ReceiveInformation17.mmIntermediaryInformation, ReceiveInformation16.mmIntermediaryInformation, InvestmentAccount56.mmIntermediaryInformation,
-						DeliverInformation16.mmIntermediaryInformation, DeliverInformation17.mmIntermediaryInformation, InvestmentAccount57.mmIntermediaryInformation, AggregateHoldingBalance3.mmAgent, InvestmentAccount64.mmIntermediary);
+						AggregateHoldingBalance3.mmAgent, InvestmentAccount64.mmIntermediary, ReceiveInformation18.mmIntermediaryInformation, InvestmentAccount66.mmIntermediaryInformation, InvestmentAccount67.mmIntermediaryInformation,
+						DeliverInformation19.mmIntermediaryInformation, ReceiveInformation19.mmIntermediaryInformation, DeliverInformation18.mmIntermediaryInformation, InvestmentAccount68.mmIntermediaryInformation);
 				superType_lazy = () -> AccountPartyRole.mmObject();
-				derivationComponent_lazy = () -> Arrays.asList(Intermediary11.mmObject(), Intermediary27.mmObject(), Intermediary32.mmObject(), Intermediary36.mmObject(), Intermediary34.mmObject(), Intermediary33.mmObject(),
-						Intermediary35.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(Intermediary11.mmObject(), Intermediary27.mmObject(), Intermediary32.mmObject(), Intermediary36.mmObject(), Intermediary33.mmObject(), Intermediary41.mmObject(),
+						Intermediary42.mmObject());
 			}
 
 			@Override

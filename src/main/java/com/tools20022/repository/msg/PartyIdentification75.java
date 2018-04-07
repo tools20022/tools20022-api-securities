@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -27,8 +28,12 @@ import com.tools20022.repository.datatype.LEIIdentifier;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlternatePartyIdentification7;
+import com.tools20022.repository.msg.PartyTextInformation1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -69,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,17 +84,25 @@ import javax.xml.bind.annotation.XmlType;
  * "PartyIdentification75"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Identification of an entity involved in an activity."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification127
+ * PartyIdentification127}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "PartyIdentification75", propOrder = {"identification", "LEI", "alternateIdentification", "processingDate", "processingIdentification", "additionalInformation"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "PartyIdentification75", propOrder = {"identification", "lEI", "alternateIdentification", "processingDate", "processingIdentification", "additionalInformation"})
 public class PartyIdentification75 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected PartyIdentification44Choice identification;
 	/**
-	 * Unique and unambiguous way to identify an organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -109,6 +122,9 @@ public class PartyIdentification75 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Id"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95a:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -117,27 +133,48 @@ public class PartyIdentification75 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Unique and unambiguous way to identify an organisation."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification127#mmIdentification
+	 * PartyIdentification127.mmIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyIdentification75, PartyIdentification44Choice> mmIdentification = new MMMessageAssociationEnd<PartyIdentification75, PartyIdentification44Choice>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification75.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification75.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95a:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous way to identify an organisation.";
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmIdentification);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> PartyIdentification44Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification44Choice getValue(PartyIdentification75 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification75 obj, PartyIdentification44Choice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "LEI")
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal entity identification as an alternate identification for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,26 +205,46 @@ public class PartyIdentification75 {
 	 * definition} =
 	 * "Legal entity identification as an alternate identification for a party."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification127#mmLEI
+	 * PartyIdentification127.mmLEI}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLEI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification75, Optional<LEIIdentifier>> mmLEI = new MMMessageAttribute<PartyIdentification75, Optional<LEIIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmLEI;
-			componentContext_lazy = () -> PartyIdentification75.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification75.mmObject();
 			isDerived = false;
 			xmlTag = "LEI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LEI";
 			definition = "Legal entity identification as an alternate identification for a party.";
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmLEI);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(PartyIdentification75 obj) {
+			return obj.getLEI();
+		}
+
+		@Override
+		public void setValue(PartyIdentification75 obj, Optional<LEIIdentifier> value) {
+			obj.setLEI(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AltrnId")
 	protected AlternatePartyIdentification7 alternateIdentification;
 	/**
-	 * Alternate identification for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -207,6 +264,9 @@ public class PartyIdentification75 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "AltrnId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -215,27 +275,48 @@ public class PartyIdentification75 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Alternate identification for a party."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification127#mmAlternateIdentification
+	 * PartyIdentification127.mmAlternateIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAlternateIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyIdentification75, Optional<AlternatePartyIdentification7>> mmAlternateIdentification = new MMMessageAssociationEnd<PartyIdentification75, Optional<AlternatePartyIdentification7>>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification75.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification75.mmObject();
 			isDerived = false;
 			xmlTag = "AltrnId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AlternateIdentification";
 			definition = "Alternate identification for a party.";
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmAlternateIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AlternatePartyIdentification7.mmObject();
+			type_lazy = () -> AlternatePartyIdentification7.mmObject();
+		}
+
+		@Override
+		public Optional<AlternatePartyIdentification7> getValue(PartyIdentification75 obj) {
+			return obj.getAlternateIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification75 obj, Optional<AlternatePartyIdentification7> value) {
+			obj.setAlternateIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrcgDt")
 	protected DateAndDateTimeChoice processingDate;
 	/**
-	 * Date/time at which the instruction was processed by the specified party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -250,6 +331,9 @@ public class PartyIdentification75 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PrcgDt"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::PROC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -260,26 +344,47 @@ public class PartyIdentification75 {
 	 * definition} =
 	 * "Date/time at which the instruction was processed by the specified party."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification127#mmProcessingDate
+	 * PartyIdentification127.mmProcessingDate}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProcessingDate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyIdentification75, Optional<DateAndDateTimeChoice>> mmProcessingDate = new MMMessageAssociationEnd<PartyIdentification75, Optional<DateAndDateTimeChoice>>() {
 		{
-			componentContext_lazy = () -> PartyIdentification75.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification75.mmObject();
 			isDerived = false;
 			xmlTag = "PrcgDt";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::PROC"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProcessingDate";
 			definition = "Date/time at which the instruction was processed by the specified party.";
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmProcessingDate);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public Optional<DateAndDateTimeChoice> getValue(PartyIdentification75 obj) {
+			return obj.getProcessingDate();
+		}
+
+		@Override
+		public void setValue(PartyIdentification75 obj, Optional<DateAndDateTimeChoice> value) {
+			obj.setProcessingDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrcgId")
 	protected Max35Text processingIdentification;
 	/**
-	 * Unambiguous identification of the transaction for the party identified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,6 +399,9 @@ public class PartyIdentification75 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PrcgId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C::PROC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -304,25 +412,46 @@ public class PartyIdentification75 {
 	 * definition} =
 	 * "Unambiguous identification of the transaction for the party identified."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification127#mmProcessingIdentification
+	 * PartyIdentification127.mmProcessingIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProcessingIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification75, Optional<Max35Text>> mmProcessingIdentification = new MMMessageAttribute<PartyIdentification75, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> PartyIdentification75.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification75.mmObject();
 			isDerived = false;
 			xmlTag = "PrcgId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C::PROC"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProcessingIdentification";
 			definition = "Unambiguous identification of the transaction for the party identified.";
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmProcessingIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(PartyIdentification75 obj) {
+			return obj.getProcessingIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification75 obj, Optional<Max35Text> value) {
+			obj.setProcessingIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected PartyTextInformation1 additionalInformation;
 	/**
-	 * Provides additional information to a party identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -336,6 +465,9 @@ public class PartyIdentification75 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "AddtlInf"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70a:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -345,89 +477,111 @@ public class PartyIdentification75 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Provides additional information to a party identification."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification127#mmAdditionalInformation
+	 * PartyIdentification127.mmAdditionalInformation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAdditionalInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyIdentification75, Optional<PartyTextInformation1>> mmAdditionalInformation = new MMMessageAssociationEnd<PartyIdentification75, Optional<PartyTextInformation1>>() {
 		{
-			componentContext_lazy = () -> PartyIdentification75.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification75.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70a:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Provides additional information to a party identification.";
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmAdditionalInformation);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyTextInformation1.mmObject();
+			type_lazy = () -> PartyTextInformation1.mmObject();
+		}
+
+		@Override
+		public Optional<PartyTextInformation1> getValue(PartyIdentification75 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(PartyIdentification75 obj, Optional<PartyTextInformation1> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyIdentification75.mmIdentification, PartyIdentification75.mmLEI, PartyIdentification75.mmAlternateIdentification, PartyIdentification75.mmProcessingDate,
-						PartyIdentification75.mmProcessingIdentification, PartyIdentification75.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyIdentification75.mmIdentification, com.tools20022.repository.msg.PartyIdentification75.mmLEI,
+						com.tools20022.repository.msg.PartyIdentification75.mmAlternateIdentification, com.tools20022.repository.msg.PartyIdentification75.mmProcessingDate,
+						com.tools20022.repository.msg.PartyIdentification75.mmProcessingIdentification, com.tools20022.repository.msg.PartyIdentification75.mmAdditionalInformation);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentification75";
 				definition = "Identification of an entity involved in an activity.";
+				nextVersions_lazy = () -> Arrays.asList(PartyIdentification127.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PartyIdentification44Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PartyIdentification44Choice identification) {
-		this.identification = identification;
+	public PartyIdentification75 setIdentification(PartyIdentification44Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "LEI")
-	public LEIIdentifier getLEI() {
-		return lEI;
+	public Optional<LEIIdentifier> getLEI() {
+		return lEI == null ? Optional.empty() : Optional.of(lEI);
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
+	public PartyIdentification75 setLEI(LEIIdentifier lEI) {
 		this.lEI = lEI;
+		return this;
 	}
 
-	@XmlElement(name = "AltrnId")
-	public AlternatePartyIdentification7 getAlternateIdentification() {
-		return alternateIdentification;
+	public Optional<AlternatePartyIdentification7> getAlternateIdentification() {
+		return alternateIdentification == null ? Optional.empty() : Optional.of(alternateIdentification);
 	}
 
-	public void setAlternateIdentification(com.tools20022.repository.msg.AlternatePartyIdentification7 alternateIdentification) {
+	public PartyIdentification75 setAlternateIdentification(AlternatePartyIdentification7 alternateIdentification) {
 		this.alternateIdentification = alternateIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "PrcgDt")
-	public DateAndDateTimeChoice getProcessingDate() {
-		return processingDate;
+	public Optional<DateAndDateTimeChoice> getProcessingDate() {
+		return processingDate == null ? Optional.empty() : Optional.of(processingDate);
 	}
 
-	public void setProcessingDate(DateAndDateTimeChoice processingDate) {
+	public PartyIdentification75 setProcessingDate(DateAndDateTimeChoice processingDate) {
 		this.processingDate = processingDate;
+		return this;
 	}
 
-	@XmlElement(name = "PrcgId")
-	public Max35Text getProcessingIdentification() {
-		return processingIdentification;
+	public Optional<Max35Text> getProcessingIdentification() {
+		return processingIdentification == null ? Optional.empty() : Optional.of(processingIdentification);
 	}
 
-	public void setProcessingIdentification(Max35Text processingIdentification) {
+	public PartyIdentification75 setProcessingIdentification(Max35Text processingIdentification) {
 		this.processingIdentification = processingIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public PartyTextInformation1 getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<PartyTextInformation1> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(com.tools20022.repository.msg.PartyTextInformation1 additionalInformation) {
+	public PartyIdentification75 setAdditionalInformation(PartyTextInformation1 additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

@@ -26,9 +26,9 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.InvestmentFundOrder;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Instruction from an investor to sell investment fund units back to the fund.
@@ -99,8 +99,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -118,9 +118,8 @@ public class RedemptionOrder extends InvestmentFundOrder {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate holdingsRedemptionRate;
 	/**
-	 * Portion of the investor's holdings, in a specific investment fund/ fund
-	 * class, that is redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +168,7 @@ public class RedemptionOrder extends InvestmentFundOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHoldingsRedemptionRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RedemptionOrder, PercentageRate> mmHoldingsRedemptionRate = new MMBusinessAttribute<RedemptionOrder, PercentageRate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(FundOrderData5.mmHoldingsRedemptionRate, FinancialInstrumentQuantity29Choice.mmHoldingsRedemptionRate, FinancialInstrumentQuantity28Choice.mmHoldingsRedemptionRate,
 					RedemptionExecution16.mmHoldingsRedemptionRate, RedemptionExecution15.mmHoldingsRedemptionRate, SwitchRedemptionLegExecution4.mmHoldingsRedemptionRate);
@@ -183,19 +182,21 @@ public class RedemptionOrder extends InvestmentFundOrder {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RedemptionOrder.class.getMethod("getHoldingsRedemptionRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(RedemptionOrder obj) {
+			return obj.getHoldingsRedemptionRate();
+		}
+
+		@Override
+		public void setValue(RedemptionOrder obj, PercentageRate value) {
+			obj.setHoldingsRedemptionRate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RedemptionOrder";
 				definition = "Instruction from an investor to sell investment fund units back to the fund.";
@@ -219,7 +220,8 @@ public class RedemptionOrder extends InvestmentFundOrder {
 		return holdingsRedemptionRate;
 	}
 
-	public void setHoldingsRedemptionRate(PercentageRate holdingsRedemptionRate) {
-		this.holdingsRedemptionRate = holdingsRedemptionRate;
+	public RedemptionOrder setHoldingsRedemptionRate(PercentageRate holdingsRedemptionRate) {
+		this.holdingsRedemptionRate = Objects.requireNonNull(holdingsRedemptionRate);
+		return this;
 	}
 }

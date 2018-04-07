@@ -25,10 +25,8 @@ import com.tools20022.repository.area.SecuritiesClearingLatestVersion;
 import com.tools20022.repository.choice.PartyIdentification35Choice;
 import com.tools20022.repository.choice.SettlementParties2Choice;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -104,16 +102,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SettlementObligationReportV03", propOrder = {"reportParameters", "pagination", "clearingMember", "clearingSegment", "deliveryAccount", "reportDetails", "settlementParties", "supplementaryData"})
 public class SettlementObligationReportV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptParams", required = true)
 	protected ReportParameters4 reportParameters;
 	/**
-	 * Provides details about the report such as the report identification, the
-	 * creation date and time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,7 +134,7 @@ public class SettlementObligationReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportParameters = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, ReportParameters4> mmReportParameters = new MMMessageBuildingBlock<SettlementObligationReportV03, ReportParameters4>() {
 		{
 			xmlTag = "RptParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -147,20 +145,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> ReportParameters4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getReportParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportParameters4 getValue(SettlementObligationReportV03 obj) {
+			return obj.getReportParameters();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, ReportParameters4 value) {
+			obj.setReportParameters(value);
 		}
 	};
+	@XmlElement(name = "Pgntn", required = true)
 	protected Pagination pagination;
 	/**
-	 * Page number of the message (within a report) and continuation indicator
-	 * to indicate that the report is to continue or that the message is the
-	 * last page of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,7 +181,7 @@ public class SettlementObligationReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, Pagination> mmPagination = new MMMessageBuildingBlock<SettlementObligationReportV03, Pagination>() {
 		{
 			xmlTag = "Pgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -193,19 +192,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getPagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Pagination getValue(SettlementObligationReportV03 obj) {
+			return obj.getPagination();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, Pagination value) {
+			obj.setPagination(value);
 		}
 	};
+	@XmlElement(name = "ClrMmb")
 	protected PartyIdentification35Choice clearingMember;
 	/**
-	 * Provides the identification of the clearing member (individual clearing
-	 * member or general clearing member).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,7 +229,7 @@ public class SettlementObligationReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingMember = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, Optional<PartyIdentification35Choice>> mmClearingMember = new MMMessageBuildingBlock<SettlementObligationReportV03, Optional<PartyIdentification35Choice>>() {
 		{
 			xmlTag = "ClrMmb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,22 +240,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> PartyIdentification35Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getClearingMember", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<PartyIdentification35Choice> getValue(SettlementObligationReportV03 obj) {
+			return obj.getClearingMember();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, Optional<PartyIdentification35Choice> value) {
+			obj.setClearingMember(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ClrSgmt")
 	protected PartyIdentification35Choice clearingSegment;
 	/**
-	 * Clearing organisation that will clear the trade.<br>
-	 * Note: This field allows Clearing Member Firm to segregate flows coming
-	 * from clearing counterparty's clearing system. Indeed, Clearing Member
-	 * Firms receive messages from the same system (same sender) and this field
-	 * allows them to know if the message is related to equities or derivatives.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,7 +277,7 @@ public class SettlementObligationReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingSegment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, Optional<PartyIdentification35Choice>> mmClearingSegment = new MMMessageBuildingBlock<SettlementObligationReportV03, Optional<PartyIdentification35Choice>>() {
 		{
 			xmlTag = "ClrSgmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -288,22 +288,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> PartyIdentification35Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getClearingSegment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<PartyIdentification35Choice> getValue(SettlementObligationReportV03 obj) {
+			return obj.getClearingSegment();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, Optional<PartyIdentification35Choice> value) {
+			obj.setClearingSegment(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DlvryAcct")
 	protected SecuritiesAccount19 deliveryAccount;
 	/**
-	 * Provides the identification of the account used for netting. This is an
-	 * account opened by the central counterparty in the name of the clearing
-	 * member or its settlement agent within the account structure, for
-	 * settlement purposes (gives information about the clearing member/its
-	 * settlement agent account at the central securities depository).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -326,7 +325,7 @@ public class SettlementObligationReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDeliveryAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, Optional<SecuritiesAccount19>> mmDeliveryAccount = new MMMessageBuildingBlock<SettlementObligationReportV03, Optional<SecuritiesAccount19>>() {
 		{
 			xmlTag = "DlvryAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,18 +336,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> SecuritiesAccount19.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getDeliveryAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SecuritiesAccount19> getValue(SettlementObligationReportV03 obj) {
+			return obj.getDeliveryAccount();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, Optional<SecuritiesAccount19> value) {
+			obj.setDeliveryAccount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RptDtls", required = true)
 	protected List<Report5> reportDetails;
 	/**
-	 * Provides details on the settlement obligation report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,7 +370,7 @@ public class SettlementObligationReportV03 {
 	 * definition} = "Provides details on the settlement obligation report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, List<Report5>> mmReportDetails = new MMMessageBuildingBlock<SettlementObligationReportV03, List<Report5>>() {
 		{
 			xmlTag = "RptDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -378,19 +380,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> Report5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getReportDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Report5> getValue(SettlementObligationReportV03 obj) {
+			return obj.getReportDetails();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, List<Report5> value) {
+			obj.setReportDetails(value);
 		}
 	};
+	@XmlElement(name = "SttlmPties")
 	protected SettlementParties2Choice settlementParties;
 	/**
-	 * Provides details about the receiving parties involved in the settlement
-	 * chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -413,7 +417,7 @@ public class SettlementObligationReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSettlementParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, Optional<SettlementParties2Choice>> mmSettlementParties = new MMMessageBuildingBlock<SettlementObligationReportV03, Optional<SettlementParties2Choice>>() {
 		{
 			xmlTag = "SttlmPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -424,19 +428,21 @@ public class SettlementObligationReportV03 {
 			complexType_lazy = () -> SettlementParties2Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getSettlementParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SettlementParties2Choice> getValue(SettlementObligationReportV03 obj) {
+			return obj.getSettlementParties();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, Optional<SettlementParties2Choice> value) {
+			obj.setSettlementParties(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -455,26 +461,28 @@ public class SettlementObligationReportV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SettlementObligationReportV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<SettlementObligationReportV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementObligationReportV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(SettlementObligationReportV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(SettlementObligationReportV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -509,79 +517,79 @@ public class SettlementObligationReportV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptParams", required = true)
 	public ReportParameters4 getReportParameters() {
 		return reportParameters;
 	}
 
-	public void setReportParameters(ReportParameters4 reportParameters) {
-		this.reportParameters = reportParameters;
+	public SettlementObligationReportV03 setReportParameters(ReportParameters4 reportParameters) {
+		this.reportParameters = Objects.requireNonNull(reportParameters);
+		return this;
 	}
 
-	@XmlElement(name = "Pgntn", required = true)
 	public Pagination getPagination() {
 		return pagination;
 	}
 
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
+	public SettlementObligationReportV03 setPagination(Pagination pagination) {
+		this.pagination = Objects.requireNonNull(pagination);
+		return this;
 	}
 
-	@XmlElement(name = "ClrMmb")
-	public PartyIdentification35Choice getClearingMember() {
-		return clearingMember;
+	public Optional<PartyIdentification35Choice> getClearingMember() {
+		return clearingMember == null ? Optional.empty() : Optional.of(clearingMember);
 	}
 
-	public void setClearingMember(PartyIdentification35Choice clearingMember) {
+	public SettlementObligationReportV03 setClearingMember(PartyIdentification35Choice clearingMember) {
 		this.clearingMember = clearingMember;
+		return this;
 	}
 
-	@XmlElement(name = "ClrSgmt")
-	public PartyIdentification35Choice getClearingSegment() {
-		return clearingSegment;
+	public Optional<PartyIdentification35Choice> getClearingSegment() {
+		return clearingSegment == null ? Optional.empty() : Optional.of(clearingSegment);
 	}
 
-	public void setClearingSegment(PartyIdentification35Choice clearingSegment) {
+	public SettlementObligationReportV03 setClearingSegment(PartyIdentification35Choice clearingSegment) {
 		this.clearingSegment = clearingSegment;
+		return this;
 	}
 
-	@XmlElement(name = "DlvryAcct")
-	public SecuritiesAccount19 getDeliveryAccount() {
-		return deliveryAccount;
+	public Optional<SecuritiesAccount19> getDeliveryAccount() {
+		return deliveryAccount == null ? Optional.empty() : Optional.of(deliveryAccount);
 	}
 
-	public void setDeliveryAccount(SecuritiesAccount19 deliveryAccount) {
+	public SettlementObligationReportV03 setDeliveryAccount(SecuritiesAccount19 deliveryAccount) {
 		this.deliveryAccount = deliveryAccount;
+		return this;
 	}
 
-	@XmlElement(name = "RptDtls", required = true)
 	public List<Report5> getReportDetails() {
-		return reportDetails;
+		return reportDetails == null ? reportDetails = new ArrayList<>() : reportDetails;
 	}
 
-	public void setReportDetails(List<Report5> reportDetails) {
-		this.reportDetails = reportDetails;
+	public SettlementObligationReportV03 setReportDetails(List<Report5> reportDetails) {
+		this.reportDetails = Objects.requireNonNull(reportDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmPties")
-	public SettlementParties2Choice getSettlementParties() {
-		return settlementParties;
+	public Optional<SettlementParties2Choice> getSettlementParties() {
+		return settlementParties == null ? Optional.empty() : Optional.of(settlementParties);
 	}
 
-	public void setSettlementParties(SettlementParties2Choice settlementParties) {
+	public SettlementObligationReportV03 setSettlementParties(SettlementParties2Choice settlementParties) {
 		this.settlementParties = settlementParties;
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public SettlementObligationReportV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:secl.010.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:secl.010.001.03")
 	static public class Document {
 		@XmlElement(name = "SttlmOblgtnRpt", required = true)
 		public SettlementObligationReportV03 messageBody;

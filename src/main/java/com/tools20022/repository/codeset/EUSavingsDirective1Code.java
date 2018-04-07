@@ -40,13 +40,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirective1Code#EUSavingsInScope
- * EUSavingsDirective1Code.mmEUSavingsInScope}</li>
+ * EUSavingsDirective1Code.EUSavingsInScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirective1Code#EUSavingsOutScope
- * EUSavingsDirective1Code.mmEUSavingsOutScope}</li>
+ * EUSavingsDirective1Code.EUSavingsOutScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUSavingsDirective1Code#EUSavingsVariable
- * EUSavingsDirective1Code.mmEUSavingsVariable}</li>
+ * EUSavingsDirective1Code.EUSavingsVariable}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -55,8 +55,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -71,7 +71,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "EUSavingsDirective1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "ndicate whether or not the fund is subject to reporting  under the EU Savings Directive.  Enter \"Variable\" if the status of the fund is likely to change from time to time."
+ * "ndicate whether or not the fund is subject to reporting under the EU Savings Directive. Enter \"Variable\" if the status of the fund is likely to change from time to time."
  * </li>
  * </ul>
  */
@@ -159,11 +159,11 @@ public class EUSavingsDirective1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EUSI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EUSavingsDirective1Code";
-				definition = "ndicate whether or not the fund is subject to reporting  under the EU Savings Directive.  Enter \"Variable\" if the status of the fund is likely to change from time to time.";
+				definition = "ndicate whether or not the fund is subject to reporting under the EU Savings Directive. Enter \"Variable\" if the status of the fund is likely to change from time to time.";
 				trace_lazy = () -> EUSavingsDirectiveCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EUSavingsDirective1Code.EUSavingsInScope, com.tools20022.repository.codeset.EUSavingsDirective1Code.EUSavingsOutScope,
 						com.tools20022.repository.codeset.EUSavingsDirective1Code.EUSavingsVariable);

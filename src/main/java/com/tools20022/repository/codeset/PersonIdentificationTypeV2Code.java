@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -39,43 +40,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#PassportNumber
- * PersonIdentificationTypeV2Code.mmPassportNumber}</li>
+ * PersonIdentificationTypeV2Code.PassportNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#CPFAccountNumber
- * PersonIdentificationTypeV2Code.mmCPFAccountNumber}</li>
+ * PersonIdentificationTypeV2Code.CPFAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#SRSAccountNumber
- * PersonIdentificationTypeV2Code.mmSRSAccountNumber}</li>
+ * PersonIdentificationTypeV2Code.SRSAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#NationalRegistrationIdentificationNumber
- * PersonIdentificationTypeV2Code.mmNationalRegistrationIdentificationNumber}</li>
+ * PersonIdentificationTypeV2Code.NationalRegistrationIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#Other
- * PersonIdentificationTypeV2Code.mmOther}</li>
+ * PersonIdentificationTypeV2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#DriversLicenseNumber
- * PersonIdentificationTypeV2Code.mmDriversLicenseNumber}</li>
+ * PersonIdentificationTypeV2Code.DriversLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#SocialSecurityNumber
- * PersonIdentificationTypeV2Code.mmSocialSecurityNumber}</li>
+ * PersonIdentificationTypeV2Code.SocialSecurityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#AlienRegistrationNumber
- * PersonIdentificationTypeV2Code.mmAlienRegistrationNumber}</li>
+ * PersonIdentificationTypeV2Code.AlienRegistrationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#IdentityCardNumber
- * PersonIdentificationTypeV2Code.mmIdentityCardNumber}</li>
+ * PersonIdentificationTypeV2Code.IdentityCardNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#EmployerIdentificationNumber
- * PersonIdentificationTypeV2Code.mmEmployerIdentificationNumber}</li>
+ * PersonIdentificationTypeV2Code.EmployerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#ForeignInvestmentIdentityNumber
- * PersonIdentificationTypeV2Code.mmForeignInvestmentIdentityNumber}</li>
+ * PersonIdentificationTypeV2Code.ForeignInvestmentIdentityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#TaxIdentificationNumber
- * PersonIdentificationTypeV2Code.mmTaxIdentificationNumber}</li>
+ * PersonIdentificationTypeV2Code.TaxIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationTypeV2Code#CorporateIdentification
- * PersonIdentificationTypeV2Code.mmCorporateIdentification}</li>
+ * PersonIdentificationTypeV2Code.CorporateIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -89,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -278,6 +279,9 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DRLC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//DRLC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -291,6 +295,7 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 */
 	public static final PersonIdentificationTypeV2Code DriversLicenseNumber = new PersonIdentificationTypeV2Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//DRLC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DriversLicenseNumber";
 			definition = "Number assigned by a license authority to a driver's license.";
@@ -309,6 +314,9 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SOCS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//SSNX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -321,6 +329,7 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 */
 	public static final PersonIdentificationTypeV2Code SocialSecurityNumber = new PersonIdentificationTypeV2Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//SSNX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SocialSecurityNumber";
 			definition = "Number assigned by a social security agency.";
@@ -339,6 +348,9 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ARNU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//ARNU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -352,6 +364,7 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 */
 	public static final PersonIdentificationTypeV2Code AlienRegistrationNumber = new PersonIdentificationTypeV2Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//ARNU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AlienRegistrationNumber";
 			definition = "Number assigned by a government agency to identify foreign nationals.";
@@ -401,6 +414,9 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EMID"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//EINX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -414,6 +430,7 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	 */
 	public static final PersonIdentificationTypeV2Code EmployerIdentificationNumber = new PersonIdentificationTypeV2Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//EINX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployerIdentificationNumber";
 			definition = "Number assigned to an employer by a registration authority.";
@@ -520,7 +537,7 @@ public class PersonIdentificationTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CCPT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentificationTypeV2Code";

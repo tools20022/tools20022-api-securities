@@ -24,8 +24,12 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.DateTimePeriodDetails;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,27 +61,29 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = August 8, 2018</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "DateTimePeriodChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Choice between various date time patterns."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DateTimePeriodChoice", propOrder = {"fromDateTime", "toDateTime", "dateTimeRange"})
 public class DateTimePeriodChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrDtTm", required = true)
 	protected ISODateTime fromDateTime;
 	/**
-	 * Date and time at which the range starts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +113,10 @@ public class DateTimePeriodChoice {
 	 * definition} = "Date and time at which the range starts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFromDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateTimePeriodChoice, ISODateTime> mmFromDateTime = new MMMessageAttribute<DateTimePeriodChoice, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmFromDateTime;
-			componentContext_lazy = () -> DateTimePeriodChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DateTimePeriodChoice.mmObject();
 			isDerived = false;
 			xmlTag = "FrDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +126,22 @@ public class DateTimePeriodChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(DateTimePeriodChoice obj) {
+			return obj.getFromDateTime();
+		}
+
+		@Override
+		public void setValue(DateTimePeriodChoice obj, ISODateTime value) {
+			obj.setFromDateTime(value);
+		}
 	};
+	@XmlElement(name = "ToDtTm", required = true)
 	protected ISODateTime toDateTime;
 	/**
-	 * Date and time at which the range ends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +171,10 @@ public class DateTimePeriodChoice {
 	 * definition} = "Date and time at which the range ends."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmToDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateTimePeriodChoice, ISODateTime> mmToDateTime = new MMMessageAttribute<DateTimePeriodChoice, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmToDateTime;
-			componentContext_lazy = () -> DateTimePeriodChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DateTimePeriodChoice.mmObject();
 			isDerived = false;
 			xmlTag = "ToDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,11 +184,22 @@ public class DateTimePeriodChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(DateTimePeriodChoice obj) {
+			return obj.getToDateTime();
+		}
+
+		@Override
+		public void setValue(DateTimePeriodChoice obj, ISODateTime value) {
+			obj.setToDateTime(value);
+		}
 	};
+	@XmlElement(name = "DtTmRg", required = true)
 	protected DateTimePeriodDetails dateTimeRange;
 	/**
-	 * Range of time between a start date and time and an end date and time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,10 +231,10 @@ public class DateTimePeriodChoice {
 	 * "Range of time between a start date and time and an end date and time."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDateTimeRange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DateTimePeriodChoice, DateTimePeriodDetails> mmDateTimeRange = new MMMessageAttribute<DateTimePeriodChoice, DateTimePeriodDetails>() {
 		{
 			businessComponentTrace_lazy = () -> DateTimePeriod.mmObject();
-			componentContext_lazy = () -> DateTimePeriodChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DateTimePeriodChoice.mmObject();
 			isDerived = false;
 			xmlTag = "DtTmRg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,15 +244,33 @@ public class DateTimePeriodChoice {
 			minOccurs = 1;
 			complexType_lazy = () -> DateTimePeriodDetails.mmObject();
 		}
+
+		@Override
+		public DateTimePeriodDetails getValue(DateTimePeriodChoice obj) {
+			return obj.getDateTimeRange();
+		}
+
+		@Override
+		public void setValue(DateTimePeriodChoice obj, DateTimePeriodDetails value) {
+			obj.setDateTimeRange(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DateTimePeriodChoice.mmFromDateTime, DateTimePeriodChoice.mmToDateTime, DateTimePeriodChoice.mmDateTimeRange);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.DateTimePeriodChoice.mmFromDateTime, com.tools20022.repository.choice.DateTimePeriodChoice.mmToDateTime,
+						com.tools20022.repository.choice.DateTimePeriodChoice.mmDateTimeRange);
 				trace_lazy = () -> DateTimePeriod.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("August 8, 2018");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "DateTimePeriodChoice";
 				definition = "Choice between various date time patterns.";
 			}
@@ -232,30 +278,30 @@ public class DateTimePeriodChoice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrDtTm", required = true)
 	public ISODateTime getFromDateTime() {
 		return fromDateTime;
 	}
 
-	public void setFromDateTime(ISODateTime fromDateTime) {
-		this.fromDateTime = fromDateTime;
+	public DateTimePeriodChoice setFromDateTime(ISODateTime fromDateTime) {
+		this.fromDateTime = Objects.requireNonNull(fromDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "ToDtTm", required = true)
 	public ISODateTime getToDateTime() {
 		return toDateTime;
 	}
 
-	public void setToDateTime(ISODateTime toDateTime) {
-		this.toDateTime = toDateTime;
+	public DateTimePeriodChoice setToDateTime(ISODateTime toDateTime) {
+		this.toDateTime = Objects.requireNonNull(toDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "DtTmRg", required = true)
 	public DateTimePeriodDetails getDateTimeRange() {
 		return dateTimeRange;
 	}
 
-	public void setDateTimeRange(DateTimePeriodDetails dateTimeRange) {
-		this.dateTimeRange = dateTimeRange;
+	public DateTimePeriodChoice setDateTimeRange(DateTimePeriodDetails dateTimeRange) {
+		this.dateTimeRange = Objects.requireNonNull(dateTimeRange);
+		return this;
 	}
 }

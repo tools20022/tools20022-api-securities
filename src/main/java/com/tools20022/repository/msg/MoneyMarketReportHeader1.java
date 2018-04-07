@@ -27,8 +27,10 @@ import com.tools20022.repository.area.auth.MoneyMarketSecuredMarketStatisticalRe
 import com.tools20022.repository.area.auth.MoneyMarketUnsecuredMarketStatisticalReportV02;
 import com.tools20022.repository.datatype.LEIIdentifier;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DateTimePeriod1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +75,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +89,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MoneyMarketReportHeader1", propOrder = {"reportingAgent", "referencePeriod"})
 public class MoneyMarketReportHeader1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptgAgt", required = true)
 	protected LEIIdentifier reportingAgent;
 	/**
-	 * Agent which is subject to reporting requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,9 +124,9 @@ public class MoneyMarketReportHeader1 {
 	 * definition} = "Agent which is subject to reporting requirements."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportingAgent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MoneyMarketReportHeader1, LEIIdentifier> mmReportingAgent = new MMMessageAttribute<MoneyMarketReportHeader1, LEIIdentifier>() {
 		{
-			componentContext_lazy = () -> MoneyMarketReportHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MoneyMarketReportHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "RptgAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,13 +136,22 @@ public class MoneyMarketReportHeader1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public LEIIdentifier getValue(MoneyMarketReportHeader1 obj) {
+			return obj.getReportingAgent();
+		}
+
+		@Override
+		public void setValue(MoneyMarketReportHeader1 obj, LEIIdentifier value) {
+			obj.setReportingAgent(value);
+		}
 	};
+	@XmlElement(name = "RefPrd", required = true)
 	protected DateTimePeriod1 referencePeriod;
 	/**
-	 * Beginning and ending date-time to which the transaction data refers
-	 * (trade date in case of new transactions and date of amendment in case of
-	 * revisions).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,32 +173,42 @@ public class MoneyMarketReportHeader1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Beginning and ending date-time to which the transaction data refers (trade date in case of new transactions and date of amendment in case of revisions). "
+	 * "Beginning and ending date-time to which the transaction data refers (trade date in case of new transactions and date of amendment in case of revisions)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReferencePeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MoneyMarketReportHeader1, DateTimePeriod1> mmReferencePeriod = new MMMessageAssociationEnd<MoneyMarketReportHeader1, DateTimePeriod1>() {
 		{
-			componentContext_lazy = () -> MoneyMarketReportHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MoneyMarketReportHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "RefPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReferencePeriod";
-			definition = "Beginning and ending date-time to which the transaction data refers (trade date in case of new transactions and date of amendment in case of revisions). ";
+			definition = "Beginning and ending date-time to which the transaction data refers (trade date in case of new transactions and date of amendment in case of revisions).";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DateTimePeriod1.mmObject();
+			type_lazy = () -> DateTimePeriod1.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod1 getValue(MoneyMarketReportHeader1 obj) {
+			return obj.getReferencePeriod();
+		}
+
+		@Override
+		public void setValue(MoneyMarketReportHeader1 obj, DateTimePeriod1 value) {
+			obj.setReferencePeriod(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MoneyMarketReportHeader1.mmReportingAgent, MoneyMarketReportHeader1.mmReferencePeriod);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MoneyMarketReportHeader1.mmReportingAgent, com.tools20022.repository.msg.MoneyMarketReportHeader1.mmReferencePeriod);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MoneyMarketUnsecuredMarketStatisticalReportV02.mmReportHeader, MoneyMarketForeignExchangeSwapsStatisticalReportV02.mmReportHeader,
 						MoneyMarketSecuredMarketStatisticalReportV02.mmReportHeader, MoneyMarketOvernightIndexSwapsStatisticalReportV02.mmReportHeader);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoneyMarketReportHeader1";
 				definition = "Provides the money market statistical report instrument related header details.";
@@ -195,21 +217,21 @@ public class MoneyMarketReportHeader1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptgAgt", required = true)
 	public LEIIdentifier getReportingAgent() {
 		return reportingAgent;
 	}
 
-	public void setReportingAgent(LEIIdentifier reportingAgent) {
-		this.reportingAgent = reportingAgent;
+	public MoneyMarketReportHeader1 setReportingAgent(LEIIdentifier reportingAgent) {
+		this.reportingAgent = Objects.requireNonNull(reportingAgent);
+		return this;
 	}
 
-	@XmlElement(name = "RefPrd", required = true)
 	public DateTimePeriod1 getReferencePeriod() {
 		return referencePeriod;
 	}
 
-	public void setReferencePeriod(com.tools20022.repository.msg.DateTimePeriod1 referencePeriod) {
-		this.referencePeriod = referencePeriod;
+	public MoneyMarketReportHeader1 setReferencePeriod(DateTimePeriod1 referencePeriod) {
+		this.referencePeriod = Objects.requireNonNull(referencePeriod);
+		return this;
 	}
 }

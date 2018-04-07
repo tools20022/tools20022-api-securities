@@ -24,9 +24,11 @@ import com.tools20022.repository.datatype.ISOYear;
 import com.tools20022.repository.datatype.PreviousAll;
 import com.tools20022.repository.entity.PortfolioTransfer;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PreviousYear1Choice", propOrder = {"allPreviousYears", "specificPreviousYears"})
 public class PreviousYear1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AllPrvsYrs", required = true)
 	protected PreviousAll allPreviousYears;
 	/**
-	 * Selection ot the entirety of the investment plans.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,27 +108,38 @@ public class PreviousYear1Choice {
 	 * name} = "AllPreviousYears"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Selection ot the entirety of the investment plans."</li>
+	 * definition} = "Selection of all investment plans."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAllPreviousYears = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PreviousYear1Choice, PreviousAll> mmAllPreviousYears = new MMMessageAttribute<PreviousYear1Choice, PreviousAll>() {
 		{
 			businessComponentTrace_lazy = () -> PortfolioTransfer.mmObject();
-			componentContext_lazy = () -> PreviousYear1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PreviousYear1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AllPrvsYrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllPreviousYears";
-			definition = "Selection ot the entirety of the investment plans.";
+			definition = "Selection of all investment plans.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PreviousAll.mmObject();
 		}
+
+		@Override
+		public PreviousAll getValue(PreviousYear1Choice obj) {
+			return obj.getAllPreviousYears();
+		}
+
+		@Override
+		public void setValue(PreviousYear1Choice obj, PreviousAll value) {
+			obj.setAllPreviousYears(value);
+		}
 	};
+	@XmlElement(name = "SpcfcPrvsYrs", required = true)
 	protected List<ISOYear> specificPreviousYears;
 	/**
-	 * Selection of investment plans issued during previous years.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,10 +170,10 @@ public class PreviousYear1Choice {
 	 * "Selection of investment plans issued during previous years."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSpecificPreviousYears = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PreviousYear1Choice, List<ISOYear>> mmSpecificPreviousYears = new MMMessageAttribute<PreviousYear1Choice, List<ISOYear>>() {
 		{
 			businessElementTrace_lazy = () -> PortfolioTransfer.mmTransferredYear;
-			componentContext_lazy = () -> PreviousYear1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PreviousYear1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SpcfcPrvsYrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +182,24 @@ public class PreviousYear1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISOYear.mmObject();
 		}
+
+		@Override
+		public List<ISOYear> getValue(PreviousYear1Choice obj) {
+			return obj.getSpecificPreviousYears();
+		}
+
+		@Override
+		public void setValue(PreviousYear1Choice obj, List<ISOYear> value) {
+			obj.setSpecificPreviousYears(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PreviousYear1Choice.mmAllPreviousYears, PreviousYear1Choice.mmSpecificPreviousYears);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PreviousYear1Choice.mmAllPreviousYears, com.tools20022.repository.choice.PreviousYear1Choice.mmSpecificPreviousYears);
 				trace_lazy = () -> PortfolioTransfer.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PreviousYear1Choice";
 				definition = "Choice between selected investment plans issued during previous years or the entirety of the investment plans.";
@@ -184,21 +208,21 @@ public class PreviousYear1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AllPrvsYrs", required = true)
 	public PreviousAll getAllPreviousYears() {
 		return allPreviousYears;
 	}
 
-	public void setAllPreviousYears(PreviousAll allPreviousYears) {
-		this.allPreviousYears = allPreviousYears;
+	public PreviousYear1Choice setAllPreviousYears(PreviousAll allPreviousYears) {
+		this.allPreviousYears = Objects.requireNonNull(allPreviousYears);
+		return this;
 	}
 
-	@XmlElement(name = "SpcfcPrvsYrs", required = true)
 	public List<ISOYear> getSpecificPreviousYears() {
-		return specificPreviousYears;
+		return specificPreviousYears == null ? specificPreviousYears = new ArrayList<>() : specificPreviousYears;
 	}
 
-	public void setSpecificPreviousYears(List<ISOYear> specificPreviousYears) {
-		this.specificPreviousYears = specificPreviousYears;
+	public PreviousYear1Choice setSpecificPreviousYears(List<ISOYear> specificPreviousYears) {
+		this.specificPreviousYears = Objects.requireNonNull(specificPreviousYears);
+		return this;
 	}
 }

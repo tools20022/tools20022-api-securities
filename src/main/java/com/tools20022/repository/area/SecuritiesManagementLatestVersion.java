@@ -86,27 +86,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementStatusAdviceV05
  * IntraPositionMovementStatusAdviceV05}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementPostingReportV06
- * IntraPositionMovementPostingReportV06}</li>
+ * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementConfirmationV07
+ * IntraPositionMovementConfirmationV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesSettlementTransactionAllegementReportV06
- * SecuritiesSettlementTransactionAllegementReportV06}</li>
+ * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementPostingReportV07
+ * IntraPositionMovementPostingReportV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPendingReportV08
- * SecuritiesTransactionPendingReportV08}</li>
+ * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPendingReportV09
+ * SecuritiesTransactionPendingReportV09}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementConfirmationV06
- * IntraPositionMovementConfirmationV06}</li>
+ * {@linkplain com.tools20022.repository.area.semt.SecuritiesSettlementTransactionAllegementReportV07
+ * SecuritiesSettlementTransactionAllegementReportV07}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPostingReportV07
- * SecuritiesTransactionPostingReportV07}</li>
+ * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPostingReportV08
+ * SecuritiesTransactionPostingReportV08}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -126,7 +126,7 @@ public class SecuritiesManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Securities Management - Latest version - master";
 				definition = "Messages that support post-settlement processes for securities (including reporting on securities movements, trades and balances), the processes required to protect beneficial owner's rights throughout settlement, plus any exceptions and investigations related to securities transactions.";
@@ -135,8 +135,8 @@ public class SecuritiesManagementLatestVersion {
 						TotalPortfolioValuationReportV01.mmObject(), StatementOfInvestmentFundTransactionsV03.mmObject(), SecuritiesMessageRejectionV03.mmObject(), StatementOfInvestmentFundTransactionsCancellationV03.mmObject(),
 						SecuritiesBalanceTransparencyReportStatusAdviceV01.mmObject(), SecuritiesBalanceCustodyReportV09.mmObject(), IntraPositionMovementInstructionV04.mmObject(), SecuritiesMessageCancellationAdviceV05.mmObject(),
 						SecuritiesStatementQueryV06.mmObject(), SecuritiesBalanceAccountingReportV09.mmObject(), SecuritiesSettlementTransactionAuditTrailReportV03.mmObject(), SecuritiesBalanceTransparencyReportV02.mmObject(),
-						IntraPositionMovementStatusAdviceV05.mmObject(), IntraPositionMovementPostingReportV06.mmObject(), SecuritiesSettlementTransactionAllegementReportV06.mmObject(), SecuritiesTransactionPendingReportV08.mmObject(),
-						IntraPositionMovementConfirmationV06.mmObject(), SecuritiesTransactionPostingReportV07.mmObject());
+						IntraPositionMovementStatusAdviceV05.mmObject(), IntraPositionMovementConfirmationV07.mmObject(), IntraPositionMovementPostingReportV07.mmObject(), SecuritiesTransactionPendingReportV09.mmObject(),
+						SecuritiesSettlementTransactionAllegementReportV07.mmObject(), SecuritiesTransactionPostingReportV08.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

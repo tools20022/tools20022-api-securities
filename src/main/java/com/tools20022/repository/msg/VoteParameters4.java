@@ -32,9 +32,12 @@ import com.tools20022.repository.entity.ElectronicAddress;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.entity.VotingCondition;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CommunicationAddress4;
+import com.tools20022.repository.msg.IncentivePremium3;
+import com.tools20022.repository.msg.PostalAddress1;
+import com.tools20022.repository.msg.VoteMethods2;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -130,8 +133,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -142,17 +145,18 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information describing how the voting process is organised."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "VoteParameters4", propOrder = {"securitiesQuantityRequiredToVote", "partialVoteAllowed", "splitVoteAllowed", "voteDeadline", "voteSTPDeadline", "voteMarketDeadline", "voteMethods", "votingBallotElectronicAddress",
 		"votingBallotRequestAddress", "revocabilityDeadline", "revocabilitySTPDeadline", "revocabilityMarketDeadline", "beneficialOwnerDisclosure", "voteInstructionType", "earlyIncentivePremium", "incentivePremium",
 		"earlyVoteWithPremiumDeadline", "voteWithPremiumDeadline", "voteWithPremiumSTPDeadline", "voteWithPremiumMarketDeadline", "additionalVotingRequirements", "previousInstructionInvalidityIndicator"})
 public class VoteParameters4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SctiesQtyReqrdToVote")
 	protected DecimalNumber securitiesQuantityRequiredToVote;
 	/**
-	 * Number of holdings required for a vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,10 +187,10 @@ public class VoteParameters4 {
 	 * definition} = "Number of holdings required for a vote."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesQuantityRequiredToVote = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DecimalNumber>> mmSecuritiesQuantityRequiredToVote = new MMMessageAttribute<VoteParameters4, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmSecuritiesQuantityRequiredToVote;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesQtyReqrdToVote";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -196,12 +200,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(VoteParameters4 obj) {
+			return obj.getSecuritiesQuantityRequiredToVote();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DecimalNumber> value) {
+			obj.setSecuritiesQuantityRequiredToVote(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtlVoteAllwd", required = true)
 	protected YesNoIndicator partialVoteAllowed;
 	/**
-	 * Specifies whether it is allowed to only vote on a part of the entire
-	 * holding, leaving part of the position un-voted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,10 +248,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartialVoteAllowed = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, YesNoIndicator> mmPartialVoteAllowed = new MMMessageAttribute<VoteParameters4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmPartialVoteAllowed;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlVoteAllwd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -247,12 +261,22 @@ public class VoteParameters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(VoteParameters4 obj) {
+			return obj.getPartialVoteAllowed();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, YesNoIndicator value) {
+			obj.setPartialVoteAllowed(value);
+		}
 	};
+	@XmlElement(name = "SpltVoteAllwd", required = true)
 	protected YesNoIndicator splitVoteAllowed;
 	/**
-	 * Specifies whether it is allowed to vote in different directions for the
-	 * entire holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,10 +309,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSplitVoteAllowed = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, YesNoIndicator> mmSplitVoteAllowed = new MMMessageAttribute<VoteParameters4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmSplitVoteAllowed;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "SpltVoteAllwd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -298,12 +322,22 @@ public class VoteParameters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(VoteParameters4 obj) {
+			return obj.getSplitVoteAllowed();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, YesNoIndicator value) {
+			obj.setSplitVoteAllowed(value);
+		}
 	};
+	@XmlElement(name = "VoteDdln")
 	protected DateFormat29Choice voteDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,10 +370,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmVoteDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmIntermediaryDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -349,12 +383,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getVoteDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setVoteDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteSTPDdln")
 	protected DateFormat29Choice voteSTPDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * intermediary (STP mode).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,10 +431,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteSTPDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmVoteSTPDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmSTPDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteSTPDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -400,12 +444,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getVoteSTPDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setVoteSTPDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteMktDdln")
 	protected DateFormat29Choice voteMarketDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,10 +492,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteMarketDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmVoteMarketDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmMarketDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteMktDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -451,11 +505,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getVoteMarketDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setVoteMarketDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteMthds")
 	protected VoteMethods2 voteMethods;
 	/**
-	 * Indicates the different methods that can be used to vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -485,10 +550,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVoteMethods = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VoteParameters4, Optional<VoteMethods2>> mmVoteMethods = new MMMessageAssociationEnd<VoteParameters4, Optional<VoteMethods2>>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmVoteLocation;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteMthds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -497,14 +562,24 @@ public class VoteParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.VoteMethods2.mmObject();
+			type_lazy = () -> VoteMethods2.mmObject();
+		}
+
+		@Override
+		public Optional<VoteMethods2> getValue(VoteParameters4 obj) {
+			return obj.getVoteMethods();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<VoteMethods2> value) {
+			obj.setVoteMethods(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "VtngBlltElctrncAdr")
 	protected CommunicationAddress4 votingBallotElectronicAddress;
 	/**
-	 * Electronic location, e-mail or URL address, where the voting ballot can
-	 * be requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -535,10 +610,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVotingBallotElectronicAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VoteParameters4, Optional<CommunicationAddress4>> mmVotingBallotElectronicAddress = new MMMessageAssociationEnd<VoteParameters4, Optional<CommunicationAddress4>>() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VtngBlltElctrncAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -547,13 +622,24 @@ public class VoteParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CommunicationAddress4.mmObject();
+			type_lazy = () -> CommunicationAddress4.mmObject();
+		}
+
+		@Override
+		public Optional<CommunicationAddress4> getValue(VoteParameters4 obj) {
+			return obj.getVotingBallotElectronicAddress();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<CommunicationAddress4> value) {
+			obj.setVotingBallotElectronicAddress(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "VtngBlltReqAdr")
 	protected PostalAddress1 votingBallotRequestAddress;
 	/**
-	 * Specifies the postal address where the voting ballot can be requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -583,10 +669,10 @@ public class VoteParameters4 {
 	 * "Specifies the postal address where the voting ballot can be requested."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVotingBallotRequestAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VoteParameters4, Optional<PostalAddress1>> mmVotingBallotRequestAddress = new MMMessageAssociationEnd<VoteParameters4, Optional<PostalAddress1>>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VtngBlltReqAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -595,14 +681,24 @@ public class VoteParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress1.mmObject();
+			type_lazy = () -> PostalAddress1.mmObject();
+		}
+
+		@Override
+		public Optional<PostalAddress1> getValue(VoteParameters4 obj) {
+			return obj.getVotingBallotRequestAddress();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<PostalAddress1> value) {
+			obj.setVotingBallotRequestAddress(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RvcbltyDdln")
 	protected DateFormat29Choice revocabilityDeadline;
 	/**
-	 * Date till which the instructing party can revoke, change or withdraw its
-	 * voting instruction. This deadline is specified by an intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -635,10 +731,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRevocabilityDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmRevocabilityDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmIntermediaryDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RvcbltyDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -648,13 +744,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getRevocabilityDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setRevocabilityDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RvcbltySTPDdln")
 	protected DateFormat29Choice revocabilitySTPDeadline;
 	/**
-	 * Date till which the instructing party can revoke, change or withdraw its
-	 * voting instruction. This deadline is specified by an intermediary (STP
-	 * mode).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,10 +792,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRevocabilitySTPDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmRevocabilitySTPDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmSTPDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RvcbltySTPDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -700,12 +805,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getRevocabilitySTPDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setRevocabilitySTPDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RvcbltyMktDdln")
 	protected DateFormat29Choice revocabilityMarketDeadline;
 	/**
-	 * Date till which the instructing party can revoke, change or withdraw its
-	 * voting instruction. This deadline is set by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -738,10 +853,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRevocabilityMarketDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmRevocabilityMarketDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmMarketDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RvcbltyMktDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -751,12 +866,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getRevocabilityMarketDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setRevocabilityMarketDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BnfclOwnrDsclsr", required = true)
 	protected YesNoIndicator beneficialOwnerDisclosure;
 	/**
-	 * Indicates whether beneficiary details, for example, name and address,
-	 * must be supplied in order to take part in a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -789,10 +914,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBeneficialOwnerDisclosure = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, YesNoIndicator> mmBeneficialOwnerDisclosure = new MMMessageAttribute<VoteParameters4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmBeneficialOwnerDisclosure;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "BnfclOwnrDsclsr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -802,13 +927,22 @@ public class VoteParameters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(VoteParameters4 obj) {
+			return obj.getBeneficialOwnerDisclosure();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, YesNoIndicator value) {
+			obj.setBeneficialOwnerDisclosure(value);
+		}
 	};
+	@XmlElement(name = "VoteInstrTp")
 	protected List<VoteInstruction2Code> voteInstructionType;
 	/**
-	 * Identifies the possible types of voting instructions. When used at the
-	 * resolution level, it supersedes the value specified in the meeting
-	 * notice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -841,10 +975,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteInstructionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, List<VoteInstruction2Code>> mmVoteInstructionType = new MMMessageAttribute<VoteParameters4, List<VoteInstruction2Code>>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmVoteInstructionType;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteInstrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -854,12 +988,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> VoteInstruction2Code.mmObject();
 		}
+
+		@Override
+		public List<VoteInstruction2Code> getValue(VoteParameters4 obj) {
+			return obj.getVoteInstructionType();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, List<VoteInstruction2Code> value) {
+			obj.setVoteInstructionType(value);
+		}
 	};
+	@XmlElement(name = "EarlyIncntivPrm")
 	protected IncentivePremium3 earlyIncentivePremium;
 	/**
-	 * Cash premium paid to the security holder when voting earlier (before the
-	 * early vote with premium deadline).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -890,10 +1034,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEarlyIncentivePremium = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VoteParameters4, Optional<IncentivePremium3>> mmEarlyIncentivePremium = new MMMessageAssociationEnd<VoteParameters4, Optional<IncentivePremium3>>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmIncentivePremium;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "EarlyIncntivPrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -902,13 +1046,24 @@ public class VoteParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IncentivePremium3.mmObject();
+			type_lazy = () -> IncentivePremium3.mmObject();
+		}
+
+		@Override
+		public Optional<IncentivePremium3> getValue(VoteParameters4 obj) {
+			return obj.getEarlyIncentivePremium();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<IncentivePremium3> value) {
+			obj.setEarlyIncentivePremium(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "IncntivPrm")
 	protected IncentivePremium3 incentivePremium;
 	/**
-	 * Cash premium paid to the security holder when voting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -937,10 +1092,10 @@ public class VoteParameters4 {
 	 * definition} = "Cash premium paid to the security holder when voting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIncentivePremium = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VoteParameters4, Optional<IncentivePremium3>> mmIncentivePremium = new MMMessageAssociationEnd<VoteParameters4, Optional<IncentivePremium3>>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmIncentivePremium;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "IncntivPrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -949,14 +1104,24 @@ public class VoteParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IncentivePremium3.mmObject();
+			type_lazy = () -> IncentivePremium3.mmObject();
+		}
+
+		@Override
+		public Optional<IncentivePremium3> getValue(VoteParameters4 obj) {
+			return obj.getIncentivePremium();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<IncentivePremium3> value) {
+			obj.setIncentivePremium(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "EarlyVoteWthPrmDdln")
 	protected DateFormat29Choice earlyVoteWithPremiumDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * intermediary to take advantage of the early incentive premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -987,10 +1152,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEarlyVoteWithPremiumDeadline = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<VoteParameters4, Optional<DateFormat29Choice>> mmEarlyVoteWithPremiumDeadline = new MMMessageAssociationEnd<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmIntermediaryDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "EarlyVoteWthPrmDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1001,12 +1166,22 @@ public class VoteParameters4 {
 			isComposite = true;
 			type_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getEarlyVoteWithPremiumDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setEarlyVoteWithPremiumDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteWthPrmDdln")
 	protected DateFormat29Choice voteWithPremiumDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * intermediary to take advantage of the premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1039,10 +1214,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteWithPremiumDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmVoteWithPremiumDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmIntermediaryDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteWthPrmDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1052,12 +1227,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getVoteWithPremiumDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setVoteWithPremiumDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteWthPrmSTPDdln")
 	protected DateFormat29Choice voteWithPremiumSTPDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * intermediary to take advantage of the premium (STP mode).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1090,10 +1275,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteWithPremiumSTPDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmVoteWithPremiumSTPDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmSTPDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteWthPrmSTPDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1103,12 +1288,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getVoteWithPremiumSTPDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setVoteWithPremiumSTPDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteWthPrmMktDdln")
 	protected DateFormat29Choice voteWithPremiumMarketDeadline;
 	/**
-	 * Date and time by which the vote instructions should be submitted to the
-	 * issuer to take advantage of the premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1141,10 +1336,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteWithPremiumMarketDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>> mmVoteWithPremiumMarketDeadline = new MMMessageAttribute<VoteParameters4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmMarketDeadline;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VoteWthPrmMktDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1154,12 +1349,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(VoteParameters4 obj) {
+			return obj.getVoteWithPremiumMarketDeadline();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<DateFormat29Choice> value) {
+			obj.setVoteWithPremiumMarketDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlVtngRqrmnts")
 	protected Max350Text additionalVotingRequirements;
 	/**
-	 * Additional information on specific requirements for allowing a person to
-	 * vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1186,9 +1391,9 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalVotingRequirements = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<Max350Text>> mmAdditionalVotingRequirements = new MMMessageAttribute<VoteParameters4, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlVtngRqrmnts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1198,12 +1403,22 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(VoteParameters4 obj) {
+			return obj.getAdditionalVotingRequirements();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<Max350Text> value) {
+			obj.setAdditionalVotingRequirements(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrvsInstrInvldtyInd")
 	protected YesNoIndicator previousInstructionInvalidityIndicator;
 	/**
-	 * Indicates whether the previously sent instructions becomes invalid after
-	 * a market deadline extension.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1236,10 +1451,10 @@ public class VoteParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPreviousInstructionInvalidityIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VoteParameters4, Optional<YesNoIndicator>> mmPreviousInstructionInvalidityIndicator = new MMMessageAttribute<VoteParameters4, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> VotingCondition.mmPreviousInstructionInvalidity;
-			componentContext_lazy = () -> VoteParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VoteParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "PrvsInstrInvldtyInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1249,19 +1464,34 @@ public class VoteParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(VoteParameters4 obj) {
+			return obj.getPreviousInstructionInvalidityIndicator();
+		}
+
+		@Override
+		public void setValue(VoteParameters4 obj, Optional<YesNoIndicator> value) {
+			obj.setPreviousInstructionInvalidityIndicator(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(VoteParameters4.mmSecuritiesQuantityRequiredToVote, VoteParameters4.mmPartialVoteAllowed, VoteParameters4.mmSplitVoteAllowed, VoteParameters4.mmVoteDeadline,
-						VoteParameters4.mmVoteSTPDeadline, VoteParameters4.mmVoteMarketDeadline, VoteParameters4.mmVoteMethods, VoteParameters4.mmVotingBallotElectronicAddress, VoteParameters4.mmVotingBallotRequestAddress,
-						VoteParameters4.mmRevocabilityDeadline, VoteParameters4.mmRevocabilitySTPDeadline, VoteParameters4.mmRevocabilityMarketDeadline, VoteParameters4.mmBeneficialOwnerDisclosure, VoteParameters4.mmVoteInstructionType,
-						VoteParameters4.mmEarlyIncentivePremium, VoteParameters4.mmIncentivePremium, VoteParameters4.mmEarlyVoteWithPremiumDeadline, VoteParameters4.mmVoteWithPremiumDeadline, VoteParameters4.mmVoteWithPremiumSTPDeadline,
-						VoteParameters4.mmVoteWithPremiumMarketDeadline, VoteParameters4.mmAdditionalVotingRequirements, VoteParameters4.mmPreviousInstructionInvalidityIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.VoteParameters4.mmSecuritiesQuantityRequiredToVote, com.tools20022.repository.msg.VoteParameters4.mmPartialVoteAllowed,
+						com.tools20022.repository.msg.VoteParameters4.mmSplitVoteAllowed, com.tools20022.repository.msg.VoteParameters4.mmVoteDeadline, com.tools20022.repository.msg.VoteParameters4.mmVoteSTPDeadline,
+						com.tools20022.repository.msg.VoteParameters4.mmVoteMarketDeadline, com.tools20022.repository.msg.VoteParameters4.mmVoteMethods, com.tools20022.repository.msg.VoteParameters4.mmVotingBallotElectronicAddress,
+						com.tools20022.repository.msg.VoteParameters4.mmVotingBallotRequestAddress, com.tools20022.repository.msg.VoteParameters4.mmRevocabilityDeadline,
+						com.tools20022.repository.msg.VoteParameters4.mmRevocabilitySTPDeadline, com.tools20022.repository.msg.VoteParameters4.mmRevocabilityMarketDeadline,
+						com.tools20022.repository.msg.VoteParameters4.mmBeneficialOwnerDisclosure, com.tools20022.repository.msg.VoteParameters4.mmVoteInstructionType, com.tools20022.repository.msg.VoteParameters4.mmEarlyIncentivePremium,
+						com.tools20022.repository.msg.VoteParameters4.mmIncentivePremium, com.tools20022.repository.msg.VoteParameters4.mmEarlyVoteWithPremiumDeadline,
+						com.tools20022.repository.msg.VoteParameters4.mmVoteWithPremiumDeadline, com.tools20022.repository.msg.VoteParameters4.mmVoteWithPremiumSTPDeadline,
+						com.tools20022.repository.msg.VoteParameters4.mmVoteWithPremiumMarketDeadline, com.tools20022.repository.msg.VoteParameters4.mmAdditionalVotingRequirements,
+						com.tools20022.repository.msg.VoteParameters4.mmPreviousInstructionInvalidityIndicator);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingNotificationV05.mmVote);
 				trace_lazy = () -> VotingCondition.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteParameters4";
 				definition = "Information describing how the voting process is organised.";
@@ -1270,201 +1500,201 @@ public class VoteParameters4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctiesQtyReqrdToVote")
-	public DecimalNumber getSecuritiesQuantityRequiredToVote() {
-		return securitiesQuantityRequiredToVote;
+	public Optional<DecimalNumber> getSecuritiesQuantityRequiredToVote() {
+		return securitiesQuantityRequiredToVote == null ? Optional.empty() : Optional.of(securitiesQuantityRequiredToVote);
 	}
 
-	public void setSecuritiesQuantityRequiredToVote(DecimalNumber securitiesQuantityRequiredToVote) {
+	public VoteParameters4 setSecuritiesQuantityRequiredToVote(DecimalNumber securitiesQuantityRequiredToVote) {
 		this.securitiesQuantityRequiredToVote = securitiesQuantityRequiredToVote;
+		return this;
 	}
 
-	@XmlElement(name = "PrtlVoteAllwd", required = true)
 	public YesNoIndicator getPartialVoteAllowed() {
 		return partialVoteAllowed;
 	}
 
-	public void setPartialVoteAllowed(YesNoIndicator partialVoteAllowed) {
-		this.partialVoteAllowed = partialVoteAllowed;
+	public VoteParameters4 setPartialVoteAllowed(YesNoIndicator partialVoteAllowed) {
+		this.partialVoteAllowed = Objects.requireNonNull(partialVoteAllowed);
+		return this;
 	}
 
-	@XmlElement(name = "SpltVoteAllwd", required = true)
 	public YesNoIndicator getSplitVoteAllowed() {
 		return splitVoteAllowed;
 	}
 
-	public void setSplitVoteAllowed(YesNoIndicator splitVoteAllowed) {
-		this.splitVoteAllowed = splitVoteAllowed;
+	public VoteParameters4 setSplitVoteAllowed(YesNoIndicator splitVoteAllowed) {
+		this.splitVoteAllowed = Objects.requireNonNull(splitVoteAllowed);
+		return this;
 	}
 
-	@XmlElement(name = "VoteDdln")
-	public DateFormat29Choice getVoteDeadline() {
-		return voteDeadline;
+	public Optional<DateFormat29Choice> getVoteDeadline() {
+		return voteDeadline == null ? Optional.empty() : Optional.of(voteDeadline);
 	}
 
-	public void setVoteDeadline(DateFormat29Choice voteDeadline) {
+	public VoteParameters4 setVoteDeadline(DateFormat29Choice voteDeadline) {
 		this.voteDeadline = voteDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "VoteSTPDdln")
-	public DateFormat29Choice getVoteSTPDeadline() {
-		return voteSTPDeadline;
+	public Optional<DateFormat29Choice> getVoteSTPDeadline() {
+		return voteSTPDeadline == null ? Optional.empty() : Optional.of(voteSTPDeadline);
 	}
 
-	public void setVoteSTPDeadline(DateFormat29Choice voteSTPDeadline) {
+	public VoteParameters4 setVoteSTPDeadline(DateFormat29Choice voteSTPDeadline) {
 		this.voteSTPDeadline = voteSTPDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "VoteMktDdln")
-	public DateFormat29Choice getVoteMarketDeadline() {
-		return voteMarketDeadline;
+	public Optional<DateFormat29Choice> getVoteMarketDeadline() {
+		return voteMarketDeadline == null ? Optional.empty() : Optional.of(voteMarketDeadline);
 	}
 
-	public void setVoteMarketDeadline(DateFormat29Choice voteMarketDeadline) {
+	public VoteParameters4 setVoteMarketDeadline(DateFormat29Choice voteMarketDeadline) {
 		this.voteMarketDeadline = voteMarketDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "VoteMthds")
-	public VoteMethods2 getVoteMethods() {
-		return voteMethods;
+	public Optional<VoteMethods2> getVoteMethods() {
+		return voteMethods == null ? Optional.empty() : Optional.of(voteMethods);
 	}
 
-	public void setVoteMethods(com.tools20022.repository.msg.VoteMethods2 voteMethods) {
+	public VoteParameters4 setVoteMethods(VoteMethods2 voteMethods) {
 		this.voteMethods = voteMethods;
+		return this;
 	}
 
-	@XmlElement(name = "VtngBlltElctrncAdr")
-	public CommunicationAddress4 getVotingBallotElectronicAddress() {
-		return votingBallotElectronicAddress;
+	public Optional<CommunicationAddress4> getVotingBallotElectronicAddress() {
+		return votingBallotElectronicAddress == null ? Optional.empty() : Optional.of(votingBallotElectronicAddress);
 	}
 
-	public void setVotingBallotElectronicAddress(com.tools20022.repository.msg.CommunicationAddress4 votingBallotElectronicAddress) {
+	public VoteParameters4 setVotingBallotElectronicAddress(CommunicationAddress4 votingBallotElectronicAddress) {
 		this.votingBallotElectronicAddress = votingBallotElectronicAddress;
+		return this;
 	}
 
-	@XmlElement(name = "VtngBlltReqAdr")
-	public PostalAddress1 getVotingBallotRequestAddress() {
-		return votingBallotRequestAddress;
+	public Optional<PostalAddress1> getVotingBallotRequestAddress() {
+		return votingBallotRequestAddress == null ? Optional.empty() : Optional.of(votingBallotRequestAddress);
 	}
 
-	public void setVotingBallotRequestAddress(com.tools20022.repository.msg.PostalAddress1 votingBallotRequestAddress) {
+	public VoteParameters4 setVotingBallotRequestAddress(PostalAddress1 votingBallotRequestAddress) {
 		this.votingBallotRequestAddress = votingBallotRequestAddress;
+		return this;
 	}
 
-	@XmlElement(name = "RvcbltyDdln")
-	public DateFormat29Choice getRevocabilityDeadline() {
-		return revocabilityDeadline;
+	public Optional<DateFormat29Choice> getRevocabilityDeadline() {
+		return revocabilityDeadline == null ? Optional.empty() : Optional.of(revocabilityDeadline);
 	}
 
-	public void setRevocabilityDeadline(DateFormat29Choice revocabilityDeadline) {
+	public VoteParameters4 setRevocabilityDeadline(DateFormat29Choice revocabilityDeadline) {
 		this.revocabilityDeadline = revocabilityDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "RvcbltySTPDdln")
-	public DateFormat29Choice getRevocabilitySTPDeadline() {
-		return revocabilitySTPDeadline;
+	public Optional<DateFormat29Choice> getRevocabilitySTPDeadline() {
+		return revocabilitySTPDeadline == null ? Optional.empty() : Optional.of(revocabilitySTPDeadline);
 	}
 
-	public void setRevocabilitySTPDeadline(DateFormat29Choice revocabilitySTPDeadline) {
+	public VoteParameters4 setRevocabilitySTPDeadline(DateFormat29Choice revocabilitySTPDeadline) {
 		this.revocabilitySTPDeadline = revocabilitySTPDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "RvcbltyMktDdln")
-	public DateFormat29Choice getRevocabilityMarketDeadline() {
-		return revocabilityMarketDeadline;
+	public Optional<DateFormat29Choice> getRevocabilityMarketDeadline() {
+		return revocabilityMarketDeadline == null ? Optional.empty() : Optional.of(revocabilityMarketDeadline);
 	}
 
-	public void setRevocabilityMarketDeadline(DateFormat29Choice revocabilityMarketDeadline) {
+	public VoteParameters4 setRevocabilityMarketDeadline(DateFormat29Choice revocabilityMarketDeadline) {
 		this.revocabilityMarketDeadline = revocabilityMarketDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "BnfclOwnrDsclsr", required = true)
 	public YesNoIndicator getBeneficialOwnerDisclosure() {
 		return beneficialOwnerDisclosure;
 	}
 
-	public void setBeneficialOwnerDisclosure(YesNoIndicator beneficialOwnerDisclosure) {
-		this.beneficialOwnerDisclosure = beneficialOwnerDisclosure;
+	public VoteParameters4 setBeneficialOwnerDisclosure(YesNoIndicator beneficialOwnerDisclosure) {
+		this.beneficialOwnerDisclosure = Objects.requireNonNull(beneficialOwnerDisclosure);
+		return this;
 	}
 
-	@XmlElement(name = "VoteInstrTp")
 	public List<VoteInstruction2Code> getVoteInstructionType() {
-		return voteInstructionType;
+		return voteInstructionType == null ? voteInstructionType = new ArrayList<>() : voteInstructionType;
 	}
 
-	public void setVoteInstructionType(List<VoteInstruction2Code> voteInstructionType) {
-		this.voteInstructionType = voteInstructionType;
+	public VoteParameters4 setVoteInstructionType(List<VoteInstruction2Code> voteInstructionType) {
+		this.voteInstructionType = Objects.requireNonNull(voteInstructionType);
+		return this;
 	}
 
-	@XmlElement(name = "EarlyIncntivPrm")
-	public IncentivePremium3 getEarlyIncentivePremium() {
-		return earlyIncentivePremium;
+	public Optional<IncentivePremium3> getEarlyIncentivePremium() {
+		return earlyIncentivePremium == null ? Optional.empty() : Optional.of(earlyIncentivePremium);
 	}
 
-	public void setEarlyIncentivePremium(com.tools20022.repository.msg.IncentivePremium3 earlyIncentivePremium) {
+	public VoteParameters4 setEarlyIncentivePremium(IncentivePremium3 earlyIncentivePremium) {
 		this.earlyIncentivePremium = earlyIncentivePremium;
+		return this;
 	}
 
-	@XmlElement(name = "IncntivPrm")
-	public IncentivePremium3 getIncentivePremium() {
-		return incentivePremium;
+	public Optional<IncentivePremium3> getIncentivePremium() {
+		return incentivePremium == null ? Optional.empty() : Optional.of(incentivePremium);
 	}
 
-	public void setIncentivePremium(com.tools20022.repository.msg.IncentivePremium3 incentivePremium) {
+	public VoteParameters4 setIncentivePremium(IncentivePremium3 incentivePremium) {
 		this.incentivePremium = incentivePremium;
+		return this;
 	}
 
-	@XmlElement(name = "EarlyVoteWthPrmDdln")
-	public DateFormat29Choice getEarlyVoteWithPremiumDeadline() {
-		return earlyVoteWithPremiumDeadline;
+	public Optional<DateFormat29Choice> getEarlyVoteWithPremiumDeadline() {
+		return earlyVoteWithPremiumDeadline == null ? Optional.empty() : Optional.of(earlyVoteWithPremiumDeadline);
 	}
 
-	public void setEarlyVoteWithPremiumDeadline(DateFormat29Choice earlyVoteWithPremiumDeadline) {
+	public VoteParameters4 setEarlyVoteWithPremiumDeadline(DateFormat29Choice earlyVoteWithPremiumDeadline) {
 		this.earlyVoteWithPremiumDeadline = earlyVoteWithPremiumDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "VoteWthPrmDdln")
-	public DateFormat29Choice getVoteWithPremiumDeadline() {
-		return voteWithPremiumDeadline;
+	public Optional<DateFormat29Choice> getVoteWithPremiumDeadline() {
+		return voteWithPremiumDeadline == null ? Optional.empty() : Optional.of(voteWithPremiumDeadline);
 	}
 
-	public void setVoteWithPremiumDeadline(DateFormat29Choice voteWithPremiumDeadline) {
+	public VoteParameters4 setVoteWithPremiumDeadline(DateFormat29Choice voteWithPremiumDeadline) {
 		this.voteWithPremiumDeadline = voteWithPremiumDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "VoteWthPrmSTPDdln")
-	public DateFormat29Choice getVoteWithPremiumSTPDeadline() {
-		return voteWithPremiumSTPDeadline;
+	public Optional<DateFormat29Choice> getVoteWithPremiumSTPDeadline() {
+		return voteWithPremiumSTPDeadline == null ? Optional.empty() : Optional.of(voteWithPremiumSTPDeadline);
 	}
 
-	public void setVoteWithPremiumSTPDeadline(DateFormat29Choice voteWithPremiumSTPDeadline) {
+	public VoteParameters4 setVoteWithPremiumSTPDeadline(DateFormat29Choice voteWithPremiumSTPDeadline) {
 		this.voteWithPremiumSTPDeadline = voteWithPremiumSTPDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "VoteWthPrmMktDdln")
-	public DateFormat29Choice getVoteWithPremiumMarketDeadline() {
-		return voteWithPremiumMarketDeadline;
+	public Optional<DateFormat29Choice> getVoteWithPremiumMarketDeadline() {
+		return voteWithPremiumMarketDeadline == null ? Optional.empty() : Optional.of(voteWithPremiumMarketDeadline);
 	}
 
-	public void setVoteWithPremiumMarketDeadline(DateFormat29Choice voteWithPremiumMarketDeadline) {
+	public VoteParameters4 setVoteWithPremiumMarketDeadline(DateFormat29Choice voteWithPremiumMarketDeadline) {
 		this.voteWithPremiumMarketDeadline = voteWithPremiumMarketDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlVtngRqrmnts")
-	public Max350Text getAdditionalVotingRequirements() {
-		return additionalVotingRequirements;
+	public Optional<Max350Text> getAdditionalVotingRequirements() {
+		return additionalVotingRequirements == null ? Optional.empty() : Optional.of(additionalVotingRequirements);
 	}
 
-	public void setAdditionalVotingRequirements(Max350Text additionalVotingRequirements) {
+	public VoteParameters4 setAdditionalVotingRequirements(Max350Text additionalVotingRequirements) {
 		this.additionalVotingRequirements = additionalVotingRequirements;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsInstrInvldtyInd")
-	public YesNoIndicator getPreviousInstructionInvalidityIndicator() {
-		return previousInstructionInvalidityIndicator;
+	public Optional<YesNoIndicator> getPreviousInstructionInvalidityIndicator() {
+		return previousInstructionInvalidityIndicator == null ? Optional.empty() : Optional.of(previousInstructionInvalidityIndicator);
 	}
 
-	public void setPreviousInstructionInvalidityIndicator(YesNoIndicator previousInstructionInvalidityIndicator) {
+	public VoteParameters4 setPreviousInstructionInvalidityIndicator(YesNoIndicator previousInstructionInvalidityIndicator) {
 		this.previousInstructionInvalidityIndicator = previousInstructionInvalidityIndicator;
+		return this;
 	}
 }

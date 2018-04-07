@@ -17,19 +17,22 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.seev.CorporateActionEventProcessingStatusAdviceV06;
-import com.tools20022.repository.area.seev.CorporateActionInstructionCancellationRequestStatusAdviceV07;
-import com.tools20022.repository.area.seev.CorporateActionInstructionStatusAdviceV08;
+import com.tools20022.repository.area.seev.CorporateActionInstructionCancellationRequestStatusAdviceV08;
+import com.tools20022.repository.area.seev.CorporateActionInstructionStatusAdviceV09;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.CorporateActionEvent;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,19 +66,19 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.seev.CorporateActionEventProcessingStatusAdviceV06#mmAdditionalInformation
  * CorporateActionEventProcessingStatusAdviceV06.mmAdditionalInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionCancellationRequestStatusAdviceV07#mmAdditionalInformation
- * CorporateActionInstructionCancellationRequestStatusAdviceV07.
- * mmAdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionStatusAdviceV09#mmAdditionalInformation
+ * CorporateActionInstructionStatusAdviceV09.mmAdditionalInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionStatusAdviceV08#mmAdditionalInformation
- * CorporateActionInstructionStatusAdviceV08.mmAdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionCancellationRequestStatusAdviceV08#mmAdditionalInformation
+ * CorporateActionInstructionCancellationRequestStatusAdviceV08.
+ * mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,17 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides additional information such as the information conditions."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionNarrative10", propOrder = {"additionalText", "partyContactNarrative"})
 public class CorporateActionNarrative10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AddtlTxt")
 	protected List<Max350Text> additionalText;
 	/**
-	 * Provides additional information or specifies in more detail the content
-	 * of a message. This field may only be used when the information to be
-	 * transmitted, cannot be coded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,6 +114,9 @@ public class CorporateActionNarrative10 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "AddtlTxt"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70E::ADTX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -124,24 +129,34 @@ public class CorporateActionNarrative10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalText = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative10, List<Max350Text>> mmAdditionalText = new MMMessageAttribute<CorporateActionNarrative10, List<Max350Text>>() {
 		{
-			componentContext_lazy = () -> CorporateActionNarrative10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative10.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlTxt";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70E::ADTX"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalText";
 			definition = "Provides additional information or specifies in more detail the content of a message. This field may only be used when the information to be transmitted, cannot be coded.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public List<Max350Text> getValue(CorporateActionNarrative10 obj) {
+			return obj.getAdditionalText();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative10 obj, List<Max350Text> value) {
+			obj.setAdditionalText(value);
+		}
 	};
+	@XmlElement(name = "PtyCtctNrrtv")
 	protected List<Max350Text> partyContactNarrative;
 	/**
-	 * Provides additional information regarding the party, for example, the
-	 * contact unit or person responsible for the transaction identified in the
-	 * message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,6 +176,9 @@ public class CorporateActionNarrative10 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PtyCtctNrrtv"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70E::PACO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -173,28 +191,39 @@ public class CorporateActionNarrative10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartyContactNarrative = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative10, List<Max350Text>> mmPartyContactNarrative = new MMMessageAttribute<CorporateActionNarrative10, List<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Role.mmContactPersonRole;
-			componentContext_lazy = () -> CorporateActionNarrative10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative10.mmObject();
 			isDerived = false;
 			xmlTag = "PtyCtctNrrtv";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70E::PACO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartyContactNarrative";
 			definition = "Provides additional information regarding the party, for example, the contact unit or person responsible for the transaction identified in the message.";
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public List<Max350Text> getValue(CorporateActionNarrative10 obj) {
+			return obj.getPartyContactNarrative();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative10 obj, List<Max350Text> value) {
+			obj.setPartyContactNarrative(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionNarrative10.mmAdditionalText, CorporateActionNarrative10.mmPartyContactNarrative);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionEventProcessingStatusAdviceV06.mmAdditionalInformation, CorporateActionInstructionCancellationRequestStatusAdviceV07.mmAdditionalInformation,
-						CorporateActionInstructionStatusAdviceV08.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionNarrative10.mmAdditionalText, com.tools20022.repository.msg.CorporateActionNarrative10.mmPartyContactNarrative);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionEventProcessingStatusAdviceV06.mmAdditionalInformation, CorporateActionInstructionStatusAdviceV09.mmAdditionalInformation,
+						CorporateActionInstructionCancellationRequestStatusAdviceV08.mmAdditionalInformation);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNarrative10";
 				definition = "Provides additional information such as the information conditions.";
@@ -203,21 +232,21 @@ public class CorporateActionNarrative10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AddtlTxt")
 	public List<Max350Text> getAdditionalText() {
-		return additionalText;
+		return additionalText == null ? additionalText = new ArrayList<>() : additionalText;
 	}
 
-	public void setAdditionalText(List<Max350Text> additionalText) {
-		this.additionalText = additionalText;
+	public CorporateActionNarrative10 setAdditionalText(List<Max350Text> additionalText) {
+		this.additionalText = Objects.requireNonNull(additionalText);
+		return this;
 	}
 
-	@XmlElement(name = "PtyCtctNrrtv")
 	public List<Max350Text> getPartyContactNarrative() {
-		return partyContactNarrative;
+		return partyContactNarrative == null ? partyContactNarrative = new ArrayList<>() : partyContactNarrative;
 	}
 
-	public void setPartyContactNarrative(List<Max350Text> partyContactNarrative) {
-		this.partyContactNarrative = partyContactNarrative;
+	public CorporateActionNarrative10 setPartyContactNarrative(List<Max350Text> partyContactNarrative) {
+		this.partyContactNarrative = Objects.requireNonNull(partyContactNarrative);
+		return this;
 	}
 }

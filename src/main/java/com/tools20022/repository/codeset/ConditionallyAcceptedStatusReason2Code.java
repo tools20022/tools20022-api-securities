@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConditionallyAcceptedStatusReason2Code#AwaitingDocuments
- * ConditionallyAcceptedStatusReason2Code.mmAwaitingDocuments}</li>
+ * ConditionallyAcceptedStatusReason2Code.AwaitingDocuments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConditionallyAcceptedStatusReason2Code#AwaitingRedemptionMoney
- * ConditionallyAcceptedStatusReason2Code.mmAwaitingRedemptionMoney}</li>
+ * ConditionallyAcceptedStatusReason2Code.AwaitingRedemptionMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConditionallyAcceptedStatusReason2Code#AwaitingSubscriptionMoney
- * ConditionallyAcceptedStatusReason2Code.mmAwaitingSubscriptionMoney}</li>
+ * ConditionallyAcceptedStatusReason2Code.AwaitingSubscriptionMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConditionallyAcceptedStatusReason2Code#PossibleDuplicate
- * ConditionallyAcceptedStatusReason2Code.mmPossibleDuplicate}</li>
+ * ConditionallyAcceptedStatusReason2Code.PossibleDuplicate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConditionallyAcceptedStatusReason2Code#TradingLimitExceeded
- * ConditionallyAcceptedStatusReason2Code.mmTradingLimitExceeded}</li>
+ * ConditionallyAcceptedStatusReason2Code.TradingLimitExceeded}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class ConditionallyAcceptedStatusReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DOCC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConditionallyAcceptedStatusReason2Code";

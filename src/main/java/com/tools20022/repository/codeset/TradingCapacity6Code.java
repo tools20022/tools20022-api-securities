@@ -37,25 +37,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#Agent
- * TradingCapacity6Code.mmAgent}</li>
+ * TradingCapacity6Code.Agent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#ActingAgent
- * TradingCapacity6Code.mmActingAgent}</li>
+ * TradingCapacity6Code.ActingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#CrossingAgent
- * TradingCapacity6Code.mmCrossingAgent}</li>
+ * TradingCapacity6Code.CrossingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#CrossingPrincipal
- * TradingCapacity6Code.mmCrossingPrincipal}</li>
+ * TradingCapacity6Code.CrossingPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#OtherAgent
- * TradingCapacity6Code.mmOtherAgent}</li>
+ * TradingCapacity6Code.OtherAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#PrincipalAgent
- * TradingCapacity6Code.mmPrincipalAgent}</li>
+ * TradingCapacity6Code.PrincipalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity6Code#Principal
- * TradingCapacity6Code.mmPrincipal}</li>
+ * TradingCapacity6Code.Principal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -262,7 +262,7 @@ public class TradingCapacity6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AGEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingCapacity6Code";

@@ -38,70 +38,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#CashNotReceived
- * ConfirmationCancellationReason1Code.mmCashNotReceived}</li>
+ * ConfirmationCancellationReason1Code.CashNotReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#ConfirmationReplacement
- * ConfirmationCancellationReason1Code.mmConfirmationReplacement}</li>
+ * ConfirmationCancellationReason1Code.ConfirmationReplacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectBackEndLoadAmount
- * ConfirmationCancellationReason1Code.mmIncorrectBackEndLoadAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectBackEndLoadAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectCashAmount
- * ConfirmationCancellationReason1Code.mmIncorrectCashAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectCashAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectDiscountAmount
- * ConfirmationCancellationReason1Code.mmIncorrectDiscountAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectDiscountAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectDiscountAmountCurrency
- * ConfirmationCancellationReason1Code.mmIncorrectDiscountAmountCurrency}</li>
+ * ConfirmationCancellationReason1Code.IncorrectDiscountAmountCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectExchangeRate
- * ConfirmationCancellationReason1Code.mmIncorrectExchangeRate}</li>
+ * ConfirmationCancellationReason1Code.IncorrectExchangeRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectFeeOrCommission
- * ConfirmationCancellationReason1Code.mmIncorrectFeeOrCommission}</li>
+ * ConfirmationCancellationReason1Code.IncorrectFeeOrCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectFinancialInstrumentQuantity
- * ConfirmationCancellationReason1Code.mmIncorrectFinancialInstrumentQuantity}</li>
+ * ConfirmationCancellationReason1Code.IncorrectFinancialInstrumentQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectFrontEndLoadAmount
- * ConfirmationCancellationReason1Code.mmIncorrectFrontEndLoadAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectFrontEndLoadAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectGrossAmount
- * ConfirmationCancellationReason1Code.mmIncorrectGrossAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectGrossAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectGrossAmountCurrency
- * ConfirmationCancellationReason1Code.mmIncorrectGrossAmountCurrency}</li>
+ * ConfirmationCancellationReason1Code.IncorrectGrossAmountCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectNetAmount
- * ConfirmationCancellationReason1Code.mmIncorrectNetAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectNetAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectNetAmountCurrency
- * ConfirmationCancellationReason1Code.mmIncorrectNetAmountCurrency}</li>
+ * ConfirmationCancellationReason1Code.IncorrectNetAmountCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectOperation
- * ConfirmationCancellationReason1Code.mmIncorrectOperation}</li>
+ * ConfirmationCancellationReason1Code.IncorrectOperation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectQuantityUnitsOrCash
- * ConfirmationCancellationReason1Code.mmIncorrectQuantityUnitsOrCash}</li>
+ * ConfirmationCancellationReason1Code.IncorrectQuantityUnitsOrCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectSettlementAmount
- * ConfirmationCancellationReason1Code.mmIncorrectSettlementAmount}</li>
+ * ConfirmationCancellationReason1Code.IncorrectSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectSettlementAmountCurrency
- * ConfirmationCancellationReason1Code.mmIncorrectSettlementAmountCurrency}</li>
+ * ConfirmationCancellationReason1Code.IncorrectSettlementAmountCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectSettlementDate
- * ConfirmationCancellationReason1Code.mmIncorrectSettlementDate}</li>
+ * ConfirmationCancellationReason1Code.IncorrectSettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectSettlementMethod
- * ConfirmationCancellationReason1Code.mmIncorrectSettlementMethod}</li>
+ * ConfirmationCancellationReason1Code.IncorrectSettlementMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#IncorrectTradeDate
- * ConfirmationCancellationReason1Code.mmIncorrectTradeDate}</li>
+ * ConfirmationCancellationReason1Code.IncorrectTradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ConfirmationCancellationReason1Code#InvalidReference
- * ConfirmationCancellationReason1Code.mmInvalidReference}</li>
+ * ConfirmationCancellationReason1Code.InvalidReference}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -110,8 +110,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -662,7 +662,7 @@ public class ConfirmationCancellationReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConfirmationCancellationReason1Code";
 				definition = "Specifies the reason why a confirmation is cancelled.";

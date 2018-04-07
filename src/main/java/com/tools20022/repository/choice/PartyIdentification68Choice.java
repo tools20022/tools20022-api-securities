@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -32,6 +33,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -77,18 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of identification of a party."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "PartyIdentification68Choice", propOrder = {"BIC", "nameAndAddress", "country"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "PartyIdentification68Choice", propOrder = {"bIC", "nameAndAddress", "country"})
 public class PartyIdentification68Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BIC", required = true)
 	protected AnyBICIdentifier bIC;
 	/**
-	 * Code allocated to a financial or non-financial institution by the ISO
-	 * 9362 Registration Authority, as described in ISO 9362
-	 * "Banking - Banking telecommunication messages - Business identifier code (BIC)"
-	 * .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,6 +109,9 @@ public class PartyIdentification68Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "BIC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95P:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -121,12 +124,13 @@ public class PartyIdentification68Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBIC = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification68Choice, AnyBICIdentifier> mmBIC = new MMMessageAttribute<PartyIdentification68Choice, AnyBICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmBICFI;
-			componentContext_lazy = () -> PartyIdentification68Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification68Choice.mmObject();
 			isDerived = false;
 			xmlTag = "BIC";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95P:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BIC";
 			definition = "Code allocated to a financial or non-financial institution by the ISO 9362 Registration Authority, as described in ISO 9362 \"Banking - Banking telecommunication messages - Business identifier code (BIC)\".";
@@ -134,11 +138,22 @@ public class PartyIdentification68Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public AnyBICIdentifier getValue(PartyIdentification68Choice obj) {
+			return obj.getBIC();
+		}
+
+		@Override
+		public void setValue(PartyIdentification68Choice obj, AnyBICIdentifier value) {
+			obj.setBIC(value);
+		}
 	};
+	@XmlElement(name = "NmAndAdr", required = true)
 	protected NameAndAddress13 nameAndAddress;
 	/**
-	 * Identification of a party with its name and address in free text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,6 +174,9 @@ public class PartyIdentification68Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "NmAndAdr"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95Q:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -170,12 +188,13 @@ public class PartyIdentification68Choice {
 	 * "Identification of a party with its name and address in free text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameAndAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification68Choice, NameAndAddress13> mmNameAndAddress = new MMMessageAttribute<PartyIdentification68Choice, NameAndAddress13>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification68Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification68Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95Q:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NameAndAddress";
 			definition = "Identification of a party with its name and address in free text.";
@@ -183,11 +202,22 @@ public class PartyIdentification68Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> NameAndAddress13.mmObject();
 		}
+
+		@Override
+		public NameAndAddress13 getValue(PartyIdentification68Choice obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(PartyIdentification68Choice obj, NameAndAddress13 value) {
+			obj.setNameAndAddress(value);
+		}
 	};
+	@XmlElement(name = "Ctry", required = true)
 	protected CountryCode country;
 	/**
-	 * Nation with its own government, occupying a particular territory.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,6 +237,9 @@ public class PartyIdentification68Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Ctry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95C:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -218,12 +251,13 @@ public class PartyIdentification68Choice {
 	 * "Nation with its own government, occupying a particular territory."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification68Choice, CountryCode> mmCountry = new MMMessageAttribute<PartyIdentification68Choice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> PartyIdentification68Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification68Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95C:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Country";
 			definition = "Nation with its own government, occupying a particular territory.";
@@ -231,14 +265,25 @@ public class PartyIdentification68Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(PartyIdentification68Choice obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(PartyIdentification68Choice obj, CountryCode value) {
+			obj.setCountry(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyIdentification68Choice.mmBIC, PartyIdentification68Choice.mmNameAndAddress, PartyIdentification68Choice.mmCountry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PartyIdentification68Choice.mmBIC, com.tools20022.repository.choice.PartyIdentification68Choice.mmNameAndAddress,
+						com.tools20022.repository.choice.PartyIdentification68Choice.mmCountry);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -254,30 +299,30 @@ public class PartyIdentification68Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BIC", required = true)
 	public AnyBICIdentifier getBIC() {
 		return bIC;
 	}
 
-	public void setBIC(AnyBICIdentifier bIC) {
-		this.bIC = bIC;
+	public PartyIdentification68Choice setBIC(AnyBICIdentifier bIC) {
+		this.bIC = Objects.requireNonNull(bIC);
+		return this;
 	}
 
-	@XmlElement(name = "NmAndAdr", required = true)
 	public NameAndAddress13 getNameAndAddress() {
 		return nameAndAddress;
 	}
 
-	public void setNameAndAddress(NameAndAddress13 nameAndAddress) {
-		this.nameAndAddress = nameAndAddress;
+	public PartyIdentification68Choice setNameAndAddress(NameAndAddress13 nameAndAddress) {
+		this.nameAndAddress = Objects.requireNonNull(nameAndAddress);
+		return this;
 	}
 
-	@XmlElement(name = "Ctry", required = true)
 	public CountryCode getCountry() {
 		return country;
 	}
 
-	public void setCountry(CountryCode country) {
-		this.country = country;
+	public PartyIdentification68Choice setCountry(CountryCode country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 }

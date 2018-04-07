@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.GenericIdentification36;
 import com.tools20022.repository.msg.NameAndAddress6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,16 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * PartyIdentification33Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyIdentification100Choice", propOrder = {"anyBIC", "proprietaryIdentification", "nameAndAddress"})
 public class PartyIdentification100Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AnyBIC", required = true)
 	protected AnyBICIdentifier anyBIC;
 	/**
-	 * Unique and unambiguous identifier for an organisation that is allocated
-	 * by an institution, for example, Dun &amp; Bradstreet Identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,10 +124,10 @@ public class PartyIdentification100Choice {
 	 * PartyIdentification33Choice.mmAnyBIC}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAnyBIC = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification100Choice, AnyBICIdentifier> mmAnyBIC = new MMMessageAttribute<PartyIdentification100Choice, AnyBICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmAnyBIC;
-			componentContext_lazy = () -> PartyIdentification100Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification100Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AnyBIC";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,12 +138,22 @@ public class PartyIdentification100Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public AnyBICIdentifier getValue(PartyIdentification100Choice obj) {
+			return obj.getAnyBIC();
+		}
+
+		@Override
+		public void setValue(PartyIdentification100Choice obj, AnyBICIdentifier value) {
+			obj.setAnyBIC(value);
+		}
 	};
+	@XmlElement(name = "PrtryId", required = true)
 	protected GenericIdentification36 proprietaryIdentification;
 	/**
-	 * Unique and unambiguous identifier, as assigned to a financial institution
-	 * using a proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,10 +191,10 @@ public class PartyIdentification100Choice {
 	 * PartyIdentification33Choice.mmProprietaryIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification100Choice, GenericIdentification36> mmProprietaryIdentification = new MMMessageAttribute<PartyIdentification100Choice, GenericIdentification36>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PartyIdentification100Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification100Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,12 +205,22 @@ public class PartyIdentification100Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification36.mmObject();
 		}
+
+		@Override
+		public GenericIdentification36 getValue(PartyIdentification100Choice obj) {
+			return obj.getProprietaryIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification100Choice obj, GenericIdentification36 value) {
+			obj.setProprietaryIdentification(value);
+		}
 	};
+	@XmlElement(name = "NmAndAdr", required = true)
 	protected NameAndAddress6 nameAndAddress;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,10 +257,10 @@ public class PartyIdentification100Choice {
 	 * PartyIdentification33Choice.mmNameAndAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameAndAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification100Choice, NameAndAddress6> mmNameAndAddress = new MMMessageAttribute<PartyIdentification100Choice, NameAndAddress6>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification100Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification100Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,14 +271,25 @@ public class PartyIdentification100Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> NameAndAddress6.mmObject();
 		}
+
+		@Override
+		public NameAndAddress6 getValue(PartyIdentification100Choice obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(PartyIdentification100Choice obj, NameAndAddress6 value) {
+			obj.setNameAndAddress(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyIdentification100Choice.mmAnyBIC, PartyIdentification100Choice.mmProprietaryIdentification, PartyIdentification100Choice.mmNameAndAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PartyIdentification100Choice.mmAnyBIC, com.tools20022.repository.choice.PartyIdentification100Choice.mmProprietaryIdentification,
+						com.tools20022.repository.choice.PartyIdentification100Choice.mmNameAndAddress);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentification100Choice";
 				definition = "Identification of a party.";
@@ -267,30 +299,30 @@ public class PartyIdentification100Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AnyBIC", required = true)
 	public AnyBICIdentifier getAnyBIC() {
 		return anyBIC;
 	}
 
-	public void setAnyBIC(AnyBICIdentifier anyBIC) {
-		this.anyBIC = anyBIC;
+	public PartyIdentification100Choice setAnyBIC(AnyBICIdentifier anyBIC) {
+		this.anyBIC = Objects.requireNonNull(anyBIC);
+		return this;
 	}
 
-	@XmlElement(name = "PrtryId", required = true)
 	public GenericIdentification36 getProprietaryIdentification() {
 		return proprietaryIdentification;
 	}
 
-	public void setProprietaryIdentification(GenericIdentification36 proprietaryIdentification) {
-		this.proprietaryIdentification = proprietaryIdentification;
+	public PartyIdentification100Choice setProprietaryIdentification(GenericIdentification36 proprietaryIdentification) {
+		this.proprietaryIdentification = Objects.requireNonNull(proprietaryIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "NmAndAdr", required = true)
 	public NameAndAddress6 getNameAndAddress() {
 		return nameAndAddress;
 	}
 
-	public void setNameAndAddress(NameAndAddress6 nameAndAddress) {
-		this.nameAndAddress = nameAndAddress;
+	public PartyIdentification100Choice setNameAndAddress(NameAndAddress6 nameAndAddress) {
+		this.nameAndAddress = Objects.requireNonNull(nameAndAddress);
+		return this;
 	}
 }

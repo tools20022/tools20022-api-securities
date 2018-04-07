@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#UnrecognisedDelivery
- * DeliveryReturn1Code.mmUnrecognisedDelivery}</li>
+ * DeliveryReturn1Code.UnrecognisedDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#WrongQuantity
- * DeliveryReturn1Code.mmWrongQuantity}</li>
+ * DeliveryReturn1Code.WrongQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#WrongSettlementAmount
- * DeliveryReturn1Code.mmWrongSettlementAmount}</li>
+ * DeliveryReturn1Code.WrongSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#PartialDelivery
- * DeliveryReturn1Code.mmPartialDelivery}</li>
+ * DeliveryReturn1Code.PartialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#AccountMissing
- * DeliveryReturn1Code.mmAccountMissing}</li>
+ * DeliveryReturn1Code.AccountMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#DueBiillMissing
- * DeliveryReturn1Code.mmDueBiillMissing}</li>
+ * DeliveryReturn1Code.DueBiillMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeliveryReturn1Code#PartialReturn
- * DeliveryReturn1Code.mmPartialReturn}</li>
+ * DeliveryReturn1Code.PartialReturn}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -263,7 +263,7 @@ public class DeliveryReturn1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNRE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryReturn1Code";

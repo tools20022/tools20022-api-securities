@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,16 +39,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderCancellationStatus2Code#SentToNextParty
- * OrderCancellationStatus2Code.mmSentToNextParty}</li>
+ * OrderCancellationStatus2Code.SentToNextParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderCancellationStatus2Code#Received
- * OrderCancellationStatus2Code.mmReceived}</li>
+ * OrderCancellationStatus2Code.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderCancellationStatus2Code#CancellationPending
- * OrderCancellationStatus2Code.mmCancellationPending}</li>
+ * OrderCancellationStatus2Code.CancellationPending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderCancellationStatus2Code#CancellationCompleted
- * OrderCancellationStatus2Code.mmCancellationCompleted}</li>
+ * OrderCancellationStatus2Code.CancellationCompleted}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -130,6 +131,9 @@ public class OrderCancellationStatus2Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.OrderCancellationStatus2Code
 	 * OrderCancellationStatus2Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: FIX 39</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -139,6 +143,7 @@ public class OrderCancellationStatus2Code extends MMCode {
 	 */
 	public static final OrderCancellationStatus2Code CancellationPending = new OrderCancellationStatus2Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "FIX 39"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CancellationPending";
 			owner_lazy = () -> com.tools20022.repository.codeset.OrderCancellationStatus2Code.mmObject();
@@ -177,7 +182,7 @@ public class OrderCancellationStatus2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderCancellationStatus2Code";
 				definition = "Specifies the current status of the order cancellation request.";

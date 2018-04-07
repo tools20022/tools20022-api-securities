@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -26,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification38;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BusinessProcessType1Choice", propOrder = {"code", "proprietary"})
 public class BusinessProcessType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected BusinessProcessType1Code code;
 	/**
-	 * Business process type is identified using a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,10 +111,10 @@ public class BusinessProcessType1Choice {
 	 * definition} = "Business process type is identified using a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessProcessType1Choice, BusinessProcessType1Code> mmCode = new MMMessageAttribute<BusinessProcessType1Choice, BusinessProcessType1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmBusinessProcessType;
-			componentContext_lazy = () -> BusinessProcessType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BusinessProcessType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +124,22 @@ public class BusinessProcessType1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> BusinessProcessType1Code.mmObject();
 		}
+
+		@Override
+		public BusinessProcessType1Code getValue(BusinessProcessType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(BusinessProcessType1Choice obj, BusinessProcessType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification38 proprietary;
 	/**
-	 * Type of business process expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,6 +160,9 @@ public class BusinessProcessType1Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::LEOG/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -157,12 +174,13 @@ public class BusinessProcessType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessProcessType1Choice, GenericIdentification38> mmProprietary = new MMMessageAttribute<BusinessProcessType1Choice, GenericIdentification38>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmBusinessProcessType;
-			componentContext_lazy = () -> BusinessProcessType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BusinessProcessType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::LEOG/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Type of business process expressed as a proprietary code.";
@@ -170,14 +188,24 @@ public class BusinessProcessType1Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification38.mmObject();
 		}
+
+		@Override
+		public GenericIdentification38 getValue(BusinessProcessType1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(BusinessProcessType1Choice obj, GenericIdentification38 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BusinessProcessType1Choice.mmCode, BusinessProcessType1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.BusinessProcessType1Choice.mmCode, com.tools20022.repository.choice.BusinessProcessType1Choice.mmProprietary);
 				trace_lazy = () -> SecuritiesOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessProcessType1Choice";
 				definition = "Choice between a code or a data source scheme to determine the business process type.";
@@ -186,21 +214,21 @@ public class BusinessProcessType1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public BusinessProcessType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(BusinessProcessType1Code code) {
-		this.code = code;
+	public BusinessProcessType1Choice setCode(BusinessProcessType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification38 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification38 proprietary) {
-		this.proprietary = proprietary;
+	public BusinessProcessType1Choice setProprietary(GenericIdentification38 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

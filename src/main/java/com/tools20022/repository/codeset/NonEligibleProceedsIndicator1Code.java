@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEligibleProceedsIndicator1Code#NonEligibleCurrency
- * NonEligibleProceedsIndicator1Code.mmNonEligibleCurrency}</li>
+ * NonEligibleProceedsIndicator1Code.NonEligibleCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEligibleProceedsIndicator1Code#AccountLimitation
- * NonEligibleProceedsIndicator1Code.mmAccountLimitation}</li>
+ * NonEligibleProceedsIndicator1Code.AccountLimitation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEligibleProceedsIndicator1Code#OtherNonEligibility
- * NonEligibleProceedsIndicator1Code.mmOtherNonEligibility}</li>
+ * NonEligibleProceedsIndicator1Code.OtherNonEligibility}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -157,7 +157,7 @@ public class NonEligibleProceedsIndicator1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NELC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonEligibleProceedsIndicator1Code";

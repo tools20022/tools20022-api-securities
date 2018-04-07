@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#Redemption
- * TransactionType2Code.mmRedemption}</li>
+ * TransactionType2Code.Redemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#Subscription
- * TransactionType2Code.mmSubscription}</li>
+ * TransactionType2Code.Subscription}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#SubscriptionSavingsPlan
- * TransactionType2Code.mmSubscriptionSavingsPlan}</li>
+ * TransactionType2Code.SubscriptionSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#RedemptionWithdrawingPlan
- * TransactionType2Code.mmRedemptionWithdrawingPlan}</li>
+ * TransactionType2Code.RedemptionWithdrawingPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#TransferIn
- * TransactionType2Code.mmTransferIn}</li>
+ * TransactionType2Code.TransferIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#TransferOut
- * TransactionType2Code.mmTransferOut}</li>
+ * TransactionType2Code.TransferOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#SwitchIn
- * TransactionType2Code.mmSwitchIn}</li>
+ * TransactionType2Code.SwitchIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#SwitchOut
- * TransactionType2Code.mmSwitchOut}</li>
+ * TransactionType2Code.SwitchOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#SubscriptionAssetAllocation
- * TransactionType2Code.mmSubscriptionAssetAllocation}</li>
+ * TransactionType2Code.SubscriptionAssetAllocation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionType2Code#RedemptionAssetAllocation
- * TransactionType2Code.mmRedemptionAssetAllocation}</li>
+ * TransactionType2Code.RedemptionAssetAllocation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -344,7 +344,7 @@ public class TransactionType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("REDM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionType2Code";

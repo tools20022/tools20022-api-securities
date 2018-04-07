@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Status advising on the processing of the cancellation request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CancellationProcessingStatus1", propOrder = {"status", "additionalInformation"})
 public class CancellationProcessingStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Sts", required = true)
 	protected CancellationStatus3Code status;
 	/**
-	 * Status of the request for cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +110,10 @@ public class CancellationProcessingStatus1 {
 	 * definition} = "Status of the request for cancellation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CancellationProcessingStatus1, CancellationStatus3Code> mmStatus = new MMMessageAttribute<CancellationProcessingStatus1, CancellationStatus3Code>() {
 		{
 			businessElementTrace_lazy = () -> MeetingStatus.mmInstructionCancellationStatus;
-			componentContext_lazy = () -> CancellationProcessingStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CancellationProcessingStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +123,22 @@ public class CancellationProcessingStatus1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CancellationStatus3Code.mmObject();
 		}
+
+		@Override
+		public CancellationStatus3Code getValue(CancellationProcessingStatus1 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(CancellationProcessingStatus1 obj, CancellationStatus3Code value) {
+			obj.setStatus(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +168,10 @@ public class CancellationProcessingStatus1 {
 	 * definition} = "Additional information about the status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CancellationProcessingStatus1, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<CancellationProcessingStatus1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
-			componentContext_lazy = () -> CancellationProcessingStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CancellationProcessingStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,14 +181,24 @@ public class CancellationProcessingStatus1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CancellationProcessingStatus1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(CancellationProcessingStatus1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CancellationProcessingStatus1.mmStatus, CancellationProcessingStatus1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CancellationProcessingStatus1.mmStatus, com.tools20022.repository.msg.CancellationProcessingStatus1.mmAdditionalInformation);
 				trace_lazy = () -> MeetingStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancellationProcessingStatus1";
 				definition = "Status advising on the processing of the cancellation request.";
@@ -183,21 +207,21 @@ public class CancellationProcessingStatus1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public CancellationStatus3Code getStatus() {
 		return status;
 	}
 
-	public void setStatus(CancellationStatus3Code status) {
-		this.status = status;
+	public CancellationProcessingStatus1 setStatus(CancellationStatus3Code status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public CancellationProcessingStatus1 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

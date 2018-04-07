@@ -38,67 +38,67 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#AccountServicerDeadlineMissed
- * RejectionReason46Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason46Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#IncorrectCertification
- * RejectionReason46Code.mmIncorrectCertification}</li>
+ * RejectionReason46Code.IncorrectCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#InvalidForTaxAuthorities
- * RejectionReason46Code.mmInvalidForTaxAuthorities}</li>
+ * RejectionReason46Code.InvalidForTaxAuthorities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#InvalidOptionType
- * RejectionReason46Code.mmInvalidOptionType}</li>
+ * RejectionReason46Code.InvalidOptionType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#InvalidReference
- * RejectionReason46Code.mmInvalidReference}</li>
+ * RejectionReason46Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#InvalidSecurity
- * RejectionReason46Code.mmInvalidSecurity}</li>
+ * RejectionReason46Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#LackofSecurities
- * RejectionReason46Code.mmLackofSecurities}</li>
+ * RejectionReason46Code.LackofSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#MarketDeadlineMissed
- * RejectionReason46Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason46Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#Mismatch
- * RejectionReason46Code.mmMismatch}</li>
+ * RejectionReason46Code.Mismatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#MissingBeneficiaryOwnerDetails
- * RejectionReason46Code.mmMissingBeneficiaryOwnerDetails}</li>
+ * RejectionReason46Code.MissingBeneficiaryOwnerDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#OptionCancelled
- * RejectionReason46Code.mmOptionCancelled}</li>
+ * RejectionReason46Code.OptionCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#OptionInactive
- * RejectionReason46Code.mmOptionInactive}</li>
+ * RejectionReason46Code.OptionInactive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#OptionNumberRejection
- * RejectionReason46Code.mmOptionNumberRejection}</li>
+ * RejectionReason46Code.OptionNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#Other
- * RejectionReason46Code.mmOther}</li>
+ * RejectionReason46Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#QuantityRejection
- * RejectionReason46Code.mmQuantityRejection}</li>
+ * RejectionReason46Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#RefusedByTaxAuthorities
- * RejectionReason46Code.mmRefusedByTaxAuthorities}</li>
+ * RejectionReason46Code.RefusedByTaxAuthorities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#SafekeepingAccountRejection
- * RejectionReason46Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason46Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#UnrecognisedIdentification
- * RejectionReason46Code.mmUnrecognisedIdentification}</li>
+ * RejectionReason46Code.UnrecognisedIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#AmountRejection
- * RejectionReason46Code.mmAmountRejection}</li>
+ * RejectionReason46Code.AmountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#CurrencyRejection
- * RejectionReason46Code.mmCurrencyRejection}</li>
+ * RejectionReason46Code.CurrencyRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason46Code#InstructionTypeRejection
- * RejectionReason46Code.mmInstructionTypeRejection}</li>
+ * RejectionReason46Code.InstructionTypeRejection}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -107,8 +107,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -636,7 +636,7 @@ public class RejectionReason46Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason46Code";
 				definition = "Specifies the reason why the instruction request has a rejected status.";

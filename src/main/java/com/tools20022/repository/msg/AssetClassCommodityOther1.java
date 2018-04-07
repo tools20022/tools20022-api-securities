@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.Commodity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,16 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Defines commodity attributes of a derivative where the type is other."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AssetClassCommodityOther1", propOrder = "baseProduct")
 public class AssetClassCommodityOther1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BasePdct", required = true)
 	protected AssetClassProductType15Code baseProduct;
 	/**
-	 * Base product for the underlying asset class as specified in the
-	 * classification of commodities derivatives table.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,10 +105,10 @@ public class AssetClassCommodityOther1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AssetClassCommodityOther1, AssetClassProductType15Code> mmBaseProduct = new MMMessageAttribute<AssetClassCommodityOther1, AssetClassProductType15Code>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmBaseProduct;
-			componentContext_lazy = () -> AssetClassCommodityOther1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AssetClassCommodityOther1.mmObject();
 			isDerived = false;
 			xmlTag = "BasePdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,14 +118,24 @@ public class AssetClassCommodityOther1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AssetClassProductType15Code.mmObject();
 		}
+
+		@Override
+		public AssetClassProductType15Code getValue(AssetClassCommodityOther1 obj) {
+			return obj.getBaseProduct();
+		}
+
+		@Override
+		public void setValue(AssetClassCommodityOther1 obj, AssetClassProductType15Code value) {
+			obj.setBaseProduct(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AssetClassCommodityOther1.mmBaseProduct);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AssetClassCommodityOther1.mmBaseProduct);
 				trace_lazy = () -> Commodity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassCommodityOther1";
 				definition = "Defines commodity attributes of a derivative where the type is other.";
@@ -133,12 +144,12 @@ public class AssetClassCommodityOther1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BasePdct", required = true)
 	public AssetClassProductType15Code getBaseProduct() {
 		return baseProduct;
 	}
 
-	public void setBaseProduct(AssetClassProductType15Code baseProduct) {
-		this.baseProduct = baseProduct;
+	public AssetClassCommodityOther1 setBaseProduct(AssetClassProductType15Code baseProduct) {
+		this.baseProduct = Objects.requireNonNull(baseProduct);
+		return this;
 	}
 }

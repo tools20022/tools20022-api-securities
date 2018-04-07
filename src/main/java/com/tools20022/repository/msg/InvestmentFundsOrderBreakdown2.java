@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.SecuritiesOrder;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestmentFundsOrderBreakdown2", propOrder = {"orderBreakdownType", "amount"})
 public class InvestmentFundsOrderBreakdown2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrdrBrkdwnTp", required = true)
 	protected OrderBreakdownType1Choice orderBreakdownType;
 	/**
-	 * Type of order breakdown.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +111,10 @@ public class InvestmentFundsOrderBreakdown2 {
 	 * definition} = "Type of order breakdown."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderBreakdownType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundsOrderBreakdown2, OrderBreakdownType1Choice> mmOrderBreakdownType = new MMMessageAttribute<InvestmentFundsOrderBreakdown2, OrderBreakdownType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderType;
-			componentContext_lazy = () -> InvestmentFundsOrderBreakdown2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrBrkdwnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +124,22 @@ public class InvestmentFundsOrderBreakdown2 {
 			minOccurs = 1;
 			complexType_lazy = () -> OrderBreakdownType1Choice.mmObject();
 		}
+
+		@Override
+		public OrderBreakdownType1Choice getValue(InvestmentFundsOrderBreakdown2 obj) {
+			return obj.getOrderBreakdownType();
+		}
+
+		@Override
+		public void setValue(InvestmentFundsOrderBreakdown2 obj, OrderBreakdownType1Choice value) {
+			obj.setOrderBreakdownType(value);
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Portion of the net amount that is attributed to an order type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +171,10 @@ public class InvestmentFundsOrderBreakdown2 {
 	 * "Portion of the net amount that is attributed to an order type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundsOrderBreakdown2, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<InvestmentFundsOrderBreakdown2, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmOrderedAmount;
-			componentContext_lazy = () -> InvestmentFundsOrderBreakdown2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +184,24 @@ public class InvestmentFundsOrderBreakdown2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(InvestmentFundsOrderBreakdown2 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundsOrderBreakdown2 obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestmentFundsOrderBreakdown2.mmOrderBreakdownType, InvestmentFundsOrderBreakdown2.mmAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2.mmOrderBreakdownType, com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2.mmAmount);
 				trace_lazy = () -> InvestmentFundOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundsOrderBreakdown2";
 				definition = "An investor's instruction to either subscribe or redeem an amount of money or its equivalent, for example, other assets, into or out of an investment fund.";
@@ -187,21 +210,21 @@ public class InvestmentFundsOrderBreakdown2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrdrBrkdwnTp", required = true)
 	public OrderBreakdownType1Choice getOrderBreakdownType() {
 		return orderBreakdownType;
 	}
 
-	public void setOrderBreakdownType(OrderBreakdownType1Choice orderBreakdownType) {
-		this.orderBreakdownType = orderBreakdownType;
+	public InvestmentFundsOrderBreakdown2 setOrderBreakdownType(OrderBreakdownType1Choice orderBreakdownType) {
+		this.orderBreakdownType = Objects.requireNonNull(orderBreakdownType);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public InvestmentFundsOrderBreakdown2 setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 }

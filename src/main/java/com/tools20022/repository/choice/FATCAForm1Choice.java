@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FATCAForm1Choice", propOrder = {"code", "proprietary"})
 public class FATCAForm1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected FATCAFormType1Code code;
 	/**
-	 * Type of Foreign Account Tax Compliance Act (FATCA) form expressed as a
-	 * code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +120,10 @@ public class FATCAForm1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FATCAForm1Choice, FATCAFormType1Code> mmCode = new MMMessageAttribute<FATCAForm1Choice, FATCAFormType1Code>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentAccountPartyRole.mmFATCAFormType;
-			componentContext_lazy = () -> FATCAForm1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FATCAForm1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,12 +134,22 @@ public class FATCAForm1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> FATCAFormType1Code.mmObject();
 		}
+
+		@Override
+		public FATCAFormType1Code getValue(FATCAForm1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(FATCAForm1Choice obj, FATCAFormType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Type of Foreign Account Tax Compliance Act (FATCA) form expressed as a
-	 * proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,9 +184,9 @@ public class FATCAForm1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FATCAForm1Choice, GenericIdentification47> mmProprietary = new MMMessageAssociationEnd<FATCAForm1Choice, GenericIdentification47>() {
 		{
-			componentContext_lazy = () -> FATCAForm1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FATCAForm1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,14 +198,24 @@ public class FATCAForm1Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification47.mmObject();
 		}
+
+		@Override
+		public GenericIdentification47 getValue(FATCAForm1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(FATCAForm1Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FATCAForm1Choice.mmCode, FATCAForm1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.FATCAForm1Choice.mmCode, com.tools20022.repository.choice.FATCAForm1Choice.mmProprietary);
 				trace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FATCAForm1Choice";
 				definition = "Choice of formats for the type of Foreign Account Tax Compliance Act (FATCA) form.";
@@ -203,21 +224,21 @@ public class FATCAForm1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public FATCAFormType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(FATCAFormType1Code code) {
-		this.code = code;
+	public FATCAForm1Choice setCode(FATCAFormType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public FATCAForm1Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

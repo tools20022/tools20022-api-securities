@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#Conditional
- * OptionFeatures1Code.mmConditional}</li>
+ * OptionFeatures1Code.Conditional}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#MaximumCash
- * OptionFeatures1Code.mmMaximumCash}</li>
+ * OptionFeatures1Code.MaximumCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#MaximumSecurities
- * OptionFeatures1Code.mmMaximumSecurities}</li>
+ * OptionFeatures1Code.MaximumSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#OddLotPreference
- * OptionFeatures1Code.mmOddLotPreference}</li>
+ * OptionFeatures1Code.OddLotPreference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#Proration
- * OptionFeatures1Code.mmProration}</li>
+ * OptionFeatures1Code.Proration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#OverAndAbove
- * OptionFeatures1Code.mmOverAndAbove}</li>
+ * OptionFeatures1Code.OverAndAbove}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#QuantityToReceive
- * OptionFeatures1Code.mmQuantityToReceive}</li>
+ * OptionFeatures1Code.QuantityToReceive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionFeatures1Code#ReducedWithholdingTax
- * OptionFeatures1Code.mmReducedWithholdingTax}</li>
+ * OptionFeatures1Code.ReducedWithholdingTax}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,7 +83,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "OptionFeatures1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Specifies the  feature of an option."</li>
+ * definition} = "Specifies the feature of an option."</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -116,7 +116,7 @@ public class OptionFeatures1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.OptionFeatures6Code#Conditional
-	 * OptionFeatures6Code.mmConditional}</li>
+	 * OptionFeatures6Code.Conditional}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -149,7 +149,7 @@ public class OptionFeatures1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.OptionFeatures6Code#MaximumCash
-	 * OptionFeatures6Code.mmMaximumCash}</li>
+	 * OptionFeatures6Code.MaximumCash}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -182,7 +182,7 @@ public class OptionFeatures1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.OptionFeatures6Code#MaximumSecurities
-	 * OptionFeatures6Code.mmMaximumSecurities}</li>
+	 * OptionFeatures6Code.MaximumSecurities}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -215,7 +215,7 @@ public class OptionFeatures1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.OptionFeatures6Code#OddLotPreference
-	 * OptionFeatures6Code.mmOddLotPreference}</li>
+	 * OptionFeatures6Code.OddLotPreference}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -248,7 +248,7 @@ public class OptionFeatures1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.OptionFeatures6Code#Proration
-	 * OptionFeatures6Code.mmProration}</li>
+	 * OptionFeatures6Code.Proration}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -329,7 +329,7 @@ public class OptionFeatures1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.OptionFeatures6Code#ReducedWithholdingTax
-	 * OptionFeatures6Code.mmReducedWithholdingTax}</li>
+	 * OptionFeatures6Code.ReducedWithholdingTax}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -351,11 +351,11 @@ public class OptionFeatures1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("COND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionFeatures1Code";
-				definition = "Specifies the  feature of an option.";
+				definition = "Specifies the feature of an option.";
 				nextVersions_lazy = () -> Arrays.asList(OptionFeatures6Code.mmObject());
 				trace_lazy = () -> OptionFeaturesCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OptionFeatures1Code.Conditional, com.tools20022.repository.codeset.OptionFeatures1Code.MaximumCash,

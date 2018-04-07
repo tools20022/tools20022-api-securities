@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,11 +39,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.StatementBasisCode#Contractual
- * StatementBasisCode.mmContractual}</li>
+ * StatementBasisCode.Contractual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatementBasisCode#Settled
- * StatementBasisCode.mmSettled}</li>
+ * StatementBasisCode.Settled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.StatementBasisCode#Traded
- * StatementBasisCode.mmTraded}</li>
+ * StatementBasisCode.Traded}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,6 +93,9 @@ public class StatementBasisCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CONT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::STBA//CONT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -106,6 +110,7 @@ public class StatementBasisCode extends MMCode {
 	 */
 	public static final StatementBasisCode Contractual = new StatementBasisCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::STBA//CONT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Contractual";
 			definition = "The statement is based on contractual settlement date irrespective of settled data positions.";
@@ -125,6 +130,9 @@ public class StatementBasisCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SETT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::STBA//SETT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -139,6 +147,7 @@ public class StatementBasisCode extends MMCode {
 	 */
 	public static final StatementBasisCode Settled = new StatementBasisCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::STBA//SETT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settled";
 			definition = "The statement is based on settled date positions to the knowledge of the sender at the time of the statement preparation.";
@@ -157,6 +166,9 @@ public class StatementBasisCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TRAD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F:STBA::TRAD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -169,6 +181,7 @@ public class StatementBasisCode extends MMCode {
 	 */
 	public static final StatementBasisCode Traded = new StatementBasisCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F:STBA::TRAD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Traded";
 			definition = "The statement is based on trade date positions.";
@@ -184,7 +197,7 @@ public class StatementBasisCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CONT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementBasisCode";

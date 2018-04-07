@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max25Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -48,8 +49,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,16 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Transparency calculation specific details for a freight commodity."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CommodityDerivate5", propOrder = {"size", "averageTimeCharter"})
 public class CommodityDerivate5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Sz", required = true)
 	protected Max25Text size;
 	/**
-	 * Specification of the size related to the freight sub type. Field to be
-	 * populated when the base product field is equal to freight.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,9 +98,9 @@ public class CommodityDerivate5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSize = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommodityDerivate5, Max25Text> mmSize = new MMMessageAttribute<CommodityDerivate5, Max25Text>() {
 		{
-			componentContext_lazy = () -> CommodityDerivate5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommodityDerivate5.mmObject();
 			isDerived = false;
 			xmlTag = "Sz";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,12 +110,22 @@ public class CommodityDerivate5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max25Text.mmObject();
 		}
+
+		@Override
+		public Max25Text getValue(CommodityDerivate5 obj) {
+			return obj.getSize();
+		}
+
+		@Override
+		public void setValue(CommodityDerivate5 obj, Max25Text value) {
+			obj.setSize(value);
+		}
 	};
+	@XmlElement(name = "AvrgTmChrtr", required = true)
 	protected Max25Text averageTimeCharter;
 	/**
-	 * Details the specific route or time charter average. Field to be populated
-	 * when the base product field is equal to freight.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,9 +152,9 @@ public class CommodityDerivate5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAverageTimeCharter = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommodityDerivate5, Max25Text> mmAverageTimeCharter = new MMMessageAttribute<CommodityDerivate5, Max25Text>() {
 		{
-			componentContext_lazy = () -> CommodityDerivate5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommodityDerivate5.mmObject();
 			isDerived = false;
 			xmlTag = "AvrgTmChrtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,13 +164,23 @@ public class CommodityDerivate5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max25Text.mmObject();
 		}
+
+		@Override
+		public Max25Text getValue(CommodityDerivate5 obj) {
+			return obj.getAverageTimeCharter();
+		}
+
+		@Override
+		public void setValue(CommodityDerivate5 obj, Max25Text value) {
+			obj.setAverageTimeCharter(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CommodityDerivate5.mmSize, CommodityDerivate5.mmAverageTimeCharter);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CommodityDerivate5.mmSize, com.tools20022.repository.msg.CommodityDerivate5.mmAverageTimeCharter);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommodityDerivate5";
 				definition = "Transparency calculation specific details for a freight commodity.";
@@ -168,21 +189,21 @@ public class CommodityDerivate5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Sz", required = true)
 	public Max25Text getSize() {
 		return size;
 	}
 
-	public void setSize(Max25Text size) {
-		this.size = size;
+	public CommodityDerivate5 setSize(Max25Text size) {
+		this.size = Objects.requireNonNull(size);
+		return this;
 	}
 
-	@XmlElement(name = "AvrgTmChrtr", required = true)
 	public Max25Text getAverageTimeCharter() {
 		return averageTimeCharter;
 	}
 
-	public void setAverageTimeCharter(Max25Text averageTimeCharter) {
-		this.averageTimeCharter = averageTimeCharter;
+	public CommodityDerivate5 setAverageTimeCharter(Max25Text averageTimeCharter) {
+		this.averageTimeCharter = Objects.requireNonNull(averageTimeCharter);
+		return this;
 	}
 }

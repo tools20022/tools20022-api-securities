@@ -26,10 +26,8 @@ import com.tools20022.repository.choice.Period4Choice;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.msg.SecuritiesInvalidReferenceDataReport3;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -83,22 +81,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingInvalidReferenceDataReportV01", propOrder = {"datePeriod", "numberOfRecords", "financialInstruments", "supplementaryData"})
 public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DtPrd", required = true)
 	protected Period4Choice datePeriod;
 	/**
-	 * Date period capturing when instruments in the report have been
-	 * invalidated<br>
-	 * <br>
-	 * Usage:<br>
-	 * Within MiFIR, only the From Date To Date field will be used with the From
-	 * Date corresponding to the date the first instrument was added to this
-	 * report while the To Date is the date the last instrument was added to the
-	 * file.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +113,7 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDatePeriod = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, Period4Choice> mmDatePeriod = new MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, Period4Choice>() {
 		{
 			xmlTag = "DtPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,18 +124,21 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 			complexType_lazy = () -> Period4Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingInvalidReferenceDataReportV01.class.getMethod("getDatePeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Period4Choice getValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj) {
+			return obj.getDatePeriod();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj, Period4Choice value) {
+			obj.setDatePeriod(value);
 		}
 	};
+	@XmlElement(name = "NbOfRcrds")
 	protected Number numberOfRecords;
 	/**
-	 * Number of invalid records in this message.<br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,7 +158,7 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 	 * definition} = "Number of invalid records in this message.\r\n"</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNumberOfRecords = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, Optional<Number>> mmNumberOfRecords = new MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, Optional<Number>>() {
 		{
 			xmlTag = "NbOfRcrds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,18 +169,21 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingInvalidReferenceDataReportV01.class.getMethod("getNumberOfRecords", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Number> getValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj) {
+			return obj.getNumberOfRecords();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj, Optional<Number> value) {
+			obj.setNumberOfRecords(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "FinInstrms", required = true)
 	protected List<SecuritiesInvalidReferenceDataReport3> financialInstruments;
 	/**
-	 * Provides the details of the financial instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +204,7 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 	 * definition} = "Provides the details of the financial instruments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInstruments = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, List<SecuritiesInvalidReferenceDataReport3>> mmFinancialInstruments = new MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, List<SecuritiesInvalidReferenceDataReport3>>() {
 		{
 			xmlTag = "FinInstrms";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,19 +214,21 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 			complexType_lazy = () -> SecuritiesInvalidReferenceDataReport3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingInvalidReferenceDataReportV01.class.getMethod("getFinancialInstruments", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SecuritiesInvalidReferenceDataReport3> getValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj) {
+			return obj.getFinancialInstruments();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj, List<SecuritiesInvalidReferenceDataReport3> value) {
+			obj.setFinancialInstruments(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,7 +251,7 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingInvalidReferenceDataReportV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -261,12 +261,14 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingInvalidReferenceDataReportV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingInvalidReferenceDataReportV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -301,43 +303,43 @@ public class FinancialInstrumentReportingInvalidReferenceDataReportV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DtPrd", required = true)
 	public Period4Choice getDatePeriod() {
 		return datePeriod;
 	}
 
-	public void setDatePeriod(Period4Choice datePeriod) {
-		this.datePeriod = datePeriod;
+	public FinancialInstrumentReportingInvalidReferenceDataReportV01 setDatePeriod(Period4Choice datePeriod) {
+		this.datePeriod = Objects.requireNonNull(datePeriod);
+		return this;
 	}
 
-	@XmlElement(name = "NbOfRcrds")
-	public Number getNumberOfRecords() {
-		return numberOfRecords;
+	public Optional<Number> getNumberOfRecords() {
+		return numberOfRecords == null ? Optional.empty() : Optional.of(numberOfRecords);
 	}
 
-	public void setNumberOfRecords(Number numberOfRecords) {
+	public FinancialInstrumentReportingInvalidReferenceDataReportV01 setNumberOfRecords(Number numberOfRecords) {
 		this.numberOfRecords = numberOfRecords;
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrms", required = true)
 	public List<SecuritiesInvalidReferenceDataReport3> getFinancialInstruments() {
-		return financialInstruments;
+		return financialInstruments == null ? financialInstruments = new ArrayList<>() : financialInstruments;
 	}
 
-	public void setFinancialInstruments(List<SecuritiesInvalidReferenceDataReport3> financialInstruments) {
-		this.financialInstruments = financialInstruments;
+	public FinancialInstrumentReportingInvalidReferenceDataReportV01 setFinancialInstruments(List<SecuritiesInvalidReferenceDataReport3> financialInstruments) {
+		this.financialInstruments = Objects.requireNonNull(financialInstruments);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingInvalidReferenceDataReportV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.042.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.042.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgInvldRefDataRpt", required = true)
 		public FinancialInstrumentReportingInvalidReferenceDataReportV01 messageBody;

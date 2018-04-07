@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#ClientDirected
- * CommissionType9Code.mmClientDirected}</li>
+ * CommissionType9Code.ClientDirected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#StepOut
- * CommissionType9Code.mmStepOut}</li>
+ * CommissionType9Code.StepOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#SoftDollar
- * CommissionType9Code.mmSoftDollar}</li>
+ * CommissionType9Code.SoftDollar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#PercentageOfPrincipal
- * CommissionType9Code.mmPercentageOfPrincipal}</li>
+ * CommissionType9Code.PercentageOfPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#FlatFee
- * CommissionType9Code.mmFlatFee}</li>
+ * CommissionType9Code.FlatFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#PerUnit
- * CommissionType9Code.mmPerUnit}</li>
+ * CommissionType9Code.PerUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#PercentageCommissionWaivedAsCashDiscount
- * CommissionType9Code.mmPercentageCommissionWaivedAsCashDiscount}</li>
+ * CommissionType9Code.PercentageCommissionWaivedAsCashDiscount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#PercentageCommissionWaivedAsAdditionalUnits
- * CommissionType9Code.mmPercentageCommissionWaivedAsAdditionalUnits}</li>
+ * CommissionType9Code.PercentageCommissionWaivedAsAdditionalUnits}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#BrokerageRate
- * CommissionType9Code.mmBrokerageRate}</li>
+ * CommissionType9Code.BrokerageRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#DifferentialOrDeferredPayment
- * CommissionType9Code.mmDifferentialOrDeferredPayment}</li>
+ * CommissionType9Code.DifferentialOrDeferredPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CommissionType9Code#PointsPerBondOrContract
- * CommissionType9Code.mmPointsPerBondOrContract}</li>
+ * CommissionType9Code.PointsPerBondOrContract}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -371,7 +371,7 @@ public class CommissionType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CLDI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommissionType9Code";

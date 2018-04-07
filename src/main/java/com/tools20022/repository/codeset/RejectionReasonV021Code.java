@@ -39,28 +39,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#InvalidSecurity
- * RejectionReasonV021Code.mmInvalidSecurity}</li>
+ * RejectionReasonV021Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#UnrecognisedIdentification
- * RejectionReasonV021Code.mmUnrecognisedIdentification}</li>
+ * RejectionReasonV021Code.UnrecognisedIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#UnknownSymbol
- * RejectionReasonV021Code.mmUnknownSymbol}</li>
+ * RejectionReasonV021Code.UnknownSymbol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#InsufficientCollateral
- * RejectionReasonV021Code.mmInsufficientCollateral}</li>
+ * RejectionReasonV021Code.InsufficientCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#ConcentrationLimitExceeded
- * RejectionReasonV021Code.mmConcentrationLimitExceeded}</li>
+ * RejectionReasonV021Code.ConcentrationLimitExceeded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#NonEligibleSecurity
- * RejectionReasonV021Code.mmNonEligibleSecurity}</li>
+ * RejectionReasonV021Code.NonEligibleSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#InvalidIdentification
- * RejectionReasonV021Code.mmInvalidIdentification}</li>
+ * RejectionReasonV021Code.InvalidIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReasonV021Code#Other
- * RejectionReasonV021Code.mmOther}</li>
+ * RejectionReasonV021Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -69,8 +69,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -293,7 +293,7 @@ public class RejectionReasonV021Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DSEC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReasonV021Code";

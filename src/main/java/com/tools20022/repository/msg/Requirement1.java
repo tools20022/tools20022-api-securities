@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ExposureCalculation;
 import com.tools20022.repository.entity.MarginAmountRequirement;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.MarginRequirement1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Requirement1", propOrder = {"variationMarginRequirement", "segregatedIndependentAmountRequirement"})
 public class Requirement1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "VartnMrgnRqrmnt", required = true)
 	protected MarginRequirement1 variationMarginRequirement;
 	/**
-	 * Provides details about the margin requirements for the variation margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,10 +111,10 @@ public class Requirement1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVariationMarginRequirement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Requirement1, MarginRequirement1> mmVariationMarginRequirement = new MMMessageAssociationEnd<Requirement1, MarginRequirement1>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmVariationMarginAmountRequirement;
-			componentContext_lazy = () -> Requirement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Requirement1.mmObject();
 			isDerived = false;
 			xmlTag = "VartnMrgnRqrmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,14 +123,24 @@ public class Requirement1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MarginRequirement1.mmObject();
+			type_lazy = () -> MarginRequirement1.mmObject();
+		}
+
+		@Override
+		public MarginRequirement1 getValue(Requirement1 obj) {
+			return obj.getVariationMarginRequirement();
+		}
+
+		@Override
+		public void setValue(Requirement1 obj, MarginRequirement1 value) {
+			obj.setVariationMarginRequirement(value);
 		}
 	};
+	@XmlElement(name = "SgrtdIndpdntAmtRqrmnt")
 	protected MarginRequirement1 segregatedIndependentAmountRequirement;
 	/**
-	 * Provides details about the margin requirements for the segregated
-	 * independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -156,10 +170,10 @@ public class Requirement1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSegregatedIndependentAmountRequirement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Requirement1, Optional<MarginRequirement1>> mmSegregatedIndependentAmountRequirement = new MMMessageAssociationEnd<Requirement1, Optional<MarginRequirement1>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmSegregatedAmountRequirement;
-			componentContext_lazy = () -> Requirement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Requirement1.mmObject();
 			isDerived = false;
 			xmlTag = "SgrtdIndpdntAmtRqrmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,16 +182,26 @@ public class Requirement1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MarginRequirement1.mmObject();
+			type_lazy = () -> MarginRequirement1.mmObject();
+		}
+
+		@Override
+		public Optional<MarginRequirement1> getValue(Requirement1 obj) {
+			return obj.getSegregatedIndependentAmountRequirement();
+		}
+
+		@Override
+		public void setValue(Requirement1 obj, Optional<MarginRequirement1> value) {
+			obj.setSegregatedIndependentAmountRequirement(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Requirement1.mmVariationMarginRequirement, Requirement1.mmSegregatedIndependentAmountRequirement);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Requirement1.mmVariationMarginRequirement, com.tools20022.repository.msg.Requirement1.mmSegregatedIndependentAmountRequirement);
 				trace_lazy = () -> MarginAmountRequirement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Requirement1";
 				definition = "Provides details about the margin requirements for the variation margin and optionally the segregated independent amount.";
@@ -186,21 +210,21 @@ public class Requirement1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "VartnMrgnRqrmnt", required = true)
 	public MarginRequirement1 getVariationMarginRequirement() {
 		return variationMarginRequirement;
 	}
 
-	public void setVariationMarginRequirement(com.tools20022.repository.msg.MarginRequirement1 variationMarginRequirement) {
-		this.variationMarginRequirement = variationMarginRequirement;
+	public Requirement1 setVariationMarginRequirement(MarginRequirement1 variationMarginRequirement) {
+		this.variationMarginRequirement = Objects.requireNonNull(variationMarginRequirement);
+		return this;
 	}
 
-	@XmlElement(name = "SgrtdIndpdntAmtRqrmnt")
-	public MarginRequirement1 getSegregatedIndependentAmountRequirement() {
-		return segregatedIndependentAmountRequirement;
+	public Optional<MarginRequirement1> getSegregatedIndependentAmountRequirement() {
+		return segregatedIndependentAmountRequirement == null ? Optional.empty() : Optional.of(segregatedIndependentAmountRequirement);
 	}
 
-	public void setSegregatedIndependentAmountRequirement(com.tools20022.repository.msg.MarginRequirement1 segregatedIndependentAmountRequirement) {
+	public Requirement1 setSegregatedIndependentAmountRequirement(MarginRequirement1 segregatedIndependentAmountRequirement) {
 		this.segregatedIndependentAmountRequirement = segregatedIndependentAmountRequirement;
+		return this;
 	}
 }

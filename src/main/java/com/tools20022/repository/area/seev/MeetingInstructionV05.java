@@ -26,10 +26,11 @@ import com.tools20022.repository.msg.Instruction3;
 import com.tools20022.repository.msg.MeetingReference7;
 import com.tools20022.repository.msg.SecurityIdentification14;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -94,15 +95,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MeetingInstructionV05", propOrder = {"meetingReference", "financialInstrumentIdentification", "instruction", "supplementaryData"})
 public class MeetingInstructionV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MtgRef", required = true)
 	protected MeetingReference7 meetingReference;
 	/**
-	 * Series of elements which allow to identify a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +125,7 @@ public class MeetingInstructionV05 {
 	 * definition} = "Series of elements which allow to identify a meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMeetingReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MeetingInstructionV05, MeetingReference7> mmMeetingReference = new MMMessageBuildingBlock<MeetingInstructionV05, MeetingReference7>() {
 		{
 			xmlTag = "MtgRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,18 +136,21 @@ public class MeetingInstructionV05 {
 			complexType_lazy = () -> MeetingReference7.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingInstructionV05.class.getMethod("getMeetingReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MeetingReference7 getValue(MeetingInstructionV05 obj) {
+			return obj.getMeetingReference();
+		}
+
+		@Override
+		public void setValue(MeetingInstructionV05 obj, MeetingReference7 value) {
+			obj.setMeetingReference(value);
 		}
 	};
+	@XmlElement(name = "FinInstrmId", required = true)
 	protected SecurityIdentification14 financialInstrumentIdentification;
 	/**
-	 * Identifies the security for which the meeting is organised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,7 +172,7 @@ public class MeetingInstructionV05 {
 	 * "Identifies the security for which the meeting is organised."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInstrumentIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MeetingInstructionV05, SecurityIdentification14> mmFinancialInstrumentIdentification = new MMMessageBuildingBlock<MeetingInstructionV05, SecurityIdentification14>() {
 		{
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,19 +183,21 @@ public class MeetingInstructionV05 {
 			complexType_lazy = () -> SecurityIdentification14.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingInstructionV05.class.getMethod("getFinancialInstrumentIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecurityIdentification14 getValue(MeetingInstructionV05 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(MeetingInstructionV05 obj, SecurityIdentification14 value) {
+			obj.setFinancialInstrumentIdentification(value);
 		}
 	};
+	@XmlElement(name = "Instr", required = true)
 	protected List<Instruction3> instruction;
 	/**
-	 * Identifies the position of the instructing party and the action that they
-	 * want to take.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,7 +219,7 @@ public class MeetingInstructionV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInstruction = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MeetingInstructionV05, List<Instruction3>> mmInstruction = new MMMessageBuildingBlock<MeetingInstructionV05, List<Instruction3>>() {
 		{
 			xmlTag = "Instr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,19 +229,21 @@ public class MeetingInstructionV05 {
 			complexType_lazy = () -> Instruction3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingInstructionV05.class.getMethod("getInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Instruction3> getValue(MeetingInstructionV05 obj) {
+			return obj.getInstruction();
+		}
+
+		@Override
+		public void setValue(MeetingInstructionV05 obj, List<Instruction3> value) {
+			obj.setInstruction(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,7 +266,7 @@ public class MeetingInstructionV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MeetingInstructionV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MeetingInstructionV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,12 +276,14 @@ public class MeetingInstructionV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingInstructionV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MeetingInstructionV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MeetingInstructionV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -305,43 +316,43 @@ public class MeetingInstructionV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MtgRef", required = true)
 	public MeetingReference7 getMeetingReference() {
 		return meetingReference;
 	}
 
-	public void setMeetingReference(MeetingReference7 meetingReference) {
-		this.meetingReference = meetingReference;
+	public MeetingInstructionV05 setMeetingReference(MeetingReference7 meetingReference) {
+		this.meetingReference = Objects.requireNonNull(meetingReference);
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmId", required = true)
 	public SecurityIdentification14 getFinancialInstrumentIdentification() {
 		return financialInstrumentIdentification;
 	}
 
-	public void setFinancialInstrumentIdentification(SecurityIdentification14 financialInstrumentIdentification) {
-		this.financialInstrumentIdentification = financialInstrumentIdentification;
+	public MeetingInstructionV05 setFinancialInstrumentIdentification(SecurityIdentification14 financialInstrumentIdentification) {
+		this.financialInstrumentIdentification = Objects.requireNonNull(financialInstrumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Instr", required = true)
 	public List<Instruction3> getInstruction() {
-		return instruction;
+		return instruction == null ? instruction = new ArrayList<>() : instruction;
 	}
 
-	public void setInstruction(List<Instruction3> instruction) {
-		this.instruction = instruction;
+	public MeetingInstructionV05 setInstruction(List<Instruction3> instruction) {
+		this.instruction = Objects.requireNonNull(instruction);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MeetingInstructionV05 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:seev.004.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.004.001.05")
 	static public class Document {
 		@XmlElement(name = "MtgInstr", required = true)
 		public MeetingInstructionV05 messageBody;

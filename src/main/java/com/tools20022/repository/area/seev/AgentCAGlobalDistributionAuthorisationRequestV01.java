@@ -25,9 +25,9 @@ import com.tools20022.repository.area.SecuritiesEventsLatestVersion;
 import com.tools20022.repository.msg.CorporateActionInformation1;
 import com.tools20022.repository.msg.DocumentIdentification8;
 import com.tools20022.repository.msg.GlobalDistributionRequest1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -91,16 +91,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AgentCAGlobalDistributionAuthorisationRequestV01", propOrder = {"identification", "corporateActionGeneralInformation", "globalDistributionDetails"})
 public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected DocumentIdentification8 identification;
 	/**
-	 * Identification assigned by the Sender to unambiguously identify the
-	 * request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +123,7 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAGlobalDistributionAuthorisationRequestV01, DocumentIdentification8> mmIdentification = new MMMessageBuildingBlock<AgentCAGlobalDistributionAuthorisationRequestV01, DocumentIdentification8>() {
 		{
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,18 +134,21 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 			complexType_lazy = () -> DocumentIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAGlobalDistributionAuthorisationRequestV01.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentIdentification8 getValue(AgentCAGlobalDistributionAuthorisationRequestV01 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AgentCAGlobalDistributionAuthorisationRequestV01 obj, DocumentIdentification8 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "CorpActnGnlInf", required = true)
 	protected CorporateActionInformation1 corporateActionGeneralInformation;
 	/**
-	 * General information about the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +169,7 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 	 * definition} = "General information about the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCorporateActionGeneralInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAGlobalDistributionAuthorisationRequestV01, CorporateActionInformation1> mmCorporateActionGeneralInformation = new MMMessageBuildingBlock<AgentCAGlobalDistributionAuthorisationRequestV01, CorporateActionInformation1>() {
 		{
 			xmlTag = "CorpActnGnlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,18 +180,21 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 			complexType_lazy = () -> CorporateActionInformation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAGlobalDistributionAuthorisationRequestV01.class.getMethod("getCorporateActionGeneralInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionInformation1 getValue(AgentCAGlobalDistributionAuthorisationRequestV01 obj) {
+			return obj.getCorporateActionGeneralInformation();
+		}
+
+		@Override
+		public void setValue(AgentCAGlobalDistributionAuthorisationRequestV01 obj, CorporateActionInformation1 value) {
+			obj.setCorporateActionGeneralInformation(value);
 		}
 	};
+	@XmlElement(name = "GblDstrbtnDtls", required = true)
 	protected GlobalDistributionRequest1 globalDistributionDetails;
 	/**
-	 * Provides detailed information about the global distribution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,7 +216,7 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 	 * "Provides detailed information about the global distribution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmGlobalDistributionDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAGlobalDistributionAuthorisationRequestV01, GlobalDistributionRequest1> mmGlobalDistributionDetails = new MMMessageBuildingBlock<AgentCAGlobalDistributionAuthorisationRequestV01, GlobalDistributionRequest1>() {
 		{
 			xmlTag = "GblDstrbtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,12 +227,14 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 			complexType_lazy = () -> GlobalDistributionRequest1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAGlobalDistributionAuthorisationRequestV01.class.getMethod("getGlobalDistributionDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public GlobalDistributionRequest1 getValue(AgentCAGlobalDistributionAuthorisationRequestV01 obj) {
+			return obj.getGlobalDistributionDetails();
+		}
+
+		@Override
+		public void setValue(AgentCAGlobalDistributionAuthorisationRequestV01 obj, GlobalDistributionRequest1 value) {
+			obj.setGlobalDistributionDetails(value);
 		}
 	};
 
@@ -260,34 +268,34 @@ public class AgentCAGlobalDistributionAuthorisationRequestV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public DocumentIdentification8 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(DocumentIdentification8 identification) {
-		this.identification = identification;
+	public AgentCAGlobalDistributionAuthorisationRequestV01 setIdentification(DocumentIdentification8 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnGnlInf", required = true)
 	public CorporateActionInformation1 getCorporateActionGeneralInformation() {
 		return corporateActionGeneralInformation;
 	}
 
-	public void setCorporateActionGeneralInformation(CorporateActionInformation1 corporateActionGeneralInformation) {
-		this.corporateActionGeneralInformation = corporateActionGeneralInformation;
+	public AgentCAGlobalDistributionAuthorisationRequestV01 setCorporateActionGeneralInformation(CorporateActionInformation1 corporateActionGeneralInformation) {
+		this.corporateActionGeneralInformation = Objects.requireNonNull(corporateActionGeneralInformation);
+		return this;
 	}
 
-	@XmlElement(name = "GblDstrbtnDtls", required = true)
 	public GlobalDistributionRequest1 getGlobalDistributionDetails() {
 		return globalDistributionDetails;
 	}
 
-	public void setGlobalDistributionDetails(GlobalDistributionRequest1 globalDistributionDetails) {
-		this.globalDistributionDetails = globalDistributionDetails;
+	public AgentCAGlobalDistributionAuthorisationRequestV01 setGlobalDistributionDetails(GlobalDistributionRequest1 globalDistributionDetails) {
+		this.globalDistributionDetails = Objects.requireNonNull(globalDistributionDetails);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:seev.017.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.017.001.01")
 	static public class Document {
 		@XmlElement(name = "AgtCAGblDstrbtnAuthstnReq", required = true)
 		public AgentCAGlobalDistributionAuthorisationRequestV01 messageBody;

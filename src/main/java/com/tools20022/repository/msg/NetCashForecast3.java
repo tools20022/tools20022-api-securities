@@ -29,8 +29,11 @@ import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.FundsCashFlow;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -79,8 +82,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,15 +95,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Net cash movement to a fund as a result of investment funds transactions."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetCashForecast3", propOrder = {"netAmount", "netUnitsNumber", "flowDirection"})
 public class NetCashForecast3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NetAmt")
 	protected ActiveOrHistoricCurrencyAndAmount netAmount;
 	/**
-	 * Net amount of the cash flow, expressed as an amount of money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,10 +136,10 @@ public class NetCashForecast3 {
 	 * "Net amount of the cash flow, expressed as an amount of money."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast3, Optional<ActiveOrHistoricCurrencyAndAmount>> mmNetAmount = new MMMessageAttribute<NetCashForecast3, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmAmount;
-			componentContext_lazy = () -> NetCashForecast3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast3.mmObject();
 			isDerived = false;
 			xmlTag = "NetAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -145,11 +149,22 @@ public class NetCashForecast3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(NetCashForecast3 obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(NetCashForecast3 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setNetAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NetUnitsNb")
 	protected FinancialInstrumentQuantity1 netUnitsNumber;
 	/**
-	 * Net amount, expressed as a number of units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,10 +195,10 @@ public class NetCashForecast3 {
 	 * definition} = "Net amount, expressed as a number of units."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetUnitsNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast3, Optional<FinancialInstrumentQuantity1>> mmNetUnitsNumber = new MMMessageAttribute<NetCashForecast3, Optional<FinancialInstrumentQuantity1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmUnit;
-			componentContext_lazy = () -> NetCashForecast3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast3.mmObject();
 			isDerived = false;
 			xmlTag = "NetUnitsNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,14 +206,24 @@ public class NetCashForecast3 {
 			definition = "Net amount, expressed as a number of units.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentQuantity1.mmObject();
+			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(NetCashForecast3 obj) {
+			return obj.getNetUnitsNumber();
+		}
+
+		@Override
+		public void setValue(NetCashForecast3 obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setNetUnitsNumber(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "FlowDrctn", required = true)
 	protected FlowDirectionType1Code flowDirection;
 	/**
-	 * Specifies the direction of the cash flow from the perspective of the
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,10 +256,10 @@ public class NetCashForecast3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFlowDirection = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast3, FlowDirectionType1Code> mmFlowDirection = new MMMessageAttribute<NetCashForecast3, FlowDirectionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> FundsCashFlow.mmFlowDirection;
-			componentContext_lazy = () -> NetCashForecast3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast3.mmObject();
 			isDerived = false;
 			xmlTag = "FlowDrctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -244,16 +269,27 @@ public class NetCashForecast3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> FlowDirectionType1Code.mmObject();
 		}
+
+		@Override
+		public FlowDirectionType1Code getValue(NetCashForecast3 obj) {
+			return obj.getFlowDirection();
+		}
+
+		@Override
+		public void setValue(NetCashForecast3 obj, FlowDirectionType1Code value) {
+			obj.setFlowDirection(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NetCashForecast3.mmNetAmount, NetCashForecast3.mmNetUnitsNumber, NetCashForecast3.mmFlowDirection);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NetCashForecast3.mmNetAmount, com.tools20022.repository.msg.NetCashForecast3.mmNetUnitsNumber,
+						com.tools20022.repository.msg.NetCashForecast3.mmFlowDirection);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FundDetailedEstimatedCashForecastReportV04.mmConsolidatedNetCashForecast, FundConfirmedCashForecastReportV04.mmConsolidatedNetCashForecast,
 						FundEstimatedCashForecastReportV04.mmConsolidatedNetCashForecast, FundDetailedConfirmedCashForecastReportV04.mmConsolidatedNetCashForecast);
 				trace_lazy = () -> FundsCashFlow.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetCashForecast3";
 				definition = "Net cash movement to a fund as a result of investment funds transactions.";
@@ -262,30 +298,30 @@ public class NetCashForecast3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NetAmt")
-	public ActiveOrHistoricCurrencyAndAmount getNetAmount() {
-		return netAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getNetAmount() {
+		return netAmount == null ? Optional.empty() : Optional.of(netAmount);
 	}
 
-	public void setNetAmount(ActiveOrHistoricCurrencyAndAmount netAmount) {
+	public NetCashForecast3 setNetAmount(ActiveOrHistoricCurrencyAndAmount netAmount) {
 		this.netAmount = netAmount;
+		return this;
 	}
 
-	@XmlElement(name = "NetUnitsNb")
-	public FinancialInstrumentQuantity1 getNetUnitsNumber() {
-		return netUnitsNumber;
+	public Optional<FinancialInstrumentQuantity1> getNetUnitsNumber() {
+		return netUnitsNumber == null ? Optional.empty() : Optional.of(netUnitsNumber);
 	}
 
-	public void setNetUnitsNumber(com.tools20022.repository.msg.FinancialInstrumentQuantity1 netUnitsNumber) {
+	public NetCashForecast3 setNetUnitsNumber(FinancialInstrumentQuantity1 netUnitsNumber) {
 		this.netUnitsNumber = netUnitsNumber;
+		return this;
 	}
 
-	@XmlElement(name = "FlowDrctn", required = true)
 	public FlowDirectionType1Code getFlowDirection() {
 		return flowDirection;
 	}
 
-	public void setFlowDirection(FlowDirectionType1Code flowDirection) {
-		this.flowDirection = flowDirection;
+	public NetCashForecast3 setFlowDirection(FlowDirectionType1Code flowDirection) {
+		this.flowDirection = Objects.requireNonNull(flowDirection);
+		return this;
 	}
 }

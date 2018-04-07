@@ -25,9 +25,9 @@ import com.tools20022.repository.area.SecuritiesManagementLatestVersion;
 import com.tools20022.repository.msg.AdditionalReference3;
 import com.tools20022.repository.msg.MessageIdentification1;
 import com.tools20022.repository.msg.RejectionReason23;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -92,16 +92,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesMessageRejectionV03", propOrder = {"messageIdentification", "relatedReference", "reason"})
 public class SecuritiesMessageRejectionV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies a message from a business application
-	 * standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,33 +120,36 @@ public class SecuritiesMessageRejectionV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies a message from a business application standpoint. "
+	 * "Reference that uniquely identifies a message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesMessageRejectionV03, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<SecuritiesMessageRejectionV03, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies a message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies a message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesMessageRejectionV03.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(SecuritiesMessageRejectionV03 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesMessageRejectionV03 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "RltdRef", required = true)
 	protected AdditionalReference3 relatedReference;
 	/**
-	 * Reference to a linked message that was previously received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +171,7 @@ public class SecuritiesMessageRejectionV03 {
 	 * "Reference to a linked message that was previously received."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRelatedReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesMessageRejectionV03, AdditionalReference3> mmRelatedReference = new MMMessageBuildingBlock<SecuritiesMessageRejectionV03, AdditionalReference3>() {
 		{
 			xmlTag = "RltdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,18 +182,21 @@ public class SecuritiesMessageRejectionV03 {
 			complexType_lazy = () -> AdditionalReference3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesMessageRejectionV03.class.getMethod("getRelatedReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AdditionalReference3 getValue(SecuritiesMessageRejectionV03 obj) {
+			return obj.getRelatedReference();
+		}
+
+		@Override
+		public void setValue(SecuritiesMessageRejectionV03 obj, AdditionalReference3 value) {
+			obj.setRelatedReference(value);
 		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected RejectionReason23 reason;
 	/**
-	 * Reason to reject the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,7 +217,7 @@ public class SecuritiesMessageRejectionV03 {
 	 * definition} = "Reason to reject the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReason = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesMessageRejectionV03, RejectionReason23> mmReason = new MMMessageBuildingBlock<SecuritiesMessageRejectionV03, RejectionReason23>() {
 		{
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,12 +228,14 @@ public class SecuritiesMessageRejectionV03 {
 			complexType_lazy = () -> RejectionReason23.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesMessageRejectionV03.class.getMethod("getReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RejectionReason23 getValue(SecuritiesMessageRejectionV03 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesMessageRejectionV03 obj, RejectionReason23 value) {
+			obj.setReason(value);
 		}
 	};
 
@@ -260,34 +268,34 @@ public class SecuritiesMessageRejectionV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public SecuritiesMessageRejectionV03 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RltdRef", required = true)
 	public AdditionalReference3 getRelatedReference() {
 		return relatedReference;
 	}
 
-	public void setRelatedReference(AdditionalReference3 relatedReference) {
-		this.relatedReference = relatedReference;
+	public SecuritiesMessageRejectionV03 setRelatedReference(AdditionalReference3 relatedReference) {
+		this.relatedReference = Objects.requireNonNull(relatedReference);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public RejectionReason23 getReason() {
 		return reason;
 	}
 
-	public void setReason(RejectionReason23 reason) {
-		this.reason = reason;
+	public SecuritiesMessageRejectionV03 setReason(RejectionReason23 reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:semt.001.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.001.001.03")
 	static public class Document {
 		@XmlElement(name = "SctiesMsgRjctn", required = true)
 		public SecuritiesMessageRejectionV03 messageBody;

@@ -38,64 +38,64 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#DividendReinvestment
- * CorporateActionEventType1Code.mmDividendReinvestment}</li>
+ * CorporateActionEventType1Code.DividendReinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#CapitalGainsDistribution
- * CorporateActionEventType1Code.mmCapitalGainsDistribution}</li>
+ * CorporateActionEventType1Code.CapitalGainsDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#CashDividend
- * CorporateActionEventType1Code.mmCashDividend}</li>
+ * CorporateActionEventType1Code.CashDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#DividendOption
- * CorporateActionEventType1Code.mmDividendOption}</li>
+ * CorporateActionEventType1Code.DividendOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#StockDividend
- * CorporateActionEventType1Code.mmStockDividend}</li>
+ * CorporateActionEventType1Code.StockDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#Liquidation
- * CorporateActionEventType1Code.mmLiquidation}</li>
+ * CorporateActionEventType1Code.Liquidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#Merger
- * CorporateActionEventType1Code.mmMerger}</li>
+ * CorporateActionEventType1Code.Merger}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#NameChange
- * CorporateActionEventType1Code.mmNameChange}</li>
+ * CorporateActionEventType1Code.NameChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#SpinOff
- * CorporateActionEventType1Code.mmSpinOff}</li>
+ * CorporateActionEventType1Code.SpinOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#StockSplit
- * CorporateActionEventType1Code.mmStockSplit}</li>
+ * CorporateActionEventType1Code.StockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#ReverseStockSplit
- * CorporateActionEventType1Code.mmReverseStockSplit}</li>
+ * CorporateActionEventType1Code.ReverseStockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#Tender
- * CorporateActionEventType1Code.mmTender}</li>
+ * CorporateActionEventType1Code.Tender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#BonusIssue
- * CorporateActionEventType1Code.mmBonusIssue}</li>
+ * CorporateActionEventType1Code.BonusIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#RightsDistribution
- * CorporateActionEventType1Code.mmRightsDistribution}</li>
+ * CorporateActionEventType1Code.RightsDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#CallOnRights
- * CorporateActionEventType1Code.mmCallOnRights}</li>
+ * CorporateActionEventType1Code.CallOnRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#Change
- * CorporateActionEventType1Code.mmChange}</li>
+ * CorporateActionEventType1Code.Change}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#Redenomination
- * CorporateActionEventType1Code.mmRedenomination}</li>
+ * CorporateActionEventType1Code.Redenomination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#ExchangeOption
- * CorporateActionEventType1Code.mmExchangeOption}</li>
+ * CorporateActionEventType1Code.ExchangeOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#ExchangeOffer
- * CorporateActionEventType1Code.mmExchangeOffer}</li>
+ * CorporateActionEventType1Code.ExchangeOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType1Code#DecreaseInValue
- * CorporateActionEventType1Code.mmDecreaseInValue}</li>
+ * CorporateActionEventType1Code.DecreaseInValue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -104,8 +104,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -614,7 +614,7 @@ public class CorporateActionEventType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DRIP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventType1Code";

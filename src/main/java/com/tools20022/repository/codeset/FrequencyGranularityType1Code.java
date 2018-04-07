@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfMonth
- * FrequencyGranularityType1Code.mmEndOfMonth}</li>
+ * FrequencyGranularityType1Code.EndOfMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfWeek
- * FrequencyGranularityType1Code.mmEndOfWeek}</li>
+ * FrequencyGranularityType1Code.EndOfWeek}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfSemester
- * FrequencyGranularityType1Code.mmEndOfSemester}</li>
+ * FrequencyGranularityType1Code.EndOfSemester}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfQuarter
- * FrequencyGranularityType1Code.mmEndOfQuarter}</li>
+ * FrequencyGranularityType1Code.EndOfQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfFortnight
- * FrequencyGranularityType1Code.mmEndOfFortnight}</li>
+ * FrequencyGranularityType1Code.EndOfFortnight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfDay
- * FrequencyGranularityType1Code.mmEndOfDay}</li>
+ * FrequencyGranularityType1Code.EndOfDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyGranularityType1Code#EndOfYear
- * FrequencyGranularityType1Code.mmEndOfYear}</li>
+ * FrequencyGranularityType1Code.EndOfYear}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -258,7 +258,7 @@ public class FrequencyGranularityType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FrequencyGranularityType1Code";
 				definition = "Defines the granularity of the frequency used for the reporting.";

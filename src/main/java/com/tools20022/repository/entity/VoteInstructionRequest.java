@@ -23,11 +23,15 @@ import com.tools20022.repository.choice.VoteInstructionForMeetingResolution2Choi
 import com.tools20022.repository.codeset.VoteInstructionCode;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.InstructionForMeeting;
+import com.tools20022.repository.entity.ProxyAppointment;
+import com.tools20022.repository.entity.Vote;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Decision of the voting party for one resolution. Several types of decisions
@@ -94,8 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +117,8 @@ public class VoteInstructionRequest {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InstructionForMeeting meetingInstruction;
 	/**
-	 * Meeting instruction which contains a vote instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +150,7 @@ public class VoteInstructionRequest {
 	 * definition} = "Meeting instruction which contains a vote instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VoteInstructionRequest, Optional<InstructionForMeeting>> mmMeetingInstruction = new MMBusinessAssociationEnd<VoteInstructionRequest, Optional<InstructionForMeeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
@@ -155,15 +159,25 @@ public class VoteInstructionRequest {
 			definition = "Meeting instruction which contains a vote instruction.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmVoteInstruction;
+			opposite_lazy = () -> InstructionForMeeting.mmVoteInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
+			type_lazy = () -> InstructionForMeeting.mmObject();
+		}
+
+		@Override
+		public Optional<InstructionForMeeting> getValue(VoteInstructionRequest obj) {
+			return obj.getMeetingInstruction();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, Optional<InstructionForMeeting> value) {
+			obj.setMeetingInstruction(value.orElse(null));
 		}
 	};
 	protected Vote votePerResolution;
 	/**
-	 * Specifies the number of votes to be cast for a specific resolution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +222,7 @@ public class VoteInstructionRequest {
 	 * "Specifies the number of votes to be cast for a specific resolution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVotePerResolution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VoteInstructionRequest, Optional<Vote>> mmVotePerResolution = new MMBusinessAssociationEnd<VoteInstructionRequest, Optional<Vote>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DetailedInstructionStatus10.mmVotePerResolution, Vote3Choice.mmVoteInstruction, VoteDetails3.mmVoteInstructionForAgendaResolution);
 			isDerived = false;
@@ -218,16 +232,25 @@ public class VoteInstructionRequest {
 			definition = "Specifies the number of votes to be cast for a specific resolution.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Vote.mmVoteRequest;
+			opposite_lazy = () -> Vote.mmVoteRequest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Vote.mmObject();
+			type_lazy = () -> Vote.mmObject();
+		}
+
+		@Override
+		public Optional<Vote> getValue(VoteInstructionRequest obj) {
+			return obj.getVotePerResolution();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, Optional<Vote> value) {
+			obj.setVotePerResolution(value.orElse(null));
 		}
 	};
 	protected Number discretionary;
 	/**
-	 * Number of votes for which decision is left to the party that will
-	 * exercise the voting right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,7 +284,7 @@ public class VoteInstructionRequest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDiscretionary = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VoteInstructionRequest, Number> mmDiscretionary = new MMBusinessAttribute<VoteInstructionRequest, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Vote6.mmDiscretionary, Vote8.mmDiscretionary);
 			isDerived = false;
@@ -274,18 +297,20 @@ public class VoteInstructionRequest {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VoteInstructionRequest.class.getMethod("getDiscretionary", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(VoteInstructionRequest obj) {
+			return obj.getDiscretionary();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, Number value) {
+			obj.setDiscretionary(value);
 		}
 	};
 	protected VoteInstructionCode globalVoteInstruction;
 	/**
-	 * Vote instruction per resolution is cast for the entire entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,7 +343,7 @@ public class VoteInstructionRequest {
 	 * "Vote instruction per resolution is cast for the entire entitlement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGlobalVoteInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VoteInstructionRequest, VoteInstructionCode> mmGlobalVoteInstruction = new MMBusinessAttribute<VoteInstructionRequest, VoteInstructionCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Vote3Choice.mmGlobalVoteInstruction);
 			isDerived = false;
@@ -331,19 +356,20 @@ public class VoteInstructionRequest {
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VoteInstructionRequest.class.getMethod("getGlobalVoteInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public VoteInstructionCode getValue(VoteInstructionRequest obj) {
+			return obj.getGlobalVoteInstruction();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, VoteInstructionCode value) {
+			obj.setGlobalVoteInstruction(value);
 		}
 	};
 	protected VoteInstructionCode voteForMeetingResolution;
 	/**
-	 * Specifies the vote recommendation for resolutions added during the
-	 * meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,7 +408,7 @@ public class VoteInstructionRequest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVoteForMeetingResolution = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VoteInstructionRequest, VoteInstructionCode> mmVoteForMeetingResolution = new MMBusinessAttribute<VoteInstructionRequest, VoteInstructionCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Vote9.mmVoteOption, VoteDetails3.mmVoteInstructionForMeetingResolution, VoteInstructionForMeetingResolution2Choice.mmVoteIndication);
 			isDerived = false;
@@ -395,18 +421,20 @@ public class VoteInstructionRequest {
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VoteInstructionRequest.class.getMethod("getVoteForMeetingResolution", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public VoteInstructionCode getValue(VoteInstructionRequest obj) {
+			return obj.getVoteForMeetingResolution();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, VoteInstructionCode value) {
+			obj.setVoteForMeetingResolution(value);
 		}
 	};
 	protected YesNoIndicator voteExecutionConfirmation;
 	/**
-	 * Indicates that a Vote execution confirmation is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -439,7 +467,7 @@ public class VoteInstructionRequest {
 	 * "Indicates that a Vote execution confirmation is requested."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVoteExecutionConfirmation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VoteInstructionRequest, YesNoIndicator> mmVoteExecutionConfirmation = new MMBusinessAttribute<VoteInstructionRequest, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Instruction3.mmVoteExecutionConfirmation);
 			isDerived = false;
@@ -452,18 +480,20 @@ public class VoteInstructionRequest {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VoteInstructionRequest.class.getMethod("getVoteExecutionConfirmation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(VoteInstructionRequest obj) {
+			return obj.getVoteExecutionConfirmation();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, YesNoIndicator value) {
+			obj.setVoteExecutionConfirmation(value);
 		}
 	};
 	protected ProxyAppointment relatedProxyAppointment;
 	/**
-	 * Proxy appointment to which instructions are attached.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -494,7 +524,7 @@ public class VoteInstructionRequest {
 	 * definition} = "Proxy appointment to which instructions are attached."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedProxyAppointment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VoteInstructionRequest, Optional<ProxyAppointment>> mmRelatedProxyAppointment = new MMBusinessAssociationEnd<VoteInstructionRequest, Optional<ProxyAppointment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VoteInstructionRequest.mmObject();
@@ -503,21 +533,30 @@ public class VoteInstructionRequest {
 			definition = "Proxy appointment to which instructions are attached.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmVote;
+			opposite_lazy = () -> ProxyAppointment.mmVote;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProxyAppointment.mmObject();
+			type_lazy = () -> ProxyAppointment.mmObject();
+		}
+
+		@Override
+		public Optional<ProxyAppointment> getValue(VoteInstructionRequest obj) {
+			return obj.getRelatedProxyAppointment();
+		}
+
+		@Override
+		public void setValue(VoteInstructionRequest obj, Optional<ProxyAppointment> value) {
+			obj.setRelatedProxyAppointment(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteInstructionRequest";
 				definition = "Decision of the voting party for one resolution. Several types of decisions can be indicated to allow for split vote specification.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProxyAppointment.mmVote, com.tools20022.repository.entity.InstructionForMeeting.mmVoteInstruction,
-						com.tools20022.repository.entity.Vote.mmVoteRequest);
+				associationDomain_lazy = () -> Arrays.asList(ProxyAppointment.mmVote, InstructionForMeeting.mmVoteInstruction, Vote.mmVoteRequest);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VoteInstructionRequest.mmMeetingInstruction, com.tools20022.repository.entity.VoteInstructionRequest.mmVotePerResolution,
 						com.tools20022.repository.entity.VoteInstructionRequest.mmDiscretionary, com.tools20022.repository.entity.VoteInstructionRequest.mmGlobalVoteInstruction,
 						com.tools20022.repository.entity.VoteInstructionRequest.mmVoteForMeetingResolution, com.tools20022.repository.entity.VoteInstructionRequest.mmVoteExecutionConfirmation,
@@ -533,59 +572,66 @@ public class VoteInstructionRequest {
 		return mmObject_lazy.get();
 	}
 
-	public InstructionForMeeting getMeetingInstruction() {
-		return meetingInstruction;
+	public Optional<InstructionForMeeting> getMeetingInstruction() {
+		return meetingInstruction == null ? Optional.empty() : Optional.of(meetingInstruction);
 	}
 
-	public void setMeetingInstruction(com.tools20022.repository.entity.InstructionForMeeting meetingInstruction) {
+	public VoteInstructionRequest setMeetingInstruction(InstructionForMeeting meetingInstruction) {
 		this.meetingInstruction = meetingInstruction;
+		return this;
 	}
 
-	public Vote getVotePerResolution() {
-		return votePerResolution;
+	public Optional<Vote> getVotePerResolution() {
+		return votePerResolution == null ? Optional.empty() : Optional.of(votePerResolution);
 	}
 
-	public void setVotePerResolution(com.tools20022.repository.entity.Vote votePerResolution) {
+	public VoteInstructionRequest setVotePerResolution(Vote votePerResolution) {
 		this.votePerResolution = votePerResolution;
+		return this;
 	}
 
 	public Number getDiscretionary() {
 		return discretionary;
 	}
 
-	public void setDiscretionary(Number discretionary) {
-		this.discretionary = discretionary;
+	public VoteInstructionRequest setDiscretionary(Number discretionary) {
+		this.discretionary = Objects.requireNonNull(discretionary);
+		return this;
 	}
 
 	public VoteInstructionCode getGlobalVoteInstruction() {
 		return globalVoteInstruction;
 	}
 
-	public void setGlobalVoteInstruction(VoteInstructionCode globalVoteInstruction) {
-		this.globalVoteInstruction = globalVoteInstruction;
+	public VoteInstructionRequest setGlobalVoteInstruction(VoteInstructionCode globalVoteInstruction) {
+		this.globalVoteInstruction = Objects.requireNonNull(globalVoteInstruction);
+		return this;
 	}
 
 	public VoteInstructionCode getVoteForMeetingResolution() {
 		return voteForMeetingResolution;
 	}
 
-	public void setVoteForMeetingResolution(VoteInstructionCode voteForMeetingResolution) {
-		this.voteForMeetingResolution = voteForMeetingResolution;
+	public VoteInstructionRequest setVoteForMeetingResolution(VoteInstructionCode voteForMeetingResolution) {
+		this.voteForMeetingResolution = Objects.requireNonNull(voteForMeetingResolution);
+		return this;
 	}
 
 	public YesNoIndicator getVoteExecutionConfirmation() {
 		return voteExecutionConfirmation;
 	}
 
-	public void setVoteExecutionConfirmation(YesNoIndicator voteExecutionConfirmation) {
-		this.voteExecutionConfirmation = voteExecutionConfirmation;
+	public VoteInstructionRequest setVoteExecutionConfirmation(YesNoIndicator voteExecutionConfirmation) {
+		this.voteExecutionConfirmation = Objects.requireNonNull(voteExecutionConfirmation);
+		return this;
 	}
 
-	public ProxyAppointment getRelatedProxyAppointment() {
-		return relatedProxyAppointment;
+	public Optional<ProxyAppointment> getRelatedProxyAppointment() {
+		return relatedProxyAppointment == null ? Optional.empty() : Optional.of(relatedProxyAppointment);
 	}
 
-	public void setRelatedProxyAppointment(com.tools20022.repository.entity.ProxyAppointment relatedProxyAppointment) {
+	public VoteInstructionRequest setRelatedProxyAppointment(ProxyAppointment relatedProxyAppointment) {
 		this.relatedProxyAppointment = relatedProxyAppointment;
+		return this;
 	}
 }

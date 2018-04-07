@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Choice of holding indicator and aggregated position of holdings."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentAggregateBalance1Choice", propOrder = {"holdingsIndicator", "holdingBalance"})
 public class FinancialInstrumentAggregateBalance1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "HldgsInd", required = true)
 	protected YesNoIndicator holdingsIndicator;
 	/**
-	 * Indicates whether holdings are present.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +104,9 @@ public class FinancialInstrumentAggregateBalance1Choice {
 	 * definition} = "Indicates whether holdings are present."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHoldingsIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentAggregateBalance1Choice, YesNoIndicator> mmHoldingsIndicator = new MMMessageAttribute<FinancialInstrumentAggregateBalance1Choice, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> FinancialInstrumentAggregateBalance1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentAggregateBalance1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "HldgsInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +116,22 @@ public class FinancialInstrumentAggregateBalance1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(FinancialInstrumentAggregateBalance1Choice obj) {
+			return obj.getHoldingsIndicator();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentAggregateBalance1Choice obj, YesNoIndicator value) {
+			obj.setHoldingsIndicator(value);
+		}
 	};
+	@XmlElement(name = "HldgBal", required = true)
 	protected FinancialInstrumentAggregateBalance2 holdingBalance;
 	/**
-	 * Balance of holdings.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -143,9 +156,9 @@ public class FinancialInstrumentAggregateBalance1Choice {
 	 * definition} = "Balance of holdings."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmHoldingBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstrumentAggregateBalance1Choice, FinancialInstrumentAggregateBalance2> mmHoldingBalance = new MMMessageAssociationEnd<FinancialInstrumentAggregateBalance1Choice, FinancialInstrumentAggregateBalance2>() {
 		{
-			componentContext_lazy = () -> FinancialInstrumentAggregateBalance1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentAggregateBalance1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "HldgBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,14 +169,25 @@ public class FinancialInstrumentAggregateBalance1Choice {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentAggregateBalance2.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentAggregateBalance2 getValue(FinancialInstrumentAggregateBalance1Choice obj) {
+			return obj.getHoldingBalance();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentAggregateBalance1Choice obj, FinancialInstrumentAggregateBalance2 value) {
+			obj.setHoldingBalance(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstrumentAggregateBalance1Choice.mmHoldingsIndicator, FinancialInstrumentAggregateBalance1Choice.mmHoldingBalance);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.FinancialInstrumentAggregateBalance1Choice.mmHoldingsIndicator,
+						com.tools20022.repository.choice.FinancialInstrumentAggregateBalance1Choice.mmHoldingBalance);
 				trace_lazy = () -> AssetHolding.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentAggregateBalance1Choice";
 				definition = "Choice of holding indicator and aggregated position of holdings.";
@@ -172,21 +196,21 @@ public class FinancialInstrumentAggregateBalance1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "HldgsInd", required = true)
 	public YesNoIndicator getHoldingsIndicator() {
 		return holdingsIndicator;
 	}
 
-	public void setHoldingsIndicator(YesNoIndicator holdingsIndicator) {
-		this.holdingsIndicator = holdingsIndicator;
+	public FinancialInstrumentAggregateBalance1Choice setHoldingsIndicator(YesNoIndicator holdingsIndicator) {
+		this.holdingsIndicator = Objects.requireNonNull(holdingsIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "HldgBal", required = true)
 	public FinancialInstrumentAggregateBalance2 getHoldingBalance() {
 		return holdingBalance;
 	}
 
-	public void setHoldingBalance(FinancialInstrumentAggregateBalance2 holdingBalance) {
-		this.holdingBalance = holdingBalance;
+	public FinancialInstrumentAggregateBalance1Choice setHoldingBalance(FinancialInstrumentAggregateBalance2 holdingBalance) {
+		this.holdingBalance = Objects.requireNonNull(holdingBalance);
+		return this;
 	}
 }

@@ -38,36 +38,36 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#Abstain
- * VoteInstruction3Code.mmAbstain}</li>
+ * VoteInstruction3Code.Abstain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#Against
- * VoteInstruction3Code.mmAgainst}</li>
+ * VoteInstruction3Code.Against}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#AgainstManagement
- * VoteInstruction3Code.mmAgainstManagement}</li>
+ * VoteInstruction3Code.AgainstManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#Discretionary
- * VoteInstruction3Code.mmDiscretionary}</li>
+ * VoteInstruction3Code.Discretionary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#For
- * VoteInstruction3Code.mmFor}</li>
+ * VoteInstruction3Code.For}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#NoAction
- * VoteInstruction3Code.mmNoAction}</li>
+ * VoteInstruction3Code.NoAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#Withhold
- * VoteInstruction3Code.mmWithhold}</li>
+ * VoteInstruction3Code.Withhold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#WithManagement
- * VoteInstruction3Code.mmWithManagement}</li>
+ * VoteInstruction3Code.WithManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#OneYear
- * VoteInstruction3Code.mmOneYear}</li>
+ * VoteInstruction3Code.OneYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#ThreeYears
- * VoteInstruction3Code.mmThreeYears}</li>
+ * VoteInstruction3Code.ThreeYears}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction3Code#TwoYears
- * VoteInstruction3Code.mmTwoYears}</li>
+ * VoteInstruction3Code.TwoYears}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -76,8 +76,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -364,7 +364,7 @@ public class VoteInstruction3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteInstruction3Code";
 				definition = "Specifies the possible types of voting instructions.";

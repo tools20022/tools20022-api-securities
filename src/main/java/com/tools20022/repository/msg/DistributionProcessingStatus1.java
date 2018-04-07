@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides information about the processing status of a global movement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DistributionProcessingStatus1", propOrder = {"status", "additionalInformation"})
 public class DistributionProcessingStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Sts", required = true)
 	protected ProcessedStatus3FormatChoice status;
 	/**
-	 * The processing status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,9 +100,9 @@ public class DistributionProcessingStatus1 {
 	 * definition} = "The processing status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DistributionProcessingStatus1, ProcessedStatus3FormatChoice> mmStatus = new MMMessageAttribute<DistributionProcessingStatus1, ProcessedStatus3FormatChoice>() {
 		{
-			componentContext_lazy = () -> DistributionProcessingStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DistributionProcessingStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,11 +112,22 @@ public class DistributionProcessingStatus1 {
 			minOccurs = 1;
 			complexType_lazy = () -> ProcessedStatus3FormatChoice.mmObject();
 		}
+
+		@Override
+		public ProcessedStatus3FormatChoice getValue(DistributionProcessingStatus1 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(DistributionProcessingStatus1 obj, ProcessedStatus3FormatChoice value) {
+			obj.setStatus(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,9 +152,9 @@ public class DistributionProcessingStatus1 {
 	 * definition} = "Additional information about the status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DistributionProcessingStatus1, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<DistributionProcessingStatus1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> DistributionProcessingStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DistributionProcessingStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,13 +164,23 @@ public class DistributionProcessingStatus1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(DistributionProcessingStatus1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(DistributionProcessingStatus1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DistributionProcessingStatus1.mmStatus, DistributionProcessingStatus1.mmAdditionalInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DistributionProcessingStatus1.mmStatus, com.tools20022.repository.msg.DistributionProcessingStatus1.mmAdditionalInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DistributionProcessingStatus1";
 				definition = "Provides information about the processing status of a global movement.";
@@ -165,21 +189,21 @@ public class DistributionProcessingStatus1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public ProcessedStatus3FormatChoice getStatus() {
 		return status;
 	}
 
-	public void setStatus(ProcessedStatus3FormatChoice status) {
-		this.status = status;
+	public DistributionProcessingStatus1 setStatus(ProcessedStatus3FormatChoice status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public DistributionProcessingStatus1 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

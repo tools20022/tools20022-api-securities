@@ -37,27 +37,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#Swap
- * RepurchaseTypeV2Code.mmSwap}</li>
+ * RepurchaseTypeV2Code.Swap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#RepurchaseCall
- * RepurchaseTypeV2Code.mmRepurchaseCall}</li>
+ * RepurchaseTypeV2Code.RepurchaseCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#Pairoff
- * RepurchaseTypeV2Code.mmPairoff}</li>
+ * RepurchaseTypeV2Code.Pairoff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#RepoRate
- * RepurchaseTypeV2Code.mmRepoRate}</li>
+ * RepurchaseTypeV2Code.RepoRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#RepoContractRollover
- * RepurchaseTypeV2Code.mmRepoContractRollover}</li>
+ * RepurchaseTypeV2Code.RepoContractRollover}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#TopUp
- * RepurchaseTypeV2Code.mmTopUp}</li>
+ * RepurchaseTypeV2Code.TopUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#Withdrawal
- * RepurchaseTypeV2Code.mmWithdrawal}</li>
+ * RepurchaseTypeV2Code.Withdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseTypeV2Code#PrincipalExposureAdjustment
- * RepurchaseTypeV2Code.mmPrincipalExposureAdjustment}</li>
+ * RepurchaseTypeV2Code.PrincipalExposureAdjustment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -361,7 +361,7 @@ public class RepurchaseTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CADJ");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepurchaseTypeV2Code";

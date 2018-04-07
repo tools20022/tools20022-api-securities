@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,16 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Information related to the identification of an individual person."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AlternateIdentification4", propOrder = {"identification", "type", "issuer", "issueDate", "expiryDate", "issuerCountry"})
 public class AlternateIdentification4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Name or number assigned by an entity to enable recognition of that
-	 * entity, for example, account identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,10 +126,10 @@ public class AlternateIdentification4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlternateIdentification4, Max35Text> mmIdentification = new MMMessageAttribute<AlternateIdentification4, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> AlternateIdentification4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,11 +139,22 @@ public class AlternateIdentification4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AlternateIdentification4 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AlternateIdentification4 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Tp", required = true)
 	protected OtherIdentification4Choice type;
 	/**
-	 * Specifies the nature of the identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,10 +185,10 @@ public class AlternateIdentification4 {
 	 * definition} = "Specifies the nature of the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlternateIdentification4, OtherIdentification4Choice> mmType = new MMMessageAttribute<AlternateIdentification4, OtherIdentification4Choice>() {
 		{
 			businessComponentTrace_lazy = () -> PersonIdentification.mmObject();
-			componentContext_lazy = () -> AlternateIdentification4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,11 +198,22 @@ public class AlternateIdentification4 {
 			minOccurs = 1;
 			complexType_lazy = () -> OtherIdentification4Choice.mmObject();
 		}
+
+		@Override
+		public OtherIdentification4Choice getValue(AlternateIdentification4 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(AlternateIdentification4 obj, OtherIdentification4Choice value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Issr")
 	protected Max35Text issuer;
 	/**
-	 * Entity that assigns the identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,10 +243,10 @@ public class AlternateIdentification4 {
 	 * definition} = "Entity that assigns the identifier."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlternateIdentification4, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<AlternateIdentification4, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
-			componentContext_lazy = () -> AlternateIdentification4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -232,11 +256,22 @@ public class AlternateIdentification4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AlternateIdentification4 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(AlternateIdentification4 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IsseDt")
 	protected ISODate issueDate;
 	/**
-	 * Date at which the identification was issued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,10 +301,10 @@ public class AlternateIdentification4 {
 	 * definition} = "Date at which the identification was issued."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlternateIdentification4, Optional<ISODate>> mmIssueDate = new MMMessageAttribute<AlternateIdentification4, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIssueDate;
-			componentContext_lazy = () -> AlternateIdentification4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
 			isDerived = false;
 			xmlTag = "IsseDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,11 +314,22 @@ public class AlternateIdentification4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(AlternateIdentification4 obj) {
+			return obj.getIssueDate();
+		}
+
+		@Override
+		public void setValue(AlternateIdentification4 obj, Optional<ISODate> value) {
+			obj.setIssueDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpryDt")
 	protected ISODate expiryDate;
 	/**
-	 * Date at which the identification expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,10 +359,10 @@ public class AlternateIdentification4 {
 	 * definition} = "Date at which the identification expires."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpiryDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlternateIdentification4, Optional<ISODate>> mmExpiryDate = new MMMessageAttribute<AlternateIdentification4, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmExpiryDate;
-			componentContext_lazy = () -> AlternateIdentification4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
 			isDerived = false;
 			xmlTag = "XpryDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -326,11 +372,22 @@ public class AlternateIdentification4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(AlternateIdentification4 obj) {
+			return obj.getExpiryDate();
+		}
+
+		@Override
+		public void setValue(AlternateIdentification4 obj, Optional<ISODate> value) {
+			obj.setExpiryDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IssrCtry")
 	protected CountryCode issuerCountry;
 	/**
-	 * Country that issued the identification document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,10 +417,10 @@ public class AlternateIdentification4 {
 	 * definition} = "Country that issued the identification document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuerCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlternateIdentification4, Optional<CountryCode>> mmIssuerCountry = new MMMessageAttribute<AlternateIdentification4, Optional<CountryCode>>() {
 		{
 			businessComponentTrace_lazy = () -> GenericIdentification.mmObject();
-			componentContext_lazy = () -> AlternateIdentification4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlternateIdentification4.mmObject();
 			isDerived = false;
 			xmlTag = "IssrCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -373,15 +430,26 @@ public class AlternateIdentification4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(AlternateIdentification4 obj) {
+			return obj.getIssuerCountry();
+		}
+
+		@Override
+		public void setValue(AlternateIdentification4 obj, Optional<CountryCode> value) {
+			obj.setIssuerCountry(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AlternateIdentification4.mmIdentification, AlternateIdentification4.mmType, AlternateIdentification4.mmIssuer, AlternateIdentification4.mmIssueDate,
-						AlternateIdentification4.mmExpiryDate, AlternateIdentification4.mmIssuerCountry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AlternateIdentification4.mmIdentification, com.tools20022.repository.msg.AlternateIdentification4.mmType,
+						com.tools20022.repository.msg.AlternateIdentification4.mmIssuer, com.tools20022.repository.msg.AlternateIdentification4.mmIssueDate, com.tools20022.repository.msg.AlternateIdentification4.mmExpiryDate,
+						com.tools20022.repository.msg.AlternateIdentification4.mmIssuerCountry);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlternateIdentification4";
 				definition = "Information related to the identification of an individual person.";
@@ -390,57 +458,57 @@ public class AlternateIdentification4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public AlternateIdentification4 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public OtherIdentification4Choice getType() {
 		return type;
 	}
 
-	public void setType(OtherIdentification4Choice type) {
-		this.type = type;
+	public AlternateIdentification4 setType(OtherIdentification4Choice type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Issr")
-	public Max35Text getIssuer() {
-		return issuer;
+	public Optional<Max35Text> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(Max35Text issuer) {
+	public AlternateIdentification4 setIssuer(Max35Text issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 
-	@XmlElement(name = "IsseDt")
-	public ISODate getIssueDate() {
-		return issueDate;
+	public Optional<ISODate> getIssueDate() {
+		return issueDate == null ? Optional.empty() : Optional.of(issueDate);
 	}
 
-	public void setIssueDate(ISODate issueDate) {
+	public AlternateIdentification4 setIssueDate(ISODate issueDate) {
 		this.issueDate = issueDate;
+		return this;
 	}
 
-	@XmlElement(name = "XpryDt")
-	public ISODate getExpiryDate() {
-		return expiryDate;
+	public Optional<ISODate> getExpiryDate() {
+		return expiryDate == null ? Optional.empty() : Optional.of(expiryDate);
 	}
 
-	public void setExpiryDate(ISODate expiryDate) {
+	public AlternateIdentification4 setExpiryDate(ISODate expiryDate) {
 		this.expiryDate = expiryDate;
+		return this;
 	}
 
-	@XmlElement(name = "IssrCtry")
-	public CountryCode getIssuerCountry() {
-		return issuerCountry;
+	public Optional<CountryCode> getIssuerCountry() {
+		return issuerCountry == null ? Optional.empty() : Optional.of(issuerCountry);
 	}
 
-	public void setIssuerCountry(CountryCode issuerCountry) {
+	public AlternateIdentification4 setIssuerCountry(CountryCode issuerCountry) {
 		this.issuerCountry = issuerCountry;
+		return this;
 	}
 }

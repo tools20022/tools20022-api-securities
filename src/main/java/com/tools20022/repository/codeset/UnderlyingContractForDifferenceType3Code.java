@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#Bond
- * UnderlyingContractForDifferenceType3Code.mmBond}</li>
+ * UnderlyingContractForDifferenceType3Code.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#Commodity
- * UnderlyingContractForDifferenceType3Code.mmCommodity}</li>
+ * UnderlyingContractForDifferenceType3Code.Commodity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#Currency
- * UnderlyingContractForDifferenceType3Code.mmCurrency}</li>
+ * UnderlyingContractForDifferenceType3Code.Currency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#EmissionAllowance
- * UnderlyingContractForDifferenceType3Code.mmEmissionAllowance}</li>
+ * UnderlyingContractForDifferenceType3Code.EmissionAllowance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#Equity
- * UnderlyingContractForDifferenceType3Code.mmEquity}</li>
+ * UnderlyingContractForDifferenceType3Code.Equity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#FutureOnEquity
- * UnderlyingContractForDifferenceType3Code.mmFutureOnEquity}</li>
+ * UnderlyingContractForDifferenceType3Code.FutureOnEquity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#OptionOnEquity
- * UnderlyingContractForDifferenceType3Code.mmOptionOnEquity}</li>
+ * UnderlyingContractForDifferenceType3Code.OptionOnEquity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingContractForDifferenceType3Code#Other
- * UnderlyingContractForDifferenceType3Code.mmOther}</li>
+ * UnderlyingContractForDifferenceType3Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -285,7 +285,7 @@ public class UnderlyingContractForDifferenceType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingContractForDifferenceType3Code";
 				definition = "Specifies the type for an underlying contract for difference derivative.";

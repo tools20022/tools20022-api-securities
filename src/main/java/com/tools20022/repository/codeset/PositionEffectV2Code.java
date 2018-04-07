@@ -39,18 +39,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PositionEffectV2Code#OpenPosition
- * PositionEffectV2Code.mmOpenPosition}</li>
+ * PositionEffectV2Code.OpenPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PositionEffectV2Code#ClosePosition
- * PositionEffectV2Code.mmClosePosition}</li>
+ * PositionEffectV2Code.ClosePosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PositionEffectV2Code#Rolled
- * PositionEffectV2Code.mmRolled}</li>
+ * PositionEffectV2Code.Rolled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectV2Code#Fifo
- * PositionEffectV2Code.mmFifo}</li>
+ * PositionEffectV2Code.Fifo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PositionEffectV2Code#CloseAccount
- * PositionEffectV2Code.mmCloseAccount}</li>
+ * PositionEffectV2Code.CloseAccount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -79,7 +79,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PositionEffectV2Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Indicates whether the resulting position after a  trade should be an opening position or closing position."
+ * "Indicates whether the resulting position after a trade should be an opening position or closing position."
  * </li>
  * </ul>
  */
@@ -251,11 +251,11 @@ public class PositionEffectV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OPEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PositionEffectV2Code";
-				definition = "Indicates whether the resulting position after a  trade should be an opening position or closing position.";
+				definition = "Indicates whether the resulting position after a trade should be an opening position or closing position.";
 				derivation_lazy = () -> Arrays.asList(PositionEffect2Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PositionEffectV2Code.OpenPosition, com.tools20022.repository.codeset.PositionEffectV2Code.ClosePosition,
 						com.tools20022.repository.codeset.PositionEffectV2Code.Rolled, com.tools20022.repository.codeset.PositionEffectV2Code.Fifo, com.tools20022.repository.codeset.PositionEffectV2Code.CloseAccount);

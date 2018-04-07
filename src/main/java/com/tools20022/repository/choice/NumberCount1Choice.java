@@ -17,20 +17,22 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.semt.IntraPositionMovementInstructionV04;
-import com.tools20022.repository.area.sese.SecuritiesFinancingInstructionV07;
-import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionGenerationNotificationV07;
-import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV07;
+import com.tools20022.repository.area.sese.SecuritiesFinancingInstructionV08;
+import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionGenerationNotificationV08;
+import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV08;
 import com.tools20022.repository.area.setr.SecuritiesTradeConfirmationV03;
 import com.tools20022.repository.datatype.Exact3NumericText;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TotalNumber1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,21 +66,29 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementInstructionV04#mmNumberCounts
  * IntraPositionMovementInstructionV04.mmNumberCounts}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.SecuritiesFinancingInstructionV07#mmNumberCounts
- * SecuritiesFinancingInstructionV07.mmNumberCounts}</li>
+ * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionGenerationNotificationV08#mmNumberCounts
+ * SecuritiesSettlementTransactionGenerationNotificationV08.mmNumberCounts}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionGenerationNotificationV07#mmNumberCounts
- * SecuritiesSettlementTransactionGenerationNotificationV07.mmNumberCounts}</li>
+ * {@linkplain com.tools20022.repository.area.sese.SecuritiesFinancingInstructionV08#mmNumberCounts
+ * SecuritiesFinancingInstructionV08.mmNumberCounts}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV07#mmNumberCounts
- * SecuritiesSettlementTransactionInstructionV07.mmNumberCounts}</li>
+ * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV08#mmNumberCounts
+ * SecuritiesSettlementTransactionInstructionV08.mmNumberCounts}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCurrentInstructionNumberRule#forNumberCount1Choice
+ * ConstraintCurrentInstructionNumberRule.forNumberCount1Choice}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,16 +99,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of number count type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NumberCount1Choice", propOrder = {"currentInstructionNumber", "totalNumber"})
 public class NumberCount1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CurInstrNb", required = true)
 	protected Exact3NumericText currentInstructionNumber;
 	/**
-	 * Sequential number of the instruction in a range of linked settlement
-	 * instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,6 +124,9 @@ public class NumberCount1Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "CurInstrNb"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :99B::SETT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -126,11 +139,12 @@ public class NumberCount1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrentInstructionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberCount1Choice, Exact3NumericText> mmCurrentInstructionNumber = new MMMessageAttribute<NumberCount1Choice, Exact3NumericText>() {
 		{
-			componentContext_lazy = () -> NumberCount1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NumberCount1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CurInstrNb";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":99B::SETT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrentInstructionNumber";
 			definition = "Sequential number of the instruction in a range of linked settlement instructions.";
@@ -138,12 +152,22 @@ public class NumberCount1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
+
+		@Override
+		public Exact3NumericText getValue(NumberCount1Choice obj) {
+			return obj.getCurrentInstructionNumber();
+		}
+
+		@Override
+		public void setValue(NumberCount1Choice obj, Exact3NumericText value) {
+			obj.setCurrentInstructionNumber(value);
+		}
 	};
+	@XmlElement(name = "TtlNb", required = true)
 	protected TotalNumber1 totalNumber;
 	/**
-	 * Total numbers of settlement transactions, receipts and deliveries, and
-	 * the concerned settlement transaction number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,6 +181,9 @@ public class NumberCount1Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "TtlNb"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :99B:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -169,11 +196,12 @@ public class NumberCount1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTotalNumber = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<NumberCount1Choice, TotalNumber1> mmTotalNumber = new MMMessageAssociationEnd<NumberCount1Choice, TotalNumber1>() {
 		{
-			componentContext_lazy = () -> NumberCount1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NumberCount1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNb";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":99B:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalNumber";
 			definition = "Total numbers of settlement transactions, receipts and deliveries, and the concerned settlement transaction number.";
@@ -182,15 +210,26 @@ public class NumberCount1Choice {
 			isComposite = true;
 			type_lazy = () -> TotalNumber1.mmObject();
 		}
+
+		@Override
+		public TotalNumber1 getValue(NumberCount1Choice obj) {
+			return obj.getTotalNumber();
+		}
+
+		@Override
+		public void setValue(NumberCount1Choice obj, TotalNumber1 value) {
+			obj.setTotalNumber(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NumberCount1Choice.mmCurrentInstructionNumber, NumberCount1Choice.mmTotalNumber);
-				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationV03.mmNumberCount, IntraPositionMovementInstructionV04.mmNumberCounts, SecuritiesFinancingInstructionV07.mmNumberCounts,
-						SecuritiesSettlementTransactionGenerationNotificationV07.mmNumberCounts, SecuritiesSettlementTransactionInstructionV07.mmNumberCounts);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.NumberCount1Choice.mmCurrentInstructionNumber, com.tools20022.repository.choice.NumberCount1Choice.mmTotalNumber);
+				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationV03.mmNumberCount, IntraPositionMovementInstructionV04.mmNumberCounts, SecuritiesSettlementTransactionGenerationNotificationV08.mmNumberCounts,
+						SecuritiesFinancingInstructionV08.mmNumberCounts, SecuritiesSettlementTransactionInstructionV08.mmNumberCounts);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCurrentInstructionNumberRule.forNumberCount1Choice);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NumberCount1Choice";
 				definition = "Choice of number count type.";
@@ -199,21 +238,21 @@ public class NumberCount1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CurInstrNb", required = true)
 	public Exact3NumericText getCurrentInstructionNumber() {
 		return currentInstructionNumber;
 	}
 
-	public void setCurrentInstructionNumber(Exact3NumericText currentInstructionNumber) {
-		this.currentInstructionNumber = currentInstructionNumber;
+	public NumberCount1Choice setCurrentInstructionNumber(Exact3NumericText currentInstructionNumber) {
+		this.currentInstructionNumber = Objects.requireNonNull(currentInstructionNumber);
+		return this;
 	}
 
-	@XmlElement(name = "TtlNb", required = true)
 	public TotalNumber1 getTotalNumber() {
 		return totalNumber;
 	}
 
-	public void setTotalNumber(TotalNumber1 totalNumber) {
-		this.totalNumber = totalNumber;
+	public NumberCount1Choice setTotalNumber(TotalNumber1 totalNumber) {
+		this.totalNumber = Objects.requireNonNull(totalNumber);
+		return this;
 	}
 }

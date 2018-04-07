@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationBasis2Code#Average
- * CalculationBasis2Code.mmAverage}</li>
+ * CalculationBasis2Code.Average}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationBasis2Code#Daily
- * CalculationBasis2Code.mmDaily}</li>
+ * CalculationBasis2Code.Daily}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationBasis2Code#Monthly
- * CalculationBasis2Code.mmMonthly}</li>
+ * CalculationBasis2Code.Monthly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationBasis2Code#Annual
- * CalculationBasis2Code.mmAnnual}</li>
+ * CalculationBasis2Code.Annual}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class CalculationBasis2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AVER");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CalculationBasis2Code";

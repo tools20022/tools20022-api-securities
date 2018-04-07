@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Aluminium
- * AssetClassDetailedSubProductType10Code.mmAluminium}</li>
+ * AssetClassDetailedSubProductType10Code.Aluminium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#AluminiumAlloy
- * AssetClassDetailedSubProductType10Code.mmAluminiumAlloy}</li>
+ * AssetClassDetailedSubProductType10Code.AluminiumAlloy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Cobalt
- * AssetClassDetailedSubProductType10Code.mmCobalt}</li>
+ * AssetClassDetailedSubProductType10Code.Cobalt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Copper
- * AssetClassDetailedSubProductType10Code.mmCopper}</li>
+ * AssetClassDetailedSubProductType10Code.Copper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#IronOre
- * AssetClassDetailedSubProductType10Code.mmIronOre}</li>
+ * AssetClassDetailedSubProductType10Code.IronOre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Molybdenum
- * AssetClassDetailedSubProductType10Code.mmMolybdenum}</li>
+ * AssetClassDetailedSubProductType10Code.Molybdenum}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#NASAAC
- * AssetClassDetailedSubProductType10Code.mmNASAAC}</li>
+ * AssetClassDetailedSubProductType10Code.NASAAC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Nickel
- * AssetClassDetailedSubProductType10Code.mmNickel}</li>
+ * AssetClassDetailedSubProductType10Code.Nickel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Steel
- * AssetClassDetailedSubProductType10Code.mmSteel}</li>
+ * AssetClassDetailedSubProductType10Code.Steel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Tin
- * AssetClassDetailedSubProductType10Code.mmTin}</li>
+ * AssetClassDetailedSubProductType10Code.Tin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Zinc
- * AssetClassDetailedSubProductType10Code.mmZinc}</li>
+ * AssetClassDetailedSubProductType10Code.Zinc}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Other
- * AssetClassDetailedSubProductType10Code.mmOther}</li>
+ * AssetClassDetailedSubProductType10Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType10Code#Lead
- * AssetClassDetailedSubProductType10Code.mmLead}</li>
+ * AssetClassDetailedSubProductType10Code.Lead}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -420,7 +420,7 @@ public class AssetClassDetailedSubProductType10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassDetailedSubProductType10Code";
 				definition = "Further sub product code list for commodity derivative Non-Precious.";

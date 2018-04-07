@@ -39,11 +39,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionType2Code#Call
- * OptionType2Code.mmCall}</li>
+ * OptionType2Code.Call}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionType2Code#Put
- * OptionType2Code.mmPut}</li>
+ * OptionType2Code.Put}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionType2Code#Other
- * OptionType2Code.mmOther}</li>
+ * OptionType2Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -52,8 +52,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,7 +156,7 @@ public class OptionType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CALL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionType2Code";

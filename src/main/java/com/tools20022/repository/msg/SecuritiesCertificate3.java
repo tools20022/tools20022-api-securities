@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -27,6 +28,8 @@ import com.tools20022.repository.entity.SecuritiesCertificate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintISO8532AndIssuerSchemeNameRule#forSecuritiesCertificate3
+ * ConstraintISO8532AndIssuerSchemeNameRule.forSecuritiesCertificate3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Physical representation of a security."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesCertificate3", propOrder = {"number", "issuer", "schemeName"})
 public class SecuritiesCertificate3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nb", required = true)
 	protected Max35Text number;
 	/**
-	 * Unique and unambiguous identifier of a certificate assigned by the
-	 * issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,6 +110,9 @@ public class SecuritiesCertificate3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Nb"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13B::CERT/[4!c[4c]]/30x</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -111,12 +125,13 @@ public class SecuritiesCertificate3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesCertificate3, Max35Text> mmNumber = new MMMessageAttribute<SecuritiesCertificate3, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesCertificate.mmNumber;
-			componentContext_lazy = () -> SecuritiesCertificate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCertificate3.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13B::CERT/[4!c[4c]]/30x"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Number";
 			definition = "Unique and unambiguous identifier of a certificate assigned by the issuer.";
@@ -124,11 +139,22 @@ public class SecuritiesCertificate3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(SecuritiesCertificate3 obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(SecuritiesCertificate3 obj, Max35Text value) {
+			obj.setNumber(value);
+		}
 	};
+	@XmlElement(name = "Issr")
 	protected Max35Text issuer;
 	/**
-	 * Entity that assigns the identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,6 +174,9 @@ public class SecuritiesCertificate3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Issr"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13B::CERT/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -158,12 +187,13 @@ public class SecuritiesCertificate3 {
 	 * definition} = "Entity that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesCertificate3, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<SecuritiesCertificate3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> IdentificationIssuerRole.mmEntityName;
-			componentContext_lazy = () -> SecuritiesCertificate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCertificate3.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13B::CERT/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Entity that assigns the identification.";
@@ -171,11 +201,22 @@ public class SecuritiesCertificate3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecuritiesCertificate3 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(SecuritiesCertificate3 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SchmeNm")
 	protected Max35Text schemeName;
 	/**
-	 * Short textual description of the scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -195,6 +236,9 @@ public class SecuritiesCertificate3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SchmeNm"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13B::CERT/4!c4c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -205,12 +249,13 @@ public class SecuritiesCertificate3 {
 	 * definition} = "Short textual description of the scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSchemeName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesCertificate3, Optional<Max35Text>> mmSchemeName = new MMMessageAttribute<SecuritiesCertificate3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmNameShort;
-			componentContext_lazy = () -> SecuritiesCertificate3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCertificate3.mmObject();
 			isDerived = false;
 			xmlTag = "SchmeNm";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13B::CERT/4!c4c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SchemeName";
 			definition = "Short textual description of the scheme.";
@@ -218,14 +263,26 @@ public class SecuritiesCertificate3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecuritiesCertificate3 obj) {
+			return obj.getSchemeName();
+		}
+
+		@Override
+		public void setValue(SecuritiesCertificate3 obj, Optional<Max35Text> value) {
+			obj.setSchemeName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesCertificate3.mmNumber, SecuritiesCertificate3.mmIssuer, SecuritiesCertificate3.mmSchemeName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesCertificate3.mmNumber, com.tools20022.repository.msg.SecuritiesCertificate3.mmIssuer,
+						com.tools20022.repository.msg.SecuritiesCertificate3.mmSchemeName);
 				trace_lazy = () -> SecuritiesCertificate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintISO8532AndIssuerSchemeNameRule.forSecuritiesCertificate3);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesCertificate3";
 				definition = "Physical representation of a security.";
@@ -234,30 +291,30 @@ public class SecuritiesCertificate3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nb", required = true)
 	public Max35Text getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max35Text number) {
-		this.number = number;
+	public SecuritiesCertificate3 setNumber(Max35Text number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
-	@XmlElement(name = "Issr")
-	public Max35Text getIssuer() {
-		return issuer;
+	public Optional<Max35Text> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(Max35Text issuer) {
+	public SecuritiesCertificate3 setIssuer(Max35Text issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 
-	@XmlElement(name = "SchmeNm")
-	public Max35Text getSchemeName() {
-		return schemeName;
+	public Optional<Max35Text> getSchemeName() {
+		return schemeName == null ? Optional.empty() : Optional.of(schemeName);
 	}
 
-	public void setSchemeName(Max35Text schemeName) {
+	public SecuritiesCertificate3 setSchemeName(Max35Text schemeName) {
 		this.schemeName = schemeName;
+		return this;
 	}
 }

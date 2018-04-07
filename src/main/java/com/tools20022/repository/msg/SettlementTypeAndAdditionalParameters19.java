@@ -17,10 +17,11 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV07;
+import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV08;
 import com.tools20022.repository.codeset.DeliveryReceiptType2Code;
 import com.tools20022.repository.codeset.ReceiveDelivery1Code;
 import com.tools20022.repository.datatype.Max35Text;
@@ -31,6 +32,8 @@ import com.tools20022.repository.entity.TradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -87,16 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV07#mmSettlementTypeAndAdditionalParameters
- * SecuritiesSettlementTransactionInstructionV07.
+ * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionInstructionV08#mmSettlementTypeAndAdditionalParameters
+ * SecuritiesSettlementTransactionInstructionV08.
  * mmSettlementTypeAndAdditionalParameters}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,17 +110,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides transaction type and identification information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SettlementTypeAndAdditionalParameters19", propOrder = {"securitiesMovementType", "payment", "commonIdentification", "corporateActionEventIdentification", "reconciliationIndicator",
 		"clientCollateralInstructionIdentification", "clientCollateralTransactionIdentification", "tripartyAgentServiceProviderCollateralTransactionIdentification", "tripartyAgentServiceProviderCollateralInstructionIdentification"})
 public class SettlementTypeAndAdditionalParameters19 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SctiesMvmntTp", required = true)
 	protected ReceiveDelivery1Code securitiesMovementType;
 	/**
-	 * Specifies if the movement on a securities account results from a deliver
-	 * or a receive instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,6 +141,10 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SctiesMvmntTp"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22H::REDE, ISO15022Synonym: MT 540-1
+	 * or 542-3</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -150,12 +157,13 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesMovementType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, ReceiveDelivery1Code> mmSecuritiesMovementType = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, ReceiveDelivery1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSecuritiesMovementType;
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesMvmntTp";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22H::REDE"), new ISO15022Synonym(this, "MT 540-1 or 542-3"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesMovementType";
 			definition = "Specifies if the movement on a securities account results from a deliver or a receive instruction.";
@@ -163,12 +171,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ReceiveDelivery1Code.mmObject();
 		}
+
+		@Override
+		public ReceiveDelivery1Code getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getSecuritiesMovementType();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, ReceiveDelivery1Code value) {
+			obj.setSecuritiesMovementType(value);
+		}
 	};
+	@XmlElement(name = "Pmt", required = true)
 	protected DeliveryReceiptType2Code payment;
 	/**
-	 * Specifies how the transaction is to be settled, for example, against
-	 * payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,6 +207,10 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Pmt"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22H::PAYM, ISO15022Synonym: MT
+	 * 541-543 or 540-542</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -201,12 +223,13 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPayment = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, DeliveryReceiptType2Code> mmPayment = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, DeliveryReceiptType2Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementType;
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "Pmt";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22H::PAYM"), new ISO15022Synonym(this, "MT 541-543 or 540-542"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Payment";
 			definition = "Specifies how the transaction is to be settled, for example, against payment.";
@@ -214,12 +237,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DeliveryReceiptType2Code.mmObject();
 		}
+
+		@Override
+		public DeliveryReceiptType2Code getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, DeliveryReceiptType2Code value) {
+			obj.setPayment(value);
+		}
 	};
+	@XmlElement(name = "CmonId")
 	protected Max35Text commonIdentification;
 	/**
-	 * Unique reference agreed upon by the two trade counterparties to identify
-	 * the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,6 +272,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "CmonId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C::COMM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -251,12 +287,13 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCommonIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>> mmCommonIdentification = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmCommonIdentification;
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "CmonId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C::COMM"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CommonIdentification";
 			definition = "Unique reference agreed upon by the two trade counterparties to identify the trade.";
@@ -264,12 +301,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getCommonIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<Max35Text> value) {
+			obj.setCommonIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CorpActnEvtId")
 	protected Max35Text corporateActionEventIdentification;
 	/**
-	 * Identification assigned by the account servicer to unambiguously identify
-	 * a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,6 +336,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "CorpActnEvtId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C::CORP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -301,12 +351,13 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCorporateActionEventIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>> mmCorporateActionEventIdentification = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEventRegistration.mmCorporateActionEventIdentification;
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "CorpActnEvtId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C::CORP"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorporateActionEventIdentification";
 			definition = "Identification assigned by the account servicer to unambiguously identify a corporate action event.";
@@ -314,13 +365,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getCorporateActionEventIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<Max35Text> value) {
+			obj.setCorporateActionEventIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RcncltnInd")
 	protected YesNoIndicator reconciliationIndicator;
 	/**
-	 * Indicates whether the settlement transaction was already sent on the
-	 * market and that it is only sent by an account owner to an account
-	 * servicer for reconciliation purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,6 +396,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "RcncltnInd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :23G:4!c/RECO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -348,11 +411,12 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReconciliationIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<YesNoIndicator>> mmReconciliationIndicator = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "RcncltnInd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":23G:4!c/RECO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReconciliationIndicator";
 			definition = "Indicates whether the settlement transaction was already sent on the market and that it is only sent by an account owner to an account servicer for reconciliation purposes.";
@@ -360,11 +424,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getReconciliationIndicator();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<YesNoIndicator> value) {
+			obj.setReconciliationIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClntCollInstrId")
 	protected Max35Text clientCollateralInstructionIdentification;
 	/**
-	 * Unique identification assigned to the instruction by the client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -390,9 +465,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * "Unique identification assigned to the instruction by the client."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientCollateralInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>> mmClientCollateralInstructionIdentification = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "ClntCollInstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -402,12 +477,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getClientCollateralInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<Max35Text> value) {
+			obj.setClientCollateralInstructionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClntCollTxId")
 	protected Max35Text clientCollateralTransactionIdentification;
 	/**
-	 * Unique identification identifying the triparty collateral management
-	 * transaction from the client's point of view.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -434,9 +519,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientCollateralTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>> mmClientCollateralTransactionIdentification = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "ClntCollTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -446,12 +531,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getClientCollateralTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<Max35Text> value) {
+			obj.setClientCollateralTransactionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TrptyAgtSvcPrvdrCollTxId")
 	protected Max35Text tripartyAgentServiceProviderCollateralTransactionIdentification;
 	/**
-	 * Unique identification identifying the triparty collateral management
-	 * transaction from the triparty-agent's/service-provider's point of view.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,9 +574,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTripartyAgentServiceProviderCollateralTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>> mmTripartyAgentServiceProviderCollateralTransactionIdentification = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "TrptyAgtSvcPrvdrCollTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -491,12 +586,22 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getTripartyAgentServiceProviderCollateralTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<Max35Text> value) {
+			obj.setTripartyAgentServiceProviderCollateralTransactionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TrptyAgtSvcPrvdrCollInstrId")
 	protected Max35Text tripartyAgentServiceProviderCollateralInstructionIdentification;
 	/**
-	 * Unique identification assigned to the instruction by the
-	 * triparty-agent/service-provider.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -524,9 +629,9 @@ public class SettlementTypeAndAdditionalParameters19 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTripartyAgentServiceProviderCollateralInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>> mmTripartyAgentServiceProviderCollateralInstructionIdentification = new MMMessageAttribute<SettlementTypeAndAdditionalParameters19, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SettlementTypeAndAdditionalParameters19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmObject();
 			isDerived = false;
 			xmlTag = "TrptyAgtSvcPrvdrCollInstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -536,18 +641,30 @@ public class SettlementTypeAndAdditionalParameters19 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SettlementTypeAndAdditionalParameters19 obj) {
+			return obj.getTripartyAgentServiceProviderCollateralInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndAdditionalParameters19 obj, Optional<Max35Text> value) {
+			obj.setTripartyAgentServiceProviderCollateralInstructionIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SettlementTypeAndAdditionalParameters19.mmSecuritiesMovementType, SettlementTypeAndAdditionalParameters19.mmPayment, SettlementTypeAndAdditionalParameters19.mmCommonIdentification,
-						SettlementTypeAndAdditionalParameters19.mmCorporateActionEventIdentification, SettlementTypeAndAdditionalParameters19.mmReconciliationIndicator,
-						SettlementTypeAndAdditionalParameters19.mmClientCollateralInstructionIdentification, SettlementTypeAndAdditionalParameters19.mmClientCollateralTransactionIdentification,
-						SettlementTypeAndAdditionalParameters19.mmTripartyAgentServiceProviderCollateralTransactionIdentification, SettlementTypeAndAdditionalParameters19.mmTripartyAgentServiceProviderCollateralInstructionIdentification);
-				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesSettlementTransactionInstructionV07.mmSettlementTypeAndAdditionalParameters);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmSecuritiesMovementType, com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmPayment,
+						com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmCommonIdentification, com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmCorporateActionEventIdentification,
+						com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmReconciliationIndicator, com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmClientCollateralInstructionIdentification,
+						com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmClientCollateralTransactionIdentification,
+						com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmTripartyAgentServiceProviderCollateralTransactionIdentification,
+						com.tools20022.repository.msg.SettlementTypeAndAdditionalParameters19.mmTripartyAgentServiceProviderCollateralInstructionIdentification);
+				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesSettlementTransactionInstructionV08.mmSettlementTypeAndAdditionalParameters);
 				trace_lazy = () -> SecuritiesSettlement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTypeAndAdditionalParameters19";
 				definition = "Provides transaction type and identification information.";
@@ -556,84 +673,84 @@ public class SettlementTypeAndAdditionalParameters19 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctiesMvmntTp", required = true)
 	public ReceiveDelivery1Code getSecuritiesMovementType() {
 		return securitiesMovementType;
 	}
 
-	public void setSecuritiesMovementType(ReceiveDelivery1Code securitiesMovementType) {
-		this.securitiesMovementType = securitiesMovementType;
+	public SettlementTypeAndAdditionalParameters19 setSecuritiesMovementType(ReceiveDelivery1Code securitiesMovementType) {
+		this.securitiesMovementType = Objects.requireNonNull(securitiesMovementType);
+		return this;
 	}
 
-	@XmlElement(name = "Pmt", required = true)
 	public DeliveryReceiptType2Code getPayment() {
 		return payment;
 	}
 
-	public void setPayment(DeliveryReceiptType2Code payment) {
-		this.payment = payment;
+	public SettlementTypeAndAdditionalParameters19 setPayment(DeliveryReceiptType2Code payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 
-	@XmlElement(name = "CmonId")
-	public Max35Text getCommonIdentification() {
-		return commonIdentification;
+	public Optional<Max35Text> getCommonIdentification() {
+		return commonIdentification == null ? Optional.empty() : Optional.of(commonIdentification);
 	}
 
-	public void setCommonIdentification(Max35Text commonIdentification) {
+	public SettlementTypeAndAdditionalParameters19 setCommonIdentification(Max35Text commonIdentification) {
 		this.commonIdentification = commonIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnEvtId")
-	public Max35Text getCorporateActionEventIdentification() {
-		return corporateActionEventIdentification;
+	public Optional<Max35Text> getCorporateActionEventIdentification() {
+		return corporateActionEventIdentification == null ? Optional.empty() : Optional.of(corporateActionEventIdentification);
 	}
 
-	public void setCorporateActionEventIdentification(Max35Text corporateActionEventIdentification) {
+	public SettlementTypeAndAdditionalParameters19 setCorporateActionEventIdentification(Max35Text corporateActionEventIdentification) {
 		this.corporateActionEventIdentification = corporateActionEventIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnInd")
-	public YesNoIndicator getReconciliationIndicator() {
-		return reconciliationIndicator;
+	public Optional<YesNoIndicator> getReconciliationIndicator() {
+		return reconciliationIndicator == null ? Optional.empty() : Optional.of(reconciliationIndicator);
 	}
 
-	public void setReconciliationIndicator(YesNoIndicator reconciliationIndicator) {
+	public SettlementTypeAndAdditionalParameters19 setReconciliationIndicator(YesNoIndicator reconciliationIndicator) {
 		this.reconciliationIndicator = reconciliationIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "ClntCollInstrId")
-	public Max35Text getClientCollateralInstructionIdentification() {
-		return clientCollateralInstructionIdentification;
+	public Optional<Max35Text> getClientCollateralInstructionIdentification() {
+		return clientCollateralInstructionIdentification == null ? Optional.empty() : Optional.of(clientCollateralInstructionIdentification);
 	}
 
-	public void setClientCollateralInstructionIdentification(Max35Text clientCollateralInstructionIdentification) {
+	public SettlementTypeAndAdditionalParameters19 setClientCollateralInstructionIdentification(Max35Text clientCollateralInstructionIdentification) {
 		this.clientCollateralInstructionIdentification = clientCollateralInstructionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ClntCollTxId")
-	public Max35Text getClientCollateralTransactionIdentification() {
-		return clientCollateralTransactionIdentification;
+	public Optional<Max35Text> getClientCollateralTransactionIdentification() {
+		return clientCollateralTransactionIdentification == null ? Optional.empty() : Optional.of(clientCollateralTransactionIdentification);
 	}
 
-	public void setClientCollateralTransactionIdentification(Max35Text clientCollateralTransactionIdentification) {
+	public SettlementTypeAndAdditionalParameters19 setClientCollateralTransactionIdentification(Max35Text clientCollateralTransactionIdentification) {
 		this.clientCollateralTransactionIdentification = clientCollateralTransactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "TrptyAgtSvcPrvdrCollTxId")
-	public Max35Text getTripartyAgentServiceProviderCollateralTransactionIdentification() {
-		return tripartyAgentServiceProviderCollateralTransactionIdentification;
+	public Optional<Max35Text> getTripartyAgentServiceProviderCollateralTransactionIdentification() {
+		return tripartyAgentServiceProviderCollateralTransactionIdentification == null ? Optional.empty() : Optional.of(tripartyAgentServiceProviderCollateralTransactionIdentification);
 	}
 
-	public void setTripartyAgentServiceProviderCollateralTransactionIdentification(Max35Text tripartyAgentServiceProviderCollateralTransactionIdentification) {
+	public SettlementTypeAndAdditionalParameters19 setTripartyAgentServiceProviderCollateralTransactionIdentification(Max35Text tripartyAgentServiceProviderCollateralTransactionIdentification) {
 		this.tripartyAgentServiceProviderCollateralTransactionIdentification = tripartyAgentServiceProviderCollateralTransactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "TrptyAgtSvcPrvdrCollInstrId")
-	public Max35Text getTripartyAgentServiceProviderCollateralInstructionIdentification() {
-		return tripartyAgentServiceProviderCollateralInstructionIdentification;
+	public Optional<Max35Text> getTripartyAgentServiceProviderCollateralInstructionIdentification() {
+		return tripartyAgentServiceProviderCollateralInstructionIdentification == null ? Optional.empty() : Optional.of(tripartyAgentServiceProviderCollateralInstructionIdentification);
 	}
 
-	public void setTripartyAgentServiceProviderCollateralInstructionIdentification(Max35Text tripartyAgentServiceProviderCollateralInstructionIdentification) {
+	public SettlementTypeAndAdditionalParameters19 setTripartyAgentServiceProviderCollateralInstructionIdentification(Max35Text tripartyAgentServiceProviderCollateralInstructionIdentification) {
 		this.tripartyAgentServiceProviderCollateralInstructionIdentification = tripartyAgentServiceProviderCollateralInstructionIdentification;
+		return this;
 	}
 }

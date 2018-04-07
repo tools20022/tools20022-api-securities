@@ -22,11 +22,13 @@ import com.tools20022.repository.choice.QuorumQuantity1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Meeting4;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies whether a quorum is required or not together with the quorum
@@ -70,8 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +91,8 @@ public class Quorum {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text quantity;
 	/**
-	 * Minimum quantity of securities required to hold a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +125,7 @@ public class Quorum {
 	 * "Minimum quantity of securities required to hold a meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQuantity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Quorum, Max35Text> mmQuantity = new MMBusinessAttribute<Quorum, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(QuorumQuantity1Choice.mmQuorumQuantity, Meeting4.mmQuorumQuantity);
 			isDerived = false;
@@ -136,19 +138,20 @@ public class Quorum {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Quorum.class.getMethod("getQuantity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Quorum obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(Quorum obj, Max35Text value) {
+			obj.setQuantity(value);
 		}
 	};
 	protected PercentageRate percentage;
 	/**
-	 * Minimum quantity of securities, expressed as a percentage, required to
-	 * hold a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,7 +184,7 @@ public class Quorum {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Quorum, PercentageRate> mmPercentage = new MMBusinessAttribute<Quorum, PercentageRate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(QuorumQuantity1Choice.mmQuorumQuantityPercentage);
 			isDerived = false;
@@ -194,19 +197,20 @@ public class Quorum {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Quorum.class.getMethod("getPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Quorum obj) {
+			return obj.getPercentage();
+		}
+
+		@Override
+		public void setValue(Quorum obj, PercentageRate value) {
+			obj.setPercentage(value);
 		}
 	};
 	protected YesNoIndicator quorumRequired;
 	/**
-	 * Specifies whether a minimum number of security representation is required
-	 * to hold a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,7 +242,7 @@ public class Quorum {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQuorumRequired = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Quorum, YesNoIndicator> mmQuorumRequired = new MMBusinessAttribute<Quorum, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Meeting4.mmQuorumRequired);
 			isDerived = false;
@@ -251,18 +255,20 @@ public class Quorum {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Quorum.class.getMethod("getQuorumRequired", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Quorum obj) {
+			return obj.getQuorumRequired();
+		}
+
+		@Override
+		public void setValue(Quorum obj, YesNoIndicator value) {
+			obj.setQuorumRequired(value);
 		}
 	};
 	protected Meeting meeting;
 	/**
-	 * Meeting for which a quorum is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,7 +297,7 @@ public class Quorum {
 	 * definition} = "Meeting for which a quorum is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Quorum, Optional<Meeting>> mmMeeting = new MMBusinessAssociationEnd<Quorum, Optional<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Quorum.mmObject();
@@ -300,20 +306,30 @@ public class Quorum {
 			definition = "Meeting for which a quorum is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmQuorum;
+			opposite_lazy = () -> Meeting.mmQuorum;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public Optional<Meeting> getValue(Quorum obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(Quorum obj, Optional<Meeting> value) {
+			obj.setMeeting(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Quorum";
 				definition = "Specifies whether a quorum is required or not together with the quorum parameters.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmQuorum);
+				associationDomain_lazy = () -> Arrays.asList(Meeting.mmQuorum);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Quorum.mmQuantity, com.tools20022.repository.entity.Quorum.mmPercentage, com.tools20022.repository.entity.Quorum.mmQuorumRequired,
 						com.tools20022.repository.entity.Quorum.mmMeeting);
 				derivationComponent_lazy = () -> Arrays.asList(QuorumQuantity1Choice.mmObject());
@@ -331,31 +347,35 @@ public class Quorum {
 		return quantity;
 	}
 
-	public void setQuantity(Max35Text quantity) {
-		this.quantity = quantity;
+	public Quorum setQuantity(Max35Text quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
 	public PercentageRate getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(PercentageRate percentage) {
-		this.percentage = percentage;
+	public Quorum setPercentage(PercentageRate percentage) {
+		this.percentage = Objects.requireNonNull(percentage);
+		return this;
 	}
 
 	public YesNoIndicator getQuorumRequired() {
 		return quorumRequired;
 	}
 
-	public void setQuorumRequired(YesNoIndicator quorumRequired) {
-		this.quorumRequired = quorumRequired;
+	public Quorum setQuorumRequired(YesNoIndicator quorumRequired) {
+		this.quorumRequired = Objects.requireNonNull(quorumRequired);
+		return this;
 	}
 
-	public Meeting getMeeting() {
-		return meeting;
+	public Optional<Meeting> getMeeting() {
+		return meeting == null ? Optional.empty() : Optional.of(meeting);
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+	public Quorum setMeeting(Meeting meeting) {
 		this.meeting = meeting;
+		return this;
 	}
 }

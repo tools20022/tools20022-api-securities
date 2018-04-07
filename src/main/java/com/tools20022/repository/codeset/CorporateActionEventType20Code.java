@@ -38,201 +38,200 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#ActiveTradingStatus
- * CorporateActionEventType20Code.mmActiveTradingStatus}</li>
+ * CorporateActionEventType20Code.ActiveTradingStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Attachment
- * CorporateActionEventType20Code.mmAttachment}</li>
+ * CorporateActionEventType20Code.Attachment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Bankruptcy
- * CorporateActionEventType20Code.mmBankruptcy}</li>
+ * CorporateActionEventType20Code.Bankruptcy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#BondDefault
- * CorporateActionEventType20Code.mmBondDefault}</li>
+ * CorporateActionEventType20Code.BondDefault}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#BonusIssue
- * CorporateActionEventType20Code.mmBonusIssue}</li>
+ * CorporateActionEventType20Code.BonusIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CallOnIntermediateSecurities
- * CorporateActionEventType20Code.mmCallOnIntermediateSecurities}</li>
+ * CorporateActionEventType20Code.CallOnIntermediateSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CapitalDistribution
- * CorporateActionEventType20Code.mmCapitalDistribution}</li>
+ * CorporateActionEventType20Code.CapitalDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CapitalGainsDistribution
- * CorporateActionEventType20Code.mmCapitalGainsDistribution}</li>
+ * CorporateActionEventType20Code.CapitalGainsDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Capitalisation
- * CorporateActionEventType20Code.mmCapitalisation}</li>
+ * CorporateActionEventType20Code.Capitalisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CashDistributionFromNonEligibleSecuritiesSales
- * CorporateActionEventType20Code.
- * mmCashDistributionFromNonEligibleSecuritiesSales}</li>
+ * CorporateActionEventType20Code.CashDistributionFromNonEligibleSecuritiesSales
+ * }</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CashDividend
- * CorporateActionEventType20Code.mmCashDividend}</li>
+ * CorporateActionEventType20Code.CashDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Change
- * CorporateActionEventType20Code.mmChange}</li>
+ * CorporateActionEventType20Code.Change}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CompanyOption
- * CorporateActionEventType20Code.mmCompanyOption}</li>
+ * CorporateActionEventType20Code.CompanyOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#ClassActionProposedSettlement
- * CorporateActionEventType20Code.mmClassActionProposedSettlement}</li>
+ * CorporateActionEventType20Code.ClassActionProposedSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Consent
- * CorporateActionEventType20Code.mmConsent}</li>
+ * CorporateActionEventType20Code.Consent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Conversion
- * CorporateActionEventType20Code.mmConversion}</li>
+ * CorporateActionEventType20Code.Conversion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#CreditEvent
- * CorporateActionEventType20Code.mmCreditEvent}</li>
+ * CorporateActionEventType20Code.CreditEvent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#DecreaseInValue
- * CorporateActionEventType20Code.mmDecreaseInValue}</li>
+ * CorporateActionEventType20Code.DecreaseInValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Detachment
- * CorporateActionEventType20Code.mmDetachment}</li>
+ * CorporateActionEventType20Code.Detachment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Disclosure
- * CorporateActionEventType20Code.mmDisclosure}</li>
+ * CorporateActionEventType20Code.Disclosure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#DividendOption
- * CorporateActionEventType20Code.mmDividendOption}</li>
+ * CorporateActionEventType20Code.DividendOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#DividendReinvestment
- * CorporateActionEventType20Code.mmDividendReinvestment}</li>
+ * CorporateActionEventType20Code.DividendReinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Drawing
- * CorporateActionEventType20Code.mmDrawing}</li>
+ * CorporateActionEventType20Code.Drawing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#DutchAuction
- * CorporateActionEventType20Code.mmDutchAuction}</li>
+ * CorporateActionEventType20Code.DutchAuction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Exchange
- * CorporateActionEventType20Code.mmExchange}</li>
+ * CorporateActionEventType20Code.Exchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#FinalMaturity
- * CorporateActionEventType20Code.mmFinalMaturity}</li>
+ * CorporateActionEventType20Code.FinalMaturity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#FullCall
- * CorporateActionEventType20Code.mmFullCall}</li>
+ * CorporateActionEventType20Code.FullCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#IncreaseInValue
- * CorporateActionEventType20Code.mmIncreaseInValue}</li>
+ * CorporateActionEventType20Code.IncreaseInValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#InstalmentCall
- * CorporateActionEventType20Code.mmInstalmentCall}</li>
+ * CorporateActionEventType20Code.InstalmentCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#InterestPayment
- * CorporateActionEventType20Code.mmInterestPayment}</li>
+ * CorporateActionEventType20Code.InterestPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#InterestPaymentWithPrincipal
- * CorporateActionEventType20Code.mmInterestPaymentWithPrincipal}</li>
+ * CorporateActionEventType20Code.InterestPaymentWithPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#IntermediateSecuritiesDistribution
- * CorporateActionEventType20Code.mmIntermediateSecuritiesDistribution}</li>
+ * CorporateActionEventType20Code.IntermediateSecuritiesDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#LiquidationDividend
- * CorporateActionEventType20Code.mmLiquidationDividend}</li>
+ * CorporateActionEventType20Code.LiquidationDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#MaturityExtension
- * CorporateActionEventType20Code.mmMaturityExtension}</li>
+ * CorporateActionEventType20Code.MaturityExtension}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Merger
- * CorporateActionEventType20Code.mmMerger}</li>
+ * CorporateActionEventType20Code.Merger}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#NonOfficialOffer
- * CorporateActionEventType20Code.mmNonOfficialOffer}</li>
+ * CorporateActionEventType20Code.NonOfficialOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#NonUSTEFRADCertification
- * CorporateActionEventType20Code.mmNonUSTEFRADCertification}</li>
+ * CorporateActionEventType20Code.NonUSTEFRADCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#OddLotSalePurchase
- * CorporateActionEventType20Code.mmOddLotSalePurchase}</li>
+ * CorporateActionEventType20Code.OddLotSalePurchase}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#OtherEvent
- * CorporateActionEventType20Code.mmOtherEvent}</li>
+ * CorporateActionEventType20Code.OtherEvent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PariPassu
- * CorporateActionEventType20Code.mmPariPassu}</li>
+ * CorporateActionEventType20Code.PariPassu}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PartialRedemptionWithoutPoolFactorReduction
- * CorporateActionEventType20Code.mmPartialRedemptionWithoutPoolFactorReduction}
- * </li>
+ * CorporateActionEventType20Code.PartialRedemptionWithoutPoolFactorReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PartialRedemptionWithPoolFactorReduction
- * CorporateActionEventType20Code.mmPartialRedemptionWithPoolFactorReduction}</li>
+ * CorporateActionEventType20Code.PartialRedemptionWithPoolFactorReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PayInKind
- * CorporateActionEventType20Code.mmPayInKind}</li>
+ * CorporateActionEventType20Code.PayInKind}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PlaceOfIncorporation
- * CorporateActionEventType20Code.mmPlaceOfIncorporation}</li>
+ * CorporateActionEventType20Code.PlaceOfIncorporation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Prefunding
- * CorporateActionEventType20Code.mmPrefunding}</li>
+ * CorporateActionEventType20Code.Prefunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PriorityIssue
- * CorporateActionEventType20Code.mmPriorityIssue}</li>
+ * CorporateActionEventType20Code.PriorityIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#PutRedemption
- * CorporateActionEventType20Code.mmPutRedemption}</li>
+ * CorporateActionEventType20Code.PutRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Redenomination
- * CorporateActionEventType20Code.mmRedenomination}</li>
+ * CorporateActionEventType20Code.Redenomination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#RemarketingAgreement
- * CorporateActionEventType20Code.mmRemarketingAgreement}</li>
+ * CorporateActionEventType20Code.RemarketingAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#RepurchaseOffer
- * CorporateActionEventType20Code.mmRepurchaseOffer}</li>
+ * CorporateActionEventType20Code.RepurchaseOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#ReverseStockSplit
- * CorporateActionEventType20Code.mmReverseStockSplit}</li>
+ * CorporateActionEventType20Code.ReverseStockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#RightsIssue
- * CorporateActionEventType20Code.mmRightsIssue}</li>
+ * CorporateActionEventType20Code.RightsIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#ScripDividend
- * CorporateActionEventType20Code.mmScripDividend}</li>
+ * CorporateActionEventType20Code.ScripDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#SharesPremiumDividend
- * CorporateActionEventType20Code.mmSharesPremiumDividend}</li>
+ * CorporateActionEventType20Code.SharesPremiumDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#SmallestNegotiableUnit
- * CorporateActionEventType20Code.mmSmallestNegotiableUnit}</li>
+ * CorporateActionEventType20Code.SmallestNegotiableUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#SpinOff
- * CorporateActionEventType20Code.mmSpinOff}</li>
+ * CorporateActionEventType20Code.SpinOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#StockDividend
- * CorporateActionEventType20Code.mmStockDividend}</li>
+ * CorporateActionEventType20Code.StockDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#StockSplit
- * CorporateActionEventType20Code.mmStockSplit}</li>
+ * CorporateActionEventType20Code.StockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#TaxReclaim
- * CorporateActionEventType20Code.mmTaxReclaim}</li>
+ * CorporateActionEventType20Code.TaxReclaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Tender
- * CorporateActionEventType20Code.mmTender}</li>
+ * CorporateActionEventType20Code.Tender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#TradingStatusDelisted
- * CorporateActionEventType20Code.mmTradingStatusDelisted}</li>
+ * CorporateActionEventType20Code.TradingStatusDelisted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#TradingStatusSuspended
- * CorporateActionEventType20Code.mmTradingStatusSuspended}</li>
+ * CorporateActionEventType20Code.TradingStatusSuspended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#WarrantExercise
- * CorporateActionEventType20Code.mmWarrantExercise}</li>
+ * CorporateActionEventType20Code.WarrantExercise}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#WithholdingTaxReliefCertification
- * CorporateActionEventType20Code.mmWithholdingTaxReliefCertification}</li>
+ * CorporateActionEventType20Code.WithholdingTaxReliefCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventType20Code#Worthless
- * CorporateActionEventType20Code.mmWorthless}</li>
+ * CorporateActionEventType20Code.Worthless}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -241,8 +240,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -1825,7 +1824,7 @@ public class CorporateActionEventType20Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventType20Code";
 				definition = "Specifies the corporate action event type.";

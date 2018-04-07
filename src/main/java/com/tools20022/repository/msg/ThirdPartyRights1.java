@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information about third party rights."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ThirdPartyRights1", propOrder = {"type", "dateTime", "holder", "legalEntityIdentifier", "amount", "description"})
 public class ThirdPartyRights1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected Max35Text type;
 	/**
-	 * Type of third party right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,9 +108,9 @@ public class ThirdPartyRights1 {
 	 * definition} = "Type of third party right."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ThirdPartyRights1, Max35Text> mmType = new MMMessageAttribute<ThirdPartyRights1, Max35Text>() {
 		{
-			componentContext_lazy = () -> ThirdPartyRights1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ThirdPartyRights1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,11 +120,22 @@ public class ThirdPartyRights1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ThirdPartyRights1 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ThirdPartyRights1 obj, Max35Text value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "DtTm")
 	protected ISODateTime dateTime;
 	/**
-	 * Timestamp for the third party right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,9 +160,9 @@ public class ThirdPartyRights1 {
 	 * definition} = "Timestamp for the third party right."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ThirdPartyRights1, Optional<ISODateTime>> mmDateTime = new MMMessageAttribute<ThirdPartyRights1, Optional<ISODateTime>>() {
 		{
-			componentContext_lazy = () -> ThirdPartyRights1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ThirdPartyRights1.mmObject();
 			isDerived = false;
 			xmlTag = "DtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,11 +172,22 @@ public class ThirdPartyRights1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(ThirdPartyRights1 obj) {
+			return obj.getDateTime();
+		}
+
+		@Override
+		public void setValue(ThirdPartyRights1 obj, Optional<ISODateTime> value) {
+			obj.setDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Hldr")
 	protected PartyIdentification70Choice holder;
 	/**
-	 * Party that holds the third party right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -187,9 +212,9 @@ public class ThirdPartyRights1 {
 	 * definition} = "Party that holds the third party right."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmHolder = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ThirdPartyRights1, Optional<PartyIdentification70Choice>> mmHolder = new MMMessageAssociationEnd<ThirdPartyRights1, Optional<PartyIdentification70Choice>>() {
 		{
-			componentContext_lazy = () -> ThirdPartyRights1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ThirdPartyRights1.mmObject();
 			isDerived = false;
 			xmlTag = "Hldr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,13 +225,22 @@ public class ThirdPartyRights1 {
 			isComposite = true;
 			type_lazy = () -> PartyIdentification70Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification70Choice> getValue(ThirdPartyRights1 obj) {
+			return obj.getHolder();
+		}
+
+		@Override
+		public void setValue(ThirdPartyRights1 obj, Optional<PartyIdentification70Choice> value) {
+			obj.setHolder(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LglNttyIdr")
 	protected LEIIdentifier legalEntityIdentifier;
 	/**
-	 * Identification of the holder with a Legal Entity Identifier. This is a
-	 * code allocated to a party as described in ISO 17442
-	 * "Financial Services - Legal Entity Identifier (LEI)".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,10 +273,10 @@ public class ThirdPartyRights1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLegalEntityIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ThirdPartyRights1, Optional<LEIIdentifier>> mmLegalEntityIdentifier = new MMMessageAttribute<ThirdPartyRights1, Optional<LEIIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmLEI;
-			componentContext_lazy = () -> ThirdPartyRights1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ThirdPartyRights1.mmObject();
 			isDerived = false;
 			xmlTag = "LglNttyIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,11 +286,22 @@ public class ThirdPartyRights1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(ThirdPartyRights1 obj) {
+			return obj.getLegalEntityIdentifier();
+		}
+
+		@Override
+		public void setValue(ThirdPartyRights1 obj, Optional<LEIIdentifier> value) {
+			obj.setLegalEntityIdentifier(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Amt")
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount of the third party right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,9 +327,9 @@ public class ThirdPartyRights1 {
 	 * definition} = "Amount of the third party right."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ThirdPartyRights1, Optional<ActiveCurrencyAndAmount>> mmAmount = new MMMessageAttribute<ThirdPartyRights1, Optional<ActiveCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> ThirdPartyRights1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ThirdPartyRights1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -294,11 +339,22 @@ public class ThirdPartyRights1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(ThirdPartyRights1 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(ThirdPartyRights1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max350Text description;
 	/**
-	 * Description of the third party right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -323,9 +379,9 @@ public class ThirdPartyRights1 {
 	 * definition} = "Description of the third party right."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ThirdPartyRights1, Optional<Max350Text>> mmDescription = new MMMessageAttribute<ThirdPartyRights1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> ThirdPartyRights1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ThirdPartyRights1.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -335,14 +391,24 @@ public class ThirdPartyRights1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(ThirdPartyRights1 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(ThirdPartyRights1 obj, Optional<Max350Text> value) {
+			obj.setDescription(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ThirdPartyRights1.mmType, ThirdPartyRights1.mmDateTime, ThirdPartyRights1.mmHolder, ThirdPartyRights1.mmLegalEntityIdentifier, ThirdPartyRights1.mmAmount,
-						ThirdPartyRights1.mmDescription);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ThirdPartyRights1.mmType, com.tools20022.repository.msg.ThirdPartyRights1.mmDateTime, com.tools20022.repository.msg.ThirdPartyRights1.mmHolder,
+						com.tools20022.repository.msg.ThirdPartyRights1.mmLegalEntityIdentifier, com.tools20022.repository.msg.ThirdPartyRights1.mmAmount, com.tools20022.repository.msg.ThirdPartyRights1.mmDescription);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ThirdPartyRights1";
 				definition = "Information about third party rights.";
@@ -351,57 +417,57 @@ public class ThirdPartyRights1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public Max35Text getType() {
 		return type;
 	}
 
-	public void setType(Max35Text type) {
-		this.type = type;
+	public ThirdPartyRights1 setType(Max35Text type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "DtTm")
-	public ISODateTime getDateTime() {
-		return dateTime;
+	public Optional<ISODateTime> getDateTime() {
+		return dateTime == null ? Optional.empty() : Optional.of(dateTime);
 	}
 
-	public void setDateTime(ISODateTime dateTime) {
+	public ThirdPartyRights1 setDateTime(ISODateTime dateTime) {
 		this.dateTime = dateTime;
+		return this;
 	}
 
-	@XmlElement(name = "Hldr")
-	public PartyIdentification70Choice getHolder() {
-		return holder;
+	public Optional<PartyIdentification70Choice> getHolder() {
+		return holder == null ? Optional.empty() : Optional.of(holder);
 	}
 
-	public void setHolder(PartyIdentification70Choice holder) {
+	public ThirdPartyRights1 setHolder(PartyIdentification70Choice holder) {
 		this.holder = holder;
+		return this;
 	}
 
-	@XmlElement(name = "LglNttyIdr")
-	public LEIIdentifier getLegalEntityIdentifier() {
-		return legalEntityIdentifier;
+	public Optional<LEIIdentifier> getLegalEntityIdentifier() {
+		return legalEntityIdentifier == null ? Optional.empty() : Optional.of(legalEntityIdentifier);
 	}
 
-	public void setLegalEntityIdentifier(LEIIdentifier legalEntityIdentifier) {
+	public ThirdPartyRights1 setLegalEntityIdentifier(LEIIdentifier legalEntityIdentifier) {
 		this.legalEntityIdentifier = legalEntityIdentifier;
+		return this;
 	}
 
-	@XmlElement(name = "Amt")
-	public ActiveCurrencyAndAmount getAmount() {
-		return amount;
+	public Optional<ActiveCurrencyAndAmount> getAmount() {
+		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
+	public ThirdPartyRights1 setAmount(ActiveCurrencyAndAmount amount) {
 		this.amount = amount;
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max350Text getDescription() {
-		return description;
+	public Optional<Max350Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max350Text description) {
+	public ThirdPartyRights1 setDescription(Max350Text description) {
 		this.description = description;
+		return this;
 	}
 }

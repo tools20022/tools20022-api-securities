@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.SecuritiesTradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,17 +77,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of reference."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "References42Choice", propOrder = {"accountOwnerTransactionIdentification", "accountServicerTransactionIdentification", "poolIdentification", "marketInfrastructureTransactionIdentification",
 		"processorTransactionIdentification"})
 public class References42Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AcctOwnrTxId", required = true)
 	protected Max35Text accountOwnerTransactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the account
-	 * owner (or the instructing party managing the account).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,10 +119,10 @@ public class References42Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountOwnerTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References42Choice, Max35Text> mmAccountOwnerTransactionIdentification = new MMMessageAttribute<References42Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmAccountOwnerTransactionIdentification;
-			componentContext_lazy = () -> References42Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References42Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnrTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,12 +132,22 @@ public class References42Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References42Choice obj) {
+			return obj.getAccountOwnerTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(References42Choice obj, Max35Text value) {
+			obj.setAccountOwnerTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "AcctSvcrTxId", required = true)
 	protected Max35Text accountServicerTransactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the account
-	 * servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,10 +179,10 @@ public class References42Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountServicerTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References42Choice, Max35Text> mmAccountServicerTransactionIdentification = new MMMessageAttribute<References42Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmAccountServicerTransactionIdentification;
-			componentContext_lazy = () -> References42Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References42Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcrTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,11 +192,22 @@ public class References42Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References42Choice obj) {
+			return obj.getAccountServicerTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(References42Choice obj, Max35Text value) {
+			obj.setAccountServicerTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "PoolId", required = true)
 	protected Max35Text poolIdentification;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,10 +237,10 @@ public class References42Choice {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPoolIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References42Choice, Max35Text> mmPoolIdentification = new MMMessageAttribute<References42Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeIdentification.mmPoolIdentification;
-			componentContext_lazy = () -> References42Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References42Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PoolId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,12 +250,22 @@ public class References42Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References42Choice obj) {
+			return obj.getPoolIdentification();
+		}
+
+		@Override
+		public void setValue(References42Choice obj, Max35Text value) {
+			obj.setPoolIdentification(value);
+		}
 	};
+	@XmlElement(name = "MktInfrstrctrTxId", required = true)
 	protected Max35Text marketInfrastructureTransactionIdentification;
 	/**
-	 * Identification of a transaction assigned by a market infrastructure other
-	 * than a central securities depository, for example, Target2-Securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,10 +298,10 @@ public class References42Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMarketInfrastructureTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References42Choice, Max35Text> mmMarketInfrastructureTransactionIdentification = new MMMessageAttribute<References42Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeIdentification.mmMarketInfrastructureTransactionIdentification;
-			componentContext_lazy = () -> References42Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References42Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MktInfrstrctrTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,13 +311,22 @@ public class References42Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References42Choice obj) {
+			return obj.getMarketInfrastructureTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(References42Choice obj, Max35Text value) {
+			obj.setMarketInfrastructureTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "PrcrTxId", required = true)
 	protected Max35Text processorTransactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the processor of the
-	 * instruction other than the account owner, the account servicer and the
-	 * market infrastructure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,10 +358,10 @@ public class References42Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProcessorTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References42Choice, Max35Text> mmProcessorTransactionIdentification = new MMMessageAttribute<References42Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeIdentification.mmProcessorTransactionIdentification;
-			componentContext_lazy = () -> References42Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References42Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrcrTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -330,15 +371,26 @@ public class References42Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References42Choice obj) {
+			return obj.getProcessorTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(References42Choice obj, Max35Text value) {
+			obj.setProcessorTransactionIdentification(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(References42Choice.mmAccountOwnerTransactionIdentification, References42Choice.mmAccountServicerTransactionIdentification, References42Choice.mmPoolIdentification,
-						References42Choice.mmMarketInfrastructureTransactionIdentification, References42Choice.mmProcessorTransactionIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.References42Choice.mmAccountOwnerTransactionIdentification,
+						com.tools20022.repository.choice.References42Choice.mmAccountServicerTransactionIdentification, com.tools20022.repository.choice.References42Choice.mmPoolIdentification,
+						com.tools20022.repository.choice.References42Choice.mmMarketInfrastructureTransactionIdentification, com.tools20022.repository.choice.References42Choice.mmProcessorTransactionIdentification);
 				trace_lazy = () -> SecuritiesTradeIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "References42Choice";
 				definition = "Choice of reference.";
@@ -347,48 +399,48 @@ public class References42Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AcctOwnrTxId", required = true)
 	public Max35Text getAccountOwnerTransactionIdentification() {
 		return accountOwnerTransactionIdentification;
 	}
 
-	public void setAccountOwnerTransactionIdentification(Max35Text accountOwnerTransactionIdentification) {
-		this.accountOwnerTransactionIdentification = accountOwnerTransactionIdentification;
+	public References42Choice setAccountOwnerTransactionIdentification(Max35Text accountOwnerTransactionIdentification) {
+		this.accountOwnerTransactionIdentification = Objects.requireNonNull(accountOwnerTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcrTxId", required = true)
 	public Max35Text getAccountServicerTransactionIdentification() {
 		return accountServicerTransactionIdentification;
 	}
 
-	public void setAccountServicerTransactionIdentification(Max35Text accountServicerTransactionIdentification) {
-		this.accountServicerTransactionIdentification = accountServicerTransactionIdentification;
+	public References42Choice setAccountServicerTransactionIdentification(Max35Text accountServicerTransactionIdentification) {
+		this.accountServicerTransactionIdentification = Objects.requireNonNull(accountServicerTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PoolId", required = true)
 	public Max35Text getPoolIdentification() {
 		return poolIdentification;
 	}
 
-	public void setPoolIdentification(Max35Text poolIdentification) {
-		this.poolIdentification = poolIdentification;
+	public References42Choice setPoolIdentification(Max35Text poolIdentification) {
+		this.poolIdentification = Objects.requireNonNull(poolIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "MktInfrstrctrTxId", required = true)
 	public Max35Text getMarketInfrastructureTransactionIdentification() {
 		return marketInfrastructureTransactionIdentification;
 	}
 
-	public void setMarketInfrastructureTransactionIdentification(Max35Text marketInfrastructureTransactionIdentification) {
-		this.marketInfrastructureTransactionIdentification = marketInfrastructureTransactionIdentification;
+	public References42Choice setMarketInfrastructureTransactionIdentification(Max35Text marketInfrastructureTransactionIdentification) {
+		this.marketInfrastructureTransactionIdentification = Objects.requireNonNull(marketInfrastructureTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PrcrTxId", required = true)
 	public Max35Text getProcessorTransactionIdentification() {
 		return processorTransactionIdentification;
 	}
 
-	public void setProcessorTransactionIdentification(Max35Text processorTransactionIdentification) {
-		this.processorTransactionIdentification = processorTransactionIdentification;
+	public References42Choice setProcessorTransactionIdentification(Max35Text processorTransactionIdentification) {
+		this.processorTransactionIdentification = Objects.requireNonNull(processorTransactionIdentification);
+		return this;
 	}
 }

@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the cash account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashAccount17", propOrder = {"accountIdentification", "paymentCurrency", "accountOwnerIdentification", "correspondentBankIdentification"})
 public class CashAccount17 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AcctId", required = true)
 	protected CashAccountIdentification1Choice accountIdentification;
 	/**
-	 * Identification of the cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,10 +118,10 @@ public class CashAccount17 {
 	 * definition} = "Identification of the cash account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount17, CashAccountIdentification1Choice> mmAccountIdentification = new MMMessageAttribute<CashAccount17, CashAccountIdentification1Choice>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> CashAccount17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount17.mmObject();
 			isDerived = false;
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,11 +131,22 @@ public class CashAccount17 {
 			minOccurs = 1;
 			complexType_lazy = () -> CashAccountIdentification1Choice.mmObject();
 		}
+
+		@Override
+		public CashAccountIdentification1Choice getValue(CashAccount17 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(CashAccount17 obj, CashAccountIdentification1Choice value) {
+			obj.setAccountIdentification(value);
+		}
 	};
+	@XmlElement(name = "PmtCcy", required = true)
 	protected ActiveCurrencyCode paymentCurrency;
 	/**
-	 * Currency of the payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,10 +176,10 @@ public class CashAccount17 {
 	 * definition} = "Currency of the payment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount17, ActiveCurrencyCode> mmPaymentCurrency = new MMMessageAttribute<CashAccount17, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
-			componentContext_lazy = () -> CashAccount17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount17.mmObject();
 			isDerived = false;
 			xmlTag = "PmtCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,11 +189,22 @@ public class CashAccount17 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyCode getValue(CashAccount17 obj) {
+			return obj.getPaymentCurrency();
+		}
+
+		@Override
+		public void setValue(CashAccount17 obj, ActiveCurrencyCode value) {
+			obj.setPaymentCurrency(value);
+		}
 	};
+	@XmlElement(name = "AcctOwnrId")
 	protected PartyIdentification2Choice accountOwnerIdentification;
 	/**
-	 * Identification of the party that owns the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,10 +234,10 @@ public class CashAccount17 {
 	 * definition} = "Identification of the party that owns the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountOwnerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount17, Optional<PartyIdentification2Choice>> mmAccountOwnerIdentification = new MMMessageAttribute<CashAccount17, Optional<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CashAccount17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount17.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,11 +247,22 @@ public class CashAccount17 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(CashAccount17 obj) {
+			return obj.getAccountOwnerIdentification();
+		}
+
+		@Override
+		public void setValue(CashAccount17 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setAccountOwnerIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CrspdtBkId", required = true)
 	protected BICIdentifier correspondentBankIdentification;
 	/**
-	 * Identification of the cash correspondent back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,10 +292,10 @@ public class CashAccount17 {
 	 * definition} = "Identification of the cash correspondent back."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCorrespondentBankIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount17, BICIdentifier> mmCorrespondentBankIdentification = new MMMessageAttribute<CashAccount17, BICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmAnyBIC;
-			componentContext_lazy = () -> CashAccount17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount17.mmObject();
 			isDerived = false;
 			xmlTag = "CrspdtBkId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -269,14 +305,25 @@ public class CashAccount17 {
 			minOccurs = 1;
 			simpleType_lazy = () -> BICIdentifier.mmObject();
 		}
+
+		@Override
+		public BICIdentifier getValue(CashAccount17 obj) {
+			return obj.getCorrespondentBankIdentification();
+		}
+
+		@Override
+		public void setValue(CashAccount17 obj, BICIdentifier value) {
+			obj.setCorrespondentBankIdentification(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashAccount17.mmAccountIdentification, CashAccount17.mmPaymentCurrency, CashAccount17.mmAccountOwnerIdentification, CashAccount17.mmCorrespondentBankIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccount17.mmAccountIdentification, com.tools20022.repository.msg.CashAccount17.mmPaymentCurrency,
+						com.tools20022.repository.msg.CashAccount17.mmAccountOwnerIdentification, com.tools20022.repository.msg.CashAccount17.mmCorrespondentBankIdentification);
 				trace_lazy = () -> CashAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccount17";
 				definition = "Provides information about the cash account.";
@@ -285,39 +332,39 @@ public class CashAccount17 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AcctId", required = true)
 	public CashAccountIdentification1Choice getAccountIdentification() {
 		return accountIdentification;
 	}
 
-	public void setAccountIdentification(CashAccountIdentification1Choice accountIdentification) {
-		this.accountIdentification = accountIdentification;
+	public CashAccount17 setAccountIdentification(CashAccountIdentification1Choice accountIdentification) {
+		this.accountIdentification = Objects.requireNonNull(accountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PmtCcy", required = true)
 	public ActiveCurrencyCode getPaymentCurrency() {
 		return paymentCurrency;
 	}
 
-	public void setPaymentCurrency(ActiveCurrencyCode paymentCurrency) {
-		this.paymentCurrency = paymentCurrency;
+	public CashAccount17 setPaymentCurrency(ActiveCurrencyCode paymentCurrency) {
+		this.paymentCurrency = Objects.requireNonNull(paymentCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnrId")
-	public PartyIdentification2Choice getAccountOwnerIdentification() {
-		return accountOwnerIdentification;
+	public Optional<PartyIdentification2Choice> getAccountOwnerIdentification() {
+		return accountOwnerIdentification == null ? Optional.empty() : Optional.of(accountOwnerIdentification);
 	}
 
-	public void setAccountOwnerIdentification(PartyIdentification2Choice accountOwnerIdentification) {
+	public CashAccount17 setAccountOwnerIdentification(PartyIdentification2Choice accountOwnerIdentification) {
 		this.accountOwnerIdentification = accountOwnerIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CrspdtBkId", required = true)
 	public BICIdentifier getCorrespondentBankIdentification() {
 		return correspondentBankIdentification;
 	}
 
-	public void setCorrespondentBankIdentification(BICIdentifier correspondentBankIdentification) {
-		this.correspondentBankIdentification = correspondentBankIdentification;
+	public CashAccount17 setCorrespondentBankIdentification(BICIdentifier correspondentBankIdentification) {
+		this.correspondentBankIdentification = Objects.requireNonNull(correspondentBankIdentification);
+		return this;
 	}
 }

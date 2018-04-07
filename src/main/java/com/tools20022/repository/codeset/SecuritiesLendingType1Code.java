@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingType1Code#NewRegistration
- * SecuritiesLendingType1Code.mmNewRegistration}</li>
+ * SecuritiesLendingType1Code.NewRegistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingType1Code#RollOverRenewal
- * SecuritiesLendingType1Code.mmRollOverRenewal}</li>
+ * SecuritiesLendingType1Code.RollOverRenewal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingType1Code#CallBack
- * SecuritiesLendingType1Code.mmCallBack}</li>
+ * SecuritiesLendingType1Code.CallBack}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -155,7 +155,7 @@ public class SecuritiesLendingType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NWRG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesLendingType1Code";

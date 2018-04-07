@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification38;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the allegment reason."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AllegementReason1Choice", propOrder = {"code", "proprietary"})
 public class AllegementReason1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected AllegementReason1Code code;
 	/**
-	 * Specifies the reason why the instruction has been alleged.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +109,10 @@ public class AllegementReason1Choice {
 	 * "Specifies the reason why the instruction has been alleged."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AllegementReason1Choice, AllegementReason1Code> mmCode = new MMMessageAttribute<AllegementReason1Choice, AllegementReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmAllegementReason;
-			componentContext_lazy = () -> AllegementReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AllegementReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +122,22 @@ public class AllegementReason1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> AllegementReason1Code.mmObject();
 		}
+
+		@Override
+		public AllegementReason1Code getValue(AllegementReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(AllegementReason1Choice obj, AllegementReason1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification38 proprietary;
 	/**
-	 * Specifies the reason why the instruction has been alleged.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,10 +169,10 @@ public class AllegementReason1Choice {
 	 * "Specifies the reason why the instruction has been alleged."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AllegementReason1Choice, GenericIdentification38> mmProprietary = new MMMessageAttribute<AllegementReason1Choice, GenericIdentification38>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmAllegementReason;
-			componentContext_lazy = () -> AllegementReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AllegementReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,14 +182,24 @@ public class AllegementReason1Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification38.mmObject();
 		}
+
+		@Override
+		public GenericIdentification38 getValue(AllegementReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(AllegementReason1Choice obj, GenericIdentification38 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AllegementReason1Choice.mmCode, AllegementReason1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AllegementReason1Choice.mmCode, com.tools20022.repository.choice.AllegementReason1Choice.mmProprietary);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AllegementReason1Choice";
 				definition = "Choice of format for the allegment reason.";
@@ -185,21 +208,21 @@ public class AllegementReason1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public AllegementReason1Code getCode() {
 		return code;
 	}
 
-	public void setCode(AllegementReason1Code code) {
-		this.code = code;
+	public AllegementReason1Choice setCode(AllegementReason1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification38 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification38 proprietary) {
-		this.proprietary = proprietary;
+	public AllegementReason1Choice setProprietary(GenericIdentification38 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

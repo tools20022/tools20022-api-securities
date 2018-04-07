@@ -37,31 +37,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency5Code#Annual
- * EventFrequency5Code.mmAnnual}</li>
+ * EventFrequency5Code.Annual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency5Code#SemiAnnual
- * EventFrequency5Code.mmSemiAnnual}</li>
+ * EventFrequency5Code.SemiAnnual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency5Code#Quarterly
- * EventFrequency5Code.mmQuarterly}</li>
+ * EventFrequency5Code.Quarterly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency5Code#Monthly
- * EventFrequency5Code.mmMonthly}</li>
+ * EventFrequency5Code.Monthly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency5Code#Weekly
- * EventFrequency5Code.mmWeekly}</li>
+ * EventFrequency5Code.Weekly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency5Code#Daily
- * EventFrequency5Code.mmDaily}</li>
+ * EventFrequency5Code.Daily}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency5Code#Closed
- * EventFrequency5Code.mmClosed}</li>
+ * EventFrequency5Code.Closed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency5Code#EveryTwoMonths
- * EventFrequency5Code.mmEveryTwoMonths}</li>
+ * EventFrequency5Code.EveryTwoMonths}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency5Code#EveryTwoWeeks
- * EventFrequency5Code.mmEveryTwoWeeks}</li>
+ * EventFrequency5Code.EveryTwoWeeks}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency5Code#TwiceAMonth
- * EventFrequency5Code.mmTwiceAMonth}</li>
+ * EventFrequency5Code.TwiceAMonth}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -70,8 +70,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -340,7 +340,7 @@ public class EventFrequency5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EventFrequency5Code";

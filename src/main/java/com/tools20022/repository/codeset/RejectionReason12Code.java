@@ -38,52 +38,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#EventAlreadyDeactivated
- * RejectionReason12Code.mmEventAlreadyDeactivated}</li>
+ * RejectionReason12Code.EventAlreadyDeactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#FailedValidation
- * RejectionReason12Code.mmFailedValidation}</li>
+ * RejectionReason12Code.FailedValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#SameCAIdentification
- * RejectionReason12Code.mmSameCAIdentification}</li>
+ * RejectionReason12Code.SameCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidCAIdentification
- * RejectionReason12Code.mmInvalidCAIdentification}</li>
+ * RejectionReason12Code.InvalidCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidAgent
- * RejectionReason12Code.mmInvalidAgent}</li>
+ * RejectionReason12Code.InvalidAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#NotMainAgent
- * RejectionReason12Code.mmNotMainAgent}</li>
+ * RejectionReason12Code.NotMainAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidOption
- * RejectionReason12Code.mmInvalidOption}</li>
+ * RejectionReason12Code.InvalidOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#PendingDeactivation
- * RejectionReason12Code.mmPendingDeactivation}</li>
+ * RejectionReason12Code.PendingDeactivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#NoRemainingOption
- * RejectionReason12Code.mmNoRemainingOption}</li>
+ * RejectionReason12Code.NoRemainingOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidEventType
- * RejectionReason12Code.mmInvalidEventType}</li>
+ * RejectionReason12Code.InvalidEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidUnderlyingSecurity
- * RejectionReason12Code.mmInvalidUnderlyingSecurity}</li>
+ * RejectionReason12Code.InvalidUnderlyingSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidEventProcessingType
- * RejectionReason12Code.mmInvalidEventProcessingType}</li>
+ * RejectionReason12Code.InvalidEventProcessingType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#InvalidMandatoryVoluntaryEventType
- * RejectionReason12Code.mmInvalidMandatoryVoluntaryEventType}</li>
+ * RejectionReason12Code.InvalidMandatoryVoluntaryEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#SameIdentification
- * RejectionReason12Code.mmSameIdentification}</li>
+ * RejectionReason12Code.SameIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#MismatchedCAIdentification
- * RejectionReason12Code.mmMismatchedCAIdentification}</li>
+ * RejectionReason12Code.MismatchedCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason12Code#NotApplicable
- * RejectionReason12Code.mmNotApplicable}</li>
+ * RejectionReason12Code.NotApplicable}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -92,8 +92,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -507,7 +507,7 @@ public class RejectionReason12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DEAC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason12Code";

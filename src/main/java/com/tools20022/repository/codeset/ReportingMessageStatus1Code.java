@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#Accepted
- * ReportingMessageStatus1Code.mmAccepted}</li>
+ * ReportingMessageStatus1Code.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#AcceptedTechnicalValidation
- * ReportingMessageStatus1Code.mmAcceptedTechnicalValidation}</li>
+ * ReportingMessageStatus1Code.AcceptedTechnicalValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#PartiallyAccepted
- * ReportingMessageStatus1Code.mmPartiallyAccepted}</li>
+ * ReportingMessageStatus1Code.PartiallyAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#Received
- * ReportingMessageStatus1Code.mmReceived}</li>
+ * ReportingMessageStatus1Code.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#Rejected
- * ReportingMessageStatus1Code.mmRejected}</li>
+ * ReportingMessageStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#Reminder
- * ReportingMessageStatus1Code.mmReminder}</li>
+ * ReportingMessageStatus1Code.Reminder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#Warning
- * ReportingMessageStatus1Code.mmWarning}</li>
+ * ReportingMessageStatus1Code.Warning}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#IncorrectFilename
- * ReportingMessageStatus1Code.mmIncorrectFilename}</li>
+ * ReportingMessageStatus1Code.IncorrectFilename}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingMessageStatus1Code#CorruptedFile
- * ReportingMessageStatus1Code.mmCorruptedFile}</li>
+ * ReportingMessageStatus1Code.CorruptedFile}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -311,7 +311,7 @@ public class ReportingMessageStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingMessageStatus1Code";
 				definition = "Specifies the status of a whole message processing.";

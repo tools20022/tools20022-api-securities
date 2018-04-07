@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingsPlanTypeCode#InvestmentPlan
- * HoldingsPlanTypeCode.mmInvestmentPlan}</li>
+ * HoldingsPlanTypeCode.InvestmentPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingsPlanTypeCode#SwitchPlan
- * HoldingsPlanTypeCode.mmSwitchPlan}</li>
+ * HoldingsPlanTypeCode.SwitchPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingsPlanTypeCode#WithdrawalPlan
- * HoldingsPlanTypeCode.mmWithdrawalPlan}</li>
+ * HoldingsPlanTypeCode.WithdrawalPlan}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,8 +80,7 @@ public class HoldingsPlanTypeCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Identifies whether or not.holding to be transferred belong to an
-	 * investment plan.
+	 * Holding to be transferred belongs to an investment plan.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -98,23 +97,20 @@ public class HoldingsPlanTypeCode extends MMCode {
 	 * name} = "InvestmentPlan"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "Identifies whether or not.holding to be transferred belong to an investment plan."
-	 * </li>
+	 * definition} = "Holding to be transferred belongs to an investment plan."</li>
 	 * </ul>
 	 */
 	public static final HoldingsPlanTypeCode InvestmentPlan = new HoldingsPlanTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestmentPlan";
-			definition = "Identifies whether or not.holding to be transferred belong to an investment plan.";
+			definition = "Holding to be transferred belongs to an investment plan.";
 			owner_lazy = () -> com.tools20022.repository.codeset.HoldingsPlanTypeCode.mmObject();
 			codeName = "INVP";
 		}
 	};
 	/**
-	 * Identifies whether or not holdings to be transferred belong to switch
-	 * plan.
+	 * Holding to be transferred belongs to a switch plan.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -131,23 +127,20 @@ public class HoldingsPlanTypeCode extends MMCode {
 	 * name} = "SwitchPlan"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "Identifies whether or not holdings to be transferred belong to switch plan."
-	 * </li>
+	 * definition} = "Holding to be transferred belongs to a switch plan."</li>
 	 * </ul>
 	 */
 	public static final HoldingsPlanTypeCode SwitchPlan = new HoldingsPlanTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SwitchPlan";
-			definition = "Identifies whether or not holdings to be transferred belong to switch plan.";
+			definition = "Holding to be transferred belongs to a switch plan.";
 			owner_lazy = () -> com.tools20022.repository.codeset.HoldingsPlanTypeCode.mmObject();
 			codeName = "SWIP";
 		}
 	};
 	/**
-	 * Identifies whether or not holdings to be transferred belong to a
-	 * withdrawal plan.
+	 * Holding to be transferred belongs to a withdrawal plan.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -164,16 +157,14 @@ public class HoldingsPlanTypeCode extends MMCode {
 	 * name} = "WithdrawalPlan"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "Identifies whether or not holdings to be transferred belong to a withdrawal plan."
-	 * </li>
+	 * definition} = "Holding to be transferred belongs to a withdrawal plan."</li>
 	 * </ul>
 	 */
 	public static final HoldingsPlanTypeCode WithdrawalPlan = new HoldingsPlanTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WithdrawalPlan";
-			definition = "Identifies whether or not holdings to be transferred belong to a withdrawal plan.";
+			definition = "Holding to be transferred belongs to a withdrawal plan.";
 			owner_lazy = () -> com.tools20022.repository.codeset.HoldingsPlanTypeCode.mmObject();
 			codeName = "PLAR";
 		}
@@ -186,7 +177,7 @@ public class HoldingsPlanTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INVP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldingsPlanTypeCode";

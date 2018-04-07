@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.PaperCommodityPulp1;
 import com.tools20022.repository.msg.PaperCommodityRecoveredPaper1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Defines commodity attributes of a derivative where the type is paper."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AssetClassCommodityPaper1Choice", propOrder = {"containerBoard", "newsprint", "pulp", "recoveredPaper"})
 public class AssetClassCommodityPaper1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CntnrBrd", required = true)
 	protected PaperCommodityContainerBoard1 containerBoard;
 	/**
-	 * Container board commodity derivative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -112,10 +114,10 @@ public class AssetClassCommodityPaper1Choice {
 	 * definition} = "Container board commodity derivative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContainerBoard = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityContainerBoard1> mmContainerBoard = new MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityContainerBoard1>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmSubProduct;
-			componentContext_lazy = () -> AssetClassCommodityPaper1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CntnrBrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,11 +128,22 @@ public class AssetClassCommodityPaper1Choice {
 			isComposite = true;
 			type_lazy = () -> PaperCommodityContainerBoard1.mmObject();
 		}
+
+		@Override
+		public PaperCommodityContainerBoard1 getValue(AssetClassCommodityPaper1Choice obj) {
+			return obj.getContainerBoard();
+		}
+
+		@Override
+		public void setValue(AssetClassCommodityPaper1Choice obj, PaperCommodityContainerBoard1 value) {
+			obj.setContainerBoard(value);
+		}
 	};
+	@XmlElement(name = "Nwsprnt", required = true)
 	protected PaperCommodityNewsprint1 newsprint;
 	/**
-	 * Newsprint commodity derivative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -160,10 +173,10 @@ public class AssetClassCommodityPaper1Choice {
 	 * definition} = "Newsprint commodity derivative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNewsprint = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityNewsprint1> mmNewsprint = new MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityNewsprint1>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmSubProduct;
-			componentContext_lazy = () -> AssetClassCommodityPaper1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Nwsprnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,11 +187,22 @@ public class AssetClassCommodityPaper1Choice {
 			isComposite = true;
 			type_lazy = () -> PaperCommodityNewsprint1.mmObject();
 		}
+
+		@Override
+		public PaperCommodityNewsprint1 getValue(AssetClassCommodityPaper1Choice obj) {
+			return obj.getNewsprint();
+		}
+
+		@Override
+		public void setValue(AssetClassCommodityPaper1Choice obj, PaperCommodityNewsprint1 value) {
+			obj.setNewsprint(value);
+		}
 	};
+	@XmlElement(name = "Pulp", required = true)
 	protected PaperCommodityPulp1 pulp;
 	/**
-	 * Pulp commodity derivative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -207,10 +231,10 @@ public class AssetClassCommodityPaper1Choice {
 	 * definition} = "Pulp commodity derivative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPulp = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityPulp1> mmPulp = new MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityPulp1>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmSubProduct;
-			componentContext_lazy = () -> AssetClassCommodityPaper1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Pulp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,11 +245,22 @@ public class AssetClassCommodityPaper1Choice {
 			isComposite = true;
 			type_lazy = () -> PaperCommodityPulp1.mmObject();
 		}
+
+		@Override
+		public PaperCommodityPulp1 getValue(AssetClassCommodityPaper1Choice obj) {
+			return obj.getPulp();
+		}
+
+		@Override
+		public void setValue(AssetClassCommodityPaper1Choice obj, PaperCommodityPulp1 value) {
+			obj.setPulp(value);
+		}
 	};
+	@XmlElement(name = "RcvrdPpr", required = true)
 	protected PaperCommodityRecoveredPaper1 recoveredPaper;
 	/**
-	 * Recovered paper commodity derivative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -255,10 +290,10 @@ public class AssetClassCommodityPaper1Choice {
 	 * definition} = "Recovered paper commodity derivative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRecoveredPaper = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityRecoveredPaper1> mmRecoveredPaper = new MMMessageAssociationEnd<AssetClassCommodityPaper1Choice, PaperCommodityRecoveredPaper1>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmSubProduct;
-			componentContext_lazy = () -> AssetClassCommodityPaper1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RcvrdPpr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -269,15 +304,25 @@ public class AssetClassCommodityPaper1Choice {
 			isComposite = true;
 			type_lazy = () -> PaperCommodityRecoveredPaper1.mmObject();
 		}
+
+		@Override
+		public PaperCommodityRecoveredPaper1 getValue(AssetClassCommodityPaper1Choice obj) {
+			return obj.getRecoveredPaper();
+		}
+
+		@Override
+		public void setValue(AssetClassCommodityPaper1Choice obj, PaperCommodityRecoveredPaper1 value) {
+			obj.setRecoveredPaper(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AssetClassCommodityPaper1Choice.mmContainerBoard, AssetClassCommodityPaper1Choice.mmNewsprint, AssetClassCommodityPaper1Choice.mmPulp,
-						AssetClassCommodityPaper1Choice.mmRecoveredPaper);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmContainerBoard, com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmNewsprint,
+						com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmPulp, com.tools20022.repository.choice.AssetClassCommodityPaper1Choice.mmRecoveredPaper);
 				trace_lazy = () -> Commodity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassCommodityPaper1Choice";
 				definition = "Defines commodity attributes of a derivative where the type is paper.";
@@ -286,39 +331,39 @@ public class AssetClassCommodityPaper1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CntnrBrd", required = true)
 	public PaperCommodityContainerBoard1 getContainerBoard() {
 		return containerBoard;
 	}
 
-	public void setContainerBoard(PaperCommodityContainerBoard1 containerBoard) {
-		this.containerBoard = containerBoard;
+	public AssetClassCommodityPaper1Choice setContainerBoard(PaperCommodityContainerBoard1 containerBoard) {
+		this.containerBoard = Objects.requireNonNull(containerBoard);
+		return this;
 	}
 
-	@XmlElement(name = "Nwsprnt", required = true)
 	public PaperCommodityNewsprint1 getNewsprint() {
 		return newsprint;
 	}
 
-	public void setNewsprint(PaperCommodityNewsprint1 newsprint) {
-		this.newsprint = newsprint;
+	public AssetClassCommodityPaper1Choice setNewsprint(PaperCommodityNewsprint1 newsprint) {
+		this.newsprint = Objects.requireNonNull(newsprint);
+		return this;
 	}
 
-	@XmlElement(name = "Pulp", required = true)
 	public PaperCommodityPulp1 getPulp() {
 		return pulp;
 	}
 
-	public void setPulp(PaperCommodityPulp1 pulp) {
-		this.pulp = pulp;
+	public AssetClassCommodityPaper1Choice setPulp(PaperCommodityPulp1 pulp) {
+		this.pulp = Objects.requireNonNull(pulp);
+		return this;
 	}
 
-	@XmlElement(name = "RcvrdPpr", required = true)
 	public PaperCommodityRecoveredPaper1 getRecoveredPaper() {
 		return recoveredPaper;
 	}
 
-	public void setRecoveredPaper(PaperCommodityRecoveredPaper1 recoveredPaper) {
-		this.recoveredPaper = recoveredPaper;
+	public AssetClassCommodityPaper1Choice setRecoveredPaper(PaperCommodityRecoveredPaper1 recoveredPaper) {
+		this.recoveredPaper = Objects.requireNonNull(recoveredPaper);
+		return this;
 	}
 }

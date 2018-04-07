@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -83,8 +84,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,17 +97,17 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides amounts taken in to account to calculate the collateral position."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SummaryAmounts1", propOrder = {"thresholdAmount", "thresholdType", "preHaircutCollateralValue", "adjustedExposure", "collateralRequired", "minimumTransferAmount", "roundingAmount", "previousExposureValue",
 		"previousCollateralValue", "totalPendingIncomingCollateral", "totalPendingOutgoingCollateral", "totalAccruedInterestAmount", "totalFees"})
 public class SummaryAmounts1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ThrshldAmt")
 	protected ActiveCurrencyAndAmount thresholdAmount;
 	/**
-	 * Amount of unsecured exposure a counterparty will accept before issuing a
-	 * margin call in the base currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,10 +140,10 @@ public class SummaryAmounts1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmThresholdAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmThresholdAmount = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> VariationMarginTerm.mmThresholdAmount;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "ThrshldAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,11 +153,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getThresholdAmount();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setThresholdAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ThrshldTp")
 	protected ThresholdType1Code thresholdType;
 	/**
-	 * Specifies if the threshold amount is secured or unsecured.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,10 +200,10 @@ public class SummaryAmounts1 {
 	 * "Specifies if the threshold amount is secured or unsecured."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmThresholdType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ThresholdType1Code>> mmThresholdType = new MMMessageAttribute<SummaryAmounts1, Optional<ThresholdType1Code>>() {
 		{
 			businessElementTrace_lazy = () -> VariationMarginTerm.mmThresholdType;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "ThrshldTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,11 +213,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ThresholdType1Code.mmObject();
 		}
+
+		@Override
+		public Optional<ThresholdType1Code> getValue(SummaryAmounts1 obj) {
+			return obj.getThresholdType();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ThresholdType1Code> value) {
+			obj.setThresholdType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PreHrcutCollVal")
 	protected ActiveCurrencyAndAmount preHaircutCollateralValue;
 	/**
-	 * Total value of posted collateral (pre-haircut) held by the taker.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,10 +260,10 @@ public class SummaryAmounts1 {
 	 * "Total value of posted collateral (pre-haircut) held by the taker."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPreHaircutCollateralValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmPreHaircutCollateralValue = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalCollateralCurrentValue;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "PreHrcutCollVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,11 +273,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getPreHaircutCollateralValue();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setPreHaircutCollateralValue(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AdjstdXpsr")
 	protected ActiveCurrencyAndAmount adjustedExposure;
 	/**
-	 * Total amount of collateral required (unrounded).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,10 +319,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Total amount of collateral required (unrounded)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdjustedExposure = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmAdjustedExposure = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalExposedAmount;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "AdjstdXpsr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -298,11 +332,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getAdjustedExposure();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAdjustedExposure(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CollReqrd")
 	protected ActiveCurrencyAndAmount collateralRequired;
 	/**
-	 * Total amount of collateral required (rounded).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,10 +377,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Total amount of collateral required (rounded)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralRequired = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmCollateralRequired = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessComponentTrace_lazy = () -> MarginCall.mmObject();
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "CollReqrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -345,13 +390,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getCollateralRequired();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setCollateralRequired(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MinTrfAmt")
 	protected ActiveCurrencyAndAmount minimumTransferAmount;
 	/**
-	 * Minimum amount to pay/receive as specified in the agreement in the base
-	 * currency (to avoid the need to transfer an inconveniently small amount of
-	 * collateral).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,10 +438,10 @@ public class SummaryAmounts1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMinimumTransferAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmMinimumTransferAmount = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureTerm.mmMinimumTransferAmount;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "MinTrfAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -397,12 +451,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getMinimumTransferAmount();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setMinimumTransferAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RndgAmt")
 	protected ActiveCurrencyAndAmount roundingAmount;
 	/**
-	 * Amount specified to avoid the need to transfer uneven amounts of
-	 * collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -435,10 +499,10 @@ public class SummaryAmounts1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRoundingAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmRoundingAmount = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureTerm.mmRoundingAmount;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "RndgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -448,11 +512,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getRoundingAmount();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setRoundingAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrvsXpsrVal")
 	protected ActiveCurrencyAndAmount previousExposureValue;
 	/**
-	 * Exposure value at previous valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -483,10 +558,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Exposure value at previous valuation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPreviousExposureValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmPreviousExposureValue = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalExposedAmount;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "PrvsXpsrVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -496,11 +571,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getPreviousExposureValue();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setPreviousExposureValue(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrvsCollVal")
 	protected ActiveCurrencyAndAmount previousCollateralValue;
 	/**
-	 * Value of collateral at previous valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -531,10 +617,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Value of collateral at previous valuation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPreviousCollateralValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmPreviousCollateralValue = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalCollateralCurrentValue;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "PrvsCollVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -544,11 +630,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getPreviousCollateralValue();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setPreviousCollateralValue(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlPdgIncmgColl")
 	protected ActiveCurrencyAndAmount totalPendingIncomingCollateral;
 	/**
-	 * Value of incoming collateral, to be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -579,10 +676,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Value of incoming collateral, to be settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalPendingIncomingCollateral = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmTotalPendingIncomingCollateral = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralBalance.mmInTransit;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlPdgIncmgColl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -592,11 +689,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getTotalPendingIncomingCollateral();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalPendingIncomingCollateral(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlPdgOutgngColl")
 	protected ActiveCurrencyAndAmount totalPendingOutgoingCollateral;
 	/**
-	 * Value of outgoing collateral, to be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -627,10 +735,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Value of outgoing collateral, to be settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalPendingOutgoingCollateral = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmTotalPendingOutgoingCollateral = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralBalance.mmInTransit;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlPdgOutgngColl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -640,11 +748,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getTotalPendingOutgoingCollateral();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalPendingOutgoingCollateral(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlAcrdIntrstAmt")
 	protected ActiveCurrencyAndAmount totalAccruedInterestAmount;
 	/**
-	 * Sum of accrued interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -675,10 +794,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Sum of accrued interest."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalAccruedInterestAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmTotalAccruedInterestAmount = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmAccruedInterestAmount;
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAcrdIntrstAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -688,11 +807,22 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getTotalAccruedInterestAmount();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalAccruedInterestAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlFees")
 	protected ActiveCurrencyAndAmount totalFees;
 	/**
-	 * Sum of fees/commissions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -722,10 +852,10 @@ public class SummaryAmounts1 {
 	 * definition} = "Sum of fees/commissions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalFees = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>> mmTotalFees = new MMMessageAttribute<SummaryAmounts1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessComponentTrace_lazy = () -> Commission.mmObject();
-			componentContext_lazy = () -> SummaryAmounts1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlFees";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -735,15 +865,27 @@ public class SummaryAmounts1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(SummaryAmounts1 obj) {
+			return obj.getTotalFees();
+		}
+
+		@Override
+		public void setValue(SummaryAmounts1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalFees(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SummaryAmounts1.mmThresholdAmount, SummaryAmounts1.mmThresholdType, SummaryAmounts1.mmPreHaircutCollateralValue, SummaryAmounts1.mmAdjustedExposure,
-						SummaryAmounts1.mmCollateralRequired, SummaryAmounts1.mmMinimumTransferAmount, SummaryAmounts1.mmRoundingAmount, SummaryAmounts1.mmPreviousExposureValue, SummaryAmounts1.mmPreviousCollateralValue,
-						SummaryAmounts1.mmTotalPendingIncomingCollateral, SummaryAmounts1.mmTotalPendingOutgoingCollateral, SummaryAmounts1.mmTotalAccruedInterestAmount, SummaryAmounts1.mmTotalFees);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SummaryAmounts1.mmThresholdAmount, com.tools20022.repository.msg.SummaryAmounts1.mmThresholdType,
+						com.tools20022.repository.msg.SummaryAmounts1.mmPreHaircutCollateralValue, com.tools20022.repository.msg.SummaryAmounts1.mmAdjustedExposure, com.tools20022.repository.msg.SummaryAmounts1.mmCollateralRequired,
+						com.tools20022.repository.msg.SummaryAmounts1.mmMinimumTransferAmount, com.tools20022.repository.msg.SummaryAmounts1.mmRoundingAmount, com.tools20022.repository.msg.SummaryAmounts1.mmPreviousExposureValue,
+						com.tools20022.repository.msg.SummaryAmounts1.mmPreviousCollateralValue, com.tools20022.repository.msg.SummaryAmounts1.mmTotalPendingIncomingCollateral,
+						com.tools20022.repository.msg.SummaryAmounts1.mmTotalPendingOutgoingCollateral, com.tools20022.repository.msg.SummaryAmounts1.mmTotalAccruedInterestAmount, com.tools20022.repository.msg.SummaryAmounts1.mmTotalFees);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SummaryAmounts1";
 				definition = "Provides amounts taken in to account to calculate the collateral position.";
@@ -752,120 +894,120 @@ public class SummaryAmounts1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ThrshldAmt")
-	public ActiveCurrencyAndAmount getThresholdAmount() {
-		return thresholdAmount;
+	public Optional<ActiveCurrencyAndAmount> getThresholdAmount() {
+		return thresholdAmount == null ? Optional.empty() : Optional.of(thresholdAmount);
 	}
 
-	public void setThresholdAmount(ActiveCurrencyAndAmount thresholdAmount) {
+	public SummaryAmounts1 setThresholdAmount(ActiveCurrencyAndAmount thresholdAmount) {
 		this.thresholdAmount = thresholdAmount;
+		return this;
 	}
 
-	@XmlElement(name = "ThrshldTp")
-	public ThresholdType1Code getThresholdType() {
-		return thresholdType;
+	public Optional<ThresholdType1Code> getThresholdType() {
+		return thresholdType == null ? Optional.empty() : Optional.of(thresholdType);
 	}
 
-	public void setThresholdType(ThresholdType1Code thresholdType) {
+	public SummaryAmounts1 setThresholdType(ThresholdType1Code thresholdType) {
 		this.thresholdType = thresholdType;
+		return this;
 	}
 
-	@XmlElement(name = "PreHrcutCollVal")
-	public ActiveCurrencyAndAmount getPreHaircutCollateralValue() {
-		return preHaircutCollateralValue;
+	public Optional<ActiveCurrencyAndAmount> getPreHaircutCollateralValue() {
+		return preHaircutCollateralValue == null ? Optional.empty() : Optional.of(preHaircutCollateralValue);
 	}
 
-	public void setPreHaircutCollateralValue(ActiveCurrencyAndAmount preHaircutCollateralValue) {
+	public SummaryAmounts1 setPreHaircutCollateralValue(ActiveCurrencyAndAmount preHaircutCollateralValue) {
 		this.preHaircutCollateralValue = preHaircutCollateralValue;
+		return this;
 	}
 
-	@XmlElement(name = "AdjstdXpsr")
-	public ActiveCurrencyAndAmount getAdjustedExposure() {
-		return adjustedExposure;
+	public Optional<ActiveCurrencyAndAmount> getAdjustedExposure() {
+		return adjustedExposure == null ? Optional.empty() : Optional.of(adjustedExposure);
 	}
 
-	public void setAdjustedExposure(ActiveCurrencyAndAmount adjustedExposure) {
+	public SummaryAmounts1 setAdjustedExposure(ActiveCurrencyAndAmount adjustedExposure) {
 		this.adjustedExposure = adjustedExposure;
+		return this;
 	}
 
-	@XmlElement(name = "CollReqrd")
-	public ActiveCurrencyAndAmount getCollateralRequired() {
-		return collateralRequired;
+	public Optional<ActiveCurrencyAndAmount> getCollateralRequired() {
+		return collateralRequired == null ? Optional.empty() : Optional.of(collateralRequired);
 	}
 
-	public void setCollateralRequired(ActiveCurrencyAndAmount collateralRequired) {
+	public SummaryAmounts1 setCollateralRequired(ActiveCurrencyAndAmount collateralRequired) {
 		this.collateralRequired = collateralRequired;
+		return this;
 	}
 
-	@XmlElement(name = "MinTrfAmt")
-	public ActiveCurrencyAndAmount getMinimumTransferAmount() {
-		return minimumTransferAmount;
+	public Optional<ActiveCurrencyAndAmount> getMinimumTransferAmount() {
+		return minimumTransferAmount == null ? Optional.empty() : Optional.of(minimumTransferAmount);
 	}
 
-	public void setMinimumTransferAmount(ActiveCurrencyAndAmount minimumTransferAmount) {
+	public SummaryAmounts1 setMinimumTransferAmount(ActiveCurrencyAndAmount minimumTransferAmount) {
 		this.minimumTransferAmount = minimumTransferAmount;
+		return this;
 	}
 
-	@XmlElement(name = "RndgAmt")
-	public ActiveCurrencyAndAmount getRoundingAmount() {
-		return roundingAmount;
+	public Optional<ActiveCurrencyAndAmount> getRoundingAmount() {
+		return roundingAmount == null ? Optional.empty() : Optional.of(roundingAmount);
 	}
 
-	public void setRoundingAmount(ActiveCurrencyAndAmount roundingAmount) {
+	public SummaryAmounts1 setRoundingAmount(ActiveCurrencyAndAmount roundingAmount) {
 		this.roundingAmount = roundingAmount;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsXpsrVal")
-	public ActiveCurrencyAndAmount getPreviousExposureValue() {
-		return previousExposureValue;
+	public Optional<ActiveCurrencyAndAmount> getPreviousExposureValue() {
+		return previousExposureValue == null ? Optional.empty() : Optional.of(previousExposureValue);
 	}
 
-	public void setPreviousExposureValue(ActiveCurrencyAndAmount previousExposureValue) {
+	public SummaryAmounts1 setPreviousExposureValue(ActiveCurrencyAndAmount previousExposureValue) {
 		this.previousExposureValue = previousExposureValue;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsCollVal")
-	public ActiveCurrencyAndAmount getPreviousCollateralValue() {
-		return previousCollateralValue;
+	public Optional<ActiveCurrencyAndAmount> getPreviousCollateralValue() {
+		return previousCollateralValue == null ? Optional.empty() : Optional.of(previousCollateralValue);
 	}
 
-	public void setPreviousCollateralValue(ActiveCurrencyAndAmount previousCollateralValue) {
+	public SummaryAmounts1 setPreviousCollateralValue(ActiveCurrencyAndAmount previousCollateralValue) {
 		this.previousCollateralValue = previousCollateralValue;
+		return this;
 	}
 
-	@XmlElement(name = "TtlPdgIncmgColl")
-	public ActiveCurrencyAndAmount getTotalPendingIncomingCollateral() {
-		return totalPendingIncomingCollateral;
+	public Optional<ActiveCurrencyAndAmount> getTotalPendingIncomingCollateral() {
+		return totalPendingIncomingCollateral == null ? Optional.empty() : Optional.of(totalPendingIncomingCollateral);
 	}
 
-	public void setTotalPendingIncomingCollateral(ActiveCurrencyAndAmount totalPendingIncomingCollateral) {
+	public SummaryAmounts1 setTotalPendingIncomingCollateral(ActiveCurrencyAndAmount totalPendingIncomingCollateral) {
 		this.totalPendingIncomingCollateral = totalPendingIncomingCollateral;
+		return this;
 	}
 
-	@XmlElement(name = "TtlPdgOutgngColl")
-	public ActiveCurrencyAndAmount getTotalPendingOutgoingCollateral() {
-		return totalPendingOutgoingCollateral;
+	public Optional<ActiveCurrencyAndAmount> getTotalPendingOutgoingCollateral() {
+		return totalPendingOutgoingCollateral == null ? Optional.empty() : Optional.of(totalPendingOutgoingCollateral);
 	}
 
-	public void setTotalPendingOutgoingCollateral(ActiveCurrencyAndAmount totalPendingOutgoingCollateral) {
+	public SummaryAmounts1 setTotalPendingOutgoingCollateral(ActiveCurrencyAndAmount totalPendingOutgoingCollateral) {
 		this.totalPendingOutgoingCollateral = totalPendingOutgoingCollateral;
+		return this;
 	}
 
-	@XmlElement(name = "TtlAcrdIntrstAmt")
-	public ActiveCurrencyAndAmount getTotalAccruedInterestAmount() {
-		return totalAccruedInterestAmount;
+	public Optional<ActiveCurrencyAndAmount> getTotalAccruedInterestAmount() {
+		return totalAccruedInterestAmount == null ? Optional.empty() : Optional.of(totalAccruedInterestAmount);
 	}
 
-	public void setTotalAccruedInterestAmount(ActiveCurrencyAndAmount totalAccruedInterestAmount) {
+	public SummaryAmounts1 setTotalAccruedInterestAmount(ActiveCurrencyAndAmount totalAccruedInterestAmount) {
 		this.totalAccruedInterestAmount = totalAccruedInterestAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TtlFees")
-	public ActiveCurrencyAndAmount getTotalFees() {
-		return totalFees;
+	public Optional<ActiveCurrencyAndAmount> getTotalFees() {
+		return totalFees == null ? Optional.empty() : Optional.of(totalFees);
 	}
 
-	public void setTotalFees(ActiveCurrencyAndAmount totalFees) {
+	public SummaryAmounts1 setTotalFees(ActiveCurrencyAndAmount totalFees) {
 		this.totalFees = totalFees;
+		return this;
 	}
 }

@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,18 +68,19 @@ import javax.xml.bind.annotation.XmlType;
  * "ReportItemRejectionReason1Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Provides the report item rejection reason in a coded or proprietary  form."</li>
+ * "Provides the report item rejection reason in a coded or proprietary form."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportItemRejectionReason1Choice", propOrder = {"code", "proprietary"})
 public class ReportItemRejectionReason1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected HoldingRejectionReason41Code code;
 	/**
-	 * Status reason expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +111,10 @@ public class ReportItemRejectionReason1Choice {
 	 * definition} = "Status reason expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportItemRejectionReason1Choice, HoldingRejectionReason41Code> mmCode = new MMMessageAttribute<ReportItemRejectionReason1Choice, HoldingRejectionReason41Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> ReportItemRejectionReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReportItemRejectionReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +124,22 @@ public class ReportItemRejectionReason1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> HoldingRejectionReason41Code.mmObject();
 		}
+
+		@Override
+		public HoldingRejectionReason41Code getValue(ReportItemRejectionReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ReportItemRejectionReason1Choice obj, HoldingRejectionReason41Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Status reason expressed as a proprietary code
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,54 +166,64 @@ public class ReportItemRejectionReason1Choice {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Status reason expressed as a proprietary code"</li>
+	 * definition} = "Status reason expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ReportItemRejectionReason1Choice, GenericIdentification30> mmProprietary = new MMMessageAssociationEnd<ReportItemRejectionReason1Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> ReportItemRejectionReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReportItemRejectionReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Status reason expressed as a proprietary code";
+			definition = "Status reason expressed as a proprietary code.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> GenericIdentification30.mmObject();
+		}
+
+		@Override
+		public GenericIdentification30 getValue(ReportItemRejectionReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ReportItemRejectionReason1Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportItemRejectionReason1Choice.mmCode, ReportItemRejectionReason1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ReportItemRejectionReason1Choice.mmCode, com.tools20022.repository.choice.ReportItemRejectionReason1Choice.mmProprietary);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportItemRejectionReason1Choice";
-				definition = "Provides the report item rejection reason in a coded or proprietary  form.";
+				definition = "Provides the report item rejection reason in a coded or proprietary form.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public HoldingRejectionReason41Code getCode() {
 		return code;
 	}
 
-	public void setCode(HoldingRejectionReason41Code code) {
-		this.code = code;
+	public ReportItemRejectionReason1Choice setCode(HoldingRejectionReason41Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public ReportItemRejectionReason1Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

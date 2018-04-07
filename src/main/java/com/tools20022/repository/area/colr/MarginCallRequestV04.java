@@ -26,10 +26,8 @@ import com.tools20022.repository.choice.ExpectedCollateral2Choice;
 import com.tools20022.repository.choice.MarginRequirement1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -49,7 +47,7 @@ import javax.xml.bind.annotation.*;
  * - request new collateral at the initiation of an exposure<br>
  * - request additional collateral<br>
  * When sent by the collateral giver the MarginCallRequest message is used to:<br>
- * - request the return of collateral
+ * - request the return of collateral.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -114,21 +112,21 @@ import javax.xml.bind.annotation.*;
  * "MarginCallRequestV04"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Scope\r\nThe MarginCallRequest message is sent by the collateral taker or its collateral manager to the collateral giver or its collateral manager\r\nThis message is used to request new collateral at the initiation of an exposure or request additional collateral for an existing exposure. It can also be used to recall collateral upon the collateral giver or its collateral manager's request.\r\n\r\nThe message definition is intended for use with the ISO20022 Business Application Header.\r\n\r\nUsage\r\nWhen sent by the collateral taker the MarginCallRequest message is used to:\r\n- request new collateral at the initiation of an exposure\r\n- request additional collateral\r\nWhen sent by the collateral giver the MarginCallRequest message is used to:\r\n- request the return of collateral"
+ * "Scope\r\nThe MarginCallRequest message is sent by the collateral taker or its collateral manager to the collateral giver or its collateral manager\r\nThis message is used to request new collateral at the initiation of an exposure or request additional collateral for an existing exposure. It can also be used to recall collateral upon the collateral giver or its collateral manager's request.\r\n\r\nThe message definition is intended for use with the ISO20022 Business Application Header.\r\n\r\nUsage\r\nWhen sent by the collateral taker the MarginCallRequest message is used to:\r\n- request new collateral at the initiation of an exposure\r\n- request additional collateral\r\nWhen sent by the collateral giver the MarginCallRequest message is used to:\r\n- request the return of collateral."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarginCallRequestV04", propOrder = {"transactionIdentification", "obligation", "agreement", "marginCallResult", "marginDetailsDueToA", "marginDetailsDueToB", "requirementDetailsDueToA", "requirementDetailsDueToB",
 		"expectedCollateralDueToA", "expectedCollateralDueToB", "marginCallDetails", "supplementaryData"})
 public class MarginCallRequestV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as know by the instructing
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,7 +148,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Max35Text> mmTransactionIdentification = new MMMessageBuildingBlock<MarginCallRequestV04, Max35Text>() {
 		{
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,20 +159,21 @@ public class MarginCallRequestV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(MarginCallRequestV04 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "Oblgtn", required = true)
 	protected Obligation4 obligation;
 	/**
-	 * Provides information like the identification of the party or parties
-	 * associated with the collateral agreement, the exposure type and the
-	 * valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,7 +195,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmObligation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Obligation4> mmObligation = new MMMessageBuildingBlock<MarginCallRequestV04, Obligation4>() {
 		{
 			xmlTag = "Oblgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,18 +206,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> Obligation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getObligation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Obligation4 getValue(MarginCallRequestV04 obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Obligation4 value) {
+			obj.setObligation(value);
 		}
 	};
+	@XmlElement(name = "Agrmt")
 	protected Agreement4 agreement;
 	/**
-	 * Agreement details for the over the counter market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -238,7 +240,7 @@ public class MarginCallRequestV04 {
 	 * definition} = "Agreement details for the over the counter market."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<Agreement4>> mmAgreement = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<Agreement4>>() {
 		{
 			xmlTag = "Agrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -249,21 +251,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> Agreement4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getAgreement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Agreement4> getValue(MarginCallRequestV04 obj) {
+			return obj.getAgreement();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<Agreement4> value) {
+			obj.setAgreement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MrgnCallRslt", required = true)
 	protected MarginCallResult3 marginCallResult;
 	/**
-	 * Summation of the call amounts per margin type. It is provided for the
-	 * purposes of carrying forward for future messages that are used to compare
-	 * the margin call results to determine whether a call is agreed or
-	 * full/partially disputed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -286,7 +288,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarginCallResult = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, MarginCallResult3> mmMarginCallResult = new MMMessageBuildingBlock<MarginCallRequestV04, MarginCallResult3>() {
 		{
 			xmlTag = "MrgnCallRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -297,19 +299,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> MarginCallResult3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getMarginCallResult", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarginCallResult3 getValue(MarginCallRequestV04 obj) {
+			return obj.getMarginCallResult();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, MarginCallResult3 value) {
+			obj.setMarginCallResult(value);
 		}
 	};
+	@XmlElement(name = "MrgnDtlsDueToA")
 	protected MarginCall1 marginDetailsDueToA;
 	/**
-	 * Provides details about the margin calculation that would be due to party
-	 * A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,7 +335,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarginDetailsDueToA = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginCall1>> mmMarginDetailsDueToA = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginCall1>>() {
 		{
 			xmlTag = "MrgnDtlsDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -342,19 +346,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> MarginCall1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getMarginDetailsDueToA", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MarginCall1> getValue(MarginCallRequestV04 obj) {
+			return obj.getMarginDetailsDueToA();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<MarginCall1> value) {
+			obj.setMarginDetailsDueToA(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MrgnDtlsDueToB")
 	protected MarginCall1 marginDetailsDueToB;
 	/**
-	 * Provides details about the margin calculation that would be due to party
-	 * B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -376,7 +382,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarginDetailsDueToB = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginCall1>> mmMarginDetailsDueToB = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginCall1>>() {
 		{
 			xmlTag = "MrgnDtlsDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -387,19 +393,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> MarginCall1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getMarginDetailsDueToB", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MarginCall1> getValue(MarginCallRequestV04 obj) {
+			return obj.getMarginDetailsDueToB();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<MarginCall1> value) {
+			obj.setMarginDetailsDueToB(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RqrmntDtlsDueToA")
 	protected MarginRequirement1Choice requirementDetailsDueToA;
 	/**
-	 * Amount of expected margin that will be either delivered to party A by
-	 * party B or recalled to party A from party B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,7 +430,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRequirementDetailsDueToA = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginRequirement1Choice>> mmRequirementDetailsDueToA = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginRequirement1Choice>>() {
 		{
 			xmlTag = "RqrmntDtlsDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -433,19 +441,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> MarginRequirement1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getRequirementDetailsDueToA", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MarginRequirement1Choice> getValue(MarginCallRequestV04 obj) {
+			return obj.getRequirementDetailsDueToA();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<MarginRequirement1Choice> value) {
+			obj.setRequirementDetailsDueToA(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RqrmntDtlsDueToB")
 	protected MarginRequirement1Choice requirementDetailsDueToB;
 	/**
-	 * Amount of expected margin that will be either delivered to party B by
-	 * party A or recalled to party B from party A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -468,7 +478,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRequirementDetailsDueToB = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginRequirement1Choice>> mmRequirementDetailsDueToB = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<MarginRequirement1Choice>>() {
 		{
 			xmlTag = "RqrmntDtlsDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -479,19 +489,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> MarginRequirement1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getRequirementDetailsDueToB", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MarginRequirement1Choice> getValue(MarginCallRequestV04 obj) {
+			return obj.getRequirementDetailsDueToB();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<MarginRequirement1Choice> value) {
+			obj.setRequirementDetailsDueToB(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "XpctdCollDueToA")
 	protected ExpectedCollateral2Choice expectedCollateralDueToA;
 	/**
-	 * Provides details about the type of collateral that will be either
-	 * delivered to party A by party B or recalled to party A from party B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -514,7 +526,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExpectedCollateralDueToA = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<ExpectedCollateral2Choice>> mmExpectedCollateralDueToA = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<ExpectedCollateral2Choice>>() {
 		{
 			xmlTag = "XpctdCollDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -525,19 +537,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> ExpectedCollateral2Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getExpectedCollateralDueToA", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ExpectedCollateral2Choice> getValue(MarginCallRequestV04 obj) {
+			return obj.getExpectedCollateralDueToA();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<ExpectedCollateral2Choice> value) {
+			obj.setExpectedCollateralDueToA(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "XpctdCollDueToB")
 	protected ExpectedCollateral2Choice expectedCollateralDueToB;
 	/**
-	 * Provides details about the type of collateral that will be either
-	 * delivered to party B by party A or recalled to party B from party A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,7 +574,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExpectedCollateralDueToB = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, Optional<ExpectedCollateral2Choice>> mmExpectedCollateralDueToB = new MMMessageBuildingBlock<MarginCallRequestV04, Optional<ExpectedCollateral2Choice>>() {
 		{
 			xmlTag = "XpctdCollDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -571,20 +585,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> ExpectedCollateral2Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getExpectedCollateralDueToB", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ExpectedCollateral2Choice> getValue(MarginCallRequestV04 obj) {
+			return obj.getExpectedCollateralDueToB();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, Optional<ExpectedCollateral2Choice> value) {
+			obj.setExpectedCollateralDueToB(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MrgnCallDtls")
 	protected List<MarginCall2> marginCallDetails;
 	/**
-	 * Allows the reporting of the margin requirements for multiple accounts and
-	 * report a single margin call amount made up of the aggregate of all the
-	 * individual requirement amounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -606,7 +621,7 @@ public class MarginCallRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarginCallDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, List<MarginCall2>> mmMarginCallDetails = new MMMessageBuildingBlock<MarginCallRequestV04, List<MarginCall2>>() {
 		{
 			xmlTag = "MrgnCallDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -616,19 +631,21 @@ public class MarginCallRequestV04 {
 			complexType_lazy = () -> MarginCall2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getMarginCallDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MarginCall2> getValue(MarginCallRequestV04 obj) {
+			return obj.getMarginCallDetails();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, List<MarginCall2> value) {
+			obj.setMarginCallDetails(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -647,26 +664,28 @@ public class MarginCallRequestV04 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MarginCallRequestV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MarginCallRequestV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCallRequestV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MarginCallRequestV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MarginCallRequestV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -675,7 +694,7 @@ public class MarginCallRequestV04 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginCallRequestV04";
-				definition = "Scope\r\nThe MarginCallRequest message is sent by the collateral taker or its collateral manager to the collateral giver or its collateral manager\r\nThis message is used to request new collateral at the initiation of an exposure or request additional collateral for an existing exposure. It can also be used to recall collateral upon the collateral giver or its collateral manager's request.\r\n\r\nThe message definition is intended for use with the ISO20022 Business Application Header.\r\n\r\nUsage\r\nWhen sent by the collateral taker the MarginCallRequest message is used to:\r\n- request new collateral at the initiation of an exposure\r\n- request additional collateral\r\nWhen sent by the collateral giver the MarginCallRequest message is used to:\r\n- request the return of collateral";
+				definition = "Scope\r\nThe MarginCallRequest message is sent by the collateral taker or its collateral manager to the collateral giver or its collateral manager\r\nThis message is used to request new collateral at the initiation of an exposure or request additional collateral for an existing exposure. It can also be used to recall collateral upon the collateral giver or its collateral manager's request.\r\n\r\nThe message definition is intended for use with the ISO20022 Business Application Header.\r\n\r\nUsage\r\nWhen sent by the collateral taker the MarginCallRequest message is used to:\r\n- request new collateral at the initiation of an exposure\r\n- request additional collateral\r\nWhen sent by the collateral giver the MarginCallRequest message is used to:\r\n- request the return of collateral.";
 				rootElement = "Document";
 				xmlTag = "MrgnCallReq";
 				businessArea_lazy = () -> CollateralManagementLatestVersion.mmObject();
@@ -703,115 +722,115 @@ public class MarginCallRequestV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public MarginCallRequestV04 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Oblgtn", required = true)
 	public Obligation4 getObligation() {
 		return obligation;
 	}
 
-	public void setObligation(Obligation4 obligation) {
-		this.obligation = obligation;
+	public MarginCallRequestV04 setObligation(Obligation4 obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 
-	@XmlElement(name = "Agrmt")
-	public Agreement4 getAgreement() {
-		return agreement;
+	public Optional<Agreement4> getAgreement() {
+		return agreement == null ? Optional.empty() : Optional.of(agreement);
 	}
 
-	public void setAgreement(Agreement4 agreement) {
+	public MarginCallRequestV04 setAgreement(Agreement4 agreement) {
 		this.agreement = agreement;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnCallRslt", required = true)
 	public MarginCallResult3 getMarginCallResult() {
 		return marginCallResult;
 	}
 
-	public void setMarginCallResult(MarginCallResult3 marginCallResult) {
-		this.marginCallResult = marginCallResult;
+	public MarginCallRequestV04 setMarginCallResult(MarginCallResult3 marginCallResult) {
+		this.marginCallResult = Objects.requireNonNull(marginCallResult);
+		return this;
 	}
 
-	@XmlElement(name = "MrgnDtlsDueToA")
-	public MarginCall1 getMarginDetailsDueToA() {
-		return marginDetailsDueToA;
+	public Optional<MarginCall1> getMarginDetailsDueToA() {
+		return marginDetailsDueToA == null ? Optional.empty() : Optional.of(marginDetailsDueToA);
 	}
 
-	public void setMarginDetailsDueToA(MarginCall1 marginDetailsDueToA) {
+	public MarginCallRequestV04 setMarginDetailsDueToA(MarginCall1 marginDetailsDueToA) {
 		this.marginDetailsDueToA = marginDetailsDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnDtlsDueToB")
-	public MarginCall1 getMarginDetailsDueToB() {
-		return marginDetailsDueToB;
+	public Optional<MarginCall1> getMarginDetailsDueToB() {
+		return marginDetailsDueToB == null ? Optional.empty() : Optional.of(marginDetailsDueToB);
 	}
 
-	public void setMarginDetailsDueToB(MarginCall1 marginDetailsDueToB) {
+	public MarginCallRequestV04 setMarginDetailsDueToB(MarginCall1 marginDetailsDueToB) {
 		this.marginDetailsDueToB = marginDetailsDueToB;
+		return this;
 	}
 
-	@XmlElement(name = "RqrmntDtlsDueToA")
-	public MarginRequirement1Choice getRequirementDetailsDueToA() {
-		return requirementDetailsDueToA;
+	public Optional<MarginRequirement1Choice> getRequirementDetailsDueToA() {
+		return requirementDetailsDueToA == null ? Optional.empty() : Optional.of(requirementDetailsDueToA);
 	}
 
-	public void setRequirementDetailsDueToA(MarginRequirement1Choice requirementDetailsDueToA) {
+	public MarginCallRequestV04 setRequirementDetailsDueToA(MarginRequirement1Choice requirementDetailsDueToA) {
 		this.requirementDetailsDueToA = requirementDetailsDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "RqrmntDtlsDueToB")
-	public MarginRequirement1Choice getRequirementDetailsDueToB() {
-		return requirementDetailsDueToB;
+	public Optional<MarginRequirement1Choice> getRequirementDetailsDueToB() {
+		return requirementDetailsDueToB == null ? Optional.empty() : Optional.of(requirementDetailsDueToB);
 	}
 
-	public void setRequirementDetailsDueToB(MarginRequirement1Choice requirementDetailsDueToB) {
+	public MarginCallRequestV04 setRequirementDetailsDueToB(MarginRequirement1Choice requirementDetailsDueToB) {
 		this.requirementDetailsDueToB = requirementDetailsDueToB;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdCollDueToA")
-	public ExpectedCollateral2Choice getExpectedCollateralDueToA() {
-		return expectedCollateralDueToA;
+	public Optional<ExpectedCollateral2Choice> getExpectedCollateralDueToA() {
+		return expectedCollateralDueToA == null ? Optional.empty() : Optional.of(expectedCollateralDueToA);
 	}
 
-	public void setExpectedCollateralDueToA(ExpectedCollateral2Choice expectedCollateralDueToA) {
+	public MarginCallRequestV04 setExpectedCollateralDueToA(ExpectedCollateral2Choice expectedCollateralDueToA) {
 		this.expectedCollateralDueToA = expectedCollateralDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdCollDueToB")
-	public ExpectedCollateral2Choice getExpectedCollateralDueToB() {
-		return expectedCollateralDueToB;
+	public Optional<ExpectedCollateral2Choice> getExpectedCollateralDueToB() {
+		return expectedCollateralDueToB == null ? Optional.empty() : Optional.of(expectedCollateralDueToB);
 	}
 
-	public void setExpectedCollateralDueToB(ExpectedCollateral2Choice expectedCollateralDueToB) {
+	public MarginCallRequestV04 setExpectedCollateralDueToB(ExpectedCollateral2Choice expectedCollateralDueToB) {
 		this.expectedCollateralDueToB = expectedCollateralDueToB;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnCallDtls")
 	public List<MarginCall2> getMarginCallDetails() {
-		return marginCallDetails;
+		return marginCallDetails == null ? marginCallDetails = new ArrayList<>() : marginCallDetails;
 	}
 
-	public void setMarginCallDetails(List<MarginCall2> marginCallDetails) {
-		this.marginCallDetails = marginCallDetails;
+	public MarginCallRequestV04 setMarginCallDetails(List<MarginCall2> marginCallDetails) {
+		this.marginCallDetails = Objects.requireNonNull(marginCallDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MarginCallRequestV04 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:colr.003.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.003.001.04")
 	static public class Document {
 		@XmlElement(name = "MrgnCallReq", required = true)
 		public MarginCallRequestV04 messageBody;

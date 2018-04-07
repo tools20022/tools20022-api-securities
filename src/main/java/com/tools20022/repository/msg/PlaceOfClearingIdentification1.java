@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "PlaceOfClearingIdentification1", propOrder = {"identification", "LEI"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "PlaceOfClearingIdentification1", propOrder = {"identification", "lEI"})
 public class PlaceOfClearingIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id")
 	protected AnyBICIdentifier identification;
 	/**
-	 * Unique identification of the place of clearing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,10 +113,10 @@ public class PlaceOfClearingIdentification1 {
 	 * definition} = "Unique identification of the place of clearing."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlaceOfClearingIdentification1, Optional<AnyBICIdentifier>> mmIdentification = new MMMessageAttribute<PlaceOfClearingIdentification1, Optional<AnyBICIdentifier>>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PlaceOfClearingIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PlaceOfClearingIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,12 +126,22 @@ public class PlaceOfClearingIdentification1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<AnyBICIdentifier> getValue(PlaceOfClearingIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(PlaceOfClearingIdentification1 obj, Optional<AnyBICIdentifier> value) {
+			obj.setIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LEI")
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal entity identification as an alternate identification for a place of
-	 * clearing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,9 +169,9 @@ public class PlaceOfClearingIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLEI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlaceOfClearingIdentification1, Optional<LEIIdentifier>> mmLEI = new MMMessageAttribute<PlaceOfClearingIdentification1, Optional<LEIIdentifier>>() {
 		{
-			componentContext_lazy = () -> PlaceOfClearingIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PlaceOfClearingIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "LEI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,14 +181,24 @@ public class PlaceOfClearingIdentification1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(PlaceOfClearingIdentification1 obj) {
+			return obj.getLEI();
+		}
+
+		@Override
+		public void setValue(PlaceOfClearingIdentification1 obj, Optional<LEIIdentifier> value) {
+			obj.setLEI(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PlaceOfClearingIdentification1.mmIdentification, PlaceOfClearingIdentification1.mmLEI);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PlaceOfClearingIdentification1.mmIdentification, com.tools20022.repository.msg.PlaceOfClearingIdentification1.mmLEI);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlaceOfClearingIdentification1";
 				definition = "Identification of infrastructure which may be a component of a clearing house and which facilitates clearing and settlement for its members by standing between the buyer and the seller. It may net transactions and it substitutes itself as settlement counterparty for each position.";
@@ -185,21 +207,21 @@ public class PlaceOfClearingIdentification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id")
-	public AnyBICIdentifier getIdentification() {
-		return identification;
+	public Optional<AnyBICIdentifier> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(AnyBICIdentifier identification) {
+	public PlaceOfClearingIdentification1 setIdentification(AnyBICIdentifier identification) {
 		this.identification = identification;
+		return this;
 	}
 
-	@XmlElement(name = "LEI")
-	public LEIIdentifier getLEI() {
-		return lEI;
+	public Optional<LEIIdentifier> getLEI() {
+		return lEI == null ? Optional.empty() : Optional.of(lEI);
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
+	public PlaceOfClearingIdentification1 setLEI(LEIIdentifier lEI) {
 		this.lEI = lEI;
+		return this;
 	}
 }

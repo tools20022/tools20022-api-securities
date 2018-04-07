@@ -25,9 +25,10 @@ import com.tools20022.repository.area.SecuritiesEventsLatestVersion;
 import com.tools20022.repository.choice.CorporateActionInformationStatus1Choice;
 import com.tools20022.repository.msg.CorporateActionAdditionalInformation1;
 import com.tools20022.repository.msg.DocumentIdentification8;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -84,16 +85,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AgentCAInformationStatusAdviceV01", propOrder = {"identification", "agentCAInformationAdviceIdentification", "corporateActionAdditionalInformation", "informationStatusDetails"})
 public class AgentCAInformationStatusAdviceV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected DocumentIdentification8 identification;
 	/**
-	 * Identification assigned by the Sender to unambiguously identify the
-	 * status advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +117,7 @@ public class AgentCAInformationStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, DocumentIdentification8> mmIdentification = new MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, DocumentIdentification8>() {
 		{
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,19 +128,21 @@ public class AgentCAInformationStatusAdviceV01 {
 			complexType_lazy = () -> DocumentIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAInformationStatusAdviceV01.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentIdentification8 getValue(AgentCAInformationStatusAdviceV01 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AgentCAInformationStatusAdviceV01 obj, DocumentIdentification8 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "AgtCAInfAdvcId", required = true)
 	protected DocumentIdentification8 agentCAInformationAdviceIdentification;
 	/**
-	 * Identification of the linked Agent CA Information Advice for which a
-	 * status is given.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,7 +165,7 @@ public class AgentCAInformationStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAgentCAInformationAdviceIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, DocumentIdentification8> mmAgentCAInformationAdviceIdentification = new MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, DocumentIdentification8>() {
 		{
 			xmlTag = "AgtCAInfAdvcId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,19 +176,21 @@ public class AgentCAInformationStatusAdviceV01 {
 			complexType_lazy = () -> DocumentIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAInformationStatusAdviceV01.class.getMethod("getAgentCAInformationAdviceIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentIdentification8 getValue(AgentCAInformationStatusAdviceV01 obj) {
+			return obj.getAgentCAInformationAdviceIdentification();
+		}
+
+		@Override
+		public void setValue(AgentCAInformationStatusAdviceV01 obj, DocumentIdentification8 value) {
+			obj.setAgentCAInformationAdviceIdentification(value);
 		}
 	};
+	@XmlElement(name = "CorpActnAddtlInf")
 	protected CorporateActionAdditionalInformation1 corporateActionAdditionalInformation;
 	/**
-	 * Additional information about the corporate action such as the delivery
-	 * details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +213,7 @@ public class AgentCAInformationStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCorporateActionAdditionalInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, Optional<CorporateActionAdditionalInformation1>> mmCorporateActionAdditionalInformation = new MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, Optional<CorporateActionAdditionalInformation1>>() {
 		{
 			xmlTag = "CorpActnAddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,18 +224,21 @@ public class AgentCAInformationStatusAdviceV01 {
 			complexType_lazy = () -> CorporateActionAdditionalInformation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAInformationStatusAdviceV01.class.getMethod("getCorporateActionAdditionalInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CorporateActionAdditionalInformation1> getValue(AgentCAInformationStatusAdviceV01 obj) {
+			return obj.getCorporateActionAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(AgentCAInformationStatusAdviceV01 obj, Optional<CorporateActionAdditionalInformation1> value) {
+			obj.setCorporateActionAdditionalInformation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "InfStsDtls", required = true)
 	protected CorporateActionInformationStatus1Choice informationStatusDetails;
 	/**
-	 * Status of the information advice sent by the CSD.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,7 +259,7 @@ public class AgentCAInformationStatusAdviceV01 {
 	 * definition} = "Status of the information advice sent by the CSD."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInformationStatusDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, CorporateActionInformationStatus1Choice> mmInformationStatusDetails = new MMMessageBuildingBlock<AgentCAInformationStatusAdviceV01, CorporateActionInformationStatus1Choice>() {
 		{
 			xmlTag = "InfStsDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -262,12 +270,14 @@ public class AgentCAInformationStatusAdviceV01 {
 			complexType_lazy = () -> CorporateActionInformationStatus1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAInformationStatusAdviceV01.class.getMethod("getInformationStatusDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionInformationStatus1Choice getValue(AgentCAInformationStatusAdviceV01 obj) {
+			return obj.getInformationStatusDetails();
+		}
+
+		@Override
+		public void setValue(AgentCAInformationStatusAdviceV01 obj, CorporateActionInformationStatus1Choice value) {
+			obj.setInformationStatusDetails(value);
 		}
 	};
 
@@ -301,43 +311,43 @@ public class AgentCAInformationStatusAdviceV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public DocumentIdentification8 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(DocumentIdentification8 identification) {
-		this.identification = identification;
+	public AgentCAInformationStatusAdviceV01 setIdentification(DocumentIdentification8 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "AgtCAInfAdvcId", required = true)
 	public DocumentIdentification8 getAgentCAInformationAdviceIdentification() {
 		return agentCAInformationAdviceIdentification;
 	}
 
-	public void setAgentCAInformationAdviceIdentification(DocumentIdentification8 agentCAInformationAdviceIdentification) {
-		this.agentCAInformationAdviceIdentification = agentCAInformationAdviceIdentification;
+	public AgentCAInformationStatusAdviceV01 setAgentCAInformationAdviceIdentification(DocumentIdentification8 agentCAInformationAdviceIdentification) {
+		this.agentCAInformationAdviceIdentification = Objects.requireNonNull(agentCAInformationAdviceIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnAddtlInf")
-	public CorporateActionAdditionalInformation1 getCorporateActionAdditionalInformation() {
-		return corporateActionAdditionalInformation;
+	public Optional<CorporateActionAdditionalInformation1> getCorporateActionAdditionalInformation() {
+		return corporateActionAdditionalInformation == null ? Optional.empty() : Optional.of(corporateActionAdditionalInformation);
 	}
 
-	public void setCorporateActionAdditionalInformation(CorporateActionAdditionalInformation1 corporateActionAdditionalInformation) {
+	public AgentCAInformationStatusAdviceV01 setCorporateActionAdditionalInformation(CorporateActionAdditionalInformation1 corporateActionAdditionalInformation) {
 		this.corporateActionAdditionalInformation = corporateActionAdditionalInformation;
+		return this;
 	}
 
-	@XmlElement(name = "InfStsDtls", required = true)
 	public CorporateActionInformationStatus1Choice getInformationStatusDetails() {
 		return informationStatusDetails;
 	}
 
-	public void setInformationStatusDetails(CorporateActionInformationStatus1Choice informationStatusDetails) {
-		this.informationStatusDetails = informationStatusDetails;
+	public AgentCAInformationStatusAdviceV01 setInformationStatusDetails(CorporateActionInformationStatus1Choice informationStatusDetails) {
+		this.informationStatusDetails = Objects.requireNonNull(informationStatusDetails);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:seev.024.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.024.001.01")
 	static public class Document {
 		@XmlElement(name = "AgtCAInfStsAdvc", required = true)
 		public AgentCAInformationStatusAdviceV01 messageBody;

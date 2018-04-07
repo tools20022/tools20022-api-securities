@@ -24,8 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.ProprietaryReason1Choice;
 import com.tools20022.repository.datatype.Max210Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification36;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +58,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintAdditionalReasonInformationRule#forProprietaryStatusAndReason5
+ * ConstraintAdditionalReasonInformationRule.forProprietaryStatusAndReason5}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProprietaryStatusAndReason5", propOrder = {"status", "reason", "additionalReasonInformation"})
 public class ProprietaryStatusAndReason5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Sts", required = true)
 	protected GenericIdentification36 status;
 	/**
-	 * Proprietary identification of the status of the instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,9 +116,9 @@ public class ProprietaryStatusAndReason5 {
 	 * "Proprietary identification of the status of the instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryStatusAndReason5, GenericIdentification36> mmStatus = new MMMessageAttribute<ProprietaryStatusAndReason5, GenericIdentification36>() {
 		{
-			componentContext_lazy = () -> ProprietaryStatusAndReason5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryStatusAndReason5.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,13 +126,24 @@ public class ProprietaryStatusAndReason5 {
 			definition = "Proprietary identification of the status of the instruction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.GenericIdentification36.mmObject();
+			complexType_lazy = () -> GenericIdentification36.mmObject();
+		}
+
+		@Override
+		public GenericIdentification36 getValue(ProprietaryStatusAndReason5 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(ProprietaryStatusAndReason5 obj, GenericIdentification36 value) {
+			obj.setStatus(value);
 		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected ProprietaryReason1Choice reason;
 	/**
-	 * Proprietary identification of the reason for the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -145,9 +168,9 @@ public class ProprietaryStatusAndReason5 {
 	 * definition} = "Proprietary identification of the reason for the status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProprietaryStatusAndReason5, ProprietaryReason1Choice> mmReason = new MMMessageAssociationEnd<ProprietaryStatusAndReason5, ProprietaryReason1Choice>() {
 		{
-			componentContext_lazy = () -> ProprietaryStatusAndReason5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryStatusAndReason5.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,11 +181,22 @@ public class ProprietaryStatusAndReason5 {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1Choice.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1Choice getValue(ProprietaryStatusAndReason5 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(ProprietaryStatusAndReason5 obj, ProprietaryReason1Choice value) {
+			obj.setReason(value);
+		}
 	};
+	@XmlElement(name = "AddtlRsnInf")
 	protected Max210Text additionalReasonInformation;
 	/**
-	 * Additional information about the processed instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -187,9 +221,9 @@ public class ProprietaryStatusAndReason5 {
 	 * definition} = "Additional information about the processed instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalReasonInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProprietaryStatusAndReason5, Optional<Max210Text>> mmAdditionalReasonInformation = new MMMessageAttribute<ProprietaryStatusAndReason5, Optional<Max210Text>>() {
 		{
-			componentContext_lazy = () -> ProprietaryStatusAndReason5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProprietaryStatusAndReason5.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlRsnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,13 +233,25 @@ public class ProprietaryStatusAndReason5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max210Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max210Text> getValue(ProprietaryStatusAndReason5 obj) {
+			return obj.getAdditionalReasonInformation();
+		}
+
+		@Override
+		public void setValue(ProprietaryStatusAndReason5 obj, Optional<Max210Text> value) {
+			obj.setAdditionalReasonInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProprietaryStatusAndReason5.mmStatus, ProprietaryStatusAndReason5.mmReason, ProprietaryStatusAndReason5.mmAdditionalReasonInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryStatusAndReason5.mmStatus, com.tools20022.repository.msg.ProprietaryStatusAndReason5.mmReason,
+						com.tools20022.repository.msg.ProprietaryStatusAndReason5.mmAdditionalReasonInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintAdditionalReasonInformationRule.forProprietaryStatusAndReason5);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProprietaryStatusAndReason5";
 				definition = "Proprietary status and reason of an instruction or an instruction cancellation.";
@@ -214,30 +260,30 @@ public class ProprietaryStatusAndReason5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public GenericIdentification36 getStatus() {
 		return status;
 	}
 
-	public void setStatus(com.tools20022.repository.msg.GenericIdentification36 status) {
-		this.status = status;
+	public ProprietaryStatusAndReason5 setStatus(GenericIdentification36 status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public ProprietaryReason1Choice getReason() {
 		return reason;
 	}
 
-	public void setReason(ProprietaryReason1Choice reason) {
-		this.reason = reason;
+	public ProprietaryStatusAndReason5 setReason(ProprietaryReason1Choice reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlRsnInf")
-	public Max210Text getAdditionalReasonInformation() {
-		return additionalReasonInformation;
+	public Optional<Max210Text> getAdditionalReasonInformation() {
+		return additionalReasonInformation == null ? Optional.empty() : Optional.of(additionalReasonInformation);
 	}
 
-	public void setAdditionalReasonInformation(Max210Text additionalReasonInformation) {
+	public ProprietaryStatusAndReason5 setAdditionalReasonInformation(Max210Text additionalReasonInformation) {
 		this.additionalReasonInformation = additionalReasonInformation;
+		return this;
 	}
 }

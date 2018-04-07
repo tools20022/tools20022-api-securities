@@ -25,8 +25,6 @@ class ListBuilderForGeneratedRepository_07 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
-		list.add((T) BlockTradeCode.mmObject());
-		list.add((T) BlockTrade1Code.mmObject());
 		list.add((T) SettlementSystemMethodCode.mmObject());
 		list.add((T) SettlementSystemMethod1Code.mmObject());
 		list.add((T) AutoBorrowingCode.mmObject());
@@ -41,7 +39,6 @@ class ListBuilderForGeneratedRepository_07 {
 		list.add((T) Registration2Code.mmObject());
 		list.add((T) ProcessingPosition4Code.mmObject());
 		list.add((T) RepurchaseTypeCode.mmObject());
-		list.add((T) SecuritiesTransactionType8Code.mmObject());
 		list.add((T) GeneratedReasonCode.mmObject());
 		list.add((T) DateType4Code.mmObject());
 		list.add((T) StatementStructureCode.mmObject());
@@ -525,6 +522,9 @@ class ListBuilderForGeneratedRepository_07 {
 		list.add((T) TypeOfPrice30Code.mmObject());
 		list.add((T) BalanceType13Code.mmObject());
 		list.add((T) UnrealisedCode.mmObject());
+		list.add((T) Unrealised1Code.mmObject());
+		list.add((T) FinancialAssetTypeCategoryCode.mmObject());
+		list.add((T) FinancialAssetTypeCategory1Code.mmObject());
 		ListBuilderForGeneratedRepository_08.addElems(list);
 		return list;
 	}

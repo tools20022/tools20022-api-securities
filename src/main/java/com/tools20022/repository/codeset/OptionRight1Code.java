@@ -37,16 +37,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OptionRight1Code#Exercise
- * OptionRight1Code.mmExercise}</li>
+ * OptionRight1Code.Exercise}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionRight1Code#Assignment
- * OptionRight1Code.mmAssignment}</li>
+ * OptionRight1Code.Assignment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionRight1Code#Renouncement
- * OptionRight1Code.mmRenouncement}</li>
+ * OptionRight1Code.Renouncement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionRight1Code#Expiration
- * OptionRight1Code.mmExpiration}</li>
+ * OptionRight1Code.Expiration}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -55,8 +55,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -181,7 +181,7 @@ public class OptionRight1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EXER");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionRight1Code";

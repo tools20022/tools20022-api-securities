@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#EventAlreadyDeactivated
- * RejectionReason7Code.mmEventAlreadyDeactivated}</li>
+ * RejectionReason7Code.EventAlreadyDeactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#FailedValidation
- * RejectionReason7Code.mmFailedValidation}</li>
+ * RejectionReason7Code.FailedValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#NoPendingDeactivationInstruction
- * RejectionReason7Code.mmNoPendingDeactivationInstruction}</li>
+ * RejectionReason7Code.NoPendingDeactivationInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidIdentification
- * RejectionReason7Code.mmInvalidIdentification}</li>
+ * RejectionReason7Code.InvalidIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidCAIdentification
- * RejectionReason7Code.mmInvalidCAIdentification}</li>
+ * RejectionReason7Code.InvalidCAIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidAgent
- * RejectionReason7Code.mmInvalidAgent}</li>
+ * RejectionReason7Code.InvalidAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#SameIdentification
- * RejectionReason7Code.mmSameIdentification}</li>
+ * RejectionReason7Code.SameIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#OptionAlreadyDeactivated
- * RejectionReason7Code.mmOptionAlreadyDeactivated}</li>
+ * RejectionReason7Code.OptionAlreadyDeactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidEventType
- * RejectionReason7Code.mmInvalidEventType}</li>
+ * RejectionReason7Code.InvalidEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidUnderlyingSecurity
- * RejectionReason7Code.mmInvalidUnderlyingSecurity}</li>
+ * RejectionReason7Code.InvalidUnderlyingSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidEventProcessingType
- * RejectionReason7Code.mmInvalidEventProcessingType}</li>
+ * RejectionReason7Code.InvalidEventProcessingType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidMandatoryVoluntaryEventType
- * RejectionReason7Code.mmInvalidMandatoryVoluntaryEventType}</li>
+ * RejectionReason7Code.InvalidMandatoryVoluntaryEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidCorporateActionInformation
- * RejectionReason7Code.mmInvalidCorporateActionInformation}</li>
+ * RejectionReason7Code.InvalidCorporateActionInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason7Code#InvalidDetails
- * RejectionReason7Code.mmInvalidDetails}</li>
+ * RejectionReason7Code.InvalidDetails}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -86,8 +86,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -452,7 +452,7 @@ public class RejectionReason7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DEAC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason7Code";

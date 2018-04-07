@@ -23,9 +23,14 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ActiveOrHistoricCurrencyCode;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashInForecast5;
+import com.tools20022.repository.msg.CashOutForecast5;
+import com.tools20022.repository.msg.NetCashForecast4;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the cash-in and cash-out flows by currency."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BreakdownByCurrency2", propOrder = {"currency", "cashOutForecast", "cashInForecast", "netCashForecast"})
 public class BreakdownByCurrency2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ccy", required = true)
 	protected ActiveOrHistoricCurrencyCode currency;
 	/**
-	 * Currency for which the cash flow is being reported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +109,9 @@ public class BreakdownByCurrency2 {
 	 * definition} = "Currency for which the cash flow is being reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BreakdownByCurrency2, ActiveOrHistoricCurrencyCode> mmCurrency = new MMMessageAttribute<BreakdownByCurrency2, ActiveOrHistoricCurrencyCode>() {
 		{
-			componentContext_lazy = () -> BreakdownByCurrency2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BreakdownByCurrency2.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,12 +121,22 @@ public class BreakdownByCurrency2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public ActiveOrHistoricCurrencyCode getValue(BreakdownByCurrency2 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(BreakdownByCurrency2 obj, ActiveOrHistoricCurrencyCode value) {
+			obj.setCurrency(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.CashOutForecast5> cashOutForecast;
+	@XmlElement(name = "CshOutFcst")
+	protected List<CashOutForecast5> cashOutForecast;
 	/**
-	 * Cash movement out of the fund as a result of transactions in shares in an
-	 * investment fund, for example, redemptions or switch-outs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -146,9 +162,9 @@ public class BreakdownByCurrency2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashOutForecast = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BreakdownByCurrency2, List<CashOutForecast5>> mmCashOutForecast = new MMMessageAssociationEnd<BreakdownByCurrency2, List<CashOutForecast5>>() {
 		{
-			componentContext_lazy = () -> BreakdownByCurrency2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BreakdownByCurrency2.mmObject();
 			isDerived = false;
 			xmlTag = "CshOutFcst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,14 +172,24 @@ public class BreakdownByCurrency2 {
 			definition = "Cash movement out of the fund as a result of transactions in shares in an investment fund, for example, redemptions or switch-outs.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashOutForecast5.mmObject();
+			type_lazy = () -> CashOutForecast5.mmObject();
+		}
+
+		@Override
+		public List<CashOutForecast5> getValue(BreakdownByCurrency2 obj) {
+			return obj.getCashOutForecast();
+		}
+
+		@Override
+		public void setValue(BreakdownByCurrency2 obj, List<CashOutForecast5> value) {
+			obj.setCashOutForecast(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CashInForecast5> cashInForecast;
+	@XmlElement(name = "CshInFcst")
+	protected List<CashInForecast5> cashInForecast;
 	/**
-	 * Cash movement into the fund as a result of transactions in shares in an
-	 * investment fund, for example, subscriptions or switch-ins.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -189,9 +215,9 @@ public class BreakdownByCurrency2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashInForecast = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BreakdownByCurrency2, List<CashInForecast5>> mmCashInForecast = new MMMessageAssociationEnd<BreakdownByCurrency2, List<CashInForecast5>>() {
 		{
-			componentContext_lazy = () -> BreakdownByCurrency2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BreakdownByCurrency2.mmObject();
 			isDerived = false;
 			xmlTag = "CshInFcst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,14 +225,24 @@ public class BreakdownByCurrency2 {
 			definition = "Cash movement into the fund as a result of transactions in shares in an investment fund, for example, subscriptions or switch-ins.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashInForecast5.mmObject();
+			type_lazy = () -> CashInForecast5.mmObject();
+		}
+
+		@Override
+		public List<CashInForecast5> getValue(BreakdownByCurrency2 obj) {
+			return obj.getCashInForecast();
+		}
+
+		@Override
+		public void setValue(BreakdownByCurrency2 obj, List<CashInForecast5> value) {
+			obj.setCashInForecast(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.NetCashForecast4> netCashForecast;
+	@XmlElement(name = "NetCshFcst")
+	protected List<NetCashForecast4> netCashForecast;
 	/**
-	 * Net cash as a result of the cash-in and cash-out flows specified for the
-	 * currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -232,9 +268,9 @@ public class BreakdownByCurrency2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNetCashForecast = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BreakdownByCurrency2, List<NetCashForecast4>> mmNetCashForecast = new MMMessageAssociationEnd<BreakdownByCurrency2, List<NetCashForecast4>>() {
 		{
-			componentContext_lazy = () -> BreakdownByCurrency2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BreakdownByCurrency2.mmObject();
 			isDerived = false;
 			xmlTag = "NetCshFcst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,15 +278,26 @@ public class BreakdownByCurrency2 {
 			definition = "Net cash as a result of the cash-in and cash-out flows specified for the currency.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NetCashForecast4.mmObject();
+			type_lazy = () -> NetCashForecast4.mmObject();
+		}
+
+		@Override
+		public List<NetCashForecast4> getValue(BreakdownByCurrency2 obj) {
+			return obj.getNetCashForecast();
+		}
+
+		@Override
+		public void setValue(BreakdownByCurrency2 obj, List<NetCashForecast4> value) {
+			obj.setNetCashForecast(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BreakdownByCurrency2.mmCurrency, BreakdownByCurrency2.mmCashOutForecast, BreakdownByCurrency2.mmCashInForecast, BreakdownByCurrency2.mmNetCashForecast);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BreakdownByCurrency2.mmCurrency, com.tools20022.repository.msg.BreakdownByCurrency2.mmCashOutForecast,
+						com.tools20022.repository.msg.BreakdownByCurrency2.mmCashInForecast, com.tools20022.repository.msg.BreakdownByCurrency2.mmNetCashForecast);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BreakdownByCurrency2";
 				definition = "Specifies the cash-in and cash-out flows by currency.";
@@ -259,39 +306,39 @@ public class BreakdownByCurrency2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ccy", required = true)
 	public ActiveOrHistoricCurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(ActiveOrHistoricCurrencyCode currency) {
-		this.currency = currency;
+	public BreakdownByCurrency2 setCurrency(ActiveOrHistoricCurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
-	@XmlElement(name = "CshOutFcst")
 	public List<CashOutForecast5> getCashOutForecast() {
-		return cashOutForecast;
+		return cashOutForecast == null ? cashOutForecast = new ArrayList<>() : cashOutForecast;
 	}
 
-	public void setCashOutForecast(List<com.tools20022.repository.msg.CashOutForecast5> cashOutForecast) {
-		this.cashOutForecast = cashOutForecast;
+	public BreakdownByCurrency2 setCashOutForecast(List<CashOutForecast5> cashOutForecast) {
+		this.cashOutForecast = Objects.requireNonNull(cashOutForecast);
+		return this;
 	}
 
-	@XmlElement(name = "CshInFcst")
 	public List<CashInForecast5> getCashInForecast() {
-		return cashInForecast;
+		return cashInForecast == null ? cashInForecast = new ArrayList<>() : cashInForecast;
 	}
 
-	public void setCashInForecast(List<com.tools20022.repository.msg.CashInForecast5> cashInForecast) {
-		this.cashInForecast = cashInForecast;
+	public BreakdownByCurrency2 setCashInForecast(List<CashInForecast5> cashInForecast) {
+		this.cashInForecast = Objects.requireNonNull(cashInForecast);
+		return this;
 	}
 
-	@XmlElement(name = "NetCshFcst")
 	public List<NetCashForecast4> getNetCashForecast() {
-		return netCashForecast;
+		return netCashForecast == null ? netCashForecast = new ArrayList<>() : netCashForecast;
 	}
 
-	public void setNetCashForecast(List<com.tools20022.repository.msg.NetCashForecast4> netCashForecast) {
-		this.netCashForecast = netCashForecast;
+	public BreakdownByCurrency2 setNetCashForecast(List<NetCashForecast4> netCashForecast) {
+		this.netCashForecast = Objects.requireNonNull(netCashForecast);
+		return this;
 	}
 }

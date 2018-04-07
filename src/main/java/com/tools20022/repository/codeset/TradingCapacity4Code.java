@@ -38,48 +38,48 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#Principal
- * TradingCapacity4Code.mmPrincipal}</li>
+ * TradingCapacity4Code.Principal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#CrossingPrincipal
- * TradingCapacity4Code.mmCrossingPrincipal}</li>
+ * TradingCapacity4Code.CrossingPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#RisklessPrincipal
- * TradingCapacity4Code.mmRisklessPrincipal}</li>
+ * TradingCapacity4Code.RisklessPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#Proprietary
- * TradingCapacity4Code.mmProprietary}</li>
+ * TradingCapacity4Code.Proprietary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#Agent
- * TradingCapacity4Code.mmAgent}</li>
+ * TradingCapacity4Code.Agent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#CrossingAgent
- * TradingCapacity4Code.mmCrossingAgent}</li>
+ * TradingCapacity4Code.CrossingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#OtherAgent
- * TradingCapacity4Code.mmOtherAgent}</li>
+ * TradingCapacity4Code.OtherAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#PrincipalAgent
- * TradingCapacity4Code.mmPrincipalAgent}</li>
+ * TradingCapacity4Code.PrincipalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#ActingAgent
- * TradingCapacity4Code.mmActingAgent}</li>
+ * TradingCapacity4Code.ActingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#InvestmentFirm
- * TradingCapacity4Code.mmInvestmentFirm}</li>
+ * TradingCapacity4Code.InvestmentFirm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#MarketMaker
- * TradingCapacity4Code.mmMarketMaker}</li>
+ * TradingCapacity4Code.MarketMaker}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#MultilateralTradingFacility
- * TradingCapacity4Code.mmMultilateralTradingFacility}</li>
+ * TradingCapacity4Code.MultilateralTradingFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#RegulatedMarket
- * TradingCapacity4Code.mmRegulatedMarket}</li>
+ * TradingCapacity4Code.RegulatedMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#SystematicInternaliser
- * TradingCapacity4Code.mmSystematicInternaliser}</li>
+ * TradingCapacity4Code.SystematicInternaliser}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingCapacity4Code#TransferAgent
- * TradingCapacity4Code.mmTransferAgent}</li>
+ * TradingCapacity4Code.TransferAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -88,8 +88,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -478,7 +478,7 @@ public class TradingCapacity4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PRIN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingCapacity4Code";

@@ -20,10 +20,13 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.DateAndDateTime1Choice;
+import com.tools20022.repository.choice.TradingDateCode1Choice;
 import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "expressed as a ISO20022 code."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TradeDate4Choice", propOrder = {"date", "value"})
 public class TradeDate4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Dt", required = true)
 	protected DateAndDateTime1Choice date;
 	/**
-	 * Date and time at which the securities are to be traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,10 +103,10 @@ public class TradeDate4Choice {
 	 * definition} = "Date and time at which the securities are to be traded."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeDate4Choice, DateAndDateTime1Choice> mmDate = new MMMessageAttribute<TradeDate4Choice, DateAndDateTime1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Trade.mmObject();
-			componentContext_lazy = () -> TradeDate4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TradeDate4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -110,14 +114,24 @@ public class TradeDate4Choice {
 			definition = "Date and time at which the securities are to be traded.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.DateAndDateTime1Choice.mmObject();
+			complexType_lazy = () -> DateAndDateTime1Choice.mmObject();
+		}
+
+		@Override
+		public DateAndDateTime1Choice getValue(TradeDate4Choice obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(TradeDate4Choice obj, DateAndDateTime1Choice value) {
+			obj.setDate(value);
 		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected TradingDateCode1Choice value;
 	/**
-	 * Date and time at which the securities are to be traded expressed as a
-	 * ISO20022 code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,10 +163,10 @@ public class TradeDate4Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeDate4Choice, TradingDateCode1Choice> mmValue = new MMMessageAttribute<TradeDate4Choice, TradingDateCode1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Trade.mmObject();
-			componentContext_lazy = () -> TradeDate4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TradeDate4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,16 +174,26 @@ public class TradeDate4Choice {
 			definition = "Date and time at which the securities are to be traded expressed as a ISO20022 code.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.TradingDateCode1Choice.mmObject();
+			complexType_lazy = () -> TradingDateCode1Choice.mmObject();
+		}
+
+		@Override
+		public TradingDateCode1Choice getValue(TradeDate4Choice obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(TradeDate4Choice obj, TradingDateCode1Choice value) {
+			obj.setValue(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TradeDate4Choice.mmDate, TradeDate4Choice.mmValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.TradeDate4Choice.mmDate, com.tools20022.repository.choice.TradeDate4Choice.mmValue);
 				trace_lazy = () -> Trade.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeDate4Choice";
 				definition = "expressed as a ISO20022 code.";
@@ -178,21 +202,21 @@ public class TradeDate4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Dt", required = true)
 	public DateAndDateTime1Choice getDate() {
 		return date;
 	}
 
-	public void setDate(com.tools20022.repository.choice.DateAndDateTime1Choice date) {
-		this.date = date;
+	public TradeDate4Choice setDate(DateAndDateTime1Choice date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public TradingDateCode1Choice getValue() {
 		return value;
 	}
 
-	public void setValue(com.tools20022.repository.choice.TradingDateCode1Choice value) {
-		this.value = value;
+	public TradeDate4Choice setValue(TradingDateCode1Choice value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 }

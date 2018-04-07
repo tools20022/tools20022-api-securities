@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrative1Code#TaxationConditions
- * CorporateActionNarrative1Code.mmTaxationConditions}</li>
+ * CorporateActionNarrative1Code.TaxationConditions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrative1Code#RegistrationDetails
- * CorporateActionNarrative1Code.mmRegistrationDetails}</li>
+ * CorporateActionNarrative1Code.RegistrationDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrative1Code#WithholdingTaxReliefCertification
- * CorporateActionNarrative1Code.mmWithholdingTaxReliefCertification}</li>
+ * CorporateActionNarrative1Code.WithholdingTaxReliefCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrative1Code#ICSDRefusalOfMarkUpDownConfirmation
- * CorporateActionNarrative1Code.mmICSDRefusalOfMarkUpDownConfirmation}</li>
+ * CorporateActionNarrative1Code.ICSDRefusalOfMarkUpDownConfirmation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrative1Code#ChasingOfPriorAuthorization
- * CorporateActionNarrative1Code.mmChasingOfPriorAuthorization}</li>
+ * CorporateActionNarrative1Code.ChasingOfPriorAuthorization}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrative1Code#ConfirmationOfHoldingTransfer
- * CorporateActionNarrative1Code.mmConfirmationOfHoldingTransfer}</li>
+ * CorporateActionNarrative1Code.ConfirmationOfHoldingTransfer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class CorporateActionNarrative1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TAXE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNarrative1Code";

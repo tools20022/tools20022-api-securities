@@ -37,34 +37,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatus4Code#Accepted
- * OrderStatus4Code.mmAccepted}</li>
+ * OrderStatus4Code.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#AlreadyExecuted
- * OrderStatus4Code.mmAlreadyExecuted}</li>
+ * OrderStatus4Code.AlreadyExecuted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#SentToNextParty
- * OrderStatus4Code.mmSentToNextParty}</li>
+ * OrderStatus4Code.SentToNextParty}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatus4Code#Received
- * OrderStatus4Code.mmReceived}</li>
+ * OrderStatus4Code.Received}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatus4Code#Settled
- * OrderStatus4Code.mmSettled}</li>
+ * OrderStatus4Code.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#CommunicationProblemNextParty
- * OrderStatus4Code.mmCommunicationProblemNextParty}</li>
+ * OrderStatus4Code.CommunicationProblemNextParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#ConfirmationAmendment
- * OrderStatus4Code.mmConfirmationAmendment}</li>
+ * OrderStatus4Code.ConfirmationAmendment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#DoneForDay
- * OrderStatus4Code.mmDoneForDay}</li>
+ * OrderStatus4Code.DoneForDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#PartiallyDone
- * OrderStatus4Code.mmPartiallyDone}</li>
+ * OrderStatus4Code.PartiallyDone}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OrderStatus4Code#Open
- * OrderStatus4Code.mmOpen}</li>
+ * OrderStatus4Code.Open}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderStatus4Code#InvalidAgentConfirmation
- * OrderStatus4Code.mmInvalidAgentConfirmation}</li>
+ * OrderStatus4Code.InvalidAgentConfirmation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -367,7 +367,7 @@ public class OrderStatus4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PACK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderStatus4Code";

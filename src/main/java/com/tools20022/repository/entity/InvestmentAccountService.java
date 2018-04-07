@@ -22,12 +22,13 @@ import com.tools20022.repository.codeset.BeneficiaryCertificationCompletionCode;
 import com.tools20022.repository.codeset.IncomePreferenceCode;
 import com.tools20022.repository.codeset.TaxWithholdingMethodCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
-import com.tools20022.repository.entity.AccountService;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Services linked to an account which are available to the account owner or to
@@ -100,8 +101,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,9 +120,8 @@ public class InvestmentAccountService extends AccountService {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected IncomePreferenceCode incomePreference;
 	/**
-	 * Dividend option chosen by the account owner based on the options offered
-	 * in the prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,18 +132,6 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmIncomePreference
-	 * InvestmentAccount54.mmIncomePreference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmIncomePreference
-	 * InvestmentAccount56.mmIncomePreference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount55#mmIncomePreference
-	 * InvestmentAccount55.mmIncomePreference}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmIncomePreference
-	 * InvestmentAccount57.mmIncomePreference}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount61#mmIncomePreference
 	 * InvestmentAccount61.mmIncomePreference}</li>
@@ -195,6 +183,18 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SwitchRedemptionLegExecution4#mmIncomePreference
 	 * SwitchRedemptionLegExecution4.mmIncomePreference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmIncomePreference
+	 * InvestmentAccount66.mmIncomePreference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmIncomePreference
+	 * InvestmentAccount67.mmIncomePreference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount65#mmIncomePreference
+	 * InvestmentAccount65.mmIncomePreference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmIncomePreference
+	 * InvestmentAccount68.mmIncomePreference}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -215,13 +215,13 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIncomePreference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccountService, IncomePreferenceCode> mmIncomePreference = new MMBusinessAttribute<InvestmentAccountService, IncomePreferenceCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(InvestmentAccount54.mmIncomePreference, InvestmentAccount56.mmIncomePreference, InvestmentAccount55.mmIncomePreference, InvestmentAccount57.mmIncomePreference,
-					InvestmentAccount61.mmIncomePreference, InvestmentPlan14.mmIncomePreference, InvestmentAccount63.mmIncomePreference, InvestmentAccount62.mmIncomePreference, RedemptionOrder14.mmIncomePreference,
-					SwitchSubscriptionLegOrder6.mmIncomePreference, InvestmentPlan15.mmIncomePreference, SubscriptionExecution13.mmIncomePreference, SubscriptionExecution12.mmIncomePreference, SubscriptionOrder15.mmIncomePreference,
-					SwitchRedemptionLegOrder6.mmIncomePreference, RedemptionOrder15.mmIncomePreference, RedemptionExecution16.mmIncomePreference, SubscriptionOrder14.mmIncomePreference, SwitchSubscriptionLegExecution4.mmIncomePreference,
-					RedemptionExecution15.mmIncomePreference, SwitchRedemptionLegExecution4.mmIncomePreference);
+			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmIncomePreference, InvestmentPlan14.mmIncomePreference, InvestmentAccount63.mmIncomePreference, InvestmentAccount62.mmIncomePreference,
+					RedemptionOrder14.mmIncomePreference, SwitchSubscriptionLegOrder6.mmIncomePreference, InvestmentPlan15.mmIncomePreference, SubscriptionExecution13.mmIncomePreference, SubscriptionExecution12.mmIncomePreference,
+					SubscriptionOrder15.mmIncomePreference, SwitchRedemptionLegOrder6.mmIncomePreference, RedemptionOrder15.mmIncomePreference, RedemptionExecution16.mmIncomePreference, SubscriptionOrder14.mmIncomePreference,
+					SwitchSubscriptionLegExecution4.mmIncomePreference, RedemptionExecution15.mmIncomePreference, SwitchRedemptionLegExecution4.mmIncomePreference, InvestmentAccount66.mmIncomePreference,
+					InvestmentAccount67.mmIncomePreference, InvestmentAccount65.mmIncomePreference, InvestmentAccount68.mmIncomePreference);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -232,20 +232,20 @@ public class InvestmentAccountService extends AccountService {
 			simpleType_lazy = () -> IncomePreferenceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccountService.class.getMethod("getIncomePreference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IncomePreferenceCode getValue(InvestmentAccountService obj) {
+			return obj.getIncomePreference();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, IncomePreferenceCode value) {
+			obj.setIncomePreference(value);
 		}
 	};
 	protected TaxWithholdingMethodCode taxWithholdingMethod;
 	/**
-	 * Method by which the tax (withholding tax) is to be processed i.e. either
-	 * withheld at source or tax information reported to tax authorities or tax
-	 * information is reported due to the provision of a tax certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,7 +285,7 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxWithholdingMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccountService, TaxWithholdingMethodCode> mmTaxWithholdingMethod = new MMBusinessAttribute<InvestmentAccountService, TaxWithholdingMethodCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmTaxWithholdingMethod, InvestmentAccount63.mmTaxWithholdingMethod, InvestmentAccount62.mmTaxWithholdingMethod);
 			isDerived = false;
@@ -298,18 +298,20 @@ public class InvestmentAccountService extends AccountService {
 			simpleType_lazy = () -> TaxWithholdingMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccountService.class.getMethod("getTaxWithholdingMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TaxWithholdingMethodCode getValue(InvestmentAccountService obj) {
+			return obj.getTaxWithholdingMethod();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, TaxWithholdingMethodCode value) {
+			obj.setTaxWithholdingMethod(value);
 		}
 	};
 	protected RoundingParameters roundingMethod;
 	/**
-	 * Rounding method used to determine the quantity of investment fund units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -356,7 +358,7 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRoundingMethod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountService, RoundingParameters> mmRoundingMethod = new MMBusinessAssociationEnd<InvestmentAccountService, RoundingParameters>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmRoundingDetails, InvestmentAccount63.mmRoundingDetails, InvestmentAccount62.mmRoundingDetails);
 			isDerived = false;
@@ -366,17 +368,25 @@ public class InvestmentAccountService extends AccountService {
 			definition = "Rounding method used to determine the quantity of investment fund units.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmInvestmentAccountService;
+			opposite_lazy = () -> RoundingParameters.mmInvestmentAccountService;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
+			type_lazy = () -> RoundingParameters.mmObject();
+		}
+
+		@Override
+		public RoundingParameters getValue(InvestmentAccountService obj) {
+			return obj.getRoundingMethod();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, RoundingParameters value) {
+			obj.setRoundingMethod(value);
 		}
 	};
 	protected YesNoIndicator beneficiaryCertificationIndicator;
 	/**
-	 * Indicates whether the beneficial ownership certification has been sent,
-	 * certifying that the beneficial owner is eligible to own a specific
-	 * investment fund or investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -402,7 +412,7 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBeneficiaryCertificationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccountService, YesNoIndicator> mmBeneficiaryCertificationIndicator = new MMBusinessAttribute<InvestmentAccountService, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
@@ -414,19 +424,20 @@ public class InvestmentAccountService extends AccountService {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccountService.class.getMethod("getBeneficiaryCertificationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(InvestmentAccountService obj) {
+			return obj.getBeneficiaryCertificationIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, YesNoIndicator value) {
+			obj.setBeneficiaryCertificationIndicator(value);
 		}
 	};
 	protected BeneficiaryCertificationCompletionCode beneficiaryCertificationCompletion;
 	/**
-	 * Beneficial owner or its designated agent certifies that it complies with
-	 * any holding or investment restrictions or requirements of the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,20 +449,20 @@ public class InvestmentAccountService extends AccountService {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmBeneficiaryCertificationCompletion
-	 * InvestmentAccount54.mmBeneficiaryCertificationCompletion}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmBeneficiaryCertificationCompletion
-	 * InvestmentAccount56.mmBeneficiaryCertificationCompletion}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount55#mmBeneficiaryCertificationCompletion
-	 * InvestmentAccount55.mmBeneficiaryCertificationCompletion}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmBeneficiaryCertificationCompletion
-	 * InvestmentAccount57.mmBeneficiaryCertificationCompletion}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.IndividualPerson31#mmBeneficiaryCertificationCompletion
 	 * IndividualPerson31.mmBeneficiaryCertificationCompletion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmBeneficiaryCertificationCompletion
+	 * InvestmentAccount66.mmBeneficiaryCertificationCompletion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmBeneficiaryCertificationCompletion
+	 * InvestmentAccount67.mmBeneficiaryCertificationCompletion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount65#mmBeneficiaryCertificationCompletion
+	 * InvestmentAccount65.mmBeneficiaryCertificationCompletion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmBeneficiaryCertificationCompletion
+	 * InvestmentAccount68.mmBeneficiaryCertificationCompletion}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -472,10 +483,10 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBeneficiaryCertificationCompletion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccountService, BeneficiaryCertificationCompletionCode> mmBeneficiaryCertificationCompletion = new MMBusinessAttribute<InvestmentAccountService, BeneficiaryCertificationCompletionCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(InvestmentAccount54.mmBeneficiaryCertificationCompletion, InvestmentAccount56.mmBeneficiaryCertificationCompletion, InvestmentAccount55.mmBeneficiaryCertificationCompletion,
-					InvestmentAccount57.mmBeneficiaryCertificationCompletion, IndividualPerson31.mmBeneficiaryCertificationCompletion);
+			derivation_lazy = () -> Arrays.asList(IndividualPerson31.mmBeneficiaryCertificationCompletion, InvestmentAccount66.mmBeneficiaryCertificationCompletion, InvestmentAccount67.mmBeneficiaryCertificationCompletion,
+					InvestmentAccount65.mmBeneficiaryCertificationCompletion, InvestmentAccount68.mmBeneficiaryCertificationCompletion);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -486,18 +497,20 @@ public class InvestmentAccountService extends AccountService {
 			simpleType_lazy = () -> BeneficiaryCertificationCompletionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccountService.class.getMethod("getBeneficiaryCertificationCompletion", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BeneficiaryCertificationCompletionCode getValue(InvestmentAccountService obj) {
+			return obj.getBeneficiaryCertificationCompletion();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, BeneficiaryCertificationCompletionCode value) {
+			obj.setBeneficiaryCertificationCompletion(value);
 		}
 	};
 	protected InvestmentPlan systematicInvestmentPlan;
 	/**
-	 * Investment plan associated with an investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -528,7 +541,7 @@ public class InvestmentAccountService extends AccountService {
 	 * definition} = "Investment plan associated with an investment account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystematicInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountService, Optional<InvestmentPlan>> mmSystematicInvestmentPlan = new MMBusinessAssociationEnd<InvestmentAccountService, Optional<InvestmentPlan>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
@@ -537,15 +550,25 @@ public class InvestmentAccountService extends AccountService {
 			definition = "Investment plan associated with an investment account.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmRelatedService;
+			opposite_lazy = () -> InvestmentPlan.mmRelatedService;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
+			type_lazy = () -> InvestmentPlan.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentPlan> getValue(InvestmentAccountService obj) {
+			return obj.getSystematicInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, Optional<InvestmentPlan> value) {
+			obj.setSystematicInvestmentPlan(value.orElse(null));
 		}
 	};
 	protected InvestmentAccountContract investmentAccountContract;
 	/**
-	 * Contract which specifies the services related to an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -578,7 +601,7 @@ public class InvestmentAccountService extends AccountService {
 	 * "Contract which specifies the services related to an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountService, Optional<InvestmentAccountContract>> mmInvestmentAccountContract = new MMBusinessAssociationEnd<InvestmentAccountService, Optional<InvestmentAccountContract>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
@@ -591,11 +614,21 @@ public class InvestmentAccountService extends AccountService {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 		}
+
+		@Override
+		public Optional<InvestmentAccountContract> getValue(InvestmentAccountService obj) {
+			return obj.getInvestmentAccountContract();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, Optional<InvestmentAccountContract> value) {
+			obj.setInvestmentAccountContract(value.orElse(null));
+		}
 	};
 	protected ReportingService reportingService;
 	/**
-	 * Reporting services parameters for an investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -626,7 +659,7 @@ public class InvestmentAccountService extends AccountService {
 	 * definition} = "Reporting services parameters for an investment account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportingService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountService, com.tools20022.repository.entity.ReportingService> mmReportingService = new MMBusinessAssociationEnd<InvestmentAccountService, com.tools20022.repository.entity.ReportingService>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
@@ -639,11 +672,21 @@ public class InvestmentAccountService extends AccountService {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.ReportingService getValue(InvestmentAccountService obj) {
+			return obj.getReportingService();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, com.tools20022.repository.entity.ReportingService value) {
+			obj.setReportingService(value);
+		}
 	};
 	protected Reinvestment reinvestment;
 	/**
-	 * Reinvestment information included in the investment account contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -689,7 +732,7 @@ public class InvestmentAccountService extends AccountService {
 	 * "Reinvestment information included in the investment account contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReinvestment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccountService, com.tools20022.repository.entity.Reinvestment> mmReinvestment = new MMBusinessAssociationEnd<InvestmentAccountService, com.tools20022.repository.entity.Reinvestment>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmReinvestmentDetails, InvestmentAccount63.mmReinvestmentDetails, InvestmentAccount62.mmReinvestmentDetails);
 			isDerived = false;
@@ -703,18 +746,27 @@ public class InvestmentAccountService extends AccountService {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Reinvestment getValue(InvestmentAccountService obj) {
+			return obj.getReinvestment();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountService obj, com.tools20022.repository.entity.Reinvestment value) {
+			obj.setReinvestment(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountService";
 				definition = "Services linked to an account which are available to the account owner or to the holder of a mandate. The exercise of these services may be submitted to a limit.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReportingService.mmRelatedInvestmentAccountService, com.tools20022.repository.entity.InvestmentAccountContract.mmServices,
-						com.tools20022.repository.entity.RoundingParameters.mmInvestmentAccountService, com.tools20022.repository.entity.InvestmentPlan.mmRelatedService,
-						com.tools20022.repository.entity.Reinvestment.mmRelatedinvestmentAccountService);
+						RoundingParameters.mmInvestmentAccountService, InvestmentPlan.mmRelatedService, com.tools20022.repository.entity.Reinvestment.mmRelatedinvestmentAccountService);
 				superType_lazy = () -> AccountService.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountService.mmIncomePreference, com.tools20022.repository.entity.InvestmentAccountService.mmTaxWithholdingMethod,
 						com.tools20022.repository.entity.InvestmentAccountService.mmRoundingMethod, com.tools20022.repository.entity.InvestmentAccountService.mmBeneficiaryCertificationIndicator,
@@ -735,71 +787,80 @@ public class InvestmentAccountService extends AccountService {
 		return incomePreference;
 	}
 
-	public void setIncomePreference(IncomePreferenceCode incomePreference) {
-		this.incomePreference = incomePreference;
+	public InvestmentAccountService setIncomePreference(IncomePreferenceCode incomePreference) {
+		this.incomePreference = Objects.requireNonNull(incomePreference);
+		return this;
 	}
 
 	public TaxWithholdingMethodCode getTaxWithholdingMethod() {
 		return taxWithholdingMethod;
 	}
 
-	public void setTaxWithholdingMethod(TaxWithholdingMethodCode taxWithholdingMethod) {
-		this.taxWithholdingMethod = taxWithholdingMethod;
+	public InvestmentAccountService setTaxWithholdingMethod(TaxWithholdingMethodCode taxWithholdingMethod) {
+		this.taxWithholdingMethod = Objects.requireNonNull(taxWithholdingMethod);
+		return this;
 	}
 
 	public RoundingParameters getRoundingMethod() {
 		return roundingMethod;
 	}
 
-	public void setRoundingMethod(com.tools20022.repository.entity.RoundingParameters roundingMethod) {
-		this.roundingMethod = roundingMethod;
+	public InvestmentAccountService setRoundingMethod(RoundingParameters roundingMethod) {
+		this.roundingMethod = Objects.requireNonNull(roundingMethod);
+		return this;
 	}
 
 	public YesNoIndicator getBeneficiaryCertificationIndicator() {
 		return beneficiaryCertificationIndicator;
 	}
 
-	public void setBeneficiaryCertificationIndicator(YesNoIndicator beneficiaryCertificationIndicator) {
-		this.beneficiaryCertificationIndicator = beneficiaryCertificationIndicator;
+	public InvestmentAccountService setBeneficiaryCertificationIndicator(YesNoIndicator beneficiaryCertificationIndicator) {
+		this.beneficiaryCertificationIndicator = Objects.requireNonNull(beneficiaryCertificationIndicator);
+		return this;
 	}
 
 	public BeneficiaryCertificationCompletionCode getBeneficiaryCertificationCompletion() {
 		return beneficiaryCertificationCompletion;
 	}
 
-	public void setBeneficiaryCertificationCompletion(BeneficiaryCertificationCompletionCode beneficiaryCertificationCompletion) {
-		this.beneficiaryCertificationCompletion = beneficiaryCertificationCompletion;
+	public InvestmentAccountService setBeneficiaryCertificationCompletion(BeneficiaryCertificationCompletionCode beneficiaryCertificationCompletion) {
+		this.beneficiaryCertificationCompletion = Objects.requireNonNull(beneficiaryCertificationCompletion);
+		return this;
 	}
 
-	public InvestmentPlan getSystematicInvestmentPlan() {
-		return systematicInvestmentPlan;
+	public Optional<InvestmentPlan> getSystematicInvestmentPlan() {
+		return systematicInvestmentPlan == null ? Optional.empty() : Optional.of(systematicInvestmentPlan);
 	}
 
-	public void setSystematicInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan systematicInvestmentPlan) {
+	public InvestmentAccountService setSystematicInvestmentPlan(InvestmentPlan systematicInvestmentPlan) {
 		this.systematicInvestmentPlan = systematicInvestmentPlan;
+		return this;
 	}
 
-	public InvestmentAccountContract getInvestmentAccountContract() {
-		return investmentAccountContract;
+	public Optional<InvestmentAccountContract> getInvestmentAccountContract() {
+		return investmentAccountContract == null ? Optional.empty() : Optional.of(investmentAccountContract);
 	}
 
-	public void setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
+	public InvestmentAccountService setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
 		this.investmentAccountContract = investmentAccountContract;
+		return this;
 	}
 
 	public ReportingService getReportingService() {
 		return reportingService;
 	}
 
-	public void setReportingService(com.tools20022.repository.entity.ReportingService reportingService) {
-		this.reportingService = reportingService;
+	public InvestmentAccountService setReportingService(com.tools20022.repository.entity.ReportingService reportingService) {
+		this.reportingService = Objects.requireNonNull(reportingService);
+		return this;
 	}
 
 	public Reinvestment getReinvestment() {
 		return reinvestment;
 	}
 
-	public void setReinvestment(com.tools20022.repository.entity.Reinvestment reinvestment) {
-		this.reinvestment = reinvestment;
+	public InvestmentAccountService setReinvestment(com.tools20022.repository.entity.Reinvestment reinvestment) {
+		this.reinvestment = Objects.requireNonNull(reinvestment);
+		return this;
 	}
 }

@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max210Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Summation of the call amounts either due to A or due to B."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Result1", propOrder = {"dueToPartyA", "dueToPartyB", "additionalInformation"})
 public class Result1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DueToPtyA")
 	protected ActiveCurrencyAndAmount dueToPartyA;
 	/**
-	 * Amount payable by party B to party A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class Result1 {
 	 * definition} = "Amount payable by party B to party A."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueToPartyA = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Result1, Optional<ActiveCurrencyAndAmount>> mmDueToPartyA = new MMMessageAttribute<Result1, Optional<ActiveCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> Result1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Result1.mmObject();
 			isDerived = false;
 			xmlTag = "DueToPtyA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +110,22 @@ public class Result1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Result1 obj) {
+			return obj.getDueToPartyA();
+		}
+
+		@Override
+		public void setValue(Result1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setDueToPartyA(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DueToPtyB")
 	protected ActiveCurrencyAndAmount dueToPartyB;
 	/**
-	 * Amount payable by party A to party B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,9 +150,9 @@ public class Result1 {
 	 * definition} = "Amount payable by party A to party B."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDueToPartyB = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Result1, Optional<ActiveCurrencyAndAmount>> mmDueToPartyB = new MMMessageAttribute<Result1, Optional<ActiveCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> Result1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Result1.mmObject();
 			isDerived = false;
 			xmlTag = "DueToPtyB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,12 +162,22 @@ public class Result1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Result1 obj) {
+			return obj.getDueToPartyB();
+		}
+
+		@Override
+		public void setValue(Result1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setDueToPartyB(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max210Text additionalInformation;
 	/**
-	 * Provides additional information related to the collateral that may be
-	 * requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,9 +203,9 @@ public class Result1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Result1, Optional<Max210Text>> mmAdditionalInformation = new MMMessageAttribute<Result1, Optional<Max210Text>>() {
 		{
-			componentContext_lazy = () -> Result1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Result1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,13 +215,23 @@ public class Result1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max210Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max210Text> getValue(Result1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(Result1 obj, Optional<Max210Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Result1.mmDueToPartyA, Result1.mmDueToPartyB, Result1.mmAdditionalInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Result1.mmDueToPartyA, com.tools20022.repository.msg.Result1.mmDueToPartyB, com.tools20022.repository.msg.Result1.mmAdditionalInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Result1";
 				definition = "Summation of the call amounts either due to A or due to B.";
@@ -207,30 +240,30 @@ public class Result1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DueToPtyA")
-	public ActiveCurrencyAndAmount getDueToPartyA() {
-		return dueToPartyA;
+	public Optional<ActiveCurrencyAndAmount> getDueToPartyA() {
+		return dueToPartyA == null ? Optional.empty() : Optional.of(dueToPartyA);
 	}
 
-	public void setDueToPartyA(ActiveCurrencyAndAmount dueToPartyA) {
+	public Result1 setDueToPartyA(ActiveCurrencyAndAmount dueToPartyA) {
 		this.dueToPartyA = dueToPartyA;
+		return this;
 	}
 
-	@XmlElement(name = "DueToPtyB")
-	public ActiveCurrencyAndAmount getDueToPartyB() {
-		return dueToPartyB;
+	public Optional<ActiveCurrencyAndAmount> getDueToPartyB() {
+		return dueToPartyB == null ? Optional.empty() : Optional.of(dueToPartyB);
 	}
 
-	public void setDueToPartyB(ActiveCurrencyAndAmount dueToPartyB) {
+	public Result1 setDueToPartyB(ActiveCurrencyAndAmount dueToPartyB) {
 		this.dueToPartyB = dueToPartyB;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max210Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max210Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max210Text additionalInformation) {
+	public Result1 setAdditionalInformation(Max210Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

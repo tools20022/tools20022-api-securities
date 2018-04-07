@@ -25,9 +25,13 @@ import com.tools20022.repository.entity.CorporateActionNotification;
 import com.tools20022.repository.entity.CorporateActionOptionServicing;
 import com.tools20022.repository.entity.CorporateActionServicing;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CorporateAction2;
+import com.tools20022.repository.msg.CorporateActionOption1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides detailed information about an announcement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionNotificationAdvice1", propOrder = {"corporateActionDetails", "corporateActionOptionDetails"})
 public class CorporateActionNotificationAdvice1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CorpActnDtls", required = true)
 	protected CorporateAction2 corporateActionDetails;
 	/**
-	 * Provides detailed information about the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -117,10 +122,10 @@ public class CorporateActionNotificationAdvice1 {
 	 * "Provides detailed information about the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCorporateActionDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionNotificationAdvice1, CorporateAction2> mmCorporateActionDetails = new MMMessageAssociationEnd<CorporateActionNotificationAdvice1, CorporateAction2>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionServicing.mmEvent;
-			componentContext_lazy = () -> CorporateActionNotificationAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNotificationAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "CorpActnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,13 +134,24 @@ public class CorporateActionNotificationAdvice1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
+			type_lazy = () -> CorporateAction2.mmObject();
+		}
+
+		@Override
+		public CorporateAction2 getValue(CorporateActionNotificationAdvice1 obj) {
+			return obj.getCorporateActionDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionNotificationAdvice1 obj, CorporateAction2 value) {
+			obj.setCorporateActionDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CorporateActionOption1> corporateActionOptionDetails;
+	@XmlElement(name = "CorpActnOptnDtls")
+	protected List<CorporateActionOption1> corporateActionOptionDetails;
 	/**
-	 * Provides information about an option of a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -164,10 +180,10 @@ public class CorporateActionNotificationAdvice1 {
 	 * definition} = "Provides information about an option of a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCorporateActionOptionDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionNotificationAdvice1, List<CorporateActionOption1>> mmCorporateActionOptionDetails = new MMMessageAssociationEnd<CorporateActionNotificationAdvice1, List<CorporateActionOption1>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOptionServicing.mmRelatedOption;
-			componentContext_lazy = () -> CorporateActionNotificationAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNotificationAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "CorpActnOptnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,17 +191,28 @@ public class CorporateActionNotificationAdvice1 {
 			definition = "Provides information about an option of a CA event.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionOption1.mmObject();
+			type_lazy = () -> CorporateActionOption1.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionOption1> getValue(CorporateActionNotificationAdvice1 obj) {
+			return obj.getCorporateActionOptionDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionNotificationAdvice1 obj, List<CorporateActionOption1> value) {
+			obj.setCorporateActionOptionDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionNotificationAdvice1.mmCorporateActionDetails, CorporateActionNotificationAdvice1.mmCorporateActionOptionDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionNotificationAdvice1.mmCorporateActionDetails,
+						com.tools20022.repository.msg.CorporateActionNotificationAdvice1.mmCorporateActionOptionDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCANotificationCancellationRequestV01.mmCorporateActionNotificationDetails);
 				trace_lazy = () -> CorporateActionNotification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNotificationAdvice1";
 				definition = "Provides detailed information about an announcement.";
@@ -194,21 +221,21 @@ public class CorporateActionNotificationAdvice1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CorpActnDtls", required = true)
 	public CorporateAction2 getCorporateActionDetails() {
 		return corporateActionDetails;
 	}
 
-	public void setCorporateActionDetails(com.tools20022.repository.msg.CorporateAction2 corporateActionDetails) {
-		this.corporateActionDetails = corporateActionDetails;
+	public CorporateActionNotificationAdvice1 setCorporateActionDetails(CorporateAction2 corporateActionDetails) {
+		this.corporateActionDetails = Objects.requireNonNull(corporateActionDetails);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnOptnDtls")
 	public List<CorporateActionOption1> getCorporateActionOptionDetails() {
-		return corporateActionOptionDetails;
+		return corporateActionOptionDetails == null ? corporateActionOptionDetails = new ArrayList<>() : corporateActionOptionDetails;
 	}
 
-	public void setCorporateActionOptionDetails(List<com.tools20022.repository.msg.CorporateActionOption1> corporateActionOptionDetails) {
-		this.corporateActionOptionDetails = corporateActionOptionDetails;
+	public CorporateActionNotificationAdvice1 setCorporateActionOptionDetails(List<CorporateActionOption1> corporateActionOptionDetails) {
+		this.corporateActionOptionDetails = Objects.requireNonNull(corporateActionOptionDetails);
+		return this;
 	}
 }

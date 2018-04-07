@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.Derivative;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,16 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "EquityDerivative3Choice", propOrder = {"basket", "index", "singleName", "other"})
 public class EquityDerivative3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Bskt", required = true)
 	protected UnderlyingEquityType3Code basket;
 	/**
-	 * Populated when sub asset class is either swaps or portfolio swaps and the
-	 * underlying type is a basket.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,10 +118,10 @@ public class EquityDerivative3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBasket = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType3Code> mmBasket = new MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType3Code>() {
 		{
 			businessElementTrace_lazy = () -> AssetClassification.mmProductType;
-			componentContext_lazy = () -> EquityDerivative3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.EquityDerivative3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Bskt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,12 +131,22 @@ public class EquityDerivative3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> UnderlyingEquityType3Code.mmObject();
 		}
+
+		@Override
+		public UnderlyingEquityType3Code getValue(EquityDerivative3Choice obj) {
+			return obj.getBasket();
+		}
+
+		@Override
+		public void setValue(EquityDerivative3Choice obj, UnderlyingEquityType3Code value) {
+			obj.setBasket(value);
+		}
 	};
+	@XmlElement(name = "Indx", required = true)
 	protected UnderlyingEquityType4Code index;
 	/**
-	 * Populated when the sub asset class is either swap or portfolio swap and
-	 * the underlying type is an index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,10 +179,10 @@ public class EquityDerivative3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIndex = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType4Code> mmIndex = new MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType4Code>() {
 		{
 			businessElementTrace_lazy = () -> AssetClassification.mmProductType;
-			componentContext_lazy = () -> EquityDerivative3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.EquityDerivative3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Indx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,12 +192,22 @@ public class EquityDerivative3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> UnderlyingEquityType4Code.mmObject();
 		}
+
+		@Override
+		public UnderlyingEquityType4Code getValue(EquityDerivative3Choice obj) {
+			return obj.getIndex();
+		}
+
+		@Override
+		public void setValue(EquityDerivative3Choice obj, UnderlyingEquityType4Code value) {
+			obj.setIndex(value);
+		}
 	};
+	@XmlElement(name = "SnglNm", required = true)
 	protected UnderlyingEquityType5Code singleName;
 	/**
-	 * Populated when sub asset class is either swaps or portfolio swaps and the
-	 * underlying type is a single name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,10 +240,10 @@ public class EquityDerivative3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSingleName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType5Code> mmSingleName = new MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType5Code>() {
 		{
 			businessElementTrace_lazy = () -> AssetClassification.mmProductType;
-			componentContext_lazy = () -> EquityDerivative3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.EquityDerivative3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SnglNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -232,11 +253,22 @@ public class EquityDerivative3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> UnderlyingEquityType5Code.mmObject();
 		}
+
+		@Override
+		public UnderlyingEquityType5Code getValue(EquityDerivative3Choice obj) {
+			return obj.getSingleName();
+		}
+
+		@Override
+		public void setValue(EquityDerivative3Choice obj, UnderlyingEquityType5Code value) {
+			obj.setSingleName(value);
+		}
 	};
+	@XmlElement(name = "Othr", required = true)
 	protected UnderlyingEquityType6Code other;
 	/**
-	 * Populated when the sub asset class is neither swaps nor portfolio swaps.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,10 +301,10 @@ public class EquityDerivative3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOther = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType6Code> mmOther = new MMMessageAttribute<EquityDerivative3Choice, UnderlyingEquityType6Code>() {
 		{
 			businessElementTrace_lazy = () -> AssetClassification.mmProductType;
-			componentContext_lazy = () -> EquityDerivative3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.EquityDerivative3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -282,14 +314,25 @@ public class EquityDerivative3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> UnderlyingEquityType6Code.mmObject();
 		}
+
+		@Override
+		public UnderlyingEquityType6Code getValue(EquityDerivative3Choice obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(EquityDerivative3Choice obj, UnderlyingEquityType6Code value) {
+			obj.setOther(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(EquityDerivative3Choice.mmBasket, EquityDerivative3Choice.mmIndex, EquityDerivative3Choice.mmSingleName, EquityDerivative3Choice.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.EquityDerivative3Choice.mmBasket, com.tools20022.repository.choice.EquityDerivative3Choice.mmIndex,
+						com.tools20022.repository.choice.EquityDerivative3Choice.mmSingleName, com.tools20022.repository.choice.EquityDerivative3Choice.mmOther);
 				trace_lazy = () -> Derivative.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EquityDerivative3Choice";
 				definition = "Element to define an equity instrument underlying code types.";
@@ -298,39 +341,39 @@ public class EquityDerivative3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Bskt", required = true)
 	public UnderlyingEquityType3Code getBasket() {
 		return basket;
 	}
 
-	public void setBasket(UnderlyingEquityType3Code basket) {
-		this.basket = basket;
+	public EquityDerivative3Choice setBasket(UnderlyingEquityType3Code basket) {
+		this.basket = Objects.requireNonNull(basket);
+		return this;
 	}
 
-	@XmlElement(name = "Indx", required = true)
 	public UnderlyingEquityType4Code getIndex() {
 		return index;
 	}
 
-	public void setIndex(UnderlyingEquityType4Code index) {
-		this.index = index;
+	public EquityDerivative3Choice setIndex(UnderlyingEquityType4Code index) {
+		this.index = Objects.requireNonNull(index);
+		return this;
 	}
 
-	@XmlElement(name = "SnglNm", required = true)
 	public UnderlyingEquityType5Code getSingleName() {
 		return singleName;
 	}
 
-	public void setSingleName(UnderlyingEquityType5Code singleName) {
-		this.singleName = singleName;
+	public EquityDerivative3Choice setSingleName(UnderlyingEquityType5Code singleName) {
+		this.singleName = Objects.requireNonNull(singleName);
+		return this;
 	}
 
-	@XmlElement(name = "Othr", required = true)
 	public UnderlyingEquityType6Code getOther() {
 		return other;
 	}
 
-	public void setOther(UnderlyingEquityType6Code other) {
-		this.other = other;
+	public EquityDerivative3Choice setOther(UnderlyingEquityType6Code other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

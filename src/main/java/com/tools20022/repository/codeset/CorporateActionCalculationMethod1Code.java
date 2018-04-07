@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethod1Code#ProRata
- * CorporateActionCalculationMethod1Code.mmProRata}</li>
+ * CorporateActionCalculationMethod1Code.ProRata}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethod1Code#Lottery
- * CorporateActionCalculationMethod1Code.mmLottery}</li>
+ * CorporateActionCalculationMethod1Code.Lottery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethod1Code#NominalReduction
- * CorporateActionCalculationMethod1Code.mmNominalReduction}</li>
+ * CorporateActionCalculationMethod1Code.NominalReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethod1Code#NoNominalReduction
- * CorporateActionCalculationMethod1Code.mmNoNominalReduction}</li>
+ * CorporateActionCalculationMethod1Code.NoNominalReduction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class CorporateActionCalculationMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PROR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionCalculationMethod1Code";

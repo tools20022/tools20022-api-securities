@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason3Code#AccountServicerDeadlineMissed
- * AcknowledgementReason3Code.mmAccountServicerDeadlineMissed}</li>
+ * AcknowledgementReason3Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason3Code#MarketPracticeRuleDiscrepency
- * AcknowledgementReason3Code.mmMarketPracticeRuleDiscrepency}</li>
+ * AcknowledgementReason3Code.MarketPracticeRuleDiscrepency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason3Code#Other
- * AcknowledgementReason3Code.mmOther}</li>
+ * AcknowledgementReason3Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,7 +156,7 @@ public class AcknowledgementReason3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcknowledgementReason3Code";

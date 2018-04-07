@@ -20,11 +20,13 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RoundingDirectionCode;
 import com.tools20022.repository.datatype.DecimalNumber;
+import com.tools20022.repository.entity.InvestmentAccountService;
+import com.tools20022.repository.entity.SecuritiesPegOrderInstruction;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Parameters applied to a fractional number.
@@ -75,8 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,8 +94,8 @@ public class RoundingParameters {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InvestmentAccountService investmentAccountService;
 	/**
-	 * Investment account services for which rounding parameters are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,7 +129,7 @@ public class RoundingParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccountService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RoundingParameters, InvestmentAccountService> mmInvestmentAccountService = new MMBusinessAssociationEnd<RoundingParameters, InvestmentAccountService>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
@@ -136,17 +138,25 @@ public class RoundingParameters {
 			definition = "Investment account services for which rounding parameters are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmRoundingMethod;
+			opposite_lazy = () -> InvestmentAccountService.mmRoundingMethod;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
+			type_lazy = () -> InvestmentAccountService.mmObject();
+		}
+
+		@Override
+		public InvestmentAccountService getValue(RoundingParameters obj) {
+			return obj.getInvestmentAccountService();
+		}
+
+		@Override
+		public void setValue(RoundingParameters obj, InvestmentAccountService value) {
+			obj.setInvestmentAccountService(value);
 		}
 	};
 	protected DecimalNumber roundingModulus;
 	/**
-	 * Float value specifying the value to which rounding is required, eg, 10
-	 * means round to a multiple of 10 units/shares, 0.5 means round to a
-	 * multiple of 0.5 units/shares.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,7 +190,7 @@ public class RoundingParameters {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRoundingModulus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RoundingParameters, DecimalNumber> mmRoundingModulus = new MMBusinessAttribute<RoundingParameters, DecimalNumber>() {
 		{
 			derivation_lazy = () -> Arrays.asList(RoundingParameters1.mmRoundingModulus);
 			isDerived = false;
@@ -193,18 +203,20 @@ public class RoundingParameters {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RoundingParameters.class.getMethod("getRoundingModulus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(RoundingParameters obj) {
+			return obj.getRoundingModulus();
+		}
+
+		@Override
+		public void setValue(RoundingParameters obj, DecimalNumber value) {
+			obj.setRoundingModulus(value);
 		}
 	};
 	protected RoundingDirectionCode roundingDirection;
 	/**
-	 * Rounding direction applied to fractional numbers, eg, round up.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,10 +230,6 @@ public class RoundingParameters {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.RoundingParameters1#mmRoundingDirection
 	 * RoundingParameters1.mmRoundingDirection}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Transfer31#mmRounding
-	 * Transfer31.mmRounding}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Transfer30#mmRounding
-	 * Transfer30.mmRounding}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentPlan14#mmRoundingDirection
 	 * InvestmentPlan14.mmRoundingDirection}</li>
@@ -252,6 +260,10 @@ public class RoundingParameters {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.RedemptionExecution15#mmRounding
 	 * RedemptionExecution15.mmRounding}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Transfer35#mmRounding
+	 * Transfer35.mmRounding}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Transfer34#mmRounding
+	 * Transfer34.mmRounding}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -271,11 +283,11 @@ public class RoundingParameters {
 	 * "Rounding direction applied to fractional numbers, eg, round up."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRoundingDirection = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RoundingParameters, RoundingDirectionCode> mmRoundingDirection = new MMBusinessAttribute<RoundingParameters, RoundingDirectionCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(RoundingParameters1.mmRoundingDirection, Transfer31.mmRounding, Transfer30.mmRounding, InvestmentPlan14.mmRoundingDirection, RedemptionOrder14.mmRounding,
-					InvestmentPlan15.mmRoundingDirection, SubscriptionExecution13.mmRounding, SubscriptionExecution12.mmRounding, SubscriptionOrder15.mmRounding, RedemptionOrder15.mmRounding, RedemptionExecution16.mmRounding,
-					SubscriptionOrder14.mmRounding, RedemptionExecution15.mmRounding);
+			derivation_lazy = () -> Arrays.asList(RoundingParameters1.mmRoundingDirection, InvestmentPlan14.mmRoundingDirection, RedemptionOrder14.mmRounding, InvestmentPlan15.mmRoundingDirection, SubscriptionExecution13.mmRounding,
+					SubscriptionExecution12.mmRounding, SubscriptionOrder15.mmRounding, RedemptionOrder15.mmRounding, RedemptionExecution16.mmRounding, SubscriptionOrder14.mmRounding, RedemptionExecution15.mmRounding,
+					Transfer35.mmRounding, Transfer34.mmRounding);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -286,18 +298,20 @@ public class RoundingParameters {
 			simpleType_lazy = () -> RoundingDirectionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RoundingParameters.class.getMethod("getRoundingDirection", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RoundingDirectionCode getValue(RoundingParameters obj) {
+			return obj.getRoundingDirection();
+		}
+
+		@Override
+		public void setValue(RoundingParameters obj, RoundingDirectionCode value) {
+			obj.setRoundingDirection(value);
 		}
 	};
 	protected SecuritiesPegOrderInstruction relatedPegOrderInstruction;
 	/**
-	 * Peg order for which a rounding direction is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,7 +343,7 @@ public class RoundingParameters {
 	 * definition} = "Peg order for which a rounding direction is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPegOrderInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RoundingParameters, SecuritiesPegOrderInstruction> mmRelatedPegOrderInstruction = new MMBusinessAssociationEnd<RoundingParameters, SecuritiesPegOrderInstruction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
@@ -338,20 +352,30 @@ public class RoundingParameters {
 			definition = "Peg order for which a rounding direction is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmRoundDirection;
+			opposite_lazy = () -> SecuritiesPegOrderInstruction.mmRoundDirection;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmObject();
+			type_lazy = () -> SecuritiesPegOrderInstruction.mmObject();
+		}
+
+		@Override
+		public SecuritiesPegOrderInstruction getValue(RoundingParameters obj) {
+			return obj.getRelatedPegOrderInstruction();
+		}
+
+		@Override
+		public void setValue(RoundingParameters obj, SecuritiesPegOrderInstruction value) {
+			obj.setRelatedPegOrderInstruction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RoundingParameters";
 				definition = "Parameters applied to a fractional number.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountService.mmRoundingMethod, com.tools20022.repository.entity.SecuritiesPegOrderInstruction.mmRoundDirection);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentAccountService.mmRoundingMethod, SecuritiesPegOrderInstruction.mmRoundDirection);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RoundingParameters.mmInvestmentAccountService, com.tools20022.repository.entity.RoundingParameters.mmRoundingModulus,
 						com.tools20022.repository.entity.RoundingParameters.mmRoundingDirection, com.tools20022.repository.entity.RoundingParameters.mmRelatedPegOrderInstruction);
 				derivationComponent_lazy = () -> Arrays.asList(RoundingParameters1.mmObject());
@@ -369,31 +393,35 @@ public class RoundingParameters {
 		return investmentAccountService;
 	}
 
-	public void setInvestmentAccountService(com.tools20022.repository.entity.InvestmentAccountService investmentAccountService) {
-		this.investmentAccountService = investmentAccountService;
+	public RoundingParameters setInvestmentAccountService(InvestmentAccountService investmentAccountService) {
+		this.investmentAccountService = Objects.requireNonNull(investmentAccountService);
+		return this;
 	}
 
 	public DecimalNumber getRoundingModulus() {
 		return roundingModulus;
 	}
 
-	public void setRoundingModulus(DecimalNumber roundingModulus) {
-		this.roundingModulus = roundingModulus;
+	public RoundingParameters setRoundingModulus(DecimalNumber roundingModulus) {
+		this.roundingModulus = Objects.requireNonNull(roundingModulus);
+		return this;
 	}
 
 	public RoundingDirectionCode getRoundingDirection() {
 		return roundingDirection;
 	}
 
-	public void setRoundingDirection(RoundingDirectionCode roundingDirection) {
-		this.roundingDirection = roundingDirection;
+	public RoundingParameters setRoundingDirection(RoundingDirectionCode roundingDirection) {
+		this.roundingDirection = Objects.requireNonNull(roundingDirection);
+		return this;
 	}
 
 	public SecuritiesPegOrderInstruction getRelatedPegOrderInstruction() {
 		return relatedPegOrderInstruction;
 	}
 
-	public void setRelatedPegOrderInstruction(com.tools20022.repository.entity.SecuritiesPegOrderInstruction relatedPegOrderInstruction) {
-		this.relatedPegOrderInstruction = relatedPegOrderInstruction;
+	public RoundingParameters setRelatedPegOrderInstruction(SecuritiesPegOrderInstruction relatedPegOrderInstruction) {
+		this.relatedPegOrderInstruction = Objects.requireNonNull(relatedPegOrderInstruction);
+		return this;
 	}
 }

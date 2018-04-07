@@ -79,9 +79,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.area.auth.FinancialInstrumentReportingNonWorkingDayReportV01
  * FinancialInstrumentReportingNonWorkingDayReportV01}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.FinancialInstrumentReportingTransactionReportV01
- * FinancialInstrumentReportingTransactionReportV01}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.auth.FinancialInstrumentReportingEquityTradingActivityReportV01
  * FinancialInstrumentReportingEquityTradingActivityReportV01}</li>
  * <li>
@@ -110,8 +107,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -131,7 +128,7 @@ public class AuthoritiesLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Authorities - Latest version - master";
 				definition = "Messages that support the provision of miscellaneous financial information to authorities, such as Regulators, Police, Customs, Tax authorities, Enforcement authorities, Ministries, etc.";
@@ -141,10 +138,9 @@ public class AuthoritiesLatestVersion {
 						FinancialInstrumentReportingInstrumentClassificationReportV01.mmObject(), FinancialInstrumentReportingNonEquityTradingActivityResultV01.mmObject(),
 						FinancialInstrumentReportingEquityTradingActivityResultV01.mmObject(), FinancialInstrumentReportingEquityTransparencyDataReportV01.mmObject(), FinancialInstrumentReportingReferenceDataReportV01.mmObject(),
 						FinancialInstrumentReportingInvalidReferenceDataReportV01.mmObject(), FinancialInstrumentReportingStatusAdviceV01.mmObject(), FinancialInstrumentReportingNonWorkingDayReportV01.mmObject(),
-						FinancialInstrumentReportingTransactionReportV01.mmObject(), FinancialInstrumentReportingEquityTradingActivityReportV01.mmObject(), FinancialInstrumentReportingCurrencyCodeReportV01.mmObject(),
-						FinancialInstrumentReportingReferenceDataIndexReportV01.mmObject(), FinancialInstrumentReportingMarketIdentificationCodeReportV01.mmObject(),
-						FinancialInstrumentReportingNonEquityTransparencyDataReportV01.mmObject(), FinancialInstrumentReportingReferenceDataDeltaReportV01.mmObject(), FinancialInstrumentReportingCountryCodeReportV01.mmObject(),
-						FinancialInstrumentReportingNonEquityTradingActivityReportV01.mmObject());
+						FinancialInstrumentReportingEquityTradingActivityReportV01.mmObject(), FinancialInstrumentReportingCurrencyCodeReportV01.mmObject(), FinancialInstrumentReportingReferenceDataIndexReportV01.mmObject(),
+						FinancialInstrumentReportingMarketIdentificationCodeReportV01.mmObject(), FinancialInstrumentReportingNonEquityTransparencyDataReportV01.mmObject(),
+						FinancialInstrumentReportingReferenceDataDeltaReportV01.mmObject(), FinancialInstrumentReportingCountryCodeReportV01.mmObject(), FinancialInstrumentReportingNonEquityTradingActivityReportV01.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

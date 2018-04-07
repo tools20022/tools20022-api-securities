@@ -25,8 +25,11 @@ import com.tools20022.repository.choice.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ForeignExchangeTerms8;
+import com.tools20022.repository.msg.RelatedTaxType1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -147,8 +150,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -159,7 +162,7 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies rates."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionRate2", propOrder = {"withholdingTax", "withholdingOfForeignTax", "withholdingOfLocalTax", "germanLocalTax1", "germanLocalTax2", "germanLocalTax3", "germanLocalTax4", "taxOnIncome", "taxOnProfit",
 		"taxReclaim", "fiscalStamp", "proration", "newToOld", "newSecuritiesToUnderlyingSecurities", "additionalQuantityForExistingSecurities", "additionalQuantityForSubscribedResultantSecurities", "relatedTax", "nonResidentRate",
 		"charges", "interestForUsedPayment", "indexFactor", "fullyFranked", "grossDividend", "netDividend", "finalDividend", "provisionalDividend", "cashIncentive", "solicitationFee", "maximumAllowedOversubscription", "additionalTax",
@@ -167,11 +170,11 @@ import javax.xml.bind.annotation.XmlType;
 public class CorporateActionRate2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "WhldgTax")
 	protected RateFormat1Choice withholdingTax;
 	/**
-	 * Percentage of a cash distribution that will be withheld by a tax
-	 * authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,10 +206,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmWithholdingTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmWithholdingTax = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "WhldgTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,13 +219,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getWithholdingTax();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setWithholdingTax(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "WhldgOfFrgnTax")
 	protected RateAndAmountFormat1Choice withholdingOfForeignTax;
 	/**
-	 * Rate at which the income will be withheld by the jurisdiction in which
-	 * the income was originally paid, for which relief at source and/or reclaim
-	 * may be possible.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,10 +267,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmWithholdingOfForeignTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmWithholdingOfForeignTax = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> TaxVoucher.mmRelatedSecurityTax;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "WhldgOfFrgnTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -268,13 +280,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getWithholdingOfForeignTax();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setWithholdingOfForeignTax(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "WhldgOfLclTax")
 	protected RateAndAmountFormat1Choice withholdingOfLocalTax;
 	/**
-	 * Rate at which the income will be withheld by the jurisdiction in which
-	 * the account owner is located, for which relief at source and/or reclaim
-	 * may be possible.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,10 +328,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmWithholdingOfLocalTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmWithholdingOfLocalTax = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> TaxVoucher.mmRelatedSecurityTax;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "WhldgOfLclTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -320,13 +341,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getWithholdingOfLocalTax();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setWithholdingOfLocalTax(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrmnLclTax1")
 	protected RateAndAmountFormat1Choice germanLocalTax1;
 	/**
-	 * Local tax (ZAS Anrechnungsbetrag) subject to interest down payment tax
-	 * (proportion of interest liable for interest down payment tax/interim
-	 * profit that is not covered by the tax exempt amount).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -358,10 +388,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGermanLocalTax1 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmGermanLocalTax1 = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "GrmnLclTax1";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -371,13 +401,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getGermanLocalTax1();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setGermanLocalTax1(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrmnLclTax2")
 	protected RateAndAmountFormat1Choice germanLocalTax2;
 	/**
-	 * Local tax (ZAS Pflichtige Zinsen) interest liable for interest down
-	 * payment tax (proportion of gross interest per unit/interim profits that
-	 * is not covered by the credit in the interest pool).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -409,10 +448,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGermanLocalTax2 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmGermanLocalTax2 = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "GrmnLclTax2";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -422,12 +461,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getGermanLocalTax2();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setGermanLocalTax2(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrmnLclTax3")
 	protected RateAndAmountFormat1Choice germanLocalTax3;
 	/**
-	 * Local tax (Zinstopf) offset interest per unit against tax exempt amount
-	 * (variation to offset interest per unit in relation to tax exempt amount).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -459,10 +508,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGermanLocalTax3 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmGermanLocalTax3 = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "GrmnLclTax3";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -472,12 +521,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getGermanLocalTax3();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setGermanLocalTax3(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrmnLclTax4")
 	protected RateAndAmountFormat1Choice germanLocalTax4;
 	/**
-	 * Local tax (Ertrag Besitzanteilig) yield liable for interest down payment
-	 * tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -509,10 +568,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGermanLocalTax4 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmGermanLocalTax4 = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "GrmnLclTax4";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -522,11 +581,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getGermanLocalTax4();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setGermanLocalTax4(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxOnIncm")
 	protected RateFormat1Choice taxOnIncome;
 	/**
-	 * Taxation applied on an amount clearly identified as an income.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -557,10 +627,10 @@ public class CorporateActionRate2 {
 	 * "Taxation applied on an amount clearly identified as an income."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxOnIncome = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmTaxOnIncome = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxOnIncm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -570,12 +640,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getTaxOnIncome();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setTaxOnIncome(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxOnPrft")
 	protected RateFormat1Choice taxOnProfit;
 	/**
-	 * Taxation applied on an amount clearly identified as capital profits,
-	 * capital gains.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -607,10 +687,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxOnProfit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmTaxOnProfit = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxOnPrft";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -620,12 +700,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getTaxOnProfit();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setTaxOnProfit(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxRclm")
 	protected RateFormat1Choice taxReclaim;
 	/**
-	 * Percentage of cash that was paid in excess of actual tax obligation and
-	 * was reclaimed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -657,10 +747,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxReclaim = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmTaxReclaim = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxRclm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -670,11 +760,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getTaxReclaim();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setTaxReclaim(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FsclStmp")
 	protected RateFormat1Choice fiscalStamp;
 	/**
-	 * Percentage of fiscal tax to apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -704,10 +805,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Percentage of fiscal tax to apply."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFiscalStamp = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmFiscalStamp = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "FsclStmp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -717,11 +818,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getFiscalStamp();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setFiscalStamp(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Prratn")
 	protected RateFormat1Choice proration;
 	/**
-	 * Proportionate allocation used for the offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -752,10 +864,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Proportionate allocation used for the offer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProration = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmProration = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmProrationRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "Prratn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -765,14 +877,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getProration();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setProration(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewToOd")
 	protected RatioFormat2Choice newToOld;
 	/**
-	 * Quantity of new securities for a given quantity of underlying securities,
-	 * where the underlying securities will be exchanged or debited, eg, 2 for
-	 * 1: 2 new equities credited for every 1 underlying equity debited = 2
-	 * resulting equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -805,10 +925,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewToOld = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat2Choice>> mmNewToOld = new MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmNewToOld;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "NewToOd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -818,12 +938,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RatioFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RatioFormat2Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getNewToOld();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RatioFormat2Choice> value) {
+			obj.setNewToOld(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewSctiesToUndrlygScties")
 	protected RatioFormat2Choice newSecuritiesToUnderlyingSecurities;
 	/**
-	 * Quantity of new equities that will be derived by the exercise of a given
-	 * quantity of intermediate securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -856,10 +986,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewSecuritiesToUnderlyingSecurities = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat2Choice>> mmNewSecuritiesToUnderlyingSecurities = new MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmNewSecuritiesToUnderlyingSecurities;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "NewSctiesToUndrlygScties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -869,14 +999,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RatioFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RatioFormat2Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getNewSecuritiesToUnderlyingSecurities();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RatioFormat2Choice> value) {
+			obj.setNewSecuritiesToUnderlyingSecurities(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlQtyForExstgScties")
 	protected RatioFormat1Choice additionalQuantityForExistingSecurities;
 	/**
-	 * Quantity of additional securities for a given quantity of underlying
-	 * securities where underlying securities are not exchanged or debited, eg,
-	 * 1 for 1: 1 new equity credited for every 1 underlying equity = 2
-	 * resulting equities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -909,10 +1047,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalQuantityForExistingSecurities = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat1Choice>> mmAdditionalQuantityForExistingSecurities = new MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmAdditionalQuantityForExistingSecurities;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlQtyForExstgScties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -922,12 +1060,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RatioFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RatioFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getAdditionalQuantityForExistingSecurities();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RatioFormat1Choice> value) {
+			obj.setAdditionalQuantityForExistingSecurities(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlQtyForSbcbdRsltntScties")
 	protected RatioFormat1Choice additionalQuantityForSubscribedResultantSecurities;
 	/**
-	 * Quantity of additional intermediate securities/new equities awarded for a
-	 * given quantity of securities derived from subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -961,10 +1109,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalQuantityForSubscribedResultantSecurities = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat1Choice>> mmAdditionalQuantityForSubscribedResultantSecurities = new MMMessageAttribute<CorporateActionRate2, Optional<RatioFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmAdditionalQuantityForSubscribedResultantSecurities;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlQtyForSbcbdRsltntScties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -974,11 +1122,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RatioFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RatioFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getAdditionalQuantityForSubscribedResultantSecurities();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RatioFormat1Choice> value) {
+			obj.setAdditionalQuantityForSubscribedResultantSecurities(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RltdTax")
 	protected RelatedTaxType1 relatedTax;
 	/**
-	 * Percentage of the gross dividend rate on which tax must be paid .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1006,27 +1165,38 @@ public class CorporateActionRate2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Percentage of the gross dividend rate on which tax must be paid ."</li>
+	 * "Percentage of the gross dividend rate on which tax must be paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRelatedTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RelatedTaxType1>> mmRelatedTax = new MMMessageAttribute<CorporateActionRate2, Optional<RelatedTaxType1>>() {
 		{
 			businessElementTrace_lazy = () -> TaxVoucher.mmRelatedSecurityTax;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "RltdTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedTax";
-			definition = "Percentage of the gross dividend rate on which tax must be paid .";
+			definition = "Percentage of the gross dividend rate on which tax must be paid.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.RelatedTaxType1.mmObject();
+			complexType_lazy = () -> RelatedTaxType1.mmObject();
+		}
+
+		@Override
+		public Optional<RelatedTaxType1> getValue(CorporateActionRate2 obj) {
+			return obj.getRelatedTax();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RelatedTaxType1> value) {
+			obj.setRelatedTax(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NonResdtRate")
 	protected RateAndAmountFormat1Choice nonResidentRate;
 	/**
-	 * Rate per share to which a non-resident is entitled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1056,10 +1226,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Rate per share to which a non-resident is entitled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNonResidentRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmNonResidentRate = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "NonResdtRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1069,12 +1239,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getNonResidentRate();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setNonResidentRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Chrgs")
 	protected RateAndAmountFormat1Choice charges;
 	/**
-	 * Rate used to calculate the amount of the charges/fees that cannot be
-	 * categorised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1107,10 +1287,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCharges = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmCharges = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmCorporateActionCharge;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "Chrgs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1120,12 +1300,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getCharges();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setCharges(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IntrstForUsdPmt")
 	protected RateAndAmountFormat1Choice interestForUsedPayment;
 	/**
-	 * The actual interest rate used for the payment of the interest for the
-	 * specified interest period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1158,10 +1348,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestForUsedPayment = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmInterestForUsedPayment = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstForUsdPmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1171,11 +1361,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getInterestForUsedPayment();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setInterestForUsedPayment(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IndxFctr")
 	protected RateAndAmountFormat1Choice indexFactor;
 	/**
-	 * Public index rate applied to the amount paid to adjust it to inflation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1208,10 +1409,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIndexFactor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmIndexFactor = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Index.mmIndexFactor;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "IndxFctr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1221,13 +1422,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getIndexFactor();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setIndexFactor(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FullyFrnkd")
 	protected RateAndAmountFormat1Choice fullyFranked;
 	/**
-	 * Rate resulting from a fully franked dividend paid by a company; rate
-	 * includes tax credit for companies that have made sufficient tax payments
-	 * during fiscal period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1260,10 +1470,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFullyFranked = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmFullyFranked = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmFullyFrankedRateAndAmount;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "FullyFrnkd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1273,12 +1483,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getFullyFranked();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setFullyFranked(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrssDvdd")
 	protected GrossDividendRate1Choice grossDividend;
 	/**
-	 * Cash dividend amount per equity before deductions or allowances have been
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1311,10 +1531,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGrossDividend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<GrossDividendRate1Choice>> mmGrossDividend = new MMMessageAttribute<CorporateActionRate2, Optional<GrossDividendRate1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmGrossDividend;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "GrssDvdd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1324,12 +1544,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> GrossDividendRate1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<GrossDividendRate1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getGrossDividend();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<GrossDividendRate1Choice> value) {
+			obj.setGrossDividend(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NetDvdd")
 	protected NetDividendRate1Choice netDividend;
 	/**
-	 * Cash dividend amount per equity after deductions or allowances have been
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1362,10 +1592,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetDividend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<NetDividendRate1Choice>> mmNetDividend = new MMMessageAttribute<CorporateActionRate2, Optional<NetDividendRate1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmNetDividend;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "NetDvdd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1375,11 +1605,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> NetDividendRate1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<NetDividendRate1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getNetDividend();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<NetDividendRate1Choice> value) {
+			obj.setNetDividend(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FnlDvdd")
 	protected AmountAndRateFormat2Choice finalDividend;
 	/**
-	 * Dividend is final.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1410,10 +1651,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Dividend is final."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinalDividend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<AmountAndRateFormat2Choice>> mmFinalDividend = new MMMessageAttribute<CorporateActionRate2, Optional<AmountAndRateFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmFinalDividend;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "FnlDvdd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1423,11 +1664,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> AmountAndRateFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AmountAndRateFormat2Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getFinalDividend();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<AmountAndRateFormat2Choice> value) {
+			obj.setFinalDividend(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrvsnlDvdd")
 	protected AmountAndRateFormat2Choice provisionalDividend;
 	/**
-	 * Dividend is provisional.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1458,10 +1710,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Dividend is provisional."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProvisionalDividend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<AmountAndRateFormat2Choice>> mmProvisionalDividend = new MMMessageAttribute<CorporateActionRate2, Optional<AmountAndRateFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmProvisionalDividend;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "PrvsnlDvdd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1471,12 +1723,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> AmountAndRateFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AmountAndRateFormat2Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getProvisionalDividend();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<AmountAndRateFormat2Choice> value) {
+			obj.setProvisionalDividend(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CshIncntiv")
 	protected RateFormat1Choice cashIncentive;
 	/**
-	 * Rate of the cash premium made available if the securities holder consents
-	 * or participates to an event, e.g. consent fees.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1509,10 +1771,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashIncentive = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmCashIncentive = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CashProceedsDefinition.mmCashIncentiveAmount;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "CshIncntiv";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1522,12 +1784,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getCashIncentive();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setCashIncentive(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SlctnFee")
 	protected RateFormat1Choice solicitationFee;
 	/**
-	 * Cash rate made available in an offer in order to encourage participation
-	 * in the offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1560,10 +1832,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSolicitationFee = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmSolicitationFee = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionFeesAndCharges.mmSolicitationFee;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "SlctnFee";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1573,14 +1845,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getSolicitationFee();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setSolicitationFee(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MaxAllwdOvrsbcpt")
 	protected RateFormat1Choice maximumAllowedOversubscription;
 	/**
-	 * A maximum percentage of shares available through the over subscription
-	 * privilege, usually a percentage of the basic subscription shares, eg, an
-	 * account owner subscribing to 100 shares may over subscribe to a maximum
-	 * of 50 additional shares when the over subscription maximum is 50%.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1613,10 +1893,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumAllowedOversubscription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmMaximumAllowedOversubscription = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmMaximumAllowedOverSubscription;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxAllwdOvrsbcpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1626,11 +1906,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getMaximumAllowedOversubscription();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setMaximumAllowedOversubscription(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlTax")
 	protected RateAndAmountFormat1Choice additionalTax;
 	/**
-	 * Rate used for additional tax that cannot be categorised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1660,10 +1951,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Rate used for additional tax that cannot be categorised."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>> mmAdditionalTax = new MMMessageAttribute<CorporateActionRate2, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> Tax.mmObject();
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1673,12 +1964,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getAdditionalTax();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setAdditionalTax(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrgnlAmt")
 	protected ActiveCurrencyAndAmount originalAmount;
 	/**
-	 * Amount in its original currency when conversion from/into another
-	 * currency has occurred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1711,10 +2012,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOriginalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<ActiveCurrencyAndAmount>> mmOriginalAmount = new MMMessageAttribute<CorporateActionRate2, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmOriginalAmount;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1724,11 +2025,22 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(CorporateActionRate2 obj) {
+			return obj.getOriginalAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setOriginalAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XchgRate")
 	protected ForeignExchangeTerms8 exchangeRate;
 	/**
-	 * Provides information about a foreign exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1757,10 +2069,10 @@ public class CorporateActionRate2 {
 	 * definition} = "Provides information about a foreign exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExchangeRate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionRate2, Optional<ForeignExchangeTerms8>> mmExchangeRate = new MMMessageAssociationEnd<CorporateActionRate2, Optional<ForeignExchangeTerms8>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmExchangeRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "XchgRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1769,14 +2081,24 @@ public class CorporateActionRate2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ForeignExchangeTerms8.mmObject();
+			type_lazy = () -> ForeignExchangeTerms8.mmObject();
+		}
+
+		@Override
+		public Optional<ForeignExchangeTerms8> getValue(CorporateActionRate2 obj) {
+			return obj.getExchangeRate();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<ForeignExchangeTerms8> value) {
+			obj.setExchangeRate(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AplblRate")
 	protected RateFormat1Choice applicableRate;
 	/**
-	 * Rate applicable to the event announced, eg, redemption rate for a
-	 * redemption event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1809,10 +2131,10 @@ public class CorporateActionRate2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApplicableRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>> mmApplicableRate = new MMMessageAttribute<CorporateActionRate2, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmApplicableRate;
-			componentContext_lazy = () -> CorporateActionRate2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate2.mmObject();
 			isDerived = false;
 			xmlTag = "AplblRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1822,20 +2144,36 @@ public class CorporateActionRate2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate2 obj) {
+			return obj.getApplicableRate();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate2 obj, Optional<RateFormat1Choice> value) {
+			obj.setApplicableRate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionRate2.mmWithholdingTax, CorporateActionRate2.mmWithholdingOfForeignTax, CorporateActionRate2.mmWithholdingOfLocalTax, CorporateActionRate2.mmGermanLocalTax1,
-						CorporateActionRate2.mmGermanLocalTax2, CorporateActionRate2.mmGermanLocalTax3, CorporateActionRate2.mmGermanLocalTax4, CorporateActionRate2.mmTaxOnIncome, CorporateActionRate2.mmTaxOnProfit,
-						CorporateActionRate2.mmTaxReclaim, CorporateActionRate2.mmFiscalStamp, CorporateActionRate2.mmProration, CorporateActionRate2.mmNewToOld, CorporateActionRate2.mmNewSecuritiesToUnderlyingSecurities,
-						CorporateActionRate2.mmAdditionalQuantityForExistingSecurities, CorporateActionRate2.mmAdditionalQuantityForSubscribedResultantSecurities, CorporateActionRate2.mmRelatedTax, CorporateActionRate2.mmNonResidentRate,
-						CorporateActionRate2.mmCharges, CorporateActionRate2.mmInterestForUsedPayment, CorporateActionRate2.mmIndexFactor, CorporateActionRate2.mmFullyFranked, CorporateActionRate2.mmGrossDividend,
-						CorporateActionRate2.mmNetDividend, CorporateActionRate2.mmFinalDividend, CorporateActionRate2.mmProvisionalDividend, CorporateActionRate2.mmCashIncentive, CorporateActionRate2.mmSolicitationFee,
-						CorporateActionRate2.mmMaximumAllowedOversubscription, CorporateActionRate2.mmAdditionalTax, CorporateActionRate2.mmOriginalAmount, CorporateActionRate2.mmExchangeRate, CorporateActionRate2.mmApplicableRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionRate2.mmWithholdingTax, com.tools20022.repository.msg.CorporateActionRate2.mmWithholdingOfForeignTax,
+						com.tools20022.repository.msg.CorporateActionRate2.mmWithholdingOfLocalTax, com.tools20022.repository.msg.CorporateActionRate2.mmGermanLocalTax1, com.tools20022.repository.msg.CorporateActionRate2.mmGermanLocalTax2,
+						com.tools20022.repository.msg.CorporateActionRate2.mmGermanLocalTax3, com.tools20022.repository.msg.CorporateActionRate2.mmGermanLocalTax4, com.tools20022.repository.msg.CorporateActionRate2.mmTaxOnIncome,
+						com.tools20022.repository.msg.CorporateActionRate2.mmTaxOnProfit, com.tools20022.repository.msg.CorporateActionRate2.mmTaxReclaim, com.tools20022.repository.msg.CorporateActionRate2.mmFiscalStamp,
+						com.tools20022.repository.msg.CorporateActionRate2.mmProration, com.tools20022.repository.msg.CorporateActionRate2.mmNewToOld,
+						com.tools20022.repository.msg.CorporateActionRate2.mmNewSecuritiesToUnderlyingSecurities, com.tools20022.repository.msg.CorporateActionRate2.mmAdditionalQuantityForExistingSecurities,
+						com.tools20022.repository.msg.CorporateActionRate2.mmAdditionalQuantityForSubscribedResultantSecurities, com.tools20022.repository.msg.CorporateActionRate2.mmRelatedTax,
+						com.tools20022.repository.msg.CorporateActionRate2.mmNonResidentRate, com.tools20022.repository.msg.CorporateActionRate2.mmCharges, com.tools20022.repository.msg.CorporateActionRate2.mmInterestForUsedPayment,
+						com.tools20022.repository.msg.CorporateActionRate2.mmIndexFactor, com.tools20022.repository.msg.CorporateActionRate2.mmFullyFranked, com.tools20022.repository.msg.CorporateActionRate2.mmGrossDividend,
+						com.tools20022.repository.msg.CorporateActionRate2.mmNetDividend, com.tools20022.repository.msg.CorporateActionRate2.mmFinalDividend, com.tools20022.repository.msg.CorporateActionRate2.mmProvisionalDividend,
+						com.tools20022.repository.msg.CorporateActionRate2.mmCashIncentive, com.tools20022.repository.msg.CorporateActionRate2.mmSolicitationFee,
+						com.tools20022.repository.msg.CorporateActionRate2.mmMaximumAllowedOversubscription, com.tools20022.repository.msg.CorporateActionRate2.mmAdditionalTax,
+						com.tools20022.repository.msg.CorporateActionRate2.mmOriginalAmount, com.tools20022.repository.msg.CorporateActionRate2.mmExchangeRate, com.tools20022.repository.msg.CorporateActionRate2.mmApplicableRate);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionRate2";
 				definition = "Specifies rates.";
@@ -1844,300 +2182,300 @@ public class CorporateActionRate2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "WhldgTax")
-	public RateFormat1Choice getWithholdingTax() {
-		return withholdingTax;
+	public Optional<RateFormat1Choice> getWithholdingTax() {
+		return withholdingTax == null ? Optional.empty() : Optional.of(withholdingTax);
 	}
 
-	public void setWithholdingTax(RateFormat1Choice withholdingTax) {
+	public CorporateActionRate2 setWithholdingTax(RateFormat1Choice withholdingTax) {
 		this.withholdingTax = withholdingTax;
+		return this;
 	}
 
-	@XmlElement(name = "WhldgOfFrgnTax")
-	public RateAndAmountFormat1Choice getWithholdingOfForeignTax() {
-		return withholdingOfForeignTax;
+	public Optional<RateAndAmountFormat1Choice> getWithholdingOfForeignTax() {
+		return withholdingOfForeignTax == null ? Optional.empty() : Optional.of(withholdingOfForeignTax);
 	}
 
-	public void setWithholdingOfForeignTax(RateAndAmountFormat1Choice withholdingOfForeignTax) {
+	public CorporateActionRate2 setWithholdingOfForeignTax(RateAndAmountFormat1Choice withholdingOfForeignTax) {
 		this.withholdingOfForeignTax = withholdingOfForeignTax;
+		return this;
 	}
 
-	@XmlElement(name = "WhldgOfLclTax")
-	public RateAndAmountFormat1Choice getWithholdingOfLocalTax() {
-		return withholdingOfLocalTax;
+	public Optional<RateAndAmountFormat1Choice> getWithholdingOfLocalTax() {
+		return withholdingOfLocalTax == null ? Optional.empty() : Optional.of(withholdingOfLocalTax);
 	}
 
-	public void setWithholdingOfLocalTax(RateAndAmountFormat1Choice withholdingOfLocalTax) {
+	public CorporateActionRate2 setWithholdingOfLocalTax(RateAndAmountFormat1Choice withholdingOfLocalTax) {
 		this.withholdingOfLocalTax = withholdingOfLocalTax;
+		return this;
 	}
 
-	@XmlElement(name = "GrmnLclTax1")
-	public RateAndAmountFormat1Choice getGermanLocalTax1() {
-		return germanLocalTax1;
+	public Optional<RateAndAmountFormat1Choice> getGermanLocalTax1() {
+		return germanLocalTax1 == null ? Optional.empty() : Optional.of(germanLocalTax1);
 	}
 
-	public void setGermanLocalTax1(RateAndAmountFormat1Choice germanLocalTax1) {
+	public CorporateActionRate2 setGermanLocalTax1(RateAndAmountFormat1Choice germanLocalTax1) {
 		this.germanLocalTax1 = germanLocalTax1;
+		return this;
 	}
 
-	@XmlElement(name = "GrmnLclTax2")
-	public RateAndAmountFormat1Choice getGermanLocalTax2() {
-		return germanLocalTax2;
+	public Optional<RateAndAmountFormat1Choice> getGermanLocalTax2() {
+		return germanLocalTax2 == null ? Optional.empty() : Optional.of(germanLocalTax2);
 	}
 
-	public void setGermanLocalTax2(RateAndAmountFormat1Choice germanLocalTax2) {
+	public CorporateActionRate2 setGermanLocalTax2(RateAndAmountFormat1Choice germanLocalTax2) {
 		this.germanLocalTax2 = germanLocalTax2;
+		return this;
 	}
 
-	@XmlElement(name = "GrmnLclTax3")
-	public RateAndAmountFormat1Choice getGermanLocalTax3() {
-		return germanLocalTax3;
+	public Optional<RateAndAmountFormat1Choice> getGermanLocalTax3() {
+		return germanLocalTax3 == null ? Optional.empty() : Optional.of(germanLocalTax3);
 	}
 
-	public void setGermanLocalTax3(RateAndAmountFormat1Choice germanLocalTax3) {
+	public CorporateActionRate2 setGermanLocalTax3(RateAndAmountFormat1Choice germanLocalTax3) {
 		this.germanLocalTax3 = germanLocalTax3;
+		return this;
 	}
 
-	@XmlElement(name = "GrmnLclTax4")
-	public RateAndAmountFormat1Choice getGermanLocalTax4() {
-		return germanLocalTax4;
+	public Optional<RateAndAmountFormat1Choice> getGermanLocalTax4() {
+		return germanLocalTax4 == null ? Optional.empty() : Optional.of(germanLocalTax4);
 	}
 
-	public void setGermanLocalTax4(RateAndAmountFormat1Choice germanLocalTax4) {
+	public CorporateActionRate2 setGermanLocalTax4(RateAndAmountFormat1Choice germanLocalTax4) {
 		this.germanLocalTax4 = germanLocalTax4;
+		return this;
 	}
 
-	@XmlElement(name = "TaxOnIncm")
-	public RateFormat1Choice getTaxOnIncome() {
-		return taxOnIncome;
+	public Optional<RateFormat1Choice> getTaxOnIncome() {
+		return taxOnIncome == null ? Optional.empty() : Optional.of(taxOnIncome);
 	}
 
-	public void setTaxOnIncome(RateFormat1Choice taxOnIncome) {
+	public CorporateActionRate2 setTaxOnIncome(RateFormat1Choice taxOnIncome) {
 		this.taxOnIncome = taxOnIncome;
+		return this;
 	}
 
-	@XmlElement(name = "TaxOnPrft")
-	public RateFormat1Choice getTaxOnProfit() {
-		return taxOnProfit;
+	public Optional<RateFormat1Choice> getTaxOnProfit() {
+		return taxOnProfit == null ? Optional.empty() : Optional.of(taxOnProfit);
 	}
 
-	public void setTaxOnProfit(RateFormat1Choice taxOnProfit) {
+	public CorporateActionRate2 setTaxOnProfit(RateFormat1Choice taxOnProfit) {
 		this.taxOnProfit = taxOnProfit;
+		return this;
 	}
 
-	@XmlElement(name = "TaxRclm")
-	public RateFormat1Choice getTaxReclaim() {
-		return taxReclaim;
+	public Optional<RateFormat1Choice> getTaxReclaim() {
+		return taxReclaim == null ? Optional.empty() : Optional.of(taxReclaim);
 	}
 
-	public void setTaxReclaim(RateFormat1Choice taxReclaim) {
+	public CorporateActionRate2 setTaxReclaim(RateFormat1Choice taxReclaim) {
 		this.taxReclaim = taxReclaim;
+		return this;
 	}
 
-	@XmlElement(name = "FsclStmp")
-	public RateFormat1Choice getFiscalStamp() {
-		return fiscalStamp;
+	public Optional<RateFormat1Choice> getFiscalStamp() {
+		return fiscalStamp == null ? Optional.empty() : Optional.of(fiscalStamp);
 	}
 
-	public void setFiscalStamp(RateFormat1Choice fiscalStamp) {
+	public CorporateActionRate2 setFiscalStamp(RateFormat1Choice fiscalStamp) {
 		this.fiscalStamp = fiscalStamp;
+		return this;
 	}
 
-	@XmlElement(name = "Prratn")
-	public RateFormat1Choice getProration() {
-		return proration;
+	public Optional<RateFormat1Choice> getProration() {
+		return proration == null ? Optional.empty() : Optional.of(proration);
 	}
 
-	public void setProration(RateFormat1Choice proration) {
+	public CorporateActionRate2 setProration(RateFormat1Choice proration) {
 		this.proration = proration;
+		return this;
 	}
 
-	@XmlElement(name = "NewToOd")
-	public RatioFormat2Choice getNewToOld() {
-		return newToOld;
+	public Optional<RatioFormat2Choice> getNewToOld() {
+		return newToOld == null ? Optional.empty() : Optional.of(newToOld);
 	}
 
-	public void setNewToOld(RatioFormat2Choice newToOld) {
+	public CorporateActionRate2 setNewToOld(RatioFormat2Choice newToOld) {
 		this.newToOld = newToOld;
+		return this;
 	}
 
-	@XmlElement(name = "NewSctiesToUndrlygScties")
-	public RatioFormat2Choice getNewSecuritiesToUnderlyingSecurities() {
-		return newSecuritiesToUnderlyingSecurities;
+	public Optional<RatioFormat2Choice> getNewSecuritiesToUnderlyingSecurities() {
+		return newSecuritiesToUnderlyingSecurities == null ? Optional.empty() : Optional.of(newSecuritiesToUnderlyingSecurities);
 	}
 
-	public void setNewSecuritiesToUnderlyingSecurities(RatioFormat2Choice newSecuritiesToUnderlyingSecurities) {
+	public CorporateActionRate2 setNewSecuritiesToUnderlyingSecurities(RatioFormat2Choice newSecuritiesToUnderlyingSecurities) {
 		this.newSecuritiesToUnderlyingSecurities = newSecuritiesToUnderlyingSecurities;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlQtyForExstgScties")
-	public RatioFormat1Choice getAdditionalQuantityForExistingSecurities() {
-		return additionalQuantityForExistingSecurities;
+	public Optional<RatioFormat1Choice> getAdditionalQuantityForExistingSecurities() {
+		return additionalQuantityForExistingSecurities == null ? Optional.empty() : Optional.of(additionalQuantityForExistingSecurities);
 	}
 
-	public void setAdditionalQuantityForExistingSecurities(RatioFormat1Choice additionalQuantityForExistingSecurities) {
+	public CorporateActionRate2 setAdditionalQuantityForExistingSecurities(RatioFormat1Choice additionalQuantityForExistingSecurities) {
 		this.additionalQuantityForExistingSecurities = additionalQuantityForExistingSecurities;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlQtyForSbcbdRsltntScties")
-	public RatioFormat1Choice getAdditionalQuantityForSubscribedResultantSecurities() {
-		return additionalQuantityForSubscribedResultantSecurities;
+	public Optional<RatioFormat1Choice> getAdditionalQuantityForSubscribedResultantSecurities() {
+		return additionalQuantityForSubscribedResultantSecurities == null ? Optional.empty() : Optional.of(additionalQuantityForSubscribedResultantSecurities);
 	}
 
-	public void setAdditionalQuantityForSubscribedResultantSecurities(RatioFormat1Choice additionalQuantityForSubscribedResultantSecurities) {
+	public CorporateActionRate2 setAdditionalQuantityForSubscribedResultantSecurities(RatioFormat1Choice additionalQuantityForSubscribedResultantSecurities) {
 		this.additionalQuantityForSubscribedResultantSecurities = additionalQuantityForSubscribedResultantSecurities;
+		return this;
 	}
 
-	@XmlElement(name = "RltdTax")
-	public RelatedTaxType1 getRelatedTax() {
-		return relatedTax;
+	public Optional<RelatedTaxType1> getRelatedTax() {
+		return relatedTax == null ? Optional.empty() : Optional.of(relatedTax);
 	}
 
-	public void setRelatedTax(com.tools20022.repository.msg.RelatedTaxType1 relatedTax) {
+	public CorporateActionRate2 setRelatedTax(RelatedTaxType1 relatedTax) {
 		this.relatedTax = relatedTax;
+		return this;
 	}
 
-	@XmlElement(name = "NonResdtRate")
-	public RateAndAmountFormat1Choice getNonResidentRate() {
-		return nonResidentRate;
+	public Optional<RateAndAmountFormat1Choice> getNonResidentRate() {
+		return nonResidentRate == null ? Optional.empty() : Optional.of(nonResidentRate);
 	}
 
-	public void setNonResidentRate(RateAndAmountFormat1Choice nonResidentRate) {
+	public CorporateActionRate2 setNonResidentRate(RateAndAmountFormat1Choice nonResidentRate) {
 		this.nonResidentRate = nonResidentRate;
+		return this;
 	}
 
-	@XmlElement(name = "Chrgs")
-	public RateAndAmountFormat1Choice getCharges() {
-		return charges;
+	public Optional<RateAndAmountFormat1Choice> getCharges() {
+		return charges == null ? Optional.empty() : Optional.of(charges);
 	}
 
-	public void setCharges(RateAndAmountFormat1Choice charges) {
+	public CorporateActionRate2 setCharges(RateAndAmountFormat1Choice charges) {
 		this.charges = charges;
+		return this;
 	}
 
-	@XmlElement(name = "IntrstForUsdPmt")
-	public RateAndAmountFormat1Choice getInterestForUsedPayment() {
-		return interestForUsedPayment;
+	public Optional<RateAndAmountFormat1Choice> getInterestForUsedPayment() {
+		return interestForUsedPayment == null ? Optional.empty() : Optional.of(interestForUsedPayment);
 	}
 
-	public void setInterestForUsedPayment(RateAndAmountFormat1Choice interestForUsedPayment) {
+	public CorporateActionRate2 setInterestForUsedPayment(RateAndAmountFormat1Choice interestForUsedPayment) {
 		this.interestForUsedPayment = interestForUsedPayment;
+		return this;
 	}
 
-	@XmlElement(name = "IndxFctr")
-	public RateAndAmountFormat1Choice getIndexFactor() {
-		return indexFactor;
+	public Optional<RateAndAmountFormat1Choice> getIndexFactor() {
+		return indexFactor == null ? Optional.empty() : Optional.of(indexFactor);
 	}
 
-	public void setIndexFactor(RateAndAmountFormat1Choice indexFactor) {
+	public CorporateActionRate2 setIndexFactor(RateAndAmountFormat1Choice indexFactor) {
 		this.indexFactor = indexFactor;
+		return this;
 	}
 
-	@XmlElement(name = "FullyFrnkd")
-	public RateAndAmountFormat1Choice getFullyFranked() {
-		return fullyFranked;
+	public Optional<RateAndAmountFormat1Choice> getFullyFranked() {
+		return fullyFranked == null ? Optional.empty() : Optional.of(fullyFranked);
 	}
 
-	public void setFullyFranked(RateAndAmountFormat1Choice fullyFranked) {
+	public CorporateActionRate2 setFullyFranked(RateAndAmountFormat1Choice fullyFranked) {
 		this.fullyFranked = fullyFranked;
+		return this;
 	}
 
-	@XmlElement(name = "GrssDvdd")
-	public GrossDividendRate1Choice getGrossDividend() {
-		return grossDividend;
+	public Optional<GrossDividendRate1Choice> getGrossDividend() {
+		return grossDividend == null ? Optional.empty() : Optional.of(grossDividend);
 	}
 
-	public void setGrossDividend(GrossDividendRate1Choice grossDividend) {
+	public CorporateActionRate2 setGrossDividend(GrossDividendRate1Choice grossDividend) {
 		this.grossDividend = grossDividend;
+		return this;
 	}
 
-	@XmlElement(name = "NetDvdd")
-	public NetDividendRate1Choice getNetDividend() {
-		return netDividend;
+	public Optional<NetDividendRate1Choice> getNetDividend() {
+		return netDividend == null ? Optional.empty() : Optional.of(netDividend);
 	}
 
-	public void setNetDividend(NetDividendRate1Choice netDividend) {
+	public CorporateActionRate2 setNetDividend(NetDividendRate1Choice netDividend) {
 		this.netDividend = netDividend;
+		return this;
 	}
 
-	@XmlElement(name = "FnlDvdd")
-	public AmountAndRateFormat2Choice getFinalDividend() {
-		return finalDividend;
+	public Optional<AmountAndRateFormat2Choice> getFinalDividend() {
+		return finalDividend == null ? Optional.empty() : Optional.of(finalDividend);
 	}
 
-	public void setFinalDividend(AmountAndRateFormat2Choice finalDividend) {
+	public CorporateActionRate2 setFinalDividend(AmountAndRateFormat2Choice finalDividend) {
 		this.finalDividend = finalDividend;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsnlDvdd")
-	public AmountAndRateFormat2Choice getProvisionalDividend() {
-		return provisionalDividend;
+	public Optional<AmountAndRateFormat2Choice> getProvisionalDividend() {
+		return provisionalDividend == null ? Optional.empty() : Optional.of(provisionalDividend);
 	}
 
-	public void setProvisionalDividend(AmountAndRateFormat2Choice provisionalDividend) {
+	public CorporateActionRate2 setProvisionalDividend(AmountAndRateFormat2Choice provisionalDividend) {
 		this.provisionalDividend = provisionalDividend;
+		return this;
 	}
 
-	@XmlElement(name = "CshIncntiv")
-	public RateFormat1Choice getCashIncentive() {
-		return cashIncentive;
+	public Optional<RateFormat1Choice> getCashIncentive() {
+		return cashIncentive == null ? Optional.empty() : Optional.of(cashIncentive);
 	}
 
-	public void setCashIncentive(RateFormat1Choice cashIncentive) {
+	public CorporateActionRate2 setCashIncentive(RateFormat1Choice cashIncentive) {
 		this.cashIncentive = cashIncentive;
+		return this;
 	}
 
-	@XmlElement(name = "SlctnFee")
-	public RateFormat1Choice getSolicitationFee() {
-		return solicitationFee;
+	public Optional<RateFormat1Choice> getSolicitationFee() {
+		return solicitationFee == null ? Optional.empty() : Optional.of(solicitationFee);
 	}
 
-	public void setSolicitationFee(RateFormat1Choice solicitationFee) {
+	public CorporateActionRate2 setSolicitationFee(RateFormat1Choice solicitationFee) {
 		this.solicitationFee = solicitationFee;
+		return this;
 	}
 
-	@XmlElement(name = "MaxAllwdOvrsbcpt")
-	public RateFormat1Choice getMaximumAllowedOversubscription() {
-		return maximumAllowedOversubscription;
+	public Optional<RateFormat1Choice> getMaximumAllowedOversubscription() {
+		return maximumAllowedOversubscription == null ? Optional.empty() : Optional.of(maximumAllowedOversubscription);
 	}
 
-	public void setMaximumAllowedOversubscription(RateFormat1Choice maximumAllowedOversubscription) {
+	public CorporateActionRate2 setMaximumAllowedOversubscription(RateFormat1Choice maximumAllowedOversubscription) {
 		this.maximumAllowedOversubscription = maximumAllowedOversubscription;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlTax")
-	public RateAndAmountFormat1Choice getAdditionalTax() {
-		return additionalTax;
+	public Optional<RateAndAmountFormat1Choice> getAdditionalTax() {
+		return additionalTax == null ? Optional.empty() : Optional.of(additionalTax);
 	}
 
-	public void setAdditionalTax(RateAndAmountFormat1Choice additionalTax) {
+	public CorporateActionRate2 setAdditionalTax(RateAndAmountFormat1Choice additionalTax) {
 		this.additionalTax = additionalTax;
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlAmt")
-	public ActiveCurrencyAndAmount getOriginalAmount() {
-		return originalAmount;
+	public Optional<ActiveCurrencyAndAmount> getOriginalAmount() {
+		return originalAmount == null ? Optional.empty() : Optional.of(originalAmount);
 	}
 
-	public void setOriginalAmount(ActiveCurrencyAndAmount originalAmount) {
+	public CorporateActionRate2 setOriginalAmount(ActiveCurrencyAndAmount originalAmount) {
 		this.originalAmount = originalAmount;
+		return this;
 	}
 
-	@XmlElement(name = "XchgRate")
-	public ForeignExchangeTerms8 getExchangeRate() {
-		return exchangeRate;
+	public Optional<ForeignExchangeTerms8> getExchangeRate() {
+		return exchangeRate == null ? Optional.empty() : Optional.of(exchangeRate);
 	}
 
-	public void setExchangeRate(com.tools20022.repository.msg.ForeignExchangeTerms8 exchangeRate) {
+	public CorporateActionRate2 setExchangeRate(ForeignExchangeTerms8 exchangeRate) {
 		this.exchangeRate = exchangeRate;
+		return this;
 	}
 
-	@XmlElement(name = "AplblRate")
-	public RateFormat1Choice getApplicableRate() {
-		return applicableRate;
+	public Optional<RateFormat1Choice> getApplicableRate() {
+		return applicableRate == null ? Optional.empty() : Optional.of(applicableRate);
 	}
 
-	public void setApplicableRate(RateFormat1Choice applicableRate) {
+	public CorporateActionRate2 setApplicableRate(RateFormat1Choice applicableRate) {
 		this.applicableRate = applicableRate;
+		return this;
 	}
 }

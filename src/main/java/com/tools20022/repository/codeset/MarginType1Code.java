@@ -39,37 +39,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#SettlementRiskMargin
- * MarginType1Code.mmSettlementRiskMargin}</li>
+ * MarginType1Code.SettlementRiskMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#AdditionalDefaultFundMargin
- * MarginType1Code.mmAdditionalDefaultFundMargin}</li>
+ * MarginType1Code.AdditionalDefaultFundMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#ShortChargeMargin
- * MarginType1Code.mmShortChargeMargin}</li>
+ * MarginType1Code.ShortChargeMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#CouponMargin
- * MarginType1Code.mmCouponMargin}</li>
+ * MarginType1Code.CouponMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#UpfrontMargin
- * MarginType1Code.mmUpfrontMargin}</li>
+ * MarginType1Code.UpfrontMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#CreditEventMargin
- * MarginType1Code.mmCreditEventMargin}</li>
+ * MarginType1Code.CreditEventMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#InitialDeposit
- * MarginType1Code.mmInitialDeposit}</li>
+ * MarginType1Code.InitialDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#NegociationMargin
- * MarginType1Code.mmNegociationMargin}</li>
+ * MarginType1Code.NegociationMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#InitialMargin
- * MarginType1Code.mmInitialMargin}</li>
+ * MarginType1Code.InitialMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#VariationMargin
- * MarginType1Code.mmVariationMargin}</li>
+ * MarginType1Code.VariationMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MarginType1Code#IncreaseCoverageAmount
- * MarginType1Code.mmIncreaseCoverageAmount}</li>
+ * MarginType1Code.IncreaseCoverageAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -373,7 +373,7 @@ public class MarginType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SEMA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginType1Code";

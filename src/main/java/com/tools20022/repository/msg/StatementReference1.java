@@ -25,8 +25,11 @@ import com.tools20022.repository.area.semt.SecuritiesBalanceTransparencyReportSt
 import com.tools20022.repository.choice.DateAndDateTimeChoice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Pagination;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,20 +78,20 @@ import javax.xml.bind.annotation.XmlType;
  * "StatementReference1"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Identifies the reference of the statment  by a unique identifier and the date (and time)."
+ * "Identifies the reference of the statment by a unique identifier and the date (and time)."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StatementReference1", propOrder = {"statementIdentification", "statementDateTime", "pagination"})
 public class StatementReference1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StmtId", required = true)
 	protected Max35Text statementIdentification;
 	/**
-	 * Reference common to all pages of the statement for which the status
-	 * advice is sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,9 +118,9 @@ public class StatementReference1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatementIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementReference1, Max35Text> mmStatementIdentification = new MMMessageAttribute<StatementReference1, Max35Text>() {
 		{
-			componentContext_lazy = () -> StatementReference1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementReference1.mmObject();
 			isDerived = false;
 			xmlTag = "StmtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,11 +130,22 @@ public class StatementReference1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(StatementReference1 obj) {
+			return obj.getStatementIdentification();
+		}
+
+		@Override
+		public void setValue(StatementReference1 obj, Max35Text value) {
+			obj.setStatementIdentification(value);
+		}
 	};
+	@XmlElement(name = "StmtDtTm", required = true)
 	protected DateAndDateTimeChoice statementDateTime;
 	/**
-	 * Date and time the statement was created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,9 +171,9 @@ public class StatementReference1 {
 	 * definition} = "Date and time the statement was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatementDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatementReference1, DateAndDateTimeChoice> mmStatementDateTime = new MMMessageAttribute<StatementReference1, DateAndDateTimeChoice>() {
 		{
-			componentContext_lazy = () -> StatementReference1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementReference1.mmObject();
 			isDerived = false;
 			xmlTag = "StmtDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,13 +183,22 @@ public class StatementReference1 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(StatementReference1 obj) {
+			return obj.getStatementDateTime();
+		}
+
+		@Override
+		public void setValue(StatementReference1 obj, DateAndDateTimeChoice value) {
+			obj.setStatementDateTime(value);
+		}
 	};
+	@XmlElement(name = "Pgntn")
 	protected Pagination pagination;
 	/**
-	 * Page number of the related message (within the statement) and
-	 * continuation indicator to indicate that the statement is to continue or
-	 * that the related message is the last page of the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -200,9 +223,9 @@ public class StatementReference1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPagination = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<StatementReference1, Optional<Pagination>> mmPagination = new MMMessageAssociationEnd<StatementReference1, Optional<Pagination>>() {
 		{
-			componentContext_lazy = () -> StatementReference1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatementReference1.mmObject();
 			isDerived = false;
 			xmlTag = "Pgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,48 +234,59 @@ public class StatementReference1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Pagination.mmObject();
+			type_lazy = () -> Pagination.mmObject();
+		}
+
+		@Override
+		public Optional<Pagination> getValue(StatementReference1 obj) {
+			return obj.getPagination();
+		}
+
+		@Override
+		public void setValue(StatementReference1 obj, Optional<Pagination> value) {
+			obj.setPagination(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StatementReference1.mmStatementIdentification, StatementReference1.mmStatementDateTime, StatementReference1.mmPagination);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatementReference1.mmStatementIdentification, com.tools20022.repository.msg.StatementReference1.mmStatementDateTime,
+						com.tools20022.repository.msg.StatementReference1.mmPagination);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesBalanceTransparencyReportStatusAdviceV01.mmRelatedStatement);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementReference1";
-				definition = "Identifies the reference of the statment  by a unique identifier and the date (and time).";
+				definition = "Identifies the reference of the statment by a unique identifier and the date (and time).";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StmtId", required = true)
 	public Max35Text getStatementIdentification() {
 		return statementIdentification;
 	}
 
-	public void setStatementIdentification(Max35Text statementIdentification) {
-		this.statementIdentification = statementIdentification;
+	public StatementReference1 setStatementIdentification(Max35Text statementIdentification) {
+		this.statementIdentification = Objects.requireNonNull(statementIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "StmtDtTm", required = true)
 	public DateAndDateTimeChoice getStatementDateTime() {
 		return statementDateTime;
 	}
 
-	public void setStatementDateTime(DateAndDateTimeChoice statementDateTime) {
-		this.statementDateTime = statementDateTime;
+	public StatementReference1 setStatementDateTime(DateAndDateTimeChoice statementDateTime) {
+		this.statementDateTime = Objects.requireNonNull(statementDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "Pgntn")
-	public Pagination getPagination() {
-		return pagination;
+	public Optional<Pagination> getPagination() {
+		return pagination == null ? Optional.empty() : Optional.of(pagination);
 	}
 
-	public void setPagination(com.tools20022.repository.msg.Pagination pagination) {
+	public StatementReference1 setPagination(Pagination pagination) {
 		this.pagination = pagination;
+		return this;
 	}
 }

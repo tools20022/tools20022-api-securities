@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.CollateralSubstitution;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides details about the accepted collateral substitution."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralSubstitutionResponse1", propOrder = {"collateralSubstitutionRequestIdentification", "acceptedAmount"})
 public class CollateralSubstitutionResponse1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CollSbstitnReqId", required = true)
 	protected Max35Text collateralSubstitutionRequestIdentification;
 	/**
-	 * Reference to the collateral substitution request identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,9 +104,9 @@ public class CollateralSubstitutionResponse1 {
 	 * "Reference to the collateral substitution request identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralSubstitutionResponse1, Max35Text> mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute<CollateralSubstitutionResponse1, Max35Text>() {
 		{
-			componentContext_lazy = () -> CollateralSubstitutionResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,11 +116,22 @@ public class CollateralSubstitutionResponse1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(CollateralSubstitutionResponse1 obj) {
+			return obj.getCollateralSubstitutionRequestIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionResponse1 obj, Max35Text value) {
+			obj.setCollateralSubstitutionRequestIdentification(value);
+		}
 	};
+	@XmlElement(name = "AccptdAmt")
 	protected ActiveCurrencyAndAmount acceptedAmount;
 	/**
-	 * Provides the accepted collateral substitution amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,10 +162,10 @@ public class CollateralSubstitutionResponse1 {
 	 * definition} = "Provides the accepted collateral substitution amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAcceptedAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralSubstitutionResponse1, Optional<ActiveCurrencyAndAmount>> mmAcceptedAmount = new MMMessageAttribute<CollateralSubstitutionResponse1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralSubstitution.mmAcceptedAmount;
-			componentContext_lazy = () -> CollateralSubstitutionResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "AccptdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,14 +175,25 @@ public class CollateralSubstitutionResponse1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(CollateralSubstitutionResponse1 obj) {
+			return obj.getAcceptedAmount();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionResponse1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAcceptedAmount(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralSubstitutionResponse1.mmCollateralSubstitutionRequestIdentification, CollateralSubstitutionResponse1.mmAcceptedAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralSubstitutionResponse1.mmCollateralSubstitutionRequestIdentification,
+						com.tools20022.repository.msg.CollateralSubstitutionResponse1.mmAcceptedAmount);
 				trace_lazy = () -> CollateralSubstitution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralSubstitutionResponse1";
 				definition = "Provides details about the accepted collateral substitution.";
@@ -177,21 +202,21 @@ public class CollateralSubstitutionResponse1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CollSbstitnReqId", required = true)
 	public Max35Text getCollateralSubstitutionRequestIdentification() {
 		return collateralSubstitutionRequestIdentification;
 	}
 
-	public void setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
-		this.collateralSubstitutionRequestIdentification = collateralSubstitutionRequestIdentification;
+	public CollateralSubstitutionResponse1 setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
+		this.collateralSubstitutionRequestIdentification = Objects.requireNonNull(collateralSubstitutionRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AccptdAmt")
-	public ActiveCurrencyAndAmount getAcceptedAmount() {
-		return acceptedAmount;
+	public Optional<ActiveCurrencyAndAmount> getAcceptedAmount() {
+		return acceptedAmount == null ? Optional.empty() : Optional.of(acceptedAmount);
 	}
 
-	public void setAcceptedAmount(ActiveCurrencyAndAmount acceptedAmount) {
+	public CollateralSubstitutionResponse1 setAcceptedAmount(ActiveCurrencyAndAmount acceptedAmount) {
 		this.acceptedAmount = acceptedAmount;
+		return this;
 	}
 }

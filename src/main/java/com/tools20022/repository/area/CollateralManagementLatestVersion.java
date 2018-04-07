@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Messages that support collateral management actions
+ * Messages that support collateral management actions.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -78,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,7 +87,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "Collateral Management - Latest version - master"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Messages that support collateral management actions"</li>
+ * definition} = "Messages that support collateral management actions."</li>
  * </ul>
  */
 public class CollateralManagementLatestVersion {
@@ -97,10 +97,10 @@ public class CollateralManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Collateral Management - Latest version - master";
-				definition = "Messages that support collateral management actions";
+				definition = "Messages that support collateral management actions.";
 				code = "colr";
 				messageDefinition_lazy = () -> Arrays.asList(MarginCallRequestV04.mmObject(), InterestPaymentResponseV04.mmObject(), MarginCallDisputeNotificationV04.mmObject(), CollateralSubstitutionResponseV04.mmObject(),
 						MarginCallResponseV04.mmObject(), InterestPaymentStatementV04.mmObject(), CollateralManagementCancellationRequestV04.mmObject(), CollateralSubstitutionConfirmationV04.mmObject(),

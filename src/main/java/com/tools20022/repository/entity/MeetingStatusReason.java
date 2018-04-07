@@ -24,14 +24,16 @@ import com.tools20022.repository.choice.InstructionStatus6Choice;
 import com.tools20022.repository.choice.MeetingCancellationReason1Choice;
 import com.tools20022.repository.codeset.MeetingCancellationReasonCode;
 import com.tools20022.repository.codeset.RejectionReasonCode;
+import com.tools20022.repository.entity.MeetingStatus;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AdditionalStatus1;
 import com.tools20022.repository.msg.AdditionalStatus2;
 import com.tools20022.repository.msg.MeetingCancellationReason2;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the underlying reason for a status of a meeting or related
@@ -88,8 +90,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,8 +109,8 @@ public class MeetingStatusReason extends StatusReason {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected MeetingCancellationReasonCode meetingCancellationReason;
 	/**
-	 * Specifies the reason for cancelling a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +148,7 @@ public class MeetingStatusReason extends StatusReason {
 	 * definition} = "Specifies the reason for cancelling a meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMeetingCancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingStatusReason, MeetingCancellationReasonCode> mmMeetingCancellationReason = new MMBusinessAttribute<MeetingStatusReason, MeetingCancellationReasonCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MeetingCancellationReason1Choice.mmCode, MeetingCancellationReason1Choice.mmProprietary, MeetingCancellationReason2.mmCancellationReasonCode);
 			isDerived = false;
@@ -159,19 +161,20 @@ public class MeetingStatusReason extends StatusReason {
 			simpleType_lazy = () -> MeetingCancellationReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingStatusReason.class.getMethod("getMeetingCancellationReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MeetingCancellationReasonCode getValue(MeetingStatusReason obj) {
+			return obj.getMeetingCancellationReason();
+		}
+
+		@Override
+		public void setValue(MeetingStatusReason obj, MeetingCancellationReasonCode value) {
+			obj.setMeetingCancellationReason(value);
 		}
 	};
 	protected MeetingStatus meetingStatus;
 	/**
-	 * Status for which a reason is provided. It is derived from the association
-	 * between StatusReason and Status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,7 +207,7 @@ public class MeetingStatusReason extends StatusReason {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingStatusReason, Optional<MeetingStatus>> mmMeetingStatus = new MMBusinessAssociationEnd<MeetingStatusReason, Optional<MeetingStatus>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingStatusReason.mmObject();
@@ -217,12 +220,21 @@ public class MeetingStatusReason extends StatusReason {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingStatus.mmObject();
 		}
+
+		@Override
+		public Optional<MeetingStatus> getValue(MeetingStatusReason obj) {
+			return obj.getMeetingStatus();
+		}
+
+		@Override
+		public void setValue(MeetingStatusReason obj, Optional<MeetingStatus> value) {
+			obj.setMeetingStatus(value.orElse(null));
+		}
 	};
 	protected RejectionReasonCode instructionRejectionReason;
 	/**
-	 * Reason of the rejection of the instruction or of the cancellation
-	 * request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,7 +284,7 @@ public class MeetingStatusReason extends StatusReason {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstructionRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MeetingStatusReason, RejectionReasonCode> mmInstructionRejectionReason = new MMBusinessAttribute<MeetingStatusReason, RejectionReasonCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InstructionRejectionStatus1Choice.mmCode, InstructionRejectionStatus1Choice.mmProprietary, AdditionalStatus1.mmReason, CancellationRejectionStatus1Choice.mmCode,
 					CancellationRejectionStatus1Choice.mmProprietary, AdditionalStatus2.mmReason, InstructionStatus6Choice.mmRejectionStatus);
@@ -286,19 +298,21 @@ public class MeetingStatusReason extends StatusReason {
 			simpleType_lazy = () -> RejectionReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MeetingStatusReason.class.getMethod("getInstructionRejectionReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RejectionReasonCode getValue(MeetingStatusReason obj) {
+			return obj.getInstructionRejectionReason();
+		}
+
+		@Override
+		public void setValue(MeetingStatusReason obj, RejectionReasonCode value) {
+			obj.setInstructionRejectionReason(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingStatusReason";
 				definition = "Specifies the underlying reason for a status of a meeting or related instructions.";
@@ -321,23 +335,26 @@ public class MeetingStatusReason extends StatusReason {
 		return meetingCancellationReason;
 	}
 
-	public void setMeetingCancellationReason(MeetingCancellationReasonCode meetingCancellationReason) {
-		this.meetingCancellationReason = meetingCancellationReason;
+	public MeetingStatusReason setMeetingCancellationReason(MeetingCancellationReasonCode meetingCancellationReason) {
+		this.meetingCancellationReason = Objects.requireNonNull(meetingCancellationReason);
+		return this;
 	}
 
-	public MeetingStatus getMeetingStatus() {
-		return meetingStatus;
+	public Optional<MeetingStatus> getMeetingStatus() {
+		return meetingStatus == null ? Optional.empty() : Optional.of(meetingStatus);
 	}
 
-	public void setMeetingStatus(com.tools20022.repository.entity.MeetingStatus meetingStatus) {
+	public MeetingStatusReason setMeetingStatus(com.tools20022.repository.entity.MeetingStatus meetingStatus) {
 		this.meetingStatus = meetingStatus;
+		return this;
 	}
 
 	public RejectionReasonCode getInstructionRejectionReason() {
 		return instructionRejectionReason;
 	}
 
-	public void setInstructionRejectionReason(RejectionReasonCode instructionRejectionReason) {
-		this.instructionRejectionReason = instructionRejectionReason;
+	public MeetingStatusReason setInstructionRejectionReason(RejectionReasonCode instructionRejectionReason) {
+		this.instructionRejectionReason = Objects.requireNonNull(instructionRejectionReason);
+		return this;
 	}
 }

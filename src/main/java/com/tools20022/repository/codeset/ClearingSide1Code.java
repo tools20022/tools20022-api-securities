@@ -37,13 +37,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ClearingSide1Code#Buy
- * ClearingSide1Code.mmBuy}</li>
+ * ClearingSide1Code.Buy}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ClearingSide1Code#Sell
- * ClearingSide1Code.mmSell}</li>
+ * ClearingSide1Code.Sell}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ClearingSide1Code#Lend
- * ClearingSide1Code.mmLend}</li>
+ * ClearingSide1Code.Lend}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ClearingSide1Code#Borrow
- * ClearingSide1Code.mmBorrow}</li>
+ * ClearingSide1Code.Borrow}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -52,8 +52,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -178,7 +178,7 @@ public class ClearingSide1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingSide1Code";

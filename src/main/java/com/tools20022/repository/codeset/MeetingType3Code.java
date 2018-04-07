@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingType3Code#Extraordinary
- * MeetingType3Code.mmExtraordinary}</li>
+ * MeetingType3Code.Extraordinary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingType3Code#General
- * MeetingType3Code.mmGeneral}</li>
+ * MeetingType3Code.General}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingType3Code#Mixed
- * MeetingType3Code.mmMixed}</li>
+ * MeetingType3Code.Mixed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingType3Code#Special
- * MeetingType3Code.mmSpecial}</li>
+ * MeetingType3Code.Special}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingType3Code#BondHolderMeeting
- * MeetingType3Code.mmBondHolderMeeting}</li>
+ * MeetingType3Code.BondHolderMeeting}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -200,7 +200,7 @@ public class MeetingType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingType3Code";
 				definition = "Specifies the type of security holders meeting.";

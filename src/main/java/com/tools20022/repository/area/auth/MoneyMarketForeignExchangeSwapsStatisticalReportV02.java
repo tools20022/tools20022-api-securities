@@ -25,10 +25,11 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.choice.ForeignExchangeSwap3Choice;
 import com.tools20022.repository.msg.MoneyMarketReportHeader1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -73,19 +74,20 @@ import javax.xml.bind.annotation.*;
  * "MoneyMarketForeignExchangeSwapsStatisticalReportV02"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents  to the relevant competent authority, to report all daily Foreign Exchange Swaps (FX Swaps) transactions."
+ * "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents to the relevant competent authority, to report all daily Foreign Exchange Swaps (FX Swaps) transactions."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MoneyMarketForeignExchangeSwapsStatisticalReportV02", propOrder = {"reportHeader", "foreignExchangeSwapsReport", "supplementaryData"})
 public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptHdr", required = true)
 	protected MoneyMarketReportHeader1 reportHeader;
 	/**
-	 * Provides the elements specific to the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,7 +108,7 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 	 * definition} = "Provides the elements specific to the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketForeignExchangeSwapsStatisticalReportV02, MoneyMarketReportHeader1> mmReportHeader = new MMMessageBuildingBlock<MoneyMarketForeignExchangeSwapsStatisticalReportV02, MoneyMarketReportHeader1>() {
 		{
 			xmlTag = "RptHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,19 +119,21 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 			complexType_lazy = () -> MoneyMarketReportHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketForeignExchangeSwapsStatisticalReportV02.class.getMethod("getReportHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MoneyMarketReportHeader1 getValue(MoneyMarketForeignExchangeSwapsStatisticalReportV02 obj) {
+			return obj.getReportHeader();
+		}
+
+		@Override
+		public void setValue(MoneyMarketForeignExchangeSwapsStatisticalReportV02 obj, MoneyMarketReportHeader1 value) {
+			obj.setReportHeader(value);
 		}
 	};
+	@XmlElement(name = "FXSwpsRpt", required = true)
 	protected ForeignExchangeSwap3Choice foreignExchangeSwapsReport;
 	/**
-	 * Provides the reason why no activity is reported or the required list of
-	 * transactions for the foreign exchange swaps segment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +156,7 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmForeignExchangeSwapsReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketForeignExchangeSwapsStatisticalReportV02, ForeignExchangeSwap3Choice> mmForeignExchangeSwapsReport = new MMMessageBuildingBlock<MoneyMarketForeignExchangeSwapsStatisticalReportV02, ForeignExchangeSwap3Choice>() {
 		{
 			xmlTag = "FXSwpsRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,19 +167,21 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 			complexType_lazy = () -> ForeignExchangeSwap3Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketForeignExchangeSwapsStatisticalReportV02.class.getMethod("getForeignExchangeSwapsReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ForeignExchangeSwap3Choice getValue(MoneyMarketForeignExchangeSwapsStatisticalReportV02 obj) {
+			return obj.getForeignExchangeSwapsReport();
+		}
+
+		@Override
+		public void setValue(MoneyMarketForeignExchangeSwapsStatisticalReportV02 obj, ForeignExchangeSwap3Choice value) {
+			obj.setForeignExchangeSwapsReport(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,7 +204,7 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketForeignExchangeSwapsStatisticalReportV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MoneyMarketForeignExchangeSwapsStatisticalReportV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -208,12 +214,14 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketForeignExchangeSwapsStatisticalReportV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MoneyMarketForeignExchangeSwapsStatisticalReportV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MoneyMarketForeignExchangeSwapsStatisticalReportV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -222,7 +230,7 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoneyMarketForeignExchangeSwapsStatisticalReportV02";
-				definition = "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents  to the relevant competent authority, to report all daily Foreign Exchange Swaps (FX Swaps) transactions.";
+				definition = "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents to the relevant competent authority, to report all daily Foreign Exchange Swaps (FX Swaps) transactions.";
 				rootElement = "Document";
 				xmlTag = "MnyMktFXSwpsSttstclRpt";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
@@ -247,34 +255,34 @@ public class MoneyMarketForeignExchangeSwapsStatisticalReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptHdr", required = true)
 	public MoneyMarketReportHeader1 getReportHeader() {
 		return reportHeader;
 	}
 
-	public void setReportHeader(MoneyMarketReportHeader1 reportHeader) {
-		this.reportHeader = reportHeader;
+	public MoneyMarketForeignExchangeSwapsStatisticalReportV02 setReportHeader(MoneyMarketReportHeader1 reportHeader) {
+		this.reportHeader = Objects.requireNonNull(reportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "FXSwpsRpt", required = true)
 	public ForeignExchangeSwap3Choice getForeignExchangeSwapsReport() {
 		return foreignExchangeSwapsReport;
 	}
 
-	public void setForeignExchangeSwapsReport(ForeignExchangeSwap3Choice foreignExchangeSwapsReport) {
-		this.foreignExchangeSwapsReport = foreignExchangeSwapsReport;
+	public MoneyMarketForeignExchangeSwapsStatisticalReportV02 setForeignExchangeSwapsReport(ForeignExchangeSwap3Choice foreignExchangeSwapsReport) {
+		this.foreignExchangeSwapsReport = Objects.requireNonNull(foreignExchangeSwapsReport);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MoneyMarketForeignExchangeSwapsStatisticalReportV02 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.014.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.014.001.02")
 	static public class Document {
 		@XmlElement(name = "MnyMktFXSwpsSttstclRpt", required = true)
 		public MoneyMarketForeignExchangeSwapsStatisticalReportV02 messageBody;

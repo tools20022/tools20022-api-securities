@@ -27,10 +27,8 @@ import com.tools20022.repository.choice.PartyIdentification92Choice;
 import com.tools20022.repository.choice.SafekeepingPlaceFormat10Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -120,17 +118,17 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IntraPositionMovementInstructionV04", propOrder = {"transactionIdentification", "corporateActionEventIdentification", "numberCounts", "linkages", "accountOwner", "safekeepingAccount", "safekeepingPlace",
 		"financialInstrumentIdentification", "financialInstrumentAttributes", "intraPositionDetails", "supplementaryData"})
 public class IntraPositionMovementInstructionV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as know by the instructing
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +150,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Max35Text> mmTransactionIdentification = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Max35Text>() {
 		{
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,19 +161,21 @@ public class IntraPositionMovementInstructionV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "CorpActnEvtId")
 	protected Identification14 corporateActionEventIdentification;
 	/**
-	 * Identification assigned by the account servicer to unambiguously identify
-	 * a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,7 +198,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCorporateActionEventIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<Identification14>> mmCorporateActionEventIdentification = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<Identification14>>() {
 		{
 			xmlTag = "CorpActnEvtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -209,18 +209,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> Identification14.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getCorporateActionEventIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Identification14> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getCorporateActionEventIdentification();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, Optional<Identification14> value) {
+			obj.setCorporateActionEventIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NbCounts")
 	protected NumberCount1Choice numberCounts;
 	/**
-	 * Count of the number of transactions linked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,7 +244,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * definition} = "Count of the number of transactions linked."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNumberCounts = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<NumberCount1Choice>> mmNumberCounts = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<NumberCount1Choice>>() {
 		{
 			xmlTag = "NbCounts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,19 +255,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> NumberCount1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getNumberCounts", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<NumberCount1Choice> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getNumberCounts();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, Optional<NumberCount1Choice> value) {
+			obj.setNumberCounts(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Lnkgs")
 	protected List<Linkages36> linkages;
 	/**
-	 * Link to another transaction that must be processed after, before or at
-	 * the same time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -286,7 +291,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmLinkages = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, List<Linkages36>> mmLinkages = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, List<Linkages36>>() {
 		{
 			xmlTag = "Lnkgs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -296,18 +301,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> Linkages36.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getLinkages", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Linkages36> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getLinkages();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, List<Linkages36> value) {
+			obj.setLinkages(value);
 		}
 	};
+	@XmlElement(name = "AcctOwnr")
 	protected PartyIdentification92Choice accountOwner;
 	/**
-	 * Party that legally owns the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,7 +336,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * definition} = "Party that legally owns the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountOwner = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<PartyIdentification92Choice>> mmAccountOwner = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<PartyIdentification92Choice>>() {
 		{
 			xmlTag = "AcctOwnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -339,18 +347,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> PartyIdentification92Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getAccountOwner", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<PartyIdentification92Choice> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getAccountOwner();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, Optional<PartyIdentification92Choice> value) {
+			obj.setAccountOwner(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SfkpgAcct", required = true)
 	protected SecuritiesAccount24 safekeepingAccount;
 	/**
-	 * Account to or from which a securities entry is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -371,7 +382,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * definition} = "Account to or from which a securities entry is made."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSafekeepingAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, SecuritiesAccount24> mmSafekeepingAccount = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, SecuritiesAccount24>() {
 		{
 			xmlTag = "SfkpgAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -382,21 +393,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> SecuritiesAccount24.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getSafekeepingAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesAccount24 getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getSafekeepingAccount();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, SecuritiesAccount24 value) {
+			obj.setSafekeepingAccount(value);
 		}
 	};
+	@XmlElement(name = "SfkpgPlc")
 	protected SafekeepingPlaceFormat10Choice safekeepingPlace;
 	/**
-	 * Place where the securities are safe-kept, physically or notionally. This
-	 * place can be, for example, a local custodian, a Central Securities
-	 * Depository (CSD) or an International Central Securities Depository
-	 * (ICSD).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,34 +426,36 @@ public class IntraPositionMovementInstructionV04 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Place where the securities are safe-kept, physically or notionally.  This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD)."
+	 * "Place where the securities are safe-kept, physically or notionally. This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSafekeepingPlace = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<SafekeepingPlaceFormat10Choice>> mmSafekeepingPlace = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<SafekeepingPlaceFormat10Choice>>() {
 		{
 			xmlTag = "SfkpgPlc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SafekeepingPlace";
-			definition = "Place where the securities are safe-kept, physically or notionally.  This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD).";
+			definition = "Place where the securities are safe-kept, physically or notionally. This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> SafekeepingPlaceFormat10Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getSafekeepingPlace", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SafekeepingPlaceFormat10Choice> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getSafekeepingPlace();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, Optional<SafekeepingPlaceFormat10Choice> value) {
+			obj.setSafekeepingPlace(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "FinInstrmId", required = true)
 	protected SecurityIdentification19 financialInstrumentIdentification;
 	/**
-	 * Financial instrument representing a sum of rights of the investor
-	 * vis-a-vis the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -465,7 +478,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInstrumentIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, SecurityIdentification19> mmFinancialInstrumentIdentification = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, SecurityIdentification19>() {
 		{
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -476,18 +489,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> SecurityIdentification19.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getFinancialInstrumentIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecurityIdentification19 getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, SecurityIdentification19 value) {
+			obj.setFinancialInstrumentIdentification(value);
 		}
 	};
+	@XmlElement(name = "FinInstrmAttrbts")
 	protected FinancialInstrumentAttributes63 financialInstrumentAttributes;
 	/**
-	 * Elements characterising a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -508,7 +524,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * definition} = "Elements characterising a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInstrumentAttributes = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<FinancialInstrumentAttributes63>> mmFinancialInstrumentAttributes = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, Optional<FinancialInstrumentAttributes63>>() {
 		{
 			xmlTag = "FinInstrmAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -519,18 +535,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> FinancialInstrumentAttributes63.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getFinancialInstrumentAttributes", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<FinancialInstrumentAttributes63> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getFinancialInstrumentAttributes();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, Optional<FinancialInstrumentAttributes63> value) {
+			obj.setFinancialInstrumentAttributes(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "IntraPosDtls", required = true)
 	protected IntraPositionDetails33 intraPositionDetails;
 	/**
-	 * Intra-position movement transaction details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -551,7 +570,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * definition} = "Intra-position movement transaction details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIntraPositionDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, IntraPositionDetails33> mmIntraPositionDetails = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, IntraPositionDetails33>() {
 		{
 			xmlTag = "IntraPosDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -562,19 +581,21 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> IntraPositionDetails33.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getIntraPositionDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IntraPositionDetails33 getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getIntraPositionDetails();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, IntraPositionDetails33 value) {
+			obj.setIntraPositionDetails(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,7 +618,7 @@ public class IntraPositionMovementInstructionV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<IntraPositionMovementInstructionV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<IntraPositionMovementInstructionV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -607,12 +628,14 @@ public class IntraPositionMovementInstructionV04 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IntraPositionMovementInstructionV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(IntraPositionMovementInstructionV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(IntraPositionMovementInstructionV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -649,106 +672,106 @@ public class IntraPositionMovementInstructionV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public IntraPositionMovementInstructionV04 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnEvtId")
-	public Identification14 getCorporateActionEventIdentification() {
-		return corporateActionEventIdentification;
+	public Optional<Identification14> getCorporateActionEventIdentification() {
+		return corporateActionEventIdentification == null ? Optional.empty() : Optional.of(corporateActionEventIdentification);
 	}
 
-	public void setCorporateActionEventIdentification(Identification14 corporateActionEventIdentification) {
+	public IntraPositionMovementInstructionV04 setCorporateActionEventIdentification(Identification14 corporateActionEventIdentification) {
 		this.corporateActionEventIdentification = corporateActionEventIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "NbCounts")
-	public NumberCount1Choice getNumberCounts() {
-		return numberCounts;
+	public Optional<NumberCount1Choice> getNumberCounts() {
+		return numberCounts == null ? Optional.empty() : Optional.of(numberCounts);
 	}
 
-	public void setNumberCounts(NumberCount1Choice numberCounts) {
+	public IntraPositionMovementInstructionV04 setNumberCounts(NumberCount1Choice numberCounts) {
 		this.numberCounts = numberCounts;
+		return this;
 	}
 
-	@XmlElement(name = "Lnkgs")
 	public List<Linkages36> getLinkages() {
-		return linkages;
+		return linkages == null ? linkages = new ArrayList<>() : linkages;
 	}
 
-	public void setLinkages(List<Linkages36> linkages) {
-		this.linkages = linkages;
+	public IntraPositionMovementInstructionV04 setLinkages(List<Linkages36> linkages) {
+		this.linkages = Objects.requireNonNull(linkages);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnr")
-	public PartyIdentification92Choice getAccountOwner() {
-		return accountOwner;
+	public Optional<PartyIdentification92Choice> getAccountOwner() {
+		return accountOwner == null ? Optional.empty() : Optional.of(accountOwner);
 	}
 
-	public void setAccountOwner(PartyIdentification92Choice accountOwner) {
+	public IntraPositionMovementInstructionV04 setAccountOwner(PartyIdentification92Choice accountOwner) {
 		this.accountOwner = accountOwner;
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgAcct", required = true)
 	public SecuritiesAccount24 getSafekeepingAccount() {
 		return safekeepingAccount;
 	}
 
-	public void setSafekeepingAccount(SecuritiesAccount24 safekeepingAccount) {
-		this.safekeepingAccount = safekeepingAccount;
+	public IntraPositionMovementInstructionV04 setSafekeepingAccount(SecuritiesAccount24 safekeepingAccount) {
+		this.safekeepingAccount = Objects.requireNonNull(safekeepingAccount);
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgPlc")
-	public SafekeepingPlaceFormat10Choice getSafekeepingPlace() {
-		return safekeepingPlace;
+	public Optional<SafekeepingPlaceFormat10Choice> getSafekeepingPlace() {
+		return safekeepingPlace == null ? Optional.empty() : Optional.of(safekeepingPlace);
 	}
 
-	public void setSafekeepingPlace(SafekeepingPlaceFormat10Choice safekeepingPlace) {
+	public IntraPositionMovementInstructionV04 setSafekeepingPlace(SafekeepingPlaceFormat10Choice safekeepingPlace) {
 		this.safekeepingPlace = safekeepingPlace;
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmId", required = true)
 	public SecurityIdentification19 getFinancialInstrumentIdentification() {
 		return financialInstrumentIdentification;
 	}
 
-	public void setFinancialInstrumentIdentification(SecurityIdentification19 financialInstrumentIdentification) {
-		this.financialInstrumentIdentification = financialInstrumentIdentification;
+	public IntraPositionMovementInstructionV04 setFinancialInstrumentIdentification(SecurityIdentification19 financialInstrumentIdentification) {
+		this.financialInstrumentIdentification = Objects.requireNonNull(financialInstrumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmAttrbts")
-	public FinancialInstrumentAttributes63 getFinancialInstrumentAttributes() {
-		return financialInstrumentAttributes;
+	public Optional<FinancialInstrumentAttributes63> getFinancialInstrumentAttributes() {
+		return financialInstrumentAttributes == null ? Optional.empty() : Optional.of(financialInstrumentAttributes);
 	}
 
-	public void setFinancialInstrumentAttributes(FinancialInstrumentAttributes63 financialInstrumentAttributes) {
+	public IntraPositionMovementInstructionV04 setFinancialInstrumentAttributes(FinancialInstrumentAttributes63 financialInstrumentAttributes) {
 		this.financialInstrumentAttributes = financialInstrumentAttributes;
+		return this;
 	}
 
-	@XmlElement(name = "IntraPosDtls", required = true)
 	public IntraPositionDetails33 getIntraPositionDetails() {
 		return intraPositionDetails;
 	}
 
-	public void setIntraPositionDetails(IntraPositionDetails33 intraPositionDetails) {
-		this.intraPositionDetails = intraPositionDetails;
+	public IntraPositionMovementInstructionV04 setIntraPositionDetails(IntraPositionDetails33 intraPositionDetails) {
+		this.intraPositionDetails = Objects.requireNonNull(intraPositionDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public IntraPositionMovementInstructionV04 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:semt.013.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:semt.013.001.04")
 	static public class Document {
 		@XmlElement(name = "IntraPosMvmntInstr", required = true)
 		public IntraPositionMovementInstructionV04 messageBody;

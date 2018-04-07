@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.SourceOfPrice;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the value, type and source of price."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Price6", propOrder = {"rateOrAmount", "type", "source"})
 public class Price6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RateOrAmt", required = true)
 	protected PriceRateOrAmountChoice rateOrAmount;
 	/**
-	 * Value of the price expressed as a currency and value or as a rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -106,10 +108,10 @@ public class Price6 {
 	 * "Value of the price expressed as a currency and value or as a rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRateOrAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Price6, PriceRateOrAmountChoice> mmRateOrAmount = new MMMessageAssociationEnd<Price6, PriceRateOrAmountChoice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmRate;
-			componentContext_lazy = () -> Price6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Price6.mmObject();
 			isDerived = false;
 			xmlTag = "RateOrAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +122,22 @@ public class Price6 {
 			isComposite = true;
 			type_lazy = () -> PriceRateOrAmountChoice.mmObject();
 		}
+
+		@Override
+		public PriceRateOrAmountChoice getValue(Price6 obj) {
+			return obj.getRateOrAmount();
+		}
+
+		@Override
+		public void setValue(Price6 obj, PriceRateOrAmountChoice value) {
+			obj.setRateOrAmount(value);
+		}
 	};
+	@XmlElement(name = "Tp", required = true)
 	protected TypeOfPrice13Code type;
 	/**
-	 * Specification of the price type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +167,10 @@ public class Price6 {
 	 * definition} = "Specification of the price type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Price6, TypeOfPrice13Code> mmType = new MMMessageAttribute<Price6, TypeOfPrice13Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmPriceType;
-			componentContext_lazy = () -> Price6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Price6.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,11 +180,22 @@ public class Price6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TypeOfPrice13Code.mmObject();
 		}
+
+		@Override
+		public TypeOfPrice13Code getValue(Price6 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Price6 obj, TypeOfPrice13Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Src", required = true)
 	protected PriceSource2Code source;
 	/**
-	 * Source for the price valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,10 +225,10 @@ public class Price6 {
 	 * definition} = "Source for the price valuation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSource = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Price6, PriceSource2Code> mmSource = new MMMessageAttribute<Price6, PriceSource2Code>() {
 		{
 			businessComponentTrace_lazy = () -> SourceOfPrice.mmObject();
-			componentContext_lazy = () -> Price6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Price6.mmObject();
 			isDerived = false;
 			xmlTag = "Src";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -214,14 +238,24 @@ public class Price6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> PriceSource2Code.mmObject();
 		}
+
+		@Override
+		public PriceSource2Code getValue(Price6 obj) {
+			return obj.getSource();
+		}
+
+		@Override
+		public void setValue(Price6 obj, PriceSource2Code value) {
+			obj.setSource(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Price6.mmRateOrAmount, Price6.mmType, Price6.mmSource);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Price6.mmRateOrAmount, com.tools20022.repository.msg.Price6.mmType, com.tools20022.repository.msg.Price6.mmSource);
 				trace_lazy = () -> SecuritiesPricing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Price6";
 				definition = "Provides the value, type and source of price.";
@@ -230,30 +264,30 @@ public class Price6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RateOrAmt", required = true)
 	public PriceRateOrAmountChoice getRateOrAmount() {
 		return rateOrAmount;
 	}
 
-	public void setRateOrAmount(PriceRateOrAmountChoice rateOrAmount) {
-		this.rateOrAmount = rateOrAmount;
+	public Price6 setRateOrAmount(PriceRateOrAmountChoice rateOrAmount) {
+		this.rateOrAmount = Objects.requireNonNull(rateOrAmount);
+		return this;
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public TypeOfPrice13Code getType() {
 		return type;
 	}
 
-	public void setType(TypeOfPrice13Code type) {
-		this.type = type;
+	public Price6 setType(TypeOfPrice13Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Src", required = true)
 	public PriceSource2Code getSource() {
 		return source;
 	}
 
-	public void setSource(PriceSource2Code source) {
-		this.source = source;
+	public Price6 setSource(PriceSource2Code source) {
+		this.source = Objects.requireNonNull(source);
+		return this;
 	}
 }

@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#ArgusMcCloskey
- * AssetPriceTypeCode.mmArgusMcCloskey}</li>
+ * AssetPriceTypeCode.ArgusMcCloskey}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#Baltic
- * AssetPriceTypeCode.mmBaltic}</li>
+ * AssetPriceTypeCode.Baltic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#Exchange
- * AssetPriceTypeCode.mmExchange}</li>
+ * AssetPriceTypeCode.Exchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#GlobalCoal
- * AssetPriceTypeCode.mmGlobalCoal}</li>
+ * AssetPriceTypeCode.GlobalCoal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#IHSMcCloskey
- * AssetPriceTypeCode.mmIHSMcCloskey}</li>
+ * AssetPriceTypeCode.IHSMcCloskey}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#Platts
- * AssetPriceTypeCode.mmPlatts}</li>
+ * AssetPriceTypeCode.Platts}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AssetPriceTypeCode#Other
- * AssetPriceTypeCode.mmOther}</li>
+ * AssetPriceTypeCode.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -300,7 +300,7 @@ public class AssetPriceTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetPriceTypeCode";
 				definition = "Specifies the type of price for an asset.";

@@ -30,9 +30,9 @@ import com.tools20022.repository.msg.DeMinimusApplicable1;
 import com.tools20022.repository.msg.DeMinimusNotApplicable1;
 import com.tools20022.repository.msg.NewIssueAllocation2;
 import com.tools20022.repository.msg.SecuritiesTransactionReport4;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Party which makes investment decisions in relation with its investment
@@ -90,8 +90,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,9 +109,8 @@ public class Investor extends InvestmentAccountPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator newIssuePermission;
 	/**
-	 * Indicates whether the investor permits its beneficial owners to
-	 * participate in profits and losses attributed to new issue securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,7 +143,7 @@ public class Investor extends InvestmentAccountPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNewIssuePermission = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Investor, YesNoIndicator> mmNewIssuePermission = new MMBusinessAttribute<Investor, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DeMinimusApplicable1.mmNewIssuePermission);
 			isDerived = false;
@@ -157,18 +156,20 @@ public class Investor extends InvestmentAccountPartyRole {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Investor.class.getMethod("getNewIssuePermission", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Investor obj) {
+			return obj.getNewIssuePermission();
+		}
+
+		@Override
+		public void setValue(Investor obj, YesNoIndicator value) {
+			obj.setNewIssuePermission(value);
 		}
 	};
 	protected Max35Text deMinimusApplicable;
 	/**
-	 * Determine if the investor is covered by the "de minimis" exemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,7 +203,7 @@ public class Investor extends InvestmentAccountPartyRole {
 	 * "Determine if the investor is covered by the \"de minimis\" exemption."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDeMinimusApplicable = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Investor, Max35Text> mmDeMinimusApplicable = new MMBusinessAttribute<Investor, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DeMinimus1Choice.mmDeMinimusApplicable, DeMinimus1Choice.mmDeMinimusNotApplicable);
 			isDerived = false;
@@ -215,19 +216,20 @@ public class Investor extends InvestmentAccountPartyRole {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Investor.class.getMethod("getDeMinimusApplicable", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Investor obj) {
+			return obj.getDeMinimusApplicable();
+		}
+
+		@Override
+		public void setValue(Investor obj, Max35Text value) {
+			obj.setDeMinimusApplicable(value);
 		}
 	};
 	protected YesNoIndicator restricted;
 	/**
-	 * Indicates whether the investor is eligible to participate in the profits
-	 * and losses from a new issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,7 +262,7 @@ public class Investor extends InvestmentAccountPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRestricted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Investor, YesNoIndicator> mmRestricted = new MMBusinessAttribute<Investor, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(NewIssueAllocation2.mmRestricted);
 			isDerived = false;
@@ -273,18 +275,20 @@ public class Investor extends InvestmentAccountPartyRole {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Investor.class.getMethod("getRestricted", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Investor obj) {
+			return obj.getRestricted();
+		}
+
+		@Override
+		public void setValue(Investor obj, YesNoIndicator value) {
+			obj.setRestricted(value);
 		}
 	};
 	protected Max350Text restrictedPersonReason;
 	/**
-	 * Reason for the restricted person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,7 +318,7 @@ public class Investor extends InvestmentAccountPartyRole {
 	 * definition} = "Reason for the restricted person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRestrictedPersonReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Investor, Max350Text> mmRestrictedPersonReason = new MMBusinessAttribute<Investor, Max350Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DeMinimusNotApplicable1.mmRestrictedPersonReason);
 			isDerived = false;
@@ -327,19 +331,21 @@ public class Investor extends InvestmentAccountPartyRole {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Investor.class.getMethod("getRestrictedPersonReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(Investor obj) {
+			return obj.getRestrictedPersonReason();
+		}
+
+		@Override
+		public void setValue(Investor obj, Max350Text value) {
+			obj.setRestrictedPersonReason(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Investor";
 				definition = "Party which makes investment decisions in relation with its investment account.";
@@ -362,31 +368,35 @@ public class Investor extends InvestmentAccountPartyRole {
 		return newIssuePermission;
 	}
 
-	public void setNewIssuePermission(YesNoIndicator newIssuePermission) {
-		this.newIssuePermission = newIssuePermission;
+	public Investor setNewIssuePermission(YesNoIndicator newIssuePermission) {
+		this.newIssuePermission = Objects.requireNonNull(newIssuePermission);
+		return this;
 	}
 
 	public Max35Text getDeMinimusApplicable() {
 		return deMinimusApplicable;
 	}
 
-	public void setDeMinimusApplicable(Max35Text deMinimusApplicable) {
-		this.deMinimusApplicable = deMinimusApplicable;
+	public Investor setDeMinimusApplicable(Max35Text deMinimusApplicable) {
+		this.deMinimusApplicable = Objects.requireNonNull(deMinimusApplicable);
+		return this;
 	}
 
 	public YesNoIndicator getRestricted() {
 		return restricted;
 	}
 
-	public void setRestricted(YesNoIndicator restricted) {
-		this.restricted = restricted;
+	public Investor setRestricted(YesNoIndicator restricted) {
+		this.restricted = Objects.requireNonNull(restricted);
+		return this;
 	}
 
 	public Max350Text getRestrictedPersonReason() {
 		return restrictedPersonReason;
 	}
 
-	public void setRestrictedPersonReason(Max350Text restrictedPersonReason) {
-		this.restrictedPersonReason = restrictedPersonReason;
+	public Investor setRestrictedPersonReason(Max350Text restrictedPersonReason) {
+		this.restrictedPersonReason = Objects.requireNonNull(restrictedPersonReason);
+		return this;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between an amount or rate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AmountOrRate3Choice", propOrder = {"amount", "rate"})
 public class AmountOrRate3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAnd13DecimalAmount amount;
 	/**
-	 * Amount of money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,10 +103,10 @@ public class AmountOrRate3Choice {
 	 * definition} = "Amount of money."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountOrRate3Choice, ActiveCurrencyAnd13DecimalAmount> mmAmount = new MMMessageAttribute<AmountOrRate3Choice, ActiveCurrencyAnd13DecimalAmount>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> AmountOrRate3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AmountOrRate3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +116,22 @@ public class AmountOrRate3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAnd13DecimalAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAnd13DecimalAmount getValue(AmountOrRate3Choice obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountOrRate3Choice obj, ActiveCurrencyAnd13DecimalAmount value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "Rate", required = true)
 	protected PercentageRate rate;
 	/**
-	 * Rate used to calculate the amount
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,29 +159,39 @@ public class AmountOrRate3Choice {
 	 * name} = "Rate"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Rate used to calculate the amount "</li>
+	 * definition} = "Rate used to calculate the amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountOrRate3Choice, PercentageRate> mmRate = new MMMessageAttribute<AmountOrRate3Choice, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmChargeRate;
-			componentContext_lazy = () -> AmountOrRate3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AmountOrRate3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rate";
-			definition = "Rate used to calculate the amount ";
+			definition = "Rate used to calculate the amount.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		@Override
+		public PercentageRate getValue(AmountOrRate3Choice obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(AmountOrRate3Choice obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AmountOrRate3Choice.mmAmount, AmountOrRate3Choice.mmRate);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AmountOrRate3Choice.mmAmount, com.tools20022.repository.choice.AmountOrRate3Choice.mmRate);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountOrRate3Choice";
 				definition = "Choice between an amount or rate.";
@@ -177,21 +200,21 @@ public class AmountOrRate3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAnd13DecimalAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAnd13DecimalAmount amount) {
-		this.amount = amount;
+	public AmountOrRate3Choice setAmount(ActiveCurrencyAnd13DecimalAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "Rate", required = true)
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public AmountOrRate3Choice setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 }

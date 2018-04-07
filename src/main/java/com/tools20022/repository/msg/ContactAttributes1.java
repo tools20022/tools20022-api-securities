@@ -24,8 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PostalAddress1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,16 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Communication device number or electronic address used for communication."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ContactAttributes1", propOrder = {"name", "postalAddress", "phoneNumber", "faxNumber", "emailAddress", "URLAddress", "identification"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ContactAttributes1", propOrder = {"name", "postalAddress", "phoneNumber", "faxNumber", "emailAddress", "uRLAddress", "identification"})
 public class ContactAttributes1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nm", required = true)
 	protected Max350Text name;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +124,10 @@ public class ContactAttributes1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactAttributes1, Max350Text> mmName = new MMMessageAttribute<ContactAttributes1, Max350Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,12 +137,22 @@ public class ContactAttributes1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Max350Text getValue(ContactAttributes1 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, Max350Text value) {
+			obj.setName(value);
+		}
 	};
+	@XmlElement(name = "PstlAdr", required = true)
 	protected PostalAddress1 postalAddress;
 	/**
-	 * Information that locates and identifies a specific address, as defined by
-	 * postal services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -170,10 +183,10 @@ public class ContactAttributes1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ContactAttributes1, PostalAddress1> mmPostalAddress = new MMMessageAssociationEnd<ContactAttributes1, PostalAddress1>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "PstlAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,14 +195,24 @@ public class ContactAttributes1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress1.mmObject();
+			type_lazy = () -> PostalAddress1.mmObject();
+		}
+
+		@Override
+		public PostalAddress1 getValue(ContactAttributes1 obj) {
+			return obj.getPostalAddress();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, PostalAddress1 value) {
+			obj.setPostalAddress(value);
 		}
 	};
+	@XmlElement(name = "PhneNb", required = true)
 	protected PhoneNumber phoneNumber;
 	/**
-	 * Collection of information that identifies a phone number, as defined by
-	 * telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,10 +244,10 @@ public class ContactAttributes1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPhoneNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactAttributes1, PhoneNumber> mmPhoneNumber = new MMMessageAttribute<ContactAttributes1, PhoneNumber>() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmPhoneNumber;
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "PhneNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,12 +257,22 @@ public class ContactAttributes1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
+
+		@Override
+		public PhoneNumber getValue(ContactAttributes1 obj) {
+			return obj.getPhoneNumber();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, PhoneNumber value) {
+			obj.setPhoneNumber(value);
+		}
 	};
+	@XmlElement(name = "FaxNb")
 	protected PhoneNumber faxNumber;
 	/**
-	 * Collection of information that identifies a FAX number, as defined by
-	 * telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,10 +304,10 @@ public class ContactAttributes1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFaxNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactAttributes1, Optional<PhoneNumber>> mmFaxNumber = new MMMessageAttribute<ContactAttributes1, Optional<PhoneNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmFaxNumber;
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "FaxNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -284,11 +317,22 @@ public class ContactAttributes1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
+
+		@Override
+		public Optional<PhoneNumber> getValue(ContactAttributes1 obj) {
+			return obj.getFaxNumber();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, Optional<PhoneNumber> value) {
+			obj.setFaxNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EmailAdr")
 	protected Max256Text emailAddress;
 	/**
-	 * Address for electronic mail (e-mail).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,10 +362,10 @@ public class ContactAttributes1 {
 	 * definition} = "Address for electronic mail (e-mail)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEmailAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactAttributes1, Optional<Max256Text>> mmEmailAddress = new MMMessageAttribute<ContactAttributes1, Optional<Max256Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmEmailAddress;
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "EmailAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -331,12 +375,22 @@ public class ContactAttributes1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(ContactAttributes1 obj) {
+			return obj.getEmailAddress();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, Optional<Max256Text> value) {
+			obj.setEmailAddress(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "URLAdr")
 	protected Max2048Text uRLAddress;
 	/**
-	 * Address for the Universal Resource Locator (URL), eg, used over the www
-	 * (HTTP) service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,10 +422,10 @@ public class ContactAttributes1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmURLAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactAttributes1, Optional<Max2048Text>> mmURLAddress = new MMMessageAttribute<ContactAttributes1, Optional<Max2048Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmURLAddress;
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "URLAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -381,13 +435,22 @@ public class ContactAttributes1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max2048Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max2048Text> getValue(ContactAttributes1 obj) {
+			return obj.getURLAddress();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, Optional<Max2048Text> value) {
+			obj.setURLAddress(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Id")
 	protected BICIdentifier identification;
 	/**
-	 * Unique and unambiguous identification of a financial institution, as
-	 * assigned under a globally recognised or proprietary identification
-	 * scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -420,10 +483,10 @@ public class ContactAttributes1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactAttributes1, Optional<BICIdentifier>> mmIdentification = new MMMessageAttribute<ContactAttributes1, Optional<BICIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> ContactPoint.mmBICAddress;
-			componentContext_lazy = () -> ContactAttributes1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -433,15 +496,26 @@ public class ContactAttributes1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BICIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<BICIdentifier> getValue(ContactAttributes1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(ContactAttributes1 obj, Optional<BICIdentifier> value) {
+			obj.setIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContactAttributes1.mmName, ContactAttributes1.mmPostalAddress, ContactAttributes1.mmPhoneNumber, ContactAttributes1.mmFaxNumber, ContactAttributes1.mmEmailAddress,
-						ContactAttributes1.mmURLAddress, ContactAttributes1.mmIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContactAttributes1.mmName, com.tools20022.repository.msg.ContactAttributes1.mmPostalAddress,
+						com.tools20022.repository.msg.ContactAttributes1.mmPhoneNumber, com.tools20022.repository.msg.ContactAttributes1.mmFaxNumber, com.tools20022.repository.msg.ContactAttributes1.mmEmailAddress,
+						com.tools20022.repository.msg.ContactAttributes1.mmURLAddress, com.tools20022.repository.msg.ContactAttributes1.mmIdentification);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContactAttributes1";
 				definition = "Communication device number or electronic address used for communication.";
@@ -450,66 +524,66 @@ public class ContactAttributes1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max350Text getName() {
 		return name;
 	}
 
-	public void setName(Max350Text name) {
-		this.name = name;
+	public ContactAttributes1 setName(Max350Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
-	@XmlElement(name = "PstlAdr", required = true)
 	public PostalAddress1 getPostalAddress() {
 		return postalAddress;
 	}
 
-	public void setPostalAddress(com.tools20022.repository.msg.PostalAddress1 postalAddress) {
-		this.postalAddress = postalAddress;
+	public ContactAttributes1 setPostalAddress(PostalAddress1 postalAddress) {
+		this.postalAddress = Objects.requireNonNull(postalAddress);
+		return this;
 	}
 
-	@XmlElement(name = "PhneNb", required = true)
 	public PhoneNumber getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(PhoneNumber phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public ContactAttributes1 setPhoneNumber(PhoneNumber phoneNumber) {
+		this.phoneNumber = Objects.requireNonNull(phoneNumber);
+		return this;
 	}
 
-	@XmlElement(name = "FaxNb")
-	public PhoneNumber getFaxNumber() {
-		return faxNumber;
+	public Optional<PhoneNumber> getFaxNumber() {
+		return faxNumber == null ? Optional.empty() : Optional.of(faxNumber);
 	}
 
-	public void setFaxNumber(PhoneNumber faxNumber) {
+	public ContactAttributes1 setFaxNumber(PhoneNumber faxNumber) {
 		this.faxNumber = faxNumber;
+		return this;
 	}
 
-	@XmlElement(name = "EmailAdr")
-	public Max256Text getEmailAddress() {
-		return emailAddress;
+	public Optional<Max256Text> getEmailAddress() {
+		return emailAddress == null ? Optional.empty() : Optional.of(emailAddress);
 	}
 
-	public void setEmailAddress(Max256Text emailAddress) {
+	public ContactAttributes1 setEmailAddress(Max256Text emailAddress) {
 		this.emailAddress = emailAddress;
+		return this;
 	}
 
-	@XmlElement(name = "URLAdr")
-	public Max2048Text getURLAddress() {
-		return uRLAddress;
+	public Optional<Max2048Text> getURLAddress() {
+		return uRLAddress == null ? Optional.empty() : Optional.of(uRLAddress);
 	}
 
-	public void setURLAddress(Max2048Text uRLAddress) {
+	public ContactAttributes1 setURLAddress(Max2048Text uRLAddress) {
 		this.uRLAddress = uRLAddress;
+		return this;
 	}
 
-	@XmlElement(name = "Id")
-	public BICIdentifier getIdentification() {
-		return identification;
+	public Optional<BICIdentifier> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(BICIdentifier identification) {
+	public ContactAttributes1 setIdentification(BICIdentifier identification) {
 		this.identification = identification;
+		return this;
 	}
 }

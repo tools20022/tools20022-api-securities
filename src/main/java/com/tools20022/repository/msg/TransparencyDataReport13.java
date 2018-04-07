@@ -27,8 +27,11 @@ import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NumberAndVolume2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -86,8 +89,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidISINRule#forTransparencyDataReport13
+ * ConstraintValidISINRule.forTransparencyDataReport13}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidMICRule#forTransparencyDataReport13
+ * ConstraintValidMICRule.forTransparencyDataReport13}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,20 +114,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransparencyDataReport13", propOrder = {"technicalRecordIdentification", "identification", "reportingDate", "tradingVenue", "suspension", "transactionsExecuted", "transactionsExecutedExcludingPreTradeWaiver",
 		"transactionsExecutedExcludingPostTradeLargeInScaleWaiver"})
 public class TransparencyDataReport13 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TechRcrdId")
 	protected Max35Text technicalRecordIdentification;
 	/**
-	 * Unique identifier of a record in a message used as part of error
-	 * management and status advice messages.<br>
-	 * <br>
-	 * Usage:<br>
-	 * This identification will be used in the status advice report sent back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,9 +151,9 @@ public class TransparencyDataReport13 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTechnicalRecordIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransparencyDataReport13, Optional<Max35Text>> mmTechnicalRecordIdentification = new MMMessageAttribute<TransparencyDataReport13, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "TechRcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,11 +163,22 @@ public class TransparencyDataReport13 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(TransparencyDataReport13 obj) {
+			return obj.getTechnicalRecordIdentification();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, Optional<Max35Text> value) {
+			obj.setTechnicalRecordIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Id", required = true)
 	protected ISINOct2015Identifier identification;
 	/**
-	 * Identifies the financial instrument using an ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -187,10 +209,10 @@ public class TransparencyDataReport13 {
 	 * definition} = "Identifies the financial instrument using an ISIN."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransparencyDataReport13, ISINOct2015Identifier> mmIdentification = new MMMessageAttribute<TransparencyDataReport13, ISINOct2015Identifier>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,11 +222,22 @@ public class TransparencyDataReport13 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public ISINOct2015Identifier getValue(TransparencyDataReport13 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, ISINOct2015Identifier value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "RptgDt")
 	protected ISODate reportingDate;
 	/**
-	 * Date to which the quantitative data fields below relate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,10 +267,10 @@ public class TransparencyDataReport13 {
 	 * definition} = "Date to which the quantitative data fields below relate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransparencyDataReport13, Optional<ISODate>> mmReportingDate = new MMMessageAttribute<TransparencyDataReport13, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "RptgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -247,12 +280,22 @@ public class TransparencyDataReport13 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(TransparencyDataReport13 obj) {
+			return obj.getReportingDate();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, Optional<ISODate> value) {
+			obj.setReportingDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TradgVn")
 	protected MICIdentifier tradingVenue;
 	/**
-	 * Segment MIC for the trading venue where applicable, otherwise the
-	 * operational MIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,10 +328,10 @@ public class TransparencyDataReport13 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTradingVenue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransparencyDataReport13, Optional<MICIdentifier>> mmTradingVenue = new MMMessageAttribute<TransparencyDataReport13, Optional<MICIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmPlaceOfListing;
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "TradgVn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -298,12 +341,22 @@ public class TransparencyDataReport13 {
 			minOccurs = 0;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<MICIdentifier> getValue(TransparencyDataReport13 obj) {
+			return obj.getTradingVenue();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, Optional<MICIdentifier> value) {
+			obj.setTradingVenue(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Sspnsn", required = true)
 	protected TrueFalseIndicator suspension;
 	/**
-	 * Indicates whether the instrument was suspended for trading on that
-	 * Trading Venue for the whole day on the given reporting day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,9 +384,9 @@ public class TransparencyDataReport13 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSuspension = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransparencyDataReport13, TrueFalseIndicator> mmSuspension = new MMMessageAttribute<TransparencyDataReport13, TrueFalseIndicator>() {
 		{
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "Sspnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -343,12 +396,22 @@ public class TransparencyDataReport13 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public TrueFalseIndicator getValue(TransparencyDataReport13 obj) {
+			return obj.getSuspension();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, TrueFalseIndicator value) {
+			obj.setSuspension(value);
+		}
 	};
+	@XmlElement(name = "TxsExctd", required = true)
 	protected NumberAndVolume2 transactionsExecuted;
 	/**
-	 * Total number of transactions executed on the reporting day.<br>
-	 * <br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -373,9 +436,9 @@ public class TransparencyDataReport13 {
 	 * "Total number of transactions executed on the reporting day.\r\n\r\n"</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionsExecuted = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransparencyDataReport13, NumberAndVolume2> mmTransactionsExecuted = new MMMessageAssociationEnd<TransparencyDataReport13, NumberAndVolume2>() {
 		{
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "TxsExctd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -384,14 +447,24 @@ public class TransparencyDataReport13 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NumberAndVolume2.mmObject();
+			type_lazy = () -> NumberAndVolume2.mmObject();
+		}
+
+		@Override
+		public NumberAndVolume2 getValue(TransparencyDataReport13 obj) {
+			return obj.getTransactionsExecuted();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, NumberAndVolume2 value) {
+			obj.setTransactionsExecuted(value);
 		}
 	};
+	@XmlElement(name = "TxsExctdExclgPreTradWvr", required = true)
 	protected NumberAndVolume2 transactionsExecutedExcludingPreTradeWaiver;
 	/**
-	 * Details all transactions that have been performed under a pre-trade
-	 * Waiver.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -417,9 +490,9 @@ public class TransparencyDataReport13 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionsExecutedExcludingPreTradeWaiver = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransparencyDataReport13, NumberAndVolume2> mmTransactionsExecutedExcludingPreTradeWaiver = new MMMessageAssociationEnd<TransparencyDataReport13, NumberAndVolume2>() {
 		{
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "TxsExctdExclgPreTradWvr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -428,14 +501,24 @@ public class TransparencyDataReport13 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NumberAndVolume2.mmObject();
+			type_lazy = () -> NumberAndVolume2.mmObject();
+		}
+
+		@Override
+		public NumberAndVolume2 getValue(TransparencyDataReport13 obj) {
+			return obj.getTransactionsExecutedExcludingPreTradeWaiver();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, NumberAndVolume2 value) {
+			obj.setTransactionsExecutedExcludingPreTradeWaiver(value);
 		}
 	};
+	@XmlElement(name = "TxsExctdExclgPstTradLrgInScaleWvr", required = true)
 	protected NumberAndVolume2 transactionsExecutedExcludingPostTradeLargeInScaleWaiver;
 	/**
-	 * Details all transactions that have been performed under a post-trade
-	 * large in scale waivers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -461,9 +544,9 @@ public class TransparencyDataReport13 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionsExecutedExcludingPostTradeLargeInScaleWaiver = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransparencyDataReport13, NumberAndVolume2> mmTransactionsExecutedExcludingPostTradeLargeInScaleWaiver = new MMMessageAssociationEnd<TransparencyDataReport13, NumberAndVolume2>() {
 		{
-			componentContext_lazy = () -> TransparencyDataReport13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransparencyDataReport13.mmObject();
 			isDerived = false;
 			xmlTag = "TxsExctdExclgPstTradLrgInScaleWvr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -472,19 +555,31 @@ public class TransparencyDataReport13 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NumberAndVolume2.mmObject();
+			type_lazy = () -> NumberAndVolume2.mmObject();
+		}
+
+		@Override
+		public NumberAndVolume2 getValue(TransparencyDataReport13 obj) {
+			return obj.getTransactionsExecutedExcludingPostTradeLargeInScaleWaiver();
+		}
+
+		@Override
+		public void setValue(TransparencyDataReport13 obj, NumberAndVolume2 value) {
+			obj.setTransactionsExecutedExcludingPostTradeLargeInScaleWaiver(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransparencyDataReport13.mmTechnicalRecordIdentification, TransparencyDataReport13.mmIdentification, TransparencyDataReport13.mmReportingDate,
-						TransparencyDataReport13.mmTradingVenue, TransparencyDataReport13.mmSuspension, TransparencyDataReport13.mmTransactionsExecuted, TransparencyDataReport13.mmTransactionsExecutedExcludingPreTradeWaiver,
-						TransparencyDataReport13.mmTransactionsExecutedExcludingPostTradeLargeInScaleWaiver);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransparencyDataReport13.mmTechnicalRecordIdentification, com.tools20022.repository.msg.TransparencyDataReport13.mmIdentification,
+						com.tools20022.repository.msg.TransparencyDataReport13.mmReportingDate, com.tools20022.repository.msg.TransparencyDataReport13.mmTradingVenue, com.tools20022.repository.msg.TransparencyDataReport13.mmSuspension,
+						com.tools20022.repository.msg.TransparencyDataReport13.mmTransactionsExecuted, com.tools20022.repository.msg.TransparencyDataReport13.mmTransactionsExecutedExcludingPreTradeWaiver,
+						com.tools20022.repository.msg.TransparencyDataReport13.mmTransactionsExecutedExcludingPostTradeLargeInScaleWaiver);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FinancialInstrumentReportingEquityTradingActivityReportV01.mmEquityTransparencyData);
 				trace_lazy = () -> Security.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidISINRule.forTransparencyDataReport13, com.tools20022.repository.constraints.ConstraintValidMICRule.forTransparencyDataReport13);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransparencyDataReport13";
 				definition = "Provides for reporting quantitative details of equity instruments as part of transparency calculations.";
@@ -493,75 +588,75 @@ public class TransparencyDataReport13 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TechRcrdId")
-	public Max35Text getTechnicalRecordIdentification() {
-		return technicalRecordIdentification;
+	public Optional<Max35Text> getTechnicalRecordIdentification() {
+		return technicalRecordIdentification == null ? Optional.empty() : Optional.of(technicalRecordIdentification);
 	}
 
-	public void setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
+	public TransparencyDataReport13 setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
 		this.technicalRecordIdentification = technicalRecordIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public ISINOct2015Identifier getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(ISINOct2015Identifier identification) {
-		this.identification = identification;
+	public TransparencyDataReport13 setIdentification(ISINOct2015Identifier identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "RptgDt")
-	public ISODate getReportingDate() {
-		return reportingDate;
+	public Optional<ISODate> getReportingDate() {
+		return reportingDate == null ? Optional.empty() : Optional.of(reportingDate);
 	}
 
-	public void setReportingDate(ISODate reportingDate) {
+	public TransparencyDataReport13 setReportingDate(ISODate reportingDate) {
 		this.reportingDate = reportingDate;
+		return this;
 	}
 
-	@XmlElement(name = "TradgVn")
-	public MICIdentifier getTradingVenue() {
-		return tradingVenue;
+	public Optional<MICIdentifier> getTradingVenue() {
+		return tradingVenue == null ? Optional.empty() : Optional.of(tradingVenue);
 	}
 
-	public void setTradingVenue(MICIdentifier tradingVenue) {
+	public TransparencyDataReport13 setTradingVenue(MICIdentifier tradingVenue) {
 		this.tradingVenue = tradingVenue;
+		return this;
 	}
 
-	@XmlElement(name = "Sspnsn", required = true)
 	public TrueFalseIndicator getSuspension() {
 		return suspension;
 	}
 
-	public void setSuspension(TrueFalseIndicator suspension) {
-		this.suspension = suspension;
+	public TransparencyDataReport13 setSuspension(TrueFalseIndicator suspension) {
+		this.suspension = Objects.requireNonNull(suspension);
+		return this;
 	}
 
-	@XmlElement(name = "TxsExctd", required = true)
 	public NumberAndVolume2 getTransactionsExecuted() {
 		return transactionsExecuted;
 	}
 
-	public void setTransactionsExecuted(com.tools20022.repository.msg.NumberAndVolume2 transactionsExecuted) {
-		this.transactionsExecuted = transactionsExecuted;
+	public TransparencyDataReport13 setTransactionsExecuted(NumberAndVolume2 transactionsExecuted) {
+		this.transactionsExecuted = Objects.requireNonNull(transactionsExecuted);
+		return this;
 	}
 
-	@XmlElement(name = "TxsExctdExclgPreTradWvr", required = true)
 	public NumberAndVolume2 getTransactionsExecutedExcludingPreTradeWaiver() {
 		return transactionsExecutedExcludingPreTradeWaiver;
 	}
 
-	public void setTransactionsExecutedExcludingPreTradeWaiver(com.tools20022.repository.msg.NumberAndVolume2 transactionsExecutedExcludingPreTradeWaiver) {
-		this.transactionsExecutedExcludingPreTradeWaiver = transactionsExecutedExcludingPreTradeWaiver;
+	public TransparencyDataReport13 setTransactionsExecutedExcludingPreTradeWaiver(NumberAndVolume2 transactionsExecutedExcludingPreTradeWaiver) {
+		this.transactionsExecutedExcludingPreTradeWaiver = Objects.requireNonNull(transactionsExecutedExcludingPreTradeWaiver);
+		return this;
 	}
 
-	@XmlElement(name = "TxsExctdExclgPstTradLrgInScaleWvr", required = true)
 	public NumberAndVolume2 getTransactionsExecutedExcludingPostTradeLargeInScaleWaiver() {
 		return transactionsExecutedExcludingPostTradeLargeInScaleWaiver;
 	}
 
-	public void setTransactionsExecutedExcludingPostTradeLargeInScaleWaiver(com.tools20022.repository.msg.NumberAndVolume2 transactionsExecutedExcludingPostTradeLargeInScaleWaiver) {
-		this.transactionsExecutedExcludingPostTradeLargeInScaleWaiver = transactionsExecutedExcludingPostTradeLargeInScaleWaiver;
+	public TransparencyDataReport13 setTransactionsExecutedExcludingPostTradeLargeInScaleWaiver(NumberAndVolume2 transactionsExecutedExcludingPostTradeLargeInScaleWaiver) {
+		this.transactionsExecutedExcludingPostTradeLargeInScaleWaiver = Objects.requireNonNull(transactionsExecutedExcludingPostTradeLargeInScaleWaiver);
+		return this;
 	}
 }

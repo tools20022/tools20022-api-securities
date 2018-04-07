@@ -17,14 +17,18 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Unique identifier of an account, as assigned by the account servicer.
@@ -194,15 +198,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * AccountIdentification32}</li>
  * <li>{@linkplain com.tools20022.repository.msg.AccountIdentificationAndName5
  * AccountIdentificationAndName5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountIdentification40
- * AccountIdentification40}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountIdentification43
+ * AccountIdentification43}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -219,8 +223,8 @@ public class AccountIdentification {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Account account;
 	/**
-	 * Account for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,7 +254,7 @@ public class AccountIdentification {
 	 * definition} = "Account for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountIdentification, Optional<Account>> mmAccount = new MMBusinessAssociationEnd<AccountIdentification, Optional<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
@@ -259,20 +263,25 @@ public class AccountIdentification {
 			definition = "Account for which an identification is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmIdentification;
+			opposite_lazy = () -> Account.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public Optional<Account> getValue(AccountIdentification obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, Optional<Account> value) {
+			obj.setAccount(value.orElse(null));
 		}
 	};
 	protected IBAN2007Identifier iBAN;
 	/**
-	 * International Bank Account Number (IBAN) - identifier used
-	 * internationally by financial institutions to uniquely identify the
-	 * account of a customer. Further specifications of the format and content
-	 * of the IBAN can be found in the standard ISO 13616
-	 * "Banking and related financial services - International Bank Account Number (IBAN)"
-	 * version 1997-10-01, or later revisions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +333,7 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIBAN = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountIdentification, IBAN2007Identifier> mmIBAN = new MMBusinessAttribute<AccountIdentification, IBAN2007Identifier>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountIdentification5Choice.mmIBAN, CashAccountIdentification1Choice.mmIBAN, AccountIdentification3Choice.mmIBAN, AccountIdentification4Choice.mmIBAN, AccountIdentification4Choice.mmOther,
 					CashAccountIdentification5Choice.mmIBAN, CashAccountIdentification2Choice.mmIBAN);
@@ -338,21 +347,20 @@ public class AccountIdentification {
 			simpleType_lazy = () -> IBAN2007Identifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountIdentification.class.getMethod("getIBAN", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IBAN2007Identifier getValue(AccountIdentification obj) {
+			return obj.getIBAN();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, IBAN2007Identifier value) {
+			obj.setIBAN(value);
 		}
 	};
 	protected BBANIdentifier bBAN;
 	/**
-	 * Basic Bank Account Number (BBAN) - identifier used nationally by
-	 * financial institutions, ie, in individual countries, generally as part of
-	 * a National Account Numbering Scheme(s), to uniquely identify the account
-	 * of a customer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -392,7 +400,7 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBBAN = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountIdentification, BBANIdentifier> mmBBAN = new MMBusinessAttribute<AccountIdentification, BBANIdentifier>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountIdentification5Choice.mmBBAN, CashAccountIdentification1Choice.mmBBAN, AccountIdentification3Choice.mmBBAN);
 			isDerived = false;
@@ -405,21 +413,20 @@ public class AccountIdentification {
 			simpleType_lazy = () -> BBANIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountIdentification.class.getMethod("getBBAN", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BBANIdentifier getValue(AccountIdentification obj) {
+			return obj.getBBAN();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, BBANIdentifier value) {
+			obj.setBBAN(value);
 		}
 	};
 	protected UPICIdentifier uPIC;
 	/**
-	 * Universal Payment Identification Code (UPIC) - identifier used by the New
-	 * York Clearing House to mask confidential data, such as bank accounts and
-	 * bank routing numbers. UPIC numbers remain with business customers,
-	 * regardless of banking relationship changes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -456,7 +463,7 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUPIC = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountIdentification, UPICIdentifier> mmUPIC = new MMBusinessAttribute<AccountIdentification, UPICIdentifier>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccountIdentification1Choice.mmUPIC, AccountIdentification3Choice.mmUPIC);
 			isDerived = false;
@@ -469,19 +476,20 @@ public class AccountIdentification {
 			simpleType_lazy = () -> UPICIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountIdentification.class.getMethod("getUPIC", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public UPICIdentifier getValue(AccountIdentification obj) {
+			return obj.getUPIC();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, UPICIdentifier value) {
+			obj.setUPIC(value);
 		}
 	};
 	protected GenericIdentification proprietaryIdentification;
 	/**
-	 * Unique identifier for an account. It is assigned by the account servicer
-	 * using a proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -535,6 +543,13 @@ public class AccountIdentification {
 	 * {@linkplain com.tools20022.repository.entity.AccountIdentification
 	 * AccountIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=AdminComment, AdminComment=|Former definition of
+	 * DomesticAccount: The account number used by financial institutions in
+	 * individual countries | to identify an account of a customer but not
+	 * necessarily the bank and | branch of the financial institution where the
+	 * account is held.</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -547,29 +562,44 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProprietaryIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountIdentification, GenericIdentification> mmProprietaryIdentification = new MMBusinessAssociationEnd<AccountIdentification, GenericIdentification>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountIdentification5Choice.mmDomesticAccount, AccountIdentification5Choice.mmDepositoryAccount, AccountIdentification1.mmProprietary, CashAccountIdentification1Choice.mmDomesticAccount,
 					AccountIdentification3Choice.mmProprietaryAccount, CashAccountIdentification5Choice.mmProprietary, CashAccountIdentification2Choice.mmProprietary, AccountIdentification26.mmProprietary,
 					AccountDesignation1Choice.mmProprietary);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"AdminComment",
+							new String[]{
+									"AdminComment",
+									"|Former definition of DomesticAccount: The account number used by financial institutions in individual countries\n| to identify an account of a customer but not necessarily the bank and\n| branch of the financial institution where the account is held. \n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProprietaryIdentification";
 			definition = "Unique identifier for an account. It is assigned by the account servicer using a proprietary identification scheme.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccount;
+			opposite_lazy = () -> GenericIdentification.mmIdentificationForAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(AccountIdentification obj) {
+			return obj.getProprietaryIdentification();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, GenericIdentification value) {
+			obj.setProprietaryIdentification(value);
 		}
 	};
 	protected Max70Text name;
 	/**
-	 * Name of the account. It provides an additional means of identification,
-	 * and is designated by the account servicer in agreement with the account
-	 * owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -606,26 +636,14 @@ public class AccountIdentification {
 	 * SecuritiesAccount26.mmName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.SecuritiesAccount25#mmName
 	 * SecuritiesAccount25.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmAccountName
-	 * InvestmentAccount54.mmAccountName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmAccountName
-	 * InvestmentAccount56.mmAccountName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.SubAccount5#mmName
 	 * SubAccount5.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount55#mmAccountName
-	 * InvestmentAccount55.mmAccountName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AccountIdentificationAndName5#mmName
 	 * AccountIdentificationAndName5.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount53#mmAccountName
 	 * InvestmentAccount53.mmAccountName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmAccountName
-	 * InvestmentAccount57.mmAccountName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.CollateralAccount2#mmName
 	 * CollateralAccount2.mmName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount61#mmName
@@ -643,6 +661,18 @@ public class AccountIdentification {
 	 * InvestmentAccount64.mmName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.CollateralAccount3#mmName
 	 * CollateralAccount3.mmName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmAccountName
+	 * InvestmentAccount66.mmAccountName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmAccountName
+	 * InvestmentAccount67.mmAccountName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount65#mmAccountName
+	 * InvestmentAccount65.mmAccountName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmAccountName
+	 * InvestmentAccount68.mmAccountName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -663,14 +693,12 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountIdentification, Max70Text> mmName = new MMBusinessAttribute<AccountIdentification, Max70Text>() {
 		{
-			derivation_lazy = () -> Arrays
-					.asList(SubAccount1.mmName, SafekeepingAccount2.mmName, SecuritiesAccount20.mmName, SecuritiesAccount3.mmName, AccountIdentification5.mmName, SecuritiesAccount19.mmName, SecuritiesAccount18.mmName,
-							SecuritiesAccount22.mmName, InvestmentAccount43.mmName, SubAccount4.mmName, SecuritiesAccount24.mmName, SecuritiesAccount26.mmName, SecuritiesAccount25.mmName, InvestmentAccount54.mmAccountName,
-							InvestmentAccount56.mmAccountName, SubAccount5.mmName, InvestmentAccount55.mmAccountName, AccountIdentificationAndName5.mmName, InvestmentAccount53.mmAccountName, InvestmentAccount57.mmAccountName,
-							CollateralAccount2.mmName, InvestmentAccount61.mmName, InvestmentAccount63.mmName, InvestmentAccount62.mmName, InvestmentAccount58.mmAccountName, SubAccount6.mmName, InvestmentAccount64.mmName,
-							CollateralAccount3.mmName);
+			derivation_lazy = () -> Arrays.asList(SubAccount1.mmName, SafekeepingAccount2.mmName, SecuritiesAccount20.mmName, SecuritiesAccount3.mmName, AccountIdentification5.mmName, SecuritiesAccount19.mmName, SecuritiesAccount18.mmName,
+					SecuritiesAccount22.mmName, InvestmentAccount43.mmName, SubAccount4.mmName, SecuritiesAccount24.mmName, SecuritiesAccount26.mmName, SecuritiesAccount25.mmName, SubAccount5.mmName, AccountIdentificationAndName5.mmName,
+					InvestmentAccount53.mmAccountName, CollateralAccount2.mmName, InvestmentAccount61.mmName, InvestmentAccount63.mmName, InvestmentAccount62.mmName, InvestmentAccount58.mmAccountName, SubAccount6.mmName,
+					InvestmentAccount64.mmName, CollateralAccount3.mmName, InvestmentAccount66.mmAccountName, InvestmentAccount67.mmAccountName, InvestmentAccount65.mmAccountName, InvestmentAccount68.mmAccountName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -681,20 +709,20 @@ public class AccountIdentification {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountIdentification.class.getMethod("getName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(AccountIdentification obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, Max70Text value) {
+			obj.setName(value);
 		}
 	};
 	protected GenericIdentification costReferencePattern;
 	/**
-	 * Template describing the mask of the structure for the format of the
-	 * accounting account identifier; for example "AABBBBCC" where AA represents
-	 * the country, BBBB the service classification, CC the sales area.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -728,7 +756,7 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCostReferencePattern = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountIdentification, GenericIdentification> mmCostReferencePattern = new MMBusinessAssociationEnd<AccountIdentification, GenericIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
@@ -737,15 +765,25 @@ public class AccountIdentification {
 			definition = "Template describing the mask of the structure for the format of the accounting account identifier; for example \"AABBBBCC\" where AA represents the country, BBBB the service classification, CC the sales area.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccountCostReferencePattern;
+			opposite_lazy = () -> GenericIdentification.mmIdentificationForAccountCostReferencePattern;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(AccountIdentification obj) {
+			return obj.getCostReferencePattern();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, GenericIdentification value) {
+			obj.setCostReferencePattern(value);
 		}
 	};
 	protected Max35Text number;
 	/**
-	 * String of characters (mainly numbers) used to identify an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -783,7 +821,7 @@ public class AccountIdentification {
 	 * "String of characters (mainly numbers) used to identify an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountIdentification, Max35Text> mmNumber = new MMBusinessAttribute<AccountIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Entitlement1.mmAccountIdentification, DetailedInstructionStatus11.mmAccountIdentification, DetailedInstructionStatus11.mmSubAccountIdentification);
 			isDerived = false;
@@ -796,24 +834,25 @@ public class AccountIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountIdentification.class.getMethod("getNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AccountIdentification obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(AccountIdentification obj, Max35Text value) {
+			obj.setNumber(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountIdentification";
 				definition = "Unique identifier of an account, as assigned by the account servicer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccount,
-						com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccountCostReferencePattern, com.tools20022.repository.entity.Account.mmIdentification);
+				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmIdentificationForAccount, GenericIdentification.mmIdentificationForAccountCostReferencePattern, Account.mmIdentification);
 				derivationElement_lazy = () -> Arrays.asList(AccountIdentificationAndPurpose.mmIdentification, AccountIdentification3.mmIdentification, AccountIdentificationFormatChoice.mmSimpleIdentification,
 						AccountIdentificationFormatChoice.mmIdentificationAndPurpose, AccountIdentificationFormatChoice.mmIdentificationAsDSS, AccountIdentification10.mmIdentificationCode, SubAccountIdentification3.mmIdentification,
 						SubAccountIdentification5.mmIdentification, SubAccountIdentification36.mmIdentification, AccountIdentification33Choice.mmForAllAccounts, AccountIdentification33Choice.mmAccountsListAndBalanceDetails,
@@ -826,7 +865,7 @@ public class AccountIdentification {
 						CashAccountIdentification5Choice.mmObject(), CashAccountIdentification2Choice.mmObject(), AccountIdentification10.mmObject(), AccountIdentification26.mmObject(), SubAccountIdentification3.mmObject(),
 						SubAccountIdentification5.mmObject(), AccountIdentification2Choice.mmObject(), AccountIdentification5.mmObject(), SubAccountIdentification36.mmObject(), AccountIdentification33Choice.mmObject(),
 						AccountIdentification29Choice.mmObject(), AccountIdentification32Choice.mmObject(), AccountIdentification31.mmObject(), AccountIdentification32.mmObject(), AccountIdentificationAndName5.mmObject(),
-						AccountIdentification40.mmObject());
+						AccountIdentification43.mmObject());
 			}
 
 			@Override
@@ -837,67 +876,75 @@ public class AccountIdentification {
 		return mmObject_lazy.get();
 	}
 
-	public Account getAccount() {
-		return account;
+	public Optional<Account> getAccount() {
+		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
+	public AccountIdentification setAccount(Account account) {
 		this.account = account;
+		return this;
 	}
 
 	public IBAN2007Identifier getIBAN() {
 		return iBAN;
 	}
 
-	public void setIBAN(IBAN2007Identifier iBAN) {
-		this.iBAN = iBAN;
+	public AccountIdentification setIBAN(IBAN2007Identifier iBAN) {
+		this.iBAN = Objects.requireNonNull(iBAN);
+		return this;
 	}
 
 	public BBANIdentifier getBBAN() {
 		return bBAN;
 	}
 
-	public void setBBAN(BBANIdentifier bBAN) {
-		this.bBAN = bBAN;
+	public AccountIdentification setBBAN(BBANIdentifier bBAN) {
+		this.bBAN = Objects.requireNonNull(bBAN);
+		return this;
 	}
 
 	public UPICIdentifier getUPIC() {
 		return uPIC;
 	}
 
-	public void setUPIC(UPICIdentifier uPIC) {
-		this.uPIC = uPIC;
+	public AccountIdentification setUPIC(UPICIdentifier uPIC) {
+		this.uPIC = Objects.requireNonNull(uPIC);
+		return this;
 	}
 
 	public GenericIdentification getProprietaryIdentification() {
 		return proprietaryIdentification;
 	}
 
-	public void setProprietaryIdentification(com.tools20022.repository.entity.GenericIdentification proprietaryIdentification) {
-		this.proprietaryIdentification = proprietaryIdentification;
+	public AccountIdentification setProprietaryIdentification(GenericIdentification proprietaryIdentification) {
+		this.proprietaryIdentification = Objects.requireNonNull(proprietaryIdentification);
+		return this;
 	}
 
 	public Max70Text getName() {
 		return name;
 	}
 
-	public void setName(Max70Text name) {
-		this.name = name;
+	public AccountIdentification setName(Max70Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public GenericIdentification getCostReferencePattern() {
 		return costReferencePattern;
 	}
 
-	public void setCostReferencePattern(com.tools20022.repository.entity.GenericIdentification costReferencePattern) {
-		this.costReferencePattern = costReferencePattern;
+	public AccountIdentification setCostReferencePattern(GenericIdentification costReferencePattern) {
+		this.costReferencePattern = Objects.requireNonNull(costReferencePattern);
+		return this;
 	}
 
 	public Max35Text getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max35Text number) {
-		this.number = number;
+	public AccountIdentification setNumber(Max35Text number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 }

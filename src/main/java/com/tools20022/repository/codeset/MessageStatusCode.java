@@ -37,27 +37,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageStatusCode#Accepted
- * MessageStatusCode.mmAccepted}</li>
+ * MessageStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageStatusCode#AcceptedTechnicalValidation
- * MessageStatusCode.mmAcceptedTechnicalValidation}</li>
+ * MessageStatusCode.AcceptedTechnicalValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageStatusCode#PartiallyAccepted
- * MessageStatusCode.mmPartiallyAccepted}</li>
+ * MessageStatusCode.PartiallyAccepted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageStatusCode#Received
- * MessageStatusCode.mmReceived}</li>
+ * MessageStatusCode.Received}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageStatusCode#Rejected
- * MessageStatusCode.mmRejected}</li>
+ * MessageStatusCode.Rejected}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageStatusCode#Reminder
- * MessageStatusCode.mmReminder}</li>
+ * MessageStatusCode.Reminder}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageStatusCode#Warning
- * MessageStatusCode.mmWarning}</li>
+ * MessageStatusCode.Warning}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageStatusCode#CorruptedFile
- * MessageStatusCode.mmCorruptedFile}</li>
+ * MessageStatusCode.CorruptedFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageStatusCode#IncorrectFilename
- * MessageStatusCode.mmIncorrectFilename}</li>
+ * MessageStatusCode.IncorrectFilename}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -372,7 +372,7 @@ public class MessageStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageStatusCode";
 				definition = "Specifies the status of a whole message processing.";

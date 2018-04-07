@@ -24,8 +24,11 @@ import com.tools20022.repository.area.sese.SecuritiesStatusOrStatementQueryStatu
 import com.tools20022.repository.choice.DocumentNumber5Choice;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Identification14;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,16 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Identification of the message number and the query identification."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DocumentIdentification30", propOrder = {"messageNumber", "reference"})
 public class DocumentIdentification30 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgNb")
 	protected DocumentNumber5Choice messageNumber;
 	/**
-	 * Message type number/message identifier of the message referenced in the
-	 * linkage sequence.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,9 +115,9 @@ public class DocumentIdentification30 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification30, Optional<DocumentNumber5Choice>> mmMessageNumber = new MMMessageAttribute<DocumentIdentification30, Optional<DocumentNumber5Choice>>() {
 		{
-			componentContext_lazy = () -> DocumentIdentification30.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification30.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,11 +127,22 @@ public class DocumentIdentification30 {
 			minOccurs = 0;
 			complexType_lazy = () -> DocumentNumber5Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DocumentNumber5Choice> getValue(DocumentIdentification30 obj) {
+			return obj.getMessageNumber();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification30 obj, Optional<DocumentNumber5Choice> value) {
+			obj.setMessageNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Ref", required = true)
 	protected Identification14 reference;
 	/**
-	 * Reference to the query identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,9 +168,9 @@ public class DocumentIdentification30 {
 	 * definition} = "Reference to the query identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification30, Identification14> mmReference = new MMMessageAttribute<DocumentIdentification30, Identification14>() {
 		{
-			componentContext_lazy = () -> DocumentIdentification30.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification30.mmObject();
 			isDerived = false;
 			xmlTag = "Ref";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,17 +178,27 @@ public class DocumentIdentification30 {
 			definition = "Reference to the query identification.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.Identification14.mmObject();
+			complexType_lazy = () -> Identification14.mmObject();
+		}
+
+		@Override
+		public Identification14 getValue(DocumentIdentification30 obj) {
+			return obj.getReference();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification30 obj, Identification14 value) {
+			obj.setReference(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DocumentIdentification30.mmMessageNumber, DocumentIdentification30.mmReference);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentIdentification30.mmMessageNumber, com.tools20022.repository.msg.DocumentIdentification30.mmReference);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesStatusOrStatementQueryStatusAdviceV04.mmQueryDetails);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentIdentification30";
 				definition = "Identification of the message number and the query identification.";
@@ -183,21 +207,21 @@ public class DocumentIdentification30 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgNb")
-	public DocumentNumber5Choice getMessageNumber() {
-		return messageNumber;
+	public Optional<DocumentNumber5Choice> getMessageNumber() {
+		return messageNumber == null ? Optional.empty() : Optional.of(messageNumber);
 	}
 
-	public void setMessageNumber(DocumentNumber5Choice messageNumber) {
+	public DocumentIdentification30 setMessageNumber(DocumentNumber5Choice messageNumber) {
 		this.messageNumber = messageNumber;
+		return this;
 	}
 
-	@XmlElement(name = "Ref", required = true)
 	public Identification14 getReference() {
 		return reference;
 	}
 
-	public void setReference(com.tools20022.repository.msg.Identification14 reference) {
-		this.reference = reference;
+	public DocumentIdentification30 setReference(Identification14 reference) {
+		this.reference = Objects.requireNonNull(reference);
+		return this;
 	}
 }

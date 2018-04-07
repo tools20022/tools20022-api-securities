@@ -26,10 +26,11 @@ import com.tools20022.repository.choice.CollateralProposalResponse3Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.Obligation5;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -91,16 +92,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralProposalResponseV05", propOrder = {"transactionIdentification", "obligation", "proposalResponse", "supplementaryData"})
 public class CollateralProposalResponseV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as know by the instructing
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,7 +123,7 @@ public class CollateralProposalResponseV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralProposalResponseV05, Max35Text> mmTransactionIdentification = new MMMessageBuildingBlock<CollateralProposalResponseV05, Max35Text>() {
 		{
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,20 +134,21 @@ public class CollateralProposalResponseV05 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralProposalResponseV05.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(CollateralProposalResponseV05 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralProposalResponseV05 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "Oblgtn", required = true)
 	protected Obligation5 obligation;
 	/**
-	 * Provides information like the identification of the party or parties
-	 * associated with the collateral agreement, the exposure type and the
-	 * valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +170,7 @@ public class CollateralProposalResponseV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmObligation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralProposalResponseV05, Obligation5> mmObligation = new MMMessageBuildingBlock<CollateralProposalResponseV05, Obligation5>() {
 		{
 			xmlTag = "Oblgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,19 +181,21 @@ public class CollateralProposalResponseV05 {
 			complexType_lazy = () -> Obligation5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralProposalResponseV05.class.getMethod("getObligation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Obligation5 getValue(CollateralProposalResponseV05 obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(CollateralProposalResponseV05 obj, Obligation5 value) {
+			obj.setObligation(value);
 		}
 	};
+	@XmlElement(name = "PrpslRspn", required = true)
 	protected CollateralProposalResponse3Choice proposalResponse;
 	/**
-	 * Details the response to the collateral which has been proposed for the
-	 * margin call. The proposed collateral can be accepted or rejected.<br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +218,7 @@ public class CollateralProposalResponseV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProposalResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralProposalResponseV05, CollateralProposalResponse3Choice> mmProposalResponse = new MMMessageBuildingBlock<CollateralProposalResponseV05, CollateralProposalResponse3Choice>() {
 		{
 			xmlTag = "PrpslRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,19 +229,21 @@ public class CollateralProposalResponseV05 {
 			complexType_lazy = () -> CollateralProposalResponse3Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralProposalResponseV05.class.getMethod("getProposalResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CollateralProposalResponse3Choice getValue(CollateralProposalResponseV05 obj) {
+			return obj.getProposalResponse();
+		}
+
+		@Override
+		public void setValue(CollateralProposalResponseV05 obj, CollateralProposalResponse3Choice value) {
+			obj.setProposalResponse(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,7 +266,7 @@ public class CollateralProposalResponseV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralProposalResponseV05, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CollateralProposalResponseV05, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,12 +276,14 @@ public class CollateralProposalResponseV05 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralProposalResponseV05.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CollateralProposalResponseV05 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CollateralProposalResponseV05 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -308,43 +316,43 @@ public class CollateralProposalResponseV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public CollateralProposalResponseV05 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Oblgtn", required = true)
 	public Obligation5 getObligation() {
 		return obligation;
 	}
 
-	public void setObligation(Obligation5 obligation) {
-		this.obligation = obligation;
+	public CollateralProposalResponseV05 setObligation(Obligation5 obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 
-	@XmlElement(name = "PrpslRspn", required = true)
 	public CollateralProposalResponse3Choice getProposalResponse() {
 		return proposalResponse;
 	}
 
-	public void setProposalResponse(CollateralProposalResponse3Choice proposalResponse) {
-		this.proposalResponse = proposalResponse;
+	public CollateralProposalResponseV05 setProposalResponse(CollateralProposalResponse3Choice proposalResponse) {
+		this.proposalResponse = Objects.requireNonNull(proposalResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public CollateralProposalResponseV05 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:colr.008.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.008.001.05")
 	static public class Document {
 		@XmlElement(name = "CollPrpslRspn", required = true)
 		public CollateralProposalResponseV05 messageBody;

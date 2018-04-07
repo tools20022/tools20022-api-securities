@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#AccountServicerDeadlineMissed
- * AcknowledgementReason5Code.mmAccountServicerDeadlineMissed}</li>
+ * AcknowledgementReason5Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#MarketPracticeRuleDiscrepency
- * AcknowledgementReason5Code.mmMarketPracticeRuleDiscrepency}</li>
+ * AcknowledgementReason5Code.MarketPracticeRuleDiscrepency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#Other
- * AcknowledgementReason5Code.mmOther}</li>
+ * AcknowledgementReason5Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#ConditionalCurrency
- * AcknowledgementReason5Code.mmConditionalCurrency}</li>
+ * AcknowledgementReason5Code.ConditionalCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#ConditionalRegistrar
- * AcknowledgementReason5Code.mmConditionalRegistrar}</li>
+ * AcknowledgementReason5Code.ConditionalRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#ConditionalRealignement
- * AcknowledgementReason5Code.mmConditionalRealignement}</li>
+ * AcknowledgementReason5Code.ConditionalRealignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#NotStraightThroughProcessing
- * AcknowledgementReason5Code.mmNotStraightThroughProcessing}</li>
+ * AcknowledgementReason5Code.NotStraightThroughProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#AcceptedWithoutVotingRights
- * AcknowledgementReason5Code.mmAcceptedWithoutVotingRights}</li>
+ * AcknowledgementReason5Code.AcceptedWithoutVotingRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason5Code#MarketDeadlineMissed
- * AcknowledgementReason5Code.mmMarketDeadlineMissed}</li>
+ * AcknowledgementReason5Code.MarketDeadlineMissed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -318,7 +318,7 @@ public class AcknowledgementReason5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcknowledgementReason5Code";

@@ -25,6 +25,7 @@ import com.tools20022.repository.codeset.UnderlyingInterestRateType3Code;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,20 +62,20 @@ import javax.xml.bind.annotation.XmlType;
  * "InterestRateDerivative2Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Choice element specifying the underlying types of an interest rate derivative. "
+ * "Choice element specifying the underlying types of an interest rate derivative."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestRateDerivative2Choice", propOrder = {"swapRelated", "other"})
 public class InterestRateDerivative2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SwpRltd", required = true)
 	protected SwapType1Code swapRelated;
 	/**
-	 * Underlying interest rate type is a swap, swaption, a future on a swap or
-	 * a forward on a swap with regard to the underlying swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +103,9 @@ public class InterestRateDerivative2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSwapRelated = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestRateDerivative2Choice, SwapType1Code> mmSwapRelated = new MMMessageAttribute<InterestRateDerivative2Choice, SwapType1Code>() {
 		{
-			componentContext_lazy = () -> InterestRateDerivative2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InterestRateDerivative2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SwpRltd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,12 +115,22 @@ public class InterestRateDerivative2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> SwapType1Code.mmObject();
 		}
+
+		@Override
+		public SwapType1Code getValue(InterestRateDerivative2Choice obj) {
+			return obj.getSwapRelated();
+		}
+
+		@Override
+		public void setValue(InterestRateDerivative2Choice obj, SwapType1Code value) {
+			obj.setSwapRelated(value);
+		}
 	};
+	@XmlElement(name = "Othr", required = true)
 	protected UnderlyingInterestRateType3Code other;
 	/**
-	 * Where contract type is different from swaps, swaptions, futures on swaps
-	 * and forwards on a swap, this field is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,9 +158,9 @@ public class InterestRateDerivative2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOther = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestRateDerivative2Choice, UnderlyingInterestRateType3Code> mmOther = new MMMessageAttribute<InterestRateDerivative2Choice, UnderlyingInterestRateType3Code>() {
 		{
-			componentContext_lazy = () -> InterestRateDerivative2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InterestRateDerivative2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,36 +170,46 @@ public class InterestRateDerivative2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> UnderlyingInterestRateType3Code.mmObject();
 		}
+
+		@Override
+		public UnderlyingInterestRateType3Code getValue(InterestRateDerivative2Choice obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(InterestRateDerivative2Choice obj, UnderlyingInterestRateType3Code value) {
+			obj.setOther(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestRateDerivative2Choice.mmSwapRelated, InterestRateDerivative2Choice.mmOther);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InterestRateDerivative2Choice.mmSwapRelated, com.tools20022.repository.choice.InterestRateDerivative2Choice.mmOther);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestRateDerivative2Choice";
-				definition = "Choice element specifying the underlying types of an interest rate derivative. ";
+				definition = "Choice element specifying the underlying types of an interest rate derivative.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SwpRltd", required = true)
 	public SwapType1Code getSwapRelated() {
 		return swapRelated;
 	}
 
-	public void setSwapRelated(SwapType1Code swapRelated) {
-		this.swapRelated = swapRelated;
+	public InterestRateDerivative2Choice setSwapRelated(SwapType1Code swapRelated) {
+		this.swapRelated = Objects.requireNonNull(swapRelated);
+		return this;
 	}
 
-	@XmlElement(name = "Othr", required = true)
 	public UnderlyingInterestRateType3Code getOther() {
 		return other;
 	}
 
-	public void setOther(UnderlyingInterestRateType3Code other) {
-		this.other = other;
+	public InterestRateDerivative2Choice setOther(UnderlyingInterestRateType3Code other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

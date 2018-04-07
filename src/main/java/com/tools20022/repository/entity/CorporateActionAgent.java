@@ -27,9 +27,9 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CorporateActionAgent1;
 import com.tools20022.repository.msg.CorporateActionOption1;
 import com.tools20022.repository.msg.IssuerAgent2;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * A firm authorised to act as an intermediary between issuer and shareholders.
@@ -77,8 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,8 +96,8 @@ public class CorporateActionAgent extends CorporateActionPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AgentRoleCode agentRole;
 	/**
-	 * Specifies the agent role played by a party in a corporate action process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,7 +139,7 @@ public class CorporateActionAgent extends CorporateActionPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAgentRole = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionAgent, AgentRoleCode> mmAgentRole = new MMBusinessAttribute<CorporateActionAgent, AgentRoleCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AgentRole1FormatChoice.mmCode, AgentRole1FormatChoice.mmProprietary, CorporateActionAgent1.mmAgentRole, IssuerAgent2.mmRole);
 			isDerived = false;
@@ -152,19 +152,21 @@ public class CorporateActionAgent extends CorporateActionPartyRole {
 			simpleType_lazy = () -> AgentRoleCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionAgent.class.getMethod("getAgentRole", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AgentRoleCode getValue(CorporateActionAgent obj) {
+			return obj.getAgentRole();
+		}
+
+		@Override
+		public void setValue(CorporateActionAgent obj, AgentRoleCode value) {
+			obj.setAgentRole(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionAgent";
 				definition = "A firm authorised to act as an intermediary between issuer and shareholders. It takes care of the needs of the shareholders such as reporting, inquiries and regulatory compliance.";
@@ -186,7 +188,8 @@ public class CorporateActionAgent extends CorporateActionPartyRole {
 		return agentRole;
 	}
 
-	public void setAgentRole(AgentRoleCode agentRole) {
-		this.agentRole = agentRole;
+	public CorporateActionAgent setAgentRole(AgentRoleCode agentRole) {
+		this.agentRole = Objects.requireNonNull(agentRole);
+		return this;
 	}
 }

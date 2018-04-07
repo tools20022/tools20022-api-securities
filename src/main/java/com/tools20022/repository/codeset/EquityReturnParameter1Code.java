@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameter1Code#ParameterReturnDividend
- * EquityReturnParameter1Code.mmParameterReturnDividend}</li>
+ * EquityReturnParameter1Code.ParameterReturnDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameter1Code#ParameterReturnVariance
- * EquityReturnParameter1Code.mmParameterReturnVariance}</li>
+ * EquityReturnParameter1Code.ParameterReturnVariance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameter1Code#ParameterReturnVolatility
- * EquityReturnParameter1Code.mmParameterReturnVolatility}</li>
+ * EquityReturnParameter1Code.ParameterReturnVolatility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameter1Code#PriceReturnBasicPerformanceParameter
- * EquityReturnParameter1Code.mmPriceReturnBasicPerformanceParameter}</li>
+ * EquityReturnParameter1Code.PriceReturnBasicPerformanceParameter}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class EquityReturnParameter1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EquityReturnParameter1Code";
 				definition = "Specifies an equity derivative return parameter.";

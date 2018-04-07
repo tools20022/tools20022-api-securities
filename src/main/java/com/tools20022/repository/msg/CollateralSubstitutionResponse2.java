@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides details about the rejected collateral substitution."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralSubstitutionResponse2", propOrder = {"collateralSubstitutionRequestIdentification", "rejectedAmount", "rejectionReason", "rejectionReasonInformation"})
 public class CollateralSubstitutionResponse2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CollSbstitnReqId", required = true)
 	protected Max35Text collateralSubstitutionRequestIdentification;
 	/**
-	 * Reference to the collateral substitution request identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,9 +113,9 @@ public class CollateralSubstitutionResponse2 {
 	 * "Reference to the collateral substitution request identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralSubstitutionResponse2, Max35Text> mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute<CollateralSubstitutionResponse2, Max35Text>() {
 		{
-			componentContext_lazy = () -> CollateralSubstitutionResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +125,22 @@ public class CollateralSubstitutionResponse2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(CollateralSubstitutionResponse2 obj) {
+			return obj.getCollateralSubstitutionRequestIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionResponse2 obj, Max35Text value) {
+			obj.setCollateralSubstitutionRequestIdentification(value);
+		}
 	};
+	@XmlElement(name = "RjctdAmt", required = true)
 	protected ActiveCurrencyAndAmount rejectedAmount;
 	/**
-	 * Specifies the collateral substitution amount that is rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +172,10 @@ public class CollateralSubstitutionResponse2 {
 	 * "Specifies the collateral substitution amount that is rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectedAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralSubstitutionResponse2, ActiveCurrencyAndAmount> mmRejectedAmount = new MMMessageAttribute<CollateralSubstitutionResponse2, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CollateralSubstitution.mmRejectedAmount;
-			componentContext_lazy = () -> CollateralSubstitutionResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "RjctdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,11 +185,22 @@ public class CollateralSubstitutionResponse2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CollateralSubstitutionResponse2 obj) {
+			return obj.getRejectedAmount();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionResponse2 obj, ActiveCurrencyAndAmount value) {
+			obj.setRejectedAmount(value);
+		}
 	};
+	@XmlElement(name = "RjctnRsn", required = true)
 	protected RejectionReasonV021Code rejectionReason;
 	/**
-	 * Specifies the reasons why the collateral substitution is rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,10 +232,10 @@ public class CollateralSubstitutionResponse2 {
 	 * "Specifies the reasons why the collateral substitution is rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralSubstitutionResponse2, RejectionReasonV021Code> mmRejectionReason = new MMMessageAttribute<CollateralSubstitutionResponse2, RejectionReasonV021Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> CollateralSubstitutionResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,12 +245,22 @@ public class CollateralSubstitutionResponse2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> RejectionReasonV021Code.mmObject();
 		}
+
+		@Override
+		public RejectionReasonV021Code getValue(CollateralSubstitutionResponse2 obj) {
+			return obj.getRejectionReason();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionResponse2 obj, RejectionReasonV021Code value) {
+			obj.setRejectionReason(value);
+		}
 	};
+	@XmlElement(name = "RjctnRsnInf")
 	protected Max140Text rejectionReasonInformation;
 	/**
-	 * Provides additional information about the collateral substitution request
-	 * rejection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,10 +292,10 @@ public class CollateralSubstitutionResponse2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionReasonInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralSubstitutionResponse2, Optional<Max140Text>> mmRejectionReasonInformation = new MMMessageAttribute<CollateralSubstitutionResponse2, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> CollateralSubstitutionResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnRsnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,15 +305,26 @@ public class CollateralSubstitutionResponse2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(CollateralSubstitutionResponse2 obj) {
+			return obj.getRejectionReasonInformation();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionResponse2 obj, Optional<Max140Text> value) {
+			obj.setRejectionReasonInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralSubstitutionResponse2.mmCollateralSubstitutionRequestIdentification, CollateralSubstitutionResponse2.mmRejectedAmount, CollateralSubstitutionResponse2.mmRejectionReason,
-						CollateralSubstitutionResponse2.mmRejectionReasonInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmCollateralSubstitutionRequestIdentification,
+						com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmRejectedAmount, com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmRejectionReason,
+						com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmRejectionReasonInformation);
 				trace_lazy = () -> CollateralSubstitution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralSubstitutionResponse2";
 				definition = "Provides details about the rejected collateral substitution.";
@@ -287,39 +333,39 @@ public class CollateralSubstitutionResponse2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CollSbstitnReqId", required = true)
 	public Max35Text getCollateralSubstitutionRequestIdentification() {
 		return collateralSubstitutionRequestIdentification;
 	}
 
-	public void setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
-		this.collateralSubstitutionRequestIdentification = collateralSubstitutionRequestIdentification;
+	public CollateralSubstitutionResponse2 setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
+		this.collateralSubstitutionRequestIdentification = Objects.requireNonNull(collateralSubstitutionRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RjctdAmt", required = true)
 	public ActiveCurrencyAndAmount getRejectedAmount() {
 		return rejectedAmount;
 	}
 
-	public void setRejectedAmount(ActiveCurrencyAndAmount rejectedAmount) {
-		this.rejectedAmount = rejectedAmount;
+	public CollateralSubstitutionResponse2 setRejectedAmount(ActiveCurrencyAndAmount rejectedAmount) {
+		this.rejectedAmount = Objects.requireNonNull(rejectedAmount);
+		return this;
 	}
 
-	@XmlElement(name = "RjctnRsn", required = true)
 	public RejectionReasonV021Code getRejectionReason() {
 		return rejectionReason;
 	}
 
-	public void setRejectionReason(RejectionReasonV021Code rejectionReason) {
-		this.rejectionReason = rejectionReason;
+	public CollateralSubstitutionResponse2 setRejectionReason(RejectionReasonV021Code rejectionReason) {
+		this.rejectionReason = Objects.requireNonNull(rejectionReason);
+		return this;
 	}
 
-	@XmlElement(name = "RjctnRsnInf")
-	public Max140Text getRejectionReasonInformation() {
-		return rejectionReasonInformation;
+	public Optional<Max140Text> getRejectionReasonInformation() {
+		return rejectionReasonInformation == null ? Optional.empty() : Optional.of(rejectionReasonInformation);
 	}
 
-	public void setRejectionReasonInformation(Max140Text rejectionReasonInformation) {
+	public CollateralSubstitutionResponse2 setRejectionReasonInformation(Max140Text rejectionReasonInformation) {
 		this.rejectionReasonInformation = rejectionReasonInformation;
+		return this;
 	}
 }

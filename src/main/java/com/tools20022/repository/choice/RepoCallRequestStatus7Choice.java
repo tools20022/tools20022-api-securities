@@ -17,16 +17,20 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.sese.SecuritiesFinancingStatusAdviceV07;
+import com.tools20022.repository.choice.AcknowledgedAcceptedStatus22Choice;
+import com.tools20022.repository.choice.DeniedStatus17Choice;
 import com.tools20022.repository.entity.SecuritiesTradeStatus;
 import com.tools20022.repository.entity.SecuritiesTradeStatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ProprietaryStatusAndReason6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Choice of format for the repurchase agreement call acknowledgement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RepoCallRequestStatus7Choice", propOrder = {"acknowledgedAccepted", "denied", "proprietary"})
 public class RepoCallRequestStatus7Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AckdAccptd", required = true)
 	protected AcknowledgedAcceptedStatus22Choice acknowledgedAccepted;
 	/**
-	 * Instruction has been acknowledged by the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -108,6 +113,9 @@ public class RepoCallRequestStatus7Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "AckdAccptd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::CALL//PACK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -119,25 +127,37 @@ public class RepoCallRequestStatus7Choice {
 	 * "Instruction has been acknowledged by the account servicer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAcknowledgedAccepted = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RepoCallRequestStatus7Choice, AcknowledgedAcceptedStatus22Choice> mmAcknowledgedAccepted = new MMMessageAssociationEnd<RepoCallRequestStatus7Choice, AcknowledgedAcceptedStatus22Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmRepoCallAcknowledgementReason;
-			componentContext_lazy = () -> RepoCallRequestStatus7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RepoCallRequestStatus7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AckdAccptd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::CALL//PACK"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcknowledgedAccepted";
 			definition = "Instruction has been acknowledged by the account servicer.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.AcknowledgedAcceptedStatus22Choice.mmObject();
+			type_lazy = () -> AcknowledgedAcceptedStatus22Choice.mmObject();
+		}
+
+		@Override
+		public AcknowledgedAcceptedStatus22Choice getValue(RepoCallRequestStatus7Choice obj) {
+			return obj.getAcknowledgedAccepted();
+		}
+
+		@Override
+		public void setValue(RepoCallRequestStatus7Choice obj, AcknowledgedAcceptedStatus22Choice value) {
+			obj.setAcknowledgedAccepted(value);
 		}
 	};
+	@XmlElement(name = "Dnd", required = true)
 	protected DeniedStatus17Choice denied;
 	/**
-	 * Instruction/Request will not be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,6 +177,9 @@ public class RepoCallRequestStatus7Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Dnd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::CALL//DEND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -167,25 +190,37 @@ public class RepoCallRequestStatus7Choice {
 	 * definition} = "Instruction/Request will not be executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDenied = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RepoCallRequestStatus7Choice, DeniedStatus17Choice> mmDenied = new MMMessageAssociationEnd<RepoCallRequestStatus7Choice, DeniedStatus17Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmDeniedReason;
-			componentContext_lazy = () -> RepoCallRequestStatus7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RepoCallRequestStatus7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Dnd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::CALL//DEND"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Denied";
 			definition = "Instruction/Request will not be executed.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.DeniedStatus17Choice.mmObject();
+			type_lazy = () -> DeniedStatus17Choice.mmObject();
+		}
+
+		@Override
+		public DeniedStatus17Choice getValue(RepoCallRequestStatus7Choice obj) {
+			return obj.getDenied();
+		}
+
+		@Override
+		public void setValue(RepoCallRequestStatus7Choice obj, DeniedStatus17Choice value) {
+			obj.setDenied(value);
 		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected ProprietaryStatusAndReason6 proprietary;
 	/**
-	 * Proprietary status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -205,6 +240,9 @@ public class RepoCallRequestStatus7Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::CALL/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -215,12 +253,13 @@ public class RepoCallRequestStatus7Choice {
 	 * definition} = "Proprietary status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RepoCallRequestStatus7Choice, ProprietaryStatusAndReason6> mmProprietary = new MMMessageAssociationEnd<RepoCallRequestStatus7Choice, ProprietaryStatusAndReason6>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatus.mmObject();
-			componentContext_lazy = () -> RepoCallRequestStatus7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RepoCallRequestStatus7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::CALL/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Proprietary status.";
@@ -229,15 +268,26 @@ public class RepoCallRequestStatus7Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryStatusAndReason6.mmObject();
 		}
+
+		@Override
+		public ProprietaryStatusAndReason6 getValue(RepoCallRequestStatus7Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(RepoCallRequestStatus7Choice obj, ProprietaryStatusAndReason6 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RepoCallRequestStatus7Choice.mmAcknowledgedAccepted, RepoCallRequestStatus7Choice.mmDenied, RepoCallRequestStatus7Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RepoCallRequestStatus7Choice.mmAcknowledgedAccepted, com.tools20022.repository.choice.RepoCallRequestStatus7Choice.mmDenied,
+						com.tools20022.repository.choice.RepoCallRequestStatus7Choice.mmProprietary);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesFinancingStatusAdviceV07.mmRepoCallRequestStatus);
 				trace_lazy = () -> SecuritiesTradeStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepoCallRequestStatus7Choice";
 				definition = "Choice of format for the repurchase agreement call acknowledgement.";
@@ -246,30 +296,30 @@ public class RepoCallRequestStatus7Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AckdAccptd", required = true)
 	public AcknowledgedAcceptedStatus22Choice getAcknowledgedAccepted() {
 		return acknowledgedAccepted;
 	}
 
-	public void setAcknowledgedAccepted(com.tools20022.repository.choice.AcknowledgedAcceptedStatus22Choice acknowledgedAccepted) {
-		this.acknowledgedAccepted = acknowledgedAccepted;
+	public RepoCallRequestStatus7Choice setAcknowledgedAccepted(AcknowledgedAcceptedStatus22Choice acknowledgedAccepted) {
+		this.acknowledgedAccepted = Objects.requireNonNull(acknowledgedAccepted);
+		return this;
 	}
 
-	@XmlElement(name = "Dnd", required = true)
 	public DeniedStatus17Choice getDenied() {
 		return denied;
 	}
 
-	public void setDenied(com.tools20022.repository.choice.DeniedStatus17Choice denied) {
-		this.denied = denied;
+	public RepoCallRequestStatus7Choice setDenied(DeniedStatus17Choice denied) {
+		this.denied = Objects.requireNonNull(denied);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public ProprietaryStatusAndReason6 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(ProprietaryStatusAndReason6 proprietary) {
-		this.proprietary = proprietary;
+	public RepoCallRequestStatus7Choice setProprietary(ProprietaryStatusAndReason6 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

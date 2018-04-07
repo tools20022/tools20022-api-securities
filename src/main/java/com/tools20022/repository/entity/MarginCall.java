@@ -21,15 +21,17 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.MarginProductCode;
 import com.tools20022.repository.codeset.MarginTypeCode;
-import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the calculation and the resulting margin and independent amount
@@ -195,12 +197,12 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+ * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "MarginCall"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -214,8 +216,8 @@ public class MarginCall {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime marginCallValuationDate;
 	/**
-	 * Close of business date that initiating party is valuing the margin call.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,7 +245,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MarginCallValuationDate"</li>
 	 * <li>
@@ -253,12 +255,12 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarginCallValuationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, ISODateTime> mmMarginCallValuationDate = new MMBusinessAttribute<MarginCall, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Summary1.mmValuationDateTime, Obligation4.mmValuationDate, Obligation5.mmValuationDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginCallValuationDate";
 			definition = "Close of business date that initiating party is valuing the margin call.";
 			maxOccurs = 1;
@@ -266,25 +268,27 @@ public class MarginCall {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getMarginCallValuationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(MarginCall obj) {
+			return obj.getMarginCallValuationDate();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, ISODateTime value) {
+			obj.setMarginCallValuationDate(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount agreedAmount;
+	protected CurrencyAndAmount agreedAmount;
 	/**
-	 * Specifies the amount which is undisputed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -305,7 +309,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "AgreedAmount"</li>
 	 * <li>
@@ -313,39 +317,40 @@ public class MarginCall {
 	 * definition} = "Specifies the amount which is undisputed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAgreedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmAgreedAmount = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Amount1.mmAgreedAmount, AgreedAmount1Choice.mmAgreedAmountDetails, CollateralMovement10.mmAgreedAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgreedAmount";
 			definition = "Specifies the amount which is undisputed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getAgreedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getAgreedAmount();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setAgreedAmount(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount variationMargin;
+	protected CurrencyAndAmount variationMargin;
 	/**
-	 * Provides the summation of the call amounts for the variation margin and
-	 * optionally the segregated independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -372,7 +377,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "VariationMargin"</li>
 	 * <li>
@@ -382,40 +387,41 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVariationMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmVariationMargin = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DisputeNotification1.mmVariationMarginDispute, MarginCallResult2.mmVariationMarginResult, MarginCallResult2Choice.mmMarginCallAmount, AgreedAmount1.mmVariationMarginAmount,
 					Margin3.mmVariationMargin);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariationMargin";
 			definition = "Provides the summation of the call amounts for the variation margin and optionally the segregated independent amount.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getVariationMargin", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getVariationMargin();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setVariationMargin(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount segregatedIndependentAmount;
+	protected CurrencyAndAmount segregatedIndependentAmount;
 	/**
-	 * Provides the summation of the call amounts for the segregated independent
-	 * amount only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -446,7 +452,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "SegregatedIndependentAmount"</li>
 	 * <li>
@@ -456,33 +462,34 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSegregatedIndependentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmSegregatedIndependentAmount = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DisputeNotification1.mmSegregatedIndependentAmountDispute, DisputeNotification1Choice.mmSegregatedIndependentAmountDisputeDetails, MarginCallResult2.mmSegregatedIndependentAmount,
 					MarginCallResult2Choice.mmSegregatedIndependentAmount, AgreedAmount1.mmSegregatedIndependentAmount, AgreedAmount1Choice.mmSegregatedIndependentAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SegregatedIndependentAmount";
 			definition = "Provides the summation of the call amounts for the segregated independent amount only.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getSegregatedIndependentAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getSegregatedIndependentAmount();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setSegregatedIndependentAmount(value);
 		}
 	};
 	protected DefaultFundContribution defaultFundContribution;
 	/**
-	 * Portion of the participation to the default fund that clearing member
-	 * must provide. It is the sum of the individual contributions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -515,7 +522,7 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDefaultFundContribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginCall, DefaultFundContribution> mmDefaultFundContribution = new MMBusinessAssociationEnd<MarginCall, DefaultFundContribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
@@ -524,15 +531,25 @@ public class MarginCall {
 			definition = "Portion of the participation to the default fund that clearing member must provide. It is the sum of the individual contributions.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmRelatedMarginCall;
+			opposite_lazy = () -> DefaultFundContribution.mmRelatedMarginCall;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
+			type_lazy = () -> DefaultFundContribution.mmObject();
+		}
+
+		@Override
+		public DefaultFundContribution getValue(MarginCall obj) {
+			return obj.getDefaultFundContribution();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, DefaultFundContribution value) {
+			obj.setDefaultFundContribution(value);
 		}
 	};
 	protected ExpectedCollateralType expectedVariationMarginType;
 	/**
-	 * Specifies the expected collateral type and direction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -563,7 +580,7 @@ public class MarginCall {
 	 * definition} = "Specifies the expected collateral type and direction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExpectedVariationMarginType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginCall, ExpectedCollateralType> mmExpectedVariationMarginType = new MMBusinessAssociationEnd<MarginCall, ExpectedCollateralType>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
@@ -572,15 +589,25 @@ public class MarginCall {
 			definition = "Specifies the expected collateral type and direction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmVariationMarginRelatedCall;
+			opposite_lazy = () -> ExpectedCollateralType.mmVariationMarginRelatedCall;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
+			type_lazy = () -> ExpectedCollateralType.mmObject();
+		}
+
+		@Override
+		public ExpectedCollateralType getValue(MarginCall obj) {
+			return obj.getExpectedVariationMarginType();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, ExpectedCollateralType value) {
+			obj.setExpectedVariationMarginType(value);
 		}
 	};
 	protected ExpectedCollateralType expectedSegregatedIndependentAmountType;
 	/**
-	 * Specifies the expected collateral type and direction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -611,7 +638,7 @@ public class MarginCall {
 	 * definition} = "Specifies the expected collateral type and direction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExpectedSegregatedIndependentAmountType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginCall, ExpectedCollateralType> mmExpectedSegregatedIndependentAmountType = new MMBusinessAssociationEnd<MarginCall, ExpectedCollateralType>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
@@ -620,23 +647,32 @@ public class MarginCall {
 			definition = "Specifies the expected collateral type and direction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmSegregatedIndependentAmountRelatedCall;
+			opposite_lazy = () -> ExpectedCollateralType.mmSegregatedIndependentAmountRelatedCall;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
+			type_lazy = () -> ExpectedCollateralType.mmObject();
+		}
+
+		@Override
+		public ExpectedCollateralType getValue(MarginCall obj) {
+			return obj.getExpectedSegregatedIndependentAmountType();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, ExpectedCollateralType value) {
+			obj.setExpectedSegregatedIndependentAmountType(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount totalMarkToMarket;
+	protected CurrencyAndAmount totalMarkToMarket;
 	/**
-	 * Net unrealised profit or loss on the value of the netted, gross and
-	 * failing positions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -652,7 +688,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "TotalMarkToMarket"</li>
 	 * <li>
@@ -662,38 +698,40 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalMarkToMarket = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmTotalMarkToMarket = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin3.mmTotalMarkToMarket);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalMarkToMarket";
 			definition = "Net unrealised profit or loss on the value of the netted, gross and failing positions.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getTotalMarkToMarket", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getTotalMarkToMarket();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setTotalMarkToMarket(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount markToMarketNetted;
+	protected CurrencyAndAmount markToMarketNetted;
 	/**
-	 * Unrealised net loss calculated at the participant portfolio level.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -709,7 +747,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MarkToMarketNetted"</li>
 	 * <li>
@@ -718,38 +756,40 @@ public class MarginCall {
 	 * "Unrealised net loss calculated at the participant portfolio level."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarkToMarketNetted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmMarkToMarketNetted = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin3.mmMarkToMarketNetted);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarkToMarketNetted";
 			definition = "Unrealised net loss calculated at the participant portfolio level.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getMarkToMarketNetted", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getMarkToMarketNetted();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setMarkToMarketNetted(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount markToMarketGross;
+	protected CurrencyAndAmount markToMarketGross;
 	/**
-	 * Unrealised net loss calculated in that market/boundary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -765,7 +805,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MarkToMarketGross"</li>
 	 * <li>
@@ -773,38 +813,40 @@ public class MarginCall {
 	 * definition} = "Unrealised net loss calculated in that market/boundary."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarkToMarketGross = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmMarkToMarketGross = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin3.mmMarkToMarketGross);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarkToMarketGross";
 			definition = "Unrealised net loss calculated in that market/boundary.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getMarkToMarketGross", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getMarkToMarketGross();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setMarkToMarketGross(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount markToMarketFails;
+	protected CurrencyAndAmount markToMarketFails;
 	/**
-	 * Sum of the unrealised loss without taking profit into consideration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -820,7 +862,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MarkToMarketFails"</li>
 	 * <li>
@@ -829,39 +871,40 @@ public class MarginCall {
 	 * "Sum of the unrealised loss without taking profit into consideration."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarkToMarketFails = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmMarkToMarketFails = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin3.mmMarkToMarketFails);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarkToMarketFails";
 			definition = "Sum of the unrealised loss without taking profit into consideration.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getMarkToMarketFails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getMarkToMarketFails();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setMarkToMarketFails(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount failsHaircut;
+	protected CurrencyAndAmount failsHaircut;
 	/**
-	 * Haircut applied to the absolute value of the participants net positions.
-	 * Calculation depends on a participants credit rating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -877,7 +920,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "FailsHaircut"</li>
 	 * <li>
@@ -887,40 +930,40 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFailsHaircut = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmFailsHaircut = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(VariationMargin3.mmFailsHaircut);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailsHaircut";
 			definition = "Haircut applied to the absolute value of the participants net positions. Calculation depends on a participants credit rating.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getFailsHaircut", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getFailsHaircut();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setFailsHaircut(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount initialMargin;
+	protected CurrencyAndAmount initialMargin;
 	/**
-	 * Margin required for absorbing future market price fluctuations (market
-	 * risks) occurring between the default of a member and close-out of
-	 * unsettled securities positions by the CCP.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -935,7 +978,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "InitialMargin"</li>
 	 * <li>
@@ -945,39 +988,40 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInitialMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmInitialMargin = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Margin3.mmInitialMargin);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitialMargin";
 			definition = "Margin required for absorbing future market price fluctuations (market risks) occurring between the default of a member and close-out of unsettled securities positions by the CCP.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getInitialMargin", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getInitialMargin();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setInitialMargin(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount increaseCoverage;
+	protected CurrencyAndAmount increaseCoverage;
 	/**
-	 * Amount added to the requirement amount. Its value is at the discretion of
-	 * the central clearing counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -985,7 +1029,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "IncreaseCoverage"</li>
 	 * <li>
@@ -995,32 +1039,32 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIncreaseCoverage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmIncreaseCoverage = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncreaseCoverage";
 			definition = "Amount added to the requirement amount. Its value is at the discretion of the central clearing counterparty.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getIncreaseCoverage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getIncreaseCoverage();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setIncreaseCoverage(value);
 		}
 	};
 	protected YesNoIndicator collateralisedMarginAccountIndicator;
 	/**
-	 * Used to indicate whether the reported margin account is collateralised or
-	 * not. If not collateralised, the account is configured for informational
-	 * reporting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1043,7 +1087,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "CollateralisedMarginAccountIndicator"</li>
 	 * <li>
@@ -1053,12 +1097,12 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCollateralisedMarginAccountIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, YesNoIndicator> mmCollateralisedMarginAccountIndicator = new MMBusinessAttribute<MarginCall, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarginReport2.mmCollateralisedMarginAccountIndicator);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralisedMarginAccountIndicator";
 			definition = "Used to indicate whether the reported margin account is collateralised or not. If not collateralised, the account is configured for informational reporting.";
 			maxOccurs = 1;
@@ -1066,18 +1110,20 @@ public class MarginCall {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getCollateralisedMarginAccountIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(MarginCall obj) {
+			return obj.getCollateralisedMarginAccountIndicator();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, YesNoIndicator value) {
+			obj.setCollateralisedMarginAccountIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CollateralMovement> collateralMovement;
+	protected List<CollateralMovement> collateralMovement;
 	/**
-	 * Movements resulting from the margin call calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1118,7 +1164,7 @@ public class MarginCall {
 	 * definition} = "Movements resulting from the margin call calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginCall, List<CollateralMovement>> mmCollateralMovement = new MMBusinessAssociationEnd<MarginCall, List<CollateralMovement>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarginCalculation1.mmMarginResult, MarginCalculation2.mmMarginResult);
 			isDerived = false;
@@ -1127,15 +1173,25 @@ public class MarginCall {
 			name = "CollateralMovement";
 			definition = "Movements resulting from the margin call calculation.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmMarginCall;
+			opposite_lazy = () -> CollateralMovement.mmMarginCall;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
+			type_lazy = () -> CollateralMovement.mmObject();
+		}
+
+		@Override
+		public List<CollateralMovement> getValue(MarginCall obj) {
+			return obj.getCollateralMovement();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, List<CollateralMovement> value) {
+			obj.setCollateralMovement(value);
 		}
 	};
 	protected CollateralManagement relatedManagementProcess;
 	/**
-	 * Process which groups the activities related to collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1167,7 +1223,7 @@ public class MarginCall {
 	 * "Process which groups the activities related to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginCall, CollateralManagement> mmRelatedManagementProcess = new MMBusinessAssociationEnd<MarginCall, CollateralManagement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
@@ -1176,15 +1232,25 @@ public class MarginCall {
 			definition = "Process which groups the activities related to collateral.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmMarginCall;
+			opposite_lazy = () -> CollateralManagement.mmMarginCall;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
+			type_lazy = () -> CollateralManagement.mmObject();
+		}
+
+		@Override
+		public CollateralManagement getValue(MarginCall obj) {
+			return obj.getRelatedManagementProcess();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CollateralManagement value) {
+			obj.setRelatedManagementProcess(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Security> security;
+	protected List<Security> security;
 	/**
-	 * Description of the securities related to the margin call.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1214,7 +1280,7 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarginCall, List<Security>> mmSecurity = new MMBusinessAssociationEnd<MarginCall, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
@@ -1222,15 +1288,25 @@ public class MarginCall {
 			name = "Security";
 			definition = "Description of the securities related to the margin call.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRelatedMarginCall;
+			opposite_lazy = () -> Security.mmRelatedMarginCall;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(MarginCall obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, List<Security> value) {
+			obj.setSecurity(value);
 		}
 	};
 	protected MarginProductCode marginProduct;
 	/**
-	 * Specifies the underlying product of the margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1259,7 +1335,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MarginProduct"</li>
 	 * <li>
@@ -1267,12 +1343,12 @@ public class MarginCall {
 	 * definition} = "Specifies the underlying product of the margin."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarginProduct = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, MarginProductCode> mmMarginProduct = new MMBusinessAttribute<MarginCall, MarginProductCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarginProductType1Choice.mmCode, MarginProductType1Choice.mmProprietary, MarginReport2.mmMarginProduct);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginProduct";
 			definition = "Specifies the underlying product of the margin.";
 			maxOccurs = 1;
@@ -1280,19 +1356,20 @@ public class MarginCall {
 			simpleType_lazy = () -> MarginProductCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getMarginProduct", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarginProductCode getValue(MarginCall obj) {
+			return obj.getMarginProduct();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, MarginProductCode value) {
+			obj.setMarginProduct(value);
 		}
 	};
 	protected MarginTypeCode marginType;
 	/**
-	 * Specifies the type of margin, for example, initial margin, variation
-	 * margin, initial deposit or coupon margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1320,7 +1397,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MarginType"</li>
 	 * <li>
@@ -1330,12 +1407,12 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarginType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, MarginTypeCode> mmMarginType = new MMBusinessAttribute<MarginCall, MarginTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarginType1Choice.mmCode, MarginType1Choice.mmProprietary, Margin4.mmType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginType";
 			definition = "Specifies the type of margin, for example, initial margin, variation margin, initial deposit or coupon margin.";
 			maxOccurs = 1;
@@ -1343,27 +1420,27 @@ public class MarginCall {
 			simpleType_lazy = () -> MarginTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getMarginType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarginTypeCode getValue(MarginCall obj) {
+			return obj.getMarginType();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, MarginTypeCode value) {
+			obj.setMarginType(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount totalMarginAmount;
+	protected CurrencyAndAmount totalMarginAmount;
 	/**
-	 * Total margin requirement (expressed in the reporting currency) that must
-	 * be provided. This is the total requirement calculated to cover the
-	 * initial margin and the variation margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
@@ -1384,7 +1461,7 @@ public class MarginCall {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "TotalMarginAmount"</li>
 	 * <li>
@@ -1394,38 +1471,39 @@ public class MarginCall {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalMarginAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MarginCall, CurrencyAndAmount> mmTotalMarginAmount = new MMBusinessAttribute<MarginCall, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarginCalculation1.mmTotalMarginAmount, Margin4.mmAmount, MarginCalculation2.mmTotalMarginAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalMarginAmount";
 			definition = "Total margin requirement (expressed in the reporting currency) that must be provided. This is the total requirement calculated to cover the initial margin and the variation margin.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MarginCall.class.getMethod("getTotalMarginAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(MarginCall obj) {
+			return obj.getTotalMarginAmount();
+		}
+
+		@Override
+		public void setValue(MarginCall obj, CurrencyAndAmount value) {
+			obj.setTotalMarginAmount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginCall";
 				definition = "Specifies the calculation and the resulting margin and independent amount needed to cover the risk exposure of one party versus another.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRelatedMarginCall, com.tools20022.repository.entity.CollateralMovement.mmMarginCall,
-						com.tools20022.repository.entity.CollateralManagement.mmMarginCall, com.tools20022.repository.entity.DefaultFundContribution.mmRelatedMarginCall,
-						com.tools20022.repository.entity.ExpectedCollateralType.mmVariationMarginRelatedCall, com.tools20022.repository.entity.ExpectedCollateralType.mmSegregatedIndependentAmountRelatedCall);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRelatedMarginCall, CollateralMovement.mmMarginCall, CollateralManagement.mmMarginCall, DefaultFundContribution.mmRelatedMarginCall,
+						ExpectedCollateralType.mmVariationMarginRelatedCall, ExpectedCollateralType.mmSegregatedIndependentAmountRelatedCall);
 				derivationElement_lazy = () -> Arrays.asList(MarginCallResult2Choice.mmMarginCallResultDetails, MarginCallResult3.mmMarginCallResult, SummaryAmounts1.mmCollateralRequired, Margin3.mmOtherMargin,
 						MarginCalculation2.mmMarginTypeAmount, MarginReport2.mmMarginCalculationSummary, MarginReport2.mmMarginCalculation, MarginCall2.mmMarginCallResult, MarginCall2.mmMarginDetailDueToA, MarginCall2.mmMarginDetailDueToB);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MarginCall.mmMarginCallValuationDate, com.tools20022.repository.entity.MarginCall.mmAgreedAmount,
@@ -1453,167 +1531,188 @@ public class MarginCall {
 		return marginCallValuationDate;
 	}
 
-	public void setMarginCallValuationDate(ISODateTime marginCallValuationDate) {
-		this.marginCallValuationDate = marginCallValuationDate;
+	public MarginCall setMarginCallValuationDate(ISODateTime marginCallValuationDate) {
+		this.marginCallValuationDate = Objects.requireNonNull(marginCallValuationDate);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getAgreedAmount() {
+	public CurrencyAndAmount getAgreedAmount() {
 		return agreedAmount;
 	}
 
-	public void setAgreedAmount(ActiveCurrencyAndAmount agreedAmount) {
-		this.agreedAmount = agreedAmount;
+	public MarginCall setAgreedAmount(CurrencyAndAmount agreedAmount) {
+		this.agreedAmount = Objects.requireNonNull(agreedAmount);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getVariationMargin() {
+	public CurrencyAndAmount getVariationMargin() {
 		return variationMargin;
 	}
 
-	public void setVariationMargin(ActiveCurrencyAndAmount variationMargin) {
-		this.variationMargin = variationMargin;
+	public MarginCall setVariationMargin(CurrencyAndAmount variationMargin) {
+		this.variationMargin = Objects.requireNonNull(variationMargin);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getSegregatedIndependentAmount() {
+	public CurrencyAndAmount getSegregatedIndependentAmount() {
 		return segregatedIndependentAmount;
 	}
 
-	public void setSegregatedIndependentAmount(ActiveCurrencyAndAmount segregatedIndependentAmount) {
-		this.segregatedIndependentAmount = segregatedIndependentAmount;
+	public MarginCall setSegregatedIndependentAmount(CurrencyAndAmount segregatedIndependentAmount) {
+		this.segregatedIndependentAmount = Objects.requireNonNull(segregatedIndependentAmount);
+		return this;
 	}
 
 	public DefaultFundContribution getDefaultFundContribution() {
 		return defaultFundContribution;
 	}
 
-	public void setDefaultFundContribution(com.tools20022.repository.entity.DefaultFundContribution defaultFundContribution) {
-		this.defaultFundContribution = defaultFundContribution;
+	public MarginCall setDefaultFundContribution(DefaultFundContribution defaultFundContribution) {
+		this.defaultFundContribution = Objects.requireNonNull(defaultFundContribution);
+		return this;
 	}
 
 	public ExpectedCollateralType getExpectedVariationMarginType() {
 		return expectedVariationMarginType;
 	}
 
-	public void setExpectedVariationMarginType(com.tools20022.repository.entity.ExpectedCollateralType expectedVariationMarginType) {
-		this.expectedVariationMarginType = expectedVariationMarginType;
+	public MarginCall setExpectedVariationMarginType(ExpectedCollateralType expectedVariationMarginType) {
+		this.expectedVariationMarginType = Objects.requireNonNull(expectedVariationMarginType);
+		return this;
 	}
 
 	public ExpectedCollateralType getExpectedSegregatedIndependentAmountType() {
 		return expectedSegregatedIndependentAmountType;
 	}
 
-	public void setExpectedSegregatedIndependentAmountType(com.tools20022.repository.entity.ExpectedCollateralType expectedSegregatedIndependentAmountType) {
-		this.expectedSegregatedIndependentAmountType = expectedSegregatedIndependentAmountType;
+	public MarginCall setExpectedSegregatedIndependentAmountType(ExpectedCollateralType expectedSegregatedIndependentAmountType) {
+		this.expectedSegregatedIndependentAmountType = Objects.requireNonNull(expectedSegregatedIndependentAmountType);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getTotalMarkToMarket() {
+	public CurrencyAndAmount getTotalMarkToMarket() {
 		return totalMarkToMarket;
 	}
 
-	public void setTotalMarkToMarket(ActiveCurrencyAndAmount totalMarkToMarket) {
-		this.totalMarkToMarket = totalMarkToMarket;
+	public MarginCall setTotalMarkToMarket(CurrencyAndAmount totalMarkToMarket) {
+		this.totalMarkToMarket = Objects.requireNonNull(totalMarkToMarket);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getMarkToMarketNetted() {
+	public CurrencyAndAmount getMarkToMarketNetted() {
 		return markToMarketNetted;
 	}
 
-	public void setMarkToMarketNetted(ActiveCurrencyAndAmount markToMarketNetted) {
-		this.markToMarketNetted = markToMarketNetted;
+	public MarginCall setMarkToMarketNetted(CurrencyAndAmount markToMarketNetted) {
+		this.markToMarketNetted = Objects.requireNonNull(markToMarketNetted);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getMarkToMarketGross() {
+	public CurrencyAndAmount getMarkToMarketGross() {
 		return markToMarketGross;
 	}
 
-	public void setMarkToMarketGross(ActiveCurrencyAndAmount markToMarketGross) {
-		this.markToMarketGross = markToMarketGross;
+	public MarginCall setMarkToMarketGross(CurrencyAndAmount markToMarketGross) {
+		this.markToMarketGross = Objects.requireNonNull(markToMarketGross);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getMarkToMarketFails() {
+	public CurrencyAndAmount getMarkToMarketFails() {
 		return markToMarketFails;
 	}
 
-	public void setMarkToMarketFails(ActiveCurrencyAndAmount markToMarketFails) {
-		this.markToMarketFails = markToMarketFails;
+	public MarginCall setMarkToMarketFails(CurrencyAndAmount markToMarketFails) {
+		this.markToMarketFails = Objects.requireNonNull(markToMarketFails);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getFailsHaircut() {
+	public CurrencyAndAmount getFailsHaircut() {
 		return failsHaircut;
 	}
 
-	public void setFailsHaircut(ActiveCurrencyAndAmount failsHaircut) {
-		this.failsHaircut = failsHaircut;
+	public MarginCall setFailsHaircut(CurrencyAndAmount failsHaircut) {
+		this.failsHaircut = Objects.requireNonNull(failsHaircut);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getInitialMargin() {
+	public CurrencyAndAmount getInitialMargin() {
 		return initialMargin;
 	}
 
-	public void setInitialMargin(ActiveCurrencyAndAmount initialMargin) {
-		this.initialMargin = initialMargin;
+	public MarginCall setInitialMargin(CurrencyAndAmount initialMargin) {
+		this.initialMargin = Objects.requireNonNull(initialMargin);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getIncreaseCoverage() {
+	public CurrencyAndAmount getIncreaseCoverage() {
 		return increaseCoverage;
 	}
 
-	public void setIncreaseCoverage(ActiveCurrencyAndAmount increaseCoverage) {
-		this.increaseCoverage = increaseCoverage;
+	public MarginCall setIncreaseCoverage(CurrencyAndAmount increaseCoverage) {
+		this.increaseCoverage = Objects.requireNonNull(increaseCoverage);
+		return this;
 	}
 
 	public YesNoIndicator getCollateralisedMarginAccountIndicator() {
 		return collateralisedMarginAccountIndicator;
 	}
 
-	public void setCollateralisedMarginAccountIndicator(YesNoIndicator collateralisedMarginAccountIndicator) {
-		this.collateralisedMarginAccountIndicator = collateralisedMarginAccountIndicator;
+	public MarginCall setCollateralisedMarginAccountIndicator(YesNoIndicator collateralisedMarginAccountIndicator) {
+		this.collateralisedMarginAccountIndicator = Objects.requireNonNull(collateralisedMarginAccountIndicator);
+		return this;
 	}
 
 	public List<CollateralMovement> getCollateralMovement() {
-		return collateralMovement;
+		return collateralMovement == null ? collateralMovement = new ArrayList<>() : collateralMovement;
 	}
 
-	public void setCollateralMovement(List<com.tools20022.repository.entity.CollateralMovement> collateralMovement) {
-		this.collateralMovement = collateralMovement;
+	public MarginCall setCollateralMovement(List<CollateralMovement> collateralMovement) {
+		this.collateralMovement = Objects.requireNonNull(collateralMovement);
+		return this;
 	}
 
 	public CollateralManagement getRelatedManagementProcess() {
 		return relatedManagementProcess;
 	}
 
-	public void setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
-		this.relatedManagementProcess = relatedManagementProcess;
+	public MarginCall setRelatedManagementProcess(CollateralManagement relatedManagementProcess) {
+		this.relatedManagementProcess = Objects.requireNonNull(relatedManagementProcess);
+		return this;
 	}
 
 	public List<Security> getSecurity() {
-		return security;
+		return security == null ? security = new ArrayList<>() : security;
 	}
 
-	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
-		this.security = security;
+	public MarginCall setSecurity(List<Security> security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public MarginProductCode getMarginProduct() {
 		return marginProduct;
 	}
 
-	public void setMarginProduct(MarginProductCode marginProduct) {
-		this.marginProduct = marginProduct;
+	public MarginCall setMarginProduct(MarginProductCode marginProduct) {
+		this.marginProduct = Objects.requireNonNull(marginProduct);
+		return this;
 	}
 
 	public MarginTypeCode getMarginType() {
 		return marginType;
 	}
 
-	public void setMarginType(MarginTypeCode marginType) {
-		this.marginType = marginType;
+	public MarginCall setMarginType(MarginTypeCode marginType) {
+		this.marginType = Objects.requireNonNull(marginType);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getTotalMarginAmount() {
+	public CurrencyAndAmount getTotalMarginAmount() {
 		return totalMarginAmount;
 	}
 
-	public void setTotalMarginAmount(ActiveCurrencyAndAmount totalMarginAmount) {
-		this.totalMarginAmount = totalMarginAmount;
+	public MarginCall setTotalMarginAmount(CurrencyAndAmount totalMarginAmount) {
+		this.totalMarginAmount = Objects.requireNonNull(totalMarginAmount);
+		return this;
 	}
 }

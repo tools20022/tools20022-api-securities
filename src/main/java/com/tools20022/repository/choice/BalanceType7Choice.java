@@ -29,6 +29,7 @@ import com.tools20022.repository.msg.AccountIdentification5;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the balance type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BalanceType7Choice", propOrder = {"code", "proprietary", "account"})
 public class BalanceType7Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected FinancialAssetBalanceType1Code code;
 	/**
-	 * Balance type expressed in coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +111,10 @@ public class BalanceType7Choice {
 	 * definition} = "Balance type expressed in coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceType7Choice, FinancialAssetBalanceType1Code> mmCode = new MMMessageAttribute<BalanceType7Choice, FinancialAssetBalanceType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> BalanceType7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BalanceType7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +124,22 @@ public class BalanceType7Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> FinancialAssetBalanceType1Code.mmObject();
 		}
+
+		@Override
+		public FinancialAssetBalanceType1Code getValue(BalanceType7Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(BalanceType7Choice obj, FinancialAssetBalanceType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Balance type expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +170,10 @@ public class BalanceType7Choice {
 	 * definition} = "Balance type expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceType7Choice, GenericIdentification30> mmProprietary = new MMMessageAttribute<BalanceType7Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> BalanceType7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BalanceType7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +183,22 @@ public class BalanceType7Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(BalanceType7Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(BalanceType7Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
+		}
 	};
+	@XmlElement(name = "Acct", required = true)
 	protected AccountIdentification5 account;
 	/**
-	 * Account identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -203,10 +227,10 @@ public class BalanceType7Choice {
 	 * definition} = "Account identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BalanceType7Choice, AccountIdentification5> mmAccount = new MMMessageAssociationEnd<BalanceType7Choice, AccountIdentification5>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> BalanceType7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BalanceType7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,14 +241,25 @@ public class BalanceType7Choice {
 			isComposite = true;
 			type_lazy = () -> AccountIdentification5.mmObject();
 		}
+
+		@Override
+		public AccountIdentification5 getValue(BalanceType7Choice obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(BalanceType7Choice obj, AccountIdentification5 value) {
+			obj.setAccount(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BalanceType7Choice.mmCode, BalanceType7Choice.mmProprietary, BalanceType7Choice.mmAccount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.BalanceType7Choice.mmCode, com.tools20022.repository.choice.BalanceType7Choice.mmProprietary,
+						com.tools20022.repository.choice.BalanceType7Choice.mmAccount);
 				trace_lazy = () -> Balance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceType7Choice";
 				definition = "Choice of format for the balance type.";
@@ -233,30 +268,30 @@ public class BalanceType7Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public FinancialAssetBalanceType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(FinancialAssetBalanceType1Code code) {
-		this.code = code;
+	public BalanceType7Choice setCode(FinancialAssetBalanceType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public BalanceType7Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 
-	@XmlElement(name = "Acct", required = true)
 	public AccountIdentification5 getAccount() {
 		return account;
 	}
 
-	public void setAccount(AccountIdentification5 account) {
-		this.account = account;
+	public BalanceType7Choice setAccount(AccountIdentification5 account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

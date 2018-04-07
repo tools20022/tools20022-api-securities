@@ -38,10 +38,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClosurePendingStatusReason1Code#AccountClosingInProcess
- * ClosurePendingStatusReason1Code.mmAccountClosingInProcess}</li>
+ * ClosurePendingStatusReason1Code.AccountClosingInProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ClosurePendingStatusReason1Code#PendingConditions
- * ClosurePendingStatusReason1Code.mmPendingConditions}</li>
+ * ClosurePendingStatusReason1Code.PendingConditions}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -50,8 +50,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -122,7 +122,7 @@ public class ClosurePendingStatusReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClosurePendingStatusReason1Code";
 				definition = "Specifies the reason for the closure pending status.";

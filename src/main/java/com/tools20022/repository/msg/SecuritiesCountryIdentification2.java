@@ -27,8 +27,11 @@ import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CountryCodeAndName3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,8 +75,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +88,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Details an individual country including its name and country code."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "SecuritiesCountryIdentification2", propOrder = {"country", "EEACountry", "modification", "validityPeriod", "lastUpdated"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "SecuritiesCountryIdentification2", propOrder = {"country", "eEACountry", "modification", "validityPeriod", "lastUpdated"})
 public class SecuritiesCountryIdentification2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctry", required = true)
 	protected CountryCodeAndName3 country;
 	/**
-	 * Two character country code and country name as per ISO 3166.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -118,9 +122,9 @@ public class SecuritiesCountryIdentification2 {
 	 * "Two character country code and country name as per ISO 3166."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCountry = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesCountryIdentification2, CountryCodeAndName3> mmCountry = new MMMessageAssociationEnd<SecuritiesCountryIdentification2, CountryCodeAndName3>() {
 		{
-			componentContext_lazy = () -> SecuritiesCountryIdentification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,14 +133,24 @@ public class SecuritiesCountryIdentification2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CountryCodeAndName3.mmObject();
+			type_lazy = () -> CountryCodeAndName3.mmObject();
+		}
+
+		@Override
+		public CountryCodeAndName3 getValue(SecuritiesCountryIdentification2 obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(SecuritiesCountryIdentification2 obj, CountryCodeAndName3 value) {
+			obj.setCountry(value);
 		}
 	};
+	@XmlElement(name = "EEACtry", required = true)
 	protected TrueFalseIndicator eEACountry;
 	/**
-	 * Flag which reflects if the country is a member of the EEA (European
-	 * Economic Area) or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,9 +178,9 @@ public class SecuritiesCountryIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEEACountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesCountryIdentification2, TrueFalseIndicator> mmEEACountry = new MMMessageAttribute<SecuritiesCountryIdentification2, TrueFalseIndicator>() {
 		{
-			componentContext_lazy = () -> SecuritiesCountryIdentification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "EEACtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,11 +190,22 @@ public class SecuritiesCountryIdentification2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public TrueFalseIndicator getValue(SecuritiesCountryIdentification2 obj) {
+			return obj.getEEACountry();
+		}
+
+		@Override
+		public void setValue(SecuritiesCountryIdentification2 obj, TrueFalseIndicator value) {
+			obj.setEEACountry(value);
+		}
 	};
+	@XmlElement(name = "Mod")
 	protected Modification1Code modification;
 	/**
-	 * Modification status for the record compared to the previous report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,9 +232,9 @@ public class SecuritiesCountryIdentification2 {
 	 * "Modification status for the record compared to the previous report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesCountryIdentification2, Optional<Modification1Code>> mmModification = new MMMessageAttribute<SecuritiesCountryIdentification2, Optional<Modification1Code>>() {
 		{
-			componentContext_lazy = () -> SecuritiesCountryIdentification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "Mod";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,11 +244,22 @@ public class SecuritiesCountryIdentification2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
+
+		@Override
+		public Optional<Modification1Code> getValue(SecuritiesCountryIdentification2 obj) {
+			return obj.getModification();
+		}
+
+		@Override
+		public void setValue(SecuritiesCountryIdentification2 obj, Optional<Modification1Code> value) {
+			obj.setModification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VldtyPrd", required = true)
 	protected Period4Choice validityPeriod;
 	/**
-	 * Details the validity of the specific record.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -247,9 +283,9 @@ public class SecuritiesCountryIdentification2 {
 	 * definition} = "Details the validity of the specific record."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmValidityPeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesCountryIdentification2, Period4Choice> mmValidityPeriod = new MMMessageAssociationEnd<SecuritiesCountryIdentification2, Period4Choice>() {
 		{
-			componentContext_lazy = () -> SecuritiesCountryIdentification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "VldtyPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -260,11 +296,22 @@ public class SecuritiesCountryIdentification2 {
 			isComposite = true;
 			type_lazy = () -> Period4Choice.mmObject();
 		}
+
+		@Override
+		public Period4Choice getValue(SecuritiesCountryIdentification2 obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesCountryIdentification2 obj, Period4Choice value) {
+			obj.setValidityPeriod(value);
+		}
 	};
+	@XmlElement(name = "LastUpdtd")
 	protected ISODate lastUpdated;
 	/**
-	 * Date when this record was last modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,9 +336,9 @@ public class SecuritiesCountryIdentification2 {
 	 * definition} = "Date when this record was last modified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLastUpdated = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesCountryIdentification2, Optional<ISODate>> mmLastUpdated = new MMMessageAttribute<SecuritiesCountryIdentification2, Optional<ISODate>>() {
 		{
-			componentContext_lazy = () -> SecuritiesCountryIdentification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "LastUpdtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -301,15 +348,26 @@ public class SecuritiesCountryIdentification2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(SecuritiesCountryIdentification2 obj) {
+			return obj.getLastUpdated();
+		}
+
+		@Override
+		public void setValue(SecuritiesCountryIdentification2 obj, Optional<ISODate> value) {
+			obj.setLastUpdated(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesCountryIdentification2.mmCountry, SecuritiesCountryIdentification2.mmEEACountry, SecuritiesCountryIdentification2.mmModification,
-						SecuritiesCountryIdentification2.mmValidityPeriod, SecuritiesCountryIdentification2.mmLastUpdated);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmCountry, com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmEEACountry,
+						com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmModification, com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmValidityPeriod,
+						com.tools20022.repository.msg.SecuritiesCountryIdentification2.mmLastUpdated);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FinancialInstrumentReportingCountryCodeReportV01.mmCountryData);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesCountryIdentification2";
 				definition = "Details an individual country including its name and country code.";
@@ -318,48 +376,48 @@ public class SecuritiesCountryIdentification2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctry", required = true)
 	public CountryCodeAndName3 getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.msg.CountryCodeAndName3 country) {
-		this.country = country;
+	public SecuritiesCountryIdentification2 setCountry(CountryCodeAndName3 country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
-	@XmlElement(name = "EEACtry", required = true)
 	public TrueFalseIndicator getEEACountry() {
 		return eEACountry;
 	}
 
-	public void setEEACountry(TrueFalseIndicator eEACountry) {
-		this.eEACountry = eEACountry;
+	public SecuritiesCountryIdentification2 setEEACountry(TrueFalseIndicator eEACountry) {
+		this.eEACountry = Objects.requireNonNull(eEACountry);
+		return this;
 	}
 
-	@XmlElement(name = "Mod")
-	public Modification1Code getModification() {
-		return modification;
+	public Optional<Modification1Code> getModification() {
+		return modification == null ? Optional.empty() : Optional.of(modification);
 	}
 
-	public void setModification(Modification1Code modification) {
+	public SecuritiesCountryIdentification2 setModification(Modification1Code modification) {
 		this.modification = modification;
+		return this;
 	}
 
-	@XmlElement(name = "VldtyPrd", required = true)
 	public Period4Choice getValidityPeriod() {
 		return validityPeriod;
 	}
 
-	public void setValidityPeriod(Period4Choice validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public SecuritiesCountryIdentification2 setValidityPeriod(Period4Choice validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 
-	@XmlElement(name = "LastUpdtd")
-	public ISODate getLastUpdated() {
-		return lastUpdated;
+	public Optional<ISODate> getLastUpdated() {
+		return lastUpdated == null ? Optional.empty() : Optional.of(lastUpdated);
 	}
 
-	public void setLastUpdated(ISODate lastUpdated) {
+	public SecuritiesCountryIdentification2 setLastUpdated(ISODate lastUpdated) {
 		this.lastUpdated = lastUpdated;
+		return this;
 	}
 }

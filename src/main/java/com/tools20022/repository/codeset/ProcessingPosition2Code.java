@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingPosition2Code#After
- * ProcessingPosition2Code.mmAfter}</li>
+ * ProcessingPosition2Code.After}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingPosition2Code#With
- * ProcessingPosition2Code.mmWith}</li>
+ * ProcessingPosition2Code.With}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingPosition2Code#Before
- * ProcessingPosition2Code.mmBefore}</li>
+ * ProcessingPosition2Code.Before}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingPosition2Code#Information
- * ProcessingPosition2Code.mmInformation}</li>
+ * ProcessingPosition2Code.Information}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class ProcessingPosition2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AFTE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessingPosition2Code";

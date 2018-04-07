@@ -19,14 +19,16 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.ForeignExchangeTrade;
 import com.tools20022.repository.entity.TreasuryTrade;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ForeignExchangeSwapTransaction3;
 import com.tools20022.repository.msg.OvernightIndexSwapTransaction4;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Combination of two foreign exchange trades, in opposite directions, for
@@ -75,8 +77,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,9 +96,8 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text linkSwapIdentification;
 	/**
-	 * Correlation identification for the near and far leg of a swap
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +122,7 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLinkSwapIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ForeignExchangeSwap, Max35Text> mmLinkSwapIdentification = new MMBusinessAttribute<ForeignExchangeSwap, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
@@ -133,19 +134,20 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ForeignExchangeSwap.class.getMethod("getLinkSwapIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ForeignExchangeSwap obj) {
+			return obj.getLinkSwapIdentification();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeSwap obj, Max35Text value) {
+			obj.setLinkSwapIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ForeignExchangeTrade> swapLeg;
+	protected List<ForeignExchangeTrade> swapLeg;
 	/**
-	 * One-side of a pair of foreign exchange trades executed as part of a swap
-	 * agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,7 +181,7 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSwapLeg = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeSwap, List<ForeignExchangeTrade>> mmSwapLeg = new MMBusinessAssociationEnd<ForeignExchangeSwap, List<ForeignExchangeTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
@@ -188,20 +190,30 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 			definition = "One-side of a pair of foreign exchange trades executed as part of a swap agreement.";
 			maxOccurs = 2;
 			minOccurs = 2;
-			opposite_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmRelatedSwap;
+			opposite_lazy = () -> ForeignExchangeTrade.mmRelatedSwap;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
+			type_lazy = () -> ForeignExchangeTrade.mmObject();
+		}
+
+		@Override
+		public List<ForeignExchangeTrade> getValue(ForeignExchangeSwap obj) {
+			return obj.getSwapLeg();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeSwap obj, List<ForeignExchangeTrade> value) {
+			obj.setSwapLeg(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ForeignExchangeSwap";
 				definition = "Combination of two foreign exchange trades, in opposite directions, for different value dates and for the same pair(s) of currencies.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ForeignExchangeTrade.mmRelatedSwap);
+				associationDomain_lazy = () -> Arrays.asList(ForeignExchangeTrade.mmRelatedSwap);
 				superType_lazy = () -> TreasuryTrade.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ForeignExchangeSwap.mmLinkSwapIdentification, com.tools20022.repository.entity.ForeignExchangeSwap.mmSwapLeg);
 				derivationComponent_lazy = () -> Arrays.asList(ForeignExchangeSwapTransaction3.mmObject(), OvernightIndexSwapTransaction4.mmObject());
@@ -219,15 +231,17 @@ public class ForeignExchangeSwap extends TreasuryTrade {
 		return linkSwapIdentification;
 	}
 
-	public void setLinkSwapIdentification(Max35Text linkSwapIdentification) {
-		this.linkSwapIdentification = linkSwapIdentification;
+	public ForeignExchangeSwap setLinkSwapIdentification(Max35Text linkSwapIdentification) {
+		this.linkSwapIdentification = Objects.requireNonNull(linkSwapIdentification);
+		return this;
 	}
 
 	public List<ForeignExchangeTrade> getSwapLeg() {
-		return swapLeg;
+		return swapLeg == null ? swapLeg = new ArrayList<>() : swapLeg;
 	}
 
-	public void setSwapLeg(List<com.tools20022.repository.entity.ForeignExchangeTrade> swapLeg) {
-		this.swapLeg = swapLeg;
+	public ForeignExchangeSwap setSwapLeg(List<ForeignExchangeTrade> swapLeg) {
+		this.swapLeg = Objects.requireNonNull(swapLeg);
+		return this;
 	}
 }

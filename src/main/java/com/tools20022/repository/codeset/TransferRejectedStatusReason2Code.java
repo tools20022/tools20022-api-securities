@@ -39,83 +39,82 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#SettlementDate
- * TransferRejectedStatusReason2Code.mmSettlementDate}</li>
+ * TransferRejectedStatusReason2Code.SettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#SettlementPlace
- * TransferRejectedStatusReason2Code.mmSettlementPlace}</li>
+ * TransferRejectedStatusReason2Code.SettlementPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#FinancialInstrumentIdentification
- * TransferRejectedStatusReason2Code.mmFinancialInstrumentIdentification}</li>
+ * TransferRejectedStatusReason2Code.FinancialInstrumentIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#NotEnoughFinancialInstrument
- * TransferRejectedStatusReason2Code.mmNotEnoughFinancialInstrument}</li>
+ * TransferRejectedStatusReason2Code.NotEnoughFinancialInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#SettlementParties
- * TransferRejectedStatusReason2Code.mmSettlementParties}</li>
+ * TransferRejectedStatusReason2Code.SettlementParties}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#CertificateNumber
- * TransferRejectedStatusReason2Code.mmCertificateNumber}</li>
+ * TransferRejectedStatusReason2Code.CertificateNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvestmentAccount
- * TransferRejectedStatusReason2Code.mmInvestmentAccount}</li>
+ * TransferRejectedStatusReason2Code.InvestmentAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#AcquisitionDate
- * TransferRejectedStatusReason2Code.mmAcquisitionDate}</li>
+ * TransferRejectedStatusReason2Code.AcquisitionDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#AccountBlockedForCorporateAction
- * TransferRejectedStatusReason2Code.mmAccountBlockedForCorporateAction}</li>
+ * TransferRejectedStatusReason2Code.AccountBlockedForCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#AccountBlockedMissingDocuments
- * TransferRejectedStatusReason2Code.mmAccountBlockedMissingDocuments}</li>
+ * TransferRejectedStatusReason2Code.AccountBlockedMissingDocuments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#FinancialInstrumentIdentificationAndName
- * TransferRejectedStatusReason2Code.mmFinancialInstrumentIdentificationAndName}
- * </li>
+ * TransferRejectedStatusReason2Code.FinancialInstrumentIdentificationAndName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#PhysicalDeliveryImpossible
- * TransferRejectedStatusReason2Code.mmPhysicalDeliveryImpossible}</li>
+ * TransferRejectedStatusReason2Code.PhysicalDeliveryImpossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#LegallyImpossible
- * TransferRejectedStatusReason2Code.mmLegallyImpossible}</li>
+ * TransferRejectedStatusReason2Code.LegallyImpossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#NotCompliantWithSLA
- * TransferRejectedStatusReason2Code.mmNotCompliantWithSLA}</li>
+ * TransferRejectedStatusReason2Code.NotCompliantWithSLA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#FinancialInstrumentQuantity
- * TransferRejectedStatusReason2Code.mmFinancialInstrumentQuantity}</li>
+ * TransferRejectedStatusReason2Code.FinancialInstrumentQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvestorNameAddressUnknown
- * TransferRejectedStatusReason2Code.mmInvestorNameAddressUnknown}</li>
+ * TransferRejectedStatusReason2Code.InvestorNameAddressUnknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InsufficientInvestorData
- * TransferRejectedStatusReason2Code.mmInsufficientInvestorData}</li>
+ * TransferRejectedStatusReason2Code.InsufficientInvestorData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvalidAccountServicer
- * TransferRejectedStatusReason2Code.mmInvalidAccountServicer}</li>
+ * TransferRejectedStatusReason2Code.InvalidAccountServicer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvalidNomineeAccount
- * TransferRejectedStatusReason2Code.mmInvalidNomineeAccount}</li>
+ * TransferRejectedStatusReason2Code.InvalidNomineeAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvalidNewPlanManager
- * TransferRejectedStatusReason2Code.mmInvalidNewPlanManager}</li>
+ * TransferRejectedStatusReason2Code.InvalidNewPlanManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#CurrentYearPartial
- * TransferRejectedStatusReason2Code.mmCurrentYearPartial}</li>
+ * TransferRejectedStatusReason2Code.CurrentYearPartial}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#PartialNotSupported
- * TransferRejectedStatusReason2Code.mmPartialNotSupported}</li>
+ * TransferRejectedStatusReason2Code.PartialNotSupported}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#FinancialInstrumentTaxYear
- * TransferRejectedStatusReason2Code.mmFinancialInstrumentTaxYear}</li>
+ * TransferRejectedStatusReason2Code.FinancialInstrumentTaxYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvalidISAType
- * TransferRejectedStatusReason2Code.mmInvalidISAType}</li>
+ * TransferRejectedStatusReason2Code.InvalidISAType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#InvalidCashAccount
- * TransferRejectedStatusReason2Code.mmInvalidCashAccount}</li>
+ * TransferRejectedStatusReason2Code.InvalidCashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferRejectedStatusReason2Code#DuplicateTransferReference
- * TransferRejectedStatusReason2Code.mmDuplicateTransferReference}</li>
+ * TransferRejectedStatusReason2Code.DuplicateTransferReference}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -124,8 +123,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -780,7 +779,7 @@ public class TransferRejectedStatusReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DDAT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransferRejectedStatusReason2Code";

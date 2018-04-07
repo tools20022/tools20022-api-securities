@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#Annual
- * Frequency1Code.mmAnnual}</li>
+ * Frequency1Code.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#Monthly
- * Frequency1Code.mmMonthly}</li>
+ * Frequency1Code.Monthly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#Quarterly
- * Frequency1Code.mmQuarterly}</li>
+ * Frequency1Code.Quarterly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#SemiAnnual
- * Frequency1Code.mmSemiAnnual}</li>
+ * Frequency1Code.SemiAnnual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#Weekly
- * Frequency1Code.mmWeekly}</li>
+ * Frequency1Code.Weekly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#Daily
- * Frequency1Code.mmDaily}</li>
+ * Frequency1Code.Daily}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#Adhoc
- * Frequency1Code.mmAdhoc}</li>
+ * Frequency1Code.Adhoc}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency1Code#IntraDay
- * Frequency1Code.mmIntraDay}</li>
+ * Frequency1Code.IntraDay}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +60,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::PFRE, ISO15022Synonym: :22F::SFRE</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -281,7 +285,8 @@ public class Frequency1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE"), new ISO15022Synonym(this, ":22F::SFRE"));
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency1Code";

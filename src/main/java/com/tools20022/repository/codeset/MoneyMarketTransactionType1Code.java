@@ -39,10 +39,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyMarketTransactionType1Code#CashBorrowing
- * MoneyMarketTransactionType1Code.mmCashBorrowing}</li>
+ * MoneyMarketTransactionType1Code.CashBorrowing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MoneyMarketTransactionType1Code#CashLending
- * MoneyMarketTransactionType1Code.mmCashLending}</li>
+ * MoneyMarketTransactionType1Code.CashLending}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -51,8 +51,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,7 +125,7 @@ public class MoneyMarketTransactionType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoneyMarketTransactionType1Code";
 				definition = "Specifies the transaction type used in the money market statistical reporting for the secured market.";

@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,18 +60,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "RateType12FormatChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of formats to  express the type of rate."</li>
+ * definition} = "Choice of formats to express the type of rate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RateType12FormatChoice", propOrder = {"code", "proprietary"})
 public class RateType12FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected RateType12Code code;
 	/**
-	 * Standard code to specify the type of rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class RateType12FormatChoice {
 	 * definition} = "Standard code to specify the type of rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateType12FormatChoice, RateType12Code> mmCode = new MMMessageAttribute<RateType12FormatChoice, RateType12Code>() {
 		{
-			componentContext_lazy = () -> RateType12FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RateType12FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +110,22 @@ public class RateType12FormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> RateType12Code.mmObject();
 		}
+
+		@Override
+		public RateType12Code getValue(RateType12FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(RateType12FormatChoice obj, RateType12Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the type of rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,51 +148,61 @@ public class RateType12FormatChoice {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Proprietary code to  express the type of rate."</li>
+	 * definition} = "Proprietary code to express the type of rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateType12FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<RateType12FormatChoice, GenericIdentification13>() {
 		{
-			componentContext_lazy = () -> RateType12FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RateType12FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express the type of rate.";
+			definition = "Proprietary code to express the type of rate.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(RateType12FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(RateType12FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RateType12FormatChoice.mmCode, RateType12FormatChoice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RateType12FormatChoice.mmCode, com.tools20022.repository.choice.RateType12FormatChoice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateType12FormatChoice";
-				definition = "Choice of formats to  express the type of rate.";
+				definition = "Choice of formats to express the type of rate.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public RateType12Code getCode() {
 		return code;
 	}
 
-	public void setCode(RateType12Code code) {
-		this.code = code;
+	public RateType12FormatChoice setCode(RateType12Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public RateType12FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

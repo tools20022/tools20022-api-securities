@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.MarginCallResult2;
 import com.tools20022.repository.msg.Result1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,16 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarginCallResult2Choice", propOrder = {"marginCallResultDetails", "marginCallAmount", "segregatedIndependentAmount"})
 public class MarginCallResult2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MrgnCallRsltDtls", required = true)
 	protected MarginCallResult2 marginCallResultDetails;
 	/**
-	 * Provides the summation of the call amounts for the variation margin and
-	 * optionaly the segregated independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -111,10 +112,10 @@ public class MarginCallResult2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginCallResultDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCallResult2Choice, MarginCallResult2> mmMarginCallResultDetails = new MMMessageAssociationEnd<MarginCallResult2Choice, MarginCallResult2>() {
 		{
 			businessComponentTrace_lazy = () -> MarginCall.mmObject();
-			componentContext_lazy = () -> MarginCallResult2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginCallResult2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnCallRsltDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +126,22 @@ public class MarginCallResult2Choice {
 			isComposite = true;
 			type_lazy = () -> MarginCallResult2.mmObject();
 		}
+
+		@Override
+		public MarginCallResult2 getValue(MarginCallResult2Choice obj) {
+			return obj.getMarginCallResultDetails();
+		}
+
+		@Override
+		public void setValue(MarginCallResult2Choice obj, MarginCallResult2 value) {
+			obj.setMarginCallResultDetails(value);
+		}
 	};
+	@XmlElement(name = "MrgnCallAmt", required = true)
 	protected Result1 marginCallAmount;
 	/**
-	 * Provides the summation of the call amounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,10 +169,10 @@ public class MarginCallResult2Choice {
 	 * definition} = "Provides the summation of the call amounts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginCallAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCallResult2Choice, Result1> mmMarginCallAmount = new MMMessageAssociationEnd<MarginCallResult2Choice, Result1>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmVariationMargin;
-			componentContext_lazy = () -> MarginCallResult2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginCallResult2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnCallAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,12 +183,22 @@ public class MarginCallResult2Choice {
 			isComposite = true;
 			type_lazy = () -> Result1.mmObject();
 		}
+
+		@Override
+		public Result1 getValue(MarginCallResult2Choice obj) {
+			return obj.getMarginCallAmount();
+		}
+
+		@Override
+		public void setValue(MarginCallResult2Choice obj, Result1 value) {
+			obj.setMarginCallAmount(value);
+		}
 	};
+	@XmlElement(name = "SgrtdIndpdntAmt", required = true)
 	protected Result1 segregatedIndependentAmount;
 	/**
-	 * Provides the summation of the call amounts for the segregated independent
-	 * amount only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -206,10 +228,10 @@ public class MarginCallResult2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSegregatedIndependentAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCallResult2Choice, Result1> mmSegregatedIndependentAmount = new MMMessageAssociationEnd<MarginCallResult2Choice, Result1>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmSegregatedIndependentAmount;
-			componentContext_lazy = () -> MarginCallResult2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginCallResult2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SgrtdIndpdntAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,14 +242,25 @@ public class MarginCallResult2Choice {
 			isComposite = true;
 			type_lazy = () -> Result1.mmObject();
 		}
+
+		@Override
+		public Result1 getValue(MarginCallResult2Choice obj) {
+			return obj.getSegregatedIndependentAmount();
+		}
+
+		@Override
+		public void setValue(MarginCallResult2Choice obj, Result1 value) {
+			obj.setSegregatedIndependentAmount(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarginCallResult2Choice.mmMarginCallResultDetails, MarginCallResult2Choice.mmMarginCallAmount, MarginCallResult2Choice.mmSegregatedIndependentAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MarginCallResult2Choice.mmMarginCallResultDetails, com.tools20022.repository.choice.MarginCallResult2Choice.mmMarginCallAmount,
+						com.tools20022.repository.choice.MarginCallResult2Choice.mmSegregatedIndependentAmount);
 				trace_lazy = () -> MarginCall.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginCallResult2Choice";
 				definition = "Choice to provide the summation of the call amounts for the variation margin and the segregated independent amount, or the segregated independent amount only.";
@@ -236,30 +269,30 @@ public class MarginCallResult2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MrgnCallRsltDtls", required = true)
 	public MarginCallResult2 getMarginCallResultDetails() {
 		return marginCallResultDetails;
 	}
 
-	public void setMarginCallResultDetails(MarginCallResult2 marginCallResultDetails) {
-		this.marginCallResultDetails = marginCallResultDetails;
+	public MarginCallResult2Choice setMarginCallResultDetails(MarginCallResult2 marginCallResultDetails) {
+		this.marginCallResultDetails = Objects.requireNonNull(marginCallResultDetails);
+		return this;
 	}
 
-	@XmlElement(name = "MrgnCallAmt", required = true)
 	public Result1 getMarginCallAmount() {
 		return marginCallAmount;
 	}
 
-	public void setMarginCallAmount(Result1 marginCallAmount) {
-		this.marginCallAmount = marginCallAmount;
+	public MarginCallResult2Choice setMarginCallAmount(Result1 marginCallAmount) {
+		this.marginCallAmount = Objects.requireNonNull(marginCallAmount);
+		return this;
 	}
 
-	@XmlElement(name = "SgrtdIndpdntAmt", required = true)
 	public Result1 getSegregatedIndependentAmount() {
 		return segregatedIndependentAmount;
 	}
 
-	public void setSegregatedIndependentAmount(Result1 segregatedIndependentAmount) {
-		this.segregatedIndependentAmount = segregatedIndependentAmount;
+	public MarginCallResult2Choice setSegregatedIndependentAmount(Result1 segregatedIndependentAmount) {
+		this.segregatedIndependentAmount = Objects.requireNonNull(segregatedIndependentAmount);
+		return this;
 	}
 }

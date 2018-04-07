@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for the corporate action event type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateAction1Choice", propOrder = {"type", "proprietary"})
 public class CorporateAction1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected CorporateActionEventType1Code type;
 	/**
-	 * Corporate action event type expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,27 +101,38 @@ public class CorporateAction1Choice {
 	 * name} = "Type"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Corporate action event  type expressed as a code."</li>
+	 * definition} = "Corporate action event type expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction1Choice, CorporateActionEventType1Code> mmType = new MMMessageAttribute<CorporateAction1Choice, CorporateActionEventType1Code>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
-			componentContext_lazy = () -> CorporateAction1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateAction1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
-			definition = "Corporate action event  type expressed as a code.";
+			definition = "Corporate action event type expressed as a code.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventType1Code.mmObject();
 		}
+
+		@Override
+		public CorporateActionEventType1Code getValue(CorporateAction1Choice obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(CorporateAction1Choice obj, CorporateActionEventType1Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Corporate action event expressed as a proprietary code
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,29 +160,39 @@ public class CorporateAction1Choice {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Corporate action event expressed as a proprietary code"</li>
+	 * definition} = "Corporate action event expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction1Choice, GenericIdentification47> mmProprietary = new MMMessageAttribute<CorporateAction1Choice, GenericIdentification47>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
-			componentContext_lazy = () -> CorporateAction1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateAction1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Corporate action event expressed as a proprietary code";
+			definition = "Corporate action event expressed as a proprietary code.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification47.mmObject();
+		}
+
+		@Override
+		public GenericIdentification47 getValue(CorporateAction1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CorporateAction1Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateAction1Choice.mmType, CorporateAction1Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CorporateAction1Choice.mmType, com.tools20022.repository.choice.CorporateAction1Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateAction1Choice";
 				definition = "Choice of formats for the corporate action event type.";
@@ -178,21 +201,21 @@ public class CorporateAction1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public CorporateActionEventType1Code getType() {
 		return type;
 	}
 
-	public void setType(CorporateActionEventType1Code type) {
-		this.type = type;
+	public CorporateAction1Choice setType(CorporateActionEventType1Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public CorporateAction1Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

@@ -21,6 +21,9 @@ import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.setr.SecuritiesTradeConfirmationStatusAdviceV02;
+import com.tools20022.repository.choice.InstructionProcessingReason1Choice;
+import com.tools20022.repository.choice.InstructionProcessingReason2Choice;
+import com.tools20022.repository.choice.PendingProcessing1Choice;
 import com.tools20022.repository.entity.SecuritiesTradeStatusReason;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
@@ -28,6 +31,8 @@ import com.tools20022.repository.msg.ProprietaryReason1;
 import com.tools20022.repository.msg.ProprietaryStatusAndReason1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -117,8 +122,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -129,16 +134,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of status for the processing."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProcessingStatus17Choice", propOrder = {"acknowledgedAccepted", "alreadyMatchedAndAffirmed", "defaultAction", "done", "forcedRejection", "fullyExecutedConfirmationSent", "future", "generated", "inRepair", "noInstruction",
 		"openOrder", "pendingProcessing", "receivedAtIntermediary", "rejected", "settlementInstructionSent", "standingInstruction", "tradingSuspendedByStockExchange", "treated", "proprietaryStatus"})
 public class ProcessingStatus17Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AckdAccptd", required = true)
 	protected ProprietaryReason1 acknowledgedAccepted;
 	/**
-	 * Trade is AcknowledgedAccepted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -167,10 +173,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is AcknowledgedAccepted."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAcknowledgedAccepted = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmAcknowledgedAccepted = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmAcknowledgedAcceptedReason;
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AckdAccptd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,11 +187,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getAcknowledgedAccepted();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setAcknowledgedAccepted(value);
+		}
 	};
+	@XmlElement(name = "AlrdyMtchdAndAffrmd", required = true)
 	protected ProprietaryReason1 alreadyMatchedAndAffirmed;
 	/**
-	 * Trade is AlreadyMatchedAndAffirmed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -214,10 +231,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is AlreadyMatchedAndAffirmed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAlreadyMatchedAndAffirmed = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmAlreadyMatchedAndAffirmed = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AlrdyMtchdAndAffrmd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,11 +245,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getAlreadyMatchedAndAffirmed();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setAlreadyMatchedAndAffirmed(value);
+		}
 	};
+	@XmlElement(name = "DfltActn", required = true)
 	protected ProprietaryReason1 defaultAction;
 	/**
-	 * Trade is DefaultAction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -261,10 +289,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is DefaultAction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDefaultAction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmDefaultAction = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DfltActn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -275,11 +303,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getDefaultAction();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setDefaultAction(value);
+		}
 	};
+	@XmlElement(name = "Done", required = true)
 	protected ProprietaryReason1 done;
 	/**
-	 * Trade is Done.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -308,10 +347,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is Done."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDone = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmDone = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Done";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -322,11 +361,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getDone();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setDone(value);
+		}
 	};
+	@XmlElement(name = "ForcdRjctn", required = true)
 	protected ProprietaryReason1 forcedRejection;
 	/**
-	 * Trade is in forced rejection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -355,10 +405,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is in forced rejection."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForcedRejection = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmForcedRejection = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "ForcdRjctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -369,11 +419,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getForcedRejection();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setForcedRejection(value);
+		}
 	};
+	@XmlElement(name = "FullyExctdConfSnt", required = true)
 	protected ProprietaryReason1 fullyExecutedConfirmationSent;
 	/**
-	 * The trade is fully executed and the confirmation is sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -403,10 +464,10 @@ public class ProcessingStatus17Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFullyExecutedConfirmationSent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmFullyExecutedConfirmationSent = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "FullyExctdConfSnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -417,11 +478,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getFullyExecutedConfirmationSent();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setFullyExecutedConfirmationSent(value);
+		}
 	};
+	@XmlElement(name = "Futr", required = true)
 	protected ProprietaryReason1 future;
 	/**
-	 * Trade is future.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -450,10 +522,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is future."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFuture = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmFuture = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Futr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -464,11 +536,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getFuture();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setFuture(value);
+		}
 	};
+	@XmlElement(name = "Gnrtd", required = true)
 	protected ProprietaryReason1 generated;
 	/**
-	 * Trade is generated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -497,10 +580,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is generated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGenerated = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmGenerated = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Gnrtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -511,11 +594,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getGenerated();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setGenerated(value);
+		}
 	};
+	@XmlElement(name = "InRpr", required = true)
 	protected InstructionProcessingReason2Choice inRepair;
 	/**
-	 * Trade is InRepair.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -545,10 +639,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is InRepair."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInRepair = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, InstructionProcessingReason2Choice> mmInRepair = new MMMessageAssociationEnd<ProcessingStatus17Choice, InstructionProcessingReason2Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmRepairReason;
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "InRpr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -557,13 +651,24 @@ public class ProcessingStatus17Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.InstructionProcessingReason2Choice.mmObject();
+			type_lazy = () -> InstructionProcessingReason2Choice.mmObject();
+		}
+
+		@Override
+		public InstructionProcessingReason2Choice getValue(ProcessingStatus17Choice obj) {
+			return obj.getInRepair();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, InstructionProcessingReason2Choice value) {
+			obj.setInRepair(value);
 		}
 	};
+	@XmlElement(name = "NoInstr", required = true)
 	protected ProprietaryReason1 noInstruction;
 	/**
-	 * Trade is in no instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -592,10 +697,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is in no instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNoInstruction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmNoInstruction = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoInstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -606,11 +711,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getNoInstruction();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setNoInstruction(value);
+		}
 	};
+	@XmlElement(name = "OpnOrdr", required = true)
 	protected ProprietaryReason1 openOrder;
 	/**
-	 * Trade is in OpenOrder
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -636,28 +752,39 @@ public class ProcessingStatus17Choice {
 	 * name} = "OpenOrder"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Trade is in OpenOrder"</li>
+	 * definition} = "Trade is in OpenOrder."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOpenOrder = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmOpenOrder = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OpnOrdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OpenOrder";
-			definition = "Trade is in OpenOrder";
+			definition = "Trade is in OpenOrder.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getOpenOrder();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setOpenOrder(value);
+		}
 	};
+	@XmlElement(name = "PdgPrcg", required = true)
 	protected PendingProcessing1Choice pendingProcessing;
 	/**
-	 * Processing of the trade is pending .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -684,28 +811,39 @@ public class ProcessingStatus17Choice {
 	 * name} = "PendingProcessing"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Processing of the trade is pending ."</li>
+	 * definition} = "Processing of the trade is pending."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPendingProcessing = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, PendingProcessing1Choice> mmPendingProcessing = new MMMessageAssociationEnd<ProcessingStatus17Choice, PendingProcessing1Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmPendingReason;
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PdgPrcg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PendingProcessing";
-			definition = "Processing of the trade is pending .";
+			definition = "Processing of the trade is pending.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.PendingProcessing1Choice.mmObject();
+			type_lazy = () -> PendingProcessing1Choice.mmObject();
+		}
+
+		@Override
+		public PendingProcessing1Choice getValue(ProcessingStatus17Choice obj) {
+			return obj.getPendingProcessing();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, PendingProcessing1Choice value) {
+			obj.setPendingProcessing(value);
 		}
 	};
+	@XmlElement(name = "RcvdAtIntrmy", required = true)
 	protected ProprietaryReason1 receivedAtIntermediary;
 	/**
-	 * Trade is ReceivedAtIntermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -734,10 +872,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is ReceivedAtIntermediary."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReceivedAtIntermediary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmReceivedAtIntermediary = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RcvdAtIntrmy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -748,11 +886,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getReceivedAtIntermediary();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setReceivedAtIntermediary(value);
+		}
 	};
+	@XmlElement(name = "Rjctd", required = true)
 	protected InstructionProcessingReason1Choice rejected;
 	/**
-	 * Trade has been rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -782,10 +931,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade has been rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRejected = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, InstructionProcessingReason1Choice> mmRejected = new MMMessageAssociationEnd<ProcessingStatus17Choice, InstructionProcessingReason1Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rjctd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -794,13 +943,24 @@ public class ProcessingStatus17Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.InstructionProcessingReason1Choice.mmObject();
+			type_lazy = () -> InstructionProcessingReason1Choice.mmObject();
+		}
+
+		@Override
+		public InstructionProcessingReason1Choice getValue(ProcessingStatus17Choice obj) {
+			return obj.getRejected();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, InstructionProcessingReason1Choice value) {
+			obj.setRejected(value);
 		}
 	};
+	@XmlElement(name = "SttlmInstrSnt", required = true)
 	protected ProprietaryReason1 settlementInstructionSent;
 	/**
-	 * Settlement Instruction for the trade is sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -829,10 +989,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Settlement Instruction for the trade is sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementInstructionSent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmSettlementInstructionSent = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmInstrSnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -843,11 +1003,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getSettlementInstructionSent();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setSettlementInstructionSent(value);
+		}
 	};
+	@XmlElement(name = "StgInstr", required = true)
 	protected ProprietaryReason1 standingInstruction;
 	/**
-	 * Trade is standing instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -876,10 +1047,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is standing instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStandingInstruction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmStandingInstruction = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "StgInstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -890,11 +1061,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getStandingInstruction();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setStandingInstruction(value);
+		}
 	};
+	@XmlElement(name = "TradgSspdByStockXchg", required = true)
 	protected ProprietaryReason1 tradingSuspendedByStockExchange;
 	/**
-	 * Trading is suspended by the stock exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -923,10 +1105,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trading is suspended by the stock exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTradingSuspendedByStockExchange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmTradingSuspendedByStockExchange = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "TradgSspdByStockXchg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -937,11 +1119,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getTradingSuspendedByStockExchange();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setTradingSuspendedByStockExchange(value);
+		}
 	};
+	@XmlElement(name = "Trtd", required = true)
 	protected ProprietaryReason1 treated;
 	/**
-	 * Trade is treated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -970,10 +1163,10 @@ public class ProcessingStatus17Choice {
 	 * definition} = "Trade is treated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTreated = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1> mmTreated = new MMMessageAssociationEnd<ProcessingStatus17Choice, ProprietaryReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Trtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -984,12 +1177,22 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason1.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason1 getValue(ProcessingStatus17Choice obj) {
+			return obj.getTreated();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, ProprietaryReason1 value) {
+			obj.setTreated(value);
+		}
 	};
+	@XmlElement(name = "PrtrySts")
 	protected ProprietaryStatusAndReason1 proprietaryStatus;
 	/**
-	 * Provides a proprietary status and a proprietary reason of the processing
-	 * status of the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1021,10 +1224,10 @@ public class ProcessingStatus17Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietaryStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProcessingStatus17Choice, Optional<ProprietaryStatusAndReason1>> mmProprietaryStatus = new MMMessageAssociationEnd<ProcessingStatus17Choice, Optional<ProprietaryStatusAndReason1>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> ProcessingStatus17Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProcessingStatus17Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtrySts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1035,19 +1238,33 @@ public class ProcessingStatus17Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryStatusAndReason1.mmObject();
 		}
+
+		@Override
+		public Optional<ProprietaryStatusAndReason1> getValue(ProcessingStatus17Choice obj) {
+			return obj.getProprietaryStatus();
+		}
+
+		@Override
+		public void setValue(ProcessingStatus17Choice obj, Optional<ProprietaryStatusAndReason1> value) {
+			obj.setProprietaryStatus(value.orElse(null));
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProcessingStatus17Choice.mmAcknowledgedAccepted, ProcessingStatus17Choice.mmAlreadyMatchedAndAffirmed, ProcessingStatus17Choice.mmDefaultAction, ProcessingStatus17Choice.mmDone,
-						ProcessingStatus17Choice.mmForcedRejection, ProcessingStatus17Choice.mmFullyExecutedConfirmationSent, ProcessingStatus17Choice.mmFuture, ProcessingStatus17Choice.mmGenerated, ProcessingStatus17Choice.mmInRepair,
-						ProcessingStatus17Choice.mmNoInstruction, ProcessingStatus17Choice.mmOpenOrder, ProcessingStatus17Choice.mmPendingProcessing, ProcessingStatus17Choice.mmReceivedAtIntermediary, ProcessingStatus17Choice.mmRejected,
-						ProcessingStatus17Choice.mmSettlementInstructionSent, ProcessingStatus17Choice.mmStandingInstruction, ProcessingStatus17Choice.mmTradingSuspendedByStockExchange, ProcessingStatus17Choice.mmTreated,
-						ProcessingStatus17Choice.mmProprietaryStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ProcessingStatus17Choice.mmAcknowledgedAccepted, com.tools20022.repository.choice.ProcessingStatus17Choice.mmAlreadyMatchedAndAffirmed,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmDefaultAction, com.tools20022.repository.choice.ProcessingStatus17Choice.mmDone,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmForcedRejection, com.tools20022.repository.choice.ProcessingStatus17Choice.mmFullyExecutedConfirmationSent,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmFuture, com.tools20022.repository.choice.ProcessingStatus17Choice.mmGenerated, com.tools20022.repository.choice.ProcessingStatus17Choice.mmInRepair,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmNoInstruction, com.tools20022.repository.choice.ProcessingStatus17Choice.mmOpenOrder,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmPendingProcessing, com.tools20022.repository.choice.ProcessingStatus17Choice.mmReceivedAtIntermediary,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmRejected, com.tools20022.repository.choice.ProcessingStatus17Choice.mmSettlementInstructionSent,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmStandingInstruction, com.tools20022.repository.choice.ProcessingStatus17Choice.mmTradingSuspendedByStockExchange,
+						com.tools20022.repository.choice.ProcessingStatus17Choice.mmTreated, com.tools20022.repository.choice.ProcessingStatus17Choice.mmProprietaryStatus);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationStatusAdviceV02.mmProcessingStatus);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessingStatus17Choice";
 				definition = "Choice of status for the processing.";
@@ -1056,174 +1273,174 @@ public class ProcessingStatus17Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AckdAccptd", required = true)
 	public ProprietaryReason1 getAcknowledgedAccepted() {
 		return acknowledgedAccepted;
 	}
 
-	public void setAcknowledgedAccepted(ProprietaryReason1 acknowledgedAccepted) {
-		this.acknowledgedAccepted = acknowledgedAccepted;
+	public ProcessingStatus17Choice setAcknowledgedAccepted(ProprietaryReason1 acknowledgedAccepted) {
+		this.acknowledgedAccepted = Objects.requireNonNull(acknowledgedAccepted);
+		return this;
 	}
 
-	@XmlElement(name = "AlrdyMtchdAndAffrmd", required = true)
 	public ProprietaryReason1 getAlreadyMatchedAndAffirmed() {
 		return alreadyMatchedAndAffirmed;
 	}
 
-	public void setAlreadyMatchedAndAffirmed(ProprietaryReason1 alreadyMatchedAndAffirmed) {
-		this.alreadyMatchedAndAffirmed = alreadyMatchedAndAffirmed;
+	public ProcessingStatus17Choice setAlreadyMatchedAndAffirmed(ProprietaryReason1 alreadyMatchedAndAffirmed) {
+		this.alreadyMatchedAndAffirmed = Objects.requireNonNull(alreadyMatchedAndAffirmed);
+		return this;
 	}
 
-	@XmlElement(name = "DfltActn", required = true)
 	public ProprietaryReason1 getDefaultAction() {
 		return defaultAction;
 	}
 
-	public void setDefaultAction(ProprietaryReason1 defaultAction) {
-		this.defaultAction = defaultAction;
+	public ProcessingStatus17Choice setDefaultAction(ProprietaryReason1 defaultAction) {
+		this.defaultAction = Objects.requireNonNull(defaultAction);
+		return this;
 	}
 
-	@XmlElement(name = "Done", required = true)
 	public ProprietaryReason1 getDone() {
 		return done;
 	}
 
-	public void setDone(ProprietaryReason1 done) {
-		this.done = done;
+	public ProcessingStatus17Choice setDone(ProprietaryReason1 done) {
+		this.done = Objects.requireNonNull(done);
+		return this;
 	}
 
-	@XmlElement(name = "ForcdRjctn", required = true)
 	public ProprietaryReason1 getForcedRejection() {
 		return forcedRejection;
 	}
 
-	public void setForcedRejection(ProprietaryReason1 forcedRejection) {
-		this.forcedRejection = forcedRejection;
+	public ProcessingStatus17Choice setForcedRejection(ProprietaryReason1 forcedRejection) {
+		this.forcedRejection = Objects.requireNonNull(forcedRejection);
+		return this;
 	}
 
-	@XmlElement(name = "FullyExctdConfSnt", required = true)
 	public ProprietaryReason1 getFullyExecutedConfirmationSent() {
 		return fullyExecutedConfirmationSent;
 	}
 
-	public void setFullyExecutedConfirmationSent(ProprietaryReason1 fullyExecutedConfirmationSent) {
-		this.fullyExecutedConfirmationSent = fullyExecutedConfirmationSent;
+	public ProcessingStatus17Choice setFullyExecutedConfirmationSent(ProprietaryReason1 fullyExecutedConfirmationSent) {
+		this.fullyExecutedConfirmationSent = Objects.requireNonNull(fullyExecutedConfirmationSent);
+		return this;
 	}
 
-	@XmlElement(name = "Futr", required = true)
 	public ProprietaryReason1 getFuture() {
 		return future;
 	}
 
-	public void setFuture(ProprietaryReason1 future) {
-		this.future = future;
+	public ProcessingStatus17Choice setFuture(ProprietaryReason1 future) {
+		this.future = Objects.requireNonNull(future);
+		return this;
 	}
 
-	@XmlElement(name = "Gnrtd", required = true)
 	public ProprietaryReason1 getGenerated() {
 		return generated;
 	}
 
-	public void setGenerated(ProprietaryReason1 generated) {
-		this.generated = generated;
+	public ProcessingStatus17Choice setGenerated(ProprietaryReason1 generated) {
+		this.generated = Objects.requireNonNull(generated);
+		return this;
 	}
 
-	@XmlElement(name = "InRpr", required = true)
 	public InstructionProcessingReason2Choice getInRepair() {
 		return inRepair;
 	}
 
-	public void setInRepair(com.tools20022.repository.choice.InstructionProcessingReason2Choice inRepair) {
-		this.inRepair = inRepair;
+	public ProcessingStatus17Choice setInRepair(InstructionProcessingReason2Choice inRepair) {
+		this.inRepair = Objects.requireNonNull(inRepair);
+		return this;
 	}
 
-	@XmlElement(name = "NoInstr", required = true)
 	public ProprietaryReason1 getNoInstruction() {
 		return noInstruction;
 	}
 
-	public void setNoInstruction(ProprietaryReason1 noInstruction) {
-		this.noInstruction = noInstruction;
+	public ProcessingStatus17Choice setNoInstruction(ProprietaryReason1 noInstruction) {
+		this.noInstruction = Objects.requireNonNull(noInstruction);
+		return this;
 	}
 
-	@XmlElement(name = "OpnOrdr", required = true)
 	public ProprietaryReason1 getOpenOrder() {
 		return openOrder;
 	}
 
-	public void setOpenOrder(ProprietaryReason1 openOrder) {
-		this.openOrder = openOrder;
+	public ProcessingStatus17Choice setOpenOrder(ProprietaryReason1 openOrder) {
+		this.openOrder = Objects.requireNonNull(openOrder);
+		return this;
 	}
 
-	@XmlElement(name = "PdgPrcg", required = true)
 	public PendingProcessing1Choice getPendingProcessing() {
 		return pendingProcessing;
 	}
 
-	public void setPendingProcessing(com.tools20022.repository.choice.PendingProcessing1Choice pendingProcessing) {
-		this.pendingProcessing = pendingProcessing;
+	public ProcessingStatus17Choice setPendingProcessing(PendingProcessing1Choice pendingProcessing) {
+		this.pendingProcessing = Objects.requireNonNull(pendingProcessing);
+		return this;
 	}
 
-	@XmlElement(name = "RcvdAtIntrmy", required = true)
 	public ProprietaryReason1 getReceivedAtIntermediary() {
 		return receivedAtIntermediary;
 	}
 
-	public void setReceivedAtIntermediary(ProprietaryReason1 receivedAtIntermediary) {
-		this.receivedAtIntermediary = receivedAtIntermediary;
+	public ProcessingStatus17Choice setReceivedAtIntermediary(ProprietaryReason1 receivedAtIntermediary) {
+		this.receivedAtIntermediary = Objects.requireNonNull(receivedAtIntermediary);
+		return this;
 	}
 
-	@XmlElement(name = "Rjctd", required = true)
 	public InstructionProcessingReason1Choice getRejected() {
 		return rejected;
 	}
 
-	public void setRejected(com.tools20022.repository.choice.InstructionProcessingReason1Choice rejected) {
-		this.rejected = rejected;
+	public ProcessingStatus17Choice setRejected(InstructionProcessingReason1Choice rejected) {
+		this.rejected = Objects.requireNonNull(rejected);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmInstrSnt", required = true)
 	public ProprietaryReason1 getSettlementInstructionSent() {
 		return settlementInstructionSent;
 	}
 
-	public void setSettlementInstructionSent(ProprietaryReason1 settlementInstructionSent) {
-		this.settlementInstructionSent = settlementInstructionSent;
+	public ProcessingStatus17Choice setSettlementInstructionSent(ProprietaryReason1 settlementInstructionSent) {
+		this.settlementInstructionSent = Objects.requireNonNull(settlementInstructionSent);
+		return this;
 	}
 
-	@XmlElement(name = "StgInstr", required = true)
 	public ProprietaryReason1 getStandingInstruction() {
 		return standingInstruction;
 	}
 
-	public void setStandingInstruction(ProprietaryReason1 standingInstruction) {
-		this.standingInstruction = standingInstruction;
+	public ProcessingStatus17Choice setStandingInstruction(ProprietaryReason1 standingInstruction) {
+		this.standingInstruction = Objects.requireNonNull(standingInstruction);
+		return this;
 	}
 
-	@XmlElement(name = "TradgSspdByStockXchg", required = true)
 	public ProprietaryReason1 getTradingSuspendedByStockExchange() {
 		return tradingSuspendedByStockExchange;
 	}
 
-	public void setTradingSuspendedByStockExchange(ProprietaryReason1 tradingSuspendedByStockExchange) {
-		this.tradingSuspendedByStockExchange = tradingSuspendedByStockExchange;
+	public ProcessingStatus17Choice setTradingSuspendedByStockExchange(ProprietaryReason1 tradingSuspendedByStockExchange) {
+		this.tradingSuspendedByStockExchange = Objects.requireNonNull(tradingSuspendedByStockExchange);
+		return this;
 	}
 
-	@XmlElement(name = "Trtd", required = true)
 	public ProprietaryReason1 getTreated() {
 		return treated;
 	}
 
-	public void setTreated(ProprietaryReason1 treated) {
-		this.treated = treated;
+	public ProcessingStatus17Choice setTreated(ProprietaryReason1 treated) {
+		this.treated = Objects.requireNonNull(treated);
+		return this;
 	}
 
-	@XmlElement(name = "PrtrySts")
-	public ProprietaryStatusAndReason1 getProprietaryStatus() {
-		return proprietaryStatus;
+	public Optional<ProprietaryStatusAndReason1> getProprietaryStatus() {
+		return proprietaryStatus == null ? Optional.empty() : Optional.of(proprietaryStatus);
 	}
 
-	public void setProprietaryStatus(ProprietaryStatusAndReason1 proprietaryStatus) {
+	public ProcessingStatus17Choice setProprietaryStatus(ProprietaryStatusAndReason1 proprietaryStatus) {
 		this.proprietaryStatus = proprietaryStatus;
+		return this;
 	}
 }

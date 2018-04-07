@@ -39,34 +39,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#SafekeepingAccount
- * HoldingAccountLevel1Code.mmSafekeepingAccount}</li>
+ * HoldingAccountLevel1Code.SafekeepingAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level1
- * HoldingAccountLevel1Code.mmLevel1}</li>
+ * HoldingAccountLevel1Code.Level1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level2
- * HoldingAccountLevel1Code.mmLevel2}</li>
+ * HoldingAccountLevel1Code.Level2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level3
- * HoldingAccountLevel1Code.mmLevel3}</li>
+ * HoldingAccountLevel1Code.Level3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level4
- * HoldingAccountLevel1Code.mmLevel4}</li>
+ * HoldingAccountLevel1Code.Level4}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level5
- * HoldingAccountLevel1Code.mmLevel5}</li>
+ * HoldingAccountLevel1Code.Level5}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level6
- * HoldingAccountLevel1Code.mmLevel6}</li>
+ * HoldingAccountLevel1Code.Level6}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level7
- * HoldingAccountLevel1Code.mmLevel7}</li>
+ * HoldingAccountLevel1Code.Level7}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level8
- * HoldingAccountLevel1Code.mmLevel8}</li>
+ * HoldingAccountLevel1Code.Level8}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingAccountLevel1Code#Level9
- * HoldingAccountLevel1Code.mmLevel9}</li>
+ * HoldingAccountLevel1Code.Level9}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -75,8 +75,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -341,7 +341,7 @@ public class HoldingAccountLevel1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldingAccountLevel1Code";
 				definition = "Specifies the level at which the safekeeping holding account has been defined.";

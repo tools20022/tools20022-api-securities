@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IdentificationSource1Choice", propOrder = {"domestic", "proprietary"})
 public class IdentificationSource1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Dmst", required = true)
 	protected CountryCode domestic;
 	/**
-	 * Country of the proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +111,10 @@ public class IdentificationSource1Choice {
 	 * definition} = "Country of the proprietary identification scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDomestic = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationSource1Choice, CountryCode> mmDomestic = new MMMessageAttribute<IdentificationSource1Choice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> IdentificationIssuerRole.mmCountry;
-			componentContext_lazy = () -> IdentificationSource1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationSource1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Dmst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +124,22 @@ public class IdentificationSource1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(IdentificationSource1Choice obj) {
+			return obj.getDomestic();
+		}
+
+		@Override
+		public void setValue(IdentificationSource1Choice obj, CountryCode value) {
+			obj.setDomestic(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected Max35Text proprietary;
 	/**
-	 * Entity that issues the proprietary identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,10 +169,10 @@ public class IdentificationSource1Choice {
 	 * definition} = "Entity that issues the proprietary identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationSource1Choice, Max35Text> mmProprietary = new MMMessageAttribute<IdentificationSource1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> IdentificationSource1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationSource1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,14 +182,24 @@ public class IdentificationSource1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(IdentificationSource1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(IdentificationSource1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IdentificationSource1Choice.mmDomestic, IdentificationSource1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.IdentificationSource1Choice.mmDomestic, com.tools20022.repository.choice.IdentificationSource1Choice.mmProprietary);
 				trace_lazy = () -> IdentificationIssuerRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationSource1Choice";
 				definition = "Choice of proprietary or domestic identification scheme that uniquely identifies a security.";
@@ -185,21 +208,21 @@ public class IdentificationSource1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Dmst", required = true)
 	public CountryCode getDomestic() {
 		return domestic;
 	}
 
-	public void setDomestic(CountryCode domestic) {
-		this.domestic = domestic;
+	public IdentificationSource1Choice setDomestic(CountryCode domestic) {
+		this.domestic = Objects.requireNonNull(domestic);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public Max35Text getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(Max35Text proprietary) {
-		this.proprietary = proprietary;
+	public IdentificationSource1Choice setProprietary(Max35Text proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

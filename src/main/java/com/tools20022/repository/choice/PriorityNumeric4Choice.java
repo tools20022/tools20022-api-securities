@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -25,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,16 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the priority."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PriorityNumeric4Choice", propOrder = {"numeric", "proprietary"})
 public class PriorityNumeric4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nmrc", required = true)
 	protected Exact4NumericText numeric;
 	/**
-	 * Specifies the execution priority of the instruction with a number between
-	 * 0001 and 9999.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -87,6 +89,9 @@ public class PriorityNumeric4Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Nmrc"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIR//4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -99,11 +104,12 @@ public class PriorityNumeric4Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumeric = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PriorityNumeric4Choice, Exact4NumericText> mmNumeric = new MMMessageAttribute<PriorityNumeric4Choice, Exact4NumericText>() {
 		{
-			componentContext_lazy = () -> PriorityNumeric4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PriorityNumeric4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Nmrc";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIR//4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Numeric";
 			definition = "Specifies the execution priority of the instruction with a number between 0001 and 9999.";
@@ -111,12 +117,22 @@ public class PriorityNumeric4Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact4NumericText.mmObject();
 		}
+
+		@Override
+		public Exact4NumericText getValue(PriorityNumeric4Choice obj) {
+			return obj.getNumeric();
+		}
+
+		@Override
+		public void setValue(PriorityNumeric4Choice obj, Exact4NumericText value) {
+			obj.setNumeric(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Specifies the execution priority of the instruction with a proprietary
-	 * scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,6 +148,9 @@ public class PriorityNumeric4Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::RTRN/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -144,11 +163,12 @@ public class PriorityNumeric4Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PriorityNumeric4Choice, GenericIdentification30> mmProprietary = new MMMessageAttribute<PriorityNumeric4Choice, GenericIdentification30>() {
 		{
-			componentContext_lazy = () -> PriorityNumeric4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PriorityNumeric4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::RTRN/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Specifies the execution priority of the instruction with a proprietary scheme.";
@@ -156,13 +176,23 @@ public class PriorityNumeric4Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(PriorityNumeric4Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(PriorityNumeric4Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PriorityNumeric4Choice.mmNumeric, PriorityNumeric4Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PriorityNumeric4Choice.mmNumeric, com.tools20022.repository.choice.PriorityNumeric4Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriorityNumeric4Choice";
 				definition = "Choice of format for the priority.";
@@ -171,21 +201,21 @@ public class PriorityNumeric4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nmrc", required = true)
 	public Exact4NumericText getNumeric() {
 		return numeric;
 	}
 
-	public void setNumeric(Exact4NumericText numeric) {
-		this.numeric = numeric;
+	public PriorityNumeric4Choice setNumeric(Exact4NumericText numeric) {
+		this.numeric = Objects.requireNonNull(numeric);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public PriorityNumeric4Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

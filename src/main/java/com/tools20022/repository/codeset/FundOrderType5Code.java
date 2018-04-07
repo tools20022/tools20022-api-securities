@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType5Code#NormalStaffPortion
- * FundOrderType5Code.mmNormalStaffPortion}</li>
+ * FundOrderType5Code.NormalStaffPortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType5Code#NormalClientPortion
- * FundOrderType5Code.mmNormalClientPortion}</li>
+ * FundOrderType5Code.NormalClientPortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType5Code#StaffWithSavingsPlan
- * FundOrderType5Code.mmStaffWithSavingsPlan}</li>
+ * FundOrderType5Code.StaffWithSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FundOrderType5Code#ClientWithSavingsPlan
- * FundOrderType5Code.mmClientWithSavingsPlan}</li>
+ * FundOrderType5Code.ClientWithSavingsPlan}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class FundOrderType5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NSPN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundOrderType5Code";

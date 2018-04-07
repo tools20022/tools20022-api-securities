@@ -27,9 +27,9 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.InvestmentFund;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.FinancialInstrument17;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,16 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Parameters required to request a Fund Processing Passport (FPP)."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FundParameters4", propOrder = {"financialInstrumentDetails", "fundManagementCompany", "dateFrom", "countryOfDomicile", "registeredDistributionCountry"})
 public class FundParameters4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.FinancialInstrument17> financialInstrumentDetails;
+	@XmlElement(name = "FinInstrmDtls")
+	protected List<FinancialInstrument17> financialInstrumentDetails;
 	/**
-	 * Financial instrument for which the fund processing passport report report
-	 * is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -119,10 +119,10 @@ public class FundParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundParameters4, List<FinancialInstrument17>> mmFinancialInstrumentDetails = new MMMessageAssociationEnd<FundParameters4, List<FinancialInstrument17>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFund.mmInvestmentFundClass;
-			componentContext_lazy = () -> FundParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,13 +130,24 @@ public class FundParameters4 {
 			definition = "Financial instrument for which the fund processing passport report report is requested.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
+			type_lazy = () -> FinancialInstrument17.mmObject();
+		}
+
+		@Override
+		public List<FinancialInstrument17> getValue(FundParameters4 obj) {
+			return obj.getFinancialInstrumentDetails();
+		}
+
+		@Override
+		public void setValue(FundParameters4 obj, List<FinancialInstrument17> value) {
+			obj.setFinancialInstrumentDetails(value);
 		}
 	};
+	@XmlElement(name = "FndMgmtCpny")
 	protected List<PartyIdentification2Choice> fundManagementCompany;
 	/**
-	 * Fund management company for which the report is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,10 +179,10 @@ public class FundParameters4 {
 	 * "Fund management company for which the report is requested."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFundManagementCompany = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundParameters4, List<PartyIdentification2Choice>> mmFundManagementCompany = new MMMessageAttribute<FundParameters4, List<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> FundParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "FndMgmtCpny";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,12 +191,22 @@ public class FundParameters4 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public List<PartyIdentification2Choice> getValue(FundParameters4 obj) {
+			return obj.getFundManagementCompany();
+		}
+
+		@Override
+		public void setValue(FundParameters4 obj, List<PartyIdentification2Choice> value) {
+			obj.setFundManagementCompany(value);
+		}
 	};
+	@XmlElement(name = "DtFr")
 	protected ISODate dateFrom;
 	/**
-	 * Specifies the date on or after which the information required will have
-	 * been last updated. Only the most recent versions of the data is required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,9 +233,9 @@ public class FundParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDateFrom = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundParameters4, Optional<ISODate>> mmDateFrom = new MMMessageAttribute<FundParameters4, Optional<ISODate>>() {
 		{
-			componentContext_lazy = () -> FundParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "DtFr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,12 +245,22 @@ public class FundParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(FundParameters4 obj) {
+			return obj.getDateFrom();
+		}
+
+		@Override
+		public void setValue(FundParameters4 obj, Optional<ISODate> value) {
+			obj.setDateFrom(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtryOfDmcl")
 	protected CountryCode countryOfDomicile;
 	/**
-	 * Country where the fund has legal domicile as reflected in the ISIN
-	 * classification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,10 +292,10 @@ public class FundParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountryOfDomicile = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundParameters4, Optional<CountryCode>> mmCountryOfDomicile = new MMMessageAttribute<FundParameters4, Optional<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFund.mmDomicileCountry;
-			componentContext_lazy = () -> FundParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "CtryOfDmcl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -274,11 +305,22 @@ public class FundParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(FundParameters4 obj) {
+			return obj.getCountryOfDomicile();
+		}
+
+		@Override
+		public void setValue(FundParameters4 obj, Optional<CountryCode> value) {
+			obj.setCountryOfDomicile(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RegdDstrbtnCtry")
 	protected CountryCode registeredDistributionCountry;
 	/**
-	 * Countries where the fund is registered for distribution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -303,9 +345,9 @@ public class FundParameters4 {
 	 * definition} = "Countries where the fund is registered for distribution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisteredDistributionCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundParameters4, Optional<CountryCode>> mmRegisteredDistributionCountry = new MMMessageAttribute<FundParameters4, Optional<CountryCode>>() {
 		{
-			componentContext_lazy = () -> FundParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RegdDstrbtnCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -315,15 +357,25 @@ public class FundParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public Optional<CountryCode> getValue(FundParameters4 obj) {
+			return obj.getRegisteredDistributionCountry();
+		}
+
+		@Override
+		public void setValue(FundParameters4 obj, Optional<CountryCode> value) {
+			obj.setRegisteredDistributionCountry(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FundParameters4.mmFinancialInstrumentDetails, FundParameters4.mmFundManagementCompany, FundParameters4.mmDateFrom, FundParameters4.mmCountryOfDomicile,
-						FundParameters4.mmRegisteredDistributionCountry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FundParameters4.mmFinancialInstrumentDetails, com.tools20022.repository.msg.FundParameters4.mmFundManagementCompany,
+						com.tools20022.repository.msg.FundParameters4.mmDateFrom, com.tools20022.repository.msg.FundParameters4.mmCountryOfDomicile, com.tools20022.repository.msg.FundParameters4.mmRegisteredDistributionCountry);
 				trace_lazy = () -> InvestmentFund.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundParameters4";
 				definition = "Parameters required to request a Fund Processing Passport (FPP).";
@@ -332,48 +384,48 @@ public class FundParameters4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FinInstrmDtls")
 	public List<FinancialInstrument17> getFinancialInstrumentDetails() {
-		return financialInstrumentDetails;
+		return financialInstrumentDetails == null ? financialInstrumentDetails = new ArrayList<>() : financialInstrumentDetails;
 	}
 
-	public void setFinancialInstrumentDetails(List<com.tools20022.repository.msg.FinancialInstrument17> financialInstrumentDetails) {
-		this.financialInstrumentDetails = financialInstrumentDetails;
+	public FundParameters4 setFinancialInstrumentDetails(List<FinancialInstrument17> financialInstrumentDetails) {
+		this.financialInstrumentDetails = Objects.requireNonNull(financialInstrumentDetails);
+		return this;
 	}
 
-	@XmlElement(name = "FndMgmtCpny")
 	public List<PartyIdentification2Choice> getFundManagementCompany() {
-		return fundManagementCompany;
+		return fundManagementCompany == null ? fundManagementCompany = new ArrayList<>() : fundManagementCompany;
 	}
 
-	public void setFundManagementCompany(List<PartyIdentification2Choice> fundManagementCompany) {
-		this.fundManagementCompany = fundManagementCompany;
+	public FundParameters4 setFundManagementCompany(List<PartyIdentification2Choice> fundManagementCompany) {
+		this.fundManagementCompany = Objects.requireNonNull(fundManagementCompany);
+		return this;
 	}
 
-	@XmlElement(name = "DtFr")
-	public ISODate getDateFrom() {
-		return dateFrom;
+	public Optional<ISODate> getDateFrom() {
+		return dateFrom == null ? Optional.empty() : Optional.of(dateFrom);
 	}
 
-	public void setDateFrom(ISODate dateFrom) {
+	public FundParameters4 setDateFrom(ISODate dateFrom) {
 		this.dateFrom = dateFrom;
+		return this;
 	}
 
-	@XmlElement(name = "CtryOfDmcl")
-	public CountryCode getCountryOfDomicile() {
-		return countryOfDomicile;
+	public Optional<CountryCode> getCountryOfDomicile() {
+		return countryOfDomicile == null ? Optional.empty() : Optional.of(countryOfDomicile);
 	}
 
-	public void setCountryOfDomicile(CountryCode countryOfDomicile) {
+	public FundParameters4 setCountryOfDomicile(CountryCode countryOfDomicile) {
 		this.countryOfDomicile = countryOfDomicile;
+		return this;
 	}
 
-	@XmlElement(name = "RegdDstrbtnCtry")
-	public CountryCode getRegisteredDistributionCountry() {
-		return registeredDistributionCountry;
+	public Optional<CountryCode> getRegisteredDistributionCountry() {
+		return registeredDistributionCountry == null ? Optional.empty() : Optional.of(registeredDistributionCountry);
 	}
 
-	public void setRegisteredDistributionCountry(CountryCode registeredDistributionCountry) {
+	public FundParameters4 setRegisteredDistributionCountry(CountryCode registeredDistributionCountry) {
 		this.registeredDistributionCountry = registeredDistributionCountry;
+		return this;
 	}
 }

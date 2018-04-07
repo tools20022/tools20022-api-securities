@@ -39,13 +39,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SpecialCollateral2Code#GeneralCollateral
- * SpecialCollateral2Code.mmGeneralCollateral}</li>
+ * SpecialCollateral2Code.GeneralCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SpecialCollateral2Code#SpecialCollateral
- * SpecialCollateral2Code.mmSpecialCollateral}</li>
+ * SpecialCollateral2Code.SpecialCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SpecialCollateral2Code#MatchedAndReverseRepurchaseAgreement
- * SpecialCollateral2Code.mmMatchedAndReverseRepurchaseAgreement}</li>
+ * SpecialCollateral2Code.MatchedAndReverseRepurchaseAgreement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -152,7 +152,7 @@ public class SpecialCollateral2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SpecialCollateral2Code";
 				definition = "Specifies the collateral type against which all repurchase agreements are conducted.";

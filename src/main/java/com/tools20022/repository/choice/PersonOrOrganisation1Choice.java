@@ -31,6 +31,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PersonIdentification10;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -66,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "PersonOrOrganisation1Choice", propOrder = {"LEI", "MIC", "person", "internal"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "PersonOrOrganisation1Choice", propOrder = {"lEI", "mIC", "person", "internal"})
 public class PersonOrOrganisation1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "LEI", required = true)
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal entity identifier of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,10 +134,10 @@ public class PersonOrOrganisation1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLEI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonOrOrganisation1Choice, LEIIdentifier> mmLEI = new MMMessageAttribute<PersonOrOrganisation1Choice, LEIIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmLEI;
-			componentContext_lazy = () -> PersonOrOrganisation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "LEI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -146,11 +148,22 @@ public class PersonOrOrganisation1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public LEIIdentifier getValue(PersonOrOrganisation1Choice obj) {
+			return obj.getLEI();
+		}
+
+		@Override
+		public void setValue(PersonOrOrganisation1Choice obj, LEIIdentifier value) {
+			obj.setLEI(value);
+		}
 	};
+	@XmlElement(name = "MIC", required = true)
 	protected MICIdentifier mIC;
 	/**
-	 * Market identifier code of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,10 +194,10 @@ public class PersonOrOrganisation1Choice {
 	 * definition} = "Market identifier code of the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMIC = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonOrOrganisation1Choice, MICIdentifier> mmMIC = new MMMessageAttribute<PersonOrOrganisation1Choice, MICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmMIC;
-			componentContext_lazy = () -> PersonOrOrganisation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MIC";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,11 +207,22 @@ public class PersonOrOrganisation1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public MICIdentifier getValue(PersonOrOrganisation1Choice obj) {
+			return obj.getMIC();
+		}
+
+		@Override
+		public void setValue(PersonOrOrganisation1Choice obj, MICIdentifier value) {
+			obj.setMIC(value);
+		}
 	};
+	@XmlElement(name = "Prsn", required = true)
 	protected PersonIdentification10 person;
 	/**
-	 * Identification of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -235,10 +259,10 @@ public class PersonOrOrganisation1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPerson = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PersonOrOrganisation1Choice, PersonIdentification10> mmPerson = new MMMessageAssociationEnd<PersonOrOrganisation1Choice, PersonIdentification10>() {
 		{
 			businessComponentTrace_lazy = () -> PersonIdentification.mmObject();
-			componentContext_lazy = () -> PersonOrOrganisation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,11 +274,22 @@ public class PersonOrOrganisation1Choice {
 			isComposite = true;
 			type_lazy = () -> PersonIdentification10.mmObject();
 		}
+
+		@Override
+		public PersonIdentification10 getValue(PersonOrOrganisation1Choice obj) {
+			return obj.getPerson();
+		}
+
+		@Override
+		public void setValue(PersonOrOrganisation1Choice obj, PersonIdentification10 value) {
+			obj.setPerson(value);
+		}
 	};
+	@XmlElement(name = "Intl", required = true)
 	protected InternalPartyRole1Code internal;
 	/**
-	 * Identifies internal party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,10 +320,10 @@ public class PersonOrOrganisation1Choice {
 	 * definition} = "Identifies internal party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInternal = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonOrOrganisation1Choice, InternalPartyRole1Code> mmInternal = new MMMessageAttribute<PersonOrOrganisation1Choice, InternalPartyRole1Code>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PersonOrOrganisation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Intl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -298,14 +333,25 @@ public class PersonOrOrganisation1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> InternalPartyRole1Code.mmObject();
 		}
+
+		@Override
+		public InternalPartyRole1Code getValue(PersonOrOrganisation1Choice obj) {
+			return obj.getInternal();
+		}
+
+		@Override
+		public void setValue(PersonOrOrganisation1Choice obj, InternalPartyRole1Code value) {
+			obj.setInternal(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PersonOrOrganisation1Choice.mmLEI, PersonOrOrganisation1Choice.mmMIC, PersonOrOrganisation1Choice.mmPerson, PersonOrOrganisation1Choice.mmInternal);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmLEI, com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmMIC,
+						com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmPerson, com.tools20022.repository.choice.PersonOrOrganisation1Choice.mmInternal);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonOrOrganisation1Choice";
 				definition = "Specifies the identification of a person or an organisation.";
@@ -315,39 +361,39 @@ public class PersonOrOrganisation1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "LEI", required = true)
 	public LEIIdentifier getLEI() {
 		return lEI;
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
-		this.lEI = lEI;
+	public PersonOrOrganisation1Choice setLEI(LEIIdentifier lEI) {
+		this.lEI = Objects.requireNonNull(lEI);
+		return this;
 	}
 
-	@XmlElement(name = "MIC", required = true)
 	public MICIdentifier getMIC() {
 		return mIC;
 	}
 
-	public void setMIC(MICIdentifier mIC) {
-		this.mIC = mIC;
+	public PersonOrOrganisation1Choice setMIC(MICIdentifier mIC) {
+		this.mIC = Objects.requireNonNull(mIC);
+		return this;
 	}
 
-	@XmlElement(name = "Prsn", required = true)
 	public PersonIdentification10 getPerson() {
 		return person;
 	}
 
-	public void setPerson(PersonIdentification10 person) {
-		this.person = person;
+	public PersonOrOrganisation1Choice setPerson(PersonIdentification10 person) {
+		this.person = Objects.requireNonNull(person);
+		return this;
 	}
 
-	@XmlElement(name = "Intl", required = true)
 	public InternalPartyRole1Code getInternal() {
 		return internal;
 	}
 
-	public void setInternal(InternalPartyRole1Code internal) {
-		this.internal = internal;
+	public PersonOrOrganisation1Choice setInternal(InternalPartyRole1Code internal) {
+		this.internal = Objects.requireNonNull(internal);
+		return this;
 	}
 }

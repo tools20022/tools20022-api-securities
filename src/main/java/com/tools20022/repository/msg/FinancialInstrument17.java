@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -29,8 +30,11 @@ import com.tools20022.repository.entity.InvestmentFundClass;
 import com.tools20022.repository.entity.LocalName;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.SecurityIdentification7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +78,17 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintFinancialInstrumentIdentificationGuideline#forFinancialInstrument17
+ * ConstraintFinancialInstrumentIdentificationGuideline.forFinancialInstrument17
+ * }</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,15 +101,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrument17", propOrder = {"identification", "name", "supplementaryIdentification", "classType", "securitiesForm", "distributionPolicy", "productGroup"})
 public class FinancialInstrument17 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected SecurityIdentification7 identification;
 	/**
-	 * Identification of a security by an ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,10 +141,10 @@ public class FinancialInstrument17 {
 	 * definition} = "Identification of a security by an ISIN."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, SecurityIdentification7> mmIdentification = new MMMessageAttribute<FinancialInstrument17, SecurityIdentification7>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,13 +152,24 @@ public class FinancialInstrument17 {
 			definition = "Identification of a security by an ISIN.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
+			complexType_lazy = () -> SecurityIdentification7.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification7 getValue(FinancialInstrument17 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, SecurityIdentification7 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max350Text name;
 	/**
-	 * Name of the financial instrument in free format text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,6 +189,9 @@ public class FinancialInstrument17 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Nm"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70a::FIAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -174,12 +202,13 @@ public class FinancialInstrument17 {
 	 * definition} = "Name of the financial instrument in free format text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, Optional<Max350Text>> mmName = new MMMessageAttribute<FinancialInstrument17, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> LocalName.mmFullName;
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70a::FIAN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name of the financial instrument in free format text.";
@@ -187,12 +216,22 @@ public class FinancialInstrument17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(FinancialInstrument17 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, Optional<Max350Text> value) {
+			obj.setName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SplmtryId")
 	protected Max35Text supplementaryIdentification;
 	/**
-	 * Additional information about a financial instrument to help identify the
-	 * instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,9 +258,9 @@ public class FinancialInstrument17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSupplementaryIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, Optional<Max35Text>> mmSupplementaryIdentification = new MMMessageAttribute<FinancialInstrument17, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -231,15 +270,22 @@ public class FinancialInstrument17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(FinancialInstrument17 obj) {
+			return obj.getSupplementaryIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, Optional<Max35Text> value) {
+			obj.setSupplementaryIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClssTp")
 	protected Max35Text classType;
 	/**
-	 * Features of units offered by a fund. For example, a unit may have a
-	 * specific load structure, eg, front end or back end, an income policy, eg,
-	 * pay out or accumulate, or a trailer policy, eg, with or without. Fund
-	 * classes are typically denoted by a single character, eg, 'Class A',
-	 * 'Class 2'.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,10 +317,10 @@ public class FinancialInstrument17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClassType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, Optional<Max35Text>> mmClassType = new MMMessageAttribute<FinancialInstrument17, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmClassType;
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "ClssTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -284,11 +330,22 @@ public class FinancialInstrument17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(FinancialInstrument17 obj) {
+			return obj.getClassType();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, Optional<Max35Text> value) {
+			obj.setClassType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SctiesForm")
 	protected FormOfSecurity1Code securitiesForm;
 	/**
-	 * Specifies the form, ie, ownership, of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -309,6 +366,9 @@ public class FinancialInstrument17 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SctiesForm"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::FORM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -319,12 +379,13 @@ public class FinancialInstrument17 {
 	 * definition} = "Specifies the form, ie, ownership, of the security."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesForm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, Optional<FormOfSecurity1Code>> mmSecuritiesForm = new MMMessageAttribute<FinancialInstrument17, Optional<FormOfSecurity1Code>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmRegistrationForm;
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesForm";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::FORM"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesForm";
 			definition = "Specifies the form, ie, ownership, of the security.";
@@ -332,12 +393,22 @@ public class FinancialInstrument17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> FormOfSecurity1Code.mmObject();
 		}
+
+		@Override
+		public Optional<FormOfSecurity1Code> getValue(FinancialInstrument17 obj) {
+			return obj.getSecuritiesForm();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, Optional<FormOfSecurity1Code> value) {
+			obj.setSecuritiesForm(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DstrbtnPlcy")
 	protected DistributionPolicy1Code distributionPolicy;
 	/**
-	 * Income policy relating to a class type, ie, if income is paid out or
-	 * retained in the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -370,10 +441,10 @@ public class FinancialInstrument17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDistributionPolicy = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, Optional<DistributionPolicy1Code>> mmDistributionPolicy = new MMMessageAttribute<FinancialInstrument17, Optional<DistributionPolicy1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmDistributionPolicy;
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "DstrbtnPlcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -383,11 +454,22 @@ public class FinancialInstrument17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DistributionPolicy1Code.mmObject();
 		}
+
+		@Override
+		public Optional<DistributionPolicy1Code> getValue(FinancialInstrument17 obj) {
+			return obj.getDistributionPolicy();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, Optional<DistributionPolicy1Code> value) {
+			obj.setDistributionPolicy(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PdctGrp")
 	protected Max140Text productGroup;
 	/**
-	 * Company specific description of a group of funds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,10 +499,10 @@ public class FinancialInstrument17 {
 	 * definition} = "Company specific description of a group of funds."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProductGroup = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument17, Optional<Max140Text>> mmProductGroup = new MMMessageAttribute<FinancialInstrument17, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmProductGroup;
-			componentContext_lazy = () -> FinancialInstrument17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument17.mmObject();
 			isDerived = false;
 			xmlTag = "PdctGrp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -430,15 +512,27 @@ public class FinancialInstrument17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(FinancialInstrument17 obj) {
+			return obj.getProductGroup();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument17 obj, Optional<Max140Text> value) {
+			obj.setProductGroup(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstrument17.mmIdentification, FinancialInstrument17.mmName, FinancialInstrument17.mmSupplementaryIdentification, FinancialInstrument17.mmClassType,
-						FinancialInstrument17.mmSecuritiesForm, FinancialInstrument17.mmDistributionPolicy, FinancialInstrument17.mmProductGroup);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FinancialInstrument17.mmIdentification, com.tools20022.repository.msg.FinancialInstrument17.mmName,
+						com.tools20022.repository.msg.FinancialInstrument17.mmSupplementaryIdentification, com.tools20022.repository.msg.FinancialInstrument17.mmClassType,
+						com.tools20022.repository.msg.FinancialInstrument17.mmSecuritiesForm, com.tools20022.repository.msg.FinancialInstrument17.mmDistributionPolicy, com.tools20022.repository.msg.FinancialInstrument17.mmProductGroup);
 				trace_lazy = () -> InvestmentFundClass.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintFinancialInstrumentIdentificationGuideline.forFinancialInstrument17);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrument17";
 				definition = "Security that is a sub-set of an investment fund, and is governed by the same investment fund policy, eg, dividend option or valuation currency.";
@@ -447,66 +541,66 @@ public class FinancialInstrument17 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public SecurityIdentification7 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(com.tools20022.repository.msg.SecurityIdentification7 identification) {
-		this.identification = identification;
+	public FinancialInstrument17 setIdentification(SecurityIdentification7 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max350Text getName() {
-		return name;
+	public Optional<Max350Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max350Text name) {
+	public FinancialInstrument17 setName(Max350Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryId")
-	public Max35Text getSupplementaryIdentification() {
-		return supplementaryIdentification;
+	public Optional<Max35Text> getSupplementaryIdentification() {
+		return supplementaryIdentification == null ? Optional.empty() : Optional.of(supplementaryIdentification);
 	}
 
-	public void setSupplementaryIdentification(Max35Text supplementaryIdentification) {
+	public FinancialInstrument17 setSupplementaryIdentification(Max35Text supplementaryIdentification) {
 		this.supplementaryIdentification = supplementaryIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ClssTp")
-	public Max35Text getClassType() {
-		return classType;
+	public Optional<Max35Text> getClassType() {
+		return classType == null ? Optional.empty() : Optional.of(classType);
 	}
 
-	public void setClassType(Max35Text classType) {
+	public FinancialInstrument17 setClassType(Max35Text classType) {
 		this.classType = classType;
+		return this;
 	}
 
-	@XmlElement(name = "SctiesForm")
-	public FormOfSecurity1Code getSecuritiesForm() {
-		return securitiesForm;
+	public Optional<FormOfSecurity1Code> getSecuritiesForm() {
+		return securitiesForm == null ? Optional.empty() : Optional.of(securitiesForm);
 	}
 
-	public void setSecuritiesForm(FormOfSecurity1Code securitiesForm) {
+	public FinancialInstrument17 setSecuritiesForm(FormOfSecurity1Code securitiesForm) {
 		this.securitiesForm = securitiesForm;
+		return this;
 	}
 
-	@XmlElement(name = "DstrbtnPlcy")
-	public DistributionPolicy1Code getDistributionPolicy() {
-		return distributionPolicy;
+	public Optional<DistributionPolicy1Code> getDistributionPolicy() {
+		return distributionPolicy == null ? Optional.empty() : Optional.of(distributionPolicy);
 	}
 
-	public void setDistributionPolicy(DistributionPolicy1Code distributionPolicy) {
+	public FinancialInstrument17 setDistributionPolicy(DistributionPolicy1Code distributionPolicy) {
 		this.distributionPolicy = distributionPolicy;
+		return this;
 	}
 
-	@XmlElement(name = "PdctGrp")
-	public Max140Text getProductGroup() {
-		return productGroup;
+	public Optional<Max140Text> getProductGroup() {
+		return productGroup == null ? Optional.empty() : Optional.of(productGroup);
 	}
 
-	public void setProductGroup(Max140Text productGroup) {
+	public FinancialInstrument17 setProductGroup(Max140Text productGroup) {
 		this.productGroup = productGroup;
+		return this;
 	}
 }

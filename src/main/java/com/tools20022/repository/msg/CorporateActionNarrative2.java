@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -78,8 +79,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,17 +91,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides additional information about the CA event."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionNarrative2", propOrder = {"informationConditions", "informationToComplyWith", "taxationConditions", "declarationDetails", "registrationDetails", "additionalText"})
 public class CorporateActionNarrative2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InfConds")
 	protected Max350Text informationConditions;
 	/**
-	 * Provides conditional information related to the event, eg, an offer is
-	 * subject to 50% acceptance, the offeror allows the securities holder to
-	 * set some conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,10 +132,10 @@ public class CorporateActionNarrative2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformationConditions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>> mmInformationConditions = new MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmInformationConditions;
-			componentContext_lazy = () -> CorporateActionNarrative2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative2.mmObject();
 			isDerived = false;
 			xmlTag = "InfConds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -145,13 +145,22 @@ public class CorporateActionNarrative2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative2 obj) {
+			return obj.getInformationConditions();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative2 obj, Optional<Max350Text> value) {
+			obj.setInformationConditions(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InfToCmplyWth")
 	protected Max350Text informationToComplyWith;
 	/**
-	 * Provides information conditions to the account owner that are to be
-	 * complied with, eg, not open to US/Canadian residents, QIB or SIL to be
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,10 +192,10 @@ public class CorporateActionNarrative2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformationToComplyWith = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>> mmInformationToComplyWith = new MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmInformationToComplyWith;
-			componentContext_lazy = () -> CorporateActionNarrative2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative2.mmObject();
 			isDerived = false;
 			xmlTag = "InfToCmplyWth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -196,12 +205,22 @@ public class CorporateActionNarrative2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative2 obj) {
+			return obj.getInformationToComplyWith();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative2 obj, Optional<Max350Text> value) {
+			obj.setInformationToComplyWith(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxtnConds")
 	protected Max350Text taxationConditions;
 	/**
-	 * Provides taxation conditions that cannot be included within the
-	 * structured fields of this message and has not been mentioned in the SLA.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,10 +252,10 @@ public class CorporateActionNarrative2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxationConditions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>> mmTaxationConditions = new MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmTaxationConditions;
-			componentContext_lazy = () -> CorporateActionNarrative2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxtnConds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -246,12 +265,22 @@ public class CorporateActionNarrative2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative2 obj) {
+			return obj.getTaxationConditions();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative2 obj, Optional<Max350Text> value) {
+			obj.setTaxationConditions(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DclrtnDtls")
 	protected Max350Text declarationDetails;
 	/**
-	 * Provides declaration details narrative relative to the financial
-	 * instrument, eg, beneficial ownership.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -283,10 +312,10 @@ public class CorporateActionNarrative2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDeclarationDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>> mmDeclarationDetails = new MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmDeclarationDetails;
-			componentContext_lazy = () -> CorporateActionNarrative2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative2.mmObject();
 			isDerived = false;
 			xmlTag = "DclrtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -296,11 +325,22 @@ public class CorporateActionNarrative2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative2 obj) {
+			return obj.getDeclarationDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative2 obj, Optional<Max350Text> value) {
+			obj.setDeclarationDetails(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RegnDtls")
 	protected Max350Text registrationDetails;
 	/**
-	 * Provides information required for the registration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,10 +370,10 @@ public class CorporateActionNarrative2 {
 	 * definition} = "Provides information required for the registration."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegistrationDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>> mmRegistrationDetails = new MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmRegistrationDetails;
-			componentContext_lazy = () -> CorporateActionNarrative2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative2.mmObject();
 			isDerived = false;
 			xmlTag = "RegnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -343,12 +383,22 @@ public class CorporateActionNarrative2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative2 obj) {
+			return obj.getRegistrationDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative2 obj, Optional<Max350Text> value) {
+			obj.setRegistrationDetails(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlTxt")
 	protected Max350Text additionalText;
 	/**
-	 * Provides additional information or specifies in more detail the content
-	 * of a message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -375,9 +425,9 @@ public class CorporateActionNarrative2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalText = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>> mmAdditionalText = new MMMessageAttribute<CorporateActionNarrative2, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> CorporateActionNarrative2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlTxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -387,16 +437,27 @@ public class CorporateActionNarrative2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative2 obj) {
+			return obj.getAdditionalText();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative2 obj, Optional<Max350Text> value) {
+			obj.setAdditionalText(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionNarrative2.mmInformationConditions, CorporateActionNarrative2.mmInformationToComplyWith, CorporateActionNarrative2.mmTaxationConditions,
-						CorporateActionNarrative2.mmDeclarationDetails, CorporateActionNarrative2.mmRegistrationDetails, CorporateActionNarrative2.mmAdditionalText);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionNarrative2.mmInformationConditions, com.tools20022.repository.msg.CorporateActionNarrative2.mmInformationToComplyWith,
+						com.tools20022.repository.msg.CorporateActionNarrative2.mmTaxationConditions, com.tools20022.repository.msg.CorporateActionNarrative2.mmDeclarationDetails,
+						com.tools20022.repository.msg.CorporateActionNarrative2.mmRegistrationDetails, com.tools20022.repository.msg.CorporateActionNarrative2.mmAdditionalText);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCANotificationAdviceV01.mmAdditionalInformation);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNarrative2";
 				definition = "Provides additional information about the CA event.";
@@ -405,57 +466,57 @@ public class CorporateActionNarrative2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InfConds")
-	public Max350Text getInformationConditions() {
-		return informationConditions;
+	public Optional<Max350Text> getInformationConditions() {
+		return informationConditions == null ? Optional.empty() : Optional.of(informationConditions);
 	}
 
-	public void setInformationConditions(Max350Text informationConditions) {
+	public CorporateActionNarrative2 setInformationConditions(Max350Text informationConditions) {
 		this.informationConditions = informationConditions;
+		return this;
 	}
 
-	@XmlElement(name = "InfToCmplyWth")
-	public Max350Text getInformationToComplyWith() {
-		return informationToComplyWith;
+	public Optional<Max350Text> getInformationToComplyWith() {
+		return informationToComplyWith == null ? Optional.empty() : Optional.of(informationToComplyWith);
 	}
 
-	public void setInformationToComplyWith(Max350Text informationToComplyWith) {
+	public CorporateActionNarrative2 setInformationToComplyWith(Max350Text informationToComplyWith) {
 		this.informationToComplyWith = informationToComplyWith;
+		return this;
 	}
 
-	@XmlElement(name = "TaxtnConds")
-	public Max350Text getTaxationConditions() {
-		return taxationConditions;
+	public Optional<Max350Text> getTaxationConditions() {
+		return taxationConditions == null ? Optional.empty() : Optional.of(taxationConditions);
 	}
 
-	public void setTaxationConditions(Max350Text taxationConditions) {
+	public CorporateActionNarrative2 setTaxationConditions(Max350Text taxationConditions) {
 		this.taxationConditions = taxationConditions;
+		return this;
 	}
 
-	@XmlElement(name = "DclrtnDtls")
-	public Max350Text getDeclarationDetails() {
-		return declarationDetails;
+	public Optional<Max350Text> getDeclarationDetails() {
+		return declarationDetails == null ? Optional.empty() : Optional.of(declarationDetails);
 	}
 
-	public void setDeclarationDetails(Max350Text declarationDetails) {
+	public CorporateActionNarrative2 setDeclarationDetails(Max350Text declarationDetails) {
 		this.declarationDetails = declarationDetails;
+		return this;
 	}
 
-	@XmlElement(name = "RegnDtls")
-	public Max350Text getRegistrationDetails() {
-		return registrationDetails;
+	public Optional<Max350Text> getRegistrationDetails() {
+		return registrationDetails == null ? Optional.empty() : Optional.of(registrationDetails);
 	}
 
-	public void setRegistrationDetails(Max350Text registrationDetails) {
+	public CorporateActionNarrative2 setRegistrationDetails(Max350Text registrationDetails) {
 		this.registrationDetails = registrationDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlTxt")
-	public Max350Text getAdditionalText() {
-		return additionalText;
+	public Optional<Max350Text> getAdditionalText() {
+		return additionalText == null ? Optional.empty() : Optional.of(additionalText);
 	}
 
-	public void setAdditionalText(Max350Text additionalText) {
+	public CorporateActionNarrative2 setAdditionalText(Max350Text additionalText) {
 		this.additionalText = additionalText;
+		return this;
 	}
 }

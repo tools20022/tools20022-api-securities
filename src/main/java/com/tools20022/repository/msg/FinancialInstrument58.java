@@ -26,8 +26,11 @@ import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.entity.Spread;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FloatingInterestRate8;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies underlying instruments or index a derivative has."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "FinancialInstrument58", propOrder = {"ISIN", "name"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "FinancialInstrument58", propOrder = {"iSIN", "name"})
 public class FinancialInstrument58 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ISIN")
 	protected ISINOct2015Identifier iSIN;
 	/**
-	 * Identification of the index on which the financial instrument is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +110,10 @@ public class FinancialInstrument58 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmISIN = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrument58, Optional<ISINOct2015Identifier>> mmISIN = new MMMessageAttribute<FinancialInstrument58, Optional<ISINOct2015Identifier>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> FinancialInstrument58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument58.mmObject();
 			isDerived = false;
 			xmlTag = "ISIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +123,22 @@ public class FinancialInstrument58 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public Optional<ISINOct2015Identifier> getValue(FinancialInstrument58 obj) {
+			return obj.getISIN();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument58 obj, Optional<ISINOct2015Identifier> value) {
+			obj.setISIN(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Nm", required = true)
 	protected FloatingInterestRate8 name;
 	/**
-	 * Name of the index on which the financial instrument is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,10 +168,10 @@ public class FinancialInstrument58 {
 	 * "Name of the index on which the financial instrument is based."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstrument58, FloatingInterestRate8> mmName = new MMMessageAssociationEnd<FinancialInstrument58, FloatingInterestRate8>() {
 		{
 			businessElementTrace_lazy = () -> Spread.mmIndex;
-			componentContext_lazy = () -> FinancialInstrument58.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrument58.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,16 +180,26 @@ public class FinancialInstrument58 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FloatingInterestRate8.mmObject();
+			type_lazy = () -> FloatingInterestRate8.mmObject();
+		}
+
+		@Override
+		public FloatingInterestRate8 getValue(FinancialInstrument58 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(FinancialInstrument58 obj, FloatingInterestRate8 value) {
+			obj.setName(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstrument58.mmISIN, FinancialInstrument58.mmName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FinancialInstrument58.mmISIN, com.tools20022.repository.msg.FinancialInstrument58.mmName);
 				trace_lazy = () -> Security.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrument58";
 				definition = "Specifies underlying instruments or index a derivative has.";
@@ -183,21 +208,21 @@ public class FinancialInstrument58 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ISIN")
-	public ISINOct2015Identifier getISIN() {
-		return iSIN;
+	public Optional<ISINOct2015Identifier> getISIN() {
+		return iSIN == null ? Optional.empty() : Optional.of(iSIN);
 	}
 
-	public void setISIN(ISINOct2015Identifier iSIN) {
+	public FinancialInstrument58 setISIN(ISINOct2015Identifier iSIN) {
 		this.iSIN = iSIN;
+		return this;
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public FloatingInterestRate8 getName() {
 		return name;
 	}
 
-	public void setName(com.tools20022.repository.msg.FloatingInterestRate8 name) {
-		this.name = name;
+	public FinancialInstrument58 setName(FloatingInterestRate8 name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 }

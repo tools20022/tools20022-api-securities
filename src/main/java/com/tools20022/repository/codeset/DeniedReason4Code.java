@@ -38,33 +38,33 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#AccountServicerDeadlineMissed
- * DeniedReason4Code.mmAccountServicerDeadlineMissed}</li>
+ * DeniedReason4Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#DeniedSinceAlreadyCancelled
- * DeniedReason4Code.mmDeniedSinceAlreadyCancelled}</li>
+ * DeniedReason4Code.DeniedSinceAlreadyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#DeniedSinceInProgress
- * DeniedReason4Code.mmDeniedSinceInProgress}</li>
+ * DeniedReason4Code.DeniedSinceInProgress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#DeniedSinceRepoEnded
- * DeniedReason4Code.mmDeniedSinceRepoEnded}</li>
+ * DeniedReason4Code.DeniedSinceRepoEnded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#DeniedSinceAlreadySettled
- * DeniedReason4Code.mmDeniedSinceAlreadySettled}</li>
+ * DeniedReason4Code.DeniedSinceAlreadySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#MarketDeadlineMissed
- * DeniedReason4Code.mmMarketDeadlineMissed}</li>
+ * DeniedReason4Code.MarketDeadlineMissed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DeniedReason4Code#Other
- * DeniedReason4Code.mmOther}</li>
+ * DeniedReason4Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#ConditionalRegistrar
- * DeniedReason4Code.mmConditionalRegistrar}</li>
+ * DeniedReason4Code.ConditionalRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#ConditionalCurrency
- * DeniedReason4Code.mmConditionalCurrency}</li>
+ * DeniedReason4Code.ConditionalCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason4Code#ConditionalRealignement
- * DeniedReason4Code.mmConditionalRealignement}</li>
+ * DeniedReason4Code.ConditionalRealignement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -343,7 +343,7 @@ public class DeniedReason4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeniedReason4Code";

@@ -37,38 +37,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Bid
- * TypeOfPrice6Code.mmBid}</li>
+ * TypeOfPrice6Code.Bid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Offer
- * TypeOfPrice6Code.mmOffer}</li>
+ * TypeOfPrice6Code.Offer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#NetAssetValue
- * TypeOfPrice6Code.mmNetAssetValue}</li>
+ * TypeOfPrice6Code.NetAssetValue}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Creation
- * TypeOfPrice6Code.mmCreation}</li>
+ * TypeOfPrice6Code.Creation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Cancellation
- * TypeOfPrice6Code.mmCancellation}</li>
+ * TypeOfPrice6Code.Cancellation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Interim
- * TypeOfPrice6Code.mmInterim}</li>
+ * TypeOfPrice6Code.Interim}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Swing
- * TypeOfPrice6Code.mmSwing}</li>
+ * TypeOfPrice6Code.Swing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Other
- * TypeOfPrice6Code.mmOther}</li>
+ * TypeOfPrice6Code.Other}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Mid
- * TypeOfPrice6Code.mmMid}</li>
+ * TypeOfPrice6Code.Mid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Reinvestment
- * TypeOfPrice6Code.mmReinvestment}</li>
+ * TypeOfPrice6Code.Reinvestment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Switch
- * TypeOfPrice6Code.mmSwitch}</li>
+ * TypeOfPrice6Code.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#DailyDividendRate
- * TypeOfPrice6Code.mmDailyDividendRate}</li>
+ * TypeOfPrice6Code.DailyDividendRate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#Actual
- * TypeOfPrice6Code.mmActual}</li>
+ * TypeOfPrice6Code.Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice6Code#NonAdjustedUnpublished
- * TypeOfPrice6Code.mmNonAdjustedUnpublished}</li>
+ * TypeOfPrice6Code.NonAdjustedUnpublished}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -443,7 +443,7 @@ public class TypeOfPrice6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BIDE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPrice6Code";

@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#EligibleForCollateralPurposes
- * SecuritiesBalanceType7Code.mmEligibleForCollateralPurposes}</li>
+ * SecuritiesBalanceType7Code.EligibleForCollateralPurposes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#Unclassified
- * SecuritiesBalanceType7Code.mmUnclassified}</li>
+ * SecuritiesBalanceType7Code.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#TaxExempt
- * SecuritiesBalanceType7Code.mmTaxExempt}</li>
+ * SecuritiesBalanceType7Code.TaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#NonTaxExempt
- * SecuritiesBalanceType7Code.mmNonTaxExempt}</li>
+ * SecuritiesBalanceType7Code.NonTaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#Registered
- * SecuritiesBalanceType7Code.mmRegistered}</li>
+ * SecuritiesBalanceType7Code.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#StreetPosition
- * SecuritiesBalanceType7Code.mmStreetPosition}</li>
+ * SecuritiesBalanceType7Code.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#Unregistered
- * SecuritiesBalanceType7Code.mmUnregistered}</li>
+ * SecuritiesBalanceType7Code.Unregistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#Issued
- * SecuritiesBalanceType7Code.mmIssued}</li>
+ * SecuritiesBalanceType7Code.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType7Code#QuasiIssued
- * SecuritiesBalanceType7Code.mmQuasiIssued}</li>
+ * SecuritiesBalanceType7Code.QuasiIssued}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -318,7 +318,7 @@ public class SecuritiesBalanceType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("COLA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType7Code";

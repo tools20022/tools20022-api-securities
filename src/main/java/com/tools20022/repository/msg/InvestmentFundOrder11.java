@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -87,8 +89,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,16 +107,16 @@ import javax.xml.bind.annotation.XmlType;
  * InvestmentFundOrder9}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestmentFundOrder11", propOrder = {"orderReference", "clientReference", "dealReference", "cancellationReference", "cancellationReason"})
 public class InvestmentFundOrder11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrdrRef", required = true)
 	protected Max35Text orderReference;
 	/**
-	 * Unique and unambiguous identifier for the order, as assigned by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,10 +153,10 @@ public class InvestmentFundOrder11 {
 	 * InvestmentFundOrder9.mmOrderReference}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundOrder11, Max35Text> mmOrderReference = new MMMessageAttribute<InvestmentFundOrder11, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmIdentification;
-			componentContext_lazy = () -> InvestmentFundOrder11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundOrder11.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,13 +167,22 @@ public class InvestmentFundOrder11 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(InvestmentFundOrder11 obj) {
+			return obj.getOrderReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder11 obj, Max35Text value) {
+			obj.setOrderReference(value);
+		}
 	};
+	@XmlElement(name = "ClntRef")
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of the order. This
-	 * reference can typically be used in a hub scenario to give the reference
-	 * of the order as assigned by the underlying client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,10 +219,10 @@ public class InvestmentFundOrder11 {
 	 * InvestmentFundOrder9.mmClientReference}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundOrder11, Optional<Max35Text>> mmClientReference = new MMMessageAttribute<InvestmentFundOrder11, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmClientReference;
-			componentContext_lazy = () -> InvestmentFundOrder11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundOrder11.mmObject();
 			isDerived = false;
 			xmlTag = "ClntRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,12 +233,22 @@ public class InvestmentFundOrder11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundOrder11 obj) {
+			return obj.getClientReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder11 obj, Optional<Max35Text> value) {
+			obj.setClientReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DealRef")
 	protected Max35Text dealReference;
 	/**
-	 * Unique and unambiguous identifier for the order execution, as assigned by
-	 * the confirming party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,10 +280,10 @@ public class InvestmentFundOrder11 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDealReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundOrder11, Optional<Max35Text>> mmDealReference = new MMMessageAttribute<InvestmentFundOrder11, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmDealIdentification;
-			componentContext_lazy = () -> InvestmentFundOrder11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundOrder11.mmObject();
 			isDerived = false;
 			xmlTag = "DealRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -272,12 +293,22 @@ public class InvestmentFundOrder11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundOrder11 obj) {
+			return obj.getDealReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder11 obj, Optional<Max35Text> value) {
+			obj.setDealReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CxlRef")
 	protected Max35Text cancellationReference;
 	/**
-	 * Unique and unambiguous identifier for the order confirmation
-	 * cancellation, as assigned by the confirming party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,10 +345,10 @@ public class InvestmentFundOrder11 {
 	 * InvestmentFundOrder9.mmCancellationReference}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCancellationReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundOrder11, Optional<Max35Text>> mmCancellationReference = new MMMessageAttribute<InvestmentFundOrder11, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeIdentification.mmCancellationRequestIdentification;
-			componentContext_lazy = () -> InvestmentFundOrder11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundOrder11.mmObject();
 			isDerived = false;
 			xmlTag = "CxlRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -328,11 +359,22 @@ public class InvestmentFundOrder11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundOrder11 obj) {
+			return obj.getCancellationReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder11 obj, Optional<Max35Text> value) {
+			obj.setCancellationReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CxlRsn")
 	protected CancellationReason31Choice cancellationReason;
 	/**
-	 * Reason for the cancellation of the confirmation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -362,9 +404,9 @@ public class InvestmentFundOrder11 {
 	 * InvestmentFundOrder9.mmCancellationReason}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCancellationReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InvestmentFundOrder11, Optional<CancellationReason31Choice>> mmCancellationReason = new MMMessageAssociationEnd<InvestmentFundOrder11, Optional<CancellationReason31Choice>>() {
 		{
-			componentContext_lazy = () -> InvestmentFundOrder11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundOrder11.mmObject();
 			isDerived = false;
 			xmlTag = "CxlRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -376,18 +418,29 @@ public class InvestmentFundOrder11 {
 			isComposite = true;
 			type_lazy = () -> CancellationReason31Choice.mmObject();
 		}
+
+		@Override
+		public Optional<CancellationReason31Choice> getValue(InvestmentFundOrder11 obj) {
+			return obj.getCancellationReason();
+		}
+
+		@Override
+		public void setValue(InvestmentFundOrder11 obj, Optional<CancellationReason31Choice> value) {
+			obj.setCancellationReason(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestmentFundOrder11.mmOrderReference, InvestmentFundOrder11.mmClientReference, InvestmentFundOrder11.mmDealReference, InvestmentFundOrder11.mmCancellationReference,
-						InvestmentFundOrder11.mmCancellationReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestmentFundOrder11.mmOrderReference, com.tools20022.repository.msg.InvestmentFundOrder11.mmClientReference,
+						com.tools20022.repository.msg.InvestmentFundOrder11.mmDealReference, com.tools20022.repository.msg.InvestmentFundOrder11.mmCancellationReference,
+						com.tools20022.repository.msg.InvestmentFundOrder11.mmCancellationReason);
 				messageBuildingBlock_lazy = () -> Arrays.asList(RedemptionBulkOrderConfirmationCancellationInstructionV02.mmOrderReferences, SubscriptionOrderConfirmationCancellationInstructionV02.mmOrderReferences,
 						RedemptionOrderConfirmationCancellationInstructionV02.mmOrderReferences, SubscriptionBulkOrderConfirmationCancellationInstructionV02.mmOrderReferences,
 						SwitchOrderConfirmationCancellationInstructionV02.mmOrderReferences);
 				trace_lazy = () -> InvestmentFundOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundOrder11";
 				definition = "References of an order confirmation and an order confirmation cancellation.";
@@ -397,48 +450,48 @@ public class InvestmentFundOrder11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrdrRef", required = true)
 	public Max35Text getOrderReference() {
 		return orderReference;
 	}
 
-	public void setOrderReference(Max35Text orderReference) {
-		this.orderReference = orderReference;
+	public InvestmentFundOrder11 setOrderReference(Max35Text orderReference) {
+		this.orderReference = Objects.requireNonNull(orderReference);
+		return this;
 	}
 
-	@XmlElement(name = "ClntRef")
-	public Max35Text getClientReference() {
-		return clientReference;
+	public Optional<Max35Text> getClientReference() {
+		return clientReference == null ? Optional.empty() : Optional.of(clientReference);
 	}
 
-	public void setClientReference(Max35Text clientReference) {
+	public InvestmentFundOrder11 setClientReference(Max35Text clientReference) {
 		this.clientReference = clientReference;
+		return this;
 	}
 
-	@XmlElement(name = "DealRef")
-	public Max35Text getDealReference() {
-		return dealReference;
+	public Optional<Max35Text> getDealReference() {
+		return dealReference == null ? Optional.empty() : Optional.of(dealReference);
 	}
 
-	public void setDealReference(Max35Text dealReference) {
+	public InvestmentFundOrder11 setDealReference(Max35Text dealReference) {
 		this.dealReference = dealReference;
+		return this;
 	}
 
-	@XmlElement(name = "CxlRef")
-	public Max35Text getCancellationReference() {
-		return cancellationReference;
+	public Optional<Max35Text> getCancellationReference() {
+		return cancellationReference == null ? Optional.empty() : Optional.of(cancellationReference);
 	}
 
-	public void setCancellationReference(Max35Text cancellationReference) {
+	public InvestmentFundOrder11 setCancellationReference(Max35Text cancellationReference) {
 		this.cancellationReference = cancellationReference;
+		return this;
 	}
 
-	@XmlElement(name = "CxlRsn")
-	public CancellationReason31Choice getCancellationReason() {
-		return cancellationReason;
+	public Optional<CancellationReason31Choice> getCancellationReason() {
+		return cancellationReason == null ? Optional.empty() : Optional.of(cancellationReason);
 	}
 
-	public void setCancellationReason(CancellationReason31Choice cancellationReason) {
+	public InvestmentFundOrder11 setCancellationReason(CancellationReason31Choice cancellationReason) {
 		this.cancellationReason = cancellationReason;
+		return this;
 	}
 }

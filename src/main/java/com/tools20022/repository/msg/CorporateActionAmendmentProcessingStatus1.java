@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provide processing status information of an election amendment request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionAmendmentProcessingStatus1", propOrder = {"status", "additionalInformation"})
 public class CorporateActionAmendmentProcessingStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Sts", required = true)
 	protected ProcessedStatus5FormatChoice status;
 	/**
-	 * The processing status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +110,10 @@ public class CorporateActionAmendmentProcessingStatus1 {
 	 * definition} = "The processing status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionAmendmentProcessingStatus1, ProcessedStatus5FormatChoice> mmStatus = new MMMessageAttribute<CorporateActionAmendmentProcessingStatus1, ProcessedStatus5FormatChoice>() {
 		{
 			businessComponentTrace_lazy = () -> CorporateActionStatus.mmObject();
-			componentContext_lazy = () -> CorporateActionAmendmentProcessingStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionAmendmentProcessingStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +123,22 @@ public class CorporateActionAmendmentProcessingStatus1 {
 			minOccurs = 1;
 			complexType_lazy = () -> ProcessedStatus5FormatChoice.mmObject();
 		}
+
+		@Override
+		public ProcessedStatus5FormatChoice getValue(CorporateActionAmendmentProcessingStatus1 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(CorporateActionAmendmentProcessingStatus1 obj, ProcessedStatus5FormatChoice value) {
+			obj.setStatus(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +168,10 @@ public class CorporateActionAmendmentProcessingStatus1 {
 	 * definition} = "Additional information about the status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionAmendmentProcessingStatus1, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<CorporateActionAmendmentProcessingStatus1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusDescription;
-			componentContext_lazy = () -> CorporateActionAmendmentProcessingStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionAmendmentProcessingStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,14 +181,24 @@ public class CorporateActionAmendmentProcessingStatus1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionAmendmentProcessingStatus1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(CorporateActionAmendmentProcessingStatus1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionAmendmentProcessingStatus1.mmStatus, CorporateActionAmendmentProcessingStatus1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionAmendmentProcessingStatus1.mmStatus, com.tools20022.repository.msg.CorporateActionAmendmentProcessingStatus1.mmAdditionalInformation);
 				trace_lazy = () -> CorporateActionStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionAmendmentProcessingStatus1";
 				definition = "Provide processing status information of an election amendment request.";
@@ -183,21 +207,21 @@ public class CorporateActionAmendmentProcessingStatus1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public ProcessedStatus5FormatChoice getStatus() {
 		return status;
 	}
 
-	public void setStatus(ProcessedStatus5FormatChoice status) {
-		this.status = status;
+	public CorporateActionAmendmentProcessingStatus1 setStatus(ProcessedStatus5FormatChoice status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public CorporateActionAmendmentProcessingStatus1 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

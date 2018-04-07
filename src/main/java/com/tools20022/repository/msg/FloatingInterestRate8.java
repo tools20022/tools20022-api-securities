@@ -25,8 +25,11 @@ import com.tools20022.repository.choice.BenchmarkCurveName5Choice;
 import com.tools20022.repository.entity.Index;
 import com.tools20022.repository.entity.VariableInterest;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.InterestRateContractTerm2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,18 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FloatingInterestRate8", propOrder = {"referenceRate", "term"})
 public class FloatingInterestRate8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RefRate", required = true)
 	protected BenchmarkCurveName5Choice referenceRate;
 	/**
-	 * Identifies the reference index for the instrument. <br>
-	 * <br>
-	 * Usage:<br>
-	 * Index or name if the reference rate is not included in the index list.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +114,10 @@ public class FloatingInterestRate8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReferenceRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FloatingInterestRate8, BenchmarkCurveName5Choice> mmReferenceRate = new MMMessageAttribute<FloatingInterestRate8, BenchmarkCurveName5Choice>() {
 		{
 			businessElementTrace_lazy = () -> Index.mmIdentification;
-			componentContext_lazy = () -> FloatingInterestRate8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FloatingInterestRate8.mmObject();
 			isDerived = false;
 			xmlTag = "RefRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,11 +127,22 @@ public class FloatingInterestRate8 {
 			minOccurs = 1;
 			complexType_lazy = () -> BenchmarkCurveName5Choice.mmObject();
 		}
+
+		@Override
+		public BenchmarkCurveName5Choice getValue(FloatingInterestRate8 obj) {
+			return obj.getReferenceRate();
+		}
+
+		@Override
+		public void setValue(FloatingInterestRate8 obj, BenchmarkCurveName5Choice value) {
+			obj.setReferenceRate(value);
+		}
 	};
+	@XmlElement(name = "Term")
 	protected InterestRateContractTerm2 term;
 	/**
-	 * Term of the reference rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -160,10 +172,10 @@ public class FloatingInterestRate8 {
 	 * definition} = "Term of the reference rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTerm = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FloatingInterestRate8, Optional<InterestRateContractTerm2>> mmTerm = new MMMessageAssociationEnd<FloatingInterestRate8, Optional<InterestRateContractTerm2>>() {
 		{
 			businessElementTrace_lazy = () -> VariableInterest.mmDurationCalculation;
-			componentContext_lazy = () -> FloatingInterestRate8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FloatingInterestRate8.mmObject();
 			isDerived = false;
 			xmlTag = "Term";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,16 +184,26 @@ public class FloatingInterestRate8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InterestRateContractTerm2.mmObject();
+			type_lazy = () -> InterestRateContractTerm2.mmObject();
+		}
+
+		@Override
+		public Optional<InterestRateContractTerm2> getValue(FloatingInterestRate8 obj) {
+			return obj.getTerm();
+		}
+
+		@Override
+		public void setValue(FloatingInterestRate8 obj, Optional<InterestRateContractTerm2> value) {
+			obj.setTerm(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FloatingInterestRate8.mmReferenceRate, FloatingInterestRate8.mmTerm);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FloatingInterestRate8.mmReferenceRate, com.tools20022.repository.msg.FloatingInterestRate8.mmTerm);
 				trace_lazy = () -> VariableInterest.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FloatingInterestRate8";
 				definition = "Provides the index used to define the rate and optionally the basis point spread.";
@@ -190,21 +212,21 @@ public class FloatingInterestRate8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RefRate", required = true)
 	public BenchmarkCurveName5Choice getReferenceRate() {
 		return referenceRate;
 	}
 
-	public void setReferenceRate(BenchmarkCurveName5Choice referenceRate) {
-		this.referenceRate = referenceRate;
+	public FloatingInterestRate8 setReferenceRate(BenchmarkCurveName5Choice referenceRate) {
+		this.referenceRate = Objects.requireNonNull(referenceRate);
+		return this;
 	}
 
-	@XmlElement(name = "Term")
-	public InterestRateContractTerm2 getTerm() {
-		return term;
+	public Optional<InterestRateContractTerm2> getTerm() {
+		return term == null ? Optional.empty() : Optional.of(term);
 	}
 
-	public void setTerm(com.tools20022.repository.msg.InterestRateContractTerm2 term) {
+	public FloatingInterestRate8 setTerm(InterestRateContractTerm2 term) {
 		this.term = term;
+		return this;
 	}
 }

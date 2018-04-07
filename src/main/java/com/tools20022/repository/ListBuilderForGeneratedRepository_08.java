@@ -25,9 +25,6 @@ class ListBuilderForGeneratedRepository_08 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
-		list.add((T) Unrealised1Code.mmObject());
-		list.add((T) FinancialAssetTypeCategoryCode.mmObject());
-		list.add((T) FinancialAssetTypeCategory1Code.mmObject());
 		list.add((T) FinancialAssetBalanceTypeCode.mmObject());
 		list.add((T) FinancialAssetBalanceType1Code.mmObject());
 		list.add((T) ObligationTypeCode.mmObject());
@@ -187,7 +184,7 @@ class ListBuilderForGeneratedRepository_08 {
 		list.add((T) PriceSource2Code.mmObject());
 		list.add((T) ReportItemStatus1Code.mmObject());
 		list.add((T) FrequencyGranularityTypeCode.mmObject());
-		list.add((T) SecuritiesBalanceTypeDraftV3Code.mmObject());
+		list.add((T) SecuritiesBalanceTypeV3Code.mmObject());
 		list.add((T) ReportItemStatusCode.mmObject());
 		list.add((T) PledgeeTypeCode.mmObject());
 		list.add((T) HoldingAccountLevel1Code.mmObject());
@@ -295,9 +292,11 @@ class ListBuilderForGeneratedRepository_08 {
 		list.add((T) EquityReturnParameterCode.mmObject());
 		list.add((T) AssetClassTransactionTypeCode.mmObject());
 		list.add((T) SwapTypeCode.mmObject());
+		list.add((T) TradeConfirmationTypeCode.mmObject());
 		list.add((T) CreditDebit3Code.mmObject());
 		list.add((T) OptionStyle7Code.mmObject());
 		list.add((T) CountrySubDivisionCode.mmObject());
+		list.add((T) TaxRateMarkerCode.mmObject());
 		list.add((T) TransferInFunction1Code.mmObject());
 		list.add((T) TransferInFunction2Code.mmObject());
 		list.add((T) Collateral1Code.mmObject());
@@ -488,22 +487,16 @@ class ListBuilderForGeneratedRepository_08 {
 		list.add((T) PendingReason14Code.mmObject());
 		list.add((T) IssuerTaxability2Code.mmObject());
 		list.add((T) OptionFeatures10Code.mmObject());
-		list.add((T) CorporateActionEventType22Code.mmObject());
 		list.add((T) CorporateActionEventType20Code.mmObject());
-		list.add((T) CorporateActionEventType21Code.mmObject());
 		list.add((T) RejectionReason46Code.mmObject());
-		list.add((T) CorporateActionEventType23Code.mmObject());
 		list.add((T) RejectionReasonV3Code.mmObject());
-		list.add((T) CorporateActionEventType24Code.mmObject());
 		list.add((T) CorporateActionEventTypeV6Code.mmObject());
 		list.add((T) PendingFailingReasonV2Code.mmObject());
 		list.add((T) IssuerTaxabilityV2Code.mmObject());
 		list.add((T) MandateClassificationCode.mmObject());
-		list.add((T) SecuritiesTransactionType18Code.mmObject());
 		list.add((T) SecuritiesFinancingTransactionType2Code.mmObject());
 		list.add((T) RepurchaseType8Code.mmObject());
 		list.add((T) RepurchaseType10Code.mmObject());
-		list.add((T) SecuritiesTransactionType17Code.mmObject());
 		list.add((T) RepurchaseType9Code.mmObject());
 		list.add((T) RepurchaseTypeV2Code.mmObject());
 		list.add((T) OrderCancellationStatus2Code.mmObject());
@@ -516,6 +509,23 @@ class ListBuilderForGeneratedRepository_08 {
 		list.add((T) ReportingMessageStatus1Code.mmObject());
 		list.add((T) MessageStatusCode.mmObject());
 		list.add((T) RecordStatusCode.mmObject());
+		list.add((T) ActiveOrHistoricCurrencyCode_BusinessCode.mmObject());
+		list.add((T) ExternalAccountIdentificationCode.mmObject());
+		list.add((T) ExternalClearingSystemIdentificationCode.mmObject());
+		list.add((T) ExternalFinancialInstitutionIdentificationCode.mmObject());
+		list.add((T) ExternalOrganisationIdentificationCode.mmObject());
+		list.add((T) ExternalPersonIdentificationCode.mmObject());
+		list.add((T) NamePrefixCode.mmObject());
+		list.add((T) ActiveCurrencyCode_BusinessCode.mmObject());
+		list.add((T) CreditQualityCode.mmObject());
+		list.add((T) ExternalFinancialInstrumentIdentificationTypeCode.mmObject());
+		list.add((T) ExternalStatusReasonCode.mmObject());
+		list.add((T) MarketClientSide1Code.mmObject());
+		list.add((T) InvestmentFundFee2Code.mmObject());
+		list.add((T) OtherAmountType1Code.mmObject());
+		list.add((T) OtherAmountTypeCode.mmObject());
+		list.add((T) CorporateActionEventType28Code.mmObject());
+		ListBuilderForGeneratedRepository_09.addElems(list);
 		return list;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the parameters of the report."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportParameters4", propOrder = {"reportIdentification", "reportDateAndTime"})
 public class ReportParameters4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptId", required = true)
 	protected Max35Text reportIdentification;
 	/**
-	 * Unique identification of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,9 +107,9 @@ public class ReportParameters4 {
 	 * definition} = "Unique identification of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters4, Max35Text> mmReportIdentification = new MMMessageAttribute<ReportParameters4, Max35Text>() {
 		{
-			componentContext_lazy = () -> ReportParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,11 +119,22 @@ public class ReportParameters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ReportParameters4 obj) {
+			return obj.getReportIdentification();
+		}
+
+		@Override
+		public void setValue(ReportParameters4 obj, Max35Text value) {
+			obj.setReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "RptDtAndTm", required = true)
 	protected DateAndDateTimeChoice reportDateAndTime;
 	/**
-	 * Date and time of the report .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,29 +157,39 @@ public class ReportParameters4 {
 	 * name} = "ReportDateAndTime"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Date and time of the report ."</li>
+	 * definition} = "Date and time of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportDateAndTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters4, DateAndDateTimeChoice> mmReportDateAndTime = new MMMessageAttribute<ReportParameters4, DateAndDateTimeChoice>() {
 		{
-			componentContext_lazy = () -> ReportParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RptDtAndTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReportDateAndTime";
-			definition = "Date and time of the report .";
+			definition = "Date and time of the report.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
+		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(ReportParameters4 obj) {
+			return obj.getReportDateAndTime();
+		}
+
+		@Override
+		public void setValue(ReportParameters4 obj, DateAndDateTimeChoice value) {
+			obj.setReportDateAndTime(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportParameters4.mmReportIdentification, ReportParameters4.mmReportDateAndTime);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportParameters4.mmReportIdentification, com.tools20022.repository.msg.ReportParameters4.mmReportDateAndTime);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SettlementObligationReportV03.mmReportParameters);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportParameters4";
 				definition = "Provides the parameters of the report.";
@@ -175,21 +198,21 @@ public class ReportParameters4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptId", required = true)
 	public Max35Text getReportIdentification() {
 		return reportIdentification;
 	}
 
-	public void setReportIdentification(Max35Text reportIdentification) {
-		this.reportIdentification = reportIdentification;
+	public ReportParameters4 setReportIdentification(Max35Text reportIdentification) {
+		this.reportIdentification = Objects.requireNonNull(reportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RptDtAndTm", required = true)
 	public DateAndDateTimeChoice getReportDateAndTime() {
 		return reportDateAndTime;
 	}
 
-	public void setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
-		this.reportDateAndTime = reportDateAndTime;
+	public ReportParameters4 setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
+		this.reportDateAndTime = Objects.requireNonNull(reportDateAndTime);
+		return this;
 	}
 }

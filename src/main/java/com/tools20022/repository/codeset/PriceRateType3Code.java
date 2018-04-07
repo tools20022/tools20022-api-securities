@@ -38,14 +38,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceRateType3Code#Discount
- * PriceRateType3Code.mmDiscount}</li>
+ * PriceRateType3Code.Discount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceRateType3Code#Premium
- * PriceRateType3Code.mmPremium}</li>
+ * PriceRateType3Code.Premium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceRateType3Code#Percentage
- * PriceRateType3Code.mmPercentage}</li>
+ * PriceRateType3Code.Percentage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceRateType3Code#Yield
- * PriceRateType3Code.mmYield}</li>
+ * PriceRateType3Code.Yield}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -180,7 +180,7 @@ public class PriceRateType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DISC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceRateType3Code";

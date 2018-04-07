@@ -31,6 +31,7 @@ import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,15 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Communication device number or electronic address used for communication."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "CommunicationAddress6", propOrder = {"addressType", "email", "phone", "mobile", "faxNumber", "telexAddress", "URLAddress"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "CommunicationAddress6", propOrder = {"addressType", "email", "phone", "mobile", "faxNumber", "telexAddress", "uRLAddress"})
 public class CommunicationAddress6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AdrTp")
 	protected AddressType1Choice addressType;
 	/**
-	 * Type of communication address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,10 +125,10 @@ public class CommunicationAddress6 {
 	 * definition} = "Type of communication address."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAddressType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<AddressType1Choice>> mmAddressType = new MMMessageAttribute<CommunicationAddress6, Optional<AddressType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmAddressType;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "AdrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,11 +138,22 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			complexType_lazy = () -> AddressType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AddressType1Choice> getValue(CommunicationAddress6 obj) {
+			return obj.getAddressType();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<AddressType1Choice> value) {
+			obj.setAddressType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Email")
 	protected Max256Text email;
 	/**
-	 * Address for electronic mail (e-mail).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,10 +183,10 @@ public class CommunicationAddress6 {
 	 * definition} = "Address for electronic mail (e-mail)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEmail = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<Max256Text>> mmEmail = new MMMessageAttribute<CommunicationAddress6, Optional<Max256Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmEmailAddress;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "Email";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,12 +196,22 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(CommunicationAddress6 obj) {
+			return obj.getEmail();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<Max256Text> value) {
+			obj.setEmail(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Phne")
 	protected PhoneNumber phone;
 	/**
-	 * Collection of information that identifies a phone number, as defined by
-	 * telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,10 +243,10 @@ public class CommunicationAddress6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPhone = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<PhoneNumber>> mmPhone = new MMMessageAttribute<CommunicationAddress6, Optional<PhoneNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmPhoneNumber;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "Phne";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,12 +256,22 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
+
+		@Override
+		public Optional<PhoneNumber> getValue(CommunicationAddress6 obj) {
+			return obj.getPhone();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<PhoneNumber> value) {
+			obj.setPhone(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Mob")
 	protected PhoneNumber mobile;
 	/**
-	 * Collection of information that identifies a mobile phone number, as
-	 * defined by telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -270,10 +303,10 @@ public class CommunicationAddress6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMobile = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<PhoneNumber>> mmMobile = new MMMessageAttribute<CommunicationAddress6, Optional<PhoneNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmMobileNumber;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "Mob";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,12 +316,22 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
+
+		@Override
+		public Optional<PhoneNumber> getValue(CommunicationAddress6 obj) {
+			return obj.getMobile();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<PhoneNumber> value) {
+			obj.setMobile(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FaxNb")
 	protected PhoneNumber faxNumber;
 	/**
-	 * Collection of information that identifies a FAX number, as defined by
-	 * telecom services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,10 +363,10 @@ public class CommunicationAddress6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFaxNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<PhoneNumber>> mmFaxNumber = new MMMessageAttribute<CommunicationAddress6, Optional<PhoneNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PhoneAddress.mmFaxNumber;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "FaxNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,11 +376,22 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PhoneNumber.mmObject();
 		}
+
+		@Override
+		public Optional<PhoneNumber> getValue(CommunicationAddress6 obj) {
+			return obj.getFaxNumber();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<PhoneNumber> value) {
+			obj.setFaxNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TlxAdr")
 	protected Max35Text telexAddress;
 	/**
-	 * Address for a telex machine.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -367,10 +421,10 @@ public class CommunicationAddress6 {
 	 * definition} = "Address for a telex machine."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTelexAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<Max35Text>> mmTelexAddress = new MMMessageAttribute<CommunicationAddress6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmTelexAddress;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "TlxAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -380,12 +434,22 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CommunicationAddress6 obj) {
+			return obj.getTelexAddress();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<Max35Text> value) {
+			obj.setTelexAddress(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "URLAdr")
 	protected Max256Text uRLAddress;
 	/**
-	 * Address for the Universal Resource Locator (URL), for example, used over
-	 * the www (HTTP) service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,10 +481,10 @@ public class CommunicationAddress6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmURLAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommunicationAddress6, Optional<Max256Text>> mmURLAddress = new MMMessageAttribute<CommunicationAddress6, Optional<Max256Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmURLAddress;
-			componentContext_lazy = () -> CommunicationAddress6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
 			isDerived = false;
 			xmlTag = "URLAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -430,15 +494,26 @@ public class CommunicationAddress6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(CommunicationAddress6 obj) {
+			return obj.getURLAddress();
+		}
+
+		@Override
+		public void setValue(CommunicationAddress6 obj, Optional<Max256Text> value) {
+			obj.setURLAddress(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CommunicationAddress6.mmAddressType, CommunicationAddress6.mmEmail, CommunicationAddress6.mmPhone, CommunicationAddress6.mmMobile, CommunicationAddress6.mmFaxNumber,
-						CommunicationAddress6.mmTelexAddress, CommunicationAddress6.mmURLAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CommunicationAddress6.mmAddressType, com.tools20022.repository.msg.CommunicationAddress6.mmEmail,
+						com.tools20022.repository.msg.CommunicationAddress6.mmPhone, com.tools20022.repository.msg.CommunicationAddress6.mmMobile, com.tools20022.repository.msg.CommunicationAddress6.mmFaxNumber,
+						com.tools20022.repository.msg.CommunicationAddress6.mmTelexAddress, com.tools20022.repository.msg.CommunicationAddress6.mmURLAddress);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommunicationAddress6";
 				definition = "Communication device number or electronic address used for communication.";
@@ -447,66 +522,66 @@ public class CommunicationAddress6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AdrTp")
-	public AddressType1Choice getAddressType() {
-		return addressType;
+	public Optional<AddressType1Choice> getAddressType() {
+		return addressType == null ? Optional.empty() : Optional.of(addressType);
 	}
 
-	public void setAddressType(AddressType1Choice addressType) {
+	public CommunicationAddress6 setAddressType(AddressType1Choice addressType) {
 		this.addressType = addressType;
+		return this;
 	}
 
-	@XmlElement(name = "Email")
-	public Max256Text getEmail() {
-		return email;
+	public Optional<Max256Text> getEmail() {
+		return email == null ? Optional.empty() : Optional.of(email);
 	}
 
-	public void setEmail(Max256Text email) {
+	public CommunicationAddress6 setEmail(Max256Text email) {
 		this.email = email;
+		return this;
 	}
 
-	@XmlElement(name = "Phne")
-	public PhoneNumber getPhone() {
-		return phone;
+	public Optional<PhoneNumber> getPhone() {
+		return phone == null ? Optional.empty() : Optional.of(phone);
 	}
 
-	public void setPhone(PhoneNumber phone) {
+	public CommunicationAddress6 setPhone(PhoneNumber phone) {
 		this.phone = phone;
+		return this;
 	}
 
-	@XmlElement(name = "Mob")
-	public PhoneNumber getMobile() {
-		return mobile;
+	public Optional<PhoneNumber> getMobile() {
+		return mobile == null ? Optional.empty() : Optional.of(mobile);
 	}
 
-	public void setMobile(PhoneNumber mobile) {
+	public CommunicationAddress6 setMobile(PhoneNumber mobile) {
 		this.mobile = mobile;
+		return this;
 	}
 
-	@XmlElement(name = "FaxNb")
-	public PhoneNumber getFaxNumber() {
-		return faxNumber;
+	public Optional<PhoneNumber> getFaxNumber() {
+		return faxNumber == null ? Optional.empty() : Optional.of(faxNumber);
 	}
 
-	public void setFaxNumber(PhoneNumber faxNumber) {
+	public CommunicationAddress6 setFaxNumber(PhoneNumber faxNumber) {
 		this.faxNumber = faxNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TlxAdr")
-	public Max35Text getTelexAddress() {
-		return telexAddress;
+	public Optional<Max35Text> getTelexAddress() {
+		return telexAddress == null ? Optional.empty() : Optional.of(telexAddress);
 	}
 
-	public void setTelexAddress(Max35Text telexAddress) {
+	public CommunicationAddress6 setTelexAddress(Max35Text telexAddress) {
 		this.telexAddress = telexAddress;
+		return this;
 	}
 
-	@XmlElement(name = "URLAdr")
-	public Max256Text getURLAddress() {
-		return uRLAddress;
+	public Optional<Max256Text> getURLAddress() {
+		return uRLAddress == null ? Optional.empty() : Optional.of(uRLAddress);
 	}
 
-	public void setURLAddress(Max256Text uRLAddress) {
+	public CommunicationAddress6 setURLAddress(Max256Text uRLAddress) {
 		this.uRLAddress = uRLAddress;
+		return this;
 	}
 }

@@ -22,11 +22,12 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max3NumericText;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Physical certificates representing rights attached to the physical
@@ -66,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,8 +86,8 @@ public class CouponAttached {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODate date;
 	/**
-	 * Date of the coupon attached to the physical security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,6 +106,12 @@ public class CouponAttached {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes64#mmCouponDate
 	 * FinancialInstrumentAttributes64.mmCouponDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes91#mmCouponDate
+	 * FinancialInstrumentAttributes91.mmCouponDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes92#mmCouponDate
+	 * FinancialInstrumentAttributes92.mmCouponDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -123,9 +130,10 @@ public class CouponAttached {
 	 * definition} = "Date of the coupon attached to the physical security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CouponAttached, ISODate> mmDate = new MMBusinessAttribute<CouponAttached, ISODate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes44.mmCouponDate, FinancialInstrumentAttributes63.mmCouponDate, FinancialInstrumentAttributes64.mmCouponDate);
+			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes44.mmCouponDate, FinancialInstrumentAttributes63.mmCouponDate, FinancialInstrumentAttributes64.mmCouponDate, FinancialInstrumentAttributes91.mmCouponDate,
+					FinancialInstrumentAttributes92.mmCouponDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -136,18 +144,20 @@ public class CouponAttached {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CouponAttached.class.getMethod("getDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(CouponAttached obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(CouponAttached obj, ISODate value) {
+			obj.setDate(value);
 		}
 	};
 	protected Max3NumericText number;
 	/**
-	 * Number of the coupon attached to the physical security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,8 +181,14 @@ public class CouponAttached {
 	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes64#mmCouponAttachedNumber
 	 * FinancialInstrumentAttributes64.mmCouponAttachedNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateAction31#mmCouponNumber
-	 * CorporateAction31.mmCouponNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes91#mmCouponAttachedNumber
+	 * FinancialInstrumentAttributes91.mmCouponAttachedNumber}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes92#mmCouponAttachedNumber
+	 * FinancialInstrumentAttributes92.mmCouponAttachedNumber}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateAction41#mmCouponNumber
+	 * CorporateAction41.mmCouponNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -191,10 +207,10 @@ public class CouponAttached {
 	 * definition} = "Number of the coupon attached to the physical security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CouponAttached, Max3NumericText> mmNumber = new MMBusinessAttribute<CouponAttached, Max3NumericText>() {
 		{
 			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes44.mmCouponAttachedNumber, CorporateAction2.mmCouponNumber, FinancialInstrumentAttributes63.mmCouponAttachedNumber,
-					FinancialInstrumentAttributes64.mmCouponAttachedNumber, CorporateAction31.mmCouponNumber);
+					FinancialInstrumentAttributes64.mmCouponAttachedNumber, FinancialInstrumentAttributes91.mmCouponAttachedNumber, FinancialInstrumentAttributes92.mmCouponAttachedNumber, CorporateAction41.mmCouponNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -205,18 +221,20 @@ public class CouponAttached {
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CouponAttached.class.getMethod("getNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max3NumericText getValue(CouponAttached obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(CouponAttached obj, Max3NumericText value) {
+			obj.setNumber(value);
 		}
 	};
 	protected Security security;
 	/**
-	 * Instrument to which a coupon is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,7 +264,7 @@ public class CouponAttached {
 	 * definition} = "Instrument to which a coupon is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CouponAttached, Security> mmSecurity = new MMBusinessAssociationEnd<CouponAttached, Security>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
@@ -255,16 +273,25 @@ public class CouponAttached {
 			definition = "Instrument to which a coupon is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmCouponAttached;
+			opposite_lazy = () -> Security.mmCouponAttached;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Security getValue(CouponAttached obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(CouponAttached obj, Security value) {
+			obj.setSecurity(value);
 		}
 	};
 	protected ISODateTime couponClippingDate;
 	/**
-	 * Date on which the coupons are to be/were submitted for payment of
-	 * interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -297,7 +324,7 @@ public class CouponAttached {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCouponClippingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CouponAttached, ISODateTime> mmCouponClippingDate = new MMBusinessAttribute<CouponAttached, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionDate4.mmCouponClippingDate);
 			isDerived = false;
@@ -310,18 +337,20 @@ public class CouponAttached {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CouponAttached.class.getMethod("getCouponClippingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(CouponAttached obj) {
+			return obj.getCouponClippingDate();
+		}
+
+		@Override
+		public void setValue(CouponAttached obj, ISODateTime value) {
+			obj.setCouponClippingDate(value);
 		}
 	};
 	protected Max35Text identification;
 	/**
-	 * Identification of the coupon.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,7 +373,7 @@ public class CouponAttached {
 	 * definition} = "Identification of the coupon."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CouponAttached, Max35Text> mmIdentification = new MMBusinessAttribute<CouponAttached, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
@@ -356,23 +385,25 @@ public class CouponAttached {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CouponAttached.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(CouponAttached obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CouponAttached obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CouponAttached";
 				definition = "Physical certificates representing rights attached to the physical certificates representing a security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmCouponAttached);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmCouponAttached);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CouponAttached.mmDate, com.tools20022.repository.entity.CouponAttached.mmNumber, com.tools20022.repository.entity.CouponAttached.mmSecurity,
 						com.tools20022.repository.entity.CouponAttached.mmCouponClippingDate, com.tools20022.repository.entity.CouponAttached.mmIdentification);
 			}
@@ -389,39 +420,44 @@ public class CouponAttached {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public CouponAttached setDate(ISODate date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public Max3NumericText getNumber() {
 		return number;
 	}
 
-	public void setNumber(Max3NumericText number) {
-		this.number = number;
+	public CouponAttached setNumber(Max3NumericText number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
 	public Security getSecurity() {
 		return security;
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
-		this.security = security;
+	public CouponAttached setSecurity(Security security) {
+		this.security = Objects.requireNonNull(security);
+		return this;
 	}
 
 	public ISODateTime getCouponClippingDate() {
 		return couponClippingDate;
 	}
 
-	public void setCouponClippingDate(ISODateTime couponClippingDate) {
-		this.couponClippingDate = couponClippingDate;
+	public CouponAttached setCouponClippingDate(ISODateTime couponClippingDate) {
+		this.couponClippingDate = Objects.requireNonNull(couponClippingDate);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public CouponAttached setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 }

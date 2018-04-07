@@ -22,13 +22,11 @@ import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.MarketTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
-import com.tools20022.repository.entity.Market;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Context or geographic environment in which trading parties may meet in order
@@ -251,8 +249,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -268,10 +266,10 @@ import java.util.List;
 public class TradingMarket extends Market {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Security> tradedSecurity;
+	protected List<Security> tradedSecurity;
 	/**
-	 * Security which is traded on a specific market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,7 +299,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Security which is traded on a specific market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, List<Security>> mmTradedSecurity = new MMBusinessAssociationEnd<TradingMarket, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -309,15 +307,25 @@ public class TradingMarket extends Market {
 			name = "TradedSecurity";
 			definition = "Security which is traded on a specific market.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmTradingMarket;
+			opposite_lazy = () -> Security.mmTradingMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(TradingMarket obj) {
+			return obj.getTradedSecurity();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, List<Security> value) {
+			obj.setTradedSecurity(value);
 		}
 	};
 	protected MarketTypeCode type;
 	/**
-	 * Nature of a market in which transactions take place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -397,7 +405,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Nature of a market in which transactions take place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingMarket, MarketTypeCode> mmType = new MMBusinessAttribute<TradingMarket, MarketTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MarketType11Choice.mmCode, MarketType11Choice.mmProprietary, MarketType12Choice.mmCode, MarketType12Choice.mmProprietary, MarketType8Choice.mmCode, MarketType8Choice.mmProprietary,
 					MarketIdentification20.mmType, MarketType9Choice.mmCode, MarketType9Choice.mmProprietary, MarketIdentification79.mmType, MarketIdentification80.mmType, MarketIdentification84.mmType, MarketIdentification85.mmType,
@@ -412,18 +420,20 @@ public class TradingMarket extends Market {
 			simpleType_lazy = () -> MarketTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingMarket.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarketTypeCode getValue(TradingMarket obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, MarketTypeCode value) {
+			obj.setType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Security> listedSecurity;
+	protected List<Security> listedSecurity;
 	/**
-	 * Security whch is listed on a specific market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -453,7 +463,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Security whch is listed on a specific market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmListedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, List<Security>> mmListedSecurity = new MMBusinessAssociationEnd<TradingMarket, List<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -461,15 +471,25 @@ public class TradingMarket extends Market {
 			name = "ListedSecurity";
 			definition = "Security whch is listed on a specific market.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmPlaceOfListing;
+			opposite_lazy = () -> Security.mmPlaceOfListing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(TradingMarket obj) {
+			return obj.getListedSecurity();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, List<Security> value) {
+			obj.setListedSecurity(value);
 		}
 	};
 	protected SourceOfPrice sourceOfPrice;
 	/**
-	 * Party which provides a price on a market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,7 +520,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Party which provides a price on a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSourceOfPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, Optional<SourceOfPrice>> mmSourceOfPrice = new MMBusinessAssociationEnd<TradingMarket, Optional<SourceOfPrice>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -513,11 +533,21 @@ public class TradingMarket extends Market {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmObject();
 		}
+
+		@Override
+		public Optional<SourceOfPrice> getValue(TradingMarket obj) {
+			return obj.getSourceOfPrice();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, Optional<SourceOfPrice> value) {
+			obj.setSourceOfPrice(value.orElse(null));
+		}
 	};
 	protected LotBreakdown tradeLotSize;
 	/**
-	 * Specifies the number of securities that have to be traded in one lot .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -549,7 +579,7 @@ public class TradingMarket extends Market {
 	 * "Specifies the number of securities that have to be traded in one lot ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeLotSize = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, LotBreakdown> mmTradeLotSize = new MMBusinessAssociationEnd<TradingMarket, LotBreakdown>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -558,15 +588,25 @@ public class TradingMarket extends Market {
 			definition = "Specifies the number of securities that have to be traded in one lot .";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmTradeLotMarket;
+			opposite_lazy = () -> LotBreakdown.mmTradeLotMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
+			type_lazy = () -> LotBreakdown.mmObject();
+		}
+
+		@Override
+		public LotBreakdown getValue(TradingMarket obj) {
+			return obj.getTradeLotSize();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, LotBreakdown value) {
+			obj.setTradeLotSize(value);
 		}
 	};
 	protected SecuritiesQuantity minimumTradedNominalQuantity;
 	/**
-	 * Minimum number of securities that can be traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,7 +637,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Minimum number of securities that can be traded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMinimumTradedNominalQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, SecuritiesQuantity> mmMinimumTradedNominalQuantity = new MMBusinessAssociationEnd<TradingMarket, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -606,15 +646,25 @@ public class TradingMarket extends Market {
 			definition = "Minimum number of securities that can be traded.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumTradedQuantityMarket;
+			opposite_lazy = () -> SecuritiesQuantity.mmMinimumTradedQuantityMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(TradingMarket obj) {
+			return obj.getMinimumTradedNominalQuantity();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, SecuritiesQuantity value) {
+			obj.setMinimumTradedNominalQuantity(value);
 		}
 	};
 	protected ISODateTime listingDate;
 	/**
-	 * Date/time at which the security is listed at the specific exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -638,7 +688,7 @@ public class TradingMarket extends Market {
 	 * "Date/time at which the security is listed at the specific exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmListingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingMarket, ISODateTime> mmListingDate = new MMBusinessAttribute<TradingMarket, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -650,18 +700,20 @@ public class TradingMarket extends Market {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingMarket.class.getMethod("getListingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(TradingMarket obj) {
+			return obj.getListingDate();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, ISODateTime value) {
+			obj.setListingDate(value);
 		}
 	};
 	protected SecuritiesOrder relatedOrder;
 	/**
-	 * Order for which a place of trade is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -692,7 +744,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Order for which a place of trade is requested."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, Optional<SecuritiesOrder>> mmRelatedOrder = new MMBusinessAssociationEnd<TradingMarket, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -701,15 +753,25 @@ public class TradingMarket extends Market {
 			definition = "Order for which a place of trade is requested.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmPlaceOfTrade;
+			opposite_lazy = () -> SecuritiesOrder.mmPlaceOfTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(TradingMarket obj) {
+			return obj.getRelatedOrder();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, Optional<SecuritiesOrder> value) {
+			obj.setRelatedOrder(value.orElse(null));
 		}
 	};
 	protected CurrencyCode tradingCurrency;
 	/**
-	 * Currency of the trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -749,7 +811,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Currency of the trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingMarket, CurrencyCode> mmTradingCurrency = new MMBusinessAttribute<TradingMarket, CurrencyCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SettlementObligation5.mmTradingCurrency, TradeLeg8.mmTradingCurrency, TradeLeg10.mmTradingCurrency, TradeLeg9.mmTradingCurrency);
 			isDerived = false;
@@ -762,18 +824,20 @@ public class TradingMarket extends Market {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingMarket.class.getMethod("getTradingCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(TradingMarket obj) {
+			return obj.getTradingCurrency();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, CurrencyCode value) {
+			obj.setTradingCurrency(value);
 		}
 	};
 	protected SecuritiesQuantity maximumTradedNominalQuantity;
 	/**
-	 * Miaximum number of securities that can be traded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -804,7 +868,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Miaximum number of securities that can be traded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMaximumTradedNominalQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, SecuritiesQuantity> mmMaximumTradedNominalQuantity = new MMBusinessAssociationEnd<TradingMarket, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -813,15 +877,25 @@ public class TradingMarket extends Market {
 			definition = "Miaximum number of securities that can be traded.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumTradedQuantityMarket;
+			opposite_lazy = () -> SecuritiesQuantity.mmMaximumTradedQuantityMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(TradingMarket obj) {
+			return obj.getMaximumTradedNominalQuantity();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, SecuritiesQuantity value) {
+			obj.setMaximumTradedNominalQuantity(value);
 		}
 	};
 	protected StockExchange stockExchange;
 	/**
-	 * Stock exchange which operates on a specific market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -852,7 +926,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Stock exchange which operates on a specific market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStockExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, Optional<StockExchange>> mmStockExchange = new MMBusinessAssociationEnd<TradingMarket, Optional<StockExchange>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -865,14 +939,21 @@ public class TradingMarket extends Market {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.StockExchange.mmObject();
 		}
+
+		@Override
+		public Optional<StockExchange> getValue(TradingMarket obj) {
+			return obj.getStockExchange();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, Optional<StockExchange> value) {
+			obj.setStockExchange(value.orElse(null));
+		}
 	};
 	protected LotBreakdown quoteLot;
 	/**
-	 * Lot size associated with the price. Most exchanges require that pricing
-	 * be quoted in round lot size. However, some exchanges have pricing quoted
-	 * in many different lot sizes, for example, Latin America, some Asian
-	 * markets, Turkey.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -905,7 +986,7 @@ public class TradingMarket extends Market {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuoteLot = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, LotBreakdown> mmQuoteLot = new MMBusinessAssociationEnd<TradingMarket, LotBreakdown>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -914,18 +995,25 @@ public class TradingMarket extends Market {
 			definition = "Lot size associated with the price. Most exchanges require that pricing be quoted in round lot size. However, some exchanges have pricing quoted in many different lot sizes, for example, Latin America, some Asian markets, Turkey.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmQuoteLotMarket;
+			opposite_lazy = () -> LotBreakdown.mmQuoteLotMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
+			type_lazy = () -> LotBreakdown.mmObject();
+		}
+
+		@Override
+		public LotBreakdown getValue(TradingMarket obj) {
+			return obj.getQuoteLot();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, LotBreakdown value) {
+			obj.setQuoteLot(value);
 		}
 	};
 	protected LotBreakdown roundLot;
 	/**
-	 * Minimum quantity of securities that can be purchased without incurring a
-	 * larger fee. For example, if the round lot size is 100 and the trade is
-	 * for 125 shares, then 100 will be processed without a fee and the
-	 * remaining 25 will incur a service fee for being an odd lot size.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -958,7 +1046,7 @@ public class TradingMarket extends Market {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRoundLot = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, LotBreakdown> mmRoundLot = new MMBusinessAssociationEnd<TradingMarket, LotBreakdown>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -967,15 +1055,25 @@ public class TradingMarket extends Market {
 			definition = "Minimum quantity of securities that can be purchased without incurring a larger fee. For example, if the round lot size is 100 and the trade is for 125  shares, then 100 will be processed without a fee and the remaining 25 will incur a service fee for being an odd lot size.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmRoundLotMarket;
+			opposite_lazy = () -> LotBreakdown.mmRoundLotMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
+			type_lazy = () -> LotBreakdown.mmObject();
+		}
+
+		@Override
+		public LotBreakdown getValue(TradingMarket obj) {
+			return obj.getRoundLot();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, LotBreakdown value) {
+			obj.setRoundLot(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.TradingSession> tradingSession;
 	/**
-	 * Trading session associated with a market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1006,7 +1104,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Trading session associated with a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, List<TradingSession>> mmTradingSession = new MMBusinessAssociationEnd<TradingMarket, List<TradingSession>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1018,11 +1116,21 @@ public class TradingMarket extends Market {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 		}
+
+		@Override
+		public List<TradingSession> getValue(TradingMarket obj) {
+			return obj.getTradingSession();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, List<TradingSession> value) {
+			obj.setTradingSession(value);
+		}
 	};
 	protected SecuritiesIdentification listedSecurityTradingIdentification;
 	/**
-	 * Trading identification used on this trading market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1054,7 +1162,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Trading identification used on this trading market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmListedSecurityTradingIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, SecuritiesIdentification> mmListedSecurityTradingIdentification = new MMBusinessAssociationEnd<TradingMarket, SecuritiesIdentification>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1063,15 +1171,25 @@ public class TradingMarket extends Market {
 			definition = "Trading identification used on this trading market.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmApplicableTradingMarket;
+			opposite_lazy = () -> SecuritiesIdentification.mmApplicableTradingMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			type_lazy = () -> SecuritiesIdentification.mmObject();
+		}
+
+		@Override
+		public SecuritiesIdentification getValue(TradingMarket obj) {
+			return obj.getListedSecurityTradingIdentification();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, SecuritiesIdentification value) {
+			obj.setListedSecurityTradingIdentification(value);
 		}
 	};
 	protected CurrencyCode defaultCurrency;
 	/**
-	 * Default currency for the securities trading on this market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1095,7 +1213,7 @@ public class TradingMarket extends Market {
 	 * "Default currency for the securities trading on this market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDefaultCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingMarket, CurrencyCode> mmDefaultCurrency = new MMBusinessAttribute<TradingMarket, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1107,18 +1225,20 @@ public class TradingMarket extends Market {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingMarket.class.getMethod("getDefaultCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(TradingMarket obj) {
+			return obj.getDefaultCurrency();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, CurrencyCode value) {
+			obj.setDefaultCurrency(value);
 		}
 	};
 	protected ISODateTime firstTradingDate;
 	/**
-	 * First date/time at which the security is eligible for trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1142,7 +1262,7 @@ public class TradingMarket extends Market {
 	 * "First date/time at which the security is eligible for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFirstTradingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingMarket, ISODateTime> mmFirstTradingDate = new MMBusinessAttribute<TradingMarket, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1154,18 +1274,20 @@ public class TradingMarket extends Market {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingMarket.class.getMethod("getFirstTradingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(TradingMarket obj) {
+			return obj.getFirstTradingDate();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, ISODateTime value) {
+			obj.setFirstTradingDate(value);
 		}
 	};
 	protected ISODateTime lastTradingDate;
 	/**
-	 * Last date/time at which the security is eligible for trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1189,7 +1311,7 @@ public class TradingMarket extends Market {
 	 * "Last date/time at which the security is eligible for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLastTradingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TradingMarket, ISODateTime> mmLastTradingDate = new MMBusinessAttribute<TradingMarket, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1201,18 +1323,20 @@ public class TradingMarket extends Market {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradingMarket.class.getMethod("getLastTradingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(TradingMarket obj) {
+			return obj.getLastTradingDate();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, ISODateTime value) {
+			obj.setLastTradingDate(value);
 		}
 	};
 	protected Issuance issuance;
 	/**
-	 * Issuance for which the place has been defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1242,7 +1366,7 @@ public class TradingMarket extends Market {
 	 * definition} = "Issuance for which the place has been defined."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, com.tools20022.repository.entity.Issuance> mmIssuance = new MMBusinessAssociationEnd<TradingMarket, com.tools20022.repository.entity.Issuance>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1255,11 +1379,21 @@ public class TradingMarket extends Market {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Issuance getValue(TradingMarket obj) {
+			return obj.getIssuance();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, com.tools20022.repository.entity.Issuance value) {
+			obj.setIssuance(value);
+		}
 	};
 	protected PlaceOfSettlement relatedPlaceOfSettlement;
 	/**
-	 * Place of settlement for which a settlement market is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1291,7 +1425,7 @@ public class TradingMarket extends Market {
 	 * "Place of settlement for which a settlement market is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPlaceOfSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TradingMarket, PlaceOfSettlement> mmRelatedPlaceOfSettlement = new MMBusinessAssociationEnd<TradingMarket, PlaceOfSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
@@ -1300,24 +1434,32 @@ public class TradingMarket extends Market {
 			definition = "Place of settlement for which a settlement market is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PlaceOfSettlement.mmSettlementMarket;
+			opposite_lazy = () -> PlaceOfSettlement.mmSettlementMarket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PlaceOfSettlement.mmObject();
+			type_lazy = () -> PlaceOfSettlement.mmObject();
+		}
+
+		@Override
+		public PlaceOfSettlement getValue(TradingMarket obj) {
+			return obj.getRelatedPlaceOfSettlement();
+		}
+
+		@Override
+		public void setValue(TradingMarket obj, PlaceOfSettlement value) {
+			obj.setRelatedPlaceOfSettlement(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingMarket";
 				definition = "Context or geographic environment in which trading parties may meet in order to negotiate and execute trades among themselves. It also identifies the primary market where an asset is issued.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmTradingMarket, com.tools20022.repository.entity.Security.mmPlaceOfListing,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmApplicableTradingMarket, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumTradedQuantityMarket,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumTradedQuantityMarket, com.tools20022.repository.entity.LotBreakdown.mmTradeLotMarket, com.tools20022.repository.entity.LotBreakdown.mmQuoteLotMarket,
-						com.tools20022.repository.entity.LotBreakdown.mmRoundLotMarket, com.tools20022.repository.entity.Issuance.mmIssuePlace, com.tools20022.repository.entity.SourceOfPrice.mmMarketIdentification,
-						com.tools20022.repository.entity.SecuritiesOrder.mmPlaceOfTrade, com.tools20022.repository.entity.TradingSession.mmMarket, com.tools20022.repository.entity.PlaceOfSettlement.mmSettlementMarket,
+				associationDomain_lazy = () -> Arrays.asList(Security.mmTradingMarket, Security.mmPlaceOfListing, SecuritiesIdentification.mmApplicableTradingMarket, SecuritiesQuantity.mmMinimumTradedQuantityMarket,
+						SecuritiesQuantity.mmMaximumTradedQuantityMarket, LotBreakdown.mmTradeLotMarket, LotBreakdown.mmQuoteLotMarket, LotBreakdown.mmRoundLotMarket, com.tools20022.repository.entity.Issuance.mmIssuePlace,
+						com.tools20022.repository.entity.SourceOfPrice.mmMarketIdentification, SecuritiesOrder.mmPlaceOfTrade, com.tools20022.repository.entity.TradingSession.mmMarket, PlaceOfSettlement.mmSettlementMarket,
 						com.tools20022.repository.entity.StockExchange.mmMarket);
 				derivationElement_lazy = () -> Arrays.asList(MarketIdentification20.mmIdentification, MarketIdentification79.mmIdentification, MarketIdentification80.mmIdentification, TradeLeg8.mmPlaceOfTrade,
 						MarketIdentification84.mmIdentification, TradeLeg10.mmPlaceOfTrade, MarketIdentification85.mmIdentification, TradeLeg9.mmPlaceOfTrade, SettlementObligation8.mmPlaceOfTrade, SecuritiesTransaction1.mmTradeVenue,
@@ -1345,162 +1487,182 @@ public class TradingMarket extends Market {
 	}
 
 	public List<Security> getTradedSecurity() {
-		return tradedSecurity;
+		return tradedSecurity == null ? tradedSecurity = new ArrayList<>() : tradedSecurity;
 	}
 
-	public void setTradedSecurity(List<com.tools20022.repository.entity.Security> tradedSecurity) {
-		this.tradedSecurity = tradedSecurity;
+	public TradingMarket setTradedSecurity(List<Security> tradedSecurity) {
+		this.tradedSecurity = Objects.requireNonNull(tradedSecurity);
+		return this;
 	}
 
 	public MarketTypeCode getType() {
 		return type;
 	}
 
-	public void setType(MarketTypeCode type) {
-		this.type = type;
+	public TradingMarket setType(MarketTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public List<Security> getListedSecurity() {
-		return listedSecurity;
+		return listedSecurity == null ? listedSecurity = new ArrayList<>() : listedSecurity;
 	}
 
-	public void setListedSecurity(List<com.tools20022.repository.entity.Security> listedSecurity) {
-		this.listedSecurity = listedSecurity;
+	public TradingMarket setListedSecurity(List<Security> listedSecurity) {
+		this.listedSecurity = Objects.requireNonNull(listedSecurity);
+		return this;
 	}
 
-	public SourceOfPrice getSourceOfPrice() {
-		return sourceOfPrice;
+	public Optional<SourceOfPrice> getSourceOfPrice() {
+		return sourceOfPrice == null ? Optional.empty() : Optional.of(sourceOfPrice);
 	}
 
-	public void setSourceOfPrice(com.tools20022.repository.entity.SourceOfPrice sourceOfPrice) {
+	public TradingMarket setSourceOfPrice(com.tools20022.repository.entity.SourceOfPrice sourceOfPrice) {
 		this.sourceOfPrice = sourceOfPrice;
+		return this;
 	}
 
 	public LotBreakdown getTradeLotSize() {
 		return tradeLotSize;
 	}
 
-	public void setTradeLotSize(com.tools20022.repository.entity.LotBreakdown tradeLotSize) {
-		this.tradeLotSize = tradeLotSize;
+	public TradingMarket setTradeLotSize(LotBreakdown tradeLotSize) {
+		this.tradeLotSize = Objects.requireNonNull(tradeLotSize);
+		return this;
 	}
 
 	public SecuritiesQuantity getMinimumTradedNominalQuantity() {
 		return minimumTradedNominalQuantity;
 	}
 
-	public void setMinimumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumTradedNominalQuantity) {
-		this.minimumTradedNominalQuantity = minimumTradedNominalQuantity;
+	public TradingMarket setMinimumTradedNominalQuantity(SecuritiesQuantity minimumTradedNominalQuantity) {
+		this.minimumTradedNominalQuantity = Objects.requireNonNull(minimumTradedNominalQuantity);
+		return this;
 	}
 
 	public ISODateTime getListingDate() {
 		return listingDate;
 	}
 
-	public void setListingDate(ISODateTime listingDate) {
-		this.listingDate = listingDate;
+	public TradingMarket setListingDate(ISODateTime listingDate) {
+		this.listingDate = Objects.requireNonNull(listingDate);
+		return this;
 	}
 
-	public SecuritiesOrder getRelatedOrder() {
-		return relatedOrder;
+	public Optional<SecuritiesOrder> getRelatedOrder() {
+		return relatedOrder == null ? Optional.empty() : Optional.of(relatedOrder);
 	}
 
-	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+	public TradingMarket setRelatedOrder(SecuritiesOrder relatedOrder) {
 		this.relatedOrder = relatedOrder;
+		return this;
 	}
 
 	public CurrencyCode getTradingCurrency() {
 		return tradingCurrency;
 	}
 
-	public void setTradingCurrency(CurrencyCode tradingCurrency) {
-		this.tradingCurrency = tradingCurrency;
+	public TradingMarket setTradingCurrency(CurrencyCode tradingCurrency) {
+		this.tradingCurrency = Objects.requireNonNull(tradingCurrency);
+		return this;
 	}
 
 	public SecuritiesQuantity getMaximumTradedNominalQuantity() {
 		return maximumTradedNominalQuantity;
 	}
 
-	public void setMaximumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumTradedNominalQuantity) {
-		this.maximumTradedNominalQuantity = maximumTradedNominalQuantity;
+	public TradingMarket setMaximumTradedNominalQuantity(SecuritiesQuantity maximumTradedNominalQuantity) {
+		this.maximumTradedNominalQuantity = Objects.requireNonNull(maximumTradedNominalQuantity);
+		return this;
 	}
 
-	public StockExchange getStockExchange() {
-		return stockExchange;
+	public Optional<StockExchange> getStockExchange() {
+		return stockExchange == null ? Optional.empty() : Optional.of(stockExchange);
 	}
 
-	public void setStockExchange(com.tools20022.repository.entity.StockExchange stockExchange) {
+	public TradingMarket setStockExchange(com.tools20022.repository.entity.StockExchange stockExchange) {
 		this.stockExchange = stockExchange;
+		return this;
 	}
 
 	public LotBreakdown getQuoteLot() {
 		return quoteLot;
 	}
 
-	public void setQuoteLot(com.tools20022.repository.entity.LotBreakdown quoteLot) {
-		this.quoteLot = quoteLot;
+	public TradingMarket setQuoteLot(LotBreakdown quoteLot) {
+		this.quoteLot = Objects.requireNonNull(quoteLot);
+		return this;
 	}
 
 	public LotBreakdown getRoundLot() {
 		return roundLot;
 	}
 
-	public void setRoundLot(com.tools20022.repository.entity.LotBreakdown roundLot) {
-		this.roundLot = roundLot;
+	public TradingMarket setRoundLot(LotBreakdown roundLot) {
+		this.roundLot = Objects.requireNonNull(roundLot);
+		return this;
 	}
 
 	public List<TradingSession> getTradingSession() {
-		return tradingSession;
+		return tradingSession == null ? tradingSession = new ArrayList<>() : tradingSession;
 	}
 
-	public void setTradingSession(List<com.tools20022.repository.entity.TradingSession> tradingSession) {
-		this.tradingSession = tradingSession;
+	public TradingMarket setTradingSession(List<com.tools20022.repository.entity.TradingSession> tradingSession) {
+		this.tradingSession = Objects.requireNonNull(tradingSession);
+		return this;
 	}
 
 	public SecuritiesIdentification getListedSecurityTradingIdentification() {
 		return listedSecurityTradingIdentification;
 	}
 
-	public void setListedSecurityTradingIdentification(com.tools20022.repository.entity.SecuritiesIdentification listedSecurityTradingIdentification) {
-		this.listedSecurityTradingIdentification = listedSecurityTradingIdentification;
+	public TradingMarket setListedSecurityTradingIdentification(SecuritiesIdentification listedSecurityTradingIdentification) {
+		this.listedSecurityTradingIdentification = Objects.requireNonNull(listedSecurityTradingIdentification);
+		return this;
 	}
 
 	public CurrencyCode getDefaultCurrency() {
 		return defaultCurrency;
 	}
 
-	public void setDefaultCurrency(CurrencyCode defaultCurrency) {
-		this.defaultCurrency = defaultCurrency;
+	public TradingMarket setDefaultCurrency(CurrencyCode defaultCurrency) {
+		this.defaultCurrency = Objects.requireNonNull(defaultCurrency);
+		return this;
 	}
 
 	public ISODateTime getFirstTradingDate() {
 		return firstTradingDate;
 	}
 
-	public void setFirstTradingDate(ISODateTime firstTradingDate) {
-		this.firstTradingDate = firstTradingDate;
+	public TradingMarket setFirstTradingDate(ISODateTime firstTradingDate) {
+		this.firstTradingDate = Objects.requireNonNull(firstTradingDate);
+		return this;
 	}
 
 	public ISODateTime getLastTradingDate() {
 		return lastTradingDate;
 	}
 
-	public void setLastTradingDate(ISODateTime lastTradingDate) {
-		this.lastTradingDate = lastTradingDate;
+	public TradingMarket setLastTradingDate(ISODateTime lastTradingDate) {
+		this.lastTradingDate = Objects.requireNonNull(lastTradingDate);
+		return this;
 	}
 
 	public Issuance getIssuance() {
 		return issuance;
 	}
 
-	public void setIssuance(com.tools20022.repository.entity.Issuance issuance) {
-		this.issuance = issuance;
+	public TradingMarket setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
 	public PlaceOfSettlement getRelatedPlaceOfSettlement() {
 		return relatedPlaceOfSettlement;
 	}
 
-	public void setRelatedPlaceOfSettlement(com.tools20022.repository.entity.PlaceOfSettlement relatedPlaceOfSettlement) {
-		this.relatedPlaceOfSettlement = relatedPlaceOfSettlement;
+	public TradingMarket setRelatedPlaceOfSettlement(PlaceOfSettlement relatedPlaceOfSettlement) {
+		this.relatedPlaceOfSettlement = Objects.requireNonNull(relatedPlaceOfSettlement);
+		return this;
 	}
 }

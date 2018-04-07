@@ -24,11 +24,14 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AccountIdentification26;
 import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -75,16 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * SubAccount1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SubAccount4", propOrder = {"identification", "name", "characteristic"})
 public class SubAccount4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected AccountIdentification26 identification;
 	/**
-	 * Unique and unambiguous identification for the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +124,10 @@ public class SubAccount4 {
 	 * SubAccount1.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubAccount4, AccountIdentification26> mmIdentification = new MMMessageAttribute<SubAccount4, AccountIdentification26>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> SubAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,15 +136,24 @@ public class SubAccount4 {
 			previousVersion_lazy = () -> SubAccount1.mmIdentification;
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AccountIdentification26.mmObject();
+			complexType_lazy = () -> AccountIdentification26.mmObject();
+		}
+
+		@Override
+		public AccountIdentification26 getValue(SubAccount4 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SubAccount4 obj, AccountIdentification26 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max35Text name;
 	/**
-	 * Name of the account. It provides an additional means of identification,
-	 * and is designated by the account servicer in agreement with the account
-	 * owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,10 +189,10 @@ public class SubAccount4 {
 	 * SubAccount1.mmName}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubAccount4, Optional<Max35Text>> mmName = new MMMessageAttribute<SubAccount4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmName;
-			componentContext_lazy = () -> SubAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,11 +203,22 @@ public class SubAccount4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SubAccount4 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(SubAccount4 obj, Optional<Max35Text> value) {
+			obj.setName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Chrtc")
 	protected Max35Text characteristic;
 	/**
-	 * Specifies additional properties of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,10 +251,10 @@ public class SubAccount4 {
 	 * SubAccount1.mmCharacteristic}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCharacteristic = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubAccount4, Optional<Max35Text>> mmCharacteristic = new MMMessageAttribute<SubAccount4, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> Account.mmObject();
-			componentContext_lazy = () -> SubAccount4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubAccount4.mmObject();
 			isDerived = false;
 			xmlTag = "Chrtc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,14 +265,24 @@ public class SubAccount4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SubAccount4 obj) {
+			return obj.getCharacteristic();
+		}
+
+		@Override
+		public void setValue(SubAccount4 obj, Optional<Max35Text> value) {
+			obj.setCharacteristic(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SubAccount4.mmIdentification, SubAccount4.mmName, SubAccount4.mmCharacteristic);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SubAccount4.mmIdentification, com.tools20022.repository.msg.SubAccount4.mmName, com.tools20022.repository.msg.SubAccount4.mmCharacteristic);
 				trace_lazy = () -> Account.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -266,30 +299,30 @@ public class SubAccount4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public AccountIdentification26 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(com.tools20022.repository.msg.AccountIdentification26 identification) {
-		this.identification = identification;
+	public SubAccount4 setIdentification(AccountIdentification26 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max35Text getName() {
-		return name;
+	public Optional<Max35Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max35Text name) {
+	public SubAccount4 setName(Max35Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "Chrtc")
-	public Max35Text getCharacteristic() {
-		return characteristic;
+	public Optional<Max35Text> getCharacteristic() {
+		return characteristic == null ? Optional.empty() : Optional.of(characteristic);
 	}
 
-	public void setCharacteristic(Max35Text characteristic) {
+	public SubAccount4 setCharacteristic(Max35Text characteristic) {
 		this.characteristic = characteristic;
+		return this;
 	}
 }

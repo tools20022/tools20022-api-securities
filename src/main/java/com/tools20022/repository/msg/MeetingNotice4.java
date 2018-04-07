@@ -28,9 +28,11 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.AdditionalRights2;
+import com.tools20022.repository.msg.MeetingContactPerson2;
+import com.tools20022.repository.msg.PostalAddress1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -116,8 +118,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -130,18 +132,18 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MeetingNotice4", propOrder = {"meetingIdentification", "issuerMeetingIdentification", "type", "classification", "announcementDate", "attendanceRequired", "attendanceConfirmationInformation",
 		"attendanceConfirmationDeadline", "attendanceConfirmationSTPDeadline", "attendanceConfirmationMarketDeadline", "additionalDocumentationURLAddress", "additionalProcedureDetails", "totalNumberOfSecuritiesOutstanding",
 		"totalNumberOfVotingRights", "proxyAppointmentNotificationAddress", "proxyChoice", "contactPersonDetails", "resultPublicationDate"})
 public class MeetingNotice4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MtgId")
 	protected Max35Text meetingIdentification;
 	/**
-	 * Identification assigned to the general meeting by the party notifying the
-	 * meeting. It must be unique for the party notifying the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,10 +174,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMeetingIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<Max35Text>> mmMeetingIdentification = new MMMessageAttribute<MeetingNotice4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmIdentification;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "MtgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,12 +187,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(MeetingNotice4 obj) {
+			return obj.getMeetingIdentification();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<Max35Text> value) {
+			obj.setMeetingIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IssrMtgId")
 	protected Max35Text issuerMeetingIdentification;
 	/**
-	 * Identification assigned to the meeting by the issuer. It must be unique
-	 * for the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,10 +233,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuerMeetingIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<Max35Text>> mmIssuerMeetingIdentification = new MMMessageAttribute<MeetingNotice4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> IssuerMeeting.mmIssuerMeetingIdentification;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "IssrMtgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,11 +246,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(MeetingNotice4 obj) {
+			return obj.getIssuerMeetingIdentification();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<Max35Text> value) {
+			obj.setIssuerMeetingIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Tp", required = true)
 	protected MeetingType3Code type;
 	/**
-	 * Specifies the type of security holders meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,10 +291,10 @@ public class MeetingNotice4 {
 	 * definition} = "Specifies the type of security holders meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, MeetingType3Code> mmType = new MMMessageAttribute<MeetingNotice4, MeetingType3Code>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmType;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -281,11 +304,22 @@ public class MeetingNotice4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> MeetingType3Code.mmObject();
 		}
+
+		@Override
+		public MeetingType3Code getValue(MeetingNotice4 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, MeetingType3Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Clssfctn")
 	protected MeetingTypeClassification1Choice classification;
 	/**
-	 * Classifies the type of meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,10 +349,10 @@ public class MeetingNotice4 {
 	 * definition} = "Classifies the type of meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClassification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<MeetingTypeClassification1Choice>> mmClassification = new MMMessageAttribute<MeetingNotice4, Optional<MeetingTypeClassification1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmMeetingEventClassification;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "Clssfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -328,11 +362,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			complexType_lazy = () -> MeetingTypeClassification1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<MeetingTypeClassification1Choice> getValue(MeetingNotice4 obj) {
+			return obj.getClassification();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<MeetingTypeClassification1Choice> value) {
+			obj.setClassification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AnncmntDt")
 	protected ISODate announcementDate;
 	/**
-	 * Official meeting announcement date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,10 +406,10 @@ public class MeetingNotice4 {
 	 * definition} = "Official meeting announcement date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAnnouncementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<ISODate>> mmAnnouncementDate = new MMMessageAttribute<MeetingNotice4, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmAnnouncementDate;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AnncmntDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -374,12 +419,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(MeetingNotice4 obj) {
+			return obj.getAnnouncementDate();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<ISODate> value) {
+			obj.setAnnouncementDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AttndncReqrd")
 	protected YesNoIndicator attendanceRequired;
 	/**
-	 * Indicates whether physical participation to the meeting is required in
-	 * order to be allowed to vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -411,10 +466,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendanceRequired = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<YesNoIndicator>> mmAttendanceRequired = new MMMessageAttribute<MeetingNotice4, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmAttendanceRequired;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AttndncReqrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -424,12 +479,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(MeetingNotice4 obj) {
+			return obj.getAttendanceRequired();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<YesNoIndicator> value) {
+			obj.setAttendanceRequired(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AttndncConfInf")
 	protected Max350Text attendanceConfirmationInformation;
 	/**
-	 * Indicates how to order the attendance card or to give notice of
-	 * attendance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,10 +525,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendanceConfirmationInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<Max350Text>> mmAttendanceConfirmationInformation = new MMMessageAttribute<MeetingNotice4, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmAttendanceConfirmation;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AttndncConfInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -473,13 +538,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(MeetingNotice4 obj) {
+			return obj.getAttendanceConfirmationInformation();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<Max350Text> value) {
+			obj.setAttendanceConfirmationInformation(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AttndncConfDdln")
 	protected DateFormat29Choice attendanceConfirmationDeadline;
 	/**
-	 * Date and time by which the beneficial owner or agent must notify of its
-	 * intention to participate in the meeting. This deadline is set by an
-	 * intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -511,10 +585,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendanceConfirmationDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<DateFormat29Choice>> mmAttendanceConfirmationDeadline = new MMMessageAttribute<MeetingNotice4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmIntermediaryDeadline;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AttndncConfDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -524,13 +598,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(MeetingNotice4 obj) {
+			return obj.getAttendanceConfirmationDeadline();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<DateFormat29Choice> value) {
+			obj.setAttendanceConfirmationDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AttndncConfSTPDdln")
 	protected DateFormat29Choice attendanceConfirmationSTPDeadline;
 	/**
-	 * Date and time by which the beneficial owner or agent must notify of its
-	 * intention to participate in the meeting (STP mode). This deadline is set
-	 * by an intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,10 +645,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendanceConfirmationSTPDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<DateFormat29Choice>> mmAttendanceConfirmationSTPDeadline = new MMMessageAttribute<MeetingNotice4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmSTPDeadline;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AttndncConfSTPDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -575,12 +658,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(MeetingNotice4 obj) {
+			return obj.getAttendanceConfirmationSTPDeadline();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<DateFormat29Choice> value) {
+			obj.setAttendanceConfirmationSTPDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AttndncConfMktDdln")
 	protected DateFormat29Choice attendanceConfirmationMarketDeadline;
 	/**
-	 * Date and time by which the attendance to the meeting should be confirmed.
-	 * This deadline is set by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -612,10 +705,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttendanceConfirmationMarketDeadline = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<DateFormat29Choice>> mmAttendanceConfirmationMarketDeadline = new MMMessageAttribute<MeetingNotice4, Optional<DateFormat29Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Deadline.mmMarketDeadline;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AttndncConfMktDdln";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -625,12 +718,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat29Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat29Choice> getValue(MeetingNotice4 obj) {
+			return obj.getAttendanceConfirmationMarketDeadline();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<DateFormat29Choice> value) {
+			obj.setAttendanceConfirmationMarketDeadline(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlDcmnttnURLAdr")
 	protected Max256Text additionalDocumentationURLAddress;
 	/**
-	 * Address to use over the www (HTTP) service where additional information
-	 * on the meeting may be found.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -661,10 +764,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalDocumentationURLAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<Max256Text>> mmAdditionalDocumentationURLAddress = new MMMessageAttribute<MeetingNotice4, Optional<Max256Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmURLAddress;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlDcmnttnURLAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -674,13 +777,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(MeetingNotice4 obj) {
+			return obj.getAdditionalDocumentationURLAddress();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<Max256Text> value) {
+			obj.setAdditionalDocumentationURLAddress(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.AdditionalRights2> additionalProcedureDetails;
+	@XmlElement(name = "AddtlPrcdrDtls")
+	protected List<AdditionalRights2> additionalProcedureDetails;
 	/**
-	 * Additional procedural information about the general meeting, specifying
-	 * the participation requirements and the voting procedures. Alternatively,
-	 * this may indicate where such information may be obtained.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -710,10 +822,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAdditionalProcedureDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MeetingNotice4, List<AdditionalRights2>> mmAdditionalProcedureDetails = new MMMessageAssociationEnd<MeetingNotice4, List<AdditionalRights2>>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmAdditionalRight;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlPrcdrDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -722,14 +834,24 @@ public class MeetingNotice4 {
 			maxOccurs = 5;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AdditionalRights2.mmObject();
+			type_lazy = () -> AdditionalRights2.mmObject();
+		}
+
+		@Override
+		public List<AdditionalRights2> getValue(MeetingNotice4 obj) {
+			return obj.getAdditionalProcedureDetails();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, List<AdditionalRights2> value) {
+			obj.setAdditionalProcedureDetails(value);
 		}
 	};
+	@XmlElement(name = "TtlNbOfSctiesOutsdng")
 	protected UnitOrFaceAmount1Choice totalNumberOfSecuritiesOutstanding;
 	/**
-	 * Number of securities admitted to the vote, expressed as an amount and a
-	 * currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -761,10 +883,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalNumberOfSecuritiesOutstanding = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<UnitOrFaceAmount1Choice>> mmTotalNumberOfSecuritiesOutstanding = new MMMessageAttribute<MeetingNotice4, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> MeetingParticipation.mmTotalNumberOfSecuritiesOutstanding;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNbOfSctiesOutsdng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -774,11 +896,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(MeetingNotice4 obj) {
+			return obj.getTotalNumberOfSecuritiesOutstanding();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setTotalNumberOfSecuritiesOutstanding(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlNbOfVtngRghts")
 	protected Number totalNumberOfVotingRights;
 	/**
-	 * Number of rights admitted to the vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -807,10 +940,10 @@ public class MeetingNotice4 {
 	 * definition} = "Number of rights admitted to the vote."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalNumberOfVotingRights = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<Number>> mmTotalNumberOfVotingRights = new MMMessageAttribute<MeetingNotice4, Optional<Number>>() {
 		{
 			businessElementTrace_lazy = () -> MeetingParticipation.mmTotalNumberOfVotingRights;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNbOfVtngRghts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -820,11 +953,22 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(MeetingNotice4 obj) {
+			return obj.getTotalNumberOfVotingRights();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<Number> value) {
+			obj.setTotalNumberOfVotingRights(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrxyAppntmntNtfctnAdr")
 	protected PostalAddress1 proxyAppointmentNotificationAddress;
 	/**
-	 * Address where the information on the proxy should be sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -853,10 +997,10 @@ public class MeetingNotice4 {
 	 * "Address where the information on the proxy should be sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProxyAppointmentNotificationAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MeetingNotice4, Optional<PostalAddress1>> mmProxyAppointmentNotificationAddress = new MMMessageAssociationEnd<MeetingNotice4, Optional<PostalAddress1>>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "PrxyAppntmntNtfctnAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -865,13 +1009,24 @@ public class MeetingNotice4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress1.mmObject();
+			type_lazy = () -> PostalAddress1.mmObject();
+		}
+
+		@Override
+		public Optional<PostalAddress1> getValue(MeetingNotice4 obj) {
+			return obj.getProxyAppointmentNotificationAddress();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<PostalAddress1> value) {
+			obj.setProxyAppointmentNotificationAddress(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrxyChc")
 	protected Proxy2Choice proxyChoice;
 	/**
-	 * Indicates whether a proxy is allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -899,10 +1054,10 @@ public class MeetingNotice4 {
 	 * definition} = "Indicates whether a proxy is allowed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProxyChoice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MeetingNotice4, Optional<Proxy2Choice>> mmProxyChoice = new MMMessageAssociationEnd<MeetingNotice4, Optional<Proxy2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Meeting.mmProxyAppointmentConditions;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "PrxyChc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -913,12 +1068,22 @@ public class MeetingNotice4 {
 			isComposite = true;
 			type_lazy = () -> Proxy2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<Proxy2Choice> getValue(MeetingNotice4 obj) {
+			return obj.getProxyChoice();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<Proxy2Choice> value) {
+			obj.setProxyChoice(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.MeetingContactPerson2> contactPersonDetails;
+	@XmlElement(name = "CtctPrsnDtls")
+	protected List<MeetingContactPerson2> contactPersonDetails;
 	/**
-	 * Contact person at the party organising the meeting, at the issuer or at
-	 * an intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -947,10 +1112,10 @@ public class MeetingNotice4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContactPersonDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MeetingNotice4, List<MeetingContactPerson2>> mmContactPersonDetails = new MMMessageAssociationEnd<MeetingNotice4, List<MeetingContactPerson2>>() {
 		{
 			businessComponentTrace_lazy = () -> Person.mmObject();
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "CtctPrsnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -959,13 +1124,24 @@ public class MeetingNotice4 {
 			maxOccurs = 12;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MeetingContactPerson2.mmObject();
+			type_lazy = () -> MeetingContactPerson2.mmObject();
+		}
+
+		@Override
+		public List<MeetingContactPerson2> getValue(MeetingNotice4 obj) {
+			return obj.getContactPersonDetails();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, List<MeetingContactPerson2> value) {
+			obj.setContactPersonDetails(value);
 		}
 	};
+	@XmlElement(name = "RsltPblctnDt")
 	protected DateFormat3Choice resultPublicationDate;
 	/**
-	 * Date on which the company publishes the results of its meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -996,10 +1172,10 @@ public class MeetingNotice4 {
 	 * "Date on which the company publishes the results of its meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResultPublicationDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingNotice4, Optional<DateFormat3Choice>> mmResultPublicationDate = new MMMessageAttribute<MeetingNotice4, Optional<DateFormat3Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmResultPublicationDate;
-			componentContext_lazy = () -> MeetingNotice4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MeetingNotice4.mmObject();
 			isDerived = false;
 			xmlTag = "RsltPblctnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1009,18 +1185,32 @@ public class MeetingNotice4 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat3Choice> getValue(MeetingNotice4 obj) {
+			return obj.getResultPublicationDate();
+		}
+
+		@Override
+		public void setValue(MeetingNotice4 obj, Optional<DateFormat3Choice> value) {
+			obj.setResultPublicationDate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MeetingNotice4.mmMeetingIdentification, MeetingNotice4.mmIssuerMeetingIdentification, MeetingNotice4.mmType, MeetingNotice4.mmClassification, MeetingNotice4.mmAnnouncementDate,
-						MeetingNotice4.mmAttendanceRequired, MeetingNotice4.mmAttendanceConfirmationInformation, MeetingNotice4.mmAttendanceConfirmationDeadline, MeetingNotice4.mmAttendanceConfirmationSTPDeadline,
-						MeetingNotice4.mmAttendanceConfirmationMarketDeadline, MeetingNotice4.mmAdditionalDocumentationURLAddress, MeetingNotice4.mmAdditionalProcedureDetails, MeetingNotice4.mmTotalNumberOfSecuritiesOutstanding,
-						MeetingNotice4.mmTotalNumberOfVotingRights, MeetingNotice4.mmProxyAppointmentNotificationAddress, MeetingNotice4.mmProxyChoice, MeetingNotice4.mmContactPersonDetails, MeetingNotice4.mmResultPublicationDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MeetingNotice4.mmMeetingIdentification, com.tools20022.repository.msg.MeetingNotice4.mmIssuerMeetingIdentification,
+						com.tools20022.repository.msg.MeetingNotice4.mmType, com.tools20022.repository.msg.MeetingNotice4.mmClassification, com.tools20022.repository.msg.MeetingNotice4.mmAnnouncementDate,
+						com.tools20022.repository.msg.MeetingNotice4.mmAttendanceRequired, com.tools20022.repository.msg.MeetingNotice4.mmAttendanceConfirmationInformation,
+						com.tools20022.repository.msg.MeetingNotice4.mmAttendanceConfirmationDeadline, com.tools20022.repository.msg.MeetingNotice4.mmAttendanceConfirmationSTPDeadline,
+						com.tools20022.repository.msg.MeetingNotice4.mmAttendanceConfirmationMarketDeadline, com.tools20022.repository.msg.MeetingNotice4.mmAdditionalDocumentationURLAddress,
+						com.tools20022.repository.msg.MeetingNotice4.mmAdditionalProcedureDetails, com.tools20022.repository.msg.MeetingNotice4.mmTotalNumberOfSecuritiesOutstanding,
+						com.tools20022.repository.msg.MeetingNotice4.mmTotalNumberOfVotingRights, com.tools20022.repository.msg.MeetingNotice4.mmProxyAppointmentNotificationAddress,
+						com.tools20022.repository.msg.MeetingNotice4.mmProxyChoice, com.tools20022.repository.msg.MeetingNotice4.mmContactPersonDetails, com.tools20022.repository.msg.MeetingNotice4.mmResultPublicationDate);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingNotificationV05.mmMeeting);
 				trace_lazy = () -> MeetingNotice.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingNotice4";
 				definition = "Information about the shareholders meeting, specifying the participation requirements and the voting procedures. Alternatively, it may indicate where such information may be obtained.";
@@ -1029,165 +1219,165 @@ public class MeetingNotice4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MtgId")
-	public Max35Text getMeetingIdentification() {
-		return meetingIdentification;
+	public Optional<Max35Text> getMeetingIdentification() {
+		return meetingIdentification == null ? Optional.empty() : Optional.of(meetingIdentification);
 	}
 
-	public void setMeetingIdentification(Max35Text meetingIdentification) {
+	public MeetingNotice4 setMeetingIdentification(Max35Text meetingIdentification) {
 		this.meetingIdentification = meetingIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "IssrMtgId")
-	public Max35Text getIssuerMeetingIdentification() {
-		return issuerMeetingIdentification;
+	public Optional<Max35Text> getIssuerMeetingIdentification() {
+		return issuerMeetingIdentification == null ? Optional.empty() : Optional.of(issuerMeetingIdentification);
 	}
 
-	public void setIssuerMeetingIdentification(Max35Text issuerMeetingIdentification) {
+	public MeetingNotice4 setIssuerMeetingIdentification(Max35Text issuerMeetingIdentification) {
 		this.issuerMeetingIdentification = issuerMeetingIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public MeetingType3Code getType() {
 		return type;
 	}
 
-	public void setType(MeetingType3Code type) {
-		this.type = type;
+	public MeetingNotice4 setType(MeetingType3Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Clssfctn")
-	public MeetingTypeClassification1Choice getClassification() {
-		return classification;
+	public Optional<MeetingTypeClassification1Choice> getClassification() {
+		return classification == null ? Optional.empty() : Optional.of(classification);
 	}
 
-	public void setClassification(MeetingTypeClassification1Choice classification) {
+	public MeetingNotice4 setClassification(MeetingTypeClassification1Choice classification) {
 		this.classification = classification;
+		return this;
 	}
 
-	@XmlElement(name = "AnncmntDt")
-	public ISODate getAnnouncementDate() {
-		return announcementDate;
+	public Optional<ISODate> getAnnouncementDate() {
+		return announcementDate == null ? Optional.empty() : Optional.of(announcementDate);
 	}
 
-	public void setAnnouncementDate(ISODate announcementDate) {
+	public MeetingNotice4 setAnnouncementDate(ISODate announcementDate) {
 		this.announcementDate = announcementDate;
+		return this;
 	}
 
-	@XmlElement(name = "AttndncReqrd")
-	public YesNoIndicator getAttendanceRequired() {
-		return attendanceRequired;
+	public Optional<YesNoIndicator> getAttendanceRequired() {
+		return attendanceRequired == null ? Optional.empty() : Optional.of(attendanceRequired);
 	}
 
-	public void setAttendanceRequired(YesNoIndicator attendanceRequired) {
+	public MeetingNotice4 setAttendanceRequired(YesNoIndicator attendanceRequired) {
 		this.attendanceRequired = attendanceRequired;
+		return this;
 	}
 
-	@XmlElement(name = "AttndncConfInf")
-	public Max350Text getAttendanceConfirmationInformation() {
-		return attendanceConfirmationInformation;
+	public Optional<Max350Text> getAttendanceConfirmationInformation() {
+		return attendanceConfirmationInformation == null ? Optional.empty() : Optional.of(attendanceConfirmationInformation);
 	}
 
-	public void setAttendanceConfirmationInformation(Max350Text attendanceConfirmationInformation) {
+	public MeetingNotice4 setAttendanceConfirmationInformation(Max350Text attendanceConfirmationInformation) {
 		this.attendanceConfirmationInformation = attendanceConfirmationInformation;
+		return this;
 	}
 
-	@XmlElement(name = "AttndncConfDdln")
-	public DateFormat29Choice getAttendanceConfirmationDeadline() {
-		return attendanceConfirmationDeadline;
+	public Optional<DateFormat29Choice> getAttendanceConfirmationDeadline() {
+		return attendanceConfirmationDeadline == null ? Optional.empty() : Optional.of(attendanceConfirmationDeadline);
 	}
 
-	public void setAttendanceConfirmationDeadline(DateFormat29Choice attendanceConfirmationDeadline) {
+	public MeetingNotice4 setAttendanceConfirmationDeadline(DateFormat29Choice attendanceConfirmationDeadline) {
 		this.attendanceConfirmationDeadline = attendanceConfirmationDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "AttndncConfSTPDdln")
-	public DateFormat29Choice getAttendanceConfirmationSTPDeadline() {
-		return attendanceConfirmationSTPDeadline;
+	public Optional<DateFormat29Choice> getAttendanceConfirmationSTPDeadline() {
+		return attendanceConfirmationSTPDeadline == null ? Optional.empty() : Optional.of(attendanceConfirmationSTPDeadline);
 	}
 
-	public void setAttendanceConfirmationSTPDeadline(DateFormat29Choice attendanceConfirmationSTPDeadline) {
+	public MeetingNotice4 setAttendanceConfirmationSTPDeadline(DateFormat29Choice attendanceConfirmationSTPDeadline) {
 		this.attendanceConfirmationSTPDeadline = attendanceConfirmationSTPDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "AttndncConfMktDdln")
-	public DateFormat29Choice getAttendanceConfirmationMarketDeadline() {
-		return attendanceConfirmationMarketDeadline;
+	public Optional<DateFormat29Choice> getAttendanceConfirmationMarketDeadline() {
+		return attendanceConfirmationMarketDeadline == null ? Optional.empty() : Optional.of(attendanceConfirmationMarketDeadline);
 	}
 
-	public void setAttendanceConfirmationMarketDeadline(DateFormat29Choice attendanceConfirmationMarketDeadline) {
+	public MeetingNotice4 setAttendanceConfirmationMarketDeadline(DateFormat29Choice attendanceConfirmationMarketDeadline) {
 		this.attendanceConfirmationMarketDeadline = attendanceConfirmationMarketDeadline;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlDcmnttnURLAdr")
-	public Max256Text getAdditionalDocumentationURLAddress() {
-		return additionalDocumentationURLAddress;
+	public Optional<Max256Text> getAdditionalDocumentationURLAddress() {
+		return additionalDocumentationURLAddress == null ? Optional.empty() : Optional.of(additionalDocumentationURLAddress);
 	}
 
-	public void setAdditionalDocumentationURLAddress(Max256Text additionalDocumentationURLAddress) {
+	public MeetingNotice4 setAdditionalDocumentationURLAddress(Max256Text additionalDocumentationURLAddress) {
 		this.additionalDocumentationURLAddress = additionalDocumentationURLAddress;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlPrcdrDtls")
 	public List<AdditionalRights2> getAdditionalProcedureDetails() {
-		return additionalProcedureDetails;
+		return additionalProcedureDetails == null ? additionalProcedureDetails = new ArrayList<>() : additionalProcedureDetails;
 	}
 
-	public void setAdditionalProcedureDetails(List<com.tools20022.repository.msg.AdditionalRights2> additionalProcedureDetails) {
-		this.additionalProcedureDetails = additionalProcedureDetails;
+	public MeetingNotice4 setAdditionalProcedureDetails(List<AdditionalRights2> additionalProcedureDetails) {
+		this.additionalProcedureDetails = Objects.requireNonNull(additionalProcedureDetails);
+		return this;
 	}
 
-	@XmlElement(name = "TtlNbOfSctiesOutsdng")
-	public UnitOrFaceAmount1Choice getTotalNumberOfSecuritiesOutstanding() {
-		return totalNumberOfSecuritiesOutstanding;
+	public Optional<UnitOrFaceAmount1Choice> getTotalNumberOfSecuritiesOutstanding() {
+		return totalNumberOfSecuritiesOutstanding == null ? Optional.empty() : Optional.of(totalNumberOfSecuritiesOutstanding);
 	}
 
-	public void setTotalNumberOfSecuritiesOutstanding(UnitOrFaceAmount1Choice totalNumberOfSecuritiesOutstanding) {
+	public MeetingNotice4 setTotalNumberOfSecuritiesOutstanding(UnitOrFaceAmount1Choice totalNumberOfSecuritiesOutstanding) {
 		this.totalNumberOfSecuritiesOutstanding = totalNumberOfSecuritiesOutstanding;
+		return this;
 	}
 
-	@XmlElement(name = "TtlNbOfVtngRghts")
-	public Number getTotalNumberOfVotingRights() {
-		return totalNumberOfVotingRights;
+	public Optional<Number> getTotalNumberOfVotingRights() {
+		return totalNumberOfVotingRights == null ? Optional.empty() : Optional.of(totalNumberOfVotingRights);
 	}
 
-	public void setTotalNumberOfVotingRights(Number totalNumberOfVotingRights) {
+	public MeetingNotice4 setTotalNumberOfVotingRights(Number totalNumberOfVotingRights) {
 		this.totalNumberOfVotingRights = totalNumberOfVotingRights;
+		return this;
 	}
 
-	@XmlElement(name = "PrxyAppntmntNtfctnAdr")
-	public PostalAddress1 getProxyAppointmentNotificationAddress() {
-		return proxyAppointmentNotificationAddress;
+	public Optional<PostalAddress1> getProxyAppointmentNotificationAddress() {
+		return proxyAppointmentNotificationAddress == null ? Optional.empty() : Optional.of(proxyAppointmentNotificationAddress);
 	}
 
-	public void setProxyAppointmentNotificationAddress(com.tools20022.repository.msg.PostalAddress1 proxyAppointmentNotificationAddress) {
+	public MeetingNotice4 setProxyAppointmentNotificationAddress(PostalAddress1 proxyAppointmentNotificationAddress) {
 		this.proxyAppointmentNotificationAddress = proxyAppointmentNotificationAddress;
+		return this;
 	}
 
-	@XmlElement(name = "PrxyChc")
-	public Proxy2Choice getProxyChoice() {
-		return proxyChoice;
+	public Optional<Proxy2Choice> getProxyChoice() {
+		return proxyChoice == null ? Optional.empty() : Optional.of(proxyChoice);
 	}
 
-	public void setProxyChoice(Proxy2Choice proxyChoice) {
+	public MeetingNotice4 setProxyChoice(Proxy2Choice proxyChoice) {
 		this.proxyChoice = proxyChoice;
+		return this;
 	}
 
-	@XmlElement(name = "CtctPrsnDtls")
 	public List<MeetingContactPerson2> getContactPersonDetails() {
-		return contactPersonDetails;
+		return contactPersonDetails == null ? contactPersonDetails = new ArrayList<>() : contactPersonDetails;
 	}
 
-	public void setContactPersonDetails(List<com.tools20022.repository.msg.MeetingContactPerson2> contactPersonDetails) {
-		this.contactPersonDetails = contactPersonDetails;
+	public MeetingNotice4 setContactPersonDetails(List<MeetingContactPerson2> contactPersonDetails) {
+		this.contactPersonDetails = Objects.requireNonNull(contactPersonDetails);
+		return this;
 	}
 
-	@XmlElement(name = "RsltPblctnDt")
-	public DateFormat3Choice getResultPublicationDate() {
-		return resultPublicationDate;
+	public Optional<DateFormat3Choice> getResultPublicationDate() {
+		return resultPublicationDate == null ? Optional.empty() : Optional.of(resultPublicationDate);
 	}
 
-	public void setResultPublicationDate(DateFormat3Choice resultPublicationDate) {
+	public MeetingNotice4 setResultPublicationDate(DateFormat3Choice resultPublicationDate) {
 		this.resultPublicationDate = resultPublicationDate;
+		return this;
 	}
 }

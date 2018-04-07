@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -30,8 +31,13 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification37;
+import com.tools20022.repository.msg.SecuritiesAccount19;
+import com.tools20022.repository.msg.SecurityIdentification19;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -93,8 +99,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,16 +111,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Details of the intra-position movement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IntraPositionDetails39", propOrder = {"poolIdentification", "accountOwner", "safekeepingAccount", "financialInstrumentIdentification", "settlementQuantity", "lotNumber", "settlementDate", "acknowledgedStatusTimeStamp",
 		"balanceFrom", "balanceTo"})
 public class IntraPositionDetails39 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PoolId")
 	protected Max35Text poolIdentification;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,6 +136,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PoolId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C::POOL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -139,11 +149,12 @@ public class IntraPositionDetails39 {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPoolIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IntraPositionDetails39, Optional<Max35Text>> mmPoolIdentification = new MMMessageAttribute<IntraPositionDetails39, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "PoolId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C::POOL"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PoolIdentification";
 			definition = "Collective reference identifying a set of messages.";
@@ -151,11 +162,22 @@ public class IntraPositionDetails39 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(IntraPositionDetails39 obj) {
+			return obj.getPoolIdentification();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, Optional<Max35Text> value) {
+			obj.setPoolIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AcctOwnr")
 	protected PartyIdentification92Choice accountOwner;
 	/**
-	 * Party that legally owns the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -175,6 +197,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "AcctOwnr"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95a::ACOW</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -185,12 +210,13 @@ public class IntraPositionDetails39 {
 	 * definition} = "Party that legally owns the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountOwner = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, Optional<PartyIdentification92Choice>> mmAccountOwner = new MMMessageAssociationEnd<IntraPositionDetails39, Optional<PartyIdentification92Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnr";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95a::ACOW"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountOwner";
 			definition = "Party that legally owns the account.";
@@ -199,11 +225,22 @@ public class IntraPositionDetails39 {
 			isComposite = true;
 			type_lazy = () -> PartyIdentification92Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification92Choice> getValue(IntraPositionDetails39 obj) {
+			return obj.getAccountOwner();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, Optional<PartyIdentification92Choice> value) {
+			obj.setAccountOwner(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SfkpgAcct", required = true)
 	protected SecuritiesAccount19 safekeepingAccount;
 	/**
-	 * Account to or from which a securities entry is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -222,6 +259,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SfkpgAcct"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :97A::SAFE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -232,26 +272,37 @@ public class IntraPositionDetails39 {
 	 * definition} = "Account to or from which a securities entry is made."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSafekeepingAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, SecuritiesAccount19> mmSafekeepingAccount = new MMMessageAssociationEnd<IntraPositionDetails39, SecuritiesAccount19>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmAccount;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgAcct";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":97A::SAFE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SafekeepingAccount";
 			definition = "Account to or from which a securities entry is made.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount19.mmObject();
+			type_lazy = () -> SecuritiesAccount19.mmObject();
+		}
+
+		@Override
+		public SecuritiesAccount19 getValue(IntraPositionDetails39 obj) {
+			return obj.getSafekeepingAccount();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, SecuritiesAccount19 value) {
+			obj.setSafekeepingAccount(value);
 		}
 	};
+	@XmlElement(name = "FinInstrmId", required = true)
 	protected SecurityIdentification19 financialInstrumentIdentification;
 	/**
-	 * Financial instruments representing a sum of rights of the investor
-	 * vis-a-vis the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -271,6 +322,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "FinInstrmId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :35B:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -283,25 +337,37 @@ public class IntraPositionDetails39 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, SecurityIdentification19> mmFinancialInstrumentIdentification = new MMMessageAssociationEnd<IntraPositionDetails39, SecurityIdentification19>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":35B:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialInstrumentIdentification";
 			definition = "Financial instruments representing a sum of rights of the investor vis-a-vis the issuer.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecurityIdentification19.mmObject();
+			type_lazy = () -> SecurityIdentification19.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification19 getValue(IntraPositionDetails39 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, SecurityIdentification19 value) {
+			obj.setFinancialInstrumentIdentification(value);
 		}
 	};
+	@XmlElement(name = "SttlmQty", required = true)
 	protected FinancialInstrumentQuantity1Choice settlementQuantity;
 	/**
-	 * Total quantity of securities to be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -321,6 +387,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SttlmQty"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :36B::ESTT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -331,12 +400,13 @@ public class IntraPositionDetails39 {
 	 * definition} = "Total quantity of securities to be settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, FinancialInstrumentQuantity1Choice> mmSettlementQuantity = new MMMessageAssociationEnd<IntraPositionDetails39, FinancialInstrumentQuantity1Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmTransferredQuantity;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmQty";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":36B::ESTT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementQuantity";
 			definition = "Total quantity of securities to be settled.";
@@ -345,11 +415,22 @@ public class IntraPositionDetails39 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1Choice getValue(IntraPositionDetails39 obj) {
+			return obj.getSettlementQuantity();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, FinancialInstrumentQuantity1Choice value) {
+			obj.setSettlementQuantity(value);
+		}
 	};
+	@XmlElement(name = "LotNb")
 	protected GenericIdentification37 lotNumber;
 	/**
-	 * Number identifying a lot constituting the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,10 +462,10 @@ public class IntraPositionDetails39 {
 	 * "Number identifying a lot constituting the financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLotNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IntraPositionDetails39, Optional<GenericIdentification37>> mmLotNumber = new MMMessageAttribute<IntraPositionDetails39, Optional<GenericIdentification37>>() {
 		{
 			businessElementTrace_lazy = () -> LotBreakdown.mmLotNumber;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "LotNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -392,13 +473,24 @@ public class IntraPositionDetails39 {
 			definition = "Number identifying a lot constituting the financial instrument.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.GenericIdentification37.mmObject();
+			complexType_lazy = () -> GenericIdentification37.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification37> getValue(IntraPositionDetails39 obj) {
+			return obj.getLotNumber();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, Optional<GenericIdentification37> value) {
+			obj.setLotNumber(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SttlmDt", required = true)
 	protected DateAndDateTimeChoice settlementDate;
 	/**
-	 * Date and time at which the securities are to be moved.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -418,6 +510,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SttlmDt"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::SETT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -428,12 +523,13 @@ public class IntraPositionDetails39 {
 	 * definition} = "Date and time at which the securities are to be moved."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementDate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, DateAndDateTimeChoice> mmSettlementDate = new MMMessageAssociationEnd<IntraPositionDetails39, DateAndDateTimeChoice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementDate;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmDt";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::SETT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementDate";
 			definition = "Date and time at which the securities are to be moved.";
@@ -442,11 +538,22 @@ public class IntraPositionDetails39 {
 			isComposite = true;
 			type_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(IntraPositionDetails39 obj) {
+			return obj.getSettlementDate();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, DateAndDateTimeChoice value) {
+			obj.setSettlementDate(value);
+		}
 	};
+	@XmlElement(name = "AckdStsTmStmp")
 	protected ISODateTime acknowledgedStatusTimeStamp;
 	/**
-	 * Time stamp on when the transaction is acknowledged.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -471,9 +578,9 @@ public class IntraPositionDetails39 {
 	 * definition} = "Time stamp on when the transaction is acknowledged."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAcknowledgedStatusTimeStamp = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IntraPositionDetails39, Optional<ISODateTime>> mmAcknowledgedStatusTimeStamp = new MMMessageAttribute<IntraPositionDetails39, Optional<ISODateTime>>() {
 		{
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "AckdStsTmStmp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -483,11 +590,22 @@ public class IntraPositionDetails39 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(IntraPositionDetails39 obj) {
+			return obj.getAcknowledgedStatusTimeStamp();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, Optional<ISODateTime> value) {
+			obj.setAcknowledgedStatusTimeStamp(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BalFr")
 	protected SecuritiesBalanceType7Choice balanceFrom;
 	/**
-	 * Balance from which the securities are moving.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -507,6 +625,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "BalFr"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93A::FROM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -517,12 +638,13 @@ public class IntraPositionDetails39 {
 	 * definition} = "Balance from which the securities are moving."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceFrom = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, Optional<SecuritiesBalanceType7Choice>> mmBalanceFrom = new MMMessageAssociationEnd<IntraPositionDetails39, Optional<SecuritiesBalanceType7Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesBalanceType;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "BalFr";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93A::FROM"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BalanceFrom";
 			definition = "Balance from which the securities are moving.";
@@ -531,11 +653,22 @@ public class IntraPositionDetails39 {
 			isComposite = true;
 			type_lazy = () -> SecuritiesBalanceType7Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesBalanceType7Choice> getValue(IntraPositionDetails39 obj) {
+			return obj.getBalanceFrom();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, Optional<SecuritiesBalanceType7Choice> value) {
+			obj.setBalanceFrom(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BalTo")
 	protected SecuritiesBalanceType7Choice balanceTo;
 	/**
-	 * Balance to which the securities are moving.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -555,6 +688,9 @@ public class IntraPositionDetails39 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "BalTo"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93A::TOBA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -565,12 +701,13 @@ public class IntraPositionDetails39 {
 	 * definition} = "Balance to which the securities are moving."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceTo = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IntraPositionDetails39, Optional<SecuritiesBalanceType7Choice>> mmBalanceTo = new MMMessageAssociationEnd<IntraPositionDetails39, Optional<SecuritiesBalanceType7Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesBalanceType;
-			componentContext_lazy = () -> IntraPositionDetails39.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IntraPositionDetails39.mmObject();
 			isDerived = false;
 			xmlTag = "BalTo";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93A::TOBA"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BalanceTo";
 			definition = "Balance to which the securities are moving.";
@@ -579,17 +716,29 @@ public class IntraPositionDetails39 {
 			isComposite = true;
 			type_lazy = () -> SecuritiesBalanceType7Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesBalanceType7Choice> getValue(IntraPositionDetails39 obj) {
+			return obj.getBalanceTo();
+		}
+
+		@Override
+		public void setValue(IntraPositionDetails39 obj, Optional<SecuritiesBalanceType7Choice> value) {
+			obj.setBalanceTo(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IntraPositionDetails39.mmPoolIdentification, IntraPositionDetails39.mmAccountOwner, IntraPositionDetails39.mmSafekeepingAccount,
-						IntraPositionDetails39.mmFinancialInstrumentIdentification, IntraPositionDetails39.mmSettlementQuantity, IntraPositionDetails39.mmLotNumber, IntraPositionDetails39.mmSettlementDate,
-						IntraPositionDetails39.mmAcknowledgedStatusTimeStamp, IntraPositionDetails39.mmBalanceFrom, IntraPositionDetails39.mmBalanceTo);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IntraPositionDetails39.mmPoolIdentification, com.tools20022.repository.msg.IntraPositionDetails39.mmAccountOwner,
+						com.tools20022.repository.msg.IntraPositionDetails39.mmSafekeepingAccount, com.tools20022.repository.msg.IntraPositionDetails39.mmFinancialInstrumentIdentification,
+						com.tools20022.repository.msg.IntraPositionDetails39.mmSettlementQuantity, com.tools20022.repository.msg.IntraPositionDetails39.mmLotNumber, com.tools20022.repository.msg.IntraPositionDetails39.mmSettlementDate,
+						com.tools20022.repository.msg.IntraPositionDetails39.mmAcknowledgedStatusTimeStamp, com.tools20022.repository.msg.IntraPositionDetails39.mmBalanceFrom,
+						com.tools20022.repository.msg.IntraPositionDetails39.mmBalanceTo);
 				messageBuildingBlock_lazy = () -> Arrays.asList(IntraPositionMovementStatusAdviceV05.mmTransactionDetails);
 				trace_lazy = () -> IntraPositionTransfer.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IntraPositionDetails39";
 				definition = "Details of the intra-position movement.";
@@ -598,93 +747,93 @@ public class IntraPositionDetails39 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PoolId")
-	public Max35Text getPoolIdentification() {
-		return poolIdentification;
+	public Optional<Max35Text> getPoolIdentification() {
+		return poolIdentification == null ? Optional.empty() : Optional.of(poolIdentification);
 	}
 
-	public void setPoolIdentification(Max35Text poolIdentification) {
+	public IntraPositionDetails39 setPoolIdentification(Max35Text poolIdentification) {
 		this.poolIdentification = poolIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnr")
-	public PartyIdentification92Choice getAccountOwner() {
-		return accountOwner;
+	public Optional<PartyIdentification92Choice> getAccountOwner() {
+		return accountOwner == null ? Optional.empty() : Optional.of(accountOwner);
 	}
 
-	public void setAccountOwner(PartyIdentification92Choice accountOwner) {
+	public IntraPositionDetails39 setAccountOwner(PartyIdentification92Choice accountOwner) {
 		this.accountOwner = accountOwner;
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgAcct", required = true)
 	public SecuritiesAccount19 getSafekeepingAccount() {
 		return safekeepingAccount;
 	}
 
-	public void setSafekeepingAccount(com.tools20022.repository.msg.SecuritiesAccount19 safekeepingAccount) {
-		this.safekeepingAccount = safekeepingAccount;
+	public IntraPositionDetails39 setSafekeepingAccount(SecuritiesAccount19 safekeepingAccount) {
+		this.safekeepingAccount = Objects.requireNonNull(safekeepingAccount);
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmId", required = true)
 	public SecurityIdentification19 getFinancialInstrumentIdentification() {
 		return financialInstrumentIdentification;
 	}
 
-	public void setFinancialInstrumentIdentification(com.tools20022.repository.msg.SecurityIdentification19 financialInstrumentIdentification) {
-		this.financialInstrumentIdentification = financialInstrumentIdentification;
+	public IntraPositionDetails39 setFinancialInstrumentIdentification(SecurityIdentification19 financialInstrumentIdentification) {
+		this.financialInstrumentIdentification = Objects.requireNonNull(financialInstrumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmQty", required = true)
 	public FinancialInstrumentQuantity1Choice getSettlementQuantity() {
 		return settlementQuantity;
 	}
 
-	public void setSettlementQuantity(FinancialInstrumentQuantity1Choice settlementQuantity) {
-		this.settlementQuantity = settlementQuantity;
+	public IntraPositionDetails39 setSettlementQuantity(FinancialInstrumentQuantity1Choice settlementQuantity) {
+		this.settlementQuantity = Objects.requireNonNull(settlementQuantity);
+		return this;
 	}
 
-	@XmlElement(name = "LotNb")
-	public GenericIdentification37 getLotNumber() {
-		return lotNumber;
+	public Optional<GenericIdentification37> getLotNumber() {
+		return lotNumber == null ? Optional.empty() : Optional.of(lotNumber);
 	}
 
-	public void setLotNumber(com.tools20022.repository.msg.GenericIdentification37 lotNumber) {
+	public IntraPositionDetails39 setLotNumber(GenericIdentification37 lotNumber) {
 		this.lotNumber = lotNumber;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmDt", required = true)
 	public DateAndDateTimeChoice getSettlementDate() {
 		return settlementDate;
 	}
 
-	public void setSettlementDate(DateAndDateTimeChoice settlementDate) {
-		this.settlementDate = settlementDate;
+	public IntraPositionDetails39 setSettlementDate(DateAndDateTimeChoice settlementDate) {
+		this.settlementDate = Objects.requireNonNull(settlementDate);
+		return this;
 	}
 
-	@XmlElement(name = "AckdStsTmStmp")
-	public ISODateTime getAcknowledgedStatusTimeStamp() {
-		return acknowledgedStatusTimeStamp;
+	public Optional<ISODateTime> getAcknowledgedStatusTimeStamp() {
+		return acknowledgedStatusTimeStamp == null ? Optional.empty() : Optional.of(acknowledgedStatusTimeStamp);
 	}
 
-	public void setAcknowledgedStatusTimeStamp(ISODateTime acknowledgedStatusTimeStamp) {
+	public IntraPositionDetails39 setAcknowledgedStatusTimeStamp(ISODateTime acknowledgedStatusTimeStamp) {
 		this.acknowledgedStatusTimeStamp = acknowledgedStatusTimeStamp;
+		return this;
 	}
 
-	@XmlElement(name = "BalFr")
-	public SecuritiesBalanceType7Choice getBalanceFrom() {
-		return balanceFrom;
+	public Optional<SecuritiesBalanceType7Choice> getBalanceFrom() {
+		return balanceFrom == null ? Optional.empty() : Optional.of(balanceFrom);
 	}
 
-	public void setBalanceFrom(SecuritiesBalanceType7Choice balanceFrom) {
+	public IntraPositionDetails39 setBalanceFrom(SecuritiesBalanceType7Choice balanceFrom) {
 		this.balanceFrom = balanceFrom;
+		return this;
 	}
 
-	@XmlElement(name = "BalTo")
-	public SecuritiesBalanceType7Choice getBalanceTo() {
-		return balanceTo;
+	public Optional<SecuritiesBalanceType7Choice> getBalanceTo() {
+		return balanceTo == null ? Optional.empty() : Optional.of(balanceTo);
 	}
 
-	public void setBalanceTo(SecuritiesBalanceType7Choice balanceTo) {
+	public IntraPositionDetails39 setBalanceTo(SecuritiesBalanceType7Choice balanceTo) {
 		this.balanceTo = balanceTo;
+		return this;
 	}
 }

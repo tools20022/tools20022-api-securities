@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,10 +62,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Instrument specific technical data to support identification."
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.RecordTechnicalData1
- * RecordTechnicalData1}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -72,18 +69,22 @@ import javax.xml.bind.annotation.XmlType;
  * RecordTechnicalData3}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.RecordTechnicalData1
+ * RecordTechnicalData1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RecordTechnicalData2", propOrder = {"receiptDateTime", "cancellationReason"})
 public class RecordTechnicalData2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RctDtTm", required = true)
 	protected ISODateTime receiptDateTime;
 	/**
-	 * Defines the date and time when the report was originally received by the
-	 * national competent authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,9 +116,9 @@ public class RecordTechnicalData2 {
 	 * RecordTechnicalData1.mmReceiptDateTime}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReceiptDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecordTechnicalData2, ISODateTime> mmReceiptDateTime = new MMMessageAttribute<RecordTechnicalData2, ISODateTime>() {
 		{
-			componentContext_lazy = () -> RecordTechnicalData2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecordTechnicalData2.mmObject();
 			isDerived = false;
 			xmlTag = "RctDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,11 +129,22 @@ public class RecordTechnicalData2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(RecordTechnicalData2 obj) {
+			return obj.getReceiptDateTime();
+		}
+
+		@Override
+		public void setValue(RecordTechnicalData2 obj, ISODateTime value) {
+			obj.setReceiptDateTime(value);
+		}
 	};
+	@XmlElement(name = "CxlRsn", required = true)
 	protected CancelledStatusReason15Code cancellationReason;
 	/**
-	 * Specifies the reason for the cancellation the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,9 +171,9 @@ public class RecordTechnicalData2 {
 	 * "Specifies the reason for the cancellation the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCancellationReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecordTechnicalData2, CancelledStatusReason15Code> mmCancellationReason = new MMMessageAttribute<RecordTechnicalData2, CancelledStatusReason15Code>() {
 		{
-			componentContext_lazy = () -> RecordTechnicalData2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecordTechnicalData2.mmObject();
 			isDerived = false;
 			xmlTag = "CxlRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,13 +183,23 @@ public class RecordTechnicalData2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CancelledStatusReason15Code.mmObject();
 		}
+
+		@Override
+		public CancelledStatusReason15Code getValue(RecordTechnicalData2 obj) {
+			return obj.getCancellationReason();
+		}
+
+		@Override
+		public void setValue(RecordTechnicalData2 obj, CancelledStatusReason15Code value) {
+			obj.setCancellationReason(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RecordTechnicalData2.mmReceiptDateTime, RecordTechnicalData2.mmCancellationReason);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RecordTechnicalData2.mmReceiptDateTime, com.tools20022.repository.msg.RecordTechnicalData2.mmCancellationReason);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RecordTechnicalData2";
 				definition = "Instrument specific technical data to support identification.";
@@ -188,21 +210,21 @@ public class RecordTechnicalData2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RctDtTm", required = true)
 	public ISODateTime getReceiptDateTime() {
 		return receiptDateTime;
 	}
 
-	public void setReceiptDateTime(ISODateTime receiptDateTime) {
-		this.receiptDateTime = receiptDateTime;
+	public RecordTechnicalData2 setReceiptDateTime(ISODateTime receiptDateTime) {
+		this.receiptDateTime = Objects.requireNonNull(receiptDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "CxlRsn", required = true)
 	public CancelledStatusReason15Code getCancellationReason() {
 		return cancellationReason;
 	}
 
-	public void setCancellationReason(CancelledStatusReason15Code cancellationReason) {
-		this.cancellationReason = cancellationReason;
+	public RecordTechnicalData2 setCancellationReason(CancelledStatusReason15Code cancellationReason) {
+		this.cancellationReason = Objects.requireNonNull(cancellationReason);
+		return this;
 	}
 }

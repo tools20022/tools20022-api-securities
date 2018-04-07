@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPledgeeTypeAndIdentificationOrLEIRule#forPledgee1
+ * ConstraintPledgeeTypeAndIdentificationOrLEIRule.forPledgee1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Identifies the entity to which the financial instruments are pledged."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "Pledgee1", propOrder = {"pledgeeTypeAndIdentification", "LEI"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "Pledgee1", propOrder = {"pledgeeTypeAndIdentification", "lEI"})
 public class Pledgee1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PldgeeTpAndId")
 	protected PledgeeFormat3Choice pledgeeTypeAndIdentification;
 	/**
-	 * Unique identification of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -104,10 +114,10 @@ public class Pledgee1 {
 	 * definition} = "Unique identification of the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPledgeeTypeAndIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Pledgee1, Optional<PledgeeFormat3Choice>> mmPledgeeTypeAndIdentification = new MMMessageAssociationEnd<Pledgee1, Optional<PledgeeFormat3Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> Pledgee1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Pledgee1.mmObject();
 			isDerived = false;
 			xmlTag = "PldgeeTpAndId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +128,22 @@ public class Pledgee1 {
 			isComposite = true;
 			type_lazy = () -> PledgeeFormat3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PledgeeFormat3Choice> getValue(Pledgee1 obj) {
+			return obj.getPledgeeTypeAndIdentification();
+		}
+
+		@Override
+		public void setValue(Pledgee1 obj, Optional<PledgeeFormat3Choice> value) {
+			obj.setPledgeeTypeAndIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LEI")
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal entity identification as an alternate identification for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,9 +170,9 @@ public class Pledgee1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLEI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Pledgee1, Optional<LEIIdentifier>> mmLEI = new MMMessageAttribute<Pledgee1, Optional<LEIIdentifier>>() {
 		{
-			componentContext_lazy = () -> Pledgee1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Pledgee1.mmObject();
 			isDerived = false;
 			xmlTag = "LEI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,14 +182,25 @@ public class Pledgee1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(Pledgee1 obj) {
+			return obj.getLEI();
+		}
+
+		@Override
+		public void setValue(Pledgee1 obj, Optional<LEIIdentifier> value) {
+			obj.setLEI(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Pledgee1.mmPledgeeTypeAndIdentification, Pledgee1.mmLEI);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Pledgee1.mmPledgeeTypeAndIdentification, com.tools20022.repository.msg.Pledgee1.mmLEI);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintPledgeeTypeAndIdentificationOrLEIRule.forPledgee1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Pledgee1";
 				definition = "Identifies the entity to which the financial instruments are pledged.";
@@ -177,21 +209,21 @@ public class Pledgee1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PldgeeTpAndId")
-	public PledgeeFormat3Choice getPledgeeTypeAndIdentification() {
-		return pledgeeTypeAndIdentification;
+	public Optional<PledgeeFormat3Choice> getPledgeeTypeAndIdentification() {
+		return pledgeeTypeAndIdentification == null ? Optional.empty() : Optional.of(pledgeeTypeAndIdentification);
 	}
 
-	public void setPledgeeTypeAndIdentification(PledgeeFormat3Choice pledgeeTypeAndIdentification) {
+	public Pledgee1 setPledgeeTypeAndIdentification(PledgeeFormat3Choice pledgeeTypeAndIdentification) {
 		this.pledgeeTypeAndIdentification = pledgeeTypeAndIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "LEI")
-	public LEIIdentifier getLEI() {
-		return lEI;
+	public Optional<LEIIdentifier> getLEI() {
+		return lEI == null ? Optional.empty() : Optional.of(lEI);
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
+	public Pledgee1 setLEI(LEIIdentifier lEI) {
 		this.lEI = lEI;
+		return this;
 	}
 }

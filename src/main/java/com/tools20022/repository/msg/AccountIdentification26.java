@@ -26,8 +26,10 @@ import com.tools20022.repository.area.reda.StandingSettlementInstructionStatusAd
 import com.tools20022.repository.area.reda.StandingSettlementInstructionV01;
 import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.SimpleIdentificationInformation4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,16 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * AccountIdentification1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountIdentification26", propOrder = "proprietary")
 public class AccountIdentification26 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prtry", required = true)
 	protected SimpleIdentificationInformation4 proprietary;
 	/**
-	 * Unique identifier for an account. It is assigned by the account servicer
-	 * using a proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,10 +132,10 @@ public class AccountIdentification26 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountIdentification26, SimpleIdentificationInformation4> mmProprietary = new MMMessageAttribute<AccountIdentification26, SimpleIdentificationInformation4>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmProprietaryIdentification;
-			componentContext_lazy = () -> AccountIdentification26.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountIdentification26.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,18 +143,28 @@ public class AccountIdentification26 {
 			definition = "Unique identifier for an account. It is assigned by the account servicer using a proprietary identification scheme.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.SimpleIdentificationInformation4.mmObject();
+			complexType_lazy = () -> SimpleIdentificationInformation4.mmObject();
+		}
+
+		@Override
+		public SimpleIdentificationInformation4 getValue(AccountIdentification26 obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(AccountIdentification26 obj, SimpleIdentificationInformation4 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountIdentification26.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountIdentification26.mmProprietary);
 				messageBuildingBlock_lazy = () -> Arrays.asList(StandingSettlementInstructionV01.mmAccountIdentification, StandingSettlementInstructionCancellationV01.mmAccountIdentification,
 						StandingSettlementInstructionStatusAdviceV01.mmAccountIdentification, StandingSettlementInstructionDeletionV01.mmAccountIdentification);
 				trace_lazy = () -> AccountIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountIdentification26";
 				definition = "Unique identifier of an account, as assigned by the account servicer.";
@@ -162,12 +174,12 @@ public class AccountIdentification26 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public SimpleIdentificationInformation4 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(com.tools20022.repository.msg.SimpleIdentificationInformation4 proprietary) {
-		this.proprietary = proprietary;
+	public AccountIdentification26 setProprietary(SimpleIdentificationInformation4 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

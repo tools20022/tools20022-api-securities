@@ -30,6 +30,7 @@ import com.tools20022.repository.entity.TradingMarket;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PlaceOfTradeIdentification1Choice", propOrder = {"country", "exchange", "party", "overTheCounter"})
 public class PlaceOfTradeIdentification1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctry", required = true)
 	protected CountryCode country;
 	/**
-	 * Country in which the transaction is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,10 +119,10 @@ public class PlaceOfTradeIdentification1Choice {
 	 * definition} = "Country in which the transaction is executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlaceOfTradeIdentification1Choice, CountryCode> mmCountry = new MMMessageAttribute<PlaceOfTradeIdentification1Choice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> PlaceOfTradeIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,11 +132,22 @@ public class PlaceOfTradeIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(PlaceOfTradeIdentification1Choice obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(PlaceOfTradeIdentification1Choice obj, CountryCode value) {
+			obj.setCountry(value);
+		}
 	};
+	@XmlElement(name = "Xchg", required = true)
 	protected MICIdentifier exchange;
 	/**
-	 * Exchange at which the transaction is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,10 +178,10 @@ public class PlaceOfTradeIdentification1Choice {
 	 * definition} = "Exchange at which the transaction is executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExchange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlaceOfTradeIdentification1Choice, MICIdentifier> mmExchange = new MMMessageAttribute<PlaceOfTradeIdentification1Choice, MICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmMIC;
-			componentContext_lazy = () -> PlaceOfTradeIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Xchg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,11 +191,22 @@ public class PlaceOfTradeIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public MICIdentifier getValue(PlaceOfTradeIdentification1Choice obj) {
+			return obj.getExchange();
+		}
+
+		@Override
+		public void setValue(PlaceOfTradeIdentification1Choice obj, MICIdentifier value) {
+			obj.setExchange(value);
+		}
 	};
+	@XmlElement(name = "Pty", required = true)
 	protected AnyBICIdentifier party;
 	/**
-	 * Party's location at which the transaction is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,10 +237,10 @@ public class PlaceOfTradeIdentification1Choice {
 	 * definition} = "Party's location at which the transaction is executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlaceOfTradeIdentification1Choice, AnyBICIdentifier> mmParty = new MMMessageAttribute<PlaceOfTradeIdentification1Choice, AnyBICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmAnyBIC;
-			componentContext_lazy = () -> PlaceOfTradeIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -226,11 +250,22 @@ public class PlaceOfTradeIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public AnyBICIdentifier getValue(PlaceOfTradeIdentification1Choice obj) {
+			return obj.getParty();
+		}
+
+		@Override
+		public void setValue(PlaceOfTradeIdentification1Choice obj, AnyBICIdentifier value) {
+			obj.setParty(value);
+		}
 	};
+	@XmlElement(name = "OverTheCntr", required = true)
 	protected Max35Text overTheCounter;
 	/**
-	 * Place at which the Over-the-Counter (OTC) transaction is executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,9 +291,9 @@ public class PlaceOfTradeIdentification1Choice {
 	 * "Place at which the Over-the-Counter (OTC) transaction is executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOverTheCounter = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlaceOfTradeIdentification1Choice, Max35Text> mmOverTheCounter = new MMMessageAttribute<PlaceOfTradeIdentification1Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> PlaceOfTradeIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OverTheCntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -268,15 +303,25 @@ public class PlaceOfTradeIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(PlaceOfTradeIdentification1Choice obj) {
+			return obj.getOverTheCounter();
+		}
+
+		@Override
+		public void setValue(PlaceOfTradeIdentification1Choice obj, Max35Text value) {
+			obj.setOverTheCounter(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PlaceOfTradeIdentification1Choice.mmCountry, PlaceOfTradeIdentification1Choice.mmExchange, PlaceOfTradeIdentification1Choice.mmParty,
-						PlaceOfTradeIdentification1Choice.mmOverTheCounter);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmCountry, com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmExchange,
+						com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmParty, com.tools20022.repository.choice.PlaceOfTradeIdentification1Choice.mmOverTheCounter);
 				trace_lazy = () -> TradingMarket.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlaceOfTradeIdentification1Choice";
 				definition = "Context, or geographic environment, in which trading parties may meet in order to negotiate and execute trades among themselves.";
@@ -285,39 +330,39 @@ public class PlaceOfTradeIdentification1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctry", required = true)
 	public CountryCode getCountry() {
 		return country;
 	}
 
-	public void setCountry(CountryCode country) {
-		this.country = country;
+	public PlaceOfTradeIdentification1Choice setCountry(CountryCode country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
-	@XmlElement(name = "Xchg", required = true)
 	public MICIdentifier getExchange() {
 		return exchange;
 	}
 
-	public void setExchange(MICIdentifier exchange) {
-		this.exchange = exchange;
+	public PlaceOfTradeIdentification1Choice setExchange(MICIdentifier exchange) {
+		this.exchange = Objects.requireNonNull(exchange);
+		return this;
 	}
 
-	@XmlElement(name = "Pty", required = true)
 	public AnyBICIdentifier getParty() {
 		return party;
 	}
 
-	public void setParty(AnyBICIdentifier party) {
-		this.party = party;
+	public PlaceOfTradeIdentification1Choice setParty(AnyBICIdentifier party) {
+		this.party = Objects.requireNonNull(party);
+		return this;
 	}
 
-	@XmlElement(name = "OverTheCntr", required = true)
 	public Max35Text getOverTheCounter() {
 		return overTheCounter;
 	}
 
-	public void setOverTheCounter(Max35Text overTheCounter) {
-		this.overTheCounter = overTheCounter;
+	public PlaceOfTradeIdentification1Choice setOverTheCounter(Max35Text overTheCounter) {
+		this.overTheCounter = Objects.requireNonNull(overTheCounter);
+		return this;
 	}
 }

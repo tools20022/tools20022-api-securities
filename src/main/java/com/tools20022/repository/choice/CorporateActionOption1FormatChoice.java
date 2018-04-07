@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the option type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionOption1FormatChoice", propOrder = {"code", "proprietary"})
 public class CorporateActionOption1FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CorporateActionOptionType1Code code;
 	/**
-	 * Option type expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,10 +107,10 @@ public class CorporateActionOption1FormatChoice {
 	 * definition} = "Option type expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionOption1FormatChoice, CorporateActionOptionType1Code> mmCode = new MMMessageAttribute<CorporateActionOption1FormatChoice, CorporateActionOptionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionType;
-			componentContext_lazy = () -> CorporateActionOption1FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateActionOption1FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class CorporateActionOption1FormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionOptionType1Code.mmObject();
 		}
+
+		@Override
+		public CorporateActionOptionType1Code getValue(CorporateActionOption1FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CorporateActionOption1FormatChoice obj, CorporateActionOptionType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Option type expressed as a prorprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,10 +166,10 @@ public class CorporateActionOption1FormatChoice {
 	 * definition} = "Option type expressed as a prorprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionOption1FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<CorporateActionOption1FormatChoice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionType;
-			componentContext_lazy = () -> CorporateActionOption1FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateActionOption1FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,14 +179,24 @@ public class CorporateActionOption1FormatChoice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
 		}
+
+		@Override
+		public GenericIdentification13 getValue(CorporateActionOption1FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CorporateActionOption1FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionOption1FormatChoice.mmCode, CorporateActionOption1FormatChoice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CorporateActionOption1FormatChoice.mmCode, com.tools20022.repository.choice.CorporateActionOption1FormatChoice.mmProprietary);
 				trace_lazy = () -> CorporateActionOption.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionOption1FormatChoice";
 				definition = "Choice of format for the option type.";
@@ -182,21 +205,21 @@ public class CorporateActionOption1FormatChoice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CorporateActionOptionType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(CorporateActionOptionType1Code code) {
-		this.code = code;
+	public CorporateActionOption1FormatChoice setCode(CorporateActionOptionType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public CorporateActionOption1FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

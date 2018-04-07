@@ -24,8 +24,12 @@ import com.tools20022.repository.choice.PartyIdentification102Choice;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.SecuritiesSettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentificationAndAccount126;
+import com.tools20022.repository.msg.PartyIdentificationAndAccount127;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintDepositoryGuideline#forDeliveringPartiesAndAccount15
+ * ConstraintDepositoryGuideline.forDeliveringPartiesAndAccount15}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,18 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DeliveringPartiesAndAccount15", propOrder = {"depository", "party1", "party2"})
 public class DeliveringPartiesAndAccount15 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Dpstry", required = true)
 	protected PartyIdentification102Choice depository;
 	/**
-	 * First party in the settlement chain. In a plain vanilla settlement, it is
-	 * the Central Securities Depository where the counterparty requests to
-	 * receive the financial instrument or from where the counterparty delivers
-	 * the financial instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -118,10 +128,10 @@ public class DeliveringPartiesAndAccount15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDepository = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DeliveringPartiesAndAccount15, PartyIdentification102Choice> mmDepository = new MMMessageAssociationEnd<DeliveringPartiesAndAccount15, PartyIdentification102Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> DeliveringPartiesAndAccount15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveringPartiesAndAccount15.mmObject();
 			isDerived = false;
 			xmlTag = "Dpstry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,11 +142,22 @@ public class DeliveringPartiesAndAccount15 {
 			isComposite = true;
 			type_lazy = () -> PartyIdentification102Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification102Choice getValue(DeliveringPartiesAndAccount15 obj) {
+			return obj.getDepository();
+		}
+
+		@Override
+		public void setValue(DeliveringPartiesAndAccount15 obj, PartyIdentification102Choice value) {
+			obj.setDepository(value);
+		}
 	};
+	@XmlElement(name = "Pty1", required = true)
 	protected PartyIdentificationAndAccount126 party1;
 	/**
-	 * Party that, in a settlement chain interacts with the depository.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -167,10 +188,10 @@ public class DeliveringPartiesAndAccount15 {
 	 * "Party that, in a settlement chain interacts with the depository."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParty1 = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DeliveringPartiesAndAccount15, PartyIdentificationAndAccount126> mmParty1 = new MMMessageAssociationEnd<DeliveringPartiesAndAccount15, PartyIdentificationAndAccount126>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> DeliveringPartiesAndAccount15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveringPartiesAndAccount15.mmObject();
 			isDerived = false;
 			xmlTag = "Pty1";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,13 +200,24 @@ public class DeliveringPartiesAndAccount15 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentificationAndAccount126.mmObject();
+			type_lazy = () -> PartyIdentificationAndAccount126.mmObject();
+		}
+
+		@Override
+		public PartyIdentificationAndAccount126 getValue(DeliveringPartiesAndAccount15 obj) {
+			return obj.getParty1();
+		}
+
+		@Override
+		public void setValue(DeliveringPartiesAndAccount15 obj, PartyIdentificationAndAccount126 value) {
+			obj.setParty1(value);
 		}
 	};
+	@XmlElement(name = "Pty2")
 	protected PartyIdentificationAndAccount127 party2;
 	/**
-	 * Party that, in a settlement chain interacts with the party 1.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -216,10 +248,10 @@ public class DeliveringPartiesAndAccount15 {
 	 * "Party that, in a settlement chain interacts with the party 1."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParty2 = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DeliveringPartiesAndAccount15, Optional<PartyIdentificationAndAccount127>> mmParty2 = new MMMessageAssociationEnd<DeliveringPartiesAndAccount15, Optional<PartyIdentificationAndAccount127>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> DeliveringPartiesAndAccount15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveringPartiesAndAccount15.mmObject();
 			isDerived = false;
 			xmlTag = "Pty2";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,16 +260,28 @@ public class DeliveringPartiesAndAccount15 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentificationAndAccount127.mmObject();
+			type_lazy = () -> PartyIdentificationAndAccount127.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentificationAndAccount127> getValue(DeliveringPartiesAndAccount15 obj) {
+			return obj.getParty2();
+		}
+
+		@Override
+		public void setValue(DeliveringPartiesAndAccount15 obj, Optional<PartyIdentificationAndAccount127> value) {
+			obj.setParty2(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DeliveringPartiesAndAccount15.mmDepository, DeliveringPartiesAndAccount15.mmParty1, DeliveringPartiesAndAccount15.mmParty2);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DeliveringPartiesAndAccount15.mmDepository, com.tools20022.repository.msg.DeliveringPartiesAndAccount15.mmParty1,
+						com.tools20022.repository.msg.DeliveringPartiesAndAccount15.mmParty2);
 				trace_lazy = () -> SecuritiesSettlementPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintDepositoryGuideline.forDeliveringPartiesAndAccount15);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveringPartiesAndAccount15";
 				definition = "Chain of parties involved in the settlement of a transaction, including receipts and deliveries, book transfers, treasury deals, or other activities, resulting in the movement of a security or amount of money from one account to another.";
@@ -246,30 +290,30 @@ public class DeliveringPartiesAndAccount15 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Dpstry", required = true)
 	public PartyIdentification102Choice getDepository() {
 		return depository;
 	}
 
-	public void setDepository(PartyIdentification102Choice depository) {
-		this.depository = depository;
+	public DeliveringPartiesAndAccount15 setDepository(PartyIdentification102Choice depository) {
+		this.depository = Objects.requireNonNull(depository);
+		return this;
 	}
 
-	@XmlElement(name = "Pty1", required = true)
 	public PartyIdentificationAndAccount126 getParty1() {
 		return party1;
 	}
 
-	public void setParty1(com.tools20022.repository.msg.PartyIdentificationAndAccount126 party1) {
-		this.party1 = party1;
+	public DeliveringPartiesAndAccount15 setParty1(PartyIdentificationAndAccount126 party1) {
+		this.party1 = Objects.requireNonNull(party1);
+		return this;
 	}
 
-	@XmlElement(name = "Pty2")
-	public PartyIdentificationAndAccount127 getParty2() {
-		return party2;
+	public Optional<PartyIdentificationAndAccount127> getParty2() {
+		return party2 == null ? Optional.empty() : Optional.of(party2);
 	}
 
-	public void setParty2(com.tools20022.repository.msg.PartyIdentificationAndAccount127 party2) {
+	public DeliveringPartiesAndAccount15 setParty2(PartyIdentificationAndAccount127 party2) {
 		this.party2 = party2;
+		return this;
 	}
 }

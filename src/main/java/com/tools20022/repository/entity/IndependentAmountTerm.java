@@ -28,9 +28,9 @@ import com.tools20022.repository.msg.IndependentAmount1;
 import com.tools20022.repository.msg.IndependentAmount2;
 import com.tools20022.repository.msg.Margin1;
 import com.tools20022.repository.msg.SegregatedIndependentAmountMargin1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Defines the specific terms used to calculate an independent amount.
@@ -77,8 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,15 +95,8 @@ public class IndependentAmountTerm extends ExposureTerm {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected IndependentAmountConventionTypeCode convention;
 	/**
-	 * Determines how the independent amount was applied in the calculation. <br>
-	 * It is either: <br>
-	 * - Before threshold, effectively acting as an add on to exposure, <br>
-	 * - After threshold where the amount is an add on to the credit support
-	 * amount and forms part of the variation margin requirement, <br>
-	 * - Segregated where it is treated independently of variation margin for
-	 * segregation purposes.Defines the specific terms used to calculate an
-	 * independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,7 +133,7 @@ public class IndependentAmountTerm extends ExposureTerm {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmConvention = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IndependentAmountTerm, IndependentAmountConventionTypeCode> mmConvention = new MMBusinessAttribute<IndependentAmountTerm, IndependentAmountConventionTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IndependentAmount1.mmConvention, IndependentAmount2.mmConvention);
 			isDerived = false;
@@ -153,19 +146,21 @@ public class IndependentAmountTerm extends ExposureTerm {
 			simpleType_lazy = () -> IndependentAmountConventionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IndependentAmountTerm.class.getMethod("getConvention", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IndependentAmountConventionTypeCode getValue(IndependentAmountTerm obj) {
+			return obj.getConvention();
+		}
+
+		@Override
+		public void setValue(IndependentAmountTerm obj, IndependentAmountConventionTypeCode value) {
+			obj.setConvention(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "IndependentAmountTerm";
 				definition = "Defines the specific terms used to calculate an independent amount.";
@@ -187,7 +182,8 @@ public class IndependentAmountTerm extends ExposureTerm {
 		return convention;
 	}
 
-	public void setConvention(IndependentAmountConventionTypeCode convention) {
-		this.convention = convention;
+	public IndependentAmountTerm setConvention(IndependentAmountConventionTypeCode convention) {
+		this.convention = Objects.requireNonNull(convention);
+		return this;
 	}
 }

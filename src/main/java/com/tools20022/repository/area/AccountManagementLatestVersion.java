@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Messages that support the management of account related activities, such as
- * the opening and maintenance of an account
+ * the opening and maintenance of an account.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -55,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,7 +65,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Account Management - Latest version - master"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Messages that support the management of account related activities, such as the opening and maintenance of an account"
+ * "Messages that support the management of account related activities, such as the opening and maintenance of an account."
  * </li>
  * </ul>
  */
@@ -76,10 +76,10 @@ public class AccountManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Account Management - Latest version - master";
-				definition = "Messages that support the management of account related activities, such as the opening and maintenance of an account";
+				definition = "Messages that support the management of account related activities, such as the opening and maintenance of an account.";
 				code = "acmt";
 				messageDefinition_lazy = () -> Arrays.asList(AccountDetailsConfirmationV07.mmObject(), AccountModificationInstructionV07.mmObject(), AccountOpeningInstructionV07.mmObject(), AccountManagementStatusReportV06.mmObject(),
 						RequestForAccountManagementStatusReportV05.mmObject());

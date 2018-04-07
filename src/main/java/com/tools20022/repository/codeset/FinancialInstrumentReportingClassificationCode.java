@@ -39,43 +39,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#SecuritisedDerivative
- * FinancialInstrumentReportingClassificationCode.mmSecuritisedDerivative}</li>
+ * FinancialInstrumentReportingClassificationCode.SecuritisedDerivative}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#StructuredFinanceProduct
- * FinancialInstrumentReportingClassificationCode.mmStructuredFinanceProduct}</li>
+ * FinancialInstrumentReportingClassificationCode.StructuredFinanceProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#Bond
- * FinancialInstrumentReportingClassificationCode.mmBond}</li>
+ * FinancialInstrumentReportingClassificationCode.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#EmissionAllowance
- * FinancialInstrumentReportingClassificationCode.mmEmissionAllowance}</li>
+ * FinancialInstrumentReportingClassificationCode.EmissionAllowance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#ContractForDifference
- * FinancialInstrumentReportingClassificationCode.mmContractForDifference}</li>
+ * FinancialInstrumentReportingClassificationCode.ContractForDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#Derivative
- * FinancialInstrumentReportingClassificationCode.mmDerivative}</li>
+ * FinancialInstrumentReportingClassificationCode.Derivative}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#Share
- * FinancialInstrumentReportingClassificationCode.mmShare}</li>
+ * FinancialInstrumentReportingClassificationCode.Share}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#ElectronicTradedFund
- * FinancialInstrumentReportingClassificationCode.mmElectronicTradedFund}</li>
+ * FinancialInstrumentReportingClassificationCode.ElectronicTradedFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#DepositaryReceipt
- * FinancialInstrumentReportingClassificationCode.mmDepositaryReceipt}</li>
+ * FinancialInstrumentReportingClassificationCode.DepositaryReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#Other
- * FinancialInstrumentReportingClassificationCode.mmOther}</li>
+ * FinancialInstrumentReportingClassificationCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#Certificate
- * FinancialInstrumentReportingClassificationCode.mmCertificate}</li>
+ * FinancialInstrumentReportingClassificationCode.Certificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#ExchangeTradedNote
- * FinancialInstrumentReportingClassificationCode.mmExchangeTradedNote}</li>
+ * FinancialInstrumentReportingClassificationCode.ExchangeTradedNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentReportingClassificationCode#ExchangeTradedCommodities
- * FinancialInstrumentReportingClassificationCode.mmExchangeTradedCommodities}</li>
+ * FinancialInstrumentReportingClassificationCode.ExchangeTradedCommodities}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -92,8 +92,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -509,7 +509,7 @@ public class FinancialInstrumentReportingClassificationCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentReportingClassificationCode";
 				definition = "Specifies the financial instrument reporting classification for both equity and non-equity.";

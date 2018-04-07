@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#NewTransaction
- * TransactionOperationTypeCode.mmNewTransaction}</li>
+ * TransactionOperationTypeCode.NewTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Cancellation
- * TransactionOperationTypeCode.mmCancellation}</li>
+ * TransactionOperationTypeCode.Cancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Amendment
- * TransactionOperationTypeCode.mmAmendment}</li>
+ * TransactionOperationTypeCode.Amendment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Correction
- * TransactionOperationTypeCode.mmCorrection}</li>
+ * TransactionOperationTypeCode.Correction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#EarlyTermination
- * TransactionOperationTypeCode.mmEarlyTermination}</li>
+ * TransactionOperationTypeCode.EarlyTermination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Error
- * TransactionOperationTypeCode.mmError}</li>
+ * TransactionOperationTypeCode.Error}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Modification
- * TransactionOperationTypeCode.mmModification}</li>
+ * TransactionOperationTypeCode.Modification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Compression
- * TransactionOperationTypeCode.mmCompression}</li>
+ * TransactionOperationTypeCode.Compression}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#ValuationUpdate
- * TransactionOperationTypeCode.mmValuationUpdate}</li>
+ * TransactionOperationTypeCode.ValuationUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#PositionComponent
- * TransactionOperationTypeCode.mmPositionComponent}</li>
+ * TransactionOperationTypeCode.PositionComponent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationTypeCode#Other
- * TransactionOperationTypeCode.mmOther}</li>
+ * TransactionOperationTypeCode.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -82,8 +82,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -449,7 +449,7 @@ public class TransactionOperationTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionOperationTypeCode";
 				definition = "Specifies the type of process related to a specific transaction.";

@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType8Code#ToBeSpecified
- * PriceValueType8Code.mmToBeSpecified}</li>
+ * PriceValueType8Code.ToBeSpecified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType8Code#Unspecified
- * PriceValueType8Code.mmUnspecified}</li>
+ * PriceValueType8Code.Unspecified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType8Code#Unknown
- * PriceValueType8Code.mmUnknown}</li>
+ * PriceValueType8Code.Unknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType8Code#NilPayment
- * PriceValueType8Code.mmNilPayment}</li>
+ * PriceValueType8Code.NilPayment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class PriceValueType8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TBSP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceValueType8Code";

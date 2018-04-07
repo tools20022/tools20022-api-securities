@@ -22,14 +22,17 @@ import com.tools20022.repository.choice.StatementFrequencyReason2Choice;
 import com.tools20022.repository.codeset.FrequencyCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.AccountService;
+import com.tools20022.repository.entity.ContactPoint;
+import com.tools20022.repository.entity.InvestmentAccountService;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.InvestmentAccount61;
 import com.tools20022.repository.msg.InvestmentAccount62;
 import com.tools20022.repository.msg.InvestmentAccount63;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the reporting parameters that are included in the account contract
@@ -88,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,9 +110,8 @@ public class ReportingService extends AccountService {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected FrequencyCode statementFrequency;
 	/**
-	 * Specifies the frequency at which a statement must be created by the
-	 * account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +151,7 @@ public class ReportingService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatementFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReportingService, FrequencyCode> mmStatementFrequency = new MMBusinessAttribute<ReportingService, FrequencyCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmStatementFrequency, InvestmentAccount63.mmStatementFrequency, InvestmentAccount62.mmStatementFrequency);
 			isDerived = false;
@@ -162,19 +164,20 @@ public class ReportingService extends AccountService {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReportingService.class.getMethod("getStatementFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(ReportingService obj) {
+			return obj.getStatementFrequency();
+		}
+
+		@Override
+		public void setValue(ReportingService obj, FrequencyCode value) {
+			obj.setStatementFrequency(value);
 		}
 	};
 	protected CurrencyAndAmount floorNotificationAmount;
 	/**
-	 * Specifies the balance amount of an account under which a notification
-	 * should be sent from the account servicer to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,7 +203,7 @@ public class ReportingService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFloorNotificationAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReportingService, CurrencyAndAmount> mmFloorNotificationAmount = new MMBusinessAttribute<ReportingService, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
@@ -212,19 +215,20 @@ public class ReportingService extends AccountService {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReportingService.class.getMethod("getFloorNotificationAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ReportingService obj) {
+			return obj.getFloorNotificationAmount();
+		}
+
+		@Override
+		public void setValue(ReportingService obj, CurrencyAndAmount value) {
+			obj.setFloorNotificationAmount(value);
 		}
 	};
 	protected CurrencyAndAmount ceilingNotificationAmount;
 	/**
-	 * Specifies the balance amount of an account above which a notification
-	 * should be sent from the account servicer to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,7 +254,7 @@ public class ReportingService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCeilingNotificationAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ReportingService, CurrencyAndAmount> mmCeilingNotificationAmount = new MMBusinessAttribute<ReportingService, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
@@ -262,19 +266,20 @@ public class ReportingService extends AccountService {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReportingService.class.getMethod("getCeilingNotificationAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ReportingService obj) {
+			return obj.getCeilingNotificationAmount();
+		}
+
+		@Override
+		public void setValue(ReportingService obj, CurrencyAndAmount value) {
+			obj.setCeilingNotificationAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ContactPoint> reportingChannel;
+	protected List<ContactPoint> reportingChannel;
 	/**
-	 * Specifies the channel through which the statement must be made available
-	 * to the account owner or to the information recipient.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,7 +312,7 @@ public class ReportingService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportingChannel = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ReportingService, List<ContactPoint>> mmReportingChannel = new MMBusinessAssociationEnd<ReportingService, List<ContactPoint>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
@@ -315,15 +320,25 @@ public class ReportingService extends AccountService {
 			name = "ReportingChannel";
 			definition = "Specifies the channel through which the statement must be made available to the account owner or to the information recipient.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmRelatedReportingService;
+			opposite_lazy = () -> ContactPoint.mmRelatedReportingService;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
+			type_lazy = () -> ContactPoint.mmObject();
+		}
+
+		@Override
+		public List<ContactPoint> getValue(ReportingService obj) {
+			return obj.getReportingChannel();
+		}
+
+		@Override
+		public void setValue(ReportingService obj, List<ContactPoint> value) {
+			obj.setReportingChannel(value);
 		}
 	};
 	protected InvestmentAccountService relatedInvestmentAccountService;
 	/**
-	 * Investment account services which include reporting services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -356,7 +371,7 @@ public class ReportingService extends AccountService {
 	 * "Investment account services which include reporting services."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestmentAccountService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ReportingService, InvestmentAccountService> mmRelatedInvestmentAccountService = new MMBusinessAssociationEnd<ReportingService, InvestmentAccountService>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
@@ -365,20 +380,30 @@ public class ReportingService extends AccountService {
 			definition = "Investment account services which include reporting services.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmReportingService;
+			opposite_lazy = () -> InvestmentAccountService.mmReportingService;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
+			type_lazy = () -> InvestmentAccountService.mmObject();
+		}
+
+		@Override
+		public InvestmentAccountService getValue(ReportingService obj) {
+			return obj.getRelatedInvestmentAccountService();
+		}
+
+		@Override
+		public void setValue(ReportingService obj, InvestmentAccountService value) {
+			obj.setRelatedInvestmentAccountService(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingService";
 				definition = "Specifies the reporting parameters that are included in the account contract which specifies the services linked to the account..";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.mmRelatedReportingService, com.tools20022.repository.entity.InvestmentAccountService.mmReportingService);
+				associationDomain_lazy = () -> Arrays.asList(ContactPoint.mmRelatedReportingService, InvestmentAccountService.mmReportingService);
 				superType_lazy = () -> AccountService.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReportingService.mmStatementFrequency, com.tools20022.repository.entity.ReportingService.mmFloorNotificationAmount,
 						com.tools20022.repository.entity.ReportingService.mmCeilingNotificationAmount, com.tools20022.repository.entity.ReportingService.mmReportingChannel,
@@ -398,39 +423,44 @@ public class ReportingService extends AccountService {
 		return statementFrequency;
 	}
 
-	public void setStatementFrequency(FrequencyCode statementFrequency) {
-		this.statementFrequency = statementFrequency;
+	public ReportingService setStatementFrequency(FrequencyCode statementFrequency) {
+		this.statementFrequency = Objects.requireNonNull(statementFrequency);
+		return this;
 	}
 
 	public CurrencyAndAmount getFloorNotificationAmount() {
 		return floorNotificationAmount;
 	}
 
-	public void setFloorNotificationAmount(CurrencyAndAmount floorNotificationAmount) {
-		this.floorNotificationAmount = floorNotificationAmount;
+	public ReportingService setFloorNotificationAmount(CurrencyAndAmount floorNotificationAmount) {
+		this.floorNotificationAmount = Objects.requireNonNull(floorNotificationAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getCeilingNotificationAmount() {
 		return ceilingNotificationAmount;
 	}
 
-	public void setCeilingNotificationAmount(CurrencyAndAmount ceilingNotificationAmount) {
-		this.ceilingNotificationAmount = ceilingNotificationAmount;
+	public ReportingService setCeilingNotificationAmount(CurrencyAndAmount ceilingNotificationAmount) {
+		this.ceilingNotificationAmount = Objects.requireNonNull(ceilingNotificationAmount);
+		return this;
 	}
 
 	public List<ContactPoint> getReportingChannel() {
-		return reportingChannel;
+		return reportingChannel == null ? reportingChannel = new ArrayList<>() : reportingChannel;
 	}
 
-	public void setReportingChannel(List<com.tools20022.repository.entity.ContactPoint> reportingChannel) {
-		this.reportingChannel = reportingChannel;
+	public ReportingService setReportingChannel(List<ContactPoint> reportingChannel) {
+		this.reportingChannel = Objects.requireNonNull(reportingChannel);
+		return this;
 	}
 
 	public InvestmentAccountService getRelatedInvestmentAccountService() {
 		return relatedInvestmentAccountService;
 	}
 
-	public void setRelatedInvestmentAccountService(com.tools20022.repository.entity.InvestmentAccountService relatedInvestmentAccountService) {
-		this.relatedInvestmentAccountService = relatedInvestmentAccountService;
+	public ReportingService setRelatedInvestmentAccountService(InvestmentAccountService relatedInvestmentAccountService) {
+		this.relatedInvestmentAccountService = Objects.requireNonNull(relatedInvestmentAccountService);
+		return this;
 	}
 }

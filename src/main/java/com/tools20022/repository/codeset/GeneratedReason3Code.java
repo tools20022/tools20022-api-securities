@@ -38,24 +38,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#CollateralManagement
- * GeneratedReason3Code.mmCollateralManagement}</li>
+ * GeneratedReason3Code.CollateralManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#MarketClaim
- * GeneratedReason3Code.mmMarketClaim}</li>
+ * GeneratedReason3Code.MarketClaim}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#Other
- * GeneratedReason3Code.mmOther}</li>
+ * GeneratedReason3Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#ReturnRefusedDumps
- * GeneratedReason3Code.mmReturnRefusedDumps}</li>
+ * GeneratedReason3Code.ReturnRefusedDumps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#SplitShaping
- * GeneratedReason3Code.mmSplitShaping}</li>
+ * GeneratedReason3Code.SplitShaping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#ThirdParty
- * GeneratedReason3Code.mmThirdParty}</li>
+ * GeneratedReason3Code.ThirdParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.GeneratedReason3Code#Transformation
- * GeneratedReason3Code.mmTransformation}</li>
+ * GeneratedReason3Code.Transformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -256,7 +256,7 @@ public class GeneratedReason3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GeneratedReason3Code";
 				definition = "Specifies the reason why the transaction was generated.";

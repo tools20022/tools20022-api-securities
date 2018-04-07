@@ -38,39 +38,39 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#FailedValidation
- * RejectionReason14Code.mmFailedValidation}</li>
+ * RejectionReason14Code.FailedValidation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RejectionReason14Code#Late
- * RejectionReason14Code.mmLate}</li>
+ * RejectionReason14Code.Late}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidEventType
- * RejectionReason14Code.mmInvalidEventType}</li>
+ * RejectionReason14Code.InvalidEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidUnderlyingSecurity
- * RejectionReason14Code.mmInvalidUnderlyingSecurity}</li>
+ * RejectionReason14Code.InvalidUnderlyingSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidEventProcessingType
- * RejectionReason14Code.mmInvalidEventProcessingType}</li>
+ * RejectionReason14Code.InvalidEventProcessingType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidMandatoryVoluntaryEventType
- * RejectionReason14Code.mmInvalidMandatoryVoluntaryEventType}</li>
+ * RejectionReason14Code.InvalidMandatoryVoluntaryEventType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidCorporateActionInformation
- * RejectionReason14Code.mmInvalidCorporateActionInformation}</li>
+ * RejectionReason14Code.InvalidCorporateActionInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidAgent
- * RejectionReason14Code.mmInvalidAgent}</li>
+ * RejectionReason14Code.InvalidAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidMovementInformation
- * RejectionReason14Code.mmInvalidMovementInformation}</li>
+ * RejectionReason14Code.InvalidMovementInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#SameIdentification
- * RejectionReason14Code.mmSameIdentification}</li>
+ * RejectionReason14Code.SameIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#InvalidIdentification
- * RejectionReason14Code.mmInvalidIdentification}</li>
+ * RejectionReason14Code.InvalidIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason14Code#MovementAlreadySettled
- * RejectionReason14Code.mmMovementAlreadySettled}</li>
+ * RejectionReason14Code.MovementAlreadySettled}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -79,8 +79,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -398,7 +398,7 @@ public class RejectionReason14Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FAIL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason14Code";

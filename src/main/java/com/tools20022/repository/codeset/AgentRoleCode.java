@@ -38,20 +38,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgentRoleCode#SystemPayingAgent
- * AgentRoleCode.mmSystemPayingAgent}</li>
+ * AgentRoleCode.SystemPayingAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AgentRoleCode#CoDomicile
- * AgentRoleCode.mmCoDomicile}</li>
+ * AgentRoleCode.CoDomicile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgentRoleCode#PrincipalAgent
- * AgentRoleCode.mmPrincipalAgent}</li>
+ * AgentRoleCode.PrincipalAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AgentRoleCode#SubAgent
- * AgentRoleCode.mmSubAgent}</li>
+ * AgentRoleCode.SubAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AgentRoleCode#IssuerAgent
- * AgentRoleCode.mmIssuerAgent}</li>
+ * AgentRoleCode.IssuerAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AgentRoleCode#Registrar
- * AgentRoleCode.mmRegistrar}</li>
+ * AgentRoleCode.Registrar}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AgentRoleCode#PayingAgent
- * AgentRoleCode.mmPayingAgent}</li>
+ * AgentRoleCode.PayingAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -324,7 +324,7 @@ public class AgentRoleCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SPAY");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AgentRoleCode";

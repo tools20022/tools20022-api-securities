@@ -37,31 +37,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#Buy
- * Side1Code.mmBuy}</li>
+ * Side1Code.Buy}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#Sell
- * Side1Code.mmSell}</li>
+ * Side1Code.Sell}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#TwoSided
- * Side1Code.mmTwoSided}</li>
+ * Side1Code.TwoSided}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#BuyMinus
- * Side1Code.mmBuyMinus}</li>
+ * Side1Code.BuyMinus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#SellPlus
- * Side1Code.mmSellPlus}</li>
+ * Side1Code.SellPlus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#SellShort
- * Side1Code.mmSellShort}</li>
+ * Side1Code.SellShort}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#SellShortExempt
- * Side1Code.mmSellShortExempt}</li>
+ * Side1Code.SellShortExempt}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#Cross
- * Side1Code.mmCross}</li>
+ * Side1Code.Cross}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#CrossShort
- * Side1Code.mmCrossShort}</li>
+ * Side1Code.CrossShort}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#CrossShortExempt
- * Side1Code.mmCrossShortExempt}</li>
+ * Side1Code.CrossShortExempt}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#AsDefined
- * Side1Code.mmAsDefined}</li>
+ * Side1Code.AsDefined}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#Opposite
- * Side1Code.mmOpposite}</li>
+ * Side1Code.Opposite}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Side1Code#Undisclosed
- * Side1Code.mmUndisclosed}</li>
+ * Side1Code.Undisclosed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -69,8 +69,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -399,7 +399,7 @@ public class Side1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Side1Code";

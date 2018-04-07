@@ -25,10 +25,8 @@ import com.tools20022.repository.area.ReferenceDataLatestVersion;
 import com.tools20022.repository.codeset.PriceReportFunction1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -49,7 +47,7 @@ import javax.xml.bind.annotation.*;
  * information about the valuation of a financial instrument, - inform another
  * party that the quotation of a financial instrument is suspended, - report
  * prices that are used for other purposes than the execution of investment
- * funds orders.
+ * funds orders. .
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -100,6 +98,14 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code reda.001.001.04}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintNewPriceReportRule#for_reda_PriceReportV04
+ * ConstraintNewPriceReportRule.for_reda_PriceReportV04}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -108,21 +114,21 @@ import javax.xml.bind.annotation.*;
  * "PriceReportV04"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "SCOPE\n\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReport message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to provide the net asset value and price information for financial instruments on specific trade dates and, optionally, to quote price variation information.\n\nUSAGE\n\nThe PriceReport message is sent by the report provider to the report recipient to:\n- report prices for one or several different financial instruments for one or several different trade dates,\n- report statistical information about the valuation of a financial instrument,\n- inform another party that the quotation of a financial instrument is suspended,\n- report prices that are used for other purposes than the execution of investment funds orders.\n"
+ * "SCOPE\n\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReport message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to provide the net asset value and price information for financial instruments on specific trade dates and, optionally, to quote price variation information.\n\nUSAGE\n\nThe PriceReport message is sent by the report provider to the report recipient to: \n- report prices for one or several different financial instruments for one or several different trade dates,\n- report statistical information about the valuation of a financial instrument,\n- inform another party that the quotation of a financial instrument is suspended,\n- report prices that are used for other purposes than the execution of investment funds orders.\n."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PriceReportV04", propOrder = {"messageIdentification", "poolReference", "previousReference", "relatedReference", "messagePagination", "priceReportIdentification", "function", "cancellationIdentification",
 		"priceValuationDetails", "extension"})
 public class PriceReportV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies a message from a business application
-	 * standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,33 +147,36 @@ public class PriceReportV04 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies a message from a business application standpoint. "
+	 * "Reference that uniquely identifies a message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<PriceReportV04, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies a message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies a message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(PriceReportV04 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "PoolRef")
 	protected AdditionalReference3 poolReference;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +197,7 @@ public class PriceReportV04 {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPoolReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, Optional<AdditionalReference3>> mmPoolReference = new MMMessageBuildingBlock<PriceReportV04, Optional<AdditionalReference3>>() {
 		{
 			xmlTag = "PoolRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,18 +208,21 @@ public class PriceReportV04 {
 			complexType_lazy = () -> AdditionalReference3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getPoolReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference3> getValue(PriceReportV04 obj) {
+			return obj.getPoolReference();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, Optional<AdditionalReference3> value) {
+			obj.setPoolReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrvsRef")
 	protected List<AdditionalReference3> previousReference;
 	/**
-	 * Reference to a linked message that was previously sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,7 +243,7 @@ public class PriceReportV04 {
 	 * definition} = "Reference to a linked message that was previously sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPreviousReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, List<AdditionalReference3>> mmPreviousReference = new MMMessageBuildingBlock<PriceReportV04, List<AdditionalReference3>>() {
 		{
 			xmlTag = "PrvsRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -241,18 +253,21 @@ public class PriceReportV04 {
 			complexType_lazy = () -> AdditionalReference3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getPreviousReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AdditionalReference3> getValue(PriceReportV04 obj) {
+			return obj.getPreviousReference();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, List<AdditionalReference3> value) {
+			obj.setPreviousReference(value);
 		}
 	};
+	@XmlElement(name = "RltdRef")
 	protected AdditionalReference3 relatedReference;
 	/**
-	 * Reference to a linked message that was previously received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +289,7 @@ public class PriceReportV04 {
 	 * "Reference to a linked message that was previously received."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRelatedReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, Optional<AdditionalReference3>> mmRelatedReference = new MMMessageBuildingBlock<PriceReportV04, Optional<AdditionalReference3>>() {
 		{
 			xmlTag = "RltdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,18 +300,21 @@ public class PriceReportV04 {
 			complexType_lazy = () -> AdditionalReference3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getRelatedReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference3> getValue(PriceReportV04 obj) {
+			return obj.getRelatedReference();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, Optional<AdditionalReference3> value) {
+			obj.setRelatedReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MsgPgntn", required = true)
 	protected Pagination messagePagination;
 	/**
-	 * Pagination of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -316,7 +334,7 @@ public class PriceReportV04 {
 	 * definition} = "Pagination of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessagePagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, Pagination> mmMessagePagination = new MMMessageBuildingBlock<PriceReportV04, Pagination>() {
 		{
 			xmlTag = "MsgPgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -327,19 +345,21 @@ public class PriceReportV04 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getMessagePagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Pagination getValue(PriceReportV04 obj) {
+			return obj.getMessagePagination();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, Pagination value) {
+			obj.setMessagePagination(value);
 		}
 	};
+	@XmlElement(name = "PricRptId", required = true)
 	protected Max35Text priceReportIdentification;
 	/**
-	 * Unique and unambiguous identifier for the price report, as assigned by
-	 * the reporting party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -361,7 +381,7 @@ public class PriceReportV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPriceReportIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, Max35Text> mmPriceReportIdentification = new MMMessageBuildingBlock<PriceReportV04, Max35Text>() {
 		{
 			xmlTag = "PricRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -372,19 +392,21 @@ public class PriceReportV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getPriceReportIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PriceReportV04 obj) {
+			return obj.getPriceReportIdentification();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, Max35Text value) {
+			obj.setPriceReportIdentification(value);
 		}
 	};
+	@XmlElement(name = "Fctn", required = true)
 	protected PriceReportFunction1Code function;
 	/**
-	 * Function of the price report, that is, whether the price report is a new
-	 * price report or a replacement of some kind.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,7 +429,7 @@ public class PriceReportV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFunction = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, PriceReportFunction1Code> mmFunction = new MMMessageBuildingBlock<PriceReportV04, PriceReportFunction1Code>() {
 		{
 			xmlTag = "Fctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -418,19 +440,21 @@ public class PriceReportV04 {
 			simpleType_lazy = () -> PriceReportFunction1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getFunction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PriceReportFunction1Code getValue(PriceReportV04 obj) {
+			return obj.getFunction();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, PriceReportFunction1Code value) {
+			obj.setFunction(value);
 		}
 	};
+	@XmlElement(name = "CxlId")
 	protected Max35Text cancellationIdentification;
 	/**
-	 * Unique and unambiguous identifier for the cancellation of the previous
-	 * price report, as assigned by the reporting party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -452,7 +476,7 @@ public class PriceReportV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCancellationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, Optional<Max35Text>> mmCancellationIdentification = new MMMessageBuildingBlock<PriceReportV04, Optional<Max35Text>>() {
 		{
 			xmlTag = "CxlId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -463,18 +487,21 @@ public class PriceReportV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getCancellationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Max35Text> getValue(PriceReportV04 obj) {
+			return obj.getCancellationIdentification();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, Optional<Max35Text> value) {
+			obj.setCancellationIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PricValtnDtls", required = true)
 	protected List<PriceValuation4> priceValuationDetails;
 	/**
-	 * Information related to the price valuation of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -495,7 +522,7 @@ public class PriceReportV04 {
 	 * "Information related to the price valuation of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPriceValuationDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, List<PriceValuation4>> mmPriceValuationDetails = new MMMessageBuildingBlock<PriceReportV04, List<PriceValuation4>>() {
 		{
 			xmlTag = "PricValtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -505,19 +532,21 @@ public class PriceReportV04 {
 			complexType_lazy = () -> PriceValuation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getPriceValuationDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<PriceValuation4> getValue(PriceReportV04 obj) {
+			return obj.getPriceValuationDetails();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, List<PriceValuation4> value) {
+			obj.setPriceValuationDetails(value);
 		}
 	};
+	@XmlElement(name = "Xtnsn")
 	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -539,7 +568,7 @@ public class PriceReportV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExtension = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportV04, List<Extension1>> mmExtension = new MMMessageBuildingBlock<PriceReportV04, List<Extension1>>() {
 		{
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -549,21 +578,24 @@ public class PriceReportV04 {
 			complexType_lazy = () -> Extension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportV04.class.getMethod("getExtension", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Extension1> getValue(PriceReportV04 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(PriceReportV04 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintNewPriceReportRule.for_reda_PriceReportV04);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceReportV04";
-				definition = "SCOPE\n\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReport message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to provide the net asset value and price information for financial instruments on specific trade dates and, optionally, to quote price variation information.\n\nUSAGE\n\nThe PriceReport message is sent by the report provider to the report recipient to:\n- report prices for one or several different financial instruments for one or several different trade dates,\n- report statistical information about the valuation of a financial instrument,\n- inform another party that the quotation of a financial instrument is suspended,\n- report prices that are used for other purposes than the execution of investment funds orders.\n";
+				definition = "SCOPE\n\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReport message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to provide the net asset value and price information for financial instruments on specific trade dates and, optionally, to quote price variation information.\n\nUSAGE\n\nThe PriceReport message is sent by the report provider to the report recipient to: \n- report prices for one or several different financial instruments for one or several different trade dates,\n- report statistical information about the valuation of a financial instrument,\n- inform another party that the quotation of a financial instrument is suspended,\n- report prices that are used for other purposes than the execution of investment funds orders.\n.";
 				rootElement = "Document";
 				xmlTag = "PricRpt";
 				businessArea_lazy = () -> ReferenceDataLatestVersion.mmObject();
@@ -590,97 +622,97 @@ public class PriceReportV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public PriceReportV04 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PoolRef")
-	public AdditionalReference3 getPoolReference() {
-		return poolReference;
+	public Optional<AdditionalReference3> getPoolReference() {
+		return poolReference == null ? Optional.empty() : Optional.of(poolReference);
 	}
 
-	public void setPoolReference(AdditionalReference3 poolReference) {
+	public PriceReportV04 setPoolReference(AdditionalReference3 poolReference) {
 		this.poolReference = poolReference;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsRef")
 	public List<AdditionalReference3> getPreviousReference() {
-		return previousReference;
+		return previousReference == null ? previousReference = new ArrayList<>() : previousReference;
 	}
 
-	public void setPreviousReference(List<AdditionalReference3> previousReference) {
-		this.previousReference = previousReference;
+	public PriceReportV04 setPreviousReference(List<AdditionalReference3> previousReference) {
+		this.previousReference = Objects.requireNonNull(previousReference);
+		return this;
 	}
 
-	@XmlElement(name = "RltdRef")
-	public AdditionalReference3 getRelatedReference() {
-		return relatedReference;
+	public Optional<AdditionalReference3> getRelatedReference() {
+		return relatedReference == null ? Optional.empty() : Optional.of(relatedReference);
 	}
 
-	public void setRelatedReference(AdditionalReference3 relatedReference) {
+	public PriceReportV04 setRelatedReference(AdditionalReference3 relatedReference) {
 		this.relatedReference = relatedReference;
+		return this;
 	}
 
-	@XmlElement(name = "MsgPgntn", required = true)
 	public Pagination getMessagePagination() {
 		return messagePagination;
 	}
 
-	public void setMessagePagination(Pagination messagePagination) {
-		this.messagePagination = messagePagination;
+	public PriceReportV04 setMessagePagination(Pagination messagePagination) {
+		this.messagePagination = Objects.requireNonNull(messagePagination);
+		return this;
 	}
 
-	@XmlElement(name = "PricRptId", required = true)
 	public Max35Text getPriceReportIdentification() {
 		return priceReportIdentification;
 	}
 
-	public void setPriceReportIdentification(Max35Text priceReportIdentification) {
-		this.priceReportIdentification = priceReportIdentification;
+	public PriceReportV04 setPriceReportIdentification(Max35Text priceReportIdentification) {
+		this.priceReportIdentification = Objects.requireNonNull(priceReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Fctn", required = true)
 	public PriceReportFunction1Code getFunction() {
 		return function;
 	}
 
-	public void setFunction(PriceReportFunction1Code function) {
-		this.function = function;
+	public PriceReportV04 setFunction(PriceReportFunction1Code function) {
+		this.function = Objects.requireNonNull(function);
+		return this;
 	}
 
-	@XmlElement(name = "CxlId")
-	public Max35Text getCancellationIdentification() {
-		return cancellationIdentification;
+	public Optional<Max35Text> getCancellationIdentification() {
+		return cancellationIdentification == null ? Optional.empty() : Optional.of(cancellationIdentification);
 	}
 
-	public void setCancellationIdentification(Max35Text cancellationIdentification) {
+	public PriceReportV04 setCancellationIdentification(Max35Text cancellationIdentification) {
 		this.cancellationIdentification = cancellationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "PricValtnDtls", required = true)
 	public List<PriceValuation4> getPriceValuationDetails() {
-		return priceValuationDetails;
+		return priceValuationDetails == null ? priceValuationDetails = new ArrayList<>() : priceValuationDetails;
 	}
 
-	public void setPriceValuationDetails(List<PriceValuation4> priceValuationDetails) {
-		this.priceValuationDetails = priceValuationDetails;
+	public PriceReportV04 setPriceValuationDetails(List<PriceValuation4> priceValuationDetails) {
+		this.priceValuationDetails = Objects.requireNonNull(priceValuationDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<Extension1> extension) {
-		this.extension = extension;
+	public PriceReportV04 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:reda.001.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.001.001.04")
 	static public class Document {
 		@XmlElement(name = "PricRpt", required = true)
 		public PriceReportV04 messageBody;

@@ -38,12 +38,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CollateralPoolCode#Pool
- * CollateralPoolCode.mmPool}</li>
+ * CollateralPoolCode.Pool}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CollateralPoolCode#NoPool
- * CollateralPoolCode.mmNoPool}</li>
+ * CollateralPoolCode.NoPool}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CollateralPoolCode#DeliveryByValuePool
- * CollateralPoolCode.mmDeliveryByValuePool}</li>
+ * CollateralPoolCode.DeliveryByValuePool}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -173,7 +173,7 @@ public class CollateralPoolCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralPoolCode";
 				definition = "Specifies whether the collateral is a pool collateral, delivery by value specific pool or not a pool.";

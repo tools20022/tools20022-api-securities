@@ -31,6 +31,7 @@ import com.tools20022.repository.entity.Commission;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +72,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCommercialAgreementRule#forFee3
+ * ConstraintCommercialAgreementRule.forFee3}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintFeeElementRule#forFee3
+ * ConstraintFeeElementRule.forFee3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,16 +95,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Amount of money associated with a service."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Fee3", propOrder = {"type", "repairedStandardAmount", "repairedStandardRate", "repairedDiscountAmount", "repairedDiscountRate", "repairedRequestedAmount", "repairedRequestedRate", "commercialAgreementReference",
 		"newCommercialAgreementReferenceIndicator"})
 public class Fee3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp")
 	protected ChargeType5Choice type;
 	/**
-	 * Type of fee (charge/commission).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +134,10 @@ public class Fee3 {
 	 * definition} = "Type of fee (charge/commission)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<ChargeType5Choice>> mmType = new MMMessageAttribute<Fee3, Optional<ChargeType5Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Charges.mmChargeType;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,14 +147,22 @@ public class Fee3 {
 			minOccurs = 0;
 			complexType_lazy = () -> ChargeType5Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ChargeType5Choice> getValue(Fee3 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<ChargeType5Choice> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RprdStdAmt")
 	protected ActiveCurrencyAndAmount repairedStandardAmount;
 	/**
-	 * Modified value of the standard fee (charge/commission) amount applied on
-	 * the order (the standard fee (charge/commission) amount in the original
-	 * individual order that has been repaired so that the order can be
-	 * accepted).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,10 +193,10 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRepairedStandardAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<ActiveCurrencyAndAmount>> mmRepairedStandardAmount = new MMMessageAttribute<Fee3, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "RprdStdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,14 +206,22 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Fee3 obj) {
+			return obj.getRepairedStandardAmount();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setRepairedStandardAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RprdStdRate")
 	protected PercentageRate repairedStandardRate;
 	/**
-	 * Modified value of the standard fee (charge/commission) rate applied on
-	 * the order (the standard fee (charge/commission) rate in the original
-	 * individual order that has been repaired so that the order can be
-	 * accepted).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,10 +252,10 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRepairedStandardRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<PercentageRate>> mmRepairedStandardRate = new MMMessageAttribute<Fee3, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmChargeRate;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "RprdStdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -236,13 +265,22 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(Fee3 obj) {
+			return obj.getRepairedStandardRate();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<PercentageRate> value) {
+			obj.setRepairedStandardRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RprdDscntAmt")
 	protected ActiveCurrencyAndAmount repairedDiscountAmount;
 	/**
-	 * Modified value of the discount amount applied on the order (the discount
-	 * amount in the original individual order that has been repaired so that
-	 * the order can be accepted).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,10 +311,10 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRepairedDiscountAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<ActiveCurrencyAndAmount>> mmRepairedDiscountAmount = new MMMessageAttribute<Fee3, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "RprdDscntAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -286,13 +324,22 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Fee3 obj) {
+			return obj.getRepairedDiscountAmount();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setRepairedDiscountAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RprdDscntRate")
 	protected PercentageRate repairedDiscountRate;
 	/**
-	 * Modified value of the discount rate applied on the order (the discount
-	 * rate in the original individual order that has been repaired so that the
-	 * order can be accepted).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -323,10 +370,10 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRepairedDiscountRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<PercentageRate>> mmRepairedDiscountRate = new MMMessageAttribute<Fee3, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmChargeRate;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "RprdDscntRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -336,14 +383,22 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(Fee3 obj) {
+			return obj.getRepairedDiscountRate();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<PercentageRate> value) {
+			obj.setRepairedDiscountRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RprdReqdAmt")
 	protected ActiveCurrencyAndAmount repairedRequestedAmount;
 	/**
-	 * Modified value of the requested fee (charge/commission) amount applied on
-	 * the order (the requested fee (charge/commission) amount in the original
-	 * individual order that has been repaired so that the order can be
-	 * accepted).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,10 +429,10 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRepairedRequestedAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<ActiveCurrencyAndAmount>> mmRepairedRequestedAmount = new MMMessageAttribute<Fee3, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "RprdReqdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -387,14 +442,22 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Fee3 obj) {
+			return obj.getRepairedRequestedAmount();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setRepairedRequestedAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RprdReqdRate")
 	protected PercentageRate repairedRequestedRate;
 	/**
-	 * Modified value of the requested fee (charge/commission) rate applied on
-	 * the order (the requested fee (charge/commission) rate in the original
-	 * individual order that has been repaired so that the order can be
-	 * accepted).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,30 +484,39 @@ public class Fee3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Modified value of the requested  fee (charge/commission) rate applied on the order (the requested fee (charge/commission) rate in the original individual order that has been repaired so that the order can be accepted)."
+	 * "Modified value of the requested fee (charge/commission) rate applied on the order (the requested fee (charge/commission) rate in the original individual order that has been repaired so that the order can be accepted)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRepairedRequestedRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<PercentageRate>> mmRepairedRequestedRate = new MMMessageAttribute<Fee3, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmChargeRate;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "RprdReqdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RepairedRequestedRate";
-			definition = "Modified value of the requested  fee (charge/commission) rate applied on the order (the requested fee (charge/commission) rate in the original individual order that has been repaired so that the order can be accepted).";
+			definition = "Modified value of the requested fee (charge/commission) rate applied on the order (the requested fee (charge/commission) rate in the original individual order that has been repaired so that the order can be accepted).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(Fee3 obj) {
+			return obj.getRepairedRequestedRate();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<PercentageRate> value) {
+			obj.setRepairedRequestedRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ComrclAgrmtRef")
 	protected Max35Text commercialAgreementReference;
 	/**
-	 * Reference to the agreement established between the fund and another
-	 * party. This element, amongst others, defines the conditions of the
-	 * commissions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -474,10 +546,10 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCommercialAgreementReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<Max35Text>> mmCommercialAgreementReference = new MMMessageAttribute<Fee3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Commission.mmCommercialAgreementReference;
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "ComrclAgrmtRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -487,11 +559,22 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Fee3 obj) {
+			return obj.getCommercialAgreementReference();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<Max35Text> value) {
+			obj.setCommercialAgreementReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewComrclAgrmtRefInd")
 	protected YesNoIndicator newCommercialAgreementReferenceIndicator;
 	/**
-	 * Indicates if the CommercialAgreementReference is a new reference or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -517,9 +600,9 @@ public class Fee3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewCommercialAgreementReferenceIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Fee3, Optional<YesNoIndicator>> mmNewCommercialAgreementReferenceIndicator = new MMMessageAttribute<Fee3, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> Fee3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Fee3.mmObject();
 			isDerived = false;
 			xmlTag = "NewComrclAgrmtRefInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -529,15 +612,27 @@ public class Fee3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(Fee3 obj) {
+			return obj.getNewCommercialAgreementReferenceIndicator();
+		}
+
+		@Override
+		public void setValue(Fee3 obj, Optional<YesNoIndicator> value) {
+			obj.setNewCommercialAgreementReferenceIndicator(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Fee3.mmType, Fee3.mmRepairedStandardAmount, Fee3.mmRepairedStandardRate, Fee3.mmRepairedDiscountAmount, Fee3.mmRepairedDiscountRate, Fee3.mmRepairedRequestedAmount,
-						Fee3.mmRepairedRequestedRate, Fee3.mmCommercialAgreementReference, Fee3.mmNewCommercialAgreementReferenceIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Fee3.mmType, com.tools20022.repository.msg.Fee3.mmRepairedStandardAmount, com.tools20022.repository.msg.Fee3.mmRepairedStandardRate,
+						com.tools20022.repository.msg.Fee3.mmRepairedDiscountAmount, com.tools20022.repository.msg.Fee3.mmRepairedDiscountRate, com.tools20022.repository.msg.Fee3.mmRepairedRequestedAmount,
+						com.tools20022.repository.msg.Fee3.mmRepairedRequestedRate, com.tools20022.repository.msg.Fee3.mmCommercialAgreementReference, com.tools20022.repository.msg.Fee3.mmNewCommercialAgreementReferenceIndicator);
 				trace_lazy = () -> Charges.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCommercialAgreementRule.forFee3, com.tools20022.repository.constraints.ConstraintFeeElementRule.forFee3);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Fee3";
 				definition = "Amount of money associated with a service.";
@@ -546,84 +641,84 @@ public class Fee3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp")
-	public ChargeType5Choice getType() {
-		return type;
+	public Optional<ChargeType5Choice> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(ChargeType5Choice type) {
+	public Fee3 setType(ChargeType5Choice type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "RprdStdAmt")
-	public ActiveCurrencyAndAmount getRepairedStandardAmount() {
-		return repairedStandardAmount;
+	public Optional<ActiveCurrencyAndAmount> getRepairedStandardAmount() {
+		return repairedStandardAmount == null ? Optional.empty() : Optional.of(repairedStandardAmount);
 	}
 
-	public void setRepairedStandardAmount(ActiveCurrencyAndAmount repairedStandardAmount) {
+	public Fee3 setRepairedStandardAmount(ActiveCurrencyAndAmount repairedStandardAmount) {
 		this.repairedStandardAmount = repairedStandardAmount;
+		return this;
 	}
 
-	@XmlElement(name = "RprdStdRate")
-	public PercentageRate getRepairedStandardRate() {
-		return repairedStandardRate;
+	public Optional<PercentageRate> getRepairedStandardRate() {
+		return repairedStandardRate == null ? Optional.empty() : Optional.of(repairedStandardRate);
 	}
 
-	public void setRepairedStandardRate(PercentageRate repairedStandardRate) {
+	public Fee3 setRepairedStandardRate(PercentageRate repairedStandardRate) {
 		this.repairedStandardRate = repairedStandardRate;
+		return this;
 	}
 
-	@XmlElement(name = "RprdDscntAmt")
-	public ActiveCurrencyAndAmount getRepairedDiscountAmount() {
-		return repairedDiscountAmount;
+	public Optional<ActiveCurrencyAndAmount> getRepairedDiscountAmount() {
+		return repairedDiscountAmount == null ? Optional.empty() : Optional.of(repairedDiscountAmount);
 	}
 
-	public void setRepairedDiscountAmount(ActiveCurrencyAndAmount repairedDiscountAmount) {
+	public Fee3 setRepairedDiscountAmount(ActiveCurrencyAndAmount repairedDiscountAmount) {
 		this.repairedDiscountAmount = repairedDiscountAmount;
+		return this;
 	}
 
-	@XmlElement(name = "RprdDscntRate")
-	public PercentageRate getRepairedDiscountRate() {
-		return repairedDiscountRate;
+	public Optional<PercentageRate> getRepairedDiscountRate() {
+		return repairedDiscountRate == null ? Optional.empty() : Optional.of(repairedDiscountRate);
 	}
 
-	public void setRepairedDiscountRate(PercentageRate repairedDiscountRate) {
+	public Fee3 setRepairedDiscountRate(PercentageRate repairedDiscountRate) {
 		this.repairedDiscountRate = repairedDiscountRate;
+		return this;
 	}
 
-	@XmlElement(name = "RprdReqdAmt")
-	public ActiveCurrencyAndAmount getRepairedRequestedAmount() {
-		return repairedRequestedAmount;
+	public Optional<ActiveCurrencyAndAmount> getRepairedRequestedAmount() {
+		return repairedRequestedAmount == null ? Optional.empty() : Optional.of(repairedRequestedAmount);
 	}
 
-	public void setRepairedRequestedAmount(ActiveCurrencyAndAmount repairedRequestedAmount) {
+	public Fee3 setRepairedRequestedAmount(ActiveCurrencyAndAmount repairedRequestedAmount) {
 		this.repairedRequestedAmount = repairedRequestedAmount;
+		return this;
 	}
 
-	@XmlElement(name = "RprdReqdRate")
-	public PercentageRate getRepairedRequestedRate() {
-		return repairedRequestedRate;
+	public Optional<PercentageRate> getRepairedRequestedRate() {
+		return repairedRequestedRate == null ? Optional.empty() : Optional.of(repairedRequestedRate);
 	}
 
-	public void setRepairedRequestedRate(PercentageRate repairedRequestedRate) {
+	public Fee3 setRepairedRequestedRate(PercentageRate repairedRequestedRate) {
 		this.repairedRequestedRate = repairedRequestedRate;
+		return this;
 	}
 
-	@XmlElement(name = "ComrclAgrmtRef")
-	public Max35Text getCommercialAgreementReference() {
-		return commercialAgreementReference;
+	public Optional<Max35Text> getCommercialAgreementReference() {
+		return commercialAgreementReference == null ? Optional.empty() : Optional.of(commercialAgreementReference);
 	}
 
-	public void setCommercialAgreementReference(Max35Text commercialAgreementReference) {
+	public Fee3 setCommercialAgreementReference(Max35Text commercialAgreementReference) {
 		this.commercialAgreementReference = commercialAgreementReference;
+		return this;
 	}
 
-	@XmlElement(name = "NewComrclAgrmtRefInd")
-	public YesNoIndicator getNewCommercialAgreementReferenceIndicator() {
-		return newCommercialAgreementReferenceIndicator;
+	public Optional<YesNoIndicator> getNewCommercialAgreementReferenceIndicator() {
+		return newCommercialAgreementReferenceIndicator == null ? Optional.empty() : Optional.of(newCommercialAgreementReferenceIndicator);
 	}
 
-	public void setNewCommercialAgreementReferenceIndicator(YesNoIndicator newCommercialAgreementReferenceIndicator) {
+	public Fee3 setNewCommercialAgreementReferenceIndicator(YesNoIndicator newCommercialAgreementReferenceIndicator) {
 		this.newCommercialAgreementReferenceIndicator = newCommercialAgreementReferenceIndicator;
+		return this;
 	}
 }

@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.InvestmentFundOrderExecution;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between profit and loss."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProfitAndLoss2Choice", propOrder = {"profit", "loss"})
 public class ProfitAndLoss2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prft", required = true)
 	protected ActiveCurrencyAndAmount profit;
 	/**
-	 * Value of the positive amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,10 +102,10 @@ public class ProfitAndLoss2Choice {
 	 * definition} = "Value of the positive amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProfit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProfitAndLoss2Choice, ActiveCurrencyAndAmount> mmProfit = new MMMessageAttribute<ProfitAndLoss2Choice, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmInterimProfitAmount;
-			componentContext_lazy = () -> ProfitAndLoss2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProfitAndLoss2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prft";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,11 +115,22 @@ public class ProfitAndLoss2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(ProfitAndLoss2Choice obj) {
+			return obj.getProfit();
+		}
+
+		@Override
+		public void setValue(ProfitAndLoss2Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setProfit(value);
+		}
 	};
+	@XmlElement(name = "Loss", required = true)
 	protected ActiveCurrencyAndAmount loss;
 	/**
-	 * Value of the negative amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,10 +161,10 @@ public class ProfitAndLoss2Choice {
 	 * definition} = "Value of the negative amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLoss = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProfitAndLoss2Choice, ActiveCurrencyAndAmount> mmLoss = new MMMessageAttribute<ProfitAndLoss2Choice, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmInterimProfitAmount;
-			componentContext_lazy = () -> ProfitAndLoss2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProfitAndLoss2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Loss";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,13 +174,23 @@ public class ProfitAndLoss2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(ProfitAndLoss2Choice obj) {
+			return obj.getLoss();
+		}
+
+		@Override
+		public void setValue(ProfitAndLoss2Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setLoss(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProfitAndLoss2Choice.mmProfit, ProfitAndLoss2Choice.mmLoss);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ProfitAndLoss2Choice.mmProfit, com.tools20022.repository.choice.ProfitAndLoss2Choice.mmLoss);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProfitAndLoss2Choice";
 				definition = "Choice between profit and loss.";
@@ -176,21 +199,21 @@ public class ProfitAndLoss2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prft", required = true)
 	public ActiveCurrencyAndAmount getProfit() {
 		return profit;
 	}
 
-	public void setProfit(ActiveCurrencyAndAmount profit) {
-		this.profit = profit;
+	public ProfitAndLoss2Choice setProfit(ActiveCurrencyAndAmount profit) {
+		this.profit = Objects.requireNonNull(profit);
+		return this;
 	}
 
-	@XmlElement(name = "Loss", required = true)
 	public ActiveCurrencyAndAmount getLoss() {
 		return loss;
 	}
 
-	public void setLoss(ActiveCurrencyAndAmount loss) {
-		this.loss = loss;
+	public ProfitAndLoss2Choice setLoss(ActiveCurrencyAndAmount loss) {
+		this.loss = Objects.requireNonNull(loss);
+		return this;
 	}
 }

@@ -38,67 +38,67 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#FailedValidation
- * RejectionReason6Code.mmFailedValidation}</li>
+ * RejectionReason6Code.FailedValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingOption
- * RejectionReason6Code.mmMissingOption}</li>
+ * RejectionReason6Code.MissingOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#NotDefinedAgent
- * RejectionReason6Code.mmNotDefinedAgent}</li>
+ * RejectionReason6Code.NotDefinedAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingPeriodEndDate
- * RejectionReason6Code.mmMissingPeriodEndDate}</li>
+ * RejectionReason6Code.MissingPeriodEndDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingPeriodStartDate
- * RejectionReason6Code.mmMissingPeriodStartDate}</li>
+ * RejectionReason6Code.MissingPeriodStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingResultingAmount
- * RejectionReason6Code.mmMissingResultingAmount}</li>
+ * RejectionReason6Code.MissingResultingAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#WrongSecurityType
- * RejectionReason6Code.mmWrongSecurityType}</li>
+ * RejectionReason6Code.WrongSecurityType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#NotEligibleDisperseSecurity
- * RejectionReason6Code.mmNotEligibleDisperseSecurity}</li>
+ * RejectionReason6Code.NotEligibleDisperseSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#NonEligibleSecurity
- * RejectionReason6Code.mmNonEligibleSecurity}</li>
+ * RejectionReason6Code.NonEligibleSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingExchangeRate
- * RejectionReason6Code.mmMissingExchangeRate}</li>
+ * RejectionReason6Code.MissingExchangeRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#ValueDateBeforePaymentDate
- * RejectionReason6Code.mmValueDateBeforePaymentDate}</li>
+ * RejectionReason6Code.ValueDateBeforePaymentDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#UnexpectedAccruedInterest
- * RejectionReason6Code.mmUnexpectedAccruedInterest}</li>
+ * RejectionReason6Code.UnexpectedAccruedInterest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#NoAccessToService
- * RejectionReason6Code.mmNoAccessToService}</li>
+ * RejectionReason6Code.NoAccessToService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingCertification
- * RejectionReason6Code.mmMissingCertification}</li>
+ * RejectionReason6Code.MissingCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#NotBusinessDay
- * RejectionReason6Code.mmNotBusinessDay}</li>
+ * RejectionReason6Code.NotBusinessDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#EffectiveDayAfterPaymentDate
- * RejectionReason6Code.mmEffectiveDayAfterPaymentDate}</li>
+ * RejectionReason6Code.EffectiveDayAfterPaymentDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#GrossAmountLessThanNetAmount
- * RejectionReason6Code.mmGrossAmountLessThanNetAmount}</li>
+ * RejectionReason6Code.GrossAmountLessThanNetAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#MissingDefaultOption
- * RejectionReason6Code.mmMissingDefaultOption}</li>
+ * RejectionReason6Code.MissingDefaultOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#NonActiveParty
- * RejectionReason6Code.mmNonActiveParty}</li>
+ * RejectionReason6Code.NonActiveParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#PeriodEndDateBeforeStartDate
- * RejectionReason6Code.mmPeriodEndDateBeforeStartDate}</li>
+ * RejectionReason6Code.PeriodEndDateBeforeStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason6Code#RecordDateAfterPaymentDate
- * RejectionReason6Code.mmRecordDateAfterPaymentDate}</li>
+ * RejectionReason6Code.RecordDateAfterPaymentDate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -107,8 +107,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -642,7 +642,7 @@ public class RejectionReason6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FAIL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason6Code";

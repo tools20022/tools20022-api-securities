@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#AutomaticMarketClaim
- * AdditionalBusinessProcess5Code.mmAutomaticMarketClaim}</li>
+ * AdditionalBusinessProcess5Code.AutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#SubjectToTransformation
- * AdditionalBusinessProcess5Code.mmSubjectToTransformation}</li>
+ * AdditionalBusinessProcess5Code.SubjectToTransformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#CancelUnderlyingTrades
- * AdditionalBusinessProcess5Code.mmCancelUnderlyingTrades}</li>
+ * AdditionalBusinessProcess5Code.CancelUnderlyingTrades}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#NoAutomaticMarketClaimsAndTransformations
- * AdditionalBusinessProcess5Code.mmNoAutomaticMarketClaimsAndTransformations}</li>
+ * AdditionalBusinessProcess5Code.NoAutomaticMarketClaimsAndTransformations}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#NoSplitElection
- * AdditionalBusinessProcess5Code.mmNoSplitElection}</li>
+ * AdditionalBusinessProcess5Code.NoSplitElection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#SchemeOrPlanOfArrangement
- * AdditionalBusinessProcess5Code.mmSchemeOrPlanOfArrangement}</li>
+ * AdditionalBusinessProcess5Code.SchemeOrPlanOfArrangement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#Consent
- * AdditionalBusinessProcess5Code.mmConsent}</li>
+ * AdditionalBusinessProcess5Code.Consent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#PartialMandatoryPutRedemption
- * AdditionalBusinessProcess5Code.mmPartialMandatoryPutRedemption}</li>
+ * AdditionalBusinessProcess5Code.PartialMandatoryPutRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#FullPrefunding
- * AdditionalBusinessProcess5Code.mmFullPrefunding}</li>
+ * AdditionalBusinessProcess5Code.FullPrefunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#PartialPreFunding
- * AdditionalBusinessProcess5Code.mmPartialPreFunding}</li>
+ * AdditionalBusinessProcess5Code.PartialPreFunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess5Code#RequiredAction
- * AdditionalBusinessProcess5Code.mmRequiredAction}</li>
+ * AdditionalBusinessProcess5Code.RequiredAction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -373,7 +373,7 @@ public class AdditionalBusinessProcess5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACLA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalBusinessProcess5Code";

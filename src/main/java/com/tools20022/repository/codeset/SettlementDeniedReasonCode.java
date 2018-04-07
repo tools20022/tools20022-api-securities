@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#AccountServicerDeadlineMissed
- * SettlementDeniedReasonCode.mmAccountServicerDeadlineMissed}</li>
+ * SettlementDeniedReasonCode.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#CallDeniedSinceAlreadyApplied
- * SettlementDeniedReasonCode.mmCallDeniedSinceAlreadyApplied}</li>
+ * SettlementDeniedReasonCode.CallDeniedSinceAlreadyApplied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#DeniedSinceCancelled
- * SettlementDeniedReasonCode.mmDeniedSinceCancelled}</li>
+ * SettlementDeniedReasonCode.DeniedSinceCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#DeniedSinceNotAllowed
- * SettlementDeniedReasonCode.mmDeniedSinceNotAllowed}</li>
+ * SettlementDeniedReasonCode.DeniedSinceNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#DeniedSinceInProgress
- * SettlementDeniedReasonCode.mmDeniedSinceInProgress}</li>
+ * SettlementDeniedReasonCode.DeniedSinceInProgress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#DeniedSinceRepoEnded
- * SettlementDeniedReasonCode.mmDeniedSinceRepoEnded}</li>
+ * SettlementDeniedReasonCode.DeniedSinceRepoEnded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#DeniedSinceSettled
- * SettlementDeniedReasonCode.mmDeniedSinceSettled}</li>
+ * SettlementDeniedReasonCode.DeniedSinceSettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#InstructionProcessed
- * SettlementDeniedReasonCode.mmInstructionProcessed}</li>
+ * SettlementDeniedReasonCode.InstructionProcessed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#MarketDeadlineMissed
- * SettlementDeniedReasonCode.mmMarketDeadlineMissed}</li>
+ * SettlementDeniedReasonCode.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#Other
- * SettlementDeniedReasonCode.mmOther}</li>
+ * SettlementDeniedReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#ConditionalCurrency
- * SettlementDeniedReasonCode.mmConditionalCurrency}</li>
+ * SettlementDeniedReasonCode.ConditionalCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#ConditionalRealignement
- * SettlementDeniedReasonCode.mmConditionalRealignement}</li>
+ * SettlementDeniedReasonCode.ConditionalRealignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDeniedReasonCode#ConditionalRegistrar
- * SettlementDeniedReasonCode.mmConditionalRegistrar}</li>
+ * SettlementDeniedReasonCode.ConditionalRegistrar}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -89,8 +89,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -523,7 +523,7 @@ public class SettlementDeniedReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementDeniedReasonCode";

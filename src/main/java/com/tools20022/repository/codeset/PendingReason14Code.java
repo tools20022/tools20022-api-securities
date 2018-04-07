@@ -38,36 +38,36 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#AccountServicerDeadlineMissed
- * PendingReason14Code.mmAccountServicerDeadlineMissed}</li>
+ * PendingReason14Code.AccountServicerDeadlineMissed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PendingReason14Code#Other
- * PendingReason14Code.mmOther}</li>
+ * PendingReason14Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#PendingBeneficiaryOwnerDetails
- * PendingReason14Code.mmPendingBeneficiaryOwnerDetails}</li>
+ * PendingReason14Code.PendingBeneficiaryOwnerDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#MissingCertification
- * PendingReason14Code.mmMissingCertification}</li>
+ * PendingReason14Code.MissingCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#InsufficientMoney
- * PendingReason14Code.mmInsufficientMoney}</li>
+ * PendingReason14Code.InsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#LackOfSecurities
- * PendingReason14Code.mmLackOfSecurities}</li>
+ * PendingReason14Code.LackOfSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#MarketDeadlineMissed
- * PendingReason14Code.mmMarketDeadlineMissed}</li>
+ * PendingReason14Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#QuantityDisagreement
- * PendingReason14Code.mmQuantityDisagreement}</li>
+ * PendingReason14Code.QuantityDisagreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#PendingReceipt
- * PendingReason14Code.mmPendingReceipt}</li>
+ * PendingReason14Code.PendingReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#WrongCertificatesNumbers
- * PendingReason14Code.mmWrongCertificatesNumbers}</li>
+ * PendingReason14Code.WrongCertificatesNumbers}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingReason14Code#DisagreementOnCashAmount
- * PendingReason14Code.mmDisagreementOnCashAmount}</li>
+ * PendingReason14Code.DisagreementOnCashAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -76,8 +76,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -365,7 +365,7 @@ public class PendingReason14Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingReason14Code";
 				definition = "Specifies the reason why the instruction has a pending status.";

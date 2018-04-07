@@ -29,9 +29,9 @@ import com.tools20022.repository.entity.CashEntry;
 import com.tools20022.repository.entity.Entry;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CashAccount18;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the cash movement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashMovement3", propOrder = {"postingDateTime", "valueDate", "postingAmount", "accountDetails"})
 public class CashMovement3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PstngDtTm")
 	protected DateAndDateTimeChoice postingDateTime;
 	/**
-	 * Date and time of the posting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +122,10 @@ public class CashMovement3 {
 	 * definition} = "Date and time of the posting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPostingDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashMovement3, Optional<DateAndDateTimeChoice>> mmPostingDateTime = new MMMessageAttribute<CashMovement3, Optional<DateAndDateTimeChoice>>() {
 		{
 			businessElementTrace_lazy = () -> Entry.mmEntryDate;
-			componentContext_lazy = () -> CashMovement3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashMovement3.mmObject();
 			isDerived = false;
 			xmlTag = "PstngDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,11 +135,22 @@ public class CashMovement3 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public Optional<DateAndDateTimeChoice> getValue(CashMovement3 obj) {
+			return obj.getPostingDateTime();
+		}
+
+		@Override
+		public void setValue(CashMovement3 obj, Optional<DateAndDateTimeChoice> value) {
+			obj.setPostingDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ValDt", required = true)
 	protected ISODate valueDate;
 	/**
-	 * Value date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,10 +179,10 @@ public class CashMovement3 {
 	 * definition} = "Value date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashMovement3, ISODate> mmValueDate = new MMMessageAttribute<CashMovement3, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
-			componentContext_lazy = () -> CashMovement3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashMovement3.mmObject();
 			isDerived = false;
 			xmlTag = "ValDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +192,22 @@ public class CashMovement3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public ISODate getValue(CashMovement3 obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(CashMovement3 obj, ISODate value) {
+			obj.setValueDate(value);
+		}
 	};
+	@XmlElement(name = "PstngAmt", required = true)
 	protected ActiveCurrencyAndAmount postingAmount;
 	/**
-	 * Cash amount that is posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,10 +237,10 @@ public class CashMovement3 {
 	 * definition} = "Cash amount that is posted."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPostingAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashMovement3, ActiveCurrencyAndAmount> mmPostingAmount = new MMMessageAttribute<CashMovement3, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmAmount;
-			componentContext_lazy = () -> CashMovement3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashMovement3.mmObject();
 			isDerived = false;
 			xmlTag = "PstngAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,11 +250,22 @@ public class CashMovement3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CashMovement3 obj) {
+			return obj.getPostingAmount();
+		}
+
+		@Override
+		public void setValue(CashMovement3 obj, ActiveCurrencyAndAmount value) {
+			obj.setPostingAmount(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.CashAccount18> accountDetails;
+	@XmlElement(name = "AcctDtls", required = true)
+	protected List<CashAccount18> accountDetails;
 	/**
-	 * Provides information about the account which is debited/credited.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -260,10 +294,10 @@ public class CashMovement3 {
 	 * "Provides information about the account which is debited/credited."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashMovement3, List<CashAccount18>> mmAccountDetails = new MMMessageAssociationEnd<CashMovement3, List<CashAccount18>>() {
 		{
 			businessElementTrace_lazy = () -> CashEntry.mmCashAccount;
-			componentContext_lazy = () -> CashMovement3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashMovement3.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -272,17 +306,28 @@ public class CashMovement3 {
 			maxOccurs = 2;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount18.mmObject();
+			type_lazy = () -> CashAccount18.mmObject();
+		}
+
+		@Override
+		public List<CashAccount18> getValue(CashMovement3 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(CashMovement3 obj, List<CashAccount18> value) {
+			obj.setAccountDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashMovement3.mmPostingDateTime, CashMovement3.mmValueDate, CashMovement3.mmPostingAmount, CashMovement3.mmAccountDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashMovement3.mmPostingDateTime, com.tools20022.repository.msg.CashMovement3.mmValueDate, com.tools20022.repository.msg.CashMovement3.mmPostingAmount,
+						com.tools20022.repository.msg.CashMovement3.mmAccountDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCAMovementConfirmationV01.mmCashMovementDetails);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashMovement3";
 				definition = "Provides information about the cash movement.";
@@ -291,39 +336,39 @@ public class CashMovement3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PstngDtTm")
-	public DateAndDateTimeChoice getPostingDateTime() {
-		return postingDateTime;
+	public Optional<DateAndDateTimeChoice> getPostingDateTime() {
+		return postingDateTime == null ? Optional.empty() : Optional.of(postingDateTime);
 	}
 
-	public void setPostingDateTime(DateAndDateTimeChoice postingDateTime) {
+	public CashMovement3 setPostingDateTime(DateAndDateTimeChoice postingDateTime) {
 		this.postingDateTime = postingDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "ValDt", required = true)
 	public ISODate getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODate valueDate) {
-		this.valueDate = valueDate;
+	public CashMovement3 setValueDate(ISODate valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
-	@XmlElement(name = "PstngAmt", required = true)
 	public ActiveCurrencyAndAmount getPostingAmount() {
 		return postingAmount;
 	}
 
-	public void setPostingAmount(ActiveCurrencyAndAmount postingAmount) {
-		this.postingAmount = postingAmount;
+	public CashMovement3 setPostingAmount(ActiveCurrencyAndAmount postingAmount) {
+		this.postingAmount = Objects.requireNonNull(postingAmount);
+		return this;
 	}
 
-	@XmlElement(name = "AcctDtls", required = true)
 	public List<CashAccount18> getAccountDetails() {
-		return accountDetails;
+		return accountDetails == null ? accountDetails = new ArrayList<>() : accountDetails;
 	}
 
-	public void setAccountDetails(List<com.tools20022.repository.msg.CashAccount18> accountDetails) {
-		this.accountDetails = accountDetails;
+	public CashMovement3 setAccountDetails(List<CashAccount18> accountDetails) {
+		this.accountDetails = Objects.requireNonNull(accountDetails);
+		return this;
 	}
 }

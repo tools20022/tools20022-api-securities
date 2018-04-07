@@ -22,13 +22,15 @@ import com.tools20022.repository.choice.Status21Choice;
 import com.tools20022.repository.choice.Status25Choice;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the status of an account or the status of the processing of the
@@ -108,8 +110,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -127,8 +129,8 @@ public class AccountStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Account> account;
 	/**
-	 * Identifies the account for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +160,7 @@ public class AccountStatus extends Status {
 	 * definition} = "Identifies the account for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountStatus, List<Account>> mmAccount = new MMBusinessAssociationEnd<AccountStatus, List<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
@@ -170,11 +172,21 @@ public class AccountStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 		}
+
+		@Override
+		public List<Account> getValue(AccountStatus obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, List<Account> value) {
+			obj.setAccount(value);
+		}
 	};
 	protected AccountStatusCode status;
 	/**
-	 * Specifies the status of an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +218,7 @@ public class AccountStatus extends Status {
 	 * definition} = "Specifies the status of an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountStatus, AccountStatusCode> mmStatus = new MMBusinessAttribute<AccountStatus, AccountStatusCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(OtherAccountStatus1.mmStatus);
 			isDerived = false;
@@ -219,18 +231,20 @@ public class AccountStatus extends Status {
 			simpleType_lazy = () -> AccountStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountStatusCode getValue(AccountStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, AccountStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 	protected YesNoIndicator blocked;
 	/**
-	 * Indicates whether the account is blocked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +276,7 @@ public class AccountStatus extends Status {
 	 * definition} = "Indicates whether the account is blocked."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBlocked = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountStatus, YesNoIndicator> mmBlocked = new MMBusinessAttribute<AccountStatus, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BlockedStatusReason2.mmBlocked);
 			isDerived = false;
@@ -275,19 +289,20 @@ public class AccountStatus extends Status {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountStatus.class.getMethod("getBlocked", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(AccountStatus obj) {
+			return obj.getBlocked();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, YesNoIndicator value) {
+			obj.setBlocked(value);
 		}
 	};
 	protected AccountManagementStatusCode managementStatus;
 	/**
-	 * Specifies the status of the processing of a request linked to the
-	 * management of an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,7 +335,7 @@ public class AccountStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmManagementStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountStatus, AccountManagementStatusCode> mmManagementStatus = new MMBusinessAttribute<AccountStatus, AccountManagementStatusCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Status25Choice.mmStatus);
 			isDerived = false;
@@ -333,18 +348,20 @@ public class AccountStatus extends Status {
 			simpleType_lazy = () -> AccountManagementStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountStatus.class.getMethod("getManagementStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountManagementStatusCode getValue(AccountStatus obj) {
+			return obj.getManagementStatus();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, AccountManagementStatusCode value) {
+			obj.setManagementStatus(value);
 		}
 	};
 	protected EntryStatusCode entryStatus;
 	/**
-	 * Status of an entry on the books of the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,7 +385,7 @@ public class AccountStatus extends Status {
 	 * definition} = "Status of an entry on the books of the account servicer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEntryStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountStatus, EntryStatusCode> mmEntryStatus = new MMBusinessAttribute<AccountStatus, EntryStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
@@ -380,18 +397,20 @@ public class AccountStatus extends Status {
 			simpleType_lazy = () -> EntryStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountStatus.class.getMethod("getEntryStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EntryStatusCode getValue(AccountStatus obj) {
+			return obj.getEntryStatus();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, EntryStatusCode value) {
+			obj.setEntryStatus(value);
 		}
 	};
 	protected BalanceStatusCode balanceStatus;
 	/**
-	 * Current status of a cash balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,7 +434,7 @@ public class AccountStatus extends Status {
 	 * definition} = "Current status of a cash balance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBalanceStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountStatus, BalanceStatusCode> mmBalanceStatus = new MMBusinessAttribute<AccountStatus, BalanceStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
@@ -427,18 +446,20 @@ public class AccountStatus extends Status {
 			simpleType_lazy = () -> BalanceStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountStatus.class.getMethod("getBalanceStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BalanceStatusCode getValue(AccountStatus obj) {
+			return obj.getBalanceStatus();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, BalanceStatusCode value) {
+			obj.setBalanceStatus(value);
 		}
 	};
 	protected ReasonBlockedCode blockedReason;
 	/**
-	 * Specifies the different reasons for which the account is blocked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -471,7 +492,7 @@ public class AccountStatus extends Status {
 	 * "Specifies the different reasons for which the account is blocked."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBlockedReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountStatus, ReasonBlockedCode> mmBlockedReason = new MMBusinessAttribute<AccountStatus, ReasonBlockedCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BlockedStatusReason2.mmReason);
 			isDerived = false;
@@ -484,19 +505,21 @@ public class AccountStatus extends Status {
 			simpleType_lazy = () -> ReasonBlockedCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountStatus.class.getMethod("getBlockedReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReasonBlockedCode getValue(AccountStatus obj) {
+			return obj.getBlockedReason();
+		}
+
+		@Override
+		public void setValue(AccountStatus obj, ReasonBlockedCode value) {
+			obj.setBlockedReason(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatus";
 				definition = "Specifies the status of an account or the status of the processing of the actions linked to the management of an account.";
@@ -519,58 +542,65 @@ public class AccountStatus extends Status {
 	}
 
 	public List<Account> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
-		this.account = account;
+	public AccountStatus setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public AccountStatusCode getStatus() {
 		return status;
 	}
 
-	public void setStatus(AccountStatusCode status) {
-		this.status = status;
+	public AccountStatus setStatus(AccountStatusCode status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public YesNoIndicator getBlocked() {
 		return blocked;
 	}
 
-	public void setBlocked(YesNoIndicator blocked) {
-		this.blocked = blocked;
+	public AccountStatus setBlocked(YesNoIndicator blocked) {
+		this.blocked = Objects.requireNonNull(blocked);
+		return this;
 	}
 
 	public AccountManagementStatusCode getManagementStatus() {
 		return managementStatus;
 	}
 
-	public void setManagementStatus(AccountManagementStatusCode managementStatus) {
-		this.managementStatus = managementStatus;
+	public AccountStatus setManagementStatus(AccountManagementStatusCode managementStatus) {
+		this.managementStatus = Objects.requireNonNull(managementStatus);
+		return this;
 	}
 
 	public EntryStatusCode getEntryStatus() {
 		return entryStatus;
 	}
 
-	public void setEntryStatus(EntryStatusCode entryStatus) {
-		this.entryStatus = entryStatus;
+	public AccountStatus setEntryStatus(EntryStatusCode entryStatus) {
+		this.entryStatus = Objects.requireNonNull(entryStatus);
+		return this;
 	}
 
 	public BalanceStatusCode getBalanceStatus() {
 		return balanceStatus;
 	}
 
-	public void setBalanceStatus(BalanceStatusCode balanceStatus) {
-		this.balanceStatus = balanceStatus;
+	public AccountStatus setBalanceStatus(BalanceStatusCode balanceStatus) {
+		this.balanceStatus = Objects.requireNonNull(balanceStatus);
+		return this;
 	}
 
 	public ReasonBlockedCode getBlockedReason() {
 		return blockedReason;
 	}
 
-	public void setBlockedReason(ReasonBlockedCode blockedReason) {
-		this.blockedReason = blockedReason;
+	public AccountStatus setBlockedReason(ReasonBlockedCode blockedReason) {
+		this.blockedReason = Objects.requireNonNull(blockedReason);
+		return this;
 	}
 }

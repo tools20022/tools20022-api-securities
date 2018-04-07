@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingCancellationReason5Code#AccountServicerDeadlineMissed
- * PendingCancellationReason5Code.mmAccountServicerDeadlineMissed}</li>
+ * PendingCancellationReason5Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingCancellationReason5Code#QuantityRejection
- * PendingCancellationReason5Code.mmQuantityRejection}</li>
+ * PendingCancellationReason5Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingCancellationReason5Code#AmountRejection
- * PendingCancellationReason5Code.mmAmountRejection}</li>
+ * PendingCancellationReason5Code.AmountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingCancellationReason5Code#MarketDeadlineMissed
- * PendingCancellationReason5Code.mmMarketDeadlineMissed}</li>
+ * PendingCancellationReason5Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingCancellationReason5Code#Other
- * PendingCancellationReason5Code.mmOther}</li>
+ * PendingCancellationReason5Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -204,7 +204,7 @@ public class PendingCancellationReason5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingCancellationReason5Code";
 				definition = "Specifies the reason why the cancellation request has a pending status.";

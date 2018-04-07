@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies a generic identification."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "GenericIdentification16", propOrder = {"identification", "identificationType", "issuer"})
 public class GenericIdentification16 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * The identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +112,10 @@ public class GenericIdentification16 {
 	 * definition} = "The identifier."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification16, Max35Text> mmIdentification = new MMMessageAttribute<GenericIdentification16, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> GenericIdentification16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification16.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +125,22 @@ public class GenericIdentification16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(GenericIdentification16 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification16 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "IdTp", required = true)
 	protected PersonIdentificationType3Choice identificationType;
 	/**
-	 * Specifies the nature of the identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +171,10 @@ public class GenericIdentification16 {
 	 * definition} = "Specifies the nature of the identifier."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentificationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification16, PersonIdentificationType3Choice> mmIdentificationType = new MMMessageAttribute<GenericIdentification16, PersonIdentificationType3Choice>() {
 		{
 			businessComponentTrace_lazy = () -> PersonIdentification.mmObject();
-			componentContext_lazy = () -> GenericIdentification16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification16.mmObject();
 			isDerived = false;
 			xmlTag = "IdTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +184,22 @@ public class GenericIdentification16 {
 			minOccurs = 1;
 			complexType_lazy = () -> PersonIdentificationType3Choice.mmObject();
 		}
+
+		@Override
+		public PersonIdentificationType3Choice getValue(GenericIdentification16 obj) {
+			return obj.getIdentificationType();
+		}
+
+		@Override
+		public void setValue(GenericIdentification16 obj, PersonIdentificationType3Choice value) {
+			obj.setIdentificationType(value);
+		}
 	};
+	@XmlElement(name = "Issr")
 	protected Max35Text issuer;
 	/**
-	 * Party that assigns the identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,10 +229,10 @@ public class GenericIdentification16 {
 	 * definition} = "Party that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification16, Optional<Max35Text>> mmIssuer = new MMMessageAttribute<GenericIdentification16, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
-			componentContext_lazy = () -> GenericIdentification16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification16.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,14 +242,25 @@ public class GenericIdentification16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(GenericIdentification16 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(GenericIdentification16 obj, Optional<Max35Text> value) {
+			obj.setIssuer(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GenericIdentification16.mmIdentification, GenericIdentification16.mmIdentificationType, GenericIdentification16.mmIssuer);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GenericIdentification16.mmIdentification, com.tools20022.repository.msg.GenericIdentification16.mmIdentificationType,
+						com.tools20022.repository.msg.GenericIdentification16.mmIssuer);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GenericIdentification16";
 				definition = "Specifies a generic identification.";
@@ -233,30 +269,30 @@ public class GenericIdentification16 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public GenericIdentification16 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "IdTp", required = true)
 	public PersonIdentificationType3Choice getIdentificationType() {
 		return identificationType;
 	}
 
-	public void setIdentificationType(PersonIdentificationType3Choice identificationType) {
-		this.identificationType = identificationType;
+	public GenericIdentification16 setIdentificationType(PersonIdentificationType3Choice identificationType) {
+		this.identificationType = Objects.requireNonNull(identificationType);
+		return this;
 	}
 
-	@XmlElement(name = "Issr")
-	public Max35Text getIssuer() {
-		return issuer;
+	public Optional<Max35Text> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(Max35Text issuer) {
+	public GenericIdentification16 setIssuer(Max35Text issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 }

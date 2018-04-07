@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.DeliveringPartiesAndAccount15;
 import com.tools20022.repository.msg.ReceivingPartiesAndAccount15;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,18 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SettlementParties5Choice", propOrder = {"deliveringSettlementParties", "receivingSettlementParties"})
 public class SettlementParties5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DlvrgSttlmPties")
 	protected DeliveringPartiesAndAccount15 deliveringSettlementParties;
 	/**
-	 * Chain of parties involved in the settlement of a transaction, including
-	 * receipts and deliveries, book transfers, treasury deals, or other
-	 * activities, resulting in the movement of a security or amount of money
-	 * from one account to another.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -128,10 +127,10 @@ public class SettlementParties5Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDeliveringSettlementParties = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SettlementParties5Choice, Optional<DeliveringPartiesAndAccount15>> mmDeliveringSettlementParties = new MMMessageAssociationEnd<SettlementParties5Choice, Optional<DeliveringPartiesAndAccount15>>() {
 		{
 			businessComponentTrace_lazy = () -> DeliveringSettlementParty.mmObject();
-			componentContext_lazy = () -> SettlementParties5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SettlementParties5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DlvrgSttlmPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,14 +142,22 @@ public class SettlementParties5Choice {
 			isComposite = true;
 			type_lazy = () -> DeliveringPartiesAndAccount15.mmObject();
 		}
+
+		@Override
+		public Optional<DeliveringPartiesAndAccount15> getValue(SettlementParties5Choice obj) {
+			return obj.getDeliveringSettlementParties();
+		}
+
+		@Override
+		public void setValue(SettlementParties5Choice obj, Optional<DeliveringPartiesAndAccount15> value) {
+			obj.setDeliveringSettlementParties(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RcvgSttlmPties")
 	protected ReceivingPartiesAndAccount15 receivingSettlementParties;
 	/**
-	 * Chain of parties involved in the settlement of a transaction, including
-	 * receipts and deliveries, book transfers, treasury deals, or other
-	 * activities, resulting in the movement of a security or amount of money
-	 * from one account to another.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -190,10 +197,10 @@ public class SettlementParties5Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReceivingSettlementParties = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SettlementParties5Choice, Optional<ReceivingPartiesAndAccount15>> mmReceivingSettlementParties = new MMMessageAssociationEnd<SettlementParties5Choice, Optional<ReceivingPartiesAndAccount15>>() {
 		{
 			businessComponentTrace_lazy = () -> ReceivingSettlementParty.mmObject();
-			componentContext_lazy = () -> SettlementParties5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SettlementParties5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RcvgSttlmPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,14 +212,24 @@ public class SettlementParties5Choice {
 			isComposite = true;
 			type_lazy = () -> ReceivingPartiesAndAccount15.mmObject();
 		}
+
+		@Override
+		public Optional<ReceivingPartiesAndAccount15> getValue(SettlementParties5Choice obj) {
+			return obj.getReceivingSettlementParties();
+		}
+
+		@Override
+		public void setValue(SettlementParties5Choice obj, Optional<ReceivingPartiesAndAccount15> value) {
+			obj.setReceivingSettlementParties(value.orElse(null));
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SettlementParties5Choice.mmDeliveringSettlementParties, SettlementParties5Choice.mmReceivingSettlementParties);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.SettlementParties5Choice.mmDeliveringSettlementParties, com.tools20022.repository.choice.SettlementParties5Choice.mmReceivingSettlementParties);
 				trace_lazy = () -> SecuritiesSettlementPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementParties5Choice";
 				definition = "Provides details on either the delivering or receiving parties.";
@@ -222,21 +239,21 @@ public class SettlementParties5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DlvrgSttlmPties")
-	public DeliveringPartiesAndAccount15 getDeliveringSettlementParties() {
-		return deliveringSettlementParties;
+	public Optional<DeliveringPartiesAndAccount15> getDeliveringSettlementParties() {
+		return deliveringSettlementParties == null ? Optional.empty() : Optional.of(deliveringSettlementParties);
 	}
 
-	public void setDeliveringSettlementParties(DeliveringPartiesAndAccount15 deliveringSettlementParties) {
+	public SettlementParties5Choice setDeliveringSettlementParties(DeliveringPartiesAndAccount15 deliveringSettlementParties) {
 		this.deliveringSettlementParties = deliveringSettlementParties;
+		return this;
 	}
 
-	@XmlElement(name = "RcvgSttlmPties")
-	public ReceivingPartiesAndAccount15 getReceivingSettlementParties() {
-		return receivingSettlementParties;
+	public Optional<ReceivingPartiesAndAccount15> getReceivingSettlementParties() {
+		return receivingSettlementParties == null ? Optional.empty() : Optional.of(receivingSettlementParties);
 	}
 
-	public void setReceivingSettlementParties(ReceivingPartiesAndAccount15 receivingSettlementParties) {
+	public SettlementParties5Choice setReceivingSettlementParties(ReceivingPartiesAndAccount15 receivingSettlementParties) {
 		this.receivingSettlementParties = receivingSettlementParties;
+		return this;
 	}
 }

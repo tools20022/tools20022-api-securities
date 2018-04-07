@@ -40,19 +40,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementTypeCode#AccountOpening
- * AccountManagementTypeCode.mmAccountOpening}</li>
+ * AccountManagementTypeCode.AccountOpening}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementTypeCode#AccountModification
- * AccountManagementTypeCode.mmAccountModification}</li>
+ * AccountManagementTypeCode.AccountModification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementTypeCode#GetAccountDetails
- * AccountManagementTypeCode.mmGetAccountDetails}</li>
+ * AccountManagementTypeCode.GetAccountDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementTypeCode#AccountClosure
- * AccountManagementTypeCode.mmAccountClosure}</li>
+ * AccountManagementTypeCode.AccountClosure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementTypeCode#AccountStatus
- * AccountManagementTypeCode.mmAccountStatus}</li>
+ * AccountManagementTypeCode.AccountStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -67,8 +67,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -249,7 +249,7 @@ public class AccountManagementTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACCO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountManagementTypeCode";

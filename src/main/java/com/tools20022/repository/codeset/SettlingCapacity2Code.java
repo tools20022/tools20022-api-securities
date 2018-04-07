@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity2Code#SettlingAgent
- * SettlingCapacity2Code.mmSettlingAgent}</li>
+ * SettlingCapacity2Code.SettlingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity2Code#SettlingCustodian
- * SettlingCapacity2Code.mmSettlingCustodian}</li>
+ * SettlingCapacity2Code.SettlingCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity2Code#SettlingPrincipal
- * SettlingCapacity2Code.mmSettlingPrincipal}</li>
+ * SettlingCapacity2Code.SettlingPrincipal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlingCapacity2Code#SettlingRisklessPrincipal
- * SettlingCapacity2Code.mmSettlingRisklessPrincipal}</li>
+ * SettlingCapacity2Code.SettlingRisklessPrincipal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -177,7 +177,7 @@ public class SettlingCapacity2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlingCapacity2Code";
 				definition = "Specifies the role of the party in the settlement of the transaction.";

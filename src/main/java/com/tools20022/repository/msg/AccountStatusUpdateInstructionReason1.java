@@ -26,6 +26,7 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintReasonElementRule#forAccountStatusUpdateInstructionReason1
+ * ConstraintReasonElementRule.forAccountStatusUpdateInstructionReason1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * EnabledStatusReason1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountStatusUpdateInstructionReason1", propOrder = {"code", "additionalInformation"})
 public class AccountStatusUpdateInstructionReason1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd")
 	protected AccountStatusUpdateInstructionReason2Choice code;
 	/**
-	 * Reason for the instruction to change the account status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -105,9 +115,9 @@ public class AccountStatusUpdateInstructionReason1 {
 	 * EnabledStatusReason1.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCode = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatusUpdateInstructionReason1, Optional<AccountStatusUpdateInstructionReason2Choice>> mmCode = new MMMessageAssociationEnd<AccountStatusUpdateInstructionReason1, Optional<AccountStatusUpdateInstructionReason2Choice>>() {
 		{
-			componentContext_lazy = () -> AccountStatusUpdateInstructionReason1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatusUpdateInstructionReason1.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,12 +129,22 @@ public class AccountStatusUpdateInstructionReason1 {
 			isComposite = true;
 			type_lazy = () -> AccountStatusUpdateInstructionReason2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AccountStatusUpdateInstructionReason2Choice> getValue(AccountStatusUpdateInstructionReason1 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(AccountStatusUpdateInstructionReason1 obj, Optional<AccountStatusUpdateInstructionReason2Choice> value) {
+			obj.setCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the reason for the instruction to change the
-	 * account status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,9 +176,9 @@ public class AccountStatusUpdateInstructionReason1 {
 	 * EnabledStatusReason1.mmAdditionalInformation}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountStatusUpdateInstructionReason1, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<AccountStatusUpdateInstructionReason1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> AccountStatusUpdateInstructionReason1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatusUpdateInstructionReason1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,13 +189,24 @@ public class AccountStatusUpdateInstructionReason1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(AccountStatusUpdateInstructionReason1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(AccountStatusUpdateInstructionReason1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountStatusUpdateInstructionReason1.mmCode, AccountStatusUpdateInstructionReason1.mmAdditionalInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountStatusUpdateInstructionReason1.mmCode, com.tools20022.repository.msg.AccountStatusUpdateInstructionReason1.mmAdditionalInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintReasonElementRule.forAccountStatusUpdateInstructionReason1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatusUpdateInstructionReason1";
 				definition = "Reason for an update to an account status.";
@@ -185,21 +216,21 @@ public class AccountStatusUpdateInstructionReason1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd")
-	public AccountStatusUpdateInstructionReason2Choice getCode() {
-		return code;
+	public Optional<AccountStatusUpdateInstructionReason2Choice> getCode() {
+		return code == null ? Optional.empty() : Optional.of(code);
 	}
 
-	public void setCode(AccountStatusUpdateInstructionReason2Choice code) {
+	public AccountStatusUpdateInstructionReason1 setCode(AccountStatusUpdateInstructionReason2Choice code) {
 		this.code = code;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public AccountStatusUpdateInstructionReason1 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

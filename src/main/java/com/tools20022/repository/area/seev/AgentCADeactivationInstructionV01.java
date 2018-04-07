@@ -25,9 +25,9 @@ import com.tools20022.repository.area.SecuritiesEventsLatestVersion;
 import com.tools20022.repository.msg.CorporateActionDeactivationInstruction1;
 import com.tools20022.repository.msg.CorporateActionInformation1;
 import com.tools20022.repository.msg.DocumentIdentification8;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -93,16 +93,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AgentCADeactivationInstructionV01", propOrder = {"identification", "corporateActionGeneralInformation", "deactivationDetails"})
 public class AgentCADeactivationInstructionV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected DocumentIdentification8 identification;
 	/**
-	 * Identification assigned by the Sender to unambiguously identify the
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,7 +125,7 @@ public class AgentCADeactivationInstructionV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCADeactivationInstructionV01, DocumentIdentification8> mmIdentification = new MMMessageBuildingBlock<AgentCADeactivationInstructionV01, DocumentIdentification8>() {
 		{
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,18 +136,21 @@ public class AgentCADeactivationInstructionV01 {
 			complexType_lazy = () -> DocumentIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCADeactivationInstructionV01.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentIdentification8 getValue(AgentCADeactivationInstructionV01 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AgentCADeactivationInstructionV01 obj, DocumentIdentification8 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "CorpActnGnlInf", required = true)
 	protected CorporateActionInformation1 corporateActionGeneralInformation;
 	/**
-	 * General information about the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +171,7 @@ public class AgentCADeactivationInstructionV01 {
 	 * definition} = "General information about the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCorporateActionGeneralInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCADeactivationInstructionV01, CorporateActionInformation1> mmCorporateActionGeneralInformation = new MMMessageBuildingBlock<AgentCADeactivationInstructionV01, CorporateActionInformation1>() {
 		{
 			xmlTag = "CorpActnGnlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,18 +182,21 @@ public class AgentCADeactivationInstructionV01 {
 			complexType_lazy = () -> CorporateActionInformation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCADeactivationInstructionV01.class.getMethod("getCorporateActionGeneralInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionInformation1 getValue(AgentCADeactivationInstructionV01 obj) {
+			return obj.getCorporateActionGeneralInformation();
+		}
+
+		@Override
+		public void setValue(AgentCADeactivationInstructionV01 obj, CorporateActionInformation1 value) {
+			obj.setCorporateActionGeneralInformation(value);
 		}
 	};
+	@XmlElement(name = "DeactvtnDtls", required = true)
 	protected CorporateActionDeactivationInstruction1 deactivationDetails;
 	/**
-	 * Information related to the deactivation of a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,7 +217,7 @@ public class AgentCADeactivationInstructionV01 {
 	 * definition} = "Information related to the deactivation of a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDeactivationDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCADeactivationInstructionV01, CorporateActionDeactivationInstruction1> mmDeactivationDetails = new MMMessageBuildingBlock<AgentCADeactivationInstructionV01, CorporateActionDeactivationInstruction1>() {
 		{
 			xmlTag = "DeactvtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,12 +228,14 @@ public class AgentCADeactivationInstructionV01 {
 			complexType_lazy = () -> CorporateActionDeactivationInstruction1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCADeactivationInstructionV01.class.getMethod("getDeactivationDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionDeactivationInstruction1 getValue(AgentCADeactivationInstructionV01 obj) {
+			return obj.getDeactivationDetails();
+		}
+
+		@Override
+		public void setValue(AgentCADeactivationInstructionV01 obj, CorporateActionDeactivationInstruction1 value) {
+			obj.setDeactivationDetails(value);
 		}
 	};
 
@@ -260,34 +268,34 @@ public class AgentCADeactivationInstructionV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public DocumentIdentification8 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(DocumentIdentification8 identification) {
-		this.identification = identification;
+	public AgentCADeactivationInstructionV01 setIdentification(DocumentIdentification8 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnGnlInf", required = true)
 	public CorporateActionInformation1 getCorporateActionGeneralInformation() {
 		return corporateActionGeneralInformation;
 	}
 
-	public void setCorporateActionGeneralInformation(CorporateActionInformation1 corporateActionGeneralInformation) {
-		this.corporateActionGeneralInformation = corporateActionGeneralInformation;
+	public AgentCADeactivationInstructionV01 setCorporateActionGeneralInformation(CorporateActionInformation1 corporateActionGeneralInformation) {
+		this.corporateActionGeneralInformation = Objects.requireNonNull(corporateActionGeneralInformation);
+		return this;
 	}
 
-	@XmlElement(name = "DeactvtnDtls", required = true)
 	public CorporateActionDeactivationInstruction1 getDeactivationDetails() {
 		return deactivationDetails;
 	}
 
-	public void setDeactivationDetails(CorporateActionDeactivationInstruction1 deactivationDetails) {
-		this.deactivationDetails = deactivationDetails;
+	public AgentCADeactivationInstructionV01 setDeactivationDetails(CorporateActionDeactivationInstruction1 deactivationDetails) {
+		this.deactivationDetails = Objects.requireNonNull(deactivationDetails);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:seev.028.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.028.001.01")
 	static public class Document {
 		@XmlElement(name = "AgtCADeactvtnInstr", required = true)
 		public AgentCADeactivationInstructionV01 messageBody;

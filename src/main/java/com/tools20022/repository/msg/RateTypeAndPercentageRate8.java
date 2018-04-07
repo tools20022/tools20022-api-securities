@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Specifies the value expressed as a rate type and a percentage rate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RateTypeAndPercentageRate8", propOrder = {"rateType", "rate"})
 public class RateTypeAndPercentageRate8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RateTp", required = true)
 	protected RateType42Choice rateType;
 	/**
-	 * Value expressed as a rate type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -104,10 +106,10 @@ public class RateTypeAndPercentageRate8 {
 	 * definition} = "Value expressed as a rate type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRateType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RateTypeAndPercentageRate8, RateType42Choice> mmRateType = new MMMessageAssociationEnd<RateTypeAndPercentageRate8, RateType42Choice>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmWithholdingTaxType;
-			componentContext_lazy = () -> RateTypeAndPercentageRate8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateTypeAndPercentageRate8.mmObject();
 			isDerived = false;
 			xmlTag = "RateTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class RateTypeAndPercentageRate8 {
 			isComposite = true;
 			type_lazy = () -> RateType42Choice.mmObject();
 		}
+
+		@Override
+		public RateType42Choice getValue(RateTypeAndPercentageRate8 obj) {
+			return obj.getRateType();
+		}
+
+		@Override
+		public void setValue(RateTypeAndPercentageRate8 obj, RateType42Choice value) {
+			obj.setRateType(value);
+		}
 	};
+	@XmlElement(name = "Rate", required = true)
 	protected PercentageRate rate;
 	/**
-	 * Value expressed as a rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +165,10 @@ public class RateTypeAndPercentageRate8 {
 	 * definition} = "Value expressed as a rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateTypeAndPercentageRate8, PercentageRate> mmRate = new MMMessageAttribute<RateTypeAndPercentageRate8, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> RateTypeAndPercentageRate8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateTypeAndPercentageRate8.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,14 +178,24 @@ public class RateTypeAndPercentageRate8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public PercentageRate getValue(RateTypeAndPercentageRate8 obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(RateTypeAndPercentageRate8 obj, PercentageRate value) {
+			obj.setRate(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RateTypeAndPercentageRate8.mmRateType, RateTypeAndPercentageRate8.mmRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RateTypeAndPercentageRate8.mmRateType, com.tools20022.repository.msg.RateTypeAndPercentageRate8.mmRate);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateTypeAndPercentageRate8";
 				definition = "Specifies the value expressed as a rate type and a percentage rate.";
@@ -181,21 +204,21 @@ public class RateTypeAndPercentageRate8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RateTp", required = true)
 	public RateType42Choice getRateType() {
 		return rateType;
 	}
 
-	public void setRateType(RateType42Choice rateType) {
-		this.rateType = rateType;
+	public RateTypeAndPercentageRate8 setRateType(RateType42Choice rateType) {
+		this.rateType = Objects.requireNonNull(rateType);
+		return this;
 	}
 
-	@XmlElement(name = "Rate", required = true)
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public RateTypeAndPercentageRate8 setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 }

@@ -27,8 +27,10 @@ import com.tools20022.repository.entity.CorporateActionPrice;
 import com.tools20022.repository.entity.Issuance;
 import com.tools20022.repository.entity.SecuritiesTax;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountPrice1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,20 +86,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies prices."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionPrice1", propOrder = {"exercisePrice", "issuePrice", "cashInLieuOfSharePrice", "taxableIncomePerDividendShare", "genericCashPriceReceivedPerProduct", "genericCashPricePaidPerProduct",
 		"overSubscriptionDepositPrice"})
 public class CorporateActionPrice1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ExrcPric")
 	protected PriceFormat4Choice exercisePrice;
 	/**
-	 * 1. Price at which security will be purchased/sold if warrant is
-	 * exercised, either as an actual amount or a percentage. 2. Price at which
-	 * a bond is converted to underlying security either as an actual amount or
-	 * a percentage. 3. Strike price of an option, represented either as an
-	 * actual amount, a percentage or or a number of points above an index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,10 +129,10 @@ public class CorporateActionPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExercisePrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat4Choice>> mmExercisePrice = new MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionPrice.mmCorporateActionExercisePrice;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "ExrcPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,11 +142,22 @@ public class CorporateActionPrice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PriceFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PriceFormat4Choice> getValue(CorporateActionPrice1 obj) {
+			return obj.getExercisePrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<PriceFormat4Choice> value) {
+			obj.setExercisePrice(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IssePric")
 	protected PriceFormat2Choice issuePrice;
 	/**
-	 * Initial issue price of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,10 +188,10 @@ public class CorporateActionPrice1 {
 	 * definition} = "Initial issue price of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuePrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>> mmIssuePrice = new MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Issuance.mmIssuePrice;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "IssePric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,12 +201,22 @@ public class CorporateActionPrice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PriceFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PriceFormat2Choice> getValue(CorporateActionPrice1 obj) {
+			return obj.getIssuePrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<PriceFormat2Choice> value) {
+			obj.setIssuePrice(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CshInLieuOfShrPric")
 	protected PriceFormat2Choice cashInLieuOfSharePrice;
 	/**
-	 * Cash disbursement in lieu of equities; usually in lieu of fractional
-	 * quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +249,10 @@ public class CorporateActionPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashInLieuOfSharePrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>> mmCashInLieuOfSharePrice = new MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionPrice.mmCashInLieuOfSharePrice;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "CshInLieuOfShrPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,13 +262,22 @@ public class CorporateActionPrice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PriceFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PriceFormat2Choice> getValue(CorporateActionPrice1 obj) {
+			return obj.getCashInLieuOfSharePrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<PriceFormat2Choice> value) {
+			obj.setCashInLieuOfSharePrice(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxblIncmPerDvddShr")
 	protected AmountPrice1 taxableIncomePerDividendShare;
 	/**
-	 * Amount included in the dividend/NAV that is identified as gains directly
-	 * or indirectly derived from interest payments within the scope of the EU
-	 * Savings directive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,10 +309,10 @@ public class CorporateActionPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxableIncomePerDividendShare = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<AmountPrice1>> mmTaxableIncomePerDividendShare = new MMMessageAttribute<CorporateActionPrice1, Optional<AmountPrice1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmTaxableIncomePerDividendShare;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxblIncmPerDvddShr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -291,14 +320,24 @@ public class CorporateActionPrice1 {
 			definition = "Amount included in the dividend/NAV that is identified as gains directly or indirectly derived from interest payments within the scope of the EU Savings directive.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AmountPrice1.mmObject();
+			complexType_lazy = () -> AmountPrice1.mmObject();
+		}
+
+		@Override
+		public Optional<AmountPrice1> getValue(CorporateActionPrice1 obj) {
+			return obj.getTaxableIncomePerDividendShare();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<AmountPrice1> value) {
+			obj.setTaxableIncomePerDividendShare(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "GncCshPricRcvdPerPdct")
 	protected PriceFormat1Choice genericCashPriceReceivedPerProduct;
 	/**
-	 * Generic cash price received per product by the underlying security holder
-	 * either as a percentage or an amount, eg, redemption price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -331,10 +370,10 @@ public class CorporateActionPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGenericCashPriceReceivedPerProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat1Choice>> mmGenericCashPriceReceivedPerProduct = new MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionPrice.mmGenericCashPriceReceivedPerProduct;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "GncCshPricRcvdPerPdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -344,12 +383,22 @@ public class CorporateActionPrice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PriceFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PriceFormat1Choice> getValue(CorporateActionPrice1 obj) {
+			return obj.getGenericCashPriceReceivedPerProduct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<PriceFormat1Choice> value) {
+			obj.setGenericCashPriceReceivedPerProduct(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GncCshPricPdPerPdct")
 	protected PriceFormat2Choice genericCashPricePaidPerProduct;
 	/**
-	 * Generic cash price paid per product by the underlying security holder
-	 * either as a percentage or an amount, eg, reinvestment price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,10 +431,10 @@ public class CorporateActionPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGenericCashPricePaidPerProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>> mmGenericCashPricePaidPerProduct = new MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionPrice.mmGenericCashPricePaidPerProduct;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "GncCshPricPdPerPdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -395,12 +444,22 @@ public class CorporateActionPrice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PriceFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PriceFormat2Choice> getValue(CorporateActionPrice1 obj) {
+			return obj.getGenericCashPricePaidPerProduct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<PriceFormat2Choice> value) {
+			obj.setGenericCashPricePaidPerProduct(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OverSbcptDpstPric")
 	protected PriceFormat2Choice overSubscriptionDepositPrice;
 	/**
-	 * Amount of money required per over-subscribed equity as defined by the
-	 * issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -433,10 +492,10 @@ public class CorporateActionPrice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOverSubscriptionDepositPrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>> mmOverSubscriptionDepositPrice = new MMMessageAttribute<CorporateActionPrice1, Optional<PriceFormat2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionPrice.mmOverSubscriptionDepositPrice;
-			componentContext_lazy = () -> CorporateActionPrice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice1.mmObject();
 			isDerived = false;
 			xmlTag = "OverSbcptDpstPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -446,15 +505,27 @@ public class CorporateActionPrice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PriceFormat2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PriceFormat2Choice> getValue(CorporateActionPrice1 obj) {
+			return obj.getOverSubscriptionDepositPrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice1 obj, Optional<PriceFormat2Choice> value) {
+			obj.setOverSubscriptionDepositPrice(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionPrice1.mmExercisePrice, CorporateActionPrice1.mmIssuePrice, CorporateActionPrice1.mmCashInLieuOfSharePrice, CorporateActionPrice1.mmTaxableIncomePerDividendShare,
-						CorporateActionPrice1.mmGenericCashPriceReceivedPerProduct, CorporateActionPrice1.mmGenericCashPricePaidPerProduct, CorporateActionPrice1.mmOverSubscriptionDepositPrice);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionPrice1.mmExercisePrice, com.tools20022.repository.msg.CorporateActionPrice1.mmIssuePrice,
+						com.tools20022.repository.msg.CorporateActionPrice1.mmCashInLieuOfSharePrice, com.tools20022.repository.msg.CorporateActionPrice1.mmTaxableIncomePerDividendShare,
+						com.tools20022.repository.msg.CorporateActionPrice1.mmGenericCashPriceReceivedPerProduct, com.tools20022.repository.msg.CorporateActionPrice1.mmGenericCashPricePaidPerProduct,
+						com.tools20022.repository.msg.CorporateActionPrice1.mmOverSubscriptionDepositPrice);
 				trace_lazy = () -> CorporateActionPrice.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionPrice1";
 				definition = "Specifies prices.";
@@ -463,66 +534,66 @@ public class CorporateActionPrice1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ExrcPric")
-	public PriceFormat4Choice getExercisePrice() {
-		return exercisePrice;
+	public Optional<PriceFormat4Choice> getExercisePrice() {
+		return exercisePrice == null ? Optional.empty() : Optional.of(exercisePrice);
 	}
 
-	public void setExercisePrice(PriceFormat4Choice exercisePrice) {
+	public CorporateActionPrice1 setExercisePrice(PriceFormat4Choice exercisePrice) {
 		this.exercisePrice = exercisePrice;
+		return this;
 	}
 
-	@XmlElement(name = "IssePric")
-	public PriceFormat2Choice getIssuePrice() {
-		return issuePrice;
+	public Optional<PriceFormat2Choice> getIssuePrice() {
+		return issuePrice == null ? Optional.empty() : Optional.of(issuePrice);
 	}
 
-	public void setIssuePrice(PriceFormat2Choice issuePrice) {
+	public CorporateActionPrice1 setIssuePrice(PriceFormat2Choice issuePrice) {
 		this.issuePrice = issuePrice;
+		return this;
 	}
 
-	@XmlElement(name = "CshInLieuOfShrPric")
-	public PriceFormat2Choice getCashInLieuOfSharePrice() {
-		return cashInLieuOfSharePrice;
+	public Optional<PriceFormat2Choice> getCashInLieuOfSharePrice() {
+		return cashInLieuOfSharePrice == null ? Optional.empty() : Optional.of(cashInLieuOfSharePrice);
 	}
 
-	public void setCashInLieuOfSharePrice(PriceFormat2Choice cashInLieuOfSharePrice) {
+	public CorporateActionPrice1 setCashInLieuOfSharePrice(PriceFormat2Choice cashInLieuOfSharePrice) {
 		this.cashInLieuOfSharePrice = cashInLieuOfSharePrice;
+		return this;
 	}
 
-	@XmlElement(name = "TaxblIncmPerDvddShr")
-	public AmountPrice1 getTaxableIncomePerDividendShare() {
-		return taxableIncomePerDividendShare;
+	public Optional<AmountPrice1> getTaxableIncomePerDividendShare() {
+		return taxableIncomePerDividendShare == null ? Optional.empty() : Optional.of(taxableIncomePerDividendShare);
 	}
 
-	public void setTaxableIncomePerDividendShare(com.tools20022.repository.msg.AmountPrice1 taxableIncomePerDividendShare) {
+	public CorporateActionPrice1 setTaxableIncomePerDividendShare(AmountPrice1 taxableIncomePerDividendShare) {
 		this.taxableIncomePerDividendShare = taxableIncomePerDividendShare;
+		return this;
 	}
 
-	@XmlElement(name = "GncCshPricRcvdPerPdct")
-	public PriceFormat1Choice getGenericCashPriceReceivedPerProduct() {
-		return genericCashPriceReceivedPerProduct;
+	public Optional<PriceFormat1Choice> getGenericCashPriceReceivedPerProduct() {
+		return genericCashPriceReceivedPerProduct == null ? Optional.empty() : Optional.of(genericCashPriceReceivedPerProduct);
 	}
 
-	public void setGenericCashPriceReceivedPerProduct(PriceFormat1Choice genericCashPriceReceivedPerProduct) {
+	public CorporateActionPrice1 setGenericCashPriceReceivedPerProduct(PriceFormat1Choice genericCashPriceReceivedPerProduct) {
 		this.genericCashPriceReceivedPerProduct = genericCashPriceReceivedPerProduct;
+		return this;
 	}
 
-	@XmlElement(name = "GncCshPricPdPerPdct")
-	public PriceFormat2Choice getGenericCashPricePaidPerProduct() {
-		return genericCashPricePaidPerProduct;
+	public Optional<PriceFormat2Choice> getGenericCashPricePaidPerProduct() {
+		return genericCashPricePaidPerProduct == null ? Optional.empty() : Optional.of(genericCashPricePaidPerProduct);
 	}
 
-	public void setGenericCashPricePaidPerProduct(PriceFormat2Choice genericCashPricePaidPerProduct) {
+	public CorporateActionPrice1 setGenericCashPricePaidPerProduct(PriceFormat2Choice genericCashPricePaidPerProduct) {
 		this.genericCashPricePaidPerProduct = genericCashPricePaidPerProduct;
+		return this;
 	}
 
-	@XmlElement(name = "OverSbcptDpstPric")
-	public PriceFormat2Choice getOverSubscriptionDepositPrice() {
-		return overSubscriptionDepositPrice;
+	public Optional<PriceFormat2Choice> getOverSubscriptionDepositPrice() {
+		return overSubscriptionDepositPrice == null ? Optional.empty() : Optional.of(overSubscriptionDepositPrice);
 	}
 
-	public void setOverSubscriptionDepositPrice(PriceFormat2Choice overSubscriptionDepositPrice) {
+	public CorporateActionPrice1 setOverSubscriptionDepositPrice(PriceFormat2Choice overSubscriptionDepositPrice) {
 		this.overSubscriptionDepositPrice = overSubscriptionDepositPrice;
+		return this;
 	}
 }

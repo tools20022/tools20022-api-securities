@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType3Code#AlienRegistrationNumber
- * PersonIdentificationType3Code.mmAlienRegistrationNumber}</li>
+ * PersonIdentificationType3Code.AlienRegistrationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType3Code#PassportNumber
- * PersonIdentificationType3Code.mmPassportNumber}</li>
+ * PersonIdentificationType3Code.PassportNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType3Code#EmployerIdentificationNumber
- * PersonIdentificationType3Code.mmEmployerIdentificationNumber}</li>
+ * PersonIdentificationType3Code.EmployerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType3Code#DriversLicenseNumber
- * PersonIdentificationType3Code.mmDriversLicenseNumber}</li>
+ * PersonIdentificationType3Code.DriversLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType3Code#ForeignInvestmentIdentityNumber
- * PersonIdentificationType3Code.mmForeignInvestmentIdentityNumber}</li>
+ * PersonIdentificationType3Code.ForeignInvestmentIdentityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType3Code#TaxIdentificationNumber
- * PersonIdentificationType3Code.mmTaxIdentificationNumber}</li>
+ * PersonIdentificationType3Code.TaxIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class PersonIdentificationType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ARNU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentificationType3Code";

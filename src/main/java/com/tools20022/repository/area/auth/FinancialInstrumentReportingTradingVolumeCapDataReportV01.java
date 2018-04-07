@@ -25,10 +25,11 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.SecuritiesMarketReportHeader1;
 import com.tools20022.repository.msg.SupplementaryData1;
 import com.tools20022.repository.msg.VolumeCapReport1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -78,15 +79,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingTradingVolumeCapDataReportV01", propOrder = {"reportHeader", "volumeCapData", "supplementaryData"})
 public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptHdr", required = true)
 	protected SecuritiesMarketReportHeader1 reportHeader;
 	/**
-	 * Header information related to the global report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +109,7 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 	 * definition} = "Header information related to the global report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingTradingVolumeCapDataReportV01, SecuritiesMarketReportHeader1> mmReportHeader = new MMMessageBuildingBlock<FinancialInstrumentReportingTradingVolumeCapDataReportV01, SecuritiesMarketReportHeader1>() {
 		{
 			xmlTag = "RptHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,18 +120,21 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 			complexType_lazy = () -> SecuritiesMarketReportHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingTradingVolumeCapDataReportV01.class.getMethod("getReportHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesMarketReportHeader1 getValue(FinancialInstrumentReportingTradingVolumeCapDataReportV01 obj) {
+			return obj.getReportHeader();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingTradingVolumeCapDataReportV01 obj, SecuritiesMarketReportHeader1 value) {
+			obj.setReportHeader(value);
 		}
 	};
+	@XmlElement(name = "VolCapData", required = true)
 	protected List<VolumeCapReport1> volumeCapData;
 	/**
-	 * Provides details on the volume of trades of financial instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,7 +156,7 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 	 * "Provides details on the volume of trades of financial instruments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmVolumeCapData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingTradingVolumeCapDataReportV01, List<VolumeCapReport1>> mmVolumeCapData = new MMMessageBuildingBlock<FinancialInstrumentReportingTradingVolumeCapDataReportV01, List<VolumeCapReport1>>() {
 		{
 			xmlTag = "VolCapData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,19 +166,21 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 			complexType_lazy = () -> VolumeCapReport1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingTradingVolumeCapDataReportV01.class.getMethod("getVolumeCapData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<VolumeCapReport1> getValue(FinancialInstrumentReportingTradingVolumeCapDataReportV01 obj) {
+			return obj.getVolumeCapData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingTradingVolumeCapDataReportV01 obj, List<VolumeCapReport1> value) {
+			obj.setVolumeCapData(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,7 +203,7 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingTradingVolumeCapDataReportV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingTradingVolumeCapDataReportV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -206,12 +213,14 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingTradingVolumeCapDataReportV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingTradingVolumeCapDataReportV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingTradingVolumeCapDataReportV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -245,34 +254,34 @@ public class FinancialInstrumentReportingTradingVolumeCapDataReportV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptHdr", required = true)
 	public SecuritiesMarketReportHeader1 getReportHeader() {
 		return reportHeader;
 	}
 
-	public void setReportHeader(SecuritiesMarketReportHeader1 reportHeader) {
-		this.reportHeader = reportHeader;
+	public FinancialInstrumentReportingTradingVolumeCapDataReportV01 setReportHeader(SecuritiesMarketReportHeader1 reportHeader) {
+		this.reportHeader = Objects.requireNonNull(reportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "VolCapData", required = true)
 	public List<VolumeCapReport1> getVolumeCapData() {
-		return volumeCapData;
+		return volumeCapData == null ? volumeCapData = new ArrayList<>() : volumeCapData;
 	}
 
-	public void setVolumeCapData(List<VolumeCapReport1> volumeCapData) {
-		this.volumeCapData = volumeCapData;
+	public FinancialInstrumentReportingTradingVolumeCapDataReportV01 setVolumeCapData(List<VolumeCapReport1> volumeCapData) {
+		this.volumeCapData = Objects.requireNonNull(volumeCapData);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingTradingVolumeCapDataReportV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.035.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.035.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgTradgVolCapDataRpt", required = true)
 		public FinancialInstrumentReportingTradingVolumeCapDataReportV01 messageBody;

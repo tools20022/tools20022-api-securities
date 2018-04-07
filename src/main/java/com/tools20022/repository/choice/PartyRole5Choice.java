@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * PartyRole2Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyRole5Choice", propOrder = {"code", "proprietary"})
 public class PartyRole5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected PartyRole1Code code;
 	/**
-	 * Role expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,10 +117,10 @@ public class PartyRole5Choice {
 	 * PartyRole2Choice.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyRole5Choice, PartyRole1Code> mmCode = new MMMessageAttribute<PartyRole5Choice, PartyRole1Code>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmPartyType;
-			componentContext_lazy = () -> PartyRole5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyRole5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,11 +131,22 @@ public class PartyRole5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> PartyRole1Code.mmObject();
 		}
+
+		@Override
+		public PartyRole1Code getValue(PartyRole5Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(PartyRole5Choice obj, PartyRole1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Role expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -168,10 +181,10 @@ public class PartyRole5Choice {
 	 * PartyRole2Choice.mmProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyRole5Choice, GenericIdentification47> mmProprietary = new MMMessageAssociationEnd<PartyRole5Choice, GenericIdentification47>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmPartyType;
-			componentContext_lazy = () -> PartyRole5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyRole5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,14 +196,24 @@ public class PartyRole5Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification47.mmObject();
 		}
+
+		@Override
+		public GenericIdentification47 getValue(PartyRole5Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(PartyRole5Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyRole5Choice.mmCode, PartyRole5Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PartyRole5Choice.mmCode, com.tools20022.repository.choice.PartyRole5Choice.mmProprietary);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyRole5Choice";
 				definition = "Choice of formats for the specification of the role.";
@@ -200,21 +223,21 @@ public class PartyRole5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public PartyRole1Code getCode() {
 		return code;
 	}
 
-	public void setCode(PartyRole1Code code) {
-		this.code = code;
+	public PartyRole5Choice setCode(PartyRole1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public PartyRole5Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

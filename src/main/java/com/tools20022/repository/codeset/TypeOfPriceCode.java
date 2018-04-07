@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,123 +38,123 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Average
- * TypeOfPriceCode.mmAverage}</li>
+ * TypeOfPriceCode.Average}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#AverageOverride
- * TypeOfPriceCode.mmAverageOverride}</li>
+ * TypeOfPriceCode.AverageOverride}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Combined
- * TypeOfPriceCode.mmCombined}</li>
+ * TypeOfPriceCode.Combined}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#GrossOfAll
- * TypeOfPriceCode.mmGrossOfAll}</li>
+ * TypeOfPriceCode.GrossOfAll}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Limit
- * TypeOfPriceCode.mmLimit}</li>
+ * TypeOfPriceCode.Limit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Net
- * TypeOfPriceCode.mmNet}</li>
+ * TypeOfPriceCode.Net}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetDisclosed
- * TypeOfPriceCode.mmNetDisclosed}</li>
+ * TypeOfPriceCode.NetDisclosed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetOfAll
- * TypeOfPriceCode.mmNetOfAll}</li>
+ * TypeOfPriceCode.NetOfAll}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetUndisclosed
- * TypeOfPriceCode.mmNetUndisclosed}</li>
+ * TypeOfPriceCode.NetUndisclosed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NotionalGross
- * TypeOfPriceCode.mmNotionalGross}</li>
+ * TypeOfPriceCode.NotionalGross}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#ParValue
- * TypeOfPriceCode.mmParValue}</li>
+ * TypeOfPriceCode.ParValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#RoundedAverage
- * TypeOfPriceCode.mmRoundedAverage}</li>
+ * TypeOfPriceCode.RoundedAverage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Stop
- * TypeOfPriceCode.mmStop}</li>
+ * TypeOfPriceCode.Stop}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Bid
- * TypeOfPriceCode.mmBid}</li>
+ * TypeOfPriceCode.Bid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Offer
- * TypeOfPriceCode.mmOffer}</li>
+ * TypeOfPriceCode.Offer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NetAssetValue
- * TypeOfPriceCode.mmNetAssetValue}</li>
+ * TypeOfPriceCode.NetAssetValue}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Creation
- * TypeOfPriceCode.mmCreation}</li>
+ * TypeOfPriceCode.Creation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Cancellation
- * TypeOfPriceCode.mmCancellation}</li>
+ * TypeOfPriceCode.Cancellation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Interim
- * TypeOfPriceCode.mmInterim}</li>
+ * TypeOfPriceCode.Interim}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Swing
- * TypeOfPriceCode.mmSwing}</li>
+ * TypeOfPriceCode.Swing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Other
- * TypeOfPriceCode.mmOther}</li>
+ * TypeOfPriceCode.Other}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Mid
- * TypeOfPriceCode.mmMid}</li>
+ * TypeOfPriceCode.Mid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Reinvestment
- * TypeOfPriceCode.mmReinvestment}</li>
+ * TypeOfPriceCode.Reinvestment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Switch
- * TypeOfPriceCode.mmSwitch}</li>
+ * TypeOfPriceCode.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#DailyDividendRate
- * TypeOfPriceCode.mmDailyDividendRate}</li>
+ * TypeOfPriceCode.DailyDividendRate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Market
- * TypeOfPriceCode.mmMarket}</li>
+ * TypeOfPriceCode.Market}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Indicative
- * TypeOfPriceCode.mmIndicative}</li>
+ * TypeOfPriceCode.Indicative}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Actual
- * TypeOfPriceCode.mmActual}</li>
+ * TypeOfPriceCode.Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#NonAdjustedUnpublished
- * TypeOfPriceCode.mmNonAdjustedUnpublished}</li>
+ * TypeOfPriceCode.NonAdjustedUnpublished}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Guaranteed
- * TypeOfPriceCode.mmGuaranteed}</li>
+ * TypeOfPriceCode.Guaranteed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#EstimatedNAV
- * TypeOfPriceCode.mmEstimatedNAV}</li>
+ * TypeOfPriceCode.EstimatedNAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#GrossAssetValue
- * TypeOfPriceCode.mmGrossAssetValue}</li>
+ * TypeOfPriceCode.GrossAssetValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#EstimatedGAV
- * TypeOfPriceCode.mmEstimatedGAV}</li>
+ * TypeOfPriceCode.EstimatedGAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#SidePocketNAV
- * TypeOfPriceCode.mmSidePocketNAV}</li>
+ * TypeOfPriceCode.SidePocketNAV}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Ask
- * TypeOfPriceCode.mmAsk}</li>
+ * TypeOfPriceCode.Ask}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Auction
- * TypeOfPriceCode.mmAuction}</li>
+ * TypeOfPriceCode.Auction}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Calculated
- * TypeOfPriceCode.mmCalculated}</li>
+ * TypeOfPriceCode.Calculated}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Clean
- * TypeOfPriceCode.mmClean}</li>
+ * TypeOfPriceCode.Clean}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Dirty
- * TypeOfPriceCode.mmDirty}</li>
+ * TypeOfPriceCode.Dirty}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Draw
- * TypeOfPriceCode.mmDraw}</li>
+ * TypeOfPriceCode.Draw}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#FairValue
- * TypeOfPriceCode.mmFairValue}</li>
+ * TypeOfPriceCode.FairValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#IndicativePaid
- * TypeOfPriceCode.mmIndicativePaid}</li>
+ * TypeOfPriceCode.IndicativePaid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Kassa
- * TypeOfPriceCode.mmKassa}</li>
+ * TypeOfPriceCode.Kassa}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Paid
- * TypeOfPriceCode.mmPaid}</li>
+ * TypeOfPriceCode.Paid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#RedemptionNAV
- * TypeOfPriceCode.mmRedemptionNAV}</li>
+ * TypeOfPriceCode.RedemptionNAV}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Settlement
- * TypeOfPriceCode.mmSettlement}</li>
+ * TypeOfPriceCode.Settlement}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Spread
- * TypeOfPriceCode.mmSpread}</li>
+ * TypeOfPriceCode.Spread}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#SubscriptionNAV
- * TypeOfPriceCode.mmSubscriptionNAV}</li>
+ * TypeOfPriceCode.SubscriptionNAV}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#Tax
- * TypeOfPriceCode.mmTax}</li>
+ * TypeOfPriceCode.Tax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPriceCode#TaxableIncomePerShareCalculated
- * TypeOfPriceCode.mmTaxableIncomePerShareCalculated}</li>
+ * TypeOfPriceCode.TaxableIncomePerShareCalculated}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -163,8 +164,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * TypeOfPrice6Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice9Code
  * TypeOfPrice9Code}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice12Code
- * TypeOfPrice12Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice14Code
  * TypeOfPrice14Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code
@@ -184,8 +183,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::PRIC, ISO15022Synonym: :90a::MRKT//,
+ * ISO15022Synonym: :90a::INDC//</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -217,6 +220,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AVER"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//AVER</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -229,6 +235,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode Average = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//AVER"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Average";
 			definition = "Price is an average execution price.";
@@ -247,6 +254,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AVOV"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//AVOV</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -259,6 +269,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode AverageOverride = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//AVOV"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AverageOverride";
 			definition = "Price is an override of the average price.";
@@ -277,6 +288,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "COMB"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//COMB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -290,6 +304,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode Combined = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//COMB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Combined";
 			definition = "Price is composed of the combined expenses (used in the UK market).";
@@ -309,6 +324,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GREX"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//GREX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -323,6 +341,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode GrossOfAll = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//GREX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossOfAll";
 			definition = "Price is a gross execution price. The price is an all inclusive price, ie, including all charges, fees, and taxes.";
@@ -342,6 +361,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LIMI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//LIMI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -356,6 +378,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode Limit = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//LIMI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Limit";
 			definition = "Price is the limit price of a limit order, eg, a customer might put in a limit order to sell financial instruments at 67 or to buy at 60.";
@@ -375,6 +398,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NET2"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//NET2</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -389,6 +415,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode Net = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//NET2"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Net";
 			definition = "Price is a net price, ie, net only of local broker's commission, local fees and local taxes.";
@@ -407,6 +434,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NDIS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//NDIS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -419,6 +449,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode NetDisclosed = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//NDIS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetDisclosed";
 			definition = "Price is net to the disclosed client.";
@@ -437,6 +468,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NET1"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//NET1</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -450,6 +484,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode NetOfAll = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//NET1"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetOfAll";
 			definition = "Price is a net price, ie, net of all charges, fees and taxes.";
@@ -468,6 +503,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NUND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//NUND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -481,6 +519,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode NetUndisclosed = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//NUND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetUndisclosed";
 			definition = "Price is net to the client undisclosed (used in the UK market).";
@@ -499,6 +538,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NOGR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//NOGR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -511,6 +553,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode NotionalGross = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//NOGR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotionalGross";
 			definition = "Price is notional gross (used in the UK market).";
@@ -529,6 +572,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PARV"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//PARV</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -542,6 +588,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode ParValue = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//PARV"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParValue";
 			definition = "Price is equal to the nominal or face value of the instrument.";
@@ -560,6 +607,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RDAV"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//RDAV</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -567,14 +617,15 @@ public class TypeOfPriceCode extends MMCode {
 	 * name} = "RoundedAverage"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Price  is a rounded average price."</li>
+	 * definition} = "Price is a rounded average price."</li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode RoundedAverage = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//RDAV"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundedAverage";
-			definition = "Price  is a rounded average price.";
+			definition = "Price is a rounded average price.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "RDAV";
 		}
@@ -594,6 +645,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "STOP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PRIC//STOP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -602,15 +656,16 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Price is a stop price used in an order to buy.  The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted.  In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price."
+	 * "Price is a stop price used in an order to buy. The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted. In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price."
 	 * </li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode Stop = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC//STOP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Stop";
-			definition = "Price is a stop price used in an order to buy.  The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted.  In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.";
+			definition = "Price is a stop price used in an order to buy. The order becomes a market order when the financial instrument trades at or above the stop price after the order is submitted. In an order to sell the order becomes a market order when the financial instrument trades at or below the stop price.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "STOP";
 		}
@@ -1022,6 +1077,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MRKT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :90a::MRKT//</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1034,6 +1092,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode Market = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":90a::MRKT//"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Market";
 			definition = "Price is the current market price.";
@@ -1052,6 +1111,9 @@ public class TypeOfPriceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "INDC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :90a::INDC//</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1064,6 +1126,7 @@ public class TypeOfPriceCode extends MMCode {
 	 */
 	public static final TypeOfPriceCode Indicative = new TypeOfPriceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":90a::INDC//"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Indicative";
 			definition = "Price is the estimated indicative price.";
@@ -1163,7 +1226,7 @@ public class TypeOfPriceCode extends MMCode {
 		}
 	};
 	/**
-	 * Price is an estimated net asset value per unit
+	 * Price is an estimated net asset value per unit.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1180,14 +1243,14 @@ public class TypeOfPriceCode extends MMCode {
 	 * name} = "EstimatedNAV"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Price is an estimated net asset value per unit"</li>
+	 * definition} = "Price is an estimated net asset value per unit."</li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode EstimatedNAV = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedNAV";
-			definition = "Price is an estimated net asset value per unit";
+			definition = "Price is an estimated net asset value per unit.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ENAV";
 		}
@@ -1309,14 +1372,14 @@ public class TypeOfPriceCode extends MMCode {
 	 * name} = "Ask"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Offer.  Price for which seller is willing to sell item."</li>
+	 * definition} = "Offer. Price for which seller is willing to sell item."</li>
 	 * </ul>
 	 */
 	public static final TypeOfPriceCode Ask = new TypeOfPriceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ask";
-			definition = "Offer.  Price for which seller is willing to sell item.";
+			definition = "Offer. Price for which seller is willing to sell item.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfPriceCode.mmObject();
 			codeName = "ASKK";
 		}
@@ -1782,13 +1845,14 @@ public class TypeOfPriceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PRIC"), new ISO15022Synonym(this, ":90a::MRKT//"), new ISO15022Synonym(this, ":90a::INDC//"));
 				example = Arrays.asList("AVER");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPriceCode";
 				definition = "Specifies the type of price and information about the price.";
-				derivation_lazy = () -> Arrays.asList(TypeOfPrice6Code.mmObject(), TypeOfPrice9Code.mmObject(), TypeOfPrice12Code.mmObject(), TypeOfPrice14Code.mmObject(), TypeOfPrice11Code.mmObject(), TypeOfPrice16Code.mmObject(),
-						TypeOfPrice3Code.mmObject(), TypeOfPrice10Code.mmObject(), TypeOfPrice30Code.mmObject(), TypeOfPrice13Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(TypeOfPrice6Code.mmObject(), TypeOfPrice9Code.mmObject(), TypeOfPrice14Code.mmObject(), TypeOfPrice11Code.mmObject(), TypeOfPrice16Code.mmObject(), TypeOfPrice3Code.mmObject(),
+						TypeOfPrice10Code.mmObject(), TypeOfPrice30Code.mmObject(), TypeOfPrice13Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TypeOfPriceCode.Average, com.tools20022.repository.codeset.TypeOfPriceCode.AverageOverride, com.tools20022.repository.codeset.TypeOfPriceCode.Combined,
 						com.tools20022.repository.codeset.TypeOfPriceCode.GrossOfAll, com.tools20022.repository.codeset.TypeOfPriceCode.Limit, com.tools20022.repository.codeset.TypeOfPriceCode.Net,
 						com.tools20022.repository.codeset.TypeOfPriceCode.NetDisclosed, com.tools20022.repository.codeset.TypeOfPriceCode.NetOfAll, com.tools20022.repository.codeset.TypeOfPriceCode.NetUndisclosed,

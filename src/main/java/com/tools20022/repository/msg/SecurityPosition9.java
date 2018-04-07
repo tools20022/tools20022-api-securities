@@ -25,9 +25,13 @@ import com.tools20022.repository.area.seev.MeetingEntitlementNotificationV05;
 import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.EligiblePosition6;
+import com.tools20022.repository.msg.SecurityIdentification14;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecurityPosition9", propOrder = {"financialInstrumentIdentification", "position"})
 public class SecurityPosition9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FinInstrmId", required = true)
 	protected SecurityIdentification14 financialInstrumentIdentification;
 	/**
-	 * Identification of the security, as assigned under a formal or proprietary
-	 * identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +123,10 @@ public class SecurityPosition9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinancialInstrumentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityPosition9, SecurityIdentification14> mmFinancialInstrumentIdentification = new MMMessageAttribute<SecurityPosition9, SecurityIdentification14>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> SecurityPosition9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityPosition9.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,13 +134,24 @@ public class SecurityPosition9 {
 			definition = "Identification of the security, as assigned under a formal or proprietary identification scheme.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.SecurityIdentification14.mmObject();
+			complexType_lazy = () -> SecurityIdentification14.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification14 getValue(SecurityPosition9 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(SecurityPosition9 obj, SecurityIdentification14 value) {
+			obj.setFinancialInstrumentIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.EligiblePosition6> position;
+	@XmlElement(name = "Pos")
+	protected List<EligiblePosition6> position;
 	/**
-	 * Amount of securities that are eligible for the vote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -165,10 +180,10 @@ public class SecurityPosition9 {
 	 * definition} = "Amount of securities that are eligible for the vote."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPosition = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecurityPosition9, List<EligiblePosition6>> mmPosition = new MMMessageAssociationEnd<SecurityPosition9, List<EligiblePosition6>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesBalance.mmObject();
-			componentContext_lazy = () -> SecurityPosition9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityPosition9.mmObject();
 			isDerived = false;
 			xmlTag = "Pos";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,17 +192,27 @@ public class SecurityPosition9 {
 			maxOccurs = 1000;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.EligiblePosition6.mmObject();
+			type_lazy = () -> EligiblePosition6.mmObject();
+		}
+
+		@Override
+		public List<EligiblePosition6> getValue(SecurityPosition9 obj) {
+			return obj.getPosition();
+		}
+
+		@Override
+		public void setValue(SecurityPosition9 obj, List<EligiblePosition6> value) {
+			obj.setPosition(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecurityPosition9.mmFinancialInstrumentIdentification, SecurityPosition9.mmPosition);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityPosition9.mmFinancialInstrumentIdentification, com.tools20022.repository.msg.SecurityPosition9.mmPosition);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingEntitlementNotificationV05.mmSecurity);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityPosition9";
 				definition = "Identifies the securities for which the meeting is organised.";
@@ -196,21 +221,21 @@ public class SecurityPosition9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FinInstrmId", required = true)
 	public SecurityIdentification14 getFinancialInstrumentIdentification() {
 		return financialInstrumentIdentification;
 	}
 
-	public void setFinancialInstrumentIdentification(com.tools20022.repository.msg.SecurityIdentification14 financialInstrumentIdentification) {
-		this.financialInstrumentIdentification = financialInstrumentIdentification;
+	public SecurityPosition9 setFinancialInstrumentIdentification(SecurityIdentification14 financialInstrumentIdentification) {
+		this.financialInstrumentIdentification = Objects.requireNonNull(financialInstrumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Pos")
 	public List<EligiblePosition6> getPosition() {
-		return position;
+		return position == null ? position = new ArrayList<>() : position;
 	}
 
-	public void setPosition(List<com.tools20022.repository.msg.EligiblePosition6> position) {
-		this.position = position;
+	public SecurityPosition9 setPosition(List<EligiblePosition6> position) {
+		this.position = Objects.requireNonNull(position);
+		return this;
 	}
 }

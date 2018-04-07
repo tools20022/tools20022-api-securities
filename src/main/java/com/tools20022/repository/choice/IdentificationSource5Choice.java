@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.Scheme;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * IdentificationSource3Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IdentificationSource5Choice", propOrder = {"domesticIdentificationSource", "proprietaryIdentificationSource"})
 public class IdentificationSource5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DmstIdSrc", required = true)
 	protected CountryCode domesticIdentificationSource;
 	/**
-	 * Country of the proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,10 +119,10 @@ public class IdentificationSource5Choice {
 	 * IdentificationSource3Choice.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDomesticIdentificationSource = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationSource5Choice, CountryCode> mmDomesticIdentificationSource = new MMMessageAttribute<IdentificationSource5Choice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
-			componentContext_lazy = () -> IdentificationSource5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationSource5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DmstIdSrc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,11 +133,22 @@ public class IdentificationSource5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(IdentificationSource5Choice obj) {
+			return obj.getDomesticIdentificationSource();
+		}
+
+		@Override
+		public void setValue(IdentificationSource5Choice obj, CountryCode value) {
+			obj.setDomesticIdentificationSource(value);
+		}
 	};
+	@XmlElement(name = "PrtryIdSrc", required = true)
 	protected Max35Text proprietaryIdentificationSource;
 	/**
-	 * Entity that issues the proprietary identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,10 +183,10 @@ public class IdentificationSource5Choice {
 	 * IdentificationSource3Choice.mmProprietary}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryIdentificationSource = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationSource5Choice, Max35Text> mmProprietaryIdentificationSource = new MMMessageAttribute<IdentificationSource5Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> IdentificationSource5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationSource5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryIdSrc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -184,14 +197,25 @@ public class IdentificationSource5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(IdentificationSource5Choice obj) {
+			return obj.getProprietaryIdentificationSource();
+		}
+
+		@Override
+		public void setValue(IdentificationSource5Choice obj, Max35Text value) {
+			obj.setProprietaryIdentificationSource(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IdentificationSource5Choice.mmDomesticIdentificationSource, IdentificationSource5Choice.mmProprietaryIdentificationSource);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.IdentificationSource5Choice.mmDomesticIdentificationSource,
+						com.tools20022.repository.choice.IdentificationSource5Choice.mmProprietaryIdentificationSource);
 				trace_lazy = () -> IdentificationIssuerRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationSource5Choice";
 				definition = "Choice between source of identification of a financial instrument.";
@@ -201,21 +225,21 @@ public class IdentificationSource5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DmstIdSrc", required = true)
 	public CountryCode getDomesticIdentificationSource() {
 		return domesticIdentificationSource;
 	}
 
-	public void setDomesticIdentificationSource(CountryCode domesticIdentificationSource) {
-		this.domesticIdentificationSource = domesticIdentificationSource;
+	public IdentificationSource5Choice setDomesticIdentificationSource(CountryCode domesticIdentificationSource) {
+		this.domesticIdentificationSource = Objects.requireNonNull(domesticIdentificationSource);
+		return this;
 	}
 
-	@XmlElement(name = "PrtryIdSrc", required = true)
 	public Max35Text getProprietaryIdentificationSource() {
 		return proprietaryIdentificationSource;
 	}
 
-	public void setProprietaryIdentificationSource(Max35Text proprietaryIdentificationSource) {
-		this.proprietaryIdentificationSource = proprietaryIdentificationSource;
+	public IdentificationSource5Choice setProprietaryIdentificationSource(Max35Text proprietaryIdentificationSource) {
+		this.proprietaryIdentificationSource = Objects.requireNonNull(proprietaryIdentificationSource);
+		return this;
 	}
 }

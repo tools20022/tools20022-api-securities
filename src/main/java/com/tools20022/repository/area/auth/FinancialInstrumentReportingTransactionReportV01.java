@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AuthoritiesLatestVersion;
+import com.tools20022.repository.area.AuthoritiesPreviousVersion;
 import com.tools20022.repository.choice.ReportingTransactionType1Choice;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "FinInstrmRptgTxRpt"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AuthoritiesLatestVersion
- * AuthoritiesLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AuthoritiesPreviousVersion
+ * AuthoritiesPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code auth.016.001.01}</li>
@@ -73,15 +74,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingTransactionReportV01", propOrder = {"transaction", "supplementaryData"})
 public class FinancialInstrumentReportingTransactionReportV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tx", required = true)
 	protected List<ReportingTransactionType1Choice> transaction;
 	/**
-	 * Provides the details of the reported securities transactions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class FinancialInstrumentReportingTransactionReportV01 {
 	 * "Provides the details of the reported securities transactions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransaction = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingTransactionReportV01, List<ReportingTransactionType1Choice>> mmTransaction = new MMMessageBuildingBlock<FinancialInstrumentReportingTransactionReportV01, List<ReportingTransactionType1Choice>>() {
 		{
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,19 +115,21 @@ public class FinancialInstrumentReportingTransactionReportV01 {
 			complexType_lazy = () -> ReportingTransactionType1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingTransactionReportV01.class.getMethod("getTransaction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<ReportingTransactionType1Choice> getValue(FinancialInstrumentReportingTransactionReportV01 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingTransactionReportV01 obj, List<ReportingTransactionType1Choice> value) {
+			obj.setTransaction(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +152,7 @@ public class FinancialInstrumentReportingTransactionReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingTransactionReportV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingTransactionReportV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,12 +162,14 @@ public class FinancialInstrumentReportingTransactionReportV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingTransactionReportV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingTransactionReportV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingTransactionReportV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -175,7 +181,7 @@ public class FinancialInstrumentReportingTransactionReportV01 {
 				definition = "The FinancialInstrumentReportingTransactionReport message is sent by the reporting agent to the competent authority to report on the securities transactions or by the competent authority to another competent authority when the transaction needs to be exchanged between the competent authorities.";
 				rootElement = "Document";
 				xmlTag = "FinInstrmRptgTxRpt";
-				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
+				businessArea_lazy = () -> AuthoritiesPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.FinancialInstrumentReportingTransactionReportV01.mmTransaction,
 						com.tools20022.repository.area.auth.FinancialInstrumentReportingTransactionReportV01.mmSupplementaryData);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -196,25 +202,25 @@ public class FinancialInstrumentReportingTransactionReportV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public List<ReportingTransactionType1Choice> getTransaction() {
-		return transaction;
+		return transaction == null ? transaction = new ArrayList<>() : transaction;
 	}
 
-	public void setTransaction(List<ReportingTransactionType1Choice> transaction) {
-		this.transaction = transaction;
+	public FinancialInstrumentReportingTransactionReportV01 setTransaction(List<ReportingTransactionType1Choice> transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingTransactionReportV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.016.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.016.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgTxRpt", required = true)
 		public FinancialInstrumentReportingTransactionReportV01 messageBody;

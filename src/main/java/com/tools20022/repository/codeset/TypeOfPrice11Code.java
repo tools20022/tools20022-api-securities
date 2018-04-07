@@ -37,33 +37,33 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Bid
- * TypeOfPrice11Code.mmBid}</li>
+ * TypeOfPrice11Code.Bid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Offer
- * TypeOfPrice11Code.mmOffer}</li>
+ * TypeOfPrice11Code.Offer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#NetAssetValue
- * TypeOfPrice11Code.mmNetAssetValue}</li>
+ * TypeOfPrice11Code.NetAssetValue}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Creation
- * TypeOfPrice11Code.mmCreation}</li>
+ * TypeOfPrice11Code.Creation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Cancellation
- * TypeOfPrice11Code.mmCancellation}</li>
+ * TypeOfPrice11Code.Cancellation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Interim
- * TypeOfPrice11Code.mmInterim}</li>
+ * TypeOfPrice11Code.Interim}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Swing
- * TypeOfPrice11Code.mmSwing}</li>
+ * TypeOfPrice11Code.Swing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Mid
- * TypeOfPrice11Code.mmMid}</li>
+ * TypeOfPrice11Code.Mid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Reinvestment
- * TypeOfPrice11Code.mmReinvestment}</li>
+ * TypeOfPrice11Code.Reinvestment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Switch
- * TypeOfPrice11Code.mmSwitch}</li>
+ * TypeOfPrice11Code.Switch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Market
- * TypeOfPrice11Code.mmMarket}</li>
+ * TypeOfPrice11Code.Market}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice11Code#Indicative
- * TypeOfPrice11Code.mmIndicative}</li>
+ * TypeOfPrice11Code.Indicative}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -390,7 +390,7 @@ public class TypeOfPrice11Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BIDE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPrice11Code";

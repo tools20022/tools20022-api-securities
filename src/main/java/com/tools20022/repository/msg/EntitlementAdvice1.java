@@ -30,9 +30,9 @@ import com.tools20022.repository.entity.CorporateActionDistribution;
 import com.tools20022.repository.entity.CorporateActionEntitlement;
 import com.tools20022.repository.entity.CorporateActionOption;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Entitlement1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,15 +92,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the CA entitlement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "EntitlementAdvice1", propOrder = {"optionType", "optionNumber", "recordDate", "paymentDate", "accountAndDistributionDetails"})
 public class EntitlementAdvice1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OptnTp", required = true)
 	protected CorporateActionOption1FormatChoice optionType;
 	/**
-	 * Specifies the corporate action options available to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,10 +133,10 @@ public class EntitlementAdvice1 {
 	 * "Specifies the corporate action options available to the account owner."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOptionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EntitlementAdvice1, CorporateActionOption1FormatChoice> mmOptionType = new MMMessageAttribute<EntitlementAdvice1, CorporateActionOption1FormatChoice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionType;
-			componentContext_lazy = () -> EntitlementAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EntitlementAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "OptnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -145,11 +146,22 @@ public class EntitlementAdvice1 {
 			minOccurs = 1;
 			complexType_lazy = () -> CorporateActionOption1FormatChoice.mmObject();
 		}
+
+		@Override
+		public CorporateActionOption1FormatChoice getValue(EntitlementAdvice1 obj) {
+			return obj.getOptionType();
+		}
+
+		@Override
+		public void setValue(EntitlementAdvice1 obj, CorporateActionOption1FormatChoice value) {
+			obj.setOptionType(value);
+		}
 	};
+	@XmlElement(name = "OptnNb", required = true)
 	protected Exact3NumericText optionNumber;
 	/**
-	 * Number identifying the available corporate action options.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,10 +193,10 @@ public class EntitlementAdvice1 {
 	 * "Number identifying the available corporate action options."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOptionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EntitlementAdvice1, Exact3NumericText> mmOptionNumber = new MMMessageAttribute<EntitlementAdvice1, Exact3NumericText>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionNumber;
-			componentContext_lazy = () -> EntitlementAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EntitlementAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "OptnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,12 +206,22 @@ public class EntitlementAdvice1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
+
+		@Override
+		public Exact3NumericText getValue(EntitlementAdvice1 obj) {
+			return obj.getOptionNumber();
+		}
+
+		@Override
+		public void setValue(EntitlementAdvice1 obj, Exact3NumericText value) {
+			obj.setOptionNumber(value);
+		}
 	};
+	@XmlElement(name = "RcrdDt")
 	protected DateFormat4Choice recordDate;
 	/**
-	 * Date on which the holders of securities are/will be recorded for the
-	 * income being paid or for entitlement to the rights or offer/privilege.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,10 +254,10 @@ public class EntitlementAdvice1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRecordDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EntitlementAdvice1, Optional<DateFormat4Choice>> mmRecordDate = new MMMessageAttribute<EntitlementAdvice1, Optional<DateFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDeadline.mmRecordDate;
-			componentContext_lazy = () -> EntitlementAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EntitlementAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "RcrdDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -245,11 +267,22 @@ public class EntitlementAdvice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat4Choice> getValue(EntitlementAdvice1 obj) {
+			return obj.getRecordDate();
+		}
+
+		@Override
+		public void setValue(EntitlementAdvice1 obj, Optional<DateFormat4Choice> value) {
+			obj.setRecordDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PmtDt")
 	protected DateFormat4Choice paymentDate;
 	/**
-	 * Date on which securities/cash will be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,10 +313,10 @@ public class EntitlementAdvice1 {
 	 * definition} = "Date on which securities/cash will be paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EntitlementAdvice1, Optional<DateFormat4Choice>> mmPaymentDate = new MMMessageAttribute<EntitlementAdvice1, Optional<DateFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDistribution.mmMovementDate;
-			componentContext_lazy = () -> EntitlementAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EntitlementAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "PmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -293,11 +326,22 @@ public class EntitlementAdvice1 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat4Choice> getValue(EntitlementAdvice1 obj) {
+			return obj.getPaymentDate();
+		}
+
+		@Override
+		public void setValue(EntitlementAdvice1 obj, Optional<DateFormat4Choice> value) {
+			obj.setPaymentDate(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.Entitlement1> accountAndDistributionDetails;
+	@XmlElement(name = "AcctAndDstrbtnDtls", required = true)
+	protected List<Entitlement1> accountAndDistributionDetails;
 	/**
-	 * Provides information about the entitlement and the entitled account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -327,10 +371,10 @@ public class EntitlementAdvice1 {
 	 * "Provides information about the entitlement and the entitled account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountAndDistributionDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<EntitlementAdvice1, List<Entitlement1>> mmAccountAndDistributionDetails = new MMMessageAssociationEnd<EntitlementAdvice1, List<Entitlement1>>() {
 		{
 			businessComponentTrace_lazy = () -> CorporateActionEntitlement.mmObject();
-			componentContext_lazy = () -> EntitlementAdvice1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EntitlementAdvice1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctAndDstrbtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -338,18 +382,28 @@ public class EntitlementAdvice1 {
 			definition = "Provides information about the entitlement and the entitled account.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Entitlement1.mmObject();
+			type_lazy = () -> Entitlement1.mmObject();
+		}
+
+		@Override
+		public List<Entitlement1> getValue(EntitlementAdvice1 obj) {
+			return obj.getAccountAndDistributionDetails();
+		}
+
+		@Override
+		public void setValue(EntitlementAdvice1 obj, List<Entitlement1> value) {
+			obj.setAccountAndDistributionDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(EntitlementAdvice1.mmOptionType, EntitlementAdvice1.mmOptionNumber, EntitlementAdvice1.mmRecordDate, EntitlementAdvice1.mmPaymentDate,
-						EntitlementAdvice1.mmAccountAndDistributionDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EntitlementAdvice1.mmOptionType, com.tools20022.repository.msg.EntitlementAdvice1.mmOptionNumber,
+						com.tools20022.repository.msg.EntitlementAdvice1.mmRecordDate, com.tools20022.repository.msg.EntitlementAdvice1.mmPaymentDate, com.tools20022.repository.msg.EntitlementAdvice1.mmAccountAndDistributionDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCADistributionBreakdownAdviceV01.mmCorporateActionDistributionDetails);
 				trace_lazy = () -> CorporateActionEntitlement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EntitlementAdvice1";
 				definition = "Provides information about the CA entitlement.";
@@ -358,48 +412,48 @@ public class EntitlementAdvice1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OptnTp", required = true)
 	public CorporateActionOption1FormatChoice getOptionType() {
 		return optionType;
 	}
 
-	public void setOptionType(CorporateActionOption1FormatChoice optionType) {
-		this.optionType = optionType;
+	public EntitlementAdvice1 setOptionType(CorporateActionOption1FormatChoice optionType) {
+		this.optionType = Objects.requireNonNull(optionType);
+		return this;
 	}
 
-	@XmlElement(name = "OptnNb", required = true)
 	public Exact3NumericText getOptionNumber() {
 		return optionNumber;
 	}
 
-	public void setOptionNumber(Exact3NumericText optionNumber) {
-		this.optionNumber = optionNumber;
+	public EntitlementAdvice1 setOptionNumber(Exact3NumericText optionNumber) {
+		this.optionNumber = Objects.requireNonNull(optionNumber);
+		return this;
 	}
 
-	@XmlElement(name = "RcrdDt")
-	public DateFormat4Choice getRecordDate() {
-		return recordDate;
+	public Optional<DateFormat4Choice> getRecordDate() {
+		return recordDate == null ? Optional.empty() : Optional.of(recordDate);
 	}
 
-	public void setRecordDate(DateFormat4Choice recordDate) {
+	public EntitlementAdvice1 setRecordDate(DateFormat4Choice recordDate) {
 		this.recordDate = recordDate;
+		return this;
 	}
 
-	@XmlElement(name = "PmtDt")
-	public DateFormat4Choice getPaymentDate() {
-		return paymentDate;
+	public Optional<DateFormat4Choice> getPaymentDate() {
+		return paymentDate == null ? Optional.empty() : Optional.of(paymentDate);
 	}
 
-	public void setPaymentDate(DateFormat4Choice paymentDate) {
+	public EntitlementAdvice1 setPaymentDate(DateFormat4Choice paymentDate) {
 		this.paymentDate = paymentDate;
+		return this;
 	}
 
-	@XmlElement(name = "AcctAndDstrbtnDtls", required = true)
 	public List<Entitlement1> getAccountAndDistributionDetails() {
-		return accountAndDistributionDetails;
+		return accountAndDistributionDetails == null ? accountAndDistributionDetails = new ArrayList<>() : accountAndDistributionDetails;
 	}
 
-	public void setAccountAndDistributionDetails(List<com.tools20022.repository.msg.Entitlement1> accountAndDistributionDetails) {
-		this.accountAndDistributionDetails = accountAndDistributionDetails;
+	public EntitlementAdvice1 setAccountAndDistributionDetails(List<Entitlement1> accountAndDistributionDetails) {
+		this.accountAndDistributionDetails = Objects.requireNonNull(accountAndDistributionDetails);
+		return this;
 	}
 }

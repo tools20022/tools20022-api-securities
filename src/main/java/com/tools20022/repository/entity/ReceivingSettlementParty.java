@@ -25,12 +25,15 @@ import com.tools20022.repository.choice.SettlementParties2Choice;
 import com.tools20022.repository.choice.SettlementParties4Choice;
 import com.tools20022.repository.choice.SettlementParties5Choice;
 import com.tools20022.repository.choice.SettlementParties7Choice;
+import com.tools20022.repository.entity.ReceivingSettlementParty;
 import com.tools20022.repository.entity.SecuritiesSettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Party that receives securities as part of a chain of settlement parties or as
@@ -87,36 +90,36 @@ import java.util.List;
  * {@linkplain com.tools20022.repository.choice.SettlementParties4Choice#mmReceivingSettlementParties
  * SettlementParties4Choice.mmReceivingSettlementParties}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StandingSettlementInstruction11#mmOtherReceivingSettlementParties
- * StandingSettlementInstruction11.mmOtherReceivingSettlementParties}</li>
- * <li>
  * {@linkplain com.tools20022.repository.choice.SettlementParties5Choice#mmReceivingSettlementParties
  * SettlementParties5Choice.mmReceivingSettlementParties}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.SecuritiesOption60#mmReceivingSettlementParties
- * SecuritiesOption60.mmReceivingSettlementParties}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.SecuritiesFinancingTransactionDetails35#mmReceivingSettlementParties
  * SecuritiesFinancingTransactionDetails35.mmReceivingSettlementParties}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SecuritiesSettlementTransactionDetails27#mmReceivingSettlementParties
- * SecuritiesSettlementTransactionDetails27.mmReceivingSettlementParties}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.SecuritiesSettlementTransactionDetails28#mmReceivingSettlementParties
- * SecuritiesSettlementTransactionDetails28.mmReceivingSettlementParties}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.SecuritiesSettlementTransactionDetails26#mmReceivingSettlementParties
- * SecuritiesSettlementTransactionDetails26.mmReceivingSettlementParties}</li>
- * <li>
  * {@linkplain com.tools20022.repository.choice.SettlementParties7Choice#mmReceivingSettlementParties
  * SettlementParties7Choice.mmReceivingSettlementParties}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StandingSettlementInstruction14#mmOtherReceivingSettlementParties
+ * StandingSettlementInstruction14.mmOtherReceivingSettlementParties}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SecuritiesSettlementTransactionDetails34#mmReceivingSettlementParties
+ * SecuritiesSettlementTransactionDetails34.mmReceivingSettlementParties}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SecuritiesSettlementTransactionDetails33#mmReceivingSettlementParties
+ * SecuritiesSettlementTransactionDetails33.mmReceivingSettlementParties}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SecuritiesSettlementTransactionDetails32#mmReceivingSettlementParties
+ * SecuritiesSettlementTransactionDetails32.mmReceivingSettlementParties}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SecuritiesOption65#mmReceivingSettlementParties
+ * SecuritiesOption65.mmReceivingSettlementParties}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -134,8 +137,8 @@ public class ReceivingSettlementParty extends SecuritiesSettlementPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ReceivingSettlementParty receivingSettlementParty;
 	/**
-	 * Specifies the settlement party which is followed by another party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +171,7 @@ public class ReceivingSettlementParty extends SecuritiesSettlementPartyRole {
 	 * "Specifies the settlement party which is followed by another party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReceivingSettlementParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ReceivingSettlementParty, com.tools20022.repository.entity.ReceivingSettlementParty> mmReceivingSettlementParty = new MMBusinessAssociationEnd<ReceivingSettlementParty, com.tools20022.repository.entity.ReceivingSettlementParty>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReceivingSettlementParty.mmObject();
@@ -181,11 +184,21 @@ public class ReceivingSettlementParty extends SecuritiesSettlementPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ReceivingSettlementParty.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.ReceivingSettlementParty getValue(ReceivingSettlementParty obj) {
+			return obj.getReceivingSettlementParty();
+		}
+
+		@Override
+		public void setValue(ReceivingSettlementParty obj, com.tools20022.repository.entity.ReceivingSettlementParty value) {
+			obj.setReceivingSettlementParty(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.ReceivingSettlementParty> nextParty;
 	/**
-	 * Next party in the receiving side of the settlement transaction chain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,7 +231,7 @@ public class ReceivingSettlementParty extends SecuritiesSettlementPartyRole {
 	 * "Next party in the receiving side of the settlement transaction chain."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNextParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ReceivingSettlementParty, List<ReceivingSettlementParty>> mmNextParty = new MMBusinessAssociationEnd<ReceivingSettlementParty, List<ReceivingSettlementParty>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ReceivingSettlementParty.mmObject();
@@ -230,20 +243,30 @@ public class ReceivingSettlementParty extends SecuritiesSettlementPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ReceivingSettlementParty.mmObject();
 		}
+
+		@Override
+		public List<ReceivingSettlementParty> getValue(ReceivingSettlementParty obj) {
+			return obj.getNextParty();
+		}
+
+		@Override
+		public void setValue(ReceivingSettlementParty obj, List<ReceivingSettlementParty> value) {
+			obj.setNextParty(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReceivingSettlementParty";
 				definition = "Party that receives securities as part of a chain of settlement parties or as ultimate party.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReceivingSettlementParty.mmReceivingSettlementParty, com.tools20022.repository.entity.ReceivingSettlementParty.mmNextParty);
 				derivationElement_lazy = () -> Arrays.asList(StandingSettlementInstruction9.mmOtherReceivingSettlementParties, SettlementParties2Choice.mmReceivingSettlementParties, NonGuaranteedTrade3.mmReceivingParties,
-						SettlementParties4Choice.mmReceivingSettlementParties, StandingSettlementInstruction11.mmOtherReceivingSettlementParties, SettlementParties5Choice.mmReceivingSettlementParties,
-						SecuritiesOption60.mmReceivingSettlementParties, SecuritiesFinancingTransactionDetails35.mmReceivingSettlementParties, SecuritiesSettlementTransactionDetails27.mmReceivingSettlementParties,
-						SecuritiesSettlementTransactionDetails28.mmReceivingSettlementParties, SecuritiesSettlementTransactionDetails26.mmReceivingSettlementParties, SettlementParties7Choice.mmReceivingSettlementParties);
+						SettlementParties4Choice.mmReceivingSettlementParties, SettlementParties5Choice.mmReceivingSettlementParties, SecuritiesFinancingTransactionDetails35.mmReceivingSettlementParties,
+						SettlementParties7Choice.mmReceivingSettlementParties, StandingSettlementInstruction14.mmOtherReceivingSettlementParties, SecuritiesSettlementTransactionDetails34.mmReceivingSettlementParties,
+						SecuritiesSettlementTransactionDetails33.mmReceivingSettlementParties, SecuritiesSettlementTransactionDetails32.mmReceivingSettlementParties, SecuritiesOption65.mmReceivingSettlementParties);
 				superType_lazy = () -> SecuritiesSettlementPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReceivingSettlementParty.mmReceivingSettlementParty, com.tools20022.repository.entity.ReceivingSettlementParty.mmNextParty);
 			}
@@ -260,15 +283,17 @@ public class ReceivingSettlementParty extends SecuritiesSettlementPartyRole {
 		return receivingSettlementParty;
 	}
 
-	public void setReceivingSettlementParty(com.tools20022.repository.entity.ReceivingSettlementParty receivingSettlementParty) {
-		this.receivingSettlementParty = receivingSettlementParty;
+	public ReceivingSettlementParty setReceivingSettlementParty(com.tools20022.repository.entity.ReceivingSettlementParty receivingSettlementParty) {
+		this.receivingSettlementParty = Objects.requireNonNull(receivingSettlementParty);
+		return this;
 	}
 
 	public List<ReceivingSettlementParty> getNextParty() {
-		return nextParty;
+		return nextParty == null ? nextParty = new ArrayList<>() : nextParty;
 	}
 
-	public void setNextParty(List<com.tools20022.repository.entity.ReceivingSettlementParty> nextParty) {
-		this.nextParty = nextParty;
+	public ReceivingSettlementParty setNextParty(List<com.tools20022.repository.entity.ReceivingSettlementParty> nextParty) {
+		this.nextParty = Objects.requireNonNull(nextParty);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -27,6 +28,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "The status of an instruction, advice or request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RejectionReason9", propOrder = {"code", "additionalReasonInformation"})
 public class RejectionReason9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected RejectionReason9Choice code;
 	/**
-	 * Specifies the reason why the instruction/request has a rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,6 +100,9 @@ public class RejectionReason9 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Cd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -108,12 +115,13 @@ public class RejectionReason9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectionReason9, RejectionReason9Choice> mmCode = new MMMessageAttribute<RejectionReason9, RejectionReason9Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> RejectionReason9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RejectionReason9.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Specifies the reason why the instruction/request has a rejected status.";
@@ -121,11 +129,22 @@ public class RejectionReason9 {
 			minOccurs = 1;
 			complexType_lazy = () -> RejectionReason9Choice.mmObject();
 		}
+
+		@Override
+		public RejectionReason9Choice getValue(RejectionReason9 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(RejectionReason9 obj, RejectionReason9Choice value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "AddtlRsnInf")
 	protected Max210Text additionalReasonInformation;
 	/**
-	 * Provides additional information about the reason in narrative form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,10 +175,10 @@ public class RejectionReason9 {
 	 * "Provides additional information about the reason in narrative form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalReasonInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectionReason9, Optional<Max210Text>> mmAdditionalReasonInformation = new MMMessageAttribute<RejectionReason9, Optional<Max210Text>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> RejectionReason9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RejectionReason9.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlRsnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,14 +188,24 @@ public class RejectionReason9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max210Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max210Text> getValue(RejectionReason9 obj) {
+			return obj.getAdditionalReasonInformation();
+		}
+
+		@Override
+		public void setValue(RejectionReason9 obj, Optional<Max210Text> value) {
+			obj.setAdditionalReasonInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RejectionReason9.mmCode, RejectionReason9.mmAdditionalReasonInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RejectionReason9.mmCode, com.tools20022.repository.msg.RejectionReason9.mmAdditionalReasonInformation);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason9";
 				definition = "The status of an instruction, advice or request.";
@@ -185,21 +214,21 @@ public class RejectionReason9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public RejectionReason9Choice getCode() {
 		return code;
 	}
 
-	public void setCode(RejectionReason9Choice code) {
-		this.code = code;
+	public RejectionReason9 setCode(RejectionReason9Choice code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlRsnInf")
-	public Max210Text getAdditionalReasonInformation() {
-		return additionalReasonInformation;
+	public Optional<Max210Text> getAdditionalReasonInformation() {
+		return additionalReasonInformation == null ? Optional.empty() : Optional.of(additionalReasonInformation);
 	}
 
-	public void setAdditionalReasonInformation(Max210Text additionalReasonInformation) {
+	public RejectionReason9 setAdditionalReasonInformation(Max210Text additionalReasonInformation) {
 		this.additionalReasonInformation = additionalReasonInformation;
+		return this;
 	}
 }

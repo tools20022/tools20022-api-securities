@@ -21,10 +21,10 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.sese.AccountHoldingInformationRequestV04;
-import com.tools20022.repository.area.sese.AccountHoldingInformationV05;
-import com.tools20022.repository.area.sese.PortfolioTransferConfirmationV07;
-import com.tools20022.repository.area.sese.PortfolioTransferInstructionV07;
+import com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05;
+import com.tools20022.repository.area.sese.AccountHoldingInformationV06;
+import com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08;
+import com.tools20022.repository.area.sese.PortfolioTransferInstructionV08;
 import com.tools20022.repository.codeset.GenderCode;
 import com.tools20022.repository.codeset.NamePrefix1Code;
 import com.tools20022.repository.datatype.ISODate;
@@ -34,8 +34,11 @@ import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.entity.PersonName;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PostalAddress1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -78,48 +81,56 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV07#mmPrimaryIndividualInvestor
- * PortfolioTransferInstructionV07.mmPrimaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmPrimaryIndividualInvestor
+ * PortfolioTransferInstructionV08.mmPrimaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV07#mmSecondaryIndividualInvestor
- * PortfolioTransferInstructionV07.mmSecondaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmSecondaryIndividualInvestor
+ * PortfolioTransferInstructionV08.mmSecondaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV07#mmOtherIndividualInvestor
- * PortfolioTransferInstructionV07.mmOtherIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmOtherIndividualInvestor
+ * PortfolioTransferInstructionV08.mmOtherIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV05#mmPrimaryIndividualInvestor
- * AccountHoldingInformationV05.mmPrimaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmPrimaryIndividualInvestor
+ * PortfolioTransferConfirmationV08.mmPrimaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV05#mmSecondaryIndividualInvestor
- * AccountHoldingInformationV05.mmSecondaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmSecondaryIndividualInvestor
+ * PortfolioTransferConfirmationV08.mmSecondaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV05#mmOtherIndividualInvestor
- * AccountHoldingInformationV05.mmOtherIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmOtherIndividualInvestor
+ * PortfolioTransferConfirmationV08.mmOtherIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV07#mmPrimaryIndividualInvestor
- * PortfolioTransferConfirmationV07.mmPrimaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmPrimaryIndividualInvestor
+ * AccountHoldingInformationV06.mmPrimaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV07#mmSecondaryIndividualInvestor
- * PortfolioTransferConfirmationV07.mmSecondaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmSecondaryIndividualInvestor
+ * AccountHoldingInformationV06.mmSecondaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV07#mmOtherIndividualInvestor
- * PortfolioTransferConfirmationV07.mmOtherIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmOtherIndividualInvestor
+ * AccountHoldingInformationV06.mmOtherIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV04#mmPrimaryIndividualInvestor
- * AccountHoldingInformationRequestV04.mmPrimaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmPrimaryIndividualInvestor
+ * AccountHoldingInformationRequestV05.mmPrimaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV04#mmSecondaryIndividualInvestor
- * AccountHoldingInformationRequestV04.mmSecondaryIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmSecondaryIndividualInvestor
+ * AccountHoldingInformationRequestV05.mmSecondaryIndividualInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV04#mmOtherIndividualInvestor
- * AccountHoldingInformationRequestV04.mmOtherIndividualInvestor}</li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmOtherIndividualInvestor
+ * AccountHoldingInformationRequestV05.mmOtherIndividualInvestor}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSocialSecurityNumberGuideline#forIndividualPerson8
+ * ConstraintSocialSecurityNumberGuideline.forIndividualPerson8}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -132,16 +143,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IndividualPerson8", propOrder = {"name", "givenName", "namePrefix", "nameSuffix", "gender", "birthDate", "socialSecurityNumber", "individualInvestorAddress"})
 public class IndividualPerson8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nm", required = true)
 	protected Max35Text name;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,10 +184,10 @@ public class IndividualPerson8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Max35Text> mmName = new MMMessageAttribute<IndividualPerson8, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmBirthName;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,11 +197,22 @@ public class IndividualPerson8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(IndividualPerson8 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Max35Text value) {
+			obj.setName(value);
+		}
 	};
+	@XmlElement(name = "GvnNm", required = true)
 	protected Max35Text givenName;
 	/**
-	 * First name of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,10 +242,10 @@ public class IndividualPerson8 {
 	 * definition} = "First name of a person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGivenName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Max35Text> mmGivenName = new MMMessageAttribute<IndividualPerson8, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmGivenName;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "GvnNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,11 +255,22 @@ public class IndividualPerson8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(IndividualPerson8 obj) {
+			return obj.getGivenName();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Max35Text value) {
+			obj.setGivenName(value);
+		}
 	};
+	@XmlElement(name = "NmPrfx")
 	protected NamePrefix1Code namePrefix;
 	/**
-	 * Specifies the terms used to formally address a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,10 +301,10 @@ public class IndividualPerson8 {
 	 * definition} = "Specifies the terms used to formally address a person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNamePrefix = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Optional<NamePrefix1Code>> mmNamePrefix = new MMMessageAttribute<IndividualPerson8, Optional<NamePrefix1Code>>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmNamePrefix;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "NmPrfx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -281,12 +314,22 @@ public class IndividualPerson8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> NamePrefix1Code.mmObject();
 		}
+
+		@Override
+		public Optional<NamePrefix1Code> getValue(IndividualPerson8 obj) {
+			return obj.getNamePrefix();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Optional<NamePrefix1Code> value) {
+			obj.setNamePrefix(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NmSfx")
 	protected Max35Text nameSuffix;
 	/**
-	 * Additional information about a person that follows a person's name, eg,
-	 * qualification such as Doctor of Philosophy (PhD).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,28 +357,39 @@ public class IndividualPerson8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information about a person that follows a person's name, eg, qualification such as Doctor of Philosophy (PhD)."
+	 * "Additional information about a person that follows a person's name, for example, qualification such as Doctor of Philosophy (PhD)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameSuffix = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Optional<Max35Text>> mmNameSuffix = new MMMessageAttribute<IndividualPerson8, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmNameSuffix;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "NmSfx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NameSuffix";
-			definition = "Additional information about a person that follows a person's name, eg, qualification such as Doctor of Philosophy (PhD).";
+			definition = "Additional information about a person that follows a person's name, for example, qualification such as Doctor of Philosophy (PhD).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(IndividualPerson8 obj) {
+			return obj.getNameSuffix();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Optional<Max35Text> value) {
+			obj.setNameSuffix(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Gndr")
 	protected GenderCode gender;
 	/**
-	 * Specifies the gender of the person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -365,10 +419,10 @@ public class IndividualPerson8 {
 	 * definition} = "Specifies the gender of the person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGender = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Optional<GenderCode>> mmGender = new MMMessageAttribute<IndividualPerson8, Optional<GenderCode>>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmGender;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "Gndr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -378,11 +432,22 @@ public class IndividualPerson8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> GenderCode.mmObject();
 		}
+
+		@Override
+		public Optional<GenderCode> getValue(IndividualPerson8 obj) {
+			return obj.getGender();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Optional<GenderCode> value) {
+			obj.setGender(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BirthDt")
 	protected ISODate birthDate;
 	/**
-	 * Date on which a person is born.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -412,10 +477,10 @@ public class IndividualPerson8 {
 	 * definition} = "Date on which a person is born."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBirthDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Optional<ISODate>> mmBirthDate = new MMMessageAttribute<IndividualPerson8, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmBirthDate;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "BirthDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -425,11 +490,22 @@ public class IndividualPerson8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(IndividualPerson8 obj) {
+			return obj.getBirthDate();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Optional<ISODate> value) {
+			obj.setBirthDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SclSctyNb")
 	protected Max35Text socialSecurityNumber;
 	/**
-	 * Number assigned by a social security agency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -459,10 +535,10 @@ public class IndividualPerson8 {
 	 * definition} = "Number assigned by a social security agency."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSocialSecurityNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IndividualPerson8, Optional<Max35Text>> mmSocialSecurityNumber = new MMMessageAttribute<IndividualPerson8, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PersonIdentification.mmSocialSecurityNumber;
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "SclSctyNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -472,11 +548,22 @@ public class IndividualPerson8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(IndividualPerson8 obj) {
+			return obj.getSocialSecurityNumber();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, Optional<Max35Text> value) {
+			obj.setSocialSecurityNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IndvInvstrAdr", required = true)
 	protected PostalAddress1 individualInvestorAddress;
 	/**
-	 * Postal address of a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -505,10 +592,10 @@ public class IndividualPerson8 {
 	 * definition} = "Postal address of a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndividualInvestorAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IndividualPerson8, PostalAddress1> mmIndividualInvestorAddress = new MMMessageAssociationEnd<IndividualPerson8, PostalAddress1>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
-			componentContext_lazy = () -> IndividualPerson8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IndividualPerson8.mmObject();
 			isDerived = false;
 			xmlTag = "IndvInvstrAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -517,22 +604,34 @@ public class IndividualPerson8 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress1.mmObject();
+			type_lazy = () -> PostalAddress1.mmObject();
+		}
+
+		@Override
+		public PostalAddress1 getValue(IndividualPerson8 obj) {
+			return obj.getIndividualInvestorAddress();
+		}
+
+		@Override
+		public void setValue(IndividualPerson8 obj, PostalAddress1 value) {
+			obj.setIndividualInvestorAddress(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IndividualPerson8.mmName, IndividualPerson8.mmGivenName, IndividualPerson8.mmNamePrefix, IndividualPerson8.mmNameSuffix, IndividualPerson8.mmGender, IndividualPerson8.mmBirthDate,
-						IndividualPerson8.mmSocialSecurityNumber, IndividualPerson8.mmIndividualInvestorAddress);
-				messageBuildingBlock_lazy = () -> Arrays.asList(PortfolioTransferInstructionV07.mmPrimaryIndividualInvestor, PortfolioTransferInstructionV07.mmSecondaryIndividualInvestor,
-						PortfolioTransferInstructionV07.mmOtherIndividualInvestor, AccountHoldingInformationV05.mmPrimaryIndividualInvestor, AccountHoldingInformationV05.mmSecondaryIndividualInvestor,
-						AccountHoldingInformationV05.mmOtherIndividualInvestor, PortfolioTransferConfirmationV07.mmPrimaryIndividualInvestor, PortfolioTransferConfirmationV07.mmSecondaryIndividualInvestor,
-						PortfolioTransferConfirmationV07.mmOtherIndividualInvestor, AccountHoldingInformationRequestV04.mmPrimaryIndividualInvestor, AccountHoldingInformationRequestV04.mmSecondaryIndividualInvestor,
-						AccountHoldingInformationRequestV04.mmOtherIndividualInvestor);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IndividualPerson8.mmName, com.tools20022.repository.msg.IndividualPerson8.mmGivenName, com.tools20022.repository.msg.IndividualPerson8.mmNamePrefix,
+						com.tools20022.repository.msg.IndividualPerson8.mmNameSuffix, com.tools20022.repository.msg.IndividualPerson8.mmGender, com.tools20022.repository.msg.IndividualPerson8.mmBirthDate,
+						com.tools20022.repository.msg.IndividualPerson8.mmSocialSecurityNumber, com.tools20022.repository.msg.IndividualPerson8.mmIndividualInvestorAddress);
+				messageBuildingBlock_lazy = () -> Arrays.asList(PortfolioTransferInstructionV08.mmPrimaryIndividualInvestor, PortfolioTransferInstructionV08.mmSecondaryIndividualInvestor,
+						PortfolioTransferInstructionV08.mmOtherIndividualInvestor, PortfolioTransferConfirmationV08.mmPrimaryIndividualInvestor, PortfolioTransferConfirmationV08.mmSecondaryIndividualInvestor,
+						PortfolioTransferConfirmationV08.mmOtherIndividualInvestor, AccountHoldingInformationV06.mmPrimaryIndividualInvestor, AccountHoldingInformationV06.mmSecondaryIndividualInvestor,
+						AccountHoldingInformationV06.mmOtherIndividualInvestor, AccountHoldingInformationRequestV05.mmPrimaryIndividualInvestor, AccountHoldingInformationRequestV05.mmSecondaryIndividualInvestor,
+						AccountHoldingInformationRequestV05.mmOtherIndividualInvestor);
 				trace_lazy = () -> Person.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSocialSecurityNumberGuideline.forIndividualPerson8);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IndividualPerson8";
 				definition = "Human entity, as distinguished from a corporate entity (which is sometimes referred to as an 'artificial person').";
@@ -541,75 +640,75 @@ public class IndividualPerson8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max35Text getName() {
 		return name;
 	}
 
-	public void setName(Max35Text name) {
-		this.name = name;
+	public IndividualPerson8 setName(Max35Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
-	@XmlElement(name = "GvnNm", required = true)
 	public Max35Text getGivenName() {
 		return givenName;
 	}
 
-	public void setGivenName(Max35Text givenName) {
-		this.givenName = givenName;
+	public IndividualPerson8 setGivenName(Max35Text givenName) {
+		this.givenName = Objects.requireNonNull(givenName);
+		return this;
 	}
 
-	@XmlElement(name = "NmPrfx")
-	public NamePrefix1Code getNamePrefix() {
-		return namePrefix;
+	public Optional<NamePrefix1Code> getNamePrefix() {
+		return namePrefix == null ? Optional.empty() : Optional.of(namePrefix);
 	}
 
-	public void setNamePrefix(NamePrefix1Code namePrefix) {
+	public IndividualPerson8 setNamePrefix(NamePrefix1Code namePrefix) {
 		this.namePrefix = namePrefix;
+		return this;
 	}
 
-	@XmlElement(name = "NmSfx")
-	public Max35Text getNameSuffix() {
-		return nameSuffix;
+	public Optional<Max35Text> getNameSuffix() {
+		return nameSuffix == null ? Optional.empty() : Optional.of(nameSuffix);
 	}
 
-	public void setNameSuffix(Max35Text nameSuffix) {
+	public IndividualPerson8 setNameSuffix(Max35Text nameSuffix) {
 		this.nameSuffix = nameSuffix;
+		return this;
 	}
 
-	@XmlElement(name = "Gndr")
-	public GenderCode getGender() {
-		return gender;
+	public Optional<GenderCode> getGender() {
+		return gender == null ? Optional.empty() : Optional.of(gender);
 	}
 
-	public void setGender(GenderCode gender) {
+	public IndividualPerson8 setGender(GenderCode gender) {
 		this.gender = gender;
+		return this;
 	}
 
-	@XmlElement(name = "BirthDt")
-	public ISODate getBirthDate() {
-		return birthDate;
+	public Optional<ISODate> getBirthDate() {
+		return birthDate == null ? Optional.empty() : Optional.of(birthDate);
 	}
 
-	public void setBirthDate(ISODate birthDate) {
+	public IndividualPerson8 setBirthDate(ISODate birthDate) {
 		this.birthDate = birthDate;
+		return this;
 	}
 
-	@XmlElement(name = "SclSctyNb")
-	public Max35Text getSocialSecurityNumber() {
-		return socialSecurityNumber;
+	public Optional<Max35Text> getSocialSecurityNumber() {
+		return socialSecurityNumber == null ? Optional.empty() : Optional.of(socialSecurityNumber);
 	}
 
-	public void setSocialSecurityNumber(Max35Text socialSecurityNumber) {
+	public IndividualPerson8 setSocialSecurityNumber(Max35Text socialSecurityNumber) {
 		this.socialSecurityNumber = socialSecurityNumber;
+		return this;
 	}
 
-	@XmlElement(name = "IndvInvstrAdr", required = true)
 	public PostalAddress1 getIndividualInvestorAddress() {
 		return individualInvestorAddress;
 	}
 
-	public void setIndividualInvestorAddress(com.tools20022.repository.msg.PostalAddress1 individualInvestorAddress) {
-		this.individualInvestorAddress = individualInvestorAddress;
+	public IndividualPerson8 setIndividualInvestorAddress(PostalAddress1 individualInvestorAddress) {
+		this.individualInvestorAddress = Objects.requireNonNull(individualInvestorAddress);
+		return this;
 	}
 }

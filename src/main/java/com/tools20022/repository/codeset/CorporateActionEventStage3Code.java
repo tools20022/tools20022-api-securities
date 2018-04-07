@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#Approved
- * CorporateActionEventStage3Code.mmApproved}</li>
+ * CorporateActionEventStage3Code.Approved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#Deactivated
- * CorporateActionEventStage3Code.mmDeactivated}</li>
+ * CorporateActionEventStage3Code.Deactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#CancellationAndReRun
- * CorporateActionEventStage3Code.mmCancellationAndReRun}</li>
+ * CorporateActionEventStage3Code.CancellationAndReRun}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#Lapsed
- * CorporateActionEventStage3Code.mmLapsed}</li>
+ * CorporateActionEventStage3Code.Lapsed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#SupplementalCancellationAndReRun
- * CorporateActionEventStage3Code.mmSupplementalCancellationAndReRun}</li>
+ * CorporateActionEventStage3Code.SupplementalCancellationAndReRun}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#ActionPeriod
- * CorporateActionEventStage3Code.mmActionPeriod}</li>
+ * CorporateActionEventStage3Code.ActionPeriod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#SupplementalCancellation
- * CorporateActionEventStage3Code.mmSupplementalCancellation}</li>
+ * CorporateActionEventStage3Code.SupplementalCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#SubjectToApproval
- * CorporateActionEventStage3Code.mmSubjectToApproval}</li>
+ * CorporateActionEventStage3Code.SubjectToApproval}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#UnconditionalAsToAcceptance
- * CorporateActionEventStage3Code.mmUnconditionalAsToAcceptance}</li>
+ * CorporateActionEventStage3Code.UnconditionalAsToAcceptance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage3Code#WhollyUnconditional
- * CorporateActionEventStage3Code.mmWhollyUnconditional}</li>
+ * CorporateActionEventStage3Code.WhollyUnconditional}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -338,7 +338,7 @@ public class CorporateActionEventStage3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventStage3Code";
 				definition = "Specifies the stage of the CA event.";

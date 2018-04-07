@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
@@ -26,9 +27,11 @@ import com.tools20022.repository.entity.CorporateActionStatusReason;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.RejectedStatusReason18;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RejectedStatus18Choice", propOrder = {"noSpecifiedReason", "reason"})
 public class RejectedStatus18Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoSpcfdRsn", required = true)
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * Reason not specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,6 +105,9 @@ public class RejectedStatus18Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "NoSpcfdRsn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT not present</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -111,12 +118,13 @@ public class RejectedStatus18Choice {
 	 * definition} = "Reason not specified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectedStatus18Choice, NoReasonCode> mmNoSpecifiedReason = new MMMessageAttribute<RejectedStatus18Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmNoSpecifiedReason;
-			componentContext_lazy = () -> RejectedStatus18Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RejectedStatus18Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoSpcfdRsn";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT not present"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoSpecifiedReason";
 			definition = "Reason not specified.";
@@ -124,11 +132,22 @@ public class RejectedStatus18Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(RejectedStatus18Choice obj) {
+			return obj.getNoSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(RejectedStatus18Choice obj, NoReasonCode value) {
+			obj.setNoSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected List<RejectedStatusReason18> reason;
 	/**
-	 * Reason for the rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -147,6 +166,9 @@ public class RejectedStatus18Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Rsn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -157,12 +179,13 @@ public class RejectedStatus18Choice {
 	 * definition} = "Reason for the rejected status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RejectedStatus18Choice, List<RejectedStatusReason18>> mmReason = new MMMessageAssociationEnd<RejectedStatus18Choice, List<RejectedStatusReason18>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> RejectedStatus18Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RejectedStatus18Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reason";
 			definition = "Reason for the rejected status.";
@@ -170,14 +193,24 @@ public class RejectedStatus18Choice {
 			isComposite = true;
 			type_lazy = () -> RejectedStatusReason18.mmObject();
 		}
+
+		@Override
+		public List<RejectedStatusReason18> getValue(RejectedStatus18Choice obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(RejectedStatus18Choice obj, List<RejectedStatusReason18> value) {
+			obj.setReason(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RejectedStatus18Choice.mmNoSpecifiedReason, RejectedStatus18Choice.mmReason);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RejectedStatus18Choice.mmNoSpecifiedReason, com.tools20022.repository.choice.RejectedStatus18Choice.mmReason);
 				trace_lazy = () -> CorporateActionStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectedStatus18Choice";
 				definition = "Choice between a reason or no reason for the corporate action instruction processing rejected status.";
@@ -186,21 +219,21 @@ public class RejectedStatus18Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoSpcfdRsn", required = true)
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public RejectedStatus18Choice setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public List<RejectedStatusReason18> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<RejectedStatusReason18> reason) {
-		this.reason = reason;
+	public RejectedStatus18Choice setReason(List<RejectedStatusReason18> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 }

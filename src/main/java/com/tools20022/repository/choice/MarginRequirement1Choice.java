@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.MarginRequirement1;
 import com.tools20022.repository.msg.Requirement1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,16 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarginRequirement1Choice", propOrder = {"marginRequirement", "segregatedIndependentAmountRequirement"})
 public class MarginRequirement1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MrgnRqrmnt", required = true)
 	protected Requirement1 marginRequirement;
 	/**
-	 * Provides details about the margin requirements for the variation margin
-	 * and optionally the segregated independent amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -122,10 +123,10 @@ public class MarginRequirement1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginRequirement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginRequirement1Choice, Requirement1> mmMarginRequirement = new MMMessageAssociationEnd<MarginRequirement1Choice, Requirement1>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmVariationMarginAmountRequirement;
-			componentContext_lazy = () -> MarginRequirement1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginRequirement1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnRqrmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,12 +137,22 @@ public class MarginRequirement1Choice {
 			isComposite = true;
 			type_lazy = () -> Requirement1.mmObject();
 		}
+
+		@Override
+		public Requirement1 getValue(MarginRequirement1Choice obj) {
+			return obj.getMarginRequirement();
+		}
+
+		@Override
+		public void setValue(MarginRequirement1Choice obj, Requirement1 value) {
+			obj.setMarginRequirement(value);
+		}
 	};
+	@XmlElement(name = "SgrtdIndpdntAmtRqrmnt", required = true)
 	protected MarginRequirement1 segregatedIndependentAmountRequirement;
 	/**
-	 * Provides details about the margin requirements for the segregated
-	 * independent amount only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -172,10 +183,10 @@ public class MarginRequirement1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSegregatedIndependentAmountRequirement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginRequirement1Choice, MarginRequirement1> mmSegregatedIndependentAmountRequirement = new MMMessageAssociationEnd<MarginRequirement1Choice, MarginRequirement1>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmSegregatedAmountRequirement;
-			componentContext_lazy = () -> MarginRequirement1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginRequirement1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SgrtdIndpdntAmtRqrmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,15 +197,25 @@ public class MarginRequirement1Choice {
 			isComposite = true;
 			type_lazy = () -> MarginRequirement1.mmObject();
 		}
+
+		@Override
+		public MarginRequirement1 getValue(MarginRequirement1Choice obj) {
+			return obj.getSegregatedIndependentAmountRequirement();
+		}
+
+		@Override
+		public void setValue(MarginRequirement1Choice obj, MarginRequirement1 value) {
+			obj.setSegregatedIndependentAmountRequirement(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarginRequirement1Choice.mmMarginRequirement, MarginRequirement1Choice.mmSegregatedIndependentAmountRequirement);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MarginRequirement1Choice.mmMarginRequirement, com.tools20022.repository.choice.MarginRequirement1Choice.mmSegregatedIndependentAmountRequirement);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MarginCallRequestV04.mmRequirementDetailsDueToA, MarginCallRequestV04.mmRequirementDetailsDueToB);
 				trace_lazy = () -> ExposureCalculation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginRequirement1Choice";
 				definition = "Provides the margin requirements for the variation margin and the segregated independent amount, or the segregated independent amount only.";
@@ -203,21 +224,21 @@ public class MarginRequirement1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MrgnRqrmnt", required = true)
 	public Requirement1 getMarginRequirement() {
 		return marginRequirement;
 	}
 
-	public void setMarginRequirement(Requirement1 marginRequirement) {
-		this.marginRequirement = marginRequirement;
+	public MarginRequirement1Choice setMarginRequirement(Requirement1 marginRequirement) {
+		this.marginRequirement = Objects.requireNonNull(marginRequirement);
+		return this;
 	}
 
-	@XmlElement(name = "SgrtdIndpdntAmtRqrmnt", required = true)
 	public MarginRequirement1 getSegregatedIndependentAmountRequirement() {
 		return segregatedIndependentAmountRequirement;
 	}
 
-	public void setSegregatedIndependentAmountRequirement(MarginRequirement1 segregatedIndependentAmountRequirement) {
-		this.segregatedIndependentAmountRequirement = segregatedIndependentAmountRequirement;
+	public MarginRequirement1Choice setSegregatedIndependentAmountRequirement(MarginRequirement1 segregatedIndependentAmountRequirement) {
+		this.segregatedIndependentAmountRequirement = Objects.requireNonNull(segregatedIndependentAmountRequirement);
+		return this;
 	}
 }

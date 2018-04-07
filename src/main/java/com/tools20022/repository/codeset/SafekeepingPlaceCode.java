@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,19 +39,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldAtLocalCustodian
- * SafekeepingPlaceCode.mmSharesHeldAtLocalCustodian}</li>
+ * SafekeepingPlaceCode.SharesHeldAtLocalCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldAtICSD
- * SafekeepingPlaceCode.mmSharesHeldAtICSD}</li>
+ * SafekeepingPlaceCode.SharesHeldAtICSD}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldAtNCSD
- * SafekeepingPlaceCode.mmSharesHeldAtNCSD}</li>
+ * SafekeepingPlaceCode.SharesHeldAtNCSD}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#SharesHeldElsewhere
- * SafekeepingPlaceCode.mmSharesHeldElsewhere}</li>
+ * SafekeepingPlaceCode.SharesHeldElsewhere}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SafekeepingPlaceCode#AllPlaces
- * SafekeepingPlaceCode.mmAllPlaces}</li>
+ * SafekeepingPlaceCode.AllPlaces}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -67,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -100,6 +101,9 @@ public class SafekeepingPlaceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CUST"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94F::SAFE//CUST</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -112,6 +116,7 @@ public class SafekeepingPlaceCode extends MMCode {
 	 */
 	public static final SafekeepingPlaceCode SharesHeldAtLocalCustodian = new SafekeepingPlaceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94F::SAFE//CUST"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldAtLocalCustodian";
 			definition = "Financial instruments held at a local custodian.";
@@ -131,6 +136,9 @@ public class SafekeepingPlaceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ICSD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94F::SAFE//ICSD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -145,6 +153,7 @@ public class SafekeepingPlaceCode extends MMCode {
 	 */
 	public static final SafekeepingPlaceCode SharesHeldAtICSD = new SafekeepingPlaceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94F::SAFE//ICSD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldAtICSD";
 			definition = "Financial instruments held at an International Central Securities Depository.";
@@ -163,6 +172,9 @@ public class SafekeepingPlaceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NCSD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94F::SAFE//NCSD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -177,6 +189,7 @@ public class SafekeepingPlaceCode extends MMCode {
 	 */
 	public static final SafekeepingPlaceCode SharesHeldAtNCSD = new SafekeepingPlaceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94F::SAFE//NCSD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldAtNCSD";
 			definition = "Financial instruments held at a National Central Securities Depository.";
@@ -197,6 +210,9 @@ public class SafekeepingPlaceCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SHHE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94F::SAFE//SHHE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -211,6 +227,7 @@ public class SafekeepingPlaceCode extends MMCode {
 	 */
 	public static final SafekeepingPlaceCode SharesHeldElsewhere = new SafekeepingPlaceCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94F::SAFE//SHHE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SharesHeldElsewhere";
 			definition = "Used for certain financial instruments, for example, US mutual funds, where settlement is internal only, that is, there is no external movement of securities.";
@@ -257,7 +274,7 @@ public class SafekeepingPlaceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CUST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlaceCode";

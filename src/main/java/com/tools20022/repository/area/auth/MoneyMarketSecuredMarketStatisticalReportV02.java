@@ -25,10 +25,11 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.choice.SecuredMarketReport4Choice;
 import com.tools20022.repository.msg.MoneyMarketReportHeader1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -72,19 +73,20 @@ import javax.xml.bind.annotation.*;
  * "MoneyMarketSecuredMarketStatisticalReportV02"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents to the relevant competent authority, to report all relevant secured money market transactions. "
+ * "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents to the relevant competent authority, to report all relevant secured money market transactions."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MoneyMarketSecuredMarketStatisticalReportV02", propOrder = {"reportHeader", "securedMarketReport", "supplementaryData"})
 public class MoneyMarketSecuredMarketStatisticalReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptHdr", required = true)
 	protected MoneyMarketReportHeader1 reportHeader;
 	/**
-	 * Provides the elements specific to the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +107,7 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 	 * definition} = "Provides the elements specific to the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketSecuredMarketStatisticalReportV02, MoneyMarketReportHeader1> mmReportHeader = new MMMessageBuildingBlock<MoneyMarketSecuredMarketStatisticalReportV02, MoneyMarketReportHeader1>() {
 		{
 			xmlTag = "RptHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,19 +118,21 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 			complexType_lazy = () -> MoneyMarketReportHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketSecuredMarketStatisticalReportV02.class.getMethod("getReportHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MoneyMarketReportHeader1 getValue(MoneyMarketSecuredMarketStatisticalReportV02 obj) {
+			return obj.getReportHeader();
+		}
+
+		@Override
+		public void setValue(MoneyMarketSecuredMarketStatisticalReportV02 obj, MoneyMarketReportHeader1 value) {
+			obj.setReportHeader(value);
 		}
 	};
+	@XmlElement(name = "ScrdMktRpt", required = true)
 	protected SecuredMarketReport4Choice securedMarketReport;
 	/**
-	 * Provides the reason why no activity is reported or the required list of
-	 * transactions for the secured market segment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,7 +155,7 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecuredMarketReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketSecuredMarketStatisticalReportV02, SecuredMarketReport4Choice> mmSecuredMarketReport = new MMMessageBuildingBlock<MoneyMarketSecuredMarketStatisticalReportV02, SecuredMarketReport4Choice>() {
 		{
 			xmlTag = "ScrdMktRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,19 +166,21 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 			complexType_lazy = () -> SecuredMarketReport4Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketSecuredMarketStatisticalReportV02.class.getMethod("getSecuredMarketReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuredMarketReport4Choice getValue(MoneyMarketSecuredMarketStatisticalReportV02 obj) {
+			return obj.getSecuredMarketReport();
+		}
+
+		@Override
+		public void setValue(MoneyMarketSecuredMarketStatisticalReportV02 obj, SecuredMarketReport4Choice value) {
+			obj.setSecuredMarketReport(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,7 +203,7 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketSecuredMarketStatisticalReportV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MoneyMarketSecuredMarketStatisticalReportV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,12 +213,14 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketSecuredMarketStatisticalReportV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MoneyMarketSecuredMarketStatisticalReportV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MoneyMarketSecuredMarketStatisticalReportV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -221,7 +229,7 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoneyMarketSecuredMarketStatisticalReportV02";
-				definition = "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents to the relevant competent authority, to report all relevant secured money market transactions. ";
+				definition = "The MoneyMarketSecuredMarketStatisticalReport message is sent by the reporting agents to the relevant competent authority, to report all relevant secured money market transactions.";
 				rootElement = "Document";
 				xmlTag = "MnyMktScrdMktSttstclRpt";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
@@ -245,34 +253,34 @@ public class MoneyMarketSecuredMarketStatisticalReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptHdr", required = true)
 	public MoneyMarketReportHeader1 getReportHeader() {
 		return reportHeader;
 	}
 
-	public void setReportHeader(MoneyMarketReportHeader1 reportHeader) {
-		this.reportHeader = reportHeader;
+	public MoneyMarketSecuredMarketStatisticalReportV02 setReportHeader(MoneyMarketReportHeader1 reportHeader) {
+		this.reportHeader = Objects.requireNonNull(reportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "ScrdMktRpt", required = true)
 	public SecuredMarketReport4Choice getSecuredMarketReport() {
 		return securedMarketReport;
 	}
 
-	public void setSecuredMarketReport(SecuredMarketReport4Choice securedMarketReport) {
-		this.securedMarketReport = securedMarketReport;
+	public MoneyMarketSecuredMarketStatisticalReportV02 setSecuredMarketReport(SecuredMarketReport4Choice securedMarketReport) {
+		this.securedMarketReport = Objects.requireNonNull(securedMarketReport);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MoneyMarketSecuredMarketStatisticalReportV02 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.012.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.012.001.02")
 	static public class Document {
 		@XmlElement(name = "MnyMktScrdMktSttstclRpt", required = true)
 		public MoneyMarketSecuredMarketStatisticalReportV02 messageBody;

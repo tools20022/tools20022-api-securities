@@ -27,9 +27,10 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.InvestmentFundTransaction;
 import com.tools20022.repository.entity.TradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Account23;
+import com.tools20022.repository.msg.AdditionalReference6;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintInstructionDetailsElementRule#forInvestmentAccountModification3
+ * ConstraintInstructionDetailsElementRule.forInvestmentAccountModification3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +94,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information about the modification of an account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestmentAccountModification3", propOrder = {"modificationReason", "accountApplicationIdentification", "clientReference", "counterpartyReference", "existingAccountIdentification"})
 public class InvestmentAccountModification3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModRsn")
 	protected Max350Text modificationReason;
 	/**
-	 * Reason for the modification to the investment account information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,9 +129,9 @@ public class InvestmentAccountModification3 {
 	 * "Reason for the modification to the investment account information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentAccountModification3, Optional<Max350Text>> mmModificationReason = new MMMessageAttribute<InvestmentAccountModification3, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> InvestmentAccountModification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccountModification3.mmObject();
 			isDerived = false;
 			xmlTag = "ModRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,11 +141,22 @@ public class InvestmentAccountModification3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(InvestmentAccountModification3 obj) {
+			return obj.getModificationReason();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountModification3 obj, Optional<Max350Text> value) {
+			obj.setModificationReason(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AcctApplId")
 	protected Max35Text accountApplicationIdentification;
 	/**
-	 * Unique and unambiguous identifier of the account modification request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,9 +182,9 @@ public class InvestmentAccountModification3 {
 	 * "Unique and unambiguous identifier of the account modification request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountApplicationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentAccountModification3, Optional<Max35Text>> mmAccountApplicationIdentification = new MMMessageAttribute<InvestmentAccountModification3, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> InvestmentAccountModification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccountModification3.mmObject();
 			isDerived = false;
 			xmlTag = "AcctApplId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,11 +194,22 @@ public class InvestmentAccountModification3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentAccountModification3 obj) {
+			return obj.getAccountApplicationIdentification();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountModification3 obj, Optional<Max35Text> value) {
+			obj.setAccountApplicationIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClntRef")
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of a transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,10 +240,10 @@ public class InvestmentAccountModification3 {
 	 * "Unique and unambiguous investor's identification of a transfer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentAccountModification3, Optional<Max35Text>> mmClientReference = new MMMessageAttribute<InvestmentAccountModification3, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmClientReference;
-			componentContext_lazy = () -> InvestmentAccountModification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccountModification3.mmObject();
 			isDerived = false;
 			xmlTag = "ClntRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,12 +253,22 @@ public class InvestmentAccountModification3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentAccountModification3 obj) {
+			return obj.getClientReference();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountModification3 obj, Optional<Max35Text> value) {
+			obj.setClientReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtrPtyRef")
 	protected AdditionalReference6 counterpartyReference;
 	/**
-	 * Unambiguous identification of the transaction, for example, a transfer,
-	 * as allocated by the counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,10 +301,10 @@ public class InvestmentAccountModification3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCounterpartyReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentAccountModification3, Optional<AdditionalReference6>> mmCounterpartyReference = new MMMessageAttribute<InvestmentAccountModification3, Optional<AdditionalReference6>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmCounterpartyReference;
-			componentContext_lazy = () -> InvestmentAccountModification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccountModification3.mmObject();
 			isDerived = false;
 			xmlTag = "CtrPtyRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,13 +312,24 @@ public class InvestmentAccountModification3 {
 			definition = "Unambiguous identification of the transaction, for example, a transfer, as allocated by the counterparty.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AdditionalReference6.mmObject();
+			complexType_lazy = () -> AdditionalReference6.mmObject();
+		}
+
+		@Override
+		public Optional<AdditionalReference6> getValue(InvestmentAccountModification3 obj) {
+			return obj.getCounterpartyReference();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountModification3 obj, Optional<AdditionalReference6> value) {
+			obj.setCounterpartyReference(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.Account23> existingAccountIdentification;
+	@XmlElement(name = "ExstgAcctId")
+	protected List<Account23> existingAccountIdentification;
 	/**
-	 * Account to which the account opening is related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -299,9 +352,9 @@ public class InvestmentAccountModification3 {
 	 * definition} = "Account to which the account opening is related."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExistingAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InvestmentAccountModification3, List<Account23>> mmExistingAccountIdentification = new MMMessageAssociationEnd<InvestmentAccountModification3, List<Account23>>() {
 		{
-			componentContext_lazy = () -> InvestmentAccountModification3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccountModification3.mmObject();
 			isDerived = false;
 			xmlTag = "ExstgAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -309,17 +362,29 @@ public class InvestmentAccountModification3 {
 			definition = "Account to which the account opening is related.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Account23.mmObject();
+			type_lazy = () -> Account23.mmObject();
+		}
+
+		@Override
+		public List<Account23> getValue(InvestmentAccountModification3 obj) {
+			return obj.getExistingAccountIdentification();
+		}
+
+		@Override
+		public void setValue(InvestmentAccountModification3 obj, List<Account23> value) {
+			obj.setExistingAccountIdentification(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestmentAccountModification3.mmModificationReason, InvestmentAccountModification3.mmAccountApplicationIdentification, InvestmentAccountModification3.mmClientReference,
-						InvestmentAccountModification3.mmCounterpartyReference, InvestmentAccountModification3.mmExistingAccountIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestmentAccountModification3.mmModificationReason, com.tools20022.repository.msg.InvestmentAccountModification3.mmAccountApplicationIdentification,
+						com.tools20022.repository.msg.InvestmentAccountModification3.mmClientReference, com.tools20022.repository.msg.InvestmentAccountModification3.mmCounterpartyReference,
+						com.tools20022.repository.msg.InvestmentAccountModification3.mmExistingAccountIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountModificationInstructionV07.mmInstructionDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintInstructionDetailsElementRule.forInvestmentAccountModification3);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountModification3";
 				definition = "Information about the modification of an account.";
@@ -328,48 +393,48 @@ public class InvestmentAccountModification3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModRsn")
-	public Max350Text getModificationReason() {
-		return modificationReason;
+	public Optional<Max350Text> getModificationReason() {
+		return modificationReason == null ? Optional.empty() : Optional.of(modificationReason);
 	}
 
-	public void setModificationReason(Max350Text modificationReason) {
+	public InvestmentAccountModification3 setModificationReason(Max350Text modificationReason) {
 		this.modificationReason = modificationReason;
+		return this;
 	}
 
-	@XmlElement(name = "AcctApplId")
-	public Max35Text getAccountApplicationIdentification() {
-		return accountApplicationIdentification;
+	public Optional<Max35Text> getAccountApplicationIdentification() {
+		return accountApplicationIdentification == null ? Optional.empty() : Optional.of(accountApplicationIdentification);
 	}
 
-	public void setAccountApplicationIdentification(Max35Text accountApplicationIdentification) {
+	public InvestmentAccountModification3 setAccountApplicationIdentification(Max35Text accountApplicationIdentification) {
 		this.accountApplicationIdentification = accountApplicationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ClntRef")
-	public Max35Text getClientReference() {
-		return clientReference;
+	public Optional<Max35Text> getClientReference() {
+		return clientReference == null ? Optional.empty() : Optional.of(clientReference);
 	}
 
-	public void setClientReference(Max35Text clientReference) {
+	public InvestmentAccountModification3 setClientReference(Max35Text clientReference) {
 		this.clientReference = clientReference;
+		return this;
 	}
 
-	@XmlElement(name = "CtrPtyRef")
-	public AdditionalReference6 getCounterpartyReference() {
-		return counterpartyReference;
+	public Optional<AdditionalReference6> getCounterpartyReference() {
+		return counterpartyReference == null ? Optional.empty() : Optional.of(counterpartyReference);
 	}
 
-	public void setCounterpartyReference(com.tools20022.repository.msg.AdditionalReference6 counterpartyReference) {
+	public InvestmentAccountModification3 setCounterpartyReference(AdditionalReference6 counterpartyReference) {
 		this.counterpartyReference = counterpartyReference;
+		return this;
 	}
 
-	@XmlElement(name = "ExstgAcctId")
 	public List<Account23> getExistingAccountIdentification() {
-		return existingAccountIdentification;
+		return existingAccountIdentification == null ? existingAccountIdentification = new ArrayList<>() : existingAccountIdentification;
 	}
 
-	public void setExistingAccountIdentification(List<com.tools20022.repository.msg.Account23> existingAccountIdentification) {
-		this.existingAccountIdentification = existingAccountIdentification;
+	public InvestmentAccountModification3 setExistingAccountIdentification(List<Account23> existingAccountIdentification) {
+		this.existingAccountIdentification = Objects.requireNonNull(existingAccountIdentification);
+		return this;
 	}
 }

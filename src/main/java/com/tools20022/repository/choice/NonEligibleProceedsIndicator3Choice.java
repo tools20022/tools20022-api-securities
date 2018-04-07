@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NonEligibleProceedsIndicator3Choice", propOrder = {"code", "proprietary"})
 public class NonEligibleProceedsIndicator3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected NonEligibleProceedsIndicator1Code code;
 	/**
-	 * Standard code to specify information regarding the non eligibility of the
-	 * outturn resources.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,10 +113,10 @@ public class NonEligibleProceedsIndicator3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NonEligibleProceedsIndicator3Choice, NonEligibleProceedsIndicator1Code> mmCode = new MMMessageAttribute<NonEligibleProceedsIndicator3Choice, NonEligibleProceedsIndicator1Code>() {
 		{
 			businessElementTrace_lazy = () -> ProceedsDefinition.mmNonEligibleProceedsIndicator;
-			componentContext_lazy = () -> NonEligibleProceedsIndicator3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NonEligibleProceedsIndicator3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,12 +126,22 @@ public class NonEligibleProceedsIndicator3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NonEligibleProceedsIndicator1Code.mmObject();
 		}
+
+		@Override
+		public NonEligibleProceedsIndicator1Code getValue(NonEligibleProceedsIndicator3Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(NonEligibleProceedsIndicator3Choice obj, NonEligibleProceedsIndicator1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Proprietary identification to specify information regarding the non
-	 * eligibility of the outturn resources.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,10 +173,10 @@ public class NonEligibleProceedsIndicator3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<NonEligibleProceedsIndicator3Choice, GenericIdentification30> mmProprietary = new MMMessageAssociationEnd<NonEligibleProceedsIndicator3Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> ProceedsDefinition.mmNonEligibleProceedsIndicator;
-			componentContext_lazy = () -> NonEligibleProceedsIndicator3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NonEligibleProceedsIndicator3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,14 +187,24 @@ public class NonEligibleProceedsIndicator3Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(NonEligibleProceedsIndicator3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(NonEligibleProceedsIndicator3Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NonEligibleProceedsIndicator3Choice.mmCode, NonEligibleProceedsIndicator3Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.NonEligibleProceedsIndicator3Choice.mmCode, com.tools20022.repository.choice.NonEligibleProceedsIndicator3Choice.mmProprietary);
 				trace_lazy = () -> ProceedsDefinition.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonEligibleProceedsIndicator3Choice";
 				definition = "Choice between a standard code or proprietary code to specify the eligibility of outturn resources.";
@@ -192,21 +213,21 @@ public class NonEligibleProceedsIndicator3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public NonEligibleProceedsIndicator1Code getCode() {
 		return code;
 	}
 
-	public void setCode(NonEligibleProceedsIndicator1Code code) {
-		this.code = code;
+	public NonEligibleProceedsIndicator3Choice setCode(NonEligibleProceedsIndicator1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public NonEligibleProceedsIndicator3Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,12 +38,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceSource1Code#Fund
- * PriceSource1Code.mmFund}</li>
+ * PriceSource1Code.Fund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceSource1Code#Theoretical
- * PriceSource1Code.mmTheoretical}</li>
+ * PriceSource1Code.Theoretical}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceSource1Code#Vendor
- * PriceSource1Code.mmVendor}</li>
+ * PriceSource1Code.Vendor}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -51,8 +52,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :94B:PRIC//</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -98,7 +102,7 @@ public class PriceSource1Code extends MMCode {
 	 * nextVersions} =
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.repository.codeset.PriceSource2Code#Fund
-	 * PriceSource2Code.mmFund}</li>
+	 * PriceSource2Code.Fund}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -131,7 +135,7 @@ public class PriceSource1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PriceSource2Code#Theoretical
-	 * PriceSource2Code.mmTheoretical}</li>
+	 * PriceSource2Code.Theoretical}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -164,7 +168,7 @@ public class PriceSource1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PriceSource2Code#Vendor
-	 * PriceSource2Code.mmVendor}</li>
+	 * PriceSource2Code.Vendor}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -186,7 +190,8 @@ public class PriceSource1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B:PRIC//"));
 				example = Arrays.asList("FUND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceSource1Code";

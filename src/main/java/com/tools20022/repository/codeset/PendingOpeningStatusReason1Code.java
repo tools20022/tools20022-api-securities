@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#Authorisation
- * PendingOpeningStatusReason1Code.mmAuthorisation}</li>
+ * PendingOpeningStatusReason1Code.Authorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#AuthorisedButPending
- * PendingOpeningStatusReason1Code.mmAuthorisedButPending}</li>
+ * PendingOpeningStatusReason1Code.AuthorisedButPending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#FATCAReportingDateMissing
- * PendingOpeningStatusReason1Code.mmFATCAReportingDateMissing}</li>
+ * PendingOpeningStatusReason1Code.FATCAReportingDateMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#KnowYourCustomerDocumentMissing
- * PendingOpeningStatusReason1Code.mmKnowYourCustomerDocumentMissing}</li>
+ * PendingOpeningStatusReason1Code.KnowYourCustomerDocumentMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#NotOpened
- * PendingOpeningStatusReason1Code.mmNotOpened}</li>
+ * PendingOpeningStatusReason1Code.NotOpened}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#Restrictions
- * PendingOpeningStatusReason1Code.mmRestrictions}</li>
+ * PendingOpeningStatusReason1Code.Restrictions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingOpeningStatusReason1Code#RightsHolderMissing
- * PendingOpeningStatusReason1Code.mmRightsHolderMissing}</li>
+ * PendingOpeningStatusReason1Code.RightsHolderMissing}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -257,7 +257,7 @@ public class PendingOpeningStatusReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingOpeningStatusReason1Code";
 				definition = "Specifies the reason for a pending account opening status.";

@@ -33,9 +33,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.FinancialInstrument57;
+import com.tools20022.repository.msg.PaymentTransaction72;
+import com.tools20022.repository.msg.RedemptionOrder15;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -103,8 +105,22 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSettlementCurrencyRule#forRedemptionBulkOrder6
+ * ConstraintSettlementCurrencyRule.forRedemptionBulkOrder6}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintBulkCashSettlementDetailsRule#forRedemptionBulkOrder6
+ * ConstraintBulkCashSettlementDetailsRule.forRedemptionBulkOrder6}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintRequestedSettlementCurrencyRule#forRedemptionBulkOrder6
+ * ConstraintRequestedSettlementCurrencyRule.forRedemptionBulkOrder6}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -117,18 +133,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RedemptionBulkOrder6", propOrder = {"masterReference", "placeOfTrade", "orderDateTime", "expiryDateTime", "requestedFutureTradeDate", "cancellationRight", "financialInstrumentDetails", "individualOrderDetails",
 		"requestedSettlementCurrency", "requestedNAVCurrency", "totalSettlementAmount", "bulkCashSettlementDetails"})
 public class RedemptionBulkOrder6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MstrRef")
 	protected Max35Text masterReference;
 	/**
-	 * Unique and unambiguous identifier for a group of individual orders, as
-	 * assigned by the instructing party. This identifier links the individual
-	 * orders together.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,10 +175,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMasterReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<Max35Text>> mmMasterReference = new MMMessageAttribute<RedemptionBulkOrder6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Order.mmMasterIdentification;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "MstrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,11 +188,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getMasterReference();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<Max35Text> value) {
+			obj.setMasterReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PlcOfTrad")
 	protected PlaceOfTradeIdentification1Choice placeOfTrade;
 	/**
-	 * Market in which the advised trade transaction was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,10 +235,10 @@ public class RedemptionBulkOrder6 {
 	 * "Market in which the advised trade transaction was executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPlaceOfTrade = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<PlaceOfTradeIdentification1Choice>> mmPlaceOfTrade = new MMMessageAttribute<RedemptionBulkOrder6, Optional<PlaceOfTradeIdentification1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> TradingMarket.mmObject();
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "PlcOfTrad";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,11 +248,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			complexType_lazy = () -> PlaceOfTradeIdentification1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PlaceOfTradeIdentification1Choice> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getPlaceOfTrade();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<PlaceOfTradeIdentification1Choice> value) {
+			obj.setPlaceOfTrade(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrDtTm")
 	protected ISODateTime orderDateTime;
 	/**
-	 * Date and time the order is placed by the investor or its agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,10 +294,10 @@ public class RedemptionBulkOrder6 {
 	 * "Date and time the order is placed by the investor or its agent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<ISODateTime>> mmOrderDateTime = new MMMessageAttribute<RedemptionBulkOrder6, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderDateTime;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,11 +307,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getOrderDateTime();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<ISODateTime> value) {
+			obj.setOrderDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpryDtTm")
 	protected DateAndDateTimeChoice expiryDateTime;
 	/**
-	 * Date on which the order expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -305,10 +353,10 @@ public class RedemptionBulkOrder6 {
 	 * definition} = "Date on which the order expires."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpiryDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<DateAndDateTimeChoice>> mmExpiryDateTime = new MMMessageAttribute<RedemptionBulkOrder6, Optional<DateAndDateTimeChoice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmExpiryDateTime;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "XpryDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -318,13 +366,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public Optional<DateAndDateTimeChoice> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getExpiryDateTime();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<DateAndDateTimeChoice> value) {
+			obj.setExpiryDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ReqdFutrTradDt")
 	protected ISODate requestedFutureTradeDate;
 	/**
-	 * Future date at which the investor requests the order to be executed. The
-	 * specification of a requested future trade date is not allowed in some
-	 * markets. The date must be a date in the future.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -356,10 +413,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedFutureTradeDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<ISODate>> mmRequestedFutureTradeDate = new MMMessageAttribute<RedemptionBulkOrder6, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmRequestedExecutionDateTime;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdFutrTradDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -369,12 +426,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getRequestedFutureTradeDate();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<ISODate> value) {
+			obj.setRequestedFutureTradeDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CxlRght")
 	protected CancellationRight1Choice cancellationRight;
 	/**
-	 * Cancellation right of the investor with respect to the investment fund
-	 * order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,10 +474,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCancellationRight = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<CancellationRight1Choice>> mmCancellationRight = new MMMessageAttribute<RedemptionBulkOrder6, Optional<CancellationRight1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmCancellationRight;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "CxlRght";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -420,11 +487,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			complexType_lazy = () -> CancellationRight1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<CancellationRight1Choice> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getCancellationRight();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<CancellationRight1Choice> value) {
+			obj.setCancellationRight(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FinInstrmDtls", required = true)
 	protected FinancialInstrument57 financialInstrumentDetails;
 	/**
-	 * Investment fund class related to the order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -453,10 +531,10 @@ public class RedemptionBulkOrder6 {
 	 * definition} = "Investment fund class related to the order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionBulkOrder6, FinancialInstrument57> mmFinancialInstrumentDetails = new MMMessageAssociationEnd<RedemptionBulkOrder6, FinancialInstrument57>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmInvestmentFundClass;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -465,14 +543,24 @@ public class RedemptionBulkOrder6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FinancialInstrument57.mmObject();
+			type_lazy = () -> FinancialInstrument57.mmObject();
+		}
+
+		@Override
+		public FinancialInstrument57 getValue(RedemptionBulkOrder6 obj) {
+			return obj.getFinancialInstrumentDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, FinancialInstrument57 value) {
+			obj.setFinancialInstrumentDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.RedemptionOrder15> individualOrderDetails;
+	@XmlElement(name = "IndvOrdrDtls", required = true)
+	protected List<RedemptionOrder15> individualOrderDetails;
 	/**
-	 * Instruction from an investor to sell investment fund units back to the
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -503,10 +591,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndividualOrderDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionBulkOrder6, List<RedemptionOrder15>> mmIndividualOrderDetails = new MMMessageAssociationEnd<RedemptionBulkOrder6, List<RedemptionOrder15>>() {
 		{
 			businessComponentTrace_lazy = () -> RedemptionOrder.mmObject();
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "IndvOrdrDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -514,13 +602,24 @@ public class RedemptionBulkOrder6 {
 			definition = "Instruction from an investor to sell investment fund units back to the fund.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RedemptionOrder15.mmObject();
+			type_lazy = () -> RedemptionOrder15.mmObject();
+		}
+
+		@Override
+		public List<RedemptionOrder15> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getIndividualOrderDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, List<RedemptionOrder15> value) {
+			obj.setIndividualOrderDetails(value);
 		}
 	};
+	@XmlElement(name = "ReqdSttlmCcy")
 	protected ActiveCurrencyCode requestedSettlementCurrency;
 	/**
-	 * Currency requested for settlement of cash proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -551,10 +650,10 @@ public class RedemptionBulkOrder6 {
 	 * definition} = "Currency requested for settlement of cash proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedSettlementCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<ActiveCurrencyCode>> mmRequestedSettlementCurrency = new MMMessageAttribute<RedemptionBulkOrder6, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmRequestedSettlementCurrency;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdSttlmCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -564,13 +663,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getRequestedSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setRequestedSettlementCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ReqdNAVCcy")
 	protected ActiveOrHistoricCurrencyCode requestedNAVCurrency;
 	/**
-	 * Currency to be used for pricing the fund. This currency must be among the
-	 * set of currencies in which the price may be expressed, as stated in the
-	 * prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -603,10 +711,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedNAVCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<ActiveOrHistoricCurrencyCode>> mmRequestedNAVCurrency = new MMMessageAttribute<RedemptionBulkOrder6, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmRequestedNAVCurrency;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdNAVCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -616,12 +724,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getRequestedNAVCurrency();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setRequestedNAVCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlSttlmAmt")
 	protected ActiveCurrencyAndAmount totalSettlementAmount;
 	/**
-	 * Total amount of money paid /to be paid or received in exchange for the
-	 * financial instrument in the multiple order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -654,10 +772,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionBulkOrder6, Optional<ActiveCurrencyAndAmount>> mmTotalSettlementAmount = new MMMessageAttribute<RedemptionBulkOrder6, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "TtlSttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -667,11 +785,22 @@ public class RedemptionBulkOrder6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getTotalSettlementAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalSettlementAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BlkCshSttlmDtls")
 	protected PaymentTransaction72 bulkCashSettlementDetails;
 	/**
-	 * Payment process for the transfer of cash from the debtor to the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -701,10 +830,10 @@ public class RedemptionBulkOrder6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBulkCashSettlementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionBulkOrder6, Optional<PaymentTransaction72>> mmBulkCashSettlementDetails = new MMMessageAssociationEnd<RedemptionBulkOrder6, Optional<PaymentTransaction72>>() {
 		{
 			businessComponentTrace_lazy = () -> BulkPayment.mmObject();
-			componentContext_lazy = () -> RedemptionBulkOrder6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionBulkOrder6.mmObject();
 			isDerived = false;
 			xmlTag = "BlkCshSttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -713,19 +842,34 @@ public class RedemptionBulkOrder6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PaymentTransaction72.mmObject();
+			type_lazy = () -> PaymentTransaction72.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentTransaction72> getValue(RedemptionBulkOrder6 obj) {
+			return obj.getBulkCashSettlementDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionBulkOrder6 obj, Optional<PaymentTransaction72> value) {
+			obj.setBulkCashSettlementDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RedemptionBulkOrder6.mmMasterReference, RedemptionBulkOrder6.mmPlaceOfTrade, RedemptionBulkOrder6.mmOrderDateTime, RedemptionBulkOrder6.mmExpiryDateTime,
-						RedemptionBulkOrder6.mmRequestedFutureTradeDate, RedemptionBulkOrder6.mmCancellationRight, RedemptionBulkOrder6.mmFinancialInstrumentDetails, RedemptionBulkOrder6.mmIndividualOrderDetails,
-						RedemptionBulkOrder6.mmRequestedSettlementCurrency, RedemptionBulkOrder6.mmRequestedNAVCurrency, RedemptionBulkOrder6.mmTotalSettlementAmount, RedemptionBulkOrder6.mmBulkCashSettlementDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RedemptionBulkOrder6.mmMasterReference, com.tools20022.repository.msg.RedemptionBulkOrder6.mmPlaceOfTrade,
+						com.tools20022.repository.msg.RedemptionBulkOrder6.mmOrderDateTime, com.tools20022.repository.msg.RedemptionBulkOrder6.mmExpiryDateTime, com.tools20022.repository.msg.RedemptionBulkOrder6.mmRequestedFutureTradeDate,
+						com.tools20022.repository.msg.RedemptionBulkOrder6.mmCancellationRight, com.tools20022.repository.msg.RedemptionBulkOrder6.mmFinancialInstrumentDetails,
+						com.tools20022.repository.msg.RedemptionBulkOrder6.mmIndividualOrderDetails, com.tools20022.repository.msg.RedemptionBulkOrder6.mmRequestedSettlementCurrency,
+						com.tools20022.repository.msg.RedemptionBulkOrder6.mmRequestedNAVCurrency, com.tools20022.repository.msg.RedemptionBulkOrder6.mmTotalSettlementAmount,
+						com.tools20022.repository.msg.RedemptionBulkOrder6.mmBulkCashSettlementDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(RedemptionBulkOrderV04.mmBulkOrderDetails);
 				trace_lazy = () -> RedemptionOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSettlementCurrencyRule.forRedemptionBulkOrder6,
+						com.tools20022.repository.constraints.ConstraintBulkCashSettlementDetailsRule.forRedemptionBulkOrder6, com.tools20022.repository.constraints.ConstraintRequestedSettlementCurrencyRule.forRedemptionBulkOrder6);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RedemptionBulkOrder6";
 				definition = "Instruction from an investor to sell investment fund units back to the fund.";
@@ -734,111 +878,111 @@ public class RedemptionBulkOrder6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MstrRef")
-	public Max35Text getMasterReference() {
-		return masterReference;
+	public Optional<Max35Text> getMasterReference() {
+		return masterReference == null ? Optional.empty() : Optional.of(masterReference);
 	}
 
-	public void setMasterReference(Max35Text masterReference) {
+	public RedemptionBulkOrder6 setMasterReference(Max35Text masterReference) {
 		this.masterReference = masterReference;
+		return this;
 	}
 
-	@XmlElement(name = "PlcOfTrad")
-	public PlaceOfTradeIdentification1Choice getPlaceOfTrade() {
-		return placeOfTrade;
+	public Optional<PlaceOfTradeIdentification1Choice> getPlaceOfTrade() {
+		return placeOfTrade == null ? Optional.empty() : Optional.of(placeOfTrade);
 	}
 
-	public void setPlaceOfTrade(PlaceOfTradeIdentification1Choice placeOfTrade) {
+	public RedemptionBulkOrder6 setPlaceOfTrade(PlaceOfTradeIdentification1Choice placeOfTrade) {
 		this.placeOfTrade = placeOfTrade;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrDtTm")
-	public ISODateTime getOrderDateTime() {
-		return orderDateTime;
+	public Optional<ISODateTime> getOrderDateTime() {
+		return orderDateTime == null ? Optional.empty() : Optional.of(orderDateTime);
 	}
 
-	public void setOrderDateTime(ISODateTime orderDateTime) {
+	public RedemptionBulkOrder6 setOrderDateTime(ISODateTime orderDateTime) {
 		this.orderDateTime = orderDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "XpryDtTm")
-	public DateAndDateTimeChoice getExpiryDateTime() {
-		return expiryDateTime;
+	public Optional<DateAndDateTimeChoice> getExpiryDateTime() {
+		return expiryDateTime == null ? Optional.empty() : Optional.of(expiryDateTime);
 	}
 
-	public void setExpiryDateTime(DateAndDateTimeChoice expiryDateTime) {
+	public RedemptionBulkOrder6 setExpiryDateTime(DateAndDateTimeChoice expiryDateTime) {
 		this.expiryDateTime = expiryDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "ReqdFutrTradDt")
-	public ISODate getRequestedFutureTradeDate() {
-		return requestedFutureTradeDate;
+	public Optional<ISODate> getRequestedFutureTradeDate() {
+		return requestedFutureTradeDate == null ? Optional.empty() : Optional.of(requestedFutureTradeDate);
 	}
 
-	public void setRequestedFutureTradeDate(ISODate requestedFutureTradeDate) {
+	public RedemptionBulkOrder6 setRequestedFutureTradeDate(ISODate requestedFutureTradeDate) {
 		this.requestedFutureTradeDate = requestedFutureTradeDate;
+		return this;
 	}
 
-	@XmlElement(name = "CxlRght")
-	public CancellationRight1Choice getCancellationRight() {
-		return cancellationRight;
+	public Optional<CancellationRight1Choice> getCancellationRight() {
+		return cancellationRight == null ? Optional.empty() : Optional.of(cancellationRight);
 	}
 
-	public void setCancellationRight(CancellationRight1Choice cancellationRight) {
+	public RedemptionBulkOrder6 setCancellationRight(CancellationRight1Choice cancellationRight) {
 		this.cancellationRight = cancellationRight;
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmDtls", required = true)
 	public FinancialInstrument57 getFinancialInstrumentDetails() {
 		return financialInstrumentDetails;
 	}
 
-	public void setFinancialInstrumentDetails(com.tools20022.repository.msg.FinancialInstrument57 financialInstrumentDetails) {
-		this.financialInstrumentDetails = financialInstrumentDetails;
+	public RedemptionBulkOrder6 setFinancialInstrumentDetails(FinancialInstrument57 financialInstrumentDetails) {
+		this.financialInstrumentDetails = Objects.requireNonNull(financialInstrumentDetails);
+		return this;
 	}
 
-	@XmlElement(name = "IndvOrdrDtls", required = true)
 	public List<RedemptionOrder15> getIndividualOrderDetails() {
-		return individualOrderDetails;
+		return individualOrderDetails == null ? individualOrderDetails = new ArrayList<>() : individualOrderDetails;
 	}
 
-	public void setIndividualOrderDetails(List<com.tools20022.repository.msg.RedemptionOrder15> individualOrderDetails) {
-		this.individualOrderDetails = individualOrderDetails;
+	public RedemptionBulkOrder6 setIndividualOrderDetails(List<RedemptionOrder15> individualOrderDetails) {
+		this.individualOrderDetails = Objects.requireNonNull(individualOrderDetails);
+		return this;
 	}
 
-	@XmlElement(name = "ReqdSttlmCcy")
-	public ActiveCurrencyCode getRequestedSettlementCurrency() {
-		return requestedSettlementCurrency;
+	public Optional<ActiveCurrencyCode> getRequestedSettlementCurrency() {
+		return requestedSettlementCurrency == null ? Optional.empty() : Optional.of(requestedSettlementCurrency);
 	}
 
-	public void setRequestedSettlementCurrency(ActiveCurrencyCode requestedSettlementCurrency) {
+	public RedemptionBulkOrder6 setRequestedSettlementCurrency(ActiveCurrencyCode requestedSettlementCurrency) {
 		this.requestedSettlementCurrency = requestedSettlementCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "ReqdNAVCcy")
-	public ActiveOrHistoricCurrencyCode getRequestedNAVCurrency() {
-		return requestedNAVCurrency;
+	public Optional<ActiveOrHistoricCurrencyCode> getRequestedNAVCurrency() {
+		return requestedNAVCurrency == null ? Optional.empty() : Optional.of(requestedNAVCurrency);
 	}
 
-	public void setRequestedNAVCurrency(ActiveOrHistoricCurrencyCode requestedNAVCurrency) {
+	public RedemptionBulkOrder6 setRequestedNAVCurrency(ActiveOrHistoricCurrencyCode requestedNAVCurrency) {
 		this.requestedNAVCurrency = requestedNAVCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "TtlSttlmAmt")
-	public ActiveCurrencyAndAmount getTotalSettlementAmount() {
-		return totalSettlementAmount;
+	public Optional<ActiveCurrencyAndAmount> getTotalSettlementAmount() {
+		return totalSettlementAmount == null ? Optional.empty() : Optional.of(totalSettlementAmount);
 	}
 
-	public void setTotalSettlementAmount(ActiveCurrencyAndAmount totalSettlementAmount) {
+	public RedemptionBulkOrder6 setTotalSettlementAmount(ActiveCurrencyAndAmount totalSettlementAmount) {
 		this.totalSettlementAmount = totalSettlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "BlkCshSttlmDtls")
-	public PaymentTransaction72 getBulkCashSettlementDetails() {
-		return bulkCashSettlementDetails;
+	public Optional<PaymentTransaction72> getBulkCashSettlementDetails() {
+		return bulkCashSettlementDetails == null ? Optional.empty() : Optional.of(bulkCashSettlementDetails);
 	}
 
-	public void setBulkCashSettlementDetails(com.tools20022.repository.msg.PaymentTransaction72 bulkCashSettlementDetails) {
+	public RedemptionBulkOrder6 setBulkCashSettlementDetails(PaymentTransaction72 bulkCashSettlementDetails) {
 		this.bulkCashSettlementDetails = bulkCashSettlementDetails;
+		return this;
 	}
 }

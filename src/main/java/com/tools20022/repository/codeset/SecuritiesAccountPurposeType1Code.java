@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeType1Code#Margin
- * SecuritiesAccountPurposeType1Code.mmMargin}</li>
+ * SecuritiesAccountPurposeType1Code.Margin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeType1Code#ShortSale
- * SecuritiesAccountPurposeType1Code.mmShortSale}</li>
+ * SecuritiesAccountPurposeType1Code.ShortSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeType1Code#Abroad
- * SecuritiesAccountPurposeType1Code.mmAbroad}</li>
+ * SecuritiesAccountPurposeType1Code.Abroad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeType1Code#Centralised
- * SecuritiesAccountPurposeType1Code.mmCentralised}</li>
+ * SecuritiesAccountPurposeType1Code.Centralised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeType1Code#CashDVP
- * SecuritiesAccountPurposeType1Code.mmCashDVP}</li>
+ * SecuritiesAccountPurposeType1Code.CashDVP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeType1Code#Physical
- * SecuritiesAccountPurposeType1Code.mmPhysical}</li>
+ * SecuritiesAccountPurposeType1Code.Physical}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class SecuritiesAccountPurposeType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MARG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesAccountPurposeType1Code";

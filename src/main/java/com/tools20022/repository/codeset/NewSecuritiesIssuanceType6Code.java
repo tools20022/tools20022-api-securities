@@ -39,16 +39,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType6Code#DefeasedSecurityIndicator
- * NewSecuritiesIssuanceType6Code.mmDefeasedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType6Code.DefeasedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType6Code#NonDefeasedSecurityIndicator
- * NewSecuritiesIssuanceType6Code.mmNonDefeasedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType6Code.NonDefeasedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType6Code#RefundedSecurityIndicator
- * NewSecuritiesIssuanceType6Code.mmRefundedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType6Code.RefundedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceType6Code#NonRefundedSecurityIndicator
- * NewSecuritiesIssuanceType6Code.mmNonRefundedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceType6Code.NonRefundedSecurityIndicator}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -179,7 +179,7 @@ public class NewSecuritiesIssuanceType6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NewSecuritiesIssuanceType6Code";
 				definition = "Specifies the type of securities proceeds; whether they are defeased or non-defeased.";

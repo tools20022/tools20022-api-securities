@@ -38,176 +38,174 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentInvestmentAccountDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentInvestmentAccountDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentInvestmentAccountDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentFinancialInstrumentDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentFinancialInstrumentDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentFinancialInstrumentDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentBeneficiaryDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentBeneficiaryDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentBeneficiaryDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentPlaceOfTrade
- * RejectedConfirmationStatusReason1Code.mmDifferentPlaceOfTrade}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentPlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentOrderDateTime
- * RejectedConfirmationStatusReason1Code.mmDifferentOrderDateTime}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentOrderDateTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentCancellationRight
- * RejectedConfirmationStatusReason1Code.mmDifferentCancellationRight}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentCancellationRight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentUnitsNumber
- * RejectedConfirmationStatusReason1Code.mmDifferentUnitsNumber}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentUnitsNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentOrderType
- * RejectedConfirmationStatusReason1Code.mmDifferentOrderType}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentOrderType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentRounding
- * RejectedConfirmationStatusReason1Code.mmDifferentRounding}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentRounding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentNetAmount
- * RejectedConfirmationStatusReason1Code.mmDifferentNetAmount}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentNetAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentGrossAmount
- * RejectedConfirmationStatusReason1Code.mmDifferentGrossAmount}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentGrossAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentHoldingsRedemptionRate
- * RejectedConfirmationStatusReason1Code.mmDifferentHoldingsRedemptionRate}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentHoldingsRedemptionRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentGroup1Or2Units
- * RejectedConfirmationStatusReason1Code.mmDifferentGroup1Or2Units}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentGroup1Or2Units}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentIncomePreference
- * RejectedConfirmationStatusReason1Code.mmDifferentIncomePreference}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentIncomePreference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentLetterIntentReference
- * RejectedConfirmationStatusReason1Code.mmDifferentLetterIntentReference}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentLetterIntentReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentAccumulationRightReference
- * RejectedConfirmationStatusReason1Code.mmDifferentAccumulationRightReference}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentAccumulationRightReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentPhysicalDeliveryIndicator
- * RejectedConfirmationStatusReason1Code.mmDifferentPhysicalDeliveryIndicator}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentPhysicalDeliveryIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentRequestedSettlementCurrency
- * RejectedConfirmationStatusReason1Code.mmDifferentRequestedSettlementCurrency}
- * </li>
+ * RejectedConfirmationStatusReason1Code.DifferentRequestedSettlementCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentRequestedNAVCurrency
- * RejectedConfirmationStatusReason1Code.mmDifferentRequestedNAVCurrency}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentRequestedNAVCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentForeignExchangeDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentForeignExchangeDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentForeignExchangeDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentChargeDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentChargeDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentChargeDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentCommissionDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentCommissionDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentCommissionDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentTaxDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentTaxDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentTaxDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentPhysicalDeliveryDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentPhysicalDeliveryDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentPhysicalDeliveryDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentSettlementAndCustodyDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentSettlementAndCustodyDetails}
- * </li>
+ * RejectedConfirmationStatusReason1Code.DifferentSettlementAndCustodyDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentPaymentInstrumentDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentPaymentInstrumentDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentPaymentInstrumentDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentSettlementAmount
- * RejectedConfirmationStatusReason1Code.mmDifferentSettlementAmount}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentSettlementDate
- * RejectedConfirmationStatusReason1Code.mmDifferentSettlementDate}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentSettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentExtensionDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentExtensionDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentExtensionDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentIntermediaryDetails
- * RejectedConfirmationStatusReason1Code.mmDifferentIntermediaryDetails}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentIntermediaryDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentTotalRedemptionAmount
- * RejectedConfirmationStatusReason1Code.mmDifferentTotalRedemptionAmount}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentTotalRedemptionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentTotalSubscriptionAmount
- * RejectedConfirmationStatusReason1Code.mmDifferentTotalSubscriptionAmount}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentTotalSubscriptionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentAdditionalCashIn
- * RejectedConfirmationStatusReason1Code.mmDifferentAdditionalCashIn}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentAdditionalCashIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentResultingCashOut
- * RejectedConfirmationStatusReason1Code.mmDifferentResultingCashOut}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentResultingCashOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentPercentageOfTotalSubscriptionAmount
  * RejectedConfirmationStatusReason1Code.
- * mmDifferentPercentageOfTotalSubscriptionAmount}</li>
+ * DifferentPercentageOfTotalSubscriptionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentPercentageOfTotalRedemptionAmount
  * RejectedConfirmationStatusReason1Code.
- * mmDifferentPercentageOfTotalRedemptionAmount}</li>
+ * DifferentPercentageOfTotalRedemptionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentLegIdentification
- * RejectedConfirmationStatusReason1Code.mmDifferentLegIdentification}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentLegIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DifferentOrderReference
- * RejectedConfirmationStatusReason1Code.mmDifferentOrderReference}</li>
+ * RejectedConfirmationStatusReason1Code.DifferentOrderReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#UnknownLinkagesReference
- * RejectedConfirmationStatusReason1Code.mmUnknownLinkagesReference}</li>
+ * RejectedConfirmationStatusReason1Code.UnknownLinkagesReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DuplicateDealReference
- * RejectedConfirmationStatusReason1Code.mmDuplicateDealReference}</li>
+ * RejectedConfirmationStatusReason1Code.DuplicateDealReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#ReceivingAgent
- * RejectedConfirmationStatusReason1Code.mmReceivingAgent}</li>
+ * RejectedConfirmationStatusReason1Code.ReceivingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#ReceiversCustodian
- * RejectedConfirmationStatusReason1Code.mmReceiversCustodian}</li>
+ * RejectedConfirmationStatusReason1Code.ReceiversCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#ReceiversIntermediary
- * RejectedConfirmationStatusReason1Code.mmReceiversIntermediary}</li>
+ * RejectedConfirmationStatusReason1Code.ReceiversIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DeliveringAgent
- * RejectedConfirmationStatusReason1Code.mmDeliveringAgent}</li>
+ * RejectedConfirmationStatusReason1Code.DeliveringAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DeliverersCustodian
- * RejectedConfirmationStatusReason1Code.mmDeliverersCustodian}</li>
+ * RejectedConfirmationStatusReason1Code.DeliverersCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#DeliverersIntermediary
- * RejectedConfirmationStatusReason1Code.mmDeliverersIntermediary}</li>
+ * RejectedConfirmationStatusReason1Code.DeliverersIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#InvalidCreditTransfer
- * RejectedConfirmationStatusReason1Code.mmInvalidCreditTransfer}</li>
+ * RejectedConfirmationStatusReason1Code.InvalidCreditTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#SettlementAmount
- * RejectedConfirmationStatusReason1Code.mmSettlementAmount}</li>
+ * RejectedConfirmationStatusReason1Code.SettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#SettlementDate
- * RejectedConfirmationStatusReason1Code.mmSettlementDate}</li>
+ * RejectedConfirmationStatusReason1Code.SettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#NotCompliantWithSLA
- * RejectedConfirmationStatusReason1Code.mmNotCompliantWithSLA}</li>
+ * RejectedConfirmationStatusReason1Code.NotCompliantWithSLA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#MissingEUTaxInformation
- * RejectedConfirmationStatusReason1Code.mmMissingEUTaxInformation}</li>
+ * RejectedConfirmationStatusReason1Code.MissingEUTaxInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#MissingCommission
- * RejectedConfirmationStatusReason1Code.mmMissingCommission}</li>
+ * RejectedConfirmationStatusReason1Code.MissingCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#MissingCharge
- * RejectedConfirmationStatusReason1Code.mmMissingCharge}</li>
+ * RejectedConfirmationStatusReason1Code.MissingCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#MissingTaxInformation
- * RejectedConfirmationStatusReason1Code.mmMissingTaxInformation}</li>
+ * RejectedConfirmationStatusReason1Code.MissingTaxInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#NotAllowedtoAmend
- * RejectedConfirmationStatusReason1Code.mmNotAllowedtoAmend}</li>
+ * RejectedConfirmationStatusReason1Code.NotAllowedtoAmend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedConfirmationStatusReason1Code#AmendmentTooLate
- * RejectedConfirmationStatusReason1Code.mmAmendmentTooLate}</li>
+ * RejectedConfirmationStatusReason1Code.AmendmentTooLate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -216,8 +214,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1590,7 +1588,7 @@ public class RejectedConfirmationStatusReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DSAF");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectedConfirmationStatusReason1Code";

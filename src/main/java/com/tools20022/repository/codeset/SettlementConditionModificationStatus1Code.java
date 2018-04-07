@@ -39,19 +39,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementConditionModificationStatus1Code#AcknowledgedAccepted
- * SettlementConditionModificationStatus1Code.mmAcknowledgedAccepted}</li>
+ * SettlementConditionModificationStatus1Code.AcknowledgedAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementConditionModificationStatus1Code#Rejected
- * SettlementConditionModificationStatus1Code.mmRejected}</li>
+ * SettlementConditionModificationStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementConditionModificationStatus1Code#Pending
- * SettlementConditionModificationStatus1Code.mmPending}</li>
+ * SettlementConditionModificationStatus1Code.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementConditionModificationStatus1Code#Denied
- * SettlementConditionModificationStatus1Code.mmDenied}</li>
+ * SettlementConditionModificationStatus1Code.Denied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementConditionModificationStatus1Code#Completed
- * SettlementConditionModificationStatus1Code.mmCompleted}</li>
+ * SettlementConditionModificationStatus1Code.Completed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -212,7 +212,7 @@ public class SettlementConditionModificationStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PACK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementConditionModificationStatus1Code";

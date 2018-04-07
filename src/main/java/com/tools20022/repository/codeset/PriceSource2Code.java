@@ -37,15 +37,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceSource2Code#Fund
- * PriceSource2Code.mmFund}</li>
+ * PriceSource2Code.Fund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceSource2Code#Theoretical
- * PriceSource2Code.mmTheoretical}</li>
+ * PriceSource2Code.Theoretical}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceSource2Code#Vendor
- * PriceSource2Code.mmVendor}</li>
+ * PriceSource2Code.Vendor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceSource2Code#StockExchange
- * PriceSource2Code.mmStockExchange}</li>
+ * PriceSource2Code.StockExchange}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -98,7 +98,7 @@ public class PriceSource2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.PriceSource1Code#Fund
-	 * PriceSource1Code.mmFund}</li>
+	 * PriceSource1Code.Fund}</li>
 	 * </ul>
 	 */
 	public static final PriceSource2Code Fund = new PriceSource2Code() {
@@ -128,7 +128,7 @@ public class PriceSource2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.PriceSource1Code#Theoretical
-	 * PriceSource1Code.mmTheoretical}</li>
+	 * PriceSource1Code.Theoretical}</li>
 	 * </ul>
 	 */
 	public static final PriceSource2Code Theoretical = new PriceSource2Code() {
@@ -158,7 +158,7 @@ public class PriceSource2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.PriceSource1Code#Vendor
-	 * PriceSource1Code.mmVendor}</li>
+	 * PriceSource1Code.Vendor}</li>
 	 * </ul>
 	 */
 	public static final PriceSource2Code Vendor = new PriceSource2Code() {
@@ -202,7 +202,7 @@ public class PriceSource2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FUND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceSource2Code";

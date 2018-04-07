@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -39,46 +40,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30360ISDAor30360AmericanBasicRule
- * InterestComputationMethod1Code.mmIC30360ISDAor30360AmericanBasicRule}</li>
+ * InterestComputationMethod1Code.IC30360ISDAor30360AmericanBasicRule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30365
- * InterestComputationMethod1Code.mmIC30365}</li>
+ * InterestComputationMethod1Code.IC30365}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30Actual
- * InterestComputationMethod1Code.mmIC30Actual}</li>
+ * InterestComputationMethod1Code.IC30Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#Actual360
- * InterestComputationMethod1Code.mmActual360}</li>
+ * InterestComputationMethod1Code.Actual360}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#Actual365Fixed
- * InterestComputationMethod1Code.mmActual365Fixed}</li>
+ * InterestComputationMethod1Code.Actual365Fixed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#ActualActualICMA
- * InterestComputationMethod1Code.mmActualActualICMA}</li>
+ * InterestComputationMethod1Code.ActualActualICMA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30E360orEuroBondBasismodel1
- * InterestComputationMethod1Code.mmIC30E360orEuroBondBasismodel1}</li>
+ * InterestComputationMethod1Code.IC30E360orEuroBondBasismodel1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#ActualActualISDA
- * InterestComputationMethod1Code.mmActualActualISDA}</li>
+ * InterestComputationMethod1Code.ActualActualISDA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#Actual365LorActuActubasisRule
- * InterestComputationMethod1Code.mmActual365LorActuActubasisRule}</li>
+ * InterestComputationMethod1Code.Actual365LorActuActubasisRule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#ActualActualAFB
- * InterestComputationMethod1Code.mmActualActualAFB}</li>
+ * InterestComputationMethod1Code.ActualActualAFB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30360ICMAor30360basicrule
- * InterestComputationMethod1Code.mmIC30360ICMAor30360basicrule}</li>
+ * InterestComputationMethod1Code.IC30360ICMAor30360basicrule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30E2360orEurobondbasismodel2
- * InterestComputationMethod1Code.mmIC30E2360orEurobondbasismodel2}</li>
+ * InterestComputationMethod1Code.IC30E2360orEurobondbasismodel2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#IC30E3360orEurobondbasismodel3
- * InterestComputationMethod1Code.mmIC30E3360orEurobondbasismodel3}</li>
+ * InterestComputationMethod1Code.IC30E3360orEurobondbasismodel3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InterestComputationMethod1Code#Actual365NL
- * InterestComputationMethod1Code.mmActual365NL}</li>
+ * InterestComputationMethod1Code.Actual365NL}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -87,8 +88,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::MICO</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -455,7 +459,8 @@ public class InterestComputationMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::MICO"));
 				example = Arrays.asList("A001");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestComputationMethod1Code";

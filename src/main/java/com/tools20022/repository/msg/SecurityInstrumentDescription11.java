@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * SecurityInstrumentDescription9}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecurityInstrumentDescription11", propOrder = {"identification", "fullName", "classificationType", "notionalCurrency"})
 public class SecurityInstrumentDescription11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id")
 	protected ISINOct2015Identifier identification;
 	/**
-	 * Identifies the financial instrument using an ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,10 +129,10 @@ public class SecurityInstrumentDescription11 {
 	 * SecurityInstrumentDescription9.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityInstrumentDescription11, Optional<ISINOct2015Identifier>> mmIdentification = new MMMessageAttribute<SecurityInstrumentDescription11, Optional<ISINOct2015Identifier>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> SecurityInstrumentDescription11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription11.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -140,11 +143,22 @@ public class SecurityInstrumentDescription11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public Optional<ISINOct2015Identifier> getValue(SecurityInstrumentDescription11 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription11 obj, Optional<ISINOct2015Identifier> value) {
+			obj.setIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FullNm", required = true)
 	protected Max350Text fullName;
 	/**
-	 * Full name or description of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,10 +193,10 @@ public class SecurityInstrumentDescription11 {
 	 * SecurityInstrumentDescription9.mmFullName}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFullName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityInstrumentDescription11, Max350Text> mmFullName = new MMMessageAttribute<SecurityInstrumentDescription11, Max350Text>() {
 		{
 			businessElementTrace_lazy = () -> LocalName.mmFullName;
-			componentContext_lazy = () -> SecurityInstrumentDescription11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription11.mmObject();
 			isDerived = false;
 			xmlTag = "FullNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -193,13 +207,22 @@ public class SecurityInstrumentDescription11 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Max350Text getValue(SecurityInstrumentDescription11 obj) {
+			return obj.getFullName();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription11 obj, Max350Text value) {
+			obj.setFullName(value);
+		}
 	};
+	@XmlElement(name = "ClssfctnTp", required = true)
 	protected CFIOct2015Identifier classificationType;
 	/**
-	 * Classification type of the financial instrument, as per the ISO
-	 * classification of financial instrument (CFI) codification, that is common
-	 * share with voting rights, fully paid, or registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,10 +260,10 @@ public class SecurityInstrumentDescription11 {
 	 * SecurityInstrumentDescription9.mmClassificationType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClassificationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityInstrumentDescription11, CFIOct2015Identifier> mmClassificationType = new MMMessageAttribute<SecurityInstrumentDescription11, CFIOct2015Identifier>() {
 		{
 			businessElementTrace_lazy = () -> AssetClassification.mmClassificationType;
-			componentContext_lazy = () -> SecurityInstrumentDescription11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription11.mmObject();
 			isDerived = false;
 			xmlTag = "ClssfctnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -251,11 +274,22 @@ public class SecurityInstrumentDescription11 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CFIOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public CFIOct2015Identifier getValue(SecurityInstrumentDescription11 obj) {
+			return obj.getClassificationType();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription11 obj, CFIOct2015Identifier value) {
+			obj.setClassificationType(value);
+		}
 	};
+	@XmlElement(name = "NtnlCcy")
 	protected ActiveOrHistoricCurrencyCode notionalCurrency;
 	/**
-	 * Currency in which the notional is denominated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,10 +325,10 @@ public class SecurityInstrumentDescription11 {
 	 * SecurityInstrumentDescription9.mmNotionalCurrency}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotionalCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityInstrumentDescription11, Optional<ActiveOrHistoricCurrencyCode>> mmNotionalCurrency = new MMMessageAttribute<SecurityInstrumentDescription11, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Derivative.mmNotionalCurrency;
-			componentContext_lazy = () -> SecurityInstrumentDescription11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription11.mmObject();
 			isDerived = false;
 			xmlTag = "NtnlCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -305,15 +339,25 @@ public class SecurityInstrumentDescription11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(SecurityInstrumentDescription11 obj) {
+			return obj.getNotionalCurrency();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription11 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setNotionalCurrency(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecurityInstrumentDescription11.mmIdentification, SecurityInstrumentDescription11.mmFullName, SecurityInstrumentDescription11.mmClassificationType,
-						SecurityInstrumentDescription11.mmNotionalCurrency);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityInstrumentDescription11.mmIdentification, com.tools20022.repository.msg.SecurityInstrumentDescription11.mmFullName,
+						com.tools20022.repository.msg.SecurityInstrumentDescription11.mmClassificationType, com.tools20022.repository.msg.SecurityInstrumentDescription11.mmNotionalCurrency);
 				trace_lazy = () -> Security.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityInstrumentDescription11";
 				definition = "Identifies the security instrument by its name and typical characteristics.";
@@ -323,39 +367,39 @@ public class SecurityInstrumentDescription11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id")
-	public ISINOct2015Identifier getIdentification() {
-		return identification;
+	public Optional<ISINOct2015Identifier> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(ISINOct2015Identifier identification) {
+	public SecurityInstrumentDescription11 setIdentification(ISINOct2015Identifier identification) {
 		this.identification = identification;
+		return this;
 	}
 
-	@XmlElement(name = "FullNm", required = true)
 	public Max350Text getFullName() {
 		return fullName;
 	}
 
-	public void setFullName(Max350Text fullName) {
-		this.fullName = fullName;
+	public SecurityInstrumentDescription11 setFullName(Max350Text fullName) {
+		this.fullName = Objects.requireNonNull(fullName);
+		return this;
 	}
 
-	@XmlElement(name = "ClssfctnTp", required = true)
 	public CFIOct2015Identifier getClassificationType() {
 		return classificationType;
 	}
 
-	public void setClassificationType(CFIOct2015Identifier classificationType) {
-		this.classificationType = classificationType;
+	public SecurityInstrumentDescription11 setClassificationType(CFIOct2015Identifier classificationType) {
+		this.classificationType = Objects.requireNonNull(classificationType);
+		return this;
 	}
 
-	@XmlElement(name = "NtnlCcy")
-	public ActiveOrHistoricCurrencyCode getNotionalCurrency() {
-		return notionalCurrency;
+	public Optional<ActiveOrHistoricCurrencyCode> getNotionalCurrency() {
+		return notionalCurrency == null ? Optional.empty() : Optional.of(notionalCurrency);
 	}
 
-	public void setNotionalCurrency(ActiveOrHistoricCurrencyCode notionalCurrency) {
+	public SecurityInstrumentDescription11 setNotionalCurrency(ActiveOrHistoricCurrencyCode notionalCurrency) {
 		this.notionalCurrency = notionalCurrency;
+		return this;
 	}
 }

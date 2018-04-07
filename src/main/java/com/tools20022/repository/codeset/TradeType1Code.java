@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType1Code#OnOrderBookTrade
- * TradeType1Code.mmOnOrderBookTrade}</li>
+ * TradeType1Code.OnOrderBookTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType1Code#OffOrderBookTrade
- * TradeType1Code.mmOffOrderBookTrade}</li>
+ * TradeType1Code.OffOrderBookTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType1Code#BackUpTrade
- * TradeType1Code.mmBackUpTrade}</li>
+ * TradeType1Code.BackUpTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType1Code#CorrectiveTrade
- * TradeType1Code.mmCorrectiveTrade}</li>
+ * TradeType1Code.CorrectiveTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType1Code#TradeGiveUp
- * TradeType1Code.mmTradeGiveUp}</li>
+ * TradeType1Code.TradeGiveUp}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType1Code#LinkedTrade
- * TradeType1Code.mmLinkedTrade}</li>
+ * TradeType1Code.LinkedTrade}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -232,7 +232,7 @@ public class TradeType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OOBK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeType1Code";

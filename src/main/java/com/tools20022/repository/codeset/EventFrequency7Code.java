@@ -37,40 +37,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Annual
- * EventFrequency7Code.mmAnnual}</li>
+ * EventFrequency7Code.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Adhoc
- * EventFrequency7Code.mmAdhoc}</li>
+ * EventFrequency7Code.Adhoc}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Monthly
- * EventFrequency7Code.mmMonthly}</li>
+ * EventFrequency7Code.Monthly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Daily
- * EventFrequency7Code.mmDaily}</li>
+ * EventFrequency7Code.Daily}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#IntraDay
- * EventFrequency7Code.mmIntraDay}</li>
+ * EventFrequency7Code.IntraDay}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Weekly
- * EventFrequency7Code.mmWeekly}</li>
+ * EventFrequency7Code.Weekly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#SemiAnnual
- * EventFrequency7Code.mmSemiAnnual}</li>
+ * EventFrequency7Code.SemiAnnual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Quarterly
- * EventFrequency7Code.mmQuarterly}</li>
+ * EventFrequency7Code.Quarterly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#EveryTwoMonths
- * EventFrequency7Code.mmEveryTwoMonths}</li>
+ * EventFrequency7Code.EveryTwoMonths}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#EveryTwoWeeks
- * EventFrequency7Code.mmEveryTwoWeeks}</li>
+ * EventFrequency7Code.EveryTwoWeeks}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#TwiceAMonth
- * EventFrequency7Code.mmTwiceAMonth}</li>
+ * EventFrequency7Code.TwiceAMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#Overnight
- * EventFrequency7Code.mmOvernight}</li>
+ * EventFrequency7Code.Overnight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency7Code#OnDemand
- * EventFrequency7Code.mmOnDemand}</li>
+ * EventFrequency7Code.OnDemand}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -79,8 +79,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -425,7 +425,7 @@ public class EventFrequency7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EventFrequency7Code";

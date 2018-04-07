@@ -24,10 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.SecuritiesEventsLatestVersion;
 import com.tools20022.repository.choice.EventProcessingStatus3Choice;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -97,16 +95,17 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionEventProcessingStatusAdviceV06", propOrder = {"notificationIdentification", "otherDocumentIdentification", "corporateActionGeneralInformation", "eventProcessingStatus", "additionalInformation",
 		"supplementaryData"})
 public class CorporateActionEventProcessingStatusAdviceV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NtfctnId")
 	protected DocumentIdentification9 notificationIdentification;
 	/**
-	 * Identification of a previously sent notification document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,7 +127,7 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 	 * "Identification of a previously sent notification document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNotificationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, Optional<DocumentIdentification9>> mmNotificationIdentification = new MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, Optional<DocumentIdentification9>>() {
 		{
 			xmlTag = "NtfctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,18 +138,21 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 			complexType_lazy = () -> DocumentIdentification9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEventProcessingStatusAdviceV06.class.getMethod("getNotificationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<DocumentIdentification9> getValue(CorporateActionEventProcessingStatusAdviceV06 obj) {
+			return obj.getNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventProcessingStatusAdviceV06 obj, Optional<DocumentIdentification9> value) {
+			obj.setNotificationIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OthrDocId")
 	protected List<DocumentIdentification33> otherDocumentIdentification;
 	/**
-	 * Identification of other documents as well as the document number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +174,7 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 	 * "Identification of other documents as well as the document number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOtherDocumentIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, List<DocumentIdentification33>> mmOtherDocumentIdentification = new MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, List<DocumentIdentification33>>() {
 		{
 			xmlTag = "OthrDocId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,18 +184,21 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 			complexType_lazy = () -> DocumentIdentification33.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEventProcessingStatusAdviceV06.class.getMethod("getOtherDocumentIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<DocumentIdentification33> getValue(CorporateActionEventProcessingStatusAdviceV06 obj) {
+			return obj.getOtherDocumentIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventProcessingStatusAdviceV06 obj, List<DocumentIdentification33> value) {
+			obj.setOtherDocumentIdentification(value);
 		}
 	};
+	@XmlElement(name = "CorpActnGnlInf", required = true)
 	protected CorporateActionGeneralInformation109 corporateActionGeneralInformation;
 	/**
-	 * General information about the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +219,7 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 	 * definition} = "General information about the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCorporateActionGeneralInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, CorporateActionGeneralInformation109> mmCorporateActionGeneralInformation = new MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, CorporateActionGeneralInformation109>() {
 		{
 			xmlTag = "CorpActnGnlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,18 +230,21 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 			complexType_lazy = () -> CorporateActionGeneralInformation109.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEventProcessingStatusAdviceV06.class.getMethod("getCorporateActionGeneralInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionGeneralInformation109 getValue(CorporateActionEventProcessingStatusAdviceV06 obj) {
+			return obj.getCorporateActionGeneralInformation();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventProcessingStatusAdviceV06 obj, CorporateActionGeneralInformation109 value) {
+			obj.setCorporateActionGeneralInformation(value);
 		}
 	};
+	@XmlElement(name = "EvtPrcgSts", required = true)
 	protected List<EventProcessingStatus3Choice> eventProcessingStatus;
 	/**
-	 * Information about the status of a corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -257,7 +265,7 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 	 * definition} = "Information about the status of a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmEventProcessingStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, List<EventProcessingStatus3Choice>> mmEventProcessingStatus = new MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, List<EventProcessingStatus3Choice>>() {
 		{
 			xmlTag = "EvtPrcgSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,18 +275,21 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 			complexType_lazy = () -> EventProcessingStatus3Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEventProcessingStatusAdviceV06.class.getMethod("getEventProcessingStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<EventProcessingStatus3Choice> getValue(CorporateActionEventProcessingStatusAdviceV06 obj) {
+			return obj.getEventProcessingStatus();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventProcessingStatusAdviceV06 obj, List<EventProcessingStatus3Choice> value) {
+			obj.setEventProcessingStatus(value);
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected CorporateActionNarrative10 additionalInformation;
 	/**
-	 * Provides additional information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -299,7 +310,7 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 	 * definition} = "Provides additional information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAdditionalInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, Optional<CorporateActionNarrative10>> mmAdditionalInformation = new MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, Optional<CorporateActionNarrative10>>() {
 		{
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -310,19 +321,21 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 			complexType_lazy = () -> CorporateActionNarrative10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEventProcessingStatusAdviceV06.class.getMethod("getAdditionalInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CorporateActionNarrative10> getValue(CorporateActionEventProcessingStatusAdviceV06 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventProcessingStatusAdviceV06 obj, Optional<CorporateActionNarrative10> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -345,7 +358,7 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CorporateActionEventProcessingStatusAdviceV06, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -355,12 +368,14 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionEventProcessingStatusAdviceV06.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CorporateActionEventProcessingStatusAdviceV06 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventProcessingStatusAdviceV06 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -396,61 +411,61 @@ public class CorporateActionEventProcessingStatusAdviceV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NtfctnId")
-	public DocumentIdentification9 getNotificationIdentification() {
-		return notificationIdentification;
+	public Optional<DocumentIdentification9> getNotificationIdentification() {
+		return notificationIdentification == null ? Optional.empty() : Optional.of(notificationIdentification);
 	}
 
-	public void setNotificationIdentification(DocumentIdentification9 notificationIdentification) {
+	public CorporateActionEventProcessingStatusAdviceV06 setNotificationIdentification(DocumentIdentification9 notificationIdentification) {
 		this.notificationIdentification = notificationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OthrDocId")
 	public List<DocumentIdentification33> getOtherDocumentIdentification() {
-		return otherDocumentIdentification;
+		return otherDocumentIdentification == null ? otherDocumentIdentification = new ArrayList<>() : otherDocumentIdentification;
 	}
 
-	public void setOtherDocumentIdentification(List<DocumentIdentification33> otherDocumentIdentification) {
-		this.otherDocumentIdentification = otherDocumentIdentification;
+	public CorporateActionEventProcessingStatusAdviceV06 setOtherDocumentIdentification(List<DocumentIdentification33> otherDocumentIdentification) {
+		this.otherDocumentIdentification = Objects.requireNonNull(otherDocumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnGnlInf", required = true)
 	public CorporateActionGeneralInformation109 getCorporateActionGeneralInformation() {
 		return corporateActionGeneralInformation;
 	}
 
-	public void setCorporateActionGeneralInformation(CorporateActionGeneralInformation109 corporateActionGeneralInformation) {
-		this.corporateActionGeneralInformation = corporateActionGeneralInformation;
+	public CorporateActionEventProcessingStatusAdviceV06 setCorporateActionGeneralInformation(CorporateActionGeneralInformation109 corporateActionGeneralInformation) {
+		this.corporateActionGeneralInformation = Objects.requireNonNull(corporateActionGeneralInformation);
+		return this;
 	}
 
-	@XmlElement(name = "EvtPrcgSts", required = true)
 	public List<EventProcessingStatus3Choice> getEventProcessingStatus() {
-		return eventProcessingStatus;
+		return eventProcessingStatus == null ? eventProcessingStatus = new ArrayList<>() : eventProcessingStatus;
 	}
 
-	public void setEventProcessingStatus(List<EventProcessingStatus3Choice> eventProcessingStatus) {
-		this.eventProcessingStatus = eventProcessingStatus;
+	public CorporateActionEventProcessingStatusAdviceV06 setEventProcessingStatus(List<EventProcessingStatus3Choice> eventProcessingStatus) {
+		this.eventProcessingStatus = Objects.requireNonNull(eventProcessingStatus);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public CorporateActionNarrative10 getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<CorporateActionNarrative10> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(CorporateActionNarrative10 additionalInformation) {
+	public CorporateActionEventProcessingStatusAdviceV06 setAdditionalInformation(CorporateActionNarrative10 additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public CorporateActionEventProcessingStatusAdviceV06 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:seev.032.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.032.001.06")
 	static public class Document {
 		@XmlElement(name = "CorpActnEvtPrcgStsAdvc", required = true)
 		public CorporateActionEventProcessingStatusAdviceV06 messageBody;

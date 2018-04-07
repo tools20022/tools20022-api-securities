@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#CashCorrespondent
- * InvestmentFundRole6Code.mmCashCorrespondent}</li>
+ * InvestmentFundRole6Code.CashCorrespondent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#Concentrator
- * InvestmentFundRole6Code.mmConcentrator}</li>
+ * InvestmentFundRole6Code.Concentrator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#Custodian
- * InvestmentFundRole6Code.mmCustodian}</li>
+ * InvestmentFundRole6Code.Custodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#DataProvider
- * InvestmentFundRole6Code.mmDataProvider}</li>
+ * InvestmentFundRole6Code.DataProvider}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#Distributor
- * InvestmentFundRole6Code.mmDistributor}</li>
+ * InvestmentFundRole6Code.Distributor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#FundAccountant
- * InvestmentFundRole6Code.mmFundAccountant}</li>
+ * InvestmentFundRole6Code.FundAccountant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#FinancialAdvisor
- * InvestmentFundRole6Code.mmFinancialAdvisor}</li>
+ * InvestmentFundRole6Code.FinancialAdvisor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#FinalAgent
- * InvestmentFundRole6Code.mmFinalAgent}</li>
+ * InvestmentFundRole6Code.FinalAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#FundManagementCompany
- * InvestmentFundRole6Code.mmFundManagementCompany}</li>
+ * InvestmentFundRole6Code.FundManagementCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#FundBroker
- * InvestmentFundRole6Code.mmFundBroker}</li>
+ * InvestmentFundRole6Code.FundBroker}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#FirstAgent
- * InvestmentFundRole6Code.mmFirstAgent}</li>
+ * InvestmentFundRole6Code.FirstAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#Intermediary
- * InvestmentFundRole6Code.mmIntermediary}</li>
+ * InvestmentFundRole6Code.Intermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#InvestmentManager
- * InvestmentFundRole6Code.mmInvestmentManager}</li>
+ * InvestmentFundRole6Code.InvestmentManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#Investor
- * InvestmentFundRole6Code.mmInvestor}</li>
+ * InvestmentFundRole6Code.Investor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#PayingAgent
- * InvestmentFundRole6Code.mmPayingAgent}</li>
+ * InvestmentFundRole6Code.PayingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#Registrar
- * InvestmentFundRole6Code.mmRegistrar}</li>
+ * InvestmentFundRole6Code.Registrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#TransferAgent
- * InvestmentFundRole6Code.mmTransferAgent}</li>
+ * InvestmentFundRole6Code.TransferAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole6Code#TransmittingAgent
- * InvestmentFundRole6Code.mmTransmittingAgent}</li>
+ * InvestmentFundRole6Code.TransmittingAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -97,8 +97,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -553,7 +553,7 @@ public class InvestmentFundRole6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundRole6Code";
 				definition = "Specifies the role of the party.";

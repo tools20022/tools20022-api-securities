@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.SwitchSubscriptionLeg;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentQuantity26Choice", propOrder = {"unitsNumber", "percentageOfTotalRedemptionAmount", "netAmount", "grossAmount"})
 public class FinancialInstrumentQuantity26Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "UnitsNb", required = true)
 	protected DecimalNumber unitsNumber;
 	/**
-	 * Number of investment fund units to be subscribed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,10 +118,10 @@ public class FinancialInstrumentQuantity26Choice {
 	 * definition} = "Number of investment fund units to be subscribed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitsNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantity26Choice, DecimalNumber> mmUnitsNumber = new MMMessageAttribute<FinancialInstrumentQuantity26Choice, DecimalNumber>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmUnitsNumber;
-			componentContext_lazy = () -> FinancialInstrumentQuantity26Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmObject();
 			isDerived = false;
 			xmlTag = "UnitsNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,12 +131,22 @@ public class FinancialInstrumentQuantity26Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public DecimalNumber getValue(FinancialInstrumentQuantity26Choice obj) {
+			return obj.getUnitsNumber();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantity26Choice obj, DecimalNumber value) {
+			obj.setUnitsNumber(value);
+		}
 	};
+	@XmlElement(name = "PctgOfTtlRedAmt", required = true)
 	protected PercentageRate percentageOfTotalRedemptionAmount;
 	/**
-	 * Percentage of the total redemption amount used for the subscription in an
-	 * investment fund or investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,10 +179,10 @@ public class FinancialInstrumentQuantity26Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPercentageOfTotalRedemptionAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantity26Choice, PercentageRate> mmPercentageOfTotalRedemptionAmount = new MMMessageAttribute<FinancialInstrumentQuantity26Choice, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> SwitchSubscriptionLeg.mmPercentageOfTotalRedemptionAmount;
-			componentContext_lazy = () -> FinancialInstrumentQuantity26Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PctgOfTtlRedAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,12 +192,22 @@ public class FinancialInstrumentQuantity26Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public PercentageRate getValue(FinancialInstrumentQuantity26Choice obj) {
+			return obj.getPercentageOfTotalRedemptionAmount();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantity26Choice obj, PercentageRate value) {
+			obj.setPercentageOfTotalRedemptionAmount(value);
+		}
 	};
+	@XmlElement(name = "NetAmt", required = true)
 	protected ActiveOrHistoricCurrencyAndAmount netAmount;
 	/**
-	 * Amount of money to be invested in the fund. <br>
-	 * Net Amount = Quantity * Price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,10 +240,10 @@ public class FinancialInstrumentQuantity26Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantity26Choice, ActiveOrHistoricCurrencyAndAmount> mmNetAmount = new MMMessageAttribute<FinancialInstrumentQuantity26Choice, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmNetAmount;
-			componentContext_lazy = () -> FinancialInstrumentQuantity26Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NetAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -231,13 +253,22 @@ public class FinancialInstrumentQuantity26Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(FinancialInstrumentQuantity26Choice obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantity26Choice obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setNetAmount(value);
+		}
 	};
+	@XmlElement(name = "GrssAmt", required = true)
 	protected ActiveOrHistoricCurrencyAndAmount grossAmount;
 	/**
-	 * Amount of money to be paid by the investor when subscribing to fund
-	 * units. <br>
-	 * Gross amount = (Quantity * Price) + (Fees + Taxes).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,32 +297,43 @@ public class FinancialInstrumentQuantity26Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Amount of money to be paid by the investor when subscribing to fund units. \r\nGross amount = (Quantity * Price) + (Fees + Taxes). "
+	 * "Amount of money to be paid by the investor when subscribing to fund units. \r\nGross amount = (Quantity * Price) + (Fees + Taxes)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGrossAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentQuantity26Choice, ActiveOrHistoricCurrencyAndAmount> mmGrossAmount = new MMMessageAttribute<FinancialInstrumentQuantity26Choice, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmGrossAmount;
-			componentContext_lazy = () -> FinancialInstrumentQuantity26Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmObject();
 			isDerived = false;
 			xmlTag = "GrssAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GrossAmount";
-			definition = "Amount of money to be paid by the investor when subscribing to fund units. \r\nGross amount = (Quantity * Price) + (Fees + Taxes). ";
+			definition = "Amount of money to be paid by the investor when subscribing to fund units. \r\nGross amount = (Quantity * Price) + (Fees + Taxes).";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
+		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(FinancialInstrumentQuantity26Choice obj) {
+			return obj.getGrossAmount();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentQuantity26Choice obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setGrossAmount(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstrumentQuantity26Choice.mmUnitsNumber, FinancialInstrumentQuantity26Choice.mmPercentageOfTotalRedemptionAmount, FinancialInstrumentQuantity26Choice.mmNetAmount,
-						FinancialInstrumentQuantity26Choice.mmGrossAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmUnitsNumber,
+						com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmPercentageOfTotalRedemptionAmount, com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmNetAmount,
+						com.tools20022.repository.choice.FinancialInstrumentQuantity26Choice.mmGrossAmount);
 				trace_lazy = () -> InvestmentFundOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentQuantity26Choice";
 				definition = "Choice between formats for the specification of the number of units, amount of money or percentage.";
@@ -300,39 +342,39 @@ public class FinancialInstrumentQuantity26Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "UnitsNb", required = true)
 	public DecimalNumber getUnitsNumber() {
 		return unitsNumber;
 	}
 
-	public void setUnitsNumber(DecimalNumber unitsNumber) {
-		this.unitsNumber = unitsNumber;
+	public FinancialInstrumentQuantity26Choice setUnitsNumber(DecimalNumber unitsNumber) {
+		this.unitsNumber = Objects.requireNonNull(unitsNumber);
+		return this;
 	}
 
-	@XmlElement(name = "PctgOfTtlRedAmt", required = true)
 	public PercentageRate getPercentageOfTotalRedemptionAmount() {
 		return percentageOfTotalRedemptionAmount;
 	}
 
-	public void setPercentageOfTotalRedemptionAmount(PercentageRate percentageOfTotalRedemptionAmount) {
-		this.percentageOfTotalRedemptionAmount = percentageOfTotalRedemptionAmount;
+	public FinancialInstrumentQuantity26Choice setPercentageOfTotalRedemptionAmount(PercentageRate percentageOfTotalRedemptionAmount) {
+		this.percentageOfTotalRedemptionAmount = Objects.requireNonNull(percentageOfTotalRedemptionAmount);
+		return this;
 	}
 
-	@XmlElement(name = "NetAmt", required = true)
 	public ActiveOrHistoricCurrencyAndAmount getNetAmount() {
 		return netAmount;
 	}
 
-	public void setNetAmount(ActiveOrHistoricCurrencyAndAmount netAmount) {
-		this.netAmount = netAmount;
+	public FinancialInstrumentQuantity26Choice setNetAmount(ActiveOrHistoricCurrencyAndAmount netAmount) {
+		this.netAmount = Objects.requireNonNull(netAmount);
+		return this;
 	}
 
-	@XmlElement(name = "GrssAmt", required = true)
 	public ActiveOrHistoricCurrencyAndAmount getGrossAmount() {
 		return grossAmount;
 	}
 
-	public void setGrossAmount(ActiveOrHistoricCurrencyAndAmount grossAmount) {
-		this.grossAmount = grossAmount;
+	public FinancialInstrumentQuantity26Choice setGrossAmount(ActiveOrHistoricCurrencyAndAmount grossAmount) {
+		this.grossAmount = Objects.requireNonNull(grossAmount);
+		return this;
 	}
 }

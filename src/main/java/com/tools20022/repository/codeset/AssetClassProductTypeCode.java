@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Agricultural
- * AssetClassProductTypeCode.mmAgricultural}</li>
+ * AssetClassProductTypeCode.Agricultural}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Energy
- * AssetClassProductTypeCode.mmEnergy}</li>
+ * AssetClassProductTypeCode.Energy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Environmental
- * AssetClassProductTypeCode.mmEnvironmental}</li>
+ * AssetClassProductTypeCode.Environmental}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Freight
- * AssetClassProductTypeCode.mmFreight}</li>
+ * AssetClassProductTypeCode.Freight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Fertilizer
- * AssetClassProductTypeCode.mmFertilizer}</li>
+ * AssetClassProductTypeCode.Fertilizer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#IndustrialProduct
- * AssetClassProductTypeCode.mmIndustrialProduct}</li>
+ * AssetClassProductTypeCode.IndustrialProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Metal
- * AssetClassProductTypeCode.mmMetal}</li>
+ * AssetClassProductTypeCode.Metal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#MultiCommodityExotic
- * AssetClassProductTypeCode.mmMultiCommodityExotic}</li>
+ * AssetClassProductTypeCode.MultiCommodityExotic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Paper
- * AssetClassProductTypeCode.mmPaper}</li>
+ * AssetClassProductTypeCode.Paper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Polypropylene
- * AssetClassProductTypeCode.mmPolypropylene}</li>
+ * AssetClassProductTypeCode.Polypropylene}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Inflation
- * AssetClassProductTypeCode.mmInflation}</li>
+ * AssetClassProductTypeCode.Inflation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#OfficialEconomicStatistic
- * AssetClassProductTypeCode.mmOfficialEconomicStatistic}</li>
+ * AssetClassProductTypeCode.OfficialEconomicStatistic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#OtherC10
- * AssetClassProductTypeCode.mmOtherC10}</li>
+ * AssetClassProductTypeCode.OtherC10}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassProductTypeCode#Other
- * AssetClassProductTypeCode.mmOther}</li>
+ * AssetClassProductTypeCode.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -121,8 +121,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -565,7 +565,7 @@ public class AssetClassProductTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassProductTypeCode";
 				definition = "Commodity derivative base product code list.";

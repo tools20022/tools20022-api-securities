@@ -25,9 +25,11 @@ import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.RegulatoryReport;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -66,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,15 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RegulatoryStipulations1", propOrder = {"country", "stipulations"})
 public class RegulatoryStipulations1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctry", required = true)
 	protected CountryCode country;
 	/**
-	 * Nation with its own government, occupying a particular territory.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,9 +117,9 @@ public class RegulatoryStipulations1 {
 	 * "Nation with its own government, occupying a particular territory."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegulatoryStipulations1, CountryCode> mmCountry = new MMMessageAttribute<RegulatoryStipulations1, CountryCode>() {
 		{
-			componentContext_lazy = () -> RegulatoryStipulations1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryStipulations1.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,13 +129,22 @@ public class RegulatoryStipulations1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(RegulatoryStipulations1 obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(RegulatoryStipulations1 obj, CountryCode value) {
+			obj.setCountry(value);
+		}
 	};
+	@XmlElement(name = "Stiptns", required = true)
 	protected List<Max350Text> stipulations;
 	/**
-	 * Specifies regulatory stipulations that financial institutions must be
-	 * compliant with in the country, region, and/or where they conduct
-	 * business.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,9 +171,9 @@ public class RegulatoryStipulations1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStipulations = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegulatoryStipulations1, List<Max350Text>> mmStipulations = new MMMessageAttribute<RegulatoryStipulations1, List<Max350Text>>() {
 		{
-			componentContext_lazy = () -> RegulatoryStipulations1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegulatoryStipulations1.mmObject();
 			isDerived = false;
 			xmlTag = "Stiptns";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,15 +182,25 @@ public class RegulatoryStipulations1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public List<Max350Text> getValue(RegulatoryStipulations1 obj) {
+			return obj.getStipulations();
+		}
+
+		@Override
+		public void setValue(RegulatoryStipulations1 obj, List<Max350Text> value) {
+			obj.setStipulations(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RegulatoryStipulations1.mmCountry, RegulatoryStipulations1.mmStipulations);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegulatoryStipulations1.mmCountry, com.tools20022.repository.msg.RegulatoryStipulations1.mmStipulations);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationV03.mmRegulatoryStipulations);
 				trace_lazy = () -> RegulatoryReport.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryStipulations1";
 				definition = "Specifies regulatory stipulations that financial institutions must be compliant with in the country, region, and/or area they conduct business.";
@@ -187,21 +209,21 @@ public class RegulatoryStipulations1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctry", required = true)
 	public CountryCode getCountry() {
 		return country;
 	}
 
-	public void setCountry(CountryCode country) {
-		this.country = country;
+	public RegulatoryStipulations1 setCountry(CountryCode country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
-	@XmlElement(name = "Stiptns", required = true)
 	public List<Max350Text> getStipulations() {
-		return stipulations;
+		return stipulations == null ? stipulations = new ArrayList<>() : stipulations;
 	}
 
-	public void setStipulations(List<Max350Text> stipulations) {
-		this.stipulations = stipulations;
+	public RegulatoryStipulations1 setStipulations(List<Max350Text> stipulations) {
+		this.stipulations = Objects.requireNonNull(stipulations);
+		return this;
 	}
 }

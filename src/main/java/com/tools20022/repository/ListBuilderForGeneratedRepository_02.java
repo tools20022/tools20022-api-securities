@@ -25,22 +25,6 @@ class ListBuilderForGeneratedRepository_02 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
-		list.add((T) QuorumQuantity1Choice.mmObject());
-		list.add((T) UnitOrFaceAmount1Choice.mmObject());
-		list.add((T) IncentivePremiumType1Choice.mmObject());
-		list.add((T) IncentivePremium3.mmObject());
-		list.add((T) Entitlement1Choice.mmObject());
-		list.add((T) VoteMethods2.mmObject());
-		list.add((T) CorporateEventNarrative2.mmObject());
-		list.add((T) MeetingCancellationReason1Choice.mmObject());
-		list.add((T) MeetingCancellationReason2.mmObject());
-		list.add((T) EligibilityDates1.mmObject());
-		list.add((T) OrganisationIdentification5.mmObject());
-		list.add((T) PartyAdditionalIdentification2Choice.mmObject());
-		list.add((T) SubAccount2.mmObject());
-		list.add((T) NameAndAddress9.mmObject());
-		list.add((T) SpecificInstructionRequest1.mmObject());
-		list.add((T) UnitOrFaceAmountOrCode1Choice.mmObject());
 		list.add((T) AttendanceCard2.mmObject());
 		list.add((T) CancellationProcessingStatus1.mmObject());
 		list.add((T) InstructionType1Choice.mmObject());
@@ -399,20 +383,12 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) KYCCheckType1Choice.mmObject());
 		list.add((T) ChargePaymentMethod1Choice.mmObject());
 		list.add((T) TaxType1Choice.mmObject());
-		list.add((T) CommissionType3Choice.mmObject());
 		list.add((T) Role4Choice.mmObject());
-		list.add((T) WaivingInstruction1Choice.mmObject());
 		list.add((T) ExemptionReason1Choice.mmObject());
 		list.add((T) TaxBasis1Choice.mmObject());
-		list.add((T) CommissionBasis1Choice.mmObject());
-		list.add((T) CommissionWaiver4.mmObject());
-		list.add((T) TaxCalculationInformation8.mmObject());
 		list.add((T) CorporateActionCancellation3.mmObject());
 		list.add((T) CorporateActionPreliminaryAdviceType2.mmObject());
-		list.add((T) CorporateActionPeriod10.mmObject());
 		list.add((T) RateFormat12Choice.mmObject());
-		list.add((T) TransferReference8.mmObject());
-		list.add((T) TransferReference7.mmObject());
 		list.add((T) Order17.mmObject());
 		list.add((T) MarketIdentification79.mmObject());
 		list.add((T) Order18.mmObject());
@@ -525,6 +501,30 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) BeneficialOwner2.mmObject());
 		list.add((T) Price6.mmObject());
 		list.add((T) Role5Choice.mmObject());
+		list.add((T) ReportItemStatus1.mmObject());
+		list.add((T) ReportItemRejectionReason1Choice.mmObject());
+		list.add((T) DatePeriod1Choice.mmObject());
+		list.add((T) SubBalanceBreakdown1.mmObject());
+		list.add((T) SubBalanceQuantity5Choice.mmObject());
+		list.add((T) PledgeeTypeAndText1.mmObject());
+		list.add((T) PledgeeTypeAndAnyBICIdentifier1.mmObject());
+		list.add((T) Report5.mmObject());
+		list.add((T) TradeLegStatement3.mmObject());
+		list.add((T) SettlementObligation7.mmObject());
+		list.add((T) BuyIn4.mmObject());
+		list.add((T) NetPosition3.mmObject());
+		list.add((T) GenericIdentification58.mmObject());
+		list.add((T) PartyIdentification83Choice.mmObject());
+		list.add((T) SafekeepingPlaceFormat7Choice.mmObject());
+		list.add((T) TradeLeg10.mmObject());
+		list.add((T) PartyIdentificationAndAccount100.mmObject());
+		list.add((T) MarketIdentification85.mmObject());
+		list.add((T) TradeLeg9.mmObject());
+		list.add((T) SettlementObligation8.mmObject());
+		list.add((T) StatementReference1.mmObject());
+		list.add((T) ReportItem1.mmObject());
+		list.add((T) Fund3.mmObject());
+		list.add((T) Fund4.mmObject());
 		ListBuilderForGeneratedRepository_03.addElems(list);
 		return list;
 	}

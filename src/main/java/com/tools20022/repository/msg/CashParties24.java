@@ -24,8 +24,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.PaymentPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentificationAndAccount96;
+import com.tools20022.repository.msg.PartyIdentificationAndAccount97;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Cash settlement chain parties and accounts."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashParties24", propOrder = {"creditor", "creditorAgent", "intermediary", "intermediary2"})
 public class CashParties24 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cdtr", required = true)
 	protected PartyIdentificationAndAccount96 creditor;
 	/**
-	 * Party to which the payment amount must be ultimately delivered. In some
-	 * cases, this may be a fund.<br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -108,10 +112,10 @@ public class CashParties24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCreditor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashParties24, PartyIdentificationAndAccount96> mmCreditor = new MMMessageAssociationEnd<CashParties24, PartyIdentificationAndAccount96>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CashParties24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashParties24.mmObject();
 			isDerived = false;
 			xmlTag = "Cdtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,17 +124,24 @@ public class CashParties24 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentificationAndAccount96.mmObject();
+			type_lazy = () -> PartyIdentificationAndAccount96.mmObject();
+		}
+
+		@Override
+		public PartyIdentificationAndAccount96 getValue(CashParties24 obj) {
+			return obj.getCreditor();
+		}
+
+		@Override
+		public void setValue(CashParties24 obj, PartyIdentificationAndAccount96 value) {
+			obj.setCreditor(value);
 		}
 	};
+	@XmlElement(name = "CdtrAgt", required = true)
 	protected PartyIdentificationAndAccount97 creditorAgent;
 	/**
-	 * Financial institution that services the cash account of the beneficiary
-	 * (creditor). In some markets, this is also known as receiving agent. The
-	 * creditor agent is the party where the payment amount must be ultimately
-	 * delivered on behalf of the beneficiary (creditor), that is, the party
-	 * where the beneficiary has its account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,10 +172,10 @@ public class CashParties24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCreditorAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashParties24, PartyIdentificationAndAccount97> mmCreditorAgent = new MMMessageAssociationEnd<CashParties24, PartyIdentificationAndAccount97>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CashParties24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashParties24.mmObject();
 			isDerived = false;
 			xmlTag = "CdtrAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,14 +184,24 @@ public class CashParties24 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentificationAndAccount97.mmObject();
+			type_lazy = () -> PartyIdentificationAndAccount97.mmObject();
+		}
+
+		@Override
+		public PartyIdentificationAndAccount97 getValue(CashParties24 obj) {
+			return obj.getCreditorAgent();
+		}
+
+		@Override
+		public void setValue(CashParties24 obj, PartyIdentificationAndAccount97 value) {
+			obj.setCreditorAgent(value);
 		}
 	};
+	@XmlElement(name = "Intrmy")
 	protected PartyIdentificationAndAccount97 intermediary;
 	/**
-	 * Financial institution through which the transaction must pass to reach
-	 * the account with institution (creditor agent).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,10 +233,10 @@ public class CashParties24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntermediary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashParties24, Optional<PartyIdentificationAndAccount97>> mmIntermediary = new MMMessageAttribute<CashParties24, Optional<PartyIdentificationAndAccount97>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CashParties24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashParties24.mmObject();
 			isDerived = false;
 			xmlTag = "Intrmy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,14 +244,24 @@ public class CashParties24 {
 			definition = "Financial institution through which the transaction must pass to reach the account with institution (creditor agent).";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentificationAndAccount97.mmObject();
+			complexType_lazy = () -> PartyIdentificationAndAccount97.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentificationAndAccount97> getValue(CashParties24 obj) {
+			return obj.getIntermediary();
+		}
+
+		@Override
+		public void setValue(CashParties24 obj, Optional<PartyIdentificationAndAccount97> value) {
+			obj.setIntermediary(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Intrmy2")
 	protected PartyIdentificationAndAccount97 intermediary2;
 	/**
-	 * Financial institution through which the transaction must pass to reach
-	 * the account with institution (creditor agent).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,10 +293,10 @@ public class CashParties24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntermediary2 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashParties24, Optional<PartyIdentificationAndAccount97>> mmIntermediary2 = new MMMessageAttribute<CashParties24, Optional<PartyIdentificationAndAccount97>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CashParties24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashParties24.mmObject();
 			isDerived = false;
 			xmlTag = "Intrmy2";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -273,16 +304,27 @@ public class CashParties24 {
 			definition = "Financial institution through which the transaction must pass to reach the account with institution (creditor agent).";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentificationAndAccount97.mmObject();
+			complexType_lazy = () -> PartyIdentificationAndAccount97.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentificationAndAccount97> getValue(CashParties24 obj) {
+			return obj.getIntermediary2();
+		}
+
+		@Override
+		public void setValue(CashParties24 obj, Optional<PartyIdentificationAndAccount97> value) {
+			obj.setIntermediary2(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashParties24.mmCreditor, CashParties24.mmCreditorAgent, CashParties24.mmIntermediary, CashParties24.mmIntermediary2);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashParties24.mmCreditor, com.tools20022.repository.msg.CashParties24.mmCreditorAgent, com.tools20022.repository.msg.CashParties24.mmIntermediary,
+						com.tools20022.repository.msg.CashParties24.mmIntermediary2);
 				trace_lazy = () -> PaymentPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashParties24";
 				definition = "Cash settlement chain parties and accounts.";
@@ -291,39 +333,39 @@ public class CashParties24 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cdtr", required = true)
 	public PartyIdentificationAndAccount96 getCreditor() {
 		return creditor;
 	}
 
-	public void setCreditor(com.tools20022.repository.msg.PartyIdentificationAndAccount96 creditor) {
-		this.creditor = creditor;
+	public CashParties24 setCreditor(PartyIdentificationAndAccount96 creditor) {
+		this.creditor = Objects.requireNonNull(creditor);
+		return this;
 	}
 
-	@XmlElement(name = "CdtrAgt", required = true)
 	public PartyIdentificationAndAccount97 getCreditorAgent() {
 		return creditorAgent;
 	}
 
-	public void setCreditorAgent(com.tools20022.repository.msg.PartyIdentificationAndAccount97 creditorAgent) {
-		this.creditorAgent = creditorAgent;
+	public CashParties24 setCreditorAgent(PartyIdentificationAndAccount97 creditorAgent) {
+		this.creditorAgent = Objects.requireNonNull(creditorAgent);
+		return this;
 	}
 
-	@XmlElement(name = "Intrmy")
-	public PartyIdentificationAndAccount97 getIntermediary() {
-		return intermediary;
+	public Optional<PartyIdentificationAndAccount97> getIntermediary() {
+		return intermediary == null ? Optional.empty() : Optional.of(intermediary);
 	}
 
-	public void setIntermediary(com.tools20022.repository.msg.PartyIdentificationAndAccount97 intermediary) {
+	public CashParties24 setIntermediary(PartyIdentificationAndAccount97 intermediary) {
 		this.intermediary = intermediary;
+		return this;
 	}
 
-	@XmlElement(name = "Intrmy2")
-	public PartyIdentificationAndAccount97 getIntermediary2() {
-		return intermediary2;
+	public Optional<PartyIdentificationAndAccount97> getIntermediary2() {
+		return intermediary2 == null ? Optional.empty() : Optional.of(intermediary2);
 	}
 
-	public void setIntermediary2(com.tools20022.repository.msg.PartyIdentificationAndAccount97 intermediary2) {
+	public CashParties24 setIntermediary2(PartyIdentificationAndAccount97 intermediary2) {
 		this.intermediary2 = intermediary2;
+		return this;
 	}
 }

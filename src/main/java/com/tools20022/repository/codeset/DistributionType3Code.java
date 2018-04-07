@@ -39,16 +39,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DistributionType3Code#Final
- * DistributionType3Code.mmFinal}</li>
+ * DistributionType3Code.Final}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DistributionType3Code#Interim
- * DistributionType3Code.mmInterim}</li>
+ * DistributionType3Code.Interim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DistributionType3Code#Ongoing
- * DistributionType3Code.mmOngoing}</li>
+ * DistributionType3Code.Ongoing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DistributionType3Code#RollingBasis
- * DistributionType3Code.mmRollingBasis}</li>
+ * DistributionType3Code.RollingBasis}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -179,7 +179,7 @@ public class DistributionType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DistributionType3Code";
 				definition = "Specifies whether the proceeds of the event will be distributed on a rolling basis rather than on a specific date.";

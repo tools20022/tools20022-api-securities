@@ -27,10 +27,8 @@ import com.tools20022.repository.msg.NetPosition3;
 import com.tools20022.repository.msg.Pagination;
 import com.tools20022.repository.msg.ReportParameters1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -95,16 +93,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetPositionV03", propOrder = {"reportParameters", "pagination", "clearingMember", "clearingSegment", "netPositionReport", "supplementaryData"})
 public class NetPositionV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptParams", required = true)
 	protected ReportParameters1 reportParameters;
 	/**
-	 * Provides parameters of the margin report such as the creation date and
-	 * time, the report currency or the calculation date and time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,7 +125,7 @@ public class NetPositionV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportParameters = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetPositionV03, ReportParameters1> mmReportParameters = new MMMessageBuildingBlock<NetPositionV03, ReportParameters1>() {
 		{
 			xmlTag = "RptParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,18 +136,21 @@ public class NetPositionV03 {
 			complexType_lazy = () -> ReportParameters1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetPositionV03.class.getMethod("getReportParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportParameters1 getValue(NetPositionV03 obj) {
+			return obj.getReportParameters();
+		}
+
+		@Override
+		public void setValue(NetPositionV03 obj, ReportParameters1 value) {
+			obj.setReportParameters(value);
 		}
 	};
+	@XmlElement(name = "Pgntn", required = true)
 	protected Pagination pagination;
 	/**
-	 * Provides information about the number of used pages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +170,7 @@ public class NetPositionV03 {
 	 * definition} = "Provides information about the number of used pages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetPositionV03, Pagination> mmPagination = new MMMessageBuildingBlock<NetPositionV03, Pagination>() {
 		{
 			xmlTag = "Pgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,19 +181,21 @@ public class NetPositionV03 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetPositionV03.class.getMethod("getPagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Pagination getValue(NetPositionV03 obj) {
+			return obj.getPagination();
+		}
+
+		@Override
+		public void setValue(NetPositionV03 obj, Pagination value) {
+			obj.setPagination(value);
 		}
 	};
+	@XmlElement(name = "ClrMmb", required = true)
 	protected PartyIdentification35Choice clearingMember;
 	/**
-	 * Provides the identification of the account owner, that is the clearing
-	 * member (individual clearing member or general clearing member).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,7 +218,7 @@ public class NetPositionV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingMember = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetPositionV03, PartyIdentification35Choice> mmClearingMember = new MMMessageBuildingBlock<NetPositionV03, PartyIdentification35Choice>() {
 		{
 			xmlTag = "ClrMmb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -226,23 +229,21 @@ public class NetPositionV03 {
 			complexType_lazy = () -> PartyIdentification35Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetPositionV03.class.getMethod("getClearingMember", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartyIdentification35Choice getValue(NetPositionV03 obj) {
+			return obj.getClearingMember();
+		}
+
+		@Override
+		public void setValue(NetPositionV03 obj, PartyIdentification35Choice value) {
+			obj.setClearingMember(value);
 		}
 	};
+	@XmlElement(name = "ClrSgmt")
 	protected PartyIdentification35Choice clearingSegment;
 	/**
-	 * Clearing organisation that will clear the trade.<br>
-	 * <br>
-	 * Note: This field allows Clearing Member Firm to segregate flows coming
-	 * from clearing counterparty's clearing system. Indeed, Clearing Member
-	 * Firms receive messages from the same system (same sender) and this field
-	 * allows them to know if the message is related to equities or derivatives.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,7 +266,7 @@ public class NetPositionV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingSegment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetPositionV03, Optional<PartyIdentification35Choice>> mmClearingSegment = new MMMessageBuildingBlock<NetPositionV03, Optional<PartyIdentification35Choice>>() {
 		{
 			xmlTag = "ClrSgmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -276,19 +277,21 @@ public class NetPositionV03 {
 			complexType_lazy = () -> PartyIdentification35Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetPositionV03.class.getMethod("getClearingSegment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<PartyIdentification35Choice> getValue(NetPositionV03 obj) {
+			return obj.getClearingSegment();
+		}
+
+		@Override
+		public void setValue(NetPositionV03 obj, Optional<PartyIdentification35Choice> value) {
+			obj.setClearingSegment(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NetPosRpt", required = true)
 	protected List<NetPosition3> netPositionReport;
 	/**
-	 * Provides the net position details such as the average deal price and net
-	 * quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,7 +313,7 @@ public class NetPositionV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNetPositionReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetPositionV03, List<NetPosition3>> mmNetPositionReport = new MMMessageBuildingBlock<NetPositionV03, List<NetPosition3>>() {
 		{
 			xmlTag = "NetPosRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -320,19 +323,21 @@ public class NetPositionV03 {
 			complexType_lazy = () -> NetPosition3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetPositionV03.class.getMethod("getNetPositionReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<NetPosition3> getValue(NetPositionV03 obj) {
+			return obj.getNetPositionReport();
+		}
+
+		@Override
+		public void setValue(NetPositionV03 obj, List<NetPosition3> value) {
+			obj.setNetPositionReport(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,26 +356,28 @@ public class NetPositionV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetPositionV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<NetPositionV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetPositionV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(NetPositionV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(NetPositionV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -404,61 +411,61 @@ public class NetPositionV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptParams", required = true)
 	public ReportParameters1 getReportParameters() {
 		return reportParameters;
 	}
 
-	public void setReportParameters(ReportParameters1 reportParameters) {
-		this.reportParameters = reportParameters;
+	public NetPositionV03 setReportParameters(ReportParameters1 reportParameters) {
+		this.reportParameters = Objects.requireNonNull(reportParameters);
+		return this;
 	}
 
-	@XmlElement(name = "Pgntn", required = true)
 	public Pagination getPagination() {
 		return pagination;
 	}
 
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
+	public NetPositionV03 setPagination(Pagination pagination) {
+		this.pagination = Objects.requireNonNull(pagination);
+		return this;
 	}
 
-	@XmlElement(name = "ClrMmb", required = true)
 	public PartyIdentification35Choice getClearingMember() {
 		return clearingMember;
 	}
 
-	public void setClearingMember(PartyIdentification35Choice clearingMember) {
-		this.clearingMember = clearingMember;
+	public NetPositionV03 setClearingMember(PartyIdentification35Choice clearingMember) {
+		this.clearingMember = Objects.requireNonNull(clearingMember);
+		return this;
 	}
 
-	@XmlElement(name = "ClrSgmt")
-	public PartyIdentification35Choice getClearingSegment() {
-		return clearingSegment;
+	public Optional<PartyIdentification35Choice> getClearingSegment() {
+		return clearingSegment == null ? Optional.empty() : Optional.of(clearingSegment);
 	}
 
-	public void setClearingSegment(PartyIdentification35Choice clearingSegment) {
+	public NetPositionV03 setClearingSegment(PartyIdentification35Choice clearingSegment) {
 		this.clearingSegment = clearingSegment;
+		return this;
 	}
 
-	@XmlElement(name = "NetPosRpt", required = true)
 	public List<NetPosition3> getNetPositionReport() {
-		return netPositionReport;
+		return netPositionReport == null ? netPositionReport = new ArrayList<>() : netPositionReport;
 	}
 
-	public void setNetPositionReport(List<NetPosition3> netPositionReport) {
-		this.netPositionReport = netPositionReport;
+	public NetPositionV03 setNetPositionReport(List<NetPosition3> netPositionReport) {
+		this.netPositionReport = Objects.requireNonNull(netPositionReport);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public NetPositionV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:secl.004.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:secl.004.001.03")
 	static public class Document {
 		@XmlElement(name = "NetPos", required = true)
 		public NetPositionV03 messageBody;

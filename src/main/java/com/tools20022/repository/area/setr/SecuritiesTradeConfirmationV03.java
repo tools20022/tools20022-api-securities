@@ -24,10 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.SecuritiesTradeLatestVersion;
 import com.tools20022.repository.choice.NumberCount1Choice;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -150,23 +148,22 @@ import javax.xml.bind.annotation.*;
  * "SecuritiesTradeConfirmationV03"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "SCOPE\r\nSent by an executing party to an instructing party directly or through Central Matching Utility (CMU) to provide trade confirmation on a per-account basis based on instructions provided by the instructing party in the SecuritiesAllocationInstruction message.\r\n\r\nIt may also be used to provide trade confirmation on the trade level from an executing party or an instructing party to the custodian or an affirming party directly or through CMU.\r\n\r\nThe instructing party is typically the investment manager or an intermediary system/vendor communicating on behalf of the investment manager or of other categories of investors.\r\nThe executing party is typically the broker/dealer or an intermediary system/vendor communicating on behalf of the broker/dealer.\r\nThe custodian or the affirming party is typically the custodian, trustee, financial institution, intermediary system/vendor communicating on behalf of them, or their agent.\r\n\r\nUSAGE\r\nInitiator:  In local matching, the initiator of this message is always the executing party.  In central matching the initiator may be either the executing party or instructing party.\r\nRespondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message. "
+ * "SCOPE\r\nSent by an executing party to an instructing party directly or through Central Matching Utility (CMU) to provide trade confirmation on a per-account basis based on instructions provided by the instructing party in the SecuritiesAllocationInstruction message.\r\n\r\nIt may also be used to provide trade confirmation on the trade level from an executing party or an instructing party to the custodian or an affirming party directly or through CMU.\r\n\r\nThe instructing party is typically the investment manager or an intermediary system/vendor communicating on behalf of the investment manager or of other categories of investors.\r\nThe executing party is typically the broker/dealer or an intermediary system/vendor communicating on behalf of the broker/dealer.\r\nThe custodian or the affirming party is typically the custodian, trustee, financial institution, intermediary system/vendor communicating on behalf of them, or their agent.\r\n\r\nUSAGE\r\nInitiator: In local matching, the initiator of this message is always the executing party. In central matching the initiator may be either the executing party or instructing party.\r\nRespondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesTradeConfirmationV03", propOrder = {"identification", "numberCount", "references", "tradeDetails", "financialInstrumentIdentification", "financialInstrumentAttributes", "underlyingFinancialInstrument",
 		"stipulations", "confirmationParties", "settlementParameters", "standingSettlementInstruction", "deliveringSettlementParties", "receivingSettlementParties", "cashParties", "clearingDetails", "settlementAmount", "otherAmounts",
 		"otherPrices", "otherBusinessParties", "twoLegTransactionDetails", "regulatoryStipulations", "supplementaryData"})
 public class SecuritiesTradeConfirmationV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected TransactiontIdentification4 identification;
 	/**
-	 * Information that unambiguously identifies an SecuritiesTradeConfirmation
-	 * message as known by the account owner (or the instructing party acting on
-	 * its behalf).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +186,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, TransactiontIdentification4> mmIdentification = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, TransactiontIdentification4>() {
 		{
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,18 +197,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> TransactiontIdentification4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TransactiontIdentification4 getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, TransactiontIdentification4 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "NbCnt")
 	protected NumberCount1Choice numberCount;
 	/**
-	 * Count of the number of transactions linked.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,7 +232,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Count of the number of transactions linked."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNumberCount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<NumberCount1Choice>> mmNumberCount = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<NumberCount1Choice>>() {
 		{
 			xmlTag = "NbCnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -243,21 +243,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> NumberCount1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getNumberCount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<NumberCount1Choice> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getNumberCount();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<NumberCount1Choice> value) {
+			obj.setNumberCount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Refs")
 	protected List<Linkages15> references;
 	/**
-	 * Reference to the transaction identifier issued by a business party and/or
-	 * market infrastructure. It may also be used to reference a previous
-	 * transaction, for example, a block/allocation instruction, or tie a set of
-	 * messages together.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -275,32 +275,35 @@ public class SecuritiesTradeConfirmationV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference to the transaction identifier issued by a business party and/or market infrastructure. It may also be used to reference a previous transaction, for example, a block/allocation instruction, or tie a set of messages together. "
+	 * "Reference to the transaction identifier issued by a business party and/or market infrastructure. It may also be used to reference a previous transaction, for example, a block/allocation instruction, or tie a set of messages together."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReferences = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<Linkages15>> mmReferences = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<Linkages15>>() {
 		{
 			xmlTag = "Refs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "References";
-			definition = "Reference to the transaction identifier issued by a business party and/or market infrastructure. It may also be used to reference a previous transaction, for example, a block/allocation instruction, or tie a set of messages together. ";
+			definition = "Reference to the transaction identifier issued by a business party and/or market infrastructure. It may also be used to reference a previous transaction, for example, a block/allocation instruction, or tie a set of messages together.";
 			minOccurs = 0;
 			complexType_lazy = () -> Linkages15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getReferences", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Linkages15> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getReferences();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, List<Linkages15> value) {
+			obj.setReferences(value);
 		}
 	};
+	@XmlElement(name = "TradDtls", required = true)
 	protected Order17 tradeDetails;
 	/**
-	 * Details of the trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,7 +323,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Details of the trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTradeDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Order17> mmTradeDetails = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Order17>() {
 		{
 			xmlTag = "TradDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -331,19 +334,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> Order17.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getTradeDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Order17 getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getTradeDetails();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Order17 value) {
+			obj.setTradeDetails(value);
 		}
 	};
+	@XmlElement(name = "FinInstrmId", required = true)
 	protected SecurityIdentification14 financialInstrumentIdentification;
 	/**
-	 * Unique and unambiguous identifier of a financial instrument, assigned
-	 * under a formal or proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,7 +371,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInstrumentIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, SecurityIdentification14> mmFinancialInstrumentIdentification = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, SecurityIdentification14>() {
 		{
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -377,18 +382,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> SecurityIdentification14.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getFinancialInstrumentIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecurityIdentification14 getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, SecurityIdentification14 value) {
+			obj.setFinancialInstrumentIdentification(value);
 		}
 	};
+	@XmlElement(name = "FinInstrmAttrbts")
 	protected FinancialInstrumentAttributes44 financialInstrumentAttributes;
 	/**
-	 * Elements characterising a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -409,7 +417,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Elements characterising a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInstrumentAttributes = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<FinancialInstrumentAttributes44>> mmFinancialInstrumentAttributes = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<FinancialInstrumentAttributes44>>() {
 		{
 			xmlTag = "FinInstrmAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -420,19 +428,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> FinancialInstrumentAttributes44.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getFinancialInstrumentAttributes", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<FinancialInstrumentAttributes44> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getFinancialInstrumentAttributes();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<FinancialInstrumentAttributes44> value) {
+			obj.setFinancialInstrumentAttributes(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "UndrlygFinInstrm")
 	protected List<UnderlyingFinancialInstrument2> underlyingFinancialInstrument;
 	/**
-	 * Underlying financial instrument to which an trade confirmation is
-	 * related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -455,7 +465,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmUnderlyingFinancialInstrument = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<UnderlyingFinancialInstrument2>> mmUnderlyingFinancialInstrument = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<UnderlyingFinancialInstrument2>>() {
 		{
 			xmlTag = "UndrlygFinInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -465,19 +475,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> UnderlyingFinancialInstrument2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getUnderlyingFinancialInstrument", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<UnderlyingFinancialInstrument2> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getUnderlyingFinancialInstrument();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, List<UnderlyingFinancialInstrument2> value) {
+			obj.setUnderlyingFinancialInstrument(value);
 		}
 	};
+	@XmlElement(name = "Stiptns")
 	protected FinancialInstrumentStipulations2 stipulations;
 	/**
-	 * Additional restrictions on the financial instrument, related to the
-	 * stipulation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,7 +512,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStipulations = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<FinancialInstrumentStipulations2>> mmStipulations = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<FinancialInstrumentStipulations2>>() {
 		{
 			xmlTag = "Stiptns";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -511,18 +523,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> FinancialInstrumentStipulations2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getStipulations", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<FinancialInstrumentStipulations2> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getStipulations();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<FinancialInstrumentStipulations2> value) {
+			obj.setStipulations(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ConfPties", required = true)
 	protected List<ConfirmationParties2> confirmationParties;
 	/**
-	 * Parties involved in the confirmation of the details of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -544,7 +559,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * "Parties involved in the confirmation of the details of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmConfirmationParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<ConfirmationParties2>> mmConfirmationParties = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<ConfirmationParties2>>() {
 		{
 			xmlTag = "ConfPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -554,21 +569,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> ConfirmationParties2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getConfirmationParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<ConfirmationParties2> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getConfirmationParties();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, List<ConfirmationParties2> value) {
+			obj.setConfirmationParties(value);
 		}
 	};
+	@XmlElement(name = "SttlmParams")
 	protected SettlementDetails43 settlementParameters;
 	/**
-	 * Parameters which explicitly state the conditions that must be fulfilled
-	 * before a particular transaction of a financial instrument can be settled.
-	 * These parameters are defined by the instructing party in compliance with
-	 * settlement rules in the market the transaction will settle in.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -587,34 +602,36 @@ public class SecuritiesTradeConfirmationV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Parameters which explicitly state the conditions that must be fulfilled before a particular transaction of a financial instrument can be settled.  These parameters are defined by the instructing party in compliance with settlement rules in the market the transaction will settle in."
+	 * "Parameters which explicitly state the conditions that must be fulfilled before a particular transaction of a financial instrument can be settled. These parameters are defined by the instructing party in compliance with settlement rules in the market the transaction will settle in."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSettlementParameters = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<SettlementDetails43>> mmSettlementParameters = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<SettlementDetails43>>() {
 		{
 			xmlTag = "SttlmParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementParameters";
-			definition = "Parameters which explicitly state the conditions that must be fulfilled before a particular transaction of a financial instrument can be settled.  These parameters are defined by the instructing party in compliance with settlement rules in the market the transaction will settle in.";
+			definition = "Parameters which explicitly state the conditions that must be fulfilled before a particular transaction of a financial instrument can be settled. These parameters are defined by the instructing party in compliance with settlement rules in the market the transaction will settle in.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> SettlementDetails43.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getSettlementParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SettlementDetails43> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getSettlementParameters();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<SettlementDetails43> value) {
+			obj.setSettlementParameters(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "StgSttlmInstr")
 	protected StandingSettlementInstruction9 standingSettlementInstruction;
 	/**
-	 * Specifies what settlement standing instruction database is to be used to
-	 * derive the settlement parties involved in the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,7 +654,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStandingSettlementInstruction = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<StandingSettlementInstruction9>> mmStandingSettlementInstruction = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<StandingSettlementInstruction9>>() {
 		{
 			xmlTag = "StgSttlmInstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -648,18 +665,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> StandingSettlementInstruction9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getStandingSettlementInstruction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<StandingSettlementInstruction9> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getStandingSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<StandingSettlementInstruction9> value) {
+			obj.setStandingSettlementInstruction(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DlvrgSttlmPties")
 	protected SettlementParties23 deliveringSettlementParties;
 	/**
-	 * Identifies the chain of delivering settlement parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -680,7 +700,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Identifies the chain of delivering settlement parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDeliveringSettlementParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<SettlementParties23>> mmDeliveringSettlementParties = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<SettlementParties23>>() {
 		{
 			xmlTag = "DlvrgSttlmPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -691,18 +711,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> SettlementParties23.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getDeliveringSettlementParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SettlementParties23> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getDeliveringSettlementParties();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<SettlementParties23> value) {
+			obj.setDeliveringSettlementParties(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RcvgSttlmPties")
 	protected SettlementParties23 receivingSettlementParties;
 	/**
-	 * Identifies the chain of receiving settlement parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -723,7 +746,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Identifies the chain of receiving settlement parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReceivingSettlementParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<SettlementParties23>> mmReceivingSettlementParties = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<SettlementParties23>>() {
 		{
 			xmlTag = "RcvgSttlmPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -734,18 +757,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> SettlementParties23.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getReceivingSettlementParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SettlementParties23> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getReceivingSettlementParties();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<SettlementParties23> value) {
+			obj.setReceivingSettlementParties(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CshPties")
 	protected CashParties18 cashParties;
 	/**
-	 * Cash parties involved in the specific transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -765,7 +791,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Cash parties involved in the specific transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCashParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<CashParties18>> mmCashParties = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<CashParties18>>() {
 		{
 			xmlTag = "CshPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -776,18 +802,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> CashParties18.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getCashParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CashParties18> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getCashParties();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<CashParties18> value) {
+			obj.setCashParties(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ClrDtls")
 	protected Clearing3 clearingDetails;
 	/**
-	 * Provides clearing member information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -807,7 +836,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Provides clearing member information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<Clearing3>> mmClearingDetails = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<Clearing3>>() {
 		{
 			xmlTag = "ClrDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -818,20 +847,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> Clearing3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getClearingDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Clearing3> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getClearingDetails();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<Clearing3> value) {
+			obj.setClearingDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SttlmAmt")
 	protected AmountAndDirection28 settlementAmount;
 	/**
-	 * Total amount of money to be paid or received in exchange for the
-	 * securities. The amount includes the principal with any commissions and
-	 * fees or accrued interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -850,33 +880,36 @@ public class SecuritiesTradeConfirmationV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Total amount of money to be paid or received in exchange for the securities.  The amount includes the principal with any commissions and fees or accrued interest."
+	 * "Total amount of money to be paid or received in exchange for the securities. The amount includes the principal with any commissions and fees or accrued interest."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSettlementAmount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<AmountAndDirection28>> mmSettlementAmount = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<AmountAndDirection28>>() {
 		{
 			xmlTag = "SttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementAmount";
-			definition = "Total amount of money to be paid or received in exchange for the securities.  The amount includes the principal with any commissions and fees or accrued interest.";
+			definition = "Total amount of money to be paid or received in exchange for the securities. The amount includes the principal with any commissions and fees or accrued interest.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> AmountAndDirection28.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getSettlementAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AmountAndDirection28> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getSettlementAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<AmountAndDirection28> value) {
+			obj.setSettlementAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OthrAmts")
 	protected List<OtherAmounts16> otherAmounts;
 	/**
-	 * Other amounts than the settlement amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -896,7 +929,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Other amounts than the settlement amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOtherAmounts = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<OtherAmounts16>> mmOtherAmounts = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<OtherAmounts16>>() {
 		{
 			xmlTag = "OthrAmts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -906,18 +939,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> OtherAmounts16.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getOtherAmounts", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<OtherAmounts16> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getOtherAmounts();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, List<OtherAmounts16> value) {
+			obj.setOtherAmounts(value);
 		}
 	};
+	@XmlElement(name = "OthrPrics")
 	protected List<OtherPrices2> otherPrices;
 	/**
-	 * Other prices than the deal price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -937,7 +973,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Other prices than the deal price."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOtherPrices = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<OtherPrices2>> mmOtherPrices = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<OtherPrices2>>() {
 		{
 			xmlTag = "OthrPrics";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -947,18 +983,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> OtherPrices2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getOtherPrices", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<OtherPrices2> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getOtherPrices();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, List<OtherPrices2> value) {
+			obj.setOtherPrices(value);
 		}
 	};
+	@XmlElement(name = "OthrBizPties")
 	protected OtherParties18 otherBusinessParties;
 	/**
-	 * Other business parties relevant to the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -978,7 +1017,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * definition} = "Other business parties relevant to the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOtherBusinessParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<OtherParties18>> mmOtherBusinessParties = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<OtherParties18>>() {
 		{
 			xmlTag = "OthrBizPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -989,24 +1028,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> OtherParties18.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getOtherBusinessParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<OtherParties18> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getOtherBusinessParties();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<OtherParties18> value) {
+			obj.setOtherBusinessParties(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TwoLegTxDtls")
 	protected TwoLegTransactionDetails1 twoLegTransactionDetails;
 	/**
-	 * Identifies a transaction that the trading parties are agreeing to
-	 * repurchase, sell back or return the same or similar securities at a later
-	 * time. <br>
-	 * The two leg transaction details defines the closing leg conditions of a
-	 * two leg transaction. It is also used to define the anticipated closing
-	 * leg conditions at the time of opening the closed-end transaction. <br>
-	 * <br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1029,7 +1065,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTwoLegTransactionDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<TwoLegTransactionDetails1>> mmTwoLegTransactionDetails = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<TwoLegTransactionDetails1>>() {
 		{
 			xmlTag = "TwoLegTxDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1040,19 +1076,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> TwoLegTransactionDetails1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getTwoLegTransactionDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<TwoLegTransactionDetails1> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getTwoLegTransactionDetails();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<TwoLegTransactionDetails1> value) {
+			obj.setTwoLegTransactionDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RgltryStiptns")
 	protected RegulatoryStipulations1 regulatoryStipulations;
 	/**
-	 * Specifies regulatory stipulations that financial institutions must be
-	 * compliant with in the country, region, and/or area they conduct business.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1075,7 +1113,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRegulatoryStipulations = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<RegulatoryStipulations1>> mmRegulatoryStipulations = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, Optional<RegulatoryStipulations1>>() {
 		{
 			xmlTag = "RgltryStiptns";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1086,19 +1124,21 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> RegulatoryStipulations1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getRegulatoryStipulations", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<RegulatoryStipulations1> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getRegulatoryStipulations();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, Optional<RegulatoryStipulations1> value) {
+			obj.setRegulatoryStipulations(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1121,7 +1161,7 @@ public class SecuritiesTradeConfirmationV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<SecuritiesTradeConfirmationV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1131,12 +1171,14 @@ public class SecuritiesTradeConfirmationV03 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTradeConfirmationV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(SecuritiesTradeConfirmationV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(SecuritiesTradeConfirmationV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -1145,7 +1187,7 @@ public class SecuritiesTradeConfirmationV03 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTradeConfirmationV03";
-				definition = "SCOPE\r\nSent by an executing party to an instructing party directly or through Central Matching Utility (CMU) to provide trade confirmation on a per-account basis based on instructions provided by the instructing party in the SecuritiesAllocationInstruction message.\r\n\r\nIt may also be used to provide trade confirmation on the trade level from an executing party or an instructing party to the custodian or an affirming party directly or through CMU.\r\n\r\nThe instructing party is typically the investment manager or an intermediary system/vendor communicating on behalf of the investment manager or of other categories of investors.\r\nThe executing party is typically the broker/dealer or an intermediary system/vendor communicating on behalf of the broker/dealer.\r\nThe custodian or the affirming party is typically the custodian, trustee, financial institution, intermediary system/vendor communicating on behalf of them, or their agent.\r\n\r\nUSAGE\r\nInitiator:  In local matching, the initiator of this message is always the executing party.  In central matching the initiator may be either the executing party or instructing party.\r\nRespondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message. ";
+				definition = "SCOPE\r\nSent by an executing party to an instructing party directly or through Central Matching Utility (CMU) to provide trade confirmation on a per-account basis based on instructions provided by the instructing party in the SecuritiesAllocationInstruction message.\r\n\r\nIt may also be used to provide trade confirmation on the trade level from an executing party or an instructing party to the custodian or an affirming party directly or through CMU.\r\n\r\nThe instructing party is typically the investment manager or an intermediary system/vendor communicating on behalf of the investment manager or of other categories of investors.\r\nThe executing party is typically the broker/dealer or an intermediary system/vendor communicating on behalf of the broker/dealer.\r\nThe custodian or the affirming party is typically the custodian, trustee, financial institution, intermediary system/vendor communicating on behalf of them, or their agent.\r\n\r\nUSAGE\r\nInitiator: In local matching, the initiator of this message is always the executing party. In central matching the initiator may be either the executing party or instructing party.\r\nRespondent: instructing party, a custodian or an affirming party responds with SecuritiesTradeConfirmationResponse (accept or reject) message.";
 				rootElement = "Document";
 				xmlTag = "SctiesTradConf";
 				businessArea_lazy = () -> SecuritiesTradeLatestVersion.mmObject();
@@ -1178,205 +1220,205 @@ public class SecuritiesTradeConfirmationV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public TransactiontIdentification4 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(TransactiontIdentification4 identification) {
-		this.identification = identification;
+	public SecuritiesTradeConfirmationV03 setIdentification(TransactiontIdentification4 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "NbCnt")
-	public NumberCount1Choice getNumberCount() {
-		return numberCount;
+	public Optional<NumberCount1Choice> getNumberCount() {
+		return numberCount == null ? Optional.empty() : Optional.of(numberCount);
 	}
 
-	public void setNumberCount(NumberCount1Choice numberCount) {
+	public SecuritiesTradeConfirmationV03 setNumberCount(NumberCount1Choice numberCount) {
 		this.numberCount = numberCount;
+		return this;
 	}
 
-	@XmlElement(name = "Refs")
 	public List<Linkages15> getReferences() {
-		return references;
+		return references == null ? references = new ArrayList<>() : references;
 	}
 
-	public void setReferences(List<Linkages15> references) {
-		this.references = references;
+	public SecuritiesTradeConfirmationV03 setReferences(List<Linkages15> references) {
+		this.references = Objects.requireNonNull(references);
+		return this;
 	}
 
-	@XmlElement(name = "TradDtls", required = true)
 	public Order17 getTradeDetails() {
 		return tradeDetails;
 	}
 
-	public void setTradeDetails(Order17 tradeDetails) {
-		this.tradeDetails = tradeDetails;
+	public SecuritiesTradeConfirmationV03 setTradeDetails(Order17 tradeDetails) {
+		this.tradeDetails = Objects.requireNonNull(tradeDetails);
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmId", required = true)
 	public SecurityIdentification14 getFinancialInstrumentIdentification() {
 		return financialInstrumentIdentification;
 	}
 
-	public void setFinancialInstrumentIdentification(SecurityIdentification14 financialInstrumentIdentification) {
-		this.financialInstrumentIdentification = financialInstrumentIdentification;
+	public SecuritiesTradeConfirmationV03 setFinancialInstrumentIdentification(SecurityIdentification14 financialInstrumentIdentification) {
+		this.financialInstrumentIdentification = Objects.requireNonNull(financialInstrumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmAttrbts")
-	public FinancialInstrumentAttributes44 getFinancialInstrumentAttributes() {
-		return financialInstrumentAttributes;
+	public Optional<FinancialInstrumentAttributes44> getFinancialInstrumentAttributes() {
+		return financialInstrumentAttributes == null ? Optional.empty() : Optional.of(financialInstrumentAttributes);
 	}
 
-	public void setFinancialInstrumentAttributes(FinancialInstrumentAttributes44 financialInstrumentAttributes) {
+	public SecuritiesTradeConfirmationV03 setFinancialInstrumentAttributes(FinancialInstrumentAttributes44 financialInstrumentAttributes) {
 		this.financialInstrumentAttributes = financialInstrumentAttributes;
+		return this;
 	}
 
-	@XmlElement(name = "UndrlygFinInstrm")
 	public List<UnderlyingFinancialInstrument2> getUnderlyingFinancialInstrument() {
-		return underlyingFinancialInstrument;
+		return underlyingFinancialInstrument == null ? underlyingFinancialInstrument = new ArrayList<>() : underlyingFinancialInstrument;
 	}
 
-	public void setUnderlyingFinancialInstrument(List<UnderlyingFinancialInstrument2> underlyingFinancialInstrument) {
-		this.underlyingFinancialInstrument = underlyingFinancialInstrument;
+	public SecuritiesTradeConfirmationV03 setUnderlyingFinancialInstrument(List<UnderlyingFinancialInstrument2> underlyingFinancialInstrument) {
+		this.underlyingFinancialInstrument = Objects.requireNonNull(underlyingFinancialInstrument);
+		return this;
 	}
 
-	@XmlElement(name = "Stiptns")
-	public FinancialInstrumentStipulations2 getStipulations() {
-		return stipulations;
+	public Optional<FinancialInstrumentStipulations2> getStipulations() {
+		return stipulations == null ? Optional.empty() : Optional.of(stipulations);
 	}
 
-	public void setStipulations(FinancialInstrumentStipulations2 stipulations) {
+	public SecuritiesTradeConfirmationV03 setStipulations(FinancialInstrumentStipulations2 stipulations) {
 		this.stipulations = stipulations;
+		return this;
 	}
 
-	@XmlElement(name = "ConfPties", required = true)
 	public List<ConfirmationParties2> getConfirmationParties() {
-		return confirmationParties;
+		return confirmationParties == null ? confirmationParties = new ArrayList<>() : confirmationParties;
 	}
 
-	public void setConfirmationParties(List<ConfirmationParties2> confirmationParties) {
-		this.confirmationParties = confirmationParties;
+	public SecuritiesTradeConfirmationV03 setConfirmationParties(List<ConfirmationParties2> confirmationParties) {
+		this.confirmationParties = Objects.requireNonNull(confirmationParties);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmParams")
-	public SettlementDetails43 getSettlementParameters() {
-		return settlementParameters;
+	public Optional<SettlementDetails43> getSettlementParameters() {
+		return settlementParameters == null ? Optional.empty() : Optional.of(settlementParameters);
 	}
 
-	public void setSettlementParameters(SettlementDetails43 settlementParameters) {
+	public SecuritiesTradeConfirmationV03 setSettlementParameters(SettlementDetails43 settlementParameters) {
 		this.settlementParameters = settlementParameters;
+		return this;
 	}
 
-	@XmlElement(name = "StgSttlmInstr")
-	public StandingSettlementInstruction9 getStandingSettlementInstruction() {
-		return standingSettlementInstruction;
+	public Optional<StandingSettlementInstruction9> getStandingSettlementInstruction() {
+		return standingSettlementInstruction == null ? Optional.empty() : Optional.of(standingSettlementInstruction);
 	}
 
-	public void setStandingSettlementInstruction(StandingSettlementInstruction9 standingSettlementInstruction) {
+	public SecuritiesTradeConfirmationV03 setStandingSettlementInstruction(StandingSettlementInstruction9 standingSettlementInstruction) {
 		this.standingSettlementInstruction = standingSettlementInstruction;
+		return this;
 	}
 
-	@XmlElement(name = "DlvrgSttlmPties")
-	public SettlementParties23 getDeliveringSettlementParties() {
-		return deliveringSettlementParties;
+	public Optional<SettlementParties23> getDeliveringSettlementParties() {
+		return deliveringSettlementParties == null ? Optional.empty() : Optional.of(deliveringSettlementParties);
 	}
 
-	public void setDeliveringSettlementParties(SettlementParties23 deliveringSettlementParties) {
+	public SecuritiesTradeConfirmationV03 setDeliveringSettlementParties(SettlementParties23 deliveringSettlementParties) {
 		this.deliveringSettlementParties = deliveringSettlementParties;
+		return this;
 	}
 
-	@XmlElement(name = "RcvgSttlmPties")
-	public SettlementParties23 getReceivingSettlementParties() {
-		return receivingSettlementParties;
+	public Optional<SettlementParties23> getReceivingSettlementParties() {
+		return receivingSettlementParties == null ? Optional.empty() : Optional.of(receivingSettlementParties);
 	}
 
-	public void setReceivingSettlementParties(SettlementParties23 receivingSettlementParties) {
+	public SecuritiesTradeConfirmationV03 setReceivingSettlementParties(SettlementParties23 receivingSettlementParties) {
 		this.receivingSettlementParties = receivingSettlementParties;
+		return this;
 	}
 
-	@XmlElement(name = "CshPties")
-	public CashParties18 getCashParties() {
-		return cashParties;
+	public Optional<CashParties18> getCashParties() {
+		return cashParties == null ? Optional.empty() : Optional.of(cashParties);
 	}
 
-	public void setCashParties(CashParties18 cashParties) {
+	public SecuritiesTradeConfirmationV03 setCashParties(CashParties18 cashParties) {
 		this.cashParties = cashParties;
+		return this;
 	}
 
-	@XmlElement(name = "ClrDtls")
-	public Clearing3 getClearingDetails() {
-		return clearingDetails;
+	public Optional<Clearing3> getClearingDetails() {
+		return clearingDetails == null ? Optional.empty() : Optional.of(clearingDetails);
 	}
 
-	public void setClearingDetails(Clearing3 clearingDetails) {
+	public SecuritiesTradeConfirmationV03 setClearingDetails(Clearing3 clearingDetails) {
 		this.clearingDetails = clearingDetails;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAmt")
-	public AmountAndDirection28 getSettlementAmount() {
-		return settlementAmount;
+	public Optional<AmountAndDirection28> getSettlementAmount() {
+		return settlementAmount == null ? Optional.empty() : Optional.of(settlementAmount);
 	}
 
-	public void setSettlementAmount(AmountAndDirection28 settlementAmount) {
+	public SecuritiesTradeConfirmationV03 setSettlementAmount(AmountAndDirection28 settlementAmount) {
 		this.settlementAmount = settlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "OthrAmts")
 	public List<OtherAmounts16> getOtherAmounts() {
-		return otherAmounts;
+		return otherAmounts == null ? otherAmounts = new ArrayList<>() : otherAmounts;
 	}
 
-	public void setOtherAmounts(List<OtherAmounts16> otherAmounts) {
-		this.otherAmounts = otherAmounts;
+	public SecuritiesTradeConfirmationV03 setOtherAmounts(List<OtherAmounts16> otherAmounts) {
+		this.otherAmounts = Objects.requireNonNull(otherAmounts);
+		return this;
 	}
 
-	@XmlElement(name = "OthrPrics")
 	public List<OtherPrices2> getOtherPrices() {
-		return otherPrices;
+		return otherPrices == null ? otherPrices = new ArrayList<>() : otherPrices;
 	}
 
-	public void setOtherPrices(List<OtherPrices2> otherPrices) {
-		this.otherPrices = otherPrices;
+	public SecuritiesTradeConfirmationV03 setOtherPrices(List<OtherPrices2> otherPrices) {
+		this.otherPrices = Objects.requireNonNull(otherPrices);
+		return this;
 	}
 
-	@XmlElement(name = "OthrBizPties")
-	public OtherParties18 getOtherBusinessParties() {
-		return otherBusinessParties;
+	public Optional<OtherParties18> getOtherBusinessParties() {
+		return otherBusinessParties == null ? Optional.empty() : Optional.of(otherBusinessParties);
 	}
 
-	public void setOtherBusinessParties(OtherParties18 otherBusinessParties) {
+	public SecuritiesTradeConfirmationV03 setOtherBusinessParties(OtherParties18 otherBusinessParties) {
 		this.otherBusinessParties = otherBusinessParties;
+		return this;
 	}
 
-	@XmlElement(name = "TwoLegTxDtls")
-	public TwoLegTransactionDetails1 getTwoLegTransactionDetails() {
-		return twoLegTransactionDetails;
+	public Optional<TwoLegTransactionDetails1> getTwoLegTransactionDetails() {
+		return twoLegTransactionDetails == null ? Optional.empty() : Optional.of(twoLegTransactionDetails);
 	}
 
-	public void setTwoLegTransactionDetails(TwoLegTransactionDetails1 twoLegTransactionDetails) {
+	public SecuritiesTradeConfirmationV03 setTwoLegTransactionDetails(TwoLegTransactionDetails1 twoLegTransactionDetails) {
 		this.twoLegTransactionDetails = twoLegTransactionDetails;
+		return this;
 	}
 
-	@XmlElement(name = "RgltryStiptns")
-	public RegulatoryStipulations1 getRegulatoryStipulations() {
-		return regulatoryStipulations;
+	public Optional<RegulatoryStipulations1> getRegulatoryStipulations() {
+		return regulatoryStipulations == null ? Optional.empty() : Optional.of(regulatoryStipulations);
 	}
 
-	public void setRegulatoryStipulations(RegulatoryStipulations1 regulatoryStipulations) {
+	public SecuritiesTradeConfirmationV03 setRegulatoryStipulations(RegulatoryStipulations1 regulatoryStipulations) {
 		this.regulatoryStipulations = regulatoryStipulations;
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public SecuritiesTradeConfirmationV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:setr.027.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:setr.027.001.03")
 	static public class Document {
 		@XmlElement(name = "SctiesTradConf", required = true)
 		public SecuritiesTradeConfirmationV03 messageBody;

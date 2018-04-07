@@ -23,9 +23,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.RejectionReason19FormatChoice;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides information about the rejection status of a global movement."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DistributionRejectionStatus1", propOrder = {"reason", "additionalInformation"})
 public class DistributionRejectionStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rsn", required = true)
 	protected List<RejectionReason19FormatChoice> reason;
 	/**
-	 * The rejection reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,9 +98,9 @@ public class DistributionRejectionStatus1 {
 	 * definition} = "The rejection reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DistributionRejectionStatus1, List<RejectionReason19FormatChoice>> mmReason = new MMMessageAttribute<DistributionRejectionStatus1, List<RejectionReason19FormatChoice>>() {
 		{
-			componentContext_lazy = () -> DistributionRejectionStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DistributionRejectionStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,11 +109,22 @@ public class DistributionRejectionStatus1 {
 			minOccurs = 1;
 			complexType_lazy = () -> RejectionReason19FormatChoice.mmObject();
 		}
+
+		@Override
+		public List<RejectionReason19FormatChoice> getValue(DistributionRejectionStatus1 obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(DistributionRejectionStatus1 obj, List<RejectionReason19FormatChoice> value) {
+			obj.setReason(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,9 +149,9 @@ public class DistributionRejectionStatus1 {
 	 * definition} = "Additional information about the status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DistributionRejectionStatus1, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<DistributionRejectionStatus1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> DistributionRejectionStatus1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DistributionRejectionStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,13 +161,23 @@ public class DistributionRejectionStatus1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(DistributionRejectionStatus1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(DistributionRejectionStatus1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DistributionRejectionStatus1.mmReason, DistributionRejectionStatus1.mmAdditionalInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DistributionRejectionStatus1.mmReason, com.tools20022.repository.msg.DistributionRejectionStatus1.mmAdditionalInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DistributionRejectionStatus1";
 				definition = "Provides information about the rejection status of a global movement.";
@@ -165,21 +186,21 @@ public class DistributionRejectionStatus1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public List<RejectionReason19FormatChoice> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<RejectionReason19FormatChoice> reason) {
-		this.reason = reason;
+	public DistributionRejectionStatus1 setReason(List<RejectionReason19FormatChoice> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public DistributionRejectionStatus1 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

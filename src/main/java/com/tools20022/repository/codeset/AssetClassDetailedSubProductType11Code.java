@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType11Code#Gold
- * AssetClassDetailedSubProductType11Code.mmGold}</li>
+ * AssetClassDetailedSubProductType11Code.Gold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType11Code#Other
- * AssetClassDetailedSubProductType11Code.mmOther}</li>
+ * AssetClassDetailedSubProductType11Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType11Code#Palladium
- * AssetClassDetailedSubProductType11Code.mmPalladium}</li>
+ * AssetClassDetailedSubProductType11Code.Palladium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType11Code#Platinum
- * AssetClassDetailedSubProductType11Code.mmPlatinum}</li>
+ * AssetClassDetailedSubProductType11Code.Platinum}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType11Code#Silver
- * AssetClassDetailedSubProductType11Code.mmSilver}</li>
+ * AssetClassDetailedSubProductType11Code.Silver}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -204,7 +204,7 @@ public class AssetClassDetailedSubProductType11Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassDetailedSubProductType11Code";
 				definition = "Further sub product code list for commodity derivative Precious.";

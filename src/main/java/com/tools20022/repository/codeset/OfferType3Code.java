@@ -38,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferType3Code#SqueezeOutBid
- * OfferType3Code.mmSqueezeOutBid}</li>
+ * OfferType3Code.SqueezeOutBid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferType3Code#RestrictionExchange
- * OfferType3Code.mmRestrictionExchange}</li>
+ * OfferType3Code.RestrictionExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferType3Code#PartialOffer
- * OfferType3Code.mmPartialOffer}</li>
+ * OfferType3Code.PartialOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferType3Code#FirstComeFirstServed
- * OfferType3Code.mmFirstComeFirstServed}</li>
+ * OfferType3Code.FirstComeFirstServed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.OfferType3Code#FinalOffer
- * OfferType3Code.mmFinalOffer}</li>
+ * OfferType3Code.FinalOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OfferType3Code#DissenterRights
- * OfferType3Code.mmDissenterRights}</li>
+ * OfferType3Code.DissenterRights}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -61,8 +61,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -229,7 +229,7 @@ public class OfferType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OfferType3Code";
 				definition = "Specifies the conditions that apply to the offer.";

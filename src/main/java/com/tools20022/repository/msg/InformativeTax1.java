@@ -28,9 +28,9 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.InvestmentFundTax;
 import com.tools20022.repository.entity.SecuritiesTax;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Tax32;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTaxElementRule#forInformativeTax1
+ * ConstraintTaxElementRule.forInformativeTax1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,17 +88,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Tax related to an investment fund order."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "InformativeTax1", propOrder = {"taxableIncomePerDividend", "EUCapitalGain", "EUDividendStatus", "percentageOfDebtClaim", "individualTax"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "InformativeTax1", propOrder = {"taxableIncomePerDividend", "eUCapitalGain", "eUDividendStatus", "percentageOfDebtClaim", "individualTax"})
 public class InformativeTax1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TaxblIncmPerDvdd")
 	protected ActiveCurrencyAndAmount taxableIncomePerDividend;
 	/**
-	 * Amount included in the dividend that corresponds to gains directly or
-	 * indirectly derived from interest payment in the scope of the European
-	 * Directive on taxation of savings income in the form of interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,10 +130,10 @@ public class InformativeTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxableIncomePerDividend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InformativeTax1, Optional<ActiveCurrencyAndAmount>> mmTaxableIncomePerDividend = new MMMessageAttribute<InformativeTax1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmTaxableIncomePerDividend;
-			componentContext_lazy = () -> InformativeTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InformativeTax1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxblIncmPerDvdd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,14 +143,22 @@ public class InformativeTax1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(InformativeTax1 obj) {
+			return obj.getTaxableIncomePerDividend();
+		}
+
+		@Override
+		public void setValue(InformativeTax1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTaxableIncomePerDividend(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EUCptlGn")
 	protected EUCapitalGain3Choice eUCapitalGain;
 	/**
-	 * Specifies whether capital gain is in the scope of the European directive
-	 * on taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,10 +191,10 @@ public class InformativeTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEUCapitalGain = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InformativeTax1, Optional<EUCapitalGain3Choice>> mmEUCapitalGain = new MMMessageAttribute<InformativeTax1, Optional<EUCapitalGain3Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUCapitalGain;
-			componentContext_lazy = () -> InformativeTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InformativeTax1.mmObject();
 			isDerived = false;
 			xmlTag = "EUCptlGn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,14 +204,22 @@ public class InformativeTax1 {
 			minOccurs = 0;
 			complexType_lazy = () -> EUCapitalGain3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<EUCapitalGain3Choice> getValue(InformativeTax1 obj) {
+			return obj.getEUCapitalGain();
+		}
+
+		@Override
+		public void setValue(InformativeTax1 obj, Optional<EUCapitalGain3Choice> value) {
+			obj.setEUCapitalGain(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EUDvddSts")
 	protected EUDividendStatusType2Choice eUDividendStatus;
 	/**
-	 * Specifies whether dividend is in the scope of the European directive on
-	 * taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +252,10 @@ public class InformativeTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEUDividendStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InformativeTax1, Optional<EUDividendStatusType2Choice>> mmEUDividendStatus = new MMMessageAttribute<InformativeTax1, Optional<EUDividendStatusType2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUDividendStatus;
-			componentContext_lazy = () -> InformativeTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InformativeTax1.mmObject();
 			isDerived = false;
 			xmlTag = "EUDvddSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,14 +265,22 @@ public class InformativeTax1 {
 			minOccurs = 0;
 			complexType_lazy = () -> EUDividendStatusType2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<EUDividendStatusType2Choice> getValue(InformativeTax1 obj) {
+			return obj.getEUDividendStatus();
+		}
+
+		@Override
+		public void setValue(InformativeTax1 obj, Optional<EUDividendStatusType2Choice> value) {
+			obj.setEUDividendStatus(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PctgOfDebtClm")
 	protected PercentageRate percentageOfDebtClaim;
 	/**
-	 * Percentage of the underlying assets of the funds that represents a debt
-	 * and is in the scope of the European directive on taxation of savings
-	 * income in the form of interest payments (Council Directive 2003/48/EC 3
-	 * June).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,10 +313,10 @@ public class InformativeTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPercentageOfDebtClaim = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InformativeTax1, Optional<PercentageRate>> mmPercentageOfDebtClaim = new MMMessageAttribute<InformativeTax1, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTax.mmPercentageOfDebtClaim;
-			componentContext_lazy = () -> InformativeTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InformativeTax1.mmObject();
 			isDerived = false;
 			xmlTag = "PctgOfDebtClm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -295,12 +326,22 @@ public class InformativeTax1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(InformativeTax1 obj) {
+			return obj.getPercentageOfDebtClaim();
+		}
+
+		@Override
+		public void setValue(InformativeTax1 obj, Optional<PercentageRate> value) {
+			obj.setPercentageOfDebtClaim(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.Tax32> individualTax;
+	@XmlElement(name = "IndvTax")
+	protected List<Tax32> individualTax;
 	/**
-	 * Information related to a specific tax that is provided for information
-	 * purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -330,10 +371,10 @@ public class InformativeTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndividualTax = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InformativeTax1, List<Tax32>> mmIndividualTax = new MMMessageAssociationEnd<InformativeTax1, List<Tax32>>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentFundTax.mmObject();
-			componentContext_lazy = () -> InformativeTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InformativeTax1.mmObject();
 			isDerived = false;
 			xmlTag = "IndvTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -341,17 +382,28 @@ public class InformativeTax1 {
 			definition = "Information related to a specific tax that is provided for information purposes.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Tax32.mmObject();
+			type_lazy = () -> Tax32.mmObject();
+		}
+
+		@Override
+		public List<Tax32> getValue(InformativeTax1 obj) {
+			return obj.getIndividualTax();
+		}
+
+		@Override
+		public void setValue(InformativeTax1 obj, List<Tax32> value) {
+			obj.setIndividualTax(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InformativeTax1.mmTaxableIncomePerDividend, InformativeTax1.mmEUCapitalGain, InformativeTax1.mmEUDividendStatus, InformativeTax1.mmPercentageOfDebtClaim,
-						InformativeTax1.mmIndividualTax);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InformativeTax1.mmTaxableIncomePerDividend, com.tools20022.repository.msg.InformativeTax1.mmEUCapitalGain,
+						com.tools20022.repository.msg.InformativeTax1.mmEUDividendStatus, com.tools20022.repository.msg.InformativeTax1.mmPercentageOfDebtClaim, com.tools20022.repository.msg.InformativeTax1.mmIndividualTax);
 				trace_lazy = () -> SecuritiesTax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintTaxElementRule.forInformativeTax1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformativeTax1";
 				definition = "Tax related to an investment fund order.";
@@ -360,48 +412,48 @@ public class InformativeTax1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TaxblIncmPerDvdd")
-	public ActiveCurrencyAndAmount getTaxableIncomePerDividend() {
-		return taxableIncomePerDividend;
+	public Optional<ActiveCurrencyAndAmount> getTaxableIncomePerDividend() {
+		return taxableIncomePerDividend == null ? Optional.empty() : Optional.of(taxableIncomePerDividend);
 	}
 
-	public void setTaxableIncomePerDividend(ActiveCurrencyAndAmount taxableIncomePerDividend) {
+	public InformativeTax1 setTaxableIncomePerDividend(ActiveCurrencyAndAmount taxableIncomePerDividend) {
 		this.taxableIncomePerDividend = taxableIncomePerDividend;
+		return this;
 	}
 
-	@XmlElement(name = "EUCptlGn")
-	public EUCapitalGain3Choice getEUCapitalGain() {
-		return eUCapitalGain;
+	public Optional<EUCapitalGain3Choice> getEUCapitalGain() {
+		return eUCapitalGain == null ? Optional.empty() : Optional.of(eUCapitalGain);
 	}
 
-	public void setEUCapitalGain(EUCapitalGain3Choice eUCapitalGain) {
+	public InformativeTax1 setEUCapitalGain(EUCapitalGain3Choice eUCapitalGain) {
 		this.eUCapitalGain = eUCapitalGain;
+		return this;
 	}
 
-	@XmlElement(name = "EUDvddSts")
-	public EUDividendStatusType2Choice getEUDividendStatus() {
-		return eUDividendStatus;
+	public Optional<EUDividendStatusType2Choice> getEUDividendStatus() {
+		return eUDividendStatus == null ? Optional.empty() : Optional.of(eUDividendStatus);
 	}
 
-	public void setEUDividendStatus(EUDividendStatusType2Choice eUDividendStatus) {
+	public InformativeTax1 setEUDividendStatus(EUDividendStatusType2Choice eUDividendStatus) {
 		this.eUDividendStatus = eUDividendStatus;
+		return this;
 	}
 
-	@XmlElement(name = "PctgOfDebtClm")
-	public PercentageRate getPercentageOfDebtClaim() {
-		return percentageOfDebtClaim;
+	public Optional<PercentageRate> getPercentageOfDebtClaim() {
+		return percentageOfDebtClaim == null ? Optional.empty() : Optional.of(percentageOfDebtClaim);
 	}
 
-	public void setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
+	public InformativeTax1 setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
 		this.percentageOfDebtClaim = percentageOfDebtClaim;
+		return this;
 	}
 
-	@XmlElement(name = "IndvTax")
 	public List<Tax32> getIndividualTax() {
-		return individualTax;
+		return individualTax == null ? individualTax = new ArrayList<>() : individualTax;
 	}
 
-	public void setIndividualTax(List<com.tools20022.repository.msg.Tax32> individualTax) {
-		this.individualTax = individualTax;
+	public InformativeTax1 setIndividualTax(List<Tax32> individualTax) {
+		this.individualTax = Objects.requireNonNull(individualTax);
+		return this;
 	}
 }

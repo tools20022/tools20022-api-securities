@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for the frequency."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Frequency20Choice", propOrder = {"code", "proprietary"})
 public class Frequency20Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected EventFrequency8Code code;
 	/**
-	 * Frequency expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -95,9 +97,9 @@ public class Frequency20Choice {
 	 * definition} = "Frequency expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Frequency20Choice, EventFrequency8Code> mmCode = new MMMessageAttribute<Frequency20Choice, EventFrequency8Code>() {
 		{
-			componentContext_lazy = () -> Frequency20Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency20Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -107,11 +109,22 @@ public class Frequency20Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> EventFrequency8Code.mmObject();
 		}
+
+		@Override
+		public EventFrequency8Code getValue(Frequency20Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Frequency20Choice obj, EventFrequency8Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Frequency expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,9 +150,9 @@ public class Frequency20Choice {
 	 * definition} = "Frequency expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Frequency20Choice, GenericIdentification47> mmProprietary = new MMMessageAttribute<Frequency20Choice, GenericIdentification47>() {
 		{
-			componentContext_lazy = () -> Frequency20Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Frequency20Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,13 +162,23 @@ public class Frequency20Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification47.mmObject();
 		}
+
+		@Override
+		public GenericIdentification47 getValue(Frequency20Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(Frequency20Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Frequency20Choice.mmCode, Frequency20Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Frequency20Choice.mmCode, com.tools20022.repository.choice.Frequency20Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency20Choice";
 				definition = "Choice of formats for the frequency.";
@@ -164,21 +187,21 @@ public class Frequency20Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public EventFrequency8Code getCode() {
 		return code;
 	}
 
-	public void setCode(EventFrequency8Code code) {
-		this.code = code;
+	public Frequency20Choice setCode(EventFrequency8Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public Frequency20Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

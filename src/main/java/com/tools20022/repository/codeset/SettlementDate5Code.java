@@ -38,42 +38,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#Regular
- * SettlementDate5Code.mmRegular}</li>
+ * SettlementDate5Code.Regular}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SettlementDate5Code#Cash
- * SettlementDate5Code.mmCash}</li>
+ * SettlementDate5Code.Cash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#NextDay
- * SettlementDate5Code.mmNextDay}</li>
+ * SettlementDate5Code.NextDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#TPlusOne
- * SettlementDate5Code.mmTPlusOne}</li>
+ * SettlementDate5Code.TPlusOne}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#TPlusTwo
- * SettlementDate5Code.mmTPlusTwo}</li>
+ * SettlementDate5Code.TPlusTwo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#TPlusThree
- * SettlementDate5Code.mmTPlusThree}</li>
+ * SettlementDate5Code.TPlusThree}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#TPlusFour
- * SettlementDate5Code.mmTPlusFour}</li>
+ * SettlementDate5Code.TPlusFour}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#TPlusFive
- * SettlementDate5Code.mmTPlusFive}</li>
+ * SettlementDate5Code.TPlusFive}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#SellersOption
- * SettlementDate5Code.mmSellersOption}</li>
+ * SettlementDate5Code.SellersOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#WhenDistributed
- * SettlementDate5Code.mmWhenDistributed}</li>
+ * SettlementDate5Code.WhenDistributed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#WhenIssuedOrDistributed
- * SettlementDate5Code.mmWhenIssuedOrDistributed}</li>
+ * SettlementDate5Code.WhenIssuedOrDistributed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#ToBeAnnouncedTrade
- * SettlementDate5Code.mmToBeAnnouncedTrade}</li>
+ * SettlementDate5Code.ToBeAnnouncedTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementDate5Code#WhenIssued
- * SettlementDate5Code.mmWhenIssued}</li>
+ * SettlementDate5Code.WhenIssued}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -82,8 +82,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -424,7 +424,7 @@ public class SettlementDate5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("REGU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementDate5Code";

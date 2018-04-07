@@ -41,13 +41,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUCapitalGain2Code#CapitalGainInScope
- * EUCapitalGain2Code.mmCapitalGainInScope}</li>
+ * EUCapitalGain2Code.CapitalGainInScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUCapitalGain2Code#CapitalGainOutScope
- * EUCapitalGain2Code.mmCapitalGainOutScope}</li>
+ * EUCapitalGain2Code.CapitalGainOutScope}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EUCapitalGain2Code#CapitalGainUnknown
- * EUCapitalGain2Code.mmCapitalGainUnknown}</li>
+ * EUCapitalGain2Code.CapitalGainUnknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -160,7 +160,7 @@ public class EUCapitalGain2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EUSI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EUCapitalGain2Code";

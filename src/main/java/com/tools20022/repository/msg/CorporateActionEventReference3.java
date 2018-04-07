@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -27,6 +28,8 @@ import com.tools20022.repository.entity.CorporateActionEventRegistration;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,27 +61,27 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionNotificationV07#mmEventsLinkage
- * CorporateActionNotificationV07.mmEventsLinkage}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementReversalAdviceV09#mmEventsLinkage
+ * CorporateActionMovementReversalAdviceV09.mmEventsLinkage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementConfirmationV08#mmEventsLinkage
- * CorporateActionMovementConfirmationV08.mmEventsLinkage}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionNotificationV08#mmEventsLinkage
+ * CorporateActionNotificationV08.mmEventsLinkage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceV08#mmEventsLinkage
- * CorporateActionMovementPreliminaryAdviceV08.mmEventsLinkage}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionV08#mmEventsLinkage
+ * CorporateActionInstructionV08.mmEventsLinkage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementReversalAdviceV08#mmEventsLinkage
- * CorporateActionMovementReversalAdviceV08.mmEventsLinkage}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementConfirmationV09#mmEventsLinkage
+ * CorporateActionMovementConfirmationV09.mmEventsLinkage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionV07#mmEventsLinkage
- * CorporateActionInstructionV07.mmEventsLinkage}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceV09#mmEventsLinkage
+ * CorporateActionMovementPreliminaryAdviceV09.mmEventsLinkage}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,15 +92,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identification of a linked corporate action event."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionEventReference3", propOrder = {"eventIdentification", "linkageType"})
 public class CorporateActionEventReference3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "EvtId", required = true)
 	protected CorporateActionEventReference3Choice eventIdentification;
 	/**
-	 * Identification of the linked corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -117,6 +121,9 @@ public class CorporateActionEventReference3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "EvtId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C:</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -127,12 +134,13 @@ public class CorporateActionEventReference3 {
 	 * definition} = "Identification of the linked corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEventIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionEventReference3, CorporateActionEventReference3Choice> mmEventIdentification = new MMMessageAssociationEnd<CorporateActionEventReference3, CorporateActionEventReference3Choice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEventRegistration.mmCorporateActionEventIdentification;
-			componentContext_lazy = () -> CorporateActionEventReference3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionEventReference3.mmObject();
 			isDerived = false;
 			xmlTag = "EvtId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C:"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EventIdentification";
 			definition = "Identification of the linked corporate action event.";
@@ -141,12 +149,22 @@ public class CorporateActionEventReference3 {
 			isComposite = true;
 			type_lazy = () -> CorporateActionEventReference3Choice.mmObject();
 		}
+
+		@Override
+		public CorporateActionEventReference3Choice getValue(CorporateActionEventReference3 obj) {
+			return obj.getEventIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventReference3 obj, CorporateActionEventReference3Choice value) {
+			obj.setEventIdentification(value);
+		}
 	};
+	@XmlElement(name = "LkgTp")
 	protected ProcessingPosition7Choice linkageType;
 	/**
-	 * Specifies when this corporate action event is to be processed relative to
-	 * a linked corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -161,6 +179,9 @@ public class CorporateActionEventReference3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "LkgTp"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::LINK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -169,33 +190,44 @@ public class CorporateActionEventReference3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies when this corporate action event is to be processed relative to a linked corporate action event."
+	 * "Specifies when this corporate action event is to be processed relative to a linked corporate action event.\r\n"
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLinkageType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionEventReference3, Optional<ProcessingPosition7Choice>> mmLinkageType = new MMMessageAssociationEnd<CorporateActionEventReference3, Optional<ProcessingPosition7Choice>>() {
 		{
-			componentContext_lazy = () -> CorporateActionEventReference3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionEventReference3.mmObject();
 			isDerived = false;
 			xmlTag = "LkgTp";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::LINK"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LinkageType";
-			definition = "Specifies when this corporate action event is to be processed relative to a linked corporate action event.";
+			definition = "Specifies when this corporate action event is to be processed relative to a linked corporate action event.\r\n";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> ProcessingPosition7Choice.mmObject();
+		}
+
+		@Override
+		public Optional<ProcessingPosition7Choice> getValue(CorporateActionEventReference3 obj) {
+			return obj.getLinkageType();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventReference3 obj, Optional<ProcessingPosition7Choice> value) {
+			obj.setLinkageType(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionEventReference3.mmEventIdentification, CorporateActionEventReference3.mmLinkageType);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionNotificationV07.mmEventsLinkage, CorporateActionMovementConfirmationV08.mmEventsLinkage, CorporateActionMovementPreliminaryAdviceV08.mmEventsLinkage,
-						CorporateActionMovementReversalAdviceV08.mmEventsLinkage, CorporateActionInstructionV07.mmEventsLinkage);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionEventReference3.mmEventIdentification, com.tools20022.repository.msg.CorporateActionEventReference3.mmLinkageType);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionMovementReversalAdviceV09.mmEventsLinkage, CorporateActionNotificationV08.mmEventsLinkage, CorporateActionInstructionV08.mmEventsLinkage,
+						CorporateActionMovementConfirmationV09.mmEventsLinkage, CorporateActionMovementPreliminaryAdviceV09.mmEventsLinkage);
 				trace_lazy = () -> CorporateActionEventRegistration.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventReference3";
 				definition = "Identification of a linked corporate action event.";
@@ -204,21 +236,21 @@ public class CorporateActionEventReference3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "EvtId", required = true)
 	public CorporateActionEventReference3Choice getEventIdentification() {
 		return eventIdentification;
 	}
 
-	public void setEventIdentification(CorporateActionEventReference3Choice eventIdentification) {
-		this.eventIdentification = eventIdentification;
+	public CorporateActionEventReference3 setEventIdentification(CorporateActionEventReference3Choice eventIdentification) {
+		this.eventIdentification = Objects.requireNonNull(eventIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "LkgTp")
-	public ProcessingPosition7Choice getLinkageType() {
-		return linkageType;
+	public Optional<ProcessingPosition7Choice> getLinkageType() {
+		return linkageType == null ? Optional.empty() : Optional.of(linkageType);
 	}
 
-	public void setLinkageType(ProcessingPosition7Choice linkageType) {
+	public CorporateActionEventReference3 setLinkageType(ProcessingPosition7Choice linkageType) {
 		this.linkageType = linkageType;
+		return this;
 	}
 }

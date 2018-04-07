@@ -23,10 +23,8 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.CollateralManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -95,16 +93,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralAndExposureReportV03", propOrder = {"reportParameters", "pagination", "obligation", "agreement", "collateralReport", "supplementaryData"})
 public class CollateralAndExposureReportV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptParams", required = true)
 	protected ReportParameters5 reportParameters;
 	/**
-	 * Provides information about the report such as the report identification,
-	 * the report date and time or the report frequency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,7 +125,7 @@ public class CollateralAndExposureReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportParameters = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralAndExposureReportV03, ReportParameters5> mmReportParameters = new MMMessageBuildingBlock<CollateralAndExposureReportV03, ReportParameters5>() {
 		{
 			xmlTag = "RptParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,19 +136,21 @@ public class CollateralAndExposureReportV03 {
 			complexType_lazy = () -> ReportParameters5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralAndExposureReportV03.class.getMethod("getReportParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportParameters5 getValue(CollateralAndExposureReportV03 obj) {
+			return obj.getReportParameters();
+		}
+
+		@Override
+		public void setValue(CollateralAndExposureReportV03 obj, ReportParameters5 value) {
+			obj.setReportParameters(value);
 		}
 	};
+	@XmlElement(name = "Pgntn")
 	protected Pagination pagination;
 	/**
-	 * Specifies the page number and an indicator of whether it is the only or
-	 * last page, or if there are additional pages. <br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +172,7 @@ public class CollateralAndExposureReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralAndExposureReportV03, Optional<Pagination>> mmPagination = new MMMessageBuildingBlock<CollateralAndExposureReportV03, Optional<Pagination>>() {
 		{
 			xmlTag = "Pgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,20 +183,21 @@ public class CollateralAndExposureReportV03 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralAndExposureReportV03.class.getMethod("getPagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Pagination> getValue(CollateralAndExposureReportV03 obj) {
+			return obj.getPagination();
+		}
+
+		@Override
+		public void setValue(CollateralAndExposureReportV03 obj, Optional<Pagination> value) {
+			obj.setPagination(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Oblgtn", required = true)
 	protected Obligation4 obligation;
 	/**
-	 * Provides information like the identification of the party or parties
-	 * associated with the collateral agreement, the exposure type and the
-	 * valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,7 +219,7 @@ public class CollateralAndExposureReportV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmObligation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralAndExposureReportV03, Obligation4> mmObligation = new MMMessageBuildingBlock<CollateralAndExposureReportV03, Obligation4>() {
 		{
 			xmlTag = "Oblgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,18 +230,21 @@ public class CollateralAndExposureReportV03 {
 			complexType_lazy = () -> Obligation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralAndExposureReportV03.class.getMethod("getObligation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Obligation4 getValue(CollateralAndExposureReportV03 obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(CollateralAndExposureReportV03 obj, Obligation4 value) {
+			obj.setObligation(value);
 		}
 	};
+	@XmlElement(name = "Agrmt")
 	protected Agreement4 agreement;
 	/**
-	 * Agreement details for the over the counter market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,7 +264,7 @@ public class CollateralAndExposureReportV03 {
 	 * definition} = "Agreement details for the over the counter market."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralAndExposureReportV03, Optional<Agreement4>> mmAgreement = new MMMessageBuildingBlock<CollateralAndExposureReportV03, Optional<Agreement4>>() {
 		{
 			xmlTag = "Agrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -271,18 +275,21 @@ public class CollateralAndExposureReportV03 {
 			complexType_lazy = () -> Agreement4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralAndExposureReportV03.class.getMethod("getAgreement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Agreement4> getValue(CollateralAndExposureReportV03 obj) {
+			return obj.getAgreement();
+		}
+
+		@Override
+		public void setValue(CollateralAndExposureReportV03 obj, Optional<Agreement4> value) {
+			obj.setAgreement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CollRpt", required = true)
 	protected List<Collateral13> collateralReport;
 	/**
-	 * Provides details on the collateral report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,7 +309,7 @@ public class CollateralAndExposureReportV03 {
 	 * definition} = "Provides details on the collateral report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCollateralReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralAndExposureReportV03, List<Collateral13>> mmCollateralReport = new MMMessageBuildingBlock<CollateralAndExposureReportV03, List<Collateral13>>() {
 		{
 			xmlTag = "CollRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -312,19 +319,21 @@ public class CollateralAndExposureReportV03 {
 			complexType_lazy = () -> Collateral13.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralAndExposureReportV03.class.getMethod("getCollateralReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Collateral13> getValue(CollateralAndExposureReportV03 obj) {
+			return obj.getCollateralReport();
+		}
+
+		@Override
+		public void setValue(CollateralAndExposureReportV03 obj, List<Collateral13> value) {
+			obj.setCollateralReport(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,26 +352,28 @@ public class CollateralAndExposureReportV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralAndExposureReportV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CollateralAndExposureReportV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralAndExposureReportV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CollateralAndExposureReportV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CollateralAndExposureReportV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -396,61 +407,61 @@ public class CollateralAndExposureReportV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptParams", required = true)
 	public ReportParameters5 getReportParameters() {
 		return reportParameters;
 	}
 
-	public void setReportParameters(ReportParameters5 reportParameters) {
-		this.reportParameters = reportParameters;
+	public CollateralAndExposureReportV03 setReportParameters(ReportParameters5 reportParameters) {
+		this.reportParameters = Objects.requireNonNull(reportParameters);
+		return this;
 	}
 
-	@XmlElement(name = "Pgntn")
-	public Pagination getPagination() {
-		return pagination;
+	public Optional<Pagination> getPagination() {
+		return pagination == null ? Optional.empty() : Optional.of(pagination);
 	}
 
-	public void setPagination(Pagination pagination) {
+	public CollateralAndExposureReportV03 setPagination(Pagination pagination) {
 		this.pagination = pagination;
+		return this;
 	}
 
-	@XmlElement(name = "Oblgtn", required = true)
 	public Obligation4 getObligation() {
 		return obligation;
 	}
 
-	public void setObligation(Obligation4 obligation) {
-		this.obligation = obligation;
+	public CollateralAndExposureReportV03 setObligation(Obligation4 obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 
-	@XmlElement(name = "Agrmt")
-	public Agreement4 getAgreement() {
-		return agreement;
+	public Optional<Agreement4> getAgreement() {
+		return agreement == null ? Optional.empty() : Optional.of(agreement);
 	}
 
-	public void setAgreement(Agreement4 agreement) {
+	public CollateralAndExposureReportV03 setAgreement(Agreement4 agreement) {
 		this.agreement = agreement;
+		return this;
 	}
 
-	@XmlElement(name = "CollRpt", required = true)
 	public List<Collateral13> getCollateralReport() {
-		return collateralReport;
+		return collateralReport == null ? collateralReport = new ArrayList<>() : collateralReport;
 	}
 
-	public void setCollateralReport(List<Collateral13> collateralReport) {
-		this.collateralReport = collateralReport;
+	public CollateralAndExposureReportV03 setCollateralReport(List<Collateral13> collateralReport) {
+		this.collateralReport = Objects.requireNonNull(collateralReport);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public CollateralAndExposureReportV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:colr.016.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.016.001.03")
 	static public class Document {
 		@XmlElement(name = "CollAndXpsrRpt", required = true)
 		public CollateralAndExposureReportV03 messageBody;

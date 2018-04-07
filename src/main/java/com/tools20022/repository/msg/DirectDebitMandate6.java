@@ -23,8 +23,14 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AccountIdentificationAndName5;
+import com.tools20022.repository.msg.BranchData;
+import com.tools20022.repository.msg.FinancialInstitutionIdentification10;
+import com.tools20022.repository.msg.PartyIdentification113;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -81,8 +87,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,17 +101,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DirectDebitMandate6", propOrder = {"debtorAccount", "debtor", "debtorTaxIdentificationNumber", "debtorNationalRegistrationNumber", "creditor", "debtorAgent", "debtorAgentBranch", "creditorAgent", "creditorAgentBranch",
 		"registrationIdentification", "mandateIdentification"})
 public class DirectDebitMandate6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DbtrAcct", required = true)
 	protected AccountIdentificationAndName5 debtorAccount;
 	/**
-	 * Unambiguous identification of the account of the debtor to which a debit
-	 * entry will be made as a result of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,10 +144,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtorAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, AccountIdentificationAndName5> mmDebtorAccount = new MMMessageAttribute<DirectDebitMandate6, AccountIdentificationAndName5>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "DbtrAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,14 +155,24 @@ public class DirectDebitMandate6 {
 			definition = "Unambiguous identification of the account of the debtor to which a debit entry will be made as a result of the transaction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AccountIdentificationAndName5.mmObject();
+			complexType_lazy = () -> AccountIdentificationAndName5.mmObject();
+		}
+
+		@Override
+		public AccountIdentificationAndName5 getValue(DirectDebitMandate6 obj) {
+			return obj.getDebtorAccount();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, AccountIdentificationAndName5 value) {
+			obj.setDebtorAccount(value);
 		}
 	};
+	@XmlElement(name = "Dbtr")
 	protected PartyIdentification113 debtor;
 	/**
-	 * Party that owes the cash to the creditor/final party. The debtor is also
-	 * the debit account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,10 +205,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<PartyIdentification113>> mmDebtor = new MMMessageAttribute<DirectDebitMandate6, Optional<PartyIdentification113>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "Dbtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,13 +216,24 @@ public class DirectDebitMandate6 {
 			definition = "Party that owes the cash to the creditor/final party. The debtor is also the debit account owner.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification113.mmObject();
+			complexType_lazy = () -> PartyIdentification113.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification113> getValue(DirectDebitMandate6 obj) {
+			return obj.getDebtor();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<PartyIdentification113> value) {
+			obj.setDebtor(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DbtrTaxIdNb")
 	protected Max35Text debtorTaxIdentificationNumber;
 	/**
-	 * Number assigned by a tax authority to an entity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,10 +263,10 @@ public class DirectDebitMandate6 {
 	 * definition} = "Number assigned by a tax authority to an entity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtorTaxIdentificationNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>> mmDebtorTaxIdentificationNumber = new MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTaxIdentificationNumber;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "DbtrTaxIdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -249,11 +276,22 @@ public class DirectDebitMandate6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DirectDebitMandate6 obj) {
+			return obj.getDebtorTaxIdentificationNumber();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<Max35Text> value) {
+			obj.setDebtorTaxIdentificationNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DbtrNtlRegnNb")
 	protected Max35Text debtorNationalRegistrationNumber;
 	/**
-	 * Number assigned by a national registration authority to an entity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,10 +322,10 @@ public class DirectDebitMandate6 {
 	 * "Number assigned by a national registration authority to an entity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtorNationalRegistrationNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>> mmDebtorNationalRegistrationNumber = new MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmNationalRegistrationNumber;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "DbtrNtlRegnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -297,12 +335,22 @@ public class DirectDebitMandate6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DirectDebitMandate6 obj) {
+			return obj.getDebtorNationalRegistrationNumber();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<Max35Text> value) {
+			obj.setDebtorNationalRegistrationNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Cdtr")
 	protected PartyIdentification113 creditor;
 	/**
-	 * Party that receives an amount of money from the debtor. In the context of
-	 * the payment model, the creditor is also the credit account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -335,10 +383,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<PartyIdentification113>> mmCreditor = new MMMessageAttribute<DirectDebitMandate6, Optional<PartyIdentification113>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "Cdtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -346,14 +394,24 @@ public class DirectDebitMandate6 {
 			definition = "Party that receives an amount of money from the debtor. In the context of the payment model, the creditor is also the credit account owner.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification113.mmObject();
+			complexType_lazy = () -> PartyIdentification113.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification113> getValue(DirectDebitMandate6 obj) {
+			return obj.getCreditor();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<PartyIdentification113> value) {
+			obj.setCreditor(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DbtrAgt", required = true)
 	protected FinancialInstitutionIdentification10 debtorAgent;
 	/**
-	 * Financial institution that receives the direct debit instruction from the
-	 * creditor or other authorised party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -386,10 +444,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtorAgent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, FinancialInstitutionIdentification10> mmDebtorAgent = new MMMessageAttribute<DirectDebitMandate6, FinancialInstitutionIdentification10>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "DbtrAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -397,17 +455,24 @@ public class DirectDebitMandate6 {
 			definition = "Financial institution that receives the direct debit instruction from the creditor or other authorised party.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification10.mmObject();
+			complexType_lazy = () -> FinancialInstitutionIdentification10.mmObject();
+		}
+
+		@Override
+		public FinancialInstitutionIdentification10 getValue(DirectDebitMandate6 obj) {
+			return obj.getDebtorAgent();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, FinancialInstitutionIdentification10 value) {
+			obj.setDebtorAgent(value);
 		}
 	};
+	@XmlElement(name = "DbtrAgtBrnch")
 	protected BranchData debtorAgentBranch;
 	/**
-	 * Information identifying a specific branch of a financial institution.
 	 * 
-	 * Usage : this component should be used in case the identification
-	 * information in the financial institution component does not provide
-	 * identification up to branch level.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -435,29 +500,39 @@ public class DirectDebitMandate6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information identifying a specific branch of a financial institution.\n\nUsage : this component should be used in case the identification information in the financial institution component does not provide identification up to branch level."
+	 * "Information identifying a specific branch of a financial institution.\n\nUsage: this component should be used in case the identification information in the financial institution component does not provide identification up to branch level."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDebtorAgentBranch = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<BranchData>> mmDebtorAgentBranch = new MMMessageAttribute<DirectDebitMandate6, Optional<BranchData>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmBranch;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "DbtrAgtBrnch";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebtorAgentBranch";
-			definition = "Information identifying a specific branch of a financial institution.\n\nUsage : this component should be used in case the identification information in the financial institution component does not provide identification up to branch level.";
+			definition = "Information identifying a specific branch of a financial institution.\n\nUsage: this component should be used in case the identification information in the financial institution component does not provide identification up to branch level.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.BranchData.mmObject();
+			complexType_lazy = () -> BranchData.mmObject();
+		}
+
+		@Override
+		public Optional<BranchData> getValue(DirectDebitMandate6 obj) {
+			return obj.getDebtorAgentBranch();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<BranchData> value) {
+			obj.setDebtorAgentBranch(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CdtrAgt")
 	protected FinancialInstitutionIdentification10 creditorAgent;
 	/**
-	 * Financial institution that receives the payment transaction on behalf of
-	 * the creditor, or other nominated party, and credits the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -490,10 +565,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditorAgent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<FinancialInstitutionIdentification10>> mmCreditorAgent = new MMMessageAttribute<DirectDebitMandate6, Optional<FinancialInstitutionIdentification10>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "CdtrAgt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -501,17 +576,24 @@ public class DirectDebitMandate6 {
 			definition = "Financial institution that receives the payment transaction on behalf of the creditor, or other nominated party, and credits the account.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstitutionIdentification10.mmObject();
+			complexType_lazy = () -> FinancialInstitutionIdentification10.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstitutionIdentification10> getValue(DirectDebitMandate6 obj) {
+			return obj.getCreditorAgent();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<FinancialInstitutionIdentification10> value) {
+			obj.setCreditorAgent(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CdtrAgtBrnch")
 	protected BranchData creditorAgentBranch;
 	/**
-	 * Information identifying a specific branch of a financial institution.
 	 * 
-	 * Usage : this component should be used in case the identification
-	 * information in the financial institution component does not provide
-	 * identification up to branch level.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -539,30 +621,39 @@ public class DirectDebitMandate6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information identifying a specific branch of a financial institution.\n\nUsage : this component should be used in case the identification information in the financial institution component does not provide identification up to branch level."
+	 * "Information identifying a specific branch of a financial institution.\n\nUsage: this component should be used in case the identification information in the financial institution component does not provide identification up to branch level."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditorAgentBranch = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<BranchData>> mmCreditorAgentBranch = new MMMessageAttribute<DirectDebitMandate6, Optional<BranchData>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "CdtrAgtBrnch";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditorAgentBranch";
-			definition = "Information identifying a specific branch of a financial institution.\n\nUsage : this component should be used in case the identification information in the financial institution component does not provide identification up to branch level.";
+			definition = "Information identifying a specific branch of a financial institution.\n\nUsage: this component should be used in case the identification information in the financial institution component does not provide identification up to branch level.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.BranchData.mmObject();
+			complexType_lazy = () -> BranchData.mmObject();
+		}
+
+		@Override
+		public Optional<BranchData> getValue(DirectDebitMandate6 obj) {
+			return obj.getCreditorAgentBranch();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<BranchData> value) {
+			obj.setCreditorAgentBranch(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RegnId")
 	protected Max35Text registrationIdentification;
 	/**
-	 * Reference assigned to a creditor by its financial institution, or
-	 * relevant authority, authorising the creditor to take part in a direct
-	 * debit scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -594,10 +685,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegistrationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>> mmRegistrationIdentification = new MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> DirectDebit.mmRegistrationIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "RegnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -607,12 +698,22 @@ public class DirectDebitMandate6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DirectDebitMandate6 obj) {
+			return obj.getRegistrationIdentification();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<Max35Text> value) {
+			obj.setRegistrationIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MndtId")
 	protected Max35Text mandateIdentification;
 	/**
-	 * Reference of the direct debit mandate that has been agreed upon by the
-	 * debtor and creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -644,10 +745,10 @@ public class DirectDebitMandate6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMandateIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>> mmMandateIdentification = new MMMessageAttribute<DirectDebitMandate6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> DirectDebitMandate6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DirectDebitMandate6.mmObject();
 			isDerived = false;
 			xmlTag = "MndtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -657,16 +758,28 @@ public class DirectDebitMandate6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DirectDebitMandate6 obj) {
+			return obj.getMandateIdentification();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate6 obj, Optional<Max35Text> value) {
+			obj.setMandateIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DirectDebitMandate6.mmDebtorAccount, DirectDebitMandate6.mmDebtor, DirectDebitMandate6.mmDebtorTaxIdentificationNumber, DirectDebitMandate6.mmDebtorNationalRegistrationNumber,
-						DirectDebitMandate6.mmCreditor, DirectDebitMandate6.mmDebtorAgent, DirectDebitMandate6.mmDebtorAgentBranch, DirectDebitMandate6.mmCreditorAgent, DirectDebitMandate6.mmCreditorAgentBranch,
-						DirectDebitMandate6.mmRegistrationIdentification, DirectDebitMandate6.mmMandateIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DirectDebitMandate6.mmDebtorAccount, com.tools20022.repository.msg.DirectDebitMandate6.mmDebtor,
+						com.tools20022.repository.msg.DirectDebitMandate6.mmDebtorTaxIdentificationNumber, com.tools20022.repository.msg.DirectDebitMandate6.mmDebtorNationalRegistrationNumber,
+						com.tools20022.repository.msg.DirectDebitMandate6.mmCreditor, com.tools20022.repository.msg.DirectDebitMandate6.mmDebtorAgent, com.tools20022.repository.msg.DirectDebitMandate6.mmDebtorAgentBranch,
+						com.tools20022.repository.msg.DirectDebitMandate6.mmCreditorAgent, com.tools20022.repository.msg.DirectDebitMandate6.mmCreditorAgentBranch,
+						com.tools20022.repository.msg.DirectDebitMandate6.mmRegistrationIdentification, com.tools20022.repository.msg.DirectDebitMandate6.mmMandateIdentification);
 				trace_lazy = () -> DirectDebit.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DirectDebitMandate6";
 				definition = "Instruction, initiated by the creditor, to debit a debtor's account in favour of the creditor. A direct debit can be pre-authorised or not. In most countries, authorisation is in the form of a mandate between the debtor and creditor.";
@@ -675,102 +788,102 @@ public class DirectDebitMandate6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DbtrAcct", required = true)
 	public AccountIdentificationAndName5 getDebtorAccount() {
 		return debtorAccount;
 	}
 
-	public void setDebtorAccount(com.tools20022.repository.msg.AccountIdentificationAndName5 debtorAccount) {
-		this.debtorAccount = debtorAccount;
+	public DirectDebitMandate6 setDebtorAccount(AccountIdentificationAndName5 debtorAccount) {
+		this.debtorAccount = Objects.requireNonNull(debtorAccount);
+		return this;
 	}
 
-	@XmlElement(name = "Dbtr")
-	public PartyIdentification113 getDebtor() {
-		return debtor;
+	public Optional<PartyIdentification113> getDebtor() {
+		return debtor == null ? Optional.empty() : Optional.of(debtor);
 	}
 
-	public void setDebtor(com.tools20022.repository.msg.PartyIdentification113 debtor) {
+	public DirectDebitMandate6 setDebtor(PartyIdentification113 debtor) {
 		this.debtor = debtor;
+		return this;
 	}
 
-	@XmlElement(name = "DbtrTaxIdNb")
-	public Max35Text getDebtorTaxIdentificationNumber() {
-		return debtorTaxIdentificationNumber;
+	public Optional<Max35Text> getDebtorTaxIdentificationNumber() {
+		return debtorTaxIdentificationNumber == null ? Optional.empty() : Optional.of(debtorTaxIdentificationNumber);
 	}
 
-	public void setDebtorTaxIdentificationNumber(Max35Text debtorTaxIdentificationNumber) {
+	public DirectDebitMandate6 setDebtorTaxIdentificationNumber(Max35Text debtorTaxIdentificationNumber) {
 		this.debtorTaxIdentificationNumber = debtorTaxIdentificationNumber;
+		return this;
 	}
 
-	@XmlElement(name = "DbtrNtlRegnNb")
-	public Max35Text getDebtorNationalRegistrationNumber() {
-		return debtorNationalRegistrationNumber;
+	public Optional<Max35Text> getDebtorNationalRegistrationNumber() {
+		return debtorNationalRegistrationNumber == null ? Optional.empty() : Optional.of(debtorNationalRegistrationNumber);
 	}
 
-	public void setDebtorNationalRegistrationNumber(Max35Text debtorNationalRegistrationNumber) {
+	public DirectDebitMandate6 setDebtorNationalRegistrationNumber(Max35Text debtorNationalRegistrationNumber) {
 		this.debtorNationalRegistrationNumber = debtorNationalRegistrationNumber;
+		return this;
 	}
 
-	@XmlElement(name = "Cdtr")
-	public PartyIdentification113 getCreditor() {
-		return creditor;
+	public Optional<PartyIdentification113> getCreditor() {
+		return creditor == null ? Optional.empty() : Optional.of(creditor);
 	}
 
-	public void setCreditor(com.tools20022.repository.msg.PartyIdentification113 creditor) {
+	public DirectDebitMandate6 setCreditor(PartyIdentification113 creditor) {
 		this.creditor = creditor;
+		return this;
 	}
 
-	@XmlElement(name = "DbtrAgt", required = true)
 	public FinancialInstitutionIdentification10 getDebtorAgent() {
 		return debtorAgent;
 	}
 
-	public void setDebtorAgent(com.tools20022.repository.msg.FinancialInstitutionIdentification10 debtorAgent) {
-		this.debtorAgent = debtorAgent;
+	public DirectDebitMandate6 setDebtorAgent(FinancialInstitutionIdentification10 debtorAgent) {
+		this.debtorAgent = Objects.requireNonNull(debtorAgent);
+		return this;
 	}
 
-	@XmlElement(name = "DbtrAgtBrnch")
-	public BranchData getDebtorAgentBranch() {
-		return debtorAgentBranch;
+	public Optional<BranchData> getDebtorAgentBranch() {
+		return debtorAgentBranch == null ? Optional.empty() : Optional.of(debtorAgentBranch);
 	}
 
-	public void setDebtorAgentBranch(com.tools20022.repository.msg.BranchData debtorAgentBranch) {
+	public DirectDebitMandate6 setDebtorAgentBranch(BranchData debtorAgentBranch) {
 		this.debtorAgentBranch = debtorAgentBranch;
+		return this;
 	}
 
-	@XmlElement(name = "CdtrAgt")
-	public FinancialInstitutionIdentification10 getCreditorAgent() {
-		return creditorAgent;
+	public Optional<FinancialInstitutionIdentification10> getCreditorAgent() {
+		return creditorAgent == null ? Optional.empty() : Optional.of(creditorAgent);
 	}
 
-	public void setCreditorAgent(com.tools20022.repository.msg.FinancialInstitutionIdentification10 creditorAgent) {
+	public DirectDebitMandate6 setCreditorAgent(FinancialInstitutionIdentification10 creditorAgent) {
 		this.creditorAgent = creditorAgent;
+		return this;
 	}
 
-	@XmlElement(name = "CdtrAgtBrnch")
-	public BranchData getCreditorAgentBranch() {
-		return creditorAgentBranch;
+	public Optional<BranchData> getCreditorAgentBranch() {
+		return creditorAgentBranch == null ? Optional.empty() : Optional.of(creditorAgentBranch);
 	}
 
-	public void setCreditorAgentBranch(com.tools20022.repository.msg.BranchData creditorAgentBranch) {
+	public DirectDebitMandate6 setCreditorAgentBranch(BranchData creditorAgentBranch) {
 		this.creditorAgentBranch = creditorAgentBranch;
+		return this;
 	}
 
-	@XmlElement(name = "RegnId")
-	public Max35Text getRegistrationIdentification() {
-		return registrationIdentification;
+	public Optional<Max35Text> getRegistrationIdentification() {
+		return registrationIdentification == null ? Optional.empty() : Optional.of(registrationIdentification);
 	}
 
-	public void setRegistrationIdentification(Max35Text registrationIdentification) {
+	public DirectDebitMandate6 setRegistrationIdentification(Max35Text registrationIdentification) {
 		this.registrationIdentification = registrationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "MndtId")
-	public Max35Text getMandateIdentification() {
-		return mandateIdentification;
+	public Optional<Max35Text> getMandateIdentification() {
+		return mandateIdentification == null ? Optional.empty() : Optional.of(mandateIdentification);
 	}
 
-	public void setMandateIdentification(Max35Text mandateIdentification) {
+	public DirectDebitMandate6 setMandateIdentification(Max35Text mandateIdentification) {
 		this.mandateIdentification = mandateIdentification;
+		return this;
 	}
 }

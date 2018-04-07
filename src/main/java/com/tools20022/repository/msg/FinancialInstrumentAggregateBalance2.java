@@ -24,9 +24,9 @@ import com.tools20022.repository.choice.FinancialInstrumentQuantity1Choice;
 import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.SubBalanceBreakdown1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentAggregateBalance2", propOrder = {"settledBalance", "tradedBalance", "balanceBreakdown"})
 public class FinancialInstrumentAggregateBalance2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SttldBal")
 	protected FinancialInstrumentQuantity1Choice settledBalance;
 	/**
-	 * Balance of settled transactions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -111,10 +112,10 @@ public class FinancialInstrumentAggregateBalance2 {
 	 * definition} = "Balance of settled transactions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettledBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstrumentAggregateBalance2, Optional<FinancialInstrumentQuantity1Choice>> mmSettledBalance = new MMMessageAssociationEnd<FinancialInstrumentAggregateBalance2, Optional<FinancialInstrumentQuantity1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> FinancialInstrumentAggregateBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "SttldBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +126,22 @@ public class FinancialInstrumentAggregateBalance2 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1Choice> getValue(FinancialInstrumentAggregateBalance2 obj) {
+			return obj.getSettledBalance();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentAggregateBalance2 obj, Optional<FinancialInstrumentQuantity1Choice> value) {
+			obj.setSettledBalance(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TraddBal")
 	protected FinancialInstrumentQuantity1Choice tradedBalance;
 	/**
-	 * Balance of settled transactions and transactions pending settlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -160,10 +172,10 @@ public class FinancialInstrumentAggregateBalance2 {
 	 * "Balance of settled transactions and transactions pending settlement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTradedBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstrumentAggregateBalance2, Optional<FinancialInstrumentQuantity1Choice>> mmTradedBalance = new MMMessageAssociationEnd<FinancialInstrumentAggregateBalance2, Optional<FinancialInstrumentQuantity1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> FinancialInstrumentAggregateBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "TraddBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,11 +186,22 @@ public class FinancialInstrumentAggregateBalance2 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1Choice> getValue(FinancialInstrumentAggregateBalance2 obj) {
+			return obj.getTradedBalance();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentAggregateBalance2 obj, Optional<FinancialInstrumentQuantity1Choice> value) {
+			obj.setTradedBalance(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.SubBalanceBreakdown1> balanceBreakdown;
+	@XmlElement(name = "BalBrkdwn")
+	protected List<SubBalanceBreakdown1> balanceBreakdown;
 	/**
-	 * Breakdown of the balances of holdings into sub-balances.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -207,10 +230,10 @@ public class FinancialInstrumentAggregateBalance2 {
 	 * definition} = "Breakdown of the balances of holdings into sub-balances."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceBreakdown = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FinancialInstrumentAggregateBalance2, List<SubBalanceBreakdown1>> mmBalanceBreakdown = new MMMessageAssociationEnd<FinancialInstrumentAggregateBalance2, List<SubBalanceBreakdown1>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesBalance.mmObject();
-			componentContext_lazy = () -> FinancialInstrumentAggregateBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "BalBrkdwn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -218,16 +241,27 @@ public class FinancialInstrumentAggregateBalance2 {
 			definition = "Breakdown of the balances of holdings into sub-balances.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SubBalanceBreakdown1.mmObject();
+			type_lazy = () -> SubBalanceBreakdown1.mmObject();
+		}
+
+		@Override
+		public List<SubBalanceBreakdown1> getValue(FinancialInstrumentAggregateBalance2 obj) {
+			return obj.getBalanceBreakdown();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentAggregateBalance2 obj, List<SubBalanceBreakdown1> value) {
+			obj.setBalanceBreakdown(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstrumentAggregateBalance2.mmSettledBalance, FinancialInstrumentAggregateBalance2.mmTradedBalance, FinancialInstrumentAggregateBalance2.mmBalanceBreakdown);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2.mmSettledBalance, com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2.mmTradedBalance,
+						com.tools20022.repository.msg.FinancialInstrumentAggregateBalance2.mmBalanceBreakdown);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentAggregateBalance2";
 				definition = "Aggregated position held in a securities account for a specified financial instrument.";
@@ -236,30 +270,30 @@ public class FinancialInstrumentAggregateBalance2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SttldBal")
-	public FinancialInstrumentQuantity1Choice getSettledBalance() {
-		return settledBalance;
+	public Optional<FinancialInstrumentQuantity1Choice> getSettledBalance() {
+		return settledBalance == null ? Optional.empty() : Optional.of(settledBalance);
 	}
 
-	public void setSettledBalance(FinancialInstrumentQuantity1Choice settledBalance) {
+	public FinancialInstrumentAggregateBalance2 setSettledBalance(FinancialInstrumentQuantity1Choice settledBalance) {
 		this.settledBalance = settledBalance;
+		return this;
 	}
 
-	@XmlElement(name = "TraddBal")
-	public FinancialInstrumentQuantity1Choice getTradedBalance() {
-		return tradedBalance;
+	public Optional<FinancialInstrumentQuantity1Choice> getTradedBalance() {
+		return tradedBalance == null ? Optional.empty() : Optional.of(tradedBalance);
 	}
 
-	public void setTradedBalance(FinancialInstrumentQuantity1Choice tradedBalance) {
+	public FinancialInstrumentAggregateBalance2 setTradedBalance(FinancialInstrumentQuantity1Choice tradedBalance) {
 		this.tradedBalance = tradedBalance;
+		return this;
 	}
 
-	@XmlElement(name = "BalBrkdwn")
 	public List<SubBalanceBreakdown1> getBalanceBreakdown() {
-		return balanceBreakdown;
+		return balanceBreakdown == null ? balanceBreakdown = new ArrayList<>() : balanceBreakdown;
 	}
 
-	public void setBalanceBreakdown(List<com.tools20022.repository.msg.SubBalanceBreakdown1> balanceBreakdown) {
-		this.balanceBreakdown = balanceBreakdown;
+	public FinancialInstrumentAggregateBalance2 setBalanceBreakdown(List<SubBalanceBreakdown1> balanceBreakdown) {
+		this.balanceBreakdown = Objects.requireNonNull(balanceBreakdown);
+		return this;
 	}
 }

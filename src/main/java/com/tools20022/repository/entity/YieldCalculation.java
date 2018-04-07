@@ -22,14 +22,16 @@ import com.tools20022.repository.choice.SecuritiesTransactionPrice2Choice;
 import com.tools20022.repository.codeset.CalculationTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.RateAndAmount;
+import com.tools20022.repository.entity.SecuritiesPricing;
+import com.tools20022.repository.entity.VariableInterest;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Order17;
 import com.tools20022.repository.msg.Order18;
 import com.tools20022.repository.msg.YieldCalculation2;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Characteristics related to the yield.
@@ -97,8 +99,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -114,8 +116,8 @@ public class YieldCalculation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesPricing redemptionPrice;
 	/**
-	 * Price on which the yield is computed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,7 +156,7 @@ public class YieldCalculation {
 	 * definition} = "Price on which the yield is computed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRedemptionPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<YieldCalculation, Optional<SecuritiesPricing>> mmRedemptionPrice = new MMBusinessAssociationEnd<YieldCalculation, Optional<SecuritiesPricing>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldCalculation2.mmRedemptionPrice);
 			isDerived = false;
@@ -164,15 +166,25 @@ public class YieldCalculation {
 			definition = "Price on which the yield is computed.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmYieldCalculation;
+			opposite_lazy = () -> SecuritiesPricing.mmYieldCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesPricing> getValue(YieldCalculation obj) {
+			return obj.getRedemptionPrice();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, Optional<SecuritiesPricing> value) {
+			obj.setRedemptionPrice(value.orElse(null));
 		}
 	};
 	protected PercentageRate value;
 	/**
-	 * Result of the yield calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +218,7 @@ public class YieldCalculation {
 	 * definition} = "Result of the yield calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<YieldCalculation, PercentageRate> mmValue = new MMBusinessAttribute<YieldCalculation, PercentageRate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldCalculation2.mmValue, SecuritiesTransactionPrice2Choice.mmYield);
 			isDerived = false;
@@ -219,18 +231,20 @@ public class YieldCalculation {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return YieldCalculation.class.getMethod("getValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(YieldCalculation obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, PercentageRate value) {
+			obj.setValue(value);
 		}
 	};
 	protected CalculationTypeCode calculationType;
 	/**
-	 * Specifies the type of calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,7 +280,7 @@ public class YieldCalculation {
 	 * definition} = "Specifies the type of calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<YieldCalculation, CalculationTypeCode> mmCalculationType = new MMBusinessAttribute<YieldCalculation, CalculationTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldCalculation2.mmCalculationType, Order17.mmYieldType, Order18.mmYieldType);
 			isDerived = false;
@@ -279,19 +293,20 @@ public class YieldCalculation {
 			simpleType_lazy = () -> CalculationTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return YieldCalculation.class.getMethod("getCalculationType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CalculationTypeCode getValue(YieldCalculation obj) {
+			return obj.getCalculationType();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, CalculationTypeCode value) {
+			obj.setCalculationType(value);
 		}
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time on which the calculation is based, for example, valuation on
-	 * October 1 (price date) based on price of September 19 ( value date).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +339,7 @@ public class YieldCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<YieldCalculation, ISODateTime> mmValueDate = new MMBusinessAttribute<YieldCalculation, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldCalculation2.mmValueDate);
 			isDerived = false;
@@ -337,18 +352,20 @@ public class YieldCalculation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return YieldCalculation.class.getMethod("getValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(YieldCalculation obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, ISODateTime value) {
+			obj.setValueDate(value);
 		}
 	};
 	protected DateTimePeriod valuePeriod;
 	/**
-	 * Period on which the calculation is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,7 +404,7 @@ public class YieldCalculation {
 	 * definition} = "Period on which the calculation is based."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValuePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<YieldCalculation, DateTimePeriod> mmValuePeriod = new MMBusinessAssociationEnd<YieldCalculation, DateTimePeriod>() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldCalculation2.mmValuePeriod);
 			isDerived = false;
@@ -397,16 +414,25 @@ public class YieldCalculation {
 			definition = "Period on which the calculation is based.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmYieldCalculation;
+			opposite_lazy = () -> DateTimePeriod.mmYieldCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(YieldCalculation obj) {
+			return obj.getValuePeriod();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, DateTimePeriod value) {
+			obj.setValuePeriod(value);
 		}
 	};
 	protected ISODateTime yieldCalculationDate;
 	/**
-	 * Clarifies the yield irregularities associated with the date to which the
-	 * yield has been calculated, eg, when it falls on a non-business day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -439,7 +465,7 @@ public class YieldCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmYieldCalculationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<YieldCalculation, ISODateTime> mmYieldCalculationDate = new MMBusinessAttribute<YieldCalculation, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(YieldCalculation2.mmCalculationDate);
 			isDerived = false;
@@ -452,18 +478,20 @@ public class YieldCalculation {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return YieldCalculation.class.getMethod("getYieldCalculationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(YieldCalculation obj) {
+			return obj.getYieldCalculationDate();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, ISODateTime value) {
+			obj.setYieldCalculationDate(value);
 		}
 	};
 	protected RateAndAmount yieldRange;
 	/**
-	 * Range of allowed yield.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -494,7 +522,7 @@ public class YieldCalculation {
 	 * definition} = "Range of allowed yield."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmYieldRange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<YieldCalculation, RateAndAmount> mmYieldRange = new MMBusinessAssociationEnd<YieldCalculation, RateAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
@@ -503,15 +531,25 @@ public class YieldCalculation {
 			definition = "Range of allowed yield.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmRelatedYieldCalculation;
+			opposite_lazy = () -> RateAndAmount.mmRelatedYieldCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(YieldCalculation obj) {
+			return obj.getYieldRange();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, RateAndAmount value) {
+			obj.setYieldRange(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.VariableInterest> variableInterest;
+	protected List<VariableInterest> variableInterest;
 	/**
-	 * Variable interest used for the calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,7 +580,7 @@ public class YieldCalculation {
 	 * definition} = "Variable interest used for the calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<YieldCalculation, List<VariableInterest>> mmVariableInterest = new MMBusinessAssociationEnd<YieldCalculation, List<VariableInterest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
@@ -550,21 +588,30 @@ public class YieldCalculation {
 			name = "VariableInterest";
 			definition = "Variable interest used for the calculation.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmYieldCalculation;
+			opposite_lazy = () -> VariableInterest.mmYieldCalculation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
+			type_lazy = () -> VariableInterest.mmObject();
+		}
+
+		@Override
+		public List<VariableInterest> getValue(YieldCalculation obj) {
+			return obj.getVariableInterest();
+		}
+
+		@Override
+		public void setValue(YieldCalculation obj, List<VariableInterest> value) {
+			obj.setVariableInterest(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "YieldCalculation";
 				definition = "Characteristics related to the yield.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmYieldCalculation, com.tools20022.repository.entity.DateTimePeriod.mmYieldCalculation,
-						com.tools20022.repository.entity.VariableInterest.mmYieldCalculation, com.tools20022.repository.entity.RateAndAmount.mmRelatedYieldCalculation);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmYieldCalculation, DateTimePeriod.mmYieldCalculation, VariableInterest.mmYieldCalculation, RateAndAmount.mmRelatedYieldCalculation);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.YieldCalculation.mmRedemptionPrice, com.tools20022.repository.entity.YieldCalculation.mmValue,
 						com.tools20022.repository.entity.YieldCalculation.mmCalculationType, com.tools20022.repository.entity.YieldCalculation.mmValueDate, com.tools20022.repository.entity.YieldCalculation.mmValuePeriod,
 						com.tools20022.repository.entity.YieldCalculation.mmYieldCalculationDate, com.tools20022.repository.entity.YieldCalculation.mmYieldRange, com.tools20022.repository.entity.YieldCalculation.mmVariableInterest);
@@ -579,67 +626,75 @@ public class YieldCalculation {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesPricing getRedemptionPrice() {
-		return redemptionPrice;
+	public Optional<SecuritiesPricing> getRedemptionPrice() {
+		return redemptionPrice == null ? Optional.empty() : Optional.of(redemptionPrice);
 	}
 
-	public void setRedemptionPrice(com.tools20022.repository.entity.SecuritiesPricing redemptionPrice) {
+	public YieldCalculation setRedemptionPrice(SecuritiesPricing redemptionPrice) {
 		this.redemptionPrice = redemptionPrice;
+		return this;
 	}
 
 	public PercentageRate getValue() {
 		return value;
 	}
 
-	public void setValue(PercentageRate value) {
-		this.value = value;
+	public YieldCalculation setValue(PercentageRate value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
 	public CalculationTypeCode getCalculationType() {
 		return calculationType;
 	}
 
-	public void setCalculationType(CalculationTypeCode calculationType) {
-		this.calculationType = calculationType;
+	public YieldCalculation setCalculationType(CalculationTypeCode calculationType) {
+		this.calculationType = Objects.requireNonNull(calculationType);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public YieldCalculation setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DateTimePeriod getValuePeriod() {
 		return valuePeriod;
 	}
 
-	public void setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
-		this.valuePeriod = valuePeriod;
+	public YieldCalculation setValuePeriod(DateTimePeriod valuePeriod) {
+		this.valuePeriod = Objects.requireNonNull(valuePeriod);
+		return this;
 	}
 
 	public ISODateTime getYieldCalculationDate() {
 		return yieldCalculationDate;
 	}
 
-	public void setYieldCalculationDate(ISODateTime yieldCalculationDate) {
-		this.yieldCalculationDate = yieldCalculationDate;
+	public YieldCalculation setYieldCalculationDate(ISODateTime yieldCalculationDate) {
+		this.yieldCalculationDate = Objects.requireNonNull(yieldCalculationDate);
+		return this;
 	}
 
 	public RateAndAmount getYieldRange() {
 		return yieldRange;
 	}
 
-	public void setYieldRange(com.tools20022.repository.entity.RateAndAmount yieldRange) {
-		this.yieldRange = yieldRange;
+	public YieldCalculation setYieldRange(RateAndAmount yieldRange) {
+		this.yieldRange = Objects.requireNonNull(yieldRange);
+		return this;
 	}
 
 	public List<VariableInterest> getVariableInterest() {
-		return variableInterest;
+		return variableInterest == null ? variableInterest = new ArrayList<>() : variableInterest;
 	}
 
-	public void setVariableInterest(List<com.tools20022.repository.entity.VariableInterest> variableInterest) {
-		this.variableInterest = variableInterest;
+	public YieldCalculation setVariableInterest(List<VariableInterest> variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 }

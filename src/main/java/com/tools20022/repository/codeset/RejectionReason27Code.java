@@ -39,31 +39,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#AccountServicerDeadlineMissed
- * RejectionReason27Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason27Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#MarketDeadlineMissed
- * RejectionReason27Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason27Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#SafekeepingAccountRejection
- * RejectionReason27Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason27Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#NoMatch
- * RejectionReason27Code.mmNoMatch}</li>
+ * RejectionReason27Code.NoMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#NotFoundRejection
- * RejectionReason27Code.mmNotFoundRejection}</li>
+ * RejectionReason27Code.NotFoundRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#Other
- * RejectionReason27Code.mmOther}</li>
+ * RejectionReason27Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#ReferenceRejection
- * RejectionReason27Code.mmReferenceRejection}</li>
+ * RejectionReason27Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#InvalidModificationRequest
- * RejectionReason27Code.mmInvalidModificationRequest}</li>
+ * RejectionReason27Code.InvalidModificationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason27Code#InvalidLink
- * RejectionReason27Code.mmInvalidLink}</li>
+ * RejectionReason27Code.InvalidLink}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -320,7 +320,7 @@ public class RejectionReason27Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason27Code";

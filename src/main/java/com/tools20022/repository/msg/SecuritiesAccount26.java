@@ -32,6 +32,8 @@ import com.tools20022.repository.entity.SecuritiesAccount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,8 +78,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,16 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Account to or from which a securities entry is made."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesAccount26", propOrder = {"identification", "type", "name", "designation"})
 public class SecuritiesAccount26 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identification for the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,10 +131,10 @@ public class SecuritiesAccount26 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount26, Max35Text> mmIdentification = new MMMessageAttribute<SecuritiesAccount26, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> SecuritiesAccount26.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount26.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,11 +144,22 @@ public class SecuritiesAccount26 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(SecuritiesAccount26 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount26 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Tp")
 	protected PurposeCode7Choice type;
 	/**
-	 * Specifies the type of securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,10 +190,10 @@ public class SecuritiesAccount26 {
 	 * definition} = "Specifies the type of securities account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount26, Optional<PurposeCode7Choice>> mmType = new MMMessageAttribute<SecuritiesAccount26, Optional<PurposeCode7Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesAccount.mmSecuritiesAccountType;
-			componentContext_lazy = () -> SecuritiesAccount26.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount26.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,13 +203,22 @@ public class SecuritiesAccount26 {
 			minOccurs = 0;
 			complexType_lazy = () -> PurposeCode7Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PurposeCode7Choice> getValue(SecuritiesAccount26 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount26 obj, Optional<PurposeCode7Choice> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max70Text name;
 	/**
-	 * Name of the account. It provides an additional means of identification,
-	 * and is designated by the account servicer in agreement with the account
-	 * owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,10 +250,10 @@ public class SecuritiesAccount26 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount26, Optional<Max70Text>> mmName = new MMMessageAttribute<SecuritiesAccount26, Optional<Max70Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmName;
-			componentContext_lazy = () -> SecuritiesAccount26.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount26.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -241,15 +263,22 @@ public class SecuritiesAccount26 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(SecuritiesAccount26 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount26 obj, Optional<Max70Text> value) {
+			obj.setName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Dsgnt")
 	protected Max35Text designation;
 	/**
-	 * Supplementary registration information applying to a specific block of
-	 * units for dealing and reporting purposes. The supplementary registration
-	 * information may be used when all the units are registered, for example,
-	 * to a funds supermarket, but holdings for each investor have to reconciled
-	 * individually.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -281,10 +310,10 @@ public class SecuritiesAccount26 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDesignation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount26, Optional<Max35Text>> mmDesignation = new MMMessageAttribute<SecuritiesAccount26, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentAccount.mmDesignation;
-			componentContext_lazy = () -> SecuritiesAccount26.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount26.mmObject();
 			isDerived = false;
 			xmlTag = "Dsgnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -294,15 +323,26 @@ public class SecuritiesAccount26 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecuritiesAccount26 obj) {
+			return obj.getDesignation();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount26 obj, Optional<Max35Text> value) {
+			obj.setDesignation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesAccount26.mmIdentification, SecuritiesAccount26.mmType, SecuritiesAccount26.mmName, SecuritiesAccount26.mmDesignation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesAccount26.mmIdentification, com.tools20022.repository.msg.SecuritiesAccount26.mmType,
+						com.tools20022.repository.msg.SecuritiesAccount26.mmName, com.tools20022.repository.msg.SecuritiesAccount26.mmDesignation);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesBalanceCustodyReportV09.mmSafekeepingAccount, SecuritiesBalanceAccountingReportV09.mmSafekeepingAccount);
 				trace_lazy = () -> SecuritiesAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesAccount26";
 				definition = "Account to or from which a securities entry is made.";
@@ -311,39 +351,39 @@ public class SecuritiesAccount26 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public SecuritiesAccount26 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public PurposeCode7Choice getType() {
-		return type;
+	public Optional<PurposeCode7Choice> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(PurposeCode7Choice type) {
+	public SecuritiesAccount26 setType(PurposeCode7Choice type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max70Text getName() {
-		return name;
+	public Optional<Max70Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max70Text name) {
+	public SecuritiesAccount26 setName(Max70Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "Dsgnt")
-	public Max35Text getDesignation() {
-		return designation;
+	public Optional<Max35Text> getDesignation() {
+		return designation == null ? Optional.empty() : Optional.of(designation);
 	}
 
-	public void setDesignation(Max35Text designation) {
+	public SecuritiesAccount26 setDesignation(Max35Text designation) {
 		this.designation = designation;
+		return this;
 	}
 }

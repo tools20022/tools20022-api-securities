@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#Unincorporated
- * AccountOwnershipType4Code.mmUnincorporated}</li>
+ * AccountOwnershipType4Code.Unincorporated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#LimitedPartnership
- * AccountOwnershipType4Code.mmLimitedPartnership}</li>
+ * AccountOwnershipType4Code.LimitedPartnership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#Entrepreneurial
- * AccountOwnershipType4Code.mmEntrepreneurial}</li>
+ * AccountOwnershipType4Code.Entrepreneurial}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#Corporation
- * AccountOwnershipType4Code.mmCorporation}</li>
+ * AccountOwnershipType4Code.Corporation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#CustodialAccount
- * AccountOwnershipType4Code.mmCustodialAccount}</li>
+ * AccountOwnershipType4Code.CustodialAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#EUResidualEntity
- * AccountOwnershipType4Code.mmEUResidualEntity}</li>
+ * AccountOwnershipType4Code.EUResidualEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#FormalPartnership
- * AccountOwnershipType4Code.mmFormalPartnership}</li>
+ * AccountOwnershipType4Code.FormalPartnership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#FormalTrust
- * AccountOwnershipType4Code.mmFormalTrust}</li>
+ * AccountOwnershipType4Code.FormalTrust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#GovernmentOrganisation
- * AccountOwnershipType4Code.mmGovernmentOrganisation}</li>
+ * AccountOwnershipType4Code.GovernmentOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#JointAccount
- * AccountOwnershipType4Code.mmJointAccount}</li>
+ * AccountOwnershipType4Code.JointAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#JointAccountInCommon
- * AccountOwnershipType4Code.mmJointAccountInCommon}</li>
+ * AccountOwnershipType4Code.JointAccountInCommon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#JointAccountWithSurvivorshipRights
- * AccountOwnershipType4Code.mmJointAccountWithSurvivorshipRights}</li>
+ * AccountOwnershipType4Code.JointAccountWithSurvivorshipRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#LimitedLiabilityCompany
- * AccountOwnershipType4Code.mmLimitedLiabilityCompany}</li>
+ * AccountOwnershipType4Code.LimitedLiabilityCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#Nominee
- * AccountOwnershipType4Code.mmNominee}</li>
+ * AccountOwnershipType4Code.Nominee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#NonProfitOrganisation
- * AccountOwnershipType4Code.mmNonProfitOrganisation}</li>
+ * AccountOwnershipType4Code.NonProfitOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#OtherNonIndividual
- * AccountOwnershipType4Code.mmOtherNonIndividual}</li>
+ * AccountOwnershipType4Code.OtherNonIndividual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#RegisteredInvestmentCompany
- * AccountOwnershipType4Code.mmRegisteredInvestmentCompany}</li>
+ * AccountOwnershipType4Code.RegisteredInvestmentCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipType4Code#SingleOwnerAccount
- * AccountOwnershipType4Code.mmSingleOwnerAccount}</li>
+ * AccountOwnershipType4Code.SingleOwnerAccount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -98,8 +98,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -554,7 +554,7 @@ public class AccountOwnershipType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountOwnershipType4Code";
 				definition = "Specifies the type of account ownership.";

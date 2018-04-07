@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingStatusReasonCode#KnowYourCustomerDocumentMissing
- * PendingStatusReasonCode.mmKnowYourCustomerDocumentMissing}</li>
+ * PendingStatusReasonCode.KnowYourCustomerDocumentMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingStatusReasonCode#FATCAReportingDateMissing
- * PendingStatusReasonCode.mmFATCAReportingDateMissing}</li>
+ * PendingStatusReasonCode.FATCAReportingDateMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingStatusReasonCode#RightsHolderMissing
- * PendingStatusReasonCode.mmRightsHolderMissing}</li>
+ * PendingStatusReasonCode.RightsHolderMissing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingStatusReasonCode#ModificationInProcess
- * PendingStatusReasonCode.mmModificationInProcess}</li>
+ * PendingStatusReasonCode.ModificationInProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingStatusReasonCode#Authorisation
- * PendingStatusReasonCode.mmAuthorisation}</li>
+ * PendingStatusReasonCode.Authorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingStatusReasonCode#AuthorisedButPending
- * PendingStatusReasonCode.mmAuthorisedButPending}</li>
+ * PendingStatusReasonCode.AuthorisedButPending}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -271,7 +271,7 @@ public class PendingStatusReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingStatusReasonCode";
 				definition = "Specifies the reason for a pending status.";

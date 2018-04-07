@@ -28,9 +28,9 @@ import com.tools20022.repository.entity.ExposureTerm;
 import com.tools20022.repository.entity.MarginCall;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintMarginTypePresenceRule#forMarginCalculation2
+ * ConstraintMarginTypePresenceRule.forMarginCalculation2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,15 +96,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarginCalculation2", propOrder = {"financialInstrumentIdentification", "exposureAmount", "totalMarginAmount", "collateralOnDeposit", "minimumRequirementDeposit", "marginResult", "marginTypeAmount"})
 public class MarginCalculation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FinInstrmId")
 	protected SecurityIdentification14 financialInstrumentIdentification;
 	/**
-	 * Provides details about the security identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -126,10 +135,10 @@ public class MarginCalculation2 {
 	 * definition} = "Provides details about the security identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCalculation2, Optional<SecurityIdentification14>> mmFinancialInstrumentIdentification = new MMMessageAssociationEnd<MarginCalculation2, Optional<SecurityIdentification14>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,13 +147,24 @@ public class MarginCalculation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecurityIdentification14.mmObject();
+			type_lazy = () -> SecurityIdentification14.mmObject();
+		}
+
+		@Override
+		public Optional<SecurityIdentification14> getValue(MarginCalculation2 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, Optional<SecurityIdentification14> value) {
+			obj.setFinancialInstrumentIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "XpsrAmt")
 	protected Amount2 exposureAmount;
 	/**
-	 * Net total of the transaction exposure of all outstanding deals.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,10 +193,10 @@ public class MarginCalculation2 {
 	 * "Net total of the transaction exposure of all outstanding deals."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExposureAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCalculation2, Optional<Amount2>> mmExposureAmount = new MMMessageAssociationEnd<MarginCalculation2, Optional<Amount2>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalExposedAmount;
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "XpsrAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,13 +205,24 @@ public class MarginCalculation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Amount2.mmObject();
+			type_lazy = () -> Amount2.mmObject();
+		}
+
+		@Override
+		public Optional<Amount2> getValue(MarginCalculation2 obj) {
+			return obj.getExposureAmount();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, Optional<Amount2> value) {
+			obj.setExposureAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TtlMrgnAmt", required = true)
 	protected AmountAndDirection20 totalMarginAmount;
 	/**
-	 * Provides the total margin amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -220,10 +251,10 @@ public class MarginCalculation2 {
 	 * definition} = "Provides the total margin amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTotalMarginAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCalculation2, AmountAndDirection20> mmTotalMarginAmount = new MMMessageAssociationEnd<MarginCalculation2, AmountAndDirection20>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmTotalMarginAmount;
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlMrgnAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -232,13 +263,24 @@ public class MarginCalculation2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection20.mmObject();
+			type_lazy = () -> AmountAndDirection20.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection20 getValue(MarginCalculation2 obj) {
+			return obj.getTotalMarginAmount();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, AmountAndDirection20 value) {
+			obj.setTotalMarginAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Collateral6> collateralOnDeposit;
+	@XmlElement(name = "CollOnDpst")
+	protected List<Collateral6> collateralOnDeposit;
 	/**
-	 * Provides details on the valuation of the collateral on deposit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -268,10 +310,10 @@ public class MarginCalculation2 {
 	 * "Provides details on the valuation of the collateral on deposit."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCollateralOnDeposit = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCalculation2, List<Collateral6>> mmCollateralOnDeposit = new MMMessageAssociationEnd<MarginCalculation2, List<Collateral6>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalCollateralCurrentValue;
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "CollOnDpst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,15 +321,24 @@ public class MarginCalculation2 {
 			definition = "Provides details on the valuation of the collateral on deposit.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Collateral6.mmObject();
+			type_lazy = () -> Collateral6.mmObject();
+		}
+
+		@Override
+		public List<Collateral6> getValue(MarginCalculation2 obj) {
+			return obj.getCollateralOnDeposit();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, List<Collateral6> value) {
+			obj.setCollateralOnDeposit(value);
 		}
 	};
+	@XmlElement(name = "MinRqrmntDpst")
 	protected ActiveCurrencyAndAmount minimumRequirementDeposit;
 	/**
-	 * Minimum requirement (expressed in the reporting currency) for a
-	 * participant if their requirement falls below a specific amount set by the
-	 * central counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,10 +371,10 @@ public class MarginCalculation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMinimumRequirementDeposit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarginCalculation2, Optional<ActiveCurrencyAndAmount>> mmMinimumRequirementDeposit = new MMMessageAttribute<MarginCalculation2, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureTerm.mmMinimumRequirementDeposit;
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "MinRqrmntDpst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,12 +384,22 @@ public class MarginCalculation2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(MarginCalculation2 obj) {
+			return obj.getMinimumRequirementDeposit();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setMinimumRequirementDeposit(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MrgnRslt")
 	protected MarginResult1Choice marginResult;
 	/**
-	 * Provide details on the margin result taking into consideration the total
-	 * margin amount and the minimum requirements deposit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -369,10 +430,10 @@ public class MarginCalculation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCalculation2, Optional<MarginResult1Choice>> mmMarginResult = new MMMessageAssociationEnd<MarginCalculation2, Optional<MarginResult1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmCollateralMovement;
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -383,12 +444,22 @@ public class MarginCalculation2 {
 			isComposite = true;
 			type_lazy = () -> MarginResult1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<MarginResult1Choice> getValue(MarginCalculation2 obj) {
+			return obj.getMarginResult();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, Optional<MarginResult1Choice> value) {
+			obj.setMarginResult(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MrgnTpAmt")
 	protected Margin3 marginTypeAmount;
 	/**
-	 * Provides margin calculation details such as the initial margin amount,
-	 * the variation margin amount or other margin type amounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -417,10 +488,10 @@ public class MarginCalculation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginTypeAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCalculation2, Optional<Margin3>> mmMarginTypeAmount = new MMMessageAssociationEnd<MarginCalculation2, Optional<Margin3>>() {
 		{
 			businessComponentTrace_lazy = () -> MarginCall.mmObject();
-			componentContext_lazy = () -> MarginCalculation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCalculation2.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnTpAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -429,17 +500,29 @@ public class MarginCalculation2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Margin3.mmObject();
+			type_lazy = () -> Margin3.mmObject();
+		}
+
+		@Override
+		public Optional<Margin3> getValue(MarginCalculation2 obj) {
+			return obj.getMarginTypeAmount();
+		}
+
+		@Override
+		public void setValue(MarginCalculation2 obj, Optional<Margin3> value) {
+			obj.setMarginTypeAmount(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarginCalculation2.mmFinancialInstrumentIdentification, MarginCalculation2.mmExposureAmount, MarginCalculation2.mmTotalMarginAmount, MarginCalculation2.mmCollateralOnDeposit,
-						MarginCalculation2.mmMinimumRequirementDeposit, MarginCalculation2.mmMarginResult, MarginCalculation2.mmMarginTypeAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MarginCalculation2.mmFinancialInstrumentIdentification, com.tools20022.repository.msg.MarginCalculation2.mmExposureAmount,
+						com.tools20022.repository.msg.MarginCalculation2.mmTotalMarginAmount, com.tools20022.repository.msg.MarginCalculation2.mmCollateralOnDeposit,
+						com.tools20022.repository.msg.MarginCalculation2.mmMinimumRequirementDeposit, com.tools20022.repository.msg.MarginCalculation2.mmMarginResult, com.tools20022.repository.msg.MarginCalculation2.mmMarginTypeAmount);
 				trace_lazy = () -> MarginCall.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintMarginTypePresenceRule.forMarginCalculation2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginCalculation2";
 				definition = "Provides the details on the margin calculation per financial instrument or per currency.";
@@ -448,66 +531,66 @@ public class MarginCalculation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FinInstrmId")
-	public SecurityIdentification14 getFinancialInstrumentIdentification() {
-		return financialInstrumentIdentification;
+	public Optional<SecurityIdentification14> getFinancialInstrumentIdentification() {
+		return financialInstrumentIdentification == null ? Optional.empty() : Optional.of(financialInstrumentIdentification);
 	}
 
-	public void setFinancialInstrumentIdentification(com.tools20022.repository.msg.SecurityIdentification14 financialInstrumentIdentification) {
+	public MarginCalculation2 setFinancialInstrumentIdentification(SecurityIdentification14 financialInstrumentIdentification) {
 		this.financialInstrumentIdentification = financialInstrumentIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "XpsrAmt")
-	public Amount2 getExposureAmount() {
-		return exposureAmount;
+	public Optional<Amount2> getExposureAmount() {
+		return exposureAmount == null ? Optional.empty() : Optional.of(exposureAmount);
 	}
 
-	public void setExposureAmount(com.tools20022.repository.msg.Amount2 exposureAmount) {
+	public MarginCalculation2 setExposureAmount(Amount2 exposureAmount) {
 		this.exposureAmount = exposureAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TtlMrgnAmt", required = true)
 	public AmountAndDirection20 getTotalMarginAmount() {
 		return totalMarginAmount;
 	}
 
-	public void setTotalMarginAmount(com.tools20022.repository.msg.AmountAndDirection20 totalMarginAmount) {
-		this.totalMarginAmount = totalMarginAmount;
+	public MarginCalculation2 setTotalMarginAmount(AmountAndDirection20 totalMarginAmount) {
+		this.totalMarginAmount = Objects.requireNonNull(totalMarginAmount);
+		return this;
 	}
 
-	@XmlElement(name = "CollOnDpst")
 	public List<Collateral6> getCollateralOnDeposit() {
-		return collateralOnDeposit;
+		return collateralOnDeposit == null ? collateralOnDeposit = new ArrayList<>() : collateralOnDeposit;
 	}
 
-	public void setCollateralOnDeposit(List<com.tools20022.repository.msg.Collateral6> collateralOnDeposit) {
-		this.collateralOnDeposit = collateralOnDeposit;
+	public MarginCalculation2 setCollateralOnDeposit(List<Collateral6> collateralOnDeposit) {
+		this.collateralOnDeposit = Objects.requireNonNull(collateralOnDeposit);
+		return this;
 	}
 
-	@XmlElement(name = "MinRqrmntDpst")
-	public ActiveCurrencyAndAmount getMinimumRequirementDeposit() {
-		return minimumRequirementDeposit;
+	public Optional<ActiveCurrencyAndAmount> getMinimumRequirementDeposit() {
+		return minimumRequirementDeposit == null ? Optional.empty() : Optional.of(minimumRequirementDeposit);
 	}
 
-	public void setMinimumRequirementDeposit(ActiveCurrencyAndAmount minimumRequirementDeposit) {
+	public MarginCalculation2 setMinimumRequirementDeposit(ActiveCurrencyAndAmount minimumRequirementDeposit) {
 		this.minimumRequirementDeposit = minimumRequirementDeposit;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnRslt")
-	public MarginResult1Choice getMarginResult() {
-		return marginResult;
+	public Optional<MarginResult1Choice> getMarginResult() {
+		return marginResult == null ? Optional.empty() : Optional.of(marginResult);
 	}
 
-	public void setMarginResult(MarginResult1Choice marginResult) {
+	public MarginCalculation2 setMarginResult(MarginResult1Choice marginResult) {
 		this.marginResult = marginResult;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnTpAmt")
-	public Margin3 getMarginTypeAmount() {
-		return marginTypeAmount;
+	public Optional<Margin3> getMarginTypeAmount() {
+		return marginTypeAmount == null ? Optional.empty() : Optional.of(marginTypeAmount);
 	}
 
-	public void setMarginTypeAmount(com.tools20022.repository.msg.Margin3 marginTypeAmount) {
+	public MarginCalculation2 setMarginTypeAmount(Margin3 marginTypeAmount) {
 		this.marginTypeAmount = marginTypeAmount;
+		return this;
 	}
 }

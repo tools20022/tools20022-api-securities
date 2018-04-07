@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * Messages that support the communication of reference data related to
  * financial instruments, parties, accounts, prices and other business
- * information required to support financial activities
+ * information required to support financial activities.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -64,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,7 +74,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Reference Data - Latest version - master"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Messages that support the communication of reference data related to financial instruments, parties, accounts, prices and other business information required to support financial activities"
+ * "Messages that support the communication of reference data related to financial instruments, parties, accounts, prices and other business information required to support financial activities."
  * </li>
  * </ul>
  */
@@ -85,10 +85,10 @@ public class ReferenceDataLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reference Data - Latest version - master";
-				definition = "Messages that support the communication of reference data related to financial instruments, parties, accounts, prices and other business information required to support financial activities";
+				definition = "Messages that support the communication of reference data related to financial instruments, parties, accounts, prices and other business information required to support financial activities.";
 				code = "reda";
 				messageDefinition_lazy = () -> Arrays.asList(FundProcessingPassportReportV02.mmObject(), InvestmentFundReportRequestV02.mmObject(), PriceReportCancellationV04.mmObject(), PriceReportV04.mmObject(),
 						StandingSettlementInstructionV01.mmObject(), StandingSettlementInstructionCancellationV01.mmObject(), StandingSettlementInstructionStatusAdviceV01.mmObject(), StandingSettlementInstructionDeletionV01.mmObject());

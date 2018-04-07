@@ -33,9 +33,10 @@ import com.tools20022.repository.entity.CorporateActionEvent;
 import com.tools20022.repository.entity.SecuritiesAccount;
 import com.tools20022.repository.entity.StandingSettlementInstruction;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.FinancialInstrumentDescription3;
+import com.tools20022.repository.msg.IncludedAccount1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -98,8 +99,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,16 +111,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the standing instruction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionStandingInstructionGeneralInformation1", propOrder = {"standingInstructionType", "eventType", "instructingPartyIdentification", "clientStandingInstructionIdentification", "accountDetails",
 		"underlyingSecurity"})
 public class CorporateActionStandingInstructionGeneralInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StgInstrTp", required = true)
 	protected StandingInstructionType1Code standingInstructionType;
 	/**
-	 * Type of standing instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +152,10 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 	 * definition} = "Type of standing instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStandingInstructionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, StandingInstructionType1Code> mmStandingInstructionType = new MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, StandingInstructionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> AgentCorporateActionStandingInstruction.mmStandingInstructionType;
-			componentContext_lazy = () -> CorporateActionStandingInstructionGeneralInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "StgInstrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,11 +165,22 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> StandingInstructionType1Code.mmObject();
 		}
+
+		@Override
+		public StandingInstructionType1Code getValue(CorporateActionStandingInstructionGeneralInformation1 obj) {
+			return obj.getStandingInstructionType();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionGeneralInformation1 obj, StandingInstructionType1Code value) {
+			obj.setStandingInstructionType(value);
+		}
 	};
+	@XmlElement(name = "EvtTp")
 	protected List<CorporateActionEventType2FormatChoice> eventType;
 	/**
-	 * Type of coporpate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,10 +211,10 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 	 * definition} = "Type of coporpate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEventType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, List<CorporateActionEventType2FormatChoice>> mmEventType = new MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, List<CorporateActionEventType2FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
-			componentContext_lazy = () -> CorporateActionStandingInstructionGeneralInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "EvtTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,11 +223,22 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionEventType2FormatChoice.mmObject();
 		}
+
+		@Override
+		public List<CorporateActionEventType2FormatChoice> getValue(CorporateActionStandingInstructionGeneralInformation1 obj) {
+			return obj.getEventType();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionGeneralInformation1 obj, List<CorporateActionEventType2FormatChoice> value) {
+			obj.setEventType(value);
+		}
 	};
+	@XmlElement(name = "InstgPtyId", required = true)
 	protected PartyIdentification2Choice instructingPartyIdentification;
 	/**
-	 * Identification of the instructing party, ie, the CSD client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,9 +265,9 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 	 * "Identification of the instructing party, ie, the CSD client."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructingPartyIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, PartyIdentification2Choice> mmInstructingPartyIdentification = new MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, PartyIdentification2Choice>() {
 		{
-			componentContext_lazy = () -> CorporateActionStandingInstructionGeneralInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "InstgPtyId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -253,11 +277,22 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 			minOccurs = 1;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification2Choice getValue(CorporateActionStandingInstructionGeneralInformation1 obj) {
+			return obj.getInstructingPartyIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionGeneralInformation1 obj, PartyIdentification2Choice value) {
+			obj.setInstructingPartyIdentification(value);
+		}
 	};
+	@XmlElement(name = "ClntStgInstrId", required = true)
 	protected Max35Text clientStandingInstructionIdentification;
 	/**
-	 * Reference of the standing instruction assigned by the client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,10 +323,10 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 	 * "Reference of the standing instruction assigned by the client."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientStandingInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, Max35Text> mmClientStandingInstructionIdentification = new MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> StandingSettlementInstruction.mmIdentification;
-			componentContext_lazy = () -> CorporateActionStandingInstructionGeneralInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "ClntStgInstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -301,12 +336,22 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(CorporateActionStandingInstructionGeneralInformation1 obj) {
+			return obj.getClientStandingInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionGeneralInformation1 obj, Max35Text value) {
+			obj.setClientStandingInstructionIdentification(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.IncludedAccount1> accountDetails;
+	@XmlElement(name = "AcctDtls")
+	protected List<IncludedAccount1> accountDetails;
 	/**
-	 * Provides information about the account to which the standing instruction
-	 * can apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -337,10 +382,10 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionStandingInstructionGeneralInformation1, List<IncludedAccount1>> mmAccountDetails = new MMMessageAssociationEnd<CorporateActionStandingInstructionGeneralInformation1, List<IncludedAccount1>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesAccount.mmObject();
-			componentContext_lazy = () -> CorporateActionStandingInstructionGeneralInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -348,14 +393,24 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 			definition = "Provides information about the account to which the standing instruction can apply.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IncludedAccount1.mmObject();
+			type_lazy = () -> IncludedAccount1.mmObject();
+		}
+
+		@Override
+		public List<IncludedAccount1> getValue(CorporateActionStandingInstructionGeneralInformation1 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionGeneralInformation1 obj, List<IncludedAccount1> value) {
+			obj.setAccountDetails(value);
 		}
 	};
+	@XmlElement(name = "UndrlygScty")
 	protected FinancialInstrumentDescription3 underlyingSecurity;
 	/**
-	 * Identification of the underlying financial instrument, ie, the financial
-	 * instrument affected by the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -388,10 +443,10 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnderlyingSecurity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, Optional<FinancialInstrumentDescription3>> mmUnderlyingSecurity = new MMMessageAttribute<CorporateActionStandingInstructionGeneralInformation1, Optional<FinancialInstrumentDescription3>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmUnderlyingSecurity;
-			componentContext_lazy = () -> CorporateActionStandingInstructionGeneralInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "UndrlygScty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -399,20 +454,31 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 			definition = "Identification of the underlying financial instrument, ie, the financial instrument affected by the corporate action event.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentDescription3.mmObject();
+			complexType_lazy = () -> FinancialInstrumentDescription3.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstrumentDescription3> getValue(CorporateActionStandingInstructionGeneralInformation1 obj) {
+			return obj.getUnderlyingSecurity();
+		}
+
+		@Override
+		public void setValue(CorporateActionStandingInstructionGeneralInformation1 obj, Optional<FinancialInstrumentDescription3> value) {
+			obj.setUnderlyingSecurity(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionStandingInstructionGeneralInformation1.mmStandingInstructionType, CorporateActionStandingInstructionGeneralInformation1.mmEventType,
-						CorporateActionStandingInstructionGeneralInformation1.mmInstructingPartyIdentification, CorporateActionStandingInstructionGeneralInformation1.mmClientStandingInstructionIdentification,
-						CorporateActionStandingInstructionGeneralInformation1.mmAccountDetails, CorporateActionStandingInstructionGeneralInformation1.mmUnderlyingSecurity);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmStandingInstructionType,
+						com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmEventType, com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmInstructingPartyIdentification,
+						com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmClientStandingInstructionIdentification,
+						com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmAccountDetails, com.tools20022.repository.msg.CorporateActionStandingInstructionGeneralInformation1.mmUnderlyingSecurity);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCAStandingInstructionRequestV01.mmStandingInstructionGeneralInformation, AgentCAStandingInstructionCancellationRequestV01.mmStandingInstructionGeneralInformation,
 						AgentCAStandingInstructionStatusAdviceV01.mmStandingInstructionGeneralInformation);
 				trace_lazy = () -> AgentCorporateActionStandingInstruction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStandingInstructionGeneralInformation1";
 				definition = "Provides information about the standing instruction.";
@@ -421,57 +487,57 @@ public class CorporateActionStandingInstructionGeneralInformation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StgInstrTp", required = true)
 	public StandingInstructionType1Code getStandingInstructionType() {
 		return standingInstructionType;
 	}
 
-	public void setStandingInstructionType(StandingInstructionType1Code standingInstructionType) {
-		this.standingInstructionType = standingInstructionType;
+	public CorporateActionStandingInstructionGeneralInformation1 setStandingInstructionType(StandingInstructionType1Code standingInstructionType) {
+		this.standingInstructionType = Objects.requireNonNull(standingInstructionType);
+		return this;
 	}
 
-	@XmlElement(name = "EvtTp")
 	public List<CorporateActionEventType2FormatChoice> getEventType() {
-		return eventType;
+		return eventType == null ? eventType = new ArrayList<>() : eventType;
 	}
 
-	public void setEventType(List<CorporateActionEventType2FormatChoice> eventType) {
-		this.eventType = eventType;
+	public CorporateActionStandingInstructionGeneralInformation1 setEventType(List<CorporateActionEventType2FormatChoice> eventType) {
+		this.eventType = Objects.requireNonNull(eventType);
+		return this;
 	}
 
-	@XmlElement(name = "InstgPtyId", required = true)
 	public PartyIdentification2Choice getInstructingPartyIdentification() {
 		return instructingPartyIdentification;
 	}
 
-	public void setInstructingPartyIdentification(PartyIdentification2Choice instructingPartyIdentification) {
-		this.instructingPartyIdentification = instructingPartyIdentification;
+	public CorporateActionStandingInstructionGeneralInformation1 setInstructingPartyIdentification(PartyIdentification2Choice instructingPartyIdentification) {
+		this.instructingPartyIdentification = Objects.requireNonNull(instructingPartyIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ClntStgInstrId", required = true)
 	public Max35Text getClientStandingInstructionIdentification() {
 		return clientStandingInstructionIdentification;
 	}
 
-	public void setClientStandingInstructionIdentification(Max35Text clientStandingInstructionIdentification) {
-		this.clientStandingInstructionIdentification = clientStandingInstructionIdentification;
+	public CorporateActionStandingInstructionGeneralInformation1 setClientStandingInstructionIdentification(Max35Text clientStandingInstructionIdentification) {
+		this.clientStandingInstructionIdentification = Objects.requireNonNull(clientStandingInstructionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AcctDtls")
 	public List<IncludedAccount1> getAccountDetails() {
-		return accountDetails;
+		return accountDetails == null ? accountDetails = new ArrayList<>() : accountDetails;
 	}
 
-	public void setAccountDetails(List<com.tools20022.repository.msg.IncludedAccount1> accountDetails) {
-		this.accountDetails = accountDetails;
+	public CorporateActionStandingInstructionGeneralInformation1 setAccountDetails(List<IncludedAccount1> accountDetails) {
+		this.accountDetails = Objects.requireNonNull(accountDetails);
+		return this;
 	}
 
-	@XmlElement(name = "UndrlygScty")
-	public FinancialInstrumentDescription3 getUnderlyingSecurity() {
-		return underlyingSecurity;
+	public Optional<FinancialInstrumentDescription3> getUnderlyingSecurity() {
+		return underlyingSecurity == null ? Optional.empty() : Optional.of(underlyingSecurity);
 	}
 
-	public void setUnderlyingSecurity(com.tools20022.repository.msg.FinancialInstrumentDescription3 underlyingSecurity) {
+	public CorporateActionStandingInstructionGeneralInformation1 setUnderlyingSecurity(FinancialInstrumentDescription3 underlyingSecurity) {
 		this.underlyingSecurity = underlyingSecurity;
+		return this;
 	}
 }

@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification36;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for the reason of a rejected status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RejectedReason7Choice", propOrder = {"code", "proprietary"})
 public class RejectedReason7Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ExternalRejectedReason1Code code;
 	/**
-	 * Reason for the rejected status expressed as an ISO 20022 code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +111,10 @@ public class RejectedReason7Choice {
 	 * "Reason for the rejected status expressed as an ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectedReason7Choice, ExternalRejectedReason1Code> mmCode = new MMMessageAttribute<RejectedReason7Choice, ExternalRejectedReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmAcknowledgedAcceptedReason;
-			componentContext_lazy = () -> RejectedReason7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RejectedReason7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +124,22 @@ public class RejectedReason7Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalRejectedReason1Code.mmObject();
 		}
+
+		@Override
+		public ExternalRejectedReason1Code getValue(RejectedReason7Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(RejectedReason7Choice obj, ExternalRejectedReason1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification36 proprietary;
 	/**
-	 * Reason for the rejected status expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -152,9 +165,9 @@ public class RejectedReason7Choice {
 	 * "Reason for the rejected status expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RejectedReason7Choice, GenericIdentification36> mmProprietary = new MMMessageAssociationEnd<RejectedReason7Choice, GenericIdentification36>() {
 		{
-			componentContext_lazy = () -> RejectedReason7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RejectedReason7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,14 +178,24 @@ public class RejectedReason7Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification36.mmObject();
 		}
+
+		@Override
+		public GenericIdentification36 getValue(RejectedReason7Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(RejectedReason7Choice obj, GenericIdentification36 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RejectedReason7Choice.mmCode, RejectedReason7Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RejectedReason7Choice.mmCode, com.tools20022.repository.choice.RejectedReason7Choice.mmProprietary);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectedReason7Choice";
 				definition = "Choice of formats for the reason of a rejected status.";
@@ -181,21 +204,21 @@ public class RejectedReason7Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ExternalRejectedReason1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ExternalRejectedReason1Code code) {
-		this.code = code;
+	public RejectedReason7Choice setCode(ExternalRejectedReason1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification36 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification36 proprietary) {
-		this.proprietary = proprietary;
+	public RejectedReason7Choice setProprietary(GenericIdentification36 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

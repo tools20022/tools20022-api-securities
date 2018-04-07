@@ -20,13 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.sese.*;
 import com.tools20022.repository.area.setr.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification113;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -156,13 +160,94 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.setr.SubscriptionOrderV04#mmPreviousReference
  * SubscriptionOrderV04.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV08#mmPreviousReference
+ * ReversalOfTransferOutConfirmationV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV08#mmRelatedReference
+ * ReversalOfTransferOutConfirmationV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV08#mmPreviousReference
+ * TransferInConfirmationV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV08#mmRelatedReference
+ * TransferInConfirmationV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmPreviousReference
+ * PortfolioTransferInstructionV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmRelatedReference
+ * PortfolioTransferInstructionV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferCancellationRequestV08#mmPreviousReference
+ * PortfolioTransferCancellationRequestV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferCancellationRequestV08#mmRelatedReference
+ * PortfolioTransferCancellationRequestV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV08#mmPreviousReference
+ * TransferOutCancellationRequestV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV08#mmRelatedReference
+ * TransferOutCancellationRequestV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV08#mmPreviousReference
+ * TransferInInstructionV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV08#mmRelatedReference
+ * TransferInInstructionV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmPreviousReference
+ * PortfolioTransferConfirmationV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmRelatedReference
+ * PortfolioTransferConfirmationV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmPreviousReference
+ * AccountHoldingInformationV06.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmRelatedReference
+ * AccountHoldingInformationV06.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV08#mmPreviousReference
+ * TransferOutConfirmationV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV08#mmRelatedReference
+ * TransferOutConfirmationV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV08#mmPreviousReference
+ * TransferInCancellationRequestV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV08#mmRelatedReference
+ * TransferInCancellationRequestV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV08#mmPreviousReference
+ * TransferOutInstructionV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV08#mmRelatedReference
+ * TransferOutInstructionV08.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferCancellationStatusReportV06#mmCounterpartyReference
+ * TransferCancellationStatusReportV06.mmCounterpartyReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmPreviousReference
+ * AccountHoldingInformationRequestV05.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmRelatedReference
+ * AccountHoldingInformationRequestV05.mmRelatedReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV08#mmPreviousReference
+ * ReversalOfTransferInConfirmationV08.mmPreviousReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV08#mmRelatedReference
+ * ReversalOfTransferInConfirmationV08.mmRelatedReference}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -173,10 +258,6 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "References a related message or provides another reference, such as a pool reference, linking a set of messages. The party which issued the related reference may be the Sender of the referenced message or a party other than the Sender."
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.AdditionalReference3
- * AdditionalReference3}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -184,18 +265,22 @@ import javax.xml.bind.annotation.XmlType;
  * AdditionalReference9}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.AdditionalReference3
+ * AdditionalReference3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AdditionalReference8", propOrder = {"reference", "referenceIssuer", "messageName"})
 public class AdditionalReference8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ref", required = true)
 	protected Max35Text reference;
 	/**
-	 * Message identification of a message. This reference was assigned by the
-	 * party issuing the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,13 +308,8 @@ public class AdditionalReference8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Message identification of a message. This reference was assigned by the party issuing the message."
+	 * "Reference issued by a party to identify an instruction, transaction or a message."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.AdditionalReference3#mmReference
-	 * AdditionalReference3.mmReference}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -238,28 +318,44 @@ public class AdditionalReference8 {
 	 * AdditionalReference9.mmReference}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.AdditionalReference3#mmReference
+	 * AdditionalReference3.mmReference}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdditionalReference8, Max35Text> mmReference = new MMMessageAttribute<AdditionalReference8, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> AdditionalReference8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalReference8.mmObject();
 			isDerived = false;
 			xmlTag = "Ref";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reference";
-			definition = "Message identification of a message. This reference was assigned by the party issuing the message.";
+			definition = "Reference issued by a party to identify an instruction, transaction or a message.";
 			nextVersions_lazy = () -> Arrays.asList(AdditionalReference9.mmReference);
 			previousVersion_lazy = () -> AdditionalReference3.mmReference;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AdditionalReference8 obj) {
+			return obj.getReference();
+		}
+
+		@Override
+		public void setValue(AdditionalReference8 obj, Max35Text value) {
+			obj.setReference(value);
+		}
 	};
+	@XmlElement(name = "RefIssr")
 	protected PartyIdentification113 referenceIssuer;
 	/**
-	 * Issuer of the reference.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,11 +384,6 @@ public class AdditionalReference8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Issuer of the reference."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.AdditionalReference3#mmReferenceIssuer
-	 * AdditionalReference3.mmReferenceIssuer}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -301,12 +392,17 @@ public class AdditionalReference8 {
 	 * AdditionalReference9.mmReferenceIssuer}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.AdditionalReference3#mmReferenceIssuer
+	 * AdditionalReference3.mmReferenceIssuer}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReferenceIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdditionalReference8, Optional<PartyIdentification113>> mmReferenceIssuer = new MMMessageAttribute<AdditionalReference8, Optional<PartyIdentification113>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> AdditionalReference8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalReference8.mmObject();
 			isDerived = false;
 			xmlTag = "RefIssr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -316,13 +412,24 @@ public class AdditionalReference8 {
 			previousVersion_lazy = () -> AdditionalReference3.mmReferenceIssuer;
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification113.mmObject();
+			complexType_lazy = () -> PartyIdentification113.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification113> getValue(AdditionalReference8 obj) {
+			return obj.getReferenceIssuer();
+		}
+
+		@Override
+		public void setValue(AdditionalReference8 obj, Optional<PartyIdentification113> value) {
+			obj.setReferenceIssuer(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MsgNm")
 	protected Max35Text messageName;
 	/**
-	 * Name of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -345,11 +452,6 @@ public class AdditionalReference8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Name of the message."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.AdditionalReference3#mmMessageName
-	 * AdditionalReference3.mmMessageName}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -358,11 +460,16 @@ public class AdditionalReference8 {
 	 * AdditionalReference9.mmMessageName}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.AdditionalReference3#mmMessageName
+	 * AdditionalReference3.mmMessageName}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdditionalReference8, Optional<Max35Text>> mmMessageName = new MMMessageAttribute<AdditionalReference8, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AdditionalReference8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalReference8.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -374,12 +481,23 @@ public class AdditionalReference8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AdditionalReference8 obj) {
+			return obj.getMessageName();
+		}
+
+		@Override
+		public void setValue(AdditionalReference8 obj, Optional<Max35Text> value) {
+			obj.setMessageName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AdditionalReference8.mmReference, AdditionalReference8.mmReferenceIssuer, AdditionalReference8.mmMessageName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AdditionalReference8.mmReference, com.tools20022.repository.msg.AdditionalReference8.mmReferenceIssuer,
+						com.tools20022.repository.msg.AdditionalReference8.mmMessageName);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SubscriptionBulkOrderConfirmationV04.mmPreviousReference, SubscriptionBulkOrderConfirmationV04.mmRelatedReference, RedemptionBulkOrderV04.mmPreviousReference,
 						SubscriptionBulkOrderCancellationRequestV04.mmPreviousReference, RedemptionOrderV04.mmPreviousReference, SubscriptionOrderCancellationRequestV04.mmPreviousReference,
 						RedemptionBulkOrderConfirmationCancellationInstructionV02.mmPreviousReference, RedemptionBulkOrderConfirmationCancellationInstructionV02.mmRelatedReference, RedemptionBulkOrderConfirmationV04.mmPreviousReference,
@@ -389,9 +507,16 @@ public class AdditionalReference8 {
 						RedemptionOrderConfirmationCancellationInstructionV02.mmPreviousReference, RedemptionOrderConfirmationCancellationInstructionV02.mmRelatedReference, RedemptionOrderConfirmationV04.mmPreviousReference,
 						RedemptionOrderConfirmationV04.mmRelatedReference, SubscriptionBulkOrderConfirmationCancellationInstructionV02.mmPreviousReference, SubscriptionBulkOrderConfirmationCancellationInstructionV02.mmRelatedReference,
 						RedemptionOrderCancellationRequestV04.mmPreviousReference, SubscriptionBulkOrderV04.mmPreviousReference, SwitchOrderConfirmationCancellationInstructionV02.mmPreviousReference,
-						SwitchOrderConfirmationCancellationInstructionV02.mmRelatedReference, SubscriptionOrderV04.mmPreviousReference);
+						SwitchOrderConfirmationCancellationInstructionV02.mmRelatedReference, SubscriptionOrderV04.mmPreviousReference, ReversalOfTransferOutConfirmationV08.mmPreviousReference,
+						ReversalOfTransferOutConfirmationV08.mmRelatedReference, TransferInConfirmationV08.mmPreviousReference, TransferInConfirmationV08.mmRelatedReference, PortfolioTransferInstructionV08.mmPreviousReference,
+						PortfolioTransferInstructionV08.mmRelatedReference, PortfolioTransferCancellationRequestV08.mmPreviousReference, PortfolioTransferCancellationRequestV08.mmRelatedReference,
+						TransferOutCancellationRequestV08.mmPreviousReference, TransferOutCancellationRequestV08.mmRelatedReference, TransferInInstructionV08.mmPreviousReference, TransferInInstructionV08.mmRelatedReference,
+						PortfolioTransferConfirmationV08.mmPreviousReference, PortfolioTransferConfirmationV08.mmRelatedReference, AccountHoldingInformationV06.mmPreviousReference, AccountHoldingInformationV06.mmRelatedReference,
+						TransferOutConfirmationV08.mmPreviousReference, TransferOutConfirmationV08.mmRelatedReference, TransferInCancellationRequestV08.mmPreviousReference, TransferInCancellationRequestV08.mmRelatedReference,
+						TransferOutInstructionV08.mmPreviousReference, TransferOutInstructionV08.mmRelatedReference, TransferCancellationStatusReportV06.mmCounterpartyReference, AccountHoldingInformationRequestV05.mmPreviousReference,
+						AccountHoldingInformationRequestV05.mmRelatedReference, ReversalOfTransferInConfirmationV08.mmPreviousReference, ReversalOfTransferInConfirmationV08.mmRelatedReference);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalReference8";
 				definition = "References a related message or provides another reference, such as a pool reference, linking a set of messages. The party which issued the related reference may be the Sender of the referenced message or a party other than the Sender.";
@@ -402,30 +527,30 @@ public class AdditionalReference8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ref", required = true)
 	public Max35Text getReference() {
 		return reference;
 	}
 
-	public void setReference(Max35Text reference) {
-		this.reference = reference;
+	public AdditionalReference8 setReference(Max35Text reference) {
+		this.reference = Objects.requireNonNull(reference);
+		return this;
 	}
 
-	@XmlElement(name = "RefIssr")
-	public PartyIdentification113 getReferenceIssuer() {
-		return referenceIssuer;
+	public Optional<PartyIdentification113> getReferenceIssuer() {
+		return referenceIssuer == null ? Optional.empty() : Optional.of(referenceIssuer);
 	}
 
-	public void setReferenceIssuer(com.tools20022.repository.msg.PartyIdentification113 referenceIssuer) {
+	public AdditionalReference8 setReferenceIssuer(PartyIdentification113 referenceIssuer) {
 		this.referenceIssuer = referenceIssuer;
+		return this;
 	}
 
-	@XmlElement(name = "MsgNm")
-	public Max35Text getMessageName() {
-		return messageName;
+	public Optional<Max35Text> getMessageName() {
+		return messageName == null ? Optional.empty() : Optional.of(messageName);
 	}
 
-	public void setMessageName(Max35Text messageName) {
+	public AdditionalReference8 setMessageName(Max35Text messageName) {
 		this.messageName = messageName;
+		return this;
 	}
 }

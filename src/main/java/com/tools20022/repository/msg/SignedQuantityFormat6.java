@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Signed quantity of security formats."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SignedQuantityFormat6", propOrder = {"shortLongPosition", "quantity"})
 public class SignedQuantityFormat6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ShrtLngPos", required = true)
 	protected ShortLong1Code shortLongPosition;
 	/**
-	 * Sign of the quantity of security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +108,10 @@ public class SignedQuantityFormat6 {
 	 * definition} = "Sign of the quantity of security."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmShortLongPosition = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SignedQuantityFormat6, ShortLong1Code> mmShortLongPosition = new MMMessageAttribute<SignedQuantityFormat6, ShortLong1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmShortLong;
-			componentContext_lazy = () -> SignedQuantityFormat6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SignedQuantityFormat6.mmObject();
 			isDerived = false;
 			xmlTag = "ShrtLngPos";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,22 @@ public class SignedQuantityFormat6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ShortLong1Code.mmObject();
 		}
+
+		@Override
+		public ShortLong1Code getValue(SignedQuantityFormat6 obj) {
+			return obj.getShortLongPosition();
+		}
+
+		@Override
+		public void setValue(SignedQuantityFormat6 obj, ShortLong1Code value) {
+			obj.setShortLongPosition(value);
+		}
 	};
+	@XmlElement(name = "Qty", required = true)
 	protected FinancialInstrumentQuantity1Choice quantity;
 	/**
-	 * Quantity of security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,10 +166,10 @@ public class SignedQuantityFormat6 {
 	 * definition} = "Quantity of security."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SignedQuantityFormat6, FinancialInstrumentQuantity1Choice> mmQuantity = new MMMessageAssociationEnd<SignedQuantityFormat6, FinancialInstrumentQuantity1Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmAggregateQuantity;
-			componentContext_lazy = () -> SignedQuantityFormat6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SignedQuantityFormat6.mmObject();
 			isDerived = false;
 			xmlTag = "Qty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,14 +180,24 @@ public class SignedQuantityFormat6 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1Choice getValue(SignedQuantityFormat6 obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(SignedQuantityFormat6 obj, FinancialInstrumentQuantity1Choice value) {
+			obj.setQuantity(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SignedQuantityFormat6.mmShortLongPosition, SignedQuantityFormat6.mmQuantity);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SignedQuantityFormat6.mmShortLongPosition, com.tools20022.repository.msg.SignedQuantityFormat6.mmQuantity);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SignedQuantityFormat6";
 				definition = "Signed quantity of security formats.";
@@ -183,21 +206,21 @@ public class SignedQuantityFormat6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ShrtLngPos", required = true)
 	public ShortLong1Code getShortLongPosition() {
 		return shortLongPosition;
 	}
 
-	public void setShortLongPosition(ShortLong1Code shortLongPosition) {
-		this.shortLongPosition = shortLongPosition;
+	public SignedQuantityFormat6 setShortLongPosition(ShortLong1Code shortLongPosition) {
+		this.shortLongPosition = Objects.requireNonNull(shortLongPosition);
+		return this;
 	}
 
-	@XmlElement(name = "Qty", required = true)
 	public FinancialInstrumentQuantity1Choice getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(FinancialInstrumentQuantity1Choice quantity) {
-		this.quantity = quantity;
+	public SignedQuantityFormat6 setQuantity(FinancialInstrumentQuantity1Choice quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 }

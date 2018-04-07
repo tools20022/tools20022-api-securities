@@ -38,100 +38,100 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Cancellation1
- * InstructionProcessingStatus1Code.mmCancellation1}</li>
+ * InstructionProcessingStatus1Code.Cancellation1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Cancellation2
- * InstructionProcessingStatus1Code.mmCancellation2}</li>
+ * InstructionProcessingStatus1Code.Cancellation2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Cancellation3
- * InstructionProcessingStatus1Code.mmCancellation3}</li>
+ * InstructionProcessingStatus1Code.Cancellation3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Cancelled
- * InstructionProcessingStatus1Code.mmCancelled}</li>
+ * InstructionProcessingStatus1Code.Cancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#CancelledByAnotherParty
- * InstructionProcessingStatus1Code.mmCancelledByAnotherParty}</li>
+ * InstructionProcessingStatus1Code.CancelledByAnotherParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#PendingCancellation
- * InstructionProcessingStatus1Code.mmPendingCancellation}</li>
+ * InstructionProcessingStatus1Code.PendingCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Generated
- * InstructionProcessingStatus1Code.mmGenerated}</li>
+ * InstructionProcessingStatus1Code.Generated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#FullyExecutedConfirmationSent
- * InstructionProcessingStatus1Code.mmFullyExecutedConfirmationSent}</li>
+ * InstructionProcessingStatus1Code.FullyExecutedConfirmationSent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#CancellationRequested
- * InstructionProcessingStatus1Code.mmCancellationRequested}</li>
+ * InstructionProcessingStatus1Code.CancellationRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#DefaultAction
- * InstructionProcessingStatus1Code.mmDefaultAction}</li>
+ * InstructionProcessingStatus1Code.DefaultAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Done
- * InstructionProcessingStatus1Code.mmDone}</li>
+ * InstructionProcessingStatus1Code.Done}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#PartiallyFilledOrder
- * InstructionProcessingStatus1Code.mmPartiallyFilledOrder}</li>
+ * InstructionProcessingStatus1Code.PartiallyFilledOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#ReceivedAtStockExchange
- * InstructionProcessingStatus1Code.mmReceivedAtStockExchange}</li>
+ * InstructionProcessingStatus1Code.ReceivedAtStockExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#FullyExecutedExecutionSent
- * InstructionProcessingStatus1Code.mmFullyExecutedExecutionSent}</li>
+ * InstructionProcessingStatus1Code.FullyExecutedExecutionSent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#ForcedRejection
- * InstructionProcessingStatus1Code.mmForcedRejection}</li>
+ * InstructionProcessingStatus1Code.ForcedRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Future
- * InstructionProcessingStatus1Code.mmFuture}</li>
+ * InstructionProcessingStatus1Code.Future}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#ReceivedAtIntermediary
- * InstructionProcessingStatus1Code.mmReceivedAtIntermediary}</li>
+ * InstructionProcessingStatus1Code.ReceivedAtIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#AlreadyMatchedAndAffirmed
- * InstructionProcessingStatus1Code.mmAlreadyMatchedAndAffirmed}</li>
+ * InstructionProcessingStatus1Code.AlreadyMatchedAndAffirmed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#OpenOrder
- * InstructionProcessingStatus1Code.mmOpenOrder}</li>
+ * InstructionProcessingStatus1Code.OpenOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#OverAllocated
- * InstructionProcessingStatus1Code.mmOverAllocated}</li>
+ * InstructionProcessingStatus1Code.OverAllocated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#AcknowledgedAccepted
- * InstructionProcessingStatus1Code.mmAcknowledgedAccepted}</li>
+ * InstructionProcessingStatus1Code.AcknowledgedAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#PartialFill
- * InstructionProcessingStatus1Code.mmPartialFill}</li>
+ * InstructionProcessingStatus1Code.PartialFill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#PartialCancel
- * InstructionProcessingStatus1Code.mmPartialCancel}</li>
+ * InstructionProcessingStatus1Code.PartialCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#PendingProcessing
- * InstructionProcessingStatus1Code.mmPendingProcessing}</li>
+ * InstructionProcessingStatus1Code.PendingProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Rejected
- * InstructionProcessingStatus1Code.mmRejected}</li>
+ * InstructionProcessingStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#InRepair
- * InstructionProcessingStatus1Code.mmInRepair}</li>
+ * InstructionProcessingStatus1Code.InRepair}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#SettlementInstructionSent
- * InstructionProcessingStatus1Code.mmSettlementInstructionSent}</li>
+ * InstructionProcessingStatus1Code.SettlementInstructionSent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#StandingInstruction
- * InstructionProcessingStatus1Code.mmStandingInstruction}</li>
+ * InstructionProcessingStatus1Code.StandingInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#TradingSuspendedByStockExchange
- * InstructionProcessingStatus1Code.mmTradingSuspendedByStockExchange}</li>
+ * InstructionProcessingStatus1Code.TradingSuspendedByStockExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#Treated
- * InstructionProcessingStatus1Code.mmTreated}</li>
+ * InstructionProcessingStatus1Code.Treated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#UnderAllocated
- * InstructionProcessingStatus1Code.mmUnderAllocated}</li>
+ * InstructionProcessingStatus1Code.UnderAllocated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstructionProcessingStatus1Code#ModificationRequested
- * InstructionProcessingStatus1Code.mmModificationRequested}</li>
+ * InstructionProcessingStatus1Code.ModificationRequested}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -140,8 +140,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -938,7 +938,7 @@ public class InstructionProcessingStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CAN1");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstructionProcessingStatus1Code";

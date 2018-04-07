@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#SafekeepingAccountRejection
- * RejectionReason24Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason24Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#InvalidSecurity
- * RejectionReason24Code.mmInvalidSecurity}</li>
+ * RejectionReason24Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#MarketDeadlineMissed
- * RejectionReason24Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason24Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#ReferenceRejection
- * RejectionReason24Code.mmReferenceRejection}</li>
+ * RejectionReason24Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#AccountServicerDeadlineMissed
- * RejectionReason24Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason24Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#Other
- * RejectionReason24Code.mmOther}</li>
+ * RejectionReason24Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason24Code#InvalidRequest
- * RejectionReason24Code.mmInvalidRequest}</li>
+ * RejectionReason24Code.InvalidRequest}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -264,7 +264,7 @@ public class RejectionReason24Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SAFE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason24Code";

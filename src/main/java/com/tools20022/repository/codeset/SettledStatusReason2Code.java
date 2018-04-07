@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Partial settlement status information or information about gating
+ * Partial settlement status information or information about gating.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReason2Code#CashPartiallySettled
- * SettledStatusReason2Code.mmCashPartiallySettled}</li>
+ * SettledStatusReason2Code.CashPartiallySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReason2Code#GatedMultipleNAV
- * SettledStatusReason2Code.mmGatedMultipleNAV}</li>
+ * SettledStatusReason2Code.GatedMultipleNAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReason2Code#GatedOneNAV
- * SettledStatusReason2Code.mmGatedOneNAV}</li>
+ * SettledStatusReason2Code.GatedOneNAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReason2Code#UnitsCashPartiallySettled
- * SettledStatusReason2Code.mmUnitsCashPartiallySettled}</li>
+ * SettledStatusReason2Code.UnitsCashPartiallySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReason2Code#UnitsPartiallySettled
- * SettledStatusReason2Code.mmUnitsPartiallySettled}</li>
+ * SettledStatusReason2Code.UnitsPartiallySettled}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,7 +69,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "SettledStatusReason2Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Partial settlement status information or information about gating"</li>
+ * "Partial settlement status information or information about gating."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -204,10 +204,10 @@ public class SettledStatusReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettledStatusReason2Code";
-				definition = "Partial settlement status information or information about gating";
+				definition = "Partial settlement status information or information about gating.";
 				trace_lazy = () -> SettledStatusReasonCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettledStatusReason2Code.CashPartiallySettled, com.tools20022.repository.codeset.SettledStatusReason2Code.GatedMultipleNAV,
 						com.tools20022.repository.codeset.SettledStatusReason2Code.GatedOneNAV, com.tools20022.repository.codeset.SettledStatusReason2Code.UnitsCashPartiallySettled,

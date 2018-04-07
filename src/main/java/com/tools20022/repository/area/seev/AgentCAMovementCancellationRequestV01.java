@@ -25,9 +25,10 @@ import com.tools20022.repository.area.SecuritiesEventsLatestVersion;
 import com.tools20022.repository.msg.CorporateActionInformation1;
 import com.tools20022.repository.msg.DocumentIdentification8;
 import com.tools20022.repository.msg.MovementInstruction1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -88,16 +89,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AgentCAMovementCancellationRequestV01", propOrder = {"identification", "agentCAMovementInstructionIdentification", "corporateActionGeneralInformation", "movementDetails"})
 public class AgentCAMovementCancellationRequestV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected DocumentIdentification8 identification;
 	/**
-	 * Identification assigned by the Sender to unambiguously identify the
-	 * cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,7 +121,7 @@ public class AgentCAMovementCancellationRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, DocumentIdentification8> mmIdentification = new MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, DocumentIdentification8>() {
 		{
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,18 +132,21 @@ public class AgentCAMovementCancellationRequestV01 {
 			complexType_lazy = () -> DocumentIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAMovementCancellationRequestV01.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentIdentification8 getValue(AgentCAMovementCancellationRequestV01 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(AgentCAMovementCancellationRequestV01 obj, DocumentIdentification8 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "AgtCAMvmntInstrId", required = true)
 	protected DocumentIdentification8 agentCAMovementInstructionIdentification;
 	/**
-	 * Identification of the Agent CA Movement Instruction to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,7 +168,7 @@ public class AgentCAMovementCancellationRequestV01 {
 	 * "Identification of the Agent CA Movement Instruction to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAgentCAMovementInstructionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, DocumentIdentification8> mmAgentCAMovementInstructionIdentification = new MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, DocumentIdentification8>() {
 		{
 			xmlTag = "AgtCAMvmntInstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,18 +179,21 @@ public class AgentCAMovementCancellationRequestV01 {
 			complexType_lazy = () -> DocumentIdentification8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAMovementCancellationRequestV01.class.getMethod("getAgentCAMovementInstructionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentIdentification8 getValue(AgentCAMovementCancellationRequestV01 obj) {
+			return obj.getAgentCAMovementInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(AgentCAMovementCancellationRequestV01 obj, DocumentIdentification8 value) {
+			obj.setAgentCAMovementInstructionIdentification(value);
 		}
 	};
+	@XmlElement(name = "CorpActnGnlInf", required = true)
 	protected CorporateActionInformation1 corporateActionGeneralInformation;
 	/**
-	 * General information about the corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +214,7 @@ public class AgentCAMovementCancellationRequestV01 {
 	 * definition} = "General information about the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCorporateActionGeneralInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, CorporateActionInformation1> mmCorporateActionGeneralInformation = new MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, CorporateActionInformation1>() {
 		{
 			xmlTag = "CorpActnGnlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -218,18 +225,21 @@ public class AgentCAMovementCancellationRequestV01 {
 			complexType_lazy = () -> CorporateActionInformation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAMovementCancellationRequestV01.class.getMethod("getCorporateActionGeneralInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CorporateActionInformation1 getValue(AgentCAMovementCancellationRequestV01 obj) {
+			return obj.getCorporateActionGeneralInformation();
+		}
+
+		@Override
+		public void setValue(AgentCAMovementCancellationRequestV01 obj, CorporateActionInformation1 value) {
+			obj.setCorporateActionGeneralInformation(value);
 		}
 	};
+	@XmlElement(name = "MvmntDtls")
 	protected MovementInstruction1 movementDetails;
 	/**
-	 * Details of the movement instructions to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,7 +260,7 @@ public class AgentCAMovementCancellationRequestV01 {
 	 * definition} = "Details of the movement instructions to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMovementDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, Optional<MovementInstruction1>> mmMovementDetails = new MMMessageBuildingBlock<AgentCAMovementCancellationRequestV01, Optional<MovementInstruction1>>() {
 		{
 			xmlTag = "MvmntDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -261,12 +271,14 @@ public class AgentCAMovementCancellationRequestV01 {
 			complexType_lazy = () -> MovementInstruction1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AgentCAMovementCancellationRequestV01.class.getMethod("getMovementDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MovementInstruction1> getValue(AgentCAMovementCancellationRequestV01 obj) {
+			return obj.getMovementDetails();
+		}
+
+		@Override
+		public void setValue(AgentCAMovementCancellationRequestV01 obj, Optional<MovementInstruction1> value) {
+			obj.setMovementDetails(value.orElse(null));
 		}
 	};
 
@@ -300,43 +312,43 @@ public class AgentCAMovementCancellationRequestV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public DocumentIdentification8 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(DocumentIdentification8 identification) {
-		this.identification = identification;
+	public AgentCAMovementCancellationRequestV01 setIdentification(DocumentIdentification8 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "AgtCAMvmntInstrId", required = true)
 	public DocumentIdentification8 getAgentCAMovementInstructionIdentification() {
 		return agentCAMovementInstructionIdentification;
 	}
 
-	public void setAgentCAMovementInstructionIdentification(DocumentIdentification8 agentCAMovementInstructionIdentification) {
-		this.agentCAMovementInstructionIdentification = agentCAMovementInstructionIdentification;
+	public AgentCAMovementCancellationRequestV01 setAgentCAMovementInstructionIdentification(DocumentIdentification8 agentCAMovementInstructionIdentification) {
+		this.agentCAMovementInstructionIdentification = Objects.requireNonNull(agentCAMovementInstructionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnGnlInf", required = true)
 	public CorporateActionInformation1 getCorporateActionGeneralInformation() {
 		return corporateActionGeneralInformation;
 	}
 
-	public void setCorporateActionGeneralInformation(CorporateActionInformation1 corporateActionGeneralInformation) {
-		this.corporateActionGeneralInformation = corporateActionGeneralInformation;
+	public AgentCAMovementCancellationRequestV01 setCorporateActionGeneralInformation(CorporateActionInformation1 corporateActionGeneralInformation) {
+		this.corporateActionGeneralInformation = Objects.requireNonNull(corporateActionGeneralInformation);
+		return this;
 	}
 
-	@XmlElement(name = "MvmntDtls")
-	public MovementInstruction1 getMovementDetails() {
-		return movementDetails;
+	public Optional<MovementInstruction1> getMovementDetails() {
+		return movementDetails == null ? Optional.empty() : Optional.of(movementDetails);
 	}
 
-	public void setMovementDetails(MovementInstruction1 movementDetails) {
+	public AgentCAMovementCancellationRequestV01 setMovementDetails(MovementInstruction1 movementDetails) {
 		this.movementDetails = movementDetails;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:seev.020.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:seev.020.001.01")
 	static public class Document {
 		@XmlElement(name = "AgtCAMvmntCxlReq", required = true)
 		public AgentCAMovementCancellationRequestV01 messageBody;

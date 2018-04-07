@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -40,58 +41,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#AdoptionTaxpayerIdentificationNumber
- * PartyIdentificationType7Code.mmAdoptionTaxpayerIdentificationNumber}</li>
+ * PartyIdentificationType7Code.AdoptionTaxpayerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#IdentityCardNumber
- * PartyIdentificationType7Code.mmIdentityCardNumber}</li>
+ * PartyIdentificationType7Code.IdentityCardNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#NationalRegistrationIdentificationNumber
- * PartyIdentificationType7Code.mmNationalRegistrationIdentificationNumber}</li>
+ * PartyIdentificationType7Code.NationalRegistrationIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#Other
- * PartyIdentificationType7Code.mmOther}</li>
+ * PartyIdentificationType7Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#PassportNumber
- * PartyIdentificationType7Code.mmPassportNumber}</li>
+ * PartyIdentificationType7Code.PassportNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#PostOfficeCardNumber
- * PartyIdentificationType7Code.mmPostOfficeCardNumber}</li>
+ * PartyIdentificationType7Code.PostOfficeCardNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#SocialSecurityNumber
- * PartyIdentificationType7Code.mmSocialSecurityNumber}</li>
+ * PartyIdentificationType7Code.SocialSecurityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#SRSAccountNumber
- * PartyIdentificationType7Code.mmSRSAccountNumber}</li>
+ * PartyIdentificationType7Code.SRSAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#GunLicenseNumber
- * PartyIdentificationType7Code.mmGunLicenseNumber}</li>
+ * PartyIdentificationType7Code.GunLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#GenericTaxIdentificationNumber
- * PartyIdentificationType7Code.mmGenericTaxIdentificationNumber}</li>
+ * PartyIdentificationType7Code.GenericTaxIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#IndividualTaxpayerIdentificationNumber
- * PartyIdentificationType7Code.mmIndividualTaxpayerIdentificationNumber}</li>
+ * PartyIdentificationType7Code.IndividualTaxpayerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#CPFAccountNumber
- * PartyIdentificationType7Code.mmCPFAccountNumber}</li>
+ * PartyIdentificationType7Code.CPFAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#AlienRegistrationNumber
- * PartyIdentificationType7Code.mmAlienRegistrationNumber}</li>
+ * PartyIdentificationType7Code.AlienRegistrationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#DriversLicenseNumber
- * PartyIdentificationType7Code.mmDriversLicenseNumber}</li>
+ * PartyIdentificationType7Code.DriversLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#EmployerIdentificationNumber
- * PartyIdentificationType7Code.mmEmployerIdentificationNumber}</li>
+ * PartyIdentificationType7Code.EmployerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#NonResidentInvestor
- * PartyIdentificationType7Code.mmNonResidentInvestor}</li>
+ * PartyIdentificationType7Code.NonResidentInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#IndustryClassification
- * PartyIdentificationType7Code.mmIndustryClassification}</li>
+ * PartyIdentificationType7Code.IndustryClassification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code#GlobalIntermediaryIdentificationNumber
- * PartyIdentificationType7Code.mmGlobalIntermediaryIdentificationNumber}</li>
+ * PartyIdentificationType7Code.GlobalIntermediaryIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -100,8 +101,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -271,6 +272,9 @@ public class PartyIdentificationType7Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code
 	 * PartyIdentificationType7Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//SSNX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -280,6 +284,7 @@ public class PartyIdentificationType7Code extends MMCode {
 	 */
 	public static final PartyIdentificationType7Code SocialSecurityNumber = new PartyIdentificationType7Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//SSNX"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SocialSecurityNumber";
 			owner_lazy = () -> com.tools20022.repository.codeset.PartyIdentificationType7Code.mmObject();
@@ -415,6 +420,9 @@ public class PartyIdentificationType7Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code
 	 * PartyIdentificationType7Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//ARNU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -424,6 +432,7 @@ public class PartyIdentificationType7Code extends MMCode {
 	 */
 	public static final PartyIdentificationType7Code AlienRegistrationNumber = new PartyIdentificationType7Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//ARNU"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AlienRegistrationNumber";
 			owner_lazy = () -> com.tools20022.repository.codeset.PartyIdentificationType7Code.mmObject();
@@ -439,6 +448,9 @@ public class PartyIdentificationType7Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code
 	 * PartyIdentificationType7Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//DRLC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -448,6 +460,7 @@ public class PartyIdentificationType7Code extends MMCode {
 	 */
 	public static final PartyIdentificationType7Code DriversLicenseNumber = new PartyIdentificationType7Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//DRLC"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DriversLicenseNumber";
 			owner_lazy = () -> com.tools20022.repository.codeset.PartyIdentificationType7Code.mmObject();
@@ -463,6 +476,9 @@ public class PartyIdentificationType7Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.PartyIdentificationType7Code
 	 * PartyIdentificationType7Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//EINX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -472,6 +488,7 @@ public class PartyIdentificationType7Code extends MMCode {
 	 */
 	public static final PartyIdentificationType7Code EmployerIdentificationNumber = new PartyIdentificationType7Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//EINX"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EmployerIdentificationNumber";
 			owner_lazy = () -> com.tools20022.repository.codeset.PartyIdentificationType7Code.mmObject();
@@ -558,7 +575,7 @@ public class PartyIdentificationType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentificationType7Code";
 				definition = "Specifies an alternative identification of a party, for example, national registration identification number, passport number, tax identification number.";

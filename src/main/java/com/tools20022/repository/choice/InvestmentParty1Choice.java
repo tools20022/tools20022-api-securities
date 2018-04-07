@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PersonIdentification12;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestmentParty1Choice", propOrder = {"person", "algorithm"})
 public class InvestmentParty1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prsn", required = true)
 	protected PersonIdentification12 person;
 	/**
-	 * Identification of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -110,9 +112,9 @@ public class InvestmentParty1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPerson = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InvestmentParty1Choice, PersonIdentification12> mmPerson = new MMMessageAssociationEnd<InvestmentParty1Choice, PersonIdentification12>() {
 		{
-			componentContext_lazy = () -> InvestmentParty1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestmentParty1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,11 +126,22 @@ public class InvestmentParty1Choice {
 			isComposite = true;
 			type_lazy = () -> PersonIdentification12.mmObject();
 		}
+
+		@Override
+		public PersonIdentification12 getValue(InvestmentParty1Choice obj) {
+			return obj.getPerson();
+		}
+
+		@Override
+		public void setValue(InvestmentParty1Choice obj, PersonIdentification12 value) {
+			obj.setPerson(value);
+		}
 	};
+	@XmlElement(name = "Algo", required = true)
 	protected Max50Text algorithm;
 	/**
-	 * Identification of an algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,9 +174,9 @@ public class InvestmentParty1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentParty1Choice, Max50Text> mmAlgorithm = new MMMessageAttribute<InvestmentParty1Choice, Max50Text>() {
 		{
-			componentContext_lazy = () -> InvestmentParty1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InvestmentParty1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Algo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,13 +187,23 @@ public class InvestmentParty1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max50Text.mmObject();
 		}
+
+		@Override
+		public Max50Text getValue(InvestmentParty1Choice obj) {
+			return obj.getAlgorithm();
+		}
+
+		@Override
+		public void setValue(InvestmentParty1Choice obj, Max50Text value) {
+			obj.setAlgorithm(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestmentParty1Choice.mmPerson, InvestmentParty1Choice.mmAlgorithm);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InvestmentParty1Choice.mmPerson, com.tools20022.repository.choice.InvestmentParty1Choice.mmAlgorithm);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentParty1Choice";
 				definition = "Identification of the investment party.";
@@ -190,21 +213,21 @@ public class InvestmentParty1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prsn", required = true)
 	public PersonIdentification12 getPerson() {
 		return person;
 	}
 
-	public void setPerson(PersonIdentification12 person) {
-		this.person = person;
+	public InvestmentParty1Choice setPerson(PersonIdentification12 person) {
+		this.person = Objects.requireNonNull(person);
+		return this;
 	}
 
-	@XmlElement(name = "Algo", required = true)
 	public Max50Text getAlgorithm() {
 		return algorithm;
 	}
 
-	public void setAlgorithm(Max50Text algorithm) {
-		this.algorithm = algorithm;
+	public InvestmentParty1Choice setAlgorithm(Max50Text algorithm) {
+		this.algorithm = Objects.requireNonNull(algorithm);
+		return this;
 	}
 }

@@ -29,8 +29,12 @@ import com.tools20022.repository.codeset.TransactionStatus1Code;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
+import com.tools20022.repository.msg.UnitPrice20;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -115,8 +119,21 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTransactionTypeLegIdentificationRule#forInvestmentFundTransaction4
+ * ConstraintTransactionTypeLegIdentificationRule.forInvestmentFundTransaction4}
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintTransactionTypeLegExecutionIdentificationRule#forInvestmentFundTransaction4
+ * ConstraintTransactionTypeLegExecutionIdentificationRule.
+ * forInvestmentFundTransaction4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -129,17 +146,18 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestmentFundTransaction4", propOrder = {"eventType", "bookingStatus", "masterReference", "orderReference", "clientReference", "dealReference", "legIdentification", "legExecutionIdentification", "orderDateTime",
 		"settledTransactionIndicator", "registeredTransactionIndicator", "unitsQuantity", "creditDebit", "reversal", "settlementAmount", "settlementDate", "tradeDateTime", "cumDividendIndicator", "partiallyExecutedIndicator",
 		"priceDetails"})
 public class InvestmentFundTransaction4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "EvtTp", required = true)
 	protected TransactionType1Choice eventType;
 	/**
-	 * Underlying transaction or corporate action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -169,10 +187,10 @@ public class InvestmentFundTransaction4 {
 	 * definition} = "Underlying transaction or corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEventType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InvestmentFundTransaction4, TransactionType1Choice> mmEventType = new MMMessageAssociationEnd<InvestmentFundTransaction4, TransactionType1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentFundTransaction.mmObject();
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "EvtTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,11 +201,22 @@ public class InvestmentFundTransaction4 {
 			isComposite = true;
 			type_lazy = () -> TransactionType1Choice.mmObject();
 		}
+
+		@Override
+		public TransactionType1Choice getValue(InvestmentFundTransaction4 obj) {
+			return obj.getEventType();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, TransactionType1Choice value) {
+			obj.setEventType(value);
+		}
 	};
+	@XmlElement(name = "BookgSts")
 	protected TransactionStatus1Code bookingStatus;
 	/**
-	 * Status of an investment fund transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,10 +247,10 @@ public class InvestmentFundTransaction4 {
 	 * definition} = "Status of an investment fund transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBookingStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<TransactionStatus1Code>> mmBookingStatus = new MMMessageAttribute<InvestmentFundTransaction4, Optional<TransactionStatus1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatus.mmTransactionStatus;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "BookgSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -231,13 +260,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TransactionStatus1Code.mmObject();
 		}
+
+		@Override
+		public Optional<TransactionStatus1Code> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getBookingStatus();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<TransactionStatus1Code> value) {
+			obj.setBookingStatus(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MstrRef")
 	protected Max35Text masterReference;
 	/**
-	 * Unique and unambiguous identifier for a group of individual orders, as
-	 * assigned by the instructing party. This identifier links the individual
-	 * orders together.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,10 +307,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMasterReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>> mmMasterReference = new MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Order.mmMasterIdentification;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "MstrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -282,12 +320,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getMasterReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<Max35Text> value) {
+			obj.setMasterReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrRef")
 	protected Max35Text orderReference;
 	/**
-	 * Unique and unambiguous identifier for an order, as assigned by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,10 +367,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>> mmOrderReference = new MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmIdentification;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -332,13 +380,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getOrderReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<Max35Text> value) {
+			obj.setOrderReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClntRef")
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of an order. This
-	 * reference can typically be used in a hub scenario to give the reference
-	 * of the order as assigned by the underlying client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -370,10 +427,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>> mmClientReference = new MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmClientReference;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "ClntRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -383,12 +440,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getClientReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<Max35Text> value) {
+			obj.setClientReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DealRef")
 	protected Max35Text dealReference;
 	/**
-	 * Unique and unambiguous identifier for an order execution, as assigned by
-	 * a confirming party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -420,10 +487,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDealReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>> mmDealReference = new MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmDealIdentification;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "DealRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -433,11 +500,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getDealReference();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<Max35Text> value) {
+			obj.setDealReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LegId")
 	protected Max35Text legIdentification;
 	/**
-	 * Unique technical identifier for an instance of a leg within a switch.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -463,9 +541,9 @@ public class InvestmentFundTransaction4 {
 	 * "Unique technical identifier for an instance of a leg within a switch."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLegIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>> mmLegIdentification = new MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "LegId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -475,12 +553,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getLegIdentification();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<Max35Text> value) {
+			obj.setLegIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LegExctnId")
 	protected Max35Text legExecutionIdentification;
 	/**
-	 * Unique identifier for an instance of a leg execution within a switch
-	 * confirmation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -507,9 +595,9 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLegExecutionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>> mmLegExecutionIdentification = new MMMessageAttribute<InvestmentFundTransaction4, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "LegExctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -519,11 +607,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getLegExecutionIdentification();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<Max35Text> value) {
+			obj.setLegExecutionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrDtTm")
 	protected ISODateTime orderDateTime;
 	/**
-	 * Date and time at which the order was placed by the investor or its agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -555,10 +654,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<ISODateTime>> mmOrderDateTime = new MMMessageAttribute<InvestmentFundTransaction4, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderDateTime;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -568,12 +667,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getOrderDateTime();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<ISODateTime> value) {
+			obj.setOrderDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttldTxInd", required = true)
 	protected YesNoIndicator settledTransactionIndicator;
 	/**
-	 * Indicates whether the cash payment with respect to the executed order is
-	 * settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -606,10 +715,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettledTransactionIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator> mmSettledTransactionIndicator = new MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmSettledIndicator;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "SttldTxInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -619,12 +728,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(InvestmentFundTransaction4 obj) {
+			return obj.getSettledTransactionIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, YesNoIndicator value) {
+			obj.setSettledTransactionIndicator(value);
+		}
 	};
+	@XmlElement(name = "RegdTxInd", required = true)
 	protected YesNoIndicator registeredTransactionIndicator;
 	/**
-	 * Indicates whether the executed order has a registered status on the books
-	 * of the transfer agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -657,10 +776,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisteredTransactionIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator> mmRegisteredTransactionIndicator = new MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmRegisteredIndicator;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "RegdTxInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -670,11 +789,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(InvestmentFundTransaction4 obj) {
+			return obj.getRegisteredTransactionIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, YesNoIndicator value) {
+			obj.setRegisteredTransactionIndicator(value);
+		}
 	};
+	@XmlElement(name = "UnitsQty", required = true)
 	protected FinancialInstrumentQuantity1 unitsQuantity;
 	/**
-	 * Number of investment funds units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -705,10 +835,10 @@ public class InvestmentFundTransaction4 {
 	 * definition} = "Number of investment funds units."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitsQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, FinancialInstrumentQuantity1> mmUnitsQuantity = new MMMessageAttribute<InvestmentFundTransaction4, FinancialInstrumentQuantity1>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmUnitsNumber;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "UnitsQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -716,14 +846,24 @@ public class InvestmentFundTransaction4 {
 			definition = "Number of investment funds units.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentQuantity1.mmObject();
+			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
+		}
+
+		@Override
+		public FinancialInstrumentQuantity1 getValue(InvestmentFundTransaction4 obj) {
+			return obj.getUnitsQuantity();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, FinancialInstrumentQuantity1 value) {
+			obj.setUnitsQuantity(value);
 		}
 	};
+	@XmlElement(name = "CdtDbt", required = true)
 	protected CreditDebitCode creditDebit;
 	/**
-	 * Direction of the transaction being reported, is, securities are received
-	 * (credited) or delivered (debited).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -756,10 +896,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, CreditDebitCode> mmCreditDebit = new MMMessageAttribute<InvestmentFundTransaction4, CreditDebitCode>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmCreditDebitIndicator;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "CdtDbt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -769,12 +909,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
+
+		@Override
+		public CreditDebitCode getValue(InvestmentFundTransaction4 obj) {
+			return obj.getCreditDebit();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, CreditDebitCode value) {
+			obj.setCreditDebit(value);
+		}
 	};
+	@XmlElement(name = "Rvsl")
 	protected ReversalCode reversal;
 	/**
-	 * Transaction being reported is a reversal of previously reported
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -801,9 +951,9 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReversal = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<ReversalCode>> mmReversal = new MMMessageAttribute<InvestmentFundTransaction4, Optional<ReversalCode>>() {
 		{
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "Rvsl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -813,13 +963,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ReversalCode.mmObject();
 		}
+
+		@Override
+		public Optional<ReversalCode> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getReversal();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<ReversalCode> value) {
+			obj.setReversal(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttlmAmt")
 	protected ActiveCurrencyAndAmount settlementAmount;
 	/**
-	 * Amount of money to be moved between the debtor and creditor, before
-	 * deduction of charges, expressed in the currency as ordered by the
-	 * initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -852,10 +1011,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<ActiveCurrencyAndAmount>> mmSettlementAmount = new MMMessageAttribute<InvestmentFundTransaction4, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementAmount;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -865,12 +1024,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getSettlementAmount();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setSettlementAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttlmDt")
 	protected ISODate settlementDate;
 	/**
-	 * Date on which the debtor expects the amount of money to be available to
-	 * the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -902,10 +1071,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, Optional<ISODate>> mmSettlementDate = new MMMessageAttribute<InvestmentFundTransaction4, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementDate;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -915,12 +1084,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getSettlementDate();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<ISODate> value) {
+			obj.setSettlementDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TradDtTm", required = true)
 	protected DateAndDateTimeChoice tradeDateTime;
 	/**
-	 * Date and time at which a price is applied, according to the terms stated
-	 * in the prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -953,10 +1132,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTradeDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, DateAndDateTimeChoice> mmTradeDateTime = new MMMessageAttribute<InvestmentFundTransaction4, DateAndDateTimeChoice>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "TradDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -966,13 +1145,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(InvestmentFundTransaction4 obj) {
+			return obj.getTradeDateTime();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, DateAndDateTimeChoice value) {
+			obj.setTradeDateTime(value);
+		}
 	};
+	@XmlElement(name = "CumDvddInd", required = true)
 	protected YesNoIndicator cumDividendIndicator;
 	/**
-	 * Indicates whether the dividend is included, that is, cum-dividend, in the
-	 * executed price. When the dividend is not included, the price will be
-	 * ex-dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1005,10 +1193,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCumDividendIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator> mmCumDividendIndicator = new MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmCumDividendIndicator;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "CumDvddInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1018,13 +1206,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(InvestmentFundTransaction4 obj) {
+			return obj.getCumDividendIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, YesNoIndicator value) {
+			obj.setCumDividendIndicator(value);
+		}
 	};
+	@XmlElement(name = "PrtlyExctdInd", required = true)
 	protected YesNoIndicator partiallyExecutedIndicator;
 	/**
-	 * Indicates whether the order has been partially executed, that is, the
-	 * confirmed quantity does not match the ordered quantity for a given
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1057,10 +1254,10 @@ public class InvestmentFundTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartiallyExecutedIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator> mmPartiallyExecutedIndicator = new MMMessageAttribute<InvestmentFundTransaction4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmPartiallyExecutedIndicator;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlyExctdInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1070,11 +1267,22 @@ public class InvestmentFundTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(InvestmentFundTransaction4 obj) {
+			return obj.getPartiallyExecutedIndicator();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, YesNoIndicator value) {
+			obj.setPartiallyExecutedIndicator(value);
+		}
 	};
+	@XmlElement(name = "PricDtls")
 	protected UnitPrice20 priceDetails;
 	/**
-	 * Price at which the order was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1103,10 +1311,10 @@ public class InvestmentFundTransaction4 {
 	 * definition} = "Price at which the order was executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPriceDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InvestmentFundTransaction4, Optional<UnitPrice20>> mmPriceDetails = new MMMessageAssociationEnd<InvestmentFundTransaction4, Optional<UnitPrice20>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmExecutedTradePrice;
-			componentContext_lazy = () -> InvestmentFundTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentFundTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "PricDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1115,20 +1323,37 @@ public class InvestmentFundTransaction4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.UnitPrice20.mmObject();
+			type_lazy = () -> UnitPrice20.mmObject();
+		}
+
+		@Override
+		public Optional<UnitPrice20> getValue(InvestmentFundTransaction4 obj) {
+			return obj.getPriceDetails();
+		}
+
+		@Override
+		public void setValue(InvestmentFundTransaction4 obj, Optional<UnitPrice20> value) {
+			obj.setPriceDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestmentFundTransaction4.mmEventType, InvestmentFundTransaction4.mmBookingStatus, InvestmentFundTransaction4.mmMasterReference, InvestmentFundTransaction4.mmOrderReference,
-						InvestmentFundTransaction4.mmClientReference, InvestmentFundTransaction4.mmDealReference, InvestmentFundTransaction4.mmLegIdentification, InvestmentFundTransaction4.mmLegExecutionIdentification,
-						InvestmentFundTransaction4.mmOrderDateTime, InvestmentFundTransaction4.mmSettledTransactionIndicator, InvestmentFundTransaction4.mmRegisteredTransactionIndicator, InvestmentFundTransaction4.mmUnitsQuantity,
-						InvestmentFundTransaction4.mmCreditDebit, InvestmentFundTransaction4.mmReversal, InvestmentFundTransaction4.mmSettlementAmount, InvestmentFundTransaction4.mmSettlementDate,
-						InvestmentFundTransaction4.mmTradeDateTime, InvestmentFundTransaction4.mmCumDividendIndicator, InvestmentFundTransaction4.mmPartiallyExecutedIndicator, InvestmentFundTransaction4.mmPriceDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestmentFundTransaction4.mmEventType, com.tools20022.repository.msg.InvestmentFundTransaction4.mmBookingStatus,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmMasterReference, com.tools20022.repository.msg.InvestmentFundTransaction4.mmOrderReference,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmClientReference, com.tools20022.repository.msg.InvestmentFundTransaction4.mmDealReference,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmLegIdentification, com.tools20022.repository.msg.InvestmentFundTransaction4.mmLegExecutionIdentification,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmOrderDateTime, com.tools20022.repository.msg.InvestmentFundTransaction4.mmSettledTransactionIndicator,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmRegisteredTransactionIndicator, com.tools20022.repository.msg.InvestmentFundTransaction4.mmUnitsQuantity,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmCreditDebit, com.tools20022.repository.msg.InvestmentFundTransaction4.mmReversal,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmSettlementAmount, com.tools20022.repository.msg.InvestmentFundTransaction4.mmSettlementDate,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmTradeDateTime, com.tools20022.repository.msg.InvestmentFundTransaction4.mmCumDividendIndicator,
+						com.tools20022.repository.msg.InvestmentFundTransaction4.mmPartiallyExecutedIndicator, com.tools20022.repository.msg.InvestmentFundTransaction4.mmPriceDetails);
 				trace_lazy = () -> InvestmentFundTransaction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintTransactionTypeLegIdentificationRule.forInvestmentFundTransaction4,
+						com.tools20022.repository.constraints.ConstraintTransactionTypeLegExecutionIdentificationRule.forInvestmentFundTransaction4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundTransaction4";
 				definition = "Creation/cancellation of investment units on the books of the fund or its designated agent, as a result of executing an investment fund order.";
@@ -1137,183 +1362,183 @@ public class InvestmentFundTransaction4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "EvtTp", required = true)
 	public TransactionType1Choice getEventType() {
 		return eventType;
 	}
 
-	public void setEventType(TransactionType1Choice eventType) {
-		this.eventType = eventType;
+	public InvestmentFundTransaction4 setEventType(TransactionType1Choice eventType) {
+		this.eventType = Objects.requireNonNull(eventType);
+		return this;
 	}
 
-	@XmlElement(name = "BookgSts")
-	public TransactionStatus1Code getBookingStatus() {
-		return bookingStatus;
+	public Optional<TransactionStatus1Code> getBookingStatus() {
+		return bookingStatus == null ? Optional.empty() : Optional.of(bookingStatus);
 	}
 
-	public void setBookingStatus(TransactionStatus1Code bookingStatus) {
+	public InvestmentFundTransaction4 setBookingStatus(TransactionStatus1Code bookingStatus) {
 		this.bookingStatus = bookingStatus;
+		return this;
 	}
 
-	@XmlElement(name = "MstrRef")
-	public Max35Text getMasterReference() {
-		return masterReference;
+	public Optional<Max35Text> getMasterReference() {
+		return masterReference == null ? Optional.empty() : Optional.of(masterReference);
 	}
 
-	public void setMasterReference(Max35Text masterReference) {
+	public InvestmentFundTransaction4 setMasterReference(Max35Text masterReference) {
 		this.masterReference = masterReference;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrRef")
-	public Max35Text getOrderReference() {
-		return orderReference;
+	public Optional<Max35Text> getOrderReference() {
+		return orderReference == null ? Optional.empty() : Optional.of(orderReference);
 	}
 
-	public void setOrderReference(Max35Text orderReference) {
+	public InvestmentFundTransaction4 setOrderReference(Max35Text orderReference) {
 		this.orderReference = orderReference;
+		return this;
 	}
 
-	@XmlElement(name = "ClntRef")
-	public Max35Text getClientReference() {
-		return clientReference;
+	public Optional<Max35Text> getClientReference() {
+		return clientReference == null ? Optional.empty() : Optional.of(clientReference);
 	}
 
-	public void setClientReference(Max35Text clientReference) {
+	public InvestmentFundTransaction4 setClientReference(Max35Text clientReference) {
 		this.clientReference = clientReference;
+		return this;
 	}
 
-	@XmlElement(name = "DealRef")
-	public Max35Text getDealReference() {
-		return dealReference;
+	public Optional<Max35Text> getDealReference() {
+		return dealReference == null ? Optional.empty() : Optional.of(dealReference);
 	}
 
-	public void setDealReference(Max35Text dealReference) {
+	public InvestmentFundTransaction4 setDealReference(Max35Text dealReference) {
 		this.dealReference = dealReference;
+		return this;
 	}
 
-	@XmlElement(name = "LegId")
-	public Max35Text getLegIdentification() {
-		return legIdentification;
+	public Optional<Max35Text> getLegIdentification() {
+		return legIdentification == null ? Optional.empty() : Optional.of(legIdentification);
 	}
 
-	public void setLegIdentification(Max35Text legIdentification) {
+	public InvestmentFundTransaction4 setLegIdentification(Max35Text legIdentification) {
 		this.legIdentification = legIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "LegExctnId")
-	public Max35Text getLegExecutionIdentification() {
-		return legExecutionIdentification;
+	public Optional<Max35Text> getLegExecutionIdentification() {
+		return legExecutionIdentification == null ? Optional.empty() : Optional.of(legExecutionIdentification);
 	}
 
-	public void setLegExecutionIdentification(Max35Text legExecutionIdentification) {
+	public InvestmentFundTransaction4 setLegExecutionIdentification(Max35Text legExecutionIdentification) {
 		this.legExecutionIdentification = legExecutionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrDtTm")
-	public ISODateTime getOrderDateTime() {
-		return orderDateTime;
+	public Optional<ISODateTime> getOrderDateTime() {
+		return orderDateTime == null ? Optional.empty() : Optional.of(orderDateTime);
 	}
 
-	public void setOrderDateTime(ISODateTime orderDateTime) {
+	public InvestmentFundTransaction4 setOrderDateTime(ISODateTime orderDateTime) {
 		this.orderDateTime = orderDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "SttldTxInd", required = true)
 	public YesNoIndicator getSettledTransactionIndicator() {
 		return settledTransactionIndicator;
 	}
 
-	public void setSettledTransactionIndicator(YesNoIndicator settledTransactionIndicator) {
-		this.settledTransactionIndicator = settledTransactionIndicator;
+	public InvestmentFundTransaction4 setSettledTransactionIndicator(YesNoIndicator settledTransactionIndicator) {
+		this.settledTransactionIndicator = Objects.requireNonNull(settledTransactionIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "RegdTxInd", required = true)
 	public YesNoIndicator getRegisteredTransactionIndicator() {
 		return registeredTransactionIndicator;
 	}
 
-	public void setRegisteredTransactionIndicator(YesNoIndicator registeredTransactionIndicator) {
-		this.registeredTransactionIndicator = registeredTransactionIndicator;
+	public InvestmentFundTransaction4 setRegisteredTransactionIndicator(YesNoIndicator registeredTransactionIndicator) {
+		this.registeredTransactionIndicator = Objects.requireNonNull(registeredTransactionIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "UnitsQty", required = true)
 	public FinancialInstrumentQuantity1 getUnitsQuantity() {
 		return unitsQuantity;
 	}
 
-	public void setUnitsQuantity(com.tools20022.repository.msg.FinancialInstrumentQuantity1 unitsQuantity) {
-		this.unitsQuantity = unitsQuantity;
+	public InvestmentFundTransaction4 setUnitsQuantity(FinancialInstrumentQuantity1 unitsQuantity) {
+		this.unitsQuantity = Objects.requireNonNull(unitsQuantity);
+		return this;
 	}
 
-	@XmlElement(name = "CdtDbt", required = true)
 	public CreditDebitCode getCreditDebit() {
 		return creditDebit;
 	}
 
-	public void setCreditDebit(CreditDebitCode creditDebit) {
-		this.creditDebit = creditDebit;
+	public InvestmentFundTransaction4 setCreditDebit(CreditDebitCode creditDebit) {
+		this.creditDebit = Objects.requireNonNull(creditDebit);
+		return this;
 	}
 
-	@XmlElement(name = "Rvsl")
-	public ReversalCode getReversal() {
-		return reversal;
+	public Optional<ReversalCode> getReversal() {
+		return reversal == null ? Optional.empty() : Optional.of(reversal);
 	}
 
-	public void setReversal(ReversalCode reversal) {
+	public InvestmentFundTransaction4 setReversal(ReversalCode reversal) {
 		this.reversal = reversal;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAmt")
-	public ActiveCurrencyAndAmount getSettlementAmount() {
-		return settlementAmount;
+	public Optional<ActiveCurrencyAndAmount> getSettlementAmount() {
+		return settlementAmount == null ? Optional.empty() : Optional.of(settlementAmount);
 	}
 
-	public void setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
+	public InvestmentFundTransaction4 setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
 		this.settlementAmount = settlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmDt")
-	public ISODate getSettlementDate() {
-		return settlementDate;
+	public Optional<ISODate> getSettlementDate() {
+		return settlementDate == null ? Optional.empty() : Optional.of(settlementDate);
 	}
 
-	public void setSettlementDate(ISODate settlementDate) {
+	public InvestmentFundTransaction4 setSettlementDate(ISODate settlementDate) {
 		this.settlementDate = settlementDate;
+		return this;
 	}
 
-	@XmlElement(name = "TradDtTm", required = true)
 	public DateAndDateTimeChoice getTradeDateTime() {
 		return tradeDateTime;
 	}
 
-	public void setTradeDateTime(DateAndDateTimeChoice tradeDateTime) {
-		this.tradeDateTime = tradeDateTime;
+	public InvestmentFundTransaction4 setTradeDateTime(DateAndDateTimeChoice tradeDateTime) {
+		this.tradeDateTime = Objects.requireNonNull(tradeDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "CumDvddInd", required = true)
 	public YesNoIndicator getCumDividendIndicator() {
 		return cumDividendIndicator;
 	}
 
-	public void setCumDividendIndicator(YesNoIndicator cumDividendIndicator) {
-		this.cumDividendIndicator = cumDividendIndicator;
+	public InvestmentFundTransaction4 setCumDividendIndicator(YesNoIndicator cumDividendIndicator) {
+		this.cumDividendIndicator = Objects.requireNonNull(cumDividendIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "PrtlyExctdInd", required = true)
 	public YesNoIndicator getPartiallyExecutedIndicator() {
 		return partiallyExecutedIndicator;
 	}
 
-	public void setPartiallyExecutedIndicator(YesNoIndicator partiallyExecutedIndicator) {
-		this.partiallyExecutedIndicator = partiallyExecutedIndicator;
+	public InvestmentFundTransaction4 setPartiallyExecutedIndicator(YesNoIndicator partiallyExecutedIndicator) {
+		this.partiallyExecutedIndicator = Objects.requireNonNull(partiallyExecutedIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "PricDtls")
-	public UnitPrice20 getPriceDetails() {
-		return priceDetails;
+	public Optional<UnitPrice20> getPriceDetails() {
+		return priceDetails == null ? Optional.empty() : Optional.of(priceDetails);
 	}
 
-	public void setPriceDetails(com.tools20022.repository.msg.UnitPrice20 priceDetails) {
+	public InvestmentFundTransaction4 setPriceDetails(UnitPrice20 priceDetails) {
 		this.priceDetails = priceDetails;
+		return this;
 	}
 }

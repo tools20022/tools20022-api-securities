@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for a settlement purpose."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Purpose3Choice", propOrder = {"securitiesPurposeCode", "proprietary"})
 public class Purpose3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SctiesPurpCd", required = true)
 	protected ExternalSecuritiesPurpose1Code securitiesPurposeCode;
 	/**
-	 * Underlying reason for the SSI instruction, expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +108,10 @@ public class Purpose3Choice {
 	 * "Underlying reason for the SSI instruction, expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesPurposeCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Purpose3Choice, ExternalSecuritiesPurpose1Code> mmSecuritiesPurposeCode = new MMMessageAttribute<Purpose3Choice, ExternalSecuritiesPurpose1Code>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
-			componentContext_lazy = () -> Purpose3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Purpose3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesPurpCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,12 +121,22 @@ public class Purpose3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalSecuritiesPurpose1Code.mmObject();
 		}
+
+		@Override
+		public ExternalSecuritiesPurpose1Code getValue(Purpose3Choice obj) {
+			return obj.getSecuritiesPurposeCode();
+		}
+
+		@Override
+		public void setValue(Purpose3Choice obj, ExternalSecuritiesPurpose1Code value) {
+			obj.setSecuritiesPurposeCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification1 proprietary;
 	/**
-	 * Underlying reason for the SSI instruction, expressed as a proprietary
-	 * code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +169,10 @@ public class Purpose3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Purpose3Choice, GenericIdentification1> mmProprietary = new MMMessageAttribute<Purpose3Choice, GenericIdentification1>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
-			componentContext_lazy = () -> Purpose3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Purpose3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,14 +182,24 @@ public class Purpose3Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification1.mmObject();
 		}
+
+		@Override
+		public GenericIdentification1 getValue(Purpose3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(Purpose3Choice obj, GenericIdentification1 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Purpose3Choice.mmSecuritiesPurposeCode, Purpose3Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Purpose3Choice.mmSecuritiesPurposeCode, com.tools20022.repository.choice.Purpose3Choice.mmProprietary);
 				trace_lazy = () -> PaymentObligation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Purpose3Choice";
 				definition = "Choice of formats for a settlement purpose.";
@@ -186,21 +208,21 @@ public class Purpose3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctiesPurpCd", required = true)
 	public ExternalSecuritiesPurpose1Code getSecuritiesPurposeCode() {
 		return securitiesPurposeCode;
 	}
 
-	public void setSecuritiesPurposeCode(ExternalSecuritiesPurpose1Code securitiesPurposeCode) {
-		this.securitiesPurposeCode = securitiesPurposeCode;
+	public Purpose3Choice setSecuritiesPurposeCode(ExternalSecuritiesPurpose1Code securitiesPurposeCode) {
+		this.securitiesPurposeCode = Objects.requireNonNull(securitiesPurposeCode);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification1 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification1 proprietary) {
-		this.proprietary = proprietary;
+	public Purpose3Choice setProprietary(GenericIdentification1 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

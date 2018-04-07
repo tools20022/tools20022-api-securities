@@ -29,6 +29,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SettlementTypeAndIdentification18;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -108,8 +109,20 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSecuritiesSettlementTransactionAllegementNotificationRule#forReferences43Choice
+ * ConstraintSecuritiesSettlementTransactionAllegementNotificationRule.
+ * forReferences43Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOtherMessageIdentificationUsageRule#forReferences43Choice
+ * ConstraintOtherMessageIdentificationUsageRule.forReferences43Choice}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -120,7 +133,7 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of reference."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "References43Choice", propOrder = {"securitiesSettlementTransactionConfirmationIdentification", "intraPositionMovementConfirmationIdentification", "securitiesBalanceAccountingReportIdentification",
 		"securitiesBalanceCustodyReportIdentification", "intraPositionMovementPostingReportIdentification", "securitiesFinancingConfirmationIdentification", "securitiesTransactionPendingReportIdentification",
 		"securitiesTransactionPostingReportIdentification", "securitiesSettlementTransactionAllegementReportIdentification", "securitiesSettlementTransactionAllegementNotificationTransactionIdentification",
@@ -128,10 +141,11 @@ import javax.xml.bind.annotation.XmlType;
 public class References43Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SctiesSttlmTxConfId", required = true)
 	protected SettlementTypeAndIdentification18 securitiesSettlementTransactionConfirmationIdentification;
 	/**
-	 * Unambiguous identification of the confirmation to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,10 +176,10 @@ public class References43Choice {
 	 * "Unambiguous identification of the confirmation to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesSettlementTransactionConfirmationIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18> mmSecuritiesSettlementTransactionConfirmationIdentification = new MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmSecuritiesSettlement;
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesSttlmTxConfId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,12 +190,22 @@ public class References43Choice {
 			isComposite = true;
 			type_lazy = () -> SettlementTypeAndIdentification18.mmObject();
 		}
+
+		@Override
+		public SettlementTypeAndIdentification18 getValue(References43Choice obj) {
+			return obj.getSecuritiesSettlementTransactionConfirmationIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, SettlementTypeAndIdentification18 value) {
+			obj.setSecuritiesSettlementTransactionConfirmationIdentification(value);
+		}
 	};
+	@XmlElement(name = "IntraPosMvmntConfId", required = true)
 	protected Max35Text intraPositionMovementConfirmationIdentification;
 	/**
-	 * Unambiguous account servicer identification of the intra-position
-	 * movement confirmation to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,9 +232,9 @@ public class References43Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntraPositionMovementConfirmationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmIntraPositionMovementConfirmationIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntraPosMvmntConfId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,11 +244,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getIntraPositionMovementConfirmationIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setIntraPositionMovementConfirmationIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesBalAcctgRptId", required = true)
 	protected Max35Text securitiesBalanceAccountingReportIdentification;
 	/**
-	 * Unambiguous identification of the report message to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,9 +285,9 @@ public class References43Choice {
 	 * "Unambiguous identification of the report message to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesBalanceAccountingReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmSecuritiesBalanceAccountingReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesBalAcctgRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -262,11 +297,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getSecuritiesBalanceAccountingReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setSecuritiesBalanceAccountingReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesBalCtdyRptId", required = true)
 	protected Max35Text securitiesBalanceCustodyReportIdentification;
 	/**
-	 * Unambiguous identification of the report message to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -292,9 +338,9 @@ public class References43Choice {
 	 * "Unambiguous identification of the report message to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesBalanceCustodyReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmSecuritiesBalanceCustodyReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesBalCtdyRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -304,12 +350,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getSecuritiesBalanceCustodyReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setSecuritiesBalanceCustodyReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "IntraPosMvmntPstngRptId", required = true)
 	protected Max35Text intraPositionMovementPostingReportIdentification;
 	/**
-	 * Identification of the intra-position movement posting report to be
-	 * cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,9 +392,9 @@ public class References43Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntraPositionMovementPostingReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmIntraPositionMovementPostingReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntraPosMvmntPstngRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -348,11 +404,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getIntraPositionMovementPostingReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setIntraPositionMovementPostingReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesFincgConfId", required = true)
 	protected SettlementTypeAndIdentification18 securitiesFinancingConfirmationIdentification;
 	/**
-	 * Unambiguous identification of the confirmation to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -378,9 +445,9 @@ public class References43Choice {
 	 * "Unambiguous identification of the confirmation to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesFinancingConfirmationIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18> mmSecuritiesFinancingConfirmationIdentification = new MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesFincgConfId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -391,11 +458,22 @@ public class References43Choice {
 			isComposite = true;
 			type_lazy = () -> SettlementTypeAndIdentification18.mmObject();
 		}
+
+		@Override
+		public SettlementTypeAndIdentification18 getValue(References43Choice obj) {
+			return obj.getSecuritiesFinancingConfirmationIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, SettlementTypeAndIdentification18 value) {
+			obj.setSecuritiesFinancingConfirmationIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesTxPdgRptId", required = true)
 	protected Max35Text securitiesTransactionPendingReportIdentification;
 	/**
-	 * Unambiguous identification of the report message to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,9 +499,9 @@ public class References43Choice {
 	 * "Unambiguous identification of the report message to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesTransactionPendingReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmSecuritiesTransactionPendingReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesTxPdgRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -433,11 +511,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getSecuritiesTransactionPendingReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setSecuritiesTransactionPendingReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesTxPstngRptId", required = true)
 	protected Max35Text securitiesTransactionPostingReportIdentification;
 	/**
-	 * Unambiguous identification of the report message to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -463,9 +552,9 @@ public class References43Choice {
 	 * "Unambiguous identification of the report message to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesTransactionPostingReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmSecuritiesTransactionPostingReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesTxPstngRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -475,11 +564,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getSecuritiesTransactionPostingReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setSecuritiesTransactionPostingReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesSttlmTxAllgmtRptId", required = true)
 	protected Max35Text securitiesSettlementTransactionAllegementReportIdentification;
 	/**
-	 * Unambiguous identification of the report to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -505,9 +605,9 @@ public class References43Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesSettlementTransactionAllegementReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmSecuritiesSettlementTransactionAllegementReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesSttlmTxAllgmtRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -517,12 +617,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getSecuritiesSettlementTransactionAllegementReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setSecuritiesSettlementTransactionAllegementReportIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesSttlmTxAllgmtNtfctnTxId", required = true)
 	protected SettlementTypeAndIdentification18 securitiesSettlementTransactionAllegementNotificationTransactionIdentification;
 	/**
-	 * Unambiguous identification of the allegement notification to be cancelled
-	 * as know by the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -556,10 +666,10 @@ public class References43Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18> mmSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification = new MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmSecuritiesSettlement;
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesSttlmTxAllgmtNtfctnTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -570,11 +680,22 @@ public class References43Choice {
 			isComposite = true;
 			type_lazy = () -> SettlementTypeAndIdentification18.mmObject();
 		}
+
+		@Override
+		public SettlementTypeAndIdentification18 getValue(References43Choice obj) {
+			return obj.getSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, SettlementTypeAndIdentification18 value) {
+			obj.setSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "PrtflTrfNtfctnId", required = true)
 	protected Max35Text portfolioTransferNotificationIdentification;
 	/**
-	 * Identification of the portfolio transfer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -599,9 +720,9 @@ public class References43Choice {
 	 * definition} = "Identification of the portfolio transfer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPortfolioTransferNotificationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmPortfolioTransferNotificationIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtflTrfNtfctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -611,11 +732,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getPortfolioTransferNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setPortfolioTransferNotificationIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesSttlmTxGnrtnNtfctnId", required = true)
 	protected SettlementTypeAndIdentification18 securitiesSettlementTransactionGenerationNotificationIdentification;
 	/**
-	 * Unambiguous identification of the notification message to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -648,10 +780,10 @@ public class References43Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesSettlementTransactionGenerationNotificationIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18> mmSecuritiesSettlementTransactionGenerationNotificationIdentification = new MMMessageAssociationEnd<References43Choice, SettlementTypeAndIdentification18>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmSecuritiesSettlement;
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesSttlmTxGnrtnNtfctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -662,11 +794,22 @@ public class References43Choice {
 			isComposite = true;
 			type_lazy = () -> SettlementTypeAndIdentification18.mmObject();
 		}
+
+		@Override
+		public SettlementTypeAndIdentification18 getValue(References43Choice obj) {
+			return obj.getSecuritiesSettlementTransactionGenerationNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, SettlementTypeAndIdentification18 value) {
+			obj.setSecuritiesSettlementTransactionGenerationNotificationIdentification(value);
+		}
 	};
+	@XmlElement(name = "OthrMsgId", required = true)
 	protected Max35Text otherMessageIdentification;
 	/**
-	 * Unambiguous identification of the message to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -692,9 +835,9 @@ public class References43Choice {
 	 * "Unambiguous identification of the message to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOtherMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmOtherMessageIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OthrMsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -704,11 +847,22 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getOtherMessageIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setOtherMessageIdentification(value);
+		}
 	};
+	@XmlElement(name = "TtlPrtflValtnRptId", required = true)
 	protected Max35Text totalPortfolioValuationReportIdentification;
 	/**
-	 * Unique identification of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -733,9 +887,9 @@ public class References43Choice {
 	 * definition} = "Unique identification of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalPortfolioValuationReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<References43Choice, Max35Text> mmTotalPortfolioValuationReportIdentification = new MMMessageAttribute<References43Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> References43Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.References43Choice.mmObject();
 			isDerived = false;
 			xmlTag = "TtlPrtflValtnRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -745,20 +899,36 @@ public class References43Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(References43Choice obj) {
+			return obj.getTotalPortfolioValuationReportIdentification();
+		}
+
+		@Override
+		public void setValue(References43Choice obj, Max35Text value) {
+			obj.setTotalPortfolioValuationReportIdentification(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(References43Choice.mmSecuritiesSettlementTransactionConfirmationIdentification, References43Choice.mmIntraPositionMovementConfirmationIdentification,
-						References43Choice.mmSecuritiesBalanceAccountingReportIdentification, References43Choice.mmSecuritiesBalanceCustodyReportIdentification, References43Choice.mmIntraPositionMovementPostingReportIdentification,
-						References43Choice.mmSecuritiesFinancingConfirmationIdentification, References43Choice.mmSecuritiesTransactionPendingReportIdentification, References43Choice.mmSecuritiesTransactionPostingReportIdentification,
-						References43Choice.mmSecuritiesSettlementTransactionAllegementReportIdentification, References43Choice.mmSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification,
-						References43Choice.mmPortfolioTransferNotificationIdentification, References43Choice.mmSecuritiesSettlementTransactionGenerationNotificationIdentification, References43Choice.mmOtherMessageIdentification,
-						References43Choice.mmTotalPortfolioValuationReportIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.References43Choice.mmSecuritiesSettlementTransactionConfirmationIdentification,
+						com.tools20022.repository.choice.References43Choice.mmIntraPositionMovementConfirmationIdentification, com.tools20022.repository.choice.References43Choice.mmSecuritiesBalanceAccountingReportIdentification,
+						com.tools20022.repository.choice.References43Choice.mmSecuritiesBalanceCustodyReportIdentification, com.tools20022.repository.choice.References43Choice.mmIntraPositionMovementPostingReportIdentification,
+						com.tools20022.repository.choice.References43Choice.mmSecuritiesFinancingConfirmationIdentification, com.tools20022.repository.choice.References43Choice.mmSecuritiesTransactionPendingReportIdentification,
+						com.tools20022.repository.choice.References43Choice.mmSecuritiesTransactionPostingReportIdentification,
+						com.tools20022.repository.choice.References43Choice.mmSecuritiesSettlementTransactionAllegementReportIdentification,
+						com.tools20022.repository.choice.References43Choice.mmSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification,
+						com.tools20022.repository.choice.References43Choice.mmPortfolioTransferNotificationIdentification,
+						com.tools20022.repository.choice.References43Choice.mmSecuritiesSettlementTransactionGenerationNotificationIdentification, com.tools20022.repository.choice.References43Choice.mmOtherMessageIdentification,
+						com.tools20022.repository.choice.References43Choice.mmTotalPortfolioValuationReportIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesMessageCancellationAdviceV05.mmReference);
 				trace_lazy = () -> SecuritiesTradeIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSecuritiesSettlementTransactionAllegementNotificationRule.forReferences43Choice,
+						com.tools20022.repository.constraints.ConstraintOtherMessageIdentificationUsageRule.forReferences43Choice);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "References43Choice";
 				definition = "Choice of reference.";
@@ -767,129 +937,129 @@ public class References43Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctiesSttlmTxConfId", required = true)
 	public SettlementTypeAndIdentification18 getSecuritiesSettlementTransactionConfirmationIdentification() {
 		return securitiesSettlementTransactionConfirmationIdentification;
 	}
 
-	public void setSecuritiesSettlementTransactionConfirmationIdentification(SettlementTypeAndIdentification18 securitiesSettlementTransactionConfirmationIdentification) {
-		this.securitiesSettlementTransactionConfirmationIdentification = securitiesSettlementTransactionConfirmationIdentification;
+	public References43Choice setSecuritiesSettlementTransactionConfirmationIdentification(SettlementTypeAndIdentification18 securitiesSettlementTransactionConfirmationIdentification) {
+		this.securitiesSettlementTransactionConfirmationIdentification = Objects.requireNonNull(securitiesSettlementTransactionConfirmationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "IntraPosMvmntConfId", required = true)
 	public Max35Text getIntraPositionMovementConfirmationIdentification() {
 		return intraPositionMovementConfirmationIdentification;
 	}
 
-	public void setIntraPositionMovementConfirmationIdentification(Max35Text intraPositionMovementConfirmationIdentification) {
-		this.intraPositionMovementConfirmationIdentification = intraPositionMovementConfirmationIdentification;
+	public References43Choice setIntraPositionMovementConfirmationIdentification(Max35Text intraPositionMovementConfirmationIdentification) {
+		this.intraPositionMovementConfirmationIdentification = Objects.requireNonNull(intraPositionMovementConfirmationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesBalAcctgRptId", required = true)
 	public Max35Text getSecuritiesBalanceAccountingReportIdentification() {
 		return securitiesBalanceAccountingReportIdentification;
 	}
 
-	public void setSecuritiesBalanceAccountingReportIdentification(Max35Text securitiesBalanceAccountingReportIdentification) {
-		this.securitiesBalanceAccountingReportIdentification = securitiesBalanceAccountingReportIdentification;
+	public References43Choice setSecuritiesBalanceAccountingReportIdentification(Max35Text securitiesBalanceAccountingReportIdentification) {
+		this.securitiesBalanceAccountingReportIdentification = Objects.requireNonNull(securitiesBalanceAccountingReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesBalCtdyRptId", required = true)
 	public Max35Text getSecuritiesBalanceCustodyReportIdentification() {
 		return securitiesBalanceCustodyReportIdentification;
 	}
 
-	public void setSecuritiesBalanceCustodyReportIdentification(Max35Text securitiesBalanceCustodyReportIdentification) {
-		this.securitiesBalanceCustodyReportIdentification = securitiesBalanceCustodyReportIdentification;
+	public References43Choice setSecuritiesBalanceCustodyReportIdentification(Max35Text securitiesBalanceCustodyReportIdentification) {
+		this.securitiesBalanceCustodyReportIdentification = Objects.requireNonNull(securitiesBalanceCustodyReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "IntraPosMvmntPstngRptId", required = true)
 	public Max35Text getIntraPositionMovementPostingReportIdentification() {
 		return intraPositionMovementPostingReportIdentification;
 	}
 
-	public void setIntraPositionMovementPostingReportIdentification(Max35Text intraPositionMovementPostingReportIdentification) {
-		this.intraPositionMovementPostingReportIdentification = intraPositionMovementPostingReportIdentification;
+	public References43Choice setIntraPositionMovementPostingReportIdentification(Max35Text intraPositionMovementPostingReportIdentification) {
+		this.intraPositionMovementPostingReportIdentification = Objects.requireNonNull(intraPositionMovementPostingReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesFincgConfId", required = true)
 	public SettlementTypeAndIdentification18 getSecuritiesFinancingConfirmationIdentification() {
 		return securitiesFinancingConfirmationIdentification;
 	}
 
-	public void setSecuritiesFinancingConfirmationIdentification(SettlementTypeAndIdentification18 securitiesFinancingConfirmationIdentification) {
-		this.securitiesFinancingConfirmationIdentification = securitiesFinancingConfirmationIdentification;
+	public References43Choice setSecuritiesFinancingConfirmationIdentification(SettlementTypeAndIdentification18 securitiesFinancingConfirmationIdentification) {
+		this.securitiesFinancingConfirmationIdentification = Objects.requireNonNull(securitiesFinancingConfirmationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesTxPdgRptId", required = true)
 	public Max35Text getSecuritiesTransactionPendingReportIdentification() {
 		return securitiesTransactionPendingReportIdentification;
 	}
 
-	public void setSecuritiesTransactionPendingReportIdentification(Max35Text securitiesTransactionPendingReportIdentification) {
-		this.securitiesTransactionPendingReportIdentification = securitiesTransactionPendingReportIdentification;
+	public References43Choice setSecuritiesTransactionPendingReportIdentification(Max35Text securitiesTransactionPendingReportIdentification) {
+		this.securitiesTransactionPendingReportIdentification = Objects.requireNonNull(securitiesTransactionPendingReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesTxPstngRptId", required = true)
 	public Max35Text getSecuritiesTransactionPostingReportIdentification() {
 		return securitiesTransactionPostingReportIdentification;
 	}
 
-	public void setSecuritiesTransactionPostingReportIdentification(Max35Text securitiesTransactionPostingReportIdentification) {
-		this.securitiesTransactionPostingReportIdentification = securitiesTransactionPostingReportIdentification;
+	public References43Choice setSecuritiesTransactionPostingReportIdentification(Max35Text securitiesTransactionPostingReportIdentification) {
+		this.securitiesTransactionPostingReportIdentification = Objects.requireNonNull(securitiesTransactionPostingReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesSttlmTxAllgmtRptId", required = true)
 	public Max35Text getSecuritiesSettlementTransactionAllegementReportIdentification() {
 		return securitiesSettlementTransactionAllegementReportIdentification;
 	}
 
-	public void setSecuritiesSettlementTransactionAllegementReportIdentification(Max35Text securitiesSettlementTransactionAllegementReportIdentification) {
-		this.securitiesSettlementTransactionAllegementReportIdentification = securitiesSettlementTransactionAllegementReportIdentification;
+	public References43Choice setSecuritiesSettlementTransactionAllegementReportIdentification(Max35Text securitiesSettlementTransactionAllegementReportIdentification) {
+		this.securitiesSettlementTransactionAllegementReportIdentification = Objects.requireNonNull(securitiesSettlementTransactionAllegementReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesSttlmTxAllgmtNtfctnTxId", required = true)
 	public SettlementTypeAndIdentification18 getSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification() {
 		return securitiesSettlementTransactionAllegementNotificationTransactionIdentification;
 	}
 
-	public void setSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification(SettlementTypeAndIdentification18 securitiesSettlementTransactionAllegementNotificationTransactionIdentification) {
-		this.securitiesSettlementTransactionAllegementNotificationTransactionIdentification = securitiesSettlementTransactionAllegementNotificationTransactionIdentification;
+	public References43Choice setSecuritiesSettlementTransactionAllegementNotificationTransactionIdentification(SettlementTypeAndIdentification18 securitiesSettlementTransactionAllegementNotificationTransactionIdentification) {
+		this.securitiesSettlementTransactionAllegementNotificationTransactionIdentification = Objects.requireNonNull(securitiesSettlementTransactionAllegementNotificationTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PrtflTrfNtfctnId", required = true)
 	public Max35Text getPortfolioTransferNotificationIdentification() {
 		return portfolioTransferNotificationIdentification;
 	}
 
-	public void setPortfolioTransferNotificationIdentification(Max35Text portfolioTransferNotificationIdentification) {
-		this.portfolioTransferNotificationIdentification = portfolioTransferNotificationIdentification;
+	public References43Choice setPortfolioTransferNotificationIdentification(Max35Text portfolioTransferNotificationIdentification) {
+		this.portfolioTransferNotificationIdentification = Objects.requireNonNull(portfolioTransferNotificationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesSttlmTxGnrtnNtfctnId", required = true)
 	public SettlementTypeAndIdentification18 getSecuritiesSettlementTransactionGenerationNotificationIdentification() {
 		return securitiesSettlementTransactionGenerationNotificationIdentification;
 	}
 
-	public void setSecuritiesSettlementTransactionGenerationNotificationIdentification(SettlementTypeAndIdentification18 securitiesSettlementTransactionGenerationNotificationIdentification) {
-		this.securitiesSettlementTransactionGenerationNotificationIdentification = securitiesSettlementTransactionGenerationNotificationIdentification;
+	public References43Choice setSecuritiesSettlementTransactionGenerationNotificationIdentification(SettlementTypeAndIdentification18 securitiesSettlementTransactionGenerationNotificationIdentification) {
+		this.securitiesSettlementTransactionGenerationNotificationIdentification = Objects.requireNonNull(securitiesSettlementTransactionGenerationNotificationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OthrMsgId", required = true)
 	public Max35Text getOtherMessageIdentification() {
 		return otherMessageIdentification;
 	}
 
-	public void setOtherMessageIdentification(Max35Text otherMessageIdentification) {
-		this.otherMessageIdentification = otherMessageIdentification;
+	public References43Choice setOtherMessageIdentification(Max35Text otherMessageIdentification) {
+		this.otherMessageIdentification = Objects.requireNonNull(otherMessageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "TtlPrtflValtnRptId", required = true)
 	public Max35Text getTotalPortfolioValuationReportIdentification() {
 		return totalPortfolioValuationReportIdentification;
 	}
 
-	public void setTotalPortfolioValuationReportIdentification(Max35Text totalPortfolioValuationReportIdentification) {
-		this.totalPortfolioValuationReportIdentification = totalPortfolioValuationReportIdentification;
+	public References43Choice setTotalPortfolioValuationReportIdentification(Max35Text totalPortfolioValuationReportIdentification) {
+		this.totalPortfolioValuationReportIdentification = Objects.requireNonNull(totalPortfolioValuationReportIdentification);
+		return this;
 	}
 }

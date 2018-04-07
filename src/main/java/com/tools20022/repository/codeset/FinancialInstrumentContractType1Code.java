@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Specifies the contract type of a derivate
+ * Specifies the contract type of a derivate.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#ContractForDifference
- * FinancialInstrumentContractType1Code.mmContractForDifference}</li>
+ * FinancialInstrumentContractType1Code.ContractForDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#Forward
- * FinancialInstrumentContractType1Code.mmForward}</li>
+ * FinancialInstrumentContractType1Code.Forward}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#ForwardRateAgreement
- * FinancialInstrumentContractType1Code.mmForwardRateAgreement}</li>
+ * FinancialInstrumentContractType1Code.ForwardRateAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#Futures
- * FinancialInstrumentContractType1Code.mmFutures}</li>
+ * FinancialInstrumentContractType1Code.Futures}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#Option
- * FinancialInstrumentContractType1Code.mmOption}</li>
+ * FinancialInstrumentContractType1Code.Option}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#Other
- * FinancialInstrumentContractType1Code.mmOther}</li>
+ * FinancialInstrumentContractType1Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#SpreadBetting
- * FinancialInstrumentContractType1Code.mmSpreadBetting}</li>
+ * FinancialInstrumentContractType1Code.SpreadBetting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#Swap
- * FinancialInstrumentContractType1Code.mmSwap}</li>
+ * FinancialInstrumentContractType1Code.Swap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#Swaption
- * FinancialInstrumentContractType1Code.mmSwaption}</li>
+ * FinancialInstrumentContractType1Code.Swaption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#FuturesOnSwap
- * FinancialInstrumentContractType1Code.mmFuturesOnSwap}</li>
+ * FinancialInstrumentContractType1Code.FuturesOnSwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#PortfolioSwap
- * FinancialInstrumentContractType1Code.mmPortfolioSwap}</li>
+ * FinancialInstrumentContractType1Code.PortfolioSwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#ForwardFreightAgreement
- * FinancialInstrumentContractType1Code.mmForwardFreightAgreement}</li>
+ * FinancialInstrumentContractType1Code.ForwardFreightAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractType1Code#ForwardsOnASwap
- * FinancialInstrumentContractType1Code.mmForwardsOnASwap}</li>
+ * FinancialInstrumentContractType1Code.ForwardsOnASwap}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,7 +92,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "FinancialInstrumentContractType1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Specifies the contract type of a derivate"</li>
+ * definition} = "Specifies the contract type of a derivate."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -419,10 +419,10 @@ public class FinancialInstrumentContractType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentContractType1Code";
-				definition = "Specifies the contract type of a derivate";
+				definition = "Specifies the contract type of a derivate.";
 				trace_lazy = () -> FinancialInstrumentContractTypeCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FinancialInstrumentContractType1Code.ContractForDifference, com.tools20022.repository.codeset.FinancialInstrumentContractType1Code.Forward,
 						com.tools20022.repository.codeset.FinancialInstrumentContractType1Code.ForwardRateAgreement, com.tools20022.repository.codeset.FinancialInstrumentContractType1Code.Futures,

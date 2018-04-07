@@ -24,10 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.MarketIdentification92;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingMarketIdentificationCodeReportV01", propOrder = {"marketIdentification", "supplementaryData"})
 public class FinancialInstrumentReportingMarketIdentificationCodeReportV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MktId", required = true)
 	protected List<MarketIdentification92> marketIdentification;
 	/**
-	 * Report of the market and associate descriptive details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +106,7 @@ public class FinancialInstrumentReportingMarketIdentificationCodeReportV01 {
 	 * definition} = "Report of the market and associate descriptive details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarketIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingMarketIdentificationCodeReportV01, List<MarketIdentification92>> mmMarketIdentification = new MMMessageBuildingBlock<FinancialInstrumentReportingMarketIdentificationCodeReportV01, List<MarketIdentification92>>() {
 		{
 			xmlTag = "MktId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,19 +116,21 @@ public class FinancialInstrumentReportingMarketIdentificationCodeReportV01 {
 			complexType_lazy = () -> MarketIdentification92.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingMarketIdentificationCodeReportV01.class.getMethod("getMarketIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MarketIdentification92> getValue(FinancialInstrumentReportingMarketIdentificationCodeReportV01 obj) {
+			return obj.getMarketIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingMarketIdentificationCodeReportV01 obj, List<MarketIdentification92> value) {
+			obj.setMarketIdentification(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +153,7 @@ public class FinancialInstrumentReportingMarketIdentificationCodeReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingMarketIdentificationCodeReportV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingMarketIdentificationCodeReportV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,12 +163,14 @@ public class FinancialInstrumentReportingMarketIdentificationCodeReportV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingMarketIdentificationCodeReportV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingMarketIdentificationCodeReportV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingMarketIdentificationCodeReportV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -197,25 +203,25 @@ public class FinancialInstrumentReportingMarketIdentificationCodeReportV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MktId", required = true)
 	public List<MarketIdentification92> getMarketIdentification() {
-		return marketIdentification;
+		return marketIdentification == null ? marketIdentification = new ArrayList<>() : marketIdentification;
 	}
 
-	public void setMarketIdentification(List<MarketIdentification92> marketIdentification) {
-		this.marketIdentification = marketIdentification;
+	public FinancialInstrumentReportingMarketIdentificationCodeReportV01 setMarketIdentification(List<MarketIdentification92> marketIdentification) {
+		this.marketIdentification = Objects.requireNonNull(marketIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingMarketIdentificationCodeReportV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.049.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.049.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgMktIdCdRpt", required = true)
 		public FinancialInstrumentReportingMarketIdentificationCodeReportV01 messageBody;

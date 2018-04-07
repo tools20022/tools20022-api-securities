@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -26,6 +27,8 @@ import com.tools20022.repository.datatype.Max256Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Additional information with update description and date."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "UpdatedURLlnformation2", propOrder = {"updateDescription", "updateDate", "URLAddress"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "UpdatedURLlnformation2", propOrder = {"updateDescription", "updateDate", "uRLAddress"})
 public class UpdatedURLlnformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "UpdDesc")
 	protected Max140Text updateDescription;
 	/**
-	 * Specifies the amendments made to the narrative since the last message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,9 +104,9 @@ public class UpdatedURLlnformation2 {
 	 * "Specifies the amendments made to the narrative since the last message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUpdateDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UpdatedURLlnformation2, Optional<Max140Text>> mmUpdateDescription = new MMMessageAttribute<UpdatedURLlnformation2, Optional<Max140Text>>() {
 		{
-			componentContext_lazy = () -> UpdatedURLlnformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UpdatedURLlnformation2.mmObject();
 			isDerived = false;
 			xmlTag = "UpdDesc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,11 +116,22 @@ public class UpdatedURLlnformation2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(UpdatedURLlnformation2 obj) {
+			return obj.getUpdateDescription();
+		}
+
+		@Override
+		public void setValue(UpdatedURLlnformation2 obj, Optional<Max140Text> value) {
+			obj.setUpdateDescription(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UpdDt")
 	protected ISODate updateDate;
 	/**
-	 * Specifies the date at which the narrative has been updated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,9 +157,9 @@ public class UpdatedURLlnformation2 {
 	 * "Specifies the date at which the narrative has been updated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUpdateDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UpdatedURLlnformation2, Optional<ISODate>> mmUpdateDate = new MMMessageAttribute<UpdatedURLlnformation2, Optional<ISODate>>() {
 		{
-			componentContext_lazy = () -> UpdatedURLlnformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UpdatedURLlnformation2.mmObject();
 			isDerived = false;
 			xmlTag = "UpdDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,13 +169,22 @@ public class UpdatedURLlnformation2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(UpdatedURLlnformation2 obj) {
+			return obj.getUpdateDate();
+		}
+
+		@Override
+		public void setValue(UpdatedURLlnformation2 obj, Optional<ISODate> value) {
+			obj.setUpdateDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "URLAdr", required = true)
 	protected Max256Text uRLAddress;
 	/**
-	 * Provides the web address, that is, the address for the Universal Resource
-	 * Locator (URL), to use over the www (HTTP) service where additional
-	 * information may be found.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,6 +199,9 @@ public class UpdatedURLlnformation2 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "URLAdr"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70E::WEBB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -187,11 +214,12 @@ public class UpdatedURLlnformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmURLAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UpdatedURLlnformation2, Max256Text> mmURLAddress = new MMMessageAttribute<UpdatedURLlnformation2, Max256Text>() {
 		{
-			componentContext_lazy = () -> UpdatedURLlnformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UpdatedURLlnformation2.mmObject();
 			isDerived = false;
 			xmlTag = "URLAdr";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70E::WEBB"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "URLAddress";
 			definition = "Provides the web address, that is, the address for the Universal Resource Locator (URL), to use over the www (HTTP) service where additional information may be found.";
@@ -199,13 +227,24 @@ public class UpdatedURLlnformation2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Max256Text getValue(UpdatedURLlnformation2 obj) {
+			return obj.getURLAddress();
+		}
+
+		@Override
+		public void setValue(UpdatedURLlnformation2 obj, Max256Text value) {
+			obj.setURLAddress(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UpdatedURLlnformation2.mmUpdateDescription, UpdatedURLlnformation2.mmUpdateDate, UpdatedURLlnformation2.mmURLAddress);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UpdatedURLlnformation2.mmUpdateDescription, com.tools20022.repository.msg.UpdatedURLlnformation2.mmUpdateDate,
+						com.tools20022.repository.msg.UpdatedURLlnformation2.mmURLAddress);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UpdatedURLlnformation2";
 				definition = "Additional information with update description and date.";
@@ -214,30 +253,30 @@ public class UpdatedURLlnformation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "UpdDesc")
-	public Max140Text getUpdateDescription() {
-		return updateDescription;
+	public Optional<Max140Text> getUpdateDescription() {
+		return updateDescription == null ? Optional.empty() : Optional.of(updateDescription);
 	}
 
-	public void setUpdateDescription(Max140Text updateDescription) {
+	public UpdatedURLlnformation2 setUpdateDescription(Max140Text updateDescription) {
 		this.updateDescription = updateDescription;
+		return this;
 	}
 
-	@XmlElement(name = "UpdDt")
-	public ISODate getUpdateDate() {
-		return updateDate;
+	public Optional<ISODate> getUpdateDate() {
+		return updateDate == null ? Optional.empty() : Optional.of(updateDate);
 	}
 
-	public void setUpdateDate(ISODate updateDate) {
+	public UpdatedURLlnformation2 setUpdateDate(ISODate updateDate) {
 		this.updateDate = updateDate;
+		return this;
 	}
 
-	@XmlElement(name = "URLAdr", required = true)
 	public Max256Text getURLAddress() {
 		return uRLAddress;
 	}
 
-	public void setURLAddress(Max256Text uRLAddress) {
-		this.uRLAddress = uRLAddress;
+	public UpdatedURLlnformation2 setURLAddress(Max256Text uRLAddress) {
+		this.uRLAddress = Objects.requireNonNull(uRLAddress);
+		return this;
 	}
 }

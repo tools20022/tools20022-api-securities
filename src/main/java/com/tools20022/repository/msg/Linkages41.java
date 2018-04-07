@@ -21,13 +21,15 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionConfirmationV07;
-import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionStatusAdviceV08;
+import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionConfirmationV08;
+import com.tools20022.repository.area.sese.SecuritiesSettlementTransactionStatusAdviceV09;
 import com.tools20022.repository.choice.ProcessingPosition9Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,18 +57,18 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionConfirmationV07#mmLinkages
- * SecuritiesSettlementTransactionConfirmationV07.mmLinkages}</li>
+ * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionConfirmationV08#mmLinkages
+ * SecuritiesSettlementTransactionConfirmationV08.mmLinkages}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionStatusAdviceV08#mmLinkages
- * SecuritiesSettlementTransactionStatusAdviceV08.mmLinkages}</li>
+ * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementTransactionStatusAdviceV09#mmLinkages
+ * SecuritiesSettlementTransactionStatusAdviceV09.mmLinkages}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,16 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information related to a linked transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Linkages41", propOrder = {"processingPosition", "securitiesSettlementTransactionIdentification"})
 public class Linkages41 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PrcgPos")
 	protected ProcessingPosition9Choice processingPosition;
 	/**
-	 * When the transaction is to be executed relative to a linked transaction -
-	 * for information only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -112,9 +114,9 @@ public class Linkages41 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProcessingPosition = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Linkages41, Optional<ProcessingPosition9Choice>> mmProcessingPosition = new MMMessageAssociationEnd<Linkages41, Optional<ProcessingPosition9Choice>>() {
 		{
-			componentContext_lazy = () -> Linkages41.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Linkages41.mmObject();
 			isDerived = false;
 			xmlTag = "PrcgPos";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,12 +127,22 @@ public class Linkages41 {
 			isComposite = true;
 			type_lazy = () -> ProcessingPosition9Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ProcessingPosition9Choice> getValue(Linkages41 obj) {
+			return obj.getProcessingPosition();
+		}
+
+		@Override
+		public void setValue(Linkages41 obj, Optional<ProcessingPosition9Choice> value) {
+			obj.setProcessingPosition(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SctiesSttlmTxId", required = true)
 	protected Max35Text securitiesSettlementTransactionIdentification;
 	/**
-	 * Unambiguous identification of a securities settlement transaction as
-	 * known by the account owner (or instructing party acting on its behalf).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,9 +168,9 @@ public class Linkages41 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesSettlementTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Linkages41, Max35Text> mmSecuritiesSettlementTransactionIdentification = new MMMessageAttribute<Linkages41, Max35Text>() {
 		{
-			componentContext_lazy = () -> Linkages41.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Linkages41.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesSttlmTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +180,24 @@ public class Linkages41 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Linkages41 obj) {
+			return obj.getSecuritiesSettlementTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(Linkages41 obj, Max35Text value) {
+			obj.setSecuritiesSettlementTransactionIdentification(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Linkages41.mmProcessingPosition, Linkages41.mmSecuritiesSettlementTransactionIdentification);
-				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesSettlementTransactionConfirmationV07.mmLinkages, SecuritiesSettlementTransactionStatusAdviceV08.mmLinkages);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Linkages41.mmProcessingPosition, com.tools20022.repository.msg.Linkages41.mmSecuritiesSettlementTransactionIdentification);
+				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesSettlementTransactionConfirmationV08.mmLinkages, SecuritiesSettlementTransactionStatusAdviceV09.mmLinkages);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Linkages41";
 				definition = "Information related to a linked transaction.";
@@ -184,21 +206,21 @@ public class Linkages41 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PrcgPos")
-	public ProcessingPosition9Choice getProcessingPosition() {
-		return processingPosition;
+	public Optional<ProcessingPosition9Choice> getProcessingPosition() {
+		return processingPosition == null ? Optional.empty() : Optional.of(processingPosition);
 	}
 
-	public void setProcessingPosition(ProcessingPosition9Choice processingPosition) {
+	public Linkages41 setProcessingPosition(ProcessingPosition9Choice processingPosition) {
 		this.processingPosition = processingPosition;
+		return this;
 	}
 
-	@XmlElement(name = "SctiesSttlmTxId", required = true)
 	public Max35Text getSecuritiesSettlementTransactionIdentification() {
 		return securitiesSettlementTransactionIdentification;
 	}
 
-	public void setSecuritiesSettlementTransactionIdentification(Max35Text securitiesSettlementTransactionIdentification) {
-		this.securitiesSettlementTransactionIdentification = securitiesSettlementTransactionIdentification;
+	public Linkages41 setSecuritiesSettlementTransactionIdentification(Max35Text securitiesSettlementTransactionIdentification) {
+		this.securitiesSettlementTransactionIdentification = Objects.requireNonNull(securitiesSettlementTransactionIdentification);
+		return this;
 	}
 }

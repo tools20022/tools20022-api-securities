@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.SecuritiesTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,18 +71,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "DerivativeCommodity2"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Defines the details of a commodity derivative. "</li>
+ * definition} = "Defines the details of a commodity derivative."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DerivativeCommodity2", propOrder = {"product", "transactionType", "finalPriceType"})
 public class DerivativeCommodity2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Pdct", required = true)
 	protected AssetClassCommodity3Choice product;
 	/**
-	 * Commodity product attributes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -109,10 +112,10 @@ public class DerivativeCommodity2 {
 	 * definition} = "Commodity product attributes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProduct = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DerivativeCommodity2, AssetClassCommodity3Choice> mmProduct = new MMMessageAssociationEnd<DerivativeCommodity2, AssetClassCommodity3Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Commodity.mmObject();
-			componentContext_lazy = () -> DerivativeCommodity2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DerivativeCommodity2.mmObject();
 			isDerived = false;
 			xmlTag = "Pdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +126,22 @@ public class DerivativeCommodity2 {
 			isComposite = true;
 			type_lazy = () -> AssetClassCommodity3Choice.mmObject();
 		}
+
+		@Override
+		public AssetClassCommodity3Choice getValue(DerivativeCommodity2 obj) {
+			return obj.getProduct();
+		}
+
+		@Override
+		public void setValue(DerivativeCommodity2 obj, AssetClassCommodity3Choice value) {
+			obj.setProduct(value);
+		}
 	};
+	@XmlElement(name = "TxTp")
 	protected AssetClassTransactionType1Code transactionType;
 	/**
-	 * Transaction type as specified by the trading venue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +172,10 @@ public class DerivativeCommodity2 {
 	 * definition} = "Transaction type as specified by the trading venue."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DerivativeCommodity2, Optional<AssetClassTransactionType1Code>> mmTransactionType = new MMMessageAttribute<DerivativeCommodity2, Optional<AssetClassTransactionType1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTrade.mmTransactionType;
-			componentContext_lazy = () -> DerivativeCommodity2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DerivativeCommodity2.mmObject();
 			isDerived = false;
 			xmlTag = "TxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,11 +185,22 @@ public class DerivativeCommodity2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> AssetClassTransactionType1Code.mmObject();
 		}
+
+		@Override
+		public Optional<AssetClassTransactionType1Code> getValue(DerivativeCommodity2 obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(DerivativeCommodity2 obj, Optional<AssetClassTransactionType1Code> value) {
+			obj.setTransactionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FnlPricTp")
 	protected AssetPriceType1Code finalPriceType;
 	/**
-	 * Final price type as specified by the trading venue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,10 +231,10 @@ public class DerivativeCommodity2 {
 	 * definition} = "Final price type as specified by the trading venue."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinalPriceType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DerivativeCommodity2, Optional<AssetPriceType1Code>> mmFinalPriceType = new MMMessageAttribute<DerivativeCommodity2, Optional<AssetPriceType1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmPriceType;
-			componentContext_lazy = () -> DerivativeCommodity2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DerivativeCommodity2.mmObject();
 			isDerived = false;
 			xmlTag = "FnlPricTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,46 +244,57 @@ public class DerivativeCommodity2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> AssetPriceType1Code.mmObject();
 		}
+
+		@Override
+		public Optional<AssetPriceType1Code> getValue(DerivativeCommodity2 obj) {
+			return obj.getFinalPriceType();
+		}
+
+		@Override
+		public void setValue(DerivativeCommodity2 obj, Optional<AssetPriceType1Code> value) {
+			obj.setFinalPriceType(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DerivativeCommodity2.mmProduct, DerivativeCommodity2.mmTransactionType, DerivativeCommodity2.mmFinalPriceType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DerivativeCommodity2.mmProduct, com.tools20022.repository.msg.DerivativeCommodity2.mmTransactionType,
+						com.tools20022.repository.msg.DerivativeCommodity2.mmFinalPriceType);
 				trace_lazy = () -> SecuritiesTrade.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DerivativeCommodity2";
-				definition = "Defines the details of a commodity derivative. ";
+				definition = "Defines the details of a commodity derivative.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Pdct", required = true)
 	public AssetClassCommodity3Choice getProduct() {
 		return product;
 	}
 
-	public void setProduct(AssetClassCommodity3Choice product) {
-		this.product = product;
+	public DerivativeCommodity2 setProduct(AssetClassCommodity3Choice product) {
+		this.product = Objects.requireNonNull(product);
+		return this;
 	}
 
-	@XmlElement(name = "TxTp")
-	public AssetClassTransactionType1Code getTransactionType() {
-		return transactionType;
+	public Optional<AssetClassTransactionType1Code> getTransactionType() {
+		return transactionType == null ? Optional.empty() : Optional.of(transactionType);
 	}
 
-	public void setTransactionType(AssetClassTransactionType1Code transactionType) {
+	public DerivativeCommodity2 setTransactionType(AssetClassTransactionType1Code transactionType) {
 		this.transactionType = transactionType;
+		return this;
 	}
 
-	@XmlElement(name = "FnlPricTp")
-	public AssetPriceType1Code getFinalPriceType() {
-		return finalPriceType;
+	public Optional<AssetPriceType1Code> getFinalPriceType() {
+		return finalPriceType == null ? Optional.empty() : Optional.of(finalPriceType);
 	}
 
-	public void setFinalPriceType(AssetPriceType1Code finalPriceType) {
+	public DerivativeCommodity2 setFinalPriceType(AssetPriceType1Code finalPriceType) {
 		this.finalPriceType = finalPriceType;
+		return this;
 	}
 }

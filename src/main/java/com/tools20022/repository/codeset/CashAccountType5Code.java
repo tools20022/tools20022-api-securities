@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashAccountType5Code#Lending
- * CashAccountType5Code.mmLending}</li>
+ * CashAccountType5Code.Lending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashAccountType5Code#Collateral
- * CashAccountType5Code.mmCollateral}</li>
+ * CashAccountType5Code.Collateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashAccountType5Code#FinancialSettlement
- * CashAccountType5Code.mmFinancialSettlement}</li>
+ * CashAccountType5Code.FinancialSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashAccountType5Code#MarginReturn
- * CashAccountType5Code.mmMarginReturn}</li>
+ * CashAccountType5Code.MarginReturn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CashAccountType5Code#Segregated
- * CashAccountType5Code.mmSegregated}</li>
+ * CashAccountType5Code.Segregated}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,7 +203,7 @@ public class CashAccountType5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountType5Code";
 				definition = "Specifies the type of cash account.";

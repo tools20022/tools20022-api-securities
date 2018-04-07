@@ -20,12 +20,14 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.*;
 import com.tools20022.repository.entity.SecuritiesTradeStatusReason;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ProprietaryReason4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +75,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the instruction processing status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InstructionProcessingStatus22Choice", propOrder = {"pendingProcessing", "cancellationRequested", "acknowledgedAccepted", "cancelled", "generated", "repair", "pendingCancellation", "modificationRequested"})
 public class InstructionProcessingStatus22Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PdgPrcg", required = true)
 	protected PendingProcessingStatus11Choice pendingProcessing;
 	/**
-	 * Processing of the instruction/request is pending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -123,10 +126,10 @@ public class InstructionProcessingStatus22Choice {
 	 * definition} = "Processing of the instruction/request is pending."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPendingProcessing = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, PendingProcessingStatus11Choice> mmPendingProcessing = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, PendingProcessingStatus11Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmPendingReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PdgPrcg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,14 +138,24 @@ public class InstructionProcessingStatus22Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.PendingProcessingStatus11Choice.mmObject();
+			type_lazy = () -> PendingProcessingStatus11Choice.mmObject();
+		}
+
+		@Override
+		public PendingProcessingStatus11Choice getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getPendingProcessing();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, PendingProcessingStatus11Choice value) {
+			obj.setPendingProcessing(value);
 		}
 	};
+	@XmlElement(name = "CxlReqd", required = true)
 	protected ProprietaryReason4 cancellationRequested;
 	/**
-	 * Cancellation request from your counterparty for this transaction is
-	 * pending waiting for your cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,10 +186,10 @@ public class InstructionProcessingStatus22Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCancellationRequested = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, ProprietaryReason4> mmCancellationRequested = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, ProprietaryReason4>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmCancellationReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CxlReqd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,11 +200,22 @@ public class InstructionProcessingStatus22Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason4.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason4 getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getCancellationRequested();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, ProprietaryReason4 value) {
+			obj.setCancellationRequested(value);
+		}
 	};
+	@XmlElement(name = "AckdAccptd", required = true)
 	protected AcknowledgedAcceptedStatus21Choice acknowledgedAccepted;
 	/**
-	 * Instruction has been acknowledged by the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -222,10 +246,10 @@ public class InstructionProcessingStatus22Choice {
 	 * "Instruction has been acknowledged by the account servicer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAcknowledgedAccepted = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, AcknowledgedAcceptedStatus21Choice> mmAcknowledgedAccepted = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, AcknowledgedAcceptedStatus21Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmAcknowledgedAcceptedReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AckdAccptd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,13 +258,24 @@ public class InstructionProcessingStatus22Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.AcknowledgedAcceptedStatus21Choice.mmObject();
+			type_lazy = () -> AcknowledgedAcceptedStatus21Choice.mmObject();
+		}
+
+		@Override
+		public AcknowledgedAcceptedStatus21Choice getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getAcknowledgedAccepted();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, AcknowledgedAcceptedStatus21Choice value) {
+			obj.setAcknowledgedAccepted(value);
 		}
 	};
+	@XmlElement(name = "Canc", required = true)
 	protected CancellationStatus14Choice cancelled;
 	/**
-	 * Instruction has been cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -270,10 +305,10 @@ public class InstructionProcessingStatus22Choice {
 	 * definition} = "Instruction has been cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCancelled = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, CancellationStatus14Choice> mmCancelled = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, CancellationStatus14Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmCancellationReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Canc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -282,14 +317,24 @@ public class InstructionProcessingStatus22Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.CancellationStatus14Choice.mmObject();
+			type_lazy = () -> CancellationStatus14Choice.mmObject();
+		}
+
+		@Override
+		public CancellationStatus14Choice getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getCancelled();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, CancellationStatus14Choice value) {
+			obj.setCancelled(value);
 		}
 	};
+	@XmlElement(name = "Gnrtd", required = true)
 	protected GeneratedStatus7Choice generated;
 	/**
-	 * Transaction was created by the account servicer or a third party. It was
-	 * not instructed directly by the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -321,10 +366,10 @@ public class InstructionProcessingStatus22Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGenerated = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, GeneratedStatus7Choice> mmGenerated = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, GeneratedStatus7Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmGeneratedReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Gnrtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,13 +378,24 @@ public class InstructionProcessingStatus22Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.GeneratedStatus7Choice.mmObject();
+			type_lazy = () -> GeneratedStatus7Choice.mmObject();
+		}
+
+		@Override
+		public GeneratedStatus7Choice getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getGenerated();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, GeneratedStatus7Choice value) {
+			obj.setGenerated(value);
 		}
 	};
+	@XmlElement(name = "Rpr", required = true)
 	protected RepairStatus12Choice repair;
 	/**
-	 * Instruction/Request is accepted but in repair.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -369,10 +425,10 @@ public class InstructionProcessingStatus22Choice {
 	 * definition} = "Instruction/Request is accepted but in repair."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRepair = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, RepairStatus12Choice> mmRepair = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, RepairStatus12Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmRepairReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rpr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -381,14 +437,24 @@ public class InstructionProcessingStatus22Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.RepairStatus12Choice.mmObject();
+			type_lazy = () -> RepairStatus12Choice.mmObject();
+		}
+
+		@Override
+		public RepairStatus12Choice getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getRepair();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, RepairStatus12Choice value) {
+			obj.setRepair(value);
 		}
 	};
+	@XmlElement(name = "PdgCxl", required = true)
 	protected PendingStatus38Choice pendingCancellation;
 	/**
-	 * Cancellation request from yourself for this instruction is pending
-	 * waiting for further processing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -420,10 +486,10 @@ public class InstructionProcessingStatus22Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPendingCancellation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, PendingStatus38Choice> mmPendingCancellation = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, PendingStatus38Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmPendingReason;
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PdgCxl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -432,14 +498,24 @@ public class InstructionProcessingStatus22Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.PendingStatus38Choice.mmObject();
+			type_lazy = () -> PendingStatus38Choice.mmObject();
+		}
+
+		@Override
+		public PendingStatus38Choice getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getPendingCancellation();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, PendingStatus38Choice value) {
+			obj.setPendingCancellation(value);
 		}
 	};
+	@XmlElement(name = "ModReqd", required = true)
 	protected ProprietaryReason4 modificationRequested;
 	/**
-	 * Modification request from your counterparty for this transaction is
-	 * pending waiting for your cancellation request or your consent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -470,10 +546,10 @@ public class InstructionProcessingStatus22Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmModificationRequested = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InstructionProcessingStatus22Choice, ProprietaryReason4> mmModificationRequested = new MMMessageAssociationEnd<InstructionProcessingStatus22Choice, ProprietaryReason4>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> InstructionProcessingStatus22Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmObject();
 			isDerived = false;
 			xmlTag = "ModReqd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -484,16 +560,28 @@ public class InstructionProcessingStatus22Choice {
 			isComposite = true;
 			type_lazy = () -> ProprietaryReason4.mmObject();
 		}
+
+		@Override
+		public ProprietaryReason4 getValue(InstructionProcessingStatus22Choice obj) {
+			return obj.getModificationRequested();
+		}
+
+		@Override
+		public void setValue(InstructionProcessingStatus22Choice obj, ProprietaryReason4 value) {
+			obj.setModificationRequested(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InstructionProcessingStatus22Choice.mmPendingProcessing, InstructionProcessingStatus22Choice.mmCancellationRequested, InstructionProcessingStatus22Choice.mmAcknowledgedAccepted,
-						InstructionProcessingStatus22Choice.mmCancelled, InstructionProcessingStatus22Choice.mmGenerated, InstructionProcessingStatus22Choice.mmRepair, InstructionProcessingStatus22Choice.mmPendingCancellation,
-						InstructionProcessingStatus22Choice.mmModificationRequested);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmPendingProcessing,
+						com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmCancellationRequested, com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmAcknowledgedAccepted,
+						com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmCancelled, com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmGenerated,
+						com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmRepair, com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmPendingCancellation,
+						com.tools20022.repository.choice.InstructionProcessingStatus22Choice.mmModificationRequested);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstructionProcessingStatus22Choice";
 				definition = "Choice of format for the instruction processing status.";
@@ -502,75 +590,75 @@ public class InstructionProcessingStatus22Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PdgPrcg", required = true)
 	public PendingProcessingStatus11Choice getPendingProcessing() {
 		return pendingProcessing;
 	}
 
-	public void setPendingProcessing(com.tools20022.repository.choice.PendingProcessingStatus11Choice pendingProcessing) {
-		this.pendingProcessing = pendingProcessing;
+	public InstructionProcessingStatus22Choice setPendingProcessing(PendingProcessingStatus11Choice pendingProcessing) {
+		this.pendingProcessing = Objects.requireNonNull(pendingProcessing);
+		return this;
 	}
 
-	@XmlElement(name = "CxlReqd", required = true)
 	public ProprietaryReason4 getCancellationRequested() {
 		return cancellationRequested;
 	}
 
-	public void setCancellationRequested(ProprietaryReason4 cancellationRequested) {
-		this.cancellationRequested = cancellationRequested;
+	public InstructionProcessingStatus22Choice setCancellationRequested(ProprietaryReason4 cancellationRequested) {
+		this.cancellationRequested = Objects.requireNonNull(cancellationRequested);
+		return this;
 	}
 
-	@XmlElement(name = "AckdAccptd", required = true)
 	public AcknowledgedAcceptedStatus21Choice getAcknowledgedAccepted() {
 		return acknowledgedAccepted;
 	}
 
-	public void setAcknowledgedAccepted(com.tools20022.repository.choice.AcknowledgedAcceptedStatus21Choice acknowledgedAccepted) {
-		this.acknowledgedAccepted = acknowledgedAccepted;
+	public InstructionProcessingStatus22Choice setAcknowledgedAccepted(AcknowledgedAcceptedStatus21Choice acknowledgedAccepted) {
+		this.acknowledgedAccepted = Objects.requireNonNull(acknowledgedAccepted);
+		return this;
 	}
 
-	@XmlElement(name = "Canc", required = true)
 	public CancellationStatus14Choice getCancelled() {
 		return cancelled;
 	}
 
-	public void setCancelled(com.tools20022.repository.choice.CancellationStatus14Choice cancelled) {
-		this.cancelled = cancelled;
+	public InstructionProcessingStatus22Choice setCancelled(CancellationStatus14Choice cancelled) {
+		this.cancelled = Objects.requireNonNull(cancelled);
+		return this;
 	}
 
-	@XmlElement(name = "Gnrtd", required = true)
 	public GeneratedStatus7Choice getGenerated() {
 		return generated;
 	}
 
-	public void setGenerated(com.tools20022.repository.choice.GeneratedStatus7Choice generated) {
-		this.generated = generated;
+	public InstructionProcessingStatus22Choice setGenerated(GeneratedStatus7Choice generated) {
+		this.generated = Objects.requireNonNull(generated);
+		return this;
 	}
 
-	@XmlElement(name = "Rpr", required = true)
 	public RepairStatus12Choice getRepair() {
 		return repair;
 	}
 
-	public void setRepair(com.tools20022.repository.choice.RepairStatus12Choice repair) {
-		this.repair = repair;
+	public InstructionProcessingStatus22Choice setRepair(RepairStatus12Choice repair) {
+		this.repair = Objects.requireNonNull(repair);
+		return this;
 	}
 
-	@XmlElement(name = "PdgCxl", required = true)
 	public PendingStatus38Choice getPendingCancellation() {
 		return pendingCancellation;
 	}
 
-	public void setPendingCancellation(com.tools20022.repository.choice.PendingStatus38Choice pendingCancellation) {
-		this.pendingCancellation = pendingCancellation;
+	public InstructionProcessingStatus22Choice setPendingCancellation(PendingStatus38Choice pendingCancellation) {
+		this.pendingCancellation = Objects.requireNonNull(pendingCancellation);
+		return this;
 	}
 
-	@XmlElement(name = "ModReqd", required = true)
 	public ProprietaryReason4 getModificationRequested() {
 		return modificationRequested;
 	}
 
-	public void setModificationRequested(ProprietaryReason4 modificationRequested) {
-		this.modificationRequested = modificationRequested;
+	public InstructionProcessingStatus22Choice setModificationRequested(ProprietaryReason4 modificationRequested) {
+		this.modificationRequested = Objects.requireNonNull(modificationRequested);
+		return this;
 	}
 }

@@ -29,9 +29,9 @@ import com.tools20022.repository.entity.Debt;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -84,8 +84,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidDebtMaturityDateRule#forSecuritiesReferenceDataReport5
+ * ConstraintValidDebtMaturityDateRule.forSecuritiesReferenceDataReport5}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidDerivativeExpiryDateRule#forSecuritiesReferenceDataReport5
+ * ConstraintValidDerivativeExpiryDateRule.forSecuritiesReferenceDataReport5}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,20 +109,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesReferenceDataReport5", propOrder = {"technicalRecordIdentification", "financialInstrumentGeneralAttributes", "issuer", "tradingVenueRelatedAttributes", "debtInstrumentAttributes",
 		"derivativeInstrumentAttributes", "technicalAttributes"})
 public class SecuritiesReferenceDataReport5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TechRcrdId")
 	protected Max35Text technicalRecordIdentification;
 	/**
-	 * Unique identifier of a record in a message used as part of error
-	 * management and status advice message.<br>
-	 * <br>
-	 * Usage:<br>
-	 * This identification will be used in the status advice report sent back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,9 +146,9 @@ public class SecuritiesReferenceDataReport5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTechnicalRecordIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesReferenceDataReport5, Optional<Max35Text>> mmTechnicalRecordIdentification = new MMMessageAttribute<SecuritiesReferenceDataReport5, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "TechRcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,11 +158,22 @@ public class SecuritiesReferenceDataReport5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getTechnicalRecordIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, Optional<Max35Text> value) {
+			obj.setTechnicalRecordIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FinInstrmGnlAttrbts", required = true)
 	protected SecurityInstrumentDescription9 financialInstrumentGeneralAttributes;
 	/**
-	 * Attributes and characteristics of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -184,10 +203,10 @@ public class SecuritiesReferenceDataReport5 {
 	 * "Attributes and characteristics of the financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentGeneralAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesReferenceDataReport5, SecurityInstrumentDescription9> mmFinancialInstrumentGeneralAttributes = new MMMessageAssociationEnd<SecuritiesReferenceDataReport5, SecurityInstrumentDescription9>() {
 		{
 			businessComponentTrace_lazy = () -> Security.mmObject();
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmGnlAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -196,13 +215,24 @@ public class SecuritiesReferenceDataReport5 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription9.mmObject();
+			type_lazy = () -> SecurityInstrumentDescription9.mmObject();
+		}
+
+		@Override
+		public SecurityInstrumentDescription9 getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getFinancialInstrumentGeneralAttributes();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, SecurityInstrumentDescription9 value) {
+			obj.setFinancialInstrumentGeneralAttributes(value);
 		}
 	};
+	@XmlElement(name = "Issr", required = true)
 	protected LEIIdentifier issuer;
 	/**
-	 * LEI of Issuer or trading venue operator.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,10 +263,10 @@ public class SecuritiesReferenceDataReport5 {
 	 * definition} = "LEI of Issuer or trading venue operator."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesReferenceDataReport5, LEIIdentifier> mmIssuer = new MMMessageAttribute<SecuritiesReferenceDataReport5, LEIIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmLEI;
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -246,11 +276,22 @@ public class SecuritiesReferenceDataReport5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public LEIIdentifier getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, LEIIdentifier value) {
+			obj.setIssuer(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.TradingVenueAttributes1> tradingVenueRelatedAttributes;
+	@XmlElement(name = "TradgVnRltdAttrbts", required = true)
+	protected List<TradingVenueAttributes1> tradingVenueRelatedAttributes;
 	/**
-	 * Traded venue related attributes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -280,10 +321,10 @@ public class SecuritiesReferenceDataReport5 {
 	 * definition} = "Traded venue related attributes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTradingVenueRelatedAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesReferenceDataReport5, List<TradingVenueAttributes1>> mmTradingVenueRelatedAttributes = new MMMessageAssociationEnd<SecuritiesReferenceDataReport5, List<TradingVenueAttributes1>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmPlaceOfListing;
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "TradgVnRltdAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -291,13 +332,24 @@ public class SecuritiesReferenceDataReport5 {
 			definition = "Traded venue related attributes.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TradingVenueAttributes1.mmObject();
+			type_lazy = () -> TradingVenueAttributes1.mmObject();
+		}
+
+		@Override
+		public List<TradingVenueAttributes1> getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getTradingVenueRelatedAttributes();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, List<TradingVenueAttributes1> value) {
+			obj.setTradingVenueRelatedAttributes(value);
 		}
 	};
+	@XmlElement(name = "DebtInstrmAttrbts")
 	protected DebtInstrument2 debtInstrumentAttributes;
 	/**
-	 * Attributes specific to debt instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -325,10 +377,10 @@ public class SecuritiesReferenceDataReport5 {
 	 * definition} = "Attributes specific to debt instruments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDebtInstrumentAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesReferenceDataReport5, Optional<DebtInstrument2>> mmDebtInstrumentAttributes = new MMMessageAssociationEnd<SecuritiesReferenceDataReport5, Optional<DebtInstrument2>>() {
 		{
 			businessComponentTrace_lazy = () -> Debt.mmObject();
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "DebtInstrmAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,13 +389,24 @@ public class SecuritiesReferenceDataReport5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DebtInstrument2.mmObject();
+			type_lazy = () -> DebtInstrument2.mmObject();
+		}
+
+		@Override
+		public Optional<DebtInstrument2> getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getDebtInstrumentAttributes();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, Optional<DebtInstrument2> value) {
+			obj.setDebtInstrumentAttributes(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DerivInstrmAttrbts")
 	protected DerivativeInstrument5 derivativeInstrumentAttributes;
 	/**
-	 * Attributes specific to derivative instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -372,10 +435,10 @@ public class SecuritiesReferenceDataReport5 {
 	 * definition} = "Attributes specific to derivative instruments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDerivativeInstrumentAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesReferenceDataReport5, Optional<DerivativeInstrument5>> mmDerivativeInstrumentAttributes = new MMMessageAssociationEnd<SecuritiesReferenceDataReport5, Optional<DerivativeInstrument5>>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmDerivative;
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "DerivInstrmAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -384,13 +447,24 @@ public class SecuritiesReferenceDataReport5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DerivativeInstrument5.mmObject();
+			type_lazy = () -> DerivativeInstrument5.mmObject();
+		}
+
+		@Override
+		public Optional<DerivativeInstrument5> getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getDerivativeInstrumentAttributes();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, Optional<DerivativeInstrument5> value) {
+			obj.setDerivativeInstrumentAttributes(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TechAttrbts")
 	protected RecordTechnicalData3 technicalAttributes;
 	/**
-	 * Technical attributes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -414,9 +488,9 @@ public class SecuritiesReferenceDataReport5 {
 	 * definition} = "Technical attributes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTechnicalAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesReferenceDataReport5, Optional<RecordTechnicalData3>> mmTechnicalAttributes = new MMMessageAssociationEnd<SecuritiesReferenceDataReport5, Optional<RecordTechnicalData3>>() {
 		{
-			componentContext_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmObject();
 			isDerived = false;
 			xmlTag = "TechAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -425,19 +499,32 @@ public class SecuritiesReferenceDataReport5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RecordTechnicalData3.mmObject();
+			type_lazy = () -> RecordTechnicalData3.mmObject();
+		}
+
+		@Override
+		public Optional<RecordTechnicalData3> getValue(SecuritiesReferenceDataReport5 obj) {
+			return obj.getTechnicalAttributes();
+		}
+
+		@Override
+		public void setValue(SecuritiesReferenceDataReport5 obj, Optional<RecordTechnicalData3> value) {
+			obj.setTechnicalAttributes(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesReferenceDataReport5.mmTechnicalRecordIdentification, SecuritiesReferenceDataReport5.mmFinancialInstrumentGeneralAttributes, SecuritiesReferenceDataReport5.mmIssuer,
-						SecuritiesReferenceDataReport5.mmTradingVenueRelatedAttributes, SecuritiesReferenceDataReport5.mmDebtInstrumentAttributes, SecuritiesReferenceDataReport5.mmDerivativeInstrumentAttributes,
-						SecuritiesReferenceDataReport5.mmTechnicalAttributes);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmTechnicalRecordIdentification,
+						com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmFinancialInstrumentGeneralAttributes, com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmIssuer,
+						com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmTradingVenueRelatedAttributes, com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmDebtInstrumentAttributes,
+						com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmDerivativeInstrumentAttributes, com.tools20022.repository.msg.SecuritiesReferenceDataReport5.mmTechnicalAttributes);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FinancialInstrumentReportingReferenceDataReportV01.mmReferenceData);
 				trace_lazy = () -> Security.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidDebtMaturityDateRule.forSecuritiesReferenceDataReport5,
+						com.tools20022.repository.constraints.ConstraintValidDerivativeExpiryDateRule.forSecuritiesReferenceDataReport5);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesReferenceDataReport5";
 				definition = "Provides details on the securities reference data for the required financial instruments.";
@@ -446,66 +533,66 @@ public class SecuritiesReferenceDataReport5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TechRcrdId")
-	public Max35Text getTechnicalRecordIdentification() {
-		return technicalRecordIdentification;
+	public Optional<Max35Text> getTechnicalRecordIdentification() {
+		return technicalRecordIdentification == null ? Optional.empty() : Optional.of(technicalRecordIdentification);
 	}
 
-	public void setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
+	public SecuritiesReferenceDataReport5 setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
 		this.technicalRecordIdentification = technicalRecordIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "FinInstrmGnlAttrbts", required = true)
 	public SecurityInstrumentDescription9 getFinancialInstrumentGeneralAttributes() {
 		return financialInstrumentGeneralAttributes;
 	}
 
-	public void setFinancialInstrumentGeneralAttributes(com.tools20022.repository.msg.SecurityInstrumentDescription9 financialInstrumentGeneralAttributes) {
-		this.financialInstrumentGeneralAttributes = financialInstrumentGeneralAttributes;
+	public SecuritiesReferenceDataReport5 setFinancialInstrumentGeneralAttributes(SecurityInstrumentDescription9 financialInstrumentGeneralAttributes) {
+		this.financialInstrumentGeneralAttributes = Objects.requireNonNull(financialInstrumentGeneralAttributes);
+		return this;
 	}
 
-	@XmlElement(name = "Issr", required = true)
 	public LEIIdentifier getIssuer() {
 		return issuer;
 	}
 
-	public void setIssuer(LEIIdentifier issuer) {
-		this.issuer = issuer;
+	public SecuritiesReferenceDataReport5 setIssuer(LEIIdentifier issuer) {
+		this.issuer = Objects.requireNonNull(issuer);
+		return this;
 	}
 
-	@XmlElement(name = "TradgVnRltdAttrbts", required = true)
 	public List<TradingVenueAttributes1> getTradingVenueRelatedAttributes() {
-		return tradingVenueRelatedAttributes;
+		return tradingVenueRelatedAttributes == null ? tradingVenueRelatedAttributes = new ArrayList<>() : tradingVenueRelatedAttributes;
 	}
 
-	public void setTradingVenueRelatedAttributes(List<com.tools20022.repository.msg.TradingVenueAttributes1> tradingVenueRelatedAttributes) {
-		this.tradingVenueRelatedAttributes = tradingVenueRelatedAttributes;
+	public SecuritiesReferenceDataReport5 setTradingVenueRelatedAttributes(List<TradingVenueAttributes1> tradingVenueRelatedAttributes) {
+		this.tradingVenueRelatedAttributes = Objects.requireNonNull(tradingVenueRelatedAttributes);
+		return this;
 	}
 
-	@XmlElement(name = "DebtInstrmAttrbts")
-	public DebtInstrument2 getDebtInstrumentAttributes() {
-		return debtInstrumentAttributes;
+	public Optional<DebtInstrument2> getDebtInstrumentAttributes() {
+		return debtInstrumentAttributes == null ? Optional.empty() : Optional.of(debtInstrumentAttributes);
 	}
 
-	public void setDebtInstrumentAttributes(com.tools20022.repository.msg.DebtInstrument2 debtInstrumentAttributes) {
+	public SecuritiesReferenceDataReport5 setDebtInstrumentAttributes(DebtInstrument2 debtInstrumentAttributes) {
 		this.debtInstrumentAttributes = debtInstrumentAttributes;
+		return this;
 	}
 
-	@XmlElement(name = "DerivInstrmAttrbts")
-	public DerivativeInstrument5 getDerivativeInstrumentAttributes() {
-		return derivativeInstrumentAttributes;
+	public Optional<DerivativeInstrument5> getDerivativeInstrumentAttributes() {
+		return derivativeInstrumentAttributes == null ? Optional.empty() : Optional.of(derivativeInstrumentAttributes);
 	}
 
-	public void setDerivativeInstrumentAttributes(com.tools20022.repository.msg.DerivativeInstrument5 derivativeInstrumentAttributes) {
+	public SecuritiesReferenceDataReport5 setDerivativeInstrumentAttributes(DerivativeInstrument5 derivativeInstrumentAttributes) {
 		this.derivativeInstrumentAttributes = derivativeInstrumentAttributes;
+		return this;
 	}
 
-	@XmlElement(name = "TechAttrbts")
-	public RecordTechnicalData3 getTechnicalAttributes() {
-		return technicalAttributes;
+	public Optional<RecordTechnicalData3> getTechnicalAttributes() {
+		return technicalAttributes == null ? Optional.empty() : Optional.of(technicalAttributes);
 	}
 
-	public void setTechnicalAttributes(com.tools20022.repository.msg.RecordTechnicalData3 technicalAttributes) {
+	public SecuritiesReferenceDataReport5 setTechnicalAttributes(RecordTechnicalData3 technicalAttributes) {
 		this.technicalAttributes = technicalAttributes;
+		return this;
 	}
 }

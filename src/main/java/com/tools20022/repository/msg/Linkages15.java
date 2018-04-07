@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -29,6 +30,8 @@ import com.tools20022.repository.entity.SecuritiesTradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,16 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information related to a linked transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Linkages15", propOrder = {"messageNumber", "reference"})
 public class Linkages15 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgNb")
 	protected DocumentNumber4Choice messageNumber;
 	/**
-	 * Message type number/message identifier of the message referenced in the
-	 * linkage sequence.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -106,6 +109,9 @@ public class Linkages15 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "MsgNb"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :13a::LINK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -118,11 +124,12 @@ public class Linkages15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMessageNumber = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Linkages15, Optional<DocumentNumber4Choice>> mmMessageNumber = new MMMessageAssociationEnd<Linkages15, Optional<DocumentNumber4Choice>>() {
 		{
-			componentContext_lazy = () -> Linkages15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Linkages15.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNb";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":13a::LINK"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageNumber";
 			definition = "Message type number/message identifier of the message referenced in the linkage sequence.";
@@ -131,11 +138,22 @@ public class Linkages15 {
 			isComposite = true;
 			type_lazy = () -> DocumentNumber4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DocumentNumber4Choice> getValue(Linkages15 obj) {
+			return obj.getMessageNumber();
+		}
+
+		@Override
+		public void setValue(Linkages15 obj, Optional<DocumentNumber4Choice> value) {
+			obj.setMessageNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Ref", required = true)
 	protected IdentificationReference8Choice reference;
 	/**
-	 * Reference to the linked transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -164,10 +182,10 @@ public class Linkages15 {
 	 * definition} = "Reference to the linked transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Linkages15, IdentificationReference8Choice> mmReference = new MMMessageAssociationEnd<Linkages15, IdentificationReference8Choice>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeIdentification.mmObject();
-			componentContext_lazy = () -> Linkages15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Linkages15.mmObject();
 			isDerived = false;
 			xmlTag = "Ref";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,15 +196,25 @@ public class Linkages15 {
 			isComposite = true;
 			type_lazy = () -> IdentificationReference8Choice.mmObject();
 		}
+
+		@Override
+		public IdentificationReference8Choice getValue(Linkages15 obj) {
+			return obj.getReference();
+		}
+
+		@Override
+		public void setValue(Linkages15 obj, IdentificationReference8Choice value) {
+			obj.setReference(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Linkages15.mmMessageNumber, Linkages15.mmReference);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Linkages15.mmMessageNumber, com.tools20022.repository.msg.Linkages15.mmReference);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesTradeConfirmationCancellationV01.mmReferences, SecuritiesTradeConfirmationResponseV01.mmReferences, SecuritiesTradeConfirmationV03.mmReferences);
 				trace_lazy = () -> SecuritiesTradeIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Linkages15";
 				definition = "Information related to a linked transaction.";
@@ -195,21 +223,21 @@ public class Linkages15 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgNb")
-	public DocumentNumber4Choice getMessageNumber() {
-		return messageNumber;
+	public Optional<DocumentNumber4Choice> getMessageNumber() {
+		return messageNumber == null ? Optional.empty() : Optional.of(messageNumber);
 	}
 
-	public void setMessageNumber(DocumentNumber4Choice messageNumber) {
+	public Linkages15 setMessageNumber(DocumentNumber4Choice messageNumber) {
 		this.messageNumber = messageNumber;
+		return this;
 	}
 
-	@XmlElement(name = "Ref", required = true)
 	public IdentificationReference8Choice getReference() {
 		return reference;
 	}
 
-	public void setReference(IdentificationReference8Choice reference) {
-		this.reference = reference;
+	public Linkages15 setReference(IdentificationReference8Choice reference) {
+		this.reference = Objects.requireNonNull(reference);
+		return this;
 	}
 }

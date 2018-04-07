@@ -22,11 +22,15 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.InvestmentFundOrderExecution;
+import com.tools20022.repository.entity.SwitchExecutionRedemptionLeg;
+import com.tools20022.repository.entity.SwitchExecutionSubscriptionLeg;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SwitchExecution7;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Execution of a switch order.
@@ -75,8 +79,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,10 +94,10 @@ import java.util.List;
 public class SwitchExecution extends InvestmentFundOrderExecution {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.SwitchExecutionRedemptionLeg> redemptionLeg;
+	protected List<SwitchExecutionRedemptionLeg> redemptionLeg;
 	/**
-	 * Redemption leg of a switch order execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,7 +137,7 @@ public class SwitchExecution extends InvestmentFundOrderExecution {
 	 * definition} = "Redemption leg of a switch order execution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRedemptionLeg = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SwitchExecution, List<SwitchExecutionRedemptionLeg>> mmRedemptionLeg = new MMBusinessAssociationEnd<SwitchExecution, List<SwitchExecutionRedemptionLeg>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SwitchExecution7.mmRedemptionLegDetails);
 			isDerived = false;
@@ -142,15 +146,25 @@ public class SwitchExecution extends InvestmentFundOrderExecution {
 			name = "RedemptionLeg";
 			definition = "Redemption leg of a switch order execution.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SwitchExecutionRedemptionLeg.mmRelatedSwitchExecution;
+			opposite_lazy = () -> SwitchExecutionRedemptionLeg.mmRelatedSwitchExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SwitchExecutionRedemptionLeg.mmObject();
+			type_lazy = () -> SwitchExecutionRedemptionLeg.mmObject();
+		}
+
+		@Override
+		public List<SwitchExecutionRedemptionLeg> getValue(SwitchExecution obj) {
+			return obj.getRedemptionLeg();
+		}
+
+		@Override
+		public void setValue(SwitchExecution obj, List<SwitchExecutionRedemptionLeg> value) {
+			obj.setRedemptionLeg(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SwitchExecutionSubscriptionLeg> subscriptionLeg;
+	protected List<SwitchExecutionSubscriptionLeg> subscriptionLeg;
 	/**
-	 * Subscription leg of a switch order execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +204,7 @@ public class SwitchExecution extends InvestmentFundOrderExecution {
 	 * definition} = "Subscription leg of a switch order execution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSubscriptionLeg = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SwitchExecution, List<SwitchExecutionSubscriptionLeg>> mmSubscriptionLeg = new MMBusinessAssociationEnd<SwitchExecution, List<SwitchExecutionSubscriptionLeg>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SwitchExecution7.mmSubscriptionLegDetails);
 			isDerived = false;
@@ -199,20 +213,30 @@ public class SwitchExecution extends InvestmentFundOrderExecution {
 			name = "SubscriptionLeg";
 			definition = "Subscription leg of a switch order execution.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SwitchExecutionSubscriptionLeg.mmRelatedSwitchExecution;
+			opposite_lazy = () -> SwitchExecutionSubscriptionLeg.mmRelatedSwitchExecution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SwitchExecutionSubscriptionLeg.mmObject();
+			type_lazy = () -> SwitchExecutionSubscriptionLeg.mmObject();
+		}
+
+		@Override
+		public List<SwitchExecutionSubscriptionLeg> getValue(SwitchExecution obj) {
+			return obj.getSubscriptionLeg();
+		}
+
+		@Override
+		public void setValue(SwitchExecution obj, List<SwitchExecutionSubscriptionLeg> value) {
+			obj.setSubscriptionLeg(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SwitchExecution";
 				definition = "Execution of a switch order.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SwitchExecutionRedemptionLeg.mmRelatedSwitchExecution, com.tools20022.repository.entity.SwitchExecutionSubscriptionLeg.mmRelatedSwitchExecution);
+				associationDomain_lazy = () -> Arrays.asList(SwitchExecutionRedemptionLeg.mmRelatedSwitchExecution, SwitchExecutionSubscriptionLeg.mmRelatedSwitchExecution);
 				superType_lazy = () -> InvestmentFundOrderExecution.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SwitchExecution.mmRedemptionLeg, com.tools20022.repository.entity.SwitchExecution.mmSubscriptionLeg);
 				derivationComponent_lazy = () -> Arrays.asList(SwitchExecution7.mmObject());
@@ -227,18 +251,20 @@ public class SwitchExecution extends InvestmentFundOrderExecution {
 	}
 
 	public List<SwitchExecutionRedemptionLeg> getRedemptionLeg() {
-		return redemptionLeg;
+		return redemptionLeg == null ? redemptionLeg = new ArrayList<>() : redemptionLeg;
 	}
 
-	public void setRedemptionLeg(List<com.tools20022.repository.entity.SwitchExecutionRedemptionLeg> redemptionLeg) {
-		this.redemptionLeg = redemptionLeg;
+	public SwitchExecution setRedemptionLeg(List<SwitchExecutionRedemptionLeg> redemptionLeg) {
+		this.redemptionLeg = Objects.requireNonNull(redemptionLeg);
+		return this;
 	}
 
 	public List<SwitchExecutionSubscriptionLeg> getSubscriptionLeg() {
-		return subscriptionLeg;
+		return subscriptionLeg == null ? subscriptionLeg = new ArrayList<>() : subscriptionLeg;
 	}
 
-	public void setSubscriptionLeg(List<com.tools20022.repository.entity.SwitchExecutionSubscriptionLeg> subscriptionLeg) {
-		this.subscriptionLeg = subscriptionLeg;
+	public SwitchExecution setSubscriptionLeg(List<SwitchExecutionSubscriptionLeg> subscriptionLeg) {
+		this.subscriptionLeg = Objects.requireNonNull(subscriptionLeg);
+		return this;
 	}
 }

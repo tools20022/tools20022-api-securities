@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.TradingMarket;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidMICRule#forMarketDetail2
+ * ConstraintValidMICRule.forMarketDetail2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarketDetail2", propOrder = {"identification", "averageDailyNumberOfTransactions"})
 public class MarketDetail2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected MICIdentifier identification;
 	/**
-	 * Most relevant market in terms of liquidity as defined in the local
-	 * regulation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +120,10 @@ public class MarketDetail2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketDetail2, MICIdentifier> mmIdentification = new MMMessageAttribute<MarketDetail2, MICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmMIC;
-			componentContext_lazy = () -> MarketDetail2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarketDetail2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,12 +133,22 @@ public class MarketDetail2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public MICIdentifier getValue(MarketDetail2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(MarketDetail2 obj, MICIdentifier value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "AvrgDalyNbOfTxs")
 	protected DecimalNumber averageDailyNumberOfTransactions;
 	/**
-	 * Average daily number of transactions that have been performed on the most
-	 * relevant market in terms of liquidity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,9 +175,9 @@ public class MarketDetail2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAverageDailyNumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketDetail2, Optional<DecimalNumber>> mmAverageDailyNumberOfTransactions = new MMMessageAttribute<MarketDetail2, Optional<DecimalNumber>>() {
 		{
-			componentContext_lazy = () -> MarketDetail2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarketDetail2.mmObject();
 			isDerived = false;
 			xmlTag = "AvrgDalyNbOfTxs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,14 +187,25 @@ public class MarketDetail2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(MarketDetail2 obj) {
+			return obj.getAverageDailyNumberOfTransactions();
+		}
+
+		@Override
+		public void setValue(MarketDetail2 obj, Optional<DecimalNumber> value) {
+			obj.setAverageDailyNumberOfTransactions(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarketDetail2.mmIdentification, MarketDetail2.mmAverageDailyNumberOfTransactions);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MarketDetail2.mmIdentification, com.tools20022.repository.msg.MarketDetail2.mmAverageDailyNumberOfTransactions);
 				trace_lazy = () -> TradingMarket.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidMICRule.forMarketDetail2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketDetail2";
 				definition = "Details specific to a market including which market identification and average number of transactions on the venue.";
@@ -183,21 +214,21 @@ public class MarketDetail2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public MICIdentifier getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(MICIdentifier identification) {
-		this.identification = identification;
+	public MarketDetail2 setIdentification(MICIdentifier identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "AvrgDalyNbOfTxs")
-	public DecimalNumber getAverageDailyNumberOfTransactions() {
-		return averageDailyNumberOfTransactions;
+	public Optional<DecimalNumber> getAverageDailyNumberOfTransactions() {
+		return averageDailyNumberOfTransactions == null ? Optional.empty() : Optional.of(averageDailyNumberOfTransactions);
 	}
 
-	public void setAverageDailyNumberOfTransactions(DecimalNumber averageDailyNumberOfTransactions) {
+	public MarketDetail2 setAverageDailyNumberOfTransactions(DecimalNumber averageDailyNumberOfTransactions) {
 		this.averageDailyNumberOfTransactions = averageDailyNumberOfTransactions;
+		return this;
 	}
 }

@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Crack
- * AssetClassTransactionType1Code.mmCrack}</li>
+ * AssetClassTransactionType1Code.Crack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Differential
- * AssetClassTransactionType1Code.mmDifferential}</li>
+ * AssetClassTransactionType1Code.Differential}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Futures
- * AssetClassTransactionType1Code.mmFutures}</li>
+ * AssetClassTransactionType1Code.Futures}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Minis
- * AssetClassTransactionType1Code.mmMinis}</li>
+ * AssetClassTransactionType1Code.Minis}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Options
- * AssetClassTransactionType1Code.mmOptions}</li>
+ * AssetClassTransactionType1Code.Options}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#OTC
- * AssetClassTransactionType1Code.mmOTC}</li>
+ * AssetClassTransactionType1Code.OTC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Outright
- * AssetClassTransactionType1Code.mmOutright}</li>
+ * AssetClassTransactionType1Code.Outright}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Swaps
- * AssetClassTransactionType1Code.mmSwaps}</li>
+ * AssetClassTransactionType1Code.Swaps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#TAPOS
- * AssetClassTransactionType1Code.mmTAPOS}</li>
+ * AssetClassTransactionType1Code.TAPOS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionType1Code#Other
- * AssetClassTransactionType1Code.mmOther}</li>
+ * AssetClassTransactionType1Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -339,7 +339,7 @@ public class AssetClassTransactionType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassTransactionType1Code";
 				definition = "Code list of transaction type as specified by the trading venue.";

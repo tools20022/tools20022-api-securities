@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PhysicalTransferType4Code#Physical
- * PhysicalTransferType4Code.mmPhysical}</li>
+ * PhysicalTransferType4Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PhysicalTransferType4Code#Optional
- * PhysicalTransferType4Code.mmOptional}</li>
+ * PhysicalTransferType4Code.Optional}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PhysicalTransferType4Code#Cash
- * PhysicalTransferType4Code.mmCash}</li>
+ * PhysicalTransferType4Code.Cash}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -151,7 +151,7 @@ public class PhysicalTransferType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PhysicalTransferType4Code";
 				definition = "Specifies the asset delivery type when the financial instrument is settled.";

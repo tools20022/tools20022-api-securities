@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#ContractForDifference
- * FinancialInstrumentContractTypeCode.mmContractForDifference}</li>
+ * FinancialInstrumentContractTypeCode.ContractForDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#ForwardRateAgreement
- * FinancialInstrumentContractTypeCode.mmForwardRateAgreement}</li>
+ * FinancialInstrumentContractTypeCode.ForwardRateAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#Futures
- * FinancialInstrumentContractTypeCode.mmFutures}</li>
+ * FinancialInstrumentContractTypeCode.Futures}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#Forward
- * FinancialInstrumentContractTypeCode.mmForward}</li>
+ * FinancialInstrumentContractTypeCode.Forward}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#Option
- * FinancialInstrumentContractTypeCode.mmOption}</li>
+ * FinancialInstrumentContractTypeCode.Option}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#Swap
- * FinancialInstrumentContractTypeCode.mmSwap}</li>
+ * FinancialInstrumentContractTypeCode.Swap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#SpreadBetting
- * FinancialInstrumentContractTypeCode.mmSpreadBetting}</li>
+ * FinancialInstrumentContractTypeCode.SpreadBetting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#Swaption
- * FinancialInstrumentContractTypeCode.mmSwaption}</li>
+ * FinancialInstrumentContractTypeCode.Swaption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#Other
- * FinancialInstrumentContractTypeCode.mmOther}</li>
+ * FinancialInstrumentContractTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#FuturesOnSwap
- * FinancialInstrumentContractTypeCode.mmFuturesOnSwap}</li>
+ * FinancialInstrumentContractTypeCode.FuturesOnSwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#PortfolioSwap
- * FinancialInstrumentContractTypeCode.mmPortfolioSwap}</li>
+ * FinancialInstrumentContractTypeCode.PortfolioSwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#ForwardsOnASwap
- * FinancialInstrumentContractTypeCode.mmForwardsOnASwap}</li>
+ * FinancialInstrumentContractTypeCode.ForwardsOnASwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode#ForwardFreightAgreement
- * FinancialInstrumentContractTypeCode.mmForwardFreightAgreement}</li>
+ * FinancialInstrumentContractTypeCode.ForwardFreightAgreement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -88,8 +88,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -364,14 +364,14 @@ public class FinancialInstrumentContractTypeCode extends MMCode {
 	 * name} = "Other"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Contract of other financial instrument contract type. "</li>
+	 * definition} = "Contract of other financial instrument contract type."</li>
 	 * </ul>
 	 */
 	public static final FinancialInstrumentContractTypeCode Other = new FinancialInstrumentContractTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
-			definition = "Contract of other financial instrument contract type. ";
+			definition = "Contract of other financial instrument contract type.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentContractTypeCode.mmObject();
 			codeName = "OTHR";
 		}
@@ -504,7 +504,7 @@ public class FinancialInstrumentContractTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentContractTypeCode";
 				definition = "Specifies the contract type of a derivate financial instrument.";

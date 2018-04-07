@@ -19,13 +19,14 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMQuantity;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.datatype.NonNegativeDecimalNumber.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Number of objects represented as a non negative decimal number, eg, 0.75 or
@@ -38,8 +39,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -58,16 +59,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * </li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class NonNegativeDecimalNumber {
 
 	final static private AtomicReference<MMQuantity> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected BigDecimal value;
 
 	final static public MMQuantity mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMQuantity() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("0");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonNegativeDecimalNumber";
@@ -80,23 +83,23 @@ public class NonNegativeDecimalNumber {
 		return mmObject_lazy.get();
 	}
 
+	public NonNegativeDecimalNumber() {
+	}
+
 	public NonNegativeDecimalNumber(BigDecimal value) {
 		this.value = value;
 	}
 
-	public BigDecimal toBigDecimal() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
-	protected static class InternalXmlAdapter extends XmlAdapter<BigDecimal, NonNegativeDecimalNumber> {
-		@Override
-		public NonNegativeDecimalNumber unmarshal(BigDecimal value) {
-			return new NonNegativeDecimalNumber(value);
-		}
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
 
-		@Override
-		public BigDecimal marshal(NonNegativeDecimalNumber typedData) {
-			return typedData.value;
-		}
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

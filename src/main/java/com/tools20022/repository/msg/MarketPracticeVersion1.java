@@ -30,6 +30,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,54 +60,6 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV07#mmMarketPracticeVersion
- * PortfolioTransferInstructionV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV07#mmMarketPracticeVersion
- * ReversalOfTransferOutConfirmationV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV07#mmMarketPracticeVersion
- * TransferOutCancellationRequestV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV05#mmMarketPracticeVersion
- * AccountHoldingInformationV05.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferCancellationRequestV07#mmMarketPracticeVersion
- * PortfolioTransferCancellationRequestV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInstructionStatusReportV05#mmMarketPracticeVersion
- * TransferInstructionStatusReportV05.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV07#mmMarketPracticeVersion
- * TransferInConfirmationV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV07#mmMarketPracticeVersion
- * TransferOutConfirmationV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.RequestForTransferStatusReportV05#mmMarketPracticeVersion
- * RequestForTransferStatusReportV05.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV07#mmMarketPracticeVersion
- * TransferInCancellationRequestV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV07#mmMarketPracticeVersion
- * PortfolioTransferConfirmationV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferCancellationStatusReportV05#mmMarketPracticeVersion
- * TransferCancellationStatusReportV05.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV07#mmMarketPracticeVersion
- * TransferOutInstructionV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV07#mmMarketPracticeVersion
- * TransferInInstructionV07.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV04#mmMarketPracticeVersion
- * AccountHoldingInformationRequestV04.mmMarketPracticeVersion}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV07#mmMarketPracticeVersion
- * ReversalOfTransferInConfirmationV07.mmMarketPracticeVersion}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.acmt.AccountDetailsConfirmationV07#mmMarketPracticeVersion
  * AccountDetailsConfirmationV07.mmMarketPracticeVersion}</li>
  * <li>
@@ -117,13 +71,61 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.acmt.AccountManagementStatusReportV06#mmMarketPracticeVersion
  * AccountManagementStatusReportV06.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV08#mmMarketPracticeVersion
+ * ReversalOfTransferOutConfirmationV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV08#mmMarketPracticeVersion
+ * TransferInConfirmationV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmMarketPracticeVersion
+ * PortfolioTransferInstructionV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferCancellationRequestV08#mmMarketPracticeVersion
+ * PortfolioTransferCancellationRequestV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV08#mmMarketPracticeVersion
+ * TransferOutCancellationRequestV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV08#mmMarketPracticeVersion
+ * TransferInInstructionV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmMarketPracticeVersion
+ * PortfolioTransferConfirmationV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmMarketPracticeVersion
+ * AccountHoldingInformationV06.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV08#mmMarketPracticeVersion
+ * TransferOutConfirmationV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV08#mmMarketPracticeVersion
+ * TransferInCancellationRequestV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV08#mmMarketPracticeVersion
+ * TransferOutInstructionV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferCancellationStatusReportV06#mmMarketPracticeVersion
+ * TransferCancellationStatusReportV06.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmMarketPracticeVersion
+ * AccountHoldingInformationRequestV05.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV08#mmMarketPracticeVersion
+ * ReversalOfTransferInConfirmationV08.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.RequestForTransferStatusReportV06#mmMarketPracticeVersion
+ * RequestForTransferStatusReportV06.mmMarketPracticeVersion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInstructionStatusReportV06#mmMarketPracticeVersion
+ * TransferInstructionStatusReportV06.mmMarketPracticeVersion}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -134,15 +136,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identifies the implementation and version."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarketPracticeVersion1", propOrder = {"name", "date", "number"})
 public class MarketPracticeVersion1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nm", required = true)
 	protected Max35Text name;
 	/**
-	 * Market practice, for example, “UKTRANSFERS”, “FINDELSLT”.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,9 +171,9 @@ public class MarketPracticeVersion1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketPracticeVersion1, Max35Text> mmName = new MMMessageAttribute<MarketPracticeVersion1, Max35Text>() {
 		{
-			componentContext_lazy = () -> MarketPracticeVersion1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarketPracticeVersion1.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +183,22 @@ public class MarketPracticeVersion1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(MarketPracticeVersion1 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(MarketPracticeVersion1 obj, Max35Text value) {
+			obj.setName(value);
+		}
 	};
+	@XmlElement(name = "Dt")
 	protected ISOYearMonth date;
 	/**
-	 * Year and month, for example, 2013-06
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,26 +221,37 @@ public class MarketPracticeVersion1 {
 	 * name} = "Date"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Year and month, for example, 2013-06"</li>
+	 * definition} = "Year and month, for example, 2013-06."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketPracticeVersion1, Optional<ISOYearMonth>> mmDate = new MMMessageAttribute<MarketPracticeVersion1, Optional<ISOYearMonth>>() {
 		{
-			componentContext_lazy = () -> MarketPracticeVersion1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarketPracticeVersion1.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
-			definition = "Year and month, for example, 2013-06";
+			definition = "Year and month, for example, 2013-06.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISOYearMonth.mmObject();
 		}
+
+		@Override
+		public Optional<ISOYearMonth> getValue(MarketPracticeVersion1 obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(MarketPracticeVersion1 obj, Optional<ISOYearMonth> value) {
+			obj.setDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Nb")
 	protected Max35Text number;
 	/**
-	 * Version of the market practice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,9 +276,9 @@ public class MarketPracticeVersion1 {
 	 * definition} = "Version of the market practice."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketPracticeVersion1, Optional<Max35Text>> mmNumber = new MMMessageAttribute<MarketPracticeVersion1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> MarketPracticeVersion1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarketPracticeVersion1.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -263,20 +288,31 @@ public class MarketPracticeVersion1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(MarketPracticeVersion1 obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(MarketPracticeVersion1 obj, Optional<Max35Text> value) {
+			obj.setNumber(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarketPracticeVersion1.mmName, MarketPracticeVersion1.mmDate, MarketPracticeVersion1.mmNumber);
-				messageBuildingBlock_lazy = () -> Arrays.asList(PortfolioTransferInstructionV07.mmMarketPracticeVersion, ReversalOfTransferOutConfirmationV07.mmMarketPracticeVersion,
-						TransferOutCancellationRequestV07.mmMarketPracticeVersion, AccountHoldingInformationV05.mmMarketPracticeVersion, PortfolioTransferCancellationRequestV07.mmMarketPracticeVersion,
-						TransferInstructionStatusReportV05.mmMarketPracticeVersion, TransferInConfirmationV07.mmMarketPracticeVersion, TransferOutConfirmationV07.mmMarketPracticeVersion,
-						RequestForTransferStatusReportV05.mmMarketPracticeVersion, TransferInCancellationRequestV07.mmMarketPracticeVersion, PortfolioTransferConfirmationV07.mmMarketPracticeVersion,
-						TransferCancellationStatusReportV05.mmMarketPracticeVersion, TransferOutInstructionV07.mmMarketPracticeVersion, TransferInInstructionV07.mmMarketPracticeVersion,
-						AccountHoldingInformationRequestV04.mmMarketPracticeVersion, ReversalOfTransferInConfirmationV07.mmMarketPracticeVersion, AccountDetailsConfirmationV07.mmMarketPracticeVersion,
-						AccountModificationInstructionV07.mmMarketPracticeVersion, AccountOpeningInstructionV07.mmMarketPracticeVersion, AccountManagementStatusReportV06.mmMarketPracticeVersion);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MarketPracticeVersion1.mmName, com.tools20022.repository.msg.MarketPracticeVersion1.mmDate,
+						com.tools20022.repository.msg.MarketPracticeVersion1.mmNumber);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountDetailsConfirmationV07.mmMarketPracticeVersion, AccountModificationInstructionV07.mmMarketPracticeVersion, AccountOpeningInstructionV07.mmMarketPracticeVersion,
+						AccountManagementStatusReportV06.mmMarketPracticeVersion, ReversalOfTransferOutConfirmationV08.mmMarketPracticeVersion, TransferInConfirmationV08.mmMarketPracticeVersion,
+						PortfolioTransferInstructionV08.mmMarketPracticeVersion, PortfolioTransferCancellationRequestV08.mmMarketPracticeVersion, TransferOutCancellationRequestV08.mmMarketPracticeVersion,
+						TransferInInstructionV08.mmMarketPracticeVersion, PortfolioTransferConfirmationV08.mmMarketPracticeVersion, AccountHoldingInformationV06.mmMarketPracticeVersion, TransferOutConfirmationV08.mmMarketPracticeVersion,
+						TransferInCancellationRequestV08.mmMarketPracticeVersion, TransferOutInstructionV08.mmMarketPracticeVersion, TransferCancellationStatusReportV06.mmMarketPracticeVersion,
+						AccountHoldingInformationRequestV05.mmMarketPracticeVersion, ReversalOfTransferInConfirmationV08.mmMarketPracticeVersion, RequestForTransferStatusReportV06.mmMarketPracticeVersion,
+						TransferInstructionStatusReportV06.mmMarketPracticeVersion);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketPracticeVersion1";
 				definition = "Identifies the implementation and version.";
@@ -285,30 +321,30 @@ public class MarketPracticeVersion1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max35Text getName() {
 		return name;
 	}
 
-	public void setName(Max35Text name) {
-		this.name = name;
+	public MarketPracticeVersion1 setName(Max35Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
-	@XmlElement(name = "Dt")
-	public ISOYearMonth getDate() {
-		return date;
+	public Optional<ISOYearMonth> getDate() {
+		return date == null ? Optional.empty() : Optional.of(date);
 	}
 
-	public void setDate(ISOYearMonth date) {
+	public MarketPracticeVersion1 setDate(ISOYearMonth date) {
 		this.date = date;
+		return this;
 	}
 
-	@XmlElement(name = "Nb")
-	public Max35Text getNumber() {
-		return number;
+	public Optional<Max35Text> getNumber() {
+		return number == null ? Optional.empty() : Optional.of(number);
 	}
 
-	public void setNumber(Max35Text number) {
+	public MarketPracticeVersion1 setNumber(Max35Text number) {
 		this.number = number;
+		return this;
 	}
 }

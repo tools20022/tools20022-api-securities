@@ -28,9 +28,10 @@ import com.tools20022.repository.entity.CorporateActionDistribution;
 import com.tools20022.repository.entity.SecuritiesTransfer;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.SecuritiesAccount8;
+import com.tools20022.repository.msg.SecurityIdentification7;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +75,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information about the securities movements."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionSecuritiesMovement1", propOrder = {"postingDateTime", "securityIdentification", "postingQuantity", "accountDetails"})
 public class CorporateActionSecuritiesMovement1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PstngDtTm")
 	protected DateAndDateTimeChoice postingDateTime;
 	/**
-	 * Date and time of the posting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,10 +127,10 @@ public class CorporateActionSecuritiesMovement1 {
 	 * definition} = "Date and time of the posting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPostingDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionSecuritiesMovement1, Optional<DateAndDateTimeChoice>> mmPostingDateTime = new MMMessageAttribute<CorporateActionSecuritiesMovement1, Optional<DateAndDateTimeChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDistribution.mmPostingDateTime;
-			componentContext_lazy = () -> CorporateActionSecuritiesMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "PstngDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,11 +140,22 @@ public class CorporateActionSecuritiesMovement1 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public Optional<DateAndDateTimeChoice> getValue(CorporateActionSecuritiesMovement1 obj) {
+			return obj.getPostingDateTime();
+		}
+
+		@Override
+		public void setValue(CorporateActionSecuritiesMovement1 obj, Optional<DateAndDateTimeChoice> value) {
+			obj.setPostingDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SctyId", required = true)
 	protected SecurityIdentification7 securityIdentification;
 	/**
-	 * Identification of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,10 +186,10 @@ public class CorporateActionSecuritiesMovement1 {
 	 * definition} = "Identification of the financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecurityIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionSecuritiesMovement1, SecurityIdentification7> mmSecurityIdentification = new MMMessageAttribute<CorporateActionSecuritiesMovement1, SecurityIdentification7>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> CorporateActionSecuritiesMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "SctyId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -184,13 +197,24 @@ public class CorporateActionSecuritiesMovement1 {
 			definition = "Identification of the financial instrument.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
+			complexType_lazy = () -> SecurityIdentification7.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification7 getValue(CorporateActionSecuritiesMovement1 obj) {
+			return obj.getSecurityIdentification();
+		}
+
+		@Override
+		public void setValue(CorporateActionSecuritiesMovement1 obj, SecurityIdentification7 value) {
+			obj.setSecurityIdentification(value);
 		}
 	};
+	@XmlElement(name = "PstngQty", required = true)
 	protected UnitOrFaceAmount1Choice postingQuantity;
 	/**
-	 * Quantity of securities that is posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,10 +245,10 @@ public class CorporateActionSecuritiesMovement1 {
 	 * definition} = "Quantity of securities that is posted."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPostingQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionSecuritiesMovement1, UnitOrFaceAmount1Choice> mmPostingQuantity = new MMMessageAttribute<CorporateActionSecuritiesMovement1, UnitOrFaceAmount1Choice>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDistribution.mmPostingDateTime;
-			componentContext_lazy = () -> CorporateActionSecuritiesMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "PstngQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,11 +258,22 @@ public class CorporateActionSecuritiesMovement1 {
 			minOccurs = 1;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public UnitOrFaceAmount1Choice getValue(CorporateActionSecuritiesMovement1 obj) {
+			return obj.getPostingQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateActionSecuritiesMovement1 obj, UnitOrFaceAmount1Choice value) {
+			obj.setPostingQuantity(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.SecuritiesAccount8> accountDetails;
+	@XmlElement(name = "AcctDtls", required = true)
+	protected List<SecuritiesAccount8> accountDetails;
 	/**
-	 * Provides information about the account which is debited/credited.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -268,10 +303,10 @@ public class CorporateActionSecuritiesMovement1 {
 	 * "Provides information about the account which is debited/credited."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionSecuritiesMovement1, List<SecuritiesAccount8>> mmAccountDetails = new MMMessageAssociationEnd<CorporateActionSecuritiesMovement1, List<SecuritiesAccount8>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmAccount;
-			componentContext_lazy = () -> CorporateActionSecuritiesMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -280,18 +315,28 @@ public class CorporateActionSecuritiesMovement1 {
 			maxOccurs = 2;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount8.mmObject();
+			type_lazy = () -> SecuritiesAccount8.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesAccount8> getValue(CorporateActionSecuritiesMovement1 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionSecuritiesMovement1 obj, List<SecuritiesAccount8> value) {
+			obj.setAccountDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionSecuritiesMovement1.mmPostingDateTime, CorporateActionSecuritiesMovement1.mmSecurityIdentification, CorporateActionSecuritiesMovement1.mmPostingQuantity,
-						CorporateActionSecuritiesMovement1.mmAccountDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmPostingDateTime, com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmSecurityIdentification,
+						com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmPostingQuantity, com.tools20022.repository.msg.CorporateActionSecuritiesMovement1.mmAccountDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCAMovementConfirmationV01.mmSecuritiesMovementDetails);
 				trace_lazy = () -> SecuritiesTransfer.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionSecuritiesMovement1";
 				definition = "Information about the securities movements.";
@@ -300,39 +345,39 @@ public class CorporateActionSecuritiesMovement1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PstngDtTm")
-	public DateAndDateTimeChoice getPostingDateTime() {
-		return postingDateTime;
+	public Optional<DateAndDateTimeChoice> getPostingDateTime() {
+		return postingDateTime == null ? Optional.empty() : Optional.of(postingDateTime);
 	}
 
-	public void setPostingDateTime(DateAndDateTimeChoice postingDateTime) {
+	public CorporateActionSecuritiesMovement1 setPostingDateTime(DateAndDateTimeChoice postingDateTime) {
 		this.postingDateTime = postingDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "SctyId", required = true)
 	public SecurityIdentification7 getSecurityIdentification() {
 		return securityIdentification;
 	}
 
-	public void setSecurityIdentification(com.tools20022.repository.msg.SecurityIdentification7 securityIdentification) {
-		this.securityIdentification = securityIdentification;
+	public CorporateActionSecuritiesMovement1 setSecurityIdentification(SecurityIdentification7 securityIdentification) {
+		this.securityIdentification = Objects.requireNonNull(securityIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PstngQty", required = true)
 	public UnitOrFaceAmount1Choice getPostingQuantity() {
 		return postingQuantity;
 	}
 
-	public void setPostingQuantity(UnitOrFaceAmount1Choice postingQuantity) {
-		this.postingQuantity = postingQuantity;
+	public CorporateActionSecuritiesMovement1 setPostingQuantity(UnitOrFaceAmount1Choice postingQuantity) {
+		this.postingQuantity = Objects.requireNonNull(postingQuantity);
+		return this;
 	}
 
-	@XmlElement(name = "AcctDtls", required = true)
 	public List<SecuritiesAccount8> getAccountDetails() {
-		return accountDetails;
+		return accountDetails == null ? accountDetails = new ArrayList<>() : accountDetails;
 	}
 
-	public void setAccountDetails(List<com.tools20022.repository.msg.SecuritiesAccount8> accountDetails) {
-		this.accountDetails = accountDetails;
+	public CorporateActionSecuritiesMovement1 setAccountDetails(List<SecuritiesAccount8> accountDetails) {
+		this.accountDetails = Objects.requireNonNull(accountDetails);
+		return this;
 	}
 }

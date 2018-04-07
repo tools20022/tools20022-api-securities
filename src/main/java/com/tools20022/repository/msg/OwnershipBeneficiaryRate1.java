@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOwnershipBeneficiaryRateRule#forOwnershipBeneficiaryRate1
+ * ConstraintOwnershipBeneficiaryRateRule.forOwnershipBeneficiaryRate1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,19 +70,20 @@ import javax.xml.bind.annotation.XmlType;
  * "OwnershipBeneficiaryRate1"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Percentage of ownership or of beneficial ownership of the shares/units in the account. "
+ * "Percentage of ownership or of beneficial ownership of the shares/units in the account."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OwnershipBeneficiaryRate1", propOrder = {"rate", "fraction"})
 public class OwnershipBeneficiaryRate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rate")
 	protected PercentageRate rate;
 	/**
-	 * Ownership or beneficial ownership expressed as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,9 +110,9 @@ public class OwnershipBeneficiaryRate1 {
 	 * "Ownership or beneficial ownership expressed as a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OwnershipBeneficiaryRate1, Optional<PercentageRate>> mmRate = new MMMessageAttribute<OwnershipBeneficiaryRate1, Optional<PercentageRate>>() {
 		{
-			componentContext_lazy = () -> OwnershipBeneficiaryRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OwnershipBeneficiaryRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,12 +122,22 @@ public class OwnershipBeneficiaryRate1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(OwnershipBeneficiaryRate1 obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(OwnershipBeneficiaryRate1 obj, Optional<PercentageRate> value) {
+			obj.setRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Frctn")
 	protected Max35Text fraction;
 	/**
-	 * Ownership or beneficial ownership expressed as a fraction or another
-	 * form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,9 +164,9 @@ public class OwnershipBeneficiaryRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFraction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OwnershipBeneficiaryRate1, Optional<Max35Text>> mmFraction = new MMMessageAttribute<OwnershipBeneficiaryRate1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> OwnershipBeneficiaryRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.OwnershipBeneficiaryRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Frctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,36 +176,47 @@ public class OwnershipBeneficiaryRate1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(OwnershipBeneficiaryRate1 obj) {
+			return obj.getFraction();
+		}
+
+		@Override
+		public void setValue(OwnershipBeneficiaryRate1 obj, Optional<Max35Text> value) {
+			obj.setFraction(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OwnershipBeneficiaryRate1.mmRate, OwnershipBeneficiaryRate1.mmFraction);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OwnershipBeneficiaryRate1.mmRate, com.tools20022.repository.msg.OwnershipBeneficiaryRate1.mmFraction);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintOwnershipBeneficiaryRateRule.forOwnershipBeneficiaryRate1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OwnershipBeneficiaryRate1";
-				definition = "Percentage of ownership or of beneficial ownership of the shares/units in the account. ";
+				definition = "Percentage of ownership or of beneficial ownership of the shares/units in the account.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rate")
-	public PercentageRate getRate() {
-		return rate;
+	public Optional<PercentageRate> getRate() {
+		return rate == null ? Optional.empty() : Optional.of(rate);
 	}
 
-	public void setRate(PercentageRate rate) {
+	public OwnershipBeneficiaryRate1 setRate(PercentageRate rate) {
 		this.rate = rate;
+		return this;
 	}
 
-	@XmlElement(name = "Frctn")
-	public Max35Text getFraction() {
-		return fraction;
+	public Optional<Max35Text> getFraction() {
+		return fraction == null ? Optional.empty() : Optional.of(fraction);
 	}
 
-	public void setFraction(Max35Text fraction) {
+	public OwnershipBeneficiaryRate1 setFraction(Max35Text fraction) {
 		this.fraction = fraction;
+		return this;
 	}
 }

@@ -25,6 +25,8 @@ import com.tools20022.repository.choice.AccountStatusUpdateInstructionReason1Cho
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Instruction for a change to an account status and reason for the change."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountStatusUpdateInstruction1", propOrder = {"updateInstruction", "updateInstructionReason"})
 public class AccountStatusUpdateInstruction1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "UpdInstr", required = true)
 	protected AccountStatusUpdateInstruction1Choice updateInstruction;
 	/**
-	 * Type of status change instructed for the account status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -96,9 +99,9 @@ public class AccountStatusUpdateInstruction1 {
 	 * definition} = "Type of status change instructed for the account status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUpdateInstruction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatusUpdateInstruction1, AccountStatusUpdateInstruction1Choice> mmUpdateInstruction = new MMMessageAssociationEnd<AccountStatusUpdateInstruction1, AccountStatusUpdateInstruction1Choice>() {
 		{
-			componentContext_lazy = () -> AccountStatusUpdateInstruction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatusUpdateInstruction1.mmObject();
 			isDerived = false;
 			xmlTag = "UpdInstr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,11 +112,22 @@ public class AccountStatusUpdateInstruction1 {
 			isComposite = true;
 			type_lazy = () -> AccountStatusUpdateInstruction1Choice.mmObject();
 		}
+
+		@Override
+		public AccountStatusUpdateInstruction1Choice getValue(AccountStatusUpdateInstruction1 obj) {
+			return obj.getUpdateInstruction();
+		}
+
+		@Override
+		public void setValue(AccountStatusUpdateInstruction1 obj, AccountStatusUpdateInstruction1Choice value) {
+			obj.setUpdateInstruction(value);
+		}
 	};
+	@XmlElement(name = "UpdInstrRsn")
 	protected AccountStatusUpdateInstructionReason1Choice updateInstructionReason;
 	/**
-	 * Reason for the instruction to change the account status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -138,9 +152,9 @@ public class AccountStatusUpdateInstruction1 {
 	 * definition} = "Reason for the instruction to change the account status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUpdateInstructionReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatusUpdateInstruction1, Optional<AccountStatusUpdateInstructionReason1Choice>> mmUpdateInstructionReason = new MMMessageAssociationEnd<AccountStatusUpdateInstruction1, Optional<AccountStatusUpdateInstructionReason1Choice>>() {
 		{
-			componentContext_lazy = () -> AccountStatusUpdateInstruction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatusUpdateInstruction1.mmObject();
 			isDerived = false;
 			xmlTag = "UpdInstrRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -151,13 +165,23 @@ public class AccountStatusUpdateInstruction1 {
 			isComposite = true;
 			type_lazy = () -> AccountStatusUpdateInstructionReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AccountStatusUpdateInstructionReason1Choice> getValue(AccountStatusUpdateInstruction1 obj) {
+			return obj.getUpdateInstructionReason();
+		}
+
+		@Override
+		public void setValue(AccountStatusUpdateInstruction1 obj, Optional<AccountStatusUpdateInstructionReason1Choice> value) {
+			obj.setUpdateInstructionReason(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountStatusUpdateInstruction1.mmUpdateInstruction, AccountStatusUpdateInstruction1.mmUpdateInstructionReason);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountStatusUpdateInstruction1.mmUpdateInstruction, com.tools20022.repository.msg.AccountStatusUpdateInstruction1.mmUpdateInstructionReason);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatusUpdateInstruction1";
 				definition = "Instruction for a change to an account status and reason for the change.";
@@ -166,21 +190,21 @@ public class AccountStatusUpdateInstruction1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "UpdInstr", required = true)
 	public AccountStatusUpdateInstruction1Choice getUpdateInstruction() {
 		return updateInstruction;
 	}
 
-	public void setUpdateInstruction(AccountStatusUpdateInstruction1Choice updateInstruction) {
-		this.updateInstruction = updateInstruction;
+	public AccountStatusUpdateInstruction1 setUpdateInstruction(AccountStatusUpdateInstruction1Choice updateInstruction) {
+		this.updateInstruction = Objects.requireNonNull(updateInstruction);
+		return this;
 	}
 
-	@XmlElement(name = "UpdInstrRsn")
-	public AccountStatusUpdateInstructionReason1Choice getUpdateInstructionReason() {
-		return updateInstructionReason;
+	public Optional<AccountStatusUpdateInstructionReason1Choice> getUpdateInstructionReason() {
+		return updateInstructionReason == null ? Optional.empty() : Optional.of(updateInstructionReason);
 	}
 
-	public void setUpdateInstructionReason(AccountStatusUpdateInstructionReason1Choice updateInstructionReason) {
+	public AccountStatusUpdateInstruction1 setUpdateInstructionReason(AccountStatusUpdateInstructionReason1Choice updateInstructionReason) {
 		this.updateInstructionReason = updateInstructionReason;
+		return this;
 	}
 }

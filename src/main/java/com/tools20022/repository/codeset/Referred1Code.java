@@ -37,11 +37,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Referred1Code#Referred
- * Referred1Code.mmReferred}</li>
+ * Referred1Code.Referred}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Referred1Code#NotReferred
- * Referred1Code.mmNotReferred}</li>
+ * Referred1Code.NotReferred}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Referred1Code#NotKnown
- * Referred1Code.mmNotKnown}</li>
+ * Referred1Code.NotKnown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -49,8 +49,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -151,7 +151,7 @@ public class Referred1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("REFR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Referred1Code";

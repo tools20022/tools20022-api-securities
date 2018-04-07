@@ -20,12 +20,14 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.RateValueType6FormatChoice;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.entity.Dividend;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.NetDividendRate2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format to express a net dividend."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetDividendRate1Choice", propOrder = {"notSpecifiedRate", "amount", "rateTypeAmount"})
 public class NetDividendRate1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NotSpcfdRate", required = true)
 	protected RateValueType6FormatChoice notSpecifiedRate;
 	/**
-	 * The value of the rate is not specified, eg, the rate is unknown.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +106,9 @@ public class NetDividendRate1Choice {
 	 * "The value of the rate is not specified, eg, the rate is unknown."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotSpecifiedRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetDividendRate1Choice, RateValueType6FormatChoice> mmNotSpecifiedRate = new MMMessageAttribute<NetDividendRate1Choice, RateValueType6FormatChoice>() {
 		{
-			componentContext_lazy = () -> NetDividendRate1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NetDividendRate1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NotSpcfdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,13 +116,24 @@ public class NetDividendRate1Choice {
 			definition = "The value of the rate is not specified, eg, the rate is unknown.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.RateValueType6FormatChoice.mmObject();
+			complexType_lazy = () -> RateValueType6FormatChoice.mmObject();
+		}
+
+		@Override
+		public RateValueType6FormatChoice getValue(NetDividendRate1Choice obj) {
+			return obj.getNotSpecifiedRate();
+		}
+
+		@Override
+		public void setValue(NetDividendRate1Choice obj, RateValueType6FormatChoice value) {
+			obj.setNotSpecifiedRate(value);
 		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Value expressed as an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +164,10 @@ public class NetDividendRate1Choice {
 	 * definition} = "Value expressed as an amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetDividendRate1Choice, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<NetDividendRate1Choice, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmNetDividend;
-			componentContext_lazy = () -> NetDividendRate1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NetDividendRate1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,12 +177,22 @@ public class NetDividendRate1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(NetDividendRate1Choice obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(NetDividendRate1Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "RateTpAmt", required = true)
 	protected NetDividendRate2 rateTypeAmount;
 	/**
-	 * Value is expressed as an amount related to an underlying securities, eg,
-	 * underlying security for which an interest is paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,10 +224,10 @@ public class NetDividendRate1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRateTypeAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetDividendRate1Choice, NetDividendRate2> mmRateTypeAmount = new MMMessageAttribute<NetDividendRate1Choice, NetDividendRate2>() {
 		{
 			businessComponentTrace_lazy = () -> Dividend.mmObject();
-			componentContext_lazy = () -> NetDividendRate1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.NetDividendRate1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RateTpAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -213,14 +237,25 @@ public class NetDividendRate1Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> NetDividendRate2.mmObject();
 		}
+
+		@Override
+		public NetDividendRate2 getValue(NetDividendRate1Choice obj) {
+			return obj.getRateTypeAmount();
+		}
+
+		@Override
+		public void setValue(NetDividendRate1Choice obj, NetDividendRate2 value) {
+			obj.setRateTypeAmount(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NetDividendRate1Choice.mmNotSpecifiedRate, NetDividendRate1Choice.mmAmount, NetDividendRate1Choice.mmRateTypeAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.NetDividendRate1Choice.mmNotSpecifiedRate, com.tools20022.repository.choice.NetDividendRate1Choice.mmAmount,
+						com.tools20022.repository.choice.NetDividendRate1Choice.mmRateTypeAmount);
 				trace_lazy = () -> Dividend.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetDividendRate1Choice";
 				definition = "Choice of format to express a net dividend.";
@@ -229,30 +264,30 @@ public class NetDividendRate1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NotSpcfdRate", required = true)
 	public RateValueType6FormatChoice getNotSpecifiedRate() {
 		return notSpecifiedRate;
 	}
 
-	public void setNotSpecifiedRate(com.tools20022.repository.choice.RateValueType6FormatChoice notSpecifiedRate) {
-		this.notSpecifiedRate = notSpecifiedRate;
+	public NetDividendRate1Choice setNotSpecifiedRate(RateValueType6FormatChoice notSpecifiedRate) {
+		this.notSpecifiedRate = Objects.requireNonNull(notSpecifiedRate);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public NetDividendRate1Choice setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "RateTpAmt", required = true)
 	public NetDividendRate2 getRateTypeAmount() {
 		return rateTypeAmount;
 	}
 
-	public void setRateTypeAmount(NetDividendRate2 rateTypeAmount) {
-		this.rateTypeAmount = rateTypeAmount;
+	public NetDividendRate1Choice setRateTypeAmount(NetDividendRate2 rateTypeAmount) {
+		this.rateTypeAmount = Objects.requireNonNull(rateTypeAmount);
+		return this;
 	}
 }

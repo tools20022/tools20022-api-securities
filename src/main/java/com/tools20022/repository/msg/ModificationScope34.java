@@ -24,8 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.DataModification1Code;
 import com.tools20022.repository.entity.PostalAddress;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PostalAddress21;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ModificationScope34", propOrder = {"modificationScopeIndication", "postalAddress"})
 public class ModificationScope34 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModScpIndctn", required = true)
 	protected DataModification1Code modificationScopeIndication;
 	/**
-	 * Specifies the type of modification to be applied on a set of information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,9 +107,9 @@ public class ModificationScope34 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationScopeIndication = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ModificationScope34, DataModification1Code> mmModificationScopeIndication = new MMMessageAttribute<ModificationScope34, DataModification1Code>() {
 		{
-			componentContext_lazy = () -> ModificationScope34.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope34.mmObject();
 			isDerived = false;
 			xmlTag = "ModScpIndctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +119,22 @@ public class ModificationScope34 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DataModification1Code.mmObject();
 		}
+
+		@Override
+		public DataModification1Code getValue(ModificationScope34 obj) {
+			return obj.getModificationScopeIndication();
+		}
+
+		@Override
+		public void setValue(ModificationScope34 obj, DataModification1Code value) {
+			obj.setModificationScopeIndication(value);
+		}
 	};
+	@XmlElement(name = "PstlAdr", required = true)
 	protected PostalAddress21 postalAddress;
 	/**
-	 * Address of the organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -149,10 +163,10 @@ public class ModificationScope34 {
 	 * definition} = "Address of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ModificationScope34, PostalAddress21> mmPostalAddress = new MMMessageAssociationEnd<ModificationScope34, PostalAddress21>() {
 		{
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
-			componentContext_lazy = () -> ModificationScope34.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope34.mmObject();
 			isDerived = false;
 			xmlTag = "PstlAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,16 +175,26 @@ public class ModificationScope34 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress21.mmObject();
+			type_lazy = () -> PostalAddress21.mmObject();
+		}
+
+		@Override
+		public PostalAddress21 getValue(ModificationScope34 obj) {
+			return obj.getPostalAddress();
+		}
+
+		@Override
+		public void setValue(ModificationScope34 obj, PostalAddress21 value) {
+			obj.setPostalAddress(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ModificationScope34.mmModificationScopeIndication, ModificationScope34.mmPostalAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ModificationScope34.mmModificationScopeIndication, com.tools20022.repository.msg.ModificationScope34.mmPostalAddress);
 				trace_lazy = () -> PostalAddress.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationScope34";
 				definition = "Scope of the modification to be applied on an identified set of information.";
@@ -179,21 +203,21 @@ public class ModificationScope34 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModScpIndctn", required = true)
 	public DataModification1Code getModificationScopeIndication() {
 		return modificationScopeIndication;
 	}
 
-	public void setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
-		this.modificationScopeIndication = modificationScopeIndication;
+	public ModificationScope34 setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
+		this.modificationScopeIndication = Objects.requireNonNull(modificationScopeIndication);
+		return this;
 	}
 
-	@XmlElement(name = "PstlAdr", required = true)
 	public PostalAddress21 getPostalAddress() {
 		return postalAddress;
 	}
 
-	public void setPostalAddress(com.tools20022.repository.msg.PostalAddress21 postalAddress) {
-		this.postalAddress = postalAddress;
+	public ModificationScope34 setPostalAddress(PostalAddress21 postalAddress) {
+		this.postalAddress = Objects.requireNonNull(postalAddress);
+		return this;
 	}
 }

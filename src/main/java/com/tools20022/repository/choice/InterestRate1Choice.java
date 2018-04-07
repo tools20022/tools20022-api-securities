@@ -28,6 +28,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.VariableInterest1Rate;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between a fixed rate and a variable rate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestRate1Choice", propOrder = {"fixedInterestRate", "variableInterestRate"})
 public class InterestRate1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FxdIntrstRate", required = true)
 	protected PercentageRate fixedInterestRate;
 	/**
-	 * Indicates that the rate is fixed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +108,10 @@ public class InterestRate1Choice {
 	 * definition} = "Indicates that the rate is fixed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFixedInterestRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestRate1Choice, PercentageRate> mmFixedInterestRate = new MMMessageAttribute<InterestRate1Choice, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmRate;
-			componentContext_lazy = () -> InterestRate1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InterestRate1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "FxdIntrstRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,22 @@ public class InterestRate1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public PercentageRate getValue(InterestRate1Choice obj) {
+			return obj.getFixedInterestRate();
+		}
+
+		@Override
+		public void setValue(InterestRate1Choice obj, PercentageRate value) {
+			obj.setFixedInterestRate(value);
+		}
 	};
+	@XmlElement(name = "VarblIntrstRate", required = true)
 	protected VariableInterest1Rate variableInterestRate;
 	/**
-	 * Provides details about the variable rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -152,10 +165,10 @@ public class InterestRate1Choice {
 	 * definition} = "Provides details about the variable rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVariableInterestRate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InterestRate1Choice, VariableInterest1Rate> mmVariableInterestRate = new MMMessageAssociationEnd<InterestRate1Choice, VariableInterest1Rate>() {
 		{
 			businessComponentTrace_lazy = () -> VariableInterest.mmObject();
-			componentContext_lazy = () -> InterestRate1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InterestRate1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "VarblIntrstRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,14 +179,24 @@ public class InterestRate1Choice {
 			isComposite = true;
 			type_lazy = () -> VariableInterest1Rate.mmObject();
 		}
+
+		@Override
+		public VariableInterest1Rate getValue(InterestRate1Choice obj) {
+			return obj.getVariableInterestRate();
+		}
+
+		@Override
+		public void setValue(InterestRate1Choice obj, VariableInterest1Rate value) {
+			obj.setVariableInterestRate(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestRate1Choice.mmFixedInterestRate, InterestRate1Choice.mmVariableInterestRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InterestRate1Choice.mmFixedInterestRate, com.tools20022.repository.choice.InterestRate1Choice.mmVariableInterestRate);
 				trace_lazy = () -> Interest.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestRate1Choice";
 				definition = "Choice between a fixed rate and a variable rate.";
@@ -182,21 +205,21 @@ public class InterestRate1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FxdIntrstRate", required = true)
 	public PercentageRate getFixedInterestRate() {
 		return fixedInterestRate;
 	}
 
-	public void setFixedInterestRate(PercentageRate fixedInterestRate) {
-		this.fixedInterestRate = fixedInterestRate;
+	public InterestRate1Choice setFixedInterestRate(PercentageRate fixedInterestRate) {
+		this.fixedInterestRate = Objects.requireNonNull(fixedInterestRate);
+		return this;
 	}
 
-	@XmlElement(name = "VarblIntrstRate", required = true)
 	public VariableInterest1Rate getVariableInterestRate() {
 		return variableInterestRate;
 	}
 
-	public void setVariableInterestRate(VariableInterest1Rate variableInterestRate) {
-		this.variableInterestRate = variableInterestRate;
+	public InterestRate1Choice setVariableInterestRate(VariableInterest1Rate variableInterestRate) {
+		this.variableInterestRate = Objects.requireNonNull(variableInterestRate);
+		return this;
 	}
 }

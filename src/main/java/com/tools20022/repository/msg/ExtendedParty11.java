@@ -24,8 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Extended350Code;
 import com.tools20022.repository.entity.InvestmentAccountPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Party and account information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ExtendedParty11", propOrder = {"extendedPartyRole", "otherPartyDetails"})
 public class ExtendedParty11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "XtndedPtyRole", required = true)
 	protected Extended350Code extendedPartyRole;
 	/**
-	 * Other type of party's role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +109,10 @@ public class ExtendedParty11 {
 	 * definition} = "Other type of party's role."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExtendedPartyRole = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExtendedParty11, Extended350Code> mmExtendedPartyRole = new MMMessageAttribute<ExtendedParty11, Extended350Code>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-			componentContext_lazy = () -> ExtendedParty11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ExtendedParty11.mmObject();
 			isDerived = false;
 			xmlTag = "XtndedPtyRole";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +122,22 @@ public class ExtendedParty11 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Extended350Code.mmObject();
 		}
+
+		@Override
+		public Extended350Code getValue(ExtendedParty11 obj) {
+			return obj.getExtendedPartyRole();
+		}
+
+		@Override
+		public void setValue(ExtendedParty11 obj, Extended350Code value) {
+			obj.setExtendedPartyRole(value);
+		}
 	};
+	@XmlElement(name = "OthrPtyDtls", required = true)
 	protected InvestmentAccountOwnershipInformation14 otherPartyDetails;
 	/**
-	 * Detailed ownership information about a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,10 +167,10 @@ public class ExtendedParty11 {
 	 * definition} = "Detailed ownership information about a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherPartyDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ExtendedParty11, InvestmentAccountOwnershipInformation14> mmOtherPartyDetails = new MMMessageAssociationEnd<ExtendedParty11, InvestmentAccountOwnershipInformation14>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-			componentContext_lazy = () -> ExtendedParty11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ExtendedParty11.mmObject();
 			isDerived = false;
 			xmlTag = "OthrPtyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,16 +179,26 @@ public class ExtendedParty11 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14.mmObject();
+			type_lazy = () -> InvestmentAccountOwnershipInformation14.mmObject();
+		}
+
+		@Override
+		public InvestmentAccountOwnershipInformation14 getValue(ExtendedParty11 obj) {
+			return obj.getOtherPartyDetails();
+		}
+
+		@Override
+		public void setValue(ExtendedParty11 obj, InvestmentAccountOwnershipInformation14 value) {
+			obj.setOtherPartyDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ExtendedParty11.mmExtendedPartyRole, ExtendedParty11.mmOtherPartyDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ExtendedParty11.mmExtendedPartyRole, com.tools20022.repository.msg.ExtendedParty11.mmOtherPartyDetails);
 				trace_lazy = () -> InvestmentAccountPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExtendedParty11";
 				definition = "Party and account information.";
@@ -183,21 +207,21 @@ public class ExtendedParty11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "XtndedPtyRole", required = true)
 	public Extended350Code getExtendedPartyRole() {
 		return extendedPartyRole;
 	}
 
-	public void setExtendedPartyRole(Extended350Code extendedPartyRole) {
-		this.extendedPartyRole = extendedPartyRole;
+	public ExtendedParty11 setExtendedPartyRole(Extended350Code extendedPartyRole) {
+		this.extendedPartyRole = Objects.requireNonNull(extendedPartyRole);
+		return this;
 	}
 
-	@XmlElement(name = "OthrPtyDtls", required = true)
 	public InvestmentAccountOwnershipInformation14 getOtherPartyDetails() {
 		return otherPartyDetails;
 	}
 
-	public void setOtherPartyDetails(com.tools20022.repository.msg.InvestmentAccountOwnershipInformation14 otherPartyDetails) {
-		this.otherPartyDetails = otherPartyDetails;
+	public ExtendedParty11 setOtherPartyDetails(InvestmentAccountOwnershipInformation14 otherPartyDetails) {
+		this.otherPartyDetails = Objects.requireNonNull(otherPartyDetails);
+		return this;
 	}
 }

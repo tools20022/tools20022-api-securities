@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,19 +64,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "SecuritiesBalanceType9FormatChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of formats to  express the type of securities balance."
- * </li>
+ * definition} = "Choice of formats to express the type of securities balance."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesBalanceType9FormatChoice", propOrder = {"code", "proprietary"})
 public class SecuritiesBalanceType9FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected SecuritiesBalanceType9Code code;
 	/**
-	 * Standard code to specify the type of securities balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +107,10 @@ public class SecuritiesBalanceType9FormatChoice {
 	 * definition} = "Standard code to specify the type of securities balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesBalanceType9FormatChoice, SecuritiesBalanceType9Code> mmCode = new MMMessageAttribute<SecuritiesBalanceType9FormatChoice, SecuritiesBalanceType9Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesBalanceType;
-			componentContext_lazy = () -> SecuritiesBalanceType9FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SecuritiesBalanceType9FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +120,22 @@ public class SecuritiesBalanceType9FormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> SecuritiesBalanceType9Code.mmObject();
 		}
+
+		@Override
+		public SecuritiesBalanceType9Code getValue(SecuritiesBalanceType9FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalanceType9FormatChoice obj, SecuritiesBalanceType9Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the type of securities balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,53 +164,63 @@ public class SecuritiesBalanceType9FormatChoice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Proprietary code to  express the type of securities balance."</li>
+	 * "Proprietary code to express the type of securities balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesBalanceType9FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<SecuritiesBalanceType9FormatChoice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesBalanceType;
-			componentContext_lazy = () -> SecuritiesBalanceType9FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SecuritiesBalanceType9FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express the type of securities balance.";
+			definition = "Proprietary code to express the type of securities balance.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(SecuritiesBalanceType9FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(SecuritiesBalanceType9FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesBalanceType9FormatChoice.mmCode, SecuritiesBalanceType9FormatChoice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.SecuritiesBalanceType9FormatChoice.mmCode, com.tools20022.repository.choice.SecuritiesBalanceType9FormatChoice.mmProprietary);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType9FormatChoice";
-				definition = "Choice of formats to  express the type of securities balance.";
+				definition = "Choice of formats to express the type of securities balance.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public SecuritiesBalanceType9Code getCode() {
 		return code;
 	}
 
-	public void setCode(SecuritiesBalanceType9Code code) {
-		this.code = code;
+	public SecuritiesBalanceType9FormatChoice setCode(SecuritiesBalanceType9Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public SecuritiesBalanceType9FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.Interest;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralAmount1", propOrder = {"collateralAmount", "reportedCurrencyAndAmount", "marketValueAmount", "accruedInterestAmount", "feesAndCommissions"})
 public class CollateralAmount1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CollAmt", required = true)
 	protected ActiveCurrencyAndAmount collateralAmount;
 	/**
-	 * Specifies the total amount of the collateral in the collateral currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,10 +123,10 @@ public class CollateralAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAmount1, ActiveCurrencyAndAmount> mmCollateralAmount = new MMMessageAttribute<CollateralAmount1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmCollateralAmount;
-			componentContext_lazy = () -> CollateralAmount1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAmount1.mmObject();
 			isDerived = false;
 			xmlTag = "CollAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,11 +136,22 @@ public class CollateralAmount1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CollateralAmount1 obj) {
+			return obj.getCollateralAmount();
+		}
+
+		@Override
+		public void setValue(CollateralAmount1 obj, ActiveCurrencyAndAmount value) {
+			obj.setCollateralAmount(value);
+		}
 	};
+	@XmlElement(name = "RptdCcyAndAmt", required = true)
 	protected ActiveCurrencyAndAmount reportedCurrencyAndAmount;
 	/**
-	 * Specifies the total amount of the collateral in the reporting currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,10 +184,10 @@ public class CollateralAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportedCurrencyAndAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAmount1, ActiveCurrencyAndAmount> mmReportedCurrencyAndAmount = new MMMessageAttribute<CollateralAmount1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CollateralValuation.mmReportedCurrencyAndAmount;
-			componentContext_lazy = () -> CollateralAmount1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAmount1.mmObject();
 			isDerived = false;
 			xmlTag = "RptdCcyAndAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,13 +197,22 @@ public class CollateralAmount1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CollateralAmount1 obj) {
+			return obj.getReportedCurrencyAndAmount();
+		}
+
+		@Override
+		public void setValue(CollateralAmount1 obj, ActiveCurrencyAndAmount value) {
+			obj.setReportedCurrencyAndAmount(value);
+		}
 	};
+	@XmlElement(name = "MktValAmt", required = true)
 	protected ActiveCurrencyAndAmount marketValueAmount;
 	/**
-	 * Specifies the total market to market value of the collateral in the
-	 * reporting currency. It is the dirty price, that is, the accrued interest
-	 * is included if any.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -222,10 +245,10 @@ public class CollateralAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMarketValueAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAmount1, ActiveCurrencyAndAmount> mmMarketValueAmount = new MMMessageAttribute<CollateralAmount1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> CollateralValuation.mmMarketValueAmount;
-			componentContext_lazy = () -> CollateralAmount1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAmount1.mmObject();
 			isDerived = false;
 			xmlTag = "MktValAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,12 +258,22 @@ public class CollateralAmount1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CollateralAmount1 obj) {
+			return obj.getMarketValueAmount();
+		}
+
+		@Override
+		public void setValue(CollateralAmount1 obj, ActiveCurrencyAndAmount value) {
+			obj.setMarketValueAmount(value);
+		}
 	};
+	@XmlElement(name = "AcrdIntrstAmt")
 	protected ActiveCurrencyAndAmount accruedInterestAmount;
 	/**
-	 * Specifies the accrued interest on the value of the collateral in the
-	 * currency of the collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,10 +306,10 @@ public class CollateralAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccruedInterestAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAmount1, Optional<ActiveCurrencyAndAmount>> mmAccruedInterestAmount = new MMMessageAttribute<CollateralAmount1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmAccruedInterestAmount;
-			componentContext_lazy = () -> CollateralAmount1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAmount1.mmObject();
 			isDerived = false;
 			xmlTag = "AcrdIntrstAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -286,12 +319,22 @@ public class CollateralAmount1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(CollateralAmount1 obj) {
+			return obj.getAccruedInterestAmount();
+		}
+
+		@Override
+		public void setValue(CollateralAmount1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setAccruedInterestAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FeesAndComssns")
 	protected ActiveCurrencyAndAmount feesAndCommissions;
 	/**
-	 * Specifies the amount of money paid for the provision of financial
-	 * services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,10 +367,10 @@ public class CollateralAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFeesAndCommissions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAmount1, Optional<ActiveCurrencyAndAmount>> mmFeesAndCommissions = new MMMessageAttribute<CollateralAmount1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralManagement.mmFeesAndCommissions;
-			componentContext_lazy = () -> CollateralAmount1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAmount1.mmObject();
 			isDerived = false;
 			xmlTag = "FeesAndComssns";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,15 +380,25 @@ public class CollateralAmount1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(CollateralAmount1 obj) {
+			return obj.getFeesAndCommissions();
+		}
+
+		@Override
+		public void setValue(CollateralAmount1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setFeesAndCommissions(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralAmount1.mmCollateralAmount, CollateralAmount1.mmReportedCurrencyAndAmount, CollateralAmount1.mmMarketValueAmount, CollateralAmount1.mmAccruedInterestAmount,
-						CollateralAmount1.mmFeesAndCommissions);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralAmount1.mmCollateralAmount, com.tools20022.repository.msg.CollateralAmount1.mmReportedCurrencyAndAmount,
+						com.tools20022.repository.msg.CollateralAmount1.mmMarketValueAmount, com.tools20022.repository.msg.CollateralAmount1.mmAccruedInterestAmount, com.tools20022.repository.msg.CollateralAmount1.mmFeesAndCommissions);
 				trace_lazy = () -> Collateral.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralAmount1";
 				definition = "Provides information about the collateral valuation such as the collateral amount, the market value.";
@@ -354,48 +407,48 @@ public class CollateralAmount1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CollAmt", required = true)
 	public ActiveCurrencyAndAmount getCollateralAmount() {
 		return collateralAmount;
 	}
 
-	public void setCollateralAmount(ActiveCurrencyAndAmount collateralAmount) {
-		this.collateralAmount = collateralAmount;
+	public CollateralAmount1 setCollateralAmount(ActiveCurrencyAndAmount collateralAmount) {
+		this.collateralAmount = Objects.requireNonNull(collateralAmount);
+		return this;
 	}
 
-	@XmlElement(name = "RptdCcyAndAmt", required = true)
 	public ActiveCurrencyAndAmount getReportedCurrencyAndAmount() {
 		return reportedCurrencyAndAmount;
 	}
 
-	public void setReportedCurrencyAndAmount(ActiveCurrencyAndAmount reportedCurrencyAndAmount) {
-		this.reportedCurrencyAndAmount = reportedCurrencyAndAmount;
+	public CollateralAmount1 setReportedCurrencyAndAmount(ActiveCurrencyAndAmount reportedCurrencyAndAmount) {
+		this.reportedCurrencyAndAmount = Objects.requireNonNull(reportedCurrencyAndAmount);
+		return this;
 	}
 
-	@XmlElement(name = "MktValAmt", required = true)
 	public ActiveCurrencyAndAmount getMarketValueAmount() {
 		return marketValueAmount;
 	}
 
-	public void setMarketValueAmount(ActiveCurrencyAndAmount marketValueAmount) {
-		this.marketValueAmount = marketValueAmount;
+	public CollateralAmount1 setMarketValueAmount(ActiveCurrencyAndAmount marketValueAmount) {
+		this.marketValueAmount = Objects.requireNonNull(marketValueAmount);
+		return this;
 	}
 
-	@XmlElement(name = "AcrdIntrstAmt")
-	public ActiveCurrencyAndAmount getAccruedInterestAmount() {
-		return accruedInterestAmount;
+	public Optional<ActiveCurrencyAndAmount> getAccruedInterestAmount() {
+		return accruedInterestAmount == null ? Optional.empty() : Optional.of(accruedInterestAmount);
 	}
 
-	public void setAccruedInterestAmount(ActiveCurrencyAndAmount accruedInterestAmount) {
+	public CollateralAmount1 setAccruedInterestAmount(ActiveCurrencyAndAmount accruedInterestAmount) {
 		this.accruedInterestAmount = accruedInterestAmount;
+		return this;
 	}
 
-	@XmlElement(name = "FeesAndComssns")
-	public ActiveCurrencyAndAmount getFeesAndCommissions() {
-		return feesAndCommissions;
+	public Optional<ActiveCurrencyAndAmount> getFeesAndCommissions() {
+		return feesAndCommissions == null ? Optional.empty() : Optional.of(feesAndCommissions);
 	}
 
-	public void setFeesAndCommissions(ActiveCurrencyAndAmount feesAndCommissions) {
+	public CollateralAmount1 setFeesAndCommissions(ActiveCurrencyAndAmount feesAndCommissions) {
 		this.feesAndCommissions = feesAndCommissions;
+		return this;
 	}
 }

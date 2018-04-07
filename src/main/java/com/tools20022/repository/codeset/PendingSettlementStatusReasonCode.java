@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -40,204 +41,204 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingMoney
- * PendingSettlementStatusReasonCode.mmAwaitingMoney}</li>
+ * PendingSettlementStatusReasonCode.AwaitingMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingSecurities
- * PendingSettlementStatusReasonCode.mmAwaitingSecurities}</li>
+ * PendingSettlementStatusReasonCode.AwaitingSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#InstructionRefusedOrNotRecognised
- * PendingSettlementStatusReasonCode.mmInstructionRefusedOrNotRecognised}</li>
+ * PendingSettlementStatusReasonCode.InstructionRefusedOrNotRecognised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingSharesFromCounterparty
- * PendingSettlementStatusReasonCode.mmAwaitingSharesFromCounterparty}</li>
+ * PendingSettlementStatusReasonCode.AwaitingSharesFromCounterparty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#PhysicalDeliveryDelay
- * PendingSettlementStatusReasonCode.mmPhysicalDeliveryDelay}</li>
+ * PendingSettlementStatusReasonCode.PhysicalDeliveryDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#TradeAmendedInMarket
- * PendingSettlementStatusReasonCode.mmTradeAmendedInMarket}</li>
+ * PendingSettlementStatusReasonCode.TradeAmendedInMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingDocumentsOrEndorsementsFromYou
- * PendingSettlementStatusReasonCode.mmAwaitingDocumentsOrEndorsementsFromYou}</li>
+ * PendingSettlementStatusReasonCode.AwaitingDocumentsOrEndorsementsFromYou}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingDocumentsOrEndorsementsFromCounterparty
  * PendingSettlementStatusReasonCode.
- * mmAwaitingDocumentsOrEndorsementsFromCounterparty}</li>
+ * AwaitingDocumentsOrEndorsementsFromCounterparty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AccountBlocked
- * PendingSettlementStatusReasonCode.mmAccountBlocked}</li>
+ * PendingSettlementStatusReasonCode.AccountBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#EnquirySent
- * PendingSettlementStatusReasonCode.mmEnquirySent}</li>
+ * PendingSettlementStatusReasonCode.EnquirySent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#NewIssues
- * PendingSettlementStatusReasonCode.mmNewIssues}</li>
+ * PendingSettlementStatusReasonCode.NewIssues}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#CounterpartyInsufficientSecurities
- * PendingSettlementStatusReasonCode.mmCounterpartyInsufficientSecurities}</li>
+ * PendingSettlementStatusReasonCode.CounterpartyInsufficientSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#MultipleSettlementAmount
- * PendingSettlementStatusReasonCode.mmMultipleSettlementAmount}</li>
+ * PendingSettlementStatusReasonCode.MultipleSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#GlobalFormSecurities
- * PendingSettlementStatusReasonCode.mmGlobalFormSecurities}</li>
+ * PendingSettlementStatusReasonCode.GlobalFormSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#PreadviceInstructed
- * PendingSettlementStatusReasonCode.mmPreadviceInstructed}</li>
+ * PendingSettlementStatusReasonCode.PreadviceInstructed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#GuaranteedDeliveryIndicatorDifference
- * PendingSettlementStatusReasonCode.mmGuaranteedDeliveryIndicatorDifference}</li>
+ * PendingSettlementStatusReasonCode.GuaranteedDeliveryIndicatorDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#TradeSettlesInPartials
- * PendingSettlementStatusReasonCode.mmTradeSettlesInPartials}</li>
+ * PendingSettlementStatusReasonCode.TradeSettlesInPartials}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#NoMatchingRequired
- * PendingSettlementStatusReasonCode.mmNoMatchingRequired}</li>
+ * PendingSettlementStatusReasonCode.NoMatchingRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#CounterpartyInsufficientMoney
- * PendingSettlementStatusReasonCode.mmCounterpartyInsufficientMoney}</li>
+ * PendingSettlementStatusReasonCode.CounterpartyInsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#CollateralShortage
- * PendingSettlementStatusReasonCode.mmCollateralShortage}</li>
+ * PendingSettlementStatusReasonCode.CollateralShortage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#SecuritiesPledgedAsCollateral
- * PendingSettlementStatusReasonCode.mmSecuritiesPledgedAsCollateral}</li>
+ * PendingSettlementStatusReasonCode.SecuritiesPledgedAsCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#RefusedDepositForIssueOfDepositaryReceipts
- * PendingSettlementStatusReasonCode.
- * mmRefusedDepositForIssueOfDepositaryReceipts}</li>
+ * PendingSettlementStatusReasonCode.RefusedDepositForIssueOfDepositaryReceipts}
+ * </li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#MaximumForeignLimitReached
- * PendingSettlementStatusReasonCode.mmMaximumForeignLimitReached}</li>
+ * PendingSettlementStatusReasonCode.MaximumForeignLimitReached}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#NoForeignExchangeInstruction
- * PendingSettlementStatusReasonCode.mmNoForeignExchangeInstruction}</li>
+ * PendingSettlementStatusReasonCode.NoForeignExchangeInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#IncomeAdjustementRequired
- * PendingSettlementStatusReasonCode.mmIncomeAdjustementRequired}</li>
+ * PendingSettlementStatusReasonCode.IncomeAdjustementRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#PendingLinkedInstruction
- * PendingSettlementStatusReasonCode.mmPendingLinkedInstruction}</li>
+ * PendingSettlementStatusReasonCode.PendingLinkedInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingSettlementDate
- * PendingSettlementStatusReasonCode.mmAwaitingSettlementDate}</li>
+ * PendingSettlementStatusReasonCode.AwaitingSettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#LackOfSecurities
- * PendingSettlementStatusReasonCode.mmLackOfSecurities}</li>
+ * PendingSettlementStatusReasonCode.LackOfSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#SecuritiesLoanedOut
- * PendingSettlementStatusReasonCode.mmSecuritiesLoanedOut}</li>
+ * PendingSettlementStatusReasonCode.SecuritiesLoanedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#InsufficientMoney
- * PendingSettlementStatusReasonCode.mmInsufficientMoney}</li>
+ * PendingSettlementStatusReasonCode.InsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#ConfirmationNotReceived
- * PendingSettlementStatusReasonCode.mmConfirmationNotReceived}</li>
+ * PendingSettlementStatusReasonCode.ConfirmationNotReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#NotInGoodOrder
- * PendingSettlementStatusReasonCode.mmNotInGoodOrder}</li>
+ * PendingSettlementStatusReasonCode.NotInGoodOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#LackOfStampDutyInformation
- * PendingSettlementStatusReasonCode.mmLackOfStampDutyInformation}</li>
+ * PendingSettlementStatusReasonCode.LackOfStampDutyInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#ProcessingBatchDifference
- * PendingSettlementStatusReasonCode.mmProcessingBatchDifference}</li>
+ * PendingSettlementStatusReasonCode.ProcessingBatchDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingNextSettlementCycle
- * PendingSettlementStatusReasonCode.mmAwaitingNextSettlementCycle}</li>
+ * PendingSettlementStatusReasonCode.AwaitingNextSettlementCycle}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#SecuritiesBlocked
- * PendingSettlementStatusReasonCode.mmSecuritiesBlocked}</li>
+ * PendingSettlementStatusReasonCode.SecuritiesBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#CounterpartyInReceivership
- * PendingSettlementStatusReasonCode.mmCounterpartyInReceivership}</li>
+ * PendingSettlementStatusReasonCode.CounterpartyInReceivership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#MinimumSettlementAmount
- * PendingSettlementStatusReasonCode.mmMinimumSettlementAmount}</li>
+ * PendingSettlementStatusReasonCode.MinimumSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#PendingCAP
- * PendingSettlementStatusReasonCode.mmPendingCAP}</li>
+ * PendingSettlementStatusReasonCode.PendingCAP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#StatusReasonInvestigation
- * PendingSettlementStatusReasonCode.mmStatusReasonInvestigation}</li>
+ * PendingSettlementStatusReasonCode.StatusReasonInvestigation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#Other
- * PendingSettlementStatusReasonCode.mmOther}</li>
+ * PendingSettlementStatusReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#PhysicalSecuritiesVerification
- * PendingSettlementStatusReasonCode.mmPhysicalSecuritiesVerification}</li>
+ * PendingSettlementStatusReasonCode.PhysicalSecuritiesVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#MissingInformation
- * PendingSettlementStatusReasonCode.mmMissingInformation}</li>
+ * PendingSettlementStatusReasonCode.MissingInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AccountNotOpen
- * PendingSettlementStatusReasonCode.mmAccountNotOpen}</li>
+ * PendingSettlementStatusReasonCode.AccountNotOpen}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#UnderInvestigation
- * PendingSettlementStatusReasonCode.mmUnderInvestigation}</li>
+ * PendingSettlementStatusReasonCode.UnderInvestigation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#UnderClientInvestigation
- * PendingSettlementStatusReasonCode.mmUnderClientInvestigation}</li>
+ * PendingSettlementStatusReasonCode.UnderClientInvestigation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#UnderTransferAgentInvestigation
- * PendingSettlementStatusReasonCode.mmUnderTransferAgentInvestigation}</li>
+ * PendingSettlementStatusReasonCode.UnderTransferAgentInvestigation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingTransferAgentStatus
- * PendingSettlementStatusReasonCode.mmAwaitingTransferAgentStatus}</li>
+ * PendingSettlementStatusReasonCode.AwaitingTransferAgentStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#UsualTransactionTime
- * PendingSettlementStatusReasonCode.mmUsualTransactionTime}</li>
+ * PendingSettlementStatusReasonCode.UsualTransactionTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingStatus
- * PendingSettlementStatusReasonCode.mmAwaitingStatus}</li>
+ * PendingSettlementStatusReasonCode.AwaitingStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#ApplicationFormSent
- * PendingSettlementStatusReasonCode.mmApplicationFormSent}</li>
+ * PendingSettlementStatusReasonCode.ApplicationFormSent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#StockTransferFormSent
- * PendingSettlementStatusReasonCode.mmStockTransferFormSent}</li>
+ * PendingSettlementStatusReasonCode.StockTransferFormSent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#LongerProcessing
- * PendingSettlementStatusReasonCode.mmLongerProcessing}</li>
+ * PendingSettlementStatusReasonCode.LongerProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AdditionalDocumentsRequested
- * PendingSettlementStatusReasonCode.mmAdditionalDocumentsRequested}</li>
+ * PendingSettlementStatusReasonCode.AdditionalDocumentsRequested}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AdditionalDocumentsSent1
- * PendingSettlementStatusReasonCode.mmAdditionalDocumentsSent1}</li>
+ * PendingSettlementStatusReasonCode.AdditionalDocumentsSent1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AdditionalDocumentsSent2
- * PendingSettlementStatusReasonCode.mmAdditionalDocumentsSent2}</li>
+ * PendingSettlementStatusReasonCode.AdditionalDocumentsSent2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#DocumentsRejected
- * PendingSettlementStatusReasonCode.mmDocumentsRejected}</li>
+ * PendingSettlementStatusReasonCode.DocumentsRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingCounterpartyReceipt
- * PendingSettlementStatusReasonCode.mmAwaitingCounterpartyReceipt}</li>
+ * PendingSettlementStatusReasonCode.AwaitingCounterpartyReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#AwaitingCounterpartyDelivery
- * PendingSettlementStatusReasonCode.mmAwaitingCounterpartyDelivery}</li>
+ * PendingSettlementStatusReasonCode.AwaitingCounterpartyDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#NormalProcessingPeriodLapsed
- * PendingSettlementStatusReasonCode.mmNormalProcessingPeriodLapsed}</li>
+ * PendingSettlementStatusReasonCode.NormalProcessingPeriodLapsed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#WrongCounterpartyAccount
- * PendingSettlementStatusReasonCode.mmWrongCounterpartyAccount}</li>
+ * PendingSettlementStatusReasonCode.WrongCounterpartyAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#TransferAgentProcessing
- * PendingSettlementStatusReasonCode.mmTransferAgentProcessing}</li>
+ * PendingSettlementStatusReasonCode.TransferAgentProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#ExpectedConfirmation
- * PendingSettlementStatusReasonCode.mmExpectedConfirmation}</li>
+ * PendingSettlementStatusReasonCode.ExpectedConfirmation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#Escalation
- * PendingSettlementStatusReasonCode.mmEscalation}</li>
+ * PendingSettlementStatusReasonCode.Escalation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#TransferAgentNonReceipt
- * PendingSettlementStatusReasonCode.mmTransferAgentNonReceipt}</li>
+ * PendingSettlementStatusReasonCode.TransferAgentNonReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingSettlementStatusReasonCode#FinalVerification
- * PendingSettlementStatusReasonCode.mmFinalVerification}</li>
+ * PendingSettlementStatusReasonCode.FinalVerification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -251,8 +252,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -287,6 +288,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AWMO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//AWMO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -301,6 +305,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AwaitingMoney = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//AWMO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AwaitingMoney";
 			definition = "Securities have been delivered, but the settlement amount has not been received from the counterparty.";
@@ -321,6 +326,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CAIS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//CAIS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -335,6 +343,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AwaitingSecurities = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//CAIS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AwaitingSecurities";
 			definition = "Awaiting securities from corporate action issue or other procedures, eg, conversion, dematerialisation, exchange, registration, stamping, splitting, etc.";
@@ -354,6 +363,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REFU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//REFU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -368,6 +380,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode InstructionRefusedOrNotRecognised = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//REFU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionRefusedOrNotRecognised";
 			definition = "Instruction that has been refused or not recognised, and is represented automatically.";
@@ -386,6 +399,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AWSH"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//AWSH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -399,6 +415,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AwaitingSharesFromCounterparty = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//AWSH"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AwaitingSharesFromCounterparty";
 			definition = "Securities have not yet been received from the counterparty.";
@@ -417,6 +434,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PHSE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//PHSE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -430,6 +450,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode PhysicalDeliveryDelay = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//PHSE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalDeliveryDelay";
 			definition = "Settlement is physical and securities are being delivered.";
@@ -448,6 +469,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TAMM"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//TAMM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -460,6 +484,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode TradeAmendedInMarket = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//TAMM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeAmendedInMarket";
 			definition = "Trade is being amended in the market.";
@@ -478,6 +503,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DOCY"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//DOCY</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -490,6 +518,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AwaitingDocumentsOrEndorsementsFromYou = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//DOCY"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AwaitingDocumentsOrEndorsementsFromYou";
 			definition = "Awaiting documents or endorsements from you.";
@@ -539,6 +568,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BLOC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//BLOC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -552,6 +584,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AccountBlocked = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//BLOC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountBlocked";
 			definition = "Your account is blocked, no instruction can settle over the account.";
@@ -570,6 +603,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CHAS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//CHAS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -582,6 +618,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode EnquirySent = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//CHAS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EnquirySent";
 			definition = "Chaser/enquiry sent to the agent or depository.";
@@ -600,6 +637,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NEWI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//NEWI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -613,6 +653,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode NewIssues = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//NEWI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewIssues";
 			definition = "Securities are new issues and are not yet available/tradable.";
@@ -632,6 +673,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CLAC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//CLAC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -646,6 +690,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode CounterpartyInsufficientSecurities = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//CLAC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyInsufficientSecurities";
 			definition = "Insufficient deliverable securities in the counterparty's account, or counterparty does not hold the securities.";
@@ -665,6 +710,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MUNO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//MUNO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -679,6 +727,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode MultipleSettlementAmount = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//MUNO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MultipleSettlementAmount";
 			definition = "Securities quantity is not a multiple of an existing settlement amount lot for the instructed financial instrument.";
@@ -697,6 +746,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GLOB"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//GLOB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -710,6 +762,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode GlobalFormSecurities = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//GLOB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GlobalFormSecurities";
 			definition = "Settlement cannot be executed as securities are in global form.";
@@ -728,6 +781,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PREA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//PREA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -740,6 +796,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode PreadviceInstructed = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//PREA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreadviceInstructed";
 			definition = "Your instruction is a preadvice, ie, matching only.";
@@ -758,6 +815,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "GUAD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//GUAD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -772,6 +832,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode GuaranteedDeliveryIndicatorDifference = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//GUAD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteedDeliveryIndicatorDifference";
 			definition = "Guaranteed delivery indicator differs in the counterparty's instruction.";
@@ -790,6 +851,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PART"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//PART</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -802,6 +866,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode TradeSettlesInPartials = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//PART"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeSettlesInPartials";
 			definition = "Trade will settle in partials.";
@@ -821,6 +886,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NMAS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//NMAS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -835,6 +903,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode NoMatchingRequired = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//NMAS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoMatchingRequired";
 			definition = "Instruction has not been matched because the matching process is not required.";
@@ -853,6 +922,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CMON"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//CMON</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -865,6 +937,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode CounterpartyInsufficientMoney = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//CMON"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyInsufficientMoney";
 			definition = "Insufficient money in the counterparty's account.";
@@ -883,6 +956,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "YCOL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//YCOL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -896,6 +972,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode CollateralShortage = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//YCOL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralShortage";
 			definition = "Not enough collateral in your account to execute the transaction.";
@@ -914,6 +991,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "COLL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//COLL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -927,6 +1007,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode SecuritiesPledgedAsCollateral = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//COLL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPledgedAsCollateral";
 			definition = "Securities are not deliverable as they are pledged as collateral.";
@@ -947,6 +1028,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DEPO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//COLL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -961,6 +1045,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode RefusedDepositForIssueOfDepositaryReceipts = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//COLL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RefusedDepositForIssueOfDepositaryReceipts";
 			definition = "Deposit of shares for the issuing of depositary receipts has been refused. The allotment for depositary receipts granted by the issuer is exceeded by the transaction.";
@@ -980,6 +1065,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FLIM"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//FLIM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -994,6 +1082,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode MaximumForeignLimitReached = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//FLIM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumForeignLimitReached";
 			definition = "Insufficient deliverable securities in your account because the maximum foreign limit has been reached.";
@@ -1012,6 +1101,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NOFX"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//NOFX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1024,6 +1116,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode NoForeignExchangeInstruction = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//NOFX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoForeignExchangeInstruction";
 			definition = "Foreign exchange instruction is missing.";
@@ -1042,6 +1135,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "INCA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//INCA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1055,6 +1151,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode IncomeAdjustementRequired = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//INCA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomeAdjustementRequired";
 			definition = "Securities require income adjustment, eg, dividend or interest.";
@@ -1074,6 +1171,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LINK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//LINK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1088,6 +1188,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode PendingLinkedInstruction = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//LINK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingLinkedInstruction";
 			definition = "Your instruction is pending settlement because the instruction linked to it is pending.";
@@ -1107,6 +1208,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FUTU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//FUTU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1121,6 +1225,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AwaitingSettlementDate = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//FUTU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AwaitingSettlementDate";
 			definition = "Instruction is awaiting the settlement date, and no settlement problems have been reported.";
@@ -1139,6 +1244,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LACK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//LACK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1151,6 +1259,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode LackOfSecurities = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//LACK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LackOfSecurities";
 			definition = "Insufficient deliverable securities in your account.";
@@ -1170,6 +1279,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LALO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//LALO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1184,6 +1296,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode SecuritiesLoanedOut = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//LALO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesLoanedOut";
 			definition = "Insufficient deliverable securities in your account because securities are loaned out.";
@@ -1202,6 +1315,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MONY"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//MONY</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1214,6 +1330,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode InsufficientMoney = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//MONY"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientMoney";
 			definition = "Insufficient money in your account.";
@@ -1232,6 +1349,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NCON"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//NCOM</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1244,6 +1364,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode ConfirmationNotReceived = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//NCOM"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConfirmationNotReceived";
 			definition = "Settlement confirmation has not been received.";
@@ -1263,6 +1384,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REFS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//REFS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1277,6 +1401,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode NotInGoodOrder = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//REFS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotInGoodOrder";
 			definition = "Delivery/receipt has been refused because the physical securities are not in good order.";
@@ -1295,6 +1420,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SDUT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//SDUT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1308,6 +1436,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode LackOfStampDutyInformation = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//SDUT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LackOfStampDutyInformation";
 			definition = "Instruction is pending as stamp duty information is missing.";
@@ -1327,6 +1456,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BATC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//BATC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1341,6 +1473,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode ProcessingBatchDifference = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//BATC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingBatchDifference";
 			definition = "Processing batch differs in the counterparty's instruction, eg, day time/real time versus overnight.";
@@ -1360,6 +1493,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CYCL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//CYCL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1374,6 +1510,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode AwaitingNextSettlementCycle = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//CYCL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AwaitingNextSettlementCycle";
 			definition = "Instruction is confirmed in the local market or is ready for settlement, awaiting the next settlement cycle.";
@@ -1393,6 +1530,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SBLO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//SBLO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1407,6 +1547,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode SecuritiesBlocked = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//SBLO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBlocked";
 			definition = "Settlement is pending. The securities are blocked due to, for example, a corporate action event, re-alignment.";
@@ -1426,6 +1567,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CPEC"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//CPEC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1440,6 +1584,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode CounterpartyInReceivership = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//CPEC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CounterpartyInReceivership";
 			definition = "Counterparty is in receivership, ie, the form of bankruptcy where a court appointed person, the receiver, manages the affairs of the business.";
@@ -1459,6 +1604,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MINO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//MINO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1473,6 +1621,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode MinimumSettlementAmount = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//MINO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumSettlementAmount";
 			definition = "Securities amount is lower than the minimum existing settlement amount for the instructed financial instrument.";
@@ -1525,6 +1674,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "IAAD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//IAAD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1537,6 +1689,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode StatusReasonInvestigation = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//IAAD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusReasonInvestigation";
 			definition = "Pending reason is being investigated.";
@@ -1555,6 +1708,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OTHR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//NARR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1567,6 +1723,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode Other = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//NARR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "Another settlement pending reason.";
@@ -1586,6 +1743,9 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PHCK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::PEND//PHCK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -1600,6 +1760,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 */
 	public static final PendingSettlementStatusReasonCode PhysicalSecuritiesVerification = new PendingSettlementStatusReasonCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::PEND//PHCK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalSecuritiesVerification";
 			definition = "Physical shares have been received and are being checked for authenticity.";
@@ -2080,7 +2241,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Counterparty has not sent an instructon to receive. Check with
+	 * Counterparty has not sent an instruction to receive. Check with
 	 * counterparty.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -2099,7 +2260,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Counterparty has not sent an instructon to receive. Check with counterparty."
+	 * "Counterparty has not sent an instruction to receive. Check with counterparty."
 	 * </li>
 	 * </ul>
 	 */
@@ -2107,7 +2268,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AwaitingCounterpartyReceipt";
-			definition = "Counterparty has not sent an instructon to receive. Check with counterparty.";
+			definition = "Counterparty has not sent an instruction to receive. Check with counterparty.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PendingSettlementStatusReasonCode.mmObject();
 			codeName = "CYIN";
 		}
@@ -2366,7 +2527,7 @@ public class PendingSettlementStatusReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AWMO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingSettlementStatusReasonCode";

@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Appearance1Code#Deliverable
- * Appearance1Code.mmDeliverable}</li>
+ * Appearance1Code.Deliverable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Appearance1Code#NotDeliverable
- * Appearance1Code.mmNotDeliverable}</li>
+ * Appearance1Code.NotDeliverable}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Appearance1Code#Limited
- * Appearance1Code.mmLimited}</li>
+ * Appearance1Code.Limited}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Appearance1Code#BookEntry
- * Appearance1Code.mmBookEntry}</li>
+ * Appearance1Code.BookEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Appearance1Code#DeferredBookEntry
- * Appearance1Code.mmDeferredBookEntry}</li>
+ * Appearance1Code.DeferredBookEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Appearance1Code#DeliverableBookEntry
- * Appearance1Code.mmDeliverableBookEntry}</li>
+ * Appearance1Code.DeliverableBookEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Appearance1Code#TemporaryGlobal
- * Appearance1Code.mmTemporaryGlobal}</li>
+ * Appearance1Code.TemporaryGlobal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Appearance1Code#Global
- * Appearance1Code.mmGlobal}</li>
+ * Appearance1Code.Global}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -286,7 +286,7 @@ public class Appearance1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DELI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Appearance1Code";

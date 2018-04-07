@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -25,8 +27,12 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.TradePartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlternatePartyIdentification5;
+import com.tools20022.repository.msg.PartyTextInformation5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,16 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ConfirmationPartyDetails1", propOrder = {"identification", "alternateIdentification", "processingIdentification", "additionalInformation"})
 public class ConfirmationPartyDetails1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected PartyIdentification32Choice identification;
 	/**
-	 * Unique and unambiguous identifier for an organisation that is allocated
-	 * by an institution, eg, Dun &amp; Bradstreet Identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,6 +112,9 @@ public class ConfirmationPartyDetails1 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Id"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 448, FIXSynonym: 447</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -118,12 +127,13 @@ public class ConfirmationPartyDetails1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails1, PartyIdentification32Choice> mmIdentification = new MMMessageAttribute<ConfirmationPartyDetails1, PartyIdentification32Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "448"), new FIXSynonym(this, "447"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identifier for an organisation that is allocated by an institution, eg, Dun & Bradstreet Identification.";
@@ -131,11 +141,22 @@ public class ConfirmationPartyDetails1 {
 			minOccurs = 1;
 			complexType_lazy = () -> PartyIdentification32Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification32Choice getValue(ConfirmationPartyDetails1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails1 obj, PartyIdentification32Choice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "AltrnId")
 	protected AlternatePartyIdentification5 alternateIdentification;
 	/**
-	 * Alternate identification for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,10 +187,10 @@ public class ConfirmationPartyDetails1 {
 	 * definition} = "Alternate identification for a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlternateIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails1, Optional<AlternatePartyIdentification5>> mmAlternateIdentification = new MMMessageAttribute<ConfirmationPartyDetails1, Optional<AlternatePartyIdentification5>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "AltrnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,13 +198,24 @@ public class ConfirmationPartyDetails1 {
 			definition = "Alternate identification for a party.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AlternatePartyIdentification5.mmObject();
+			complexType_lazy = () -> AlternatePartyIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<AlternatePartyIdentification5> getValue(ConfirmationPartyDetails1 obj) {
+			return obj.getAlternateIdentification();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails1 obj, Optional<AlternatePartyIdentification5> value) {
+			obj.setAlternateIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrcgId")
 	protected Max35Text processingIdentification;
 	/**
-	 * Unambiguous identification of the transaction for the party identified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,6 +230,9 @@ public class ConfirmationPartyDetails1 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "PrcgId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :20C::PROC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -210,11 +245,12 @@ public class ConfirmationPartyDetails1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProcessingIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails1, Optional<Max35Text>> mmProcessingIdentification = new MMMessageAttribute<ConfirmationPartyDetails1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ConfirmationPartyDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "PrcgId";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":20C::PROC"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProcessingIdentification";
 			definition = "Unambiguous identification of the transaction for the party identified.";
@@ -222,11 +258,22 @@ public class ConfirmationPartyDetails1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ConfirmationPartyDetails1 obj) {
+			return obj.getProcessingIdentification();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails1 obj, Optional<Max35Text> value) {
+			obj.setProcessingIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected PartyTextInformation5 additionalInformation;
 	/**
-	 * Provides additional information to a party identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,10 +305,10 @@ public class ConfirmationPartyDetails1 {
 	 * "Provides additional information to a party identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConfirmationPartyDetails1, Optional<PartyTextInformation5>> mmAdditionalInformation = new MMMessageAttribute<ConfirmationPartyDetails1, Optional<PartyTextInformation5>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ConfirmationPartyDetails1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ConfirmationPartyDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -269,17 +316,27 @@ public class ConfirmationPartyDetails1 {
 			definition = "Provides additional information to a party identification.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyTextInformation5.mmObject();
+			complexType_lazy = () -> PartyTextInformation5.mmObject();
+		}
+
+		@Override
+		public Optional<PartyTextInformation5> getValue(ConfirmationPartyDetails1 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(ConfirmationPartyDetails1 obj, Optional<PartyTextInformation5> value) {
+			obj.setAdditionalInformation(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ConfirmationPartyDetails1.mmIdentification, ConfirmationPartyDetails1.mmAlternateIdentification, ConfirmationPartyDetails1.mmProcessingIdentification,
-						ConfirmationPartyDetails1.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ConfirmationPartyDetails1.mmIdentification, com.tools20022.repository.msg.ConfirmationPartyDetails1.mmAlternateIdentification,
+						com.tools20022.repository.msg.ConfirmationPartyDetails1.mmProcessingIdentification, com.tools20022.repository.msg.ConfirmationPartyDetails1.mmAdditionalInformation);
 				trace_lazy = () -> TradePartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConfirmationPartyDetails1";
 				definition = "Parties used for acting parties that apply either to the whole message or to individual sides.";
@@ -288,39 +345,39 @@ public class ConfirmationPartyDetails1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PartyIdentification32Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PartyIdentification32Choice identification) {
-		this.identification = identification;
+	public ConfirmationPartyDetails1 setIdentification(PartyIdentification32Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "AltrnId")
-	public AlternatePartyIdentification5 getAlternateIdentification() {
-		return alternateIdentification;
+	public Optional<AlternatePartyIdentification5> getAlternateIdentification() {
+		return alternateIdentification == null ? Optional.empty() : Optional.of(alternateIdentification);
 	}
 
-	public void setAlternateIdentification(com.tools20022.repository.msg.AlternatePartyIdentification5 alternateIdentification) {
+	public ConfirmationPartyDetails1 setAlternateIdentification(AlternatePartyIdentification5 alternateIdentification) {
 		this.alternateIdentification = alternateIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "PrcgId")
-	public Max35Text getProcessingIdentification() {
-		return processingIdentification;
+	public Optional<Max35Text> getProcessingIdentification() {
+		return processingIdentification == null ? Optional.empty() : Optional.of(processingIdentification);
 	}
 
-	public void setProcessingIdentification(Max35Text processingIdentification) {
+	public ConfirmationPartyDetails1 setProcessingIdentification(Max35Text processingIdentification) {
 		this.processingIdentification = processingIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public PartyTextInformation5 getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<PartyTextInformation5> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(com.tools20022.repository.msg.PartyTextInformation5 additionalInformation) {
+	public ConfirmationPartyDetails1 setAdditionalInformation(PartyTextInformation5 additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

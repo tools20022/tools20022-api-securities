@@ -25,10 +25,11 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.MoneyMarketStatusReportHeader1;
 import com.tools20022.repository.msg.MoneyMarketTransactionStatus2;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -76,15 +77,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MoneyMarketStatisticalReportStatusAdviceV01", propOrder = {"statusReportHeader", "transactionStatus", "supplementaryData"})
 public class MoneyMarketStatisticalReportStatusAdviceV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StsRptHdr", required = true)
 	protected MoneyMarketStatusReportHeader1 statusReportHeader;
 	/**
-	 * Provides the status on the global report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +107,7 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 	 * definition} = "Provides the status on the global report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatusReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketStatisticalReportStatusAdviceV01, MoneyMarketStatusReportHeader1> mmStatusReportHeader = new MMMessageBuildingBlock<MoneyMarketStatisticalReportStatusAdviceV01, MoneyMarketStatusReportHeader1>() {
 		{
 			xmlTag = "StsRptHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,19 +118,21 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 			complexType_lazy = () -> MoneyMarketStatusReportHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketStatisticalReportStatusAdviceV01.class.getMethod("getStatusReportHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MoneyMarketStatusReportHeader1 getValue(MoneyMarketStatisticalReportStatusAdviceV01 obj) {
+			return obj.getStatusReportHeader();
+		}
+
+		@Override
+		public void setValue(MoneyMarketStatisticalReportStatusAdviceV01 obj, MoneyMarketStatusReportHeader1 value) {
+			obj.setStatusReportHeader(value);
 		}
 	};
+	@XmlElement(name = "TxSts")
 	protected List<MoneyMarketTransactionStatus2> transactionStatus;
 	/**
-	 * Provides the status on an individual transaction and the related reason
-	 * if required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,7 +155,7 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketStatisticalReportStatusAdviceV01, List<MoneyMarketTransactionStatus2>> mmTransactionStatus = new MMMessageBuildingBlock<MoneyMarketStatisticalReportStatusAdviceV01, List<MoneyMarketTransactionStatus2>>() {
 		{
 			xmlTag = "TxSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,19 +165,21 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 			complexType_lazy = () -> MoneyMarketTransactionStatus2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketStatisticalReportStatusAdviceV01.class.getMethod("getTransactionStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MoneyMarketTransactionStatus2> getValue(MoneyMarketStatisticalReportStatusAdviceV01 obj) {
+			return obj.getTransactionStatus();
+		}
+
+		@Override
+		public void setValue(MoneyMarketStatisticalReportStatusAdviceV01 obj, List<MoneyMarketTransactionStatus2> value) {
+			obj.setTransactionStatus(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,7 +202,7 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MoneyMarketStatisticalReportStatusAdviceV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<MoneyMarketStatisticalReportStatusAdviceV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -206,12 +212,14 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MoneyMarketStatisticalReportStatusAdviceV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(MoneyMarketStatisticalReportStatusAdviceV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(MoneyMarketStatisticalReportStatusAdviceV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -244,34 +252,34 @@ public class MoneyMarketStatisticalReportStatusAdviceV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StsRptHdr", required = true)
 	public MoneyMarketStatusReportHeader1 getStatusReportHeader() {
 		return statusReportHeader;
 	}
 
-	public void setStatusReportHeader(MoneyMarketStatusReportHeader1 statusReportHeader) {
-		this.statusReportHeader = statusReportHeader;
+	public MoneyMarketStatisticalReportStatusAdviceV01 setStatusReportHeader(MoneyMarketStatusReportHeader1 statusReportHeader) {
+		this.statusReportHeader = Objects.requireNonNull(statusReportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "TxSts")
 	public List<MoneyMarketTransactionStatus2> getTransactionStatus() {
-		return transactionStatus;
+		return transactionStatus == null ? transactionStatus = new ArrayList<>() : transactionStatus;
 	}
 
-	public void setTransactionStatus(List<MoneyMarketTransactionStatus2> transactionStatus) {
-		this.transactionStatus = transactionStatus;
+	public MoneyMarketStatisticalReportStatusAdviceV01 setTransactionStatus(List<MoneyMarketTransactionStatus2> transactionStatus) {
+		this.transactionStatus = Objects.requireNonNull(transactionStatus);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public MoneyMarketStatisticalReportStatusAdviceV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.028.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.028.001.01")
 	static public class Document {
 		@XmlElement(name = "MnyMktSttstclRptStsAdvc", required = true)
 		public MoneyMarketStatisticalReportStatusAdviceV01 messageBody;

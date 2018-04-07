@@ -39,13 +39,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetFXSubProductType1Code#ForeignExchangeCrossRate
- * AssetFXSubProductType1Code.mmForeignExchangeCrossRate}</li>
+ * AssetFXSubProductType1Code.ForeignExchangeCrossRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetFXSubProductType1Code#ForeignExchangeEmergingMarket
- * AssetFXSubProductType1Code.mmForeignExchangeEmergingMarket}</li>
+ * AssetFXSubProductType1Code.ForeignExchangeEmergingMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetFXSubProductType1Code#ForeignExchangeMajor
- * AssetFXSubProductType1Code.mmForeignExchangeMajor}</li>
+ * AssetFXSubProductType1Code.ForeignExchangeMajor}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -152,7 +152,7 @@ public class AssetFXSubProductType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetFXSubProductType1Code";
 				definition = "Specifies the allowed foreign exchange types for foreign exchange derivatives.";

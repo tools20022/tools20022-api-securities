@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,9 +63,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.semt.SecuritiesBalanceCustodyReportV09#mmAccountOwner
  * SecuritiesBalanceCustodyReportV09.mmAccountOwner}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferNotificationV04#mmAccountOwner
- * PortfolioTransferNotificationV04.mmAccountOwner}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.sese.SecuritiesStatusOrStatementQueryStatusAdviceV04#mmAccountOwner
  * SecuritiesStatusOrStatementQueryStatusAdviceV04.mmAccountOwner}</li>
@@ -99,21 +98,24 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.sese.SecuritiesSettlementConditionsModificationRequestV07#mmAccountOwner
  * SecuritiesSettlementConditionsModificationRequestV07.mmAccountOwner}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesSettlementTransactionAllegementReportV06#mmAccountOwner
- * SecuritiesSettlementTransactionAllegementReportV06.mmAccountOwner}</li>
+ * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPendingReportV09#mmAccountOwner
+ * SecuritiesTransactionPendingReportV09.mmAccountOwner}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPendingReportV08#mmAccountOwner
- * SecuritiesTransactionPendingReportV08.mmAccountOwner}</li>
+ * {@linkplain com.tools20022.repository.area.semt.SecuritiesSettlementTransactionAllegementReportV07#mmAccountOwner
+ * SecuritiesSettlementTransactionAllegementReportV07.mmAccountOwner}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPostingReportV07#mmAccountOwner
- * SecuritiesTransactionPostingReportV07.mmAccountOwner}</li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferNotificationV05#mmAccountOwner
+ * PortfolioTransferNotificationV05.mmAccountOwner}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPostingReportV08#mmAccountOwner
+ * SecuritiesTransactionPostingReportV08.mmAccountOwner}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -124,15 +126,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identification of the party."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "PartyIdentification98", propOrder = {"identification", "LEI"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "PartyIdentification98", propOrder = {"identification", "lEI"})
 public class PartyIdentification98 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected PartyIdentification92Choice identification;
 	/**
-	 * Unique identification of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,10 +165,10 @@ public class PartyIdentification98 {
 	 * definition} = "Unique identification of the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PartyIdentification98, PartyIdentification92Choice> mmIdentification = new MMMessageAssociationEnd<PartyIdentification98, PartyIdentification92Choice>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification98.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification98.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,11 +179,22 @@ public class PartyIdentification98 {
 			isComposite = true;
 			type_lazy = () -> PartyIdentification92Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification92Choice getValue(PartyIdentification98 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification98 obj, PartyIdentification92Choice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "LEI")
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal entity identification as an alternate identification for a party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,9 +222,9 @@ public class PartyIdentification98 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLEI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification98, Optional<LEIIdentifier>> mmLEI = new MMMessageAttribute<PartyIdentification98, Optional<LEIIdentifier>>() {
 		{
-			componentContext_lazy = () -> PartyIdentification98.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification98.mmObject();
 			isDerived = false;
 			xmlTag = "LEI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,20 +234,30 @@ public class PartyIdentification98 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(PartyIdentification98 obj) {
+			return obj.getLEI();
+		}
+
+		@Override
+		public void setValue(PartyIdentification98 obj, Optional<LEIIdentifier> value) {
+			obj.setLEI(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyIdentification98.mmIdentification, PartyIdentification98.mmLEI);
-				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesBalanceCustodyReportV09.mmAccountOwner, PortfolioTransferNotificationV04.mmAccountOwner, SecuritiesStatusOrStatementQueryStatusAdviceV04.mmAccountOwner,
-						SecuritiesMessageCancellationAdviceV05.mmAccountOwner, SecuritiesStatementQueryV06.mmAccountOwner, SecuritiesSettlementTransactionModificationRequestStatusAdviceV04.mmAccountOwner,
-						SecuritiesSettlementConditionModificationStatusAdviceV07.mmAccountOwner, SecuritiesTransactionStatusQueryV04.mmAccountOwner, SecuritiesSettlementAllegementRemovalAdviceV04.mmAccountOwner,
-						SecuritiesTransactionCancellationRequestV05.mmAccountOwner, SecuritiesBalanceAccountingReportV09.mmAccountOwner, SecuritiesSettlementTransactionAuditTrailReportV03.mmAccountOwner,
-						SecuritiesSettlementConditionsModificationRequestV07.mmAccountOwner, SecuritiesSettlementTransactionAllegementReportV06.mmAccountOwner, SecuritiesTransactionPendingReportV08.mmAccountOwner,
-						SecuritiesTransactionPostingReportV07.mmAccountOwner);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyIdentification98.mmIdentification, com.tools20022.repository.msg.PartyIdentification98.mmLEI);
+				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesBalanceCustodyReportV09.mmAccountOwner, SecuritiesStatusOrStatementQueryStatusAdviceV04.mmAccountOwner, SecuritiesMessageCancellationAdviceV05.mmAccountOwner,
+						SecuritiesStatementQueryV06.mmAccountOwner, SecuritiesSettlementTransactionModificationRequestStatusAdviceV04.mmAccountOwner, SecuritiesSettlementConditionModificationStatusAdviceV07.mmAccountOwner,
+						SecuritiesTransactionStatusQueryV04.mmAccountOwner, SecuritiesSettlementAllegementRemovalAdviceV04.mmAccountOwner, SecuritiesTransactionCancellationRequestV05.mmAccountOwner,
+						SecuritiesBalanceAccountingReportV09.mmAccountOwner, SecuritiesSettlementTransactionAuditTrailReportV03.mmAccountOwner, SecuritiesSettlementConditionsModificationRequestV07.mmAccountOwner,
+						SecuritiesTransactionPendingReportV09.mmAccountOwner, SecuritiesSettlementTransactionAllegementReportV07.mmAccountOwner, PortfolioTransferNotificationV05.mmAccountOwner,
+						SecuritiesTransactionPostingReportV08.mmAccountOwner);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentification98";
 				definition = "Identification of the party.";
@@ -242,21 +266,21 @@ public class PartyIdentification98 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PartyIdentification92Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PartyIdentification92Choice identification) {
-		this.identification = identification;
+	public PartyIdentification98 setIdentification(PartyIdentification92Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "LEI")
-	public LEIIdentifier getLEI() {
-		return lEI;
+	public Optional<LEIIdentifier> getLEI() {
+		return lEI == null ? Optional.empty() : Optional.of(lEI);
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
+	public PartyIdentification98 setLEI(LEIIdentifier lEI) {
 		this.lEI = lEI;
+		return this;
 	}
 }

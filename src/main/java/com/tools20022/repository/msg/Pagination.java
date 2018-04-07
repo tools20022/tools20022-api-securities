@@ -29,17 +29,17 @@ import com.tools20022.repository.area.secl.MarginReportV02;
 import com.tools20022.repository.area.secl.NetPositionV03;
 import com.tools20022.repository.area.secl.SettlementObligationReportV03;
 import com.tools20022.repository.area.secl.TradeLegStatementV03;
-import com.tools20022.repository.area.seev.CorporateActionInstructionStatementReportV06;
-import com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceV08;
-import com.tools20022.repository.area.seev.CorporateActionNotificationV07;
 import com.tools20022.repository.area.semt.*;
-import com.tools20022.repository.area.sese.PortfolioTransferNotificationV04;
 import com.tools20022.repository.area.setr.SwitchOrderV04;
 import com.tools20022.repository.datatype.Max5NumericText;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -130,9 +130,6 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.semt.SecuritiesBalanceCustodyReportV09#mmPagination
  * SecuritiesBalanceCustodyReportV09.mmPagination}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferNotificationV04#mmPagination
- * PortfolioTransferNotificationV04.mmPagination}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.semt.SecuritiesBalanceAccountingReportV09#mmPagination
  * SecuritiesBalanceAccountingReportV09.mmPagination}</li>
  * <li>
@@ -150,55 +147,42 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.setr.SwitchOrderV04#mmMessagePagination
  * SwitchOrderV04.mmMessagePagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionNotificationV07#mmPagination
- * CorporateActionNotificationV07.mmPagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionStatementReportV06#mmPagination
- * CorporateActionInstructionStatementReportV06.mmPagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceV08#mmPagination
- * CorporateActionMovementPreliminaryAdviceV08.mmPagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.semt.IntraPositionMovementPostingReportV06#mmPagination
- * IntraPositionMovementPostingReportV06.mmPagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesSettlementTransactionAllegementReportV06#mmPagination
- * SecuritiesSettlementTransactionAllegementReportV06.mmPagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPendingReportV08#mmPagination
- * SecuritiesTransactionPendingReportV08.mmPagination}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.semt.SecuritiesTransactionPostingReportV07#mmPagination
- * SecuritiesTransactionPostingReportV07.mmPagination}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = September 9, 2018</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "Pagination"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Number used to sequence pages when it is not possible for data to be conveyed in a single message and the data has to be split across several pages (messages)."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Pagination1 Pagination1}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Pagination", propOrder = {"pageNumber", "lastPageIndicator"})
 public class Pagination {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PgNb", required = true)
 	protected Max5NumericText pageNumber;
 	/**
-	 * Page number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,25 +205,44 @@ public class Pagination {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Page number."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.Pagination1#mmPageNumber
+	 * Pagination1.mmPageNumber}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPageNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Pagination, Max5NumericText> mmPageNumber = new MMMessageAttribute<Pagination, Max5NumericText>() {
 		{
-			componentContext_lazy = () -> Pagination.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Pagination.mmObject();
 			isDerived = false;
 			xmlTag = "PgNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PageNumber";
 			definition = "Page number.";
+			nextVersions_lazy = () -> Arrays.asList(Pagination1.mmPageNumber);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max5NumericText.mmObject();
 		}
+
+		@Override
+		public Max5NumericText getValue(Pagination obj) {
+			return obj.getPageNumber();
+		}
+
+		@Override
+		public void setValue(Pagination obj, Max5NumericText value) {
+			obj.setPageNumber(value);
+		}
 	};
+	@XmlElement(name = "LastPgInd", required = true)
 	protected YesNoIndicator lastPageIndicator;
 	/**
-	 * Indicates the last page.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,60 +265,85 @@ public class Pagination {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Indicates the last page."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Pagination1#mmLastPageIndicator
+	 * Pagination1.mmLastPageIndicator}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLastPageIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Pagination, YesNoIndicator> mmLastPageIndicator = new MMMessageAttribute<Pagination, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> Pagination.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Pagination.mmObject();
 			isDerived = false;
 			xmlTag = "LastPgInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LastPageIndicator";
 			definition = "Indicates the last page.";
+			nextVersions_lazy = () -> Arrays.asList(Pagination1.mmLastPageIndicator);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		@Override
+		public YesNoIndicator getValue(Pagination obj) {
+			return obj.getLastPageIndicator();
+		}
+
+		@Override
+		public void setValue(Pagination obj, YesNoIndicator value) {
+			obj.setLastPageIndicator(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Pagination.mmPageNumber, Pagination.mmLastPageIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Pagination.mmPageNumber, com.tools20022.repository.msg.Pagination.mmLastPageIndicator);
 				messageBuildingBlock_lazy = () -> Arrays.asList(PriceReportCancellationV04.mmMessagePagination, PriceReportV04.mmMessagePagination, AccountingStatementOfHoldingsV02.mmMessagePagination,
 						CustodyStatementOfHoldingsV02.mmMessagePagination, AccountingStatementOfHoldingsCancellationV02.mmMessagePagination, CustodyStatementOfHoldingsCancellationV02.mmMessagePagination,
 						SecuritiesEndOfProcessReportV01.mmPagination, TotalPortfolioValuationReportV01.mmPagination, MarginReportV02.mmPagination, FundDetailedEstimatedCashForecastReportV04.mmMessagePagination,
 						FundConfirmedCashForecastReportV04.mmMessagePagination, FundDetailedConfirmedCashForecastReportCancellationV03.mmMessagePagination, FundEstimatedCashForecastReportV04.mmMessagePagination,
 						StatementOfInvestmentFundTransactionsV03.mmMessagePagination, FundConfirmedCashForecastReportCancellationV03.mmMessagePagination, StatementOfInvestmentFundTransactionsCancellationV03.mmMessagePagination,
 						FundDetailedConfirmedCashForecastReportV04.mmMessagePagination, NetPositionV03.mmPagination, TradeLegStatementV03.mmPagination, SettlementObligationReportV03.mmPagination,
-						SecuritiesBalanceCustodyReportV09.mmPagination, PortfolioTransferNotificationV04.mmPagination, SecuritiesBalanceAccountingReportV09.mmPagination, SecuritiesSettlementTransactionAuditTrailReportV03.mmPagination,
-						InterestPaymentStatementV04.mmPagination, CollateralAndExposureReportV03.mmPagination, SecuritiesBalanceTransparencyReportV02.mmPagination, SwitchOrderV04.mmMessagePagination,
-						CorporateActionNotificationV07.mmPagination, CorporateActionInstructionStatementReportV06.mmPagination, CorporateActionMovementPreliminaryAdviceV08.mmPagination, IntraPositionMovementPostingReportV06.mmPagination,
-						SecuritiesSettlementTransactionAllegementReportV06.mmPagination, SecuritiesTransactionPendingReportV08.mmPagination, SecuritiesTransactionPostingReportV07.mmPagination);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+						SecuritiesBalanceCustodyReportV09.mmPagination, SecuritiesBalanceAccountingReportV09.mmPagination, SecuritiesSettlementTransactionAuditTrailReportV03.mmPagination, InterestPaymentStatementV04.mmPagination,
+						CollateralAndExposureReportV03.mmPagination, SecuritiesBalanceTransparencyReportV02.mmPagination, SwitchOrderV04.mmMessagePagination);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("September 9, 2018");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "Pagination";
 				definition = "Number used to sequence pages when it is not possible for data to be conveyed in a single message and the data has to be split across several pages (messages).";
+				nextVersions_lazy = () -> Arrays.asList(Pagination1.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PgNb", required = true)
 	public Max5NumericText getPageNumber() {
 		return pageNumber;
 	}
 
-	public void setPageNumber(Max5NumericText pageNumber) {
-		this.pageNumber = pageNumber;
+	public Pagination setPageNumber(Max5NumericText pageNumber) {
+		this.pageNumber = Objects.requireNonNull(pageNumber);
+		return this;
 	}
 
-	@XmlElement(name = "LastPgInd", required = true)
 	public YesNoIndicator getLastPageIndicator() {
 		return lastPageIndicator;
 	}
 
-	public void setLastPageIndicator(YesNoIndicator lastPageIndicator) {
-		this.lastPageIndicator = lastPageIndicator;
+	public Pagination setLastPageIndicator(YesNoIndicator lastPageIndicator) {
+		this.lastPageIndicator = Objects.requireNonNull(lastPageIndicator);
+		return this;
 	}
 }

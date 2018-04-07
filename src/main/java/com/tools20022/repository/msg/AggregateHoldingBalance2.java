@@ -23,9 +23,14 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FinancialInstrumentAggregateBalance1;
+import com.tools20022.repository.msg.SecurityIdentification19;
+import com.tools20022.repository.msg.SupplementaryData1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,16 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AggregateHoldingBalance2", propOrder = {"financialInstrumentIdentification", "balanceForFinancialInstrument", "supplementaryData"})
 public class AggregateHoldingBalance2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FinInstrmId", required = true)
 	protected SecurityIdentification19 financialInstrumentIdentification;
 	/**
-	 * Identification of the financial instrument for which the balance
-	 * information is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,10 +118,10 @@ public class AggregateHoldingBalance2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AggregateHoldingBalance2, SecurityIdentification19> mmFinancialInstrumentIdentification = new MMMessageAssociationEnd<AggregateHoldingBalance2, SecurityIdentification19>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> AggregateHoldingBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregateHoldingBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,13 +130,24 @@ public class AggregateHoldingBalance2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecurityIdentification19.mmObject();
+			type_lazy = () -> SecurityIdentification19.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification19 getValue(AggregateHoldingBalance2 obj) {
+			return obj.getFinancialInstrumentIdentification();
+		}
+
+		@Override
+		public void setValue(AggregateHoldingBalance2 obj, SecurityIdentification19 value) {
+			obj.setFinancialInstrumentIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.FinancialInstrumentAggregateBalance1> balanceForFinancialInstrument;
+	@XmlElement(name = "BalForFinInstrm", required = true)
+	protected List<FinancialInstrumentAggregateBalance1> balanceForFinancialInstrument;
 	/**
-	 * Balance breakdown on the net position of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,10 +178,10 @@ public class AggregateHoldingBalance2 {
 	 * "Balance breakdown on the net position of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceForFinancialInstrument = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AggregateHoldingBalance2, List<FinancialInstrumentAggregateBalance1>> mmBalanceForFinancialInstrument = new MMMessageAssociationEnd<AggregateHoldingBalance2, List<FinancialInstrumentAggregateBalance1>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesBalance.mmObject();
-			componentContext_lazy = () -> AggregateHoldingBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregateHoldingBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "BalForFinInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,14 +189,24 @@ public class AggregateHoldingBalance2 {
 			definition = "Balance breakdown on the net position of a financial instrument.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentAggregateBalance1.mmObject();
+			type_lazy = () -> FinancialInstrumentAggregateBalance1.mmObject();
+		}
+
+		@Override
+		public List<FinancialInstrumentAggregateBalance1> getValue(AggregateHoldingBalance2 obj) {
+			return obj.getBalanceForFinancialInstrument();
+		}
+
+		@Override
+		public void setValue(AggregateHoldingBalance2 obj, List<FinancialInstrumentAggregateBalance1> value) {
+			obj.setBalanceForFinancialInstrument(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
+	@XmlElement(name = "SplmtryData")
+	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -206,9 +232,9 @@ public class AggregateHoldingBalance2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AggregateHoldingBalance2, List<SupplementaryData1>> mmSupplementaryData = new MMMessageAssociationEnd<AggregateHoldingBalance2, List<SupplementaryData1>>() {
 		{
-			componentContext_lazy = () -> AggregateHoldingBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregateHoldingBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,16 +242,27 @@ public class AggregateHoldingBalance2 {
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
+			type_lazy = () -> SupplementaryData1.mmObject();
+		}
+
+		@Override
+		public List<SupplementaryData1> getValue(AggregateHoldingBalance2 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(AggregateHoldingBalance2 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AggregateHoldingBalance2.mmFinancialInstrumentIdentification, AggregateHoldingBalance2.mmBalanceForFinancialInstrument, AggregateHoldingBalance2.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AggregateHoldingBalance2.mmFinancialInstrumentIdentification, com.tools20022.repository.msg.AggregateHoldingBalance2.mmBalanceForFinancialInstrument,
+						com.tools20022.repository.msg.AggregateHoldingBalance2.mmSupplementaryData);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AggregateHoldingBalance2";
 				definition = "Overall holding position, in a single financial instrument, held in a securities account at a specified place of safekeeping.";
@@ -234,30 +271,30 @@ public class AggregateHoldingBalance2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FinInstrmId", required = true)
 	public SecurityIdentification19 getFinancialInstrumentIdentification() {
 		return financialInstrumentIdentification;
 	}
 
-	public void setFinancialInstrumentIdentification(com.tools20022.repository.msg.SecurityIdentification19 financialInstrumentIdentification) {
-		this.financialInstrumentIdentification = financialInstrumentIdentification;
+	public AggregateHoldingBalance2 setFinancialInstrumentIdentification(SecurityIdentification19 financialInstrumentIdentification) {
+		this.financialInstrumentIdentification = Objects.requireNonNull(financialInstrumentIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "BalForFinInstrm", required = true)
 	public List<FinancialInstrumentAggregateBalance1> getBalanceForFinancialInstrument() {
-		return balanceForFinancialInstrument;
+		return balanceForFinancialInstrument == null ? balanceForFinancialInstrument = new ArrayList<>() : balanceForFinancialInstrument;
 	}
 
-	public void setBalanceForFinancialInstrument(List<com.tools20022.repository.msg.FinancialInstrumentAggregateBalance1> balanceForFinancialInstrument) {
-		this.balanceForFinancialInstrument = balanceForFinancialInstrument;
+	public AggregateHoldingBalance2 setBalanceForFinancialInstrument(List<FinancialInstrumentAggregateBalance1> balanceForFinancialInstrument) {
+		this.balanceForFinancialInstrument = Objects.requireNonNull(balanceForFinancialInstrument);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public AggregateHoldingBalance2 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

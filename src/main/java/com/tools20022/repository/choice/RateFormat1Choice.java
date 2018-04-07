@@ -20,11 +20,13 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.RateType12FormatChoice;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.RateAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format to expressed a rate."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RateFormat1Choice", propOrder = {"rate", "notSpecifiedRate"})
 public class RateFormat1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rate", required = true)
 	protected PercentageRate rate;
 	/**
-	 * Value is expressed as a rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,10 +106,10 @@ public class RateFormat1Choice {
 	 * definition} = "Value is expressed as a rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateFormat1Choice, PercentageRate> mmRate = new MMMessageAttribute<RateFormat1Choice, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> RateAndAmount.mmRate;
-			componentContext_lazy = () -> RateFormat1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RateFormat1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +119,22 @@ public class RateFormat1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public PercentageRate getValue(RateFormat1Choice obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(RateFormat1Choice obj, PercentageRate value) {
+			obj.setRate(value);
+		}
 	};
+	@XmlElement(name = "NotSpcfdRate", required = true)
 	protected RateType12FormatChoice notSpecifiedRate;
 	/**
-	 * Value is not specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,9 +160,9 @@ public class RateFormat1Choice {
 	 * definition} = "Value is not specified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotSpecifiedRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateFormat1Choice, RateType12FormatChoice> mmNotSpecifiedRate = new MMMessageAttribute<RateFormat1Choice, RateType12FormatChoice>() {
 		{
-			componentContext_lazy = () -> RateFormat1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RateFormat1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NotSpcfdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,16 +170,26 @@ public class RateFormat1Choice {
 			definition = "Value is not specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.RateType12FormatChoice.mmObject();
+			complexType_lazy = () -> RateType12FormatChoice.mmObject();
+		}
+
+		@Override
+		public RateType12FormatChoice getValue(RateFormat1Choice obj) {
+			return obj.getNotSpecifiedRate();
+		}
+
+		@Override
+		public void setValue(RateFormat1Choice obj, RateType12FormatChoice value) {
+			obj.setNotSpecifiedRate(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RateFormat1Choice.mmRate, RateFormat1Choice.mmNotSpecifiedRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RateFormat1Choice.mmRate, com.tools20022.repository.choice.RateFormat1Choice.mmNotSpecifiedRate);
 				trace_lazy = () -> RateAndAmount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateFormat1Choice";
 				definition = "Choice of format to expressed a rate.";
@@ -174,21 +198,21 @@ public class RateFormat1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rate", required = true)
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public RateFormat1Choice setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
-	@XmlElement(name = "NotSpcfdRate", required = true)
 	public RateType12FormatChoice getNotSpecifiedRate() {
 		return notSpecifiedRate;
 	}
 
-	public void setNotSpecifiedRate(com.tools20022.repository.choice.RateType12FormatChoice notSpecifiedRate) {
-		this.notSpecifiedRate = notSpecifiedRate;
+	public RateFormat1Choice setNotSpecifiedRate(RateType12FormatChoice notSpecifiedRate) {
+		this.notSpecifiedRate = Objects.requireNonNull(notSpecifiedRate);
+		return this;
 	}
 }

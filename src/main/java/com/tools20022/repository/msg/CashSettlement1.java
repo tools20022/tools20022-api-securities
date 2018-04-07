@@ -25,9 +25,13 @@ import com.tools20022.repository.area.acmt.AccountOpeningInstructionV07;
 import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashAccount33;
+import com.tools20022.repository.msg.PaymentInstrument13;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,22 +90,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashSettlement1", propOrder = {"cashAccountDetails", "otherCashSettlementDetails"})
 public class CashSettlement1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.CashAccount33> cashAccountDetails;
+	@XmlElement(name = "CshAcctDtls")
+	protected List<CashAccount33> cashAccountDetails;
 	/**
-	 * Account to credit or debit. When this is an account to debit, this is for
-	 * the payment of a subscription to an investment fund, a savings plan
-	 * payment, the purchase of securities or the payment of charges. When this
-	 * is an account to credit, this is for the payment of an amount as a result
-	 * of a redemption of investment fund units, the sale of securities,
-	 * interest and dividend payments. A single account may be specified for all
-	 * cash movements on the account or cash accounts may be specified for
-	 * specific types of transactions on the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -127,28 +125,39 @@ public class CashSettlement1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Account to credit or debit. When this is an account to debit, this is for the payment of a subscription to an investment fund, a savings plan payment, the purchase of securities or the payment of charges. When this is an account to credit,  this is for the payment of an amount as a result of a redemption of investment fund units, the sale of securities, interest and dividend payments. A single account may be specified for all cash movements on the account or cash accounts may be specified for specific types of transactions on the account."
+	 * "Account to credit or debit. When this is an account to debit, this is for the payment of a subscription to an investment fund, a savings plan payment, the purchase of securities or the payment of charges. When this is an account to credit, this is for the payment of an amount as a result of a redemption of investment fund units, the sale of securities, interest and dividend payments. A single account may be specified for all cash movements on the account or cash accounts may be specified for specific types of transactions on the account."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashSettlement1, List<CashAccount33>> mmCashAccountDetails = new MMMessageAssociationEnd<CashSettlement1, List<CashAccount33>>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccount.mmObject();
-			componentContext_lazy = () -> CashSettlement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashSettlement1.mmObject();
 			isDerived = false;
 			xmlTag = "CshAcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashAccountDetails";
-			definition = "Account to credit or debit. When this is an account to debit, this is for the payment of a subscription to an investment fund, a savings plan payment, the purchase of securities or the payment of charges. When this is an account to credit,  this is for the payment of an amount as a result of a redemption of investment fund units, the sale of securities, interest and dividend payments. A single account may be specified for all cash movements on the account or cash accounts may be specified for specific types of transactions on the account.";
+			definition = "Account to credit or debit. When this is an account to debit, this is for the payment of a subscription to an investment fund, a savings plan payment, the purchase of securities or the payment of charges. When this is an account to credit, this is for the payment of an amount as a result of a redemption of investment fund units, the sale of securities, interest and dividend payments. A single account may be specified for all cash movements on the account or cash accounts may be specified for specific types of transactions on the account.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount33.mmObject();
+			type_lazy = () -> CashAccount33.mmObject();
+		}
+
+		@Override
+		public List<CashAccount33> getValue(CashSettlement1 obj) {
+			return obj.getCashAccountDetails();
+		}
+
+		@Override
+		public void setValue(CashSettlement1 obj, List<CashAccount33> value) {
+			obj.setCashAccountDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.PaymentInstrument13> otherCashSettlementDetails;
+	@XmlElement(name = "OthrCshSttlmDtls")
+	protected List<PaymentInstrument13> otherCashSettlementDetails;
 	/**
-	 * Method of payment other than a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -176,10 +185,10 @@ public class CashSettlement1 {
 	 * definition} = "Method of payment other than a cash account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherCashSettlementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashSettlement1, List<PaymentInstrument13>> mmOtherCashSettlementDetails = new MMMessageAssociationEnd<CashSettlement1, List<PaymentInstrument13>>() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
-			componentContext_lazy = () -> CashSettlement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashSettlement1.mmObject();
 			isDerived = false;
 			xmlTag = "OthrCshSttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,17 +196,27 @@ public class CashSettlement1 {
 			definition = "Method of payment other than a cash account.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PaymentInstrument13.mmObject();
+			type_lazy = () -> PaymentInstrument13.mmObject();
+		}
+
+		@Override
+		public List<PaymentInstrument13> getValue(CashSettlement1 obj) {
+			return obj.getOtherCashSettlementDetails();
+		}
+
+		@Override
+		public void setValue(CashSettlement1 obj, List<PaymentInstrument13> value) {
+			obj.setOtherCashSettlementDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashSettlement1.mmCashAccountDetails, CashSettlement1.mmOtherCashSettlementDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashSettlement1.mmCashAccountDetails, com.tools20022.repository.msg.CashSettlement1.mmOtherCashSettlementDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountDetailsConfirmationV07.mmCashSettlement, AccountOpeningInstructionV07.mmCashSettlement);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSettlement1";
 				definition = "Cash settlement parties and accounts.";
@@ -207,21 +226,21 @@ public class CashSettlement1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CshAcctDtls")
 	public List<CashAccount33> getCashAccountDetails() {
-		return cashAccountDetails;
+		return cashAccountDetails == null ? cashAccountDetails = new ArrayList<>() : cashAccountDetails;
 	}
 
-	public void setCashAccountDetails(List<com.tools20022.repository.msg.CashAccount33> cashAccountDetails) {
-		this.cashAccountDetails = cashAccountDetails;
+	public CashSettlement1 setCashAccountDetails(List<CashAccount33> cashAccountDetails) {
+		this.cashAccountDetails = Objects.requireNonNull(cashAccountDetails);
+		return this;
 	}
 
-	@XmlElement(name = "OthrCshSttlmDtls")
 	public List<PaymentInstrument13> getOtherCashSettlementDetails() {
-		return otherCashSettlementDetails;
+		return otherCashSettlementDetails == null ? otherCashSettlementDetails = new ArrayList<>() : otherCashSettlementDetails;
 	}
 
-	public void setOtherCashSettlementDetails(List<com.tools20022.repository.msg.PaymentInstrument13> otherCashSettlementDetails) {
-		this.otherCashSettlementDetails = otherCashSettlementDetails;
+	public CashSettlement1 setOtherCashSettlementDetails(List<PaymentInstrument13> otherCashSettlementDetails) {
+		this.otherCashSettlementDetails = Objects.requireNonNull(otherCashSettlementDetails);
+		return this;
 	}
 }

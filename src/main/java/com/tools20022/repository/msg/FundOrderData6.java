@@ -31,6 +31,7 @@ import com.tools20022.repository.entity.SwitchOrder;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSwitchOrderDataElementRule#forFundOrderData6
+ * ConstraintSwitchOrderDataElementRule.forFundOrderData6}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,16 +88,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Extract of trade data for an investment fund switch order."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FundOrderData6", propOrder = {"settlementAmount", "settlementMethod", "additionalAmount", "unitCurrency", "quotedCurrency"})
 public class FundOrderData6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SttlmAmt")
 	protected ActiveCurrencyAndAmount settlementAmount;
 	/**
-	 * Total amount of money paid /to be paid or received in exchange for the
-	 * financial instrument in the individual order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,10 +129,10 @@ public class FundOrderData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundOrderData6, Optional<ActiveCurrencyAndAmount>> mmSettlementAmount = new MMMessageAttribute<FundOrderData6, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> FundOrderData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundOrderData6.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,11 +142,22 @@ public class FundOrderData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(FundOrderData6 obj) {
+			return obj.getSettlementAmount();
+		}
+
+		@Override
+		public void setValue(FundOrderData6 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setSettlementAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttlmMtd")
 	protected DeliveryReceiptType2Code settlementMethod;
 	/**
-	 * Method by which the transaction is settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,10 +187,10 @@ public class FundOrderData6 {
 	 * definition} = "Method by which the transaction is settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundOrderData6, Optional<DeliveryReceiptType2Code>> mmSettlementMethod = new MMMessageAttribute<FundOrderData6, Optional<DeliveryReceiptType2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementType;
-			componentContext_lazy = () -> FundOrderData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundOrderData6.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +200,22 @@ public class FundOrderData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DeliveryReceiptType2Code.mmObject();
 		}
+
+		@Override
+		public Optional<DeliveryReceiptType2Code> getValue(FundOrderData6 obj) {
+			return obj.getSettlementMethod();
+		}
+
+		@Override
+		public void setValue(FundOrderData6 obj, Optional<DeliveryReceiptType2Code> value) {
+			obj.setSettlementMethod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlAmt")
 	protected AdditionalAmount1Choice additionalAmount;
 	/**
-	 * Choice between additional cash in or resulting cash out.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,10 +245,10 @@ public class FundOrderData6 {
 	 * definition} = "Choice between additional cash in or resulting cash out."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundOrderData6, Optional<AdditionalAmount1Choice>> mmAdditionalAmount = new MMMessageAttribute<FundOrderData6, Optional<AdditionalAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SwitchOrder.mmAdditionalCashIn;
-			componentContext_lazy = () -> FundOrderData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundOrderData6.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,13 +258,22 @@ public class FundOrderData6 {
 			minOccurs = 0;
 			complexType_lazy = () -> AdditionalAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AdditionalAmount1Choice> getValue(FundOrderData6 obj) {
+			return obj.getAdditionalAmount();
+		}
+
+		@Override
+		public void setValue(FundOrderData6 obj, Optional<AdditionalAmount1Choice> value) {
+			obj.setAdditionalAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UnitCcy")
 	protected ActiveCurrencyCode unitCurrency;
 	/**
-	 * Currency from which the quoted currency is converted in an exchange rate
-	 * calculation.<br>
-	 * 1 x &lt;UnitCcy&gt; = &lt;XchgRate&gt; x &lt;QtdCcy&gt;.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,10 +305,10 @@ public class FundOrderData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundOrderData6, Optional<ActiveCurrencyCode>> mmUnitCurrency = new MMMessageAttribute<FundOrderData6, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmUnitCurrency;
-			componentContext_lazy = () -> FundOrderData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundOrderData6.mmObject();
 			isDerived = false;
 			xmlTag = "UnitCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -278,13 +318,22 @@ public class FundOrderData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(FundOrderData6 obj) {
+			return obj.getUnitCurrency();
+		}
+
+		@Override
+		public void setValue(FundOrderData6 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setUnitCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "QtdCcy")
 	protected ActiveCurrencyCode quotedCurrency;
 	/**
-	 * Currency into which the unit currency is converted in an exchange rate
-	 * calculation.<br>
-	 * 1 x &lt;UnitCcy&gt; = &lt;XchgRate&gt; x &lt;QtdCcy&gt;.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -316,10 +365,10 @@ public class FundOrderData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmQuotedCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundOrderData6, Optional<ActiveCurrencyCode>> mmQuotedCurrency = new MMMessageAttribute<FundOrderData6, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmQuotedCurrency;
-			componentContext_lazy = () -> FundOrderData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundOrderData6.mmObject();
 			isDerived = false;
 			xmlTag = "QtdCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -329,14 +378,26 @@ public class FundOrderData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(FundOrderData6 obj) {
+			return obj.getQuotedCurrency();
+		}
+
+		@Override
+		public void setValue(FundOrderData6 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setQuotedCurrency(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FundOrderData6.mmSettlementAmount, FundOrderData6.mmSettlementMethod, FundOrderData6.mmAdditionalAmount, FundOrderData6.mmUnitCurrency, FundOrderData6.mmQuotedCurrency);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FundOrderData6.mmSettlementAmount, com.tools20022.repository.msg.FundOrderData6.mmSettlementMethod,
+						com.tools20022.repository.msg.FundOrderData6.mmAdditionalAmount, com.tools20022.repository.msg.FundOrderData6.mmUnitCurrency, com.tools20022.repository.msg.FundOrderData6.mmQuotedCurrency);
 				trace_lazy = () -> SwitchOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSwitchOrderDataElementRule.forFundOrderData6);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundOrderData6";
 				definition = "Extract of trade data for an investment fund switch order.";
@@ -345,48 +406,48 @@ public class FundOrderData6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SttlmAmt")
-	public ActiveCurrencyAndAmount getSettlementAmount() {
-		return settlementAmount;
+	public Optional<ActiveCurrencyAndAmount> getSettlementAmount() {
+		return settlementAmount == null ? Optional.empty() : Optional.of(settlementAmount);
 	}
 
-	public void setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
+	public FundOrderData6 setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
 		this.settlementAmount = settlementAmount;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmMtd")
-	public DeliveryReceiptType2Code getSettlementMethod() {
-		return settlementMethod;
+	public Optional<DeliveryReceiptType2Code> getSettlementMethod() {
+		return settlementMethod == null ? Optional.empty() : Optional.of(settlementMethod);
 	}
 
-	public void setSettlementMethod(DeliveryReceiptType2Code settlementMethod) {
+	public FundOrderData6 setSettlementMethod(DeliveryReceiptType2Code settlementMethod) {
 		this.settlementMethod = settlementMethod;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlAmt")
-	public AdditionalAmount1Choice getAdditionalAmount() {
-		return additionalAmount;
+	public Optional<AdditionalAmount1Choice> getAdditionalAmount() {
+		return additionalAmount == null ? Optional.empty() : Optional.of(additionalAmount);
 	}
 
-	public void setAdditionalAmount(AdditionalAmount1Choice additionalAmount) {
+	public FundOrderData6 setAdditionalAmount(AdditionalAmount1Choice additionalAmount) {
 		this.additionalAmount = additionalAmount;
+		return this;
 	}
 
-	@XmlElement(name = "UnitCcy")
-	public ActiveCurrencyCode getUnitCurrency() {
-		return unitCurrency;
+	public Optional<ActiveCurrencyCode> getUnitCurrency() {
+		return unitCurrency == null ? Optional.empty() : Optional.of(unitCurrency);
 	}
 
-	public void setUnitCurrency(ActiveCurrencyCode unitCurrency) {
+	public FundOrderData6 setUnitCurrency(ActiveCurrencyCode unitCurrency) {
 		this.unitCurrency = unitCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "QtdCcy")
-	public ActiveCurrencyCode getQuotedCurrency() {
-		return quotedCurrency;
+	public Optional<ActiveCurrencyCode> getQuotedCurrency() {
+		return quotedCurrency == null ? Optional.empty() : Optional.of(quotedCurrency);
 	}
 
-	public void setQuotedCurrency(ActiveCurrencyCode quotedCurrency) {
+	public FundOrderData6 setQuotedCurrency(ActiveCurrencyCode quotedCurrency) {
 		this.quotedCurrency = quotedCurrency;
+		return this;
 	}
 }

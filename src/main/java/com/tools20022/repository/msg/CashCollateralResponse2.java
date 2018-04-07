@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintProposalRejectionRule#forCashCollateralResponse2
+ * ConstraintProposalRejectionRule.forCashCollateralResponse2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +97,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashCollateralResponse2", propOrder = {"responseType", "collateralIdentification", "assetNumber", "cashAccountIdentification", "rejectionReason", "rejectionInformation"})
 public class CashCollateralResponse2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RspnTp", required = true)
 	protected Status4Code responseType;
 	/**
-	 * Specifies the status of the collateral proposal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,10 +136,10 @@ public class CashCollateralResponse2 {
 	 * definition} = "Specifies the status of the collateral proposal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponseType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashCollateralResponse2, Status4Code> mmResponseType = new MMMessageAttribute<CashCollateralResponse2, Status4Code>() {
 		{
 			businessElementTrace_lazy = () -> CollateralStatus.mmResponseStatus;
-			componentContext_lazy = () -> CashCollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "RspnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,11 +149,22 @@ public class CashCollateralResponse2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Status4Code.mmObject();
 		}
+
+		@Override
+		public Status4Code getValue(CashCollateralResponse2 obj) {
+			return obj.getResponseType();
+		}
+
+		@Override
+		public void setValue(CashCollateralResponse2 obj, Status4Code value) {
+			obj.setResponseType(value);
+		}
 	};
+	@XmlElement(name = "CollId")
 	protected Max35Text collateralIdentification;
 	/**
-	 * Provides the identification of the proposed collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,9 +189,9 @@ public class CashCollateralResponse2 {
 	 * definition} = "Provides the identification of the proposed collateral."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashCollateralResponse2, Optional<Max35Text>> mmCollateralIdentification = new MMMessageAttribute<CashCollateralResponse2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> CashCollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "CollId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,12 +201,22 @@ public class CashCollateralResponse2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CashCollateralResponse2 obj) {
+			return obj.getCollateralIdentification();
+		}
+
+		@Override
+		public void setValue(CashCollateralResponse2 obj, Optional<Max35Text> value) {
+			obj.setCollateralIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AsstNb")
 	protected Max35Text assetNumber;
 	/**
-	 * Identifies the register number of the collateral deposit assigned by the
-	 * central counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,9 +243,9 @@ public class CashCollateralResponse2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAssetNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashCollateralResponse2, Optional<Max35Text>> mmAssetNumber = new MMMessageAttribute<CashCollateralResponse2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> CashCollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "AsstNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,12 +255,22 @@ public class CashCollateralResponse2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CashCollateralResponse2 obj) {
+			return obj.getAssetNumber();
+		}
+
+		@Override
+		public void setValue(CashCollateralResponse2 obj, Optional<Max35Text> value) {
+			obj.setAssetNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CshAcctId")
 	protected AccountIdentification4Choice cashAccountIdentification;
 	/**
-	 * Unique and unambiguous identification for the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -260,10 +302,10 @@ public class CashCollateralResponse2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashCollateralResponse2, Optional<AccountIdentification4Choice>> mmCashAccountIdentification = new MMMessageAssociationEnd<CashCollateralResponse2, Optional<AccountIdentification4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> CashCollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "CshAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -274,12 +316,22 @@ public class CashCollateralResponse2 {
 			isComposite = true;
 			type_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AccountIdentification4Choice> getValue(CashCollateralResponse2 obj) {
+			return obj.getCashAccountIdentification();
+		}
+
+		@Override
+		public void setValue(CashCollateralResponse2 obj, Optional<AccountIdentification4Choice> value) {
+			obj.setCashAccountIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RjctnRsn")
 	protected RejectionReasonV021Code rejectionReason;
 	/**
-	 * Specifies the reason why the instruction/cancellation request has a
-	 * rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,10 +364,10 @@ public class CashCollateralResponse2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashCollateralResponse2, Optional<RejectionReasonV021Code>> mmRejectionReason = new MMMessageAttribute<CashCollateralResponse2, Optional<RejectionReasonV021Code>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> CashCollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -325,12 +377,22 @@ public class CashCollateralResponse2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> RejectionReasonV021Code.mmObject();
 		}
+
+		@Override
+		public Optional<RejectionReasonV021Code> getValue(CashCollateralResponse2 obj) {
+			return obj.getRejectionReason();
+		}
+
+		@Override
+		public void setValue(CashCollateralResponse2 obj, Optional<RejectionReasonV021Code> value) {
+			obj.setRejectionReason(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RjctnInf")
 	protected Max35Text rejectionInformation;
 	/**
-	 * Additional information regarding why the collateral proposal has a
-	 * rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,9 +419,9 @@ public class CashCollateralResponse2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashCollateralResponse2, Optional<Max35Text>> mmRejectionInformation = new MMMessageAttribute<CashCollateralResponse2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> CashCollateralResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashCollateralResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -369,15 +431,27 @@ public class CashCollateralResponse2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CashCollateralResponse2 obj) {
+			return obj.getRejectionInformation();
+		}
+
+		@Override
+		public void setValue(CashCollateralResponse2 obj, Optional<Max35Text> value) {
+			obj.setRejectionInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashCollateralResponse2.mmResponseType, CashCollateralResponse2.mmCollateralIdentification, CashCollateralResponse2.mmAssetNumber,
-						CashCollateralResponse2.mmCashAccountIdentification, CashCollateralResponse2.mmRejectionReason, CashCollateralResponse2.mmRejectionInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashCollateralResponse2.mmResponseType, com.tools20022.repository.msg.CashCollateralResponse2.mmCollateralIdentification,
+						com.tools20022.repository.msg.CashCollateralResponse2.mmAssetNumber, com.tools20022.repository.msg.CashCollateralResponse2.mmCashAccountIdentification,
+						com.tools20022.repository.msg.CashCollateralResponse2.mmRejectionReason, com.tools20022.repository.msg.CashCollateralResponse2.mmRejectionInformation);
 				trace_lazy = () -> CollateralStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintProposalRejectionRule.forCashCollateralResponse2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashCollateralResponse2";
 				definition = "Provides more details on the response such as the response type, the collateral identification, and optionally further details in case of rejection.";
@@ -386,57 +460,57 @@ public class CashCollateralResponse2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RspnTp", required = true)
 	public Status4Code getResponseType() {
 		return responseType;
 	}
 
-	public void setResponseType(Status4Code responseType) {
-		this.responseType = responseType;
+	public CashCollateralResponse2 setResponseType(Status4Code responseType) {
+		this.responseType = Objects.requireNonNull(responseType);
+		return this;
 	}
 
-	@XmlElement(name = "CollId")
-	public Max35Text getCollateralIdentification() {
-		return collateralIdentification;
+	public Optional<Max35Text> getCollateralIdentification() {
+		return collateralIdentification == null ? Optional.empty() : Optional.of(collateralIdentification);
 	}
 
-	public void setCollateralIdentification(Max35Text collateralIdentification) {
+	public CashCollateralResponse2 setCollateralIdentification(Max35Text collateralIdentification) {
 		this.collateralIdentification = collateralIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AsstNb")
-	public Max35Text getAssetNumber() {
-		return assetNumber;
+	public Optional<Max35Text> getAssetNumber() {
+		return assetNumber == null ? Optional.empty() : Optional.of(assetNumber);
 	}
 
-	public void setAssetNumber(Max35Text assetNumber) {
+	public CashCollateralResponse2 setAssetNumber(Max35Text assetNumber) {
 		this.assetNumber = assetNumber;
+		return this;
 	}
 
-	@XmlElement(name = "CshAcctId")
-	public AccountIdentification4Choice getCashAccountIdentification() {
-		return cashAccountIdentification;
+	public Optional<AccountIdentification4Choice> getCashAccountIdentification() {
+		return cashAccountIdentification == null ? Optional.empty() : Optional.of(cashAccountIdentification);
 	}
 
-	public void setCashAccountIdentification(AccountIdentification4Choice cashAccountIdentification) {
+	public CashCollateralResponse2 setCashAccountIdentification(AccountIdentification4Choice cashAccountIdentification) {
 		this.cashAccountIdentification = cashAccountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "RjctnRsn")
-	public RejectionReasonV021Code getRejectionReason() {
-		return rejectionReason;
+	public Optional<RejectionReasonV021Code> getRejectionReason() {
+		return rejectionReason == null ? Optional.empty() : Optional.of(rejectionReason);
 	}
 
-	public void setRejectionReason(RejectionReasonV021Code rejectionReason) {
+	public CashCollateralResponse2 setRejectionReason(RejectionReasonV021Code rejectionReason) {
 		this.rejectionReason = rejectionReason;
+		return this;
 	}
 
-	@XmlElement(name = "RjctnInf")
-	public Max35Text getRejectionInformation() {
-		return rejectionInformation;
+	public Optional<Max35Text> getRejectionInformation() {
+		return rejectionInformation == null ? Optional.empty() : Optional.of(rejectionInformation);
 	}
 
-	public void setRejectionInformation(Max35Text rejectionInformation) {
+	public CashCollateralResponse2 setRejectionInformation(Max35Text rejectionInformation) {
 		this.rejectionInformation = rejectionInformation;
+		return this;
 	}
 }

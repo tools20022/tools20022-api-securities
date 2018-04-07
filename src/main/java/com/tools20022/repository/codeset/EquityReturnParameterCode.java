@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameterCode#PriceReturnBasicPerformanceParameter
- * EquityReturnParameterCode.mmPriceReturnBasicPerformanceParameter}</li>
+ * EquityReturnParameterCode.PriceReturnBasicPerformanceParameter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameterCode#ParameterReturnVariance
- * EquityReturnParameterCode.mmParameterReturnVariance}</li>
+ * EquityReturnParameterCode.ParameterReturnVariance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameterCode#ParameterReturnVolatility
- * EquityReturnParameterCode.mmParameterReturnVolatility}</li>
+ * EquityReturnParameterCode.ParameterReturnVolatility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityReturnParameterCode#ParameterReturnDividend
- * EquityReturnParameterCode.mmParameterReturnDividend}</li>
+ * EquityReturnParameterCode.ParameterReturnDividend}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,14 +95,14 @@ public class EquityReturnParameterCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Equity derivative parameter Price Return Basis Performance. "</li>
+	 * "Equity derivative parameter Price Return Basis Performance."</li>
 	 * </ul>
 	 */
 	public static final EquityReturnParameterCode PriceReturnBasicPerformanceParameter = new EquityReturnParameterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PriceReturnBasicPerformanceParameter";
-			definition = "Equity derivative parameter Price Return Basis Performance. ";
+			definition = "Equity derivative parameter Price Return Basis Performance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EquityReturnParameterCode.mmObject();
 			codeName = "PRBP";
 		}
@@ -125,14 +125,14 @@ public class EquityReturnParameterCode extends MMCode {
 	 * name} = "ParameterReturnVariance"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Equity derivative parameter Return Variance. "</li>
+	 * definition} = "Equity derivative parameter Return Variance."</li>
 	 * </ul>
 	 */
 	public static final EquityReturnParameterCode ParameterReturnVariance = new EquityReturnParameterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParameterReturnVariance";
-			definition = "Equity derivative parameter Return Variance. ";
+			definition = "Equity derivative parameter Return Variance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EquityReturnParameterCode.mmObject();
 			codeName = "PRVA";
 		}
@@ -155,14 +155,14 @@ public class EquityReturnParameterCode extends MMCode {
 	 * name} = "ParameterReturnVolatility"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Equity derivative parameter Return Volatility. "</li>
+	 * definition} = "Equity derivative parameter Return Volatility."</li>
 	 * </ul>
 	 */
 	public static final EquityReturnParameterCode ParameterReturnVolatility = new EquityReturnParameterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParameterReturnVolatility";
-			definition = "Equity derivative parameter Return Volatility. ";
+			definition = "Equity derivative parameter Return Volatility.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EquityReturnParameterCode.mmObject();
 			codeName = "PRVO";
 		}
@@ -185,14 +185,14 @@ public class EquityReturnParameterCode extends MMCode {
 	 * name} = "ParameterReturnDividend"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Equity derivative parameter Return Dividend. "</li>
+	 * definition} = "Equity derivative parameter Return Dividend."</li>
 	 * </ul>
 	 */
 	public static final EquityReturnParameterCode ParameterReturnDividend = new EquityReturnParameterCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParameterReturnDividend";
-			definition = "Equity derivative parameter Return Dividend. ";
+			definition = "Equity derivative parameter Return Dividend.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EquityReturnParameterCode.mmObject();
 			codeName = "PRDV";
 		}
@@ -205,7 +205,7 @@ public class EquityReturnParameterCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EquityReturnParameterCode";
 				definition = "Specifies an equity derivative return parameter.";

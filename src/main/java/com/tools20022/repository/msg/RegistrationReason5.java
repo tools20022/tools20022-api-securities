@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.BasicSecuritiesRegistration;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Reason of registration."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RegistrationReason5", propOrder = {"code", "additionalInformation"})
 public class RegistrationReason5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected Registration10Choice code;
 	/**
-	 * Specifies the reaoson of the holding status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -102,29 +105,39 @@ public class RegistrationReason5 {
 	 * name} = "Code"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Specifies the reaoson of the holding status."</li>
+	 * definition} = "Specifies the reason of the holding status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCode = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RegistrationReason5, Registration10Choice> mmCode = new MMMessageAssociationEnd<RegistrationReason5, Registration10Choice>() {
 		{
 			businessElementTrace_lazy = () -> BasicSecuritiesRegistration.mmRegistrationInstruction;
-			componentContext_lazy = () -> RegistrationReason5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegistrationReason5.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
-			definition = "Specifies the reaoson of the holding status.";
+			definition = "Specifies the reason of the holding status.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Registration10Choice.mmObject();
 		}
+
+		@Override
+		public Registration10Choice getValue(RegistrationReason5 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(RegistrationReason5 obj, Registration10Choice value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max210Text additionalInformation;
 	/**
-	 * Provides additional reason information that cannot be provided in a
-	 * structured field.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,9 +164,9 @@ public class RegistrationReason5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RegistrationReason5, Optional<Max210Text>> mmAdditionalInformation = new MMMessageAttribute<RegistrationReason5, Optional<Max210Text>>() {
 		{
-			componentContext_lazy = () -> RegistrationReason5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RegistrationReason5.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,14 +176,24 @@ public class RegistrationReason5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max210Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max210Text> getValue(RegistrationReason5 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(RegistrationReason5 obj, Optional<Max210Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RegistrationReason5.mmCode, RegistrationReason5.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegistrationReason5.mmCode, com.tools20022.repository.msg.RegistrationReason5.mmAdditionalInformation);
 				trace_lazy = () -> BasicSecuritiesRegistration.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegistrationReason5";
 				definition = "Reason of registration.";
@@ -179,21 +202,21 @@ public class RegistrationReason5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public Registration10Choice getCode() {
 		return code;
 	}
 
-	public void setCode(Registration10Choice code) {
-		this.code = code;
+	public RegistrationReason5 setCode(Registration10Choice code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max210Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max210Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max210Text additionalInformation) {
+	public RegistrationReason5 setAdditionalInformation(Max210Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

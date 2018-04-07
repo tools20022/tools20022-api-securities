@@ -37,28 +37,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#For
- * VoteInstruction2Code.mmFor}</li>
+ * VoteInstruction2Code.For}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#Against
- * VoteInstruction2Code.mmAgainst}</li>
+ * VoteInstruction2Code.Against}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#Abstain
- * VoteInstruction2Code.mmAbstain}</li>
+ * VoteInstruction2Code.Abstain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#Withhold
- * VoteInstruction2Code.mmWithhold}</li>
+ * VoteInstruction2Code.Withhold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#WithManagement
- * VoteInstruction2Code.mmWithManagement}</li>
+ * VoteInstruction2Code.WithManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#AgainstManagement
- * VoteInstruction2Code.mmAgainstManagement}</li>
+ * VoteInstruction2Code.AgainstManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#NoAction
- * VoteInstruction2Code.mmNoAction}</li>
+ * VoteInstruction2Code.NoAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VoteInstruction2Code#Discretionary
- * VoteInstruction2Code.mmDiscretionary}</li>
+ * VoteInstruction2Code.Discretionary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -67,8 +67,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -289,7 +289,7 @@ public class VoteInstruction2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CFOR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VoteInstruction2Code";

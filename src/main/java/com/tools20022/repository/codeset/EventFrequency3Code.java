@@ -37,18 +37,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency3Code#Annual
- * EventFrequency3Code.mmAnnual}</li>
+ * EventFrequency3Code.Annual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency3Code#Monthly
- * EventFrequency3Code.mmMonthly}</li>
+ * EventFrequency3Code.Monthly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency3Code#Quarterly
- * EventFrequency3Code.mmQuarterly}</li>
+ * EventFrequency3Code.Quarterly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency3Code#SemiAnnual
- * EventFrequency3Code.mmSemiAnnual}</li>
+ * EventFrequency3Code.SemiAnnual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency3Code#Weekly
- * EventFrequency3Code.mmWeekly}</li>
+ * EventFrequency3Code.Weekly}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -207,7 +207,7 @@ public class EventFrequency3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EventFrequency3Code";

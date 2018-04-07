@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.InstructionForMeeting;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SpecificInstructionRequest1", propOrder = {"participationRegistration", "blockingSecurities", "securitiesRegistration"})
 public class SpecificInstructionRequest1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PrtcptnRegn")
 	protected YesNoIndicator participationRegistration;
 	/**
-	 * Request to register for participation to the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +112,10 @@ public class SpecificInstructionRequest1 {
 	 * definition} = "Request to register for participation to the meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmParticipationRegistration = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecificInstructionRequest1, Optional<YesNoIndicator>> mmParticipationRegistration = new MMMessageAttribute<SpecificInstructionRequest1, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> InstructionForMeeting.mmParticipationRegistration;
-			componentContext_lazy = () -> SpecificInstructionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecificInstructionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "PrtcptnRegn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +125,22 @@ public class SpecificInstructionRequest1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SpecificInstructionRequest1 obj) {
+			return obj.getParticipationRegistration();
+		}
+
+		@Override
+		public void setValue(SpecificInstructionRequest1 obj, Optional<YesNoIndicator> value) {
+			obj.setParticipationRegistration(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BlckgScties")
 	protected YesNoIndicator blockingSecurities;
 	/**
-	 * Request to block the securities
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,27 +168,38 @@ public class SpecificInstructionRequest1 {
 	 * name} = "BlockingSecurities"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Request to block the securities"</li>
+	 * definition} = "Request to block the securities."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBlockingSecurities = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecificInstructionRequest1, Optional<YesNoIndicator>> mmBlockingSecurities = new MMMessageAttribute<SpecificInstructionRequest1, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> InstructionForMeeting.mmBlockingSecurities;
-			componentContext_lazy = () -> SpecificInstructionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecificInstructionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "BlckgScties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BlockingSecurities";
-			definition = "Request to block the securities";
+			definition = "Request to block the securities.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SpecificInstructionRequest1 obj) {
+			return obj.getBlockingSecurities();
+		}
+
+		@Override
+		public void setValue(SpecificInstructionRequest1 obj, Optional<YesNoIndicator> value) {
+			obj.setBlockingSecurities(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SctiesRegn")
 	protected YesNoIndicator securitiesRegistration;
 	/**
-	 * Request to register the securities for the meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,10 +230,10 @@ public class SpecificInstructionRequest1 {
 	 * definition} = "Request to register the securities for the meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesRegistration = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SpecificInstructionRequest1, Optional<YesNoIndicator>> mmSecuritiesRegistration = new MMMessageAttribute<SpecificInstructionRequest1, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> InstructionForMeeting.mmSecuritiesRegistration;
-			componentContext_lazy = () -> SpecificInstructionRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SpecificInstructionRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesRegn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,14 +243,25 @@ public class SpecificInstructionRequest1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SpecificInstructionRequest1 obj) {
+			return obj.getSecuritiesRegistration();
+		}
+
+		@Override
+		public void setValue(SpecificInstructionRequest1 obj, Optional<YesNoIndicator> value) {
+			obj.setSecuritiesRegistration(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SpecificInstructionRequest1.mmParticipationRegistration, SpecificInstructionRequest1.mmBlockingSecurities, SpecificInstructionRequest1.mmSecuritiesRegistration);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SpecificInstructionRequest1.mmParticipationRegistration, com.tools20022.repository.msg.SpecificInstructionRequest1.mmBlockingSecurities,
+						com.tools20022.repository.msg.SpecificInstructionRequest1.mmSecuritiesRegistration);
 				trace_lazy = () -> InstructionForMeeting.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SpecificInstructionRequest1";
 				definition = "Request to execute specific instructions, such as participation registration, securities registration or blocking of securities.";
@@ -235,30 +270,30 @@ public class SpecificInstructionRequest1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PrtcptnRegn")
-	public YesNoIndicator getParticipationRegistration() {
-		return participationRegistration;
+	public Optional<YesNoIndicator> getParticipationRegistration() {
+		return participationRegistration == null ? Optional.empty() : Optional.of(participationRegistration);
 	}
 
-	public void setParticipationRegistration(YesNoIndicator participationRegistration) {
+	public SpecificInstructionRequest1 setParticipationRegistration(YesNoIndicator participationRegistration) {
 		this.participationRegistration = participationRegistration;
+		return this;
 	}
 
-	@XmlElement(name = "BlckgScties")
-	public YesNoIndicator getBlockingSecurities() {
-		return blockingSecurities;
+	public Optional<YesNoIndicator> getBlockingSecurities() {
+		return blockingSecurities == null ? Optional.empty() : Optional.of(blockingSecurities);
 	}
 
-	public void setBlockingSecurities(YesNoIndicator blockingSecurities) {
+	public SpecificInstructionRequest1 setBlockingSecurities(YesNoIndicator blockingSecurities) {
 		this.blockingSecurities = blockingSecurities;
+		return this;
 	}
 
-	@XmlElement(name = "SctiesRegn")
-	public YesNoIndicator getSecuritiesRegistration() {
-		return securitiesRegistration;
+	public Optional<YesNoIndicator> getSecuritiesRegistration() {
+		return securitiesRegistration == null ? Optional.empty() : Optional.of(securitiesRegistration);
 	}
 
-	public void setSecuritiesRegistration(YesNoIndicator securitiesRegistration) {
+	public SpecificInstructionRequest1 setSecuritiesRegistration(YesNoIndicator securitiesRegistration) {
 		this.securitiesRegistration = securitiesRegistration;
+		return this;
 	}
 }

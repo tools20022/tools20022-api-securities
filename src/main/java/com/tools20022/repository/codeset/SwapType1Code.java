@@ -39,34 +39,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#OvernightIndexSingleCurrencySwap
- * SwapType1Code.mmOvernightIndexSingleCurrencySwap}</li>
+ * SwapType1Code.OvernightIndexSingleCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#FixedToFloatSingleCurrencySwap
- * SwapType1Code.mmFixedToFloatSingleCurrencySwap}</li>
+ * SwapType1Code.FixedToFloatSingleCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#FixedToFloatMultiCurrencySwap
- * SwapType1Code.mmFixedToFloatMultiCurrencySwap}</li>
+ * SwapType1Code.FixedToFloatMultiCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#FixedToFixedSingleCurrencySwap
- * SwapType1Code.mmFixedToFixedSingleCurrencySwap}</li>
+ * SwapType1Code.FixedToFixedSingleCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#FixedToFixedMultiCurrencySwap
- * SwapType1Code.mmFixedToFixedMultiCurrencySwap}</li>
+ * SwapType1Code.FixedToFixedMultiCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#InflationMultiCurrencySwap
- * SwapType1Code.mmInflationMultiCurrencySwap}</li>
+ * SwapType1Code.InflationMultiCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#FloatToFloatSingleCurrencySwap
- * SwapType1Code.mmFloatToFloatSingleCurrencySwap}</li>
+ * SwapType1Code.FloatToFloatSingleCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#FloatToFloatMultiCurrencySwap
- * SwapType1Code.mmFloatToFloatMultiCurrencySwap}</li>
+ * SwapType1Code.FloatToFloatMultiCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#InflationSingleCurrencySwap
- * SwapType1Code.mmInflationSingleCurrencySwap}</li>
+ * SwapType1Code.InflationSingleCurrencySwap}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SwapType1Code#OvernightIndexMultiCurrencySwap
- * SwapType1Code.mmOvernightIndexMultiCurrencySwap}</li>
+ * SwapType1Code.OvernightIndexMultiCurrencySwap}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -340,7 +340,7 @@ public class SwapType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SwapType1Code";
 				definition = "Specifies the type of an interest rate derivative when the contract type is a swap, a swaption, a future on a swap and / or a forward on a swap.";

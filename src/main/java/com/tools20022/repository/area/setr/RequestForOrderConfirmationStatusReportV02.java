@@ -25,10 +25,11 @@ import com.tools20022.repository.area.SecuritiesTradeLatestVersion;
 import com.tools20022.repository.msg.Extension1;
 import com.tools20022.repository.msg.MessageAndBusinessReference10;
 import com.tools20022.repository.msg.MessageIdentification1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -85,6 +86,19 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code setr.058.001.02}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOtherReferenceGuideline#for_setr_RequestForOrderConfirmationStatusReportV02
+ * ConstraintOtherReferenceGuideline.
+ * for_setr_RequestForOrderConfirmationStatusReportV02}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPreviousReferenceGuideline#for_setr_RequestForOrderConfirmationStatusReportV02
+ * ConstraintPreviousReferenceGuideline.
+ * for_setr_RequestForOrderConfirmationStatusReportV02}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,16 +111,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RequestForOrderConfirmationStatusReportV02", propOrder = {"messageIdentification", "requestDetails", "extension"})
 public class RequestForOrderConfirmationStatusReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies the message from a business
-	 * application standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,34 +139,36 @@ public class RequestForOrderConfirmationStatusReportV02 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies the message from a business application standpoint. "
+	 * "Reference that uniquely identifies the message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RequestForOrderConfirmationStatusReportV02, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<RequestForOrderConfirmationStatusReportV02, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies the message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies the message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RequestForOrderConfirmationStatusReportV02.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(RequestForOrderConfirmationStatusReportV02 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(RequestForOrderConfirmationStatusReportV02 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "ReqDtls", required = true)
 	protected List<MessageAndBusinessReference10> requestDetails;
 	/**
-	 * Information to identify the order confirmation for which the status is
-	 * requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,7 +191,7 @@ public class RequestForOrderConfirmationStatusReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRequestDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RequestForOrderConfirmationStatusReportV02, List<MessageAndBusinessReference10>> mmRequestDetails = new MMMessageBuildingBlock<RequestForOrderConfirmationStatusReportV02, List<MessageAndBusinessReference10>>() {
 		{
 			xmlTag = "ReqDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,19 +201,21 @@ public class RequestForOrderConfirmationStatusReportV02 {
 			complexType_lazy = () -> MessageAndBusinessReference10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RequestForOrderConfirmationStatusReportV02.class.getMethod("getRequestDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MessageAndBusinessReference10> getValue(RequestForOrderConfirmationStatusReportV02 obj) {
+			return obj.getRequestDetails();
+		}
+
+		@Override
+		public void setValue(RequestForOrderConfirmationStatusReportV02 obj, List<MessageAndBusinessReference10> value) {
+			obj.setRequestDetails(value);
 		}
 	};
+	@XmlElement(name = "Xtnsn")
 	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,7 +237,7 @@ public class RequestForOrderConfirmationStatusReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExtension = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RequestForOrderConfirmationStatusReportV02, List<Extension1>> mmExtension = new MMMessageBuildingBlock<RequestForOrderConfirmationStatusReportV02, List<Extension1>>() {
 		{
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,18 +247,22 @@ public class RequestForOrderConfirmationStatusReportV02 {
 			complexType_lazy = () -> Extension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RequestForOrderConfirmationStatusReportV02.class.getMethod("getExtension", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Extension1> getValue(RequestForOrderConfirmationStatusReportV02 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(RequestForOrderConfirmationStatusReportV02 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintOtherReferenceGuideline.for_setr_RequestForOrderConfirmationStatusReportV02,
+						com.tools20022.repository.constraints.ConstraintPreviousReferenceGuideline.for_setr_RequestForOrderConfirmationStatusReportV02);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RequestForOrderConfirmationStatusReportV02";
 				definition = "Scope\r\nThe RequestForOrderConfirmationStatusReport message is ent by an executing party, for example, a transfer agent, to the instructing party, for example, an investment manager or its authorised representative, to request the status of one or more order confirmations.\r\nUsage\r\nThe RequestForOrderConfirmationStatusReport message is used to request the status of either:\r\n- one or several individual order confirmations, or,\r\n- one or several order confirmation messages.\r\nThe response to a RequestForOrderConfirmationStatusReport message is the OrderConfirmationStatusReport message.\r\nWhen the RequestForOrderConfirmationStatusReport message is used to request the status of several individual order confirmations or one or more order confirmation messages, the executing party may receive several OrderConfirmationStatusReport messages from the instructing party.\r\nWhen the RequestForOrderConfirmationStatusReport is used to request the status of one or more individual order confirmations, each individual order confirmation is identified with its order reference. The message identification of the message in which the individual order confirmation was conveyed may also be quoted in PreviousReference.\r\nWhen the RequestForOrderConfirmationStatusReport is used to request the status of an order confirmation message, then the message identification of the order confirmation message is identified in PreviousReference.";
@@ -267,34 +289,34 @@ public class RequestForOrderConfirmationStatusReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public RequestForOrderConfirmationStatusReportV02 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ReqDtls", required = true)
 	public List<MessageAndBusinessReference10> getRequestDetails() {
-		return requestDetails;
+		return requestDetails == null ? requestDetails = new ArrayList<>() : requestDetails;
 	}
 
-	public void setRequestDetails(List<MessageAndBusinessReference10> requestDetails) {
-		this.requestDetails = requestDetails;
+	public RequestForOrderConfirmationStatusReportV02 setRequestDetails(List<MessageAndBusinessReference10> requestDetails) {
+		this.requestDetails = Objects.requireNonNull(requestDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<Extension1> extension) {
-		this.extension = extension;
+	public RequestForOrderConfirmationStatusReportV02 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:setr.058.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:setr.058.001.02")
 	static public class Document {
 		@XmlElement(name = "ReqForOrdrConfStsRpt", required = true)
 		public RequestForOrderConfirmationStatusReportV02 messageBody;

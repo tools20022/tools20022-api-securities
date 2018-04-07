@@ -39,46 +39,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#AutomaticMarketClaim
- * AdditionalBusinessProcessCode.mmAutomaticMarketClaim}</li>
+ * AdditionalBusinessProcessCode.AutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#SubjectToTransformation
- * AdditionalBusinessProcessCode.mmSubjectToTransformation}</li>
+ * AdditionalBusinessProcessCode.SubjectToTransformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#CancelUnderlyingTrades
- * AdditionalBusinessProcessCode.mmCancelUnderlyingTrades}</li>
+ * AdditionalBusinessProcessCode.CancelUnderlyingTrades}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NoAutomaticMarketClaimsAndTransformations
- * AdditionalBusinessProcessCode.mmNoAutomaticMarketClaimsAndTransformations}</li>
+ * AdditionalBusinessProcessCode.NoAutomaticMarketClaimsAndTransformations}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NoSplitElection
- * AdditionalBusinessProcessCode.mmNoSplitElection}</li>
+ * AdditionalBusinessProcessCode.NoSplitElection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#SchemeOrPlanOfArrangement
- * AdditionalBusinessProcessCode.mmSchemeOrPlanOfArrangement}</li>
+ * AdditionalBusinessProcessCode.SchemeOrPlanOfArrangement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#ClaimOrCompensation
- * AdditionalBusinessProcessCode.mmClaimOrCompensation}</li>
+ * AdditionalBusinessProcessCode.ClaimOrCompensation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#TaxRefund
- * AdditionalBusinessProcessCode.mmTaxRefund}</li>
+ * AdditionalBusinessProcessCode.TaxRefund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NotificationOfReversal
- * AdditionalBusinessProcessCode.mmNotificationOfReversal}</li>
+ * AdditionalBusinessProcessCode.NotificationOfReversal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#Consent
- * AdditionalBusinessProcessCode.mmConsent}</li>
+ * AdditionalBusinessProcessCode.Consent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#PartialMandatoryPutRedemption
- * AdditionalBusinessProcessCode.mmPartialMandatoryPutRedemption}</li>
+ * AdditionalBusinessProcessCode.PartialMandatoryPutRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#FullPrefunding
- * AdditionalBusinessProcessCode.mmFullPrefunding}</li>
+ * AdditionalBusinessProcessCode.FullPrefunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#PartialPreFunding
- * AdditionalBusinessProcessCode.mmPartialPreFunding}</li>
+ * AdditionalBusinessProcessCode.PartialPreFunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#RequiredAction
- * AdditionalBusinessProcessCode.mmRequiredAction}</li>
+ * AdditionalBusinessProcessCode.RequiredAction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -93,13 +93,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code
  * AdditionalBusinessProcess6Code}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess8Code
+ * AdditionalBusinessProcess8Code}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -417,7 +420,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	};
 	/**
 	 * Relates to a consent within a corporate action event other than a Consent
-	 * event (:22F::CAEV//CONS).
+	 * event (: 22F:: CAEV//CONS).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -435,7 +438,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS)."
+	 * "Relates to a consent within a corporate action event other than a Consent event (: 22F:: CAEV//CONS)."
 	 * </li>
 	 * </ul>
 	 */
@@ -443,7 +446,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Consent";
-			definition = "Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS).";
+			definition = "Relates to a consent within a corporate action event other than a Consent event (: 22F:: CAEV//CONS).";
 			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalBusinessProcessCode.mmObject();
 			codeName = "CONS";
 		}
@@ -541,7 +544,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event. "
+	 * "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event."
 	 * </li>
 	 * </ul>
 	 */
@@ -549,7 +552,7 @@ public class AdditionalBusinessProcessCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialPreFunding";
-			definition = "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event. ";
+			definition = "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AdditionalBusinessProcessCode.mmObject();
 			codeName = "PPRE";
 		}
@@ -595,12 +598,12 @@ public class AdditionalBusinessProcessCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACLA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalBusinessProcessCode";
 				definition = "Specifies the additional business process linked to a corporate action event such as an automatic market claim.";
-				derivation_lazy = () -> Arrays.asList(AdditionalBusinessProcess7Code.mmObject(), AdditionalBusinessProcess5Code.mmObject(), AdditionalBusinessProcess6Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(AdditionalBusinessProcess7Code.mmObject(), AdditionalBusinessProcess5Code.mmObject(), AdditionalBusinessProcess6Code.mmObject(), AdditionalBusinessProcess8Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AdditionalBusinessProcessCode.AutomaticMarketClaim, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.SubjectToTransformation,
 						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.CancelUnderlyingTrades, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.NoAutomaticMarketClaimsAndTransformations,
 						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.NoSplitElection, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.SchemeOrPlanOfArrangement,

@@ -38,79 +38,79 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Abstain
- * CorporateActionOption7Code.mmAbstain}</li>
+ * CorporateActionOption7Code.Abstain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#VoteAgainstManagement
- * CorporateActionOption7Code.mmVoteAgainstManagement}</li>
+ * CorporateActionOption7Code.VoteAgainstManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#BonusSharePlan
- * CorporateActionOption7Code.mmBonusSharePlan}</li>
+ * CorporateActionOption7Code.BonusSharePlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#BuyUp
- * CorporateActionOption7Code.mmBuyUp}</li>
+ * CorporateActionOption7Code.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#CashAndSecurity
- * CorporateActionOption7Code.mmCashAndSecurity}</li>
+ * CorporateActionOption7Code.CashAndSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Cash
- * CorporateActionOption7Code.mmCash}</li>
+ * CorporateActionOption7Code.Cash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#ConsentAndExchange
- * CorporateActionOption7Code.mmConsentAndExchange}</li>
+ * CorporateActionOption7Code.ConsentAndExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#ConsentDenied
- * CorporateActionOption7Code.mmConsentDenied}</li>
+ * CorporateActionOption7Code.ConsentDenied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#ConsentGranted
- * CorporateActionOption7Code.mmConsentGranted}</li>
+ * CorporateActionOption7Code.ConsentGranted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#ConsentAndTender
- * CorporateActionOption7Code.mmConsentAndTender}</li>
+ * CorporateActionOption7Code.ConsentAndTender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Exercise
- * CorporateActionOption7Code.mmExercise}</li>
+ * CorporateActionOption7Code.Exercise}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Lapse
- * CorporateActionOption7Code.mmLapse}</li>
+ * CorporateActionOption7Code.Lapse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#VoteWithManagement
- * CorporateActionOption7Code.mmVoteWithManagement}</li>
+ * CorporateActionOption7Code.VoteWithManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Retain
- * CorporateActionOption7Code.mmRetain}</li>
+ * CorporateActionOption7Code.Retain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#NoAction
- * CorporateActionOption7Code.mmNoAction}</li>
+ * CorporateActionOption7Code.NoAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#NonQualifiedInvestor
- * CorporateActionOption7Code.mmNonQualifiedInvestor}</li>
+ * CorporateActionOption7Code.NonQualifiedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#ProposedRate
- * CorporateActionOption7Code.mmProposedRate}</li>
+ * CorporateActionOption7Code.ProposedRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Other
- * CorporateActionOption7Code.mmOther}</li>
+ * CorporateActionOption7Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Oversubscribe
- * CorporateActionOption7Code.mmOversubscribe}</li>
+ * CorporateActionOption7Code.Oversubscribe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#ProxyCard
- * CorporateActionOption7Code.mmProxyCard}</li>
+ * CorporateActionOption7Code.ProxyCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#QualifiedInvestor
- * CorporateActionOption7Code.mmQualifiedInvestor}</li>
+ * CorporateActionOption7Code.QualifiedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#Security
- * CorporateActionOption7Code.mmSecurity}</li>
+ * CorporateActionOption7Code.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#SellEntitlement
- * CorporateActionOption7Code.mmSellEntitlement}</li>
+ * CorporateActionOption7Code.SellEntitlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#SplitInstruction
- * CorporateActionOption7Code.mmSplitInstruction}</li>
+ * CorporateActionOption7Code.SplitInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption7Code#UnknownProceeds
- * CorporateActionOption7Code.mmUnknownProceeds}</li>
+ * CorporateActionOption7Code.UnknownProceeds}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -119,8 +119,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -749,7 +749,7 @@ public class CorporateActionOption7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ABST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionOption7Code";

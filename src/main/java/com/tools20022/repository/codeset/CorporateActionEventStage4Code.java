@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage4Code#CancellationAndReRun
- * CorporateActionEventStage4Code.mmCancellationAndReRun}</li>
+ * CorporateActionEventStage4Code.CancellationAndReRun}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage4Code#SupplementalCancellationAndReRun
- * CorporateActionEventStage4Code.mmSupplementalCancellationAndReRun}</li>
+ * CorporateActionEventStage4Code.SupplementalCancellationAndReRun}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStage4Code#SupplementalCancellation
- * CorporateActionEventStage4Code.mmSupplementalCancellation}</li>
+ * CorporateActionEventStage4Code.SupplementalCancellation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -149,7 +149,7 @@ public class CorporateActionEventStage4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventStage4Code";
 				definition = "Specifies the stage of the CA lottery event.";

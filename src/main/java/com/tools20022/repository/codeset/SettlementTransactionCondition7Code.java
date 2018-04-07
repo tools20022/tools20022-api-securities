@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Assignment
- * SettlementTransactionCondition7Code.mmAssignment}</li>
+ * SettlementTransactionCondition7Code.Assignment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Clean
- * SettlementTransactionCondition7Code.mmClean}</li>
+ * SettlementTransactionCondition7Code.Clean}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Dirty
- * SettlementTransactionCondition7Code.mmDirty}</li>
+ * SettlementTransactionCondition7Code.Dirty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#DeliveryWithoutMatching
- * SettlementTransactionCondition7Code.mmDeliveryWithoutMatching}</li>
+ * SettlementTransactionCondition7Code.DeliveryWithoutMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Drawn
- * SettlementTransactionCondition7Code.mmDrawn}</li>
+ * SettlementTransactionCondition7Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Exercised
- * SettlementTransactionCondition7Code.mmExercised}</li>
+ * SettlementTransactionCondition7Code.Exercised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#FreeCleanSettlement
- * SettlementTransactionCondition7Code.mmFreeCleanSettlement}</li>
+ * SettlementTransactionCondition7Code.FreeCleanSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#KnockedOut
- * SettlementTransactionCondition7Code.mmKnockedOut}</li>
+ * SettlementTransactionCondition7Code.KnockedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Physical
- * SettlementTransactionCondition7Code.mmPhysical}</li>
+ * SettlementTransactionCondition7Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#CSDPaymentOnly
- * SettlementTransactionCondition7Code.mmCSDPaymentOnly}</li>
+ * SettlementTransactionCondition7Code.CSDPaymentOnly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#SplitCurrencySettlement
- * SettlementTransactionCondition7Code.mmSplitCurrencySettlement}</li>
+ * SettlementTransactionCondition7Code.SplitCurrencySettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#SpecialDelivery
- * SettlementTransactionCondition7Code.mmSpecialDelivery}</li>
+ * SettlementTransactionCondition7Code.SpecialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#SplitSettlement
- * SettlementTransactionCondition7Code.mmSplitSettlement}</li>
+ * SettlementTransactionCondition7Code.SplitSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition7Code#Unexposed
- * SettlementTransactionCondition7Code.mmUnexposed}</li>
+ * SettlementTransactionCondition7Code.Unexposed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -86,8 +86,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -453,7 +453,7 @@ public class SettlementTransactionCondition7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ASGN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTransactionCondition7Code";

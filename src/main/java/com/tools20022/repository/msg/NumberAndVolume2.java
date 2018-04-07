@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.DecimalNumberFraction5;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NumberAndVolume2", propOrder = {"number", "volume"})
 public class NumberAndVolume2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nb", required = true)
 	protected DecimalNumberFraction5 number;
 	/**
-	 * Total number of specific transaction types executed on the reporting day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,9 +101,9 @@ public class NumberAndVolume2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndVolume2, DecimalNumberFraction5> mmNumber = new MMMessageAttribute<NumberAndVolume2, DecimalNumberFraction5>() {
 		{
-			componentContext_lazy = () -> NumberAndVolume2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndVolume2.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -111,11 +113,22 @@ public class NumberAndVolume2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumberFraction5.mmObject();
 		}
+
+		@Override
+		public DecimalNumberFraction5 getValue(NumberAndVolume2 obj) {
+			return obj.getNumber();
+		}
+
+		@Override
+		public void setValue(NumberAndVolume2 obj, DecimalNumberFraction5 value) {
+			obj.setNumber(value);
+		}
 	};
+	@XmlElement(name = "Vol", required = true)
 	protected ActiveOrHistoricCurrencyAndAmount volume;
 	/**
-	 * Total volume of specific transactions executed on the reporting day.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,9 +155,9 @@ public class NumberAndVolume2 {
 	 * "Total volume of specific transactions executed on the reporting day."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NumberAndVolume2, ActiveOrHistoricCurrencyAndAmount> mmVolume = new MMMessageAttribute<NumberAndVolume2, ActiveOrHistoricCurrencyAndAmount>() {
 		{
-			componentContext_lazy = () -> NumberAndVolume2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NumberAndVolume2.mmObject();
 			isDerived = false;
 			xmlTag = "Vol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,13 +167,23 @@ public class NumberAndVolume2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(NumberAndVolume2 obj) {
+			return obj.getVolume();
+		}
+
+		@Override
+		public void setValue(NumberAndVolume2 obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setVolume(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NumberAndVolume2.mmNumber, NumberAndVolume2.mmVolume);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NumberAndVolume2.mmNumber, com.tools20022.repository.msg.NumberAndVolume2.mmVolume);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NumberAndVolume2";
 				definition = "Detail the number and the volume, defined by currency amount, for use in a transaction.";
@@ -169,21 +192,21 @@ public class NumberAndVolume2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nb", required = true)
 	public DecimalNumberFraction5 getNumber() {
 		return number;
 	}
 
-	public void setNumber(DecimalNumberFraction5 number) {
-		this.number = number;
+	public NumberAndVolume2 setNumber(DecimalNumberFraction5 number) {
+		this.number = Objects.requireNonNull(number);
+		return this;
 	}
 
-	@XmlElement(name = "Vol", required = true)
 	public ActiveOrHistoricCurrencyAndAmount getVolume() {
 		return volume;
 	}
 
-	public void setVolume(ActiveOrHistoricCurrencyAndAmount volume) {
-		this.volume = volume;
+	public NumberAndVolume2 setVolume(ActiveOrHistoricCurrencyAndAmount volume) {
+		this.volume = Objects.requireNonNull(volume);
+		return this;
 	}
 }

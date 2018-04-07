@@ -20,6 +20,7 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.ClearingSystemMemberIdentificationChoice;
 import com.tools20022.repository.datatype.BICFIIdentifier;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.OrganisationIdentification;
@@ -29,6 +30,7 @@ import com.tools20022.repository.msg.FinancialInstitutionIdentification10;
 import com.tools20022.repository.msg.NameAndAddress5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,29 +79,33 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Choice between formats for the identification of the financial institution."
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification7Choice
- * FinancialInstitutionIdentification7Choice}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.msg.FinancialInstitutionIdentification10
  * FinancialInstitutionIdentification10}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification9Choice
+ * FinancialInstitutionIdentification9Choice}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification7Choice
+ * FinancialInstitutionIdentification7Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "FinancialInstitutionIdentification8Choice", propOrder = {"nameAndAddress", "BICFI", "clearingSystemMemberIdentification", "proprietaryIdentification"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "FinancialInstitutionIdentification8Choice", propOrder = {"nameAndAddress", "bICFI", "clearingSystemMemberIdentification", "proprietaryIdentification"})
 public class FinancialInstitutionIdentification8Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NmAndAdr", required = true)
 	protected NameAndAddress5 nameAndAddress;
 	/**
-	 * Identifies the name and (long) postal address of a financial institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,6 +135,14 @@ public class FinancialInstitutionIdentification8Choice {
 	 * definition} =
 	 * "Identifies the name and (long) postal address of a financial institution."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification9Choice#mmNameAndAddress
+	 * FinancialInstitutionIdentification9Choice.mmNameAndAddress}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -136,25 +150,37 @@ public class FinancialInstitutionIdentification8Choice {
 	 * FinancialInstitutionIdentification7Choice.mmNameAndAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameAndAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstitutionIdentification8Choice, NameAndAddress5> mmNameAndAddress = new MMMessageAttribute<FinancialInstitutionIdentification8Choice, NameAndAddress5>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
-			componentContext_lazy = () -> FinancialInstitutionIdentification8Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NameAndAddress";
 			definition = "Identifies the name and (long) postal address of a financial institution.";
+			nextVersions_lazy = () -> Arrays.asList(FinancialInstitutionIdentification9Choice.mmNameAndAddress);
 			previousVersion_lazy = () -> FinancialInstitutionIdentification7Choice.mmNameAndAddress;
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> NameAndAddress5.mmObject();
 		}
+
+		@Override
+		public NameAndAddress5 getValue(FinancialInstitutionIdentification8Choice obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8Choice obj, NameAndAddress5 value) {
+			obj.setNameAndAddress(value);
+		}
 	};
+	@XmlElement(name = "BICFI", required = true)
 	protected BICFIIdentifier bICFI;
 	/**
-	 * Identification of the financial institution expressed as a BIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,6 +210,14 @@ public class FinancialInstitutionIdentification8Choice {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identification of the financial institution expressed as a BIC."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification9Choice#mmBICFI
+	 * FinancialInstitutionIdentification9Choice.mmBICFI}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -191,27 +225,37 @@ public class FinancialInstitutionIdentification8Choice {
 	 * FinancialInstitutionIdentification7Choice.mmBICFI}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBICFI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstitutionIdentification8Choice, BICFIIdentifier> mmBICFI = new MMMessageAttribute<FinancialInstitutionIdentification8Choice, BICFIIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmBICFI;
-			componentContext_lazy = () -> FinancialInstitutionIdentification8Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmObject();
 			isDerived = false;
 			xmlTag = "BICFI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BICFI";
 			definition = "Identification of the financial institution expressed as a BIC.";
+			nextVersions_lazy = () -> Arrays.asList(FinancialInstitutionIdentification9Choice.mmBICFI);
 			previousVersion_lazy = () -> FinancialInstitutionIdentification7Choice.mmBICFI;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> BICFIIdentifier.mmObject();
 		}
+
+		@Override
+		public BICFIIdentifier getValue(FinancialInstitutionIdentification8Choice obj) {
+			return obj.getBICFI();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8Choice obj, BICFIIdentifier value) {
+			obj.setBICFI(value);
+		}
 	};
+	@XmlElement(name = "ClrSysMmbId", required = true)
 	protected ClearingSystemMemberIdentificationChoice clearingSystemMemberIdentification;
 	/**
-	 * Choice of identifier for a clearing system member, as assigned by the
-	 * clearing system. In some clearing systems, the accounts of the clearing
-	 * system members are also assigned an identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,6 +286,15 @@ public class FinancialInstitutionIdentification8Choice {
 	 * definition} =
 	 * "Choice of identifier for a clearing system member, as assigned by the clearing system. In some clearing systems, the accounts of the clearing system members are also assigned an identifier."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification9Choice#mmClearingSystemMemberIdentification
+	 * FinancialInstitutionIdentification9Choice.
+	 * mmClearingSystemMemberIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -250,26 +303,37 @@ public class FinancialInstitutionIdentification8Choice {
 	 * mmClearingSystemMemberIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClearingSystemMemberIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstitutionIdentification8Choice, ClearingSystemMemberIdentificationChoice> mmClearingSystemMemberIdentification = new MMMessageAttribute<FinancialInstitutionIdentification8Choice, ClearingSystemMemberIdentificationChoice>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmClearingSystemMemberIdentificationType;
-			componentContext_lazy = () -> FinancialInstitutionIdentification8Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmObject();
 			isDerived = false;
 			xmlTag = "ClrSysMmbId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClearingSystemMemberIdentification";
 			definition = "Choice of identifier for a clearing system member, as assigned by the clearing system. In some clearing systems, the accounts of the clearing system members are also assigned an identifier.";
+			nextVersions_lazy = () -> Arrays.asList(FinancialInstitutionIdentification9Choice.mmClearingSystemMemberIdentification);
 			previousVersion_lazy = () -> FinancialInstitutionIdentification7Choice.mmClearingSystemMemberIdentification;
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.ClearingSystemMemberIdentificationChoice.mmObject();
+			complexType_lazy = () -> ClearingSystemMemberIdentificationChoice.mmObject();
+		}
+
+		@Override
+		public ClearingSystemMemberIdentificationChoice getValue(FinancialInstitutionIdentification8Choice obj) {
+			return obj.getClearingSystemMemberIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8Choice obj, ClearingSystemMemberIdentificationChoice value) {
+			obj.setClearingSystemMemberIdentification(value);
 		}
 	};
+	@XmlElement(name = "PrtryId", required = true)
 	protected Max35Text proprietaryIdentification;
 	/**
-	 * Unique and unambiguous identifier, as assigned to a financial institution
-	 * using a proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -299,6 +363,14 @@ public class FinancialInstitutionIdentification8Choice {
 	 * definition} =
 	 * "Unique and unambiguous identifier, as assigned to a financial institution using a proprietary identification scheme."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.FinancialInstitutionIdentification9Choice#mmProprietaryIdentification
+	 * FinancialInstitutionIdentification9Choice.mmProprietaryIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -306,72 +378,85 @@ public class FinancialInstitutionIdentification8Choice {
 	 * FinancialInstitutionIdentification7Choice.mmProprietaryIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstitutionIdentification8Choice, Max35Text> mmProprietaryIdentification = new MMMessageAttribute<FinancialInstitutionIdentification8Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> FinancialInstitutionIdentification8Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProprietaryIdentification";
 			definition = "Unique and unambiguous identifier, as assigned to a financial institution using a proprietary identification scheme.";
+			nextVersions_lazy = () -> Arrays.asList(FinancialInstitutionIdentification9Choice.mmProprietaryIdentification);
 			previousVersion_lazy = () -> FinancialInstitutionIdentification7Choice.mmProprietaryIdentification;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(FinancialInstitutionIdentification8Choice obj) {
+			return obj.getProprietaryIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstitutionIdentification8Choice obj, Max35Text value) {
+			obj.setProprietaryIdentification(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8Choice.mmNameAndAddress, FinancialInstitutionIdentification8Choice.mmBICFI,
-						FinancialInstitutionIdentification8Choice.mmClearingSystemMemberIdentification, FinancialInstitutionIdentification8Choice.mmProprietaryIdentification);
+				messageElement_lazy = () -> Arrays
+						.asList(com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmNameAndAddress, com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmBICFI,
+								com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmClearingSystemMemberIdentification,
+								com.tools20022.repository.choice.FinancialInstitutionIdentification8Choice.mmProprietaryIdentification);
 				trace_lazy = () -> OrganisationIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstitutionIdentification8Choice";
 				definition = "Choice between formats for the identification of the financial institution.";
-				nextVersions_lazy = () -> Arrays.asList(FinancialInstitutionIdentification10.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(FinancialInstitutionIdentification10.mmObject(), FinancialInstitutionIdentification9Choice.mmObject());
 				previousVersion_lazy = () -> FinancialInstitutionIdentification7Choice.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NmAndAdr", required = true)
 	public NameAndAddress5 getNameAndAddress() {
 		return nameAndAddress;
 	}
 
-	public void setNameAndAddress(NameAndAddress5 nameAndAddress) {
-		this.nameAndAddress = nameAndAddress;
+	public FinancialInstitutionIdentification8Choice setNameAndAddress(NameAndAddress5 nameAndAddress) {
+		this.nameAndAddress = Objects.requireNonNull(nameAndAddress);
+		return this;
 	}
 
-	@XmlElement(name = "BICFI", required = true)
 	public BICFIIdentifier getBICFI() {
 		return bICFI;
 	}
 
-	public void setBICFI(BICFIIdentifier bICFI) {
-		this.bICFI = bICFI;
+	public FinancialInstitutionIdentification8Choice setBICFI(BICFIIdentifier bICFI) {
+		this.bICFI = Objects.requireNonNull(bICFI);
+		return this;
 	}
 
-	@XmlElement(name = "ClrSysMmbId", required = true)
 	public ClearingSystemMemberIdentificationChoice getClearingSystemMemberIdentification() {
 		return clearingSystemMemberIdentification;
 	}
 
-	public void setClearingSystemMemberIdentification(com.tools20022.repository.choice.ClearingSystemMemberIdentificationChoice clearingSystemMemberIdentification) {
-		this.clearingSystemMemberIdentification = clearingSystemMemberIdentification;
+	public FinancialInstitutionIdentification8Choice setClearingSystemMemberIdentification(ClearingSystemMemberIdentificationChoice clearingSystemMemberIdentification) {
+		this.clearingSystemMemberIdentification = Objects.requireNonNull(clearingSystemMemberIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PrtryId", required = true)
 	public Max35Text getProprietaryIdentification() {
 		return proprietaryIdentification;
 	}
 
-	public void setProprietaryIdentification(Max35Text proprietaryIdentification) {
-		this.proprietaryIdentification = proprietaryIdentification;
+	public FinancialInstitutionIdentification8Choice setProprietaryIdentification(Max35Text proprietaryIdentification) {
+		this.proprietaryIdentification = Objects.requireNonNull(proprietaryIdentification);
+		return this;
 	}
 }

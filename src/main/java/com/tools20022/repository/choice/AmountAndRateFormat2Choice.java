@@ -20,10 +20,12 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.RateType12FormatChoice;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of rate formats."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AmountAndRateFormat2Choice", propOrder = {"amount", "notSpecifiedRate"})
 public class AmountAndRateFormat2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Number of monetary units specified in a currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -95,9 +98,9 @@ public class AmountAndRateFormat2Choice {
 	 * definition} = "Number of monetary units specified in a currency."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndRateFormat2Choice, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<AmountAndRateFormat2Choice, ActiveCurrencyAndAmount>() {
 		{
-			componentContext_lazy = () -> AmountAndRateFormat2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AmountAndRateFormat2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -107,11 +110,22 @@ public class AmountAndRateFormat2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(AmountAndRateFormat2Choice obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(AmountAndRateFormat2Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "NotSpcfdRate", required = true)
 	protected RateType12FormatChoice notSpecifiedRate;
 	/**
-	 * The rate is not specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,9 +151,9 @@ public class AmountAndRateFormat2Choice {
 	 * definition} = "The rate is not specified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotSpecifiedRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountAndRateFormat2Choice, RateType12FormatChoice> mmNotSpecifiedRate = new MMMessageAttribute<AmountAndRateFormat2Choice, RateType12FormatChoice>() {
 		{
-			componentContext_lazy = () -> AmountAndRateFormat2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AmountAndRateFormat2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NotSpcfdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -147,15 +161,25 @@ public class AmountAndRateFormat2Choice {
 			definition = "The rate is not specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.RateType12FormatChoice.mmObject();
+			complexType_lazy = () -> RateType12FormatChoice.mmObject();
+		}
+
+		@Override
+		public RateType12FormatChoice getValue(AmountAndRateFormat2Choice obj) {
+			return obj.getNotSpecifiedRate();
+		}
+
+		@Override
+		public void setValue(AmountAndRateFormat2Choice obj, RateType12FormatChoice value) {
+			obj.setNotSpecifiedRate(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AmountAndRateFormat2Choice.mmAmount, AmountAndRateFormat2Choice.mmNotSpecifiedRate);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AmountAndRateFormat2Choice.mmAmount, com.tools20022.repository.choice.AmountAndRateFormat2Choice.mmNotSpecifiedRate);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountAndRateFormat2Choice";
 				definition = "Choice of rate formats.";
@@ -164,21 +188,21 @@ public class AmountAndRateFormat2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public AmountAndRateFormat2Choice setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "NotSpcfdRate", required = true)
 	public RateType12FormatChoice getNotSpecifiedRate() {
 		return notSpecifiedRate;
 	}
 
-	public void setNotSpecifiedRate(com.tools20022.repository.choice.RateType12FormatChoice notSpecifiedRate) {
-		this.notSpecifiedRate = notSpecifiedRate;
+	public AmountAndRateFormat2Choice setNotSpecifiedRate(RateType12FormatChoice notSpecifiedRate) {
+		this.notSpecifiedRate = Objects.requireNonNull(notSpecifiedRate);
+		return this;
 	}
 }

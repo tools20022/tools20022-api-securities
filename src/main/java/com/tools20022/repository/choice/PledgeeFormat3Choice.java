@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.PledgeeTypeAndAnyBICIdentifier1;
 import com.tools20022.repository.msg.PledgeeTypeAndText1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,16 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PledgeeFormat3Choice", propOrder = {"typeAndIdentification", "identification", "proprietary"})
 public class PledgeeFormat3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TpAndId", required = true)
 	protected PledgeeTypeAndAnyBICIdentifier1 typeAndIdentification;
 	/**
-	 * Identification of the entity to which the financial instruments are
-	 * pledged expressed as a code and a BIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,10 +114,10 @@ public class PledgeeFormat3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTypeAndIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PledgeeFormat3Choice, PledgeeTypeAndAnyBICIdentifier1> mmTypeAndIdentification = new MMMessageAssociationEnd<PledgeeFormat3Choice, PledgeeTypeAndAnyBICIdentifier1>() {
 		{
 			businessComponentTrace_lazy = () -> Pledgee.mmObject();
-			componentContext_lazy = () -> PledgeeFormat3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PledgeeFormat3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "TpAndId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,12 +128,22 @@ public class PledgeeFormat3Choice {
 			isComposite = true;
 			type_lazy = () -> PledgeeTypeAndAnyBICIdentifier1.mmObject();
 		}
+
+		@Override
+		public PledgeeTypeAndAnyBICIdentifier1 getValue(PledgeeFormat3Choice obj) {
+			return obj.getTypeAndIdentification();
+		}
+
+		@Override
+		public void setValue(PledgeeFormat3Choice obj, PledgeeTypeAndAnyBICIdentifier1 value) {
+			obj.setTypeAndIdentification(value);
+		}
 	};
+	@XmlElement(name = "Id", required = true)
 	protected PledgeeTypeAndText1 identification;
 	/**
-	 * Identification of the entity to which the financial instruments are
-	 * pledged expressed as a code and a narrative description.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,10 +173,10 @@ public class PledgeeFormat3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PledgeeFormat3Choice, PledgeeTypeAndText1> mmIdentification = new MMMessageAssociationEnd<PledgeeFormat3Choice, PledgeeTypeAndText1>() {
 		{
 			businessComponentTrace_lazy = () -> Pledgee.mmObject();
-			componentContext_lazy = () -> PledgeeFormat3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PledgeeFormat3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,12 +187,22 @@ public class PledgeeFormat3Choice {
 			isComposite = true;
 			type_lazy = () -> PledgeeTypeAndText1.mmObject();
 		}
+
+		@Override
+		public PledgeeTypeAndText1 getValue(PledgeeFormat3Choice obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(PledgeeFormat3Choice obj, PledgeeTypeAndText1 value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification80 proprietary;
 	/**
-	 * Identification of the entity to which the financial instruments are
-	 * pledged expressed as a proprietary type and narrative description.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -213,10 +234,10 @@ public class PledgeeFormat3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PledgeeFormat3Choice, GenericIdentification80> mmProprietary = new MMMessageAssociationEnd<PledgeeFormat3Choice, GenericIdentification80>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PledgeeFormat3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PledgeeFormat3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,14 +248,25 @@ public class PledgeeFormat3Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification80.mmObject();
 		}
+
+		@Override
+		public GenericIdentification80 getValue(PledgeeFormat3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(PledgeeFormat3Choice obj, GenericIdentification80 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PledgeeFormat3Choice.mmTypeAndIdentification, PledgeeFormat3Choice.mmIdentification, PledgeeFormat3Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PledgeeFormat3Choice.mmTypeAndIdentification, com.tools20022.repository.choice.PledgeeFormat3Choice.mmIdentification,
+						com.tools20022.repository.choice.PledgeeFormat3Choice.mmProprietary);
 				trace_lazy = () -> Pledgee.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PledgeeFormat3Choice";
 				definition = "Choice between formats for the entity to which the financial instruments are pledged.";
@@ -243,30 +275,30 @@ public class PledgeeFormat3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TpAndId", required = true)
 	public PledgeeTypeAndAnyBICIdentifier1 getTypeAndIdentification() {
 		return typeAndIdentification;
 	}
 
-	public void setTypeAndIdentification(PledgeeTypeAndAnyBICIdentifier1 typeAndIdentification) {
-		this.typeAndIdentification = typeAndIdentification;
+	public PledgeeFormat3Choice setTypeAndIdentification(PledgeeTypeAndAnyBICIdentifier1 typeAndIdentification) {
+		this.typeAndIdentification = Objects.requireNonNull(typeAndIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PledgeeTypeAndText1 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PledgeeTypeAndText1 identification) {
-		this.identification = identification;
+	public PledgeeFormat3Choice setIdentification(PledgeeTypeAndText1 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification80 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification80 proprietary) {
-		this.proprietary = proprietary;
+	public PledgeeFormat3Choice setProprietary(GenericIdentification80 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

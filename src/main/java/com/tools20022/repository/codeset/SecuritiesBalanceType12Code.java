@@ -38,82 +38,82 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#Blocked
- * SecuritiesBalanceType12Code.mmBlocked}</li>
+ * SecuritiesBalanceType12Code.Blocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#AvailableWithNoAdditionalStatus
- * SecuritiesBalanceType12Code.mmAvailableWithNoAdditionalStatus}</li>
+ * SecuritiesBalanceType12Code.AvailableWithNoAdditionalStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#BlockedCorporateAction
- * SecuritiesBalanceType12Code.mmBlockedCorporateAction}</li>
+ * SecuritiesBalanceType12Code.BlockedCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#BlockedTrading
- * SecuritiesBalanceType12Code.mmBlockedTrading}</li>
+ * SecuritiesBalanceType12Code.BlockedTrading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#BlockedAuthenticity
- * SecuritiesBalanceType12Code.mmBlockedAuthenticity}</li>
+ * SecuritiesBalanceType12Code.BlockedAuthenticity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#Borrowed
- * SecuritiesBalanceType12Code.mmBorrowed}</li>
+ * SecuritiesBalanceType12Code.Borrowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingBorrowedDelivery
- * SecuritiesBalanceType12Code.mmPendingBorrowedDelivery}</li>
+ * SecuritiesBalanceType12Code.PendingBorrowedDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingBorrowedReceipt
- * SecuritiesBalanceType12Code.mmPendingBorrowedReceipt}</li>
+ * SecuritiesBalanceType12Code.PendingBorrowedReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#CollateralIn
- * SecuritiesBalanceType12Code.mmCollateralIn}</li>
+ * SecuritiesBalanceType12Code.CollateralIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#CollateralOut
- * SecuritiesBalanceType12Code.mmCollateralOut}</li>
+ * SecuritiesBalanceType12Code.CollateralOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#OnLoan
- * SecuritiesBalanceType12Code.mmOnLoan}</li>
+ * SecuritiesBalanceType12Code.OnLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingOnLoanDelivery
- * SecuritiesBalanceType12Code.mmPendingOnLoanDelivery}</li>
+ * SecuritiesBalanceType12Code.PendingOnLoanDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingOnLoanReceipt
- * SecuritiesBalanceType12Code.mmPendingOnLoanReceipt}</li>
+ * SecuritiesBalanceType12Code.PendingOnLoanReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#DerivativesMargin
- * SecuritiesBalanceType12Code.mmDerivativesMargin}</li>
+ * SecuritiesBalanceType12Code.DerivativesMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingCorporateActionReceipt
- * SecuritiesBalanceType12Code.mmPendingCorporateActionReceipt}</li>
+ * SecuritiesBalanceType12Code.PendingCorporateActionReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingCorporateActionDelivery
- * SecuritiesBalanceType12Code.mmPendingCorporateActionDelivery}</li>
+ * SecuritiesBalanceType12Code.PendingCorporateActionDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingDelivery
- * SecuritiesBalanceType12Code.mmPendingDelivery}</li>
+ * SecuritiesBalanceType12Code.PendingDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#PendingReceipt
- * SecuritiesBalanceType12Code.mmPendingReceipt}</li>
+ * SecuritiesBalanceType12Code.PendingReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#Pledged
- * SecuritiesBalanceType12Code.mmPledged}</li>
+ * SecuritiesBalanceType12Code.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#OutForRegistration
- * SecuritiesBalanceType12Code.mmOutForRegistration}</li>
+ * SecuritiesBalanceType12Code.OutForRegistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#Restricted
- * SecuritiesBalanceType12Code.mmRestricted}</li>
+ * SecuritiesBalanceType12Code.Restricted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#Unclassified
- * SecuritiesBalanceType12Code.mmUnclassified}</li>
+ * SecuritiesBalanceType12Code.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#InTransshipment
- * SecuritiesBalanceType12Code.mmInTransshipment}</li>
+ * SecuritiesBalanceType12Code.InTransshipment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#Drawn
- * SecuritiesBalanceType12Code.mmDrawn}</li>
+ * SecuritiesBalanceType12Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#WaitingDocumentation
- * SecuritiesBalanceType12Code.mmWaitingDocumentation}</li>
+ * SecuritiesBalanceType12Code.WaitingDocumentation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType12Code#BeingTransferred
- * SecuritiesBalanceType12Code.mmBeingTransferred}</li>
+ * SecuritiesBalanceType12Code.BeingTransferred}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -122,8 +122,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -777,7 +777,7 @@ public class SecuritiesBalanceType12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BLOK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType12Code";

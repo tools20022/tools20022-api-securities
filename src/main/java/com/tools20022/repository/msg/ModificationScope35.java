@@ -24,9 +24,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.acmt.AccountModificationInstructionV07;
 import com.tools20022.repository.codeset.DataModification1Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AdditiononalInformation12;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,15 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ModificationScope35", propOrder = {"modificationScopeIndication", "additionalInformation"})
 public class ModificationScope35 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModScpIndctn", required = true)
 	protected DataModification1Code modificationScopeIndication;
 	/**
-	 * Type of modification to be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,9 +113,9 @@ public class ModificationScope35 {
 	 * definition} = "Type of modification to be applied."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationScopeIndication = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ModificationScope35, DataModification1Code> mmModificationScopeIndication = new MMMessageAttribute<ModificationScope35, DataModification1Code>() {
 		{
-			componentContext_lazy = () -> ModificationScope35.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope35.mmObject();
 			isDerived = false;
 			xmlTag = "ModScpIndctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,12 +125,22 @@ public class ModificationScope35 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DataModification1Code.mmObject();
 		}
+
+		@Override
+		public DataModification1Code getValue(ModificationScope35 obj) {
+			return obj.getModificationScopeIndication();
+		}
+
+		@Override
+		public void setValue(ModificationScope35 obj, DataModification1Code value) {
+			obj.setModificationScopeIndication(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.AdditiononalInformation12> additionalInformation;
+	@XmlElement(name = "AddtlInf", required = true)
+	protected List<AdditiononalInformation12> additionalInformation;
 	/**
-	 * Additional information such as remarks or notes that must be conveyed
-	 * about the party and or limitations and restrictions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -149,30 +163,40 @@ public class ModificationScope35 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information such as remarks or notes that must be conveyed about the party and or  limitations and restrictions."
+	 * "Additional information such as remarks or notes that must be conveyed about the party and or limitations and restrictions."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAdditionalInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ModificationScope35, List<AdditiononalInformation12>> mmAdditionalInformation = new MMMessageAssociationEnd<ModificationScope35, List<AdditiononalInformation12>>() {
 		{
-			componentContext_lazy = () -> ModificationScope35.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope35.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
-			definition = "Additional information such as remarks or notes that must be conveyed about the party and or  limitations and restrictions.";
+			definition = "Additional information such as remarks or notes that must be conveyed about the party and or limitations and restrictions.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AdditiononalInformation12.mmObject();
+			type_lazy = () -> AdditiononalInformation12.mmObject();
+		}
+
+		@Override
+		public List<AdditiononalInformation12> getValue(ModificationScope35 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(ModificationScope35 obj, List<AdditiononalInformation12> value) {
+			obj.setAdditionalInformation(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ModificationScope35.mmModificationScopeIndication, ModificationScope35.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ModificationScope35.mmModificationScopeIndication, com.tools20022.repository.msg.ModificationScope35.mmAdditionalInformation);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountModificationInstructionV07.mmModifiedAdditionalInformation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationScope35";
 				definition = "Scope of the modification to be applied on an identified set of information.";
@@ -181,21 +205,21 @@ public class ModificationScope35 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModScpIndctn", required = true)
 	public DataModification1Code getModificationScopeIndication() {
 		return modificationScopeIndication;
 	}
 
-	public void setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
-		this.modificationScopeIndication = modificationScopeIndication;
+	public ModificationScope35 setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
+		this.modificationScopeIndication = Objects.requireNonNull(modificationScopeIndication);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf", required = true)
 	public List<AdditiononalInformation12> getAdditionalInformation() {
-		return additionalInformation;
+		return additionalInformation == null ? additionalInformation = new ArrayList<>() : additionalInformation;
 	}
 
-	public void setAdditionalInformation(List<com.tools20022.repository.msg.AdditiononalInformation12> additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public ModificationScope35 setAdditionalInformation(List<AdditiononalInformation12> additionalInformation) {
+		this.additionalInformation = Objects.requireNonNull(additionalInformation);
+		return this;
 	}
 }

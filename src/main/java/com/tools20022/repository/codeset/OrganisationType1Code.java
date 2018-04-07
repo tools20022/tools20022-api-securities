@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrganisationType1Code#InvestmentFund
- * OrganisationType1Code.mmInvestmentFund}</li>
+ * OrganisationType1Code.InvestmentFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrganisationType1Code#PrivateAssociation
- * OrganisationType1Code.mmPrivateAssociation}</li>
+ * OrganisationType1Code.PrivateAssociation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrganisationType1Code#Public
- * OrganisationType1Code.mmPublic}</li>
+ * OrganisationType1Code.Public}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrganisationType1Code#PublicFund
- * OrganisationType1Code.mmPublicFund}</li>
+ * OrganisationType1Code.PublicFund}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class OrganisationType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrganisationType1Code";
 				definition = "Specifies a type of organisation.";

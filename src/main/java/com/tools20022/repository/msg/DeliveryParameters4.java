@@ -26,8 +26,12 @@ import com.tools20022.repository.entity.ContactPersonRole;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.PhysicalDelivery;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ContactIdentification2;
+import com.tools20022.repository.msg.NameAndAddress4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintNameAndAddress1Rule#forDeliveryParameters4
+ * ConstraintNameAndAddress1Rule.forDeliveryParameters4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,16 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Parameters of a physical delivery."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DeliveryParameters4", propOrder = {"registeredAddressIndicator", "nameAndAddress", "contactPerson"})
 public class DeliveryParameters4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RegdAdrInd", required = true)
 	protected YesNoIndicator registeredAddressIndicator;
 	/**
-	 * Indicates whether the address for the physical delivery is the registered
-	 * address.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +125,10 @@ public class DeliveryParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisteredAddressIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DeliveryParameters4, YesNoIndicator> mmRegisteredAddressIndicator = new MMMessageAttribute<DeliveryParameters4, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> PhysicalDelivery.mmRegisteredAddressIndicator;
-			componentContext_lazy = () -> DeliveryParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveryParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "RegdAdrInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,12 +138,22 @@ public class DeliveryParameters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(DeliveryParameters4 obj) {
+			return obj.getRegisteredAddressIndicator();
+		}
+
+		@Override
+		public void setValue(DeliveryParameters4 obj, YesNoIndicator value) {
+			obj.setRegisteredAddressIndicator(value);
+		}
 	};
+	@XmlElement(name = "NmAndAdr")
 	protected NameAndAddress4 nameAndAddress;
 	/**
-	 * Name and address to/from which the physical delivery/receipt of the
-	 * financial instrument must take place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,10 +185,10 @@ public class DeliveryParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameAndAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DeliveryParameters4, Optional<NameAndAddress4>> mmNameAndAddress = new MMMessageAttribute<DeliveryParameters4, Optional<NameAndAddress4>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> DeliveryParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveryParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,13 +196,24 @@ public class DeliveryParameters4 {
 			definition = "Name and address to/from which the physical delivery/receipt of the financial instrument must take place.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.NameAndAddress4.mmObject();
+			complexType_lazy = () -> NameAndAddress4.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress4> getValue(DeliveryParameters4 obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(DeliveryParameters4 obj, Optional<NameAndAddress4> value) {
+			obj.setNameAndAddress(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CtctPrsn")
 	protected ContactIdentification2 contactPerson;
 	/**
-	 * Contact person and contact information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -209,10 +242,10 @@ public class DeliveryParameters4 {
 	 * definition} = "Contact person and contact information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContactPerson = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DeliveryParameters4, Optional<ContactIdentification2>> mmContactPerson = new MMMessageAssociationEnd<DeliveryParameters4, Optional<ContactIdentification2>>() {
 		{
 			businessComponentTrace_lazy = () -> ContactPersonRole.mmObject();
-			componentContext_lazy = () -> DeliveryParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DeliveryParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "CtctPrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,16 +254,28 @@ public class DeliveryParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContactIdentification2.mmObject();
+			type_lazy = () -> ContactIdentification2.mmObject();
+		}
+
+		@Override
+		public Optional<ContactIdentification2> getValue(DeliveryParameters4 obj) {
+			return obj.getContactPerson();
+		}
+
+		@Override
+		public void setValue(DeliveryParameters4 obj, Optional<ContactIdentification2> value) {
+			obj.setContactPerson(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DeliveryParameters4.mmRegisteredAddressIndicator, DeliveryParameters4.mmNameAndAddress, DeliveryParameters4.mmContactPerson);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DeliveryParameters4.mmRegisteredAddressIndicator, com.tools20022.repository.msg.DeliveryParameters4.mmNameAndAddress,
+						com.tools20022.repository.msg.DeliveryParameters4.mmContactPerson);
 				trace_lazy = () -> PhysicalDelivery.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintNameAndAddress1Rule.forDeliveryParameters4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryParameters4";
 				definition = "Parameters of a physical delivery.";
@@ -239,30 +284,30 @@ public class DeliveryParameters4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RegdAdrInd", required = true)
 	public YesNoIndicator getRegisteredAddressIndicator() {
 		return registeredAddressIndicator;
 	}
 
-	public void setRegisteredAddressIndicator(YesNoIndicator registeredAddressIndicator) {
-		this.registeredAddressIndicator = registeredAddressIndicator;
+	public DeliveryParameters4 setRegisteredAddressIndicator(YesNoIndicator registeredAddressIndicator) {
+		this.registeredAddressIndicator = Objects.requireNonNull(registeredAddressIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "NmAndAdr")
-	public NameAndAddress4 getNameAndAddress() {
-		return nameAndAddress;
+	public Optional<NameAndAddress4> getNameAndAddress() {
+		return nameAndAddress == null ? Optional.empty() : Optional.of(nameAndAddress);
 	}
 
-	public void setNameAndAddress(com.tools20022.repository.msg.NameAndAddress4 nameAndAddress) {
+	public DeliveryParameters4 setNameAndAddress(NameAndAddress4 nameAndAddress) {
 		this.nameAndAddress = nameAndAddress;
+		return this;
 	}
 
-	@XmlElement(name = "CtctPrsn")
-	public ContactIdentification2 getContactPerson() {
-		return contactPerson;
+	public Optional<ContactIdentification2> getContactPerson() {
+		return contactPerson == null ? Optional.empty() : Optional.of(contactPerson);
 	}
 
-	public void setContactPerson(com.tools20022.repository.msg.ContactIdentification2 contactPerson) {
+	public DeliveryParameters4 setContactPerson(ContactIdentification2 contactPerson) {
 		this.contactPerson = contactPerson;
+		return this;
 	}
 }

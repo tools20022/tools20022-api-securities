@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#ClaimOrCompensation
- * AdditionalBusinessProcess6Code.mmClaimOrCompensation}</li>
+ * AdditionalBusinessProcess6Code.ClaimOrCompensation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#NotificationOfReversal
- * AdditionalBusinessProcess6Code.mmNotificationOfReversal}</li>
+ * AdditionalBusinessProcess6Code.NotificationOfReversal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#TaxRefund
- * AdditionalBusinessProcess6Code.mmTaxRefund}</li>
+ * AdditionalBusinessProcess6Code.TaxRefund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#PartialMandatoryPutRedemption
- * AdditionalBusinessProcess6Code.mmPartialMandatoryPutRedemption}</li>
+ * AdditionalBusinessProcess6Code.PartialMandatoryPutRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#PartialPreFunding
- * AdditionalBusinessProcess6Code.mmPartialPreFunding}</li>
+ * AdditionalBusinessProcess6Code.PartialPreFunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#FullPrefunding
- * AdditionalBusinessProcess6Code.mmFullPrefunding}</li>
+ * AdditionalBusinessProcess6Code.FullPrefunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcess6Code#RequiredAction
- * AdditionalBusinessProcess6Code.mmRequiredAction}</li>
+ * AdditionalBusinessProcess6Code.RequiredAction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -265,7 +265,7 @@ public class AdditionalBusinessProcess6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CLAI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalBusinessProcess6Code";

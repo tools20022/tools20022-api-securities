@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.CollateralStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,15 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides the status details about the collateral substitution."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralConfirmation1", propOrder = {"collateralSubstitutionRequestIdentification", "collateralSubstitutionResponseIdentification", "confirmationType", "comment"})
 public class CollateralConfirmation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CollSbstitnReqId", required = true)
 	protected Max35Text collateralSubstitutionRequestIdentification;
 	/**
-	 * Reference to the collateral substitution request identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,9 +121,9 @@ public class CollateralConfirmation1 {
 	 * "Reference to the collateral substitution request identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralConfirmation1, Max35Text> mmCollateralSubstitutionRequestIdentification = new MMMessageAttribute<CollateralConfirmation1, Max35Text>() {
 		{
-			componentContext_lazy = () -> CollateralConfirmation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralConfirmation1.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,11 +133,22 @@ public class CollateralConfirmation1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(CollateralConfirmation1 obj) {
+			return obj.getCollateralSubstitutionRequestIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralConfirmation1 obj, Max35Text value) {
+			obj.setCollateralSubstitutionRequestIdentification(value);
+		}
 	};
+	@XmlElement(name = "CollSbstitnRspnId")
 	protected Max35Text collateralSubstitutionResponseIdentification;
 	/**
-	 * Reference to the collateral substitution response identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,9 +174,9 @@ public class CollateralConfirmation1 {
 	 * "Reference to the collateral substitution response identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralSubstitutionResponseIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralConfirmation1, Optional<Max35Text>> mmCollateralSubstitutionResponseIdentification = new MMMessageAttribute<CollateralConfirmation1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> CollateralConfirmation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralConfirmation1.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnRspnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,12 +186,22 @@ public class CollateralConfirmation1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CollateralConfirmation1 obj) {
+			return obj.getCollateralSubstitutionResponseIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralConfirmation1 obj, Optional<Max35Text> value) {
+			obj.setCollateralSubstitutionResponseIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ConfTp", required = true)
 	protected CollateralSubstitutionConfirmation1Code confirmationType;
 	/**
-	 * Provides details about the status of the collateral substitution, either
-	 * released or returned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,10 +234,10 @@ public class CollateralConfirmation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmConfirmationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralConfirmation1, CollateralSubstitutionConfirmation1Code> mmConfirmationType = new MMMessageAttribute<CollateralConfirmation1, CollateralSubstitutionConfirmation1Code>() {
 		{
 			businessElementTrace_lazy = () -> CollateralStatus.mmSubstitutionStatus;
-			componentContext_lazy = () -> CollateralConfirmation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralConfirmation1.mmObject();
 			isDerived = false;
 			xmlTag = "ConfTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,12 +247,22 @@ public class CollateralConfirmation1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CollateralSubstitutionConfirmation1Code.mmObject();
 		}
+
+		@Override
+		public CollateralSubstitutionConfirmation1Code getValue(CollateralConfirmation1 obj) {
+			return obj.getConfirmationType();
+		}
+
+		@Override
+		public void setValue(CollateralConfirmation1 obj, CollateralSubstitutionConfirmation1Code value) {
+			obj.setConfirmationType(value);
+		}
 	};
+	@XmlElement(name = "Cmnt")
 	protected Max140Text comment;
 	/**
-	 * Allows to provides additional comments on the collateral substitution
-	 * status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,9 +289,9 @@ public class CollateralConfirmation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmComment = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralConfirmation1, Optional<Max140Text>> mmComment = new MMMessageAttribute<CollateralConfirmation1, Optional<Max140Text>>() {
 		{
-			componentContext_lazy = () -> CollateralConfirmation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralConfirmation1.mmObject();
 			isDerived = false;
 			xmlTag = "Cmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,16 +301,27 @@ public class CollateralConfirmation1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(CollateralConfirmation1 obj) {
+			return obj.getComment();
+		}
+
+		@Override
+		public void setValue(CollateralConfirmation1 obj, Optional<Max140Text> value) {
+			obj.setComment(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralConfirmation1.mmCollateralSubstitutionRequestIdentification, CollateralConfirmation1.mmCollateralSubstitutionResponseIdentification,
-						CollateralConfirmation1.mmConfirmationType, CollateralConfirmation1.mmComment);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralConfirmation1.mmCollateralSubstitutionRequestIdentification,
+						com.tools20022.repository.msg.CollateralConfirmation1.mmCollateralSubstitutionResponseIdentification, com.tools20022.repository.msg.CollateralConfirmation1.mmConfirmationType,
+						com.tools20022.repository.msg.CollateralConfirmation1.mmComment);
 				messageBuildingBlock_lazy = () -> Arrays.asList(CollateralSubstitutionConfirmationV04.mmSubstitutionConfirmation);
 				trace_lazy = () -> CollateralStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralConfirmation1";
 				definition = "Provides the status details about the collateral substitution.";
@@ -285,39 +330,39 @@ public class CollateralConfirmation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CollSbstitnReqId", required = true)
 	public Max35Text getCollateralSubstitutionRequestIdentification() {
 		return collateralSubstitutionRequestIdentification;
 	}
 
-	public void setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
-		this.collateralSubstitutionRequestIdentification = collateralSubstitutionRequestIdentification;
+	public CollateralConfirmation1 setCollateralSubstitutionRequestIdentification(Max35Text collateralSubstitutionRequestIdentification) {
+		this.collateralSubstitutionRequestIdentification = Objects.requireNonNull(collateralSubstitutionRequestIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CollSbstitnRspnId")
-	public Max35Text getCollateralSubstitutionResponseIdentification() {
-		return collateralSubstitutionResponseIdentification;
+	public Optional<Max35Text> getCollateralSubstitutionResponseIdentification() {
+		return collateralSubstitutionResponseIdentification == null ? Optional.empty() : Optional.of(collateralSubstitutionResponseIdentification);
 	}
 
-	public void setCollateralSubstitutionResponseIdentification(Max35Text collateralSubstitutionResponseIdentification) {
+	public CollateralConfirmation1 setCollateralSubstitutionResponseIdentification(Max35Text collateralSubstitutionResponseIdentification) {
 		this.collateralSubstitutionResponseIdentification = collateralSubstitutionResponseIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ConfTp", required = true)
 	public CollateralSubstitutionConfirmation1Code getConfirmationType() {
 		return confirmationType;
 	}
 
-	public void setConfirmationType(CollateralSubstitutionConfirmation1Code confirmationType) {
-		this.confirmationType = confirmationType;
+	public CollateralConfirmation1 setConfirmationType(CollateralSubstitutionConfirmation1Code confirmationType) {
+		this.confirmationType = Objects.requireNonNull(confirmationType);
+		return this;
 	}
 
-	@XmlElement(name = "Cmnt")
-	public Max140Text getComment() {
-		return comment;
+	public Optional<Max140Text> getComment() {
+		return comment == null ? Optional.empty() : Optional.of(comment);
 	}
 
-	public void setComment(Max140Text comment) {
+	public CollateralConfirmation1 setComment(Max140Text comment) {
 		this.comment = comment;
+		return this;
 	}
 }

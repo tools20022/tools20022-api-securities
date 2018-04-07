@@ -30,9 +30,9 @@ import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -174,8 +174,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -186,7 +186,7 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the CA event."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateAction2", propOrder = {"eventStage", "defaultOptionType", "defaultOptionNumber", "calculationMethod", "backEndOddLotSecuritiesQuantity", "frontEndOddLotSecuritiesQuantity", "minimumExercisableSecuritiesQuantity",
 		"minimumExercisableMultipleSecuritiesQuantity", "incrementalDenomination", "newDenominationSecuritiesQuantity", "newBoardLotSecuritiesQuantity", "securitiesQuantitySought", "baseDenomination", "changeType", "offerType",
 		"restrictionIndicator", "partialElectionIndicator", "electionType", "lotteryType", "incomeType", "dividendType", "intermediateSecuritiesDistributionType", "couponNumber", "interestAccruedNumberOfDays", "newDenominationCurrency",
@@ -195,10 +195,11 @@ import javax.xml.bind.annotation.XmlType;
 public class CorporateAction2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "EvtStag")
 	protected List<CorporateActionEventStage1FormatChoice> eventStage;
 	/**
-	 * Stage in the corporate action event life cycle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +230,10 @@ public class CorporateAction2 {
 	 * definition} = "Stage in the corporate action event life cycle."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEventStage = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, List<CorporateActionEventStage1FormatChoice>> mmEventStage = new MMMessageAttribute<CorporateAction2, List<CorporateActionEventStage1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmEventStage;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "EvtStag";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -241,12 +242,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionEventStage1FormatChoice.mmObject();
 		}
+
+		@Override
+		public List<CorporateActionEventStage1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getEventStage();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, List<CorporateActionEventStage1FormatChoice> value) {
+			obj.setEventStage(value);
+		}
 	};
+	@XmlElement(name = "DfltOptnTp")
 	protected CorporateActionOption1FormatChoice defaultOptionType;
 	/**
-	 * Identifies the option that will be selected by default if no instruction
-	 * is provided by account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,10 +290,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDefaultOptionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<CorporateActionOption1FormatChoice>> mmDefaultOptionType = new MMMessageAttribute<CorporateAction2, Optional<CorporateActionOption1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "DfltOptnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -292,12 +303,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionOption1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<CorporateActionOption1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getDefaultOptionType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionOption1FormatChoice> value) {
+			obj.setDefaultOptionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DfltOptnNb")
 	protected Exact3NumericText defaultOptionNumber;
 	/**
-	 * Identifies the option number that will be selected by default if no
-	 * instruction is provided by account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -325,9 +346,9 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDefaultOptionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<Exact3NumericText>> mmDefaultOptionNumber = new MMMessageAttribute<CorporateAction2, Optional<Exact3NumericText>>() {
 		{
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "DfltOptnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,11 +358,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Exact3NumericText> getValue(CorporateAction2 obj) {
+			return obj.getDefaultOptionNumber();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<Exact3NumericText> value) {
+			obj.setDefaultOptionNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClctnMtd")
 	protected CorporateActionCalculationMethod1FormatChoice calculationMethod;
 	/**
-	 * The method of calculation of drawings and partial redemptions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -373,10 +405,10 @@ public class CorporateAction2 {
 	 * "The method of calculation of drawings and partial redemptions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<CorporateActionCalculationMethod1FormatChoice>> mmCalculationMethod = new MMMessageAttribute<CorporateAction2, Optional<CorporateActionCalculationMethod1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmCalculationMethod;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "ClctnMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -386,12 +418,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionCalculationMethod1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<CorporateActionCalculationMethod1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getCalculationMethod();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionCalculationMethod1FormatChoice> value) {
+			obj.setCalculationMethod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BckEndOddLotSctiesQty")
 	protected UnitOrFaceAmountOrCode1Choice backEndOddLotSecuritiesQuantity;
 	/**
-	 * Represents the presence of a back end odd lot provision and the quantity
-	 * of equity required after proration to be eligible for this privilege.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -424,10 +466,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBackEndOddLotSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmountOrCode1Choice>> mmBackEndOddLotSecuritiesQuantity = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmountOrCode1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmBackEndOddLotQuantity;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "BckEndOddLotSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -437,13 +479,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmountOrCode1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmountOrCode1Choice> getValue(CorporateAction2 obj) {
+			return obj.getBackEndOddLotSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmountOrCode1Choice> value) {
+			obj.setBackEndOddLotSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FrntEndOddLotSctiesQty")
 	protected UnitOrFaceAmountOrCode1Choice frontEndOddLotSecuritiesQuantity;
 	/**
-	 * Specifies that if an order is prorated holders of odd lots who tender
-	 * their full position will not have tendered position prorated but rather
-	 * accepted in full.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -476,10 +527,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFrontEndOddLotSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmountOrCode1Choice>> mmFrontEndOddLotSecuritiesQuantity = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmountOrCode1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmFrontEndOddLotQuantity;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "FrntEndOddLotSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -489,12 +540,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmountOrCode1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmountOrCode1Choice> getValue(CorporateAction2 obj) {
+			return obj.getFrontEndOddLotSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmountOrCode1Choice> value) {
+			obj.setFrontEndOddLotSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MinExrcblSctiesQty")
 	protected UnitOrFaceAmount1Choice minimumExercisableSecuritiesQuantity;
 	/**
-	 * Minimum quantity of financial instrument or lot of rights/warrants that
-	 * must be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,10 +588,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMinimumExercisableSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>> mmMinimumExercisableSecuritiesQuantity = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesConversion.mmMinimumExercisableQuantity;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "MinExrcblSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -540,12 +601,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateAction2 obj) {
+			return obj.getMinimumExercisableSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setMinimumExercisableSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MinExrcblMltplSctiesQty")
 	protected UnitOrFaceAmount1Choice minimumExercisableMultipleSecuritiesQuantity;
 	/**
-	 * Minimum multiple quantity of financial instrument or lot of
-	 * rights/warrants that must be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -578,10 +649,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMinimumExercisableMultipleSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>> mmMinimumExercisableMultipleSecuritiesQuantity = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesConversion.mmMinimumExercisableMultipleQuantity;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "MinExrcblMltplSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -591,12 +662,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateAction2 obj) {
+			return obj.getMinimumExercisableMultipleSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setMinimumExercisableMultipleSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IncrmtlDnmtn")
 	protected UnitOrFaceAmount1Choice incrementalDenomination;
 	/**
-	 * Amount used when the called amount is not met by running the lottery with
-	 * the base denomination.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -629,10 +710,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncrementalDenomination = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>> mmIncrementalDenomination = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Lottery.mmIncrementalDenomination;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "IncrmtlDnmtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -642,12 +723,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateAction2 obj) {
+			return obj.getIncrementalDenomination();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setIncrementalDenomination(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewDnmtnSctiesQty")
 	protected UnitOrFaceAmount1Choice newDenominationSecuritiesQuantity;
 	/**
-	 * New Denomination of the equity following, eg, an increase or decrease in
-	 * nominal value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -680,10 +771,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewDenominationSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>> mmNewDenominationSecuritiesQuantity = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmNewDenominationSecuritiesQuantity;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "NewDnmtnSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -693,11 +784,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateAction2 obj) {
+			return obj.getNewDenominationSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setNewDenominationSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewBrdLotSctiesQty")
 	protected UnitOrFaceAmount1Choice newBoardLotSecuritiesQuantity;
 	/**
-	 * Quantity of equity that makes up the new board lot.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -728,10 +830,10 @@ public class CorporateAction2 {
 	 * definition} = "Quantity of equity that makes up the new board lot."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewBoardLotSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>> mmNewBoardLotSecuritiesQuantity = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmBoardLotSecuritiesQuantity;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "NewBrdLotSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -741,12 +843,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateAction2 obj) {
+			return obj.getNewBoardLotSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setNewBoardLotSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SctiesQtySght")
 	protected UnitOrFaceAmountOrCode1Choice securitiesQuantitySought;
 	/**
-	 * Quantity of securities the offeror/issuer will purchase or redeem under
-	 * the terms of the event. This can be a number or the term "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -779,10 +891,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesQuantitySought = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmountOrCode1Choice>> mmSecuritiesQuantitySought = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmountOrCode1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmSecuritiesQuantitySought;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesQtySght";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -792,12 +904,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmountOrCode1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmountOrCode1Choice> getValue(CorporateAction2 obj) {
+			return obj.getSecuritiesQuantitySought();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmountOrCode1Choice> value) {
+			obj.setSecuritiesQuantitySought(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BaseDnmtn")
 	protected UnitOrFaceAmount1Choice baseDenomination;
 	/**
-	 * The minimum integral amount of securities that each account owner must
-	 * have remaining after the called amounts are applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -830,10 +952,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseDenomination = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>> mmBaseDenomination = new MMMessageAttribute<CorporateAction2, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmBaseDenomination;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "BaseDnmtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -843,11 +965,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateAction2 obj) {
+			return obj.getBaseDenomination();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setBaseDenomination(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ChngTp")
 	protected List<CorporateActionChangeType1FormatChoice> changeType;
 	/**
-	 * Specifies the type of change announced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -878,10 +1011,10 @@ public class CorporateAction2 {
 	 * definition} = "Specifies the type of change announced."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmChangeType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, List<CorporateActionChangeType1FormatChoice>> mmChangeType = new MMMessageAttribute<CorporateAction2, List<CorporateActionChangeType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesModification.mmChangeType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "ChngTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -890,11 +1023,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionChangeType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public List<CorporateActionChangeType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getChangeType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, List<CorporateActionChangeType1FormatChoice> value) {
+			obj.setChangeType(value);
+		}
 	};
+	@XmlElement(name = "OfferTp")
 	protected List<OfferType1FormatChoice> offerType;
 	/**
-	 * Specifies the conditions that apply to the offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -925,10 +1069,10 @@ public class CorporateAction2 {
 	 * definition} = "Specifies the conditions that apply to the offer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOfferType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, List<OfferType1FormatChoice>> mmOfferType = new MMMessageAttribute<CorporateAction2, List<OfferType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOfferType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "OfferTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -937,13 +1081,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> OfferType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public List<OfferType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getOfferType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, List<OfferType1FormatChoice> value) {
+			obj.setOfferType(value);
+		}
 	};
+	@XmlElement(name = "RstrctnInd")
 	protected YesNoIndicator restrictionIndicator;
 	/**
-	 * Indicates whether there is restrictions apply to the CA event or not.
 	 * 
-	 * Yes = There is restrictions. No = There is no restrictions.
-	 * <p>
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -976,10 +1129,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRestrictionIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>> mmRestrictionIndicator = new MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmRestrictionIndicator;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "RstrctnInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -989,13 +1142,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(CorporateAction2 obj) {
+			return obj.getRestrictionIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<YesNoIndicator> value) {
+			obj.setRestrictionIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtlElctnInd")
 	protected YesNoIndicator partialElectionIndicator;
 	/**
-	 * Specifies if the issuer will allow the agent to accept partial elections.
-	 * It is to allow split voting over options. It allows the client to elect
-	 * more than one option to be selected per designated holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1028,10 +1190,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartialElectionIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>> mmPartialElectionIndicator = new MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmPartialElectionIndicator;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlElctnInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1041,12 +1203,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(CorporateAction2 obj) {
+			return obj.getPartialElectionIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<YesNoIndicator> value) {
+			obj.setPartialElectionIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ElctnTp")
 	protected ElectionMovementType1FormatChoice electionType;
 	/**
-	 * Specifies the effect on the holdings of electing a Corporate Action
-	 * option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1079,10 +1251,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmElectionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<ElectionMovementType1FormatChoice>> mmElectionType = new MMMessageAttribute<CorporateAction2, Optional<ElectionMovementType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionElection.mmElectionType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "ElctnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1092,11 +1264,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> ElectionMovementType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<ElectionMovementType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getElectionType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<ElectionMovementType1FormatChoice> value) {
+			obj.setElectionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LtryTp")
 	protected LotteryType1FormatChoice lotteryType;
 	/**
-	 * Specifies the type of lottery announced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1127,10 +1310,10 @@ public class CorporateAction2 {
 	 * definition} = "Specifies the type of lottery announced."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLotteryType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<LotteryType1FormatChoice>> mmLotteryType = new MMMessageAttribute<CorporateAction2, Optional<LotteryType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> Lottery.mmLotteryType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "LtryTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1140,12 +1323,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> LotteryType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<LotteryType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getLotteryType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<LotteryType1FormatChoice> value) {
+			obj.setLotteryType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IncmTp")
 	protected GenericIdentification13 incomeType;
 	/**
-	 * Specifies the type of income. The lists of income type codes to be used,
-	 * are available on the SMPG website at www.smpg.info.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1178,10 +1371,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncomeType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<GenericIdentification13>> mmIncomeType = new MMMessageAttribute<CorporateAction2, Optional<GenericIdentification13>>() {
 		{
 			businessElementTrace_lazy = () -> CashProceedsDefinition.mmIncomeType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "IncmTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1189,13 +1382,24 @@ public class CorporateAction2 {
 			definition = "Specifies the type of income.\nThe lists of income type codes to be used, are available on the SMPG website at www.smpg.info.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.GenericIdentification13.mmObject();
+			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification13> getValue(CorporateAction2 obj) {
+			return obj.getIncomeType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<GenericIdentification13> value) {
+			obj.setIncomeType(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DvddTp")
 	protected CorporateActionFrequencyType1FormatChoice dividendType;
 	/**
-	 * Specifies the conditions in which a dividend is paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1226,10 +1430,10 @@ public class CorporateAction2 {
 	 * definition} = "Specifies the conditions in which a dividend is paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDividendType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<CorporateActionFrequencyType1FormatChoice>> mmDividendType = new MMMessageAttribute<CorporateAction2, Optional<CorporateActionFrequencyType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmDividend;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "DvddTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1239,12 +1443,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionFrequencyType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<CorporateActionFrequencyType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getDividendType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionFrequencyType1FormatChoice> value) {
+			obj.setDividendType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IntrmdtSctiesDstrbtnTp")
 	protected IntermediateSecurityDistributionType1FormatChoice intermediateSecuritiesDistributionType;
 	/**
-	 * Type of intermediates securities distribution, eg, stock dividend,
-	 * reverse right.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1277,10 +1491,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntermediateSecuritiesDistributionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<IntermediateSecurityDistributionType1FormatChoice>> mmIntermediateSecuritiesDistributionType = new MMMessageAttribute<CorporateAction2, Optional<IntermediateSecurityDistributionType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmIntermediateSecuritiesDistributionType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "IntrmdtSctiesDstrbtnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1290,11 +1504,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> IntermediateSecurityDistributionType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<IntermediateSecurityDistributionType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getIntermediateSecuritiesDistributionType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<IntermediateSecurityDistributionType1FormatChoice> value) {
+			obj.setIntermediateSecuritiesDistributionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CpnNb")
 	protected List<Max3NumericText> couponNumber;
 	/**
-	 * Number of the coupon attached/associated with a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1326,10 +1551,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCouponNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, List<Max3NumericText>> mmCouponNumber = new MMMessageAttribute<CorporateAction2, List<Max3NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> CouponAttached.mmNumber;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "CpnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1338,11 +1563,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		@Override
+		public List<Max3NumericText> getValue(CorporateAction2 obj) {
+			return obj.getCouponNumber();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, List<Max3NumericText> value) {
+			obj.setCouponNumber(value);
+		}
 	};
+	@XmlElement(name = "IntrstAcrdNbOfDays")
 	protected Number interestAccruedNumberOfDays;
 	/**
-	 * Number of days used for calculating the accrued interest amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1373,10 +1609,10 @@ public class CorporateAction2 {
 	 * "Number of days used for calculating the accrued interest amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestAccruedNumberOfDays = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<Number>> mmInterestAccruedNumberOfDays = new MMMessageAttribute<CorporateAction2, Optional<Number>>() {
 		{
 			businessElementTrace_lazy = () -> DateTimePeriod.mmNumberOfDays;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstAcrdNbOfDays";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1386,11 +1622,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(CorporateAction2 obj) {
+			return obj.getInterestAccruedNumberOfDays();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<Number> value) {
+			obj.setInterestAccruedNumberOfDays(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewDnmtnCcy")
 	protected ActiveCurrencyCode newDenominationCurrency;
 	/**
-	 * New denomination currency of the inancial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1421,10 +1668,10 @@ public class CorporateAction2 {
 	 * definition} = "New denomination currency of the inancial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewDenominationCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<ActiveCurrencyCode>> mmNewDenominationCurrency = new MMMessageAttribute<CorporateAction2, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmDenominationCurrency;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "NewDnmtnCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1434,11 +1681,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(CorporateAction2 obj) {
+			return obj.getNewDenominationCurrency();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setNewDenominationCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DtDtls")
 	protected CorporateActionDate2 dateDetails;
 	/**
-	 * Provides information about the dates related to a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1468,10 +1726,10 @@ public class CorporateAction2 {
 	 * "Provides information about the dates related to a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDateDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionDate2>> mmDateDetails = new MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionDate2>>() {
 		{
 			businessComponentTrace_lazy = () -> CorporateActionEvent.mmObject();
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "DtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1480,13 +1738,24 @@ public class CorporateAction2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionDate2.mmObject();
+			type_lazy = () -> CorporateActionDate2.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionDate2> getValue(CorporateAction2 obj) {
+			return obj.getDateDetails();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionDate2> value) {
+			obj.setDateDetails(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.CorporateActionPrice2> priceDetails;
+	@XmlElement(name = "PricDtls")
+	protected List<CorporateActionPrice2> priceDetails;
 	/**
-	 * Provides information about the prices related to a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1516,10 +1785,10 @@ public class CorporateAction2 {
 	 * "Provides information about the prices related to a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPriceDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateAction2, List<CorporateActionPrice2>> mmPriceDetails = new MMMessageAssociationEnd<CorporateAction2, List<CorporateActionPrice2>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmCorporateActionPrice;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "PricDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1527,13 +1796,24 @@ public class CorporateAction2 {
 			definition = "Provides information about the prices related to a CA event.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionPrice2.mmObject();
+			type_lazy = () -> CorporateActionPrice2.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionPrice2> getValue(CorporateAction2 obj) {
+			return obj.getPriceDetails();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, List<CorporateActionPrice2> value) {
+			obj.setPriceDetails(value);
 		}
 	};
+	@XmlElement(name = "PrdDtls")
 	protected CorporateActionPeriod1 periodDetails;
 	/**
-	 * Provides information about the periods related to a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1563,10 +1843,10 @@ public class CorporateAction2 {
 	 * "Provides information about the periods related to a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPeriodDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionPeriod1>> mmPeriodDetails = new MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionPeriod1>>() {
 		{
 			businessComponentTrace_lazy = () -> CorporateActionEvent.mmObject();
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "PrdDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1575,13 +1855,24 @@ public class CorporateAction2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionPeriod1.mmObject();
+			type_lazy = () -> CorporateActionPeriod1.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionPeriod1> getValue(CorporateAction2 obj) {
+			return obj.getPeriodDetails();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionPeriod1> value) {
+			obj.setPeriodDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RateAndAmtDtls")
 	protected CorporateActionRate1 rateAndAmountDetails;
 	/**
-	 * Provides information about rates and amounts related to a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1611,10 +1902,10 @@ public class CorporateAction2 {
 	 * "Provides information about rates and amounts related to a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRateAndAmountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionRate1>> mmRateAndAmountDetails = new MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionRate1>>() {
 		{
 			businessComponentTrace_lazy = () -> CorporateActionEvent.mmObject();
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "RateAndAmtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1623,13 +1914,24 @@ public class CorporateAction2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
+			type_lazy = () -> CorporateActionRate1.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionRate1> getValue(CorporateAction2 obj) {
+			return obj.getRateAndAmountDetails();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionRate1> value) {
+			obj.setRateAndAmountDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CorpActnAddtlInf")
 	protected CorporateActionNarrative1 corporateActionAdditionalInformation;
 	/**
-	 * Provides additional information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1654,9 +1956,9 @@ public class CorporateAction2 {
 	 * definition} = "Provides additional information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCorporateActionAdditionalInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionNarrative1>> mmCorporateActionAdditionalInformation = new MMMessageAssociationEnd<CorporateAction2, Optional<CorporateActionNarrative1>>() {
 		{
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "CorpActnAddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1665,13 +1967,24 @@ public class CorporateAction2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
+			type_lazy = () -> CorporateActionNarrative1.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionNarrative1> getValue(CorporateAction2 obj) {
+			return obj.getCorporateActionAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<CorporateActionNarrative1> value) {
+			obj.setCorporateActionAdditionalInformation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CertfctnReqrdInd")
 	protected YesNoIndicator certificationRequiredIndicator;
 	/**
-	 * Indicates whether certification is required from the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1703,10 +2016,10 @@ public class CorporateAction2 {
 	 * "Indicates whether certification is required from the account owner."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificationRequiredIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>> mmCertificationRequiredIndicator = new MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> BeneficialOwner.mmCertificationIndicator;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "CertfctnReqrdInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1716,11 +2029,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(CorporateAction2 obj) {
+			return obj.getCertificationRequiredIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<YesNoIndicator> value) {
+			obj.setCertificationRequiredIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CertfctnTp")
 	protected BeneficiaryCertificationType1FormatChoice certificationType;
 	/**
-	 * Type of certification which is required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1751,10 +2075,10 @@ public class CorporateAction2 {
 	 * definition} = "Type of certification which is required."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<BeneficiaryCertificationType1FormatChoice>> mmCertificationType = new MMMessageAttribute<CorporateAction2, Optional<BeneficiaryCertificationType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> BeneficialOwner.mmCertificationType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "CertfctnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1764,13 +2088,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> BeneficiaryCertificationType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<BeneficiaryCertificationType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getCertificationType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<BeneficiaryCertificationType1FormatChoice> value) {
+			obj.setCertificationType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CptlGn")
 	protected EUCapitalGain2Code capitalGain;
 	/**
-	 * Specifies whether the capital gain is in the scope of the EU Savings
-	 * directive for the income realised upon the sale, refund or redemption of
-	 * shares and units (...) (Article 6(1d)).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1799,29 +2132,39 @@ public class CorporateAction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies whether the capital gain is in the scope of the EU Savings directive for the income realised upon the sale, refund or redemption of shares and units (...) (Article 6(1d))."
+	 * "Specifies whether the capital gain is in the scope of the EU Savings directive for the income realised upon the sale, refund or redemption of shares and units (.) (Article 6(1d))."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCapitalGain = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<EUCapitalGain2Code>> mmCapitalGain = new MMMessageAttribute<CorporateAction2, Optional<EUCapitalGain2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUCapitalGain;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "CptlGn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CapitalGain";
-			definition = "Specifies whether the capital gain is in the scope of the EU Savings directive for the income realised upon the sale, refund or redemption of shares and units (...) (Article 6(1d)).";
+			definition = "Specifies whether the capital gain is in the scope of the EU Savings directive for the income realised upon the sale, refund or redemption of shares and units (.) (Article 6(1d)).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> EUCapitalGain2Code.mmObject();
 		}
+
+		@Override
+		public Optional<EUCapitalGain2Code> getValue(CorporateAction2 obj) {
+			return obj.getCapitalGain();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<EUCapitalGain2Code> value) {
+			obj.setCapitalGain(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxblIncmPerShrClctd")
 	protected TaxableIncomePerShareCalculated2Code taxableIncomePerShareCalculated;
 	/**
-	 * Specifies whether the financial instrument calculates the taxable income
-	 * per dividend/taxable income per share.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1854,10 +2197,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxableIncomePerShareCalculated = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<TaxableIncomePerShareCalculated2Code>> mmTaxableIncomePerShareCalculated = new MMMessageAttribute<CorporateAction2, Optional<TaxableIncomePerShareCalculated2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmTaxableIncomePerShareCalculated;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxblIncmPerShrClctd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1867,11 +2210,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TaxableIncomePerShareCalculated2Code.mmObject();
 		}
+
+		@Override
+		public Optional<TaxableIncomePerShareCalculated2Code> getValue(CorporateAction2 obj) {
+			return obj.getTaxableIncomePerShareCalculated();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<TaxableIncomePerShareCalculated2Code> value) {
+			obj.setTaxableIncomePerShareCalculated(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewPlcOfIncorprtn")
 	protected Max70Text newPlaceOfIncorporation;
 	/**
-	 * New companys place of incorporation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1901,10 +2255,10 @@ public class CorporateAction2 {
 	 * definition} = "New companys place of incorporation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewPlaceOfIncorporation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<Max70Text>> mmNewPlaceOfIncorporation = new MMMessageAttribute<CorporateAction2, Optional<Max70Text>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesModification.mmNewOrganisationInformation;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "NewPlcOfIncorprtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1914,11 +2268,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(CorporateAction2 obj) {
+			return obj.getNewPlaceOfIncorporation();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<Max70Text> value) {
+			obj.setNewPlaceOfIncorporation(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RnncblEntitlmntStsTp")
 	protected RenounceableStatus1FormatChoice renounceableEntitlementStatusType;
 	/**
-	 * Specifies whether terms of the event allow resale of the rights.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1951,10 +2316,10 @@ public class CorporateAction2 {
 	 * "Specifies whether terms of the event allow resale of the rights."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRenounceableEntitlementStatusType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<RenounceableStatus1FormatChoice>> mmRenounceableEntitlementStatusType = new MMMessageAttribute<CorporateAction2, Optional<RenounceableStatus1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionSecuritiesEntitlement.mmRenounceableEntitlementStatusType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "RnncblEntitlmntStsTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1964,11 +2329,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> RenounceableStatus1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<RenounceableStatus1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getRenounceableEntitlementStatusType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<RenounceableStatus1FormatChoice> value) {
+			obj.setRenounceableEntitlementStatusType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ConvsTp")
 	protected ConversionType1FormatChoice conversionType;
 	/**
-	 * Specifies the conversion type of an instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1999,10 +2375,10 @@ public class CorporateAction2 {
 	 * definition} = "Specifies the conversion type of an instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmConversionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<ConversionType1FormatChoice>> mmConversionType = new MMMessageAttribute<CorporateAction2, Optional<ConversionType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesConversion.mmConversionType;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "ConvsTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2012,11 +2388,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> ConversionType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<ConversionType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getConversionType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<ConversionType1FormatChoice> value) {
+			obj.setConversionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RedChrgsApldInd")
 	protected YesNoIndicator redemptionChargesAppliedIndicator;
 	/**
-	 * Indicates whether redemption charges apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2047,10 +2434,10 @@ public class CorporateAction2 {
 	 * definition} = "Indicates whether redemption charges apply."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRedemptionChargesAppliedIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>> mmRedemptionChargesAppliedIndicator = new MMMessageAttribute<CorporateAction2, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmChargesAppliedIndicator;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "RedChrgsApldInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2060,12 +2447,22 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(CorporateAction2 obj) {
+			return obj.getRedemptionChargesAppliedIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<YesNoIndicator> value) {
+			obj.setRedemptionChargesAppliedIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DstrbtnTp")
 	protected DistributionType1FormatChoice distributionType;
 	/**
-	 * Specifies whether the proceeds of the event will be distributed on a
-	 * rolling basis rather than on a specific date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2098,10 +2495,10 @@ public class CorporateAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDistributionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateAction2, Optional<DistributionType1FormatChoice>> mmDistributionType = new MMMessageAttribute<CorporateAction2, Optional<DistributionType1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionServicing.mmCorporateActionDistribution;
-			componentContext_lazy = () -> CorporateAction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateAction2.mmObject();
 			isDerived = false;
 			xmlTag = "DstrbtnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2111,23 +2508,40 @@ public class CorporateAction2 {
 			minOccurs = 0;
 			complexType_lazy = () -> DistributionType1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<DistributionType1FormatChoice> getValue(CorporateAction2 obj) {
+			return obj.getDistributionType();
+		}
+
+		@Override
+		public void setValue(CorporateAction2 obj, Optional<DistributionType1FormatChoice> value) {
+			obj.setDistributionType(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateAction2.mmEventStage, CorporateAction2.mmDefaultOptionType, CorporateAction2.mmDefaultOptionNumber, CorporateAction2.mmCalculationMethod,
-						CorporateAction2.mmBackEndOddLotSecuritiesQuantity, CorporateAction2.mmFrontEndOddLotSecuritiesQuantity, CorporateAction2.mmMinimumExercisableSecuritiesQuantity,
-						CorporateAction2.mmMinimumExercisableMultipleSecuritiesQuantity, CorporateAction2.mmIncrementalDenomination, CorporateAction2.mmNewDenominationSecuritiesQuantity, CorporateAction2.mmNewBoardLotSecuritiesQuantity,
-						CorporateAction2.mmSecuritiesQuantitySought, CorporateAction2.mmBaseDenomination, CorporateAction2.mmChangeType, CorporateAction2.mmOfferType, CorporateAction2.mmRestrictionIndicator,
-						CorporateAction2.mmPartialElectionIndicator, CorporateAction2.mmElectionType, CorporateAction2.mmLotteryType, CorporateAction2.mmIncomeType, CorporateAction2.mmDividendType,
-						CorporateAction2.mmIntermediateSecuritiesDistributionType, CorporateAction2.mmCouponNumber, CorporateAction2.mmInterestAccruedNumberOfDays, CorporateAction2.mmNewDenominationCurrency, CorporateAction2.mmDateDetails,
-						CorporateAction2.mmPriceDetails, CorporateAction2.mmPeriodDetails, CorporateAction2.mmRateAndAmountDetails, CorporateAction2.mmCorporateActionAdditionalInformation, CorporateAction2.mmCertificationRequiredIndicator,
-						CorporateAction2.mmCertificationType, CorporateAction2.mmCapitalGain, CorporateAction2.mmTaxableIncomePerShareCalculated, CorporateAction2.mmNewPlaceOfIncorporation,
-						CorporateAction2.mmRenounceableEntitlementStatusType, CorporateAction2.mmConversionType, CorporateAction2.mmRedemptionChargesAppliedIndicator, CorporateAction2.mmDistributionType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateAction2.mmEventStage, com.tools20022.repository.msg.CorporateAction2.mmDefaultOptionType,
+						com.tools20022.repository.msg.CorporateAction2.mmDefaultOptionNumber, com.tools20022.repository.msg.CorporateAction2.mmCalculationMethod,
+						com.tools20022.repository.msg.CorporateAction2.mmBackEndOddLotSecuritiesQuantity, com.tools20022.repository.msg.CorporateAction2.mmFrontEndOddLotSecuritiesQuantity,
+						com.tools20022.repository.msg.CorporateAction2.mmMinimumExercisableSecuritiesQuantity, com.tools20022.repository.msg.CorporateAction2.mmMinimumExercisableMultipleSecuritiesQuantity,
+						com.tools20022.repository.msg.CorporateAction2.mmIncrementalDenomination, com.tools20022.repository.msg.CorporateAction2.mmNewDenominationSecuritiesQuantity,
+						com.tools20022.repository.msg.CorporateAction2.mmNewBoardLotSecuritiesQuantity, com.tools20022.repository.msg.CorporateAction2.mmSecuritiesQuantitySought,
+						com.tools20022.repository.msg.CorporateAction2.mmBaseDenomination, com.tools20022.repository.msg.CorporateAction2.mmChangeType, com.tools20022.repository.msg.CorporateAction2.mmOfferType,
+						com.tools20022.repository.msg.CorporateAction2.mmRestrictionIndicator, com.tools20022.repository.msg.CorporateAction2.mmPartialElectionIndicator, com.tools20022.repository.msg.CorporateAction2.mmElectionType,
+						com.tools20022.repository.msg.CorporateAction2.mmLotteryType, com.tools20022.repository.msg.CorporateAction2.mmIncomeType, com.tools20022.repository.msg.CorporateAction2.mmDividendType,
+						com.tools20022.repository.msg.CorporateAction2.mmIntermediateSecuritiesDistributionType, com.tools20022.repository.msg.CorporateAction2.mmCouponNumber,
+						com.tools20022.repository.msg.CorporateAction2.mmInterestAccruedNumberOfDays, com.tools20022.repository.msg.CorporateAction2.mmNewDenominationCurrency, com.tools20022.repository.msg.CorporateAction2.mmDateDetails,
+						com.tools20022.repository.msg.CorporateAction2.mmPriceDetails, com.tools20022.repository.msg.CorporateAction2.mmPeriodDetails, com.tools20022.repository.msg.CorporateAction2.mmRateAndAmountDetails,
+						com.tools20022.repository.msg.CorporateAction2.mmCorporateActionAdditionalInformation, com.tools20022.repository.msg.CorporateAction2.mmCertificationRequiredIndicator,
+						com.tools20022.repository.msg.CorporateAction2.mmCertificationType, com.tools20022.repository.msg.CorporateAction2.mmCapitalGain, com.tools20022.repository.msg.CorporateAction2.mmTaxableIncomePerShareCalculated,
+						com.tools20022.repository.msg.CorporateAction2.mmNewPlaceOfIncorporation, com.tools20022.repository.msg.CorporateAction2.mmRenounceableEntitlementStatusType,
+						com.tools20022.repository.msg.CorporateAction2.mmConversionType, com.tools20022.repository.msg.CorporateAction2.mmRedemptionChargesAppliedIndicator, com.tools20022.repository.msg.CorporateAction2.mmDistributionType);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCANotificationAdviceV01.mmCorporateActionDetails);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateAction2";
 				definition = "Provides information about the CA event.";
@@ -2136,354 +2550,354 @@ public class CorporateAction2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "EvtStag")
 	public List<CorporateActionEventStage1FormatChoice> getEventStage() {
-		return eventStage;
+		return eventStage == null ? eventStage = new ArrayList<>() : eventStage;
 	}
 
-	public void setEventStage(List<CorporateActionEventStage1FormatChoice> eventStage) {
-		this.eventStage = eventStage;
+	public CorporateAction2 setEventStage(List<CorporateActionEventStage1FormatChoice> eventStage) {
+		this.eventStage = Objects.requireNonNull(eventStage);
+		return this;
 	}
 
-	@XmlElement(name = "DfltOptnTp")
-	public CorporateActionOption1FormatChoice getDefaultOptionType() {
-		return defaultOptionType;
+	public Optional<CorporateActionOption1FormatChoice> getDefaultOptionType() {
+		return defaultOptionType == null ? Optional.empty() : Optional.of(defaultOptionType);
 	}
 
-	public void setDefaultOptionType(CorporateActionOption1FormatChoice defaultOptionType) {
+	public CorporateAction2 setDefaultOptionType(CorporateActionOption1FormatChoice defaultOptionType) {
 		this.defaultOptionType = defaultOptionType;
+		return this;
 	}
 
-	@XmlElement(name = "DfltOptnNb")
-	public Exact3NumericText getDefaultOptionNumber() {
-		return defaultOptionNumber;
+	public Optional<Exact3NumericText> getDefaultOptionNumber() {
+		return defaultOptionNumber == null ? Optional.empty() : Optional.of(defaultOptionNumber);
 	}
 
-	public void setDefaultOptionNumber(Exact3NumericText defaultOptionNumber) {
+	public CorporateAction2 setDefaultOptionNumber(Exact3NumericText defaultOptionNumber) {
 		this.defaultOptionNumber = defaultOptionNumber;
+		return this;
 	}
 
-	@XmlElement(name = "ClctnMtd")
-	public CorporateActionCalculationMethod1FormatChoice getCalculationMethod() {
-		return calculationMethod;
+	public Optional<CorporateActionCalculationMethod1FormatChoice> getCalculationMethod() {
+		return calculationMethod == null ? Optional.empty() : Optional.of(calculationMethod);
 	}
 
-	public void setCalculationMethod(CorporateActionCalculationMethod1FormatChoice calculationMethod) {
+	public CorporateAction2 setCalculationMethod(CorporateActionCalculationMethod1FormatChoice calculationMethod) {
 		this.calculationMethod = calculationMethod;
+		return this;
 	}
 
-	@XmlElement(name = "BckEndOddLotSctiesQty")
-	public UnitOrFaceAmountOrCode1Choice getBackEndOddLotSecuritiesQuantity() {
-		return backEndOddLotSecuritiesQuantity;
+	public Optional<UnitOrFaceAmountOrCode1Choice> getBackEndOddLotSecuritiesQuantity() {
+		return backEndOddLotSecuritiesQuantity == null ? Optional.empty() : Optional.of(backEndOddLotSecuritiesQuantity);
 	}
 
-	public void setBackEndOddLotSecuritiesQuantity(UnitOrFaceAmountOrCode1Choice backEndOddLotSecuritiesQuantity) {
+	public CorporateAction2 setBackEndOddLotSecuritiesQuantity(UnitOrFaceAmountOrCode1Choice backEndOddLotSecuritiesQuantity) {
 		this.backEndOddLotSecuritiesQuantity = backEndOddLotSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "FrntEndOddLotSctiesQty")
-	public UnitOrFaceAmountOrCode1Choice getFrontEndOddLotSecuritiesQuantity() {
-		return frontEndOddLotSecuritiesQuantity;
+	public Optional<UnitOrFaceAmountOrCode1Choice> getFrontEndOddLotSecuritiesQuantity() {
+		return frontEndOddLotSecuritiesQuantity == null ? Optional.empty() : Optional.of(frontEndOddLotSecuritiesQuantity);
 	}
 
-	public void setFrontEndOddLotSecuritiesQuantity(UnitOrFaceAmountOrCode1Choice frontEndOddLotSecuritiesQuantity) {
+	public CorporateAction2 setFrontEndOddLotSecuritiesQuantity(UnitOrFaceAmountOrCode1Choice frontEndOddLotSecuritiesQuantity) {
 		this.frontEndOddLotSecuritiesQuantity = frontEndOddLotSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "MinExrcblSctiesQty")
-	public UnitOrFaceAmount1Choice getMinimumExercisableSecuritiesQuantity() {
-		return minimumExercisableSecuritiesQuantity;
+	public Optional<UnitOrFaceAmount1Choice> getMinimumExercisableSecuritiesQuantity() {
+		return minimumExercisableSecuritiesQuantity == null ? Optional.empty() : Optional.of(minimumExercisableSecuritiesQuantity);
 	}
 
-	public void setMinimumExercisableSecuritiesQuantity(UnitOrFaceAmount1Choice minimumExercisableSecuritiesQuantity) {
+	public CorporateAction2 setMinimumExercisableSecuritiesQuantity(UnitOrFaceAmount1Choice minimumExercisableSecuritiesQuantity) {
 		this.minimumExercisableSecuritiesQuantity = minimumExercisableSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "MinExrcblMltplSctiesQty")
-	public UnitOrFaceAmount1Choice getMinimumExercisableMultipleSecuritiesQuantity() {
-		return minimumExercisableMultipleSecuritiesQuantity;
+	public Optional<UnitOrFaceAmount1Choice> getMinimumExercisableMultipleSecuritiesQuantity() {
+		return minimumExercisableMultipleSecuritiesQuantity == null ? Optional.empty() : Optional.of(minimumExercisableMultipleSecuritiesQuantity);
 	}
 
-	public void setMinimumExercisableMultipleSecuritiesQuantity(UnitOrFaceAmount1Choice minimumExercisableMultipleSecuritiesQuantity) {
+	public CorporateAction2 setMinimumExercisableMultipleSecuritiesQuantity(UnitOrFaceAmount1Choice minimumExercisableMultipleSecuritiesQuantity) {
 		this.minimumExercisableMultipleSecuritiesQuantity = minimumExercisableMultipleSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "IncrmtlDnmtn")
-	public UnitOrFaceAmount1Choice getIncrementalDenomination() {
-		return incrementalDenomination;
+	public Optional<UnitOrFaceAmount1Choice> getIncrementalDenomination() {
+		return incrementalDenomination == null ? Optional.empty() : Optional.of(incrementalDenomination);
 	}
 
-	public void setIncrementalDenomination(UnitOrFaceAmount1Choice incrementalDenomination) {
+	public CorporateAction2 setIncrementalDenomination(UnitOrFaceAmount1Choice incrementalDenomination) {
 		this.incrementalDenomination = incrementalDenomination;
+		return this;
 	}
 
-	@XmlElement(name = "NewDnmtnSctiesQty")
-	public UnitOrFaceAmount1Choice getNewDenominationSecuritiesQuantity() {
-		return newDenominationSecuritiesQuantity;
+	public Optional<UnitOrFaceAmount1Choice> getNewDenominationSecuritiesQuantity() {
+		return newDenominationSecuritiesQuantity == null ? Optional.empty() : Optional.of(newDenominationSecuritiesQuantity);
 	}
 
-	public void setNewDenominationSecuritiesQuantity(UnitOrFaceAmount1Choice newDenominationSecuritiesQuantity) {
+	public CorporateAction2 setNewDenominationSecuritiesQuantity(UnitOrFaceAmount1Choice newDenominationSecuritiesQuantity) {
 		this.newDenominationSecuritiesQuantity = newDenominationSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "NewBrdLotSctiesQty")
-	public UnitOrFaceAmount1Choice getNewBoardLotSecuritiesQuantity() {
-		return newBoardLotSecuritiesQuantity;
+	public Optional<UnitOrFaceAmount1Choice> getNewBoardLotSecuritiesQuantity() {
+		return newBoardLotSecuritiesQuantity == null ? Optional.empty() : Optional.of(newBoardLotSecuritiesQuantity);
 	}
 
-	public void setNewBoardLotSecuritiesQuantity(UnitOrFaceAmount1Choice newBoardLotSecuritiesQuantity) {
+	public CorporateAction2 setNewBoardLotSecuritiesQuantity(UnitOrFaceAmount1Choice newBoardLotSecuritiesQuantity) {
 		this.newBoardLotSecuritiesQuantity = newBoardLotSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "SctiesQtySght")
-	public UnitOrFaceAmountOrCode1Choice getSecuritiesQuantitySought() {
-		return securitiesQuantitySought;
+	public Optional<UnitOrFaceAmountOrCode1Choice> getSecuritiesQuantitySought() {
+		return securitiesQuantitySought == null ? Optional.empty() : Optional.of(securitiesQuantitySought);
 	}
 
-	public void setSecuritiesQuantitySought(UnitOrFaceAmountOrCode1Choice securitiesQuantitySought) {
+	public CorporateAction2 setSecuritiesQuantitySought(UnitOrFaceAmountOrCode1Choice securitiesQuantitySought) {
 		this.securitiesQuantitySought = securitiesQuantitySought;
+		return this;
 	}
 
-	@XmlElement(name = "BaseDnmtn")
-	public UnitOrFaceAmount1Choice getBaseDenomination() {
-		return baseDenomination;
+	public Optional<UnitOrFaceAmount1Choice> getBaseDenomination() {
+		return baseDenomination == null ? Optional.empty() : Optional.of(baseDenomination);
 	}
 
-	public void setBaseDenomination(UnitOrFaceAmount1Choice baseDenomination) {
+	public CorporateAction2 setBaseDenomination(UnitOrFaceAmount1Choice baseDenomination) {
 		this.baseDenomination = baseDenomination;
+		return this;
 	}
 
-	@XmlElement(name = "ChngTp")
 	public List<CorporateActionChangeType1FormatChoice> getChangeType() {
-		return changeType;
+		return changeType == null ? changeType = new ArrayList<>() : changeType;
 	}
 
-	public void setChangeType(List<CorporateActionChangeType1FormatChoice> changeType) {
-		this.changeType = changeType;
+	public CorporateAction2 setChangeType(List<CorporateActionChangeType1FormatChoice> changeType) {
+		this.changeType = Objects.requireNonNull(changeType);
+		return this;
 	}
 
-	@XmlElement(name = "OfferTp")
 	public List<OfferType1FormatChoice> getOfferType() {
-		return offerType;
+		return offerType == null ? offerType = new ArrayList<>() : offerType;
 	}
 
-	public void setOfferType(List<OfferType1FormatChoice> offerType) {
-		this.offerType = offerType;
+	public CorporateAction2 setOfferType(List<OfferType1FormatChoice> offerType) {
+		this.offerType = Objects.requireNonNull(offerType);
+		return this;
 	}
 
-	@XmlElement(name = "RstrctnInd")
-	public YesNoIndicator getRestrictionIndicator() {
-		return restrictionIndicator;
+	public Optional<YesNoIndicator> getRestrictionIndicator() {
+		return restrictionIndicator == null ? Optional.empty() : Optional.of(restrictionIndicator);
 	}
 
-	public void setRestrictionIndicator(YesNoIndicator restrictionIndicator) {
+	public CorporateAction2 setRestrictionIndicator(YesNoIndicator restrictionIndicator) {
 		this.restrictionIndicator = restrictionIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "PrtlElctnInd")
-	public YesNoIndicator getPartialElectionIndicator() {
-		return partialElectionIndicator;
+	public Optional<YesNoIndicator> getPartialElectionIndicator() {
+		return partialElectionIndicator == null ? Optional.empty() : Optional.of(partialElectionIndicator);
 	}
 
-	public void setPartialElectionIndicator(YesNoIndicator partialElectionIndicator) {
+	public CorporateAction2 setPartialElectionIndicator(YesNoIndicator partialElectionIndicator) {
 		this.partialElectionIndicator = partialElectionIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "ElctnTp")
-	public ElectionMovementType1FormatChoice getElectionType() {
-		return electionType;
+	public Optional<ElectionMovementType1FormatChoice> getElectionType() {
+		return electionType == null ? Optional.empty() : Optional.of(electionType);
 	}
 
-	public void setElectionType(ElectionMovementType1FormatChoice electionType) {
+	public CorporateAction2 setElectionType(ElectionMovementType1FormatChoice electionType) {
 		this.electionType = electionType;
+		return this;
 	}
 
-	@XmlElement(name = "LtryTp")
-	public LotteryType1FormatChoice getLotteryType() {
-		return lotteryType;
+	public Optional<LotteryType1FormatChoice> getLotteryType() {
+		return lotteryType == null ? Optional.empty() : Optional.of(lotteryType);
 	}
 
-	public void setLotteryType(LotteryType1FormatChoice lotteryType) {
+	public CorporateAction2 setLotteryType(LotteryType1FormatChoice lotteryType) {
 		this.lotteryType = lotteryType;
+		return this;
 	}
 
-	@XmlElement(name = "IncmTp")
-	public GenericIdentification13 getIncomeType() {
-		return incomeType;
+	public Optional<GenericIdentification13> getIncomeType() {
+		return incomeType == null ? Optional.empty() : Optional.of(incomeType);
 	}
 
-	public void setIncomeType(com.tools20022.repository.msg.GenericIdentification13 incomeType) {
+	public CorporateAction2 setIncomeType(GenericIdentification13 incomeType) {
 		this.incomeType = incomeType;
+		return this;
 	}
 
-	@XmlElement(name = "DvddTp")
-	public CorporateActionFrequencyType1FormatChoice getDividendType() {
-		return dividendType;
+	public Optional<CorporateActionFrequencyType1FormatChoice> getDividendType() {
+		return dividendType == null ? Optional.empty() : Optional.of(dividendType);
 	}
 
-	public void setDividendType(CorporateActionFrequencyType1FormatChoice dividendType) {
+	public CorporateAction2 setDividendType(CorporateActionFrequencyType1FormatChoice dividendType) {
 		this.dividendType = dividendType;
+		return this;
 	}
 
-	@XmlElement(name = "IntrmdtSctiesDstrbtnTp")
-	public IntermediateSecurityDistributionType1FormatChoice getIntermediateSecuritiesDistributionType() {
-		return intermediateSecuritiesDistributionType;
+	public Optional<IntermediateSecurityDistributionType1FormatChoice> getIntermediateSecuritiesDistributionType() {
+		return intermediateSecuritiesDistributionType == null ? Optional.empty() : Optional.of(intermediateSecuritiesDistributionType);
 	}
 
-	public void setIntermediateSecuritiesDistributionType(IntermediateSecurityDistributionType1FormatChoice intermediateSecuritiesDistributionType) {
+	public CorporateAction2 setIntermediateSecuritiesDistributionType(IntermediateSecurityDistributionType1FormatChoice intermediateSecuritiesDistributionType) {
 		this.intermediateSecuritiesDistributionType = intermediateSecuritiesDistributionType;
+		return this;
 	}
 
-	@XmlElement(name = "CpnNb")
 	public List<Max3NumericText> getCouponNumber() {
-		return couponNumber;
+		return couponNumber == null ? couponNumber = new ArrayList<>() : couponNumber;
 	}
 
-	public void setCouponNumber(List<Max3NumericText> couponNumber) {
-		this.couponNumber = couponNumber;
+	public CorporateAction2 setCouponNumber(List<Max3NumericText> couponNumber) {
+		this.couponNumber = Objects.requireNonNull(couponNumber);
+		return this;
 	}
 
-	@XmlElement(name = "IntrstAcrdNbOfDays")
-	public Number getInterestAccruedNumberOfDays() {
-		return interestAccruedNumberOfDays;
+	public Optional<Number> getInterestAccruedNumberOfDays() {
+		return interestAccruedNumberOfDays == null ? Optional.empty() : Optional.of(interestAccruedNumberOfDays);
 	}
 
-	public void setInterestAccruedNumberOfDays(Number interestAccruedNumberOfDays) {
+	public CorporateAction2 setInterestAccruedNumberOfDays(Number interestAccruedNumberOfDays) {
 		this.interestAccruedNumberOfDays = interestAccruedNumberOfDays;
+		return this;
 	}
 
-	@XmlElement(name = "NewDnmtnCcy")
-	public ActiveCurrencyCode getNewDenominationCurrency() {
-		return newDenominationCurrency;
+	public Optional<ActiveCurrencyCode> getNewDenominationCurrency() {
+		return newDenominationCurrency == null ? Optional.empty() : Optional.of(newDenominationCurrency);
 	}
 
-	public void setNewDenominationCurrency(ActiveCurrencyCode newDenominationCurrency) {
+	public CorporateAction2 setNewDenominationCurrency(ActiveCurrencyCode newDenominationCurrency) {
 		this.newDenominationCurrency = newDenominationCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "DtDtls")
-	public CorporateActionDate2 getDateDetails() {
-		return dateDetails;
+	public Optional<CorporateActionDate2> getDateDetails() {
+		return dateDetails == null ? Optional.empty() : Optional.of(dateDetails);
 	}
 
-	public void setDateDetails(com.tools20022.repository.msg.CorporateActionDate2 dateDetails) {
+	public CorporateAction2 setDateDetails(CorporateActionDate2 dateDetails) {
 		this.dateDetails = dateDetails;
+		return this;
 	}
 
-	@XmlElement(name = "PricDtls")
 	public List<CorporateActionPrice2> getPriceDetails() {
-		return priceDetails;
+		return priceDetails == null ? priceDetails = new ArrayList<>() : priceDetails;
 	}
 
-	public void setPriceDetails(List<com.tools20022.repository.msg.CorporateActionPrice2> priceDetails) {
-		this.priceDetails = priceDetails;
+	public CorporateAction2 setPriceDetails(List<CorporateActionPrice2> priceDetails) {
+		this.priceDetails = Objects.requireNonNull(priceDetails);
+		return this;
 	}
 
-	@XmlElement(name = "PrdDtls")
-	public CorporateActionPeriod1 getPeriodDetails() {
-		return periodDetails;
+	public Optional<CorporateActionPeriod1> getPeriodDetails() {
+		return periodDetails == null ? Optional.empty() : Optional.of(periodDetails);
 	}
 
-	public void setPeriodDetails(com.tools20022.repository.msg.CorporateActionPeriod1 periodDetails) {
+	public CorporateAction2 setPeriodDetails(CorporateActionPeriod1 periodDetails) {
 		this.periodDetails = periodDetails;
+		return this;
 	}
 
-	@XmlElement(name = "RateAndAmtDtls")
-	public CorporateActionRate1 getRateAndAmountDetails() {
-		return rateAndAmountDetails;
+	public Optional<CorporateActionRate1> getRateAndAmountDetails() {
+		return rateAndAmountDetails == null ? Optional.empty() : Optional.of(rateAndAmountDetails);
 	}
 
-	public void setRateAndAmountDetails(com.tools20022.repository.msg.CorporateActionRate1 rateAndAmountDetails) {
+	public CorporateAction2 setRateAndAmountDetails(CorporateActionRate1 rateAndAmountDetails) {
 		this.rateAndAmountDetails = rateAndAmountDetails;
+		return this;
 	}
 
-	@XmlElement(name = "CorpActnAddtlInf")
-	public CorporateActionNarrative1 getCorporateActionAdditionalInformation() {
-		return corporateActionAdditionalInformation;
+	public Optional<CorporateActionNarrative1> getCorporateActionAdditionalInformation() {
+		return corporateActionAdditionalInformation == null ? Optional.empty() : Optional.of(corporateActionAdditionalInformation);
 	}
 
-	public void setCorporateActionAdditionalInformation(com.tools20022.repository.msg.CorporateActionNarrative1 corporateActionAdditionalInformation) {
+	public CorporateAction2 setCorporateActionAdditionalInformation(CorporateActionNarrative1 corporateActionAdditionalInformation) {
 		this.corporateActionAdditionalInformation = corporateActionAdditionalInformation;
+		return this;
 	}
 
-	@XmlElement(name = "CertfctnReqrdInd")
-	public YesNoIndicator getCertificationRequiredIndicator() {
-		return certificationRequiredIndicator;
+	public Optional<YesNoIndicator> getCertificationRequiredIndicator() {
+		return certificationRequiredIndicator == null ? Optional.empty() : Optional.of(certificationRequiredIndicator);
 	}
 
-	public void setCertificationRequiredIndicator(YesNoIndicator certificationRequiredIndicator) {
+	public CorporateAction2 setCertificationRequiredIndicator(YesNoIndicator certificationRequiredIndicator) {
 		this.certificationRequiredIndicator = certificationRequiredIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "CertfctnTp")
-	public BeneficiaryCertificationType1FormatChoice getCertificationType() {
-		return certificationType;
+	public Optional<BeneficiaryCertificationType1FormatChoice> getCertificationType() {
+		return certificationType == null ? Optional.empty() : Optional.of(certificationType);
 	}
 
-	public void setCertificationType(BeneficiaryCertificationType1FormatChoice certificationType) {
+	public CorporateAction2 setCertificationType(BeneficiaryCertificationType1FormatChoice certificationType) {
 		this.certificationType = certificationType;
+		return this;
 	}
 
-	@XmlElement(name = "CptlGn")
-	public EUCapitalGain2Code getCapitalGain() {
-		return capitalGain;
+	public Optional<EUCapitalGain2Code> getCapitalGain() {
+		return capitalGain == null ? Optional.empty() : Optional.of(capitalGain);
 	}
 
-	public void setCapitalGain(EUCapitalGain2Code capitalGain) {
+	public CorporateAction2 setCapitalGain(EUCapitalGain2Code capitalGain) {
 		this.capitalGain = capitalGain;
+		return this;
 	}
 
-	@XmlElement(name = "TaxblIncmPerShrClctd")
-	public TaxableIncomePerShareCalculated2Code getTaxableIncomePerShareCalculated() {
-		return taxableIncomePerShareCalculated;
+	public Optional<TaxableIncomePerShareCalculated2Code> getTaxableIncomePerShareCalculated() {
+		return taxableIncomePerShareCalculated == null ? Optional.empty() : Optional.of(taxableIncomePerShareCalculated);
 	}
 
-	public void setTaxableIncomePerShareCalculated(TaxableIncomePerShareCalculated2Code taxableIncomePerShareCalculated) {
+	public CorporateAction2 setTaxableIncomePerShareCalculated(TaxableIncomePerShareCalculated2Code taxableIncomePerShareCalculated) {
 		this.taxableIncomePerShareCalculated = taxableIncomePerShareCalculated;
+		return this;
 	}
 
-	@XmlElement(name = "NewPlcOfIncorprtn")
-	public Max70Text getNewPlaceOfIncorporation() {
-		return newPlaceOfIncorporation;
+	public Optional<Max70Text> getNewPlaceOfIncorporation() {
+		return newPlaceOfIncorporation == null ? Optional.empty() : Optional.of(newPlaceOfIncorporation);
 	}
 
-	public void setNewPlaceOfIncorporation(Max70Text newPlaceOfIncorporation) {
+	public CorporateAction2 setNewPlaceOfIncorporation(Max70Text newPlaceOfIncorporation) {
 		this.newPlaceOfIncorporation = newPlaceOfIncorporation;
+		return this;
 	}
 
-	@XmlElement(name = "RnncblEntitlmntStsTp")
-	public RenounceableStatus1FormatChoice getRenounceableEntitlementStatusType() {
-		return renounceableEntitlementStatusType;
+	public Optional<RenounceableStatus1FormatChoice> getRenounceableEntitlementStatusType() {
+		return renounceableEntitlementStatusType == null ? Optional.empty() : Optional.of(renounceableEntitlementStatusType);
 	}
 
-	public void setRenounceableEntitlementStatusType(RenounceableStatus1FormatChoice renounceableEntitlementStatusType) {
+	public CorporateAction2 setRenounceableEntitlementStatusType(RenounceableStatus1FormatChoice renounceableEntitlementStatusType) {
 		this.renounceableEntitlementStatusType = renounceableEntitlementStatusType;
+		return this;
 	}
 
-	@XmlElement(name = "ConvsTp")
-	public ConversionType1FormatChoice getConversionType() {
-		return conversionType;
+	public Optional<ConversionType1FormatChoice> getConversionType() {
+		return conversionType == null ? Optional.empty() : Optional.of(conversionType);
 	}
 
-	public void setConversionType(ConversionType1FormatChoice conversionType) {
+	public CorporateAction2 setConversionType(ConversionType1FormatChoice conversionType) {
 		this.conversionType = conversionType;
+		return this;
 	}
 
-	@XmlElement(name = "RedChrgsApldInd")
-	public YesNoIndicator getRedemptionChargesAppliedIndicator() {
-		return redemptionChargesAppliedIndicator;
+	public Optional<YesNoIndicator> getRedemptionChargesAppliedIndicator() {
+		return redemptionChargesAppliedIndicator == null ? Optional.empty() : Optional.of(redemptionChargesAppliedIndicator);
 	}
 
-	public void setRedemptionChargesAppliedIndicator(YesNoIndicator redemptionChargesAppliedIndicator) {
+	public CorporateAction2 setRedemptionChargesAppliedIndicator(YesNoIndicator redemptionChargesAppliedIndicator) {
 		this.redemptionChargesAppliedIndicator = redemptionChargesAppliedIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "DstrbtnTp")
-	public DistributionType1FormatChoice getDistributionType() {
-		return distributionType;
+	public Optional<DistributionType1FormatChoice> getDistributionType() {
+		return distributionType == null ? Optional.empty() : Optional.of(distributionType);
 	}
 
-	public void setDistributionType(DistributionType1FormatChoice distributionType) {
+	public CorporateAction2 setDistributionType(DistributionType1FormatChoice distributionType) {
 		this.distributionType = distributionType;
+		return this;
 	}
 }

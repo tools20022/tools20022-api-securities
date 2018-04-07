@@ -21,12 +21,15 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.IndividualPayment;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Payment which contains a series of other payments which have been grouped
@@ -90,8 +93,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,11 +110,10 @@ import java.util.List;
 public class BulkPayment extends Payment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.IndividualPayment> groups;
+	protected List<IndividualPayment> groups;
 	/**
-	 * Indicates that a bulk payment groups several individual payments of the
-	 * same type (credit transfer or direct debit).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,7 +145,7 @@ public class BulkPayment extends Payment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGroups = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BulkPayment, List<IndividualPayment>> mmGroups = new MMBusinessAssociationEnd<BulkPayment, List<IndividualPayment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BulkPayment.mmObject();
@@ -151,20 +153,30 @@ public class BulkPayment extends Payment {
 			name = "Groups";
 			definition = "Indicates that a bulk payment groups several individual payments of the same type (credit transfer or direct debit).";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.IndividualPayment.mmBulkPayment;
+			opposite_lazy = () -> IndividualPayment.mmBulkPayment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.IndividualPayment.mmObject();
+			type_lazy = () -> IndividualPayment.mmObject();
+		}
+
+		@Override
+		public List<IndividualPayment> getValue(BulkPayment obj) {
+			return obj.getGroups();
+		}
+
+		@Override
+		public void setValue(BulkPayment obj, List<IndividualPayment> value) {
+			obj.setGroups(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BulkPayment";
 				definition = "Payment which contains a series of other payments which have been grouped under specific criteria. A bulk payment can only contain individual payments of the same type (credit transfer or direct debit).";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IndividualPayment.mmBulkPayment);
+				associationDomain_lazy = () -> Arrays.asList(IndividualPayment.mmBulkPayment);
 				derivationElement_lazy = () -> Arrays.asList(SubscriptionBulkOrder5.mmBulkCashSettlementDetails, RedemptionBulkExecution5.mmBulkCashSettlementDetails, RedemptionMultipleExecution5.mmBulkCashSettlementDetails,
 						RedemptionMultipleOrder6.mmBulkCashSettlementDetails, SubscriptionMultipleOrder6.mmBulkCashSettlementDetails, SubscriptionBulkExecution4.mmBulkCashSettlementDetails, RedemptionBulkOrder6.mmBulkCashSettlementDetails,
 						SubscriptionMultipleExecution5.mmBulkCashSettlementDetails);
@@ -181,10 +193,11 @@ public class BulkPayment extends Payment {
 	}
 
 	public List<IndividualPayment> getGroups() {
-		return groups;
+		return groups == null ? groups = new ArrayList<>() : groups;
 	}
 
-	public void setGroups(List<com.tools20022.repository.entity.IndividualPayment> groups) {
-		this.groups = groups;
+	public BulkPayment setGroups(List<IndividualPayment> groups) {
+		this.groups = Objects.requireNonNull(groups);
+		return this;
 	}
 }

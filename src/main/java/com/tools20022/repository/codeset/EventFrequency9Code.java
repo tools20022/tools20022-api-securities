@@ -37,42 +37,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Annual
- * EventFrequency9Code.mmAnnual}</li>
+ * EventFrequency9Code.Annual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#SemiAnnual
- * EventFrequency9Code.mmSemiAnnual}</li>
+ * EventFrequency9Code.SemiAnnual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Quarterly
- * EventFrequency9Code.mmQuarterly}</li>
+ * EventFrequency9Code.Quarterly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#EveryTwoMonths
- * EventFrequency9Code.mmEveryTwoMonths}</li>
+ * EventFrequency9Code.EveryTwoMonths}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Monthly
- * EventFrequency9Code.mmMonthly}</li>
+ * EventFrequency9Code.Monthly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#TwiceAMonth
- * EventFrequency9Code.mmTwiceAMonth}</li>
+ * EventFrequency9Code.TwiceAMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#EveryTwoWeeks
- * EventFrequency9Code.mmEveryTwoWeeks}</li>
+ * EventFrequency9Code.EveryTwoWeeks}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Weekly
- * EventFrequency9Code.mmWeekly}</li>
+ * EventFrequency9Code.Weekly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Daily
- * EventFrequency9Code.mmDaily}</li>
+ * EventFrequency9Code.Daily}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Adhoc
- * EventFrequency9Code.mmAdhoc}</li>
+ * EventFrequency9Code.Adhoc}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#IntraDay
- * EventFrequency9Code.mmIntraDay}</li>
+ * EventFrequency9Code.IntraDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#Overnight
- * EventFrequency9Code.mmOvernight}</li>
+ * EventFrequency9Code.Overnight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency9Code#OnDemand
- * EventFrequency9Code.mmOnDemand}</li>
+ * EventFrequency9Code.OnDemand}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency9Code#None
- * EventFrequency9Code.mmNone}</li>
+ * EventFrequency9Code.None}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -81,8 +81,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -125,7 +125,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Annual
-	 * EventFrequency1Code.mmAnnual}</li>
+	 * EventFrequency1Code.Annual}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Annual = new EventFrequency9Code() {
@@ -155,7 +155,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#SemiAnnual
-	 * EventFrequency1Code.mmSemiAnnual}</li>
+	 * EventFrequency1Code.SemiAnnual}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code SemiAnnual = new EventFrequency9Code() {
@@ -185,7 +185,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Quarterly
-	 * EventFrequency1Code.mmQuarterly}</li>
+	 * EventFrequency1Code.Quarterly}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Quarterly = new EventFrequency9Code() {
@@ -215,7 +215,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#EveryTwoMonths
-	 * EventFrequency1Code.mmEveryTwoMonths}</li>
+	 * EventFrequency1Code.EveryTwoMonths}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code EveryTwoMonths = new EventFrequency9Code() {
@@ -245,7 +245,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Monthly
-	 * EventFrequency1Code.mmMonthly}</li>
+	 * EventFrequency1Code.Monthly}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Monthly = new EventFrequency9Code() {
@@ -275,7 +275,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#TwiceAMonth
-	 * EventFrequency1Code.mmTwiceAMonth}</li>
+	 * EventFrequency1Code.TwiceAMonth}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code TwiceAMonth = new EventFrequency9Code() {
@@ -305,7 +305,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#EveryTwoWeeks
-	 * EventFrequency1Code.mmEveryTwoWeeks}</li>
+	 * EventFrequency1Code.EveryTwoWeeks}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code EveryTwoWeeks = new EventFrequency9Code() {
@@ -335,7 +335,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Weekly
-	 * EventFrequency1Code.mmWeekly}</li>
+	 * EventFrequency1Code.Weekly}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Weekly = new EventFrequency9Code() {
@@ -365,7 +365,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Daily
-	 * EventFrequency1Code.mmDaily}</li>
+	 * EventFrequency1Code.Daily}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Daily = new EventFrequency9Code() {
@@ -395,7 +395,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Adhoc
-	 * EventFrequency1Code.mmAdhoc}</li>
+	 * EventFrequency1Code.Adhoc}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Adhoc = new EventFrequency9Code() {
@@ -425,7 +425,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#IntraDay
-	 * EventFrequency1Code.mmIntraDay}</li>
+	 * EventFrequency1Code.IntraDay}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code IntraDay = new EventFrequency9Code() {
@@ -455,7 +455,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#Overnight
-	 * EventFrequency1Code.mmOvernight}</li>
+	 * EventFrequency1Code.Overnight}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code Overnight = new EventFrequency9Code() {
@@ -485,7 +485,7 @@ public class EventFrequency9Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency1Code#OnDemand
-	 * EventFrequency1Code.mmOnDemand}</li>
+	 * EventFrequency1Code.OnDemand}</li>
 	 * </ul>
 	 */
 	public static final EventFrequency9Code OnDemand = new EventFrequency9Code() {
@@ -529,7 +529,7 @@ public class EventFrequency9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EventFrequency9Code";

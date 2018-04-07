@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.TradingMarket;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of market identification."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarketIdentification1Choice", propOrder = {"marketIdentifierCode", "description"})
 public class MarketIdentification1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MktIdrCd", required = true)
 	protected MICIdentifier marketIdentifierCode;
 	/**
-	 * ISO 10383 Market Identification Code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +108,10 @@ public class MarketIdentification1Choice {
 	 * definition} = "ISO 10383 Market Identification Code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMarketIdentifierCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketIdentification1Choice, MICIdentifier> mmMarketIdentifierCode = new MMMessageAttribute<MarketIdentification1Choice, MICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmMIC;
-			componentContext_lazy = () -> MarketIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarketIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MktIdrCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,22 @@ public class MarketIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public MICIdentifier getValue(MarketIdentification1Choice obj) {
+			return obj.getMarketIdentifierCode();
+		}
+
+		@Override
+		public void setValue(MarketIdentification1Choice obj, MICIdentifier value) {
+			obj.setMarketIdentifierCode(value);
+		}
 	};
+	@XmlElement(name = "Desc", required = true)
 	protected Max35Text description;
 	/**
-	 * Description of the market when no Market Identifier Code is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,9 +162,9 @@ public class MarketIdentification1Choice {
 	 * "Description of the market when no Market Identifier Code is available."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarketIdentification1Choice, Max35Text> mmDescription = new MMMessageAttribute<MarketIdentification1Choice, Max35Text>() {
 		{
-			componentContext_lazy = () -> MarketIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarketIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,14 +174,24 @@ public class MarketIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(MarketIdentification1Choice obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(MarketIdentification1Choice obj, Max35Text value) {
+			obj.setDescription(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarketIdentification1Choice.mmMarketIdentifierCode, MarketIdentification1Choice.mmDescription);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MarketIdentification1Choice.mmMarketIdentifierCode, com.tools20022.repository.choice.MarketIdentification1Choice.mmDescription);
 				trace_lazy = () -> TradingMarket.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketIdentification1Choice";
 				definition = "Choice of market identification.";
@@ -177,21 +200,21 @@ public class MarketIdentification1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MktIdrCd", required = true)
 	public MICIdentifier getMarketIdentifierCode() {
 		return marketIdentifierCode;
 	}
 
-	public void setMarketIdentifierCode(MICIdentifier marketIdentifierCode) {
-		this.marketIdentifierCode = marketIdentifierCode;
+	public MarketIdentification1Choice setMarketIdentifierCode(MICIdentifier marketIdentifierCode) {
+		this.marketIdentifierCode = Objects.requireNonNull(marketIdentifierCode);
+		return this;
 	}
 
-	@XmlElement(name = "Desc", required = true)
 	public Max35Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max35Text description) {
-		this.description = description;
+	public MarketIdentification1Choice setDescription(Max35Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 }

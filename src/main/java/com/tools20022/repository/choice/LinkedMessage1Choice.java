@@ -24,6 +24,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AdditionalReference3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Reference to a message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LinkedMessage1Choice", propOrder = {"previousReference", "otherReference", "relatedReference"})
 public class LinkedMessage1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PrvsRef", required = true)
 	protected AdditionalReference3 previousReference;
 	/**
-	 * Linked previous reference.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -96,9 +98,9 @@ public class LinkedMessage1Choice {
 	 * definition} = "Linked previous reference."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPreviousReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LinkedMessage1Choice, AdditionalReference3> mmPreviousReference = new MMMessageAssociationEnd<LinkedMessage1Choice, AdditionalReference3>() {
 		{
-			componentContext_lazy = () -> LinkedMessage1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.LinkedMessage1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrvsRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,11 +111,22 @@ public class LinkedMessage1Choice {
 			isComposite = true;
 			type_lazy = () -> AdditionalReference3.mmObject();
 		}
+
+		@Override
+		public AdditionalReference3 getValue(LinkedMessage1Choice obj) {
+			return obj.getPreviousReference();
+		}
+
+		@Override
+		public void setValue(LinkedMessage1Choice obj, AdditionalReference3 value) {
+			obj.setPreviousReference(value);
+		}
 	};
+	@XmlElement(name = "OthrRef", required = true)
 	protected AdditionalReference3 otherReference;
 	/**
-	 * Linked other reference.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -137,9 +150,9 @@ public class LinkedMessage1Choice {
 	 * definition} = "Linked other reference."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LinkedMessage1Choice, AdditionalReference3> mmOtherReference = new MMMessageAssociationEnd<LinkedMessage1Choice, AdditionalReference3>() {
 		{
-			componentContext_lazy = () -> LinkedMessage1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.LinkedMessage1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OthrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,11 +163,22 @@ public class LinkedMessage1Choice {
 			isComposite = true;
 			type_lazy = () -> AdditionalReference3.mmObject();
 		}
+
+		@Override
+		public AdditionalReference3 getValue(LinkedMessage1Choice obj) {
+			return obj.getOtherReference();
+		}
+
+		@Override
+		public void setValue(LinkedMessage1Choice obj, AdditionalReference3 value) {
+			obj.setOtherReference(value);
+		}
 	};
+	@XmlElement(name = "RltdRef", required = true)
 	protected AdditionalReference3 relatedReference;
 	/**
-	 * Linked related reference.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -178,9 +202,9 @@ public class LinkedMessage1Choice {
 	 * definition} = "Linked related reference."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRelatedReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LinkedMessage1Choice, AdditionalReference3> mmRelatedReference = new MMMessageAssociationEnd<LinkedMessage1Choice, AdditionalReference3>() {
 		{
-			componentContext_lazy = () -> LinkedMessage1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.LinkedMessage1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RltdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,13 +215,24 @@ public class LinkedMessage1Choice {
 			isComposite = true;
 			type_lazy = () -> AdditionalReference3.mmObject();
 		}
+
+		@Override
+		public AdditionalReference3 getValue(LinkedMessage1Choice obj) {
+			return obj.getRelatedReference();
+		}
+
+		@Override
+		public void setValue(LinkedMessage1Choice obj, AdditionalReference3 value) {
+			obj.setRelatedReference(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LinkedMessage1Choice.mmPreviousReference, LinkedMessage1Choice.mmOtherReference, LinkedMessage1Choice.mmRelatedReference);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.LinkedMessage1Choice.mmPreviousReference, com.tools20022.repository.choice.LinkedMessage1Choice.mmOtherReference,
+						com.tools20022.repository.choice.LinkedMessage1Choice.mmRelatedReference);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LinkedMessage1Choice";
 				definition = "Reference to a message.";
@@ -206,30 +241,30 @@ public class LinkedMessage1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PrvsRef", required = true)
 	public AdditionalReference3 getPreviousReference() {
 		return previousReference;
 	}
 
-	public void setPreviousReference(AdditionalReference3 previousReference) {
-		this.previousReference = previousReference;
+	public LinkedMessage1Choice setPreviousReference(AdditionalReference3 previousReference) {
+		this.previousReference = Objects.requireNonNull(previousReference);
+		return this;
 	}
 
-	@XmlElement(name = "OthrRef", required = true)
 	public AdditionalReference3 getOtherReference() {
 		return otherReference;
 	}
 
-	public void setOtherReference(AdditionalReference3 otherReference) {
-		this.otherReference = otherReference;
+	public LinkedMessage1Choice setOtherReference(AdditionalReference3 otherReference) {
+		this.otherReference = Objects.requireNonNull(otherReference);
+		return this;
 	}
 
-	@XmlElement(name = "RltdRef", required = true)
 	public AdditionalReference3 getRelatedReference() {
 		return relatedReference;
 	}
 
-	public void setRelatedReference(AdditionalReference3 relatedReference) {
-		this.relatedReference = relatedReference;
+	public LinkedMessage1Choice setRelatedReference(AdditionalReference3 relatedReference) {
+		this.relatedReference = Objects.requireNonNull(relatedReference);
+		return this;
 	}
 }

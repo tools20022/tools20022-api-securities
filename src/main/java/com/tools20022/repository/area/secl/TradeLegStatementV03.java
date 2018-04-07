@@ -24,10 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.SecuritiesClearingLatestVersion;
 import com.tools20022.repository.choice.PartyIdentification35Choice;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -93,16 +91,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TradeLegStatementV03", propOrder = {"statementParameters", "pagination", "clearingMember", "clearingAccount", "statementDetails", "supplementaryData"})
 public class TradeLegStatementV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StmtParams", required = true)
 	protected Statement31 statementParameters;
 	/**
-	 * Provides various statement parameters such as the statement
-	 * identification, the statement date and time or the statement frequency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,7 +122,7 @@ public class TradeLegStatementV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatementParameters = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TradeLegStatementV03, Statement31> mmStatementParameters = new MMMessageBuildingBlock<TradeLegStatementV03, Statement31>() {
 		{
 			xmlTag = "StmtParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,20 +133,21 @@ public class TradeLegStatementV03 {
 			complexType_lazy = () -> Statement31.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradeLegStatementV03.class.getMethod("getStatementParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Statement31 getValue(TradeLegStatementV03 obj) {
+			return obj.getStatementParameters();
+		}
+
+		@Override
+		public void setValue(TradeLegStatementV03 obj, Statement31 value) {
+			obj.setStatementParameters(value);
 		}
 	};
+	@XmlElement(name = "Pgntn", required = true)
 	protected Pagination pagination;
 	/**
-	 * Page number of the message (within a statement) and continuation
-	 * indicator to indicate that the statement is to continue or that the
-	 * message is the last page of the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,7 +169,7 @@ public class TradeLegStatementV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TradeLegStatementV03, Pagination> mmPagination = new MMMessageBuildingBlock<TradeLegStatementV03, Pagination>() {
 		{
 			xmlTag = "Pgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,19 +180,21 @@ public class TradeLegStatementV03 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradeLegStatementV03.class.getMethod("getPagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Pagination getValue(TradeLegStatementV03 obj) {
+			return obj.getPagination();
+		}
+
+		@Override
+		public void setValue(TradeLegStatementV03 obj, Pagination value) {
+			obj.setPagination(value);
 		}
 	};
+	@XmlElement(name = "ClrMmb", required = true)
 	protected PartyIdentification35Choice clearingMember;
 	/**
-	 * Provides the identification of the account owner, that is the clearing
-	 * member (individual clearing member or general clearing member).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +217,7 @@ public class TradeLegStatementV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingMember = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TradeLegStatementV03, PartyIdentification35Choice> mmClearingMember = new MMMessageBuildingBlock<TradeLegStatementV03, PartyIdentification35Choice>() {
 		{
 			xmlTag = "ClrMmb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,20 +228,21 @@ public class TradeLegStatementV03 {
 			complexType_lazy = () -> PartyIdentification35Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradeLegStatementV03.class.getMethod("getClearingMember", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartyIdentification35Choice getValue(TradeLegStatementV03 obj) {
+			return obj.getClearingMember();
+		}
+
+		@Override
+		public void setValue(TradeLegStatementV03 obj, PartyIdentification35Choice value) {
+			obj.setClearingMember(value);
 		}
 	};
+	@XmlElement(name = "ClrAcct")
 	protected SecuritiesAccount18 clearingAccount;
 	/**
-	 * Identifies the clearing member account at the Central counterparty
-	 * through which the trade must be cleared (sometimes called position
-	 * account).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,7 +265,7 @@ public class TradeLegStatementV03 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TradeLegStatementV03, Optional<SecuritiesAccount18>> mmClearingAccount = new MMMessageBuildingBlock<TradeLegStatementV03, Optional<SecuritiesAccount18>>() {
 		{
 			xmlTag = "ClrAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -274,18 +276,21 @@ public class TradeLegStatementV03 {
 			complexType_lazy = () -> SecuritiesAccount18.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradeLegStatementV03.class.getMethod("getClearingAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<SecuritiesAccount18> getValue(TradeLegStatementV03 obj) {
+			return obj.getClearingAccount();
+		}
+
+		@Override
+		public void setValue(TradeLegStatementV03 obj, Optional<SecuritiesAccount18> value) {
+			obj.setClearingAccount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "StmtDtls", required = true)
 	protected List<TradeLegStatement3> statementDetails;
 	/**
-	 * Provides the statement details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -306,7 +311,7 @@ public class TradeLegStatementV03 {
 	 * definition} = "Provides the statement details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatementDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TradeLegStatementV03, List<TradeLegStatement3>> mmStatementDetails = new MMMessageBuildingBlock<TradeLegStatementV03, List<TradeLegStatement3>>() {
 		{
 			xmlTag = "StmtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -316,19 +321,21 @@ public class TradeLegStatementV03 {
 			complexType_lazy = () -> TradeLegStatement3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradeLegStatementV03.class.getMethod("getStatementDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<TradeLegStatement3> getValue(TradeLegStatementV03 obj) {
+			return obj.getStatementDetails();
+		}
+
+		@Override
+		public void setValue(TradeLegStatementV03 obj, List<TradeLegStatement3> value) {
+			obj.setStatementDetails(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -347,26 +354,28 @@ public class TradeLegStatementV03 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TradeLegStatementV03, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<TradeLegStatementV03, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TradeLegStatementV03.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(TradeLegStatementV03 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(TradeLegStatementV03 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -400,61 +409,61 @@ public class TradeLegStatementV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StmtParams", required = true)
 	public Statement31 getStatementParameters() {
 		return statementParameters;
 	}
 
-	public void setStatementParameters(Statement31 statementParameters) {
-		this.statementParameters = statementParameters;
+	public TradeLegStatementV03 setStatementParameters(Statement31 statementParameters) {
+		this.statementParameters = Objects.requireNonNull(statementParameters);
+		return this;
 	}
 
-	@XmlElement(name = "Pgntn", required = true)
 	public Pagination getPagination() {
 		return pagination;
 	}
 
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
+	public TradeLegStatementV03 setPagination(Pagination pagination) {
+		this.pagination = Objects.requireNonNull(pagination);
+		return this;
 	}
 
-	@XmlElement(name = "ClrMmb", required = true)
 	public PartyIdentification35Choice getClearingMember() {
 		return clearingMember;
 	}
 
-	public void setClearingMember(PartyIdentification35Choice clearingMember) {
-		this.clearingMember = clearingMember;
+	public TradeLegStatementV03 setClearingMember(PartyIdentification35Choice clearingMember) {
+		this.clearingMember = Objects.requireNonNull(clearingMember);
+		return this;
 	}
 
-	@XmlElement(name = "ClrAcct")
-	public SecuritiesAccount18 getClearingAccount() {
-		return clearingAccount;
+	public Optional<SecuritiesAccount18> getClearingAccount() {
+		return clearingAccount == null ? Optional.empty() : Optional.of(clearingAccount);
 	}
 
-	public void setClearingAccount(SecuritiesAccount18 clearingAccount) {
+	public TradeLegStatementV03 setClearingAccount(SecuritiesAccount18 clearingAccount) {
 		this.clearingAccount = clearingAccount;
+		return this;
 	}
 
-	@XmlElement(name = "StmtDtls", required = true)
 	public List<TradeLegStatement3> getStatementDetails() {
-		return statementDetails;
+		return statementDetails == null ? statementDetails = new ArrayList<>() : statementDetails;
 	}
 
-	public void setStatementDetails(List<TradeLegStatement3> statementDetails) {
-		this.statementDetails = statementDetails;
+	public TradeLegStatementV03 setStatementDetails(List<TradeLegStatement3> statementDetails) {
+		this.statementDetails = Objects.requireNonNull(statementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public TradeLegStatementV03 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:secl.003.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:secl.003.001.03")
 	static public class Document {
 		@XmlElement(name = "TradLegStmt", required = true)
 		public TradeLegStatementV03 messageBody;

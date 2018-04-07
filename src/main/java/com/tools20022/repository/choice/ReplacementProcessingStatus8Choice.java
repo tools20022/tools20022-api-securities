@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -28,13 +29,14 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * Choice of format for the replacement processing status
+ * Choice of format for the replacement processing status.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,18 +66,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "ReplacementProcessingStatus8Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of format for the replacement processing status"</li>
+ * definition} = "Choice of format for the replacement processing status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReplacementProcessingStatus8Choice", propOrder = {"code", "proprietary"})
 public class ReplacementProcessingStatus8Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ReplacementProcessingStatus1Code code;
 	/**
-	 * Provides the processing status of the replacement request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,6 +99,9 @@ public class ReplacementProcessingStatus8Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Cd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::RPRC//4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -107,12 +113,13 @@ public class ReplacementProcessingStatus8Choice {
 	 * "Provides the processing status of the replacement request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReplacementProcessingStatus8Choice, ReplacementProcessingStatus1Code> mmCode = new MMMessageAttribute<ReplacementProcessingStatus8Choice, ReplacementProcessingStatus1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatus.mmReplacementProcessingStatus;
-			componentContext_lazy = () -> ReplacementProcessingStatus8Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReplacementProcessingStatus8Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::RPRC//4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Provides the processing status of the replacement request.";
@@ -120,11 +127,22 @@ public class ReplacementProcessingStatus8Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ReplacementProcessingStatus1Code.mmObject();
 		}
+
+		@Override
+		public ReplacementProcessingStatus1Code getValue(ReplacementProcessingStatus8Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ReplacementProcessingStatus8Choice obj, ReplacementProcessingStatus1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Provides the processing status of the replacement request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,6 +163,9 @@ public class ReplacementProcessingStatus8Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::RPRC/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -156,12 +177,13 @@ public class ReplacementProcessingStatus8Choice {
 	 * "Provides the processing status of the replacement request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReplacementProcessingStatus8Choice, GenericIdentification30> mmProprietary = new MMMessageAttribute<ReplacementProcessingStatus8Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionStatus.mmAgentStandingInstructionStatus;
-			componentContext_lazy = () -> ReplacementProcessingStatus8Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ReplacementProcessingStatus8Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::RPRC/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Provides the processing status of the replacement request.";
@@ -169,37 +191,47 @@ public class ReplacementProcessingStatus8Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(ReplacementProcessingStatus8Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ReplacementProcessingStatus8Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReplacementProcessingStatus8Choice.mmCode, ReplacementProcessingStatus8Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ReplacementProcessingStatus8Choice.mmCode, com.tools20022.repository.choice.ReplacementProcessingStatus8Choice.mmProprietary);
 				trace_lazy = () -> Status.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReplacementProcessingStatus8Choice";
-				definition = "Choice of format for the replacement processing status";
+				definition = "Choice of format for the replacement processing status.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ReplacementProcessingStatus1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ReplacementProcessingStatus1Code code) {
-		this.code = code;
+	public ReplacementProcessingStatus8Choice setCode(ReplacementProcessingStatus1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public ReplacementProcessingStatus8Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

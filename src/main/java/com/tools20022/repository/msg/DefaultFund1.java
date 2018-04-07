@@ -27,9 +27,9 @@ import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.DefaultFund;
 import com.tools20022.repository.entity.DefaultFundContribution;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Contribution1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,16 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DefaultFund1", propOrder = {"defaultFundAccount", "totalDefaultFundAmount", "contribution", "increaseCoverageAmount"})
 public class DefaultFund1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DfltFndAcct", required = true)
 	protected AccountIdentification4Choice defaultFundAccount;
 	/**
-	 * Specifies the account identification of the clearing member at the ICSD
-	 * (International Central Securities Depository) or at the central bank.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +119,10 @@ public class DefaultFund1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDefaultFundAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DefaultFund1, AccountIdentification4Choice> mmDefaultFundAccount = new MMMessageAttribute<DefaultFund1, AccountIdentification4Choice>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> DefaultFund1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFund1.mmObject();
 			isDerived = false;
 			xmlTag = "DfltFndAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,12 +132,22 @@ public class DefaultFund1 {
 			minOccurs = 1;
 			complexType_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
+
+		@Override
+		public AccountIdentification4Choice getValue(DefaultFund1 obj) {
+			return obj.getDefaultFundAccount();
+		}
+
+		@Override
+		public void setValue(DefaultFund1 obj, AccountIdentification4Choice value) {
+			obj.setDefaultFundAccount(value);
+		}
 	};
+	@XmlElement(name = "TtlDfltFndAmt", required = true)
 	protected ActiveCurrencyAndAmount totalDefaultFundAmount;
 	/**
-	 * Total amount required by the clearing member to participate to the
-	 * default fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,10 +179,10 @@ public class DefaultFund1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalDefaultFundAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DefaultFund1, ActiveCurrencyAndAmount> mmTotalDefaultFundAmount = new MMMessageAttribute<DefaultFund1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> DefaultFund.mmTotalAmount;
-			componentContext_lazy = () -> DefaultFund1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFund1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlDfltFndAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,12 +192,22 @@ public class DefaultFund1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(DefaultFund1 obj) {
+			return obj.getTotalDefaultFundAmount();
+		}
+
+		@Override
+		public void setValue(DefaultFund1 obj, ActiveCurrencyAndAmount value) {
+			obj.setTotalDefaultFundAmount(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.Contribution1> contribution;
+	@XmlElement(name = "Cntrbtn")
+	protected List<Contribution1> contribution;
 	/**
-	 * Provides details about the contribution to the default fund by trading
-	 * venues/products.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -217,10 +237,10 @@ public class DefaultFund1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContribution = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DefaultFund1, List<Contribution1>> mmContribution = new MMMessageAssociationEnd<DefaultFund1, List<Contribution1>>() {
 		{
 			businessElementTrace_lazy = () -> DefaultFund.mmContribution;
-			componentContext_lazy = () -> DefaultFund1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFund1.mmObject();
 			isDerived = false;
 			xmlTag = "Cntrbtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,15 +248,24 @@ public class DefaultFund1 {
 			definition = "Provides details about the contribution to the default fund by trading venues/products.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Contribution1.mmObject();
+			type_lazy = () -> Contribution1.mmObject();
+		}
+
+		@Override
+		public List<Contribution1> getValue(DefaultFund1 obj) {
+			return obj.getContribution();
+		}
+
+		@Override
+		public void setValue(DefaultFund1 obj, List<Contribution1> value) {
+			obj.setContribution(value);
 		}
 	};
+	@XmlElement(name = "IncrCvrgAmt")
 	protected ActiveCurrencyAndAmount increaseCoverageAmount;
 	/**
-	 * Additional amount that the clearing member will have to provide to cover
-	 * a risk increase. This results from a risk management decision depending
-	 * on central counterparty specific criteria.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,10 +297,10 @@ public class DefaultFund1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncreaseCoverageAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DefaultFund1, Optional<ActiveCurrencyAndAmount>> mmIncreaseCoverageAmount = new MMMessageAttribute<DefaultFund1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> DefaultFundContribution.mmExcessOrDeficitAmount;
-			componentContext_lazy = () -> DefaultFund1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFund1.mmObject();
 			isDerived = false;
 			xmlTag = "IncrCvrgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -281,14 +310,25 @@ public class DefaultFund1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(DefaultFund1 obj) {
+			return obj.getIncreaseCoverageAmount();
+		}
+
+		@Override
+		public void setValue(DefaultFund1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setIncreaseCoverageAmount(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DefaultFund1.mmDefaultFundAccount, DefaultFund1.mmTotalDefaultFundAmount, DefaultFund1.mmContribution, DefaultFund1.mmIncreaseCoverageAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DefaultFund1.mmDefaultFundAccount, com.tools20022.repository.msg.DefaultFund1.mmTotalDefaultFundAmount,
+						com.tools20022.repository.msg.DefaultFund1.mmContribution, com.tools20022.repository.msg.DefaultFund1.mmIncreaseCoverageAmount);
 				trace_lazy = () -> DefaultFund.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DefaultFund1";
 				definition = "Provides information such as the default fund account identification or the default fund amount.";
@@ -297,39 +337,39 @@ public class DefaultFund1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DfltFndAcct", required = true)
 	public AccountIdentification4Choice getDefaultFundAccount() {
 		return defaultFundAccount;
 	}
 
-	public void setDefaultFundAccount(AccountIdentification4Choice defaultFundAccount) {
-		this.defaultFundAccount = defaultFundAccount;
+	public DefaultFund1 setDefaultFundAccount(AccountIdentification4Choice defaultFundAccount) {
+		this.defaultFundAccount = Objects.requireNonNull(defaultFundAccount);
+		return this;
 	}
 
-	@XmlElement(name = "TtlDfltFndAmt", required = true)
 	public ActiveCurrencyAndAmount getTotalDefaultFundAmount() {
 		return totalDefaultFundAmount;
 	}
 
-	public void setTotalDefaultFundAmount(ActiveCurrencyAndAmount totalDefaultFundAmount) {
-		this.totalDefaultFundAmount = totalDefaultFundAmount;
+	public DefaultFund1 setTotalDefaultFundAmount(ActiveCurrencyAndAmount totalDefaultFundAmount) {
+		this.totalDefaultFundAmount = Objects.requireNonNull(totalDefaultFundAmount);
+		return this;
 	}
 
-	@XmlElement(name = "Cntrbtn")
 	public List<Contribution1> getContribution() {
-		return contribution;
+		return contribution == null ? contribution = new ArrayList<>() : contribution;
 	}
 
-	public void setContribution(List<com.tools20022.repository.msg.Contribution1> contribution) {
-		this.contribution = contribution;
+	public DefaultFund1 setContribution(List<Contribution1> contribution) {
+		this.contribution = Objects.requireNonNull(contribution);
+		return this;
 	}
 
-	@XmlElement(name = "IncrCvrgAmt")
-	public ActiveCurrencyAndAmount getIncreaseCoverageAmount() {
-		return increaseCoverageAmount;
+	public Optional<ActiveCurrencyAndAmount> getIncreaseCoverageAmount() {
+		return increaseCoverageAmount == null ? Optional.empty() : Optional.of(increaseCoverageAmount);
 	}
 
-	public void setIncreaseCoverageAmount(ActiveCurrencyAndAmount increaseCoverageAmount) {
+	public DefaultFund1 setIncreaseCoverageAmount(ActiveCurrencyAndAmount increaseCoverageAmount) {
 		this.increaseCoverageAmount = increaseCoverageAmount;
+		return this;
 	}
 }

@@ -39,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#ExistingIssue
- * NewSecuritiesIssuanceTypeCode.mmExistingIssue}</li>
+ * NewSecuritiesIssuanceTypeCode.ExistingIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#NewIssue
- * NewSecuritiesIssuanceTypeCode.mmNewIssue}</li>
+ * NewSecuritiesIssuanceTypeCode.NewIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#Unknown
- * NewSecuritiesIssuanceTypeCode.mmUnknown}</li>
+ * NewSecuritiesIssuanceTypeCode.Unknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#DefeasedSecurityIndicator
- * NewSecuritiesIssuanceTypeCode.mmDefeasedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceTypeCode.DefeasedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#NonDefeasedSecurityIndicator
- * NewSecuritiesIssuanceTypeCode.mmNonDefeasedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceTypeCode.NonDefeasedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#RefundedSecurityIndicator
- * NewSecuritiesIssuanceTypeCode.mmRefundedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceTypeCode.RefundedSecurityIndicator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode#NonRefundedSecurityIndicator
- * NewSecuritiesIssuanceTypeCode.mmNonRefundedSecurityIndicator}</li>
+ * NewSecuritiesIssuanceTypeCode.NonRefundedSecurityIndicator}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -211,7 +211,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date.  Applicable only in the frame of a Partial Defeasance PDEF corporate action event. "
+	 * "Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date. Applicable only in the frame of a Partial Defeasance PDEF corporate action event."
 	 * </li>
 	 * </ul>
 	 */
@@ -219,7 +219,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DefeasedSecurityIndicator";
-			definition = "Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date.  Applicable only in the frame of a Partial Defeasance PDEF corporate action event. ";
+			definition = "Funds have been placed in escrow by a trustee or agent to ensure payment on a portion of the outstanding balance of the original security on maturity date. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode.mmObject();
 			codeName = "DEFE";
 		}
@@ -245,7 +245,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security.  Applicable only in the frame of a Partial Defeasance PDEF corporate action event. "
+	 * "Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security. Applicable only in the frame of a Partial Defeasance PDEF corporate action event."
 	 * </li>
 	 * </ul>
 	 */
@@ -253,7 +253,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonDefeasedSecurityIndicator";
-			definition = "Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security.  Applicable only in the frame of a Partial Defeasance PDEF corporate action event. ";
+			definition = "Funds will not be guaranteed at maturity by the issuer or paying agent for this newly issued non-defeased security. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode.mmObject();
 			codeName = "NDEF";
 		}
@@ -313,7 +313,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event. "
+	 * "New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event."
 	 * </li>
 	 * </ul>
 	 */
@@ -321,7 +321,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonRefundedSecurityIndicator";
-			definition = "New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event. ";
+			definition = "New Security issued that has not been refunded and the maturity date of the original underlying security is unchanged. Applicable only in the frame of a Partial Defeasance PDEF corporate action event.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NewSecuritiesIssuanceTypeCode.mmObject();
 			codeName = "NREF";
 		}
@@ -334,7 +334,7 @@ public class NewSecuritiesIssuanceTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EXIS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NewSecuritiesIssuanceTypeCode";

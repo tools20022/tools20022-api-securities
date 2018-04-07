@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.Commodity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,16 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaperCommodityPulp1", propOrder = {"baseProduct", "subProduct"})
 public class PaperCommodityPulp1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BasePdct", required = true)
 	protected AssetClassProductType8Code baseProduct;
 	/**
-	 * Base product for the underlying asset class as specified in the
-	 * classification of commodities derivatives table.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +111,10 @@ public class PaperCommodityPulp1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaperCommodityPulp1, AssetClassProductType8Code> mmBaseProduct = new MMMessageAttribute<PaperCommodityPulp1, AssetClassProductType8Code>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmBaseProduct;
-			componentContext_lazy = () -> PaperCommodityPulp1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaperCommodityPulp1.mmObject();
 			isDerived = false;
 			xmlTag = "BasePdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +124,22 @@ public class PaperCommodityPulp1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AssetClassProductType8Code.mmObject();
 		}
+
+		@Override
+		public AssetClassProductType8Code getValue(PaperCommodityPulp1 obj) {
+			return obj.getBaseProduct();
+		}
+
+		@Override
+		public void setValue(PaperCommodityPulp1 obj, AssetClassProductType8Code value) {
+			obj.setBaseProduct(value);
+		}
 	};
+	@XmlElement(name = "SubPdct")
 	protected AssetClassSubProductType37Code subProduct;
 	/**
-	 * Sub-product for the underlying asset class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +170,10 @@ public class PaperCommodityPulp1 {
 	 * definition} = "Sub-product for the underlying asset class."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSubProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaperCommodityPulp1, Optional<AssetClassSubProductType37Code>> mmSubProduct = new MMMessageAttribute<PaperCommodityPulp1, Optional<AssetClassSubProductType37Code>>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmSubProduct;
-			componentContext_lazy = () -> PaperCommodityPulp1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaperCommodityPulp1.mmObject();
 			isDerived = false;
 			xmlTag = "SubPdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,14 +183,24 @@ public class PaperCommodityPulp1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> AssetClassSubProductType37Code.mmObject();
 		}
+
+		@Override
+		public Optional<AssetClassSubProductType37Code> getValue(PaperCommodityPulp1 obj) {
+			return obj.getSubProduct();
+		}
+
+		@Override
+		public void setValue(PaperCommodityPulp1 obj, Optional<AssetClassSubProductType37Code> value) {
+			obj.setSubProduct(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaperCommodityPulp1.mmBaseProduct, PaperCommodityPulp1.mmSubProduct);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaperCommodityPulp1.mmBaseProduct, com.tools20022.repository.msg.PaperCommodityPulp1.mmSubProduct);
 				trace_lazy = () -> Commodity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaperCommodityPulp1";
 				definition = "Defines commodity sub-product attributes of a paper derivative of type pulp.";
@@ -186,21 +209,21 @@ public class PaperCommodityPulp1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BasePdct", required = true)
 	public AssetClassProductType8Code getBaseProduct() {
 		return baseProduct;
 	}
 
-	public void setBaseProduct(AssetClassProductType8Code baseProduct) {
-		this.baseProduct = baseProduct;
+	public PaperCommodityPulp1 setBaseProduct(AssetClassProductType8Code baseProduct) {
+		this.baseProduct = Objects.requireNonNull(baseProduct);
+		return this;
 	}
 
-	@XmlElement(name = "SubPdct")
-	public AssetClassSubProductType37Code getSubProduct() {
-		return subProduct;
+	public Optional<AssetClassSubProductType37Code> getSubProduct() {
+		return subProduct == null ? Optional.empty() : Optional.of(subProduct);
 	}
 
-	public void setSubProduct(AssetClassSubProductType37Code subProduct) {
+	public PaperCommodityPulp1 setSubProduct(AssetClassSubProductType37Code subProduct) {
 		this.subProduct = subProduct;
+		return this;
 	}
 }

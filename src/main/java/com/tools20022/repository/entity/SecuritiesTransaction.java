@@ -27,9 +27,9 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.SecuritiesTransaction1;
 import com.tools20022.repository.msg.SecuritiesTransactionReport2;
 import com.tools20022.repository.msg.SecuritiesTransactionReport4;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Exchange of securities.
@@ -82,8 +82,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +99,8 @@ public class SecuritiesTransaction extends SecuritiesTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount replacedAmount;
 	/**
-	 * Specifies the amount requested to be replaced or actually replaced.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +116,7 @@ public class SecuritiesTransaction extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "ReplacedAmount"</li>
 	 * <li>
@@ -125,11 +125,11 @@ public class SecuritiesTransaction extends SecuritiesTrade {
 	 * "Specifies the amount requested to be replaced or actually replaced."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReplacedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesTransaction, CurrencyAndAmount> mmReplacedAmount = new MMBusinessAttribute<SecuritiesTransaction, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransaction.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReplacedAmount";
 			definition = "Specifies the amount requested to be replaced or actually replaced.";
 			maxOccurs = 1;
@@ -137,19 +137,21 @@ public class SecuritiesTransaction extends SecuritiesTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransaction.class.getMethod("getReplacedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(SecuritiesTransaction obj) {
+			return obj.getReplacedAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransaction obj, CurrencyAndAmount value) {
+			obj.setReplacedAmount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTransaction";
 				definition = "Exchange of securities.";
@@ -171,7 +173,8 @@ public class SecuritiesTransaction extends SecuritiesTrade {
 		return replacedAmount;
 	}
 
-	public void setReplacedAmount(CurrencyAndAmount replacedAmount) {
-		this.replacedAmount = replacedAmount;
+	public SecuritiesTransaction setReplacedAmount(CurrencyAndAmount replacedAmount) {
+		this.replacedAmount = Objects.requireNonNull(replacedAmount);
+		return this;
 	}
 }

@@ -37,22 +37,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#Average
- * TypeOfPrice3Code.mmAverage}</li>
+ * TypeOfPrice3Code.Average}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#AverageOverride
- * TypeOfPrice3Code.mmAverageOverride}</li>
+ * TypeOfPrice3Code.AverageOverride}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#GrossOfAll
- * TypeOfPrice3Code.mmGrossOfAll}</li>
+ * TypeOfPrice3Code.GrossOfAll}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#Net
- * TypeOfPrice3Code.mmNet}</li>
+ * TypeOfPrice3Code.Net}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#NetOfAll
- * TypeOfPrice3Code.mmNetOfAll}</li>
+ * TypeOfPrice3Code.NetOfAll}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#ParValue
- * TypeOfPrice3Code.mmParValue}</li>
+ * TypeOfPrice3Code.ParValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice3Code#RoundedAverage
- * TypeOfPrice3Code.mmRoundedAverage}</li>
+ * TypeOfPrice3Code.RoundedAverage}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -61,8 +61,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -259,7 +259,7 @@ public class TypeOfPrice3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AVER");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPrice3Code";

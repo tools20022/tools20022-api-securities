@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#AccreditedInvestor
- * BeneficiaryCertificationType4Code.mmAccreditedInvestor}</li>
+ * BeneficiaryCertificationType4Code.AccreditedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#DomicileCountry
- * BeneficiaryCertificationType4Code.mmDomicileCountry}</li>
+ * BeneficiaryCertificationType4Code.DomicileCountry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#NonDomicileCountry
- * BeneficiaryCertificationType4Code.mmNonDomicileCountry}</li>
+ * BeneficiaryCertificationType4Code.NonDomicileCountry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#FullBeneficialOwnerBreakdown
- * BeneficiaryCertificationType4Code.mmFullBeneficialOwnerBreakdown}</li>
+ * BeneficiaryCertificationType4Code.FullBeneficialOwnerBreakdown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#NonCompany
- * BeneficiaryCertificationType4Code.mmNonCompany}</li>
+ * BeneficiaryCertificationType4Code.NonCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#QIBCertification
- * BeneficiaryCertificationType4Code.mmQIBCertification}</li>
+ * BeneficiaryCertificationType4Code.QIBCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#TaxRateBreakdown
- * BeneficiaryCertificationType4Code.mmTaxRateBreakdown}</li>
+ * BeneficiaryCertificationType4Code.TaxRateBreakdown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#BeneficialOwnerPaperwork
- * BeneficiaryCertificationType4Code.mmBeneficialOwnerPaperwork}</li>
+ * BeneficiaryCertificationType4Code.BeneficialOwnerPaperwork}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#ICSDParticipantBreakdown
- * BeneficiaryCertificationType4Code.mmICSDParticipantBreakdown}</li>
+ * BeneficiaryCertificationType4Code.ICSDParticipantBreakdown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType4Code#FractionBreakdown
- * BeneficiaryCertificationType4Code.mmFractionBreakdown}</li>
+ * BeneficiaryCertificationType4Code.FractionBreakdown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -344,7 +344,7 @@ public class BeneficiaryCertificationType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACCI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BeneficiaryCertificationType4Code";

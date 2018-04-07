@@ -38,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.RecordStatusCode#Accepted
- * RecordStatusCode.mmAccepted}</li>
+ * RecordStatusCode.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RecordStatusCode#AcceptedAfterPending
- * RecordStatusCode.mmAcceptedAfterPending}</li>
+ * RecordStatusCode.AcceptedAfterPending}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RecordStatusCode#Pending
- * RecordStatusCode.mmPending}</li>
+ * RecordStatusCode.Pending}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RecordStatusCode#Received
- * RecordStatusCode.mmReceived}</li>
+ * RecordStatusCode.Received}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RecordStatusCode#Rejected
- * RecordStatusCode.mmRejected}</li>
+ * RecordStatusCode.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RecordStatusCode#RejectedAfterPending
- * RecordStatusCode.mmRejectedAfterPending}</li>
+ * RecordStatusCode.RejectedAfterPending}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RecordStatusCode#Warning
- * RecordStatusCode.mmWarning}</li>
+ * RecordStatusCode.Warning}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -304,7 +304,7 @@ public class RecordStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RecordStatusCode";
 				definition = "Specifies the status of the processing of an individual record within a message.";

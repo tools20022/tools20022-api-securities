@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#Concentrator
- * InvestmentFundRole7Code.mmConcentrator}</li>
+ * InvestmentFundRole7Code.Concentrator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#Distributor
- * InvestmentFundRole7Code.mmDistributor}</li>
+ * InvestmentFundRole7Code.Distributor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#FundManagementCompany
- * InvestmentFundRole7Code.mmFundManagementCompany}</li>
+ * InvestmentFundRole7Code.FundManagementCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#Intermediary
- * InvestmentFundRole7Code.mmIntermediary}</li>
+ * InvestmentFundRole7Code.Intermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#PayingAgent
- * InvestmentFundRole7Code.mmPayingAgent}</li>
+ * InvestmentFundRole7Code.PayingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#TransferAgent
- * InvestmentFundRole7Code.mmTransferAgent}</li>
+ * InvestmentFundRole7Code.TransferAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#Custodian
- * InvestmentFundRole7Code.mmCustodian}</li>
+ * InvestmentFundRole7Code.Custodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#CashCorrespondent
- * InvestmentFundRole7Code.mmCashCorrespondent}</li>
+ * InvestmentFundRole7Code.CashCorrespondent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#FundAccountant
- * InvestmentFundRole7Code.mmFundAccountant}</li>
+ * InvestmentFundRole7Code.FundAccountant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#InvestmentManager
- * InvestmentFundRole7Code.mmInvestmentManager}</li>
+ * InvestmentFundRole7Code.InvestmentManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole7Code#Investor
- * InvestmentFundRole7Code.mmInvestor}</li>
+ * InvestmentFundRole7Code.Investor}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -76,8 +76,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -364,7 +364,7 @@ public class InvestmentFundRole7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundRole7Code";
 				definition = "Specifies the role of the party.";

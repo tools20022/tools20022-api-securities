@@ -27,9 +27,9 @@ import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.entity.CashProceedsDefinition;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CashAccount19;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the cash proceeds."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashProceeds1", propOrder = {"postingAmount", "reconciliationDetails", "accountDetails"})
 public class CashProceeds1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PstngAmt", required = true)
 	protected ActiveCurrencyAndAmount postingAmount;
 	/**
-	 * Cash amount which is posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +110,10 @@ public class CashProceeds1 {
 	 * definition} = "Cash amount which is posted."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPostingAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashProceeds1, ActiveCurrencyAndAmount> mmPostingAmount = new MMMessageAttribute<CashProceeds1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmAmount;
-			componentContext_lazy = () -> CashProceeds1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashProceeds1.mmObject();
 			isDerived = false;
 			xmlTag = "PstngAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +123,22 @@ public class CashProceeds1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(CashProceeds1 obj) {
+			return obj.getPostingAmount();
+		}
+
+		@Override
+		public void setValue(CashProceeds1 obj, ActiveCurrencyAndAmount value) {
+			obj.setPostingAmount(value);
+		}
 	};
+	@XmlElement(name = "RcncltnDtls")
 	protected Max350Text reconciliationDetails;
 	/**
-	 * Reconciliation information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,9 +162,9 @@ public class CashProceeds1 {
 	 * definition} = "Reconciliation information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReconciliationDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashProceeds1, Optional<Max350Text>> mmReconciliationDetails = new MMMessageAttribute<CashProceeds1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> CashProceeds1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashProceeds1.mmObject();
 			isDerived = false;
 			xmlTag = "RcncltnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,11 +174,22 @@ public class CashProceeds1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CashProceeds1 obj) {
+			return obj.getReconciliationDetails();
+		}
+
+		@Override
+		public void setValue(CashProceeds1 obj, Optional<Max350Text> value) {
+			obj.setReconciliationDetails(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.CashAccount19> accountDetails;
+	@XmlElement(name = "AcctDtls", required = true)
+	protected List<CashAccount19> accountDetails;
 	/**
-	 * Provides information about the debited securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -194,10 +217,10 @@ public class CashProceeds1 {
 	 * "Provides information about the debited securities account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashProceeds1, List<CashAccount19>> mmAccountDetails = new MMMessageAssociationEnd<CashProceeds1, List<CashAccount19>>() {
 		{
 			businessComponentTrace_lazy = () -> CashAccount.mmObject();
-			componentContext_lazy = () -> CashProceeds1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashProceeds1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -206,16 +229,27 @@ public class CashProceeds1 {
 			maxOccurs = 2;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount19.mmObject();
+			type_lazy = () -> CashAccount19.mmObject();
+		}
+
+		@Override
+		public List<CashAccount19> getValue(CashProceeds1 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(CashProceeds1 obj, List<CashAccount19> value) {
+			obj.setAccountDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashProceeds1.mmPostingAmount, CashProceeds1.mmReconciliationDetails, CashProceeds1.mmAccountDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashProceeds1.mmPostingAmount, com.tools20022.repository.msg.CashProceeds1.mmReconciliationDetails,
+						com.tools20022.repository.msg.CashProceeds1.mmAccountDetails);
 				trace_lazy = () -> CashProceedsDefinition.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashProceeds1";
 				definition = "Provides information about the cash proceeds.";
@@ -224,30 +258,30 @@ public class CashProceeds1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PstngAmt", required = true)
 	public ActiveCurrencyAndAmount getPostingAmount() {
 		return postingAmount;
 	}
 
-	public void setPostingAmount(ActiveCurrencyAndAmount postingAmount) {
-		this.postingAmount = postingAmount;
+	public CashProceeds1 setPostingAmount(ActiveCurrencyAndAmount postingAmount) {
+		this.postingAmount = Objects.requireNonNull(postingAmount);
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnDtls")
-	public Max350Text getReconciliationDetails() {
-		return reconciliationDetails;
+	public Optional<Max350Text> getReconciliationDetails() {
+		return reconciliationDetails == null ? Optional.empty() : Optional.of(reconciliationDetails);
 	}
 
-	public void setReconciliationDetails(Max350Text reconciliationDetails) {
+	public CashProceeds1 setReconciliationDetails(Max350Text reconciliationDetails) {
 		this.reconciliationDetails = reconciliationDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AcctDtls", required = true)
 	public List<CashAccount19> getAccountDetails() {
-		return accountDetails;
+		return accountDetails == null ? accountDetails = new ArrayList<>() : accountDetails;
 	}
 
-	public void setAccountDetails(List<com.tools20022.repository.msg.CashAccount19> accountDetails) {
-		this.accountDetails = accountDetails;
+	public CashProceeds1 setAccountDetails(List<CashAccount19> accountDetails) {
+		this.accountDetails = Objects.requireNonNull(accountDetails);
+		return this;
 	}
 }

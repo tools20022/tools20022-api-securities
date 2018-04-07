@@ -25,9 +25,12 @@ import com.tools20022.repository.choice.OrderStatus4Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ExpectedExecutionDetails2;
+import com.tools20022.repository.msg.FundOrderData6;
+import com.tools20022.repository.msg.PartyIdentification113;
+import com.tools20022.repository.msg.SwitchLegReferences2;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -81,8 +84,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,16 +98,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SwitchOrderStatusAndReason2", propOrder = {"masterReference", "orderReference", "clientReference", "dealReference", "cancellationReference", "orderStatus", "legInformation", "statusInitiator", "orderData", "newDetails"})
 public class SwitchOrderStatusAndReason2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MstrRef")
 	protected Max35Text masterReference;
 	/**
-	 * Reference assigned to a set of orders or trades in order to link them
-	 * together.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,10 +139,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMasterReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>> mmMasterReference = new MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Order.mmMasterIdentification;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "MstrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,12 +152,22 @@ public class SwitchOrderStatusAndReason2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getMasterReference();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<Max35Text> value) {
+			obj.setMasterReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrRef", required = true)
 	protected Max35Text orderReference;
 	/**
-	 * Unique and unambiguous identifier for the order, as assigned by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,10 +199,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SwitchOrderStatusAndReason2, Max35Text> mmOrderReference = new MMMessageAttribute<SwitchOrderStatusAndReason2, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmIdentification;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,13 +212,22 @@ public class SwitchOrderStatusAndReason2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getOrderReference();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Max35Text value) {
+			obj.setOrderReference(value);
+		}
 	};
+	@XmlElement(name = "ClntRef")
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of the order. This
-	 * reference can typically be used in a hub scenario to give the reference
-	 * of the order as assigned by the underlying client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,10 +259,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>> mmClientReference = new MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmClientReference;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "ClntRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,12 +272,22 @@ public class SwitchOrderStatusAndReason2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getClientReference();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<Max35Text> value) {
+			obj.setClientReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DealRef")
 	protected Max35Text dealReference;
 	/**
-	 * Unique and unambiguous identifier for the order execution, as assigned by
-	 * the confirming party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,10 +319,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDealReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>> mmDealReference = new MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmDealIdentification;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "DealRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -300,12 +332,22 @@ public class SwitchOrderStatusAndReason2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getDealReference();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<Max35Text> value) {
+			obj.setDealReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CxlRef")
 	protected Max35Text cancellationReference;
 	/**
-	 * Unique and unambiguous identifier for the order cancellation, as assigned
-	 * by the instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,9 +374,9 @@ public class SwitchOrderStatusAndReason2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCancellationReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>> mmCancellationReference = new MMMessageAttribute<SwitchOrderStatusAndReason2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "CxlRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -344,11 +386,22 @@ public class SwitchOrderStatusAndReason2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getCancellationReference();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<Max35Text> value) {
+			obj.setCancellationReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrSts", required = true)
 	protected OrderStatus4Choice orderStatus;
 	/**
-	 * Status of the switch order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -377,10 +430,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * definition} = "Status of the switch order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrderStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SwitchOrderStatusAndReason2, OrderStatus4Choice> mmOrderStatus = new MMMessageAssociationEnd<SwitchOrderStatusAndReason2, OrderStatus4Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrderStatus.mmOrderStatus;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -391,11 +444,22 @@ public class SwitchOrderStatusAndReason2 {
 			isComposite = true;
 			type_lazy = () -> OrderStatus4Choice.mmObject();
 		}
+
+		@Override
+		public OrderStatus4Choice getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getOrderStatus();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, OrderStatus4Choice value) {
+			obj.setOrderStatus(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.SwitchLegReferences2> legInformation;
+	@XmlElement(name = "LegInf")
+	protected List<SwitchLegReferences2> legInformation;
 	/**
-	 * Information about a switch leg that is rejected or repaired.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -420,9 +484,9 @@ public class SwitchOrderStatusAndReason2 {
 	 * "Information about a switch leg that is rejected or repaired."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLegInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SwitchOrderStatusAndReason2, List<SwitchLegReferences2>> mmLegInformation = new MMMessageAssociationEnd<SwitchOrderStatusAndReason2, List<SwitchLegReferences2>>() {
 		{
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "LegInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -430,13 +494,24 @@ public class SwitchOrderStatusAndReason2 {
 			definition = "Information about a switch leg that is rejected or repaired.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SwitchLegReferences2.mmObject();
+			type_lazy = () -> SwitchLegReferences2.mmObject();
+		}
+
+		@Override
+		public List<SwitchLegReferences2> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getLegInformation();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, List<SwitchLegReferences2> value) {
+			obj.setLegInformation(value);
 		}
 	};
+	@XmlElement(name = "StsInitr")
 	protected PartyIdentification113 statusInitiator;
 	/**
-	 * Party that initiates the status of the order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -465,10 +540,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * definition} = "Party that initiates the status of the order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStatusInitiator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SwitchOrderStatusAndReason2, Optional<PartyIdentification113>> mmStatusInitiator = new MMMessageAssociationEnd<SwitchOrderStatusAndReason2, Optional<PartyIdentification113>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "StsInitr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -477,13 +552,24 @@ public class SwitchOrderStatusAndReason2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification113.mmObject();
+			type_lazy = () -> PartyIdentification113.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification113> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getStatusInitiator();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<PartyIdentification113> value) {
+			obj.setStatusInitiator(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OrdrData")
 	protected FundOrderData6 orderData;
 	/**
-	 * Order data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -511,10 +597,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * definition} = "Order data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrderData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SwitchOrderStatusAndReason2, Optional<FundOrderData6>> mmOrderData = new MMMessageAssociationEnd<SwitchOrderStatusAndReason2, Optional<FundOrderData6>>() {
 		{
 			businessComponentTrace_lazy = () -> SwitchOrder.mmObject();
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -523,13 +609,24 @@ public class SwitchOrderStatusAndReason2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FundOrderData6.mmObject();
+			type_lazy = () -> FundOrderData6.mmObject();
+		}
+
+		@Override
+		public Optional<FundOrderData6> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getOrderData();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<FundOrderData6> value) {
+			obj.setOrderData(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NewDtls")
 	protected ExpectedExecutionDetails2 newDetails;
 	/**
-	 * Expected execution information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -559,10 +656,10 @@ public class SwitchOrderStatusAndReason2 {
 	 * definition} = "Expected execution information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNewDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SwitchOrderStatusAndReason2, Optional<ExpectedExecutionDetails2>> mmNewDetails = new MMMessageAssociationEnd<SwitchOrderStatusAndReason2, Optional<ExpectedExecutionDetails2>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmInvestmentFundOrderExecution;
-			componentContext_lazy = () -> SwitchOrderStatusAndReason2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmObject();
 			isDerived = false;
 			xmlTag = "NewDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -571,18 +668,30 @@ public class SwitchOrderStatusAndReason2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ExpectedExecutionDetails2.mmObject();
+			type_lazy = () -> ExpectedExecutionDetails2.mmObject();
+		}
+
+		@Override
+		public Optional<ExpectedExecutionDetails2> getValue(SwitchOrderStatusAndReason2 obj) {
+			return obj.getNewDetails();
+		}
+
+		@Override
+		public void setValue(SwitchOrderStatusAndReason2 obj, Optional<ExpectedExecutionDetails2> value) {
+			obj.setNewDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SwitchOrderStatusAndReason2.mmMasterReference, SwitchOrderStatusAndReason2.mmOrderReference, SwitchOrderStatusAndReason2.mmClientReference,
-						SwitchOrderStatusAndReason2.mmDealReference, SwitchOrderStatusAndReason2.mmCancellationReference, SwitchOrderStatusAndReason2.mmOrderStatus, SwitchOrderStatusAndReason2.mmLegInformation,
-						SwitchOrderStatusAndReason2.mmStatusInitiator, SwitchOrderStatusAndReason2.mmOrderData, SwitchOrderStatusAndReason2.mmNewDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmMasterReference, com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmOrderReference,
+						com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmClientReference, com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmDealReference,
+						com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmCancellationReference, com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmOrderStatus,
+						com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmLegInformation, com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmStatusInitiator,
+						com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmOrderData, com.tools20022.repository.msg.SwitchOrderStatusAndReason2.mmNewDetails);
 				trace_lazy = () -> SwitchOrder.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SwitchOrderStatusAndReason2";
 				definition = "Status report of the individual orders of a bulk or multiple order that was previously received.";
@@ -591,93 +700,93 @@ public class SwitchOrderStatusAndReason2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MstrRef")
-	public Max35Text getMasterReference() {
-		return masterReference;
+	public Optional<Max35Text> getMasterReference() {
+		return masterReference == null ? Optional.empty() : Optional.of(masterReference);
 	}
 
-	public void setMasterReference(Max35Text masterReference) {
+	public SwitchOrderStatusAndReason2 setMasterReference(Max35Text masterReference) {
 		this.masterReference = masterReference;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrRef", required = true)
 	public Max35Text getOrderReference() {
 		return orderReference;
 	}
 
-	public void setOrderReference(Max35Text orderReference) {
-		this.orderReference = orderReference;
+	public SwitchOrderStatusAndReason2 setOrderReference(Max35Text orderReference) {
+		this.orderReference = Objects.requireNonNull(orderReference);
+		return this;
 	}
 
-	@XmlElement(name = "ClntRef")
-	public Max35Text getClientReference() {
-		return clientReference;
+	public Optional<Max35Text> getClientReference() {
+		return clientReference == null ? Optional.empty() : Optional.of(clientReference);
 	}
 
-	public void setClientReference(Max35Text clientReference) {
+	public SwitchOrderStatusAndReason2 setClientReference(Max35Text clientReference) {
 		this.clientReference = clientReference;
+		return this;
 	}
 
-	@XmlElement(name = "DealRef")
-	public Max35Text getDealReference() {
-		return dealReference;
+	public Optional<Max35Text> getDealReference() {
+		return dealReference == null ? Optional.empty() : Optional.of(dealReference);
 	}
 
-	public void setDealReference(Max35Text dealReference) {
+	public SwitchOrderStatusAndReason2 setDealReference(Max35Text dealReference) {
 		this.dealReference = dealReference;
+		return this;
 	}
 
-	@XmlElement(name = "CxlRef")
-	public Max35Text getCancellationReference() {
-		return cancellationReference;
+	public Optional<Max35Text> getCancellationReference() {
+		return cancellationReference == null ? Optional.empty() : Optional.of(cancellationReference);
 	}
 
-	public void setCancellationReference(Max35Text cancellationReference) {
+	public SwitchOrderStatusAndReason2 setCancellationReference(Max35Text cancellationReference) {
 		this.cancellationReference = cancellationReference;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrSts", required = true)
 	public OrderStatus4Choice getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(OrderStatus4Choice orderStatus) {
-		this.orderStatus = orderStatus;
+	public SwitchOrderStatusAndReason2 setOrderStatus(OrderStatus4Choice orderStatus) {
+		this.orderStatus = Objects.requireNonNull(orderStatus);
+		return this;
 	}
 
-	@XmlElement(name = "LegInf")
 	public List<SwitchLegReferences2> getLegInformation() {
-		return legInformation;
+		return legInformation == null ? legInformation = new ArrayList<>() : legInformation;
 	}
 
-	public void setLegInformation(List<com.tools20022.repository.msg.SwitchLegReferences2> legInformation) {
-		this.legInformation = legInformation;
+	public SwitchOrderStatusAndReason2 setLegInformation(List<SwitchLegReferences2> legInformation) {
+		this.legInformation = Objects.requireNonNull(legInformation);
+		return this;
 	}
 
-	@XmlElement(name = "StsInitr")
-	public PartyIdentification113 getStatusInitiator() {
-		return statusInitiator;
+	public Optional<PartyIdentification113> getStatusInitiator() {
+		return statusInitiator == null ? Optional.empty() : Optional.of(statusInitiator);
 	}
 
-	public void setStatusInitiator(com.tools20022.repository.msg.PartyIdentification113 statusInitiator) {
+	public SwitchOrderStatusAndReason2 setStatusInitiator(PartyIdentification113 statusInitiator) {
 		this.statusInitiator = statusInitiator;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrData")
-	public FundOrderData6 getOrderData() {
-		return orderData;
+	public Optional<FundOrderData6> getOrderData() {
+		return orderData == null ? Optional.empty() : Optional.of(orderData);
 	}
 
-	public void setOrderData(com.tools20022.repository.msg.FundOrderData6 orderData) {
+	public SwitchOrderStatusAndReason2 setOrderData(FundOrderData6 orderData) {
 		this.orderData = orderData;
+		return this;
 	}
 
-	@XmlElement(name = "NewDtls")
-	public ExpectedExecutionDetails2 getNewDetails() {
-		return newDetails;
+	public Optional<ExpectedExecutionDetails2> getNewDetails() {
+		return newDetails == null ? Optional.empty() : Optional.of(newDetails);
 	}
 
-	public void setNewDetails(com.tools20022.repository.msg.ExpectedExecutionDetails2 newDetails) {
+	public SwitchOrderStatusAndReason2 setNewDetails(ExpectedExecutionDetails2 newDetails) {
 		this.newDetails = newDetails;
+		return this;
 	}
 }

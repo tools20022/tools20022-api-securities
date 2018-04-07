@@ -38,27 +38,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType13Code#Investments
- * BalanceType13Code.mmInvestments}</li>
+ * BalanceType13Code.Investments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType13Code#CashAndCashEquivalents
- * BalanceType13Code.mmCashAndCashEquivalents}</li>
+ * BalanceType13Code.CashAndCashEquivalents}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType13Code#Borrowings
- * BalanceType13Code.mmBorrowings}</li>
+ * BalanceType13Code.Borrowings}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceType13Code#Revenues
- * BalanceType13Code.mmRevenues}</li>
+ * BalanceType13Code.Revenues}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceType13Code#Expenses
- * BalanceType13Code.mmExpenses}</li>
+ * BalanceType13Code.Expenses}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType13Code#InvestorInflowOutflow
- * BalanceType13Code.mmInvestorInflowOutflow}</li>
+ * BalanceType13Code.InvestorInflowOutflow}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceType13Code#Other
- * BalanceType13Code.mmOther}</li>
+ * BalanceType13Code.Other}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BalanceType13Code#Payables
- * BalanceType13Code.mmPayables}</li>
+ * BalanceType13Code.Payables}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BalanceType13Code#Receivables
- * BalanceType13Code.mmReceivables}</li>
+ * BalanceType13Code.Receivables}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -67,8 +67,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -313,7 +313,7 @@ public class BalanceType13Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INVE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceType13Code";

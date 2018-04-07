@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Specifies additional information about the repurchase agreement call
- * processed instruction
+ * processed instruction.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -39,13 +39,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReason2Code#InProcess
- * RepoCallAcknowledgementReason2Code.mmInProcess}</li>
+ * RepoCallAcknowledgementReason2Code.InProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReason2Code#Processed
- * RepoCallAcknowledgementReason2Code.mmProcessed}</li>
+ * RepoCallAcknowledgementReason2Code.Processed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepoCallAcknowledgementReason2Code#AccountServicerDeadlineMissed
- * RepoCallAcknowledgementReason2Code.mmAccountServicerDeadlineMissed}</li>
+ * RepoCallAcknowledgementReason2Code.AccountServicerDeadlineMissed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -70,7 +70,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "RepoCallAcknowledgementReason2Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies additional information about the repurchase agreement call processed instruction"
+ * "Specifies additional information about the repurchase agreement call processed instruction."
  * </li>
  * </ul>
  */
@@ -158,11 +158,11 @@ public class RepoCallAcknowledgementReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CALD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepoCallAcknowledgementReason2Code";
-				definition = "Specifies additional information about the repurchase agreement call processed instruction";
+				definition = "Specifies additional information about the repurchase agreement call processed instruction.";
 				trace_lazy = () -> RepoCallAcknowledgementReasonCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RepoCallAcknowledgementReason2Code.InProcess, com.tools20022.repository.codeset.RepoCallAcknowledgementReason2Code.Processed,
 						com.tools20022.repository.codeset.RepoCallAcknowledgementReason2Code.AccountServicerDeadlineMissed);

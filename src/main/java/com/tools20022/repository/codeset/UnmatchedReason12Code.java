@@ -39,118 +39,118 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#AccountServicerDeadlineMissed
- * UnmatchedReason12Code.mmAccountServicerDeadlineMissed}</li>
+ * UnmatchedReason12Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#AccruedInterestAmount1
- * UnmatchedReason12Code.mmAccruedInterestAmount1}</li>
+ * UnmatchedReason12Code.AccruedInterestAmount1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#CommonReference
- * UnmatchedReason12Code.mmCommonReference}</li>
+ * UnmatchedReason12Code.CommonReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#CounterpartyCancelled
- * UnmatchedReason12Code.mmCounterpartyCancelled}</li>
+ * UnmatchedReason12Code.CounterpartyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#CounterpartyTooLateForMatching
- * UnmatchedReason12Code.mmCounterpartyTooLateForMatching}</li>
+ * UnmatchedReason12Code.CounterpartyTooLateForMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#CurrencySettlementAmount
- * UnmatchedReason12Code.mmCurrencySettlementAmount}</li>
+ * UnmatchedReason12Code.CurrencySettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#DealPrice
- * UnmatchedReason12Code.mmDealPrice}</li>
+ * UnmatchedReason12Code.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#FinancialInstrument
- * UnmatchedReason12Code.mmFinancialInstrument}</li>
+ * UnmatchedReason12Code.FinancialInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#FinancialInstrumentQuantity
- * UnmatchedReason12Code.mmFinancialInstrumentQuantity}</li>
+ * UnmatchedReason12Code.FinancialInstrumentQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#LetterOfGuarantee
- * UnmatchedReason12Code.mmLetterOfGuarantee}</li>
+ * UnmatchedReason12Code.LetterOfGuarantee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#MarketDeadlineMissed
- * UnmatchedReason12Code.mmMarketDeadlineMissed}</li>
+ * UnmatchedReason12Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#MissingMarketSide
- * UnmatchedReason12Code.mmMissingMarketSide}</li>
+ * UnmatchedReason12Code.MissingMarketSide}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#NoMatch
- * UnmatchedReason12Code.mmNoMatch}</li>
+ * UnmatchedReason12Code.NoMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#NoMatchingStarted
- * UnmatchedReason12Code.mmNoMatchingStarted}</li>
+ * UnmatchedReason12Code.NoMatchingStarted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#NotRecognised
- * UnmatchedReason12Code.mmNotRecognised}</li>
+ * UnmatchedReason12Code.NotRecognised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#Other
- * UnmatchedReason12Code.mmOther}</li>
+ * UnmatchedReason12Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#PaymentCode
- * UnmatchedReason12Code.mmPaymentCode}</li>
+ * UnmatchedReason12Code.PaymentCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#PhysicalSettlement
- * UnmatchedReason12Code.mmPhysicalSettlement}</li>
+ * UnmatchedReason12Code.PhysicalSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#PlaceOfSafekeeping
- * UnmatchedReason12Code.mmPlaceOfSafekeeping}</li>
+ * UnmatchedReason12Code.PlaceOfSafekeeping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#PlaceOfTrade
- * UnmatchedReason12Code.mmPlaceOfTrade}</li>
+ * UnmatchedReason12Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#PossibleDuplicate
- * UnmatchedReason12Code.mmPossibleDuplicate}</li>
+ * UnmatchedReason12Code.PossibleDuplicate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#ReceivingDeliveringDepository
- * UnmatchedReason12Code.mmReceivingDeliveringDepository}</li>
+ * UnmatchedReason12Code.ReceivingDeliveringDepository}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#ReceivingDeliveringParty1
- * UnmatchedReason12Code.mmReceivingDeliveringParty1}</li>
+ * UnmatchedReason12Code.ReceivingDeliveringParty1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#ReceivingDeliveringParty2
- * UnmatchedReason12Code.mmReceivingDeliveringParty2}</li>
+ * UnmatchedReason12Code.ReceivingDeliveringParty2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#ReceivingDeliveringParty3
- * UnmatchedReason12Code.mmReceivingDeliveringParty3}</li>
+ * UnmatchedReason12Code.ReceivingDeliveringParty3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#RegistrationDetails
- * UnmatchedReason12Code.mmRegistrationDetails}</li>
+ * UnmatchedReason12Code.RegistrationDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#RTGSSystem
- * UnmatchedReason12Code.mmRTGSSystem}</li>
+ * UnmatchedReason12Code.RTGSSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#SafekeepingAccount
- * UnmatchedReason12Code.mmSafekeepingAccount}</li>
+ * UnmatchedReason12Code.SafekeepingAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#SettlementAmount
- * UnmatchedReason12Code.mmSettlementAmount}</li>
+ * UnmatchedReason12Code.SettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#SettlementSystemMethod
- * UnmatchedReason12Code.mmSettlementSystemMethod}</li>
+ * UnmatchedReason12Code.SettlementSystemMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#SettlementTransaction
- * UnmatchedReason12Code.mmSettlementTransaction}</li>
+ * UnmatchedReason12Code.SettlementTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#TaxStatus
- * UnmatchedReason12Code.mmTaxStatus}</li>
+ * UnmatchedReason12Code.TaxStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#TradeDate
- * UnmatchedReason12Code.mmTradeDate}</li>
+ * UnmatchedReason12Code.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#TransactionDirection
- * UnmatchedReason12Code.mmTransactionDirection}</li>
+ * UnmatchedReason12Code.TransactionDirection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#UnmatchedMarketSide
- * UnmatchedReason12Code.mmUnmatchedMarketSide}</li>
+ * UnmatchedReason12Code.UnmatchedMarketSide}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#SettlementDate
- * UnmatchedReason12Code.mmSettlementDate}</li>
+ * UnmatchedReason12Code.SettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#AutomaticGeneration
- * UnmatchedReason12Code.mmAutomaticGeneration}</li>
+ * UnmatchedReason12Code.AutomaticGeneration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnmatchedReason12Code#CumEx
- * UnmatchedReason12Code.mmCumEx}</li>
+ * UnmatchedReason12Code.CumEx}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -159,8 +159,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -1097,7 +1097,7 @@ public class UnmatchedReason12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnmatchedReason12Code";
 				definition = "Specifies the reason the transaction, transfer or settlement instruction is unmatched.";

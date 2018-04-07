@@ -20,11 +20,13 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.FinancialInstrumentQuantityChoice;
 import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between formats for the balance information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BalanceQuantity1Choice", propOrder = {"quantity", "quantityAsDSS"})
 public class BalanceQuantity1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Qty", required = true)
 	protected FinancialInstrumentQuantityChoice quantity;
 	/**
-	 * Total quantity of financial instruments of the balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,10 +107,10 @@ public class BalanceQuantity1Choice {
 	 * definition} = "Total quantity of financial instruments of the balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceQuantity1Choice, FinancialInstrumentQuantityChoice> mmQuantity = new MMMessageAttribute<BalanceQuantity1Choice, FinancialInstrumentQuantityChoice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmAggregateQuantity;
-			componentContext_lazy = () -> BalanceQuantity1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BalanceQuantity1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Qty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,13 +118,24 @@ public class BalanceQuantity1Choice {
 			definition = "Total quantity of financial instruments of the balance.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantityChoice.mmObject();
+			complexType_lazy = () -> FinancialInstrumentQuantityChoice.mmObject();
+		}
+
+		@Override
+		public FinancialInstrumentQuantityChoice getValue(BalanceQuantity1Choice obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(BalanceQuantity1Choice obj, FinancialInstrumentQuantityChoice value) {
+			obj.setQuantity(value);
 		}
 	};
+	@XmlElement(name = "QtyAsDSS", required = true)
 	protected GenericIdentification6 quantityAsDSS;
 	/**
-	 * Total quantity of financial instruments of the balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +166,10 @@ public class BalanceQuantity1Choice {
 	 * definition} = "Total quantity of financial instruments of the balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmQuantityAsDSS = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceQuantity1Choice, GenericIdentification6> mmQuantityAsDSS = new MMMessageAttribute<BalanceQuantity1Choice, GenericIdentification6>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmAggregateQuantity;
-			componentContext_lazy = () -> BalanceQuantity1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BalanceQuantity1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "QtyAsDSS";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,14 +179,24 @@ public class BalanceQuantity1Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification6.mmObject();
 		}
+
+		@Override
+		public GenericIdentification6 getValue(BalanceQuantity1Choice obj) {
+			return obj.getQuantityAsDSS();
+		}
+
+		@Override
+		public void setValue(BalanceQuantity1Choice obj, GenericIdentification6 value) {
+			obj.setQuantityAsDSS(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BalanceQuantity1Choice.mmQuantity, BalanceQuantity1Choice.mmQuantityAsDSS);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.BalanceQuantity1Choice.mmQuantity, com.tools20022.repository.choice.BalanceQuantity1Choice.mmQuantityAsDSS);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceQuantity1Choice";
 				definition = "Choice between formats for the balance information.";
@@ -181,21 +205,21 @@ public class BalanceQuantity1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Qty", required = true)
 	public FinancialInstrumentQuantityChoice getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(com.tools20022.repository.choice.FinancialInstrumentQuantityChoice quantity) {
-		this.quantity = quantity;
+	public BalanceQuantity1Choice setQuantity(FinancialInstrumentQuantityChoice quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
-	@XmlElement(name = "QtyAsDSS", required = true)
 	public GenericIdentification6 getQuantityAsDSS() {
 		return quantityAsDSS;
 	}
 
-	public void setQuantityAsDSS(GenericIdentification6 quantityAsDSS) {
-		this.quantityAsDSS = quantityAsDSS;
+	public BalanceQuantity1Choice setQuantityAsDSS(GenericIdentification6 quantityAsDSS) {
+		this.quantityAsDSS = Objects.requireNonNull(quantityAsDSS);
+		return this;
 	}
 }

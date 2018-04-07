@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Operator1Code#SmallerThan
- * Operator1Code.mmSmallerThan}</li>
+ * Operator1Code.SmallerThan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Operator1Code#SmallerOrEqualTo
- * Operator1Code.mmSmallerOrEqualTo}</li>
+ * Operator1Code.SmallerOrEqualTo}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Operator1Code#GreaterThan
- * Operator1Code.mmGreaterThan}</li>
+ * Operator1Code.GreaterThan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Operator1Code#GreaterOrEqualTo
- * Operator1Code.mmGreaterOrEqualTo}</li>
+ * Operator1Code.GreaterOrEqualTo}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Operator1Code#EqualTo
- * Operator1Code.mmEqualTo}</li>
+ * Operator1Code.EqualTo}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -208,7 +208,7 @@ public class Operator1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SMAL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Operator1Code";

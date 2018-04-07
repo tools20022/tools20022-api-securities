@@ -24,8 +24,11 @@ import com.tools20022.repository.datatype.AnyBICIdentifier;
 import com.tools20022.repository.entity.OrganisationIdentification;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification1;
+import com.tools20022.repository.msg.NameAndAddress5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +60,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintIdentificationPresenceRule#forPartyIdentification64
+ * ConstraintIdentificationPresenceRule.forPartyIdentification64}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * PartyIdentification62}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyIdentification64", propOrder = {"anyBIC", "proprietaryIdentification", "nameAndAddress"})
 public class PartyIdentification64 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AnyBIC")
 	protected AnyBICIdentifier anyBIC;
 	/**
-	 * Identification of the party expressed as a BIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,10 +129,10 @@ public class PartyIdentification64 {
 	 * PartyIdentification62.mmBICFI}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAnyBIC = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification64, Optional<AnyBICIdentifier>> mmAnyBIC = new MMMessageAttribute<PartyIdentification64, Optional<AnyBICIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmAnyBIC;
-			componentContext_lazy = () -> PartyIdentification64.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification64.mmObject();
 			isDerived = false;
 			xmlTag = "AnyBIC";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,12 +143,22 @@ public class PartyIdentification64 {
 			minOccurs = 0;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<AnyBICIdentifier> getValue(PartyIdentification64 obj) {
+			return obj.getAnyBIC();
+		}
+
+		@Override
+		public void setValue(PartyIdentification64 obj, Optional<AnyBICIdentifier> value) {
+			obj.setAnyBIC(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtryId")
 	protected GenericIdentification1 proprietaryIdentification;
 	/**
-	 * Unique and unambiguous identifier, as assigned to the party using a
-	 * proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,10 +196,10 @@ public class PartyIdentification64 {
 	 * PartyIdentification62.mmProprietaryIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification64, Optional<GenericIdentification1>> mmProprietaryIdentification = new MMMessageAttribute<PartyIdentification64, Optional<GenericIdentification1>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PartyIdentification64.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification64.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,13 +208,24 @@ public class PartyIdentification64 {
 			previousVersion_lazy = () -> PartyIdentification62.mmProprietaryIdentification;
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.GenericIdentification1.mmObject();
+			complexType_lazy = () -> GenericIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification1> getValue(PartyIdentification64 obj) {
+			return obj.getProprietaryIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification64 obj, Optional<GenericIdentification1> value) {
+			obj.setProprietaryIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NmAndAdr")
 	protected NameAndAddress5 nameAndAddress;
 	/**
-	 * Name and address of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,10 +260,10 @@ public class PartyIdentification64 {
 	 * PartyIdentification62.mmNameAndAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameAndAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification64, Optional<NameAndAddress5>> mmNameAndAddress = new MMMessageAttribute<PartyIdentification64, Optional<NameAndAddress5>>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification64.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PartyIdentification64.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,16 +272,28 @@ public class PartyIdentification64 {
 			previousVersion_lazy = () -> PartyIdentification62.mmNameAndAddress;
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.NameAndAddress5.mmObject();
+			complexType_lazy = () -> NameAndAddress5.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress5> getValue(PartyIdentification64 obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(PartyIdentification64 obj, Optional<NameAndAddress5> value) {
+			obj.setNameAndAddress(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyIdentification64.mmAnyBIC, PartyIdentification64.mmProprietaryIdentification, PartyIdentification64.mmNameAndAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyIdentification64.mmAnyBIC, com.tools20022.repository.msg.PartyIdentification64.mmProprietaryIdentification,
+						com.tools20022.repository.msg.PartyIdentification64.mmNameAndAddress);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintIdentificationPresenceRule.forPartyIdentification64);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentification64";
 				definition = "Identification of a party.";
@@ -258,30 +303,30 @@ public class PartyIdentification64 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AnyBIC")
-	public AnyBICIdentifier getAnyBIC() {
-		return anyBIC;
+	public Optional<AnyBICIdentifier> getAnyBIC() {
+		return anyBIC == null ? Optional.empty() : Optional.of(anyBIC);
 	}
 
-	public void setAnyBIC(AnyBICIdentifier anyBIC) {
+	public PartyIdentification64 setAnyBIC(AnyBICIdentifier anyBIC) {
 		this.anyBIC = anyBIC;
+		return this;
 	}
 
-	@XmlElement(name = "PrtryId")
-	public GenericIdentification1 getProprietaryIdentification() {
-		return proprietaryIdentification;
+	public Optional<GenericIdentification1> getProprietaryIdentification() {
+		return proprietaryIdentification == null ? Optional.empty() : Optional.of(proprietaryIdentification);
 	}
 
-	public void setProprietaryIdentification(com.tools20022.repository.msg.GenericIdentification1 proprietaryIdentification) {
+	public PartyIdentification64 setProprietaryIdentification(GenericIdentification1 proprietaryIdentification) {
 		this.proprietaryIdentification = proprietaryIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "NmAndAdr")
-	public NameAndAddress5 getNameAndAddress() {
-		return nameAndAddress;
+	public Optional<NameAndAddress5> getNameAndAddress() {
+		return nameAndAddress == null ? Optional.empty() : Optional.of(nameAndAddress);
 	}
 
-	public void setNameAndAddress(com.tools20022.repository.msg.NameAndAddress5 nameAndAddress) {
+	public PartyIdentification64 setNameAndAddress(NameAndAddress5 nameAndAddress) {
 		this.nameAndAddress = nameAndAddress;
+		return this;
 	}
 }

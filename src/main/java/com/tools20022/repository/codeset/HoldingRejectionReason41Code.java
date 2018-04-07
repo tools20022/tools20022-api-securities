@@ -38,226 +38,226 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidPrice
- * HoldingRejectionReason41Code.mmInvalidPrice}</li>
+ * HoldingRejectionReason41Code.InvalidPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidIdentification
- * HoldingRejectionReason41Code.mmInvalidIdentification}</li>
+ * HoldingRejectionReason41Code.InvalidIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidAgent
- * HoldingRejectionReason41Code.mmInvalidAgent}</li>
+ * HoldingRejectionReason41Code.InvalidAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#Intermediary
- * HoldingRejectionReason41Code.mmIntermediary}</li>
+ * HoldingRejectionReason41Code.Intermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#IncorrectCertification
- * HoldingRejectionReason41Code.mmIncorrectCertification}</li>
+ * HoldingRejectionReason41Code.IncorrectCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#BusinessPartnerNumberRejection
- * HoldingRejectionReason41Code.mmBusinessPartnerNumberRejection}</li>
+ * HoldingRejectionReason41Code.BusinessPartnerNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#BankReferenceNumberRejection
- * HoldingRejectionReason41Code.mmBankReferenceNumberRejection}</li>
+ * HoldingRejectionReason41Code.BankReferenceNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#AddressDetailsRejection
- * HoldingRejectionReason41Code.mmAddressDetailsRejection}</li>
+ * HoldingRejectionReason41Code.AddressDetailsRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#DeliveringCustodian
- * HoldingRejectionReason41Code.mmDeliveringCustodian}</li>
+ * HoldingRejectionReason41Code.DeliveringCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#IncorrectActivityType
- * HoldingRejectionReason41Code.mmIncorrectActivityType}</li>
+ * HoldingRejectionReason41Code.IncorrectActivityType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidForTaxAuthorities
- * HoldingRejectionReason41Code.mmInvalidForTaxAuthorities}</li>
+ * HoldingRejectionReason41Code.InvalidForTaxAuthorities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidDetails
- * HoldingRejectionReason41Code.mmInvalidDetails}</li>
+ * HoldingRejectionReason41Code.InvalidDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidOption
- * HoldingRejectionReason41Code.mmInvalidOption}</li>
+ * HoldingRejectionReason41Code.InvalidOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidOptionType
- * HoldingRejectionReason41Code.mmInvalidOptionType}</li>
+ * HoldingRejectionReason41Code.InvalidOptionType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidMovementInformation
- * HoldingRejectionReason41Code.mmInvalidMovementInformation}</li>
+ * HoldingRejectionReason41Code.InvalidMovementInformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidModificationRequest
- * HoldingRejectionReason41Code.mmInvalidModificationRequest}</li>
+ * HoldingRejectionReason41Code.InvalidModificationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidUnderlyingSecurity
- * HoldingRejectionReason41Code.mmInvalidUnderlyingSecurity}</li>
+ * HoldingRejectionReason41Code.InvalidUnderlyingSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidSecurity
- * HoldingRejectionReason41Code.mmInvalidSecurity}</li>
+ * HoldingRejectionReason41Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MissingPeriodEndDate
- * HoldingRejectionReason41Code.mmMissingPeriodEndDate}</li>
+ * HoldingRejectionReason41Code.MissingPeriodEndDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MissingPeriodStartDate
- * HoldingRejectionReason41Code.mmMissingPeriodStartDate}</li>
+ * HoldingRejectionReason41Code.MissingPeriodStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MissingOption
- * HoldingRejectionReason41Code.mmMissingOption}</li>
+ * HoldingRejectionReason41Code.MissingOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NoHolding
- * HoldingRejectionReason41Code.mmNoHolding}</li>
+ * HoldingRejectionReason41Code.NoHolding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NoInstrumentMarket
- * HoldingRejectionReason41Code.mmNoInstrumentMarket}</li>
+ * HoldingRejectionReason41Code.NoInstrumentMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotApplicable
- * HoldingRejectionReason41Code.mmNotApplicable}</li>
+ * HoldingRejectionReason41Code.NotApplicable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotAuthorised
- * HoldingRejectionReason41Code.mmNotAuthorised}</li>
+ * HoldingRejectionReason41Code.NotAuthorised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotDefinedAgent
- * HoldingRejectionReason41Code.mmNotDefinedAgent}</li>
+ * HoldingRejectionReason41Code.NotDefinedAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotEligibleDisperseSecurity
- * HoldingRejectionReason41Code.mmNotEligibleDisperseSecurity}</li>
+ * HoldingRejectionReason41Code.NotEligibleDisperseSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotIdentifiedCorrespondentBank
- * HoldingRejectionReason41Code.mmNotIdentifiedCorrespondentBank}</li>
+ * HoldingRejectionReason41Code.NotIdentifiedCorrespondentBank}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#PlaceOfSafekeeping
- * HoldingRejectionReason41Code.mmPlaceOfSafekeeping}</li>
+ * HoldingRejectionReason41Code.PlaceOfSafekeeping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#PlaceOfTrade
- * HoldingRejectionReason41Code.mmPlaceOfTrade}</li>
+ * HoldingRejectionReason41Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#PriceExceeds
- * HoldingRejectionReason41Code.mmPriceExceeds}</li>
+ * HoldingRejectionReason41Code.PriceExceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#ReceivingAgent
- * HoldingRejectionReason41Code.mmReceivingAgent}</li>
+ * HoldingRejectionReason41Code.ReceivingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#QuantityUnitType
- * HoldingRejectionReason41Code.mmQuantityUnitType}</li>
+ * HoldingRejectionReason41Code.QuantityUnitType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#QuantityRejection
- * HoldingRejectionReason41Code.mmQuantityRejection}</li>
+ * HoldingRejectionReason41Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#QuantityExceeds
- * HoldingRejectionReason41Code.mmQuantityExceeds}</li>
+ * HoldingRejectionReason41Code.QuantityExceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#ReceivingDeliveringDepository
- * HoldingRejectionReason41Code.mmReceivingDeliveringDepository}</li>
+ * HoldingRejectionReason41Code.ReceivingDeliveringDepository}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#ReceivingCustodian
- * HoldingRejectionReason41Code.mmReceivingCustodian}</li>
+ * HoldingRejectionReason41Code.ReceivingCustodian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#SafekeepingAccountRejection
- * HoldingRejectionReason41Code.mmSafekeepingAccountRejection}</li>
+ * HoldingRejectionReason41Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#SettlementAmountRejection
- * HoldingRejectionReason41Code.mmSettlementAmountRejection}</li>
+ * HoldingRejectionReason41Code.SettlementAmountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#SettlementAmountCurrencyRejection
- * HoldingRejectionReason41Code.mmSettlementAmountCurrencyRejection}</li>
+ * HoldingRejectionReason41Code.SettlementAmountCurrencyRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#TradedSecuritiesQuantity
- * HoldingRejectionReason41Code.mmTradedSecuritiesQuantity}</li>
+ * HoldingRejectionReason41Code.TradedSecuritiesQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#SettlementTransactionRejection
- * HoldingRejectionReason41Code.mmSettlementTransactionRejection}</li>
+ * HoldingRejectionReason41Code.SettlementTransactionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#UnknownSymbol
- * HoldingRejectionReason41Code.mmUnknownSymbol}</li>
+ * HoldingRejectionReason41Code.UnknownSymbol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#DealPrice
- * HoldingRejectionReason41Code.mmDealPrice}</li>
+ * HoldingRejectionReason41Code.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#ClosingDateTimeRejection
- * HoldingRejectionReason41Code.mmClosingDateTimeRejection}</li>
+ * HoldingRejectionReason41Code.ClosingDateTimeRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidReference
- * HoldingRejectionReason41Code.mmInvalidReference}</li>
+ * HoldingRejectionReason41Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NarrativeReason
- * HoldingRejectionReason41Code.mmNarrativeReason}</li>
+ * HoldingRejectionReason41Code.NarrativeReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotFoundRejection
- * HoldingRejectionReason41Code.mmNotFoundRejection}</li>
+ * HoldingRejectionReason41Code.NotFoundRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidBalance
- * HoldingRejectionReason41Code.mmInvalidBalance}</li>
+ * HoldingRejectionReason41Code.InvalidBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#AccountServicerDeadlineMissed
- * HoldingRejectionReason41Code.mmAccountServicerDeadlineMissed}</li>
+ * HoldingRejectionReason41Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#CashAccount
- * HoldingRejectionReason41Code.mmCashAccount}</li>
+ * HoldingRejectionReason41Code.CashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#CommercializationContractRejection
- * HoldingRejectionReason41Code.mmCommercializationContractRejection}</li>
+ * HoldingRejectionReason41Code.CommercializationContractRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#ConcentrationLimitExceeded
- * HoldingRejectionReason41Code.mmConcentrationLimitExceeded}</li>
+ * HoldingRejectionReason41Code.ConcentrationLimitExceeded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InsufficientBalance
- * HoldingRejectionReason41Code.mmInsufficientBalance}</li>
+ * HoldingRejectionReason41Code.InsufficientBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InsufficientCollateral
- * HoldingRejectionReason41Code.mmInsufficientCollateral}</li>
+ * HoldingRejectionReason41Code.InsufficientCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidInvestorParty
- * HoldingRejectionReason41Code.mmInvalidInvestorParty}</li>
+ * HoldingRejectionReason41Code.InvalidInvestorParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidLotNumber
- * HoldingRejectionReason41Code.mmInvalidLotNumber}</li>
+ * HoldingRejectionReason41Code.InvalidLotNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidLink
- * HoldingRejectionReason41Code.mmInvalidLink}</li>
+ * HoldingRejectionReason41Code.InvalidLink}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvalidRule
- * HoldingRejectionReason41Code.mmInvalidRule}</li>
+ * HoldingRejectionReason41Code.InvalidRule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#InvestorNameAddressUnknown
- * HoldingRejectionReason41Code.mmInvestorNameAddressUnknown}</li>
+ * HoldingRejectionReason41Code.InvestorNameAddressUnknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#Late
- * HoldingRejectionReason41Code.mmLate}</li>
+ * HoldingRejectionReason41Code.Late}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MinimumSettlementQuantity
- * HoldingRejectionReason41Code.mmMinimumSettlementQuantity}</li>
+ * HoldingRejectionReason41Code.MinimumSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MissingBeneficiaryOwnerDetails
- * HoldingRejectionReason41Code.mmMissingBeneficiaryOwnerDetails}</li>
+ * HoldingRejectionReason41Code.MissingBeneficiaryOwnerDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MissingCertification
- * HoldingRejectionReason41Code.mmMissingCertification}</li>
+ * HoldingRejectionReason41Code.MissingCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MissingOrInvalidPOA
- * HoldingRejectionReason41Code.mmMissingOrInvalidPOA}</li>
+ * HoldingRejectionReason41Code.MissingOrInvalidPOA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#MultipleSettlementQuantity
- * HoldingRejectionReason41Code.mmMultipleSettlementQuantity}</li>
+ * HoldingRejectionReason41Code.MultipleSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NarrativeInformationRejection
- * HoldingRejectionReason41Code.mmNarrativeInformationRejection}</li>
+ * HoldingRejectionReason41Code.NarrativeInformationRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NoInventory
- * HoldingRejectionReason41Code.mmNoInventory}</li>
+ * HoldingRejectionReason41Code.NoInventory}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NonEligibleSecurity
- * HoldingRejectionReason41Code.mmNonEligibleSecurity}</li>
+ * HoldingRejectionReason41Code.NonEligibleSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#PeriodEndDateBeforeStartDate
- * HoldingRejectionReason41Code.mmPeriodEndDateBeforeStartDate}</li>
+ * HoldingRejectionReason41Code.PeriodEndDateBeforeStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#ReferenceRejection
- * HoldingRejectionReason41Code.mmReferenceRejection}</li>
+ * HoldingRejectionReason41Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#SameIdentification
- * HoldingRejectionReason41Code.mmSameIdentification}</li>
+ * HoldingRejectionReason41Code.SameIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#TypeOfOwnershipRejection
- * HoldingRejectionReason41Code.mmTypeOfOwnershipRejection}</li>
+ * HoldingRejectionReason41Code.TypeOfOwnershipRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingRejectionReason41Code#NotAvailable
- * HoldingRejectionReason41Code.mmNotAvailable}</li>
+ * HoldingRejectionReason41Code.NotAvailable}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -266,8 +266,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -2066,7 +2066,7 @@ public class HoldingRejectionReason41Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldingRejectionReason41Code";
 				definition = "Specifies the reason the report item is rejected.";

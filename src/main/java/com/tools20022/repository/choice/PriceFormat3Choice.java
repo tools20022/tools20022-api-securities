@@ -27,6 +27,7 @@ import com.tools20022.repository.msg.AmountPrice1;
 import com.tools20022.repository.msg.PriceRate1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats to express a price."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PriceFormat3Choice", propOrder = {"amount", "rate"})
 public class PriceFormat3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt", required = true)
 	protected AmountPrice1 amount;
 	/**
-	 * Price expressed as a currency and amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,10 +105,10 @@ public class PriceFormat3Choice {
 	 * definition} = "Price expressed as a currency and amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PriceFormat3Choice, AmountPrice1> mmAmount = new MMMessageAttribute<PriceFormat3Choice, AmountPrice1>() {
 		{
 			businessElementTrace_lazy = () -> Price.mmAmount;
-			componentContext_lazy = () -> PriceFormat3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PriceFormat3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +118,22 @@ public class PriceFormat3Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> AmountPrice1.mmObject();
 		}
+
+		@Override
+		public AmountPrice1 getValue(PriceFormat3Choice obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(PriceFormat3Choice obj, AmountPrice1 value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "Rate", required = true)
 	protected PriceRate1 rate;
 	/**
-	 * Price expressed as a rate, ie, percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +163,10 @@ public class PriceFormat3Choice {
 	 * definition} = "Price expressed as a rate, ie, percentage."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PriceFormat3Choice, PriceRate1> mmRate = new MMMessageAttribute<PriceFormat3Choice, PriceRate1>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmRate;
-			componentContext_lazy = () -> PriceFormat3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PriceFormat3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,14 +176,24 @@ public class PriceFormat3Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> PriceRate1.mmObject();
 		}
+
+		@Override
+		public PriceRate1 getValue(PriceFormat3Choice obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(PriceFormat3Choice obj, PriceRate1 value) {
+			obj.setRate(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PriceFormat3Choice.mmAmount, PriceFormat3Choice.mmRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PriceFormat3Choice.mmAmount, com.tools20022.repository.choice.PriceFormat3Choice.mmRate);
 				trace_lazy = () -> SecuritiesPricing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceFormat3Choice";
 				definition = "Choice of formats to express a price.";
@@ -179,21 +202,21 @@ public class PriceFormat3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public AmountPrice1 getAmount() {
 		return amount;
 	}
 
-	public void setAmount(AmountPrice1 amount) {
-		this.amount = amount;
+	public PriceFormat3Choice setAmount(AmountPrice1 amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "Rate", required = true)
 	public PriceRate1 getRate() {
 		return rate;
 	}
 
-	public void setRate(PriceRate1 rate) {
-		this.rate = rate;
+	public PriceFormat3Choice setRate(PriceRate1 rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 }

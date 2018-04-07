@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType9Code#IssueFraction
- * FractionDispositionType9Code.mmIssueFraction}</li>
+ * FractionDispositionType9Code.IssueFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType9Code#RoundDown
- * FractionDispositionType9Code.mmRoundDown}</li>
+ * FractionDispositionType9Code.RoundDown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType9Code#RoundToNearest
- * FractionDispositionType9Code.mmRoundToNearest}</li>
+ * FractionDispositionType9Code.RoundToNearest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType9Code#RoundUp
- * FractionDispositionType9Code.mmRoundUp}</li>
+ * FractionDispositionType9Code.RoundUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType9Code#Unknown
- * FractionDispositionType9Code.mmUnknown}</li>
+ * FractionDispositionType9Code.Unknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -210,7 +210,7 @@ public class FractionDispositionType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DIST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FractionDispositionType9Code";

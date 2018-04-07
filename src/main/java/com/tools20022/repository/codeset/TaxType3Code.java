@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Type of tax
+ * Type of tax.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType3Code#GermanLocalTax2
- * TaxType3Code.mmGermanLocalTax2}</li>
+ * TaxType3Code.GermanLocalTax2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType3Code#WithholdingOfForeignTax
- * TaxType3Code.mmWithholdingOfForeignTax}</li>
+ * TaxType3Code.WithholdingOfForeignTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType3Code#WithholdingOfLocalTax
- * TaxType3Code.mmWithholdingOfLocalTax}</li>
+ * TaxType3Code.WithholdingOfLocalTax}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -52,8 +52,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -67,7 +67,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "TaxType3Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Type of tax"</li>
+ * definition} = "Type of tax."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -151,11 +151,11 @@ public class TaxType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LIDT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxType3Code";
-				definition = "Type of tax";
+				definition = "Type of tax.";
 				trace_lazy = () -> TaxTypeCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TaxType3Code.GermanLocalTax2, com.tools20022.repository.codeset.TaxType3Code.WithholdingOfForeignTax,
 						com.tools20022.repository.codeset.TaxType3Code.WithholdingOfLocalTax);

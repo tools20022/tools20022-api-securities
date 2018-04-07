@@ -38,15 +38,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SignatureTypeV2Code#Original
- * SignatureTypeV2Code.mmOriginal}</li>
+ * SignatureTypeV2Code.Original}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SignatureTypeV2Code#Digital
- * SignatureTypeV2Code.mmDigital}</li>
+ * SignatureTypeV2Code.Digital}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SignatureTypeV2Code#Electronic
- * SignatureTypeV2Code.mmElectronic}</li>
+ * SignatureTypeV2Code.Electronic}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SignatureTypeV2Code#None
- * SignatureTypeV2Code.mmNone}</li>
+ * SignatureTypeV2Code.None}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -208,7 +208,7 @@ public class SignatureTypeV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SignatureTypeV2Code";
 				definition = "Type of signature.";

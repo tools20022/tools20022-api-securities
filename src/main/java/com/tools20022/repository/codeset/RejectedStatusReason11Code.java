@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,172 +39,172 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#AccountBlockedForCorporateAction
- * RejectedStatusReason11Code.mmAccountBlockedForCorporateAction}</li>
+ * RejectedStatusReason11Code.AccountBlockedForCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#AccountBlockedForTransfer
- * RejectedStatusReason11Code.mmAccountBlockedForTransfer}</li>
+ * RejectedStatusReason11Code.AccountBlockedForTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#AccountBlockedMissingDocuments
- * RejectedStatusReason11Code.mmAccountBlockedMissingDocuments}</li>
+ * RejectedStatusReason11Code.AccountBlockedMissingDocuments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#AfterDeadline
- * RejectedStatusReason11Code.mmAfterDeadline}</li>
+ * RejectedStatusReason11Code.AfterDeadline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#AssetsIlliquid
- * RejectedStatusReason11Code.mmAssetsIlliquid}</li>
+ * RejectedStatusReason11Code.AssetsIlliquid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#BelowMinimumInitialInvestmentAmount
- * RejectedStatusReason11Code.mmBelowMinimumInitialInvestmentAmount}</li>
+ * RejectedStatusReason11Code.BelowMinimumInitialInvestmentAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#BelowMinimumRedemptionAmount
- * RejectedStatusReason11Code.mmBelowMinimumRedemptionAmount}</li>
+ * RejectedStatusReason11Code.BelowMinimumRedemptionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#BelowMinimumRetainedAmount
- * RejectedStatusReason11Code.mmBelowMinimumRetainedAmount}</li>
+ * RejectedStatusReason11Code.BelowMinimumRetainedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#CutOffTime
- * RejectedStatusReason11Code.mmCutOffTime}</li>
+ * RejectedStatusReason11Code.CutOffTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#DeliveringAgent
- * RejectedStatusReason11Code.mmDeliveringAgent}</li>
+ * RejectedStatusReason11Code.DeliveringAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#DirectDebit
- * RejectedStatusReason11Code.mmDirectDebit}</li>
+ * RejectedStatusReason11Code.DirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#DuplicateOrderReference
- * RejectedStatusReason11Code.mmDuplicateOrderReference}</li>
+ * RejectedStatusReason11Code.DuplicateOrderReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#FeeOrCommission
- * RejectedStatusReason11Code.mmFeeOrCommission}</li>
+ * RejectedStatusReason11Code.FeeOrCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#FinancialInstrumentIdentification
- * RejectedStatusReason11Code.mmFinancialInstrumentIdentification}</li>
+ * RejectedStatusReason11Code.FinancialInstrumentIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#FinancialInstrumentIdentificationAndName
- * RejectedStatusReason11Code.mmFinancialInstrumentIdentificationAndName}</li>
+ * RejectedStatusReason11Code.FinancialInstrumentIdentificationAndName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#FinancialInstrumentQuantity
- * RejectedStatusReason11Code.mmFinancialInstrumentQuantity}</li>
+ * RejectedStatusReason11Code.FinancialInstrumentQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#FundClosed
- * RejectedStatusReason11Code.mmFundClosed}</li>
+ * RejectedStatusReason11Code.FundClosed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InstructingPartyNotAllowedForAccount
- * RejectedStatusReason11Code.mmInstructingPartyNotAllowedForAccount}</li>
+ * RejectedStatusReason11Code.InstructingPartyNotAllowedForAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InsufficientCapacity
- * RejectedStatusReason11Code.mmInsufficientCapacity}</li>
+ * RejectedStatusReason11Code.InsufficientCapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#Intermediary
- * RejectedStatusReason11Code.mmIntermediary}</li>
+ * RejectedStatusReason11Code.Intermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InvalidCashAccount
- * RejectedStatusReason11Code.mmInvalidCashAccount}</li>
+ * RejectedStatusReason11Code.InvalidCashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InvalidCreditTransfer
- * RejectedStatusReason11Code.mmInvalidCreditTransfer}</li>
+ * RejectedStatusReason11Code.InvalidCreditTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InvalidOrderType
- * RejectedStatusReason11Code.mmInvalidOrderType}</li>
+ * RejectedStatusReason11Code.InvalidOrderType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InvalidSecurityForm
- * RejectedStatusReason11Code.mmInvalidSecurityForm}</li>
+ * RejectedStatusReason11Code.InvalidSecurityForm}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InvalidSettlementAmount
- * RejectedStatusReason11Code.mmInvalidSettlementAmount}</li>
+ * RejectedStatusReason11Code.InvalidSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#InvestmentAccount
- * RejectedStatusReason11Code.mmInvestmentAccount}</li>
+ * RejectedStatusReason11Code.InvestmentAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#LockUp
- * RejectedStatusReason11Code.mmLockUp}</li>
+ * RejectedStatusReason11Code.LockUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#NoCancellationMatch
- * RejectedStatusReason11Code.mmNoCancellationMatch}</li>
+ * RejectedStatusReason11Code.NoCancellationMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#NotCompliantWithSLA
- * RejectedStatusReason11Code.mmNotCompliantWithSLA}</li>
+ * RejectedStatusReason11Code.NotCompliantWithSLA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#NotEnoughCash
- * RejectedStatusReason11Code.mmNotEnoughCash}</li>
+ * RejectedStatusReason11Code.NotEnoughCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#NotEnoughFinancialInstrument
- * RejectedStatusReason11Code.mmNotEnoughFinancialInstrument}</li>
+ * RejectedStatusReason11Code.NotEnoughFinancialInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#PaymentCard
- * RejectedStatusReason11Code.mmPaymentCard}</li>
+ * RejectedStatusReason11Code.PaymentCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#PercentageHoldingBreach
- * RejectedStatusReason11Code.mmPercentageHoldingBreach}</li>
+ * RejectedStatusReason11Code.PercentageHoldingBreach}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#PhysicalDeliveryImpossible
- * RejectedStatusReason11Code.mmPhysicalDeliveryImpossible}</li>
+ * RejectedStatusReason11Code.PhysicalDeliveryImpossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#PhysicalSettlement
- * RejectedStatusReason11Code.mmPhysicalSettlement}</li>
+ * RejectedStatusReason11Code.PhysicalSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#PlaceOfTrade
- * RejectedStatusReason11Code.mmPlaceOfTrade}</li>
+ * RejectedStatusReason11Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#ReceivingAgent
- * RejectedStatusReason11Code.mmReceivingAgent}</li>
+ * RejectedStatusReason11Code.ReceivingAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#RTGSSystem
- * RejectedStatusReason11Code.mmRTGSSystem}</li>
+ * RejectedStatusReason11Code.RTGSSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#SafekeepingPlace
- * RejectedStatusReason11Code.mmSafekeepingPlace}</li>
+ * RejectedStatusReason11Code.SafekeepingPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#SettlementAmountCurrency
- * RejectedStatusReason11Code.mmSettlementAmountCurrency}</li>
+ * RejectedStatusReason11Code.SettlementAmountCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#SettlementDate
- * RejectedStatusReason11Code.mmSettlementDate}</li>
+ * RejectedStatusReason11Code.SettlementDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#SettlementPlace
- * RejectedStatusReason11Code.mmSettlementPlace}</li>
+ * RejectedStatusReason11Code.SettlementPlace}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#SettlementTransaction
- * RejectedStatusReason11Code.mmSettlementTransaction}</li>
+ * RejectedStatusReason11Code.SettlementTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#SubscriberOrRedeemer
- * RejectedStatusReason11Code.mmSubscriberOrRedeemer}</li>
+ * RejectedStatusReason11Code.SubscriberOrRedeemer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#TooHighUnitsOrAmountToSubscribe
- * RejectedStatusReason11Code.mmTooHighUnitsOrAmountToSubscribe}</li>
+ * RejectedStatusReason11Code.TooHighUnitsOrAmountToSubscribe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#TooLate
- * RejectedStatusReason11Code.mmTooLate}</li>
+ * RejectedStatusReason11Code.TooLate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#TooLowUnitsOrAmountToSubscribe
- * RejectedStatusReason11Code.mmTooLowUnitsOrAmountToSubscribe}</li>
+ * RejectedStatusReason11Code.TooLowUnitsOrAmountToSubscribe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#TradeDate
- * RejectedStatusReason11Code.mmTradeDate}</li>
+ * RejectedStatusReason11Code.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnacceptedCommissionWaiving
- * RejectedStatusReason11Code.mmUnacceptedCommissionWaiving}</li>
+ * RejectedStatusReason11Code.UnacceptedCommissionWaiving}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnacceptedDealCurrency
- * RejectedStatusReason11Code.mmUnacceptedDealCurrency}</li>
+ * RejectedStatusReason11Code.UnacceptedDealCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnacceptedNAVCurrency
- * RejectedStatusReason11Code.mmUnacceptedNAVCurrency}</li>
+ * RejectedStatusReason11Code.UnacceptedNAVCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnacceptedPaymentMethod
- * RejectedStatusReason11Code.mmUnacceptedPaymentMethod}</li>
+ * RejectedStatusReason11Code.UnacceptedPaymentMethod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnacceptedRequestedSettlementCurrency
- * RejectedStatusReason11Code.mmUnacceptedRequestedSettlementCurrency}</li>
+ * RejectedStatusReason11Code.UnacceptedRequestedSettlementCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnknownLinkagesReference
- * RejectedStatusReason11Code.mmUnknownLinkagesReference}</li>
+ * RejectedStatusReason11Code.UnknownLinkagesReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#UnacceptableSwitchCombination
- * RejectedStatusReason11Code.mmUnacceptableSwitchCombination}</li>
+ * RejectedStatusReason11Code.UnacceptableSwitchCombination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code#DifferentValuationPoints
- * RejectedStatusReason11Code.mmDifferentValuationPoints}</li>
+ * RejectedStatusReason11Code.DifferentValuationPoints}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -212,8 +213,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -597,6 +598,9 @@ public class RejectedStatusReason11Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code
 	 * RejectedStatusReason11Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT//DQUA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -606,6 +610,7 @@ public class RejectedStatusReason11Code extends MMCode {
 	 */
 	public static final RejectedStatusReason11Code FinancialInstrumentQuantity = new RejectedStatusReason11Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT//DQUA"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialInstrumentQuantity";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectedStatusReason11Code.mmObject();
@@ -1197,6 +1202,9 @@ public class RejectedStatusReason11Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.RejectedStatusReason11Code
 	 * RejectedStatusReason11Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT//DDAT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -1206,6 +1214,7 @@ public class RejectedStatusReason11Code extends MMCode {
 	 */
 	public static final RejectedStatusReason11Code SettlementDate = new RejectedStatusReason11Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT//DDAT"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementDate";
 			owner_lazy = () -> com.tools20022.repository.codeset.RejectedStatusReason11Code.mmObject();
@@ -1580,7 +1589,7 @@ public class RejectedStatusReason11Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectedStatusReason11Code";
 				definition = "Specifies the reason for a rejected status.";

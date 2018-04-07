@@ -23,8 +23,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AssetClassification;
 import com.tools20022.repository.entity.Derivative;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DerivativeCommodity2;
+import com.tools20022.repository.msg.DerivativeForeignExchange3;
+import com.tools20022.repository.msg.DerivativeInterest3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +58,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOneElementPresentRule#forAssetClass2
+ * ConstraintOneElementPresentRule.forAssetClass2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AssetClass2", propOrder = {"commodity", "interest", "foreignExchange"})
 public class AssetClass2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cmmdty")
 	protected DerivativeCommodity2 commodity;
 	/**
-	 * The fields in this section should only be populated for instruments that
-	 * have non-financial instrument of type commodity as underlying.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -106,10 +118,10 @@ public class AssetClass2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommodity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClass2, Optional<DerivativeCommodity2>> mmCommodity = new MMMessageAssociationEnd<AssetClass2, Optional<DerivativeCommodity2>>() {
 		{
 			businessComponentTrace_lazy = () -> Derivative.mmObject();
-			componentContext_lazy = () -> AssetClass2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AssetClass2.mmObject();
 			isDerived = false;
 			xmlTag = "Cmmdty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,14 +130,24 @@ public class AssetClass2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DerivativeCommodity2.mmObject();
+			type_lazy = () -> DerivativeCommodity2.mmObject();
+		}
+
+		@Override
+		public Optional<DerivativeCommodity2> getValue(AssetClass2 obj) {
+			return obj.getCommodity();
+		}
+
+		@Override
+		public void setValue(AssetClass2 obj, Optional<DerivativeCommodity2> value) {
+			obj.setCommodity(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Intrst")
 	protected DerivativeInterest3 interest;
 	/**
-	 * The fields in this section should only be populated for instruments that
-	 * have non-financial instrument of type interest rates as underlying.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -154,10 +176,10 @@ public class AssetClass2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInterest = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClass2, Optional<DerivativeInterest3>> mmInterest = new MMMessageAssociationEnd<AssetClass2, Optional<DerivativeInterest3>>() {
 		{
 			businessComponentTrace_lazy = () -> Derivative.mmObject();
-			componentContext_lazy = () -> AssetClass2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AssetClass2.mmObject();
 			isDerived = false;
 			xmlTag = "Intrst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,14 +188,24 @@ public class AssetClass2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DerivativeInterest3.mmObject();
+			type_lazy = () -> DerivativeInterest3.mmObject();
+		}
+
+		@Override
+		public Optional<DerivativeInterest3> getValue(AssetClass2 obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(AssetClass2 obj, Optional<DerivativeInterest3> value) {
+			obj.setInterest(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "FX")
 	protected DerivativeForeignExchange3 foreignExchange;
 	/**
-	 * The fields in this section should only be populated for instruments that
-	 * have non-financial instrument of type foreign exchange as underlying.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -203,10 +235,10 @@ public class AssetClass2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForeignExchange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AssetClass2, Optional<DerivativeForeignExchange3>> mmForeignExchange = new MMMessageAssociationEnd<AssetClass2, Optional<DerivativeForeignExchange3>>() {
 		{
 			businessComponentTrace_lazy = () -> Derivative.mmObject();
-			componentContext_lazy = () -> AssetClass2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AssetClass2.mmObject();
 			isDerived = false;
 			xmlTag = "FX";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,16 +247,27 @@ public class AssetClass2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DerivativeForeignExchange3.mmObject();
+			type_lazy = () -> DerivativeForeignExchange3.mmObject();
+		}
+
+		@Override
+		public Optional<DerivativeForeignExchange3> getValue(AssetClass2 obj) {
+			return obj.getForeignExchange();
+		}
+
+		@Override
+		public void setValue(AssetClass2 obj, Optional<DerivativeForeignExchange3> value) {
+			obj.setForeignExchange(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AssetClass2.mmCommodity, AssetClass2.mmInterest, AssetClass2.mmForeignExchange);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AssetClass2.mmCommodity, com.tools20022.repository.msg.AssetClass2.mmInterest, com.tools20022.repository.msg.AssetClass2.mmForeignExchange);
 				trace_lazy = () -> AssetClassification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintOneElementPresentRule.forAssetClass2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClass2";
 				definition = "Structure for defining asset class specific details of a derivative to be declared.";
@@ -233,30 +276,30 @@ public class AssetClass2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cmmdty")
-	public DerivativeCommodity2 getCommodity() {
-		return commodity;
+	public Optional<DerivativeCommodity2> getCommodity() {
+		return commodity == null ? Optional.empty() : Optional.of(commodity);
 	}
 
-	public void setCommodity(com.tools20022.repository.msg.DerivativeCommodity2 commodity) {
+	public AssetClass2 setCommodity(DerivativeCommodity2 commodity) {
 		this.commodity = commodity;
+		return this;
 	}
 
-	@XmlElement(name = "Intrst")
-	public DerivativeInterest3 getInterest() {
-		return interest;
+	public Optional<DerivativeInterest3> getInterest() {
+		return interest == null ? Optional.empty() : Optional.of(interest);
 	}
 
-	public void setInterest(com.tools20022.repository.msg.DerivativeInterest3 interest) {
+	public AssetClass2 setInterest(DerivativeInterest3 interest) {
 		this.interest = interest;
+		return this;
 	}
 
-	@XmlElement(name = "FX")
-	public DerivativeForeignExchange3 getForeignExchange() {
-		return foreignExchange;
+	public Optional<DerivativeForeignExchange3> getForeignExchange() {
+		return foreignExchange == null ? Optional.empty() : Optional.of(foreignExchange);
 	}
 
-	public void setForeignExchange(com.tools20022.repository.msg.DerivativeForeignExchange3 foreignExchange) {
+	public AssetClass2 setForeignExchange(DerivativeForeignExchange3 foreignExchange) {
 		this.foreignExchange = foreignExchange;
+		return this;
 	}
 }

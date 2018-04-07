@@ -38,10 +38,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AllocationStatusCode#FullyAllocated
- * AllocationStatusCode.mmFullyAllocated}</li>
+ * AllocationStatusCode.FullyAllocated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AllocationStatusCode#PartiallyAllocated
- * AllocationStatusCode.mmPartiallyAllocated}</li>
+ * AllocationStatusCode.PartiallyAllocated}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -70,8 +70,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "AllocationStatusCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the  status of allocation of collateral to cover the instruction."
- * </li>
+ * "Specifies the status of allocation of collateral to cover the instruction."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -146,11 +145,11 @@ public class AllocationStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AOLF");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AllocationStatusCode";
-				definition = "Specifies the  status of allocation of collateral to cover the instruction.";
+				definition = "Specifies the status of allocation of collateral to cover the instruction.";
 				derivation_lazy = () -> Arrays.asList(AllocationStatus1Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AllocationStatusCode.FullyAllocated, com.tools20022.repository.codeset.AllocationStatusCode.PartiallyAllocated);
 			}

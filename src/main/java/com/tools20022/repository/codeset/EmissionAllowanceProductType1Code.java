@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType1Code#EUAA
- * EmissionAllowanceProductType1Code.mmEUAA}</li>
+ * EmissionAllowanceProductType1Code.EUAA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType1Code#EUA
- * EmissionAllowanceProductType1Code.mmEUA}</li>
+ * EmissionAllowanceProductType1Code.EUA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType1Code#ERU
- * EmissionAllowanceProductType1Code.mmERU}</li>
+ * EmissionAllowanceProductType1Code.ERU}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType1Code#CER
- * EmissionAllowanceProductType1Code.mmCER}</li>
+ * EmissionAllowanceProductType1Code.CER}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType1Code#Other
- * EmissionAllowanceProductType1Code.mmOther}</li>
+ * EmissionAllowanceProductType1Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,7 +203,7 @@ public class EmissionAllowanceProductType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EmissionAllowanceProductType1Code";
 				definition = "Specifies an mission allowance type.";

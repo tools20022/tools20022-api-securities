@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice between formats to express the corporate event type."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionEventType2FormatChoice", propOrder = {"code", "proprietary"})
 public class CorporateActionEventType2FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CorporateActionEventType2Code code;
 	/**
-	 * Event types expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,10 +104,10 @@ public class CorporateActionEventType2FormatChoice {
 	 * definition} = "Event types expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionEventType2FormatChoice, CorporateActionEventType2Code> mmCode = new MMMessageAttribute<CorporateActionEventType2FormatChoice, CorporateActionEventType2Code>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
-			componentContext_lazy = () -> CorporateActionEventType2FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateActionEventType2FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +117,22 @@ public class CorporateActionEventType2FormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventType2Code.mmObject();
 		}
+
+		@Override
+		public CorporateActionEventType2Code getValue(CorporateActionEventType2FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventType2FormatChoice obj, CorporateActionEventType2Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Event types expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +163,10 @@ public class CorporateActionEventType2FormatChoice {
 	 * definition} = "Event types expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionEventType2FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<CorporateActionEventType2FormatChoice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmType;
-			componentContext_lazy = () -> CorporateActionEventType2FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateActionEventType2FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,13 +176,23 @@ public class CorporateActionEventType2FormatChoice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
 		}
+
+		@Override
+		public GenericIdentification13 getValue(CorporateActionEventType2FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CorporateActionEventType2FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionEventType2FormatChoice.mmCode, CorporateActionEventType2FormatChoice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CorporateActionEventType2FormatChoice.mmCode, com.tools20022.repository.choice.CorporateActionEventType2FormatChoice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventType2FormatChoice";
 				definition = "Choice between formats to express the corporate event type.";
@@ -178,21 +201,21 @@ public class CorporateActionEventType2FormatChoice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CorporateActionEventType2Code getCode() {
 		return code;
 	}
 
-	public void setCode(CorporateActionEventType2Code code) {
-		this.code = code;
+	public CorporateActionEventType2FormatChoice setCode(CorporateActionEventType2Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public CorporateActionEventType2FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

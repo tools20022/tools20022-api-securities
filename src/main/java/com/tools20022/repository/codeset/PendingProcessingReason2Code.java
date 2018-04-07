@@ -39,79 +39,79 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#AccountServicerDeadlineMissed
- * PendingProcessingReason2Code.mmAccountServicerDeadlineMissed}</li>
+ * PendingProcessingReason2Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#AwaitingSecurities
- * PendingProcessingReason2Code.mmAwaitingSecurities}</li>
+ * PendingProcessingReason2Code.AwaitingSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#AwaitingDocumentsOrEndorsementsFromYou
- * PendingProcessingReason2Code.mmAwaitingDocumentsOrEndorsementsFromYou}</li>
+ * PendingProcessingReason2Code.AwaitingDocumentsOrEndorsementsFromYou}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#NoForeignExchangeInstruction
- * PendingProcessingReason2Code.mmNoForeignExchangeInstruction}</li>
+ * PendingProcessingReason2Code.NoForeignExchangeInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#AccountBlocked
- * PendingProcessingReason2Code.mmAccountBlocked}</li>
+ * PendingProcessingReason2Code.AccountBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#MultipleSettlementAmount
- * PendingProcessingReason2Code.mmMultipleSettlementAmount}</li>
+ * PendingProcessingReason2Code.MultipleSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#GlobalFormSecurities
- * PendingProcessingReason2Code.mmGlobalFormSecurities}</li>
+ * PendingProcessingReason2Code.GlobalFormSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#CollateralShortage
- * PendingProcessingReason2Code.mmCollateralShortage}</li>
+ * PendingProcessingReason2Code.CollateralShortage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#SecuritiesPledgedAsCollateral
- * PendingProcessingReason2Code.mmSecuritiesPledgedAsCollateral}</li>
+ * PendingProcessingReason2Code.SecuritiesPledgedAsCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#MaximumForeignLimitReached
- * PendingProcessingReason2Code.mmMaximumForeignLimitReached}</li>
+ * PendingProcessingReason2Code.MaximumForeignLimitReached}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#NextProcess
- * PendingProcessingReason2Code.mmNextProcess}</li>
+ * PendingProcessingReason2Code.NextProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#LackOfSecurities
- * PendingProcessingReason2Code.mmLackOfSecurities}</li>
+ * PendingProcessingReason2Code.LackOfSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#SecuritiesLoanedOut
- * PendingProcessingReason2Code.mmSecuritiesLoanedOut}</li>
+ * PendingProcessingReason2Code.SecuritiesLoanedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#InsufficientMoney
- * PendingProcessingReason2Code.mmInsufficientMoney}</li>
+ * PendingProcessingReason2Code.InsufficientMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#MinimumSettlementAmount
- * PendingProcessingReason2Code.mmMinimumSettlementAmount}</li>
+ * PendingProcessingReason2Code.MinimumSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#Other
- * PendingProcessingReason2Code.mmOther}</li>
+ * PendingProcessingReason2Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#UnavailableDeliverableDenominatedQuantity
- * PendingProcessingReason2Code.mmUnavailableDeliverableDenominatedQuantity}</li>
+ * PendingProcessingReason2Code.UnavailableDeliverableDenominatedQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#InsufficientCentralBankLiquidity
- * PendingProcessingReason2Code.mmInsufficientCentralBankLiquidity}</li>
+ * PendingProcessingReason2Code.InsufficientCentralBankLiquidity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#WrongCertificatesNumbers
- * PendingProcessingReason2Code.mmWrongCertificatesNumbers}</li>
+ * PendingProcessingReason2Code.WrongCertificatesNumbers}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#CSDHold
- * PendingProcessingReason2Code.mmCSDHold}</li>
+ * PendingProcessingReason2Code.CSDHold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#CSDValidation
- * PendingProcessingReason2Code.mmCSDValidation}</li>
+ * PendingProcessingReason2Code.CSDValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#ConditionalDelivery
- * PendingProcessingReason2Code.mmConditionalDelivery}</li>
+ * PendingProcessingReason2Code.ConditionalDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#ConditionalDeliveryAwaitingRelease
- * PendingProcessingReason2Code.mmConditionalDeliveryAwaitingRelease}</li>
+ * PendingProcessingReason2Code.ConditionalDeliveryAwaitingRelease}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#ConditionalDeliveryAwaitingCancellation
- * PendingProcessingReason2Code.mmConditionalDeliveryAwaitingCancellation}</li>
+ * PendingProcessingReason2Code.ConditionalDeliveryAwaitingCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason2Code#IncompleteNumberCount
- * PendingProcessingReason2Code.mmIncompleteNumberCount}</li>
+ * PendingProcessingReason2Code.IncompleteNumberCount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -120,8 +120,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -756,7 +756,7 @@ public class PendingProcessingReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingProcessingReason2Code";

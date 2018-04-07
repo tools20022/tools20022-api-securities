@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Choice between the identification of a cash or securities account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountIdentification2Choice", propOrder = {"cashAccountIdentification", "securitiesAccountIdentification"})
 public class AccountIdentification2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CshAcctId", required = true)
 	protected Max35Text cashAccountIdentification;
 	/**
-	 * Identification of a cash account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,10 +107,10 @@ public class AccountIdentification2Choice {
 	 * definition} = "Identification of a cash account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountIdentification2Choice, Max35Text> mmCashAccountIdentification = new MMMessageAttribute<AccountIdentification2Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> AccountIdentification2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AccountIdentification2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CshAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class AccountIdentification2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AccountIdentification2Choice obj) {
+			return obj.getCashAccountIdentification();
+		}
+
+		@Override
+		public void setValue(AccountIdentification2Choice obj, Max35Text value) {
+			obj.setCashAccountIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesAcctId", required = true)
 	protected Max35Text securitiesAccountIdentification;
 	/**
-	 * Identification of a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +165,10 @@ public class AccountIdentification2Choice {
 	 * definition} = "Identification of a securities account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountIdentification2Choice, Max35Text> mmSecuritiesAccountIdentification = new MMMessageAttribute<AccountIdentification2Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> AccountIdentification2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AccountIdentification2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,14 +178,25 @@ public class AccountIdentification2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AccountIdentification2Choice obj) {
+			return obj.getSecuritiesAccountIdentification();
+		}
+
+		@Override
+		public void setValue(AccountIdentification2Choice obj, Max35Text value) {
+			obj.setSecuritiesAccountIdentification(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountIdentification2Choice.mmCashAccountIdentification, AccountIdentification2Choice.mmSecuritiesAccountIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AccountIdentification2Choice.mmCashAccountIdentification,
+						com.tools20022.repository.choice.AccountIdentification2Choice.mmSecuritiesAccountIdentification);
 				trace_lazy = () -> AccountIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountIdentification2Choice";
 				definition = "Choice between the identification of a cash or securities account.";
@@ -181,21 +205,21 @@ public class AccountIdentification2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CshAcctId", required = true)
 	public Max35Text getCashAccountIdentification() {
 		return cashAccountIdentification;
 	}
 
-	public void setCashAccountIdentification(Max35Text cashAccountIdentification) {
-		this.cashAccountIdentification = cashAccountIdentification;
+	public AccountIdentification2Choice setCashAccountIdentification(Max35Text cashAccountIdentification) {
+		this.cashAccountIdentification = Objects.requireNonNull(cashAccountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesAcctId", required = true)
 	public Max35Text getSecuritiesAccountIdentification() {
 		return securitiesAccountIdentification;
 	}
 
-	public void setSecuritiesAccountIdentification(Max35Text securitiesAccountIdentification) {
-		this.securitiesAccountIdentification = securitiesAccountIdentification;
+	public AccountIdentification2Choice setSecuritiesAccountIdentification(Max35Text securitiesAccountIdentification) {
+		this.securitiesAccountIdentification = Objects.requireNonNull(securitiesAccountIdentification);
+		return this;
 	}
 }

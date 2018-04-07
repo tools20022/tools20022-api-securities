@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.AuthorityExchangeReason1Code;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,16 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RecordTechnicalData1", propOrder = {"receiptDateTime", "exchangeReason"})
 public class RecordTechnicalData1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RctDtTm", required = true)
 	protected ISODateTime receiptDateTime;
 	/**
-	 * Defines the date and time when the report was originally received by the
-	 * national competent authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,9 +117,9 @@ public class RecordTechnicalData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReceiptDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecordTechnicalData1, ISODateTime> mmReceiptDateTime = new MMMessageAttribute<RecordTechnicalData1, ISODateTime>() {
 		{
-			componentContext_lazy = () -> RecordTechnicalData1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecordTechnicalData1.mmObject();
 			isDerived = false;
 			xmlTag = "RctDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,12 +130,22 @@ public class RecordTechnicalData1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(RecordTechnicalData1 obj) {
+			return obj.getReceiptDateTime();
+		}
+
+		@Override
+		public void setValue(RecordTechnicalData1 obj, ISODateTime value) {
+			obj.setReceiptDateTime(value);
+		}
 	};
+	@XmlElement(name = "XchgRsn", required = true)
 	protected List<AuthorityExchangeReason1Code> exchangeReason;
 	/**
-	 * Describes the reason for the exchange of the transaction report between
-	 * the competent authorities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,9 +173,9 @@ public class RecordTechnicalData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExchangeReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecordTechnicalData1, List<AuthorityExchangeReason1Code>> mmExchangeReason = new MMMessageAttribute<RecordTechnicalData1, List<AuthorityExchangeReason1Code>>() {
 		{
-			componentContext_lazy = () -> RecordTechnicalData1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecordTechnicalData1.mmObject();
 			isDerived = false;
 			xmlTag = "XchgRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,13 +184,23 @@ public class RecordTechnicalData1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AuthorityExchangeReason1Code.mmObject();
 		}
+
+		@Override
+		public List<AuthorityExchangeReason1Code> getValue(RecordTechnicalData1 obj) {
+			return obj.getExchangeReason();
+		}
+
+		@Override
+		public void setValue(RecordTechnicalData1 obj, List<AuthorityExchangeReason1Code> value) {
+			obj.setExchangeReason(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RecordTechnicalData1.mmReceiptDateTime, RecordTechnicalData1.mmExchangeReason);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RecordTechnicalData1.mmReceiptDateTime, com.tools20022.repository.msg.RecordTechnicalData1.mmExchangeReason);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RecordTechnicalData1";
 				definition = "Instrument specific technical data to support identification.";
@@ -188,21 +210,21 @@ public class RecordTechnicalData1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RctDtTm", required = true)
 	public ISODateTime getReceiptDateTime() {
 		return receiptDateTime;
 	}
 
-	public void setReceiptDateTime(ISODateTime receiptDateTime) {
-		this.receiptDateTime = receiptDateTime;
+	public RecordTechnicalData1 setReceiptDateTime(ISODateTime receiptDateTime) {
+		this.receiptDateTime = Objects.requireNonNull(receiptDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "XchgRsn", required = true)
 	public List<AuthorityExchangeReason1Code> getExchangeReason() {
-		return exchangeReason;
+		return exchangeReason == null ? exchangeReason = new ArrayList<>() : exchangeReason;
 	}
 
-	public void setExchangeReason(List<AuthorityExchangeReason1Code> exchangeReason) {
-		this.exchangeReason = exchangeReason;
+	public RecordTechnicalData1 setExchangeReason(List<AuthorityExchangeReason1Code> exchangeReason) {
+		this.exchangeReason = Objects.requireNonNull(exchangeReason);
+		return this;
 	}
 }

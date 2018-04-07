@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#CapitalPortion
- * NetDividendRateType1Code.mmCapitalPortion}</li>
+ * NetDividendRateType1Code.CapitalPortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#FullyFranked
- * NetDividendRateType1Code.mmFullyFranked}</li>
+ * NetDividendRateType1Code.FullyFranked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#IncomePortion
- * NetDividendRateType1Code.mmIncomePortion}</li>
+ * NetDividendRateType1Code.IncomePortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#Interest
- * NetDividendRateType1Code.mmInterest}</li>
+ * NetDividendRateType1Code.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#SundryOrOtherIncome
- * NetDividendRateType1Code.mmSundryOrOtherIncome}</li>
+ * NetDividendRateType1Code.SundryOrOtherIncome}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#TaxablePortion
- * NetDividendRateType1Code.mmTaxablePortion}</li>
+ * NetDividendRateType1Code.TaxablePortion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#TaxDeferred
- * NetDividendRateType1Code.mmTaxDeferred}</li>
+ * NetDividendRateType1Code.TaxDeferred}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#TaxFree
- * NetDividendRateType1Code.mmTaxFree}</li>
+ * NetDividendRateType1Code.TaxFree}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NetDividendRateType1Code#Unfranked
- * NetDividendRateType1Code.mmUnfranked}</li>
+ * NetDividendRateType1Code.Unfranked}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -87,13 +87,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "NetDividendRateType1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Specifies the type of net dividend rate."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
- * nextVersions} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.NetDividendRateType2Code
- * NetDividendRateType2Code}</li>
- * </ul>
- * </li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -324,12 +317,11 @@ public class NetDividendRateType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CAPO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetDividendRateType1Code";
 				definition = "Specifies the type of net dividend rate.";
-				nextVersions_lazy = () -> Arrays.asList(NetDividendRateType2Code.mmObject());
 				trace_lazy = () -> DividendRateTypeCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NetDividendRateType1Code.CapitalPortion, com.tools20022.repository.codeset.NetDividendRateType1Code.FullyFranked,
 						com.tools20022.repository.codeset.NetDividendRateType1Code.IncomePortion, com.tools20022.repository.codeset.NetDividendRateType1Code.Interest,

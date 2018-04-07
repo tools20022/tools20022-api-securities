@@ -17,17 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.Max70Text;
-import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Account between an investor(s) and a fund manager or a fund. The account can
@@ -156,17 +155,6 @@ import java.util.List;
  * {@linkplain com.tools20022.repository.msg.StatementOfInvestmentFundTransactions3#mmInvestmentAccountDetails
  * StatementOfInvestmentFundTransactions3.mmInvestmentAccountDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount13#mmReceiverDetails
- * ReceivingPartiesAndAccount13.mmReceiverDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransferOut17#mmAccountDetails
- * TransferOut17.mmAccountDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransferIn14#mmAccountDetails
- * TransferIn14.mmAccountDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransferIn15#mmAccountDetails
- * TransferIn15.mmAccountDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransferOut16#mmAccountDetails
- * TransferOut16.mmAccountDetails}</li>
- * <li>
  * {@linkplain com.tools20022.repository.choice.AccountUsageType2Choice#mmCode
  * AccountUsageType2Choice.mmCode}</li>
  * <li>
@@ -190,6 +178,9 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.repository.msg.InvestmentAccount62#mmAccountUsageType
  * InvestmentAccount62.mmAccountUsageType}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReceivingPartiesAndAccount17#mmReceiverDetails
+ * ReceivingPartiesAndAccount17.mmReceiverDetails}</li>
  * </ul>
  * </li>
  * <li>
@@ -206,19 +197,10 @@ import java.util.List;
  * StatementOfInvestmentFundTransactions3}</li>
  * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount42
  * InvestmentAccount42}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Account19 Account19}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount54
- * InvestmentAccount54}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount56
- * InvestmentAccount56}</li>
  * <li>{@linkplain com.tools20022.repository.choice.AccountType2Choice
  * AccountType2Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount55
- * InvestmentAccount55}</li>
  * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount53
  * InvestmentAccount53}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount57
- * InvestmentAccount57}</li>
  * <li>{@linkplain com.tools20022.repository.choice.AccountUsageType2Choice
  * AccountUsageType2Choice}</li>
  * <li>{@linkplain com.tools20022.repository.choice.OwnershipType2Choice
@@ -235,13 +217,25 @@ import java.util.List;
  * InvestmentAccount64}</li>
  * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount60
  * InvestmentAccount60}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Account24 Account24}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount66
+ * InvestmentAccount66}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount67
+ * InvestmentAccount67}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount65
+ * InvestmentAccount65}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InvestmentAccount68
+ * InvestmentAccount68}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: :22F::SFRE</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -259,9 +253,8 @@ public class InvestmentAccount extends Account {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected FundCashAccountCode investmentAccountType;
 	/**
-	 * Purpose of the account/source fund type. This is typically linked to an
-	 * investment product, eg, wrapper, PEP, ISA.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -306,7 +299,7 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestmentAccountType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccount, FundCashAccountCode> mmInvestmentAccountType = new MMBusinessAttribute<InvestmentAccount, FundCashAccountCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccountType1Choice.mmCode, InvestmentAccountType1Choice.mmProprietary, AccountType2Choice.mmCode, AccountType2Choice.mmProprietary, InvestmentAccount60.mmType);
 			isDerived = false;
@@ -319,18 +312,20 @@ public class InvestmentAccount extends Account {
 			simpleType_lazy = () -> FundCashAccountCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccount.class.getMethod("getInvestmentAccountType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FundCashAccountCode getValue(InvestmentAccount obj) {
+			return obj.getInvestmentAccountType();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, FundCashAccountCode value) {
+			obj.setInvestmentAccountType(value);
 		}
 	};
 	protected AccountOwnershipTypeCode ownershipType;
 	/**
-	 * Ownership status of the account, eg, joint owners.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,7 +369,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Ownership status of the account, eg, joint owners."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOwnershipType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccount, AccountOwnershipTypeCode> mmOwnershipType = new MMBusinessAttribute<InvestmentAccount, AccountOwnershipTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(OwnershipType2Choice.mmCode, OwnershipType2Choice.mmProprietary, InvestmentAccount61.mmOwnershipType, InvestmentAccount63.mmOwnershipType, InvestmentAccount62.mmOwnershipType);
 			isDerived = false;
@@ -387,22 +382,20 @@ public class InvestmentAccount extends Account {
 			simpleType_lazy = () -> AccountOwnershipTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccount.class.getMethod("getOwnershipType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountOwnershipTypeCode getValue(InvestmentAccount obj) {
+			return obj.getOwnershipType();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, AccountOwnershipTypeCode value) {
+			obj.setOwnershipType(value);
 		}
 	};
 	protected Max70Text designation;
 	/**
-	 * Supplementary registration information applying to a specific block of
-	 * units for dealing and reporting purposes. The supplementary registration
-	 * information may be used when all the units are registered, for example,
-	 * to a funds supermarket, but holdings for each investor have to be
-	 * reconciled individually.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,23 +414,9 @@ public class InvestmentAccount extends Account {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SecuritiesAccount26#mmDesignation
 	 * SecuritiesAccount26.mmDesignation}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Account19#mmDesignation
-	 * Account19.mmDesignation}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount54#mmAccountDesignation
-	 * InvestmentAccount54.mmAccountDesignation}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount56#mmAccountDesignation
-	 * InvestmentAccount56.mmAccountDesignation}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount55#mmAccountDesignation
-	 * InvestmentAccount55.mmAccountDesignation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount53#mmAccountDesignation
 	 * InvestmentAccount53.mmAccountDesignation}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount57#mmAccountDesignation
-	 * InvestmentAccount57.mmAccountDesignation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount61#mmDesignation
 	 * InvestmentAccount61.mmDesignation}</li>
@@ -456,6 +435,20 @@ public class InvestmentAccount extends Account {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount64#mmDesignation
 	 * InvestmentAccount64.mmDesignation}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Account24#mmDesignation
+	 * Account24.mmDesignation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount66#mmAccountDesignation
+	 * InvestmentAccount66.mmAccountDesignation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount67#mmAccountDesignation
+	 * InvestmentAccount67.mmAccountDesignation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount65#mmAccountDesignation
+	 * InvestmentAccount65.mmAccountDesignation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.InvestmentAccount68#mmAccountDesignation
+	 * InvestmentAccount68.mmAccountDesignation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -476,11 +469,11 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDesignation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccount, Max70Text> mmDesignation = new MMBusinessAttribute<InvestmentAccount, Max70Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(SafekeepingAccount2.mmDesignation, InvestmentAccount43.mmDesignation, SecuritiesAccount26.mmDesignation, Account19.mmDesignation, InvestmentAccount54.mmAccountDesignation,
-					InvestmentAccount56.mmAccountDesignation, InvestmentAccount55.mmAccountDesignation, InvestmentAccount53.mmAccountDesignation, InvestmentAccount57.mmAccountDesignation, InvestmentAccount61.mmDesignation,
-					InvestmentAccount63.mmDesignation, InvestmentAccount62.mmDesignation, InvestmentAccount58.mmAccountDesignation, SubAccount6.mmAccountDesignation, InvestmentAccount64.mmDesignation);
+			derivation_lazy = () -> Arrays.asList(SafekeepingAccount2.mmDesignation, InvestmentAccount43.mmDesignation, SecuritiesAccount26.mmDesignation, InvestmentAccount53.mmAccountDesignation, InvestmentAccount61.mmDesignation,
+					InvestmentAccount63.mmDesignation, InvestmentAccount62.mmDesignation, InvestmentAccount58.mmAccountDesignation, SubAccount6.mmAccountDesignation, InvestmentAccount64.mmDesignation, Account24.mmDesignation,
+					InvestmentAccount66.mmAccountDesignation, InvestmentAccount67.mmAccountDesignation, InvestmentAccount65.mmAccountDesignation, InvestmentAccount68.mmAccountDesignation);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -491,19 +484,20 @@ public class InvestmentAccount extends Account {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccount.class.getMethod("getDesignation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(InvestmentAccount obj) {
+			return obj.getDesignation();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, Max70Text value) {
+			obj.setDesignation(value);
 		}
 	};
 	protected CurrencyCode referenceCurrency;
 	/**
-	 * Currency chosen for reporting purposes by the account owner in agreement
-	 * with the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,7 +536,7 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReferenceCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccount, CurrencyCode> mmReferenceCurrency = new MMBusinessAttribute<InvestmentAccount, CurrencyCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmReferenceCurrency, InvestmentAccount63.mmReferenceCurrency, InvestmentAccount62.mmReferenceCurrency);
 			isDerived = false;
@@ -555,18 +549,20 @@ public class InvestmentAccount extends Account {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccount.class.getMethod("getReferenceCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(InvestmentAccount obj) {
+			return obj.getReferenceCurrency();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, CurrencyCode value) {
+			obj.setReferenceCurrency(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass;
 	/**
-	 * Investment fund classes held in an investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -614,7 +610,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Investment fund classes held in an investment account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundClass = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentFundClass>> mmInvestmentFundClass = new MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentFundClass>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmFinancialInstrumentDetails, InvestmentAccount63.mmModifiedFinancialInstrumentDetails, InvestmentAccount62.mmFinancialInstrumentDetails,
 					InvestmentAccount64.mmSecurityDetails);
@@ -628,11 +624,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 		}
+
+		@Override
+		public List<InvestmentFundClass> getValue(InvestmentAccount obj) {
+			return obj.getInvestmentFundClass();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<InvestmentFundClass> value) {
+			obj.setInvestmentFundClass(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
-	 * Part of the investment account to or from which cash entries are made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -650,9 +656,6 @@ public class InvestmentAccount extends Account {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ISATransfer24#mmCashAccount
-	 * ISATransfer24.mmCashAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.PaymentInstrument21Choice#mmCashAccountDetails
 	 * PaymentInstrument21Choice.mmCashAccountDetails}</li>
@@ -678,9 +681,9 @@ public class InvestmentAccount extends Account {
 	 * "Part of the investment account to or from which cash entries are made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<CashAccount>> mmCashAccount = new MMBusinessAssociationEnd<InvestmentAccount, List<CashAccount>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ISATransfer24.mmCashAccount, PaymentInstrument21Choice.mmCashAccountDetails, PaymentInstrument20Choice.mmCashAccountDetails);
+			derivation_lazy = () -> Arrays.asList(PaymentInstrument21Choice.mmCashAccountDetails, PaymentInstrument20Choice.mmCashAccountDetails);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -691,12 +694,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 		}
+
+		@Override
+		public List<CashAccount> getValue(InvestmentAccount obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<CashAccount> value) {
+			obj.setCashAccount(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
-	 * Part of the investment account to or from which securities entries are
-	 * made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -729,7 +741,7 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<SecuritiesAccount>> mmSecuritiesAccount = new MMBusinessAssociationEnd<InvestmentAccount, List<SecuritiesAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -741,11 +753,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 		}
+
+		@Override
+		public List<SecuritiesAccount> getValue(InvestmentAccount obj) {
+			return obj.getSecuritiesAccount();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<SecuritiesAccount> value) {
+			obj.setSecuritiesAccount(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundTax> investmentFundTax;
 	/**
-	 * Taxes specific to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -790,7 +812,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Taxes specific to the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentFundTax>> mmInvestmentFundTax = new MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentFundTax>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccount61.mmTaxExemption, InvestmentAccount63.mmTaxExemption, InvestmentAccount62.mmTaxExemption);
 			isDerived = false;
@@ -803,11 +825,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 		}
+
+		@Override
+		public List<InvestmentFundTax> getValue(InvestmentAccount obj) {
+			return obj.getInvestmentFundTax();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<InvestmentFundTax> value) {
+			obj.setInvestmentFundTax(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction;
 	/**
-	 * Investment fund transaction which uses the investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -851,7 +883,7 @@ public class InvestmentAccount extends Account {
 	 * "Investment fund transaction which uses the investment account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentFundTransaction>> mmInvestmentFundTransaction = new MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentFundTransaction>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SubAccountIdentification36.mmTransactionOnSubAccount, StatementOfInvestmentFundTransactions3.mmTransactionOnAccount);
 			isDerived = false;
@@ -864,11 +896,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 		}
+
+		@Override
+		public List<InvestmentFundTransaction> getValue(InvestmentAccount obj) {
+			return obj.getInvestmentFundTransaction();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<InvestmentFundTransaction> value) {
+			obj.setInvestmentFundTransaction(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.SidePocket> sidePocket;
 	/**
-	 * Separate account containing illiquid assets of a hedge fund portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -900,7 +942,7 @@ public class InvestmentAccount extends Account {
 	 * "Separate account containing illiquid assets of a hedge fund portfolio."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSidePocket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<SidePocket>> mmSidePocket = new MMBusinessAssociationEnd<InvestmentAccount, List<SidePocket>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -912,12 +954,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
 		}
+
+		@Override
+		public List<SidePocket> getValue(InvestmentAccount obj) {
+			return obj.getSidePocket();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<SidePocket> value) {
+			obj.setSidePocket(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountPartyRole;
 	/**
-	 * Specifies each role linked to an investment account and played by a party
-	 * in that context.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -951,7 +1002,7 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccountPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentAccountPartyRole>> mmInvestmentAccountPartyRole = new MMBusinessAssociationEnd<InvestmentAccount, List<InvestmentAccountPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -963,11 +1014,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 		}
+
+		@Override
+		public List<InvestmentAccountPartyRole> getValue(InvestmentAccount obj) {
+			return obj.getInvestmentAccountPartyRole();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, List<InvestmentAccountPartyRole> value) {
+			obj.setInvestmentAccountPartyRole(value);
+		}
 	};
 	protected PortfolioTransfer debitPortfolioTransfer;
 	/**
-	 * Transfer process for which a debit investment account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -999,7 +1060,7 @@ public class InvestmentAccount extends Account {
 	 * "Transfer process for which a debit investment account is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDebitPortfolioTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, Optional<PortfolioTransfer>> mmDebitPortfolioTransfer = new MMBusinessAssociationEnd<InvestmentAccount, Optional<PortfolioTransfer>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -1008,15 +1069,25 @@ public class InvestmentAccount extends Account {
 			definition = "Transfer process for which a debit investment account is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmAccountFrom;
+			opposite_lazy = () -> PortfolioTransfer.mmAccountFrom;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
+			type_lazy = () -> PortfolioTransfer.mmObject();
+		}
+
+		@Override
+		public Optional<PortfolioTransfer> getValue(InvestmentAccount obj) {
+			return obj.getDebitPortfolioTransfer();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, Optional<PortfolioTransfer> value) {
+			obj.setDebitPortfolioTransfer(value.orElse(null));
 		}
 	};
 	protected PortfolioTransfer creditPortfolioTransfer;
 	/**
-	 * Transfer process for which a beneficiary investment account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1049,7 +1120,7 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCreditPortfolioTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, Optional<PortfolioTransfer>> mmCreditPortfolioTransfer = new MMBusinessAssociationEnd<InvestmentAccount, Optional<PortfolioTransfer>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -1058,15 +1129,25 @@ public class InvestmentAccount extends Account {
 			definition = "Transfer process for which a beneficiary investment account is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmAccountTo;
+			opposite_lazy = () -> PortfolioTransfer.mmAccountTo;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
+			type_lazy = () -> PortfolioTransfer.mmObject();
+		}
+
+		@Override
+		public Optional<PortfolioTransfer> getValue(InvestmentAccount obj) {
+			return obj.getCreditPortfolioTransfer();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, Optional<PortfolioTransfer> value) {
+			obj.setCreditPortfolioTransfer(value.orElse(null));
 		}
 	};
 	protected FundOrderDesk accountForInvestmentFundProcessing;
 	/**
-	 * Order desk for which an account is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1097,7 +1178,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Order desk for which an account is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccountForInvestmentFundProcessing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, Optional<FundOrderDesk>> mmAccountForInvestmentFundProcessing = new MMBusinessAssociationEnd<InvestmentAccount, Optional<FundOrderDesk>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -1106,15 +1187,25 @@ public class InvestmentAccount extends Account {
 			definition = "Order desk for which an account is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmMainFundOrderDeskAccount;
+			opposite_lazy = () -> FundOrderDesk.mmMainFundOrderDeskAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
+			type_lazy = () -> FundOrderDesk.mmObject();
+		}
+
+		@Override
+		public Optional<FundOrderDesk> getValue(InvestmentAccount obj) {
+			return obj.getAccountForInvestmentFundProcessing();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, Optional<FundOrderDesk> value) {
+			obj.setAccountForInvestmentFundProcessing(value.orElse(null));
 		}
 	};
 	protected InvestmentAccountContract investmentAccountContract;
 	/**
-	 * Contract defining the related account
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1163,7 +1254,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Contract defining the related account"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, com.tools20022.repository.entity.InvestmentAccountContract> mmInvestmentAccountContract = new MMBusinessAssociationEnd<InvestmentAccount, com.tools20022.repository.entity.InvestmentAccountContract>() {
 		{
 			derivation_lazy = () -> Arrays.asList(SubscriptionExecution13.mmLetterIntentReference, SubscriptionExecution12.mmLetterIntentReference, SubscriptionOrder15.mmLetterIntentReference, SubscriptionOrder14.mmLetterIntentReference);
 			isDerived = false;
@@ -1177,12 +1268,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.InvestmentAccountContract getValue(InvestmentAccount obj) {
+			return obj.getInvestmentAccountContract();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, com.tools20022.repository.entity.InvestmentAccountContract value) {
+			obj.setInvestmentAccountContract(value);
+		}
 	};
 	protected AccountUsageTypeCode accountUsageType;
 	/**
-	 * Specifies whether the account is used for investment or for settlement
-	 * purpose.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1208,7 +1308,7 @@ public class InvestmentAccount extends Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccountUsageType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccount, AccountUsageTypeCode> mmAccountUsageType = new MMBusinessAttribute<InvestmentAccount, AccountUsageTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -1220,18 +1320,20 @@ public class InvestmentAccount extends Account {
 			simpleType_lazy = () -> AccountUsageTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccount.class.getMethod("getAccountUsageType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountUsageTypeCode getValue(InvestmentAccount obj) {
+			return obj.getAccountUsageType();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, AccountUsageTypeCode value) {
+			obj.setAccountUsageType(value);
 		}
 	};
 	protected InvestmentAccountCategoryCode category;
 	/**
-	 * Specifies the investment account category.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1275,7 +1377,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Specifies the investment account category."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCategory = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestmentAccount, InvestmentAccountCategoryCode> mmCategory = new MMBusinessAttribute<InvestmentAccount, InvestmentAccountCategoryCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InvestmentAccountCategory1Choice.mmCode, InvestmentAccountCategory1Choice.mmProprietary, InvestmentAccount61.mmInvestmentAccountCategory, InvestmentAccount63.mmInvestmentAccountCategory,
 					InvestmentAccount62.mmInvestmentAccountCategory);
@@ -1289,18 +1391,20 @@ public class InvestmentAccount extends Account {
 			simpleType_lazy = () -> InvestmentAccountCategoryCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestmentAccount.class.getMethod("getCategory", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InvestmentAccountCategoryCode getValue(InvestmentAccount obj) {
+			return obj.getCategory();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, InvestmentAccountCategoryCode value) {
+			obj.setCategory(value);
 		}
 	};
 	protected Portfolio portfolio;
 	/**
-	 * Portfolio held on an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1331,7 +1435,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Portfolio held on an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, com.tools20022.repository.entity.Portfolio> mmPortfolio = new MMBusinessAssociationEnd<InvestmentAccount, com.tools20022.repository.entity.Portfolio>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -1344,11 +1448,21 @@ public class InvestmentAccount extends Account {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Portfolio getValue(InvestmentAccount obj) {
+			return obj.getPortfolio();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, com.tools20022.repository.entity.Portfolio value) {
+			obj.setPortfolio(value);
+		}
 	};
 	protected PortfolioTransfer relatedPortfolioTransfer;
 	/**
-	 * Transfer of a portfolio held on a nominee account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1379,7 +1493,7 @@ public class InvestmentAccount extends Account {
 	 * definition} = "Transfer of a portfolio held on a nominee account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPortfolioTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestmentAccount, PortfolioTransfer> mmRelatedPortfolioTransfer = new MMBusinessAssociationEnd<InvestmentAccount, PortfolioTransfer>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
@@ -1388,28 +1502,38 @@ public class InvestmentAccount extends Account {
 			definition = "Transfer of a portfolio held on a nominee account.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmNomineeAccount;
+			opposite_lazy = () -> PortfolioTransfer.mmNomineeAccount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
+			type_lazy = () -> PortfolioTransfer.mmObject();
+		}
+
+		@Override
+		public PortfolioTransfer getValue(InvestmentAccount obj) {
+			return obj.getRelatedPortfolioTransfer();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount obj, PortfolioTransfer value) {
+			obj.setRelatedPortfolioTransfer(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccount";
 				definition = "Account between an investor(s) and a fund manager or a fund. The account can contain holdings in any investment fund or investment fund class managed (or distributed) by the fund manager, within the same fund family.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClass.mmInvestmentAccount, com.tools20022.repository.entity.CashAccount.mmRelatedInvestmentAccount,
 						com.tools20022.repository.entity.SecuritiesAccount.mmRelatedInvestmentAccount, com.tools20022.repository.entity.InvestmentAccountContract.mmInvestmentAccount,
 						com.tools20022.repository.entity.InvestmentAccountPartyRole.mmInvestmentAccount, com.tools20022.repository.entity.InvestmentFundTax.mmInvestmentAccount,
-						com.tools20022.repository.entity.InvestmentFundTransaction.mmInvestmentAccount, com.tools20022.repository.entity.PortfolioTransfer.mmAccountFrom, com.tools20022.repository.entity.PortfolioTransfer.mmAccountTo,
-						com.tools20022.repository.entity.PortfolioTransfer.mmNomineeAccount, com.tools20022.repository.entity.Portfolio.mmAccount, com.tools20022.repository.entity.SidePocket.mmInvestmentAccount,
-						com.tools20022.repository.entity.FundOrderDesk.mmMainFundOrderDeskAccount);
-				derivationElement_lazy = () -> Arrays.asList(StatementOfInvestmentFundTransactions3.mmInvestmentAccountDetails, ReceivingPartiesAndAccount13.mmReceiverDetails, TransferOut17.mmAccountDetails, TransferIn14.mmAccountDetails,
-						TransferIn15.mmAccountDetails, TransferOut16.mmAccountDetails, AccountUsageType2Choice.mmCode, AccountUsageType2Choice.mmProprietary, InvestmentAccount61.mmType, InvestmentAccount61.mmAccountUsageType,
-						AccountSelection2Choice.mmOtherAccountSelectionData, InvestmentAccount63.mmType, InvestmentAccount63.mmAccountUsageType, InvestmentAccount62.mmType, InvestmentAccount62.mmAccountUsageType);
+						com.tools20022.repository.entity.InvestmentFundTransaction.mmInvestmentAccount, PortfolioTransfer.mmAccountFrom, PortfolioTransfer.mmAccountTo, PortfolioTransfer.mmNomineeAccount,
+						com.tools20022.repository.entity.Portfolio.mmAccount, com.tools20022.repository.entity.SidePocket.mmInvestmentAccount, FundOrderDesk.mmMainFundOrderDeskAccount);
+				derivationElement_lazy = () -> Arrays.asList(StatementOfInvestmentFundTransactions3.mmInvestmentAccountDetails, AccountUsageType2Choice.mmCode, AccountUsageType2Choice.mmProprietary, InvestmentAccount61.mmType,
+						InvestmentAccount61.mmAccountUsageType, AccountSelection2Choice.mmOtherAccountSelectionData, InvestmentAccount63.mmType, InvestmentAccount63.mmAccountUsageType, InvestmentAccount62.mmType,
+						InvestmentAccount62.mmAccountUsageType, ReceivingPartiesAndAccount17.mmReceiverDetails);
 				superType_lazy = () -> Account.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountType, com.tools20022.repository.entity.InvestmentAccount.mmOwnershipType,
 						com.tools20022.repository.entity.InvestmentAccount.mmDesignation, com.tools20022.repository.entity.InvestmentAccount.mmReferenceCurrency, com.tools20022.repository.entity.InvestmentAccount.mmInvestmentFundClass,
@@ -1420,9 +1544,9 @@ public class InvestmentAccount extends Account {
 						com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountContract, com.tools20022.repository.entity.InvestmentAccount.mmAccountUsageType, com.tools20022.repository.entity.InvestmentAccount.mmCategory,
 						com.tools20022.repository.entity.InvestmentAccount.mmPortfolio, com.tools20022.repository.entity.InvestmentAccount.mmRelatedPortfolioTransfer);
 				derivationComponent_lazy = () -> Arrays.asList(InvestmentAccountType1Choice.mmObject(), InvestmentAccount43.mmObject(), StatementOfInvestmentFundTransactions3.mmObject(), InvestmentAccount42.mmObject(),
-						Account19.mmObject(), InvestmentAccount54.mmObject(), InvestmentAccount56.mmObject(), AccountType2Choice.mmObject(), InvestmentAccount55.mmObject(), InvestmentAccount53.mmObject(), InvestmentAccount57.mmObject(),
-						AccountUsageType2Choice.mmObject(), OwnershipType2Choice.mmObject(), InvestmentAccount61.mmObject(), InvestmentAccount63.mmObject(), InvestmentAccount62.mmObject(), InvestmentAccount58.mmObject(),
-						InvestmentAccount64.mmObject(), InvestmentAccount60.mmObject());
+						AccountType2Choice.mmObject(), InvestmentAccount53.mmObject(), AccountUsageType2Choice.mmObject(), OwnershipType2Choice.mmObject(), InvestmentAccount61.mmObject(), InvestmentAccount63.mmObject(),
+						InvestmentAccount62.mmObject(), InvestmentAccount58.mmObject(), InvestmentAccount64.mmObject(), InvestmentAccount60.mmObject(), Account24.mmObject(), InvestmentAccount66.mmObject(), InvestmentAccount67.mmObject(),
+						InvestmentAccount65.mmObject(), InvestmentAccount68.mmObject());
 			}
 
 			@Override
@@ -1437,151 +1561,170 @@ public class InvestmentAccount extends Account {
 		return investmentAccountType;
 	}
 
-	public void setInvestmentAccountType(FundCashAccountCode investmentAccountType) {
-		this.investmentAccountType = investmentAccountType;
+	public InvestmentAccount setInvestmentAccountType(FundCashAccountCode investmentAccountType) {
+		this.investmentAccountType = Objects.requireNonNull(investmentAccountType);
+		return this;
 	}
 
 	public AccountOwnershipTypeCode getOwnershipType() {
 		return ownershipType;
 	}
 
-	public void setOwnershipType(AccountOwnershipTypeCode ownershipType) {
-		this.ownershipType = ownershipType;
+	public InvestmentAccount setOwnershipType(AccountOwnershipTypeCode ownershipType) {
+		this.ownershipType = Objects.requireNonNull(ownershipType);
+		return this;
 	}
 
 	public Max70Text getDesignation() {
 		return designation;
 	}
 
-	public void setDesignation(Max70Text designation) {
-		this.designation = designation;
+	public InvestmentAccount setDesignation(Max70Text designation) {
+		this.designation = Objects.requireNonNull(designation);
+		return this;
 	}
 
 	public CurrencyCode getReferenceCurrency() {
 		return referenceCurrency;
 	}
 
-	public void setReferenceCurrency(CurrencyCode referenceCurrency) {
-		this.referenceCurrency = referenceCurrency;
+	public InvestmentAccount setReferenceCurrency(CurrencyCode referenceCurrency) {
+		this.referenceCurrency = Objects.requireNonNull(referenceCurrency);
+		return this;
 	}
 
 	public List<InvestmentFundClass> getInvestmentFundClass() {
-		return investmentFundClass;
+		return investmentFundClass == null ? investmentFundClass = new ArrayList<>() : investmentFundClass;
 	}
 
-	public void setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
-		this.investmentFundClass = investmentFundClass;
+	public InvestmentAccount setInvestmentFundClass(List<com.tools20022.repository.entity.InvestmentFundClass> investmentFundClass) {
+		this.investmentFundClass = Objects.requireNonNull(investmentFundClass);
+		return this;
 	}
 
 	public List<CashAccount> getCashAccount() {
-		return cashAccount;
+		return cashAccount == null ? cashAccount = new ArrayList<>() : cashAccount;
 	}
 
-	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
-		this.cashAccount = cashAccount;
+	public InvestmentAccount setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public List<SecuritiesAccount> getSecuritiesAccount() {
-		return securitiesAccount;
+		return securitiesAccount == null ? securitiesAccount = new ArrayList<>() : securitiesAccount;
 	}
 
-	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
-		this.securitiesAccount = securitiesAccount;
+	public InvestmentAccount setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = Objects.requireNonNull(securitiesAccount);
+		return this;
 	}
 
 	public List<InvestmentFundTax> getInvestmentFundTax() {
-		return investmentFundTax;
+		return investmentFundTax == null ? investmentFundTax = new ArrayList<>() : investmentFundTax;
 	}
 
-	public void setInvestmentFundTax(List<com.tools20022.repository.entity.InvestmentFundTax> investmentFundTax) {
-		this.investmentFundTax = investmentFundTax;
+	public InvestmentAccount setInvestmentFundTax(List<com.tools20022.repository.entity.InvestmentFundTax> investmentFundTax) {
+		this.investmentFundTax = Objects.requireNonNull(investmentFundTax);
+		return this;
 	}
 
 	public List<InvestmentFundTransaction> getInvestmentFundTransaction() {
-		return investmentFundTransaction;
+		return investmentFundTransaction == null ? investmentFundTransaction = new ArrayList<>() : investmentFundTransaction;
 	}
 
-	public void setInvestmentFundTransaction(List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction) {
-		this.investmentFundTransaction = investmentFundTransaction;
+	public InvestmentAccount setInvestmentFundTransaction(List<com.tools20022.repository.entity.InvestmentFundTransaction> investmentFundTransaction) {
+		this.investmentFundTransaction = Objects.requireNonNull(investmentFundTransaction);
+		return this;
 	}
 
 	public List<SidePocket> getSidePocket() {
-		return sidePocket;
+		return sidePocket == null ? sidePocket = new ArrayList<>() : sidePocket;
 	}
 
-	public void setSidePocket(List<com.tools20022.repository.entity.SidePocket> sidePocket) {
-		this.sidePocket = sidePocket;
+	public InvestmentAccount setSidePocket(List<com.tools20022.repository.entity.SidePocket> sidePocket) {
+		this.sidePocket = Objects.requireNonNull(sidePocket);
+		return this;
 	}
 
 	public List<InvestmentAccountPartyRole> getInvestmentAccountPartyRole() {
-		return investmentAccountPartyRole;
+		return investmentAccountPartyRole == null ? investmentAccountPartyRole = new ArrayList<>() : investmentAccountPartyRole;
 	}
 
-	public void setInvestmentAccountPartyRole(List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountPartyRole) {
-		this.investmentAccountPartyRole = investmentAccountPartyRole;
+	public InvestmentAccount setInvestmentAccountPartyRole(List<com.tools20022.repository.entity.InvestmentAccountPartyRole> investmentAccountPartyRole) {
+		this.investmentAccountPartyRole = Objects.requireNonNull(investmentAccountPartyRole);
+		return this;
 	}
 
-	public PortfolioTransfer getDebitPortfolioTransfer() {
-		return debitPortfolioTransfer;
+	public Optional<PortfolioTransfer> getDebitPortfolioTransfer() {
+		return debitPortfolioTransfer == null ? Optional.empty() : Optional.of(debitPortfolioTransfer);
 	}
 
-	public void setDebitPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer debitPortfolioTransfer) {
+	public InvestmentAccount setDebitPortfolioTransfer(PortfolioTransfer debitPortfolioTransfer) {
 		this.debitPortfolioTransfer = debitPortfolioTransfer;
+		return this;
 	}
 
-	public PortfolioTransfer getCreditPortfolioTransfer() {
-		return creditPortfolioTransfer;
+	public Optional<PortfolioTransfer> getCreditPortfolioTransfer() {
+		return creditPortfolioTransfer == null ? Optional.empty() : Optional.of(creditPortfolioTransfer);
 	}
 
-	public void setCreditPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer creditPortfolioTransfer) {
+	public InvestmentAccount setCreditPortfolioTransfer(PortfolioTransfer creditPortfolioTransfer) {
 		this.creditPortfolioTransfer = creditPortfolioTransfer;
+		return this;
 	}
 
-	public FundOrderDesk getAccountForInvestmentFundProcessing() {
-		return accountForInvestmentFundProcessing;
+	public Optional<FundOrderDesk> getAccountForInvestmentFundProcessing() {
+		return accountForInvestmentFundProcessing == null ? Optional.empty() : Optional.of(accountForInvestmentFundProcessing);
 	}
 
-	public void setAccountForInvestmentFundProcessing(com.tools20022.repository.entity.FundOrderDesk accountForInvestmentFundProcessing) {
+	public InvestmentAccount setAccountForInvestmentFundProcessing(FundOrderDesk accountForInvestmentFundProcessing) {
 		this.accountForInvestmentFundProcessing = accountForInvestmentFundProcessing;
+		return this;
 	}
 
 	public InvestmentAccountContract getInvestmentAccountContract() {
 		return investmentAccountContract;
 	}
 
-	public void setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
-		this.investmentAccountContract = investmentAccountContract;
+	public InvestmentAccount setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
+		this.investmentAccountContract = Objects.requireNonNull(investmentAccountContract);
+		return this;
 	}
 
 	public AccountUsageTypeCode getAccountUsageType() {
 		return accountUsageType;
 	}
 
-	public void setAccountUsageType(AccountUsageTypeCode accountUsageType) {
-		this.accountUsageType = accountUsageType;
+	public InvestmentAccount setAccountUsageType(AccountUsageTypeCode accountUsageType) {
+		this.accountUsageType = Objects.requireNonNull(accountUsageType);
+		return this;
 	}
 
 	public InvestmentAccountCategoryCode getCategory() {
 		return category;
 	}
 
-	public void setCategory(InvestmentAccountCategoryCode category) {
-		this.category = category;
+	public InvestmentAccount setCategory(InvestmentAccountCategoryCode category) {
+		this.category = Objects.requireNonNull(category);
+		return this;
 	}
 
 	public Portfolio getPortfolio() {
 		return portfolio;
 	}
 
-	public void setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
-		this.portfolio = portfolio;
+	public InvestmentAccount setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+		this.portfolio = Objects.requireNonNull(portfolio);
+		return this;
 	}
 
 	public PortfolioTransfer getRelatedPortfolioTransfer() {
 		return relatedPortfolioTransfer;
 	}
 
-	public void setRelatedPortfolioTransfer(com.tools20022.repository.entity.PortfolioTransfer relatedPortfolioTransfer) {
-		this.relatedPortfolioTransfer = relatedPortfolioTransfer;
+	public InvestmentAccount setRelatedPortfolioTransfer(PortfolioTransfer relatedPortfolioTransfer) {
+		this.relatedPortfolioTransfer = Objects.requireNonNull(relatedPortfolioTransfer);
+		return this;
 	}
 }

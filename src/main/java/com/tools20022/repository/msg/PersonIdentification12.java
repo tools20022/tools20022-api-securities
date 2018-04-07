@@ -26,8 +26,10 @@ import com.tools20022.repository.entity.Country;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericPersonIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * PartyIdentification76}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PersonIdentification12", propOrder = {"countryOfBranch", "other"})
 public class PersonIdentification12 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CtryOfBrnch", required = true)
 	protected CountryCode countryOfBranch;
 	/**
-	 * Branch where the trader is located.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,10 +117,10 @@ public class PersonIdentification12 {
 	 * PartyIdentification76.mmCountryOfBranch}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountryOfBranch = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonIdentification12, CountryCode> mmCountryOfBranch = new MMMessageAttribute<PersonIdentification12, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> PersonIdentification12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification12.mmObject();
 			isDerived = false;
 			xmlTag = "CtryOfBrnch";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,12 +131,22 @@ public class PersonIdentification12 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(PersonIdentification12 obj) {
+			return obj.getCountryOfBranch();
+		}
+
+		@Override
+		public void setValue(PersonIdentification12 obj, CountryCode value) {
+			obj.setCountryOfBranch(value);
+		}
 	};
+	@XmlElement(name = "Othr", required = true)
 	protected GenericPersonIdentification1 other;
 	/**
-	 * Unique identification of a person, as assigned by an institution, using
-	 * an identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -170,10 +183,10 @@ public class PersonIdentification12 {
 	 * PartyIdentification76.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PersonIdentification12, GenericPersonIdentification1> mmOther = new MMMessageAssociationEnd<PersonIdentification12, GenericPersonIdentification1>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PersonIdentification12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification12.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,16 +196,26 @@ public class PersonIdentification12 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericPersonIdentification1.mmObject();
+			type_lazy = () -> GenericPersonIdentification1.mmObject();
+		}
+
+		@Override
+		public GenericPersonIdentification1 getValue(PersonIdentification12 obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(PersonIdentification12 obj, GenericPersonIdentification1 value) {
+			obj.setOther(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PersonIdentification12.mmCountryOfBranch, PersonIdentification12.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PersonIdentification12.mmCountryOfBranch, com.tools20022.repository.msg.PersonIdentification12.mmOther);
 				trace_lazy = () -> PersonIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentification12";
 				definition = "Specifies the identification of a person.";
@@ -202,21 +225,21 @@ public class PersonIdentification12 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CtryOfBrnch", required = true)
 	public CountryCode getCountryOfBranch() {
 		return countryOfBranch;
 	}
 
-	public void setCountryOfBranch(CountryCode countryOfBranch) {
-		this.countryOfBranch = countryOfBranch;
+	public PersonIdentification12 setCountryOfBranch(CountryCode countryOfBranch) {
+		this.countryOfBranch = Objects.requireNonNull(countryOfBranch);
+		return this;
 	}
 
-	@XmlElement(name = "Othr", required = true)
 	public GenericPersonIdentification1 getOther() {
 		return other;
 	}
 
-	public void setOther(com.tools20022.repository.msg.GenericPersonIdentification1 other) {
-		this.other = other;
+	public PersonIdentification12 setOther(GenericPersonIdentification1 other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

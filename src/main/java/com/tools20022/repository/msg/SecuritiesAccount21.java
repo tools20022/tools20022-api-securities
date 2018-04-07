@@ -28,8 +28,11 @@ import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.entity.SecuritiesAccount;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AccountIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,8 +79,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,15 +93,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesAccount21", propOrder = {"account", "subAccount", "baseCurrency", "reportingCurrency", "foreignExchangeRate"})
 public class SecuritiesAccount21 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Acct", required = true)
 	protected AccountIdentification5 account;
 	/**
-	 * Account identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -127,10 +131,10 @@ public class SecuritiesAccount21 {
 	 * definition} = "Account identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesAccount21, AccountIdentification5> mmAccount = new MMMessageAssociationEnd<SecuritiesAccount21, AccountIdentification5>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> SecuritiesAccount21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount21.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,13 +143,24 @@ public class SecuritiesAccount21 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AccountIdentification5.mmObject();
+			type_lazy = () -> AccountIdentification5.mmObject();
+		}
+
+		@Override
+		public AccountIdentification5 getValue(SecuritiesAccount21 obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount21 obj, AccountIdentification5 value) {
+			obj.setAccount(value);
 		}
 	};
+	@XmlElement(name = "SubAcct")
 	protected AccountIdentification5 subAccount;
 	/**
-	 * Sub-account identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -174,10 +189,10 @@ public class SecuritiesAccount21 {
 	 * definition} = "Sub-account identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesAccount21, Optional<AccountIdentification5>> mmSubAccount = new MMMessageAssociationEnd<SecuritiesAccount21, Optional<AccountIdentification5>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesAccount.mmObject();
-			componentContext_lazy = () -> SecuritiesAccount21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount21.mmObject();
 			isDerived = false;
 			xmlTag = "SubAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,13 +201,24 @@ public class SecuritiesAccount21 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AccountIdentification5.mmObject();
+			type_lazy = () -> AccountIdentification5.mmObject();
+		}
+
+		@Override
+		public Optional<AccountIdentification5> getValue(SecuritiesAccount21 obj) {
+			return obj.getSubAccount();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount21 obj, Optional<AccountIdentification5> value) {
+			obj.setSubAccount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "BaseCcy")
 	protected ActiveOrHistoricCurrencyCode baseCurrency;
 	/**
-	 * Base currency for the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,10 +249,10 @@ public class SecuritiesAccount21 {
 	 * definition} = "Base currency for the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount21, Optional<ActiveOrHistoricCurrencyCode>> mmBaseCurrency = new MMMessageAttribute<SecuritiesAccount21, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
-			componentContext_lazy = () -> SecuritiesAccount21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount21.mmObject();
 			isDerived = false;
 			xmlTag = "BaseCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -236,12 +262,22 @@ public class SecuritiesAccount21 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(SecuritiesAccount21 obj) {
+			return obj.getBaseCurrency();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount21 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setBaseCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RptgCcy")
 	protected ActiveOrHistoricCurrencyCode reportingCurrency;
 	/**
-	 * Currency chosen for reporting purposes by the account owner in agreement
-	 * with the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,10 +310,10 @@ public class SecuritiesAccount21 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportingCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount21, Optional<ActiveOrHistoricCurrencyCode>> mmReportingCurrency = new MMMessageAttribute<SecuritiesAccount21, Optional<ActiveOrHistoricCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmReportingCurrency;
-			componentContext_lazy = () -> SecuritiesAccount21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount21.mmObject();
 			isDerived = false;
 			xmlTag = "RptgCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -287,12 +323,22 @@ public class SecuritiesAccount21 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyCode> getValue(SecuritiesAccount21 obj) {
+			return obj.getReportingCurrency();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount21 obj, Optional<ActiveOrHistoricCurrencyCode> value) {
+			obj.setReportingCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FXRate")
 	protected BaseOneRate foreignExchangeRate;
 	/**
-	 * Foreign exchange rate applied between the reporting and base currencies.
-	 * It is assumed the valuation date is the same as the report date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,10 +370,10 @@ public class SecuritiesAccount21 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmForeignExchangeRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesAccount21, Optional<BaseOneRate>> mmForeignExchangeRate = new MMMessageAttribute<SecuritiesAccount21, Optional<BaseOneRate>>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmExchangeRate;
-			componentContext_lazy = () -> SecuritiesAccount21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount21.mmObject();
 			isDerived = false;
 			xmlTag = "FXRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,16 +383,26 @@ public class SecuritiesAccount21 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		@Override
+		public Optional<BaseOneRate> getValue(SecuritiesAccount21 obj) {
+			return obj.getForeignExchangeRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesAccount21 obj, Optional<BaseOneRate> value) {
+			obj.setForeignExchangeRate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesAccount21.mmAccount, SecuritiesAccount21.mmSubAccount, SecuritiesAccount21.mmBaseCurrency, SecuritiesAccount21.mmReportingCurrency,
-						SecuritiesAccount21.mmForeignExchangeRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesAccount21.mmAccount, com.tools20022.repository.msg.SecuritiesAccount21.mmSubAccount,
+						com.tools20022.repository.msg.SecuritiesAccount21.mmBaseCurrency, com.tools20022.repository.msg.SecuritiesAccount21.mmReportingCurrency, com.tools20022.repository.msg.SecuritiesAccount21.mmForeignExchangeRate);
 				messageBuildingBlock_lazy = () -> Arrays.asList(TotalPortfolioValuationReportV01.mmAccountDetails);
 				trace_lazy = () -> SecuritiesAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesAccount21";
 				definition = "Unambiguous identification for the account between the account owner and the account servicer.";
@@ -355,48 +411,48 @@ public class SecuritiesAccount21 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Acct", required = true)
 	public AccountIdentification5 getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.msg.AccountIdentification5 account) {
-		this.account = account;
+	public SecuritiesAccount21 setAccount(AccountIdentification5 account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
-	@XmlElement(name = "SubAcct")
-	public AccountIdentification5 getSubAccount() {
-		return subAccount;
+	public Optional<AccountIdentification5> getSubAccount() {
+		return subAccount == null ? Optional.empty() : Optional.of(subAccount);
 	}
 
-	public void setSubAccount(com.tools20022.repository.msg.AccountIdentification5 subAccount) {
+	public SecuritiesAccount21 setSubAccount(AccountIdentification5 subAccount) {
 		this.subAccount = subAccount;
+		return this;
 	}
 
-	@XmlElement(name = "BaseCcy")
-	public ActiveOrHistoricCurrencyCode getBaseCurrency() {
-		return baseCurrency;
+	public Optional<ActiveOrHistoricCurrencyCode> getBaseCurrency() {
+		return baseCurrency == null ? Optional.empty() : Optional.of(baseCurrency);
 	}
 
-	public void setBaseCurrency(ActiveOrHistoricCurrencyCode baseCurrency) {
+	public SecuritiesAccount21 setBaseCurrency(ActiveOrHistoricCurrencyCode baseCurrency) {
 		this.baseCurrency = baseCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "RptgCcy")
-	public ActiveOrHistoricCurrencyCode getReportingCurrency() {
-		return reportingCurrency;
+	public Optional<ActiveOrHistoricCurrencyCode> getReportingCurrency() {
+		return reportingCurrency == null ? Optional.empty() : Optional.of(reportingCurrency);
 	}
 
-	public void setReportingCurrency(ActiveOrHistoricCurrencyCode reportingCurrency) {
+	public SecuritiesAccount21 setReportingCurrency(ActiveOrHistoricCurrencyCode reportingCurrency) {
 		this.reportingCurrency = reportingCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "FXRate")
-	public BaseOneRate getForeignExchangeRate() {
-		return foreignExchangeRate;
+	public Optional<BaseOneRate> getForeignExchangeRate() {
+		return foreignExchangeRate == null ? Optional.empty() : Optional.of(foreignExchangeRate);
 	}
 
-	public void setForeignExchangeRate(BaseOneRate foreignExchangeRate) {
+	public SecuritiesAccount21 setForeignExchangeRate(BaseOneRate foreignExchangeRate) {
 		this.foreignExchangeRate = foreignExchangeRate;
+		return this;
 	}
 }

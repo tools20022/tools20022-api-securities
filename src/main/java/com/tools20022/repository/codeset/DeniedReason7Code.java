@@ -38,42 +38,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#AccountServicerDeadlineMissed
- * DeniedReason7Code.mmAccountServicerDeadlineMissed}</li>
+ * DeniedReason7Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#CallDeniedSinceAlreadyApplied
- * DeniedReason7Code.mmCallDeniedSinceAlreadyApplied}</li>
+ * DeniedReason7Code.CallDeniedSinceAlreadyApplied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#ConditionalCurrency
- * DeniedReason7Code.mmConditionalCurrency}</li>
+ * DeniedReason7Code.ConditionalCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#ConditionalRealignement
- * DeniedReason7Code.mmConditionalRealignement}</li>
+ * DeniedReason7Code.ConditionalRealignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#ConditionalRegistrar
- * DeniedReason7Code.mmConditionalRegistrar}</li>
+ * DeniedReason7Code.ConditionalRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#DeniedSinceCancelled
- * DeniedReason7Code.mmDeniedSinceCancelled}</li>
+ * DeniedReason7Code.DeniedSinceCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#DeniedSinceInProgress
- * DeniedReason7Code.mmDeniedSinceInProgress}</li>
+ * DeniedReason7Code.DeniedSinceInProgress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#DeniedSinceNotAllowed
- * DeniedReason7Code.mmDeniedSinceNotAllowed}</li>
+ * DeniedReason7Code.DeniedSinceNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#DeniedSinceRepoEnded
- * DeniedReason7Code.mmDeniedSinceRepoEnded}</li>
+ * DeniedReason7Code.DeniedSinceRepoEnded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#DeniedSinceSettled
- * DeniedReason7Code.mmDeniedSinceSettled}</li>
+ * DeniedReason7Code.DeniedSinceSettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#InstructionProcessed
- * DeniedReason7Code.mmInstructionProcessed}</li>
+ * DeniedReason7Code.InstructionProcessed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason7Code#MarketDeadlineMissed
- * DeniedReason7Code.mmMarketDeadlineMissed}</li>
+ * DeniedReason7Code.MarketDeadlineMissed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DeniedReason7Code#Other
- * DeniedReason7Code.mmOther}</li>
+ * DeniedReason7Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -82,8 +82,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -418,7 +418,7 @@ public class DeniedReason7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeniedReason7Code";
 				definition = "Specifies the denied reason.";

@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType1Code#AccreditedInvestor
- * BeneficiaryCertificationType1Code.mmAccreditedInvestor}</li>
+ * BeneficiaryCertificationType1Code.AccreditedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType1Code#DomicileCountry
- * BeneficiaryCertificationType1Code.mmDomicileCountry}</li>
+ * BeneficiaryCertificationType1Code.DomicileCountry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType1Code#FullBeneficialOwnerBreakdown
- * BeneficiaryCertificationType1Code.mmFullBeneficialOwnerBreakdown}</li>
+ * BeneficiaryCertificationType1Code.FullBeneficialOwnerBreakdown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType1Code#QIBCertification
- * BeneficiaryCertificationType1Code.mmQIBCertification}</li>
+ * BeneficiaryCertificationType1Code.QIBCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType1Code#TaxRateBreakdown
- * BeneficiaryCertificationType1Code.mmTaxRateBreakdown}</li>
+ * BeneficiaryCertificationType1Code.TaxRateBreakdown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationType1Code#NonCompany
- * BeneficiaryCertificationType1Code.mmNonCompany}</li>
+ * BeneficiaryCertificationType1Code.NonCompany}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class BeneficiaryCertificationType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACCI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BeneficiaryCertificationType1Code";

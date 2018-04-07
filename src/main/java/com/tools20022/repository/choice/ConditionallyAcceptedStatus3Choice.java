@@ -26,9 +26,11 @@ import com.tools20022.repository.entity.SecuritiesOrderStatus;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ConditionallyAcceptedStatusReason3;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Reason for a conditionally accepted status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ConditionallyAcceptedStatus3Choice", propOrder = {"noSpecifiedReason", "reasonDetails"})
 public class ConditionallyAcceptedStatus3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoSpcfdRsn", required = true)
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * No reason available or to report for the conditionally accepted status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,10 +123,10 @@ public class ConditionallyAcceptedStatus3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConditionallyAcceptedStatus3Choice, NoReasonCode> mmNoSpecifiedReason = new MMMessageAttribute<ConditionallyAcceptedStatus3Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmNoSpecifiedReason;
-			componentContext_lazy = () -> ConditionallyAcceptedStatus3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ConditionallyAcceptedStatus3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoSpcfdRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,11 +137,22 @@ public class ConditionallyAcceptedStatus3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(ConditionallyAcceptedStatus3Choice obj) {
+			return obj.getNoSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(ConditionallyAcceptedStatus3Choice obj, NoReasonCode value) {
+			obj.setNoSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "RsnDtls", required = true)
 	protected List<ConditionallyAcceptedStatusReason3> reasonDetails;
 	/**
-	 * Reason for the conditionally accepted status, expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -180,10 +194,10 @@ public class ConditionallyAcceptedStatus3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReasonDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ConditionallyAcceptedStatus3Choice, List<ConditionallyAcceptedStatusReason3>> mmReasonDetails = new MMMessageAssociationEnd<ConditionallyAcceptedStatus3Choice, List<ConditionallyAcceptedStatusReason3>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrderStatus.mmConditionallyAcceptedStatus;
-			componentContext_lazy = () -> ConditionallyAcceptedStatus3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ConditionallyAcceptedStatus3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RsnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -195,14 +209,24 @@ public class ConditionallyAcceptedStatus3Choice {
 			isComposite = true;
 			type_lazy = () -> ConditionallyAcceptedStatusReason3.mmObject();
 		}
+
+		@Override
+		public List<ConditionallyAcceptedStatusReason3> getValue(ConditionallyAcceptedStatus3Choice obj) {
+			return obj.getReasonDetails();
+		}
+
+		@Override
+		public void setValue(ConditionallyAcceptedStatus3Choice obj, List<ConditionallyAcceptedStatusReason3> value) {
+			obj.setReasonDetails(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ConditionallyAcceptedStatus3Choice.mmNoSpecifiedReason, ConditionallyAcceptedStatus3Choice.mmReasonDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ConditionallyAcceptedStatus3Choice.mmNoSpecifiedReason, com.tools20022.repository.choice.ConditionallyAcceptedStatus3Choice.mmReasonDetails);
 				trace_lazy = () -> SecuritiesOrderStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConditionallyAcceptedStatus3Choice";
 				definition = "Reason for a conditionally accepted status.";
@@ -211,21 +235,21 @@ public class ConditionallyAcceptedStatus3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoSpcfdRsn", required = true)
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public ConditionallyAcceptedStatus3Choice setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "RsnDtls", required = true)
 	public List<ConditionallyAcceptedStatusReason3> getReasonDetails() {
-		return reasonDetails;
+		return reasonDetails == null ? reasonDetails = new ArrayList<>() : reasonDetails;
 	}
 
-	public void setReasonDetails(List<ConditionallyAcceptedStatusReason3> reasonDetails) {
-		this.reasonDetails = reasonDetails;
+	public ConditionallyAcceptedStatus3Choice setReasonDetails(List<ConditionallyAcceptedStatusReason3> reasonDetails) {
+		this.reasonDetails = Objects.requireNonNull(reasonDetails);
+		return this;
 	}
 }

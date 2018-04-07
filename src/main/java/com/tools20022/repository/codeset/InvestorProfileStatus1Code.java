@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#Disabled
- * InvestorProfileStatus1Code.mmDisabled}</li>
+ * InvestorProfileStatus1Code.Disabled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#Disabling
- * InvestorProfileStatus1Code.mmDisabling}</li>
+ * InvestorProfileStatus1Code.Disabling}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#Enabled
- * InvestorProfileStatus1Code.mmEnabled}</li>
+ * InvestorProfileStatus1Code.Enabled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#Enabling
- * InvestorProfileStatus1Code.mmEnabling}</li>
+ * InvestorProfileStatus1Code.Enabling}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#InAdmission
- * InvestorProfileStatus1Code.mmInAdmission}</li>
+ * InvestorProfileStatus1Code.InAdmission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#InAnalysis
- * InvestorProfileStatus1Code.mmInAnalysis}</li>
+ * InvestorProfileStatus1Code.InAnalysis}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#NotApproved
- * InvestorProfileStatus1Code.mmNotApproved}</li>
+ * InvestorProfileStatus1Code.NotApproved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#PartiallySuspended
- * InvestorProfileStatus1Code.mmPartiallySuspended}</li>
+ * InvestorProfileStatus1Code.PartiallySuspended}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#PendingApproval
- * InvestorProfileStatus1Code.mmPendingApproval}</li>
+ * InvestorProfileStatus1Code.PendingApproval}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestorProfileStatus1Code#Suspended
- * InvestorProfileStatus1Code.mmSuspended}</li>
+ * InvestorProfileStatus1Code.Suspended}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -338,7 +338,7 @@ public class InvestorProfileStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestorProfileStatus1Code";
 				definition = "Specifies the status of the investor profile.";

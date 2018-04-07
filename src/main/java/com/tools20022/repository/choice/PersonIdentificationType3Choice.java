@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the type of identification of a person."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PersonIdentificationType3Choice", propOrder = {"code", "proprietary"})
 public class PersonIdentificationType3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected PersonIdentificationType3Code code;
 	/**
-	 * Person identification expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,9 +102,9 @@ public class PersonIdentificationType3Choice {
 	 * definition} = "Person identification expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonIdentificationType3Choice, PersonIdentificationType3Code> mmCode = new MMMessageAttribute<PersonIdentificationType3Choice, PersonIdentificationType3Code>() {
 		{
-			componentContext_lazy = () -> PersonIdentificationType3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PersonIdentificationType3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,11 +114,22 @@ public class PersonIdentificationType3Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> PersonIdentificationType3Code.mmObject();
 		}
+
+		@Override
+		public PersonIdentificationType3Code getValue(PersonIdentificationType3Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(PersonIdentificationType3Choice obj, PersonIdentificationType3Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Person identification expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,9 +155,9 @@ public class PersonIdentificationType3Choice {
 	 * definition} = "Person identification expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonIdentificationType3Choice, GenericIdentification13> mmProprietary = new MMMessageAttribute<PersonIdentificationType3Choice, GenericIdentification13>() {
 		{
-			componentContext_lazy = () -> PersonIdentificationType3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PersonIdentificationType3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,14 +167,24 @@ public class PersonIdentificationType3Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
 		}
+
+		@Override
+		public GenericIdentification13 getValue(PersonIdentificationType3Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(PersonIdentificationType3Choice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PersonIdentificationType3Choice.mmCode, PersonIdentificationType3Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PersonIdentificationType3Choice.mmCode, com.tools20022.repository.choice.PersonIdentificationType3Choice.mmProprietary);
 				trace_lazy = () -> PersonIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentificationType3Choice";
 				definition = "Specifies the type of identification of a person.";
@@ -170,21 +193,21 @@ public class PersonIdentificationType3Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public PersonIdentificationType3Code getCode() {
 		return code;
 	}
 
-	public void setCode(PersonIdentificationType3Code code) {
-		this.code = code;
+	public PersonIdentificationType3Choice setCode(PersonIdentificationType3Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public PersonIdentificationType3Choice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

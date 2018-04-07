@@ -38,88 +38,88 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Blocked
- * SecuritiesBalanceType11Code.mmBlocked}</li>
+ * SecuritiesBalanceType11Code.Blocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#AvailableWithNoAdditionalStatus
- * SecuritiesBalanceType11Code.mmAvailableWithNoAdditionalStatus}</li>
+ * SecuritiesBalanceType11Code.AvailableWithNoAdditionalStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Available
- * SecuritiesBalanceType11Code.mmAvailable}</li>
+ * SecuritiesBalanceType11Code.Available}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#BlockedCorporateAction
- * SecuritiesBalanceType11Code.mmBlockedCorporateAction}</li>
+ * SecuritiesBalanceType11Code.BlockedCorporateAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#BlockedTrading
- * SecuritiesBalanceType11Code.mmBlockedTrading}</li>
+ * SecuritiesBalanceType11Code.BlockedTrading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#BlockedAuthenticity
- * SecuritiesBalanceType11Code.mmBlockedAuthenticity}</li>
+ * SecuritiesBalanceType11Code.BlockedAuthenticity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Borrowed
- * SecuritiesBalanceType11Code.mmBorrowed}</li>
+ * SecuritiesBalanceType11Code.Borrowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#CollateralIn
- * SecuritiesBalanceType11Code.mmCollateralIn}</li>
+ * SecuritiesBalanceType11Code.CollateralIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#CollateralOut
- * SecuritiesBalanceType11Code.mmCollateralOut}</li>
+ * SecuritiesBalanceType11Code.CollateralOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#EligibleForCollateralPurposes
- * SecuritiesBalanceType11Code.mmEligibleForCollateralPurposes}</li>
+ * SecuritiesBalanceType11Code.EligibleForCollateralPurposes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#OnLoan
- * SecuritiesBalanceType11Code.mmOnLoan}</li>
+ * SecuritiesBalanceType11Code.OnLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#DerivativesMargin
- * SecuritiesBalanceType11Code.mmDerivativesMargin}</li>
+ * SecuritiesBalanceType11Code.DerivativesMargin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#PendingCorporateActionReceipt
- * SecuritiesBalanceType11Code.mmPendingCorporateActionReceipt}</li>
+ * SecuritiesBalanceType11Code.PendingCorporateActionReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#PendingCorporateActionDelivery
- * SecuritiesBalanceType11Code.mmPendingCorporateActionDelivery}</li>
+ * SecuritiesBalanceType11Code.PendingCorporateActionDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Pledged
- * SecuritiesBalanceType11Code.mmPledged}</li>
+ * SecuritiesBalanceType11Code.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#OutForRegistration
- * SecuritiesBalanceType11Code.mmOutForRegistration}</li>
+ * SecuritiesBalanceType11Code.OutForRegistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Restricted
- * SecuritiesBalanceType11Code.mmRestricted}</li>
+ * SecuritiesBalanceType11Code.Restricted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Unclassified
- * SecuritiesBalanceType11Code.mmUnclassified}</li>
+ * SecuritiesBalanceType11Code.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#InTransshipment
- * SecuritiesBalanceType11Code.mmInTransshipment}</li>
+ * SecuritiesBalanceType11Code.InTransshipment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Drawn
- * SecuritiesBalanceType11Code.mmDrawn}</li>
+ * SecuritiesBalanceType11Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#TaxExempt
- * SecuritiesBalanceType11Code.mmTaxExempt}</li>
+ * SecuritiesBalanceType11Code.TaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#NonTaxExempt
- * SecuritiesBalanceType11Code.mmNonTaxExempt}</li>
+ * SecuritiesBalanceType11Code.NonTaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Registered
- * SecuritiesBalanceType11Code.mmRegistered}</li>
+ * SecuritiesBalanceType11Code.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#StreetPosition
- * SecuritiesBalanceType11Code.mmStreetPosition}</li>
+ * SecuritiesBalanceType11Code.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Unregistered
- * SecuritiesBalanceType11Code.mmUnregistered}</li>
+ * SecuritiesBalanceType11Code.Unregistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#Issued
- * SecuritiesBalanceType11Code.mmIssued}</li>
+ * SecuritiesBalanceType11Code.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#QuasiIssued
- * SecuritiesBalanceType11Code.mmQuasiIssued}</li>
+ * SecuritiesBalanceType11Code.QuasiIssued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType11Code#PendingOnLoanDelivery
- * SecuritiesBalanceType11Code.mmPendingOnLoanDelivery}</li>
+ * SecuritiesBalanceType11Code.PendingOnLoanDelivery}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -128,8 +128,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -831,7 +831,7 @@ public class SecuritiesBalanceType11Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BLOK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType11Code";

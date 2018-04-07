@@ -34,6 +34,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -117,54 +118,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.semt.SecuritiesBalanceTransparencyReportStatusAdviceV01#mmMessageIdentification
  * SecuritiesBalanceTransparencyReportStatusAdviceV01.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV07#mmMessageReference
- * PortfolioTransferInstructionV07.mmMessageReference}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV07#mmMessageIdentification
- * ReversalOfTransferOutConfirmationV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV07#mmMessageIdentification
- * TransferOutCancellationRequestV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV05#mmMessageReference
- * AccountHoldingInformationV05.mmMessageReference}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferCancellationRequestV07#mmMessageReference
- * PortfolioTransferCancellationRequestV07.mmMessageReference}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInstructionStatusReportV05#mmMessageIdentification
- * TransferInstructionStatusReportV05.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV07#mmMessageIdentification
- * TransferInConfirmationV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV07#mmMessageIdentification
- * TransferOutConfirmationV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.RequestForTransferStatusReportV05#mmMessageIdentification
- * RequestForTransferStatusReportV05.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV07#mmMessageIdentification
- * TransferInCancellationRequestV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV07#mmMessageReference
- * PortfolioTransferConfirmationV07.mmMessageReference}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferCancellationStatusReportV05#mmMessageIdentification
- * TransferCancellationStatusReportV05.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV07#mmMessageIdentification
- * TransferOutInstructionV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV07#mmMessageIdentification
- * TransferInInstructionV07.mmMessageIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV04#mmMessageReference
- * AccountHoldingInformationRequestV04.mmMessageReference}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV07#mmMessageIdentification
- * ReversalOfTransferInConfirmationV07.mmMessageIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.semt.SecuritiesBalanceTransparencyReportV02#mmMessageIdentification
  * SecuritiesBalanceTransparencyReportV02.mmMessageIdentification}</li>
@@ -262,13 +215,61 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.acmt.RequestForAccountManagementStatusReportV05#mmMessageIdentification
  * RequestForAccountManagementStatusReportV05.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferOutConfirmationV08#mmMessageIdentification
+ * ReversalOfTransferOutConfirmationV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInConfirmationV08#mmMessageIdentification
+ * TransferInConfirmationV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferInstructionV08#mmMessageReference
+ * PortfolioTransferInstructionV08.mmMessageReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferCancellationRequestV08#mmMessageReference
+ * PortfolioTransferCancellationRequestV08.mmMessageReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutCancellationRequestV08#mmMessageIdentification
+ * TransferOutCancellationRequestV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInInstructionV08#mmMessageIdentification
+ * TransferInInstructionV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.PortfolioTransferConfirmationV08#mmMessageReference
+ * PortfolioTransferConfirmationV08.mmMessageReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationV06#mmMessageReference
+ * AccountHoldingInformationV06.mmMessageReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutConfirmationV08#mmMessageIdentification
+ * TransferOutConfirmationV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInCancellationRequestV08#mmMessageIdentification
+ * TransferInCancellationRequestV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferOutInstructionV08#mmMessageIdentification
+ * TransferOutInstructionV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferCancellationStatusReportV06#mmMessageIdentification
+ * TransferCancellationStatusReportV06.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.AccountHoldingInformationRequestV05#mmMessageReference
+ * AccountHoldingInformationRequestV05.mmMessageReference}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.ReversalOfTransferInConfirmationV08#mmMessageIdentification
+ * ReversalOfTransferInConfirmationV08.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.RequestForTransferStatusReportV06#mmMessageIdentification
+ * RequestForTransferStatusReportV06.mmMessageIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.sese.TransferInstructionStatusReportV06#mmMessageIdentification
+ * TransferInstructionStatusReportV06.mmMessageIdentification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -281,15 +282,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MessageIdentification1", propOrder = {"identification", "creationDateTime"})
 public class MessageIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Identification of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,9 +316,9 @@ public class MessageIdentification1 {
 	 * definition} = "Identification of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification1, Max35Text> mmIdentification = new MMMessageAttribute<MessageIdentification1, Max35Text>() {
 		{
-			componentContext_lazy = () -> MessageIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -326,11 +328,22 @@ public class MessageIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(MessageIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(MessageIdentification1 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "CreDtTm", required = true)
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date of creation of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -355,9 +368,9 @@ public class MessageIdentification1 {
 	 * definition} = "Date of creation of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MessageIdentification1, ISODateTime> mmCreationDateTime = new MMMessageAttribute<MessageIdentification1, ISODateTime>() {
 		{
-			componentContext_lazy = () -> MessageIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MessageIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -367,35 +380,45 @@ public class MessageIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(MessageIdentification1 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(MessageIdentification1 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MessageIdentification1.mmIdentification, MessageIdentification1.mmCreationDateTime);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MessageIdentification1.mmIdentification, com.tools20022.repository.msg.MessageIdentification1.mmCreationDateTime);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FundProcessingPassportReportV02.mmMessageIdentification, InvestmentFundReportRequestV02.mmMessageIdentification, PriceReportCancellationV04.mmMessageIdentification,
 						PriceReportV04.mmMessageIdentification, AccountingStatementOfHoldingsV02.mmMessageIdentification, CustodyStatementOfHoldingsV02.mmMessageIdentification,
 						AccountingStatementOfHoldingsCancellationV02.mmMessageIdentification, CustodyStatementOfHoldingsCancellationV02.mmMessageIdentification, FundDetailedEstimatedCashForecastReportV04.mmMessageIdentification,
 						FundConfirmedCashForecastReportV04.mmMessageIdentification, FundDetailedConfirmedCashForecastReportCancellationV03.mmMessageIdentification, FundEstimatedCashForecastReportV04.mmMessageIdentification,
 						StatementOfInvestmentFundTransactionsV03.mmMessageIdentification, SecuritiesMessageRejectionV03.mmMessageIdentification, FundConfirmedCashForecastReportCancellationV03.mmMessageIdentification,
 						StatementOfInvestmentFundTransactionsCancellationV03.mmMessageIdentification, FundDetailedConfirmedCashForecastReportV04.mmMessageIdentification,
-						SecuritiesBalanceTransparencyReportStatusAdviceV01.mmMessageIdentification, PortfolioTransferInstructionV07.mmMessageReference, ReversalOfTransferOutConfirmationV07.mmMessageIdentification,
-						TransferOutCancellationRequestV07.mmMessageIdentification, AccountHoldingInformationV05.mmMessageReference, PortfolioTransferCancellationRequestV07.mmMessageReference,
-						TransferInstructionStatusReportV05.mmMessageIdentification, TransferInConfirmationV07.mmMessageIdentification, TransferOutConfirmationV07.mmMessageIdentification,
-						RequestForTransferStatusReportV05.mmMessageIdentification, TransferInCancellationRequestV07.mmMessageIdentification, PortfolioTransferConfirmationV07.mmMessageReference,
-						TransferCancellationStatusReportV05.mmMessageIdentification, TransferOutInstructionV07.mmMessageIdentification, TransferInInstructionV07.mmMessageIdentification,
-						AccountHoldingInformationRequestV04.mmMessageReference, ReversalOfTransferInConfirmationV07.mmMessageIdentification, SecuritiesBalanceTransparencyReportV02.mmMessageIdentification,
-						SubscriptionBulkOrderConfirmationV04.mmMessageIdentification, RedemptionBulkOrderV04.mmMessageIdentification, SubscriptionBulkOrderCancellationRequestV04.mmMessageIdentification,
-						RedemptionOrderV04.mmMessageIdentification, SubscriptionOrderCancellationRequestV04.mmMessageIdentification, RedemptionBulkOrderConfirmationCancellationInstructionV02.mmMessageIdentification,
-						RedemptionBulkOrderConfirmationV04.mmMessageIdentification, RedemptionBulkOrderCancellationRequestV04.mmMessageIdentification, SwitchOrderConfirmationV04.mmMessageIdentification,
-						RequestForOrderStatusReportV04.mmMessageIdentification, SubscriptionOrderConfirmationV04.mmMessageIdentification, SubscriptionOrderConfirmationCancellationInstructionV02.mmMessageIdentification,
-						SwitchOrderCancellationRequestV04.mmMessageIdentification, OrderCancellationStatusReportV04.mmMessageIdentification, SwitchOrderV04.mmMessageIdentification,
-						RedemptionOrderConfirmationCancellationInstructionV02.mmMessageIdentification, RedemptionOrderConfirmationV04.mmMessageIdentification, OrderInstructionStatusReportV04.mmMessageIdentification,
-						SubscriptionBulkOrderConfirmationCancellationInstructionV02.mmMessageIdentification, RedemptionOrderCancellationRequestV04.mmMessageIdentification, RequestForOrderConfirmationStatusReportV02.mmMessageIdentification,
-						SubscriptionBulkOrderV04.mmMessageIdentification, SwitchOrderConfirmationCancellationInstructionV02.mmMessageIdentification, OrderConfirmationStatusReportV02.mmMessageIdentification,
-						SubscriptionOrderV04.mmMessageIdentification, AccountDetailsConfirmationV07.mmMessageIdentification, AccountModificationInstructionV07.mmMessageIdentification, AccountOpeningInstructionV07.mmMessageIdentification,
-						AccountManagementStatusReportV06.mmMessageIdentification, RequestForAccountManagementStatusReportV05.mmMessageIdentification);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+						SecuritiesBalanceTransparencyReportStatusAdviceV01.mmMessageIdentification, SecuritiesBalanceTransparencyReportV02.mmMessageIdentification, SubscriptionBulkOrderConfirmationV04.mmMessageIdentification,
+						RedemptionBulkOrderV04.mmMessageIdentification, SubscriptionBulkOrderCancellationRequestV04.mmMessageIdentification, RedemptionOrderV04.mmMessageIdentification,
+						SubscriptionOrderCancellationRequestV04.mmMessageIdentification, RedemptionBulkOrderConfirmationCancellationInstructionV02.mmMessageIdentification, RedemptionBulkOrderConfirmationV04.mmMessageIdentification,
+						RedemptionBulkOrderCancellationRequestV04.mmMessageIdentification, SwitchOrderConfirmationV04.mmMessageIdentification, RequestForOrderStatusReportV04.mmMessageIdentification,
+						SubscriptionOrderConfirmationV04.mmMessageIdentification, SubscriptionOrderConfirmationCancellationInstructionV02.mmMessageIdentification, SwitchOrderCancellationRequestV04.mmMessageIdentification,
+						OrderCancellationStatusReportV04.mmMessageIdentification, SwitchOrderV04.mmMessageIdentification, RedemptionOrderConfirmationCancellationInstructionV02.mmMessageIdentification,
+						RedemptionOrderConfirmationV04.mmMessageIdentification, OrderInstructionStatusReportV04.mmMessageIdentification, SubscriptionBulkOrderConfirmationCancellationInstructionV02.mmMessageIdentification,
+						RedemptionOrderCancellationRequestV04.mmMessageIdentification, RequestForOrderConfirmationStatusReportV02.mmMessageIdentification, SubscriptionBulkOrderV04.mmMessageIdentification,
+						SwitchOrderConfirmationCancellationInstructionV02.mmMessageIdentification, OrderConfirmationStatusReportV02.mmMessageIdentification, SubscriptionOrderV04.mmMessageIdentification,
+						AccountDetailsConfirmationV07.mmMessageIdentification, AccountModificationInstructionV07.mmMessageIdentification, AccountOpeningInstructionV07.mmMessageIdentification,
+						AccountManagementStatusReportV06.mmMessageIdentification, RequestForAccountManagementStatusReportV05.mmMessageIdentification, ReversalOfTransferOutConfirmationV08.mmMessageIdentification,
+						TransferInConfirmationV08.mmMessageIdentification, PortfolioTransferInstructionV08.mmMessageReference, PortfolioTransferCancellationRequestV08.mmMessageReference,
+						TransferOutCancellationRequestV08.mmMessageIdentification, TransferInInstructionV08.mmMessageIdentification, PortfolioTransferConfirmationV08.mmMessageReference, AccountHoldingInformationV06.mmMessageReference,
+						TransferOutConfirmationV08.mmMessageIdentification, TransferInCancellationRequestV08.mmMessageIdentification, TransferOutInstructionV08.mmMessageIdentification,
+						TransferCancellationStatusReportV06.mmMessageIdentification, AccountHoldingInformationRequestV05.mmMessageReference, ReversalOfTransferInConfirmationV08.mmMessageIdentification,
+						RequestForTransferStatusReportV06.mmMessageIdentification, TransferInstructionStatusReportV06.mmMessageIdentification);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageIdentification1";
 				definition = "Identifies a message by a unique identifier and the date and time when the message was created by the sender.";
@@ -404,21 +427,21 @@ public class MessageIdentification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public MessageIdentification1 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm", required = true)
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public MessageIdentification1 setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 }

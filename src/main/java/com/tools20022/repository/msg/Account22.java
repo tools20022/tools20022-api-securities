@@ -24,8 +24,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyIdentification113;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * Account7}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Account22", propOrder = {"identification", "accountServicer"})
 public class Account22 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identification for the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,10 +117,10 @@ public class Account22 {
 	 * Account7.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Account22, Max35Text> mmIdentification = new MMMessageAttribute<Account22, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> Account22.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Account22.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,12 +131,22 @@ public class Account22 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Account22 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Account22 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "AcctSvcr")
 	protected PartyIdentification113 accountServicer;
 	/**
-	 * Institution servicing the account and assigning the account identifier to
-	 * the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,10 +183,10 @@ public class Account22 {
 	 * Account7.mmAccountServicer}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountServicer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Account22, Optional<PartyIdentification113>> mmAccountServicer = new MMMessageAttribute<Account22, Optional<PartyIdentification113>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Account22.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Account22.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,16 +195,26 @@ public class Account22 {
 			previousVersion_lazy = () -> Account7.mmAccountServicer;
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PartyIdentification113.mmObject();
+			complexType_lazy = () -> PartyIdentification113.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification113> getValue(Account22 obj) {
+			return obj.getAccountServicer();
+		}
+
+		@Override
+		public void setValue(Account22 obj, Optional<PartyIdentification113> value) {
+			obj.setAccountServicer(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Account22.mmIdentification, Account22.mmAccountServicer);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Account22.mmIdentification, com.tools20022.repository.msg.Account22.mmAccountServicer);
 				trace_lazy = () -> Account.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Account22";
 				definition = "Business relationship between two entities; one entity is the account owner, the other entity is the account servicer.";
@@ -201,21 +224,21 @@ public class Account22 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Account22 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcr")
-	public PartyIdentification113 getAccountServicer() {
-		return accountServicer;
+	public Optional<PartyIdentification113> getAccountServicer() {
+		return accountServicer == null ? Optional.empty() : Optional.of(accountServicer);
 	}
 
-	public void setAccountServicer(com.tools20022.repository.msg.PartyIdentification113 accountServicer) {
+	public Account22 setAccountServicer(PartyIdentification113 accountServicer) {
 		this.accountServicer = accountServicer;
+		return this;
 	}
 }

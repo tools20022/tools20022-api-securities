@@ -40,31 +40,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#MinorityInterestTax
- * TaxWithholdingMethod3Code.mmMinorityInterestTax}</li>
+ * TaxWithholdingMethod3Code.MinorityInterestTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#InvestmentCompany
- * TaxWithholdingMethod3Code.mmInvestmentCompany}</li>
+ * TaxWithholdingMethod3Code.InvestmentCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#Accountant
- * TaxWithholdingMethod3Code.mmAccountant}</li>
+ * TaxWithholdingMethod3Code.Accountant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#Exempt
- * TaxWithholdingMethod3Code.mmExempt}</li>
+ * TaxWithholdingMethod3Code.Exempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#ReportTax
- * TaxWithholdingMethod3Code.mmReportTax}</li>
+ * TaxWithholdingMethod3Code.ReportTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#TaxCertificate
- * TaxWithholdingMethod3Code.mmTaxCertificate}</li>
+ * TaxWithholdingMethod3Code.TaxCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#WithholdingCorporateTax
- * TaxWithholdingMethod3Code.mmWithholdingCorporateTax}</li>
+ * TaxWithholdingMethod3Code.WithholdingCorporateTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#WithholdTax
- * TaxWithholdingMethod3Code.mmWithholdTax}</li>
+ * TaxWithholdingMethod3Code.WithholdTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethod3Code#WithholdTaxAndReport
- * TaxWithholdingMethod3Code.mmWithholdTaxAndReport}</li>
+ * TaxWithholdingMethod3Code.WithholdTaxAndReport}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -315,7 +315,7 @@ public class TaxWithholdingMethod3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxWithholdingMethod3Code";
 				definition = "Specifies the method by which the tax on the interests is to be processed i.e. either withheld at source or reported to tax authorities or a tax certificate has been provided by the beneficiary.";

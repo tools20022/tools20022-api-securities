@@ -24,8 +24,13 @@ import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.entity.Debt;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DebtInstrument4;
+import com.tools20022.repository.msg.DerivativeInstrument6;
+import com.tools20022.repository.msg.SecurityInstrumentDescription11;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecurityInstrumentDescription13", propOrder = {"financialInstrumentGeneralAttributes", "debtInstrumentAttributes", "derivativeInstrumentAttributes"})
 public class SecurityInstrumentDescription13 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FinInstrmGnlAttrbts", required = true)
 	protected SecurityInstrumentDescription11 financialInstrumentGeneralAttributes;
 	/**
-	 * Attributes and characteristics of the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -108,10 +114,10 @@ public class SecurityInstrumentDescription13 {
 	 * "Attributes and characteristics of the financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancialInstrumentGeneralAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecurityInstrumentDescription13, SecurityInstrumentDescription11> mmFinancialInstrumentGeneralAttributes = new MMMessageAssociationEnd<SecurityInstrumentDescription13, SecurityInstrumentDescription11>() {
 		{
 			businessComponentTrace_lazy = () -> Security.mmObject();
-			componentContext_lazy = () -> SecurityInstrumentDescription13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription13.mmObject();
 			isDerived = false;
 			xmlTag = "FinInstrmGnlAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,13 +126,24 @@ public class SecurityInstrumentDescription13 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription11.mmObject();
+			type_lazy = () -> SecurityInstrumentDescription11.mmObject();
+		}
+
+		@Override
+		public SecurityInstrumentDescription11 getValue(SecurityInstrumentDescription13 obj) {
+			return obj.getFinancialInstrumentGeneralAttributes();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription13 obj, SecurityInstrumentDescription11 value) {
+			obj.setFinancialInstrumentGeneralAttributes(value);
 		}
 	};
+	@XmlElement(name = "DebtInstrmAttrbts")
 	protected DebtInstrument4 debtInstrumentAttributes;
 	/**
-	 * Attributes specific to debt instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -154,10 +171,10 @@ public class SecurityInstrumentDescription13 {
 	 * definition} = "Attributes specific to debt instruments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDebtInstrumentAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecurityInstrumentDescription13, Optional<DebtInstrument4>> mmDebtInstrumentAttributes = new MMMessageAssociationEnd<SecurityInstrumentDescription13, Optional<DebtInstrument4>>() {
 		{
 			businessComponentTrace_lazy = () -> Debt.mmObject();
-			componentContext_lazy = () -> SecurityInstrumentDescription13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription13.mmObject();
 			isDerived = false;
 			xmlTag = "DebtInstrmAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,13 +183,24 @@ public class SecurityInstrumentDescription13 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DebtInstrument4.mmObject();
+			type_lazy = () -> DebtInstrument4.mmObject();
+		}
+
+		@Override
+		public Optional<DebtInstrument4> getValue(SecurityInstrumentDescription13 obj) {
+			return obj.getDebtInstrumentAttributes();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription13 obj, Optional<DebtInstrument4> value) {
+			obj.setDebtInstrumentAttributes(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DerivInstrmAttrbts", required = true)
 	protected DerivativeInstrument6 derivativeInstrumentAttributes;
 	/**
-	 * Attributes specific to derivative instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -201,10 +229,10 @@ public class SecurityInstrumentDescription13 {
 	 * definition} = "Attributes specific to derivative instruments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDerivativeInstrumentAttributes = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecurityInstrumentDescription13, DerivativeInstrument6> mmDerivativeInstrumentAttributes = new MMMessageAssociationEnd<SecurityInstrumentDescription13, DerivativeInstrument6>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmDerivative;
-			componentContext_lazy = () -> SecurityInstrumentDescription13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityInstrumentDescription13.mmObject();
 			isDerived = false;
 			xmlTag = "DerivInstrmAttrbts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -213,17 +241,27 @@ public class SecurityInstrumentDescription13 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DerivativeInstrument6.mmObject();
+			type_lazy = () -> DerivativeInstrument6.mmObject();
+		}
+
+		@Override
+		public DerivativeInstrument6 getValue(SecurityInstrumentDescription13 obj) {
+			return obj.getDerivativeInstrumentAttributes();
+		}
+
+		@Override
+		public void setValue(SecurityInstrumentDescription13 obj, DerivativeInstrument6 value) {
+			obj.setDerivativeInstrumentAttributes(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecurityInstrumentDescription13.mmFinancialInstrumentGeneralAttributes, SecurityInstrumentDescription13.mmDebtInstrumentAttributes,
-						SecurityInstrumentDescription13.mmDerivativeInstrumentAttributes);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityInstrumentDescription13.mmFinancialInstrumentGeneralAttributes,
+						com.tools20022.repository.msg.SecurityInstrumentDescription13.mmDebtInstrumentAttributes, com.tools20022.repository.msg.SecurityInstrumentDescription13.mmDerivativeInstrumentAttributes);
 				trace_lazy = () -> Security.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityInstrumentDescription13";
 				definition = "Identifies the security instrument by its name and typical characteristics.";
@@ -232,30 +270,30 @@ public class SecurityInstrumentDescription13 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FinInstrmGnlAttrbts", required = true)
 	public SecurityInstrumentDescription11 getFinancialInstrumentGeneralAttributes() {
 		return financialInstrumentGeneralAttributes;
 	}
 
-	public void setFinancialInstrumentGeneralAttributes(com.tools20022.repository.msg.SecurityInstrumentDescription11 financialInstrumentGeneralAttributes) {
-		this.financialInstrumentGeneralAttributes = financialInstrumentGeneralAttributes;
+	public SecurityInstrumentDescription13 setFinancialInstrumentGeneralAttributes(SecurityInstrumentDescription11 financialInstrumentGeneralAttributes) {
+		this.financialInstrumentGeneralAttributes = Objects.requireNonNull(financialInstrumentGeneralAttributes);
+		return this;
 	}
 
-	@XmlElement(name = "DebtInstrmAttrbts")
-	public DebtInstrument4 getDebtInstrumentAttributes() {
-		return debtInstrumentAttributes;
+	public Optional<DebtInstrument4> getDebtInstrumentAttributes() {
+		return debtInstrumentAttributes == null ? Optional.empty() : Optional.of(debtInstrumentAttributes);
 	}
 
-	public void setDebtInstrumentAttributes(com.tools20022.repository.msg.DebtInstrument4 debtInstrumentAttributes) {
+	public SecurityInstrumentDescription13 setDebtInstrumentAttributes(DebtInstrument4 debtInstrumentAttributes) {
 		this.debtInstrumentAttributes = debtInstrumentAttributes;
+		return this;
 	}
 
-	@XmlElement(name = "DerivInstrmAttrbts", required = true)
 	public DerivativeInstrument6 getDerivativeInstrumentAttributes() {
 		return derivativeInstrumentAttributes;
 	}
 
-	public void setDerivativeInstrumentAttributes(com.tools20022.repository.msg.DerivativeInstrument6 derivativeInstrumentAttributes) {
-		this.derivativeInstrumentAttributes = derivativeInstrumentAttributes;
+	public SecurityInstrumentDescription13 setDerivativeInstrumentAttributes(DerivativeInstrument6 derivativeInstrumentAttributes) {
+		this.derivativeInstrumentAttributes = Objects.requireNonNull(derivativeInstrumentAttributes);
+		return this;
 	}
 }

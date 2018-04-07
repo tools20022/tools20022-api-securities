@@ -25,6 +25,7 @@ import com.tools20022.repository.codeset.AssetClassSubProductType29Code;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "EnvironmentalCommodityCarbonRelated1", propOrder = {"baseProduct", "subProduct"})
 public class EnvironmentalCommodityCarbonRelated1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BasePdct", required = true)
 	protected AssetClassProductType3Code baseProduct;
 	/**
-	 * Base product for the underlying asset class as specified in the
-	 * classification of commodities derivatives table.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +103,9 @@ public class EnvironmentalCommodityCarbonRelated1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EnvironmentalCommodityCarbonRelated1, AssetClassProductType3Code> mmBaseProduct = new MMMessageAttribute<EnvironmentalCommodityCarbonRelated1, AssetClassProductType3Code>() {
 		{
-			componentContext_lazy = () -> EnvironmentalCommodityCarbonRelated1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EnvironmentalCommodityCarbonRelated1.mmObject();
 			isDerived = false;
 			xmlTag = "BasePdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +115,22 @@ public class EnvironmentalCommodityCarbonRelated1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AssetClassProductType3Code.mmObject();
 		}
+
+		@Override
+		public AssetClassProductType3Code getValue(EnvironmentalCommodityCarbonRelated1 obj) {
+			return obj.getBaseProduct();
+		}
+
+		@Override
+		public void setValue(EnvironmentalCommodityCarbonRelated1 obj, AssetClassProductType3Code value) {
+			obj.setBaseProduct(value);
+		}
 	};
+	@XmlElement(name = "SubPdct", required = true)
 	protected AssetClassSubProductType29Code subProduct;
 	/**
-	 * Sub-product for the underlying asset class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,9 +156,9 @@ public class EnvironmentalCommodityCarbonRelated1 {
 	 * definition} = "Sub-product for the underlying asset class."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSubProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EnvironmentalCommodityCarbonRelated1, AssetClassSubProductType29Code> mmSubProduct = new MMMessageAttribute<EnvironmentalCommodityCarbonRelated1, AssetClassSubProductType29Code>() {
 		{
-			componentContext_lazy = () -> EnvironmentalCommodityCarbonRelated1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EnvironmentalCommodityCarbonRelated1.mmObject();
 			isDerived = false;
 			xmlTag = "SubPdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,13 +168,23 @@ public class EnvironmentalCommodityCarbonRelated1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AssetClassSubProductType29Code.mmObject();
 		}
+
+		@Override
+		public AssetClassSubProductType29Code getValue(EnvironmentalCommodityCarbonRelated1 obj) {
+			return obj.getSubProduct();
+		}
+
+		@Override
+		public void setValue(EnvironmentalCommodityCarbonRelated1 obj, AssetClassSubProductType29Code value) {
+			obj.setSubProduct(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(EnvironmentalCommodityCarbonRelated1.mmBaseProduct, EnvironmentalCommodityCarbonRelated1.mmSubProduct);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EnvironmentalCommodityCarbonRelated1.mmBaseProduct, com.tools20022.repository.msg.EnvironmentalCommodityCarbonRelated1.mmSubProduct);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EnvironmentalCommodityCarbonRelated1";
 				definition = "Defines commodity sub-product attributes of an environmental derivative of type carbon related.";
@@ -171,21 +193,21 @@ public class EnvironmentalCommodityCarbonRelated1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BasePdct", required = true)
 	public AssetClassProductType3Code getBaseProduct() {
 		return baseProduct;
 	}
 
-	public void setBaseProduct(AssetClassProductType3Code baseProduct) {
-		this.baseProduct = baseProduct;
+	public EnvironmentalCommodityCarbonRelated1 setBaseProduct(AssetClassProductType3Code baseProduct) {
+		this.baseProduct = Objects.requireNonNull(baseProduct);
+		return this;
 	}
 
-	@XmlElement(name = "SubPdct", required = true)
 	public AssetClassSubProductType29Code getSubProduct() {
 		return subProduct;
 	}
 
-	public void setSubProduct(AssetClassSubProductType29Code subProduct) {
-		this.subProduct = subProduct;
+	public EnvironmentalCommodityCarbonRelated1 setSubProduct(AssetClassSubProductType29Code subProduct) {
+		this.subProduct = Objects.requireNonNull(subProduct);
+		return this;
 	}
 }

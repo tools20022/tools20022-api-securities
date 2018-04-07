@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementType3Code#AccountModification
- * AccountManagementType3Code.mmAccountModification}</li>
+ * AccountManagementType3Code.AccountModification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementType3Code#AccountOpening
- * AccountManagementType3Code.mmAccountOpening}</li>
+ * AccountManagementType3Code.AccountOpening}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementType3Code#GetAccountDetails
- * AccountManagementType3Code.mmGetAccountDetails}</li>
+ * AccountManagementType3Code.GetAccountDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountManagementType3Code#AccountStatus
- * AccountManagementType3Code.mmAccountStatus}</li>
+ * AccountManagementType3Code.AccountStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class AccountManagementType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountManagementType3Code";
 				definition = "Specifies the instruction for which an status is required.";

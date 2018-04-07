@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for a type of price."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TypeOfPrice46Choice", propOrder = {"code", "proprietary"})
 public class TypeOfPrice46Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected TypeOfPrice10Code code;
 	/**
-	 * Type expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,10 +103,10 @@ public class TypeOfPrice46Choice {
 	 * definition} = "Type expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TypeOfPrice46Choice, TypeOfPrice10Code> mmCode = new MMMessageAttribute<TypeOfPrice46Choice, TypeOfPrice10Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmPriceType;
-			componentContext_lazy = () -> TypeOfPrice46Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TypeOfPrice46Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +116,22 @@ public class TypeOfPrice46Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> TypeOfPrice10Code.mmObject();
 		}
+
+		@Override
+		public TypeOfPrice10Code getValue(TypeOfPrice46Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(TypeOfPrice46Choice obj, TypeOfPrice10Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Type expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,10 +162,10 @@ public class TypeOfPrice46Choice {
 	 * definition} = "Type expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TypeOfPrice46Choice, GenericIdentification47> mmProprietary = new MMMessageAttribute<TypeOfPrice46Choice, GenericIdentification47>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmPriceType;
-			componentContext_lazy = () -> TypeOfPrice46Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TypeOfPrice46Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,13 +175,23 @@ public class TypeOfPrice46Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification47.mmObject();
 		}
+
+		@Override
+		public GenericIdentification47 getValue(TypeOfPrice46Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(TypeOfPrice46Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TypeOfPrice46Choice.mmCode, TypeOfPrice46Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.TypeOfPrice46Choice.mmCode, com.tools20022.repository.choice.TypeOfPrice46Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPrice46Choice";
 				definition = "Choice of formats for a type of price.";
@@ -177,21 +200,21 @@ public class TypeOfPrice46Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public TypeOfPrice10Code getCode() {
 		return code;
 	}
 
-	public void setCode(TypeOfPrice10Code code) {
-		this.code = code;
+	public TypeOfPrice46Choice setCode(TypeOfPrice10Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public TypeOfPrice46Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

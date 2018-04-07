@@ -39,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#Accepted
- * ReportingRecordStatus1Code.mmAccepted}</li>
+ * ReportingRecordStatus1Code.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#AcceptedAfterPending
- * ReportingRecordStatus1Code.mmAcceptedAfterPending}</li>
+ * ReportingRecordStatus1Code.AcceptedAfterPending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#Pending
- * ReportingRecordStatus1Code.mmPending}</li>
+ * ReportingRecordStatus1Code.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#Received
- * ReportingRecordStatus1Code.mmReceived}</li>
+ * ReportingRecordStatus1Code.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#Rejected
- * ReportingRecordStatus1Code.mmRejected}</li>
+ * ReportingRecordStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#RejectedAfterPending
- * ReportingRecordStatus1Code.mmRejectedAfterPending}</li>
+ * ReportingRecordStatus1Code.RejectedAfterPending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingRecordStatus1Code#Warning
- * ReportingRecordStatus1Code.mmWarning}</li>
+ * ReportingRecordStatus1Code.Warning}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -260,7 +260,7 @@ public class ReportingRecordStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingRecordStatus1Code";
 				definition = "Specifies the status of the processing of an individual record within a message.";

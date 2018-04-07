@@ -38,35 +38,35 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#UndividedPossession
- * TransferReason1Code.mmUndividedPossession}</li>
+ * TransferReason1Code.UndividedPossession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#TransferBetweenSpouses
- * TransferReason1Code.mmTransferBetweenSpouses}</li>
+ * TransferReason1Code.TransferBetweenSpouses}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TransferReason1Code#Trade
- * TransferReason1Code.mmTrade}</li>
+ * TransferReason1Code.Trade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#OrdinaryTransfer
- * TransferReason1Code.mmOrdinaryTransfer}</li>
+ * TransferReason1Code.OrdinaryTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#Heritage
- * TransferReason1Code.mmHeritage}</li>
+ * TransferReason1Code.Heritage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TransferReason1Code#Gift
- * TransferReason1Code.mmGift}</li>
+ * TransferReason1Code.Gift}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#PledgedAccountTransfer
- * TransferReason1Code.mmPledgedAccountTransfer}</li>
+ * TransferReason1Code.PledgedAccountTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#TDTFrameworkTransfer
- * TransferReason1Code.mmTDTFrameworkTransfer}</li>
+ * TransferReason1Code.TDTFrameworkTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#TransferBetweenDifferentBeneficiaries
- * TransferReason1Code.mmTransferBetweenDifferentBeneficiaries}</li>
+ * TransferReason1Code.TransferBetweenDifferentBeneficiaries}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#Demerger
- * TransferReason1Code.mmDemerger}</li>
+ * TransferReason1Code.Demerger}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferReason1Code#BetweenOwnAccounts
- * TransferReason1Code.mmBetweenOwnAccounts}</li>
+ * TransferReason1Code.BetweenOwnAccounts}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -75,8 +75,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -369,7 +369,7 @@ public class TransferReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TRAU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransferReason1Code";

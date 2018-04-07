@@ -20,10 +20,13 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.PaymentInstrument20Choice;
+import com.tools20022.repository.choice.PaymentInstrument21Choice;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Choice of a payment instrument for the cash-in flow or cash-out flow."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashInOrOut7Choice", propOrder = {"cashInPaymentInstrument", "cashOutPaymentInstrument"})
 public class CashInOrOut7Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CshInPmtInstrm", required = true)
 	protected PaymentInstrument20Choice cashInPaymentInstrument;
 	/**
-	 * Payment instrument for the cash-in flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -101,10 +105,10 @@ public class CashInOrOut7Choice {
 	 * definition} = "Payment instrument for the cash-in flow."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashInPaymentInstrument = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashInOrOut7Choice, PaymentInstrument20Choice> mmCashInPaymentInstrument = new MMMessageAssociationEnd<CashInOrOut7Choice, PaymentInstrument20Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
-			componentContext_lazy = () -> CashInOrOut7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CashInOrOut7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CshInPmtInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,13 +117,24 @@ public class CashInOrOut7Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.PaymentInstrument20Choice.mmObject();
+			type_lazy = () -> PaymentInstrument20Choice.mmObject();
+		}
+
+		@Override
+		public PaymentInstrument20Choice getValue(CashInOrOut7Choice obj) {
+			return obj.getCashInPaymentInstrument();
+		}
+
+		@Override
+		public void setValue(CashInOrOut7Choice obj, PaymentInstrument20Choice value) {
+			obj.setCashInPaymentInstrument(value);
 		}
 	};
+	@XmlElement(name = "CshOutPmtInstrm", required = true)
 	protected PaymentInstrument21Choice cashOutPaymentInstrument;
 	/**
-	 * Payment instrument for the cash-out flow.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,10 +163,10 @@ public class CashInOrOut7Choice {
 	 * definition} = "Payment instrument for the cash-out flow."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashOutPaymentInstrument = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CashInOrOut7Choice, PaymentInstrument21Choice> mmCashOutPaymentInstrument = new MMMessageAssociationEnd<CashInOrOut7Choice, PaymentInstrument21Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Payment.mmObject();
-			componentContext_lazy = () -> CashInOrOut7Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CashInOrOut7Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CshOutPmtInstrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,16 +175,26 @@ public class CashInOrOut7Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.PaymentInstrument21Choice.mmObject();
+			type_lazy = () -> PaymentInstrument21Choice.mmObject();
+		}
+
+		@Override
+		public PaymentInstrument21Choice getValue(CashInOrOut7Choice obj) {
+			return obj.getCashOutPaymentInstrument();
+		}
+
+		@Override
+		public void setValue(CashInOrOut7Choice obj, PaymentInstrument21Choice value) {
+			obj.setCashOutPaymentInstrument(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashInOrOut7Choice.mmCashInPaymentInstrument, CashInOrOut7Choice.mmCashOutPaymentInstrument);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CashInOrOut7Choice.mmCashInPaymentInstrument, com.tools20022.repository.choice.CashInOrOut7Choice.mmCashOutPaymentInstrument);
 				trace_lazy = () -> Payment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashInOrOut7Choice";
 				definition = "Choice of a payment instrument for the cash-in flow or cash-out flow.";
@@ -178,21 +203,21 @@ public class CashInOrOut7Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CshInPmtInstrm", required = true)
 	public PaymentInstrument20Choice getCashInPaymentInstrument() {
 		return cashInPaymentInstrument;
 	}
 
-	public void setCashInPaymentInstrument(com.tools20022.repository.choice.PaymentInstrument20Choice cashInPaymentInstrument) {
-		this.cashInPaymentInstrument = cashInPaymentInstrument;
+	public CashInOrOut7Choice setCashInPaymentInstrument(PaymentInstrument20Choice cashInPaymentInstrument) {
+		this.cashInPaymentInstrument = Objects.requireNonNull(cashInPaymentInstrument);
+		return this;
 	}
 
-	@XmlElement(name = "CshOutPmtInstrm", required = true)
 	public PaymentInstrument21Choice getCashOutPaymentInstrument() {
 		return cashOutPaymentInstrument;
 	}
 
-	public void setCashOutPaymentInstrument(com.tools20022.repository.choice.PaymentInstrument21Choice cashOutPaymentInstrument) {
-		this.cashOutPaymentInstrument = cashOutPaymentInstrument;
+	public CashInOrOut7Choice setCashOutPaymentInstrument(PaymentInstrument21Choice cashOutPaymentInstrument) {
+		this.cashOutPaymentInstrument = Objects.requireNonNull(cashOutPaymentInstrument);
+		return this;
 	}
 }

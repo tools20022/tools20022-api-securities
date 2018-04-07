@@ -26,9 +26,11 @@ import com.tools20022.repository.entity.SecuritiesOrderStatus;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.InRepairStatusReason4;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for the reason for an in repair status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InRepairStatusReason4Choice", propOrder = {"noSpecifiedReason", "reasonDetails"})
 public class InRepairStatusReason4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoSpcfdRsn", required = true)
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * No reason available or to report for the in repair status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +116,10 @@ public class InRepairStatusReason4Choice {
 	 * ConditionallyAcceptedStatus3Choice.mmNoSpecifiedReason}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InRepairStatusReason4Choice, NoReasonCode> mmNoSpecifiedReason = new MMMessageAttribute<InRepairStatusReason4Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmNoSpecifiedReason;
-			componentContext_lazy = () -> InRepairStatusReason4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InRepairStatusReason4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoSpcfdRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,11 +130,22 @@ public class InRepairStatusReason4Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(InRepairStatusReason4Choice obj) {
+			return obj.getNoSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(InRepairStatusReason4Choice obj, NoReasonCode value) {
+			obj.setNoSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "RsnDtls", required = true)
 	protected List<InRepairStatusReason4> reasonDetails;
 	/**
-	 * Reason for the in repair status, expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -165,10 +179,10 @@ public class InRepairStatusReason4Choice {
 	 * ConditionallyAcceptedStatus3Choice.mmReasonDetails}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReasonDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InRepairStatusReason4Choice, List<InRepairStatusReason4>> mmReasonDetails = new MMMessageAssociationEnd<InRepairStatusReason4Choice, List<InRepairStatusReason4>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrderStatus.mmConditionallyAcceptedStatus;
-			componentContext_lazy = () -> InRepairStatusReason4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InRepairStatusReason4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "RsnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,14 +194,24 @@ public class InRepairStatusReason4Choice {
 			isComposite = true;
 			type_lazy = () -> InRepairStatusReason4.mmObject();
 		}
+
+		@Override
+		public List<InRepairStatusReason4> getValue(InRepairStatusReason4Choice obj) {
+			return obj.getReasonDetails();
+		}
+
+		@Override
+		public void setValue(InRepairStatusReason4Choice obj, List<InRepairStatusReason4> value) {
+			obj.setReasonDetails(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InRepairStatusReason4Choice.mmNoSpecifiedReason, InRepairStatusReason4Choice.mmReasonDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InRepairStatusReason4Choice.mmNoSpecifiedReason, com.tools20022.repository.choice.InRepairStatusReason4Choice.mmReasonDetails);
 				trace_lazy = () -> SecuritiesOrderStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InRepairStatusReason4Choice";
 				definition = "Choice of formats for the reason for an in repair status.";
@@ -196,21 +220,21 @@ public class InRepairStatusReason4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoSpcfdRsn", required = true)
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public InRepairStatusReason4Choice setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "RsnDtls", required = true)
 	public List<InRepairStatusReason4> getReasonDetails() {
-		return reasonDetails;
+		return reasonDetails == null ? reasonDetails = new ArrayList<>() : reasonDetails;
 	}
 
-	public void setReasonDetails(List<InRepairStatusReason4> reasonDetails) {
-		this.reasonDetails = reasonDetails;
+	public InRepairStatusReason4Choice setReasonDetails(List<InRepairStatusReason4> reasonDetails) {
+		this.reasonDetails = Objects.requireNonNull(reasonDetails);
+		return this;
 	}
 }

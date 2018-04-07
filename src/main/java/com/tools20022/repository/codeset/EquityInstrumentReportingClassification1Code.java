@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityInstrumentReportingClassification1Code#Share
- * EquityInstrumentReportingClassification1Code.mmShare}</li>
+ * EquityInstrumentReportingClassification1Code.Share}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityInstrumentReportingClassification1Code#Other
- * EquityInstrumentReportingClassification1Code.mmOther}</li>
+ * EquityInstrumentReportingClassification1Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityInstrumentReportingClassification1Code#ElectronicTradedFund
- * EquityInstrumentReportingClassification1Code.mmElectronicTradedFund}</li>
+ * EquityInstrumentReportingClassification1Code.ElectronicTradedFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityInstrumentReportingClassification1Code#DepositaryReceipt
- * EquityInstrumentReportingClassification1Code.mmDepositaryReceipt}</li>
+ * EquityInstrumentReportingClassification1Code.DepositaryReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EquityInstrumentReportingClassification1Code#Certificate
- * EquityInstrumentReportingClassification1Code.mmCertificate}</li>
+ * EquityInstrumentReportingClassification1Code.Certificate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,7 +203,7 @@ public class EquityInstrumentReportingClassification1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EquityInstrumentReportingClassification1Code";
 				definition = "Specifies the equity financial instruments.";

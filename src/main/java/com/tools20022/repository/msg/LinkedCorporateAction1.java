@@ -25,8 +25,11 @@ import com.tools20022.repository.choice.ProcessingPosition2FormatChoice;
 import com.tools20022.repository.codeset.CorporateActionNotificationType1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DocumentIdentification8;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies linkage information of a corporate action message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LinkedCorporateAction1", propOrder = {"notificationType", "linkedAgentCANotificationAdviceIdentification", "linkageType", "linkedIssuerCorporateActionIdentification", "linkedCorporateActionProcessingIdentification"})
 public class LinkedCorporateAction1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NtfctnTp", required = true)
 	protected CorporateActionNotificationType1Code notificationType;
 	/**
-	 * The function of the notification e.g. new notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,9 +120,9 @@ public class LinkedCorporateAction1 {
 	 * definition} = "The function of the notification e.g. new notification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNotificationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LinkedCorporateAction1, CorporateActionNotificationType1Code> mmNotificationType = new MMMessageAttribute<LinkedCorporateAction1, CorporateActionNotificationType1Code>() {
 		{
-			componentContext_lazy = () -> LinkedCorporateAction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LinkedCorporateAction1.mmObject();
 			isDerived = false;
 			xmlTag = "NtfctnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,11 +132,22 @@ public class LinkedCorporateAction1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionNotificationType1Code.mmObject();
 		}
+
+		@Override
+		public CorporateActionNotificationType1Code getValue(LinkedCorporateAction1 obj) {
+			return obj.getNotificationType();
+		}
+
+		@Override
+		public void setValue(LinkedCorporateAction1 obj, CorporateActionNotificationType1Code value) {
+			obj.setNotificationType(value);
+		}
 	};
+	@XmlElement(name = "LkdAgtCANtfctnAdvcId")
 	protected DocumentIdentification8 linkedAgentCANotificationAdviceIdentification;
 	/**
-	 * The identification of the linked notification advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,9 +173,9 @@ public class LinkedCorporateAction1 {
 	 * definition} = "The identification of the linked notification advice."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLinkedAgentCANotificationAdviceIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LinkedCorporateAction1, Optional<DocumentIdentification8>> mmLinkedAgentCANotificationAdviceIdentification = new MMMessageAttribute<LinkedCorporateAction1, Optional<DocumentIdentification8>>() {
 		{
-			componentContext_lazy = () -> LinkedCorporateAction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LinkedCorporateAction1.mmObject();
 			isDerived = false;
 			xmlTag = "LkdAgtCANtfctnAdvcId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +183,24 @@ public class LinkedCorporateAction1 {
 			definition = "The identification of the linked notification advice.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.DocumentIdentification8.mmObject();
+			complexType_lazy = () -> DocumentIdentification8.mmObject();
+		}
+
+		@Override
+		public Optional<DocumentIdentification8> getValue(LinkedCorporateAction1 obj) {
+			return obj.getLinkedAgentCANotificationAdviceIdentification();
+		}
+
+		@Override
+		public void setValue(LinkedCorporateAction1 obj, Optional<DocumentIdentification8> value) {
+			obj.setLinkedAgentCANotificationAdviceIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "LkgTp")
 	protected ProcessingPosition2FormatChoice linkageType;
 	/**
-	 * Specifies when the instruction is to be executed relative to a linked
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -203,9 +228,9 @@ public class LinkedCorporateAction1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLinkageType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LinkedCorporateAction1, Optional<ProcessingPosition2FormatChoice>> mmLinkageType = new MMMessageAttribute<LinkedCorporateAction1, Optional<ProcessingPosition2FormatChoice>>() {
 		{
-			componentContext_lazy = () -> LinkedCorporateAction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LinkedCorporateAction1.mmObject();
 			isDerived = false;
 			xmlTag = "LkgTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,11 +240,22 @@ public class LinkedCorporateAction1 {
 			minOccurs = 0;
 			complexType_lazy = () -> ProcessingPosition2FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<ProcessingPosition2FormatChoice> getValue(LinkedCorporateAction1 obj) {
+			return obj.getLinkageType();
+		}
+
+		@Override
+		public void setValue(LinkedCorporateAction1 obj, Optional<ProcessingPosition2FormatChoice> value) {
+			obj.setLinkageType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LkdIssrCorpActnId")
 	protected Max35Text linkedIssuerCorporateActionIdentification;
 	/**
-	 * Reference given to the linked event by the CA event issuer (agent).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -245,9 +281,9 @@ public class LinkedCorporateAction1 {
 	 * "Reference given to the linked event by the CA event issuer (agent)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLinkedIssuerCorporateActionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LinkedCorporateAction1, Optional<Max35Text>> mmLinkedIssuerCorporateActionIdentification = new MMMessageAttribute<LinkedCorporateAction1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> LinkedCorporateAction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LinkedCorporateAction1.mmObject();
 			isDerived = false;
 			xmlTag = "LkdIssrCorpActnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -257,11 +293,22 @@ public class LinkedCorporateAction1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(LinkedCorporateAction1 obj) {
+			return obj.getLinkedIssuerCorporateActionIdentification();
+		}
+
+		@Override
+		public void setValue(LinkedCorporateAction1 obj, Optional<Max35Text> value) {
+			obj.setLinkedIssuerCorporateActionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LkdCorpActnPrcgId")
 	protected Max35Text linkedCorporateActionProcessingIdentification;
 	/**
-	 * Reference assigned by the CSD to the linked coporate avent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,9 +334,9 @@ public class LinkedCorporateAction1 {
 	 * "Reference assigned by the CSD to the linked coporate avent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLinkedCorporateActionProcessingIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LinkedCorporateAction1, Optional<Max35Text>> mmLinkedCorporateActionProcessingIdentification = new MMMessageAttribute<LinkedCorporateAction1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> LinkedCorporateAction1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LinkedCorporateAction1.mmObject();
 			isDerived = false;
 			xmlTag = "LkdCorpActnPrcgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -299,15 +346,26 @@ public class LinkedCorporateAction1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(LinkedCorporateAction1 obj) {
+			return obj.getLinkedCorporateActionProcessingIdentification();
+		}
+
+		@Override
+		public void setValue(LinkedCorporateAction1 obj, Optional<Max35Text> value) {
+			obj.setLinkedCorporateActionProcessingIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LinkedCorporateAction1.mmNotificationType, LinkedCorporateAction1.mmLinkedAgentCANotificationAdviceIdentification, LinkedCorporateAction1.mmLinkageType,
-						LinkedCorporateAction1.mmLinkedIssuerCorporateActionIdentification, LinkedCorporateAction1.mmLinkedCorporateActionProcessingIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LinkedCorporateAction1.mmNotificationType, com.tools20022.repository.msg.LinkedCorporateAction1.mmLinkedAgentCANotificationAdviceIdentification,
+						com.tools20022.repository.msg.LinkedCorporateAction1.mmLinkageType, com.tools20022.repository.msg.LinkedCorporateAction1.mmLinkedIssuerCorporateActionIdentification,
+						com.tools20022.repository.msg.LinkedCorporateAction1.mmLinkedCorporateActionProcessingIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCANotificationAdviceV01.mmNotificationTypeAndLinkage);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LinkedCorporateAction1";
 				definition = "Specifies linkage information of a corporate action message.";
@@ -316,48 +374,48 @@ public class LinkedCorporateAction1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NtfctnTp", required = true)
 	public CorporateActionNotificationType1Code getNotificationType() {
 		return notificationType;
 	}
 
-	public void setNotificationType(CorporateActionNotificationType1Code notificationType) {
-		this.notificationType = notificationType;
+	public LinkedCorporateAction1 setNotificationType(CorporateActionNotificationType1Code notificationType) {
+		this.notificationType = Objects.requireNonNull(notificationType);
+		return this;
 	}
 
-	@XmlElement(name = "LkdAgtCANtfctnAdvcId")
-	public DocumentIdentification8 getLinkedAgentCANotificationAdviceIdentification() {
-		return linkedAgentCANotificationAdviceIdentification;
+	public Optional<DocumentIdentification8> getLinkedAgentCANotificationAdviceIdentification() {
+		return linkedAgentCANotificationAdviceIdentification == null ? Optional.empty() : Optional.of(linkedAgentCANotificationAdviceIdentification);
 	}
 
-	public void setLinkedAgentCANotificationAdviceIdentification(com.tools20022.repository.msg.DocumentIdentification8 linkedAgentCANotificationAdviceIdentification) {
+	public LinkedCorporateAction1 setLinkedAgentCANotificationAdviceIdentification(DocumentIdentification8 linkedAgentCANotificationAdviceIdentification) {
 		this.linkedAgentCANotificationAdviceIdentification = linkedAgentCANotificationAdviceIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "LkgTp")
-	public ProcessingPosition2FormatChoice getLinkageType() {
-		return linkageType;
+	public Optional<ProcessingPosition2FormatChoice> getLinkageType() {
+		return linkageType == null ? Optional.empty() : Optional.of(linkageType);
 	}
 
-	public void setLinkageType(ProcessingPosition2FormatChoice linkageType) {
+	public LinkedCorporateAction1 setLinkageType(ProcessingPosition2FormatChoice linkageType) {
 		this.linkageType = linkageType;
+		return this;
 	}
 
-	@XmlElement(name = "LkdIssrCorpActnId")
-	public Max35Text getLinkedIssuerCorporateActionIdentification() {
-		return linkedIssuerCorporateActionIdentification;
+	public Optional<Max35Text> getLinkedIssuerCorporateActionIdentification() {
+		return linkedIssuerCorporateActionIdentification == null ? Optional.empty() : Optional.of(linkedIssuerCorporateActionIdentification);
 	}
 
-	public void setLinkedIssuerCorporateActionIdentification(Max35Text linkedIssuerCorporateActionIdentification) {
+	public LinkedCorporateAction1 setLinkedIssuerCorporateActionIdentification(Max35Text linkedIssuerCorporateActionIdentification) {
 		this.linkedIssuerCorporateActionIdentification = linkedIssuerCorporateActionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "LkdCorpActnPrcgId")
-	public Max35Text getLinkedCorporateActionProcessingIdentification() {
-		return linkedCorporateActionProcessingIdentification;
+	public Optional<Max35Text> getLinkedCorporateActionProcessingIdentification() {
+		return linkedCorporateActionProcessingIdentification == null ? Optional.empty() : Optional.of(linkedCorporateActionProcessingIdentification);
 	}
 
-	public void setLinkedCorporateActionProcessingIdentification(Max35Text linkedCorporateActionProcessingIdentification) {
+	public LinkedCorporateAction1 setLinkedCorporateActionProcessingIdentification(Max35Text linkedCorporateActionProcessingIdentification) {
 		this.linkedCorporateActionProcessingIdentification = linkedCorporateActionProcessingIdentification;
+		return this;
 	}
 }

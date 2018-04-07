@@ -38,134 +38,131 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Assignment
- * SettlementTransactionConditionV2Code.mmAssignment}</li>
+ * SettlementTransactionConditionV2Code.Assignment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#BuytoCover
- * SettlementTransactionConditionV2Code.mmBuytoCover}</li>
+ * SettlementTransactionConditionV2Code.BuytoCover}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Clean
- * SettlementTransactionConditionV2Code.mmClean}</li>
+ * SettlementTransactionConditionV2Code.Clean}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Dirty
- * SettlementTransactionConditionV2Code.mmDirty}</li>
+ * SettlementTransactionConditionV2Code.Dirty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#DeliveryWithoutMatching
- * SettlementTransactionConditionV2Code.mmDeliveryWithoutMatching}</li>
+ * SettlementTransactionConditionV2Code.DeliveryWithoutMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Drawn
- * SettlementTransactionConditionV2Code.mmDrawn}</li>
+ * SettlementTransactionConditionV2Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Exercised
- * SettlementTransactionConditionV2Code.mmExercised}</li>
+ * SettlementTransactionConditionV2Code.Exercised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#FreeCleanSettlement
- * SettlementTransactionConditionV2Code.mmFreeCleanSettlement}</li>
+ * SettlementTransactionConditionV2Code.FreeCleanSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#KnockedOut
- * SettlementTransactionConditionV2Code.mmKnockedOut}</li>
+ * SettlementTransactionConditionV2Code.KnockedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Physical
- * SettlementTransactionConditionV2Code.mmPhysical}</li>
+ * SettlementTransactionConditionV2Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Residual
- * SettlementTransactionConditionV2Code.mmResidual}</li>
+ * SettlementTransactionConditionV2Code.Residual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#ShortSell
- * SettlementTransactionConditionV2Code.mmShortSell}</li>
+ * SettlementTransactionConditionV2Code.ShortSell}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SplitCurrencySettlement
- * SettlementTransactionConditionV2Code.mmSplitCurrencySettlement}</li>
+ * SettlementTransactionConditionV2Code.SplitCurrencySettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SpecialDelivery
- * SettlementTransactionConditionV2Code.mmSpecialDelivery}</li>
+ * SettlementTransactionConditionV2Code.SpecialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SplitSettlement
- * SettlementTransactionConditionV2Code.mmSplitSettlement}</li>
+ * SettlementTransactionConditionV2Code.SplitSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Unexposed
- * SettlementTransactionConditionV2Code.mmUnexposed}</li>
+ * SettlementTransactionConditionV2Code.Unexposed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Expired
- * SettlementTransactionConditionV2Code.mmExpired}</li>
+ * SettlementTransactionConditionV2Code.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#PendingSale
- * SettlementTransactionConditionV2Code.mmPendingSale}</li>
+ * SettlementTransactionConditionV2Code.PendingSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#TripartySegregation
- * SettlementTransactionConditionV2Code.mmTripartySegregation}</li>
+ * SettlementTransactionConditionV2Code.TripartySegregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#NoAutomaticMarketClaim
- * SettlementTransactionConditionV2Code.mmNoAutomaticMarketClaim}</li>
+ * SettlementTransactionConditionV2Code.NoAutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#CSDPaymentOnly
- * SettlementTransactionConditionV2Code.mmCSDPaymentOnly}</li>
+ * SettlementTransactionConditionV2Code.CSDPaymentOnly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Change
- * SettlementTransactionConditionV2Code.mmChange}</li>
+ * SettlementTransactionConditionV2Code.Change}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#DoNotChange
- * SettlementTransactionConditionV2Code.mmDoNotChange}</li>
+ * SettlementTransactionConditionV2Code.DoNotChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#EligibleForNetting
- * SettlementTransactionConditionV2Code.mmEligibleForNetting}</li>
+ * SettlementTransactionConditionV2Code.EligibleForNetting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#FullPayment
- * SettlementTransactionConditionV2Code.mmFullPayment}</li>
+ * SettlementTransactionConditionV2Code.FullPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#HalfPayment
- * SettlementTransactionConditionV2Code.mmHalfPayment}</li>
+ * SettlementTransactionConditionV2Code.HalfPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#LetterOfGuaranteeIsAccepted
- * SettlementTransactionConditionV2Code.mmLetterOfGuaranteeIsAccepted}</li>
+ * SettlementTransactionConditionV2Code.LetterOfGuaranteeIsAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#LetterOfGuaranteeIsNotAccepted
- * SettlementTransactionConditionV2Code.mmLetterOfGuaranteeIsNotAccepted}</li>
+ * SettlementTransactionConditionV2Code.LetterOfGuaranteeIsNotAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#NotEligibleForNetting
- * SettlementTransactionConditionV2Code.mmNotEligibleForNetting}</li>
+ * SettlementTransactionConditionV2Code.NotEligibleForNetting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#PartialSettlement
- * SettlementTransactionConditionV2Code.mmPartialSettlement}</li>
+ * SettlementTransactionConditionV2Code.PartialSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#PartialSettlementNotAllowed
- * SettlementTransactionConditionV2Code.mmPartialSettlementNotAllowed}</li>
+ * SettlementTransactionConditionV2Code.PartialSettlementNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#ReHypothecation
- * SettlementTransactionConditionV2Code.mmReHypothecation}</li>
+ * SettlementTransactionConditionV2Code.ReHypothecation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SecurityEligibleForCollateralPurposes
- * SettlementTransactionConditionV2Code.mmSecurityEligibleForCollateralPurposes}
- * </li>
+ * SettlementTransactionConditionV2Code.SecurityEligibleForCollateralPurposes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SecurityNotEligibleForCollateralPurposes
- * SettlementTransactionConditionV2Code.
- * mmSecurityNotEligibleForCollateralPurposes}</li>
+ * SettlementTransactionConditionV2Code.SecurityNotEligibleForCollateralPurposes
+ * }</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SettlementInstructionIsCCPEligible
- * SettlementTransactionConditionV2Code.mmSettlementInstructionIsCCPEligible}</li>
+ * SettlementTransactionConditionV2Code.SettlementInstructionIsCCPEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SettlementInstructionIsNotCCPEligible
- * SettlementTransactionConditionV2Code.mmSettlementInstructionIsNotCCPEligible}
- * </li>
+ * SettlementTransactionConditionV2Code.SettlementInstructionIsNotCCPEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SettleThroughTheNonRTGSSystem
- * SettlementTransactionConditionV2Code.mmSettleThroughTheNonRTGSSystem}</li>
+ * SettlementTransactionConditionV2Code.SettleThroughTheNonRTGSSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#SettleThroughTheRTGSSystem
- * SettlementTransactionConditionV2Code.mmSettleThroughTheRTGSSystem}</li>
+ * SettlementTransactionConditionV2Code.SettleThroughTheRTGSSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#UncertifiedSecuritiesTaxNotApplicable
- * SettlementTransactionConditionV2Code.mmUncertifiedSecuritiesTaxNotApplicable}
- * </li>
+ * SettlementTransactionConditionV2Code.UncertifiedSecuritiesTaxNotApplicable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#USLegal144A
- * SettlementTransactionConditionV2Code.mmUSLegal144A}</li>
+ * SettlementTransactionConditionV2Code.USLegal144A}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Zengin
- * SettlementTransactionConditionV2Code.mmZengin}</li>
+ * SettlementTransactionConditionV2Code.Zengin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionConditionV2Code#Transformation
- * SettlementTransactionConditionV2Code.mmTransformation}</li>
+ * SettlementTransactionConditionV2Code.Transformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -179,8 +176,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -962,7 +959,7 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Full Payment
+	 * Full Payment.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -979,20 +976,20 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "FullPayment"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Full Payment"</li>
+	 * definition} = "Full Payment."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code FullPayment = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FullPayment";
-			definition = "Full Payment";
+			definition = "Full Payment.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "FUSD";
 		}
 	};
 	/**
-	 * Half Payment
+	 * Half Payment.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1009,14 +1006,14 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "HalfPayment"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Half Payment"</li>
+	 * definition} = "Half Payment."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code HalfPayment = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HalfPayment";
-			definition = "Half Payment";
+			definition = "Half Payment.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "HASD";
 		}
@@ -1052,7 +1049,7 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Letter of guarantee is not accepted
+	 * Letter of guarantee is not accepted.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1069,14 +1066,14 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "LetterOfGuaranteeIsNotAccepted"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Letter of guarantee is not accepted"</li>
+	 * definition} = "Letter of guarantee is not accepted."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code LetterOfGuaranteeIsNotAccepted = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LetterOfGuaranteeIsNotAccepted";
-			definition = "Letter of guarantee is not accepted";
+			definition = "Letter of guarantee is not accepted.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "NLEG";
 		}
@@ -1202,7 +1199,7 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Security eligible for collateral purposes
+	 * Security eligible for collateral purposes.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1219,14 +1216,14 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "SecurityEligibleForCollateralPurposes"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Security eligible for collateral purposes"</li>
+	 * definition} = "Security eligible for collateral purposes."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code SecurityEligibleForCollateralPurposes = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecurityEligibleForCollateralPurposes";
-			definition = "Security eligible for collateral purposes";
+			definition = "Security eligible for collateral purposes.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "COLA";
 		}
@@ -1292,7 +1289,7 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Settlement Instruction is not CCP eligible
+	 * Settlement Instruction is not CCP eligible.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1309,20 +1306,20 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "SettlementInstructionIsNotCCPEligible"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Settlement Instruction is not CCP eligible"</li>
+	 * definition} = "Settlement Instruction is not CCP eligible."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code SettlementInstructionIsNotCCPEligible = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementInstructionIsNotCCPEligible";
-			definition = "Settlement Instruction is not CCP eligible";
+			definition = "Settlement Instruction is not CCP eligible.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "NCCP";
 		}
 	};
 	/**
-	 * Settle through the Non-RTGS System
+	 * Settle through the Non-RTGS System.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1339,14 +1336,14 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "SettleThroughTheNon-RTGSSystem"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Settle through the Non-RTGS System"</li>
+	 * definition} = "Settle through the Non-RTGS System."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code SettleThroughTheNonRTGSSystem = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettleThroughTheNon-RTGSSystem";
-			definition = "Settle through the Non-RTGS System";
+			definition = "Settle through the Non-RTGS System.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "NRTG";
 		}
@@ -1472,7 +1469,7 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 		}
 	};
 	/**
-	 * Transformation
+	 * Transformation.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1489,14 +1486,14 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	 * name} = "Transformation"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Transformation"</li>
+	 * definition} = "Transformation."</li>
 	 * </ul>
 	 */
 	public static final SettlementTransactionConditionV2Code Transformation = new SettlementTransactionConditionV2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Transformation";
-			definition = "Transformation";
+			definition = "Transformation.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettlementTransactionConditionV2Code.mmObject();
 			codeName = "TRAN";
 		}
@@ -1509,7 +1506,7 @@ public class SettlementTransactionConditionV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ASGN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTransactionConditionV2Code";

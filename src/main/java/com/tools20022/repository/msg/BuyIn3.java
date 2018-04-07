@@ -31,6 +31,7 @@ import com.tools20022.repository.entity.SecuritiesTransfer;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,8 +77,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,15 +91,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BuyIn3", propOrder = {"buyInNotificationIdentification", "requestForDelayIndicator", "numberOfDays", "initialQuantity", "coveredQuantity", "uncoveredQuantity"})
 public class BuyIn3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BuyInNtfctnId", required = true)
 	protected Max35Text buyInNotificationIdentification;
 	/**
-	 * Indicates the reference of the BuyInNotification message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,9 +125,9 @@ public class BuyIn3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBuyInNotificationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BuyIn3, Max35Text> mmBuyInNotificationIdentification = new MMMessageAttribute<BuyIn3, Max35Text>() {
 		{
-			componentContext_lazy = () -> BuyIn3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BuyIn3.mmObject();
 			isDerived = false;
 			xmlTag = "BuyInNtfctnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,13 +137,22 @@ public class BuyIn3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(BuyIn3 obj) {
+			return obj.getBuyInNotificationIdentification();
+		}
+
+		@Override
+		public void setValue(BuyIn3 obj, Max35Text value) {
+			obj.setBuyInNotificationIdentification(value);
+		}
 	};
+	@XmlElement(name = "ReqForDelyInd", required = true)
 	protected YesNoIndicator requestForDelayIndicator;
 	/**
-	 * Specific continuous net settlement case where the central counterparty
-	 * can call for buy-in at a date anterior to "theoretical" buy-in date, the
-	 * clearing member may request a delay.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,9 +179,9 @@ public class BuyIn3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestForDelayIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BuyIn3, YesNoIndicator> mmRequestForDelayIndicator = new MMMessageAttribute<BuyIn3, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> BuyIn3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BuyIn3.mmObject();
 			isDerived = false;
 			xmlTag = "ReqForDelyInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,11 +191,22 @@ public class BuyIn3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(BuyIn3 obj) {
+			return obj.getRequestForDelayIndicator();
+		}
+
+		@Override
+		public void setValue(BuyIn3 obj, YesNoIndicator value) {
+			obj.setRequestForDelayIndicator(value);
+		}
 	};
+	@XmlElement(name = "NbOfDays", required = true)
 	protected Number numberOfDays;
 	/**
-	 * Number of days associated to the request for delay.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,9 +230,9 @@ public class BuyIn3 {
 	 * definition} = "Number of days associated to the request for delay."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfDays = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BuyIn3, Number> mmNumberOfDays = new MMMessageAttribute<BuyIn3, Number>() {
 		{
-			componentContext_lazy = () -> BuyIn3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BuyIn3.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfDays";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,11 +242,22 @@ public class BuyIn3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Number getValue(BuyIn3 obj) {
+			return obj.getNumberOfDays();
+		}
+
+		@Override
+		public void setValue(BuyIn3 obj, Number value) {
+			obj.setNumberOfDays(value);
+		}
 	};
+	@XmlElement(name = "InitlQty", required = true)
 	protected FinancialInstrumentQuantity1Choice initialQuantity;
 	/**
-	 * Buy in quantity called initially by the central counterparty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -254,10 +287,10 @@ public class BuyIn3 {
 	 * "Buy in quantity called initially by the central counterparty."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInitialQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BuyIn3, FinancialInstrumentQuantity1Choice> mmInitialQuantity = new MMMessageAssociationEnd<BuyIn3, FinancialInstrumentQuantity1Choice>() {
 		{
 			businessElementTrace_lazy = () -> BuyIn.mmSecuritiesCompensation;
-			componentContext_lazy = () -> BuyIn3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BuyIn3.mmObject();
 			isDerived = false;
 			xmlTag = "InitlQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -268,11 +301,22 @@ public class BuyIn3 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1Choice getValue(BuyIn3 obj) {
+			return obj.getInitialQuantity();
+		}
+
+		@Override
+		public void setValue(BuyIn3 obj, FinancialInstrumentQuantity1Choice value) {
+			obj.setInitialQuantity(value);
+		}
 	};
+	@XmlElement(name = "CvrdQty", required = true)
 	protected FinancialInstrumentQuantity1Choice coveredQuantity;
 	/**
-	 * Quantity amount covered by the clearing member after notification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -302,10 +346,10 @@ public class BuyIn3 {
 	 * "Quantity amount covered by the clearing member after notification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCoveredQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BuyIn3, FinancialInstrumentQuantity1Choice> mmCoveredQuantity = new MMMessageAssociationEnd<BuyIn3, FinancialInstrumentQuantity1Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmTransferredQuantity;
-			componentContext_lazy = () -> BuyIn3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BuyIn3.mmObject();
 			isDerived = false;
 			xmlTag = "CvrdQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -316,12 +360,22 @@ public class BuyIn3 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1Choice getValue(BuyIn3 obj) {
+			return obj.getCoveredQuantity();
+		}
+
+		@Override
+		public void setValue(BuyIn3 obj, FinancialInstrumentQuantity1Choice value) {
+			obj.setCoveredQuantity(value);
+		}
 	};
+	@XmlElement(name = "UcvrdQty", required = true)
 	protected FinancialInstrumentQuantity1Choice uncoveredQuantity;
 	/**
-	 * Quantity amount non covered by the clearing member after notification
-	 * (this is, new buy in amount to be executed).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -352,10 +406,10 @@ public class BuyIn3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUncoveredQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BuyIn3, FinancialInstrumentQuantity1Choice> mmUncoveredQuantity = new MMMessageAssociationEnd<BuyIn3, FinancialInstrumentQuantity1Choice>() {
 		{
 			businessElementTrace_lazy = () -> BuyIn.mmSecuritiesCompensation;
-			componentContext_lazy = () -> BuyIn3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BuyIn3.mmObject();
 			isDerived = false;
 			xmlTag = "UcvrdQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -366,15 +420,27 @@ public class BuyIn3 {
 			isComposite = true;
 			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1Choice getValue(BuyIn3 obj) {
+			return obj.getUncoveredQuantity();
+		}
+
+		@Override
+		public void setValue(BuyIn3 obj, FinancialInstrumentQuantity1Choice value) {
+			obj.setUncoveredQuantity(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BuyIn3.mmBuyInNotificationIdentification, BuyIn3.mmRequestForDelayIndicator, BuyIn3.mmNumberOfDays, BuyIn3.mmInitialQuantity, BuyIn3.mmCoveredQuantity, BuyIn3.mmUncoveredQuantity);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BuyIn3.mmBuyInNotificationIdentification, com.tools20022.repository.msg.BuyIn3.mmRequestForDelayIndicator,
+						com.tools20022.repository.msg.BuyIn3.mmNumberOfDays, com.tools20022.repository.msg.BuyIn3.mmInitialQuantity, com.tools20022.repository.msg.BuyIn3.mmCoveredQuantity,
+						com.tools20022.repository.msg.BuyIn3.mmUncoveredQuantity);
 				messageBuildingBlock_lazy = () -> Arrays.asList(BuyInResponseV03.mmBuyInResponseDetails);
 				trace_lazy = () -> BuyIn.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BuyIn3";
 				definition = "Specifies elements related to the response sent by the clearing member to the central counterparty in the context of the buy in process.";
@@ -383,57 +449,57 @@ public class BuyIn3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BuyInNtfctnId", required = true)
 	public Max35Text getBuyInNotificationIdentification() {
 		return buyInNotificationIdentification;
 	}
 
-	public void setBuyInNotificationIdentification(Max35Text buyInNotificationIdentification) {
-		this.buyInNotificationIdentification = buyInNotificationIdentification;
+	public BuyIn3 setBuyInNotificationIdentification(Max35Text buyInNotificationIdentification) {
+		this.buyInNotificationIdentification = Objects.requireNonNull(buyInNotificationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ReqForDelyInd", required = true)
 	public YesNoIndicator getRequestForDelayIndicator() {
 		return requestForDelayIndicator;
 	}
 
-	public void setRequestForDelayIndicator(YesNoIndicator requestForDelayIndicator) {
-		this.requestForDelayIndicator = requestForDelayIndicator;
+	public BuyIn3 setRequestForDelayIndicator(YesNoIndicator requestForDelayIndicator) {
+		this.requestForDelayIndicator = Objects.requireNonNull(requestForDelayIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "NbOfDays", required = true)
 	public Number getNumberOfDays() {
 		return numberOfDays;
 	}
 
-	public void setNumberOfDays(Number numberOfDays) {
-		this.numberOfDays = numberOfDays;
+	public BuyIn3 setNumberOfDays(Number numberOfDays) {
+		this.numberOfDays = Objects.requireNonNull(numberOfDays);
+		return this;
 	}
 
-	@XmlElement(name = "InitlQty", required = true)
 	public FinancialInstrumentQuantity1Choice getInitialQuantity() {
 		return initialQuantity;
 	}
 
-	public void setInitialQuantity(FinancialInstrumentQuantity1Choice initialQuantity) {
-		this.initialQuantity = initialQuantity;
+	public BuyIn3 setInitialQuantity(FinancialInstrumentQuantity1Choice initialQuantity) {
+		this.initialQuantity = Objects.requireNonNull(initialQuantity);
+		return this;
 	}
 
-	@XmlElement(name = "CvrdQty", required = true)
 	public FinancialInstrumentQuantity1Choice getCoveredQuantity() {
 		return coveredQuantity;
 	}
 
-	public void setCoveredQuantity(FinancialInstrumentQuantity1Choice coveredQuantity) {
-		this.coveredQuantity = coveredQuantity;
+	public BuyIn3 setCoveredQuantity(FinancialInstrumentQuantity1Choice coveredQuantity) {
+		this.coveredQuantity = Objects.requireNonNull(coveredQuantity);
+		return this;
 	}
 
-	@XmlElement(name = "UcvrdQty", required = true)
 	public FinancialInstrumentQuantity1Choice getUncoveredQuantity() {
 		return uncoveredQuantity;
 	}
 
-	public void setUncoveredQuantity(FinancialInstrumentQuantity1Choice uncoveredQuantity) {
-		this.uncoveredQuantity = uncoveredQuantity;
+	public BuyIn3 setUncoveredQuantity(FinancialInstrumentQuantity1Choice uncoveredQuantity) {
+		this.uncoveredQuantity = Objects.requireNonNull(uncoveredQuantity);
+		return this;
 	}
 }

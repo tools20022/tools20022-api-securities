@@ -39,49 +39,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#SafekeepingAccountRejection
- * RejectionReason29Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason29Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#AccountServicerDeadlineMissed
- * RejectionReason29Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason29Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#MarketDeadlineMissed
- * RejectionReason29Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason29Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#CorporateActionRejection
- * RejectionReason29Code.mmCorporateActionRejection}</li>
+ * RejectionReason29Code.CorporateActionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#SettlementDateRejection
- * RejectionReason29Code.mmSettlementDateRejection}</li>
+ * RejectionReason29Code.SettlementDateRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#ReferenceRejection
- * RejectionReason29Code.mmReferenceRejection}</li>
+ * RejectionReason29Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#Other
- * RejectionReason29Code.mmOther}</li>
+ * RejectionReason29Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#QuantityRejection
- * RejectionReason29Code.mmQuantityRejection}</li>
+ * RejectionReason29Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#InvalidSecurity
- * RejectionReason29Code.mmInvalidSecurity}</li>
+ * RejectionReason29Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#InvalidBalance
- * RejectionReason29Code.mmInvalidBalance}</li>
+ * RejectionReason29Code.InvalidBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#InvalidLink
- * RejectionReason29Code.mmInvalidLink}</li>
+ * RejectionReason29Code.InvalidLink}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#InvalidLotNumber
- * RejectionReason29Code.mmInvalidLotNumber}</li>
+ * RejectionReason29Code.InvalidLotNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#MinimumSettlementQuantity
- * RejectionReason29Code.mmMinimumSettlementQuantity}</li>
+ * RejectionReason29Code.MinimumSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#MultipleSettlementQuantity
- * RejectionReason29Code.mmMultipleSettlementQuantity}</li>
+ * RejectionReason29Code.MultipleSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason29Code#InvalidRule
- * RejectionReason29Code.mmInvalidRule}</li>
+ * RejectionReason29Code.InvalidRule}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -90,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -482,7 +482,7 @@ public class RejectionReason29Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SAFE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason29Code";

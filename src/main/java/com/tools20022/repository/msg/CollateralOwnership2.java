@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.CollateralPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Indicates whether the collateral is proprietarily owned or client owned."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralOwnership2", propOrder = {"proprietary", "clientName"})
 public class CollateralOwnership2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prtry", required = true)
 	protected YesNoIndicator proprietary;
 	/**
-	 * Indicates that the collateral is owned by the clearing member or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +106,9 @@ public class CollateralOwnership2 {
 	 * "Indicates that the collateral is owned by the clearing member or not."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralOwnership2, YesNoIndicator> mmProprietary = new MMMessageAttribute<CollateralOwnership2, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> CollateralOwnership2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralOwnership2.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +118,22 @@ public class CollateralOwnership2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(CollateralOwnership2 obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CollateralOwnership2 obj, YesNoIndicator value) {
+			obj.setProprietary(value);
+		}
 	};
+	@XmlElement(name = "ClntNm")
 	protected PartyIdentification100Choice clientName;
 	/**
-	 * Indicates that the client owns the collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -149,10 +163,10 @@ public class CollateralOwnership2 {
 	 * definition} = "Indicates that the client owns the collateral."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClientName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CollateralOwnership2, Optional<PartyIdentification100Choice>> mmClientName = new MMMessageAssociationEnd<CollateralOwnership2, Optional<PartyIdentification100Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> CollateralPartyRole.mmObject();
-			componentContext_lazy = () -> CollateralOwnership2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralOwnership2.mmObject();
 			isDerived = false;
 			xmlTag = "ClntNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,14 +177,24 @@ public class CollateralOwnership2 {
 			isComposite = true;
 			type_lazy = () -> PartyIdentification100Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification100Choice> getValue(CollateralOwnership2 obj) {
+			return obj.getClientName();
+		}
+
+		@Override
+		public void setValue(CollateralOwnership2 obj, Optional<PartyIdentification100Choice> value) {
+			obj.setClientName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralOwnership2.mmProprietary, CollateralOwnership2.mmClientName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralOwnership2.mmProprietary, com.tools20022.repository.msg.CollateralOwnership2.mmClientName);
 				trace_lazy = () -> CollateralPartyRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralOwnership2";
 				definition = "Indicates whether the collateral is proprietarily owned or client owned.";
@@ -179,21 +203,21 @@ public class CollateralOwnership2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public YesNoIndicator getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(YesNoIndicator proprietary) {
-		this.proprietary = proprietary;
+	public CollateralOwnership2 setProprietary(YesNoIndicator proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 
-	@XmlElement(name = "ClntNm")
-	public PartyIdentification100Choice getClientName() {
-		return clientName;
+	public Optional<PartyIdentification100Choice> getClientName() {
+		return clientName == null ? Optional.empty() : Optional.of(clientName);
 	}
 
-	public void setClientName(PartyIdentification100Choice clientName) {
+	public CollateralOwnership2 setClientName(PartyIdentification100Choice clientName) {
 		this.clientName = clientName;
+		return this;
 	}
 }

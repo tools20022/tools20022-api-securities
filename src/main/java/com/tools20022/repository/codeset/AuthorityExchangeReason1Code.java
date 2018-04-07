@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForInstrument
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForInstrument}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#AdHocRequest
- * AuthorityExchangeReason1Code.mmAdHocRequest}</li>
+ * AuthorityExchangeReason1Code.AdHocRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForBasketConstituent
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForBasketConstituent}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForBasketConstituent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForBuyerBranch
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForBuyerBranch}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForBuyerBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForDecisionMakingBranch
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForDecisionMakingBranch}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForDecisionMakingBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForDirectUnderlying
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForDirectUnderlying}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForDirectUnderlying}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForExecutingBranch
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForExecutingBranch}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForExecutingBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForIndex
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForIndex}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForIndex}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForMembershipBranch
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForMembershipBranch}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForMembershipBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForSellerBranch
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForSellerBranch}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForSellerBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthorityExchangeReason1Code#CompetentAuthorityForTradingVenue
- * AuthorityExchangeReason1Code.mmCompetentAuthorityForTradingVenue}</li>
+ * AuthorityExchangeReason1Code.CompetentAuthorityForTradingVenue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -367,7 +367,7 @@ public class AuthorityExchangeReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthorityExchangeReason1Code";
 				definition = "Specifies the reason for the exchange with the national competent authority.";

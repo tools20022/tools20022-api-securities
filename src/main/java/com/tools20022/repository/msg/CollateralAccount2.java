@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralAccount2", propOrder = {"identification", "type", "name"})
 public class CollateralAccount2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Unique identification of the collateral account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,10 +127,10 @@ public class CollateralAccount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAccount2, Max35Text> mmIdentification = new MMMessageAttribute<CollateralAccount2, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> CollateralAccount2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAccount2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,11 +141,22 @@ public class CollateralAccount2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(CollateralAccount2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralAccount2 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Tp")
 	protected CollateralAccountIdentificationType2Choice type;
 	/**
-	 * Indicates the type of collateral account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,10 +194,10 @@ public class CollateralAccount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAccount2, Optional<CollateralAccountIdentificationType2Choice>> mmType = new MMMessageAttribute<CollateralAccount2, Optional<CollateralAccountIdentificationType2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmCollateralAccountType;
-			componentContext_lazy = () -> CollateralAccount2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAccount2.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,13 +208,22 @@ public class CollateralAccount2 {
 			minOccurs = 0;
 			complexType_lazy = () -> CollateralAccountIdentificationType2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<CollateralAccountIdentificationType2Choice> getValue(CollateralAccount2 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(CollateralAccount2 obj, Optional<CollateralAccountIdentificationType2Choice> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max70Text name;
 	/**
-	 * Name of the account. It provides an additional means of identification,
-	 * and is designated by the account servicer in agreement with the account
-	 * owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,10 +262,10 @@ public class CollateralAccount2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CollateralAccount2, Optional<Max70Text>> mmName = new MMMessageAttribute<CollateralAccount2, Optional<Max70Text>>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmName;
-			componentContext_lazy = () -> CollateralAccount2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CollateralAccount2.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -253,14 +276,24 @@ public class CollateralAccount2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(CollateralAccount2 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(CollateralAccount2 obj, Optional<Max70Text> value) {
+			obj.setName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CollateralAccount2.mmIdentification, CollateralAccount2.mmType, CollateralAccount2.mmName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CollateralAccount2.mmIdentification, com.tools20022.repository.msg.CollateralAccount2.mmType, com.tools20022.repository.msg.CollateralAccount2.mmName);
 				trace_lazy = () -> Account.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralAccount2";
 				definition = "Provides additional information on the collateral account of the party delivering/receiving the collateral.";
@@ -270,30 +303,30 @@ public class CollateralAccount2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public CollateralAccount2 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public CollateralAccountIdentificationType2Choice getType() {
-		return type;
+	public Optional<CollateralAccountIdentificationType2Choice> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(CollateralAccountIdentificationType2Choice type) {
+	public CollateralAccount2 setType(CollateralAccountIdentificationType2Choice type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max70Text getName() {
-		return name;
+	public Optional<Max70Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max70Text name) {
+	public CollateralAccount2 setName(Max70Text name) {
 		this.name = name;
+		return this;
 	}
 }

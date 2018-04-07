@@ -22,9 +22,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ExpectedCollateralType;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CollateralMovement9;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the expected collateral type and direction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ExpectedCollateralMovement2", propOrder = {"delivery", "return"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ExpectedCollateralMovement2", propOrder = {"delivery", "return_"})
 public class ExpectedCollateralMovement2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.CollateralMovement9> delivery;
+	@XmlElement(name = "Dlvry")
+	protected List<CollateralMovement9> delivery;
 	/**
-	 * Type of collateral that will be delivered and date by which the
-	 * collateral movement is expected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,24 +110,34 @@ public class ExpectedCollateralMovement2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDelivery = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExpectedCollateralMovement2, List<CollateralMovement9>> mmDelivery = new MMMessageAttribute<ExpectedCollateralMovement2, List<CollateralMovement9>>() {
 		{
 			businessElementTrace_lazy = () -> ExpectedCollateralType.mmDelivery;
-			componentContext_lazy = () -> ExpectedCollateralMovement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ExpectedCollateralMovement2.mmObject();
 			isDerived = false;
 			xmlTag = "Dlvry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Delivery";
 			definition = "Type of collateral that will be delivered and date by which the collateral movement is expected.";
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.CollateralMovement9.mmObject();
+			complexType_lazy = () -> CollateralMovement9.mmObject();
+		}
+
+		@Override
+		public List<CollateralMovement9> getValue(ExpectedCollateralMovement2 obj) {
+			return obj.getDelivery();
+		}
+
+		@Override
+		public void setValue(ExpectedCollateralMovement2 obj, List<CollateralMovement9> value) {
+			obj.setDelivery(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CollateralMovement9> return_;
+	@XmlElement(name = "Rtr")
+	protected List<CollateralMovement9> return_;
 	/**
-	 * Type of collateral that will be returned and date by which the collateral
-	 * movement is expected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,26 +170,36 @@ public class ExpectedCollateralMovement2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReturn = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ExpectedCollateralMovement2, List<CollateralMovement9>> mmReturn = new MMMessageAttribute<ExpectedCollateralMovement2, List<CollateralMovement9>>() {
 		{
 			businessElementTrace_lazy = () -> ExpectedCollateralType.mmReturn;
-			componentContext_lazy = () -> ExpectedCollateralMovement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ExpectedCollateralMovement2.mmObject();
 			isDerived = false;
 			xmlTag = "Rtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Return";
 			definition = "Type of collateral that will be returned and date by which the collateral movement is expected.";
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.CollateralMovement9.mmObject();
+			complexType_lazy = () -> CollateralMovement9.mmObject();
+		}
+
+		@Override
+		public List<CollateralMovement9> getValue(ExpectedCollateralMovement2 obj) {
+			return obj.getReturn();
+		}
+
+		@Override
+		public void setValue(ExpectedCollateralMovement2 obj, List<CollateralMovement9> value) {
+			obj.setReturn(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ExpectedCollateralMovement2.mmDelivery, ExpectedCollateralMovement2.mmReturn);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ExpectedCollateralMovement2.mmDelivery, com.tools20022.repository.msg.ExpectedCollateralMovement2.mmReturn);
 				trace_lazy = () -> ExpectedCollateralType.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExpectedCollateralMovement2";
 				definition = "Specifies the expected collateral type and direction.";
@@ -185,21 +208,21 @@ public class ExpectedCollateralMovement2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Dlvry")
 	public List<CollateralMovement9> getDelivery() {
-		return delivery;
+		return delivery == null ? delivery = new ArrayList<>() : delivery;
 	}
 
-	public void setDelivery(List<com.tools20022.repository.msg.CollateralMovement9> delivery) {
-		this.delivery = delivery;
+	public ExpectedCollateralMovement2 setDelivery(List<CollateralMovement9> delivery) {
+		this.delivery = Objects.requireNonNull(delivery);
+		return this;
 	}
 
-	@XmlElement(name = "Rtr")
 	public List<CollateralMovement9> getReturn() {
-		return return_;
+		return return_ == null ? return_ = new ArrayList<>() : return_;
 	}
 
-	public void setReturn(List<com.tools20022.repository.msg.CollateralMovement9> return_) {
-		this.return_ = return_;
+	public ExpectedCollateralMovement2 setReturn(List<CollateralMovement9> return_) {
+		this.return_ = Objects.requireNonNull(return_);
+		return this;
 	}
 }

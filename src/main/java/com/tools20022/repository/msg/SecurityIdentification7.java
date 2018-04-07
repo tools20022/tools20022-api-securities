@@ -25,11 +25,14 @@ import com.tools20022.repository.datatype.ISINIdentifier;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlternateSecurityIdentification3;
 import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -44,8 +47,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponent#getXors xors} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SecurityIdentification7#mmISINOrOtherIdentificationRule
- * SecurityIdentification7.mmISINOrOtherIdentificationRule}</li>
+ * {@linkplain com.tools20022.repository.msg.SecurityIdentification7#ISINOrOtherIdentificationRule
+ * SecurityIdentification7.ISINOrOtherIdentificationRule}</li>
  * </ul>
  * </li>
  * <li>
@@ -69,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -84,21 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "SecurityIdentification7", propOrder = {"ISIN", "otherIdentification", "description"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "SecurityIdentification7", propOrder = {"iSIN", "otherIdentification", "description"})
 public class SecurityIdentification7 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ISIN", required = true)
 	protected ISINIdentifier iSIN;
 	/**
-	 * International Securities Identification Number (ISIN). A numbering system
-	 * designed by the United Nation's International Organisation for
-	 * Standardisation (ISO). The ISIN is composed of a 2-character prefix
-	 * representing the country of issue, followed by the national security
-	 * number (if one exists), and a check digit. Each country has a national
-	 * numbering agency that assigns ISIN numbers for securities in that
-	 * country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,29 +125,39 @@ public class SecurityIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "International Securities Identification Number (ISIN).  A numbering system designed by the United Nation's International Organisation for Standardisation (ISO). The ISIN is composed of a 2-character prefix representing the country of issue, followed by the national security number (if one exists), and a check digit. Each country has a national numbering agency that assigns ISIN numbers for securities in that country."
+	 * "International Securities Identification Number (ISIN). A numbering system designed by the United Nation's International Organisation for Standardisation (ISO). The ISIN is composed of a 2-character prefix representing the country of issue, followed by the national security number (if one exists), and a check digit. Each country has a national numbering agency that assigns ISIN numbers for securities in that country."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmISIN = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification7, ISINIdentifier> mmISIN = new MMMessageAttribute<SecurityIdentification7, ISINIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> SecurityIdentification7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
 			isDerived = false;
 			xmlTag = "ISIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ISIN";
-			definition = "International Securities Identification Number (ISIN).  A numbering system designed by the United Nation's International Organisation for Standardisation (ISO). The ISIN is composed of a 2-character prefix representing the country of issue, followed by the national security number (if one exists), and a check digit. Each country has a national numbering agency that assigns ISIN numbers for securities in that country.";
+			definition = "International Securities Identification Number (ISIN). A numbering system designed by the United Nation's International Organisation for Standardisation (ISO). The ISIN is composed of a 2-character prefix representing the country of issue, followed by the national security number (if one exists), and a check digit. Each country has a national numbering agency that assigns ISIN numbers for securities in that country.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISINIdentifier.mmObject();
 		}
+
+		@Override
+		public ISINIdentifier getValue(SecurityIdentification7 obj) {
+			return obj.getISIN();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification7 obj, ISINIdentifier value) {
+			obj.setISIN(value);
+		}
 	};
+	@XmlElement(name = "OthrId", required = true)
 	protected AlternateSecurityIdentification3 otherIdentification;
 	/**
-	 * Proprietary identification of a security assigned by an institution or
-	 * organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,10 +190,10 @@ public class SecurityIdentification7 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOtherIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification7, AlternateSecurityIdentification3> mmOtherIdentification = new MMMessageAttribute<SecurityIdentification7, AlternateSecurityIdentification3>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesIdentification.mmObject();
-			componentContext_lazy = () -> SecurityIdentification7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
 			isDerived = false;
 			xmlTag = "OthrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -193,13 +201,24 @@ public class SecurityIdentification7 {
 			definition = "Proprietary identification of a security assigned by an institution or organisation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AlternateSecurityIdentification3.mmObject();
+			complexType_lazy = () -> AlternateSecurityIdentification3.mmObject();
+		}
+
+		@Override
+		public AlternateSecurityIdentification3 getValue(SecurityIdentification7 obj) {
+			return obj.getOtherIdentification();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification7 obj, AlternateSecurityIdentification3 value) {
+			obj.setOtherIdentification(value);
 		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max140Text description;
 	/**
-	 * Textual description of a security instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +248,10 @@ public class SecurityIdentification7 {
 	 * definition} = "Textual description of a security instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification7, Optional<Max140Text>> mmDescription = new MMMessageAttribute<SecurityIdentification7, Optional<Max140Text>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesIdentification.mmObject();
-			componentContext_lazy = () -> SecurityIdentification7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -241,6 +260,16 @@ public class SecurityIdentification7 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
+		}
+
+		@Override
+		public Optional<Max140Text> getValue(SecurityIdentification7 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification7 obj, Optional<Max140Text> value) {
+			obj.setDescription(value.orElse(null));
 		}
 	};
 	/**
@@ -275,22 +304,23 @@ public class SecurityIdentification7 {
 	 * "Either ISIN or OtherIdentification must be present but not both."</li>
 	 * </ul>
 	 */
-	public static final MMXor mmISINOrOtherIdentificationRule = new MMXor() {
+	public static final MMXor ISINOrOtherIdentificationRule = new MMXor() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ISINOrOtherIdentificationRule";
 			definition = "Either ISIN or OtherIdentification must be present but not both.";
-			messageComponent_lazy = () -> SecurityIdentification7.mmObject();
-			impactedElements_lazy = () -> Arrays.asList(SecurityIdentification7.mmISIN, SecurityIdentification7.mmOtherIdentification);
+			messageComponent_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
+			impactedElements_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityIdentification7.mmISIN, com.tools20022.repository.msg.SecurityIdentification7.mmOtherIdentification);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecurityIdentification7.mmISIN, SecurityIdentification7.mmOtherIdentification, SecurityIdentification7.mmDescription);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityIdentification7.mmISIN, com.tools20022.repository.msg.SecurityIdentification7.mmOtherIdentification,
+						com.tools20022.repository.msg.SecurityIdentification7.mmDescription);
 				trace_lazy = () -> SecuritiesIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -301,36 +331,36 @@ public class SecurityIdentification7 {
 				})).get();
 				name = "SecurityIdentification7";
 				definition = "Choice between ISIN and an alternative format for the identification of a security. ISIN is the preferred format.";
-				xors_lazy = () -> Arrays.asList(SecurityIdentification7.mmISINOrOtherIdentificationRule);
+				xors_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityIdentification7.ISINOrOtherIdentificationRule);
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ISIN", required = true)
 	public ISINIdentifier getISIN() {
 		return iSIN;
 	}
 
-	public void setISIN(ISINIdentifier iSIN) {
-		this.iSIN = iSIN;
+	public SecurityIdentification7 setISIN(ISINIdentifier iSIN) {
+		this.iSIN = Objects.requireNonNull(iSIN);
+		return this;
 	}
 
-	@XmlElement(name = "OthrId", required = true)
 	public AlternateSecurityIdentification3 getOtherIdentification() {
 		return otherIdentification;
 	}
 
-	public void setOtherIdentification(com.tools20022.repository.msg.AlternateSecurityIdentification3 otherIdentification) {
-		this.otherIdentification = otherIdentification;
+	public SecurityIdentification7 setOtherIdentification(AlternateSecurityIdentification3 otherIdentification) {
+		this.otherIdentification = Objects.requireNonNull(otherIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max140Text getDescription() {
-		return description;
+	public Optional<Max140Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max140Text description) {
+	public SecurityIdentification7 setDescription(Max140Text description) {
 		this.description = description;
+		return this;
 	}
 }

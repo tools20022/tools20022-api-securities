@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.InvestmentAccount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintAccountElementRule#forInvestmentAccount60
+ * ConstraintAccountElementRule.forInvestmentAccount60}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InvestmentAccount60", propOrder = {"accountIdentification", "type"})
 public class InvestmentAccount60 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AcctId")
 	protected Max35Text accountIdentification;
 	/**
-	 * Unique and unambiguous identification for the account between the account
-	 * owner and the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,10 +120,10 @@ public class InvestmentAccount60 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentAccount60, Optional<Max35Text>> mmAccountIdentification = new MMMessageAttribute<InvestmentAccount60, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> InvestmentAccount60.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccount60.mmObject();
 			isDerived = false;
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,11 +133,22 @@ public class InvestmentAccount60 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(InvestmentAccount60 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount60 obj, Optional<Max35Text> value) {
+			obj.setAccountIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Tp")
 	protected InvestmentAccountType1Choice type;
 	/**
-	 * Account type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,10 +179,10 @@ public class InvestmentAccount60 {
 	 * definition} = "Account type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InvestmentAccount60, Optional<InvestmentAccountType1Choice>> mmType = new MMMessageAttribute<InvestmentAccount60, Optional<InvestmentAccountType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentAccount.mmInvestmentAccountType;
-			componentContext_lazy = () -> InvestmentAccount60.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InvestmentAccount60.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,14 +192,25 @@ public class InvestmentAccount60 {
 			minOccurs = 0;
 			complexType_lazy = () -> InvestmentAccountType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<InvestmentAccountType1Choice> getValue(InvestmentAccount60 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(InvestmentAccount60 obj, Optional<InvestmentAccountType1Choice> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InvestmentAccount60.mmAccountIdentification, InvestmentAccount60.mmType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InvestmentAccount60.mmAccountIdentification, com.tools20022.repository.msg.InvestmentAccount60.mmType);
 				trace_lazy = () -> InvestmentAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintAccountElementRule.forInvestmentAccount60);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccount60";
 				definition = "Account between an investor(s) and a fund manager or a fund. The account can contain holdings in any investment fund or investment fund class managed (or distributed) by the fund manager, within the same fund family.";
@@ -188,21 +219,21 @@ public class InvestmentAccount60 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AcctId")
-	public Max35Text getAccountIdentification() {
-		return accountIdentification;
+	public Optional<Max35Text> getAccountIdentification() {
+		return accountIdentification == null ? Optional.empty() : Optional.of(accountIdentification);
 	}
 
-	public void setAccountIdentification(Max35Text accountIdentification) {
+	public InvestmentAccount60 setAccountIdentification(Max35Text accountIdentification) {
 		this.accountIdentification = accountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public InvestmentAccountType1Choice getType() {
-		return type;
+	public Optional<InvestmentAccountType1Choice> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(InvestmentAccountType1Choice type) {
+	public InvestmentAccount60 setType(InvestmentAccountType1Choice type) {
 		this.type = type;
+		return this;
 	}
 }

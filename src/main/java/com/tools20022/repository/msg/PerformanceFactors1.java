@@ -23,8 +23,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.entity.PerformanceFactors;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DatePeriodDetails;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +61,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintAccumulationPeriodRule#forPerformanceFactors1
+ * ConstraintAccumulationPeriodRule.forPerformanceFactors1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Performance factors of the investment fund / fund class."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PerformanceFactors1", propOrder = {"corporateActionFactor", "cumulativeCorporateActionFactor", "accumulationPeriod", "normalPerformance"})
 public class PerformanceFactors1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CorpActnFctr")
 	protected DecimalNumber corporateActionFactor;
 	/**
-	 * Value of the NAV before all corporate events of the valuation date,
-	 * divided by the value of the NAV after the corporate event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +123,10 @@ public class PerformanceFactors1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCorporateActionFactor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PerformanceFactors1, Optional<DecimalNumber>> mmCorporateActionFactor = new MMMessageAttribute<PerformanceFactors1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PerformanceFactors.mmCorporateActionFactor;
-			componentContext_lazy = () -> PerformanceFactors1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PerformanceFactors1.mmObject();
 			isDerived = false;
 			xmlTag = "CorpActnFctr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,13 +136,22 @@ public class PerformanceFactors1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(PerformanceFactors1 obj) {
+			return obj.getCorporateActionFactor();
+		}
+
+		@Override
+		public void setValue(PerformanceFactors1 obj, Optional<DecimalNumber> value) {
+			obj.setCorporateActionFactor(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CmltvCorpActnFctr")
 	protected DecimalNumber cumulativeCorporateActionFactor;
 	/**
-	 * Value of the NAV before a corporate event, divided by the value of the
-	 * NAV after the corporate event, accumulated for a number of corporate
-	 * events over the defined period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,10 +184,10 @@ public class PerformanceFactors1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCumulativeCorporateActionFactor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PerformanceFactors1, Optional<DecimalNumber>> mmCumulativeCorporateActionFactor = new MMMessageAttribute<PerformanceFactors1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PerformanceFactors.mmCumulativeCorporateActionFactor;
-			componentContext_lazy = () -> PerformanceFactors1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PerformanceFactors1.mmObject();
 			isDerived = false;
 			xmlTag = "CmltvCorpActnFctr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,12 +197,22 @@ public class PerformanceFactors1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(PerformanceFactors1 obj) {
+			return obj.getCumulativeCorporateActionFactor();
+		}
+
+		@Override
+		public void setValue(PerformanceFactors1 obj, Optional<DecimalNumber> value) {
+			obj.setCumulativeCorporateActionFactor(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AcmltnPrd")
 	protected DatePeriodDetails accumulationPeriod;
 	/**
-	 * Period of time for the calculation of the cumulative corporate action
-	 * factor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,10 +245,10 @@ public class PerformanceFactors1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccumulationPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PerformanceFactors1, Optional<DatePeriodDetails>> mmAccumulationPeriod = new MMMessageAttribute<PerformanceFactors1, Optional<DatePeriodDetails>>() {
 		{
 			businessElementTrace_lazy = () -> PerformanceFactors.mmAccumulationPeriod;
-			componentContext_lazy = () -> PerformanceFactors1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PerformanceFactors1.mmObject();
 			isDerived = false;
 			xmlTag = "AcmltnPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,13 +256,24 @@ public class PerformanceFactors1 {
 			definition = "Period of time for the calculation of the cumulative corporate action factor.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.DatePeriodDetails.mmObject();
+			complexType_lazy = () -> DatePeriodDetails.mmObject();
+		}
+
+		@Override
+		public Optional<DatePeriodDetails> getValue(PerformanceFactors1 obj) {
+			return obj.getAccumulationPeriod();
+		}
+
+		@Override
+		public void setValue(PerformanceFactors1 obj, Optional<DatePeriodDetails> value) {
+			obj.setAccumulationPeriod(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NrmlPrfrmnc")
 	protected DecimalNumber normalPerformance;
 	/**
-	 * Normal performance value of the NAV.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,10 +304,10 @@ public class PerformanceFactors1 {
 	 * definition} = "Normal performance value of the NAV."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNormalPerformance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PerformanceFactors1, Optional<DecimalNumber>> mmNormalPerformance = new MMMessageAttribute<PerformanceFactors1, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> PerformanceFactors.mmNormalPerformance;
-			componentContext_lazy = () -> PerformanceFactors1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PerformanceFactors1.mmObject();
 			isDerived = false;
 			xmlTag = "NrmlPrfrmnc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -277,15 +317,26 @@ public class PerformanceFactors1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(PerformanceFactors1 obj) {
+			return obj.getNormalPerformance();
+		}
+
+		@Override
+		public void setValue(PerformanceFactors1 obj, Optional<DecimalNumber> value) {
+			obj.setNormalPerformance(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays
-						.asList(PerformanceFactors1.mmCorporateActionFactor, PerformanceFactors1.mmCumulativeCorporateActionFactor, PerformanceFactors1.mmAccumulationPeriod, PerformanceFactors1.mmNormalPerformance);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PerformanceFactors1.mmCorporateActionFactor, com.tools20022.repository.msg.PerformanceFactors1.mmCumulativeCorporateActionFactor,
+						com.tools20022.repository.msg.PerformanceFactors1.mmAccumulationPeriod, com.tools20022.repository.msg.PerformanceFactors1.mmNormalPerformance);
 				trace_lazy = () -> PerformanceFactors.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintAccumulationPeriodRule.forPerformanceFactors1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PerformanceFactors1";
 				definition = "Performance factors of the investment fund / fund class.";
@@ -294,39 +345,39 @@ public class PerformanceFactors1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CorpActnFctr")
-	public DecimalNumber getCorporateActionFactor() {
-		return corporateActionFactor;
+	public Optional<DecimalNumber> getCorporateActionFactor() {
+		return corporateActionFactor == null ? Optional.empty() : Optional.of(corporateActionFactor);
 	}
 
-	public void setCorporateActionFactor(DecimalNumber corporateActionFactor) {
+	public PerformanceFactors1 setCorporateActionFactor(DecimalNumber corporateActionFactor) {
 		this.corporateActionFactor = corporateActionFactor;
+		return this;
 	}
 
-	@XmlElement(name = "CmltvCorpActnFctr")
-	public DecimalNumber getCumulativeCorporateActionFactor() {
-		return cumulativeCorporateActionFactor;
+	public Optional<DecimalNumber> getCumulativeCorporateActionFactor() {
+		return cumulativeCorporateActionFactor == null ? Optional.empty() : Optional.of(cumulativeCorporateActionFactor);
 	}
 
-	public void setCumulativeCorporateActionFactor(DecimalNumber cumulativeCorporateActionFactor) {
+	public PerformanceFactors1 setCumulativeCorporateActionFactor(DecimalNumber cumulativeCorporateActionFactor) {
 		this.cumulativeCorporateActionFactor = cumulativeCorporateActionFactor;
+		return this;
 	}
 
-	@XmlElement(name = "AcmltnPrd")
-	public DatePeriodDetails getAccumulationPeriod() {
-		return accumulationPeriod;
+	public Optional<DatePeriodDetails> getAccumulationPeriod() {
+		return accumulationPeriod == null ? Optional.empty() : Optional.of(accumulationPeriod);
 	}
 
-	public void setAccumulationPeriod(com.tools20022.repository.msg.DatePeriodDetails accumulationPeriod) {
+	public PerformanceFactors1 setAccumulationPeriod(DatePeriodDetails accumulationPeriod) {
 		this.accumulationPeriod = accumulationPeriod;
+		return this;
 	}
 
-	@XmlElement(name = "NrmlPrfrmnc")
-	public DecimalNumber getNormalPerformance() {
-		return normalPerformance;
+	public Optional<DecimalNumber> getNormalPerformance() {
+		return normalPerformance == null ? Optional.empty() : Optional.of(normalPerformance);
 	}
 
-	public void setNormalPerformance(DecimalNumber normalPerformance) {
+	public PerformanceFactors1 setNormalPerformance(DecimalNumber normalPerformance) {
 		this.normalPerformance = normalPerformance;
+		return this;
 	}
 }

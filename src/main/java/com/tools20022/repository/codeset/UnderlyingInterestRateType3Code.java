@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingInterestRateType3Code#Bond
- * UnderlyingInterestRateType3Code.mmBond}</li>
+ * UnderlyingInterestRateType3Code.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingInterestRateType3Code#BondFuture
- * UnderlyingInterestRateType3Code.mmBondFuture}</li>
+ * UnderlyingInterestRateType3Code.BondFuture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingInterestRateType3Code#InterestRate
- * UnderlyingInterestRateType3Code.mmInterestRate}</li>
+ * UnderlyingInterestRateType3Code.InterestRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnderlyingInterestRateType3Code#InterestRateFutureFRA
- * UnderlyingInterestRateType3Code.mmInterestRateFutureFRA}</li>
+ * UnderlyingInterestRateType3Code.InterestRateFutureFRA}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -178,7 +178,7 @@ public class UnderlyingInterestRateType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingInterestRateType3Code";
 				definition = "Specifies the type of an underlying contract for interest rate derivatives.";

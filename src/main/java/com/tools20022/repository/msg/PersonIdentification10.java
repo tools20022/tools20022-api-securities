@@ -25,8 +25,10 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericPersonIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * PersonIdentification5}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PersonIdentification10", propOrder = {"firstName", "name", "birthDate", "other"})
 public class PersonIdentification10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrstNm", required = true)
 	protected Max140Text firstName;
 	/**
-	 * First name of a person (also known as given name).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +116,10 @@ public class PersonIdentification10 {
 	 * definition} = "First name of a person (also known as given name)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonIdentification10, Max140Text> mmFirstName = new MMMessageAttribute<PersonIdentification10, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmGivenName;
-			componentContext_lazy = () -> PersonIdentification10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification10.mmObject();
 			isDerived = false;
 			xmlTag = "FrstNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,12 +129,22 @@ public class PersonIdentification10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(PersonIdentification10 obj) {
+			return obj.getFirstName();
+		}
+
+		@Override
+		public void setValue(PersonIdentification10 obj, Max140Text value) {
+			obj.setFirstName(value);
+		}
 	};
+	@XmlElement(name = "Nm", required = true)
 	protected Max140Text name;
 	/**
-	 * Name by which a party is known and which is usually used to identify that
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,10 +176,10 @@ public class PersonIdentification10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonIdentification10, Max140Text> mmName = new MMMessageAttribute<PersonIdentification10, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> PersonIdentification10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification10.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,11 +189,22 @@ public class PersonIdentification10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(PersonIdentification10 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(PersonIdentification10 obj, Max140Text value) {
+			obj.setName(value);
+		}
 	};
+	@XmlElement(name = "BirthDt", required = true)
 	protected ISODate birthDate;
 	/**
-	 * Date on which a person is born.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,10 +234,10 @@ public class PersonIdentification10 {
 	 * definition} = "Date on which a person is born."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBirthDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonIdentification10, ISODate> mmBirthDate = new MMMessageAttribute<PersonIdentification10, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmBirthDate;
-			componentContext_lazy = () -> PersonIdentification10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification10.mmObject();
 			isDerived = false;
 			xmlTag = "BirthDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,12 +247,22 @@ public class PersonIdentification10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public ISODate getValue(PersonIdentification10 obj) {
+			return obj.getBirthDate();
+		}
+
+		@Override
+		public void setValue(PersonIdentification10 obj, ISODate value) {
+			obj.setBirthDate(value);
+		}
 	};
+	@XmlElement(name = "Othr", required = true)
 	protected GenericPersonIdentification1 other;
 	/**
-	 * Unique identification of a person, as assigned by an institution, using
-	 * an identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -265,10 +299,10 @@ public class PersonIdentification10 {
 	 * PersonIdentification5.mmOther}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PersonIdentification10, GenericPersonIdentification1> mmOther = new MMMessageAssociationEnd<PersonIdentification10, GenericPersonIdentification1>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PersonIdentification10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification10.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -278,16 +312,27 @@ public class PersonIdentification10 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericPersonIdentification1.mmObject();
+			type_lazy = () -> GenericPersonIdentification1.mmObject();
+		}
+
+		@Override
+		public GenericPersonIdentification1 getValue(PersonIdentification10 obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(PersonIdentification10 obj, GenericPersonIdentification1 value) {
+			obj.setOther(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PersonIdentification10.mmFirstName, PersonIdentification10.mmName, PersonIdentification10.mmBirthDate, PersonIdentification10.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PersonIdentification10.mmFirstName, com.tools20022.repository.msg.PersonIdentification10.mmName,
+						com.tools20022.repository.msg.PersonIdentification10.mmBirthDate, com.tools20022.repository.msg.PersonIdentification10.mmOther);
 				trace_lazy = () -> PersonIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentification10";
 				definition = "Unique and unambiguous way to identify a person.";
@@ -297,39 +342,39 @@ public class PersonIdentification10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrstNm", required = true)
 	public Max140Text getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(Max140Text firstName) {
-		this.firstName = firstName;
+	public PersonIdentification10 setFirstName(Max140Text firstName) {
+		this.firstName = Objects.requireNonNull(firstName);
+		return this;
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max140Text getName() {
 		return name;
 	}
 
-	public void setName(Max140Text name) {
-		this.name = name;
+	public PersonIdentification10 setName(Max140Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
-	@XmlElement(name = "BirthDt", required = true)
 	public ISODate getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(ISODate birthDate) {
-		this.birthDate = birthDate;
+	public PersonIdentification10 setBirthDate(ISODate birthDate) {
+		this.birthDate = Objects.requireNonNull(birthDate);
+		return this;
 	}
 
-	@XmlElement(name = "Othr", required = true)
 	public GenericPersonIdentification1 getOther() {
 		return other;
 	}
 
-	public void setOther(com.tools20022.repository.msg.GenericPersonIdentification1 other) {
-		this.other = other;
+	public PersonIdentification10 setOther(GenericPersonIdentification1 other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

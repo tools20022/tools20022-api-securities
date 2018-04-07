@@ -28,6 +28,7 @@ import com.tools20022.repository.msg.GenericIdentification1;
 import com.tools20022.repository.msg.NameAndAddress5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,28 +71,32 @@ import javax.xml.bind.annotation.XmlType;
  * "PartyIdentification90Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Choice of formats for the identification of a party."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.choice.PartyIdentification2Choice
- * PartyIdentification2Choice}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.choice.PartyIdentification96Choice
  * PartyIdentification96Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.PartyIdentification119Choice
+ * PartyIdentification119Choice}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.choice.PartyIdentification2Choice
+ * PartyIdentification2Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PartyIdentification90Choice", propOrder = {"anyBIC", "proprietaryIdentification", "nameAndAddress"})
 public class PartyIdentification90Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AnyBIC", required = true)
 	protected AnyBICIdentifier anyBIC;
 	/**
-	 * Identification of the party expressed as a BIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,30 +131,43 @@ public class PartyIdentification90Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.PartyIdentification96Choice#mmAnyBIC
 	 * PartyIdentification96Choice.mmAnyBIC}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.PartyIdentification119Choice#mmAnyBIC
+	 * PartyIdentification119Choice.mmAnyBIC}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAnyBIC = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification90Choice, AnyBICIdentifier> mmAnyBIC = new MMMessageAttribute<PartyIdentification90Choice, AnyBICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmAnyBIC;
-			componentContext_lazy = () -> PartyIdentification90Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification90Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AnyBIC";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AnyBIC";
 			definition = "Identification of the party expressed as a BIC.";
-			nextVersions_lazy = () -> Arrays.asList(PartyIdentification96Choice.mmAnyBIC);
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification96Choice.mmAnyBIC, PartyIdentification119Choice.mmAnyBIC);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
+
+		@Override
+		public AnyBICIdentifier getValue(PartyIdentification90Choice obj) {
+			return obj.getAnyBIC();
+		}
+
+		@Override
+		public void setValue(PartyIdentification90Choice obj, AnyBICIdentifier value) {
+			obj.setAnyBIC(value);
+		}
 	};
+	@XmlElement(name = "PrtryId", required = true)
 	protected GenericIdentification1 proprietaryIdentification;
 	/**
-	 * Unique and unambiguous identifier, as assigned to the party using a
-	 * proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,41 +198,55 @@ public class PartyIdentification90Choice {
 	 * definition} =
 	 * "Unique and unambiguous identifier, as assigned to the party using a proprietary identification scheme."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.choice.PartyIdentification2Choice#mmProprietaryIdentification
-	 * PartyIdentification2Choice.mmProprietaryIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.PartyIdentification96Choice#mmProprietaryIdentification
 	 * PartyIdentification96Choice.mmProprietaryIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.PartyIdentification119Choice#mmProprietaryIdentification
+	 * PartyIdentification119Choice.mmProprietaryIdentification}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.choice.PartyIdentification2Choice#mmProprietaryIdentification
+	 * PartyIdentification2Choice.mmProprietaryIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification90Choice, GenericIdentification1> mmProprietaryIdentification = new MMMessageAttribute<PartyIdentification90Choice, GenericIdentification1>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PartyIdentification90Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification90Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProprietaryIdentification";
 			definition = "Unique and unambiguous identifier, as assigned to the party using a proprietary identification scheme.";
-			nextVersions_lazy = () -> Arrays.asList(PartyIdentification96Choice.mmProprietaryIdentification);
+			nextVersions_lazy = () -> Arrays.asList(PartyIdentification96Choice.mmProprietaryIdentification, PartyIdentification119Choice.mmProprietaryIdentification);
 			previousVersion_lazy = () -> PartyIdentification2Choice.mmProprietaryIdentification;
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification1.mmObject();
 		}
+
+		@Override
+		public GenericIdentification1 getValue(PartyIdentification90Choice obj) {
+			return obj.getProprietaryIdentification();
+		}
+
+		@Override
+		public void setValue(PartyIdentification90Choice obj, GenericIdentification1 value) {
+			obj.setProprietaryIdentification(value);
+		}
 	};
+	@XmlElement(name = "NmAndAdr", required = true)
 	protected NameAndAddress5 nameAndAddress;
 	/**
-	 * Name and address of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -242,11 +274,6 @@ public class PartyIdentification90Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Name and address of the party."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.choice.PartyIdentification2Choice#mmNameAndAddress
-	 * PartyIdentification2Choice.mmNameAndAddress}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -255,12 +282,17 @@ public class PartyIdentification90Choice {
 	 * PartyIdentification96Choice.mmNameAndAddress}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.choice.PartyIdentification2Choice#mmNameAndAddress
+	 * PartyIdentification2Choice.mmNameAndAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameAndAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PartyIdentification90Choice, NameAndAddress5> mmNameAndAddress = new MMMessageAttribute<PartyIdentification90Choice, NameAndAddress5>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> PartyIdentification90Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PartyIdentification90Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -272,48 +304,59 @@ public class PartyIdentification90Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> NameAndAddress5.mmObject();
 		}
+
+		@Override
+		public NameAndAddress5 getValue(PartyIdentification90Choice obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(PartyIdentification90Choice obj, NameAndAddress5 value) {
+			obj.setNameAndAddress(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PartyIdentification90Choice.mmAnyBIC, PartyIdentification90Choice.mmProprietaryIdentification, PartyIdentification90Choice.mmNameAndAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PartyIdentification90Choice.mmAnyBIC, com.tools20022.repository.choice.PartyIdentification90Choice.mmProprietaryIdentification,
+						com.tools20022.repository.choice.PartyIdentification90Choice.mmNameAndAddress);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentification90Choice";
 				definition = "Choice of formats for the identification of a party.";
-				nextVersions_lazy = () -> Arrays.asList(PartyIdentification96Choice.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(PartyIdentification96Choice.mmObject(), PartyIdentification119Choice.mmObject());
 				previousVersion_lazy = () -> PartyIdentification2Choice.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AnyBIC", required = true)
 	public AnyBICIdentifier getAnyBIC() {
 		return anyBIC;
 	}
 
-	public void setAnyBIC(AnyBICIdentifier anyBIC) {
-		this.anyBIC = anyBIC;
+	public PartyIdentification90Choice setAnyBIC(AnyBICIdentifier anyBIC) {
+		this.anyBIC = Objects.requireNonNull(anyBIC);
+		return this;
 	}
 
-	@XmlElement(name = "PrtryId", required = true)
 	public GenericIdentification1 getProprietaryIdentification() {
 		return proprietaryIdentification;
 	}
 
-	public void setProprietaryIdentification(GenericIdentification1 proprietaryIdentification) {
-		this.proprietaryIdentification = proprietaryIdentification;
+	public PartyIdentification90Choice setProprietaryIdentification(GenericIdentification1 proprietaryIdentification) {
+		this.proprietaryIdentification = Objects.requireNonNull(proprietaryIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "NmAndAdr", required = true)
 	public NameAndAddress5 getNameAndAddress() {
 		return nameAndAddress;
 	}
 
-	public void setNameAndAddress(NameAndAddress5 nameAndAddress) {
-		this.nameAndAddress = nameAndAddress;
+	public PartyIdentification90Choice setNameAndAddress(NameAndAddress5 nameAndAddress) {
+		this.nameAndAddress = Objects.requireNonNull(nameAndAddress);
+		return this;
 	}
 }

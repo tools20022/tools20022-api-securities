@@ -27,9 +27,10 @@ import com.tools20022.repository.codeset.AssetClassSubProductTypeCode;
 import com.tools20022.repository.entity.Asset;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Basic good used in commerce that is interchangeable with other commodities of
@@ -207,8 +208,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -226,8 +227,8 @@ public class Commodity extends Asset {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AssetClassProductTypeCode baseProduct;
 	/**
-	 * Basic category of the commodity, such as agricultural or metal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -421,7 +422,7 @@ public class Commodity extends Asset {
 	 * "Basic category of the commodity, such as agricultural or metal.  "</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBaseProduct = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Commodity, AssetClassProductTypeCode> mmBaseProduct = new MMBusinessAttribute<Commodity, AssetClassProductTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(MetalCommodityPrecious1.mmBaseProduct, AgriculturalCommodityOliveOil1.mmBaseProduct, MetalCommodityNonPrecious1.mmBaseProduct, AgriculturalCommodityGrain1.mmBaseProduct,
 					EnergyCommodityOil1.mmBaseProduct, AssetClassCommodityEnergy1Choice.mmNaturalGas, EnergyCommodityNaturalGas1.mmBaseProduct, EnergyCommodityElectricity1.mmBaseProduct, AgriculturalCommoditySoft1.mmBaseProduct,
@@ -446,19 +447,20 @@ public class Commodity extends Asset {
 			simpleType_lazy = () -> AssetClassProductTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Commodity.class.getMethod("getBaseProduct", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AssetClassProductTypeCode getValue(Commodity obj) {
+			return obj.getBaseProduct();
+		}
+
+		@Override
+		public void setValue(Commodity obj, AssetClassProductTypeCode value) {
+			obj.setBaseProduct(value);
 		}
 	};
 	protected AssetClassDetailedSubProductTypeCode detailedSubProduct;
 	/**
-	 * Further detailed description of the basic resources, such as aluminium,
-	 * iron ore or wheat
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -491,7 +493,7 @@ public class Commodity extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDetailedSubProduct = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Commodity, Optional<AssetClassDetailedSubProductTypeCode>> mmDetailedSubProduct = new MMBusinessAttribute<Commodity, Optional<AssetClassDetailedSubProductTypeCode>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AgriculturalCommoditySoft1.mmAdditionalSubProduct);
 			isDerived = false;
@@ -504,19 +506,20 @@ public class Commodity extends Asset {
 			simpleType_lazy = () -> AssetClassDetailedSubProductTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Commodity.class.getMethod("getDetailedSubProduct", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AssetClassDetailedSubProductTypeCode> getValue(Commodity obj) {
+			return obj.getDetailedSubProduct();
+		}
+
+		@Override
+		public void setValue(Commodity obj, Optional<AssetClassDetailedSubProductTypeCode> value) {
+			obj.setDetailedSubProduct(value.orElse(null));
 		}
 	};
 	protected AssetClassSubProductTypeCode subProduct;
 	/**
-	 * Basic resources and agricultural products such as non-precious metal or
-	 * grain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -768,7 +771,7 @@ public class Commodity extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSubProduct = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Commodity, Optional<AssetClassSubProductTypeCode>> mmSubProduct = new MMBusinessAttribute<Commodity, Optional<AssetClassSubProductTypeCode>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AssetClassCommodityEnvironmental1Choice.mmEmissions, AssetClassCommodityEnvironmental1Choice.mmWeather, AssetClassCommodityEnvironmental1Choice.mmCarbonRelated,
 					MetalCommodityPrecious1.mmSubProduct, AgriculturalCommodityOliveOil1.mmSubProduct, AssetClassCommodityMetal1Choice.mmNonPrecious, AssetClassCommodityMetal1Choice.mmPrecious, MetalCommodityNonPrecious1.mmSubProduct,
@@ -797,19 +800,21 @@ public class Commodity extends Asset {
 			simpleType_lazy = () -> AssetClassSubProductTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Commodity.class.getMethod("getSubProduct", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AssetClassSubProductTypeCode> getValue(Commodity obj) {
+			return obj.getSubProduct();
+		}
+
+		@Override
+		public void setValue(Commodity obj, Optional<AssetClassSubProductTypeCode> value) {
+			obj.setSubProduct(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Commodity";
 				definition = "Basic good used in commerce that is interchangeable with other commodities of the same type. Commodities are most often used as inputs in the production of other goods or services. The quality of a given commodity may differ slightly, but it is essentially uniform across producers. When they are traded on an exchange, commodities must also meet specified minimum standards, also known as a basis grade.";
@@ -843,23 +848,26 @@ public class Commodity extends Asset {
 		return baseProduct;
 	}
 
-	public void setBaseProduct(AssetClassProductTypeCode baseProduct) {
-		this.baseProduct = baseProduct;
+	public Commodity setBaseProduct(AssetClassProductTypeCode baseProduct) {
+		this.baseProduct = Objects.requireNonNull(baseProduct);
+		return this;
 	}
 
-	public AssetClassDetailedSubProductTypeCode getDetailedSubProduct() {
-		return detailedSubProduct;
+	public Optional<AssetClassDetailedSubProductTypeCode> getDetailedSubProduct() {
+		return detailedSubProduct == null ? Optional.empty() : Optional.of(detailedSubProduct);
 	}
 
-	public void setDetailedSubProduct(AssetClassDetailedSubProductTypeCode detailedSubProduct) {
+	public Commodity setDetailedSubProduct(AssetClassDetailedSubProductTypeCode detailedSubProduct) {
 		this.detailedSubProduct = detailedSubProduct;
+		return this;
 	}
 
-	public AssetClassSubProductTypeCode getSubProduct() {
-		return subProduct;
+	public Optional<AssetClassSubProductTypeCode> getSubProduct() {
+		return subProduct == null ? Optional.empty() : Optional.of(subProduct);
 	}
 
-	public void setSubProduct(AssetClassSubProductTypeCode subProduct) {
+	public Commodity setSubProduct(AssetClassSubProductTypeCode subProduct) {
 		this.subProduct = subProduct;
+		return this;
 	}
 }

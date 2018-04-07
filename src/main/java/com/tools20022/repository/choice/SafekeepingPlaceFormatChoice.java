@@ -29,6 +29,7 @@ import com.tools20022.repository.msg.GenericIdentification5;
 import com.tools20022.repository.msg.SafekeepingPlaceAsCodeAndPartyIdentification;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of formats for the place of safekeeping."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SafekeepingPlaceFormatChoice", propOrder = {"identification", "identificationAsDSS", "identificationAsCountry"})
 public class SafekeepingPlaceFormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected SafekeepingPlaceAsCodeAndPartyIdentification identification;
 	/**
-	 * Place of safekeeping expressed as a code and BIC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,10 +113,10 @@ public class SafekeepingPlaceFormatChoice {
 	 * definition} = "Place of safekeeping expressed as a code and BIC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceFormatChoice, SafekeepingPlaceAsCodeAndPartyIdentification> mmIdentification = new MMMessageAttribute<SafekeepingPlaceFormatChoice, SafekeepingPlaceAsCodeAndPartyIdentification>() {
 		{
 			businessComponentTrace_lazy = () -> SafekeepingPlace.mmObject();
-			componentContext_lazy = () -> SafekeepingPlaceFormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SafekeepingPlaceFormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,11 +126,22 @@ public class SafekeepingPlaceFormatChoice {
 			minOccurs = 1;
 			complexType_lazy = () -> SafekeepingPlaceAsCodeAndPartyIdentification.mmObject();
 		}
+
+		@Override
+		public SafekeepingPlaceAsCodeAndPartyIdentification getValue(SafekeepingPlaceFormatChoice obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceFormatChoice obj, SafekeepingPlaceAsCodeAndPartyIdentification value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "IdAsDSS", required = true)
 	protected GenericIdentification5 identificationAsDSS;
 	/**
-	 * Place of safekeeping expressed with a propriety identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,10 +173,10 @@ public class SafekeepingPlaceFormatChoice {
 	 * "Place of safekeeping expressed with a propriety identification scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentificationAsDSS = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceFormatChoice, GenericIdentification5> mmIdentificationAsDSS = new MMMessageAttribute<SafekeepingPlaceFormatChoice, GenericIdentification5>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> SafekeepingPlaceFormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SafekeepingPlaceFormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "IdAsDSS";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,11 +186,22 @@ public class SafekeepingPlaceFormatChoice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification5.mmObject();
 		}
+
+		@Override
+		public GenericIdentification5 getValue(SafekeepingPlaceFormatChoice obj) {
+			return obj.getIdentificationAsDSS();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceFormatChoice obj, GenericIdentification5 value) {
+			obj.setIdentificationAsDSS(value);
+		}
 	};
+	@XmlElement(name = "IdAsCtry", required = true)
 	protected CountryCode identificationAsCountry;
 	/**
-	 * Place of safekeeping expressed with a country code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,10 +231,10 @@ public class SafekeepingPlaceFormatChoice {
 	 * definition} = "Place of safekeeping expressed with a country code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentificationAsCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceFormatChoice, CountryCode> mmIdentificationAsCountry = new MMMessageAttribute<SafekeepingPlaceFormatChoice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> SafekeepingPlaceFormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.SafekeepingPlaceFormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "IdAsCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,14 +244,25 @@ public class SafekeepingPlaceFormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(SafekeepingPlaceFormatChoice obj) {
+			return obj.getIdentificationAsCountry();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceFormatChoice obj, CountryCode value) {
+			obj.setIdentificationAsCountry(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SafekeepingPlaceFormatChoice.mmIdentification, SafekeepingPlaceFormatChoice.mmIdentificationAsDSS, SafekeepingPlaceFormatChoice.mmIdentificationAsCountry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.SafekeepingPlaceFormatChoice.mmIdentification, com.tools20022.repository.choice.SafekeepingPlaceFormatChoice.mmIdentificationAsDSS,
+						com.tools20022.repository.choice.SafekeepingPlaceFormatChoice.mmIdentificationAsCountry);
 				trace_lazy = () -> SafekeepingPlace.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlaceFormatChoice";
 				definition = "Choice of formats for the place of safekeeping.";
@@ -236,30 +271,30 @@ public class SafekeepingPlaceFormatChoice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public SafekeepingPlaceAsCodeAndPartyIdentification getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(SafekeepingPlaceAsCodeAndPartyIdentification identification) {
-		this.identification = identification;
+	public SafekeepingPlaceFormatChoice setIdentification(SafekeepingPlaceAsCodeAndPartyIdentification identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "IdAsDSS", required = true)
 	public GenericIdentification5 getIdentificationAsDSS() {
 		return identificationAsDSS;
 	}
 
-	public void setIdentificationAsDSS(GenericIdentification5 identificationAsDSS) {
-		this.identificationAsDSS = identificationAsDSS;
+	public SafekeepingPlaceFormatChoice setIdentificationAsDSS(GenericIdentification5 identificationAsDSS) {
+		this.identificationAsDSS = Objects.requireNonNull(identificationAsDSS);
+		return this;
 	}
 
-	@XmlElement(name = "IdAsCtry", required = true)
 	public CountryCode getIdentificationAsCountry() {
 		return identificationAsCountry;
 	}
 
-	public void setIdentificationAsCountry(CountryCode identificationAsCountry) {
-		this.identificationAsCountry = identificationAsCountry;
+	public SafekeepingPlaceFormatChoice setIdentificationAsCountry(CountryCode identificationAsCountry) {
+		this.identificationAsCountry = Objects.requireNonNull(identificationAsCountry);
+		return this;
 	}
 }

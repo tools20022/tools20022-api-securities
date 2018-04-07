@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidISINRule#forVolumeCapReport2
+ * ConstraintValidISINRule.forVolumeCapReport2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,19 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Double volume cap report."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "VolumeCapReport2", propOrder = {"technicalRecordIdentification", "identification", "currency", "totalTradingVolume", "totalReferencePriceTradingVolume", "totalNegotiatedTransactionsTradingVolume"})
 public class VolumeCapReport2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TechRcrdId")
 	protected Max35Text technicalRecordIdentification;
 	/**
-	 * Unique identifier of a record in a message used as part of error
-	 * management and feedback messages.<br>
-	 * <br>
-	 * Usage:<br>
-	 * This identification will be used in the status advice report sent back.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,9 +122,9 @@ public class VolumeCapReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTechnicalRecordIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VolumeCapReport2, Optional<Max35Text>> mmTechnicalRecordIdentification = new MMMessageAttribute<VolumeCapReport2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> VolumeCapReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VolumeCapReport2.mmObject();
 			isDerived = false;
 			xmlTag = "TechRcrdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,11 +134,22 @@ public class VolumeCapReport2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(VolumeCapReport2 obj) {
+			return obj.getTechnicalRecordIdentification();
+		}
+
+		@Override
+		public void setValue(VolumeCapReport2 obj, Optional<Max35Text> value) {
+			obj.setTechnicalRecordIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Id", required = true)
 	protected ISINOct2015Identifier identification;
 	/**
-	 * Identifies the financial instrument using an ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,10 +180,10 @@ public class VolumeCapReport2 {
 	 * definition} = "Identifies the financial instrument using an ISIN."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VolumeCapReport2, ISINOct2015Identifier> mmIdentification = new MMMessageAttribute<VolumeCapReport2, ISINOct2015Identifier>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> VolumeCapReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VolumeCapReport2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,11 +193,22 @@ public class VolumeCapReport2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public ISINOct2015Identifier getValue(VolumeCapReport2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(VolumeCapReport2 obj, ISINOct2015Identifier value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Ccy", required = true)
 	protected ActiveOrHistoricCurrencyCode currency;
 	/**
-	 * Currency of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,9 +234,9 @@ public class VolumeCapReport2 {
 	 * definition} = "Currency of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VolumeCapReport2, ActiveOrHistoricCurrencyCode> mmCurrency = new MMMessageAttribute<VolumeCapReport2, ActiveOrHistoricCurrencyCode>() {
 		{
-			componentContext_lazy = () -> VolumeCapReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VolumeCapReport2.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,11 +246,22 @@ public class VolumeCapReport2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public ActiveOrHistoricCurrencyCode getValue(VolumeCapReport2 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(VolumeCapReport2 obj, ActiveOrHistoricCurrencyCode value) {
+			obj.setCurrency(value);
+		}
 	};
+	@XmlElement(name = "TtlTradgVol", required = true)
 	protected ImpliedCurrencyAndAmount totalTradingVolume;
 	/**
-	 * Total traded volume of the instrument in this specific reporting period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,9 +289,9 @@ public class VolumeCapReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalTradingVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VolumeCapReport2, ImpliedCurrencyAndAmount> mmTotalTradingVolume = new MMMessageAttribute<VolumeCapReport2, ImpliedCurrencyAndAmount>() {
 		{
-			componentContext_lazy = () -> VolumeCapReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VolumeCapReport2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlTradgVol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -261,12 +301,22 @@ public class VolumeCapReport2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(VolumeCapReport2 obj) {
+			return obj.getTotalTradingVolume();
+		}
+
+		@Override
+		public void setValue(VolumeCapReport2 obj, ImpliedCurrencyAndAmount value) {
+			obj.setTotalTradingVolume(value);
+		}
 	};
+	@XmlElement(name = "TtlRefPricTradgVol", required = true)
 	protected ImpliedCurrencyAndAmount totalReferencePriceTradingVolume;
 	/**
-	 * Total volume of trading under reference price waiver as defined under the
-	 * local regulation
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,28 +340,38 @@ public class VolumeCapReport2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Total volume of trading under reference price waiver as defined under the local regulation"
+	 * "Total volume of trading under reference price waiver as defined under the local regulation."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalReferencePriceTradingVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VolumeCapReport2, ImpliedCurrencyAndAmount> mmTotalReferencePriceTradingVolume = new MMMessageAttribute<VolumeCapReport2, ImpliedCurrencyAndAmount>() {
 		{
-			componentContext_lazy = () -> VolumeCapReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VolumeCapReport2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlRefPricTradgVol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalReferencePriceTradingVolume";
-			definition = "Total volume of trading under reference price waiver as defined under the local regulation";
+			definition = "Total volume of trading under reference price waiver as defined under the local regulation.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(VolumeCapReport2 obj) {
+			return obj.getTotalReferencePriceTradingVolume();
+		}
+
+		@Override
+		public void setValue(VolumeCapReport2 obj, ImpliedCurrencyAndAmount value) {
+			obj.setTotalReferencePriceTradingVolume(value);
+		}
 	};
+	@XmlElement(name = "TtlNgtdTxsTradgVol", required = true)
 	protected ImpliedCurrencyAndAmount totalNegotiatedTransactionsTradingVolume;
 	/**
-	 * Total volume of trading under negotiated transactions waiver as defined
-	 * under the local regulation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -339,9 +399,9 @@ public class VolumeCapReport2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalNegotiatedTransactionsTradingVolume = new MMMessageAttribute() {
+	public static final MMMessageAttribute<VolumeCapReport2, ImpliedCurrencyAndAmount> mmTotalNegotiatedTransactionsTradingVolume = new MMMessageAttribute<VolumeCapReport2, ImpliedCurrencyAndAmount>() {
 		{
-			componentContext_lazy = () -> VolumeCapReport2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.VolumeCapReport2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNgtdTxsTradgVol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -351,14 +411,26 @@ public class VolumeCapReport2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(VolumeCapReport2 obj) {
+			return obj.getTotalNegotiatedTransactionsTradingVolume();
+		}
+
+		@Override
+		public void setValue(VolumeCapReport2 obj, ImpliedCurrencyAndAmount value) {
+			obj.setTotalNegotiatedTransactionsTradingVolume(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(VolumeCapReport2.mmTechnicalRecordIdentification, VolumeCapReport2.mmIdentification, VolumeCapReport2.mmCurrency, VolumeCapReport2.mmTotalTradingVolume,
-						VolumeCapReport2.mmTotalReferencePriceTradingVolume, VolumeCapReport2.mmTotalNegotiatedTransactionsTradingVolume);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.VolumeCapReport2.mmTechnicalRecordIdentification, com.tools20022.repository.msg.VolumeCapReport2.mmIdentification,
+						com.tools20022.repository.msg.VolumeCapReport2.mmCurrency, com.tools20022.repository.msg.VolumeCapReport2.mmTotalTradingVolume, com.tools20022.repository.msg.VolumeCapReport2.mmTotalReferencePriceTradingVolume,
+						com.tools20022.repository.msg.VolumeCapReport2.mmTotalNegotiatedTransactionsTradingVolume);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidISINRule.forVolumeCapReport2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VolumeCapReport2";
 				definition = "Double volume cap report.";
@@ -367,57 +439,57 @@ public class VolumeCapReport2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TechRcrdId")
-	public Max35Text getTechnicalRecordIdentification() {
-		return technicalRecordIdentification;
+	public Optional<Max35Text> getTechnicalRecordIdentification() {
+		return technicalRecordIdentification == null ? Optional.empty() : Optional.of(technicalRecordIdentification);
 	}
 
-	public void setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
+	public VolumeCapReport2 setTechnicalRecordIdentification(Max35Text technicalRecordIdentification) {
 		this.technicalRecordIdentification = technicalRecordIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public ISINOct2015Identifier getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(ISINOct2015Identifier identification) {
-		this.identification = identification;
+	public VolumeCapReport2 setIdentification(ISINOct2015Identifier identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Ccy", required = true)
 	public ActiveOrHistoricCurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(ActiveOrHistoricCurrencyCode currency) {
-		this.currency = currency;
+	public VolumeCapReport2 setCurrency(ActiveOrHistoricCurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
-	@XmlElement(name = "TtlTradgVol", required = true)
 	public ImpliedCurrencyAndAmount getTotalTradingVolume() {
 		return totalTradingVolume;
 	}
 
-	public void setTotalTradingVolume(ImpliedCurrencyAndAmount totalTradingVolume) {
-		this.totalTradingVolume = totalTradingVolume;
+	public VolumeCapReport2 setTotalTradingVolume(ImpliedCurrencyAndAmount totalTradingVolume) {
+		this.totalTradingVolume = Objects.requireNonNull(totalTradingVolume);
+		return this;
 	}
 
-	@XmlElement(name = "TtlRefPricTradgVol", required = true)
 	public ImpliedCurrencyAndAmount getTotalReferencePriceTradingVolume() {
 		return totalReferencePriceTradingVolume;
 	}
 
-	public void setTotalReferencePriceTradingVolume(ImpliedCurrencyAndAmount totalReferencePriceTradingVolume) {
-		this.totalReferencePriceTradingVolume = totalReferencePriceTradingVolume;
+	public VolumeCapReport2 setTotalReferencePriceTradingVolume(ImpliedCurrencyAndAmount totalReferencePriceTradingVolume) {
+		this.totalReferencePriceTradingVolume = Objects.requireNonNull(totalReferencePriceTradingVolume);
+		return this;
 	}
 
-	@XmlElement(name = "TtlNgtdTxsTradgVol", required = true)
 	public ImpliedCurrencyAndAmount getTotalNegotiatedTransactionsTradingVolume() {
 		return totalNegotiatedTransactionsTradingVolume;
 	}
 
-	public void setTotalNegotiatedTransactionsTradingVolume(ImpliedCurrencyAndAmount totalNegotiatedTransactionsTradingVolume) {
-		this.totalNegotiatedTransactionsTradingVolume = totalNegotiatedTransactionsTradingVolume;
+	public VolumeCapReport2 setTotalNegotiatedTransactionsTradingVolume(ImpliedCurrencyAndAmount totalNegotiatedTransactionsTradingVolume) {
+		this.totalNegotiatedTransactionsTradingVolume = Objects.requireNonNull(totalNegotiatedTransactionsTradingVolume);
+		return this;
 	}
 }

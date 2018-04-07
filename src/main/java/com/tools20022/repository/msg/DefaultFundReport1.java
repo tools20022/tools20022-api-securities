@@ -22,9 +22,14 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.secl.DefaultFundContributionReportV02;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection21;
+import com.tools20022.repository.msg.Collateral3;
+import com.tools20022.repository.msg.DefaultFund1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,16 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DefaultFundReport1", propOrder = {"defaultFundCalculation", "collateralDescription", "netExcessOrDeficit"})
 public class DefaultFundReport1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.DefaultFund1> defaultFundCalculation;
+	@XmlElement(name = "DfltFndClctn", required = true)
+	protected List<DefaultFund1> defaultFundCalculation;
 	/**
-	 * Provides details about the calculation of the clearing member
-	 * contribution to the default fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -112,9 +117,9 @@ public class DefaultFundReport1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDefaultFundCalculation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DefaultFundReport1, List<DefaultFund1>> mmDefaultFundCalculation = new MMMessageAssociationEnd<DefaultFundReport1, List<DefaultFund1>>() {
 		{
-			componentContext_lazy = () -> DefaultFundReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFundReport1.mmObject();
 			isDerived = false;
 			xmlTag = "DfltFndClctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,13 +127,24 @@ public class DefaultFundReport1 {
 			definition = "Provides details about the calculation of the clearing member contribution to the default fund.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DefaultFund1.mmObject();
+			type_lazy = () -> DefaultFund1.mmObject();
+		}
+
+		@Override
+		public List<DefaultFund1> getValue(DefaultFundReport1 obj) {
+			return obj.getDefaultFundCalculation();
+		}
+
+		@Override
+		public void setValue(DefaultFundReport1 obj, List<DefaultFund1> value) {
+			obj.setDefaultFundCalculation(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Collateral3> collateralDescription;
+	@XmlElement(name = "CollDesc", required = true)
+	protected List<Collateral3> collateralDescription;
 	/**
-	 * Provides details about the collateral held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -152,9 +168,9 @@ public class DefaultFundReport1 {
 	 * definition} = "Provides details about the collateral held."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCollateralDescription = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DefaultFundReport1, List<Collateral3>> mmCollateralDescription = new MMMessageAssociationEnd<DefaultFundReport1, List<Collateral3>>() {
 		{
-			componentContext_lazy = () -> DefaultFundReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFundReport1.mmObject();
 			isDerived = false;
 			xmlTag = "CollDesc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,15 +178,24 @@ public class DefaultFundReport1 {
 			definition = "Provides details about the collateral held.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Collateral3.mmObject();
+			type_lazy = () -> Collateral3.mmObject();
+		}
+
+		@Override
+		public List<Collateral3> getValue(DefaultFundReport1 obj) {
+			return obj.getCollateralDescription();
+		}
+
+		@Override
+		public void setValue(DefaultFundReport1 obj, List<Collateral3> value) {
+			obj.setCollateralDescription(value);
 		}
 	};
+	@XmlElement(name = "NetXcssOrDfcit", required = true)
 	protected AmountAndDirection21 netExcessOrDeficit;
 	/**
-	 * Excess amount that the central counterparty will restitute to the
-	 * clearing member or deficit to be provided by the member for the guarantee
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -196,9 +221,9 @@ public class DefaultFundReport1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNetExcessOrDeficit = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DefaultFundReport1, AmountAndDirection21> mmNetExcessOrDeficit = new MMMessageAssociationEnd<DefaultFundReport1, AmountAndDirection21>() {
 		{
-			componentContext_lazy = () -> DefaultFundReport1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DefaultFundReport1.mmObject();
 			isDerived = false;
 			xmlTag = "NetXcssOrDfcit";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,16 +232,27 @@ public class DefaultFundReport1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection21.mmObject();
+			type_lazy = () -> AmountAndDirection21.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection21 getValue(DefaultFundReport1 obj) {
+			return obj.getNetExcessOrDeficit();
+		}
+
+		@Override
+		public void setValue(DefaultFundReport1 obj, AmountAndDirection21 value) {
+			obj.setNetExcessOrDeficit(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DefaultFundReport1.mmDefaultFundCalculation, DefaultFundReport1.mmCollateralDescription, DefaultFundReport1.mmNetExcessOrDeficit);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DefaultFundReport1.mmDefaultFundCalculation, com.tools20022.repository.msg.DefaultFundReport1.mmCollateralDescription,
+						com.tools20022.repository.msg.DefaultFundReport1.mmNetExcessOrDeficit);
 				messageBuildingBlock_lazy = () -> Arrays.asList(DefaultFundContributionReportV02.mmReportDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DefaultFundReport1";
 				definition = "Provides details on the calculation of the default fund and the collateral that has been posted by the clearing member.";
@@ -225,30 +261,30 @@ public class DefaultFundReport1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DfltFndClctn", required = true)
 	public List<DefaultFund1> getDefaultFundCalculation() {
-		return defaultFundCalculation;
+		return defaultFundCalculation == null ? defaultFundCalculation = new ArrayList<>() : defaultFundCalculation;
 	}
 
-	public void setDefaultFundCalculation(List<com.tools20022.repository.msg.DefaultFund1> defaultFundCalculation) {
-		this.defaultFundCalculation = defaultFundCalculation;
+	public DefaultFundReport1 setDefaultFundCalculation(List<DefaultFund1> defaultFundCalculation) {
+		this.defaultFundCalculation = Objects.requireNonNull(defaultFundCalculation);
+		return this;
 	}
 
-	@XmlElement(name = "CollDesc", required = true)
 	public List<Collateral3> getCollateralDescription() {
-		return collateralDescription;
+		return collateralDescription == null ? collateralDescription = new ArrayList<>() : collateralDescription;
 	}
 
-	public void setCollateralDescription(List<com.tools20022.repository.msg.Collateral3> collateralDescription) {
-		this.collateralDescription = collateralDescription;
+	public DefaultFundReport1 setCollateralDescription(List<Collateral3> collateralDescription) {
+		this.collateralDescription = Objects.requireNonNull(collateralDescription);
+		return this;
 	}
 
-	@XmlElement(name = "NetXcssOrDfcit", required = true)
 	public AmountAndDirection21 getNetExcessOrDeficit() {
 		return netExcessOrDeficit;
 	}
 
-	public void setNetExcessOrDeficit(com.tools20022.repository.msg.AmountAndDirection21 netExcessOrDeficit) {
-		this.netExcessOrDeficit = netExcessOrDeficit;
+	public DefaultFundReport1 setNetExcessOrDeficit(AmountAndDirection21 netExcessOrDeficit) {
+		this.netExcessOrDeficit = Objects.requireNonNull(netExcessOrDeficit);
+		return this;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.PersonName;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information related to the identification of a person."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PersonalInformation1", propOrder = {"nameOfFather", "maidenNameOfMother", "nameOfPartner"})
 public class PersonalInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NmOfFthr")
 	protected Max35Text nameOfFather;
 	/**
-	 * Name of the father of the individual person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +108,10 @@ public class PersonalInformation1 {
 	 * definition} = "Name of the father of the individual person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameOfFather = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonalInformation1, Optional<Max35Text>> mmNameOfFather = new MMMessageAttribute<PersonalInformation1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmBirthName;
-			componentContext_lazy = () -> PersonalInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonalInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "NmOfFthr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,22 @@ public class PersonalInformation1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(PersonalInformation1 obj) {
+			return obj.getNameOfFather();
+		}
+
+		@Override
+		public void setValue(PersonalInformation1 obj, Optional<Max35Text> value) {
+			obj.setNameOfFather(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MdnNmOfMthr")
 	protected Max35Text maidenNameOfMother;
 	/**
-	 * Maiden (unmarried) name of the mother of the individual person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +167,10 @@ public class PersonalInformation1 {
 	 * "Maiden (unmarried) name of the mother of the individual person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaidenNameOfMother = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonalInformation1, Optional<Max35Text>> mmMaidenNameOfMother = new MMMessageAttribute<PersonalInformation1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PartyName.mmName;
-			componentContext_lazy = () -> PersonalInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonalInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "MdnNmOfMthr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,11 +180,22 @@ public class PersonalInformation1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(PersonalInformation1 obj) {
+			return obj.getMaidenNameOfMother();
+		}
+
+		@Override
+		public void setValue(PersonalInformation1 obj, Optional<Max35Text> value) {
+			obj.setMaidenNameOfMother(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NmOfPrtnr")
 	protected Max35Text nameOfPartner;
 	/**
-	 * Name of the partner of the individual person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,10 +225,10 @@ public class PersonalInformation1 {
 	 * definition} = "Name of the partner of the individual person."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNameOfPartner = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PersonalInformation1, Optional<Max35Text>> mmNameOfPartner = new MMMessageAttribute<PersonalInformation1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmGivenName;
-			componentContext_lazy = () -> PersonalInformation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonalInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "NmOfPrtnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -214,14 +238,25 @@ public class PersonalInformation1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(PersonalInformation1 obj) {
+			return obj.getNameOfPartner();
+		}
+
+		@Override
+		public void setValue(PersonalInformation1 obj, Optional<Max35Text> value) {
+			obj.setNameOfPartner(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PersonalInformation1.mmNameOfFather, PersonalInformation1.mmMaidenNameOfMother, PersonalInformation1.mmNameOfPartner);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PersonalInformation1.mmNameOfFather, com.tools20022.repository.msg.PersonalInformation1.mmMaidenNameOfMother,
+						com.tools20022.repository.msg.PersonalInformation1.mmNameOfPartner);
 				trace_lazy = () -> PersonName.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonalInformation1";
 				definition = "Information related to the identification of a person.";
@@ -230,30 +265,30 @@ public class PersonalInformation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NmOfFthr")
-	public Max35Text getNameOfFather() {
-		return nameOfFather;
+	public Optional<Max35Text> getNameOfFather() {
+		return nameOfFather == null ? Optional.empty() : Optional.of(nameOfFather);
 	}
 
-	public void setNameOfFather(Max35Text nameOfFather) {
+	public PersonalInformation1 setNameOfFather(Max35Text nameOfFather) {
 		this.nameOfFather = nameOfFather;
+		return this;
 	}
 
-	@XmlElement(name = "MdnNmOfMthr")
-	public Max35Text getMaidenNameOfMother() {
-		return maidenNameOfMother;
+	public Optional<Max35Text> getMaidenNameOfMother() {
+		return maidenNameOfMother == null ? Optional.empty() : Optional.of(maidenNameOfMother);
 	}
 
-	public void setMaidenNameOfMother(Max35Text maidenNameOfMother) {
+	public PersonalInformation1 setMaidenNameOfMother(Max35Text maidenNameOfMother) {
 		this.maidenNameOfMother = maidenNameOfMother;
+		return this;
 	}
 
-	@XmlElement(name = "NmOfPrtnr")
-	public Max35Text getNameOfPartner() {
-		return nameOfPartner;
+	public Optional<Max35Text> getNameOfPartner() {
+		return nameOfPartner == null ? Optional.empty() : Optional.of(nameOfPartner);
 	}
 
-	public void setNameOfPartner(Max35Text nameOfPartner) {
+	public PersonalInformation1 setNameOfPartner(Max35Text nameOfPartner) {
 		this.nameOfPartner = nameOfPartner;
+		return this;
 	}
 }

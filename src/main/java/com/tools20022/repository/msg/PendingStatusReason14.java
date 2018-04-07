@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,10 +66,6 @@ import javax.xml.bind.annotation.XmlType;
  * "PendingStatusReason14"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Reason for a pending status."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.DisabledStatusReason1
- * DisabledStatusReason1}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -75,17 +73,22 @@ import javax.xml.bind.annotation.XmlType;
  * PendingOpeningStatusReason1}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.DisabledStatusReason1
+ * DisabledStatusReason1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PendingStatusReason14", propOrder = {"code", "additionalInformation"})
 public class PendingStatusReason14 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected PendingStatusReason2Choice code;
 	/**
-	 * Reason for the pending account status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,11 +116,6 @@ public class PendingStatusReason14 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Reason for the pending account status."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.DisabledStatusReason1#mmCode
-	 * DisabledStatusReason1.mmCode}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -126,12 +124,17 @@ public class PendingStatusReason14 {
 	 * PendingOpeningStatusReason1.mmCode}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.DisabledStatusReason1#mmCode
+	 * DisabledStatusReason1.mmCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCode = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PendingStatusReason14, PendingStatusReason2Choice> mmCode = new MMMessageAssociationEnd<PendingStatusReason14, PendingStatusReason2Choice>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmPendingReason;
-			componentContext_lazy = () -> PendingStatusReason14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PendingStatusReason14.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,11 +147,22 @@ public class PendingStatusReason14 {
 			isComposite = true;
 			type_lazy = () -> PendingStatusReason2Choice.mmObject();
 		}
+
+		@Override
+		public PendingStatusReason2Choice getValue(PendingStatusReason14 obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(PendingStatusReason14 obj, PendingStatusReason2Choice value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max350Text additionalInformation;
 	/**
-	 * Additional information about the reason for the pending account status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,11 +187,6 @@ public class PendingStatusReason14 {
 	 * definition} =
 	 * "Additional information about the reason for the pending account status."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.DisabledStatusReason1#mmAdditionalInformation
-	 * DisabledStatusReason1.mmAdditionalInformation}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -186,11 +195,16 @@ public class PendingStatusReason14 {
 	 * PendingOpeningStatusReason1.mmAdditionalInformation}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.DisabledStatusReason1#mmAdditionalInformation
+	 * DisabledStatusReason1.mmAdditionalInformation}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PendingStatusReason14, Optional<Max350Text>> mmAdditionalInformation = new MMMessageAttribute<PendingStatusReason14, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> PendingStatusReason14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PendingStatusReason14.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,14 +216,24 @@ public class PendingStatusReason14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(PendingStatusReason14 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(PendingStatusReason14 obj, Optional<Max350Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PendingStatusReason14.mmCode, PendingStatusReason14.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PendingStatusReason14.mmCode, com.tools20022.repository.msg.PendingStatusReason14.mmAdditionalInformation);
 				trace_lazy = () -> StatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingStatusReason14";
 				definition = "Reason for a pending status.";
@@ -220,21 +244,21 @@ public class PendingStatusReason14 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public PendingStatusReason2Choice getCode() {
 		return code;
 	}
 
-	public void setCode(PendingStatusReason2Choice code) {
-		this.code = code;
+	public PendingStatusReason14 setCode(PendingStatusReason2Choice code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max350Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max350Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max350Text additionalInformation) {
+	public PendingStatusReason14 setAdditionalInformation(Max350Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

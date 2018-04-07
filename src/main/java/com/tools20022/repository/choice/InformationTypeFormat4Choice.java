@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InformationTypeFormat4Choice", propOrder = {"code", "proprietary"})
 public class InformationTypeFormat4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CorporateActionInformationType1Code code;
 	/**
-	 * Standard code to specify the information type required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,9 +102,9 @@ public class InformationTypeFormat4Choice {
 	 * definition} = "Standard code to specify the information type required."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InformationTypeFormat4Choice, CorporateActionInformationType1Code> mmCode = new MMMessageAttribute<InformationTypeFormat4Choice, CorporateActionInformationType1Code>() {
 		{
-			componentContext_lazy = () -> InformationTypeFormat4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InformationTypeFormat4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,11 +114,22 @@ public class InformationTypeFormat4Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionInformationType1Code.mmObject();
 		}
+
+		@Override
+		public CorporateActionInformationType1Code getValue(InformationTypeFormat4Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InformationTypeFormat4Choice obj, CorporateActionInformationType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Proprietary identification of the information type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -141,9 +154,9 @@ public class InformationTypeFormat4Choice {
 	 * definition} = "Proprietary identification of the information type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<InformationTypeFormat4Choice, GenericIdentification30> mmProprietary = new MMMessageAssociationEnd<InformationTypeFormat4Choice, GenericIdentification30>() {
 		{
-			componentContext_lazy = () -> InformationTypeFormat4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InformationTypeFormat4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,13 +167,23 @@ public class InformationTypeFormat4Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(InformationTypeFormat4Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(InformationTypeFormat4Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InformationTypeFormat4Choice.mmCode, InformationTypeFormat4Choice.mmProprietary);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InformationTypeFormat4Choice.mmCode, com.tools20022.repository.choice.InformationTypeFormat4Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationTypeFormat4Choice";
 				definition = "Choice between a standard code or proprietary code to specify the information type format required.";
@@ -169,21 +192,21 @@ public class InformationTypeFormat4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CorporateActionInformationType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(CorporateActionInformationType1Code code) {
-		this.code = code;
+	public InformationTypeFormat4Choice setCode(CorporateActionInformationType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public InformationTypeFormat4Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

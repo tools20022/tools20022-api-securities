@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#FundManagementCompany
- * InvestmentFundRole2Code.mmFundManagementCompany}</li>
+ * InvestmentFundRole2Code.FundManagementCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#Registrar
- * InvestmentFundRole2Code.mmRegistrar}</li>
+ * InvestmentFundRole2Code.Registrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#TransferAgent
- * InvestmentFundRole2Code.mmTransferAgent}</li>
+ * InvestmentFundRole2Code.TransferAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#Intermediary
- * InvestmentFundRole2Code.mmIntermediary}</li>
+ * InvestmentFundRole2Code.Intermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#Distributor
- * InvestmentFundRole2Code.mmDistributor}</li>
+ * InvestmentFundRole2Code.Distributor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#Concentrator
- * InvestmentFundRole2Code.mmConcentrator}</li>
+ * InvestmentFundRole2Code.Concentrator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#UnderlyingClient1
- * InvestmentFundRole2Code.mmUnderlyingClient1}</li>
+ * InvestmentFundRole2Code.UnderlyingClient1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#UnderlyingClient2
- * InvestmentFundRole2Code.mmUnderlyingClient2}</li>
+ * InvestmentFundRole2Code.UnderlyingClient2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundRole2Code#TransmittingAgent
- * InvestmentFundRole2Code.mmTransmittingAgent}</li>
+ * InvestmentFundRole2Code.TransmittingAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -70,8 +70,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -317,7 +317,7 @@ public class InvestmentFundRole2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FMCO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundRole2Code";

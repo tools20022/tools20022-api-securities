@@ -23,8 +23,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.DisputeManagement;
 import com.tools20022.repository.entity.MarginCall;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.SegregatedIndependentAmountDispute1;
+import com.tools20022.repository.msg.VariationMarginDispute1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DisputeNotification1", propOrder = {"variationMarginDispute", "segregatedIndependentAmountDispute"})
 public class DisputeNotification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "VartnMrgnDspt", required = true)
 	protected VariationMarginDispute1 variationMarginDispute;
 	/**
-	 * Provides the dispute notification details for the variation margin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,10 +112,10 @@ public class DisputeNotification1 {
 	 * "Provides the dispute notification details for the variation margin."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVariationMarginDispute = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DisputeNotification1, VariationMarginDispute1> mmVariationMarginDispute = new MMMessageAssociationEnd<DisputeNotification1, VariationMarginDispute1>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmVariationMargin;
-			componentContext_lazy = () -> DisputeNotification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DisputeNotification1.mmObject();
 			isDerived = false;
 			xmlTag = "VartnMrgnDspt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,14 +124,24 @@ public class DisputeNotification1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.VariationMarginDispute1.mmObject();
+			type_lazy = () -> VariationMarginDispute1.mmObject();
+		}
+
+		@Override
+		public VariationMarginDispute1 getValue(DisputeNotification1 obj) {
+			return obj.getVariationMarginDispute();
+		}
+
+		@Override
+		public void setValue(DisputeNotification1 obj, VariationMarginDispute1 value) {
+			obj.setVariationMarginDispute(value);
 		}
 	};
+	@XmlElement(name = "SgrtdIndpdntAmtDspt")
 	protected SegregatedIndependentAmountDispute1 segregatedIndependentAmountDispute;
 	/**
-	 * Provides the dispute notification details for the segregated independent
-	 * amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,10 +173,10 @@ public class DisputeNotification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSegregatedIndependentAmountDispute = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DisputeNotification1, Optional<SegregatedIndependentAmountDispute1>> mmSegregatedIndependentAmountDispute = new MMMessageAssociationEnd<DisputeNotification1, Optional<SegregatedIndependentAmountDispute1>>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmSegregatedIndependentAmount;
-			componentContext_lazy = () -> DisputeNotification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DisputeNotification1.mmObject();
 			isDerived = false;
 			xmlTag = "SgrtdIndpdntAmtDspt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,16 +185,26 @@ public class DisputeNotification1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SegregatedIndependentAmountDispute1.mmObject();
+			type_lazy = () -> SegregatedIndependentAmountDispute1.mmObject();
+		}
+
+		@Override
+		public Optional<SegregatedIndependentAmountDispute1> getValue(DisputeNotification1 obj) {
+			return obj.getSegregatedIndependentAmountDispute();
+		}
+
+		@Override
+		public void setValue(DisputeNotification1 obj, Optional<SegregatedIndependentAmountDispute1> value) {
+			obj.setSegregatedIndependentAmountDispute(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DisputeNotification1.mmVariationMarginDispute, DisputeNotification1.mmSegregatedIndependentAmountDispute);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DisputeNotification1.mmVariationMarginDispute, com.tools20022.repository.msg.DisputeNotification1.mmSegregatedIndependentAmountDispute);
 				trace_lazy = () -> DisputeManagement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisputeNotification1";
 				definition = "Provides the dispute notification details for the variation margin and optionaly the segregated independent amount.";
@@ -188,21 +213,21 @@ public class DisputeNotification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "VartnMrgnDspt", required = true)
 	public VariationMarginDispute1 getVariationMarginDispute() {
 		return variationMarginDispute;
 	}
 
-	public void setVariationMarginDispute(com.tools20022.repository.msg.VariationMarginDispute1 variationMarginDispute) {
-		this.variationMarginDispute = variationMarginDispute;
+	public DisputeNotification1 setVariationMarginDispute(VariationMarginDispute1 variationMarginDispute) {
+		this.variationMarginDispute = Objects.requireNonNull(variationMarginDispute);
+		return this;
 	}
 
-	@XmlElement(name = "SgrtdIndpdntAmtDspt")
-	public SegregatedIndependentAmountDispute1 getSegregatedIndependentAmountDispute() {
-		return segregatedIndependentAmountDispute;
+	public Optional<SegregatedIndependentAmountDispute1> getSegregatedIndependentAmountDispute() {
+		return segregatedIndependentAmountDispute == null ? Optional.empty() : Optional.of(segregatedIndependentAmountDispute);
 	}
 
-	public void setSegregatedIndependentAmountDispute(com.tools20022.repository.msg.SegregatedIndependentAmountDispute1 segregatedIndependentAmountDispute) {
+	public DisputeNotification1 setSegregatedIndependentAmountDispute(SegregatedIndependentAmountDispute1 segregatedIndependentAmountDispute) {
 		this.segregatedIndependentAmountDispute = segregatedIndependentAmountDispute;
+		return this;
 	}
 }

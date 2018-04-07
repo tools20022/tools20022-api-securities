@@ -37,46 +37,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Alimony
- * SourceOfCash1Code.mmAlimony}</li>
+ * SourceOfCash1Code.Alimony}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#CashProceeds
- * SourceOfCash1Code.mmCashProceeds}</li>
+ * SourceOfCash1Code.CashProceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Compensation
- * SourceOfCash1Code.mmCompensation}</li>
+ * SourceOfCash1Code.Compensation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#EmployeeIncome
- * SourceOfCash1Code.mmEmployeeIncome}</li>
+ * SourceOfCash1Code.EmployeeIncome}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Gift
- * SourceOfCash1Code.mmGift}</li>
+ * SourceOfCash1Code.Gift}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Inheritance
- * SourceOfCash1Code.mmInheritance}</li>
+ * SourceOfCash1Code.Inheritance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#InsurancePremiumLiquidation
- * SourceOfCash1Code.mmInsurancePremiumLiquidation}</li>
+ * SourceOfCash1Code.InsurancePremiumLiquidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#RealEstateSale
- * SourceOfCash1Code.mmRealEstateSale}</li>
+ * SourceOfCash1Code.RealEstateSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Redemption
- * SourceOfCash1Code.mmRedemption}</li>
+ * SourceOfCash1Code.Redemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#RetirementPolicy
- * SourceOfCash1Code.mmRetirementPolicy}</li>
+ * SourceOfCash1Code.RetirementPolicy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#SaleAquisitionCorporation
- * SourceOfCash1Code.mmSaleAquisitionCorporation}</li>
+ * SourceOfCash1Code.SaleAquisitionCorporation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#SaleOfGoods
- * SourceOfCash1Code.mmSaleOfGoods}</li>
+ * SourceOfCash1Code.SaleOfGoods}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Savings
- * SourceOfCash1Code.mmSavings}</li>
+ * SourceOfCash1Code.Savings}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#SelfEmploymentIncome
- * SourceOfCash1Code.mmSelfEmploymentIncome}</li>
+ * SourceOfCash1Code.SelfEmploymentIncome}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SourceOfCash1Code#Winnings
- * SourceOfCash1Code.mmWinnings}</li>
+ * SourceOfCash1Code.Winnings}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -85,8 +85,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -469,7 +469,7 @@ public class SourceOfCash1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SourceOfCash1Code";
 				definition = "Specifies the origin of cash.";

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -26,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,16 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the rejection reason."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ConsentOrRejectionReason4Choice", propOrder = {"code", "proprietary"})
 public class ConsentOrRejectionReason4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CounterpartyResponseStatusReason1Code code;
 	/**
-	 * Specifies the reason why the counterparty response has a rejection
-	 * status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,6 +99,9 @@ public class ConsentOrRejectionReason4Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Cd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT or REPR//4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -109,12 +114,13 @@ public class ConsentOrRejectionReason4Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConsentOrRejectionReason4Choice, CounterpartyResponseStatusReason1Code> mmCode = new MMMessageAttribute<ConsentOrRejectionReason4Choice, CounterpartyResponseStatusReason1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmCounterpartyStatusReason;
-			componentContext_lazy = () -> ConsentOrRejectionReason4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ConsentOrRejectionReason4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT or REPR//4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Specifies the reason why the counterparty response has a rejection status.";
@@ -122,12 +128,22 @@ public class ConsentOrRejectionReason4Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CounterpartyResponseStatusReason1Code.mmObject();
 		}
+
+		@Override
+		public CounterpartyResponseStatusReason1Code getValue(ConsentOrRejectionReason4Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ConsentOrRejectionReason4Choice obj, CounterpartyResponseStatusReason1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification30 proprietary;
 	/**
-	 * Specifies the reason why the counterparty response has a rejection
-	 * status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,6 +164,9 @@ public class ConsentOrRejectionReason4Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Prtry"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :24B::REJT or REPR/4!c[4c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -156,31 +175,42 @@ public class ConsentOrRejectionReason4Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies the reason why the counterparty response has a  rejection status."
+	 * "Specifies the reason why the counterparty response has a rejection status."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ConsentOrRejectionReason4Choice, GenericIdentification30> mmProprietary = new MMMessageAttribute<ConsentOrRejectionReason4Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeStatusReason.mmCounterpartyStatusReason;
-			componentContext_lazy = () -> ConsentOrRejectionReason4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ConsentOrRejectionReason4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":24B::REJT or REPR/4!c[4c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Specifies the reason why the counterparty response has a  rejection status.";
+			definition = "Specifies the reason why the counterparty response has a rejection status.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
+		}
+
+		@Override
+		public GenericIdentification30 getValue(ConsentOrRejectionReason4Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ConsentOrRejectionReason4Choice obj, GenericIdentification30 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ConsentOrRejectionReason4Choice.mmCode, ConsentOrRejectionReason4Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ConsentOrRejectionReason4Choice.mmCode, com.tools20022.repository.choice.ConsentOrRejectionReason4Choice.mmProprietary);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ConsentOrRejectionReason4Choice";
 				definition = "Choice of format for the rejection reason.";
@@ -189,21 +219,21 @@ public class ConsentOrRejectionReason4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CounterpartyResponseStatusReason1Code getCode() {
 		return code;
 	}
 
-	public void setCode(CounterpartyResponseStatusReason1Code code) {
-		this.code = code;
+	public ConsentOrRejectionReason4Choice setCode(CounterpartyResponseStatusReason1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification30 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification30 proprietary) {
-		this.proprietary = proprietary;
+	public ConsentOrRejectionReason4Choice setProprietary(GenericIdentification30 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

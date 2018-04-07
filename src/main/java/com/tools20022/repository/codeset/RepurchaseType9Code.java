@@ -38,26 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#Pairoff
- * RepurchaseType9Code.mmPairoff}</li>
+ * RepurchaseType9Code.Pairoff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#PrincipalExposureAdjustment
- * RepurchaseType9Code.mmPrincipalExposureAdjustment}</li>
+ * RepurchaseType9Code.PrincipalExposureAdjustment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#RepoRate
- * RepurchaseType9Code.mmRepoRate}</li>
+ * RepurchaseType9Code.RepoRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#RepurchaseCall
- * RepurchaseType9Code.mmRepurchaseCall}</li>
+ * RepurchaseType9Code.RepurchaseCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#RepoContractRollover
- * RepurchaseType9Code.mmRepoContractRollover}</li>
+ * RepurchaseType9Code.RepoContractRollover}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#Swap
- * RepurchaseType9Code.mmSwap}</li>
+ * RepurchaseType9Code.Swap}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#TopUp
- * RepurchaseType9Code.mmTopUp}</li>
+ * RepurchaseType9Code.TopUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RepurchaseType9Code#Withdrawal
- * RepurchaseType9Code.mmWithdrawal}</li>
+ * RepurchaseType9Code.Withdrawal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -282,7 +282,7 @@ public class RepurchaseType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepurchaseType9Code";
 				definition = "Specifies the type of repurchase transaction.";

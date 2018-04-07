@@ -39,22 +39,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementStatus2Code#AwaitingAuthorisation
- * SettlementStatus2Code.mmAwaitingAuthorisation}</li>
+ * SettlementStatus2Code.AwaitingAuthorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementStatus2Code#AcceptedForSettlement
- * SettlementStatus2Code.mmAcceptedForSettlement}</li>
+ * SettlementStatus2Code.AcceptedForSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementStatus2Code#SettlementTransactionCreated
- * SettlementStatus2Code.mmSettlementTransactionCreated}</li>
+ * SettlementStatus2Code.SettlementTransactionCreated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementStatus2Code#Settled
- * SettlementStatus2Code.mmSettled}</li>
+ * SettlementStatus2Code.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementStatus2Code#AwaitingCreationConfirmation
- * SettlementStatus2Code.mmAwaitingCreationConfirmation}</li>
+ * SettlementStatus2Code.AwaitingCreationConfirmation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementStatus2Code#AwaitingRescindConfirmation
- * SettlementStatus2Code.mmAwaitingRescindConfirmation}</li>
+ * SettlementStatus2Code.AwaitingRescindConfirmation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -239,7 +239,7 @@ public class SettlementStatus2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AAUT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementStatus2Code";

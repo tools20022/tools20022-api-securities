@@ -26,8 +26,12 @@ import com.tools20022.repository.codeset.Status4Code;
 import com.tools20022.repository.entity.CollateralSubstitution;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CollateralSubstitutionResponse1;
+import com.tools20022.repository.msg.CollateralSubstitutionResponse2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +72,21 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCollateralSubstitutionAcceptancePresenceRule#forSubstitutionResponse1
+ * ConstraintCollateralSubstitutionAcceptancePresenceRule.
+ * forSubstitutionResponse1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCollateralSubstitutionRejectionPresenceRule#forSubstitutionResponse1
+ * ConstraintCollateralSubstitutionRejectionPresenceRule.
+ * forSubstitutionResponse1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,15 +97,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides details about the collateral substitution response."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SubstitutionResponse1", propOrder = {"responseType", "collateralSubstitutionAcceptanceDetails", "collateralSubstitutionRejectionDetails"})
 public class SubstitutionResponse1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RspnTp", required = true)
 	protected Status4Code responseType;
 	/**
-	 * Indicates if the substitution request was accepted or rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +137,10 @@ public class SubstitutionResponse1 {
 	 * "Indicates if the substitution request was accepted or rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponseType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SubstitutionResponse1, Status4Code> mmResponseType = new MMMessageAttribute<SubstitutionResponse1, Status4Code>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmInstructionProcessingStatus;
-			componentContext_lazy = () -> SubstitutionResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubstitutionResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "RspnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,11 +150,22 @@ public class SubstitutionResponse1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Status4Code.mmObject();
 		}
+
+		@Override
+		public Status4Code getValue(SubstitutionResponse1 obj) {
+			return obj.getResponseType();
+		}
+
+		@Override
+		public void setValue(SubstitutionResponse1 obj, Status4Code value) {
+			obj.setResponseType(value);
+		}
 	};
+	@XmlElement(name = "CollSbstitnAccptncDtls")
 	protected CollateralSubstitutionResponse1 collateralSubstitutionAcceptanceDetails;
 	/**
-	 * Provides details about the accepted collateral substitution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -167,10 +196,10 @@ public class SubstitutionResponse1 {
 	 * "Provides details about the accepted collateral substitution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCollateralSubstitutionAcceptanceDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SubstitutionResponse1, Optional<CollateralSubstitutionResponse1>> mmCollateralSubstitutionAcceptanceDetails = new MMMessageAssociationEnd<SubstitutionResponse1, Optional<CollateralSubstitutionResponse1>>() {
 		{
 			businessComponentTrace_lazy = () -> CollateralSubstitution.mmObject();
-			componentContext_lazy = () -> SubstitutionResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubstitutionResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnAccptncDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,13 +208,24 @@ public class SubstitutionResponse1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse1.mmObject();
+			type_lazy = () -> CollateralSubstitutionResponse1.mmObject();
+		}
+
+		@Override
+		public Optional<CollateralSubstitutionResponse1> getValue(SubstitutionResponse1 obj) {
+			return obj.getCollateralSubstitutionAcceptanceDetails();
+		}
+
+		@Override
+		public void setValue(SubstitutionResponse1 obj, Optional<CollateralSubstitutionResponse1> value) {
+			obj.setCollateralSubstitutionAcceptanceDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CollSbstitnRjctnDtls")
 	protected CollateralSubstitutionResponse2 collateralSubstitutionRejectionDetails;
 	/**
-	 * Provides details about the rejected collateral substitution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -216,10 +256,10 @@ public class SubstitutionResponse1 {
 	 * "Provides details about the rejected collateral substitution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCollateralSubstitutionRejectionDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SubstitutionResponse1, Optional<CollateralSubstitutionResponse2>> mmCollateralSubstitutionRejectionDetails = new MMMessageAssociationEnd<SubstitutionResponse1, Optional<CollateralSubstitutionResponse2>>() {
 		{
 			businessComponentTrace_lazy = () -> CollateralSubstitution.mmObject();
-			componentContext_lazy = () -> SubstitutionResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SubstitutionResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "CollSbstitnRjctnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,17 +268,30 @@ public class SubstitutionResponse1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CollateralSubstitutionResponse2.mmObject();
+			type_lazy = () -> CollateralSubstitutionResponse2.mmObject();
+		}
+
+		@Override
+		public Optional<CollateralSubstitutionResponse2> getValue(SubstitutionResponse1 obj) {
+			return obj.getCollateralSubstitutionRejectionDetails();
+		}
+
+		@Override
+		public void setValue(SubstitutionResponse1 obj, Optional<CollateralSubstitutionResponse2> value) {
+			obj.setCollateralSubstitutionRejectionDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SubstitutionResponse1.mmResponseType, SubstitutionResponse1.mmCollateralSubstitutionAcceptanceDetails, SubstitutionResponse1.mmCollateralSubstitutionRejectionDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SubstitutionResponse1.mmResponseType, com.tools20022.repository.msg.SubstitutionResponse1.mmCollateralSubstitutionAcceptanceDetails,
+						com.tools20022.repository.msg.SubstitutionResponse1.mmCollateralSubstitutionRejectionDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(CollateralSubstitutionResponseV04.mmSubstitutionResponse);
 				trace_lazy = () -> CollateralSubstitution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCollateralSubstitutionAcceptancePresenceRule.forSubstitutionResponse1,
+						com.tools20022.repository.constraints.ConstraintCollateralSubstitutionRejectionPresenceRule.forSubstitutionResponse1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SubstitutionResponse1";
 				definition = "Provides details about the collateral substitution response.";
@@ -247,30 +300,30 @@ public class SubstitutionResponse1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RspnTp", required = true)
 	public Status4Code getResponseType() {
 		return responseType;
 	}
 
-	public void setResponseType(Status4Code responseType) {
-		this.responseType = responseType;
+	public SubstitutionResponse1 setResponseType(Status4Code responseType) {
+		this.responseType = Objects.requireNonNull(responseType);
+		return this;
 	}
 
-	@XmlElement(name = "CollSbstitnAccptncDtls")
-	public CollateralSubstitutionResponse1 getCollateralSubstitutionAcceptanceDetails() {
-		return collateralSubstitutionAcceptanceDetails;
+	public Optional<CollateralSubstitutionResponse1> getCollateralSubstitutionAcceptanceDetails() {
+		return collateralSubstitutionAcceptanceDetails == null ? Optional.empty() : Optional.of(collateralSubstitutionAcceptanceDetails);
 	}
 
-	public void setCollateralSubstitutionAcceptanceDetails(com.tools20022.repository.msg.CollateralSubstitutionResponse1 collateralSubstitutionAcceptanceDetails) {
+	public SubstitutionResponse1 setCollateralSubstitutionAcceptanceDetails(CollateralSubstitutionResponse1 collateralSubstitutionAcceptanceDetails) {
 		this.collateralSubstitutionAcceptanceDetails = collateralSubstitutionAcceptanceDetails;
+		return this;
 	}
 
-	@XmlElement(name = "CollSbstitnRjctnDtls")
-	public CollateralSubstitutionResponse2 getCollateralSubstitutionRejectionDetails() {
-		return collateralSubstitutionRejectionDetails;
+	public Optional<CollateralSubstitutionResponse2> getCollateralSubstitutionRejectionDetails() {
+		return collateralSubstitutionRejectionDetails == null ? Optional.empty() : Optional.of(collateralSubstitutionRejectionDetails);
 	}
 
-	public void setCollateralSubstitutionRejectionDetails(com.tools20022.repository.msg.CollateralSubstitutionResponse2 collateralSubstitutionRejectionDetails) {
+	public SubstitutionResponse1 setCollateralSubstitutionRejectionDetails(CollateralSubstitutionResponse2 collateralSubstitutionRejectionDetails) {
 		this.collateralSubstitutionRejectionDetails = collateralSubstitutionRejectionDetails;
+		return this;
 	}
 }

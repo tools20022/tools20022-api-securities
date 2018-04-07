@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.seev.AgentCAMovementInstructionV01;
 import com.tools20022.repository.entity.SecuritiesTransfer;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CashProceeds1;
+import com.tools20022.repository.msg.SecuritiesProceeds1;
+import com.tools20022.repository.msg.TaxVoucher1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Details of the proceeds movements."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProceedsMovement1", propOrder = {"cashProceedsMovementDetails", "securitiesProceedsMovementDetails", "taxDetails"})
 public class ProceedsMovement1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.CashProceeds1> cashProceedsMovementDetails;
+	@XmlElement(name = "CshPrcdsMvmntDtls")
+	protected List<CashProceeds1> cashProceedsMovementDetails;
 	/**
-	 * Provides information about the movement of the cash proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,9 +110,9 @@ public class ProceedsMovement1 {
 	 * "Provides information about the movement of the cash proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashProceedsMovementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProceedsMovement1, List<CashProceeds1>> mmCashProceedsMovementDetails = new MMMessageAssociationEnd<ProceedsMovement1, List<CashProceeds1>>() {
 		{
-			componentContext_lazy = () -> ProceedsMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "CshPrcdsMvmntDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,13 +120,24 @@ public class ProceedsMovement1 {
 			definition = "Provides information about the movement of the cash proceeds.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashProceeds1.mmObject();
+			type_lazy = () -> CashProceeds1.mmObject();
+		}
+
+		@Override
+		public List<CashProceeds1> getValue(ProceedsMovement1 obj) {
+			return obj.getCashProceedsMovementDetails();
+		}
+
+		@Override
+		public void setValue(ProceedsMovement1 obj, List<CashProceeds1> value) {
+			obj.setCashProceedsMovementDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.SecuritiesProceeds1> securitiesProceedsMovementDetails;
+	@XmlElement(name = "SctiesPrcdsMvmntDtls")
+	protected List<SecuritiesProceeds1> securitiesProceedsMovementDetails;
 	/**
-	 * Provides information about the movement of the securities proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,9 +162,9 @@ public class ProceedsMovement1 {
 	 * "Provides information about the movement of the securities proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesProceedsMovementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProceedsMovement1, List<SecuritiesProceeds1>> mmSecuritiesProceedsMovementDetails = new MMMessageAssociationEnd<ProceedsMovement1, List<SecuritiesProceeds1>>() {
 		{
-			componentContext_lazy = () -> ProceedsMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesPrcdsMvmntDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,13 +172,24 @@ public class ProceedsMovement1 {
 			definition = "Provides information about the movement of the securities proceeds.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecuritiesProceeds1.mmObject();
+			type_lazy = () -> SecuritiesProceeds1.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesProceeds1> getValue(ProceedsMovement1 obj) {
+			return obj.getSecuritiesProceedsMovementDetails();
+		}
+
+		@Override
+		public void setValue(ProceedsMovement1 obj, List<SecuritiesProceeds1> value) {
+			obj.setSecuritiesProceedsMovementDetails(value);
 		}
 	};
+	@XmlElement(name = "TaxDtls")
 	protected TaxVoucher1 taxDetails;
 	/**
-	 * Provides information about the tax voucher.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -193,10 +218,10 @@ public class ProceedsMovement1 {
 	 * definition} = "Provides information about the tax voucher."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTaxDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProceedsMovement1, Optional<TaxVoucher1>> mmTaxDetails = new MMMessageAssociationEnd<ProceedsMovement1, Optional<TaxVoucher1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmTransferTax;
-			componentContext_lazy = () -> ProceedsMovement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsMovement1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,16 +230,27 @@ public class ProceedsMovement1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TaxVoucher1.mmObject();
+			type_lazy = () -> TaxVoucher1.mmObject();
+		}
+
+		@Override
+		public Optional<TaxVoucher1> getValue(ProceedsMovement1 obj) {
+			return obj.getTaxDetails();
+		}
+
+		@Override
+		public void setValue(ProceedsMovement1 obj, Optional<TaxVoucher1> value) {
+			obj.setTaxDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProceedsMovement1.mmCashProceedsMovementDetails, ProceedsMovement1.mmSecuritiesProceedsMovementDetails, ProceedsMovement1.mmTaxDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProceedsMovement1.mmCashProceedsMovementDetails, com.tools20022.repository.msg.ProceedsMovement1.mmSecuritiesProceedsMovementDetails,
+						com.tools20022.repository.msg.ProceedsMovement1.mmTaxDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCAMovementInstructionV01.mmProceedsMovementDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProceedsMovement1";
 				definition = "Details of the proceeds movements.";
@@ -223,30 +259,30 @@ public class ProceedsMovement1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CshPrcdsMvmntDtls")
 	public List<CashProceeds1> getCashProceedsMovementDetails() {
-		return cashProceedsMovementDetails;
+		return cashProceedsMovementDetails == null ? cashProceedsMovementDetails = new ArrayList<>() : cashProceedsMovementDetails;
 	}
 
-	public void setCashProceedsMovementDetails(List<com.tools20022.repository.msg.CashProceeds1> cashProceedsMovementDetails) {
-		this.cashProceedsMovementDetails = cashProceedsMovementDetails;
+	public ProceedsMovement1 setCashProceedsMovementDetails(List<CashProceeds1> cashProceedsMovementDetails) {
+		this.cashProceedsMovementDetails = Objects.requireNonNull(cashProceedsMovementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesPrcdsMvmntDtls")
 	public List<SecuritiesProceeds1> getSecuritiesProceedsMovementDetails() {
-		return securitiesProceedsMovementDetails;
+		return securitiesProceedsMovementDetails == null ? securitiesProceedsMovementDetails = new ArrayList<>() : securitiesProceedsMovementDetails;
 	}
 
-	public void setSecuritiesProceedsMovementDetails(List<com.tools20022.repository.msg.SecuritiesProceeds1> securitiesProceedsMovementDetails) {
-		this.securitiesProceedsMovementDetails = securitiesProceedsMovementDetails;
+	public ProceedsMovement1 setSecuritiesProceedsMovementDetails(List<SecuritiesProceeds1> securitiesProceedsMovementDetails) {
+		this.securitiesProceedsMovementDetails = Objects.requireNonNull(securitiesProceedsMovementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "TaxDtls")
-	public TaxVoucher1 getTaxDetails() {
-		return taxDetails;
+	public Optional<TaxVoucher1> getTaxDetails() {
+		return taxDetails == null ? Optional.empty() : Optional.of(taxDetails);
 	}
 
-	public void setTaxDetails(com.tools20022.repository.msg.TaxVoucher1 taxDetails) {
+	public ProceedsMovement1 setTaxDetails(TaxVoucher1 taxDetails) {
 		this.taxDetails = taxDetails;
+		return this;
 	}
 }

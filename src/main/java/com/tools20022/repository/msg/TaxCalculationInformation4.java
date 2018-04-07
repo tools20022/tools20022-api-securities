@@ -34,6 +34,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -47,11 +48,11 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponent#getXors xors} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TaxCalculationInformation4#mmEUCapitalGainOrExtendedEUCapitalGainRule
- * TaxCalculationInformation4.mmEUCapitalGainOrExtendedEUCapitalGainRule}</li>
+ * {@linkplain com.tools20022.repository.msg.TaxCalculationInformation4#EUCapitalGainOrExtendedEUCapitalGainRule
+ * TaxCalculationInformation4.EUCapitalGainOrExtendedEUCapitalGainRule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TaxCalculationInformation4#mmEUDividendStatusOrExtendedEUDividendStatusRule
- * TaxCalculationInformation4.mmEUDividendStatusOrExtendedEUDividendStatusRule}</li>
+ * {@linkplain com.tools20022.repository.msg.TaxCalculationInformation4#EUDividendStatusOrExtendedEUDividendStatusRule
+ * TaxCalculationInformation4.EUDividendStatusOrExtendedEUDividendStatusRule}</li>
  * </ul>
  * </li>
  * <li>
@@ -87,8 +88,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -100,18 +101,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information used to calculate the tax."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "TaxCalculationInformation4", propOrder = {"EUCapitalGain", "extendedEUCapitalGain", "percentageOfDebtClaim", "percentageGrandfatheredDebt", "taxableIncomePerDividend", "EUDividendStatus", "extendedEUDividendStatus"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "TaxCalculationInformation4", propOrder = {"eUCapitalGain", "extendedEUCapitalGain", "percentageOfDebtClaim", "percentageGrandfatheredDebt", "taxableIncomePerDividend", "eUDividendStatus", "extendedEUDividendStatus"})
 public class TaxCalculationInformation4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "EUCptlGn")
 	protected EUCapitalGain2Code eUCapitalGain;
 	/**
-	 * Specifies whether capital gain is in the scope of the European directive
-	 * on taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,10 +143,10 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEUCapitalGain = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<EUCapitalGain2Code>> mmEUCapitalGain = new MMMessageAttribute<TaxCalculationInformation4, Optional<EUCapitalGain2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUCapitalGain;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "EUCptlGn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,14 +156,22 @@ public class TaxCalculationInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> EUCapitalGain2Code.mmObject();
 		}
+
+		@Override
+		public Optional<EUCapitalGain2Code> getValue(TaxCalculationInformation4 obj) {
+			return obj.getEUCapitalGain();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<EUCapitalGain2Code> value) {
+			obj.setEUCapitalGain(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XtndedEUCptlGn")
 	protected Extended350Code extendedEUCapitalGain;
 	/**
-	 * Specifies whether capital gain is in the scope of the European directive
-	 * on taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,10 +204,10 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExtendedEUCapitalGain = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<Extended350Code>> mmExtendedEUCapitalGain = new MMMessageAttribute<TaxCalculationInformation4, Optional<Extended350Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUCapitalGain;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "XtndedEUCptlGn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,14 +217,22 @@ public class TaxCalculationInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Extended350Code.mmObject();
 		}
+
+		@Override
+		public Optional<Extended350Code> getValue(TaxCalculationInformation4 obj) {
+			return obj.getExtendedEUCapitalGain();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<Extended350Code> value) {
+			obj.setExtendedEUCapitalGain(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PctgOfDebtClm")
 	protected PercentageRate percentageOfDebtClaim;
 	/**
-	 * Percentage of the underlying assets of the funds that represents a debt
-	 * and is in the scope of the European directive on taxation of savings
-	 * income in the form of interest payments (Council Directive 2003/48/EC 3
-	 * June).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,10 +265,10 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPercentageOfDebtClaim = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<PercentageRate>> mmPercentageOfDebtClaim = new MMMessageAttribute<TaxCalculationInformation4, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTax.mmPercentageOfDebtClaim;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "PctgOfDebtClm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -263,11 +278,22 @@ public class TaxCalculationInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(TaxCalculationInformation4 obj) {
+			return obj.getPercentageOfDebtClaim();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<PercentageRate> value) {
+			obj.setPercentageOfDebtClaim(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PctgGrdfthdDebt")
 	protected PercentageRate percentageGrandfatheredDebt;
 	/**
-	 * Percentage of grandfathered debt claim.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,10 +324,10 @@ public class TaxCalculationInformation4 {
 	 * definition} = "Percentage of grandfathered debt claim."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPercentageGrandfatheredDebt = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<PercentageRate>> mmPercentageGrandfatheredDebt = new MMMessageAttribute<TaxCalculationInformation4, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTax.mmPercentageGrandfatheredDebt;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "PctgGrdfthdDebt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -311,13 +337,22 @@ public class TaxCalculationInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(TaxCalculationInformation4 obj) {
+			return obj.getPercentageGrandfatheredDebt();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<PercentageRate> value) {
+			obj.setPercentageGrandfatheredDebt(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxblIncmPerDvdd")
 	protected ActiveOrHistoricCurrencyAnd13DecimalAmount taxableIncomePerDividend;
 	/**
-	 * Amount included in the dividend that corresponds to gains directly or
-	 * indirectly derived from interest payment in the scope of the European
-	 * Directive on taxation of savings income in the form of interest payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -350,10 +385,10 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxableIncomePerDividend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<ActiveOrHistoricCurrencyAnd13DecimalAmount>> mmTaxableIncomePerDividend = new MMMessageAttribute<TaxCalculationInformation4, Optional<ActiveOrHistoricCurrencyAnd13DecimalAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmTaxableIncomePerDividend;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "TaxblIncmPerDvdd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -363,14 +398,22 @@ public class TaxCalculationInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAnd13DecimalAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAnd13DecimalAmount> getValue(TaxCalculationInformation4 obj) {
+			return obj.getTaxableIncomePerDividend();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<ActiveOrHistoricCurrencyAnd13DecimalAmount> value) {
+			obj.setTaxableIncomePerDividend(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EUDvddSts")
 	protected EUDividendStatus1Code eUDividendStatus;
 	/**
-	 * Specifies whether dividend is in the scope of the European directive on
-	 * taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -403,10 +446,10 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEUDividendStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<EUDividendStatus1Code>> mmEUDividendStatus = new MMMessageAttribute<TaxCalculationInformation4, Optional<EUDividendStatus1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUDividendStatus;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "EUDvddSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -416,14 +459,22 @@ public class TaxCalculationInformation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> EUDividendStatus1Code.mmObject();
 		}
+
+		@Override
+		public Optional<EUDividendStatus1Code> getValue(TaxCalculationInformation4 obj) {
+			return obj.getEUDividendStatus();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<EUDividendStatus1Code> value) {
+			obj.setEUDividendStatus(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XtndedEUDvddSts")
 	protected Extended350Code extendedEUDividendStatus;
 	/**
-	 * Specifies whether dividend is in the scope of the European directive on
-	 * taxation of savings income in the form of interest payments (Council
-	 * Directive 2003/48/EC 3 June), or an income realised upon sale, a refund
-	 * or redemption of shares and units, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -456,10 +507,10 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExtendedEUDividendStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TaxCalculationInformation4, Optional<Extended350Code>> mmExtendedEUDividendStatus = new MMMessageAttribute<TaxCalculationInformation4, Optional<Extended350Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTax.mmEUDividendStatus;
-			componentContext_lazy = () -> TaxCalculationInformation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
 			isDerived = false;
 			xmlTag = "XtndedEUDvddSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -468,6 +519,16 @@ public class TaxCalculationInformation4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Extended350Code.mmObject();
+		}
+
+		@Override
+		public Optional<Extended350Code> getValue(TaxCalculationInformation4 obj) {
+			return obj.getExtendedEUDividendStatus();
+		}
+
+		@Override
+		public void setValue(TaxCalculationInformation4 obj, Optional<Extended350Code> value) {
+			obj.setExtendedEUDividendStatus(value.orElse(null));
 		}
 	};
 	/**
@@ -504,13 +565,13 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMXor mmEUCapitalGainOrExtendedEUCapitalGainRule = new MMXor() {
+	public static final MMXor EUCapitalGainOrExtendedEUCapitalGainRule = new MMXor() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EUCapitalGainOrExtendedEUCapitalGainRule";
 			definition = "Either EUCapitalGain or ExtendedEUCapitalGain may be present, but not both.";
-			messageComponent_lazy = () -> TaxCalculationInformation4.mmObject();
-			impactedElements_lazy = () -> Arrays.asList(TaxCalculationInformation4.mmEUCapitalGain, TaxCalculationInformation4.mmExtendedEUCapitalGain);
+			messageComponent_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
+			impactedElements_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxCalculationInformation4.mmEUCapitalGain, com.tools20022.repository.msg.TaxCalculationInformation4.mmExtendedEUCapitalGain);
 		}
 	};
 	/**
@@ -547,23 +608,25 @@ public class TaxCalculationInformation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMXor mmEUDividendStatusOrExtendedEUDividendStatusRule = new MMXor() {
+	public static final MMXor EUDividendStatusOrExtendedEUDividendStatusRule = new MMXor() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EUDividendStatusOrExtendedEUDividendStatusRule";
 			definition = "Either EUDividendStatus or ExtendedEUDividendStatus may be present, but not both.";
-			messageComponent_lazy = () -> TaxCalculationInformation4.mmObject();
-			impactedElements_lazy = () -> Arrays.asList(TaxCalculationInformation4.mmEUDividendStatus, TaxCalculationInformation4.mmExtendedEUDividendStatus);
+			messageComponent_lazy = () -> com.tools20022.repository.msg.TaxCalculationInformation4.mmObject();
+			impactedElements_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxCalculationInformation4.mmEUDividendStatus, com.tools20022.repository.msg.TaxCalculationInformation4.mmExtendedEUDividendStatus);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TaxCalculationInformation4.mmEUCapitalGain, TaxCalculationInformation4.mmExtendedEUCapitalGain, TaxCalculationInformation4.mmPercentageOfDebtClaim,
-						TaxCalculationInformation4.mmPercentageGrandfatheredDebt, TaxCalculationInformation4.mmTaxableIncomePerDividend, TaxCalculationInformation4.mmEUDividendStatus, TaxCalculationInformation4.mmExtendedEUDividendStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxCalculationInformation4.mmEUCapitalGain, com.tools20022.repository.msg.TaxCalculationInformation4.mmExtendedEUCapitalGain,
+						com.tools20022.repository.msg.TaxCalculationInformation4.mmPercentageOfDebtClaim, com.tools20022.repository.msg.TaxCalculationInformation4.mmPercentageGrandfatheredDebt,
+						com.tools20022.repository.msg.TaxCalculationInformation4.mmTaxableIncomePerDividend, com.tools20022.repository.msg.TaxCalculationInformation4.mmEUDividendStatus,
+						com.tools20022.repository.msg.TaxCalculationInformation4.mmExtendedEUDividendStatus);
 				trace_lazy = () -> InvestmentFundTax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -574,72 +637,73 @@ public class TaxCalculationInformation4 {
 				})).get();
 				name = "TaxCalculationInformation4";
 				definition = "Information used to calculate the tax.";
-				xors_lazy = () -> Arrays.asList(TaxCalculationInformation4.mmEUCapitalGainOrExtendedEUCapitalGainRule, TaxCalculationInformation4.mmEUDividendStatusOrExtendedEUDividendStatusRule);
+				xors_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxCalculationInformation4.EUCapitalGainOrExtendedEUCapitalGainRule,
+						com.tools20022.repository.msg.TaxCalculationInformation4.EUDividendStatusOrExtendedEUDividendStatusRule);
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "EUCptlGn")
-	public EUCapitalGain2Code getEUCapitalGain() {
-		return eUCapitalGain;
+	public Optional<EUCapitalGain2Code> getEUCapitalGain() {
+		return eUCapitalGain == null ? Optional.empty() : Optional.of(eUCapitalGain);
 	}
 
-	public void setEUCapitalGain(EUCapitalGain2Code eUCapitalGain) {
+	public TaxCalculationInformation4 setEUCapitalGain(EUCapitalGain2Code eUCapitalGain) {
 		this.eUCapitalGain = eUCapitalGain;
+		return this;
 	}
 
-	@XmlElement(name = "XtndedEUCptlGn")
-	public Extended350Code getExtendedEUCapitalGain() {
-		return extendedEUCapitalGain;
+	public Optional<Extended350Code> getExtendedEUCapitalGain() {
+		return extendedEUCapitalGain == null ? Optional.empty() : Optional.of(extendedEUCapitalGain);
 	}
 
-	public void setExtendedEUCapitalGain(Extended350Code extendedEUCapitalGain) {
+	public TaxCalculationInformation4 setExtendedEUCapitalGain(Extended350Code extendedEUCapitalGain) {
 		this.extendedEUCapitalGain = extendedEUCapitalGain;
+		return this;
 	}
 
-	@XmlElement(name = "PctgOfDebtClm")
-	public PercentageRate getPercentageOfDebtClaim() {
-		return percentageOfDebtClaim;
+	public Optional<PercentageRate> getPercentageOfDebtClaim() {
+		return percentageOfDebtClaim == null ? Optional.empty() : Optional.of(percentageOfDebtClaim);
 	}
 
-	public void setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
+	public TaxCalculationInformation4 setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
 		this.percentageOfDebtClaim = percentageOfDebtClaim;
+		return this;
 	}
 
-	@XmlElement(name = "PctgGrdfthdDebt")
-	public PercentageRate getPercentageGrandfatheredDebt() {
-		return percentageGrandfatheredDebt;
+	public Optional<PercentageRate> getPercentageGrandfatheredDebt() {
+		return percentageGrandfatheredDebt == null ? Optional.empty() : Optional.of(percentageGrandfatheredDebt);
 	}
 
-	public void setPercentageGrandfatheredDebt(PercentageRate percentageGrandfatheredDebt) {
+	public TaxCalculationInformation4 setPercentageGrandfatheredDebt(PercentageRate percentageGrandfatheredDebt) {
 		this.percentageGrandfatheredDebt = percentageGrandfatheredDebt;
+		return this;
 	}
 
-	@XmlElement(name = "TaxblIncmPerDvdd")
-	public ActiveOrHistoricCurrencyAnd13DecimalAmount getTaxableIncomePerDividend() {
-		return taxableIncomePerDividend;
+	public Optional<ActiveOrHistoricCurrencyAnd13DecimalAmount> getTaxableIncomePerDividend() {
+		return taxableIncomePerDividend == null ? Optional.empty() : Optional.of(taxableIncomePerDividend);
 	}
 
-	public void setTaxableIncomePerDividend(ActiveOrHistoricCurrencyAnd13DecimalAmount taxableIncomePerDividend) {
+	public TaxCalculationInformation4 setTaxableIncomePerDividend(ActiveOrHistoricCurrencyAnd13DecimalAmount taxableIncomePerDividend) {
 		this.taxableIncomePerDividend = taxableIncomePerDividend;
+		return this;
 	}
 
-	@XmlElement(name = "EUDvddSts")
-	public EUDividendStatus1Code getEUDividendStatus() {
-		return eUDividendStatus;
+	public Optional<EUDividendStatus1Code> getEUDividendStatus() {
+		return eUDividendStatus == null ? Optional.empty() : Optional.of(eUDividendStatus);
 	}
 
-	public void setEUDividendStatus(EUDividendStatus1Code eUDividendStatus) {
+	public TaxCalculationInformation4 setEUDividendStatus(EUDividendStatus1Code eUDividendStatus) {
 		this.eUDividendStatus = eUDividendStatus;
+		return this;
 	}
 
-	@XmlElement(name = "XtndedEUDvddSts")
-	public Extended350Code getExtendedEUDividendStatus() {
-		return extendedEUDividendStatus;
+	public Optional<Extended350Code> getExtendedEUDividendStatus() {
+		return extendedEUDividendStatus == null ? Optional.empty() : Optional.of(extendedEUDividendStatus);
 	}
 
-	public void setExtendedEUDividendStatus(Extended350Code extendedEUDividendStatus) {
+	public TaxCalculationInformation4 setExtendedEUDividendStatus(Extended350Code extendedEUDividendStatus) {
 		this.extendedEUDividendStatus = extendedEUDividendStatus;
+		return this;
 	}
 }

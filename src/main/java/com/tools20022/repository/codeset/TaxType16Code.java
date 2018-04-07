@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,45 +39,45 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#ConsumptionTax
- * TaxType16Code.mmConsumptionTax}</li>
+ * TaxType16Code.ConsumptionTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#TaxCredit
- * TaxType16Code.mmTaxCredit}</li>
+ * TaxType16Code.TaxCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#EUTaxRetention
- * TaxType16Code.mmEUTaxRetention}</li>
+ * TaxType16Code.EUTaxRetention}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#PaymentLevyTax
- * TaxType16Code.mmPaymentLevyTax}</li>
+ * TaxType16Code.PaymentLevyTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#LocalTax
- * TaxType16Code.mmLocalTax}</li>
+ * TaxType16Code.LocalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#NationalTax
- * TaxType16Code.mmNationalTax}</li>
+ * TaxType16Code.NationalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#Provincial
- * TaxType16Code.mmProvincial}</li>
+ * TaxType16Code.Provincial}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#StampDuty
- * TaxType16Code.mmStampDuty}</li>
+ * TaxType16Code.StampDuty}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#StateTax
- * TaxType16Code.mmStateTax}</li>
+ * TaxType16Code.StateTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#StockExchangeTax
- * TaxType16Code.mmStockExchangeTax}</li>
+ * TaxType16Code.StockExchangeTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType16Code#TransferTax
- * TaxType16Code.mmTransferTax}</li>
+ * TaxType16Code.TransferTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#TransactionTax
- * TaxType16Code.mmTransactionTax}</li>
+ * TaxType16Code.TransactionTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#ValueAddedTax
- * TaxType16Code.mmValueAddedTax}</li>
+ * TaxType16Code.ValueAddedTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#WithholdingTax
- * TaxType16Code.mmWithholdingTax}</li>
+ * TaxType16Code.WithholdingTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#CapitalLossCredit
- * TaxType16Code.mmCapitalLossCredit}</li>
+ * TaxType16Code.CapitalLossCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType16Code#CapitalGainTax
- * TaxType16Code.mmCapitalGainTax}</li>
+ * TaxType16Code.CapitalGainTax}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -84,8 +85,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -181,6 +182,9 @@ public class TaxType16Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TaxType16Code
 	 * TaxType16Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::LEVY</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -190,6 +194,7 @@ public class TaxType16Code extends MMCode {
 	 */
 	public static final TaxType16Code PaymentLevyTax = new TaxType16Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::LEVY"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentLevyTax";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxType16Code.mmObject();
@@ -205,6 +210,9 @@ public class TaxType16Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TaxType16Code
 	 * TaxType16Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::LOCL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -214,6 +222,7 @@ public class TaxType16Code extends MMCode {
 	 */
 	public static final TaxType16Code LocalTax = new TaxType16Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::LOCL"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LocalTax";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxType16Code.mmObject();
@@ -325,6 +334,9 @@ public class TaxType16Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TaxType16Code
 	 * TaxType16Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::STEX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -334,6 +346,7 @@ public class TaxType16Code extends MMCode {
 	 */
 	public static final TaxType16Code StockExchangeTax = new TaxType16Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::STEX"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StockExchangeTax";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxType16Code.mmObject();
@@ -349,6 +362,9 @@ public class TaxType16Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TaxType16Code
 	 * TaxType16Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::TRAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -358,6 +374,7 @@ public class TaxType16Code extends MMCode {
 	 */
 	public static final TaxType16Code TransferTax = new TaxType16Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::TRAN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransferTax";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxType16Code.mmObject();
@@ -373,6 +390,9 @@ public class TaxType16Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TaxType16Code
 	 * TaxType16Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::TRAX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -382,6 +402,7 @@ public class TaxType16Code extends MMCode {
 	 */
 	public static final TaxType16Code TransactionTax = new TaxType16Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::TRAX"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionTax";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxType16Code.mmObject();
@@ -397,6 +418,9 @@ public class TaxType16Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TaxType16Code
 	 * TaxType16Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::VATA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -406,6 +430,7 @@ public class TaxType16Code extends MMCode {
 	 */
 	public static final TaxType16Code ValueAddedTax = new TaxType16Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::VATA"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValueAddedTax";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxType16Code.mmObject();
@@ -492,7 +517,7 @@ public class TaxType16Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxType16Code";
 				definition = "Specifies the type of tax.";

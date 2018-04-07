@@ -22,8 +22,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ValuationStatistics;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PriceValue5;
+import com.tools20022.repository.msg.PriceValueChange1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Statistical data related to the price change of a security."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StatisticsByPredefinedTimePeriods2", propOrder = {"highestPriceValue12Months", "lowestPriceValue12Months", "oneYearPriceChange", "threeYearPriceChange", "fiveYearPriceChange"})
 public class StatisticsByPredefinedTimePeriods2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "HghstPricVal12Mnths")
 	protected PriceValue5 highestPriceValue12Months;
 	/**
-	 * Highest price for the referenced period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,10 +115,10 @@ public class StatisticsByPredefinedTimePeriods2 {
 	 * definition} = "Highest price for the referenced period."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHighestPriceValue12Months = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValue5>> mmHighestPriceValue12Months = new MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValue5>>() {
 		{
 			businessElementTrace_lazy = () -> ValuationStatistics.mmHighestPriceValue;
-			componentContext_lazy = () -> StatisticsByPredefinedTimePeriods2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmObject();
 			isDerived = false;
 			xmlTag = "HghstPricVal12Mnths";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,13 +126,24 @@ public class StatisticsByPredefinedTimePeriods2 {
 			definition = "Highest price for the referenced period.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PriceValue5.mmObject();
+			complexType_lazy = () -> PriceValue5.mmObject();
+		}
+
+		@Override
+		public Optional<PriceValue5> getValue(StatisticsByPredefinedTimePeriods2 obj) {
+			return obj.getHighestPriceValue12Months();
+		}
+
+		@Override
+		public void setValue(StatisticsByPredefinedTimePeriods2 obj, Optional<PriceValue5> value) {
+			obj.setHighestPriceValue12Months(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "LwstPricVal12Mnths")
 	protected PriceValue5 lowestPriceValue12Months;
 	/**
-	 * Lowest price for the referenced period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +173,10 @@ public class StatisticsByPredefinedTimePeriods2 {
 	 * definition} = "Lowest price for the referenced period."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLowestPriceValue12Months = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValue5>> mmLowestPriceValue12Months = new MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValue5>>() {
 		{
 			businessElementTrace_lazy = () -> ValuationStatistics.mmLowestPriceValue;
-			componentContext_lazy = () -> StatisticsByPredefinedTimePeriods2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmObject();
 			isDerived = false;
 			xmlTag = "LwstPricVal12Mnths";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,13 +184,24 @@ public class StatisticsByPredefinedTimePeriods2 {
 			definition = "Lowest price for the referenced period.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PriceValue5.mmObject();
+			complexType_lazy = () -> PriceValue5.mmObject();
+		}
+
+		@Override
+		public Optional<PriceValue5> getValue(StatisticsByPredefinedTimePeriods2 obj) {
+			return obj.getLowestPriceValue12Months();
+		}
+
+		@Override
+		public void setValue(StatisticsByPredefinedTimePeriods2 obj, Optional<PriceValue5> value) {
+			obj.setLowestPriceValue12Months(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OneYrPricChng")
 	protected PriceValueChange1 oneYearPriceChange;
 	/**
-	 * Change in price over a one year period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,10 +232,10 @@ public class StatisticsByPredefinedTimePeriods2 {
 	 * definition} = "Change in price over a one year period."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOneYearPriceChange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValueChange1>> mmOneYearPriceChange = new MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValueChange1>>() {
 		{
 			businessElementTrace_lazy = () -> ValuationStatistics.mmPriceChange;
-			componentContext_lazy = () -> StatisticsByPredefinedTimePeriods2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmObject();
 			isDerived = false;
 			xmlTag = "OneYrPricChng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,13 +243,24 @@ public class StatisticsByPredefinedTimePeriods2 {
 			definition = "Change in price over a one year period.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PriceValueChange1.mmObject();
+			complexType_lazy = () -> PriceValueChange1.mmObject();
+		}
+
+		@Override
+		public Optional<PriceValueChange1> getValue(StatisticsByPredefinedTimePeriods2 obj) {
+			return obj.getOneYearPriceChange();
+		}
+
+		@Override
+		public void setValue(StatisticsByPredefinedTimePeriods2 obj, Optional<PriceValueChange1> value) {
+			obj.setOneYearPriceChange(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ThreeYrPricChng")
 	protected PriceValueChange1 threeYearPriceChange;
 	/**
-	 * Change in price over a three year period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,10 +291,10 @@ public class StatisticsByPredefinedTimePeriods2 {
 	 * definition} = "Change in price over a three year period."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmThreeYearPriceChange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValueChange1>> mmThreeYearPriceChange = new MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValueChange1>>() {
 		{
 			businessElementTrace_lazy = () -> ValuationStatistics.mmPriceChange;
-			componentContext_lazy = () -> StatisticsByPredefinedTimePeriods2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmObject();
 			isDerived = false;
 			xmlTag = "ThreeYrPricChng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -265,13 +302,24 @@ public class StatisticsByPredefinedTimePeriods2 {
 			definition = "Change in price over a three year period.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PriceValueChange1.mmObject();
+			complexType_lazy = () -> PriceValueChange1.mmObject();
+		}
+
+		@Override
+		public Optional<PriceValueChange1> getValue(StatisticsByPredefinedTimePeriods2 obj) {
+			return obj.getThreeYearPriceChange();
+		}
+
+		@Override
+		public void setValue(StatisticsByPredefinedTimePeriods2 obj, Optional<PriceValueChange1> value) {
+			obj.setThreeYearPriceChange(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "FiveYrPricChng")
 	protected PriceValueChange1 fiveYearPriceChange;
 	/**
-	 * Change in price over a five year period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,10 +350,10 @@ public class StatisticsByPredefinedTimePeriods2 {
 	 * definition} = "Change in price over a five year period."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFiveYearPriceChange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValueChange1>> mmFiveYearPriceChange = new MMMessageAttribute<StatisticsByPredefinedTimePeriods2, Optional<PriceValueChange1>>() {
 		{
 			businessElementTrace_lazy = () -> ValuationStatistics.mmPriceChange;
-			componentContext_lazy = () -> StatisticsByPredefinedTimePeriods2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmObject();
 			isDerived = false;
 			xmlTag = "FiveYrPricChng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -313,17 +361,28 @@ public class StatisticsByPredefinedTimePeriods2 {
 			definition = "Change in price over a five year period.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.PriceValueChange1.mmObject();
+			complexType_lazy = () -> PriceValueChange1.mmObject();
+		}
+
+		@Override
+		public Optional<PriceValueChange1> getValue(StatisticsByPredefinedTimePeriods2 obj) {
+			return obj.getFiveYearPriceChange();
+		}
+
+		@Override
+		public void setValue(StatisticsByPredefinedTimePeriods2 obj, Optional<PriceValueChange1> value) {
+			obj.setFiveYearPriceChange(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(StatisticsByPredefinedTimePeriods2.mmHighestPriceValue12Months, StatisticsByPredefinedTimePeriods2.mmLowestPriceValue12Months,
-						StatisticsByPredefinedTimePeriods2.mmOneYearPriceChange, StatisticsByPredefinedTimePeriods2.mmThreeYearPriceChange, StatisticsByPredefinedTimePeriods2.mmFiveYearPriceChange);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmHighestPriceValue12Months,
+						com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmLowestPriceValue12Months, com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmOneYearPriceChange,
+						com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmThreeYearPriceChange, com.tools20022.repository.msg.StatisticsByPredefinedTimePeriods2.mmFiveYearPriceChange);
 				trace_lazy = () -> ValuationStatistics.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatisticsByPredefinedTimePeriods2";
 				definition = "Statistical data related to the price change of a security.";
@@ -332,48 +391,48 @@ public class StatisticsByPredefinedTimePeriods2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "HghstPricVal12Mnths")
-	public PriceValue5 getHighestPriceValue12Months() {
-		return highestPriceValue12Months;
+	public Optional<PriceValue5> getHighestPriceValue12Months() {
+		return highestPriceValue12Months == null ? Optional.empty() : Optional.of(highestPriceValue12Months);
 	}
 
-	public void setHighestPriceValue12Months(com.tools20022.repository.msg.PriceValue5 highestPriceValue12Months) {
+	public StatisticsByPredefinedTimePeriods2 setHighestPriceValue12Months(PriceValue5 highestPriceValue12Months) {
 		this.highestPriceValue12Months = highestPriceValue12Months;
+		return this;
 	}
 
-	@XmlElement(name = "LwstPricVal12Mnths")
-	public PriceValue5 getLowestPriceValue12Months() {
-		return lowestPriceValue12Months;
+	public Optional<PriceValue5> getLowestPriceValue12Months() {
+		return lowestPriceValue12Months == null ? Optional.empty() : Optional.of(lowestPriceValue12Months);
 	}
 
-	public void setLowestPriceValue12Months(com.tools20022.repository.msg.PriceValue5 lowestPriceValue12Months) {
+	public StatisticsByPredefinedTimePeriods2 setLowestPriceValue12Months(PriceValue5 lowestPriceValue12Months) {
 		this.lowestPriceValue12Months = lowestPriceValue12Months;
+		return this;
 	}
 
-	@XmlElement(name = "OneYrPricChng")
-	public PriceValueChange1 getOneYearPriceChange() {
-		return oneYearPriceChange;
+	public Optional<PriceValueChange1> getOneYearPriceChange() {
+		return oneYearPriceChange == null ? Optional.empty() : Optional.of(oneYearPriceChange);
 	}
 
-	public void setOneYearPriceChange(com.tools20022.repository.msg.PriceValueChange1 oneYearPriceChange) {
+	public StatisticsByPredefinedTimePeriods2 setOneYearPriceChange(PriceValueChange1 oneYearPriceChange) {
 		this.oneYearPriceChange = oneYearPriceChange;
+		return this;
 	}
 
-	@XmlElement(name = "ThreeYrPricChng")
-	public PriceValueChange1 getThreeYearPriceChange() {
-		return threeYearPriceChange;
+	public Optional<PriceValueChange1> getThreeYearPriceChange() {
+		return threeYearPriceChange == null ? Optional.empty() : Optional.of(threeYearPriceChange);
 	}
 
-	public void setThreeYearPriceChange(com.tools20022.repository.msg.PriceValueChange1 threeYearPriceChange) {
+	public StatisticsByPredefinedTimePeriods2 setThreeYearPriceChange(PriceValueChange1 threeYearPriceChange) {
 		this.threeYearPriceChange = threeYearPriceChange;
+		return this;
 	}
 
-	@XmlElement(name = "FiveYrPricChng")
-	public PriceValueChange1 getFiveYearPriceChange() {
-		return fiveYearPriceChange;
+	public Optional<PriceValueChange1> getFiveYearPriceChange() {
+		return fiveYearPriceChange == null ? Optional.empty() : Optional.of(fiveYearPriceChange);
 	}
 
-	public void setFiveYearPriceChange(com.tools20022.repository.msg.PriceValueChange1 fiveYearPriceChange) {
+	public StatisticsByPredefinedTimePeriods2 setFiveYearPriceChange(PriceValueChange1 fiveYearPriceChange) {
 		this.fiveYearPriceChange = fiveYearPriceChange;
+		return this;
 	}
 }

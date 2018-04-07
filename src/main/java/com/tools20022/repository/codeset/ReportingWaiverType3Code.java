@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#BenchmarkTransaction
- * ReportingWaiverType3Code.mmBenchmarkTransaction}</li>
+ * ReportingWaiverType3Code.BenchmarkTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#AgencyCrossTransaction
- * ReportingWaiverType3Code.mmAgencyCrossTransaction}</li>
+ * ReportingWaiverType3Code.AgencyCrossTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#IlliquidInstrumentTransaction
- * ReportingWaiverType3Code.mmIlliquidInstrumentTransaction}</li>
+ * ReportingWaiverType3Code.IlliquidInstrumentTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#AboveSpecificSizeTransaction
- * ReportingWaiverType3Code.mmAboveSpecificSizeTransaction}</li>
+ * ReportingWaiverType3Code.AboveSpecificSizeTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#Cancellations
- * ReportingWaiverType3Code.mmCancellations}</li>
+ * ReportingWaiverType3Code.Cancellations}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#Amendments
- * ReportingWaiverType3Code.mmAmendments}</li>
+ * ReportingWaiverType3Code.Amendments}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#SpecialDividendTransaction
- * ReportingWaiverType3Code.mmSpecialDividendTransaction}</li>
+ * ReportingWaiverType3Code.SpecialDividendTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#TransactionWithPriceImprovment
- * ReportingWaiverType3Code.mmTransactionWithPriceImprovment}</li>
+ * ReportingWaiverType3Code.TransactionWithPriceImprovment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#DuplicativeTradeReport
- * ReportingWaiverType3Code.mmDuplicativeTradeReport}</li>
+ * ReportingWaiverType3Code.DuplicativeTradeReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#LargeInScale
- * ReportingWaiverType3Code.mmLargeInScale}</li>
+ * ReportingWaiverType3Code.LargeInScale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#TransactionNotContributingToPriceDiscovery
- * ReportingWaiverType3Code.mmTransactionNotContributingToPriceDiscovery}</li>
+ * ReportingWaiverType3Code.TransactionNotContributingToPriceDiscovery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#PackageTransaction
- * ReportingWaiverType3Code.mmPackageTransaction}</li>
+ * ReportingWaiverType3Code.PackageTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType3Code#ExchangeForPhysical
- * ReportingWaiverType3Code.mmExchangeForPhysical}</li>
+ * ReportingWaiverType3Code.ExchangeForPhysical}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -419,7 +419,7 @@ public class ReportingWaiverType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingWaiverType3Code";
 				definition = "Specifies the type of regulatory reporting pre-trade waiver.";

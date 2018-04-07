@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Adhoc
- * EventFrequency8Code.mmAdhoc}</li>
+ * EventFrequency8Code.Adhoc}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Annual
- * EventFrequency8Code.mmAnnual}</li>
+ * EventFrequency8Code.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Daily
- * EventFrequency8Code.mmDaily}</li>
+ * EventFrequency8Code.Daily}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#EveryFourMonths
- * EventFrequency8Code.mmEveryFourMonths}</li>
+ * EventFrequency8Code.EveryFourMonths}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#EveryTwoMonths
- * EventFrequency8Code.mmEveryTwoMonths}</li>
+ * EventFrequency8Code.EveryTwoMonths}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#EveryTwoWeeks
- * EventFrequency8Code.mmEveryTwoWeeks}</li>
+ * EventFrequency8Code.EveryTwoWeeks}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#EveryTwoYears
- * EventFrequency8Code.mmEveryTwoYears}</li>
+ * EventFrequency8Code.EveryTwoYears}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#IntraDay
- * EventFrequency8Code.mmIntraDay}</li>
+ * EventFrequency8Code.IntraDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Monthly
- * EventFrequency8Code.mmMonthly}</li>
+ * EventFrequency8Code.Monthly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#OnDemand
- * EventFrequency8Code.mmOnDemand}</li>
+ * EventFrequency8Code.OnDemand}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Overnight
- * EventFrequency8Code.mmOvernight}</li>
+ * EventFrequency8Code.Overnight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Quarterly
- * EventFrequency8Code.mmQuarterly}</li>
+ * EventFrequency8Code.Quarterly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#SemiAnnual
- * EventFrequency8Code.mmSemiAnnual}</li>
+ * EventFrequency8Code.SemiAnnual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code#TwiceAMonth
- * EventFrequency8Code.mmTwiceAMonth}</li>
+ * EventFrequency8Code.TwiceAMonth}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EventFrequency8Code#Weekly
- * EventFrequency8Code.mmWeekly}</li>
+ * EventFrequency8Code.Weekly}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -85,8 +86,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,6 +111,9 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::SFRE//ADHO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -119,6 +123,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code Adhoc = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE//ADHO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Adhoc";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -134,6 +139,10 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//ANNU, ISO15022Synonym:
+	 * :22F::SFRE//YEAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -143,6 +152,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code Annual = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//ANNU"), new ISO15022Synonym(this, ":22F::SFRE//YEAR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Annual";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -158,6 +168,9 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::SFRE//DAIL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -167,6 +180,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code Daily = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE//DAIL"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Daily";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -278,6 +292,9 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::SFRE//INDA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -287,6 +304,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code IntraDay = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE//INDA"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntraDay";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -302,6 +320,10 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//MNTH, ISO15022Synonym:
+	 * :22F::SFRE//MNTH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -311,6 +333,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code Monthly = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//MNTH"), new ISO15022Synonym(this, ":22F::SFRE//MNTH"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Monthly";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -374,6 +397,10 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//QUTR, ISO15022Synonym:
+	 * :22F::SFRE//QUAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -383,6 +410,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code Quarterly = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//QUTR"), new ISO15022Synonym(this, ":22F::SFRE//QUAR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Quarterly";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -398,6 +426,9 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//SEMI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -407,6 +438,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code SemiAnnual = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//SEMI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiAnnual";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -446,6 +478,10 @@ public class EventFrequency8Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.EventFrequency8Code
 	 * EventFrequency8Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//WEEK, ISO15022Synonym:
+	 * :22F::SFRE//WEEK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -455,6 +491,7 @@ public class EventFrequency8Code extends MMCode {
 	 */
 	public static final EventFrequency8Code Weekly = new EventFrequency8Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//WEEK"), new ISO15022Synonym(this, ":22F::SFRE//WEEK"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Weekly";
 			owner_lazy = () -> com.tools20022.repository.codeset.EventFrequency8Code.mmObject();
@@ -469,7 +506,7 @@ public class EventFrequency8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EventFrequency8Code";
 				definition = "Specifies the regularity of an event.";

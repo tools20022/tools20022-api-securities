@@ -34,6 +34,8 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Date;
 import java.util.function.Supplier;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -47,9 +49,9 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponent#getXors xors} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ProceedsDelivery1#mmSecuritiesAccountIdentificationOrCashAccountIdentificationRule
+ * {@linkplain com.tools20022.repository.msg.ProceedsDelivery1#SecuritiesAccountIdentificationOrCashAccountIdentificationRule
  * ProceedsDelivery1.
- * mmSecuritiesAccountIdentificationOrCashAccountIdentificationRule}</li>
+ * SecuritiesAccountIdentificationOrCashAccountIdentificationRule}</li>
  * </ul>
  * </li>
  * <li>
@@ -77,8 +79,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
@@ -90,16 +92,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProceedsDelivery1", propOrder = {"securitiesAccountIdentification", "cashAccountIdentification", "accountOwnerIdentification", "accountServicerIdentification"})
 public class ProceedsDelivery1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SctiesAcctId", required = true)
 	protected Max35Text securitiesAccountIdentification;
 	/**
-	 * identification of the securities account to which the securities have to
-	 * be delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,10 +133,10 @@ public class ProceedsDelivery1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProceedsDelivery1, Max35Text> mmSecuritiesAccountIdentification = new MMMessageAttribute<ProceedsDelivery1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> ProceedsDelivery1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsDelivery1.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,11 +146,22 @@ public class ProceedsDelivery1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ProceedsDelivery1 obj) {
+			return obj.getSecuritiesAccountIdentification();
+		}
+
+		@Override
+		public void setValue(ProceedsDelivery1 obj, Max35Text value) {
+			obj.setSecuritiesAccountIdentification(value);
+		}
 	};
+	@XmlElement(name = "CshAcctId", required = true)
 	protected CashAccountIdentification1Choice cashAccountIdentification;
 	/**
-	 * Identification of the cash account to which the cash has to be delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,10 +194,10 @@ public class ProceedsDelivery1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProceedsDelivery1, CashAccountIdentification1Choice> mmCashAccountIdentification = new MMMessageAttribute<ProceedsDelivery1, CashAccountIdentification1Choice>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> ProceedsDelivery1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsDelivery1.mmObject();
 			isDerived = false;
 			xmlTag = "CshAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -194,11 +207,22 @@ public class ProceedsDelivery1 {
 			minOccurs = 1;
 			complexType_lazy = () -> CashAccountIdentification1Choice.mmObject();
 		}
+
+		@Override
+		public CashAccountIdentification1Choice getValue(ProceedsDelivery1 obj) {
+			return obj.getCashAccountIdentification();
+		}
+
+		@Override
+		public void setValue(ProceedsDelivery1 obj, CashAccountIdentification1Choice value) {
+			obj.setCashAccountIdentification(value);
+		}
 	};
+	@XmlElement(name = "AcctOwnrId")
 	protected PartyIdentification2Choice accountOwnerIdentification;
 	/**
-	 * Identification of the party that owns the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +253,10 @@ public class ProceedsDelivery1 {
 	 * definition} = "Identification of the party that owns the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountOwnerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProceedsDelivery1, Optional<PartyIdentification2Choice>> mmAccountOwnerIdentification = new MMMessageAttribute<ProceedsDelivery1, Optional<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ProceedsDelivery1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsDelivery1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,11 +266,22 @@ public class ProceedsDelivery1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(ProceedsDelivery1 obj) {
+			return obj.getAccountOwnerIdentification();
+		}
+
+		@Override
+		public void setValue(ProceedsDelivery1 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setAccountOwnerIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AcctSvcrId")
 	protected PartyIdentification2Choice accountServicerIdentification;
 	/**
-	 * Identification of the institution servicing the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -277,10 +312,10 @@ public class ProceedsDelivery1 {
 	 * definition} = "Identification of the institution servicing the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountServicerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProceedsDelivery1, Optional<PartyIdentification2Choice>> mmAccountServicerIdentification = new MMMessageAttribute<ProceedsDelivery1, Optional<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ProceedsDelivery1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProceedsDelivery1.mmObject();
 			isDerived = false;
 			xmlTag = "AcctSvcrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -289,6 +324,16 @@ public class ProceedsDelivery1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(ProceedsDelivery1 obj) {
+			return obj.getAccountServicerIdentification();
+		}
+
+		@Override
+		public void setValue(ProceedsDelivery1 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setAccountServicerIdentification(value.orElse(null));
 		}
 	};
 	/**
@@ -325,23 +370,23 @@ public class ProceedsDelivery1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMXor mmSecuritiesAccountIdentificationOrCashAccountIdentificationRule = new MMXor() {
+	public static final MMXor SecuritiesAccountIdentificationOrCashAccountIdentificationRule = new MMXor() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesAccountIdentificationOrCashAccountIdentificationRule";
 			definition = "Either SecuritiesAccountIdentification or CashAccountIdentification must be present.";
-			messageComponent_lazy = () -> ProceedsDelivery1.mmObject();
-			impactedElements_lazy = () -> Arrays.asList(ProceedsDelivery1.mmSecuritiesAccountIdentification, ProceedsDelivery1.mmCashAccountIdentification);
+			messageComponent_lazy = () -> com.tools20022.repository.msg.ProceedsDelivery1.mmObject();
+			impactedElements_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProceedsDelivery1.mmSecuritiesAccountIdentification, com.tools20022.repository.msg.ProceedsDelivery1.mmCashAccountIdentification);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProceedsDelivery1.mmSecuritiesAccountIdentification, ProceedsDelivery1.mmCashAccountIdentification, ProceedsDelivery1.mmAccountOwnerIdentification,
-						ProceedsDelivery1.mmAccountServicerIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProceedsDelivery1.mmSecuritiesAccountIdentification, com.tools20022.repository.msg.ProceedsDelivery1.mmCashAccountIdentification,
+						com.tools20022.repository.msg.ProceedsDelivery1.mmAccountOwnerIdentification, com.tools20022.repository.msg.ProceedsDelivery1.mmAccountServicerIdentification);
 				trace_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.OBSOLETE;
 				removalDate = ((Supplier<Date>) (() -> {
 					try {
@@ -352,45 +397,45 @@ public class ProceedsDelivery1 {
 				})).get();
 				name = "ProceedsDelivery1";
 				definition = "Provides information about the account.";
-				xors_lazy = () -> Arrays.asList(ProceedsDelivery1.mmSecuritiesAccountIdentificationOrCashAccountIdentificationRule);
+				xors_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProceedsDelivery1.SecuritiesAccountIdentificationOrCashAccountIdentificationRule);
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctiesAcctId", required = true)
 	public Max35Text getSecuritiesAccountIdentification() {
 		return securitiesAccountIdentification;
 	}
 
-	public void setSecuritiesAccountIdentification(Max35Text securitiesAccountIdentification) {
-		this.securitiesAccountIdentification = securitiesAccountIdentification;
+	public ProceedsDelivery1 setSecuritiesAccountIdentification(Max35Text securitiesAccountIdentification) {
+		this.securitiesAccountIdentification = Objects.requireNonNull(securitiesAccountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CshAcctId", required = true)
 	public CashAccountIdentification1Choice getCashAccountIdentification() {
 		return cashAccountIdentification;
 	}
 
-	public void setCashAccountIdentification(CashAccountIdentification1Choice cashAccountIdentification) {
-		this.cashAccountIdentification = cashAccountIdentification;
+	public ProceedsDelivery1 setCashAccountIdentification(CashAccountIdentification1Choice cashAccountIdentification) {
+		this.cashAccountIdentification = Objects.requireNonNull(cashAccountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnrId")
-	public PartyIdentification2Choice getAccountOwnerIdentification() {
-		return accountOwnerIdentification;
+	public Optional<PartyIdentification2Choice> getAccountOwnerIdentification() {
+		return accountOwnerIdentification == null ? Optional.empty() : Optional.of(accountOwnerIdentification);
 	}
 
-	public void setAccountOwnerIdentification(PartyIdentification2Choice accountOwnerIdentification) {
+	public ProceedsDelivery1 setAccountOwnerIdentification(PartyIdentification2Choice accountOwnerIdentification) {
 		this.accountOwnerIdentification = accountOwnerIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AcctSvcrId")
-	public PartyIdentification2Choice getAccountServicerIdentification() {
-		return accountServicerIdentification;
+	public Optional<PartyIdentification2Choice> getAccountServicerIdentification() {
+		return accountServicerIdentification == null ? Optional.empty() : Optional.of(accountServicerIdentification);
 	}
 
-	public void setAccountServicerIdentification(PartyIdentification2Choice accountServicerIdentification) {
+	public ProceedsDelivery1 setAccountServicerIdentification(PartyIdentification2Choice accountServicerIdentification) {
 		this.accountServicerIdentification = accountServicerIdentification;
+		return this;
 	}
 }

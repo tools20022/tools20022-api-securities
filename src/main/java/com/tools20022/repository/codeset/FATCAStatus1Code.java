@@ -37,27 +37,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA101
- * FATCAStatus1Code.mmFATCA101}</li>
+ * FATCAStatus1Code.FATCA101}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA102
- * FATCAStatus1Code.mmFATCA102}</li>
+ * FATCAStatus1Code.FATCA102}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA103
- * FATCAStatus1Code.mmFATCA103}</li>
+ * FATCAStatus1Code.FATCA103}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA104
- * FATCAStatus1Code.mmFATCA104}</li>
+ * FATCAStatus1Code.FATCA104}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA105
- * FATCAStatus1Code.mmFATCA105}</li>
+ * FATCAStatus1Code.FATCA105}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA201
- * FATCAStatus1Code.mmFATCA201}</li>
+ * FATCAStatus1Code.FATCA201}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA202
- * FATCAStatus1Code.mmFATCA202}</li>
+ * FATCAStatus1Code.FATCA202}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA203
- * FATCAStatus1Code.mmFATCA203}</li>
+ * FATCAStatus1Code.FATCA203}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA204
- * FATCAStatus1Code.mmFATCA204}</li>
+ * FATCAStatus1Code.FATCA204}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA205
- * FATCAStatus1Code.mmFATCA205}</li>
+ * FATCAStatus1Code.FATCA205}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FATCAStatus1Code#FATCA206
- * FATCAStatus1Code.mmFATCA206}</li>
+ * FATCAStatus1Code.FATCA206}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -355,7 +355,7 @@ public class FATCAStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FATCAStatus1Code";
 				definition = "Specifies the Foreign Account Tax Compliance Act (FATCA) status.";

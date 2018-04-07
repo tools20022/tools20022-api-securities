@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.BalanceTypeCode;
@@ -24,12 +25,14 @@ import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.codeset.OpeningClosingCode;
 import com.tools20022.repository.codeset.ProcessingTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Numerical representation of the net increases and decreases in an account at
@@ -130,8 +133,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -149,8 +152,8 @@ public class Balance {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected BalanceTypeCode type;
 	/**
-	 * Specifies the nature of a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -187,35 +190,38 @@ public class Balance {
 	 * <li>{@linkplain com.tools20022.repository.msg.BalanceDetails5#mmType
 	 * BalanceDetails5.mmType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.QuantityBreakdown29#mmSecuritiesSubBalanceType
-	 * QuantityBreakdown29.mmSecuritiesSubBalanceType}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.QuantityBreakdown32#mmSecuritiesSubBalanceType
 	 * QuantityBreakdown32.mmSecuritiesSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails128#mmSecuritiesSubBalanceType
-	 * SettlementDetails128.mmSecuritiesSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmDeliveringSecuritiesSubBalanceType
+	 * SettlementDetails142.mmDeliveringSecuritiesSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails128#mmCashSubBalanceType
-	 * SettlementDetails128.mmCashSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmReceivingSecuritiesSubBalanceType
+	 * SettlementDetails142.mmReceivingSecuritiesSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails120#mmSecuritiesSubBalanceType
-	 * SettlementDetails120.mmSecuritiesSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmCashSubBalanceType
+	 * SettlementDetails142.mmCashSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails120#mmCashSubBalanceType
-	 * SettlementDetails120.mmCashSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails144#mmSecuritiesSubBalanceType
+	 * SettlementDetails144.mmSecuritiesSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails119#mmSecuritiesSubBalanceType
-	 * SettlementDetails119.mmSecuritiesSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails144#mmCashSubBalanceType
+	 * SettlementDetails144.mmCashSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails119#mmCashSubBalanceType
-	 * SettlementDetails119.mmCashSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails145#mmSecuritiesSubBalanceType
+	 * SettlementDetails145.mmSecuritiesSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails122#mmSecuritiesSubBalanceType
-	 * SettlementDetails122.mmSecuritiesSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails145#mmCashSubBalanceType
+	 * SettlementDetails145.mmCashSubBalanceType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails122#mmCashSubBalanceType
-	 * SettlementDetails122.mmCashSubBalanceType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails146#mmSecuritiesSubBalanceType
+	 * SettlementDetails146.mmSecuritiesSubBalanceType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails146#mmCashSubBalanceType
+	 * SettlementDetails146.mmCashSubBalanceType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.QuantityBreakdown47#mmSecuritiesSubBalanceType
+	 * QuantityBreakdown47.mmSecuritiesSubBalanceType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -233,12 +239,13 @@ public class Balance {
 	 * definition} = "Specifies the nature of a balance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Balance, BalanceTypeCode> mmType = new MMBusinessAttribute<Balance, BalanceTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashBalanceType1FormatType.mmCode, CashBalanceType1FormatType.mmProprietary, CashAccount18.mmBalanceType, BalanceType6Choice.mmCode, BalanceType6Choice.mmProprietary,
-					BalanceType7Choice.mmCode, BalanceType7Choice.mmProprietary, BalanceDetails6.mmType, BalanceDetails5.mmType, QuantityBreakdown29.mmSecuritiesSubBalanceType, QuantityBreakdown32.mmSecuritiesSubBalanceType,
-					SettlementDetails128.mmSecuritiesSubBalanceType, SettlementDetails128.mmCashSubBalanceType, SettlementDetails120.mmSecuritiesSubBalanceType, SettlementDetails120.mmCashSubBalanceType,
-					SettlementDetails119.mmSecuritiesSubBalanceType, SettlementDetails119.mmCashSubBalanceType, SettlementDetails122.mmSecuritiesSubBalanceType, SettlementDetails122.mmCashSubBalanceType);
+					BalanceType7Choice.mmCode, BalanceType7Choice.mmProprietary, BalanceDetails6.mmType, BalanceDetails5.mmType, QuantityBreakdown32.mmSecuritiesSubBalanceType, SettlementDetails142.mmDeliveringSecuritiesSubBalanceType,
+					SettlementDetails142.mmReceivingSecuritiesSubBalanceType, SettlementDetails142.mmCashSubBalanceType, SettlementDetails144.mmSecuritiesSubBalanceType, SettlementDetails144.mmCashSubBalanceType,
+					SettlementDetails145.mmSecuritiesSubBalanceType, SettlementDetails145.mmCashSubBalanceType, SettlementDetails146.mmSecuritiesSubBalanceType, SettlementDetails146.mmCashSubBalanceType,
+					QuantityBreakdown47.mmSecuritiesSubBalanceType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -249,18 +256,20 @@ public class Balance {
 			simpleType_lazy = () -> BalanceTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Balance.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BalanceTypeCode getValue(Balance obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Balance obj, BalanceTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date and time at which the balance is or will be available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,6 +289,9 @@ public class Balance {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Balance
 	 * Balance}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::VALU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -291,11 +303,12 @@ public class Balance {
 	 * "Date and time at which the balance is or will be available."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Balance, ISODateTime> mmValueDate = new MMBusinessAttribute<Balance, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAggregateBalance1.mmItemDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::VALU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date and time at which the balance is or will be available.";
@@ -304,19 +317,20 @@ public class Balance {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Balance.class.getMethod("getValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Balance obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(Balance obj, ISODateTime value) {
+			obj.setValueDate(value);
 		}
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether the balance is a credit or a debit balance. A zero
-	 * balance is considered to be a credit balance
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -352,6 +366,9 @@ public class Balance {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Balance
 	 * Balance}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CRDB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -364,12 +381,13 @@ public class Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Balance, DebitCreditCode> mmCreditDebitIndicator = new MMBusinessAttribute<Balance, DebitCreditCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CashAccount19.mmCreditDebitIndicator, SecuritiesAccount9.mmCreditDebitIndicator, SecuritiesAccount12.mmCreditDebitIndicator, CashAccount18.mmCreditDebitIndicator,
 					SecuritiesAccount8.mmCreditDebitIndicator, SecuritiesAccount10.mmCreditDebitIndicator);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CRDB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the balance is a credit or a debit balance. A zero balance is considered to be a credit balance";
@@ -378,18 +396,20 @@ public class Balance {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Balance.class.getMethod("getCreditDebitIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(Balance obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(Balance obj, DebitCreditCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.AssetHolding> assetHolding;
+	protected List<AssetHolding> assetHolding;
 	/**
-	 * Specifies in terms of value and quantity the assets held in a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -456,7 +476,7 @@ public class Balance {
 	 * "Specifies in terms of value and quantity the assets held in a balance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetHolding = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Balance, List<AssetHolding>> mmAssetHolding = new MMBusinessAssociationEnd<Balance, List<AssetHolding>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AggregateBalanceInformation30.mmAccountBaseCurrencyAmounts, AggregateBalanceInformation30.mmInstrumentCurrencyAmounts, AggregateBalanceInformation31.mmAccountBaseCurrencyAmounts,
 					AggregateBalanceInformation31.mmInstrumentCurrencyAmounts, AggregateBalanceInformation31.mmAlternateReportingCurrencyAmounts, AggregateBalancePerSafekeepingPlace28.mmAccountBaseCurrencyAmounts,
@@ -468,15 +488,25 @@ public class Balance {
 			name = "AssetHolding";
 			definition = "Specifies in terms of value and quantity the assets held in a balance.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmBalance;
+			opposite_lazy = () -> AssetHolding.mmBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			type_lazy = () -> AssetHolding.mmObject();
+		}
+
+		@Override
+		public List<AssetHolding> getValue(Balance obj) {
+			return obj.getAssetHolding();
+		}
+
+		@Override
+		public void setValue(Balance obj, List<AssetHolding> value) {
+			obj.setAssetHolding(value);
 		}
 	};
 	protected ISODateTime calculationDate;
 	/**
-	 * Specifies the date and time at which the balance is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -499,7 +529,7 @@ public class Balance {
 	 * "Specifies the date and time at which the balance is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Balance, ISODateTime> mmCalculationDate = new MMBusinessAttribute<Balance, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
@@ -511,18 +541,20 @@ public class Balance {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Balance.class.getMethod("getCalculationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Balance obj) {
+			return obj.getCalculationDate();
+		}
+
+		@Override
+		public void setValue(Balance obj, ISODateTime value) {
+			obj.setCalculationDate(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Adjustment> adjustment;
+	protected List<Adjustment> adjustment;
 	/**
-	 * Specifies the balance adjustments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,7 +584,7 @@ public class Balance {
 	 * definition} = "Specifies the balance adjustments."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAdjustment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Balance, List<Adjustment>> mmAdjustment = new MMBusinessAssociationEnd<Balance, List<Adjustment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
@@ -560,15 +592,25 @@ public class Balance {
 			name = "Adjustment";
 			definition = "Specifies the balance adjustments.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmAdjustedBalance;
+			opposite_lazy = () -> Adjustment.mmAdjustedBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
+			type_lazy = () -> Adjustment.mmObject();
+		}
+
+		@Override
+		public List<Adjustment> getValue(Balance obj) {
+			return obj.getAdjustment();
+		}
+
+		@Override
+		public void setValue(Balance obj, List<Adjustment> value) {
+			obj.setAdjustment(value);
 		}
 	};
 	protected Account account;
 	/**
-	 * Account or sub-account for which a balance is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -598,7 +640,7 @@ public class Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Balance, Account> mmAccount = new MMBusinessAssociationEnd<Balance, Account>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
@@ -607,16 +649,25 @@ public class Balance {
 			definition = "Account or sub-account for which a balance is calculated.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmBalance;
+			opposite_lazy = () -> Account.mmBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public Account getValue(Balance obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(Balance obj, Account value) {
+			obj.setAccount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Interest> interest;
+	protected List<Interest> interest;
 	/**
-	 * Set of elements used to provide interest information that applies to the
-	 * balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -647,7 +698,7 @@ public class Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Balance, List<Interest>> mmInterest = new MMBusinessAssociationEnd<Balance, List<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
@@ -655,15 +706,25 @@ public class Balance {
 			name = "Interest";
 			definition = "Set of elements used to provide interest information that applies to the balance.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmAccountBalance;
+			opposite_lazy = () -> Interest.mmAccountBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public List<Interest> getValue(Balance obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(Balance obj, List<Interest> value) {
+			obj.setInterest(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Entry> balanceEntry;
+	protected List<Entry> balanceEntry;
 	/**
-	 * Credit or debit postings used to calculate a balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -691,7 +752,7 @@ public class Balance {
 	 * definition} = "Credit or debit postings used to calculate a balance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBalanceEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Balance, List<Entry>> mmBalanceEntry = new MMBusinessAssociationEnd<Balance, List<Entry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
@@ -699,16 +760,25 @@ public class Balance {
 			name = "BalanceEntry";
 			definition = "Credit or debit postings used to calculate a balance.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Entry.mmBalance;
+			opposite_lazy = () -> Entry.mmBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
+			type_lazy = () -> Entry.mmObject();
+		}
+
+		@Override
+		public List<Entry> getValue(Balance obj) {
+			return obj.getBalanceEntry();
+		}
+
+		@Override
+		public void setValue(Balance obj, List<Entry> value) {
+			obj.setBalanceEntry(value);
 		}
 	};
 	protected ProcessingTypeCode processingRestriction;
 	/**
-	 * Specifies the type of balance processing restrictions that must be
-	 * applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -733,7 +803,7 @@ public class Balance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProcessingRestriction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Balance, ProcessingTypeCode> mmProcessingRestriction = new MMBusinessAttribute<Balance, ProcessingTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
@@ -745,18 +815,20 @@ public class Balance {
 			simpleType_lazy = () -> ProcessingTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Balance.class.getMethod("getProcessingRestriction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ProcessingTypeCode getValue(Balance obj) {
+			return obj.getProcessingRestriction();
+		}
+
+		@Override
+		public void setValue(Balance obj, ProcessingTypeCode value) {
+			obj.setProcessingRestriction(value);
 		}
 	};
 	protected OpeningClosingCode openingClosingCode;
 	/**
-	 * Specifies whether the balance is an opening or a closing one.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -791,7 +863,7 @@ public class Balance {
 	 * "Specifies whether the balance is an opening or a closing one."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOpeningClosingCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Balance, OpeningClosingCode> mmOpeningClosingCode = new MMBusinessAttribute<Balance, OpeningClosingCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(OpeningClosing3Choice.mmCode, OpeningClosing3Choice.mmProprietary);
 			isDerived = false;
@@ -804,24 +876,25 @@ public class Balance {
 			simpleType_lazy = () -> OpeningClosingCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Balance.class.getMethod("getOpeningClosingCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OpeningClosingCode getValue(Balance obj) {
+			return obj.getOpeningClosingCode();
+		}
+
+		@Override
+		public void setValue(Balance obj, OpeningClosingCode value) {
+			obj.setOpeningClosingCode(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Balance";
 				definition = "Numerical representation of the net increases and decreases in an account at a specific point in time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmBalance, com.tools20022.repository.entity.Adjustment.mmAdjustedBalance, com.tools20022.repository.entity.Entry.mmBalance,
-						com.tools20022.repository.entity.AssetHolding.mmBalance, com.tools20022.repository.entity.Interest.mmAccountBalance);
+				associationDomain_lazy = () -> Arrays.asList(Account.mmBalance, Adjustment.mmAdjustedBalance, Entry.mmBalance, AssetHolding.mmBalance, Interest.mmAccountBalance);
 				derivationElement_lazy = () -> Arrays.asList(BalanceDetails5.mmDetailedBalance, PortfolioBalance1.mmSummaryBalance, PortfolioBalance1.mmDetailedBalance);
 				subType_lazy = () -> Arrays.asList(CashBalance.mmObject(), SecuritiesBalance.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Balance.mmType, com.tools20022.repository.entity.Balance.mmValueDate, com.tools20022.repository.entity.Balance.mmCreditDebitIndicator,
@@ -843,87 +916,98 @@ public class Balance {
 		return type;
 	}
 
-	public void setType(BalanceTypeCode type) {
-		this.type = type;
+	public Balance setType(BalanceTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public Balance setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Balance setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public List<AssetHolding> getAssetHolding() {
-		return assetHolding;
+		return assetHolding == null ? assetHolding = new ArrayList<>() : assetHolding;
 	}
 
-	public void setAssetHolding(List<com.tools20022.repository.entity.AssetHolding> assetHolding) {
-		this.assetHolding = assetHolding;
+	public Balance setAssetHolding(List<AssetHolding> assetHolding) {
+		this.assetHolding = Objects.requireNonNull(assetHolding);
+		return this;
 	}
 
 	public ISODateTime getCalculationDate() {
 		return calculationDate;
 	}
 
-	public void setCalculationDate(ISODateTime calculationDate) {
-		this.calculationDate = calculationDate;
+	public Balance setCalculationDate(ISODateTime calculationDate) {
+		this.calculationDate = Objects.requireNonNull(calculationDate);
+		return this;
 	}
 
 	public List<Adjustment> getAdjustment() {
-		return adjustment;
+		return adjustment == null ? adjustment = new ArrayList<>() : adjustment;
 	}
 
-	public void setAdjustment(List<com.tools20022.repository.entity.Adjustment> adjustment) {
-		this.adjustment = adjustment;
+	public Balance setAdjustment(List<Adjustment> adjustment) {
+		this.adjustment = Objects.requireNonNull(adjustment);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public Balance setAccount(Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public Balance setInterest(List<Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public List<Entry> getBalanceEntry() {
-		return balanceEntry;
+		return balanceEntry == null ? balanceEntry = new ArrayList<>() : balanceEntry;
 	}
 
-	public void setBalanceEntry(List<com.tools20022.repository.entity.Entry> balanceEntry) {
-		this.balanceEntry = balanceEntry;
+	public Balance setBalanceEntry(List<Entry> balanceEntry) {
+		this.balanceEntry = Objects.requireNonNull(balanceEntry);
+		return this;
 	}
 
 	public ProcessingTypeCode getProcessingRestriction() {
 		return processingRestriction;
 	}
 
-	public void setProcessingRestriction(ProcessingTypeCode processingRestriction) {
-		this.processingRestriction = processingRestriction;
+	public Balance setProcessingRestriction(ProcessingTypeCode processingRestriction) {
+		this.processingRestriction = Objects.requireNonNull(processingRestriction);
+		return this;
 	}
 
 	public OpeningClosingCode getOpeningClosingCode() {
 		return openingClosingCode;
 	}
 
-	public void setOpeningClosingCode(OpeningClosingCode openingClosingCode) {
-		this.openingClosingCode = openingClosingCode;
+	public Balance setOpeningClosingCode(OpeningClosingCode openingClosingCode) {
+		this.openingClosingCode = Objects.requireNonNull(openingClosingCode);
+		return this;
 	}
 }

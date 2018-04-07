@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of meeting cancellation reason."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MeetingCancellationReason1Choice", propOrder = {"code", "proprietary"})
 public class MeetingCancellationReason1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected MeetingCancellationReason2Code code;
 	/**
-	 * Specifies the reason for cancelling a meeting in coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +108,10 @@ public class MeetingCancellationReason1Choice {
 	 * "Specifies the reason for cancelling a meeting in coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingCancellationReason1Choice, MeetingCancellationReason2Code> mmCode = new MMMessageAttribute<MeetingCancellationReason1Choice, MeetingCancellationReason2Code>() {
 		{
 			businessElementTrace_lazy = () -> MeetingStatusReason.mmMeetingCancellationReason;
-			componentContext_lazy = () -> MeetingCancellationReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MeetingCancellationReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +121,22 @@ public class MeetingCancellationReason1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> MeetingCancellationReason2Code.mmObject();
 		}
+
+		@Override
+		public MeetingCancellationReason2Code getValue(MeetingCancellationReason1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(MeetingCancellationReason1Choice obj, MeetingCancellationReason2Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Specifies the reason for cancelling a meeting in free text form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,10 +168,10 @@ public class MeetingCancellationReason1Choice {
 	 * "Specifies the reason for cancelling a meeting in free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MeetingCancellationReason1Choice, GenericIdentification13> mmProprietary = new MMMessageAttribute<MeetingCancellationReason1Choice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> MeetingStatusReason.mmMeetingCancellationReason;
-			componentContext_lazy = () -> MeetingCancellationReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MeetingCancellationReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +181,24 @@ public class MeetingCancellationReason1Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
 		}
+
+		@Override
+		public GenericIdentification13 getValue(MeetingCancellationReason1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(MeetingCancellationReason1Choice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MeetingCancellationReason1Choice.mmCode, MeetingCancellationReason1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MeetingCancellationReason1Choice.mmCode, com.tools20022.repository.choice.MeetingCancellationReason1Choice.mmProprietary);
 				trace_lazy = () -> MeetingStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingCancellationReason1Choice";
 				definition = "Choice of meeting cancellation reason.";
@@ -184,21 +207,21 @@ public class MeetingCancellationReason1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public MeetingCancellationReason2Code getCode() {
 		return code;
 	}
 
-	public void setCode(MeetingCancellationReason2Code code) {
-		this.code = code;
+	public MeetingCancellationReason1Choice setCode(MeetingCancellationReason2Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public MeetingCancellationReason1Choice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

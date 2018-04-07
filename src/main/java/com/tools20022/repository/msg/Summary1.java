@@ -31,8 +31,11 @@ import com.tools20022.repository.entity.ExposureTerm;
 import com.tools20022.repository.entity.MarginCall;
 import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.SummaryAmounts1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +80,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,18 +94,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Summary1", propOrder = {"exposedAmountPartyA", "exposedAmountPartyB", "exposureType", "totalValueOfCollateral", "netExcessDeficit", "netExcessDeficitIndicator", "valuationDateTime", "requestedSettlementDate",
 		"summaryDetails"})
 public class Summary1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "XpsdAmtPtyA")
 	protected ActiveCurrencyAndAmount exposedAmountPartyA;
 	/**
-	 * Sum of the exposures of all transactions which are in the favour of party
-	 * A. That is, all transactions which would have an amount payable by party
-	 * B to party A if they were being terminated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,10 +136,10 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExposedAmountPartyA = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, Optional<ActiveCurrencyAndAmount>> mmExposedAmountPartyA = new MMMessageAttribute<Summary1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalExposedAmount;
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "XpsdAmtPtyA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -147,13 +149,22 @@ public class Summary1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Summary1 obj) {
+			return obj.getExposedAmountPartyA();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setExposedAmountPartyA(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpsdAmtPtyB")
 	protected ActiveCurrencyAndAmount exposedAmountPartyB;
 	/**
-	 * Sum of the exposures of all transactions which are in the favour of party
-	 * B. That is, all transactions which would have an amount payable by party
-	 * A to party B if they were being terminated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,10 +196,10 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExposedAmountPartyB = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, Optional<ActiveCurrencyAndAmount>> mmExposedAmountPartyB = new MMMessageAttribute<Summary1, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalExposedAmount;
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "XpsdAmtPtyB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -198,12 +209,22 @@ public class Summary1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Summary1 obj) {
+			return obj.getExposedAmountPartyB();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setExposedAmountPartyB(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpsrTp", required = true)
 	protected ExposureType1Code exposureType;
 	/**
-	 * Specifies the underlying business area/type of trade that triggered the
-	 * posting of collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,10 +256,10 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExposureType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, ExposureType1Code> mmExposureType = new MMMessageAttribute<Summary1, ExposureType1Code>() {
 		{
 			businessElementTrace_lazy = () -> ExposureTerm.mmExposureType;
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "XpsrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -248,11 +269,22 @@ public class Summary1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ExposureType1Code.mmObject();
 		}
+
+		@Override
+		public ExposureType1Code getValue(Summary1 obj) {
+			return obj.getExposureType();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, ExposureType1Code value) {
+			obj.setExposureType(value);
+		}
 	};
+	@XmlElement(name = "TtlValOfColl", required = true)
 	protected ActiveCurrencyAndAmount totalValueOfCollateral;
 	/**
-	 * Total value of the collateral (post-haircut) held by the exposed party
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,28 +312,39 @@ public class Summary1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Total value of the collateral (post-haircut) held by the exposed party"</li>
+	 * "Total value of the collateral (post-haircut) held by the exposed party."
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalValueOfCollateral = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, ActiveCurrencyAndAmount> mmTotalValueOfCollateral = new MMMessageAttribute<Summary1, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> ExposureCalculation.mmTotalCollateralCurrentValue;
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlValOfColl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalValueOfCollateral";
-			definition = "Total value of the collateral (post-haircut) held by the exposed party";
+			definition = "Total value of the collateral (post-haircut) held by the exposed party.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(Summary1 obj) {
+			return obj.getTotalValueOfCollateral();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, ActiveCurrencyAndAmount value) {
+			obj.setTotalValueOfCollateral(value);
+		}
 	};
+	@XmlElement(name = "NetXcssDfcit")
 	protected ActiveCurrencyAndAmount netExcessDeficit;
 	/**
-	 * Specifies the amount of collateral in excess or deficit compared to the
-	 * exposure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,9 +371,9 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetExcessDeficit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, Optional<ActiveCurrencyAndAmount>> mmNetExcessDeficit = new MMMessageAttribute<Summary1, Optional<ActiveCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "NetXcssDfcit";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -340,12 +383,22 @@ public class Summary1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Summary1 obj) {
+			return obj.getNetExcessDeficit();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setNetExcessDeficit(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NetXcssDfcitInd")
 	protected ShortLong1Code netExcessDeficitIndicator;
 	/**
-	 * Indicates whether the collateral actually posted is a long or a short
-	 * position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,9 +425,9 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetExcessDeficitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, Optional<ShortLong1Code>> mmNetExcessDeficitIndicator = new MMMessageAttribute<Summary1, Optional<ShortLong1Code>>() {
 		{
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "NetXcssDfcitInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -384,11 +437,22 @@ public class Summary1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ShortLong1Code.mmObject();
 		}
+
+		@Override
+		public Optional<ShortLong1Code> getValue(Summary1 obj) {
+			return obj.getNetExcessDeficitIndicator();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, Optional<ShortLong1Code> value) {
+			obj.setNetExcessDeficitIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ValtnDtTm", required = true)
 	protected ISODateTime valuationDateTime;
 	/**
-	 * Date/time at which the collateral was valued.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -417,10 +481,10 @@ public class Summary1 {
 	 * definition} = "Date/time at which the collateral was valued."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValuationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, ISODateTime> mmValuationDateTime = new MMMessageAttribute<Summary1, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmMarginCallValuationDate;
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "ValtnDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -430,12 +494,22 @@ public class Summary1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(Summary1 obj) {
+			return obj.getValuationDateTime();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, ISODateTime value) {
+			obj.setValuationDateTime(value);
+		}
 	};
+	@XmlElement(name = "ReqdSttlmDt")
 	protected ISODate requestedSettlementDate;
 	/**
-	 * Date on which the instructing party requests settlement of the collateral
-	 * to take place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,10 +540,10 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Summary1, Optional<ISODate>> mmRequestedSettlementDate = new MMMessageAttribute<Summary1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Obligation.mmRequestedSettlementDate;
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdSttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -479,12 +553,22 @@ public class Summary1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(Summary1 obj) {
+			return obj.getRequestedSettlementDate();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, Optional<ISODate> value) {
+			obj.setRequestedSettlementDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SummryDtls")
 	protected SummaryAmounts1 summaryDetails;
 	/**
-	 * Provides the more details on the valuation of the collateral that is
-	 * posted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -509,9 +593,9 @@ public class Summary1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSummaryDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Summary1, Optional<SummaryAmounts1>> mmSummaryDetails = new MMMessageAssociationEnd<Summary1, Optional<SummaryAmounts1>>() {
 		{
-			componentContext_lazy = () -> Summary1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Summary1.mmObject();
 			isDerived = false;
 			xmlTag = "SummryDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -520,16 +604,27 @@ public class Summary1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SummaryAmounts1.mmObject();
+			type_lazy = () -> SummaryAmounts1.mmObject();
+		}
+
+		@Override
+		public Optional<SummaryAmounts1> getValue(Summary1 obj) {
+			return obj.getSummaryDetails();
+		}
+
+		@Override
+		public void setValue(Summary1 obj, Optional<SummaryAmounts1> value) {
+			obj.setSummaryDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Summary1.mmExposedAmountPartyA, Summary1.mmExposedAmountPartyB, Summary1.mmExposureType, Summary1.mmTotalValueOfCollateral, Summary1.mmNetExcessDeficit,
-						Summary1.mmNetExcessDeficitIndicator, Summary1.mmValuationDateTime, Summary1.mmRequestedSettlementDate, Summary1.mmSummaryDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Summary1.mmExposedAmountPartyA, com.tools20022.repository.msg.Summary1.mmExposedAmountPartyB, com.tools20022.repository.msg.Summary1.mmExposureType,
+						com.tools20022.repository.msg.Summary1.mmTotalValueOfCollateral, com.tools20022.repository.msg.Summary1.mmNetExcessDeficit, com.tools20022.repository.msg.Summary1.mmNetExcessDeficitIndicator,
+						com.tools20022.repository.msg.Summary1.mmValuationDateTime, com.tools20022.repository.msg.Summary1.mmRequestedSettlementDate, com.tools20022.repository.msg.Summary1.mmSummaryDetails);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Summary1";
 				definition = "Provides information related to the collateral position, that is, the identification of the exposed party, the total exposure amount and the total collateral amount held by the taker. It also contains the valuation dates and the requested settlement date of collateral if there is a shortage of collateral.";
@@ -538,84 +633,84 @@ public class Summary1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "XpsdAmtPtyA")
-	public ActiveCurrencyAndAmount getExposedAmountPartyA() {
-		return exposedAmountPartyA;
+	public Optional<ActiveCurrencyAndAmount> getExposedAmountPartyA() {
+		return exposedAmountPartyA == null ? Optional.empty() : Optional.of(exposedAmountPartyA);
 	}
 
-	public void setExposedAmountPartyA(ActiveCurrencyAndAmount exposedAmountPartyA) {
+	public Summary1 setExposedAmountPartyA(ActiveCurrencyAndAmount exposedAmountPartyA) {
 		this.exposedAmountPartyA = exposedAmountPartyA;
+		return this;
 	}
 
-	@XmlElement(name = "XpsdAmtPtyB")
-	public ActiveCurrencyAndAmount getExposedAmountPartyB() {
-		return exposedAmountPartyB;
+	public Optional<ActiveCurrencyAndAmount> getExposedAmountPartyB() {
+		return exposedAmountPartyB == null ? Optional.empty() : Optional.of(exposedAmountPartyB);
 	}
 
-	public void setExposedAmountPartyB(ActiveCurrencyAndAmount exposedAmountPartyB) {
+	public Summary1 setExposedAmountPartyB(ActiveCurrencyAndAmount exposedAmountPartyB) {
 		this.exposedAmountPartyB = exposedAmountPartyB;
+		return this;
 	}
 
-	@XmlElement(name = "XpsrTp", required = true)
 	public ExposureType1Code getExposureType() {
 		return exposureType;
 	}
 
-	public void setExposureType(ExposureType1Code exposureType) {
-		this.exposureType = exposureType;
+	public Summary1 setExposureType(ExposureType1Code exposureType) {
+		this.exposureType = Objects.requireNonNull(exposureType);
+		return this;
 	}
 
-	@XmlElement(name = "TtlValOfColl", required = true)
 	public ActiveCurrencyAndAmount getTotalValueOfCollateral() {
 		return totalValueOfCollateral;
 	}
 
-	public void setTotalValueOfCollateral(ActiveCurrencyAndAmount totalValueOfCollateral) {
-		this.totalValueOfCollateral = totalValueOfCollateral;
+	public Summary1 setTotalValueOfCollateral(ActiveCurrencyAndAmount totalValueOfCollateral) {
+		this.totalValueOfCollateral = Objects.requireNonNull(totalValueOfCollateral);
+		return this;
 	}
 
-	@XmlElement(name = "NetXcssDfcit")
-	public ActiveCurrencyAndAmount getNetExcessDeficit() {
-		return netExcessDeficit;
+	public Optional<ActiveCurrencyAndAmount> getNetExcessDeficit() {
+		return netExcessDeficit == null ? Optional.empty() : Optional.of(netExcessDeficit);
 	}
 
-	public void setNetExcessDeficit(ActiveCurrencyAndAmount netExcessDeficit) {
+	public Summary1 setNetExcessDeficit(ActiveCurrencyAndAmount netExcessDeficit) {
 		this.netExcessDeficit = netExcessDeficit;
+		return this;
 	}
 
-	@XmlElement(name = "NetXcssDfcitInd")
-	public ShortLong1Code getNetExcessDeficitIndicator() {
-		return netExcessDeficitIndicator;
+	public Optional<ShortLong1Code> getNetExcessDeficitIndicator() {
+		return netExcessDeficitIndicator == null ? Optional.empty() : Optional.of(netExcessDeficitIndicator);
 	}
 
-	public void setNetExcessDeficitIndicator(ShortLong1Code netExcessDeficitIndicator) {
+	public Summary1 setNetExcessDeficitIndicator(ShortLong1Code netExcessDeficitIndicator) {
 		this.netExcessDeficitIndicator = netExcessDeficitIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "ValtnDtTm", required = true)
 	public ISODateTime getValuationDateTime() {
 		return valuationDateTime;
 	}
 
-	public void setValuationDateTime(ISODateTime valuationDateTime) {
-		this.valuationDateTime = valuationDateTime;
+	public Summary1 setValuationDateTime(ISODateTime valuationDateTime) {
+		this.valuationDateTime = Objects.requireNonNull(valuationDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "ReqdSttlmDt")
-	public ISODate getRequestedSettlementDate() {
-		return requestedSettlementDate;
+	public Optional<ISODate> getRequestedSettlementDate() {
+		return requestedSettlementDate == null ? Optional.empty() : Optional.of(requestedSettlementDate);
 	}
 
-	public void setRequestedSettlementDate(ISODate requestedSettlementDate) {
+	public Summary1 setRequestedSettlementDate(ISODate requestedSettlementDate) {
 		this.requestedSettlementDate = requestedSettlementDate;
+		return this;
 	}
 
-	@XmlElement(name = "SummryDtls")
-	public SummaryAmounts1 getSummaryDetails() {
-		return summaryDetails;
+	public Optional<SummaryAmounts1> getSummaryDetails() {
+		return summaryDetails == null ? Optional.empty() : Optional.of(summaryDetails);
 	}
 
-	public void setSummaryDetails(com.tools20022.repository.msg.SummaryAmounts1 summaryDetails) {
+	public Summary1 setSummaryDetails(SummaryAmounts1 summaryDetails) {
 		this.summaryDetails = summaryDetails;
+		return this;
 	}
 }

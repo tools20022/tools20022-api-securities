@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,16 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Choice of an initial amount or number of pre-paid instalments."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InitialAmount1Choice", propOrder = {"initialNumberOfInstalments", "amount"})
 public class InitialAmount1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InitlNbOfInstlmts", required = true)
 	protected Number initialNumberOfInstalments;
 	/**
-	 * Number of pre-paid instalment periods at the time the investment plan is
-	 * created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,10 +109,10 @@ public class InitialAmount1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInitialNumberOfInstalments = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InitialAmount1Choice, Number> mmInitialNumberOfInstalments = new MMMessageAttribute<InitialAmount1Choice, Number>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmInitialNumberOfInstalment;
-			componentContext_lazy = () -> InitialAmount1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InitialAmount1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "InitlNbOfInstlmts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +122,22 @@ public class InitialAmount1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Number getValue(InitialAmount1Choice obj) {
+			return obj.getInitialNumberOfInstalments();
+		}
+
+		@Override
+		public void setValue(InitialAmount1Choice obj, Number value) {
+			obj.setInitialNumberOfInstalments(value);
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAndAmount amount;
 	/**
-	 * Amount to be paid or redeemed at the time the investment plan is created.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +170,10 @@ public class InitialAmount1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InitialAmount1Choice, ActiveCurrencyAndAmount> mmAmount = new MMMessageAttribute<InitialAmount1Choice, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmAmount;
-			componentContext_lazy = () -> InitialAmount1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InitialAmount1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +183,24 @@ public class InitialAmount1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(InitialAmount1Choice obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(InitialAmount1Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InitialAmount1Choice.mmInitialNumberOfInstalments, InitialAmount1Choice.mmAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InitialAmount1Choice.mmInitialNumberOfInstalments, com.tools20022.repository.choice.InitialAmount1Choice.mmAmount);
 				trace_lazy = () -> Instalment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InitialAmount1Choice";
 				definition = "Choice of an initial amount or number of pre-paid instalments.";
@@ -187,21 +209,21 @@ public class InitialAmount1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InitlNbOfInstlmts", required = true)
 	public Number getInitialNumberOfInstalments() {
 		return initialNumberOfInstalments;
 	}
 
-	public void setInitialNumberOfInstalments(Number initialNumberOfInstalments) {
-		this.initialNumberOfInstalments = initialNumberOfInstalments;
+	public InitialAmount1Choice setInitialNumberOfInstalments(Number initialNumberOfInstalments) {
+		this.initialNumberOfInstalments = Objects.requireNonNull(initialNumberOfInstalments);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAndAmount amount) {
-		this.amount = amount;
+	public InitialAmount1Choice setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 }

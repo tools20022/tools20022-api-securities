@@ -29,9 +29,11 @@ import com.tools20022.repository.datatype.Exact3NumericText;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CorporateActionCashMovements2;
+import com.tools20022.repository.msg.CorporateActionSecuritiesMovement2;
+import com.tools20022.repository.msg.SecuritiesAccount7;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -91,8 +93,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,16 +105,17 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about a corporate action election."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionElection3", propOrder = {"accountDetails", "optionType", "optionNumber", "instructedUnderlyingSecuritiesQuantity", "instructedSecuritiesQuantityToReceive", "proposedRate", "cashMovementDetails",
 		"securitiesMovementDetails"})
 public class CorporateActionElection3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AcctDtls")
 	protected SecuritiesAccount7 accountDetails;
 	/**
-	 * Provides information about the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -141,10 +144,10 @@ public class CorporateActionElection3 {
 	 * definition} = "Provides information about the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionElection3, Optional<SecuritiesAccount7>> mmAccountDetails = new MMMessageAssociationEnd<CorporateActionElection3, Optional<SecuritiesAccount7>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionServicing.mmSecuritiesAccount;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,13 +156,24 @@ public class CorporateActionElection3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SecuritiesAccount7.mmObject();
+			type_lazy = () -> SecuritiesAccount7.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesAccount7> getValue(CorporateActionElection3 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, Optional<SecuritiesAccount7> value) {
+			obj.setAccountDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OptnTp")
 	protected CorporateActionOption1FormatChoice optionType;
 	/**
-	 * Specifies the corporate action options available to the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,10 +205,10 @@ public class CorporateActionElection3 {
 	 * "Specifies the corporate action options available to the account owner."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOptionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionElection3, Optional<CorporateActionOption1FormatChoice>> mmOptionType = new MMMessageAttribute<CorporateActionElection3, Optional<CorporateActionOption1FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionType;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "OptnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,11 +218,22 @@ public class CorporateActionElection3 {
 			minOccurs = 0;
 			complexType_lazy = () -> CorporateActionOption1FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<CorporateActionOption1FormatChoice> getValue(CorporateActionElection3 obj) {
+			return obj.getOptionType();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, Optional<CorporateActionOption1FormatChoice> value) {
+			obj.setOptionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OptnNb")
 	protected Exact3NumericText optionNumber;
 	/**
-	 * Number identifying the available corporate action options.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,10 +265,10 @@ public class CorporateActionElection3 {
 	 * "Number identifying the available corporate action options."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOptionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionElection3, Optional<Exact3NumericText>> mmOptionNumber = new MMMessageAttribute<CorporateActionElection3, Optional<Exact3NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionOption.mmOptionNumber;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "OptnNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -253,11 +278,22 @@ public class CorporateActionElection3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Exact3NumericText> getValue(CorporateActionElection3 obj) {
+			return obj.getOptionNumber();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, Optional<Exact3NumericText> value) {
+			obj.setOptionNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InstdUndrlygSctiesQty")
 	protected UnitOrFaceAmount1Choice instructedUnderlyingSecuritiesQuantity;
 	/**
-	 * Quantity of underlying securities to which this instruction applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,10 +325,10 @@ public class CorporateActionElection3 {
 	 * "Quantity of underlying securities to which this instruction applies."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructedUnderlyingSecuritiesQuantity = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionElection3, Optional<UnitOrFaceAmount1Choice>> mmInstructedUnderlyingSecuritiesQuantity = new MMMessageAttribute<CorporateActionElection3, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionElection.mmQuantity;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "InstdUndrlygSctiesQty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,12 +338,22 @@ public class CorporateActionElection3 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateActionElection3 obj) {
+			return obj.getInstructedUnderlyingSecuritiesQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setInstructedUnderlyingSecuritiesQuantity(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InstdSctiesQtyToRcv")
 	protected UnitOrFaceAmount1Choice instructedSecuritiesQuantityToReceive;
 	/**
-	 * Quantity of the benefits that the account owner wants to receive, eg, as
-	 * a result of dividend reinvestment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -340,10 +386,10 @@ public class CorporateActionElection3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructedSecuritiesQuantityToReceive = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionElection3, Optional<UnitOrFaceAmount1Choice>> mmInstructedSecuritiesQuantityToReceive = new MMMessageAttribute<CorporateActionElection3, Optional<UnitOrFaceAmount1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionElection.mmQuantity;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "InstdSctiesQtyToRcv";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -353,11 +399,22 @@ public class CorporateActionElection3 {
 			minOccurs = 0;
 			complexType_lazy = () -> UnitOrFaceAmount1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOrFaceAmount1Choice> getValue(CorporateActionElection3 obj) {
+			return obj.getInstructedSecuritiesQuantityToReceive();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, Optional<UnitOrFaceAmount1Choice> value) {
+			obj.setInstructedSecuritiesQuantityToReceive(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PropsdRate")
 	protected PercentageRate proposedRate;
 	/**
-	 * Rate proposed in a remarketing of variable rate notes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -388,10 +445,10 @@ public class CorporateActionElection3 {
 	 * definition} = "Rate proposed in a remarketing of variable rate notes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProposedRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionElection3, Optional<PercentageRate>> mmProposedRate = new MMMessageAttribute<CorporateActionElection3, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmProposedRate;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "PropsdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -401,12 +458,22 @@ public class CorporateActionElection3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(CorporateActionElection3 obj) {
+			return obj.getProposedRate();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, Optional<PercentageRate> value) {
+			obj.setProposedRate(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.CorporateActionCashMovements2> cashMovementDetails;
+	@XmlElement(name = "CshMvmntDtls")
+	protected List<CorporateActionCashMovements2> cashMovementDetails;
 	/**
-	 * Provides information about the cash movement resulting from the election
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -438,10 +505,10 @@ public class CorporateActionElection3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashMovementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionElection3, List<CorporateActionCashMovements2>> mmCashMovementDetails = new MMMessageAssociationEnd<CorporateActionElection3, List<CorporateActionCashMovements2>>() {
 		{
 			businessElementTrace_lazy = () -> BookEntry.mmCashEntry;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "CshMvmntDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -449,14 +516,24 @@ public class CorporateActionElection3 {
 			definition = "Provides information about the cash movement resulting from the election instruction.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionCashMovements2.mmObject();
+			type_lazy = () -> CorporateActionCashMovements2.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionCashMovements2> getValue(CorporateActionElection3 obj) {
+			return obj.getCashMovementDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, List<CorporateActionCashMovements2> value) {
+			obj.setCashMovementDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CorporateActionSecuritiesMovement2> securitiesMovementDetails;
+	@XmlElement(name = "SctiesMvmntDtls")
+	protected List<CorporateActionSecuritiesMovement2> securitiesMovementDetails;
 	/**
-	 * Provides information about the securities movement resulting from the
-	 * election instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -488,10 +565,10 @@ public class CorporateActionElection3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesMovementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CorporateActionElection3, List<CorporateActionSecuritiesMovement2>> mmSecuritiesMovementDetails = new MMMessageAssociationEnd<CorporateActionElection3, List<CorporateActionSecuritiesMovement2>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesDeliveryObligation.mmSecuritiesTransfer;
-			componentContext_lazy = () -> CorporateActionElection3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionElection3.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesMvmntDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -499,19 +576,30 @@ public class CorporateActionElection3 {
 			definition = "Provides information about the securities movement resulting from the election instruction.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CorporateActionSecuritiesMovement2.mmObject();
+			type_lazy = () -> CorporateActionSecuritiesMovement2.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionSecuritiesMovement2> getValue(CorporateActionElection3 obj) {
+			return obj.getSecuritiesMovementDetails();
+		}
+
+		@Override
+		public void setValue(CorporateActionElection3 obj, List<CorporateActionSecuritiesMovement2> value) {
+			obj.setSecuritiesMovementDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionElection3.mmAccountDetails, CorporateActionElection3.mmOptionType, CorporateActionElection3.mmOptionNumber,
-						CorporateActionElection3.mmInstructedUnderlyingSecuritiesQuantity, CorporateActionElection3.mmInstructedSecuritiesQuantityToReceive, CorporateActionElection3.mmProposedRate,
-						CorporateActionElection3.mmCashMovementDetails, CorporateActionElection3.mmSecuritiesMovementDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionElection3.mmAccountDetails, com.tools20022.repository.msg.CorporateActionElection3.mmOptionType,
+						com.tools20022.repository.msg.CorporateActionElection3.mmOptionNumber, com.tools20022.repository.msg.CorporateActionElection3.mmInstructedUnderlyingSecuritiesQuantity,
+						com.tools20022.repository.msg.CorporateActionElection3.mmInstructedSecuritiesQuantityToReceive, com.tools20022.repository.msg.CorporateActionElection3.mmProposedRate,
+						com.tools20022.repository.msg.CorporateActionElection3.mmCashMovementDetails, com.tools20022.repository.msg.CorporateActionElection3.mmSecuritiesMovementDetails);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCAElectionAdviceV01.mmElectionDetails, AgentCAElectionCancellationRequestV01.mmElectionDetails);
 				trace_lazy = () -> CorporateActionElection.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionElection3";
 				definition = "Provides information about a corporate action election.";
@@ -520,75 +608,75 @@ public class CorporateActionElection3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AcctDtls")
-	public SecuritiesAccount7 getAccountDetails() {
-		return accountDetails;
+	public Optional<SecuritiesAccount7> getAccountDetails() {
+		return accountDetails == null ? Optional.empty() : Optional.of(accountDetails);
 	}
 
-	public void setAccountDetails(com.tools20022.repository.msg.SecuritiesAccount7 accountDetails) {
+	public CorporateActionElection3 setAccountDetails(SecuritiesAccount7 accountDetails) {
 		this.accountDetails = accountDetails;
+		return this;
 	}
 
-	@XmlElement(name = "OptnTp")
-	public CorporateActionOption1FormatChoice getOptionType() {
-		return optionType;
+	public Optional<CorporateActionOption1FormatChoice> getOptionType() {
+		return optionType == null ? Optional.empty() : Optional.of(optionType);
 	}
 
-	public void setOptionType(CorporateActionOption1FormatChoice optionType) {
+	public CorporateActionElection3 setOptionType(CorporateActionOption1FormatChoice optionType) {
 		this.optionType = optionType;
+		return this;
 	}
 
-	@XmlElement(name = "OptnNb")
-	public Exact3NumericText getOptionNumber() {
-		return optionNumber;
+	public Optional<Exact3NumericText> getOptionNumber() {
+		return optionNumber == null ? Optional.empty() : Optional.of(optionNumber);
 	}
 
-	public void setOptionNumber(Exact3NumericText optionNumber) {
+	public CorporateActionElection3 setOptionNumber(Exact3NumericText optionNumber) {
 		this.optionNumber = optionNumber;
+		return this;
 	}
 
-	@XmlElement(name = "InstdUndrlygSctiesQty")
-	public UnitOrFaceAmount1Choice getInstructedUnderlyingSecuritiesQuantity() {
-		return instructedUnderlyingSecuritiesQuantity;
+	public Optional<UnitOrFaceAmount1Choice> getInstructedUnderlyingSecuritiesQuantity() {
+		return instructedUnderlyingSecuritiesQuantity == null ? Optional.empty() : Optional.of(instructedUnderlyingSecuritiesQuantity);
 	}
 
-	public void setInstructedUnderlyingSecuritiesQuantity(UnitOrFaceAmount1Choice instructedUnderlyingSecuritiesQuantity) {
+	public CorporateActionElection3 setInstructedUnderlyingSecuritiesQuantity(UnitOrFaceAmount1Choice instructedUnderlyingSecuritiesQuantity) {
 		this.instructedUnderlyingSecuritiesQuantity = instructedUnderlyingSecuritiesQuantity;
+		return this;
 	}
 
-	@XmlElement(name = "InstdSctiesQtyToRcv")
-	public UnitOrFaceAmount1Choice getInstructedSecuritiesQuantityToReceive() {
-		return instructedSecuritiesQuantityToReceive;
+	public Optional<UnitOrFaceAmount1Choice> getInstructedSecuritiesQuantityToReceive() {
+		return instructedSecuritiesQuantityToReceive == null ? Optional.empty() : Optional.of(instructedSecuritiesQuantityToReceive);
 	}
 
-	public void setInstructedSecuritiesQuantityToReceive(UnitOrFaceAmount1Choice instructedSecuritiesQuantityToReceive) {
+	public CorporateActionElection3 setInstructedSecuritiesQuantityToReceive(UnitOrFaceAmount1Choice instructedSecuritiesQuantityToReceive) {
 		this.instructedSecuritiesQuantityToReceive = instructedSecuritiesQuantityToReceive;
+		return this;
 	}
 
-	@XmlElement(name = "PropsdRate")
-	public PercentageRate getProposedRate() {
-		return proposedRate;
+	public Optional<PercentageRate> getProposedRate() {
+		return proposedRate == null ? Optional.empty() : Optional.of(proposedRate);
 	}
 
-	public void setProposedRate(PercentageRate proposedRate) {
+	public CorporateActionElection3 setProposedRate(PercentageRate proposedRate) {
 		this.proposedRate = proposedRate;
+		return this;
 	}
 
-	@XmlElement(name = "CshMvmntDtls")
 	public List<CorporateActionCashMovements2> getCashMovementDetails() {
-		return cashMovementDetails;
+		return cashMovementDetails == null ? cashMovementDetails = new ArrayList<>() : cashMovementDetails;
 	}
 
-	public void setCashMovementDetails(List<com.tools20022.repository.msg.CorporateActionCashMovements2> cashMovementDetails) {
-		this.cashMovementDetails = cashMovementDetails;
+	public CorporateActionElection3 setCashMovementDetails(List<CorporateActionCashMovements2> cashMovementDetails) {
+		this.cashMovementDetails = Objects.requireNonNull(cashMovementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesMvmntDtls")
 	public List<CorporateActionSecuritiesMovement2> getSecuritiesMovementDetails() {
-		return securitiesMovementDetails;
+		return securitiesMovementDetails == null ? securitiesMovementDetails = new ArrayList<>() : securitiesMovementDetails;
 	}
 
-	public void setSecuritiesMovementDetails(List<com.tools20022.repository.msg.CorporateActionSecuritiesMovement2> securitiesMovementDetails) {
-		this.securitiesMovementDetails = securitiesMovementDetails;
+	public CorporateActionElection3 setSecuritiesMovementDetails(List<CorporateActionSecuritiesMovement2> securitiesMovementDetails) {
+		this.securitiesMovementDetails = Objects.requireNonNull(securitiesMovementDetails);
+		return this;
 	}
 }

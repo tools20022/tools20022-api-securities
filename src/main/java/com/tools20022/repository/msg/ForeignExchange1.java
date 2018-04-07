@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.ForeignExchangeTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,16 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides the details of the foreign exchange."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ForeignExchange1", propOrder = {"foreignCurrency", "exchangeSpotRate", "exchangeForwardPoint"})
 public class ForeignExchange1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrgnCcy", required = true)
 	protected ActiveOrHistoricCurrencyCode foreignCurrency;
 	/**
-	 * Currency into which an amount is to be converted in a currency
-	 * conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +114,10 @@ public class ForeignExchange1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmForeignCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ForeignExchange1, ActiveOrHistoricCurrencyCode> mmForeignCurrency = new MMMessageAttribute<ForeignExchange1, ActiveOrHistoricCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmTargetCurrency;
-			componentContext_lazy = () -> ForeignExchange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ForeignExchange1.mmObject();
 			isDerived = false;
 			xmlTag = "FrgnCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,14 +127,22 @@ public class ForeignExchange1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
+
+		@Override
+		public ActiveOrHistoricCurrencyCode getValue(ForeignExchange1 obj) {
+			return obj.getForeignCurrency();
+		}
+
+		@Override
+		public void setValue(ForeignExchange1 obj, ActiveOrHistoricCurrencyCode value) {
+			obj.setForeignCurrency(value);
+		}
 	};
+	@XmlElement(name = "XchgSpotRate", required = true)
 	protected BaseOneRate exchangeSpotRate;
 	/**
-	 * Foreign exchange rate between the source and the foreign currency
-	 * applicable to the first leg of the FX swap transaction. The foreign
-	 * exchange spot rate will be reported as the number of foreign currency
-	 * units per one unit of the source currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,10 +174,10 @@ public class ForeignExchange1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExchangeSpotRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ForeignExchange1, BaseOneRate> mmExchangeSpotRate = new MMMessageAttribute<ForeignExchange1, BaseOneRate>() {
 		{
 			businessElementTrace_lazy = () -> CurrencyExchange.mmExchangeRate;
-			componentContext_lazy = () -> ForeignExchange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ForeignExchange1.mmObject();
 			isDerived = false;
 			xmlTag = "XchgSpotRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,15 +187,22 @@ public class ForeignExchange1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		@Override
+		public BaseOneRate getValue(ForeignExchange1 obj) {
+			return obj.getExchangeSpotRate();
+		}
+
+		@Override
+		public void setValue(ForeignExchange1 obj, BaseOneRate value) {
+			obj.setExchangeSpotRate(value);
+		}
 	};
+	@XmlElement(name = "XchgFwdPt", required = true)
 	protected DecimalNumber exchangeForwardPoint;
 	/**
-	 * Difference between the foreign exchange spot rate and the foreign
-	 * exchange forward rate expressed in basis points quoted in accordance with
-	 * the prevailing market conventions for the currency pair. <br>
-	 * Usage:<br>
-	 * This value can be either positive or negative.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,10 +235,10 @@ public class ForeignExchange1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExchangeForwardPoint = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ForeignExchange1, DecimalNumber> mmExchangeForwardPoint = new MMMessageAttribute<ForeignExchange1, DecimalNumber>() {
 		{
 			businessElementTrace_lazy = () -> ForeignExchangeTrade.mmExchangeForwardPoint;
-			componentContext_lazy = () -> ForeignExchange1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ForeignExchange1.mmObject();
 			isDerived = false;
 			xmlTag = "XchgFwdPt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -232,14 +248,25 @@ public class ForeignExchange1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public DecimalNumber getValue(ForeignExchange1 obj) {
+			return obj.getExchangeForwardPoint();
+		}
+
+		@Override
+		public void setValue(ForeignExchange1 obj, DecimalNumber value) {
+			obj.setExchangeForwardPoint(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ForeignExchange1.mmForeignCurrency, ForeignExchange1.mmExchangeSpotRate, ForeignExchange1.mmExchangeForwardPoint);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ForeignExchange1.mmForeignCurrency, com.tools20022.repository.msg.ForeignExchange1.mmExchangeSpotRate,
+						com.tools20022.repository.msg.ForeignExchange1.mmExchangeForwardPoint);
 				trace_lazy = () -> CurrencyExchange.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ForeignExchange1";
 				definition = "Provides the details of the foreign exchange.";
@@ -248,30 +275,30 @@ public class ForeignExchange1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrgnCcy", required = true)
 	public ActiveOrHistoricCurrencyCode getForeignCurrency() {
 		return foreignCurrency;
 	}
 
-	public void setForeignCurrency(ActiveOrHistoricCurrencyCode foreignCurrency) {
-		this.foreignCurrency = foreignCurrency;
+	public ForeignExchange1 setForeignCurrency(ActiveOrHistoricCurrencyCode foreignCurrency) {
+		this.foreignCurrency = Objects.requireNonNull(foreignCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "XchgSpotRate", required = true)
 	public BaseOneRate getExchangeSpotRate() {
 		return exchangeSpotRate;
 	}
 
-	public void setExchangeSpotRate(BaseOneRate exchangeSpotRate) {
-		this.exchangeSpotRate = exchangeSpotRate;
+	public ForeignExchange1 setExchangeSpotRate(BaseOneRate exchangeSpotRate) {
+		this.exchangeSpotRate = Objects.requireNonNull(exchangeSpotRate);
+		return this;
 	}
 
-	@XmlElement(name = "XchgFwdPt", required = true)
 	public DecimalNumber getExchangeForwardPoint() {
 		return exchangeForwardPoint;
 	}
 
-	public void setExchangeForwardPoint(DecimalNumber exchangeForwardPoint) {
-		this.exchangeForwardPoint = exchangeForwardPoint;
+	public ForeignExchange1 setExchangeForwardPoint(DecimalNumber exchangeForwardPoint) {
+		this.exchangeForwardPoint = Objects.requireNonNull(exchangeForwardPoint);
+		return this;
 	}
 }

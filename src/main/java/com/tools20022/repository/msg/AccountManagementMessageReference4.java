@@ -26,8 +26,12 @@ import com.tools20022.repository.choice.LinkedMessage4Choice;
 import com.tools20022.repository.codeset.AccountManagementType3Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Account23;
+import com.tools20022.repository.msg.InvestmentAccount53;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,8 +76,17 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintLinkedReferenceOrAccountApplicationIdentificationRule#forAccountManagementMessageReference4
+ * ConstraintLinkedReferenceOrAccountApplicationIdentificationRule.
+ * forAccountManagementMessageReference4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,15 +99,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountManagementMessageReference4", propOrder = {"linkedReference", "statusRequestType", "accountApplicationIdentification", "existingAccountIdentification", "investmentAccount"})
 public class AccountManagementMessageReference4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "LkdRef")
 	protected LinkedMessage4Choice linkedReference;
 	/**
-	 * Reference to a linked message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -119,9 +133,9 @@ public class AccountManagementMessageReference4 {
 	 * definition} = "Reference to a linked message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLinkedReference = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountManagementMessageReference4, Optional<LinkedMessage4Choice>> mmLinkedReference = new MMMessageAssociationEnd<AccountManagementMessageReference4, Optional<LinkedMessage4Choice>>() {
 		{
-			componentContext_lazy = () -> AccountManagementMessageReference4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountManagementMessageReference4.mmObject();
 			isDerived = false;
 			xmlTag = "LkdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,12 +146,22 @@ public class AccountManagementMessageReference4 {
 			isComposite = true;
 			type_lazy = () -> LinkedMessage4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<LinkedMessage4Choice> getValue(AccountManagementMessageReference4 obj) {
+			return obj.getLinkedReference();
+		}
+
+		@Override
+		public void setValue(AccountManagementMessageReference4 obj, Optional<LinkedMessage4Choice> value) {
+			obj.setLinkedReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "StsReqTp", required = true)
 	protected AccountManagementType3Code statusRequestType;
 	/**
-	 * Type of account management instruction for which the status is requested
-	 * or a request to know the status of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,28 +185,38 @@ public class AccountManagementMessageReference4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Type of account management instruction for which the status  is requested or a request to know the status of the account."
+	 * "Type of account management instruction for which the status is requested or a request to know the status of the account."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatusRequestType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountManagementMessageReference4, AccountManagementType3Code> mmStatusRequestType = new MMMessageAttribute<AccountManagementMessageReference4, AccountManagementType3Code>() {
 		{
-			componentContext_lazy = () -> AccountManagementMessageReference4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountManagementMessageReference4.mmObject();
 			isDerived = false;
 			xmlTag = "StsReqTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatusRequestType";
-			definition = "Type of account management instruction for which the status  is requested or a request to know the status of the account.";
+			definition = "Type of account management instruction for which the status is requested or a request to know the status of the account.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> AccountManagementType3Code.mmObject();
 		}
+
+		@Override
+		public AccountManagementType3Code getValue(AccountManagementMessageReference4 obj) {
+			return obj.getStatusRequestType();
+		}
+
+		@Override
+		public void setValue(AccountManagementMessageReference4 obj, AccountManagementType3Code value) {
+			obj.setStatusRequestType(value);
+		}
 	};
+	@XmlElement(name = "AcctApplId")
 	protected Max35Text accountApplicationIdentification;
 	/**
-	 * Unique and unambiguous identifier of the account opening or account
-	 * modification instruction at application level.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,9 +243,9 @@ public class AccountManagementMessageReference4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountApplicationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountManagementMessageReference4, Optional<Max35Text>> mmAccountApplicationIdentification = new MMMessageAttribute<AccountManagementMessageReference4, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AccountManagementMessageReference4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountManagementMessageReference4.mmObject();
 			isDerived = false;
 			xmlTag = "AcctApplId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,11 +255,22 @@ public class AccountManagementMessageReference4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AccountManagementMessageReference4 obj) {
+			return obj.getAccountApplicationIdentification();
+		}
+
+		@Override
+		public void setValue(AccountManagementMessageReference4 obj, Optional<Max35Text> value) {
+			obj.setAccountApplicationIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ExstgAcctId")
 	protected Account23 existingAccountIdentification;
 	/**
-	 * Account to which the account opening is related.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -248,9 +293,9 @@ public class AccountManagementMessageReference4 {
 	 * definition} = "Account to which the account opening is related."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExistingAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountManagementMessageReference4, Optional<Account23>> mmExistingAccountIdentification = new MMMessageAssociationEnd<AccountManagementMessageReference4, Optional<Account23>>() {
 		{
-			componentContext_lazy = () -> AccountManagementMessageReference4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountManagementMessageReference4.mmObject();
 			isDerived = false;
 			xmlTag = "ExstgAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -259,14 +304,24 @@ public class AccountManagementMessageReference4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Account23.mmObject();
+			type_lazy = () -> Account23.mmObject();
+		}
+
+		@Override
+		public Optional<Account23> getValue(AccountManagementMessageReference4 obj) {
+			return obj.getExistingAccountIdentification();
+		}
+
+		@Override
+		public void setValue(AccountManagementMessageReference4 obj, Optional<Account23> value) {
+			obj.setExistingAccountIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "InvstmtAcct")
 	protected InvestmentAccount53 investmentAccount;
 	/**
-	 * Account information for which the status of an account management
-	 * instruction is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -292,9 +347,9 @@ public class AccountManagementMessageReference4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvestmentAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountManagementMessageReference4, Optional<InvestmentAccount53>> mmInvestmentAccount = new MMMessageAssociationEnd<AccountManagementMessageReference4, Optional<InvestmentAccount53>>() {
 		{
-			componentContext_lazy = () -> AccountManagementMessageReference4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountManagementMessageReference4.mmObject();
 			isDerived = false;
 			xmlTag = "InvstmtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -303,17 +358,29 @@ public class AccountManagementMessageReference4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccount53.mmObject();
+			type_lazy = () -> InvestmentAccount53.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentAccount53> getValue(AccountManagementMessageReference4 obj) {
+			return obj.getInvestmentAccount();
+		}
+
+		@Override
+		public void setValue(AccountManagementMessageReference4 obj, Optional<InvestmentAccount53> value) {
+			obj.setInvestmentAccount(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountManagementMessageReference4.mmLinkedReference, AccountManagementMessageReference4.mmStatusRequestType, AccountManagementMessageReference4.mmAccountApplicationIdentification,
-						AccountManagementMessageReference4.mmExistingAccountIdentification, AccountManagementMessageReference4.mmInvestmentAccount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountManagementMessageReference4.mmLinkedReference, com.tools20022.repository.msg.AccountManagementMessageReference4.mmStatusRequestType,
+						com.tools20022.repository.msg.AccountManagementMessageReference4.mmAccountApplicationIdentification, com.tools20022.repository.msg.AccountManagementMessageReference4.mmExistingAccountIdentification,
+						com.tools20022.repository.msg.AccountManagementMessageReference4.mmInvestmentAccount);
 				messageBuildingBlock_lazy = () -> Arrays.asList(RequestForAccountManagementStatusReportV05.mmRequestDetails);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintLinkedReferenceOrAccountApplicationIdentificationRule.forAccountManagementMessageReference4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountManagementMessageReference4";
 				definition = "Information about the references of an account management instruction message.";
@@ -322,48 +389,48 @@ public class AccountManagementMessageReference4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "LkdRef")
-	public LinkedMessage4Choice getLinkedReference() {
-		return linkedReference;
+	public Optional<LinkedMessage4Choice> getLinkedReference() {
+		return linkedReference == null ? Optional.empty() : Optional.of(linkedReference);
 	}
 
-	public void setLinkedReference(LinkedMessage4Choice linkedReference) {
+	public AccountManagementMessageReference4 setLinkedReference(LinkedMessage4Choice linkedReference) {
 		this.linkedReference = linkedReference;
+		return this;
 	}
 
-	@XmlElement(name = "StsReqTp", required = true)
 	public AccountManagementType3Code getStatusRequestType() {
 		return statusRequestType;
 	}
 
-	public void setStatusRequestType(AccountManagementType3Code statusRequestType) {
-		this.statusRequestType = statusRequestType;
+	public AccountManagementMessageReference4 setStatusRequestType(AccountManagementType3Code statusRequestType) {
+		this.statusRequestType = Objects.requireNonNull(statusRequestType);
+		return this;
 	}
 
-	@XmlElement(name = "AcctApplId")
-	public Max35Text getAccountApplicationIdentification() {
-		return accountApplicationIdentification;
+	public Optional<Max35Text> getAccountApplicationIdentification() {
+		return accountApplicationIdentification == null ? Optional.empty() : Optional.of(accountApplicationIdentification);
 	}
 
-	public void setAccountApplicationIdentification(Max35Text accountApplicationIdentification) {
+	public AccountManagementMessageReference4 setAccountApplicationIdentification(Max35Text accountApplicationIdentification) {
 		this.accountApplicationIdentification = accountApplicationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ExstgAcctId")
-	public Account23 getExistingAccountIdentification() {
-		return existingAccountIdentification;
+	public Optional<Account23> getExistingAccountIdentification() {
+		return existingAccountIdentification == null ? Optional.empty() : Optional.of(existingAccountIdentification);
 	}
 
-	public void setExistingAccountIdentification(com.tools20022.repository.msg.Account23 existingAccountIdentification) {
+	public AccountManagementMessageReference4 setExistingAccountIdentification(Account23 existingAccountIdentification) {
 		this.existingAccountIdentification = existingAccountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "InvstmtAcct")
-	public InvestmentAccount53 getInvestmentAccount() {
-		return investmentAccount;
+	public Optional<InvestmentAccount53> getInvestmentAccount() {
+		return investmentAccount == null ? Optional.empty() : Optional.of(investmentAccount);
 	}
 
-	public void setInvestmentAccount(com.tools20022.repository.msg.InvestmentAccount53 investmentAccount) {
+	public AccountManagementMessageReference4 setInvestmentAccount(InvestmentAccount53 investmentAccount) {
 		this.investmentAccount = investmentAccount;
+		return this;
 	}
 }

@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResidentialStatusCode#Resident
- * ResidentialStatusCode.mmResident}</li>
+ * ResidentialStatusCode.Resident}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResidentialStatusCode#PermanentResident
- * ResidentialStatusCode.mmPermanentResident}</li>
+ * ResidentialStatusCode.PermanentResident}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResidentialStatusCode#NonResident
- * ResidentialStatusCode.mmNonResident}</li>
+ * ResidentialStatusCode.NonResident}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -177,7 +177,7 @@ public class ResidentialStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RESI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResidentialStatusCode";

@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.MeetingStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,16 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NotificationStatus2", propOrder = "status")
 public class NotificationStatus2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Sts", required = true)
 	protected NotificationStatus2Code status;
 	/**
-	 * Status to define if the occurrence of the event contained in the
-	 * notification is confirmed or unconfirmed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,10 +117,10 @@ public class NotificationStatus2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NotificationStatus2, NotificationStatus2Code> mmStatus = new MMMessageAttribute<NotificationStatus2, NotificationStatus2Code>() {
 		{
 			businessElementTrace_lazy = () -> MeetingStatus.mmNotificationStatus;
-			componentContext_lazy = () -> NotificationStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NotificationStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Sts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,15 +130,25 @@ public class NotificationStatus2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> NotificationStatus2Code.mmObject();
 		}
+
+		@Override
+		public NotificationStatus2Code getValue(NotificationStatus2 obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(NotificationStatus2 obj, NotificationStatus2Code value) {
+			obj.setStatus(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NotificationStatus2.mmStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NotificationStatus2.mmStatus);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingNotificationV05.mmNotificationStatus);
 				trace_lazy = () -> MeetingStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationStatus2";
 				definition = "Specifies if the occurrence of the event contained in the notification is confirmed or unconfirmed. Details of the event can be complete or incomplete.";
@@ -146,12 +157,12 @@ public class NotificationStatus2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Sts", required = true)
 	public NotificationStatus2Code getStatus() {
 		return status;
 	}
 
-	public void setStatus(NotificationStatus2Code status) {
-		this.status = status;
+	public NotificationStatus2 setStatus(NotificationStatus2Code status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 }

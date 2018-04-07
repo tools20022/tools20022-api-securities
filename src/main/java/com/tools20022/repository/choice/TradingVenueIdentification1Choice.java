@@ -29,6 +29,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TradingVenueIdentification2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidMICRule#forTradingVenueIdentification1Choice
+ * ConstraintValidMICRule.forTradingVenueIdentification1Choice}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,16 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Trade venue related fields."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TradingVenueIdentification1Choice", propOrder = {"marketIdentificationCode", "nationalCompetentAuthority", "other"})
 public class TradingVenueIdentification1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MktIdCd", required = true)
 	protected MICIdentifier marketIdentificationCode;
 	/**
-	 * Identification used where reporting entity uses a market identification
-	 * code (MIC).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,10 +124,10 @@ public class TradingVenueIdentification1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMarketIdentificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradingVenueIdentification1Choice, MICIdentifier> mmMarketIdentificationCode = new MMMessageAttribute<TradingVenueIdentification1Choice, MICIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationIdentification.mmMIC;
-			componentContext_lazy = () -> TradingVenueIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TradingVenueIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MktIdCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,12 +137,22 @@ public class TradingVenueIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public MICIdentifier getValue(TradingVenueIdentification1Choice obj) {
+			return obj.getMarketIdentificationCode();
+		}
+
+		@Override
+		public void setValue(TradingVenueIdentification1Choice obj, MICIdentifier value) {
+			obj.setMarketIdentificationCode(value);
+		}
 	};
+	@XmlElement(name = "NtlCmptntAuthrty", required = true)
 	protected CountryCode nationalCompetentAuthority;
 	/**
-	 * Identification used where reporting entity is a national competent
-	 * authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,10 +184,10 @@ public class TradingVenueIdentification1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNationalCompetentAuthority = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradingVenueIdentification1Choice, CountryCode> mmNationalCompetentAuthority = new MMMessageAttribute<TradingVenueIdentification1Choice, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> PostalAddress.mmCountry;
-			componentContext_lazy = () -> TradingVenueIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TradingVenueIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NtlCmptntAuthrty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,12 +197,22 @@ public class TradingVenueIdentification1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(TradingVenueIdentification1Choice obj) {
+			return obj.getNationalCompetentAuthority();
+		}
+
+		@Override
+		public void setValue(TradingVenueIdentification1Choice obj, CountryCode value) {
+			obj.setNationalCompetentAuthority(value);
+		}
 	};
+	@XmlElement(name = "Othr", required = true)
 	protected TradingVenueIdentification2 other;
 	/**
-	 * Identification used where a venue does not have an already defined code
-	 * type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -215,10 +244,10 @@ public class TradingVenueIdentification1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradingVenueIdentification1Choice, TradingVenueIdentification2> mmOther = new MMMessageAssociationEnd<TradingVenueIdentification1Choice, TradingVenueIdentification2>() {
 		{
 			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
-			componentContext_lazy = () -> TradingVenueIdentification1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.TradingVenueIdentification1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,14 +258,26 @@ public class TradingVenueIdentification1Choice {
 			isComposite = true;
 			type_lazy = () -> TradingVenueIdentification2.mmObject();
 		}
+
+		@Override
+		public TradingVenueIdentification2 getValue(TradingVenueIdentification1Choice obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(TradingVenueIdentification1Choice obj, TradingVenueIdentification2 value) {
+			obj.setOther(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TradingVenueIdentification1Choice.mmMarketIdentificationCode, TradingVenueIdentification1Choice.mmNationalCompetentAuthority, TradingVenueIdentification1Choice.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.TradingVenueIdentification1Choice.mmMarketIdentificationCode,
+						com.tools20022.repository.choice.TradingVenueIdentification1Choice.mmNationalCompetentAuthority, com.tools20022.repository.choice.TradingVenueIdentification1Choice.mmOther);
 				trace_lazy = () -> OrganisationIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidMICRule.forTradingVenueIdentification1Choice);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingVenueIdentification1Choice";
 				definition = "Trade venue related fields.";
@@ -245,30 +286,30 @@ public class TradingVenueIdentification1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MktIdCd", required = true)
 	public MICIdentifier getMarketIdentificationCode() {
 		return marketIdentificationCode;
 	}
 
-	public void setMarketIdentificationCode(MICIdentifier marketIdentificationCode) {
-		this.marketIdentificationCode = marketIdentificationCode;
+	public TradingVenueIdentification1Choice setMarketIdentificationCode(MICIdentifier marketIdentificationCode) {
+		this.marketIdentificationCode = Objects.requireNonNull(marketIdentificationCode);
+		return this;
 	}
 
-	@XmlElement(name = "NtlCmptntAuthrty", required = true)
 	public CountryCode getNationalCompetentAuthority() {
 		return nationalCompetentAuthority;
 	}
 
-	public void setNationalCompetentAuthority(CountryCode nationalCompetentAuthority) {
-		this.nationalCompetentAuthority = nationalCompetentAuthority;
+	public TradingVenueIdentification1Choice setNationalCompetentAuthority(CountryCode nationalCompetentAuthority) {
+		this.nationalCompetentAuthority = Objects.requireNonNull(nationalCompetentAuthority);
+		return this;
 	}
 
-	@XmlElement(name = "Othr", required = true)
 	public TradingVenueIdentification2 getOther() {
 		return other;
 	}
 
-	public void setOther(TradingVenueIdentification2 other) {
-		this.other = other;
+	public TradingVenueIdentification1Choice setOther(TradingVenueIdentification2 other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

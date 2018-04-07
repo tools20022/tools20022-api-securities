@@ -24,10 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.SecuritiesTradeLatestVersion;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -101,16 +99,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SubscriptionOrderCancellationRequestV04", propOrder = {"messageIdentification", "poolReference", "previousReference", "masterReference", "orderReferences", "copyDetails"})
 public class SubscriptionOrderCancellationRequestV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies the message from a business
-	 * application standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,33 +127,36 @@ public class SubscriptionOrderCancellationRequestV04 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies the message from a business application standpoint. "
+	 * "Reference that uniquely identifies the message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies the message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies the message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionOrderCancellationRequestV04.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(SubscriptionOrderCancellationRequestV04 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(SubscriptionOrderCancellationRequestV04 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "PoolRef")
 	protected AdditionalReference9 poolReference;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,7 +177,7 @@ public class SubscriptionOrderCancellationRequestV04 {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPoolReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<AdditionalReference9>> mmPoolReference = new MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<AdditionalReference9>>() {
 		{
 			xmlTag = "PoolRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,18 +188,21 @@ public class SubscriptionOrderCancellationRequestV04 {
 			complexType_lazy = () -> AdditionalReference9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionOrderCancellationRequestV04.class.getMethod("getPoolReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference9> getValue(SubscriptionOrderCancellationRequestV04 obj) {
+			return obj.getPoolReference();
+		}
+
+		@Override
+		public void setValue(SubscriptionOrderCancellationRequestV04 obj, Optional<AdditionalReference9> value) {
+			obj.setPoolReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrvsRef")
 	protected AdditionalReference8 previousReference;
 	/**
-	 * Reference to a linked message that was previously sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,7 +223,7 @@ public class SubscriptionOrderCancellationRequestV04 {
 	 * definition} = "Reference to a linked message that was previously sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPreviousReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<AdditionalReference8>> mmPreviousReference = new MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<AdditionalReference8>>() {
 		{
 			xmlTag = "PrvsRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,19 +234,21 @@ public class SubscriptionOrderCancellationRequestV04 {
 			complexType_lazy = () -> AdditionalReference8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionOrderCancellationRequestV04.class.getMethod("getPreviousReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference8> getValue(SubscriptionOrderCancellationRequestV04 obj) {
+			return obj.getPreviousReference();
+		}
+
+		@Override
+		public void setValue(SubscriptionOrderCancellationRequestV04 obj, Optional<AdditionalReference8> value) {
+			obj.setPreviousReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MstrRef")
 	protected Max35Text masterReference;
 	/**
-	 * Reference assigned to a set of orders or trades in order to link them
-	 * together.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,7 +270,7 @@ public class SubscriptionOrderCancellationRequestV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMasterReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<Max35Text>> mmMasterReference = new MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<Max35Text>>() {
 		{
 			xmlTag = "MstrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -275,18 +281,21 @@ public class SubscriptionOrderCancellationRequestV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionOrderCancellationRequestV04.class.getMethod("getMasterReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Max35Text> getValue(SubscriptionOrderCancellationRequestV04 obj) {
+			return obj.getMasterReference();
+		}
+
+		@Override
+		public void setValue(SubscriptionOrderCancellationRequestV04 obj, Optional<Max35Text> value) {
+			obj.setMasterReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OrdrRefs", required = true)
 	protected List<InvestmentFundOrder9> orderReferences;
 	/**
-	 * Identification of the individual order to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -307,7 +316,7 @@ public class SubscriptionOrderCancellationRequestV04 {
 	 * definition} = "Identification of the individual order to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOrderReferences = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, List<InvestmentFundOrder9>> mmOrderReferences = new MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, List<InvestmentFundOrder9>>() {
 		{
 			xmlTag = "OrdrRefs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -317,18 +326,21 @@ public class SubscriptionOrderCancellationRequestV04 {
 			complexType_lazy = () -> InvestmentFundOrder9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionOrderCancellationRequestV04.class.getMethod("getOrderReferences", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<InvestmentFundOrder9> getValue(SubscriptionOrderCancellationRequestV04 obj) {
+			return obj.getOrderReferences();
+		}
+
+		@Override
+		public void setValue(SubscriptionOrderCancellationRequestV04 obj, List<InvestmentFundOrder9> value) {
+			obj.setOrderReferences(value);
 		}
 	};
+	@XmlElement(name = "CpyDtls")
 	protected CopyInformation4 copyDetails;
 	/**
-	 * Information provided when the message is a copy of a previous message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -350,7 +362,7 @@ public class SubscriptionOrderCancellationRequestV04 {
 	 * "Information provided when the message is a copy of a previous message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCopyDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<CopyInformation4>> mmCopyDetails = new MMMessageBuildingBlock<SubscriptionOrderCancellationRequestV04, Optional<CopyInformation4>>() {
 		{
 			xmlTag = "CpyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -361,12 +373,14 @@ public class SubscriptionOrderCancellationRequestV04 {
 			complexType_lazy = () -> CopyInformation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionOrderCancellationRequestV04.class.getMethod("getCopyDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CopyInformation4> getValue(SubscriptionOrderCancellationRequestV04 obj) {
+			return obj.getCopyDetails();
+		}
+
+		@Override
+		public void setValue(SubscriptionOrderCancellationRequestV04 obj, Optional<CopyInformation4> value) {
+			obj.setCopyDetails(value.orElse(null));
 		}
 	};
 
@@ -401,61 +415,61 @@ public class SubscriptionOrderCancellationRequestV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public SubscriptionOrderCancellationRequestV04 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PoolRef")
-	public AdditionalReference9 getPoolReference() {
-		return poolReference;
+	public Optional<AdditionalReference9> getPoolReference() {
+		return poolReference == null ? Optional.empty() : Optional.of(poolReference);
 	}
 
-	public void setPoolReference(AdditionalReference9 poolReference) {
+	public SubscriptionOrderCancellationRequestV04 setPoolReference(AdditionalReference9 poolReference) {
 		this.poolReference = poolReference;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsRef")
-	public AdditionalReference8 getPreviousReference() {
-		return previousReference;
+	public Optional<AdditionalReference8> getPreviousReference() {
+		return previousReference == null ? Optional.empty() : Optional.of(previousReference);
 	}
 
-	public void setPreviousReference(AdditionalReference8 previousReference) {
+	public SubscriptionOrderCancellationRequestV04 setPreviousReference(AdditionalReference8 previousReference) {
 		this.previousReference = previousReference;
+		return this;
 	}
 
-	@XmlElement(name = "MstrRef")
-	public Max35Text getMasterReference() {
-		return masterReference;
+	public Optional<Max35Text> getMasterReference() {
+		return masterReference == null ? Optional.empty() : Optional.of(masterReference);
 	}
 
-	public void setMasterReference(Max35Text masterReference) {
+	public SubscriptionOrderCancellationRequestV04 setMasterReference(Max35Text masterReference) {
 		this.masterReference = masterReference;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrRefs", required = true)
 	public List<InvestmentFundOrder9> getOrderReferences() {
-		return orderReferences;
+		return orderReferences == null ? orderReferences = new ArrayList<>() : orderReferences;
 	}
 
-	public void setOrderReferences(List<InvestmentFundOrder9> orderReferences) {
-		this.orderReferences = orderReferences;
+	public SubscriptionOrderCancellationRequestV04 setOrderReferences(List<InvestmentFundOrder9> orderReferences) {
+		this.orderReferences = Objects.requireNonNull(orderReferences);
+		return this;
 	}
 
-	@XmlElement(name = "CpyDtls")
-	public CopyInformation4 getCopyDetails() {
-		return copyDetails;
+	public Optional<CopyInformation4> getCopyDetails() {
+		return copyDetails == null ? Optional.empty() : Optional.of(copyDetails);
 	}
 
-	public void setCopyDetails(CopyInformation4 copyDetails) {
+	public SubscriptionOrderCancellationRequestV04 setCopyDetails(CopyInformation4 copyDetails) {
 		this.copyDetails = copyDetails;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:setr.011.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:setr.011.001.04")
 	static public class Document {
 		@XmlElement(name = "SbcptOrdrCxlReq", required = true)
 		public SubscriptionOrderCancellationRequestV04 messageBody;

@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#StructuredFinanceProduct
- * NonEquityInstrumentReportingClassification1Code.mmStructuredFinanceProduct}</li>
+ * NonEquityInstrumentReportingClassification1Code.StructuredFinanceProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#SecuritisedDerivative
- * NonEquityInstrumentReportingClassification1Code.mmSecuritisedDerivative}</li>
+ * NonEquityInstrumentReportingClassification1Code.SecuritisedDerivative}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#Derivative
- * NonEquityInstrumentReportingClassification1Code.mmDerivative}</li>
+ * NonEquityInstrumentReportingClassification1Code.Derivative}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#EmissionAllowance
- * NonEquityInstrumentReportingClassification1Code.mmEmissionAllowance}</li>
+ * NonEquityInstrumentReportingClassification1Code.EmissionAllowance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#Bond
- * NonEquityInstrumentReportingClassification1Code.mmBond}</li>
+ * NonEquityInstrumentReportingClassification1Code.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#ExchangeTradedCommodities
- * NonEquityInstrumentReportingClassification1Code.mmExchangeTradedCommodities}</li>
+ * NonEquityInstrumentReportingClassification1Code.ExchangeTradedCommodities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonEquityInstrumentReportingClassification1Code#ExchangeTradedNote
- * NonEquityInstrumentReportingClassification1Code.mmExchangeTradedNote}</li>
+ * NonEquityInstrumentReportingClassification1Code.ExchangeTradedNote}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -257,7 +257,7 @@ public class NonEquityInstrumentReportingClassification1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonEquityInstrumentReportingClassification1Code";
 				definition = "Specifies the non-equity financial instruments.";

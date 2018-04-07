@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType10Code#BuyUp
- * FractionDispositionType10Code.mmBuyUp}</li>
+ * FractionDispositionType10Code.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType10Code#CashInLieuOfFraction
- * FractionDispositionType10Code.mmCashInLieuOfFraction}</li>
+ * FractionDispositionType10Code.CashInLieuOfFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType10Code#Expire
- * FractionDispositionType10Code.mmExpire}</li>
+ * FractionDispositionType10Code.Expire}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType10Code#IssueFraction
- * FractionDispositionType10Code.mmIssueFraction}</li>
+ * FractionDispositionType10Code.IssueFraction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -183,7 +183,7 @@ public class FractionDispositionType10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FractionDispositionType10Code";

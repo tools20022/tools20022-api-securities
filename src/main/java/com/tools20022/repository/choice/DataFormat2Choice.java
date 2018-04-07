@@ -25,6 +25,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DataFormat2Choice", propOrder = {"structured", "unstructured"})
 public class DataFormat2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Strd", required = true)
 	protected GenericIdentification1 structured;
 	/**
-	 * Specification of data in a structured form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,9 +101,9 @@ public class DataFormat2Choice {
 	 * definition} = "Specification of data in a structured form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DataFormat2Choice, GenericIdentification1> mmStructured = new MMMessageAttribute<DataFormat2Choice, GenericIdentification1>() {
 		{
-			componentContext_lazy = () -> DataFormat2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DataFormat2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Strd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -111,11 +113,22 @@ public class DataFormat2Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification1.mmObject();
 		}
+
+		@Override
+		public GenericIdentification1 getValue(DataFormat2Choice obj) {
+			return obj.getStructured();
+		}
+
+		@Override
+		public void setValue(DataFormat2Choice obj, GenericIdentification1 value) {
+			obj.setStructured(value);
+		}
 	};
+	@XmlElement(name = "Ustrd", required = true)
 	protected Max140Text unstructured;
 	/**
-	 * Specification of data for which there isn't a structured form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,9 +154,9 @@ public class DataFormat2Choice {
 	 * "Specification of data for which there isn't a structured form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnstructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DataFormat2Choice, Max140Text> mmUnstructured = new MMMessageAttribute<DataFormat2Choice, Max140Text>() {
 		{
-			componentContext_lazy = () -> DataFormat2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DataFormat2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Ustrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,13 +166,23 @@ public class DataFormat2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(DataFormat2Choice obj) {
+			return obj.getUnstructured();
+		}
+
+		@Override
+		public void setValue(DataFormat2Choice obj, Max140Text value) {
+			obj.setUnstructured(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DataFormat2Choice.mmStructured, DataFormat2Choice.mmUnstructured);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.DataFormat2Choice.mmStructured, com.tools20022.repository.choice.DataFormat2Choice.mmUnstructured);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataFormat2Choice";
 				definition = "Choice between the specification of the data in a structured or unstructured form.";
@@ -168,21 +191,21 @@ public class DataFormat2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Strd", required = true)
 	public GenericIdentification1 getStructured() {
 		return structured;
 	}
 
-	public void setStructured(GenericIdentification1 structured) {
-		this.structured = structured;
+	public DataFormat2Choice setStructured(GenericIdentification1 structured) {
+		this.structured = Objects.requireNonNull(structured);
+		return this;
 	}
 
-	@XmlElement(name = "Ustrd", required = true)
 	public Max140Text getUnstructured() {
 		return unstructured;
 	}
 
-	public void setUnstructured(Max140Text unstructured) {
-		this.unstructured = unstructured;
+	public DataFormat2Choice setUnstructured(Max140Text unstructured) {
+		this.unstructured = Objects.requireNonNull(unstructured);
+		return this;
 	}
 }

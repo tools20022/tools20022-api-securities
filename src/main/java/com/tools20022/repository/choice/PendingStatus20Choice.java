@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.choice;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -25,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.NoSpecifiedReason1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the matching status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PendingStatus20Choice", propOrder = {"forwarded", "underInvestigation"})
 public class PendingStatus20Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Fwdd", required = true)
 	protected NoSpecifiedReason1 forwarded;
 	/**
-	 * Allegement is forwarded.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -93,6 +96,9 @@ public class PendingStatus20Choice {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Fwdd"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::MTCH//MACH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -103,12 +109,13 @@ public class PendingStatus20Choice {
 	 * definition} = "Allegement is forwarded."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForwarded = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PendingStatus20Choice, NoSpecifiedReason1> mmForwarded = new MMMessageAssociationEnd<PendingStatus20Choice, NoSpecifiedReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> PendingStatus20Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PendingStatus20Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Fwdd";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::MTCH//MACH"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Forwarded";
 			definition = "Allegement is forwarded.";
@@ -117,11 +124,22 @@ public class PendingStatus20Choice {
 			isComposite = true;
 			type_lazy = () -> NoSpecifiedReason1.mmObject();
 		}
+
+		@Override
+		public NoSpecifiedReason1 getValue(PendingStatus20Choice obj) {
+			return obj.getForwarded();
+		}
+
+		@Override
+		public void setValue(PendingStatus20Choice obj, NoSpecifiedReason1 value) {
+			obj.setForwarded(value);
+		}
 	};
+	@XmlElement(name = "UdrInvstgtn", required = true)
 	protected NoSpecifiedReason1 underInvestigation;
 	/**
-	 * Allegement is under investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -150,10 +168,10 @@ public class PendingStatus20Choice {
 	 * definition} = "Allegement is under investigation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUnderInvestigation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PendingStatus20Choice, NoSpecifiedReason1> mmUnderInvestigation = new MMMessageAssociationEnd<PendingStatus20Choice, NoSpecifiedReason1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			componentContext_lazy = () -> PendingStatus20Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.PendingStatus20Choice.mmObject();
 			isDerived = false;
 			xmlTag = "UdrInvstgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,14 +182,24 @@ public class PendingStatus20Choice {
 			isComposite = true;
 			type_lazy = () -> NoSpecifiedReason1.mmObject();
 		}
+
+		@Override
+		public NoSpecifiedReason1 getValue(PendingStatus20Choice obj) {
+			return obj.getUnderInvestigation();
+		}
+
+		@Override
+		public void setValue(PendingStatus20Choice obj, NoSpecifiedReason1 value) {
+			obj.setUnderInvestigation(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PendingStatus20Choice.mmForwarded, PendingStatus20Choice.mmUnderInvestigation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.PendingStatus20Choice.mmForwarded, com.tools20022.repository.choice.PendingStatus20Choice.mmUnderInvestigation);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingStatus20Choice";
 				definition = "Choice of format for the matching status.";
@@ -180,21 +208,21 @@ public class PendingStatus20Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Fwdd", required = true)
 	public NoSpecifiedReason1 getForwarded() {
 		return forwarded;
 	}
 
-	public void setForwarded(NoSpecifiedReason1 forwarded) {
-		this.forwarded = forwarded;
+	public PendingStatus20Choice setForwarded(NoSpecifiedReason1 forwarded) {
+		this.forwarded = Objects.requireNonNull(forwarded);
+		return this;
 	}
 
-	@XmlElement(name = "UdrInvstgtn", required = true)
 	public NoSpecifiedReason1 getUnderInvestigation() {
 		return underInvestigation;
 	}
 
-	public void setUnderInvestigation(NoSpecifiedReason1 underInvestigation) {
-		this.underInvestigation = underInvestigation;
+	public PendingStatus20Choice setUnderInvestigation(NoSpecifiedReason1 underInvestigation) {
+		this.underInvestigation = Objects.requireNonNull(underInvestigation);
+		return this;
 	}
 }

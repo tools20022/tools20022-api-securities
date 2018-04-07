@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingsPlanType1Code#InvestmentPlan
- * HoldingsPlanType1Code.mmInvestmentPlan}</li>
+ * HoldingsPlanType1Code.InvestmentPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingsPlanType1Code#SwitchPlan
- * HoldingsPlanType1Code.mmSwitchPlan}</li>
+ * HoldingsPlanType1Code.SwitchPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.HoldingsPlanType1Code#WithdrawalPlan
- * HoldingsPlanType1Code.mmWithdrawalPlan}</li>
+ * HoldingsPlanType1Code.WithdrawalPlan}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -155,7 +155,7 @@ public class HoldingsPlanType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INVP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldingsPlanType1Code";

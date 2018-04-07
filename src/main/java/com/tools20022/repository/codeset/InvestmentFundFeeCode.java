@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,73 +39,76 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#AccountingFee
- * InvestmentFundFeeCode.mmAccountingFee}</li>
+ * InvestmentFundFeeCode.AccountingFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#BackEndLoad
- * InvestmentFundFeeCode.mmBackEndLoad}</li>
+ * InvestmentFundFeeCode.BackEndLoad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#BrokerageFee
- * InvestmentFundFeeCode.mmBrokerageFee}</li>
+ * InvestmentFundFeeCode.BrokerageFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#ContingentDeferredSalesCharge
- * InvestmentFundFeeCode.mmContingentDeferredSalesCharge}</li>
+ * InvestmentFundFeeCode.ContingentDeferredSalesCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#CorrespondentBankCharge
- * InvestmentFundFeeCode.mmCorrespondentBankCharge}</li>
+ * InvestmentFundFeeCode.CorrespondentBankCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#CustodyFee
- * InvestmentFundFeeCode.mmCustodyFee}</li>
+ * InvestmentFundFeeCode.CustodyFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#DilutionLevy
- * InvestmentFundFeeCode.mmDilutionLevy}</li>
+ * InvestmentFundFeeCode.DilutionLevy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#Discount
- * InvestmentFundFeeCode.mmDiscount}</li>
+ * InvestmentFundFeeCode.Discount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#Equalisation
- * InvestmentFundFeeCode.mmEqualisation}</li>
+ * InvestmentFundFeeCode.Equalisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#FrontEndLoad
- * InvestmentFundFeeCode.mmFrontEndLoad}</li>
+ * InvestmentFundFeeCode.FrontEndLoad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#InitialCharge
- * InvestmentFundFeeCode.mmInitialCharge}</li>
+ * InvestmentFundFeeCode.InitialCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#Premium
- * InvestmentFundFeeCode.mmPremium}</li>
+ * InvestmentFundFeeCode.Premium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#ServiceProvisionFee
- * InvestmentFundFeeCode.mmServiceProvisionFee}</li>
+ * InvestmentFundFeeCode.ServiceProvisionFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#Switch
- * InvestmentFundFeeCode.mmSwitch}</li>
+ * InvestmentFundFeeCode.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#TransferFee
- * InvestmentFundFeeCode.mmTransferFee}</li>
+ * InvestmentFundFeeCode.TransferFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#UCITSCommission
- * InvestmentFundFeeCode.mmUCITSCommission}</li>
+ * InvestmentFundFeeCode.UCITSCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#Commission
- * InvestmentFundFeeCode.mmCommission}</li>
+ * InvestmentFundFeeCode.Commission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#ShippingCharge
- * InvestmentFundFeeCode.mmShippingCharge}</li>
+ * InvestmentFundFeeCode.ShippingCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#PostageCharge
- * InvestmentFundFeeCode.mmPostageCharge}</li>
+ * InvestmentFundFeeCode.PostageCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#CommissionDePlacement
- * InvestmentFundFeeCode.mmCommissionDePlacement}</li>
+ * InvestmentFundFeeCode.CommissionDePlacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#AdditionalFee
- * InvestmentFundFeeCode.mmAdditionalFee}</li>
+ * InvestmentFundFeeCode.AdditionalFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#RegulatoryFee
- * InvestmentFundFeeCode.mmRegulatoryFee}</li>
+ * InvestmentFundFeeCode.RegulatoryFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#Penalty
- * InvestmentFundFeeCode.mmPenalty}</li>
+ * InvestmentFundFeeCode.Penalty}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode#SpecialConcessions
+ * InvestmentFundFeeCode.SpecialConcessions}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -112,13 +116,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.InvestmentFundFee1Code
  * InvestmentFundFee1Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.InvestmentFundFee2Code
+ * InvestmentFundFee2Code}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -526,6 +532,9 @@ public class InvestmentFundFeeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CHAR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::CHAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -540,6 +549,7 @@ public class InvestmentFundFeeCode extends MMCode {
 	 */
 	public static final InvestmentFundFeeCode ServiceProvisionFee = new InvestmentFundFeeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::CHAR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ServiceProvisionFee";
 			definition = "Fee paid by the investor to a distributor/intermediary or other service provider for the provision of financial services.";
@@ -631,7 +641,7 @@ public class InvestmentFundFeeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Charges paid by the investor to the fund company for subscription and redemption orders. "
+	 * "Charges paid by the investor to the fund company for subscription and redemption orders."
 	 * </li>
 	 * </ul>
 	 */
@@ -639,7 +649,7 @@ public class InvestmentFundFeeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UCITSCommission";
-			definition = "Charges paid by the investor to the fund company for subscription and redemption orders. ";
+			definition = "Charges paid by the investor to the fund company for subscription and redemption orders.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InvestmentFundFeeCode.mmObject();
 			codeName = "UCIC";
 		}
@@ -685,6 +695,9 @@ public class InvestmentFundFeeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SHIP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::SHIP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -698,6 +711,7 @@ public class InvestmentFundFeeCode extends MMCode {
 	 */
 	public static final InvestmentFundFeeCode ShippingCharge = new InvestmentFundFeeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::SHIP"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ShippingCharge";
 			definition = "Charge for shipping, including the insurance of securities.";
@@ -716,6 +730,9 @@ public class InvestmentFundFeeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "POST"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::POST</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -728,6 +745,7 @@ public class InvestmentFundFeeCode extends MMCode {
 	 */
 	public static final InvestmentFundFeeCode PostageCharge = new InvestmentFundFeeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::POST"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostageCharge";
 			definition = "Charge paid for the postage.";
@@ -810,6 +828,9 @@ public class InvestmentFundFeeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REGF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::REGF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -818,15 +839,16 @@ public class InvestmentFundFeeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Fee charged by a regulatory authority, for example, securities and exchange fees. "
+	 * "Fee charged by a regulatory authority, for example, securities and exchange fees."
 	 * </li>
 	 * </ul>
 	 */
 	public static final InvestmentFundFeeCode RegulatoryFee = new InvestmentFundFeeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::REGF"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegulatoryFee";
-			definition = "Fee charged by a regulatory authority, for example, securities and exchange fees. ";
+			definition = "Fee charged by a regulatory authority, for example, securities and exchange fees.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InvestmentFundFeeCode.mmObject();
 			codeName = "REGF";
 		}
@@ -862,6 +884,42 @@ public class InvestmentFundFeeCode extends MMCode {
 			codeName = "PENA";
 		}
 	};
+	/**
+	 * Fees, drawdown, or other reduction from or in addition to the deal price.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.InvestmentFundFeeCode
+	 * InvestmentFundFeeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SPCN"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::SPCN</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SpecialConcessions"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Fees, drawdown, or other reduction from or in addition to the deal price."
+	 * </li>
+	 * </ul>
+	 */
+	public static final InvestmentFundFeeCode SpecialConcessions = new InvestmentFundFeeCode() {
+		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::SPCN"));
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SpecialConcessions";
+			definition = "Fees, drawdown, or other reduction from or in addition to the deal price.";
+			owner_lazy = () -> com.tools20022.repository.codeset.InvestmentFundFeeCode.mmObject();
+			codeName = "SPCN";
+		}
+	};
 	final static private LinkedHashMap<String, InvestmentFundFeeCode> codesByName = new LinkedHashMap<>();
 
 	protected InvestmentFundFeeCode() {
@@ -870,11 +928,11 @@ public class InvestmentFundFeeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundFeeCode";
 				definition = "Specifies the type of service for which a fee is asked or paid.";
-				derivation_lazy = () -> Arrays.asList(InvestmentFundFee1Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(InvestmentFundFee1Code.mmObject(), InvestmentFundFee2Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestmentFundFeeCode.AccountingFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.BackEndLoad,
 						com.tools20022.repository.codeset.InvestmentFundFeeCode.BrokerageFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.ContingentDeferredSalesCharge,
 						com.tools20022.repository.codeset.InvestmentFundFeeCode.CorrespondentBankCharge, com.tools20022.repository.codeset.InvestmentFundFeeCode.CustodyFee,
@@ -883,7 +941,8 @@ public class InvestmentFundFeeCode extends MMCode {
 						com.tools20022.repository.codeset.InvestmentFundFeeCode.ServiceProvisionFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.Switch, com.tools20022.repository.codeset.InvestmentFundFeeCode.TransferFee,
 						com.tools20022.repository.codeset.InvestmentFundFeeCode.UCITSCommission, com.tools20022.repository.codeset.InvestmentFundFeeCode.Commission, com.tools20022.repository.codeset.InvestmentFundFeeCode.ShippingCharge,
 						com.tools20022.repository.codeset.InvestmentFundFeeCode.PostageCharge, com.tools20022.repository.codeset.InvestmentFundFeeCode.CommissionDePlacement,
-						com.tools20022.repository.codeset.InvestmentFundFeeCode.AdditionalFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.RegulatoryFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.Penalty);
+						com.tools20022.repository.codeset.InvestmentFundFeeCode.AdditionalFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.RegulatoryFee, com.tools20022.repository.codeset.InvestmentFundFeeCode.Penalty,
+						com.tools20022.repository.codeset.InvestmentFundFeeCode.SpecialConcessions);
 			}
 		});
 		return mmObject_lazy.get();
@@ -913,6 +972,7 @@ public class InvestmentFundFeeCode extends MMCode {
 		codesByName.put(AdditionalFee.getCodeName().get(), AdditionalFee);
 		codesByName.put(RegulatoryFee.getCodeName().get(), RegulatoryFee);
 		codesByName.put(Penalty.getCodeName().get(), Penalty);
+		codesByName.put(SpecialConcessions.getCodeName().get(), SpecialConcessions);
 	}
 
 	public static InvestmentFundFeeCode valueOf(String codeName) {

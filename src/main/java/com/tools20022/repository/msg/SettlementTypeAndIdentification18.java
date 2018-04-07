@@ -29,6 +29,7 @@ import com.tools20022.repository.entity.TradeIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides transaction type and identification information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SettlementTypeAndIdentification18", propOrder = {"transactionIdentification", "securitiesMovementType", "payment"})
 public class SettlementTypeAndIdentification18 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Provides unambiguous transaction identification information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +123,10 @@ public class SettlementTypeAndIdentification18 {
 	 * "Provides unambiguous transaction identification information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndIdentification18, Max35Text> mmTransactionIdentification = new MMMessageAttribute<SettlementTypeAndIdentification18, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmIdentification;
-			componentContext_lazy = () -> SettlementTypeAndIdentification18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndIdentification18.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,12 +136,22 @@ public class SettlementTypeAndIdentification18 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(SettlementTypeAndIdentification18 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndIdentification18 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "SctiesMvmntTp", required = true)
 	protected ReceiveDelivery1Code securitiesMovementType;
 	/**
-	 * Specifies if the movement on a securities account results from a deliver
-	 * or a receive instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,10 +184,10 @@ public class SettlementTypeAndIdentification18 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesMovementType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndIdentification18, ReceiveDelivery1Code> mmSecuritiesMovementType = new MMMessageAttribute<SettlementTypeAndIdentification18, ReceiveDelivery1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSecuritiesMovementType;
-			componentContext_lazy = () -> SettlementTypeAndIdentification18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndIdentification18.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesMvmntTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,12 +197,22 @@ public class SettlementTypeAndIdentification18 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ReceiveDelivery1Code.mmObject();
 		}
+
+		@Override
+		public ReceiveDelivery1Code getValue(SettlementTypeAndIdentification18 obj) {
+			return obj.getSecuritiesMovementType();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndIdentification18 obj, ReceiveDelivery1Code value) {
+			obj.setSecuritiesMovementType(value);
+		}
 	};
+	@XmlElement(name = "Pmt", required = true)
 	protected DeliveryReceiptType2Code payment;
 	/**
-	 * Specifies how the transaction is to be settled, for example, against
-	 * payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,10 +245,10 @@ public class SettlementTypeAndIdentification18 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPayment = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SettlementTypeAndIdentification18, DeliveryReceiptType2Code> mmPayment = new MMMessageAttribute<SettlementTypeAndIdentification18, DeliveryReceiptType2Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementType;
-			componentContext_lazy = () -> SettlementTypeAndIdentification18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SettlementTypeAndIdentification18.mmObject();
 			isDerived = false;
 			xmlTag = "Pmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -236,15 +258,26 @@ public class SettlementTypeAndIdentification18 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DeliveryReceiptType2Code.mmObject();
 		}
+
+		@Override
+		public DeliveryReceiptType2Code getValue(SettlementTypeAndIdentification18 obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(SettlementTypeAndIdentification18 obj, DeliveryReceiptType2Code value) {
+			obj.setPayment(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SettlementTypeAndIdentification18.mmTransactionIdentification, SettlementTypeAndIdentification18.mmSecuritiesMovementType, SettlementTypeAndIdentification18.mmPayment);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SettlementTypeAndIdentification18.mmTransactionIdentification,
+						com.tools20022.repository.msg.SettlementTypeAndIdentification18.mmSecuritiesMovementType, com.tools20022.repository.msg.SettlementTypeAndIdentification18.mmPayment);
 				messageBuildingBlock_lazy = () -> Arrays.asList(SecuritiesSettlementAllegementRemovalAdviceV04.mmAccountServicerTransactionIdentification);
 				trace_lazy = () -> SecuritiesSettlement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTypeAndIdentification18";
 				definition = "Provides transaction type and identification information.";
@@ -253,30 +286,30 @@ public class SettlementTypeAndIdentification18 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public SettlementTypeAndIdentification18 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SctiesMvmntTp", required = true)
 	public ReceiveDelivery1Code getSecuritiesMovementType() {
 		return securitiesMovementType;
 	}
 
-	public void setSecuritiesMovementType(ReceiveDelivery1Code securitiesMovementType) {
-		this.securitiesMovementType = securitiesMovementType;
+	public SettlementTypeAndIdentification18 setSecuritiesMovementType(ReceiveDelivery1Code securitiesMovementType) {
+		this.securitiesMovementType = Objects.requireNonNull(securitiesMovementType);
+		return this;
 	}
 
-	@XmlElement(name = "Pmt", required = true)
 	public DeliveryReceiptType2Code getPayment() {
 		return payment;
 	}
 
-	public void setPayment(DeliveryReceiptType2Code payment) {
-		this.payment = payment;
+	public SettlementTypeAndIdentification18 setPayment(DeliveryReceiptType2Code payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 }

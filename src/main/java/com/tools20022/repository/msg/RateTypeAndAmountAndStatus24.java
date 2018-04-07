@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -29,6 +30,8 @@ import com.tools20022.repository.entity.Interest;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the value expressed as a rate and an amount."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RateTypeAndAmountAndStatus24", propOrder = {"rateType", "amount", "rateStatus"})
 public class RateTypeAndAmountAndStatus24 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RateTp", required = true)
 	protected RateType33Choice rateType;
 	/**
-	 * Value expressed as a rate type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -98,6 +102,9 @@ public class RateTypeAndAmountAndStatus24 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "RateTp"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :92J::4!c/[8c]/4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -108,12 +115,13 @@ public class RateTypeAndAmountAndStatus24 {
 	 * definition} = "Value expressed as a rate type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRateType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RateTypeAndAmountAndStatus24, RateType33Choice> mmRateType = new MMMessageAssociationEnd<RateTypeAndAmountAndStatus24, RateType33Choice>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmInterestCalculation;
-			componentContext_lazy = () -> RateTypeAndAmountAndStatus24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateTypeAndAmountAndStatus24.mmObject();
 			isDerived = false;
 			xmlTag = "RateTp";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":92J::4!c/[8c]/4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RateType";
 			definition = "Value expressed as a rate type.";
@@ -122,11 +130,22 @@ public class RateTypeAndAmountAndStatus24 {
 			isComposite = true;
 			type_lazy = () -> RateType33Choice.mmObject();
 		}
+
+		@Override
+		public RateType33Choice getValue(RateTypeAndAmountAndStatus24 obj) {
+			return obj.getRateType();
+		}
+
+		@Override
+		public void setValue(RateTypeAndAmountAndStatus24 obj, RateType33Choice value) {
+			obj.setRateType(value);
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected ActiveCurrencyAnd13DecimalAmount amount;
 	/**
-	 * Value expressed as an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +176,10 @@ public class RateTypeAndAmountAndStatus24 {
 	 * definition} = "Value expressed as an amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateTypeAndAmountAndStatus24, ActiveCurrencyAnd13DecimalAmount> mmAmount = new MMMessageAttribute<RateTypeAndAmountAndStatus24, ActiveCurrencyAnd13DecimalAmount>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmAmount;
-			componentContext_lazy = () -> RateTypeAndAmountAndStatus24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateTypeAndAmountAndStatus24.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +189,22 @@ public class RateTypeAndAmountAndStatus24 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAnd13DecimalAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAnd13DecimalAmount getValue(RateTypeAndAmountAndStatus24 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(RateTypeAndAmountAndStatus24 obj, ActiveCurrencyAnd13DecimalAmount value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "RateSts")
 	protected RateStatus3Choice rateStatus;
 	/**
-	 * Value expressed as a rate status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -203,10 +233,10 @@ public class RateTypeAndAmountAndStatus24 {
 	 * definition} = "Value expressed as a rate status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRateStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RateTypeAndAmountAndStatus24, Optional<RateStatus3Choice>> mmRateStatus = new MMMessageAssociationEnd<RateTypeAndAmountAndStatus24, Optional<RateStatus3Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionStatus.mmRateStatus;
-			componentContext_lazy = () -> RateTypeAndAmountAndStatus24.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateTypeAndAmountAndStatus24.mmObject();
 			isDerived = false;
 			xmlTag = "RateSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,14 +247,25 @@ public class RateTypeAndAmountAndStatus24 {
 			isComposite = true;
 			type_lazy = () -> RateStatus3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateStatus3Choice> getValue(RateTypeAndAmountAndStatus24 obj) {
+			return obj.getRateStatus();
+		}
+
+		@Override
+		public void setValue(RateTypeAndAmountAndStatus24 obj, Optional<RateStatus3Choice> value) {
+			obj.setRateStatus(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RateTypeAndAmountAndStatus24.mmRateType, RateTypeAndAmountAndStatus24.mmAmount, RateTypeAndAmountAndStatus24.mmRateStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RateTypeAndAmountAndStatus24.mmRateType, com.tools20022.repository.msg.RateTypeAndAmountAndStatus24.mmAmount,
+						com.tools20022.repository.msg.RateTypeAndAmountAndStatus24.mmRateStatus);
 				trace_lazy = () -> Interest.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateTypeAndAmountAndStatus24";
 				definition = "Specifies the value expressed as a rate and an amount.";
@@ -233,30 +274,30 @@ public class RateTypeAndAmountAndStatus24 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RateTp", required = true)
 	public RateType33Choice getRateType() {
 		return rateType;
 	}
 
-	public void setRateType(RateType33Choice rateType) {
-		this.rateType = rateType;
+	public RateTypeAndAmountAndStatus24 setRateType(RateType33Choice rateType) {
+		this.rateType = Objects.requireNonNull(rateType);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ActiveCurrencyAnd13DecimalAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ActiveCurrencyAnd13DecimalAmount amount) {
-		this.amount = amount;
+	public RateTypeAndAmountAndStatus24 setAmount(ActiveCurrencyAnd13DecimalAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "RateSts")
-	public RateStatus3Choice getRateStatus() {
-		return rateStatus;
+	public Optional<RateStatus3Choice> getRateStatus() {
+		return rateStatus == null ? Optional.empty() : Optional.of(rateStatus);
 	}
 
-	public void setRateStatus(RateStatus3Choice rateStatus) {
+	public RateTypeAndAmountAndStatus24 setRateStatus(RateStatus3Choice rateStatus) {
 		this.rateStatus = rateStatus;
+		return this;
 	}
 }

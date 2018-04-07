@@ -23,10 +23,8 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -120,6 +118,17 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code acmt.002.001.07}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintInvestmentAccountRule#for_acmt_AccountDetailsConfirmationV07
+ * ConstraintInvestmentAccountRule.for_acmt_AccountDetailsConfirmationV07}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintUnitRule#for_acmt_AccountDetailsConfirmationV07
+ * ConstraintUnitRule.for_acmt_AccountDetailsConfirmationV07}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -132,17 +141,17 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountDetailsConfirmationV07", propOrder = {"messageIdentification", "orderReference", "relatedReference", "confirmationDetails", "investmentAccount", "accountParties", "intermediaries", "placement", "newIssueAllocation",
 		"savingsInvestmentPlan", "withdrawalInvestmentPlan", "cashSettlement", "serviceLevelAgreement", "additionalInformation", "marketPracticeVersion", "extension"})
 public class AccountDetailsConfirmationV07 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies the message from a business
-	 * application standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +174,7 @@ public class AccountDetailsConfirmationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,18 +185,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "OrdrRef")
 	protected InvestmentFundOrder4 orderReference;
 	/**
-	 * Identifies a related order or settlement transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,7 +220,7 @@ public class AccountDetailsConfirmationV07 {
 	 * definition} = "Identifies a related order or settlement transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmOrderReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<InvestmentFundOrder4>> mmOrderReference = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<InvestmentFundOrder4>>() {
 		{
 			xmlTag = "OrdrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,18 +231,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> InvestmentFundOrder4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getOrderReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<InvestmentFundOrder4> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getOrderReference();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<InvestmentFundOrder4> value) {
+			obj.setOrderReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RltdRef")
 	protected AdditionalReference6 relatedReference;
 	/**
-	 * Reference to a linked message that was previously received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -252,7 +267,7 @@ public class AccountDetailsConfirmationV07 {
 	 * "Reference to a linked message that was previously received."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRelatedReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<AdditionalReference6>> mmRelatedReference = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<AdditionalReference6>>() {
 		{
 			xmlTag = "RltdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -263,19 +278,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> AdditionalReference6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getRelatedReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference6> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getRelatedReference();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<AdditionalReference6> value) {
+			obj.setRelatedReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ConfDtls", required = true)
 	protected AccountManagementConfirmation4 confirmationDetails;
 	/**
-	 * Information about the request or instruction which triggered this
-	 * confirmation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,33 +311,36 @@ public class AccountDetailsConfirmationV07 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information about the request or instruction which triggered this confirmation. "
+	 * "Information about the request or instruction which triggered this confirmation."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmConfirmationDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, AccountManagementConfirmation4> mmConfirmationDetails = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, AccountManagementConfirmation4>() {
 		{
 			xmlTag = "ConfDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ConfirmationDetails";
-			definition = "Information about the request or instruction which triggered this confirmation. ";
+			definition = "Information about the request or instruction which triggered this confirmation.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> AccountManagementConfirmation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getConfirmationDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountManagementConfirmation4 getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getConfirmationDetails();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, AccountManagementConfirmation4 value) {
+			obj.setConfirmationDetails(value);
 		}
 	};
+	@XmlElement(name = "InvstmtAcct")
 	protected InvestmentAccount62 investmentAccount;
 	/**
-	 * Confirmation of the information related to the investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -342,7 +362,7 @@ public class AccountDetailsConfirmationV07 {
 	 * "Confirmation of the information related to the investment account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmInvestmentAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<InvestmentAccount62>> mmInvestmentAccount = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<InvestmentAccount62>>() {
 		{
 			xmlTag = "InvstmtAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -353,19 +373,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> InvestmentAccount62.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getInvestmentAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<InvestmentAccount62> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getInvestmentAccount();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<InvestmentAccount62> value) {
+			obj.setInvestmentAccount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AcctPties")
 	protected AccountParties15 accountParties;
 	/**
-	 * Confirmation of information related to parties that are related to the
-	 * account, for example, primary account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -388,7 +410,7 @@ public class AccountDetailsConfirmationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountParties = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<AccountParties15>> mmAccountParties = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<AccountParties15>>() {
 		{
 			xmlTag = "AcctPties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -399,19 +421,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> AccountParties15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getAccountParties", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AccountParties15> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getAccountParties();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<AccountParties15> value) {
+			obj.setAccountParties(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Intrmies")
 	protected List<Intermediary36> intermediaries;
 	/**
-	 * Confirmation of an intermediary or other party related to the management
-	 * of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -429,33 +453,36 @@ public class AccountDetailsConfirmationV07 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Confirmation of an intermediary or other party related to the management of the account. "
+	 * "Confirmation of an intermediary or other party related to the management of the account."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmIntermediaries = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<Intermediary36>> mmIntermediaries = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<Intermediary36>>() {
 		{
 			xmlTag = "Intrmies";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Intermediaries";
-			definition = "Confirmation of an intermediary or other party related to the management of the account. ";
+			definition = "Confirmation of an intermediary or other party related to the management of the account.";
 			maxOccurs = 10;
 			minOccurs = 0;
 			complexType_lazy = () -> Intermediary36.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getIntermediaries", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Intermediary36> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getIntermediaries();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<Intermediary36> value) {
+			obj.setIntermediaries(value);
 		}
 	};
+	@XmlElement(name = "Plcmnt")
 	protected ReferredAgent2 placement;
 	/**
-	 * Confirmation of referral information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,7 +502,7 @@ public class AccountDetailsConfirmationV07 {
 	 * definition} = "Confirmation of referral information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPlacement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<ReferredAgent2>> mmPlacement = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<ReferredAgent2>>() {
 		{
 			xmlTag = "Plcmnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -486,19 +513,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> ReferredAgent2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getPlacement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ReferredAgent2> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getPlacement();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<ReferredAgent2> value) {
+			obj.setPlacement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NewIsseAllcn")
 	protected NewIssueAllocation2 newIssueAllocation;
 	/**
-	 * Confirmation of eligibility conditions applicable when there is an
-	 * allocation of new issues for hedge fund account opening.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -521,7 +550,7 @@ public class AccountDetailsConfirmationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNewIssueAllocation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<NewIssueAllocation2>> mmNewIssueAllocation = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<NewIssueAllocation2>>() {
 		{
 			xmlTag = "NewIsseAllcn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -532,19 +561,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> NewIssueAllocation2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getNewIssueAllocation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<NewIssueAllocation2> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getNewIssueAllocation();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<NewIssueAllocation2> value) {
+			obj.setNewIssueAllocation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SvgsInvstmtPlan")
 	protected List<InvestmentPlan14> savingsInvestmentPlan;
 	/**
-	 * Confirmation of the information related to a savings plan that is related
-	 * to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -567,7 +598,7 @@ public class AccountDetailsConfirmationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSavingsInvestmentPlan = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<InvestmentPlan14>> mmSavingsInvestmentPlan = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<InvestmentPlan14>>() {
 		{
 			xmlTag = "SvgsInvstmtPlan";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -578,19 +609,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> InvestmentPlan14.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getSavingsInvestmentPlan", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<InvestmentPlan14> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getSavingsInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<InvestmentPlan14> value) {
+			obj.setSavingsInvestmentPlan(value);
 		}
 	};
+	@XmlElement(name = "WdrwlInvstmtPlan")
 	protected List<InvestmentPlan14> withdrawalInvestmentPlan;
 	/**
-	 * Confirmation of the information related to a withdrawal plan that is
-	 * related to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -613,7 +646,7 @@ public class AccountDetailsConfirmationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmWithdrawalInvestmentPlan = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<InvestmentPlan14>> mmWithdrawalInvestmentPlan = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<InvestmentPlan14>>() {
 		{
 			xmlTag = "WdrwlInvstmtPlan";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -624,19 +657,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> InvestmentPlan14.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getWithdrawalInvestmentPlan", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<InvestmentPlan14> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getWithdrawalInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<InvestmentPlan14> value) {
+			obj.setWithdrawalInvestmentPlan(value);
 		}
 	};
+	@XmlElement(name = "CshSttlm")
 	protected List<CashSettlement1> cashSettlement;
 	/**
-	 * Confirmation of a cash settlement standing instruction associated to
-	 * transactions on the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -654,33 +689,36 @@ public class AccountDetailsConfirmationV07 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Confirmation of a cash settlement standing instruction associated to  transactions on the account."
+	 * "Confirmation of a cash settlement standing instruction associated to transactions on the account."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCashSettlement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<CashSettlement1>> mmCashSettlement = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<CashSettlement1>>() {
 		{
 			xmlTag = "CshSttlm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashSettlement";
-			definition = "Confirmation of a cash settlement standing instruction associated to  transactions on the account.";
+			definition = "Confirmation of a cash settlement standing instruction associated to transactions on the account.";
 			maxOccurs = 8;
 			minOccurs = 0;
 			complexType_lazy = () -> CashSettlement1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getCashSettlement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<CashSettlement1> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getCashSettlement();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<CashSettlement1> value) {
+			obj.setCashSettlement(value);
 		}
 	};
+	@XmlElement(name = "SvcLvlAgrmt")
 	protected List<DocumentToSend3> serviceLevelAgreement;
 	/**
-	 * Identifies documents to be provided for the account opening.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -701,7 +739,7 @@ public class AccountDetailsConfirmationV07 {
 	 * "Identifies documents to be provided for the account opening."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmServiceLevelAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<DocumentToSend3>> mmServiceLevelAgreement = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<DocumentToSend3>>() {
 		{
 			xmlTag = "SvcLvlAgrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -712,19 +750,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> DocumentToSend3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getServiceLevelAgreement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<DocumentToSend3> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getServiceLevelAgreement();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<DocumentToSend3> value) {
+			obj.setServiceLevelAgreement(value);
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected List<AdditiononalInformation12> additionalInformation;
 	/**
-	 * Additional information such as remarks or notes that must be conveyed
-	 * about the party and or limitations and restrictions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,32 +783,35 @@ public class AccountDetailsConfirmationV07 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information such as remarks or notes that must be conveyed about the party and or  limitations and restrictions."
+	 * "Additional information such as remarks or notes that must be conveyed about the party and or limitations and restrictions."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAdditionalInformation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<AdditiononalInformation12>> mmAdditionalInformation = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<AdditiononalInformation12>>() {
 		{
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
-			definition = "Additional information such as remarks or notes that must be conveyed about the party and or  limitations and restrictions.";
+			definition = "Additional information such as remarks or notes that must be conveyed about the party and or limitations and restrictions.";
 			minOccurs = 0;
 			complexType_lazy = () -> AdditiononalInformation12.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getAdditionalInformation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AdditiononalInformation12> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<AdditiononalInformation12> value) {
+			obj.setAdditionalInformation(value);
 		}
 	};
+	@XmlElement(name = "MktPrctcVrsn")
 	protected MarketPracticeVersion1 marketPracticeVersion;
 	/**
-	 * Identifies the market practice to which the message conforms.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -790,7 +833,7 @@ public class AccountDetailsConfirmationV07 {
 	 * "Identifies the market practice to which the message conforms."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarketPracticeVersion = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<MarketPracticeVersion1>> mmMarketPracticeVersion = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, Optional<MarketPracticeVersion1>>() {
 		{
 			xmlTag = "MktPrctcVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -801,19 +844,21 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> MarketPracticeVersion1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getMarketPracticeVersion", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MarketPracticeVersion1> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getMarketPracticeVersion();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, Optional<MarketPracticeVersion1> value) {
+			obj.setMarketPracticeVersion(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Xtnsn")
 	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -835,7 +880,7 @@ public class AccountDetailsConfirmationV07 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExtension = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<Extension1>> mmExtension = new MMMessageBuildingBlock<AccountDetailsConfirmationV07, List<Extension1>>() {
 		{
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -845,18 +890,22 @@ public class AccountDetailsConfirmationV07 {
 			complexType_lazy = () -> Extension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountDetailsConfirmationV07.class.getMethod("getExtension", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Extension1> getValue(AccountDetailsConfirmationV07 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(AccountDetailsConfirmationV07 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintInvestmentAccountRule.for_acmt_AccountDetailsConfirmationV07,
+						com.tools20022.repository.constraints.ConstraintUnitRule.for_acmt_AccountDetailsConfirmationV07);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountDetailsConfirmationV07";
 				definition = "Scope\r\nThe AccountDetailsConfirmation message is sent by an account servicer, for example, a registrar, transfer agent, custodian bank or securities depository to the account owner, for example, an investor to confirm the opening of an account, execution of an AccountModificationInstruction or to return information requested in a GetAccountDetails message.\r\nUsage\r\nThe AccountDetailsConfirmation message is used to confirm the opening of an account, modification of an account or the provision of information requested in a previously sent GetAccountDetails message. The message contains detailed information relevant to the opened account.\r\nWhen the AccountDetailsConfirmation is used to confirm execution of an AccountModificationInstruction message, it may:\r\n- contain the modified subsets of account details that were specified in the AccountModificationInstruction, and/or\r\n- provide the status of the account.\r\nWhen the AccountModificationInstruction message is used to instruct the closure of an account, the AccountDetailsConfirmation message is used to confirm the account has been closed. \r\nWhen the AccountDetailsConfirmation is used to reply to a GetAccountDetails message, it returns the selected subsets of account details that were specified in the GetAccountDetails message.";
@@ -889,151 +938,151 @@ public class AccountDetailsConfirmationV07 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public AccountDetailsConfirmationV07 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "OrdrRef")
-	public InvestmentFundOrder4 getOrderReference() {
-		return orderReference;
+	public Optional<InvestmentFundOrder4> getOrderReference() {
+		return orderReference == null ? Optional.empty() : Optional.of(orderReference);
 	}
 
-	public void setOrderReference(InvestmentFundOrder4 orderReference) {
+	public AccountDetailsConfirmationV07 setOrderReference(InvestmentFundOrder4 orderReference) {
 		this.orderReference = orderReference;
+		return this;
 	}
 
-	@XmlElement(name = "RltdRef")
-	public AdditionalReference6 getRelatedReference() {
-		return relatedReference;
+	public Optional<AdditionalReference6> getRelatedReference() {
+		return relatedReference == null ? Optional.empty() : Optional.of(relatedReference);
 	}
 
-	public void setRelatedReference(AdditionalReference6 relatedReference) {
+	public AccountDetailsConfirmationV07 setRelatedReference(AdditionalReference6 relatedReference) {
 		this.relatedReference = relatedReference;
+		return this;
 	}
 
-	@XmlElement(name = "ConfDtls", required = true)
 	public AccountManagementConfirmation4 getConfirmationDetails() {
 		return confirmationDetails;
 	}
 
-	public void setConfirmationDetails(AccountManagementConfirmation4 confirmationDetails) {
-		this.confirmationDetails = confirmationDetails;
+	public AccountDetailsConfirmationV07 setConfirmationDetails(AccountManagementConfirmation4 confirmationDetails) {
+		this.confirmationDetails = Objects.requireNonNull(confirmationDetails);
+		return this;
 	}
 
-	@XmlElement(name = "InvstmtAcct")
-	public InvestmentAccount62 getInvestmentAccount() {
-		return investmentAccount;
+	public Optional<InvestmentAccount62> getInvestmentAccount() {
+		return investmentAccount == null ? Optional.empty() : Optional.of(investmentAccount);
 	}
 
-	public void setInvestmentAccount(InvestmentAccount62 investmentAccount) {
+	public AccountDetailsConfirmationV07 setInvestmentAccount(InvestmentAccount62 investmentAccount) {
 		this.investmentAccount = investmentAccount;
+		return this;
 	}
 
-	@XmlElement(name = "AcctPties")
-	public AccountParties15 getAccountParties() {
-		return accountParties;
+	public Optional<AccountParties15> getAccountParties() {
+		return accountParties == null ? Optional.empty() : Optional.of(accountParties);
 	}
 
-	public void setAccountParties(AccountParties15 accountParties) {
+	public AccountDetailsConfirmationV07 setAccountParties(AccountParties15 accountParties) {
 		this.accountParties = accountParties;
+		return this;
 	}
 
-	@XmlElement(name = "Intrmies")
 	public List<Intermediary36> getIntermediaries() {
-		return intermediaries;
+		return intermediaries == null ? intermediaries = new ArrayList<>() : intermediaries;
 	}
 
-	public void setIntermediaries(List<Intermediary36> intermediaries) {
-		this.intermediaries = intermediaries;
+	public AccountDetailsConfirmationV07 setIntermediaries(List<Intermediary36> intermediaries) {
+		this.intermediaries = Objects.requireNonNull(intermediaries);
+		return this;
 	}
 
-	@XmlElement(name = "Plcmnt")
-	public ReferredAgent2 getPlacement() {
-		return placement;
+	public Optional<ReferredAgent2> getPlacement() {
+		return placement == null ? Optional.empty() : Optional.of(placement);
 	}
 
-	public void setPlacement(ReferredAgent2 placement) {
+	public AccountDetailsConfirmationV07 setPlacement(ReferredAgent2 placement) {
 		this.placement = placement;
+		return this;
 	}
 
-	@XmlElement(name = "NewIsseAllcn")
-	public NewIssueAllocation2 getNewIssueAllocation() {
-		return newIssueAllocation;
+	public Optional<NewIssueAllocation2> getNewIssueAllocation() {
+		return newIssueAllocation == null ? Optional.empty() : Optional.of(newIssueAllocation);
 	}
 
-	public void setNewIssueAllocation(NewIssueAllocation2 newIssueAllocation) {
+	public AccountDetailsConfirmationV07 setNewIssueAllocation(NewIssueAllocation2 newIssueAllocation) {
 		this.newIssueAllocation = newIssueAllocation;
+		return this;
 	}
 
-	@XmlElement(name = "SvgsInvstmtPlan")
 	public List<InvestmentPlan14> getSavingsInvestmentPlan() {
-		return savingsInvestmentPlan;
+		return savingsInvestmentPlan == null ? savingsInvestmentPlan = new ArrayList<>() : savingsInvestmentPlan;
 	}
 
-	public void setSavingsInvestmentPlan(List<InvestmentPlan14> savingsInvestmentPlan) {
-		this.savingsInvestmentPlan = savingsInvestmentPlan;
+	public AccountDetailsConfirmationV07 setSavingsInvestmentPlan(List<InvestmentPlan14> savingsInvestmentPlan) {
+		this.savingsInvestmentPlan = Objects.requireNonNull(savingsInvestmentPlan);
+		return this;
 	}
 
-	@XmlElement(name = "WdrwlInvstmtPlan")
 	public List<InvestmentPlan14> getWithdrawalInvestmentPlan() {
-		return withdrawalInvestmentPlan;
+		return withdrawalInvestmentPlan == null ? withdrawalInvestmentPlan = new ArrayList<>() : withdrawalInvestmentPlan;
 	}
 
-	public void setWithdrawalInvestmentPlan(List<InvestmentPlan14> withdrawalInvestmentPlan) {
-		this.withdrawalInvestmentPlan = withdrawalInvestmentPlan;
+	public AccountDetailsConfirmationV07 setWithdrawalInvestmentPlan(List<InvestmentPlan14> withdrawalInvestmentPlan) {
+		this.withdrawalInvestmentPlan = Objects.requireNonNull(withdrawalInvestmentPlan);
+		return this;
 	}
 
-	@XmlElement(name = "CshSttlm")
 	public List<CashSettlement1> getCashSettlement() {
-		return cashSettlement;
+		return cashSettlement == null ? cashSettlement = new ArrayList<>() : cashSettlement;
 	}
 
-	public void setCashSettlement(List<CashSettlement1> cashSettlement) {
-		this.cashSettlement = cashSettlement;
+	public AccountDetailsConfirmationV07 setCashSettlement(List<CashSettlement1> cashSettlement) {
+		this.cashSettlement = Objects.requireNonNull(cashSettlement);
+		return this;
 	}
 
-	@XmlElement(name = "SvcLvlAgrmt")
 	public List<DocumentToSend3> getServiceLevelAgreement() {
-		return serviceLevelAgreement;
+		return serviceLevelAgreement == null ? serviceLevelAgreement = new ArrayList<>() : serviceLevelAgreement;
 	}
 
-	public void setServiceLevelAgreement(List<DocumentToSend3> serviceLevelAgreement) {
-		this.serviceLevelAgreement = serviceLevelAgreement;
+	public AccountDetailsConfirmationV07 setServiceLevelAgreement(List<DocumentToSend3> serviceLevelAgreement) {
+		this.serviceLevelAgreement = Objects.requireNonNull(serviceLevelAgreement);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
 	public List<AdditiononalInformation12> getAdditionalInformation() {
-		return additionalInformation;
+		return additionalInformation == null ? additionalInformation = new ArrayList<>() : additionalInformation;
 	}
 
-	public void setAdditionalInformation(List<AdditiononalInformation12> additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public AccountDetailsConfirmationV07 setAdditionalInformation(List<AdditiononalInformation12> additionalInformation) {
+		this.additionalInformation = Objects.requireNonNull(additionalInformation);
+		return this;
 	}
 
-	@XmlElement(name = "MktPrctcVrsn")
-	public MarketPracticeVersion1 getMarketPracticeVersion() {
-		return marketPracticeVersion;
+	public Optional<MarketPracticeVersion1> getMarketPracticeVersion() {
+		return marketPracticeVersion == null ? Optional.empty() : Optional.of(marketPracticeVersion);
 	}
 
-	public void setMarketPracticeVersion(MarketPracticeVersion1 marketPracticeVersion) {
+	public AccountDetailsConfirmationV07 setMarketPracticeVersion(MarketPracticeVersion1 marketPracticeVersion) {
 		this.marketPracticeVersion = marketPracticeVersion;
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<Extension1> extension) {
-		this.extension = extension;
+	public AccountDetailsConfirmationV07 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.002.07.07")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.002.001.07")
 	static public class Document {
 		@XmlElement(name = "AcctDtlsConf", required = true)
 		public AccountDetailsConfirmationV07 messageBody;

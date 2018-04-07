@@ -29,9 +29,11 @@ import com.tools20022.repository.datatype.LEIIdentifier;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Account20;
+import com.tools20022.repository.msg.CommunicationAddress6;
+import com.tools20022.repository.msg.NameAndAddress4;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -88,8 +90,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,16 +102,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identification of a party and its role."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Intermediary36", propOrder = {"identification", "legalEntityIdentifier", "account", "waivedTrailerCommissionIndicator", "role", "primaryCommunicationAddress", "secondaryCommunicationAddress", "nameAndAddress"})
 public class Intermediary36 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected PartyIdentification72Choice identification;
 	/**
-	 * Unique and unambiguous identifier for an organisation that is allocated
-	 * by an institution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,10 +143,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Intermediary36, PartyIdentification72Choice> mmIdentification = new MMMessageAttribute<Intermediary36, PartyIdentification72Choice>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,13 +156,22 @@ public class Intermediary36 {
 			minOccurs = 1;
 			complexType_lazy = () -> PartyIdentification72Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification72Choice getValue(Intermediary36 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, PartyIdentification72Choice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "LglNttyIdr")
 	protected LEIIdentifier legalEntityIdentifier;
 	/**
-	 * Identification of the organisation with a Legal Entity Identifier. This
-	 * is a code allocated to a party as described in ISO 17442
-	 * "Financial Services - Legal Entity Identifier (LEI)".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,10 +203,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLegalEntityIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Intermediary36, Optional<LEIIdentifier>> mmLegalEntityIdentifier = new MMMessageAttribute<Intermediary36, Optional<LEIIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmLEI;
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "LglNttyIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,12 +216,22 @@ public class Intermediary36 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(Intermediary36 obj) {
+			return obj.getLegalEntityIdentifier();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, Optional<LEIIdentifier> value) {
+			obj.setLegalEntityIdentifier(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Acct")
 	protected Account20 account;
 	/**
-	 * Business relationship between two entities; one entity is the account
-	 * owner, the other entity is the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,10 +262,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Intermediary36, Optional<Account20>> mmAccount = new MMMessageAttribute<Intermediary36, Optional<Account20>>() {
 		{
 			businessElementTrace_lazy = () -> AccountPartyRole.mmAccount;
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,14 +273,24 @@ public class Intermediary36 {
 			definition = "Business relationship between two entities; one entity is the account owner, the other entity is the account servicer.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Account20.mmObject();
+			complexType_lazy = () -> Account20.mmObject();
+		}
+
+		@Override
+		public Optional<Account20> getValue(Intermediary36 obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, Optional<Account20> value) {
+			obj.setAccount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "WvdTrlrComssnInd")
 	protected YesNoIndicator waivedTrailerCommissionIndicator;
 	/**
-	 * Non-enforcement of the right to all or part of a commission by the party
-	 * entitled to the commission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,10 +322,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmWaivedTrailerCommissionIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Intermediary36, Optional<YesNoIndicator>> mmWaivedTrailerCommissionIndicator = new MMMessageAttribute<Intermediary36, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> Commission.mmCommissionWaiving;
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "WvdTrlrComssnInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -304,11 +335,22 @@ public class Intermediary36 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(Intermediary36 obj) {
+			return obj.getWaivedTrailerCommissionIndicator();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, Optional<YesNoIndicator> value) {
+			obj.setWaivedTrailerCommissionIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Role")
 	protected PartyRole2Choice role;
 	/**
-	 * Role or function performed by the intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -336,10 +378,10 @@ public class Intermediary36 {
 	 * definition} = "Role or function performed by the intermediary."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRole = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Intermediary36, Optional<PartyRole2Choice>> mmRole = new MMMessageAssociationEnd<Intermediary36, Optional<PartyRole2Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> TradePartyRole.mmObject();
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "Role";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -350,11 +392,22 @@ public class Intermediary36 {
 			isComposite = true;
 			type_lazy = () -> PartyRole2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyRole2Choice> getValue(Intermediary36 obj) {
+			return obj.getRole();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, Optional<PartyRole2Choice> value) {
+			obj.setRole(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.CommunicationAddress6> primaryCommunicationAddress;
+	@XmlElement(name = "PmryComAdr")
+	protected List<CommunicationAddress6> primaryCommunicationAddress;
 	/**
-	 * Communication device number or electronic address used for communication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -384,10 +437,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPrimaryCommunicationAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Intermediary36, List<CommunicationAddress6>> mmPrimaryCommunicationAddress = new MMMessageAssociationEnd<Intermediary36, List<CommunicationAddress6>>() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "PmryComAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -395,13 +448,24 @@ public class Intermediary36 {
 			definition = "Communication device number or electronic address used for communication.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
+			type_lazy = () -> CommunicationAddress6.mmObject();
+		}
+
+		@Override
+		public List<CommunicationAddress6> getValue(Intermediary36 obj) {
+			return obj.getPrimaryCommunicationAddress();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, List<CommunicationAddress6> value) {
+			obj.setPrimaryCommunicationAddress(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CommunicationAddress6> secondaryCommunicationAddress;
+	@XmlElement(name = "ScndryComAdr")
+	protected List<CommunicationAddress6> secondaryCommunicationAddress;
 	/**
-	 * Communication device number or electronic address used for communication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -431,10 +495,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecondaryCommunicationAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Intermediary36, List<CommunicationAddress6>> mmSecondaryCommunicationAddress = new MMMessageAssociationEnd<Intermediary36, List<CommunicationAddress6>>() {
 		{
 			businessComponentTrace_lazy = () -> ElectronicAddress.mmObject();
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "ScndryComAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -442,14 +506,24 @@ public class Intermediary36 {
 			definition = "Communication device number or electronic address used for communication.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CommunicationAddress6.mmObject();
+			type_lazy = () -> CommunicationAddress6.mmObject();
+		}
+
+		@Override
+		public List<CommunicationAddress6> getValue(Intermediary36 obj) {
+			return obj.getSecondaryCommunicationAddress();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, List<CommunicationAddress6> value) {
+			obj.setSecondaryCommunicationAddress(value);
 		}
 	};
+	@XmlElement(name = "NmAndAdr")
 	protected NameAndAddress4 nameAndAddress;
 	/**
-	 * Information that locates and identifies a specific address, as defined by
-	 * postal services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -479,10 +553,10 @@ public class Intermediary36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNameAndAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Intermediary36, Optional<NameAndAddress4>> mmNameAndAddress = new MMMessageAssociationEnd<Intermediary36, Optional<NameAndAddress4>>() {
 		{
 			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
-			componentContext_lazy = () -> Intermediary36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
 			isDerived = false;
 			xmlTag = "NmAndAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -491,18 +565,31 @@ public class Intermediary36 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NameAndAddress4.mmObject();
+			type_lazy = () -> NameAndAddress4.mmObject();
+		}
+
+		@Override
+		public Optional<NameAndAddress4> getValue(Intermediary36 obj) {
+			return obj.getNameAndAddress();
+		}
+
+		@Override
+		public void setValue(Intermediary36 obj, Optional<NameAndAddress4> value) {
+			obj.setNameAndAddress(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Intermediary36.mmIdentification, Intermediary36.mmLegalEntityIdentifier, Intermediary36.mmAccount, Intermediary36.mmWaivedTrailerCommissionIndicator, Intermediary36.mmRole,
-						Intermediary36.mmPrimaryCommunicationAddress, Intermediary36.mmSecondaryCommunicationAddress, Intermediary36.mmNameAndAddress);
+				messageElement_lazy = () -> Arrays
+						.asList(com.tools20022.repository.msg.Intermediary36.mmIdentification, com.tools20022.repository.msg.Intermediary36.mmLegalEntityIdentifier, com.tools20022.repository.msg.Intermediary36.mmAccount,
+								com.tools20022.repository.msg.Intermediary36.mmWaivedTrailerCommissionIndicator, com.tools20022.repository.msg.Intermediary36.mmRole,
+								com.tools20022.repository.msg.Intermediary36.mmPrimaryCommunicationAddress, com.tools20022.repository.msg.Intermediary36.mmSecondaryCommunicationAddress,
+								com.tools20022.repository.msg.Intermediary36.mmNameAndAddress);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountDetailsConfirmationV07.mmIntermediaries, AccountOpeningInstructionV07.mmIntermediaries);
 				trace_lazy = () -> IntermediaryRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Intermediary36";
 				definition = "Identification of a party and its role.";
@@ -511,75 +598,75 @@ public class Intermediary36 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PartyIdentification72Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PartyIdentification72Choice identification) {
-		this.identification = identification;
+	public Intermediary36 setIdentification(PartyIdentification72Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "LglNttyIdr")
-	public LEIIdentifier getLegalEntityIdentifier() {
-		return legalEntityIdentifier;
+	public Optional<LEIIdentifier> getLegalEntityIdentifier() {
+		return legalEntityIdentifier == null ? Optional.empty() : Optional.of(legalEntityIdentifier);
 	}
 
-	public void setLegalEntityIdentifier(LEIIdentifier legalEntityIdentifier) {
+	public Intermediary36 setLegalEntityIdentifier(LEIIdentifier legalEntityIdentifier) {
 		this.legalEntityIdentifier = legalEntityIdentifier;
+		return this;
 	}
 
-	@XmlElement(name = "Acct")
-	public Account20 getAccount() {
-		return account;
+	public Optional<Account20> getAccount() {
+		return account == null ? Optional.empty() : Optional.of(account);
 	}
 
-	public void setAccount(com.tools20022.repository.msg.Account20 account) {
+	public Intermediary36 setAccount(Account20 account) {
 		this.account = account;
+		return this;
 	}
 
-	@XmlElement(name = "WvdTrlrComssnInd")
-	public YesNoIndicator getWaivedTrailerCommissionIndicator() {
-		return waivedTrailerCommissionIndicator;
+	public Optional<YesNoIndicator> getWaivedTrailerCommissionIndicator() {
+		return waivedTrailerCommissionIndicator == null ? Optional.empty() : Optional.of(waivedTrailerCommissionIndicator);
 	}
 
-	public void setWaivedTrailerCommissionIndicator(YesNoIndicator waivedTrailerCommissionIndicator) {
+	public Intermediary36 setWaivedTrailerCommissionIndicator(YesNoIndicator waivedTrailerCommissionIndicator) {
 		this.waivedTrailerCommissionIndicator = waivedTrailerCommissionIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "Role")
-	public PartyRole2Choice getRole() {
-		return role;
+	public Optional<PartyRole2Choice> getRole() {
+		return role == null ? Optional.empty() : Optional.of(role);
 	}
 
-	public void setRole(PartyRole2Choice role) {
+	public Intermediary36 setRole(PartyRole2Choice role) {
 		this.role = role;
+		return this;
 	}
 
-	@XmlElement(name = "PmryComAdr")
 	public List<CommunicationAddress6> getPrimaryCommunicationAddress() {
-		return primaryCommunicationAddress;
+		return primaryCommunicationAddress == null ? primaryCommunicationAddress = new ArrayList<>() : primaryCommunicationAddress;
 	}
 
-	public void setPrimaryCommunicationAddress(List<com.tools20022.repository.msg.CommunicationAddress6> primaryCommunicationAddress) {
-		this.primaryCommunicationAddress = primaryCommunicationAddress;
+	public Intermediary36 setPrimaryCommunicationAddress(List<CommunicationAddress6> primaryCommunicationAddress) {
+		this.primaryCommunicationAddress = Objects.requireNonNull(primaryCommunicationAddress);
+		return this;
 	}
 
-	@XmlElement(name = "ScndryComAdr")
 	public List<CommunicationAddress6> getSecondaryCommunicationAddress() {
-		return secondaryCommunicationAddress;
+		return secondaryCommunicationAddress == null ? secondaryCommunicationAddress = new ArrayList<>() : secondaryCommunicationAddress;
 	}
 
-	public void setSecondaryCommunicationAddress(List<com.tools20022.repository.msg.CommunicationAddress6> secondaryCommunicationAddress) {
-		this.secondaryCommunicationAddress = secondaryCommunicationAddress;
+	public Intermediary36 setSecondaryCommunicationAddress(List<CommunicationAddress6> secondaryCommunicationAddress) {
+		this.secondaryCommunicationAddress = Objects.requireNonNull(secondaryCommunicationAddress);
+		return this;
 	}
 
-	@XmlElement(name = "NmAndAdr")
-	public NameAndAddress4 getNameAndAddress() {
-		return nameAndAddress;
+	public Optional<NameAndAddress4> getNameAndAddress() {
+		return nameAndAddress == null ? Optional.empty() : Optional.of(nameAndAddress);
 	}
 
-	public void setNameAndAddress(com.tools20022.repository.msg.NameAndAddress4 nameAndAddress) {
+	public Intermediary36 setNameAndAddress(NameAndAddress4 nameAndAddress) {
 		this.nameAndAddress = nameAndAddress;
+		return this;
 	}
 }

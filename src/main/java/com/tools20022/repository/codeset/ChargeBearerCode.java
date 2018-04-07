@@ -39,17 +39,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeBearerCode#BorneByDebtor
- * ChargeBearerCode.mmBorneByDebtor}</li>
+ * ChargeBearerCode.BorneByDebtor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeBearerCode#BorneByCreditor
- * ChargeBearerCode.mmBorneByCreditor}</li>
+ * ChargeBearerCode.BorneByCreditor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeBearerCode#Shared
- * ChargeBearerCode.mmShared}</li>
+ * ChargeBearerCode.Shared}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeBearerCode#Investor
- * ChargeBearerCode.mmInvestor}</li>
+ * ChargeBearerCode.Investor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeBearerCode#Intermediary
- * ChargeBearerCode.mmIntermediary}</li>
+ * ChargeBearerCode.Intermediary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -248,7 +248,7 @@ public class ChargeBearerCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OUR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeBearerCode";

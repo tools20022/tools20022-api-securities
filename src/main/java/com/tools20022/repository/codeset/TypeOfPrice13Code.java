@@ -37,42 +37,42 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Bid
- * TypeOfPrice13Code.mmBid}</li>
+ * TypeOfPrice13Code.Bid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Offer
- * TypeOfPrice13Code.mmOffer}</li>
+ * TypeOfPrice13Code.Offer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#NetAssetValue
- * TypeOfPrice13Code.mmNetAssetValue}</li>
+ * TypeOfPrice13Code.NetAssetValue}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Creation
- * TypeOfPrice13Code.mmCreation}</li>
+ * TypeOfPrice13Code.Creation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Cancellation
- * TypeOfPrice13Code.mmCancellation}</li>
+ * TypeOfPrice13Code.Cancellation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Interim
- * TypeOfPrice13Code.mmInterim}</li>
+ * TypeOfPrice13Code.Interim}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Swing
- * TypeOfPrice13Code.mmSwing}</li>
+ * TypeOfPrice13Code.Swing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Mid
- * TypeOfPrice13Code.mmMid}</li>
+ * TypeOfPrice13Code.Mid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Reinvestment
- * TypeOfPrice13Code.mmReinvestment}</li>
+ * TypeOfPrice13Code.Reinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#SidePocketNAV
- * TypeOfPrice13Code.mmSidePocketNAV}</li>
+ * TypeOfPrice13Code.SidePocketNAV}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Switch
- * TypeOfPrice13Code.mmSwitch}</li>
+ * TypeOfPrice13Code.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#GrossAssetValue
- * TypeOfPrice13Code.mmGrossAssetValue}</li>
+ * TypeOfPrice13Code.GrossAssetValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#DailyDividendRate
- * TypeOfPrice13Code.mmDailyDividendRate}</li>
+ * TypeOfPrice13Code.DailyDividendRate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#Actual
- * TypeOfPrice13Code.mmActual}</li>
+ * TypeOfPrice13Code.Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice13Code#EstimatedGAV
- * TypeOfPrice13Code.mmEstimatedGAV}</li>
+ * TypeOfPrice13Code.EstimatedGAV}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -81,8 +81,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -471,7 +471,7 @@ public class TypeOfPrice13Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BIDE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPrice13Code";

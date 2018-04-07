@@ -38,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType12Code#InterimProfitTax
- * TaxType12Code.mmInterimProfitTax}</li>
+ * TaxType12Code.InterimProfitTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType12Code#EUTaxRetention
- * TaxType12Code.mmEUTaxRetention}</li>
+ * TaxType12Code.EUTaxRetention}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType12Code#Aktiengewinn1
- * TaxType12Code.mmAktiengewinn1}</li>
+ * TaxType12Code.Aktiengewinn1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType12Code#Aktiengewinn2
- * TaxType12Code.mmAktiengewinn2}</li>
+ * TaxType12Code.Aktiengewinn2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType12Code#Zwischengewinn
- * TaxType12Code.mmZwischengewinn}</li>
+ * TaxType12Code.Zwischengewinn}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType12Code#Mietgewinn
- * TaxType12Code.mmMietgewinn}</li>
+ * TaxType12Code.Mietgewinn}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -234,7 +234,7 @@ public class TaxType12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INPO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxType12Code";

@@ -39,187 +39,187 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#AgreementStartDate
- * RejectionReason28Code.mmAgreementStartDate}</li>
+ * RejectionReason28Code.AgreementStartDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TypeOfOrderRejection
- * RejectionReason28Code.mmTypeOfOrderRejection}</li>
+ * RejectionReason28Code.TypeOfOrderRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TransactionCallDelay
- * RejectionReason28Code.mmTransactionCallDelay}</li>
+ * RejectionReason28Code.TransactionCallDelay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#CommercializationContractRejection
- * RejectionReason28Code.mmCommercializationContractRejection}</li>
+ * RejectionReason28Code.CommercializationContractRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SettlementDateRejection
- * RejectionReason28Code.mmSettlementDateRejection}</li>
+ * RejectionReason28Code.SettlementDateRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#DealPrice
- * RejectionReason28Code.mmDealPrice}</li>
+ * RejectionReason28Code.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#PlaceOfSettlementRejection
- * RejectionReason28Code.mmPlaceOfSettlementRejection}</li>
+ * RejectionReason28Code.PlaceOfSettlementRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SettlementAmountRejection
- * RejectionReason28Code.mmSettlementAmountRejection}</li>
+ * RejectionReason28Code.SettlementAmountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#QuantityRejection
- * RejectionReason28Code.mmQuantityRejection}</li>
+ * RejectionReason28Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#InvalidSecurity
- * RejectionReason28Code.mmInvalidSecurity}</li>
+ * RejectionReason28Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TradeDate
- * RejectionReason28Code.mmTradeDate}</li>
+ * RejectionReason28Code.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#FeeCommissionRejection
- * RejectionReason28Code.mmFeeCommissionRejection}</li>
+ * RejectionReason28Code.FeeCommissionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ForfeitAmount
- * RejectionReason28Code.mmForfeitAmount}</li>
+ * RejectionReason28Code.ForfeitAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#DeliveringAgent
- * RejectionReason28Code.mmDeliveringAgent}</li>
+ * RejectionReason28Code.DeliveringAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ReceivingOrDeliveringCustodianRejection
- * RejectionReason28Code.mmReceivingOrDeliveringCustodianRejection}</li>
+ * RejectionReason28Code.ReceivingOrDeliveringCustodianRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ReceivingDeliveringParty3
- * RejectionReason28Code.mmReceivingDeliveringParty3}</li>
+ * RejectionReason28Code.ReceivingDeliveringParty3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#CommonReferenceRejection
- * RejectionReason28Code.mmCommonReferenceRejection}</li>
+ * RejectionReason28Code.CommonReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#NarrativeInformationRejection
- * RejectionReason28Code.mmNarrativeInformationRejection}</li>
+ * RejectionReason28Code.NarrativeInformationRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#NarrativeReason
- * RejectionReason28Code.mmNarrativeReason}</li>
+ * RejectionReason28Code.NarrativeReason}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SettlementAmountCurrencyRejection
- * RejectionReason28Code.mmSettlementAmountCurrencyRejection}</li>
+ * RejectionReason28Code.SettlementAmountCurrencyRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#OrderDateNotProvided
- * RejectionReason28Code.mmOrderDateNotProvided}</li>
+ * RejectionReason28Code.OrderDateNotProvided}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#PlaceOfTrade
- * RejectionReason28Code.mmPlaceOfTrade}</li>
+ * RejectionReason28Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#QuantityUnitType
- * RejectionReason28Code.mmQuantityUnitType}</li>
+ * RejectionReason28Code.QuantityUnitType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ReferenceRejection
- * RejectionReason28Code.mmReferenceRejection}</li>
+ * RejectionReason28Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ClosingTransactionAmount
- * RejectionReason28Code.mmClosingTransactionAmount}</li>
+ * RejectionReason28Code.ClosingTransactionAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#RepurchaseRate
- * RejectionReason28Code.mmRepurchaseRate}</li>
+ * RejectionReason28Code.RepurchaseRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#PremiumAmount
- * RejectionReason28Code.mmPremiumAmount}</li>
+ * RejectionReason28Code.PremiumAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#RepurchaseRateType
- * RejectionReason28Code.mmRepurchaseRateType}</li>
+ * RejectionReason28Code.RepurchaseRateType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SpreadRate
- * RejectionReason28Code.mmSpreadRate}</li>
+ * RejectionReason28Code.SpreadRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SafekeepingAccountRejection
- * RejectionReason28Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason28Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SettlementTransactionRejection
- * RejectionReason28Code.mmSettlementTransactionRejection}</li>
+ * RejectionReason28Code.SettlementTransactionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#SettlementSystemMethodRejection
- * RejectionReason28Code.mmSettlementSystemMethodRejection}</li>
+ * RejectionReason28Code.SettlementSystemMethodRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ClosingDateTimeRejection
- * RejectionReason28Code.mmClosingDateTimeRejection}</li>
+ * RejectionReason28Code.ClosingDateTimeRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TransactionNoticeAlreadyAcceptedOrRejected
- * RejectionReason28Code.mmTransactionNoticeAlreadyAcceptedOrRejected}</li>
+ * RejectionReason28Code.TransactionNoticeAlreadyAcceptedOrRejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TransactionNoticeIDUnknown
- * RejectionReason28Code.mmTransactionNoticeIDUnknown}</li>
+ * RejectionReason28Code.TransactionNoticeIDUnknown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TradedQuantityHigherThanOriginalOrderQuantity
- * RejectionReason28Code.mmTradedQuantityHigherThanOriginalOrderQuantity}</li>
+ * RejectionReason28Code.TradedQuantityHigherThanOriginalOrderQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TradedSecuritiesQuantity
- * RejectionReason28Code.mmTradedSecuritiesQuantity}</li>
+ * RejectionReason28Code.TradedSecuritiesQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#TaxStatusRejection
- * RejectionReason28Code.mmTaxStatusRejection}</li>
+ * RejectionReason28Code.TaxStatusRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#InvalidReference
- * RejectionReason28Code.mmInvalidReference}</li>
+ * RejectionReason28Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#VariableRateSupportRejection
- * RejectionReason28Code.mmVariableRateSupportRejection}</li>
+ * RejectionReason28Code.VariableRateSupportRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#InstructionIrrevocable
- * RejectionReason28Code.mmInstructionIrrevocable}</li>
+ * RejectionReason28Code.InstructionIrrevocable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#OptionNumberRejection
- * RejectionReason28Code.mmOptionNumberRejection}</li>
+ * RejectionReason28Code.OptionNumberRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#InvalidOptionType
- * RejectionReason28Code.mmInvalidOptionType}</li>
+ * RejectionReason28Code.InvalidOptionType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#UnknownSymbol
- * RejectionReason28Code.mmUnknownSymbol}</li>
+ * RejectionReason28Code.UnknownSymbol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#ExceedsLimit
- * RejectionReason28Code.mmExceedsLimit}</li>
+ * RejectionReason28Code.ExceedsLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#InvalidPrice
- * RejectionReason28Code.mmInvalidPrice}</li>
+ * RejectionReason28Code.InvalidPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#PriceExceeds
- * RejectionReason28Code.mmPriceExceeds}</li>
+ * RejectionReason28Code.PriceExceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#QuantityExceeds
- * RejectionReason28Code.mmQuantityExceeds}</li>
+ * RejectionReason28Code.QuantityExceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#WrongSide
- * RejectionReason28Code.mmWrongSide}</li>
+ * RejectionReason28Code.WrongSide}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#CalculationDifference
- * RejectionReason28Code.mmCalculationDifference}</li>
+ * RejectionReason28Code.CalculationDifference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#UnknownDealExposure
- * RejectionReason28Code.mmUnknownDealExposure}</li>
+ * RejectionReason28Code.UnknownDealExposure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#DisagreeWithCallAmount
- * RejectionReason28Code.mmDisagreeWithCallAmount}</li>
+ * RejectionReason28Code.DisagreeWithCallAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#DisagreeWithExposureAmount
- * RejectionReason28Code.mmDisagreeWithExposureAmount}</li>
+ * RejectionReason28Code.DisagreeWithExposureAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#MissingResultingAmount
- * RejectionReason28Code.mmMissingResultingAmount}</li>
+ * RejectionReason28Code.MissingResultingAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#MissingExchangeRate
- * RejectionReason28Code.mmMissingExchangeRate}</li>
+ * RejectionReason28Code.MissingExchangeRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#UnexpectedAccruedInterest
- * RejectionReason28Code.mmUnexpectedAccruedInterest}</li>
+ * RejectionReason28Code.UnexpectedAccruedInterest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#GrossAmountLessThanNetAmount
- * RejectionReason28Code.mmGrossAmountLessThanNetAmount}</li>
+ * RejectionReason28Code.GrossAmountLessThanNetAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#MissingDefaultOption
- * RejectionReason28Code.mmMissingDefaultOption}</li>
+ * RejectionReason28Code.MissingDefaultOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#FailedValidation
- * RejectionReason28Code.mmFailedValidation}</li>
+ * RejectionReason28Code.FailedValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#InvalidDetails
- * RejectionReason28Code.mmInvalidDetails}</li>
+ * RejectionReason28Code.InvalidDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason28Code#Other
- * RejectionReason28Code.mmOther}</li>
+ * RejectionReason28Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -228,8 +228,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1724,7 +1724,7 @@ public class RejectionReason28Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ASTM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason28Code";

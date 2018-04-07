@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#CreditAccountNotEligible
- * FailedSettlementReasonCode.mmCreditAccountNotEligible}</li>
+ * FailedSettlementReasonCode.CreditAccountNotEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#CreditAccountDisabled
- * FailedSettlementReasonCode.mmCreditAccountDisabled}</li>
+ * FailedSettlementReasonCode.CreditAccountDisabled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#DebitAccountNotEligible
- * FailedSettlementReasonCode.mmDebitAccountNotEligible}</li>
+ * FailedSettlementReasonCode.DebitAccountNotEligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#DebitAccountDisabled
- * FailedSettlementReasonCode.mmDebitAccountDisabled}</li>
+ * FailedSettlementReasonCode.DebitAccountDisabled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#InsufficientSecurities
- * FailedSettlementReasonCode.mmInsufficientSecurities}</li>
+ * FailedSettlementReasonCode.InsufficientSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#IncompleteDistribution
- * FailedSettlementReasonCode.mmIncompleteDistribution}</li>
+ * FailedSettlementReasonCode.IncompleteDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailedSettlementReasonCode#InsufficientCash
- * FailedSettlementReasonCode.mmInsufficientCash}</li>
+ * FailedSettlementReasonCode.InsufficientCash}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -70,8 +70,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -310,7 +310,7 @@ public class FailedSettlementReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CANE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailedSettlementReasonCode";

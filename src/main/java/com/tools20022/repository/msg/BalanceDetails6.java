@@ -28,8 +28,11 @@ import com.tools20022.repository.entity.AssetHolding;
 import com.tools20022.repository.entity.Balance;
 import com.tools20022.repository.entity.CashBalance;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection31;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintBalanceTypeGuideline2#forBalanceDetails6
+ * ConstraintBalanceTypeGuideline2.forBalanceDetails6}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Balance related details for a portfolio."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BalanceDetails6", propOrder = {"category", "type", "unrealised", "amount"})
 public class BalanceDetails6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctgy")
 	protected FinancialAssetTypeCategory1Code category;
 	/**
-	 * Category of the financial asset balance type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +122,10 @@ public class BalanceDetails6 {
 	 * definition} = "Category of the financial asset balance type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCategory = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceDetails6, Optional<FinancialAssetTypeCategory1Code>> mmCategory = new MMMessageAttribute<BalanceDetails6, Optional<FinancialAssetTypeCategory1Code>>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmFinancialAssetCategory;
-			componentContext_lazy = () -> BalanceDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "Ctgy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +135,22 @@ public class BalanceDetails6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> FinancialAssetTypeCategory1Code.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialAssetTypeCategory1Code> getValue(BalanceDetails6 obj) {
+			return obj.getCategory();
+		}
+
+		@Override
+		public void setValue(BalanceDetails6 obj, Optional<FinancialAssetTypeCategory1Code> value) {
+			obj.setCategory(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Tp")
 	protected BalanceType7Choice type;
 	/**
-	 * Balance type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +181,10 @@ public class BalanceDetails6 {
 	 * definition} = "Balance type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceDetails6, Optional<BalanceType7Choice>> mmType = new MMMessageAttribute<BalanceDetails6, Optional<BalanceType7Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> BalanceDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,11 +194,22 @@ public class BalanceDetails6 {
 			minOccurs = 0;
 			complexType_lazy = () -> BalanceType7Choice.mmObject();
 		}
+
+		@Override
+		public Optional<BalanceType7Choice> getValue(BalanceDetails6 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(BalanceDetails6 obj, Optional<BalanceType7Choice> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Urlsd")
 	protected Unrealised1Code unrealised;
 	/**
-	 * Unrealised gain or loss.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,10 +240,10 @@ public class BalanceDetails6 {
 	 * definition} = "Unrealised gain or loss."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnrealised = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceDetails6, Optional<Unrealised1Code>> mmUnrealised = new MMMessageAttribute<BalanceDetails6, Optional<Unrealised1Code>>() {
 		{
 			businessElementTrace_lazy = () -> AssetHolding.mmUnrealisedType;
-			componentContext_lazy = () -> BalanceDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "Urlsd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,11 +253,22 @@ public class BalanceDetails6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Unrealised1Code.mmObject();
 		}
+
+		@Override
+		public Optional<Unrealised1Code> getValue(BalanceDetails6 obj) {
+			return obj.getUnrealised();
+		}
+
+		@Override
+		public void setValue(BalanceDetails6 obj, Optional<Unrealised1Code> value) {
+			obj.setUnrealised(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected AmountAndDirection31 amount;
 	/**
-	 * Balance amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,10 +299,10 @@ public class BalanceDetails6 {
 	 * definition} = "Balance amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BalanceDetails6, AmountAndDirection31> mmAmount = new MMMessageAttribute<BalanceDetails6, AmountAndDirection31>() {
 		{
 			businessElementTrace_lazy = () -> CashBalance.mmAmount;
-			componentContext_lazy = () -> BalanceDetails6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BalanceDetails6.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -265,16 +310,28 @@ public class BalanceDetails6 {
 			definition = "Balance amount.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection31.mmObject();
+			complexType_lazy = () -> AmountAndDirection31.mmObject();
+		}
+
+		@Override
+		public AmountAndDirection31 getValue(BalanceDetails6 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(BalanceDetails6 obj, AmountAndDirection31 value) {
+			obj.setAmount(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BalanceDetails6.mmCategory, BalanceDetails6.mmType, BalanceDetails6.mmUnrealised, BalanceDetails6.mmAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BalanceDetails6.mmCategory, com.tools20022.repository.msg.BalanceDetails6.mmType, com.tools20022.repository.msg.BalanceDetails6.mmUnrealised,
+						com.tools20022.repository.msg.BalanceDetails6.mmAmount);
 				trace_lazy = () -> Balance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintBalanceTypeGuideline2.forBalanceDetails6);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceDetails6";
 				definition = "Balance related details for a portfolio.";
@@ -283,39 +340,39 @@ public class BalanceDetails6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctgy")
-	public FinancialAssetTypeCategory1Code getCategory() {
-		return category;
+	public Optional<FinancialAssetTypeCategory1Code> getCategory() {
+		return category == null ? Optional.empty() : Optional.of(category);
 	}
 
-	public void setCategory(FinancialAssetTypeCategory1Code category) {
+	public BalanceDetails6 setCategory(FinancialAssetTypeCategory1Code category) {
 		this.category = category;
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public BalanceType7Choice getType() {
-		return type;
+	public Optional<BalanceType7Choice> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(BalanceType7Choice type) {
+	public BalanceDetails6 setType(BalanceType7Choice type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Urlsd")
-	public Unrealised1Code getUnrealised() {
-		return unrealised;
+	public Optional<Unrealised1Code> getUnrealised() {
+		return unrealised == null ? Optional.empty() : Optional.of(unrealised);
 	}
 
-	public void setUnrealised(Unrealised1Code unrealised) {
+	public BalanceDetails6 setUnrealised(Unrealised1Code unrealised) {
 		this.unrealised = unrealised;
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public AmountAndDirection31 getAmount() {
 		return amount;
 	}
 
-	public void setAmount(com.tools20022.repository.msg.AmountAndDirection31 amount) {
-		this.amount = amount;
+	public BalanceDetails6 setAmount(AmountAndDirection31 amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 }

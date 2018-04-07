@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.CollateralMovement;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides details on the margin result."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarginResult1Choice", propOrder = {"excessAmount", "deficitAmount"})
 public class MarginResult1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "XcssAmt", required = true)
 	protected ActiveCurrencyAndAmount excessAmount;
 	/**
-	 * Excess amount that the central counterparty may restitute to the Clearing
-	 * member.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +108,10 @@ public class MarginResult1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExcessAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarginResult1Choice, ActiveCurrencyAndAmount> mmExcessAmount = new MMMessageAttribute<MarginResult1Choice, ActiveCurrencyAndAmount>() {
 		{
 			businessComponentTrace_lazy = () -> CollateralMovement.mmObject();
-			componentContext_lazy = () -> MarginResult1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginResult1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "XcssAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,12 +121,22 @@ public class MarginResult1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(MarginResult1Choice obj) {
+			return obj.getExcessAmount();
+		}
+
+		@Override
+		public void setValue(MarginResult1Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setExcessAmount(value);
+		}
 	};
+	@XmlElement(name = "DfcitAmt", required = true)
 	protected ActiveCurrencyAndAmount deficitAmount;
 	/**
-	 * Deficit amount that the central counterparty will provide to the clearing
-	 * member.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +169,10 @@ public class MarginResult1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDeficitAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MarginResult1Choice, ActiveCurrencyAndAmount> mmDeficitAmount = new MMMessageAttribute<MarginResult1Choice, ActiveCurrencyAndAmount>() {
 		{
 			businessComponentTrace_lazy = () -> CollateralMovement.mmObject();
-			componentContext_lazy = () -> MarginResult1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.MarginResult1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DfcitAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +182,24 @@ public class MarginResult1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(MarginResult1Choice obj) {
+			return obj.getDeficitAmount();
+		}
+
+		@Override
+		public void setValue(MarginResult1Choice obj, ActiveCurrencyAndAmount value) {
+			obj.setDeficitAmount(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarginResult1Choice.mmExcessAmount, MarginResult1Choice.mmDeficitAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.MarginResult1Choice.mmExcessAmount, com.tools20022.repository.choice.MarginResult1Choice.mmDeficitAmount);
 				trace_lazy = () -> CollateralMovement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginResult1Choice";
 				definition = "Provides details on the margin result.";
@@ -187,21 +208,21 @@ public class MarginResult1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "XcssAmt", required = true)
 	public ActiveCurrencyAndAmount getExcessAmount() {
 		return excessAmount;
 	}
 
-	public void setExcessAmount(ActiveCurrencyAndAmount excessAmount) {
-		this.excessAmount = excessAmount;
+	public MarginResult1Choice setExcessAmount(ActiveCurrencyAndAmount excessAmount) {
+		this.excessAmount = Objects.requireNonNull(excessAmount);
+		return this;
 	}
 
-	@XmlElement(name = "DfcitAmt", required = true)
 	public ActiveCurrencyAndAmount getDeficitAmount() {
 		return deficitAmount;
 	}
 
-	public void setDeficitAmount(ActiveCurrencyAndAmount deficitAmount) {
-		this.deficitAmount = deficitAmount;
+	public MarginResult1Choice setDeficitAmount(ActiveCurrencyAndAmount deficitAmount) {
+		this.deficitAmount = Objects.requireNonNull(deficitAmount);
+		return this;
 	}
 }

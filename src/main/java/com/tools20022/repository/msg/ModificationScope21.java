@@ -24,8 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.acmt.AccountModificationInstructionV07;
 import com.tools20022.repository.codeset.DataModification1Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NewIssueAllocation2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ModificationScope21", propOrder = {"modificationScopeIndication", "issueAllocation"})
 public class ModificationScope21 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModScpIndctn", required = true)
 	protected DataModification1Code modificationScopeIndication;
 	/**
-	 * Specifies the type of modification to be applied on a set of information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,9 +113,9 @@ public class ModificationScope21 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationScopeIndication = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ModificationScope21, DataModification1Code> mmModificationScopeIndication = new MMMessageAttribute<ModificationScope21, DataModification1Code>() {
 		{
-			componentContext_lazy = () -> ModificationScope21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope21.mmObject();
 			isDerived = false;
 			xmlTag = "ModScpIndctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,12 +125,22 @@ public class ModificationScope21 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DataModification1Code.mmObject();
 		}
+
+		@Override
+		public DataModification1Code getValue(ModificationScope21 obj) {
+			return obj.getModificationScopeIndication();
+		}
+
+		@Override
+		public void setValue(ModificationScope21 obj, DataModification1Code value) {
+			obj.setModificationScopeIndication(value);
+		}
 	};
+	@XmlElement(name = "IsseAllcn", required = true)
 	protected NewIssueAllocation2 issueAllocation;
 	/**
-	 * Information about the investment account ownership with respect to new
-	 * issue allocation for a hedge fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,9 +166,9 @@ public class ModificationScope21 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIssueAllocation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ModificationScope21, NewIssueAllocation2> mmIssueAllocation = new MMMessageAssociationEnd<ModificationScope21, NewIssueAllocation2>() {
 		{
-			componentContext_lazy = () -> ModificationScope21.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope21.mmObject();
 			isDerived = false;
 			xmlTag = "IsseAllcn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,16 +177,26 @@ public class ModificationScope21 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NewIssueAllocation2.mmObject();
+			type_lazy = () -> NewIssueAllocation2.mmObject();
+		}
+
+		@Override
+		public NewIssueAllocation2 getValue(ModificationScope21 obj) {
+			return obj.getIssueAllocation();
+		}
+
+		@Override
+		public void setValue(ModificationScope21 obj, NewIssueAllocation2 value) {
+			obj.setIssueAllocation(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ModificationScope21.mmModificationScopeIndication, ModificationScope21.mmIssueAllocation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ModificationScope21.mmModificationScopeIndication, com.tools20022.repository.msg.ModificationScope21.mmIssueAllocation);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountModificationInstructionV07.mmModifiedIssueAllocation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationScope21";
 				definition = "Scope of the modification to be applied on an identified set of information.";
@@ -182,21 +205,21 @@ public class ModificationScope21 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModScpIndctn", required = true)
 	public DataModification1Code getModificationScopeIndication() {
 		return modificationScopeIndication;
 	}
 
-	public void setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
-		this.modificationScopeIndication = modificationScopeIndication;
+	public ModificationScope21 setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
+		this.modificationScopeIndication = Objects.requireNonNull(modificationScopeIndication);
+		return this;
 	}
 
-	@XmlElement(name = "IsseAllcn", required = true)
 	public NewIssueAllocation2 getIssueAllocation() {
 		return issueAllocation;
 	}
 
-	public void setIssueAllocation(com.tools20022.repository.msg.NewIssueAllocation2 issueAllocation) {
-		this.issueAllocation = issueAllocation;
+	public ModificationScope21 setIssueAllocation(NewIssueAllocation2 issueAllocation) {
+		this.issueAllocation = Objects.requireNonNull(issueAllocation);
+		return this;
 	}
 }

@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyType5Code#Final
- * CorporateActionFrequencyType5Code.mmFinal}</li>
+ * CorporateActionFrequencyType5Code.Final}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyType5Code#Interim
- * CorporateActionFrequencyType5Code.mmInterim}</li>
+ * CorporateActionFrequencyType5Code.Interim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyType5Code#Reinvestment
- * CorporateActionFrequencyType5Code.mmReinvestment}</li>
+ * CorporateActionFrequencyType5Code.Reinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyType5Code#Regular
- * CorporateActionFrequencyType5Code.mmRegular}</li>
+ * CorporateActionFrequencyType5Code.Regular}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyType5Code#Special
- * CorporateActionFrequencyType5Code.mmSpecial}</li>
+ * CorporateActionFrequencyType5Code.Special}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionFrequencyType5Code#SpecialDividendWithReinvestment
- * CorporateActionFrequencyType5Code.mmSpecialDividendWithReinvestment}</li>
+ * CorporateActionFrequencyType5Code.SpecialDividendWithReinvestment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -231,7 +231,7 @@ public class CorporateActionFrequencyType5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionFrequencyType5Code";
 				definition = "Automatic Reinvestment of Cash distributed by accumulating funds.";

@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification47;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,18 +64,19 @@ import javax.xml.bind.annotation.XmlType;
  * "InsuranceType2Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Choice of formats for the specification of the type  of insurance."</li>
+ * "Choice of formats for the specification of the type of insurance."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InsuranceType2Choice", propOrder = {"code", "proprietary"})
 public class InsuranceType2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected Insurance1Code code;
 	/**
-	 * Type of insurance contract expressed as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,10 +107,10 @@ public class InsuranceType2Choice {
 	 * definition} = "Type of insurance contract expressed as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InsuranceType2Choice, Insurance1Code> mmCode = new MMMessageAttribute<InsuranceType2Choice, Insurance1Code>() {
 		{
 			businessElementTrace_lazy = () -> InsuranceCertificate.mmInsuranceType;
-			componentContext_lazy = () -> InsuranceType2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InsuranceType2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class InsuranceType2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Insurance1Code.mmObject();
 		}
+
+		@Override
+		public Insurance1Code getValue(InsuranceType2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(InsuranceType2Choice obj, Insurance1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification47 proprietary;
 	/**
-	 * Type of insurance contract expressed as a proprietary code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +167,10 @@ public class InsuranceType2Choice {
 	 * "Type of insurance contract expressed as a proprietary code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InsuranceType2Choice, GenericIdentification47> mmProprietary = new MMMessageAttribute<InsuranceType2Choice, GenericIdentification47>() {
 		{
 			businessElementTrace_lazy = () -> InsuranceCertificate.mmInsuranceType;
-			componentContext_lazy = () -> InsuranceType2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InsuranceType2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,37 +180,47 @@ public class InsuranceType2Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification47.mmObject();
 		}
+
+		@Override
+		public GenericIdentification47 getValue(InsuranceType2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(InsuranceType2Choice obj, GenericIdentification47 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InsuranceType2Choice.mmCode, InsuranceType2Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InsuranceType2Choice.mmCode, com.tools20022.repository.choice.InsuranceType2Choice.mmProprietary);
 				trace_lazy = () -> InsuranceCertificate.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsuranceType2Choice";
-				definition = "Choice of formats for the specification of the type  of insurance.";
+				definition = "Choice of formats for the specification of the type of insurance.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public Insurance1Code getCode() {
 		return code;
 	}
 
-	public void setCode(Insurance1Code code) {
-		this.code = code;
+	public InsuranceType2Choice setCode(Insurance1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification47 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification47 proprietary) {
-		this.proprietary = proprietary;
+	public InsuranceType2Choice setProprietary(GenericIdentification47 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

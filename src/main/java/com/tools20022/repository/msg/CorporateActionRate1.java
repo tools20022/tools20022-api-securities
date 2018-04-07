@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies rates."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionRate1", propOrder = {"interest", "relatedIndex", "percentageSought", "reinvestmentDiscountToMarket", "spread", "bidInterval", "charges"})
 public class CorporateActionRate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Intrst")
 	protected RateAndAmountFormat1Choice interest;
 	/**
-	 * Annual rate of a financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +121,10 @@ public class CorporateActionRate1 {
 	 * definition} = "Annual rate of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterest = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<RateAndAmountFormat1Choice>> mmInterest = new MMMessageAttribute<CorporateActionRate1, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CashProceedsDefinition.mmInterest;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Intrst";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,12 +134,22 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setInterest(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RltdIndx")
 	protected RateFormat1Choice relatedIndex;
 	/**
-	 * Index rate related to the interest rate of the forthcoming interest
-	 * payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,10 +182,10 @@ public class CorporateActionRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRelatedIndex = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>> mmRelatedIndex = new MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmRelatedIndex;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "RltdIndx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,12 +195,22 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getRelatedIndex();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<RateFormat1Choice> value) {
+			obj.setRelatedIndex(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PctgSght")
 	protected RateFormat1Choice percentageSought;
 	/**
-	 * Percentage of securities the offeror/issuer will purchase or redeem under
-	 * the terms of the event. This can be a number or the term "any and all".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,10 +243,10 @@ public class CorporateActionRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPercentageSought = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>> mmPercentageSought = new MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmPercentageSought;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "PctgSght";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,12 +256,22 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getPercentageSought();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<RateFormat1Choice> value) {
+			obj.setPercentageSought(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RinvstmtDscntToMkt")
 	protected RateFormat1Choice reinvestmentDiscountToMarket;
 	/**
-	 * Rate of discount for securities purchased through a reinvestment scheme
-	 * as compared to the current market price of security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,10 +304,10 @@ public class CorporateActionRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReinvestmentDiscountToMarket = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>> mmReinvestmentDiscountToMarket = new MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesProceedsDefinition.mmReinvestmentDiscountToMarket;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "RinvstmtDscntToMkt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -285,11 +317,22 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getReinvestmentDiscountToMarket();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<RateFormat1Choice> value) {
+			obj.setReinvestmentDiscountToMarket(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Sprd")
 	protected RateFormat1Choice spread;
 	/**
-	 * Margin allowed over or under a given rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,10 +363,10 @@ public class CorporateActionRate1 {
 	 * definition} = "Margin allowed over or under a given rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSpread = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>> mmSpread = new MMMessageAttribute<CorporateActionRate1, Optional<RateFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmSpread;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Sprd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,11 +376,22 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateFormat1Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getSpread();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<RateFormat1Choice> value) {
+			obj.setSpread(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BidIntrvl")
 	protected AmountAndRateFormat3Choice bidInterval;
 	/**
-	 * Acceptable price increment used for submitting a bid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,10 +422,10 @@ public class CorporateActionRate1 {
 	 * definition} = "Acceptable price increment used for submitting a bid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBidInterval = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<AmountAndRateFormat3Choice>> mmBidInterval = new MMMessageAttribute<CorporateActionRate1, Optional<AmountAndRateFormat3Choice>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmBidInterval;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "BidIntrvl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -381,12 +435,22 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> AmountAndRateFormat3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AmountAndRateFormat3Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getBidInterval();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<AmountAndRateFormat3Choice> value) {
+			obj.setBidInterval(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Chrgs")
 	protected RateAndAmountFormat1Choice charges;
 	/**
-	 * Rate used to calculate the amount of the charges/fees that cannot be
-	 * categorised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,10 +483,10 @@ public class CorporateActionRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCharges = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionRate1, Optional<RateAndAmountFormat1Choice>> mmCharges = new MMMessageAttribute<CorporateActionRate1, Optional<RateAndAmountFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmCorporateActionCharge;
-			componentContext_lazy = () -> CorporateActionRate1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Chrgs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -432,15 +496,26 @@ public class CorporateActionRate1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateAndAmountFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateAndAmountFormat1Choice> getValue(CorporateActionRate1 obj) {
+			return obj.getCharges();
+		}
+
+		@Override
+		public void setValue(CorporateActionRate1 obj, Optional<RateAndAmountFormat1Choice> value) {
+			obj.setCharges(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionRate1.mmInterest, CorporateActionRate1.mmRelatedIndex, CorporateActionRate1.mmPercentageSought, CorporateActionRate1.mmReinvestmentDiscountToMarket,
-						CorporateActionRate1.mmSpread, CorporateActionRate1.mmBidInterval, CorporateActionRate1.mmCharges);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionRate1.mmInterest, com.tools20022.repository.msg.CorporateActionRate1.mmRelatedIndex,
+						com.tools20022.repository.msg.CorporateActionRate1.mmPercentageSought, com.tools20022.repository.msg.CorporateActionRate1.mmReinvestmentDiscountToMarket, com.tools20022.repository.msg.CorporateActionRate1.mmSpread,
+						com.tools20022.repository.msg.CorporateActionRate1.mmBidInterval, com.tools20022.repository.msg.CorporateActionRate1.mmCharges);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionRate1";
 				definition = "Specifies rates.";
@@ -449,66 +524,66 @@ public class CorporateActionRate1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Intrst")
-	public RateAndAmountFormat1Choice getInterest() {
-		return interest;
+	public Optional<RateAndAmountFormat1Choice> getInterest() {
+		return interest == null ? Optional.empty() : Optional.of(interest);
 	}
 
-	public void setInterest(RateAndAmountFormat1Choice interest) {
+	public CorporateActionRate1 setInterest(RateAndAmountFormat1Choice interest) {
 		this.interest = interest;
+		return this;
 	}
 
-	@XmlElement(name = "RltdIndx")
-	public RateFormat1Choice getRelatedIndex() {
-		return relatedIndex;
+	public Optional<RateFormat1Choice> getRelatedIndex() {
+		return relatedIndex == null ? Optional.empty() : Optional.of(relatedIndex);
 	}
 
-	public void setRelatedIndex(RateFormat1Choice relatedIndex) {
+	public CorporateActionRate1 setRelatedIndex(RateFormat1Choice relatedIndex) {
 		this.relatedIndex = relatedIndex;
+		return this;
 	}
 
-	@XmlElement(name = "PctgSght")
-	public RateFormat1Choice getPercentageSought() {
-		return percentageSought;
+	public Optional<RateFormat1Choice> getPercentageSought() {
+		return percentageSought == null ? Optional.empty() : Optional.of(percentageSought);
 	}
 
-	public void setPercentageSought(RateFormat1Choice percentageSought) {
+	public CorporateActionRate1 setPercentageSought(RateFormat1Choice percentageSought) {
 		this.percentageSought = percentageSought;
+		return this;
 	}
 
-	@XmlElement(name = "RinvstmtDscntToMkt")
-	public RateFormat1Choice getReinvestmentDiscountToMarket() {
-		return reinvestmentDiscountToMarket;
+	public Optional<RateFormat1Choice> getReinvestmentDiscountToMarket() {
+		return reinvestmentDiscountToMarket == null ? Optional.empty() : Optional.of(reinvestmentDiscountToMarket);
 	}
 
-	public void setReinvestmentDiscountToMarket(RateFormat1Choice reinvestmentDiscountToMarket) {
+	public CorporateActionRate1 setReinvestmentDiscountToMarket(RateFormat1Choice reinvestmentDiscountToMarket) {
 		this.reinvestmentDiscountToMarket = reinvestmentDiscountToMarket;
+		return this;
 	}
 
-	@XmlElement(name = "Sprd")
-	public RateFormat1Choice getSpread() {
-		return spread;
+	public Optional<RateFormat1Choice> getSpread() {
+		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public void setSpread(RateFormat1Choice spread) {
+	public CorporateActionRate1 setSpread(RateFormat1Choice spread) {
 		this.spread = spread;
+		return this;
 	}
 
-	@XmlElement(name = "BidIntrvl")
-	public AmountAndRateFormat3Choice getBidInterval() {
-		return bidInterval;
+	public Optional<AmountAndRateFormat3Choice> getBidInterval() {
+		return bidInterval == null ? Optional.empty() : Optional.of(bidInterval);
 	}
 
-	public void setBidInterval(AmountAndRateFormat3Choice bidInterval) {
+	public CorporateActionRate1 setBidInterval(AmountAndRateFormat3Choice bidInterval) {
 		this.bidInterval = bidInterval;
+		return this;
 	}
 
-	@XmlElement(name = "Chrgs")
-	public RateAndAmountFormat1Choice getCharges() {
-		return charges;
+	public Optional<RateAndAmountFormat1Choice> getCharges() {
+		return charges == null ? Optional.empty() : Optional.of(charges);
 	}
 
-	public void setCharges(RateAndAmountFormat1Choice charges) {
+	public CorporateActionRate1 setCharges(RateAndAmountFormat1Choice charges) {
 		this.charges = charges;
+		return this;
 	}
 }

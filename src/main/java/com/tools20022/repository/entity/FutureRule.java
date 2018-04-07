@@ -21,10 +21,12 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.TimeUnitCode;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.Future;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Timing characteristics of the maturity of the future.
@@ -65,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,8 +84,8 @@ public class FutureRule {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TimeUnitCode timeType;
 	/**
-	 * Indicates whether the time to maturity is measured in months or years.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,7 +108,7 @@ public class FutureRule {
 	 * "Indicates whether the time to maturity is measured in months or years."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTimeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FutureRule, TimeUnitCode> mmTimeType = new MMBusinessAttribute<FutureRule, TimeUnitCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FutureRule.mmObject();
@@ -118,18 +120,20 @@ public class FutureRule {
 			simpleType_lazy = () -> TimeUnitCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FutureRule.class.getMethod("getTimeType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TimeUnitCode getValue(FutureRule obj) {
+			return obj.getTimeType();
+		}
+
+		@Override
+		public void setValue(FutureRule obj, TimeUnitCode value) {
+			obj.setTimeType(value);
 		}
 	};
 	protected Future relatedFutureInstrument;
 	/**
-	 * Future instrument for which a rule is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +162,7 @@ public class FutureRule {
 	 * definition} = "Future instrument for which a rule is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedFutureInstrument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FutureRule, Optional<Future>> mmRelatedFutureInstrument = new MMBusinessAssociationEnd<FutureRule, Optional<Future>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FutureRule.mmObject();
@@ -167,15 +171,25 @@ public class FutureRule {
 			definition = "Future instrument for which a rule is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Future.mmFutureRule;
+			opposite_lazy = () -> Future.mmFutureRule;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Future.mmObject();
+			type_lazy = () -> Future.mmObject();
+		}
+
+		@Override
+		public Optional<Future> getValue(FutureRule obj) {
+			return obj.getRelatedFutureInstrument();
+		}
+
+		@Override
+		public void setValue(FutureRule obj, Optional<Future> value) {
+			obj.setRelatedFutureInstrument(value.orElse(null));
 		}
 	};
 	protected Number maximumTimeToMaturity;
 	/**
-	 * Maximum number of time types up to maturity or first redemption option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +213,7 @@ public class FutureRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumTimeToMaturity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FutureRule, Number> mmMaximumTimeToMaturity = new MMBusinessAttribute<FutureRule, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FutureRule.mmObject();
@@ -211,18 +225,20 @@ public class FutureRule {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FutureRule.class.getMethod("getMaximumTimeToMaturity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(FutureRule obj) {
+			return obj.getMaximumTimeToMaturity();
+		}
+
+		@Override
+		public void setValue(FutureRule obj, Number value) {
+			obj.setMaximumTimeToMaturity(value);
 		}
 	};
 	protected Number minimumTimeToMaturity;
 	/**
-	 * Minimum number of time types up to maturity or first redemption option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,7 +262,7 @@ public class FutureRule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumTimeToMaturity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FutureRule, Number> mmMinimumTimeToMaturity = new MMBusinessAttribute<FutureRule, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FutureRule.mmObject();
@@ -258,18 +274,20 @@ public class FutureRule {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FutureRule.class.getMethod("getMinimumTimeToMaturity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(FutureRule obj) {
+			return obj.getMinimumTimeToMaturity();
+		}
+
+		@Override
+		public void setValue(FutureRule obj, Number value) {
+			obj.setMinimumTimeToMaturity(value);
 		}
 	};
 	protected PercentageRate baseInterestRate;
 	/**
-	 * Nominal interest rate of synthetic bond.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -292,7 +310,7 @@ public class FutureRule {
 	 * definition} = "Nominal interest rate of synthetic bond."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBaseInterestRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FutureRule, PercentageRate> mmBaseInterestRate = new MMBusinessAttribute<FutureRule, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FutureRule.mmObject();
@@ -304,23 +322,25 @@ public class FutureRule {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FutureRule.class.getMethod("getBaseInterestRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(FutureRule obj) {
+			return obj.getBaseInterestRate();
+		}
+
+		@Override
+		public void setValue(FutureRule obj, PercentageRate value) {
+			obj.setBaseInterestRate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FutureRule";
 				definition = "Timing characteristics of the maturity of the future.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Future.mmFutureRule);
+				associationDomain_lazy = () -> Arrays.asList(Future.mmFutureRule);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FutureRule.mmTimeType, com.tools20022.repository.entity.FutureRule.mmRelatedFutureInstrument,
 						com.tools20022.repository.entity.FutureRule.mmMaximumTimeToMaturity, com.tools20022.repository.entity.FutureRule.mmMinimumTimeToMaturity, com.tools20022.repository.entity.FutureRule.mmBaseInterestRate);
 			}
@@ -337,39 +357,44 @@ public class FutureRule {
 		return timeType;
 	}
 
-	public void setTimeType(TimeUnitCode timeType) {
-		this.timeType = timeType;
+	public FutureRule setTimeType(TimeUnitCode timeType) {
+		this.timeType = Objects.requireNonNull(timeType);
+		return this;
 	}
 
-	public Future getRelatedFutureInstrument() {
-		return relatedFutureInstrument;
+	public Optional<Future> getRelatedFutureInstrument() {
+		return relatedFutureInstrument == null ? Optional.empty() : Optional.of(relatedFutureInstrument);
 	}
 
-	public void setRelatedFutureInstrument(com.tools20022.repository.entity.Future relatedFutureInstrument) {
+	public FutureRule setRelatedFutureInstrument(Future relatedFutureInstrument) {
 		this.relatedFutureInstrument = relatedFutureInstrument;
+		return this;
 	}
 
 	public Number getMaximumTimeToMaturity() {
 		return maximumTimeToMaturity;
 	}
 
-	public void setMaximumTimeToMaturity(Number maximumTimeToMaturity) {
-		this.maximumTimeToMaturity = maximumTimeToMaturity;
+	public FutureRule setMaximumTimeToMaturity(Number maximumTimeToMaturity) {
+		this.maximumTimeToMaturity = Objects.requireNonNull(maximumTimeToMaturity);
+		return this;
 	}
 
 	public Number getMinimumTimeToMaturity() {
 		return minimumTimeToMaturity;
 	}
 
-	public void setMinimumTimeToMaturity(Number minimumTimeToMaturity) {
-		this.minimumTimeToMaturity = minimumTimeToMaturity;
+	public FutureRule setMinimumTimeToMaturity(Number minimumTimeToMaturity) {
+		this.minimumTimeToMaturity = Objects.requireNonNull(minimumTimeToMaturity);
+		return this;
 	}
 
 	public PercentageRate getBaseInterestRate() {
 		return baseInterestRate;
 	}
 
-	public void setBaseInterestRate(PercentageRate baseInterestRate) {
-		this.baseInterestRate = baseInterestRate;
+	public FutureRule setBaseInterestRate(PercentageRate baseInterestRate) {
+		this.baseInterestRate = Objects.requireNonNull(baseInterestRate);
+		return this;
 	}
 }

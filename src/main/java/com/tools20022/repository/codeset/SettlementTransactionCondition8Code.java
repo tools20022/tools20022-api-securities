@@ -38,73 +38,73 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Assignement
- * SettlementTransactionCondition8Code.mmAssignement}</li>
+ * SettlementTransactionCondition8Code.Assignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#BuytoCover
- * SettlementTransactionCondition8Code.mmBuytoCover}</li>
+ * SettlementTransactionCondition8Code.BuytoCover}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Clean
- * SettlementTransactionCondition8Code.mmClean}</li>
+ * SettlementTransactionCondition8Code.Clean}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Dirty
- * SettlementTransactionCondition8Code.mmDirty}</li>
+ * SettlementTransactionCondition8Code.Dirty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#DeliveryWithoutMatching
- * SettlementTransactionCondition8Code.mmDeliveryWithoutMatching}</li>
+ * SettlementTransactionCondition8Code.DeliveryWithoutMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Drawn
- * SettlementTransactionCondition8Code.mmDrawn}</li>
+ * SettlementTransactionCondition8Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Exercised
- * SettlementTransactionCondition8Code.mmExercised}</li>
+ * SettlementTransactionCondition8Code.Exercised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#FreeCleanSettlement
- * SettlementTransactionCondition8Code.mmFreeCleanSettlement}</li>
+ * SettlementTransactionCondition8Code.FreeCleanSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#KnockedOut
- * SettlementTransactionCondition8Code.mmKnockedOut}</li>
+ * SettlementTransactionCondition8Code.KnockedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Physical
- * SettlementTransactionCondition8Code.mmPhysical}</li>
+ * SettlementTransactionCondition8Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Residual
- * SettlementTransactionCondition8Code.mmResidual}</li>
+ * SettlementTransactionCondition8Code.Residual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#ShortSell
- * SettlementTransactionCondition8Code.mmShortSell}</li>
+ * SettlementTransactionCondition8Code.ShortSell}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#SpecialDelivery
- * SettlementTransactionCondition8Code.mmSpecialDelivery}</li>
+ * SettlementTransactionCondition8Code.SpecialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#SplitSettlement
- * SettlementTransactionCondition8Code.mmSplitSettlement}</li>
+ * SettlementTransactionCondition8Code.SplitSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Expired
- * SettlementTransactionCondition8Code.mmExpired}</li>
+ * SettlementTransactionCondition8Code.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#PendingSale
- * SettlementTransactionCondition8Code.mmPendingSale}</li>
+ * SettlementTransactionCondition8Code.PendingSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Unexposed
- * SettlementTransactionCondition8Code.mmUnexposed}</li>
+ * SettlementTransactionCondition8Code.Unexposed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#TripartySegregation
- * SettlementTransactionCondition8Code.mmTripartySegregation}</li>
+ * SettlementTransactionCondition8Code.TripartySegregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#NoAutomaticMarketClaim
- * SettlementTransactionCondition8Code.mmNoAutomaticMarketClaim}</li>
+ * SettlementTransactionCondition8Code.NoAutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Transformation
- * SettlementTransactionCondition8Code.mmTransformation}</li>
+ * SettlementTransactionCondition8Code.Transformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Rehypothecation
- * SettlementTransactionCondition8Code.mmRehypothecation}</li>
+ * SettlementTransactionCondition8Code.Rehypothecation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#AcceptAfterRegularSettlementDeadline
- * SettlementTransactionCondition8Code.mmAcceptAfterRegularSettlementDeadline}</li>
+ * SettlementTransactionCondition8Code.AcceptAfterRegularSettlementDeadline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition8Code#Reporting
- * SettlementTransactionCondition8Code.mmReporting}</li>
+ * SettlementTransactionCondition8Code.Reporting}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -113,8 +113,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -700,7 +700,7 @@ public class SettlementTransactionCondition8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ASGN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTransactionCondition8Code";

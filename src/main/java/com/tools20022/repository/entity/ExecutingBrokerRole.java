@@ -22,11 +22,13 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Broker;
+import com.tools20022.repository.entity.ExecutingTrader;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ConfirmationParties2;
 import com.tools20022.repository.msg.ConfirmationParties4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Party responsible for executing an order (e.g. an executing or give-up
@@ -72,8 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,8 +93,8 @@ public class ExecutingBrokerRole extends Broker {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExecutingTrader executingTrader;
 	/**
-	 * Trader at the executing broker
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +125,7 @@ public class ExecutingBrokerRole extends Broker {
 	 * definition} = "Trader at the executing broker"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExecutingTrader = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ExecutingBrokerRole, com.tools20022.repository.entity.ExecutingTrader> mmExecutingTrader = new MMBusinessAssociationEnd<ExecutingBrokerRole, com.tools20022.repository.entity.ExecutingTrader>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ExecutingBrokerRole.mmObject();
@@ -136,12 +138,22 @@ public class ExecutingBrokerRole extends Broker {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ExecutingTrader.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.ExecutingTrader getValue(ExecutingBrokerRole obj) {
+			return obj.getExecutingTrader();
+		}
+
+		@Override
+		public void setValue(ExecutingBrokerRole obj, com.tools20022.repository.entity.ExecutingTrader value) {
+			obj.setExecutingTrader(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExecutingBrokerRole";
 				definition = "Party responsible for executing an order (e.g. an executing or give-up broker).";
@@ -163,7 +175,8 @@ public class ExecutingBrokerRole extends Broker {
 		return executingTrader;
 	}
 
-	public void setExecutingTrader(com.tools20022.repository.entity.ExecutingTrader executingTrader) {
-		this.executingTrader = executingTrader;
+	public ExecutingBrokerRole setExecutingTrader(com.tools20022.repository.entity.ExecutingTrader executingTrader) {
+		this.executingTrader = Objects.requireNonNull(executingTrader);
+		return this;
 	}
 }

@@ -38,20 +38,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BondType1Code#SovereignBond
- * BondType1Code.mmSovereignBond}</li>
+ * BondType1Code.SovereignBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BondType1Code#OtherPublicBond
- * BondType1Code.mmOtherPublicBond}</li>
+ * BondType1Code.OtherPublicBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BondType1Code#ConvertibleBond
- * BondType1Code.mmConvertibleBond}</li>
+ * BondType1Code.ConvertibleBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BondType1Code#CorporateBond
- * BondType1Code.mmCorporateBond}</li>
+ * BondType1Code.CorporateBond}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BondType1Code#CoveredBond
- * BondType1Code.mmCoveredBond}</li>
+ * BondType1Code.CoveredBond}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.BondType1Code#Other
- * BondType1Code.mmOther}</li>
+ * BondType1Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -227,7 +227,7 @@ public class BondType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BondType1Code";
 				definition = "Specifies the type of bonds.";

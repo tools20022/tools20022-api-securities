@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileCollateral
- * DisputeResolutionType2Code.mmReconcileCollateral}</li>
+ * DisputeResolutionType2Code.ReconcileCollateral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileExposure
- * DisputeResolutionType2Code.mmReconcileExposure}</li>
+ * DisputeResolutionType2Code.ReconcileExposure}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileThreshold
- * DisputeResolutionType2Code.mmReconcileThreshold}</li>
+ * DisputeResolutionType2Code.ReconcileThreshold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileMinimumTransferAmount
- * DisputeResolutionType2Code.mmReconcileMinimumTransferAmount}</li>
+ * DisputeResolutionType2Code.ReconcileMinimumTransferAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileRounding
- * DisputeResolutionType2Code.mmReconcileRounding}</li>
+ * DisputeResolutionType2Code.ReconcileRounding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileValuationFrequency
- * DisputeResolutionType2Code.mmReconcileValuationFrequency}</li>
+ * DisputeResolutionType2Code.ReconcileValuationFrequency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisputeResolutionType2Code#ReconcileNettedIndependentAmount
- * DisputeResolutionType2Code.mmReconcileNettedIndependentAmount}</li>
+ * DisputeResolutionType2Code.ReconcileNettedIndependentAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -263,7 +263,7 @@ public class DisputeResolutionType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RECO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisputeResolutionType2Code";

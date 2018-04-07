@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#Subscription
- * SettlementInstructionReasonCode.mmSubscription}</li>
+ * SettlementInstructionReasonCode.Subscription}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#InvestmentSavingsPlan
- * SettlementInstructionReasonCode.mmInvestmentSavingsPlan}</li>
+ * SettlementInstructionReasonCode.InvestmentSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#WithdrawalSavingsPlan
- * SettlementInstructionReasonCode.mmWithdrawalSavingsPlan}</li>
+ * SettlementInstructionReasonCode.WithdrawalSavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#SavingsPlan
- * SettlementInstructionReasonCode.mmSavingsPlan}</li>
+ * SettlementInstructionReasonCode.SavingsPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#SecuritiesPurchase
- * SettlementInstructionReasonCode.mmSecuritiesPurchase}</li>
+ * SettlementInstructionReasonCode.SecuritiesPurchase}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#Charges
- * SettlementInstructionReasonCode.mmCharges}</li>
+ * SettlementInstructionReasonCode.Charges}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#AllDebits
- * SettlementInstructionReasonCode.mmAllDebits}</li>
+ * SettlementInstructionReasonCode.AllDebits}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#Redemption
- * SettlementInstructionReasonCode.mmRedemption}</li>
+ * SettlementInstructionReasonCode.Redemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#SecuritiesSale
- * SettlementInstructionReasonCode.mmSecuritiesSale}</li>
+ * SettlementInstructionReasonCode.SecuritiesSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#Interest
- * SettlementInstructionReasonCode.mmInterest}</li>
+ * SettlementInstructionReasonCode.Interest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#Dividend
- * SettlementInstructionReasonCode.mmDividend}</li>
+ * SettlementInstructionReasonCode.Dividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#AllCredits
- * SettlementInstructionReasonCode.mmAllCredits}</li>
+ * SettlementInstructionReasonCode.AllCredits}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#AllCreditsAndDebits
- * SettlementInstructionReasonCode.mmAllCreditsAndDebits}</li>
+ * SettlementInstructionReasonCode.AllCreditsAndDebits}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionReasonCode#CorporateAction
- * SettlementInstructionReasonCode.mmCorporateAction}</li>
+ * SettlementInstructionReasonCode.CorporateAction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -91,8 +91,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -541,7 +541,7 @@ public class SettlementInstructionReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementInstructionReasonCode";
 				definition = "Specifies the type of transaction.";

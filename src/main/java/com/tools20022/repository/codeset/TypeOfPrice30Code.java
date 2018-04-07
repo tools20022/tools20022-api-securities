@@ -37,48 +37,48 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Bid
- * TypeOfPrice30Code.mmBid}</li>
+ * TypeOfPrice30Code.Bid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Offer
- * TypeOfPrice30Code.mmOffer}</li>
+ * TypeOfPrice30Code.Offer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#NetAssetValue
- * TypeOfPrice30Code.mmNetAssetValue}</li>
+ * TypeOfPrice30Code.NetAssetValue}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Creation
- * TypeOfPrice30Code.mmCreation}</li>
+ * TypeOfPrice30Code.Creation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Cancellation
- * TypeOfPrice30Code.mmCancellation}</li>
+ * TypeOfPrice30Code.Cancellation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Interim
- * TypeOfPrice30Code.mmInterim}</li>
+ * TypeOfPrice30Code.Interim}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Swing
- * TypeOfPrice30Code.mmSwing}</li>
+ * TypeOfPrice30Code.Swing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Mid
- * TypeOfPrice30Code.mmMid}</li>
+ * TypeOfPrice30Code.Mid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Reinvestment
- * TypeOfPrice30Code.mmReinvestment}</li>
+ * TypeOfPrice30Code.Reinvestment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Switch
- * TypeOfPrice30Code.mmSwitch}</li>
+ * TypeOfPrice30Code.Switch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#DailyDividendRate
- * TypeOfPrice30Code.mmDailyDividendRate}</li>
+ * TypeOfPrice30Code.DailyDividendRate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Actual
- * TypeOfPrice30Code.mmActual}</li>
+ * TypeOfPrice30Code.Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#NonAdjustedUnpublished
- * TypeOfPrice30Code.mmNonAdjustedUnpublished}</li>
+ * TypeOfPrice30Code.NonAdjustedUnpublished}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#Guaranteed
- * TypeOfPrice30Code.mmGuaranteed}</li>
+ * TypeOfPrice30Code.Guaranteed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#EstimatedNAV
- * TypeOfPrice30Code.mmEstimatedNAV}</li>
+ * TypeOfPrice30Code.EstimatedNAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#RedemptionNAV
- * TypeOfPrice30Code.mmRedemptionNAV}</li>
+ * TypeOfPrice30Code.RedemptionNAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfPrice30Code#SubscriptionNAV
- * TypeOfPrice30Code.mmSubscriptionNAV}</li>
+ * TypeOfPrice30Code.SubscriptionNAV}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -87,8 +87,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -525,7 +525,7 @@ public class TypeOfPrice30Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BIDE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfPrice30Code";

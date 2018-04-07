@@ -17,16 +17,18 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.seev.CorporateActionMovementReversalAdviceV08;
+import com.tools20022.repository.area.seev.CorporateActionMovementReversalAdviceV09;
 import com.tools20022.repository.choice.BalanceFormat5Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.SecuritiesAccount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,15 +59,15 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementReversalAdviceV08#mmAccountDetails
- * CorporateActionMovementReversalAdviceV08.mmAccountDetails}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementReversalAdviceV09#mmAccountDetails
+ * CorporateActionMovementReversalAdviceV09.mmAccountDetails}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides account and balance information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountAndBalance36", propOrder = {"safekeepingAccount", "confirmedBalance"})
 public class AccountAndBalance36 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SfkpgAcct", required = true)
 	protected Max35Text safekeepingAccount;
 	/**
-	 * Account where financial instruments are maintained.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,6 +107,9 @@ public class AccountAndBalance36 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SfkpgAcct"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :97A::SAFE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -114,12 +120,13 @@ public class AccountAndBalance36 {
 	 * definition} = "Account where financial instruments are maintained."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSafekeepingAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountAndBalance36, Max35Text> mmSafekeepingAccount = new MMMessageAttribute<AccountAndBalance36, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesAccount.mmObject();
-			componentContext_lazy = () -> AccountAndBalance36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountAndBalance36.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgAcct";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":97A::SAFE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SafekeepingAccount";
 			definition = "Account where financial instruments are maintained.";
@@ -127,12 +134,22 @@ public class AccountAndBalance36 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AccountAndBalance36 obj) {
+			return obj.getSafekeepingAccount();
+		}
+
+		@Override
+		public void setValue(AccountAndBalance36 obj, Max35Text value) {
+			obj.setSafekeepingAccount(value);
+		}
 	};
+	@XmlElement(name = "ConfdBal", required = true)
 	protected BalanceFormat5Choice confirmedBalance;
 	/**
-	 * Balance to which the payment applies (less or equal to the total eligible
-	 * balance).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,6 +170,9 @@ public class AccountAndBalance36 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "ConfdBal"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::CONB</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -165,12 +185,13 @@ public class AccountAndBalance36 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmConfirmedBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AccountAndBalance36, BalanceFormat5Choice> mmConfirmedBalance = new MMMessageAttribute<AccountAndBalance36, BalanceFormat5Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesAccount.mmSecuritiesBalance;
-			componentContext_lazy = () -> AccountAndBalance36.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountAndBalance36.mmObject();
 			isDerived = false;
 			xmlTag = "ConfdBal";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::CONB"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ConfirmedBalance";
 			definition = "Balance to which the payment applies (less or equal to the total eligible balance).";
@@ -178,15 +199,25 @@ public class AccountAndBalance36 {
 			minOccurs = 1;
 			complexType_lazy = () -> BalanceFormat5Choice.mmObject();
 		}
+
+		@Override
+		public BalanceFormat5Choice getValue(AccountAndBalance36 obj) {
+			return obj.getConfirmedBalance();
+		}
+
+		@Override
+		public void setValue(AccountAndBalance36 obj, BalanceFormat5Choice value) {
+			obj.setConfirmedBalance(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountAndBalance36.mmSafekeepingAccount, AccountAndBalance36.mmConfirmedBalance);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionMovementReversalAdviceV08.mmAccountDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountAndBalance36.mmSafekeepingAccount, com.tools20022.repository.msg.AccountAndBalance36.mmConfirmedBalance);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionMovementReversalAdviceV09.mmAccountDetails);
 				trace_lazy = () -> SecuritiesAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountAndBalance36";
 				definition = "Provides account and balance information.";
@@ -195,21 +226,21 @@ public class AccountAndBalance36 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SfkpgAcct", required = true)
 	public Max35Text getSafekeepingAccount() {
 		return safekeepingAccount;
 	}
 
-	public void setSafekeepingAccount(Max35Text safekeepingAccount) {
-		this.safekeepingAccount = safekeepingAccount;
+	public AccountAndBalance36 setSafekeepingAccount(Max35Text safekeepingAccount) {
+		this.safekeepingAccount = Objects.requireNonNull(safekeepingAccount);
+		return this;
 	}
 
-	@XmlElement(name = "ConfdBal", required = true)
 	public BalanceFormat5Choice getConfirmedBalance() {
 		return confirmedBalance;
 	}
 
-	public void setConfirmedBalance(BalanceFormat5Choice confirmedBalance) {
-		this.confirmedBalance = confirmedBalance;
+	public AccountAndBalance36 setConfirmedBalance(BalanceFormat5Choice confirmedBalance) {
+		this.confirmedBalance = Objects.requireNonNull(confirmedBalance);
+		return this;
 	}
 }

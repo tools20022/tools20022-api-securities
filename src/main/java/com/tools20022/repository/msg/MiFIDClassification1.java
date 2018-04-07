@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Details about the MIFID classification of the account owner."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MiFIDClassification1", propOrder = {"classification", "narrative"})
 public class MiFIDClassification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Clssfctn", required = true)
 	protected OrderOriginatorEligibility1Code classification;
 	/**
-	 * MiFID classification of the account owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +99,9 @@ public class MiFIDClassification1 {
 	 * definition} = "MiFID classification of the account owner."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClassification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MiFIDClassification1, OrderOriginatorEligibility1Code> mmClassification = new MMMessageAttribute<MiFIDClassification1, OrderOriginatorEligibility1Code>() {
 		{
-			componentContext_lazy = () -> MiFIDClassification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MiFIDClassification1.mmObject();
 			isDerived = false;
 			xmlTag = "Clssfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +111,22 @@ public class MiFIDClassification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> OrderOriginatorEligibility1Code.mmObject();
 		}
+
+		@Override
+		public OrderOriginatorEligibility1Code getValue(MiFIDClassification1 obj) {
+			return obj.getClassification();
+		}
+
+		@Override
+		public void setValue(MiFIDClassification1 obj, OrderOriginatorEligibility1Code value) {
+			obj.setClassification(value);
+		}
 	};
+	@XmlElement(name = "Nrrtv")
 	protected Max350Text narrative;
 	/**
-	 * Additional information about the source of classification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,9 +152,9 @@ public class MiFIDClassification1 {
 	 * "Additional information about the source of classification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNarrative = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MiFIDClassification1, Optional<Max350Text>> mmNarrative = new MMMessageAttribute<MiFIDClassification1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> MiFIDClassification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MiFIDClassification1.mmObject();
 			isDerived = false;
 			xmlTag = "Nrrtv";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,13 +164,23 @@ public class MiFIDClassification1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(MiFIDClassification1 obj) {
+			return obj.getNarrative();
+		}
+
+		@Override
+		public void setValue(MiFIDClassification1 obj, Optional<Max350Text> value) {
+			obj.setNarrative(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MiFIDClassification1.mmClassification, MiFIDClassification1.mmNarrative);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MiFIDClassification1.mmClassification, com.tools20022.repository.msg.MiFIDClassification1.mmNarrative);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MiFIDClassification1";
 				definition = "Details about the MIFID classification of the account owner.";
@@ -165,21 +189,21 @@ public class MiFIDClassification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Clssfctn", required = true)
 	public OrderOriginatorEligibility1Code getClassification() {
 		return classification;
 	}
 
-	public void setClassification(OrderOriginatorEligibility1Code classification) {
-		this.classification = classification;
+	public MiFIDClassification1 setClassification(OrderOriginatorEligibility1Code classification) {
+		this.classification = Objects.requireNonNull(classification);
+		return this;
 	}
 
-	@XmlElement(name = "Nrrtv")
-	public Max350Text getNarrative() {
-		return narrative;
+	public Optional<Max350Text> getNarrative() {
+		return narrative == null ? Optional.empty() : Optional.of(narrative);
 	}
 
-	public void setNarrative(Max350Text narrative) {
+	public MiFIDClassification1 setNarrative(Max350Text narrative) {
 		this.narrative = narrative;
+		return this;
 	}
 }

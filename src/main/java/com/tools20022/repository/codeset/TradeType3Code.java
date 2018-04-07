@@ -37,64 +37,64 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Basket
- * TradeType3Code.mmBasket}</li>
+ * TradeType3Code.Basket}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Index
- * TradeType3Code.mmIndex}</li>
+ * TradeType3Code.Index}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#IPO
- * TradeType3Code.mmIPO}</li>
+ * TradeType3Code.IPO}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#List
- * TradeType3Code.mmList}</li>
+ * TradeType3Code.List}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#PreAllocation
- * TradeType3Code.mmPreAllocation}</li>
+ * TradeType3Code.PreAllocation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Program
- * TradeType3Code.mmProgram}</li>
+ * TradeType3Code.Program}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Trade
- * TradeType3Code.mmTrade}</li>
+ * TradeType3Code.Trade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#BrokerToBroker
- * TradeType3Code.mmBrokerToBroker}</li>
+ * TradeType3Code.BrokerToBroker}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#RiskTrade
- * TradeType3Code.mmRiskTrade}</li>
+ * TradeType3Code.RiskTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#VWAPGuarantee
- * TradeType3Code.mmVWAPGuarantee}</li>
+ * TradeType3Code.VWAPGuarantee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Agency
- * TradeType3Code.mmAgency}</li>
+ * TradeType3Code.Agency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#GuaranteedClose
- * TradeType3Code.mmGuaranteedClose}</li>
+ * TradeType3Code.GuaranteedClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#EmployeeTradeReporting
- * TradeType3Code.mmEmployeeTradeReporting}</li>
+ * TradeType3Code.EmployeeTradeReporting}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Issuance
- * TradeType3Code.mmIssuance}</li>
+ * TradeType3Code.Issuance}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#BondStart
- * TradeType3Code.mmBondStart}</li>
+ * TradeType3Code.BondStart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#BondEnd
- * TradeType3Code.mmBondEnd}</li>
+ * TradeType3Code.BondEnd}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#LendingAndBorrowing
- * TradeType3Code.mmLendingAndBorrowing}</li>
+ * TradeType3Code.LendingAndBorrowing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#BondRepricing
- * TradeType3Code.mmBondRepricing}</li>
+ * TradeType3Code.BondRepricing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#OfferingIssuingTrade
- * TradeType3Code.mmOfferingIssuingTrade}</li>
+ * TradeType3Code.OfferingIssuingTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#BondSubstitution
- * TradeType3Code.mmBondSubstitution}</li>
+ * TradeType3Code.BondSubstitution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#FutureBuyBackTrade
- * TradeType3Code.mmFutureBuyBackTrade}</li>
+ * TradeType3Code.FutureBuyBackTrade}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Options
- * TradeType3Code.mmOptions}</li>
+ * TradeType3Code.Options}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradeType3Code#FuturesOption
- * TradeType3Code.mmFuturesOption}</li>
+ * TradeType3Code.FuturesOption}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TradeType3Code#Futures
- * TradeType3Code.mmFutures}</li>
+ * TradeType3Code.Futures}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -102,8 +102,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -708,7 +708,7 @@ public class TradeType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BSKT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeType3Code";

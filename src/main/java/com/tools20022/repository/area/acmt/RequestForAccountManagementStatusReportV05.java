@@ -24,9 +24,9 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.AccountManagementMessageReference4;
 import com.tools20022.repository.msg.MessageIdentification1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,20 +75,20 @@ import javax.xml.bind.annotation.*;
  * "RequestForAccountManagementStatusReportV05"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Scope\r\nThe RequestForAccountManagementStatusReport message is sent by an account owner, for example, an investor or its designated agent, to the account servicer, for example, a registrar, transfer agent, custodian bank or securities depository  to request the status of an AccountOpeningInstruction,  GetAccountDetails or an AccountModificationInstruction.\r\nUsage\r\nThe RequestForAccountManagementStatusReport message is used to request the processing status of a previously sent AccountOpeningInstruction, GetAccountDetails or an AccountModificationInstruction message for which an AccountDetailsConfirmation message has not yet been received."
+ * "Scope\r\nThe RequestForAccountManagementStatusReport message is sent by an account owner, for example, an investor or its designated agent, to the account servicer, for example, a registrar, transfer agent, custodian bank or securities depository to request the status of an AccountOpeningInstruction, GetAccountDetails or an AccountModificationInstruction.\r\nUsage\r\nThe RequestForAccountManagementStatusReport message is used to request the processing status of a previously sent AccountOpeningInstruction, GetAccountDetails or an AccountModificationInstruction message for which an AccountDetailsConfirmation message has not yet been received."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RequestForAccountManagementStatusReportV05", propOrder = {"messageIdentification", "requestDetails"})
 public class RequestForAccountManagementStatusReportV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies a message from a business application
-	 * standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,34 +107,36 @@ public class RequestForAccountManagementStatusReportV05 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies a message from a business application standpoint. "
+	 * "Reference that uniquely identifies a message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RequestForAccountManagementStatusReportV05, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<RequestForAccountManagementStatusReportV05, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies a message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies a message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RequestForAccountManagementStatusReportV05.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(RequestForAccountManagementStatusReportV05 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(RequestForAccountManagementStatusReportV05 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "ReqDtls", required = true)
 	protected AccountManagementMessageReference4 requestDetails;
 	/**
-	 * Identifies the account for which the status of the account management
-	 * instruction is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,7 +159,7 @@ public class RequestForAccountManagementStatusReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRequestDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<RequestForAccountManagementStatusReportV05, AccountManagementMessageReference4> mmRequestDetails = new MMMessageBuildingBlock<RequestForAccountManagementStatusReportV05, AccountManagementMessageReference4>() {
 		{
 			xmlTag = "ReqDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,12 +170,14 @@ public class RequestForAccountManagementStatusReportV05 {
 			complexType_lazy = () -> AccountManagementMessageReference4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RequestForAccountManagementStatusReportV05.class.getMethod("getRequestDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountManagementMessageReference4 getValue(RequestForAccountManagementStatusReportV05 obj) {
+			return obj.getRequestDetails();
+		}
+
+		@Override
+		public void setValue(RequestForAccountManagementStatusReportV05 obj, AccountManagementMessageReference4 value) {
+			obj.setRequestDetails(value);
 		}
 	};
 
@@ -182,7 +186,7 @@ public class RequestForAccountManagementStatusReportV05 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RequestForAccountManagementStatusReportV05";
-				definition = "Scope\r\nThe RequestForAccountManagementStatusReport message is sent by an account owner, for example, an investor or its designated agent, to the account servicer, for example, a registrar, transfer agent, custodian bank or securities depository  to request the status of an AccountOpeningInstruction,  GetAccountDetails or an AccountModificationInstruction.\r\nUsage\r\nThe RequestForAccountManagementStatusReport message is used to request the processing status of a previously sent AccountOpeningInstruction, GetAccountDetails or an AccountModificationInstruction message for which an AccountDetailsConfirmation message has not yet been received.";
+				definition = "Scope\r\nThe RequestForAccountManagementStatusReport message is sent by an account owner, for example, an investor or its designated agent, to the account servicer, for example, a registrar, transfer agent, custodian bank or securities depository to request the status of an AccountOpeningInstruction, GetAccountDetails or an AccountModificationInstruction.\r\nUsage\r\nThe RequestForAccountManagementStatusReport message is used to request the processing status of a previously sent AccountOpeningInstruction, GetAccountDetails or an AccountModificationInstruction message for which an AccountDetailsConfirmation message has not yet been received.";
 				rootElement = "Document";
 				xmlTag = "ReqForAcctMgmtStsRpt";
 				businessArea_lazy = () -> AccountManagementLatestVersion.mmObject();
@@ -206,25 +210,25 @@ public class RequestForAccountManagementStatusReportV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public RequestForAccountManagementStatusReportV05 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ReqDtls", required = true)
 	public AccountManagementMessageReference4 getRequestDetails() {
 		return requestDetails;
 	}
 
-	public void setRequestDetails(AccountManagementMessageReference4 requestDetails) {
-		this.requestDetails = requestDetails;
+	public RequestForAccountManagementStatusReportV05 setRequestDetails(AccountManagementMessageReference4 requestDetails) {
+		this.requestDetails = Objects.requireNonNull(requestDetails);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.005.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.005.001.05")
 	static public class Document {
 		@XmlElement(name = "ReqForAcctMgmtStsRpt", required = true)
 		public RequestForAccountManagementStatusReportV05 messageBody;

@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification38;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "IdentificationType41Choice", propOrder = {"code", "proprietary"})
 public class IdentificationType41Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected TypeOfIdentification1Code code;
 	/**
-	 * Type of identification is defined using a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +112,10 @@ public class IdentificationType41Choice {
 	 * definition} = "Type of identification is defined using a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IdentificationType41Choice, TypeOfIdentification1Code> mmCode = new MMMessageAttribute<IdentificationType41Choice, TypeOfIdentification1Code>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTypeOfIdentification;
-			componentContext_lazy = () -> IdentificationType41Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationType41Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +125,22 @@ public class IdentificationType41Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> TypeOfIdentification1Code.mmObject();
 		}
+
+		@Override
+		public TypeOfIdentification1Code getValue(IdentificationType41Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(IdentificationType41Choice obj, TypeOfIdentification1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification38 proprietary;
 	/**
-	 * Type of identification is defined using a data source scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,10 +171,10 @@ public class IdentificationType41Choice {
 	 * "Type of identification is defined using a data source scheme."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IdentificationType41Choice, GenericIdentification38> mmProprietary = new MMMessageAssociationEnd<IdentificationType41Choice, GenericIdentification38>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmTypeOfIdentification;
-			componentContext_lazy = () -> IdentificationType41Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.IdentificationType41Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,14 +185,24 @@ public class IdentificationType41Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification38.mmObject();
 		}
+
+		@Override
+		public GenericIdentification38 getValue(IdentificationType41Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(IdentificationType41Choice obj, GenericIdentification38 value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IdentificationType41Choice.mmCode, IdentificationType41Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.IdentificationType41Choice.mmCode, com.tools20022.repository.choice.IdentificationType41Choice.mmProprietary);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationType41Choice";
 				definition = "Choice between a code and a data source scheme to specify the type of alternate identification.";
@@ -188,21 +211,21 @@ public class IdentificationType41Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public TypeOfIdentification1Code getCode() {
 		return code;
 	}
 
-	public void setCode(TypeOfIdentification1Code code) {
-		this.code = code;
+	public IdentificationType41Choice setCode(TypeOfIdentification1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification38 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification38 proprietary) {
-		this.proprietary = proprietary;
+	public IdentificationType41Choice setProprietary(GenericIdentification38 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

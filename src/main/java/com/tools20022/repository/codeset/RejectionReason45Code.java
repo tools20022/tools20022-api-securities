@@ -39,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#AccountServicerDeadlineMissed
- * RejectionReason45Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason45Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#InvalidReference
- * RejectionReason45Code.mmInvalidReference}</li>
+ * RejectionReason45Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#Other
- * RejectionReason45Code.mmOther}</li>
+ * RejectionReason45Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#RejectedSinceAlreadyCancelled
- * RejectionReason45Code.mmRejectedSinceAlreadyCancelled}</li>
+ * RejectionReason45Code.RejectedSinceAlreadyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#RejectedSinceInProgress
- * RejectionReason45Code.mmRejectedSinceInProgress}</li>
+ * RejectionReason45Code.RejectedSinceInProgress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#InstructionIrrevocable
- * RejectionReason45Code.mmInstructionIrrevocable}</li>
+ * RejectionReason45Code.InstructionIrrevocable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason45Code#MarketDeadlineMissed
- * RejectionReason45Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason45Code.MarketDeadlineMissed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,7 +76,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "RejectionReason45Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specify  the reason why the instruction cancellation request has a rejected status."
+ * "Specify the reason why the instruction cancellation request has a rejected status."
  * </li>
  * </ul>
  */
@@ -260,10 +260,10 @@ public class RejectionReason45Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason45Code";
-				definition = "Specify  the reason why the instruction cancellation request has a rejected status.";
+				definition = "Specify the reason why the instruction cancellation request has a rejected status.";
 				trace_lazy = () -> RejectionReasonCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RejectionReason45Code.AccountServicerDeadlineMissed, com.tools20022.repository.codeset.RejectionReason45Code.InvalidReference,
 						com.tools20022.repository.codeset.RejectionReason45Code.Other, com.tools20022.repository.codeset.RejectionReason45Code.RejectedSinceAlreadyCancelled,

@@ -25,6 +25,7 @@ import com.tools20022.repository.entity.AmountRatio;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Ratio expressed as a quotient of amounts."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AmountToAmountRatio2", propOrder = {"amount1", "amount2"})
 public class AmountToAmountRatio2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt1", required = true)
 	protected ActiveCurrencyAnd13DecimalAmount amount1;
 	/**
-	 * Numerator of the quotient of amounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,10 +104,10 @@ public class AmountToAmountRatio2 {
 	 * definition} = "Numerator of the quotient of amounts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount1 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountToAmountRatio2, ActiveCurrencyAnd13DecimalAmount> mmAmount1 = new MMMessageAttribute<AmountToAmountRatio2, ActiveCurrencyAnd13DecimalAmount>() {
 		{
 			businessElementTrace_lazy = () -> AmountRatio.mmAmount1;
-			componentContext_lazy = () -> AmountToAmountRatio2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmountToAmountRatio2.mmObject();
 			isDerived = false;
 			xmlTag = "Amt1";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +117,22 @@ public class AmountToAmountRatio2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAnd13DecimalAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAnd13DecimalAmount getValue(AmountToAmountRatio2 obj) {
+			return obj.getAmount1();
+		}
+
+		@Override
+		public void setValue(AmountToAmountRatio2 obj, ActiveCurrencyAnd13DecimalAmount value) {
+			obj.setAmount1(value);
+		}
 	};
+	@XmlElement(name = "Amt2", required = true)
 	protected ActiveCurrencyAnd13DecimalAmount amount2;
 	/**
-	 * Denominator of the quotient of amounts
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,30 +160,40 @@ public class AmountToAmountRatio2 {
 	 * name} = "Amount2"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Denominator of the quotient of amounts"</li>
+	 * definition} = "Denominator of the quotient of amounts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount2 = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AmountToAmountRatio2, ActiveCurrencyAnd13DecimalAmount> mmAmount2 = new MMMessageAttribute<AmountToAmountRatio2, ActiveCurrencyAnd13DecimalAmount>() {
 		{
 			businessElementTrace_lazy = () -> AmountRatio.mmAmount2;
-			componentContext_lazy = () -> AmountToAmountRatio2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AmountToAmountRatio2.mmObject();
 			isDerived = false;
 			xmlTag = "Amt2";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount2";
-			definition = "Denominator of the quotient of amounts";
+			definition = "Denominator of the quotient of amounts.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAnd13DecimalAmount.mmObject();
+		}
+
+		@Override
+		public ActiveCurrencyAnd13DecimalAmount getValue(AmountToAmountRatio2 obj) {
+			return obj.getAmount2();
+		}
+
+		@Override
+		public void setValue(AmountToAmountRatio2 obj, ActiveCurrencyAnd13DecimalAmount value) {
+			obj.setAmount2(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AmountToAmountRatio2.mmAmount1, AmountToAmountRatio2.mmAmount2);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AmountToAmountRatio2.mmAmount1, com.tools20022.repository.msg.AmountToAmountRatio2.mmAmount2);
 				trace_lazy = () -> AmountRatio.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountToAmountRatio2";
 				definition = "Ratio expressed as a quotient of amounts.";
@@ -179,21 +202,21 @@ public class AmountToAmountRatio2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt1", required = true)
 	public ActiveCurrencyAnd13DecimalAmount getAmount1() {
 		return amount1;
 	}
 
-	public void setAmount1(ActiveCurrencyAnd13DecimalAmount amount1) {
-		this.amount1 = amount1;
+	public AmountToAmountRatio2 setAmount1(ActiveCurrencyAnd13DecimalAmount amount1) {
+		this.amount1 = Objects.requireNonNull(amount1);
+		return this;
 	}
 
-	@XmlElement(name = "Amt2", required = true)
 	public ActiveCurrencyAnd13DecimalAmount getAmount2() {
 		return amount2;
 	}
 
-	public void setAmount2(ActiveCurrencyAnd13DecimalAmount amount2) {
-		this.amount2 = amount2;
+	public AmountToAmountRatio2 setAmount2(ActiveCurrencyAnd13DecimalAmount amount2) {
+		this.amount2 = Objects.requireNonNull(amount2);
+		return this;
 	}
 }

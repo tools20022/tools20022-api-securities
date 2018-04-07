@@ -30,9 +30,9 @@ import com.tools20022.repository.entity.InstructionForMeeting;
 import com.tools20022.repository.entity.Person;
 import com.tools20022.repository.entity.VoteInstructionRequest;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -84,8 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintVoteInstruction1Guideline#forInstruction3
+ * ConstraintVoteInstruction1Guideline.forInstruction3}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,15 +104,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information on the instruction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Instruction3", propOrder = {"instructionIdentification", "requestedExecutionDate", "voteExecutionConfirmation", "accountDetails", "proxy", "voteDetails", "meetingAttendee", "specificInstructionRequest"})
 public class Instruction3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InstrId", required = true)
 	protected Max35Text instructionIdentification;
 	/**
-	 * Identifies the detailed instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,9 +137,9 @@ public class Instruction3 {
 	 * definition} = "Identifies the detailed instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Instruction3, Max35Text> mmInstructionIdentification = new MMMessageAttribute<Instruction3, Max35Text>() {
 		{
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "InstrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -140,11 +149,22 @@ public class Instruction3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Instruction3 obj) {
+			return obj.getInstructionIdentification();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, Max35Text value) {
+			obj.setInstructionIdentification(value);
+		}
 	};
+	@XmlElement(name = "ReqdExctnDt")
 	protected ISODateTime requestedExecutionDate;
 	/**
-	 * Date at which the instruction must be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,10 +193,10 @@ public class Instruction3 {
 	 * definition} = "Date at which the instruction must be executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequestedExecutionDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Instruction3, Optional<ISODateTime>> mmRequestedExecutionDate = new MMMessageAttribute<Instruction3, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> InstructionForMeeting.mmRequestedExecutionDate;
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "ReqdExctnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,11 +206,22 @@ public class Instruction3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(Instruction3 obj) {
+			return obj.getRequestedExecutionDate();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, Optional<ISODateTime> value) {
+			obj.setRequestedExecutionDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VoteExctnConf", required = true)
 	protected YesNoIndicator voteExecutionConfirmation;
 	/**
-	 * Indicates that a vote execution confirmation is requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,10 +252,10 @@ public class Instruction3 {
 	 * "Indicates that a vote execution confirmation is requested."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVoteExecutionConfirmation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Instruction3, YesNoIndicator> mmVoteExecutionConfirmation = new MMMessageAttribute<Instruction3, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> VoteInstructionRequest.mmVoteExecutionConfirmation;
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "VoteExctnConf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -234,11 +265,22 @@ public class Instruction3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(Instruction3 obj) {
+			return obj.getVoteExecutionConfirmation();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, YesNoIndicator value) {
+			obj.setVoteExecutionConfirmation(value);
+		}
 	};
+	@XmlElement(name = "AcctDtls", required = true)
 	protected SafekeepingAccount6 accountDetails;
 	/**
-	 * Identification of the securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -266,10 +308,10 @@ public class Instruction3 {
 	 * definition} = "Identification of the securities account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Instruction3, SafekeepingAccount6> mmAccountDetails = new MMMessageAssociationEnd<Instruction3, SafekeepingAccount6>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionServicing.mmSecuritiesAccount;
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -278,13 +320,24 @@ public class Instruction3 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SafekeepingAccount6.mmObject();
+			type_lazy = () -> SafekeepingAccount6.mmObject();
+		}
+
+		@Override
+		public SafekeepingAccount6 getValue(Instruction3 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, SafekeepingAccount6 value) {
+			obj.setAccountDetails(value);
 		}
 	};
+	@XmlElement(name = "Prxy")
 	protected Proxy6 proxy;
 	/**
-	 * Identification of the person appointed by the security holder as proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -313,10 +366,10 @@ public class Instruction3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProxy = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Instruction3, Optional<Proxy6>> mmProxy = new MMMessageAssociationEnd<Instruction3, Optional<Proxy6>>() {
 		{
 			businessElementTrace_lazy = () -> InstructionForMeeting.mmProxyAppointment;
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "Prxy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -325,13 +378,24 @@ public class Instruction3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Proxy6.mmObject();
+			type_lazy = () -> Proxy6.mmObject();
+		}
+
+		@Override
+		public Optional<Proxy6> getValue(Instruction3 obj) {
+			return obj.getProxy();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, Optional<Proxy6> value) {
+			obj.setProxy(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "VoteDtls")
 	protected VoteDetails3 voteDetails;
 	/**
-	 * Specifies detailed voting instructions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -359,10 +423,10 @@ public class Instruction3 {
 	 * definition} = "Specifies detailed voting instructions."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVoteDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Instruction3, Optional<VoteDetails3>> mmVoteDetails = new MMMessageAssociationEnd<Instruction3, Optional<VoteDetails3>>() {
 		{
 			businessElementTrace_lazy = () -> InstructionForMeeting.mmVoteInstruction;
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "VoteDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -371,15 +435,24 @@ public class Instruction3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.VoteDetails3.mmObject();
+			type_lazy = () -> VoteDetails3.mmObject();
+		}
+
+		@Override
+		public Optional<VoteDetails3> getValue(Instruction3 obj) {
+			return obj.getVoteDetails();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, Optional<VoteDetails3> value) {
+			obj.setVoteDetails(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.IndividualPerson26> meetingAttendee;
+	@XmlElement(name = "MtgAttndee")
+	protected List<IndividualPerson26> meetingAttendee;
 	/**
-	 * Identification of the security holder who will attend and vote at the
-	 * meeting in person and/or the person assigned by the security holder to
-	 * attend the meeting without having any voting rights or taking any action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -408,10 +481,10 @@ public class Instruction3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMeetingAttendee = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Instruction3, List<IndividualPerson26>> mmMeetingAttendee = new MMMessageAssociationEnd<Instruction3, List<IndividualPerson26>>() {
 		{
 			businessComponentTrace_lazy = () -> Person.mmObject();
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "MtgAttndee";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -419,14 +492,24 @@ public class Instruction3 {
 			definition = "Identification of the security holder who will attend and vote at the meeting in person and/or the person assigned by the security holder to attend the meeting without having any voting rights or taking any action.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IndividualPerson26.mmObject();
+			type_lazy = () -> IndividualPerson26.mmObject();
+		}
+
+		@Override
+		public List<IndividualPerson26> getValue(Instruction3 obj) {
+			return obj.getMeetingAttendee();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, List<IndividualPerson26> value) {
+			obj.setMeetingAttendee(value);
 		}
 	};
+	@XmlElement(name = "SpcfcInstrReq")
 	protected SpecificInstructionRequest1 specificInstructionRequest;
 	/**
-	 * Request to execute specific instructions, such as participation
-	 * registration, securities registration or blocking of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -457,10 +540,10 @@ public class Instruction3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSpecificInstructionRequest = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Instruction3, Optional<SpecificInstructionRequest1>> mmSpecificInstructionRequest = new MMMessageAssociationEnd<Instruction3, Optional<SpecificInstructionRequest1>>() {
 		{
 			businessComponentTrace_lazy = () -> InstructionForMeeting.mmObject();
-			componentContext_lazy = () -> Instruction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Instruction3.mmObject();
 			isDerived = false;
 			xmlTag = "SpcfcInstrReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -469,18 +552,30 @@ public class Instruction3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SpecificInstructionRequest1.mmObject();
+			type_lazy = () -> SpecificInstructionRequest1.mmObject();
+		}
+
+		@Override
+		public Optional<SpecificInstructionRequest1> getValue(Instruction3 obj) {
+			return obj.getSpecificInstructionRequest();
+		}
+
+		@Override
+		public void setValue(Instruction3 obj, Optional<SpecificInstructionRequest1> value) {
+			obj.setSpecificInstructionRequest(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Instruction3.mmInstructionIdentification, Instruction3.mmRequestedExecutionDate, Instruction3.mmVoteExecutionConfirmation, Instruction3.mmAccountDetails, Instruction3.mmProxy,
-						Instruction3.mmVoteDetails, Instruction3.mmMeetingAttendee, Instruction3.mmSpecificInstructionRequest);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Instruction3.mmInstructionIdentification, com.tools20022.repository.msg.Instruction3.mmRequestedExecutionDate,
+						com.tools20022.repository.msg.Instruction3.mmVoteExecutionConfirmation, com.tools20022.repository.msg.Instruction3.mmAccountDetails, com.tools20022.repository.msg.Instruction3.mmProxy,
+						com.tools20022.repository.msg.Instruction3.mmVoteDetails, com.tools20022.repository.msg.Instruction3.mmMeetingAttendee, com.tools20022.repository.msg.Instruction3.mmSpecificInstructionRequest);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingInstructionV05.mmInstruction);
 				trace_lazy = () -> InstructionForMeeting.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintVoteInstruction1Guideline.forInstruction3);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Instruction3";
 				definition = "Provides information on the instruction.";
@@ -489,75 +584,75 @@ public class Instruction3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InstrId", required = true)
 	public Max35Text getInstructionIdentification() {
 		return instructionIdentification;
 	}
 
-	public void setInstructionIdentification(Max35Text instructionIdentification) {
-		this.instructionIdentification = instructionIdentification;
+	public Instruction3 setInstructionIdentification(Max35Text instructionIdentification) {
+		this.instructionIdentification = Objects.requireNonNull(instructionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ReqdExctnDt")
-	public ISODateTime getRequestedExecutionDate() {
-		return requestedExecutionDate;
+	public Optional<ISODateTime> getRequestedExecutionDate() {
+		return requestedExecutionDate == null ? Optional.empty() : Optional.of(requestedExecutionDate);
 	}
 
-	public void setRequestedExecutionDate(ISODateTime requestedExecutionDate) {
+	public Instruction3 setRequestedExecutionDate(ISODateTime requestedExecutionDate) {
 		this.requestedExecutionDate = requestedExecutionDate;
+		return this;
 	}
 
-	@XmlElement(name = "VoteExctnConf", required = true)
 	public YesNoIndicator getVoteExecutionConfirmation() {
 		return voteExecutionConfirmation;
 	}
 
-	public void setVoteExecutionConfirmation(YesNoIndicator voteExecutionConfirmation) {
-		this.voteExecutionConfirmation = voteExecutionConfirmation;
+	public Instruction3 setVoteExecutionConfirmation(YesNoIndicator voteExecutionConfirmation) {
+		this.voteExecutionConfirmation = Objects.requireNonNull(voteExecutionConfirmation);
+		return this;
 	}
 
-	@XmlElement(name = "AcctDtls", required = true)
 	public SafekeepingAccount6 getAccountDetails() {
 		return accountDetails;
 	}
 
-	public void setAccountDetails(com.tools20022.repository.msg.SafekeepingAccount6 accountDetails) {
-		this.accountDetails = accountDetails;
+	public Instruction3 setAccountDetails(SafekeepingAccount6 accountDetails) {
+		this.accountDetails = Objects.requireNonNull(accountDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Prxy")
-	public Proxy6 getProxy() {
-		return proxy;
+	public Optional<Proxy6> getProxy() {
+		return proxy == null ? Optional.empty() : Optional.of(proxy);
 	}
 
-	public void setProxy(com.tools20022.repository.msg.Proxy6 proxy) {
+	public Instruction3 setProxy(Proxy6 proxy) {
 		this.proxy = proxy;
+		return this;
 	}
 
-	@XmlElement(name = "VoteDtls")
-	public VoteDetails3 getVoteDetails() {
-		return voteDetails;
+	public Optional<VoteDetails3> getVoteDetails() {
+		return voteDetails == null ? Optional.empty() : Optional.of(voteDetails);
 	}
 
-	public void setVoteDetails(com.tools20022.repository.msg.VoteDetails3 voteDetails) {
+	public Instruction3 setVoteDetails(VoteDetails3 voteDetails) {
 		this.voteDetails = voteDetails;
+		return this;
 	}
 
-	@XmlElement(name = "MtgAttndee")
 	public List<IndividualPerson26> getMeetingAttendee() {
-		return meetingAttendee;
+		return meetingAttendee == null ? meetingAttendee = new ArrayList<>() : meetingAttendee;
 	}
 
-	public void setMeetingAttendee(List<com.tools20022.repository.msg.IndividualPerson26> meetingAttendee) {
-		this.meetingAttendee = meetingAttendee;
+	public Instruction3 setMeetingAttendee(List<IndividualPerson26> meetingAttendee) {
+		this.meetingAttendee = Objects.requireNonNull(meetingAttendee);
+		return this;
 	}
 
-	@XmlElement(name = "SpcfcInstrReq")
-	public SpecificInstructionRequest1 getSpecificInstructionRequest() {
-		return specificInstructionRequest;
+	public Optional<SpecificInstructionRequest1> getSpecificInstructionRequest() {
+		return specificInstructionRequest == null ? Optional.empty() : Optional.of(specificInstructionRequest);
 	}
 
-	public void setSpecificInstructionRequest(com.tools20022.repository.msg.SpecificInstructionRequest1 specificInstructionRequest) {
+	public Instruction3 setSpecificInstructionRequest(SpecificInstructionRequest1 specificInstructionRequest) {
 		this.specificInstructionRequest = specificInstructionRequest;
+		return this;
 	}
 }

@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReasonCode#Other
- * NonTradingDayReasonCode.mmOther}</li>
+ * NonTradingDayReasonCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReasonCode#TradingHoliday
- * NonTradingDayReasonCode.mmTradingHoliday}</li>
+ * NonTradingDayReasonCode.TradingHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReasonCode#HalfDay
- * NonTradingDayReasonCode.mmHalfDay}</li>
+ * NonTradingDayReasonCode.HalfDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReasonCode#BankHoliday
- * NonTradingDayReasonCode.mmBankHoliday}</li>
+ * NonTradingDayReasonCode.BankHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReasonCode#PublicHoliday
- * NonTradingDayReasonCode.mmPublicHoliday}</li>
+ * NonTradingDayReasonCode.PublicHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReasonCode#Weekend
- * NonTradingDayReasonCode.mmWeekend}</li>
+ * NonTradingDayReasonCode.Weekend}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,7 +84,7 @@ public class NonTradingDayReasonCode extends MMCode {
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
 	 * Other reasons a day is a non-trading day e.g. technical fault, company
-	 * specific non-trading day not known in advance
+	 * specific non-trading day not known in advance.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -102,7 +102,7 @@ public class NonTradingDayReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Other reasons a day is a non-trading day e.g. technical fault, company specific non-trading day not known in advance"
+	 * "Other reasons a day is a non-trading day e.g. technical fault, company specific non-trading day not known in advance."
 	 * </li>
 	 * </ul>
 	 */
@@ -110,7 +110,7 @@ public class NonTradingDayReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
-			definition = "Other reasons a day is a non-trading day e.g. technical fault, company specific non-trading day not known in advance";
+			definition = "Other reasons a day is a non-trading day e.g. technical fault, company specific non-trading day not known in advance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.NonTradingDayReasonCode.mmObject();
 			codeName = "OTHR";
 		}
@@ -275,7 +275,7 @@ public class NonTradingDayReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonTradingDayReasonCode";
 				definition = "Specifies the reason capturing a non trading day.";

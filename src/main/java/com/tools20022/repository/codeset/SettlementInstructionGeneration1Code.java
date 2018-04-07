@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Settlement Instruction Generation Code
+ * Settlement Instruction Generation Code.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -38,11 +38,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionGeneration1Code#InstructionGenerationByETCProvider
- * SettlementInstructionGeneration1Code.mmInstructionGenerationByETCProvider}</li>
+ * SettlementInstructionGeneration1Code.InstructionGenerationByETCProvider}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementInstructionGeneration1Code#NotInstructionGenerationByETCProvider
- * SettlementInstructionGeneration1Code.mmNotInstructionGenerationByETCProvider}
- * </li>
+ * SettlementInstructionGeneration1Code.NotInstructionGenerationByETCProvider}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -51,8 +50,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -66,7 +65,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "SettlementInstructionGeneration1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Settlement Instruction Generation Code"</li>
+ * definition} = "Settlement Instruction Generation Code."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -129,11 +128,11 @@ public class SettlementInstructionGeneration1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("GENS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementInstructionGeneration1Code";
-				definition = "Settlement Instruction Generation Code";
+				definition = "Settlement Instruction Generation Code.";
 				trace_lazy = () -> SettlementInstructionGenerationCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementInstructionGeneration1Code.InstructionGenerationByETCProvider,
 						com.tools20022.repository.codeset.SettlementInstructionGeneration1Code.NotInstructionGenerationByETCProvider);

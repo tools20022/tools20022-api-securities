@@ -26,10 +26,8 @@ import com.tools20022.repository.msg.DocumentNumber12;
 import com.tools20022.repository.msg.PartyIdentification98;
 import com.tools20022.repository.msg.SecuritiesAccount24;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -100,15 +98,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesTransactionStatusQueryV04", propOrder = {"statusAdviceRequested", "accountOwner", "safekeepingAccount", "supplementaryData"})
 public class SecuritiesTransactionStatusQueryV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StsAdvcReqd", required = true)
 	protected DocumentNumber12 statusAdviceRequested;
 	/**
-	 * Description of the status advise requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,7 +128,7 @@ public class SecuritiesTransactionStatusQueryV04 {
 	 * definition} = "Description of the status advise requested."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatusAdviceRequested = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, DocumentNumber12> mmStatusAdviceRequested = new MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, DocumentNumber12>() {
 		{
 			xmlTag = "StsAdvcReqd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -140,18 +139,21 @@ public class SecuritiesTransactionStatusQueryV04 {
 			complexType_lazy = () -> DocumentNumber12.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransactionStatusQueryV04.class.getMethod("getStatusAdviceRequested", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DocumentNumber12 getValue(SecuritiesTransactionStatusQueryV04 obj) {
+			return obj.getStatusAdviceRequested();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransactionStatusQueryV04 obj, DocumentNumber12 value) {
+			obj.setStatusAdviceRequested(value);
 		}
 	};
+	@XmlElement(name = "AcctOwnr")
 	protected PartyIdentification98 accountOwner;
 	/**
-	 * Party that legally owns the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +174,7 @@ public class SecuritiesTransactionStatusQueryV04 {
 	 * definition} = "Party that legally owns the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountOwner = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, Optional<PartyIdentification98>> mmAccountOwner = new MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, Optional<PartyIdentification98>>() {
 		{
 			xmlTag = "AcctOwnr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,18 +185,21 @@ public class SecuritiesTransactionStatusQueryV04 {
 			complexType_lazy = () -> PartyIdentification98.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransactionStatusQueryV04.class.getMethod("getAccountOwner", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<PartyIdentification98> getValue(SecuritiesTransactionStatusQueryV04 obj) {
+			return obj.getAccountOwner();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransactionStatusQueryV04 obj, Optional<PartyIdentification98> value) {
+			obj.setAccountOwner(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SfkpgAcct", required = true)
 	protected SecuritiesAccount24 safekeepingAccount;
 	/**
-	 * Account to or from which a securities entry is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,7 +220,7 @@ public class SecuritiesTransactionStatusQueryV04 {
 	 * definition} = "Account to or from which a securities entry is made."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSafekeepingAccount = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, SecuritiesAccount24> mmSafekeepingAccount = new MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, SecuritiesAccount24>() {
 		{
 			xmlTag = "SfkpgAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -226,19 +231,21 @@ public class SecuritiesTransactionStatusQueryV04 {
 			complexType_lazy = () -> SecuritiesAccount24.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransactionStatusQueryV04.class.getMethod("getSafekeepingAccount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesAccount24 getValue(SecuritiesTransactionStatusQueryV04 obj) {
+			return obj.getSafekeepingAccount();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransactionStatusQueryV04 obj, SecuritiesAccount24 value) {
+			obj.setSafekeepingAccount(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,7 +268,7 @@ public class SecuritiesTransactionStatusQueryV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<SecuritiesTransactionStatusQueryV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -271,12 +278,14 @@ public class SecuritiesTransactionStatusQueryV04 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesTransactionStatusQueryV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(SecuritiesTransactionStatusQueryV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(SecuritiesTransactionStatusQueryV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -310,43 +319,43 @@ public class SecuritiesTransactionStatusQueryV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StsAdvcReqd", required = true)
 	public DocumentNumber12 getStatusAdviceRequested() {
 		return statusAdviceRequested;
 	}
 
-	public void setStatusAdviceRequested(DocumentNumber12 statusAdviceRequested) {
-		this.statusAdviceRequested = statusAdviceRequested;
+	public SecuritiesTransactionStatusQueryV04 setStatusAdviceRequested(DocumentNumber12 statusAdviceRequested) {
+		this.statusAdviceRequested = Objects.requireNonNull(statusAdviceRequested);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnr")
-	public PartyIdentification98 getAccountOwner() {
-		return accountOwner;
+	public Optional<PartyIdentification98> getAccountOwner() {
+		return accountOwner == null ? Optional.empty() : Optional.of(accountOwner);
 	}
 
-	public void setAccountOwner(PartyIdentification98 accountOwner) {
+	public SecuritiesTransactionStatusQueryV04 setAccountOwner(PartyIdentification98 accountOwner) {
 		this.accountOwner = accountOwner;
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgAcct", required = true)
 	public SecuritiesAccount24 getSafekeepingAccount() {
 		return safekeepingAccount;
 	}
 
-	public void setSafekeepingAccount(SecuritiesAccount24 safekeepingAccount) {
-		this.safekeepingAccount = safekeepingAccount;
+	public SecuritiesTransactionStatusQueryV04 setSafekeepingAccount(SecuritiesAccount24 safekeepingAccount) {
+		this.safekeepingAccount = Objects.requireNonNull(safekeepingAccount);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public SecuritiesTransactionStatusQueryV04 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:sese.021.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:sese.021.001.04")
 	static public class Document {
 		@XmlElement(name = "SctiesTxStsQry", required = true)
 		public SecuritiesTransactionStatusQueryV04 messageBody;

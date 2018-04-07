@@ -26,10 +26,11 @@ import com.tools20022.repository.choice.PartyIdentification35Choice;
 import com.tools20022.repository.msg.DefaultFundReport1;
 import com.tools20022.repository.msg.ReportParameters2;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -92,16 +93,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DefaultFundContributionReportV02", propOrder = {"reportParameters", "clearingMember", "reportDetails", "supplementaryData"})
 public class DefaultFundContributionReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptParams", required = true)
 	protected ReportParameters2 reportParameters;
 	/**
-	 * Provides details about the report such as the report identification, the
-	 * calculation date, the value date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,7 +125,7 @@ public class DefaultFundContributionReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportParameters = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<DefaultFundContributionReportV02, ReportParameters2> mmReportParameters = new MMMessageBuildingBlock<DefaultFundContributionReportV02, ReportParameters2>() {
 		{
 			xmlTag = "RptParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,19 +136,21 @@ public class DefaultFundContributionReportV02 {
 			complexType_lazy = () -> ReportParameters2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DefaultFundContributionReportV02.class.getMethod("getReportParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReportParameters2 getValue(DefaultFundContributionReportV02 obj) {
+			return obj.getReportParameters();
+		}
+
+		@Override
+		public void setValue(DefaultFundContributionReportV02 obj, ReportParameters2 value) {
+			obj.setReportParameters(value);
 		}
 	};
+	@XmlElement(name = "ClrMmb", required = true)
 	protected PartyIdentification35Choice clearingMember;
 	/**
-	 * Provides the identification of the account owner, that is the clearing
-	 * member (individual clearing member or general clearing member).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,7 +173,7 @@ public class DefaultFundContributionReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmClearingMember = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<DefaultFundContributionReportV02, PartyIdentification35Choice> mmClearingMember = new MMMessageBuildingBlock<DefaultFundContributionReportV02, PartyIdentification35Choice>() {
 		{
 			xmlTag = "ClrMmb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,18 +184,21 @@ public class DefaultFundContributionReportV02 {
 			complexType_lazy = () -> PartyIdentification35Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DefaultFundContributionReportV02.class.getMethod("getClearingMember", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartyIdentification35Choice getValue(DefaultFundContributionReportV02 obj) {
+			return obj.getClearingMember();
+		}
+
+		@Override
+		public void setValue(DefaultFundContributionReportV02 obj, PartyIdentification35Choice value) {
+			obj.setClearingMember(value);
 		}
 	};
+	@XmlElement(name = "RptDtls", required = true)
 	protected List<DefaultFundReport1> reportDetails;
 	/**
-	 * Provides details on the default fund report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,7 +219,7 @@ public class DefaultFundContributionReportV02 {
 	 * definition} = "Provides details on the default fund report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<DefaultFundContributionReportV02, List<DefaultFundReport1>> mmReportDetails = new MMMessageBuildingBlock<DefaultFundContributionReportV02, List<DefaultFundReport1>>() {
 		{
 			xmlTag = "RptDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,19 +229,21 @@ public class DefaultFundContributionReportV02 {
 			complexType_lazy = () -> DefaultFundReport1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DefaultFundContributionReportV02.class.getMethod("getReportDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<DefaultFundReport1> getValue(DefaultFundContributionReportV02 obj) {
+			return obj.getReportDetails();
+		}
+
+		@Override
+		public void setValue(DefaultFundContributionReportV02 obj, List<DefaultFundReport1> value) {
+			obj.setReportDetails(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,26 +262,28 @@ public class DefaultFundContributionReportV02 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Additional information that can not be captured in the structured fields and/or any other specific block. "
+	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<DefaultFundContributionReportV02, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<DefaultFundContributionReportV02, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
-			definition = "Additional information that can not be captured in the structured fields and/or any other specific block. ";
+			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DefaultFundContributionReportV02.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(DefaultFundContributionReportV02 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(DefaultFundContributionReportV02 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -306,43 +316,43 @@ public class DefaultFundContributionReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptParams", required = true)
 	public ReportParameters2 getReportParameters() {
 		return reportParameters;
 	}
 
-	public void setReportParameters(ReportParameters2 reportParameters) {
-		this.reportParameters = reportParameters;
+	public DefaultFundContributionReportV02 setReportParameters(ReportParameters2 reportParameters) {
+		this.reportParameters = Objects.requireNonNull(reportParameters);
+		return this;
 	}
 
-	@XmlElement(name = "ClrMmb", required = true)
 	public PartyIdentification35Choice getClearingMember() {
 		return clearingMember;
 	}
 
-	public void setClearingMember(PartyIdentification35Choice clearingMember) {
-		this.clearingMember = clearingMember;
+	public DefaultFundContributionReportV02 setClearingMember(PartyIdentification35Choice clearingMember) {
+		this.clearingMember = Objects.requireNonNull(clearingMember);
+		return this;
 	}
 
-	@XmlElement(name = "RptDtls", required = true)
 	public List<DefaultFundReport1> getReportDetails() {
-		return reportDetails;
+		return reportDetails == null ? reportDetails = new ArrayList<>() : reportDetails;
 	}
 
-	public void setReportDetails(List<DefaultFundReport1> reportDetails) {
-		this.reportDetails = reportDetails;
+	public DefaultFundContributionReportV02 setReportDetails(List<DefaultFundReport1> reportDetails) {
+		this.reportDetails = Objects.requireNonNull(reportDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public DefaultFundContributionReportV02 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:secl.006.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:secl.006.001.02")
 	static public class Document {
 		@XmlElement(name = "DfltFndCntrbtnRpt", required = true)
 		public DefaultFundContributionReportV02 messageBody;

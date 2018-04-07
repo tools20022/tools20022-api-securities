@@ -38,136 +38,136 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Dairy
- * AssetClassSubProductTypeCode.mmDairy}</li>
+ * AssetClassSubProductTypeCode.Dairy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Forestry
- * AssetClassSubProductTypeCode.mmForestry}</li>
+ * AssetClassSubProductTypeCode.Forestry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#GrainOilSeeds
- * AssetClassSubProductTypeCode.mmGrainOilSeeds}</li>
+ * AssetClassSubProductTypeCode.GrainOilSeeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Livestock
- * AssetClassSubProductTypeCode.mmLivestock}</li>
+ * AssetClassSubProductTypeCode.Livestock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#OliveOil
- * AssetClassSubProductTypeCode.mmOliveOil}</li>
+ * AssetClassSubProductTypeCode.OliveOil}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Softs
- * AssetClassSubProductTypeCode.mmSofts}</li>
+ * AssetClassSubProductTypeCode.Softs}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Coal
- * AssetClassSubProductTypeCode.mmCoal}</li>
+ * AssetClassSubProductTypeCode.Coal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Electricity
- * AssetClassSubProductTypeCode.mmElectricity}</li>
+ * AssetClassSubProductTypeCode.Electricity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#InterEnergy
- * AssetClassSubProductTypeCode.mmInterEnergy}</li>
+ * AssetClassSubProductTypeCode.InterEnergy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#NaturalGas
- * AssetClassSubProductTypeCode.mmNaturalGas}</li>
+ * AssetClassSubProductTypeCode.NaturalGas}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Oil
- * AssetClassSubProductTypeCode.mmOil}</li>
+ * AssetClassSubProductTypeCode.Oil}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Precious
- * AssetClassSubProductTypeCode.mmPrecious}</li>
+ * AssetClassSubProductTypeCode.Precious}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#NonPrecious
- * AssetClassSubProductTypeCode.mmNonPrecious}</li>
+ * AssetClassSubProductTypeCode.NonPrecious}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Emission
- * AssetClassSubProductTypeCode.mmEmission}</li>
+ * AssetClassSubProductTypeCode.Emission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Weather
- * AssetClassSubProductTypeCode.mmWeather}</li>
+ * AssetClassSubProductTypeCode.Weather}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Freight
- * AssetClassSubProductTypeCode.mmFreight}</li>
+ * AssetClassSubProductTypeCode.Freight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#MultiCommodityExotic
- * AssetClassSubProductTypeCode.mmMultiCommodityExotic}</li>
+ * AssetClassSubProductTypeCode.MultiCommodityExotic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#RenewableEnergy
- * AssetClassSubProductTypeCode.mmRenewableEnergy}</li>
+ * AssetClassSubProductTypeCode.RenewableEnergy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#LightEnds
- * AssetClassSubProductTypeCode.mmLightEnds}</li>
+ * AssetClassSubProductTypeCode.LightEnds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Distillates
- * AssetClassSubProductTypeCode.mmDistillates}</li>
+ * AssetClassSubProductTypeCode.Distillates}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Carbon
- * AssetClassSubProductTypeCode.mmCarbon}</li>
+ * AssetClassSubProductTypeCode.Carbon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Ammonia
- * AssetClassSubProductTypeCode.mmAmmonia}</li>
+ * AssetClassSubProductTypeCode.Ammonia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#DiammoniumPhosphate
- * AssetClassSubProductTypeCode.mmDiammoniumPhosphate}</li>
+ * AssetClassSubProductTypeCode.DiammoniumPhosphate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Potash
- * AssetClassSubProductTypeCode.mmPotash}</li>
+ * AssetClassSubProductTypeCode.Potash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Sulphur
- * AssetClassSubProductTypeCode.mmSulphur}</li>
+ * AssetClassSubProductTypeCode.Sulphur}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Urea
- * AssetClassSubProductTypeCode.mmUrea}</li>
+ * AssetClassSubProductTypeCode.Urea}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#UreaAndAmmoniumNitrite
- * AssetClassSubProductTypeCode.mmUreaAndAmmoniumNitrite}</li>
+ * AssetClassSubProductTypeCode.UreaAndAmmoniumNitrite}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Construction
- * AssetClassSubProductTypeCode.mmConstruction}</li>
+ * AssetClassSubProductTypeCode.Construction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Manufacturing
- * AssetClassSubProductTypeCode.mmManufacturing}</li>
+ * AssetClassSubProductTypeCode.Manufacturing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Containerboard
- * AssetClassSubProductTypeCode.mmContainerboard}</li>
+ * AssetClassSubProductTypeCode.Containerboard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Newsprint
- * AssetClassSubProductTypeCode.mmNewsprint}</li>
+ * AssetClassSubProductTypeCode.Newsprint}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Pulp
- * AssetClassSubProductTypeCode.mmPulp}</li>
+ * AssetClassSubProductTypeCode.Pulp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#RecoveredPaper
- * AssetClassSubProductTypeCode.mmRecoveredPaper}</li>
+ * AssetClassSubProductTypeCode.RecoveredPaper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Plastic
- * AssetClassSubProductTypeCode.mmPlastic}</li>
+ * AssetClassSubProductTypeCode.Plastic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#CarbonRelated
- * AssetClassSubProductTypeCode.mmCarbonRelated}</li>
+ * AssetClassSubProductTypeCode.CarbonRelated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Wet
- * AssetClassSubProductTypeCode.mmWet}</li>
+ * AssetClassSubProductTypeCode.Wet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Dry
- * AssetClassSubProductTypeCode.mmDry}</li>
+ * AssetClassSubProductTypeCode.Dry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Seafood
- * AssetClassSubProductTypeCode.mmSeafood}</li>
+ * AssetClassSubProductTypeCode.Seafood}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Grain
- * AssetClassSubProductTypeCode.mmGrain}</li>
+ * AssetClassSubProductTypeCode.Grain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Deliverable
- * AssetClassSubProductTypeCode.mmDeliverable}</li>
+ * AssetClassSubProductTypeCode.Deliverable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#NonDeliverable
- * AssetClassSubProductTypeCode.mmNonDeliverable}</li>
+ * AssetClassSubProductTypeCode.NonDeliverable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Other
- * AssetClassSubProductTypeCode.mmOther}</li>
+ * AssetClassSubProductTypeCode.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#Potato
- * AssetClassSubProductTypeCode.mmPotato}</li>
+ * AssetClassSubProductTypeCode.Potato}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassSubProductTypeCode#ContainerShip
- * AssetClassSubProductTypeCode.mmContainerShip}</li>
+ * AssetClassSubProductTypeCode.ContainerShip}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -301,8 +301,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -1645,7 +1645,7 @@ public class AssetClassSubProductTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassSubProductTypeCode";
 				definition = "Defines the sub-product types for specific asset classes.";

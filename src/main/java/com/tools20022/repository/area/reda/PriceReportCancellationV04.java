@@ -27,10 +27,8 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -103,6 +101,19 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code reda.002.001.04}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCompletePriceCancellation1Rule#for_reda_PriceReportCancellationV04
+ * ConstraintCompletePriceCancellation1Rule.for_reda_PriceReportCancellationV04}
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCompletePriceCancellation2Rule#for_reda_PriceReportCancellationV04
+ * ConstraintCompletePriceCancellation2Rule.for_reda_PriceReportCancellationV04}
+ * </li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -111,21 +122,21 @@ import javax.xml.bind.annotation.*;
  * "PriceReportCancellationV04"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "SCOPE\r\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReportCancellation message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to cancel previously sent prices.\n\r\nUSAGE\r\nThe PriceReportCancellation message is used to either:\n- cancel an entire PriceReport that was previously sent (by quoting the business reference of the original price report in the PriceReportIdentification element), or,\n- cancel one or more individual prices from a previously sent price report (by using the PriceDetailsToBeCancelled sequence).\nTechnically, it is possible to cancel all the prices individually by using the PriceDetailsToBeCancelled sequence, but this is not recommended.\nThe cancellation should not contain the cancellation of prices for more than one NAV date. \r\n\r\n"
+ * "SCOPE\r\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReportCancellation message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to cancel previously sent prices.\n\r\nUSAGE\r\nThe PriceReportCancellation message is used to either: \n- cancel an entire PriceReport that was previously sent (by quoting the business reference of the original price report in the PriceReportIdentification element), or,\n- cancel one or more individual prices from a previously sent price report (by using the PriceDetailsToBeCancelled sequence).\nTechnically, it is possible to cancel all the prices individually by using the PriceDetailsToBeCancelled sequence, but this is not recommended.\nThe cancellation should not contain the cancellation of prices for more than one NAV date. \r\n\r\n"
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PriceReportCancellationV04", propOrder = {"messageIdentification", "poolReference", "previousReference", "messagePagination", "priceReportIdentification", "cancellationIdentification", "cancellationReason",
 		"expectedPriceCorrectionDate", "completePriceCancellation", "cancelledPriceValuationDetails", "extension"})
 public class PriceReportCancellationV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies a message from a business application
-	 * standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,33 +155,36 @@ public class PriceReportCancellationV04 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies a message from a business application standpoint. "
+	 * "Reference that uniquely identifies a message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<PriceReportCancellationV04, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies a message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies a message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(PriceReportCancellationV04 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "PoolRef")
 	protected AdditionalReference3 poolReference;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +205,7 @@ public class PriceReportCancellationV04 {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPoolReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Optional<AdditionalReference3>> mmPoolReference = new MMMessageBuildingBlock<PriceReportCancellationV04, Optional<AdditionalReference3>>() {
 		{
 			xmlTag = "PoolRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,18 +216,21 @@ public class PriceReportCancellationV04 {
 			complexType_lazy = () -> AdditionalReference3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getPoolReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference3> getValue(PriceReportCancellationV04 obj) {
+			return obj.getPoolReference();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Optional<AdditionalReference3> value) {
+			obj.setPoolReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrvsRef")
 	protected AdditionalReference3 previousReference;
 	/**
-	 * Reference to a linked message that was previously sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,7 +251,7 @@ public class PriceReportCancellationV04 {
 	 * definition} = "Reference to a linked message that was previously sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPreviousReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Optional<AdditionalReference3>> mmPreviousReference = new MMMessageBuildingBlock<PriceReportCancellationV04, Optional<AdditionalReference3>>() {
 		{
 			xmlTag = "PrvsRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -245,18 +262,21 @@ public class PriceReportCancellationV04 {
 			complexType_lazy = () -> AdditionalReference3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getPreviousReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference3> getValue(PriceReportCancellationV04 obj) {
+			return obj.getPreviousReference();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Optional<AdditionalReference3> value) {
+			obj.setPreviousReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MsgPgntn", required = true)
 	protected Pagination messagePagination;
 	/**
-	 * Pagination of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,7 +296,7 @@ public class PriceReportCancellationV04 {
 	 * definition} = "Pagination of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessagePagination = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Pagination> mmMessagePagination = new MMMessageBuildingBlock<PriceReportCancellationV04, Pagination>() {
 		{
 			xmlTag = "MsgPgntn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -287,19 +307,21 @@ public class PriceReportCancellationV04 {
 			complexType_lazy = () -> Pagination.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getMessagePagination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Pagination getValue(PriceReportCancellationV04 obj) {
+			return obj.getMessagePagination();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Pagination value) {
+			obj.setMessagePagination(value);
 		}
 	};
+	@XmlElement(name = "PricRptId", required = true)
 	protected Max35Text priceReportIdentification;
 	/**
-	 * Unique and unambiguous identifier for the price report, as assigned by
-	 * the reporting party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -321,7 +343,7 @@ public class PriceReportCancellationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPriceReportIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Max35Text> mmPriceReportIdentification = new MMMessageBuildingBlock<PriceReportCancellationV04, Max35Text>() {
 		{
 			xmlTag = "PricRptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -332,19 +354,21 @@ public class PriceReportCancellationV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getPriceReportIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PriceReportCancellationV04 obj) {
+			return obj.getPriceReportIdentification();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Max35Text value) {
+			obj.setPriceReportIdentification(value);
 		}
 	};
+	@XmlElement(name = "CxlId", required = true)
 	protected Max35Text cancellationIdentification;
 	/**
-	 * Unique and unambiguous identifier for the cancellation of the previous
-	 * price report, as assigned by the reporting party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -366,7 +390,7 @@ public class PriceReportCancellationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCancellationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Max35Text> mmCancellationIdentification = new MMMessageBuildingBlock<PriceReportCancellationV04, Max35Text>() {
 		{
 			xmlTag = "CxlId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -377,18 +401,21 @@ public class PriceReportCancellationV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getCancellationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PriceReportCancellationV04 obj) {
+			return obj.getCancellationIdentification();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Max35Text value) {
+			obj.setCancellationIdentification(value);
 		}
 	};
+	@XmlElement(name = "CxlRsn")
 	protected Max350Text cancellationReason;
 	/**
-	 * Reason for the cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -408,7 +435,7 @@ public class PriceReportCancellationV04 {
 	 * definition} = "Reason for the cancellation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCancellationReason = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Optional<Max350Text>> mmCancellationReason = new MMMessageBuildingBlock<PriceReportCancellationV04, Optional<Max350Text>>() {
 		{
 			xmlTag = "CxlRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -419,18 +446,21 @@ public class PriceReportCancellationV04 {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getCancellationReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Max350Text> getValue(PriceReportCancellationV04 obj) {
+			return obj.getCancellationReason();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Optional<Max350Text> value) {
+			obj.setCancellationReason(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "XpctdPricCrrctnDt")
 	protected DateAndDateTime1Choice expectedPriceCorrectionDate;
 	/**
-	 * Date or date and time the price will be corrected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,7 +481,7 @@ public class PriceReportCancellationV04 {
 	 * definition} = "Date or date and time the price will be corrected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExpectedPriceCorrectionDate = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, Optional<DateAndDateTime1Choice>> mmExpectedPriceCorrectionDate = new MMMessageBuildingBlock<PriceReportCancellationV04, Optional<DateAndDateTime1Choice>>() {
 		{
 			xmlTag = "XpctdPricCrrctnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -462,19 +492,21 @@ public class PriceReportCancellationV04 {
 			complexType_lazy = () -> DateAndDateTime1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getExpectedPriceCorrectionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<DateAndDateTime1Choice> getValue(PriceReportCancellationV04 obj) {
+			return obj.getExpectedPriceCorrectionDate();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, Optional<DateAndDateTime1Choice> value) {
+			obj.setExpectedPriceCorrectionDate(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CmpltPricCxl", required = true)
 	protected YesNoIndicator completePriceCancellation;
 	/**
-	 * Indicates whether or not all the prices of the referenced price report
-	 * are cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -497,7 +529,7 @@ public class PriceReportCancellationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCompletePriceCancellation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, YesNoIndicator> mmCompletePriceCancellation = new MMMessageBuildingBlock<PriceReportCancellationV04, YesNoIndicator>() {
 		{
 			xmlTag = "CmpltPricCxl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -508,18 +540,21 @@ public class PriceReportCancellationV04 {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getCompletePriceCancellation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(PriceReportCancellationV04 obj) {
+			return obj.getCompletePriceCancellation();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, YesNoIndicator value) {
+			obj.setCompletePriceCancellation(value);
 		}
 	};
+	@XmlElement(name = "CancPricValtnDtls")
 	protected List<PriceReport3> cancelledPriceValuationDetails;
 	/**
-	 * Details of prices to be cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -539,7 +574,7 @@ public class PriceReportCancellationV04 {
 	 * definition} = "Details of prices to be cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCancelledPriceValuationDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, List<PriceReport3>> mmCancelledPriceValuationDetails = new MMMessageBuildingBlock<PriceReportCancellationV04, List<PriceReport3>>() {
 		{
 			xmlTag = "CancPricValtnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -549,19 +584,21 @@ public class PriceReportCancellationV04 {
 			complexType_lazy = () -> PriceReport3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getCancelledPriceValuationDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<PriceReport3> getValue(PriceReportCancellationV04 obj) {
+			return obj.getCancelledPriceValuationDetails();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, List<PriceReport3> value) {
+			obj.setCancelledPriceValuationDetails(value);
 		}
 	};
+	@XmlElement(name = "Xtnsn")
 	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -583,7 +620,7 @@ public class PriceReportCancellationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExtension = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<PriceReportCancellationV04, List<Extension1>> mmExtension = new MMMessageBuildingBlock<PriceReportCancellationV04, List<Extension1>>() {
 		{
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -593,21 +630,25 @@ public class PriceReportCancellationV04 {
 			complexType_lazy = () -> Extension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PriceReportCancellationV04.class.getMethod("getExtension", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Extension1> getValue(PriceReportCancellationV04 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(PriceReportCancellationV04 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCompletePriceCancellation1Rule.for_reda_PriceReportCancellationV04,
+						com.tools20022.repository.constraints.ConstraintCompletePriceCancellation2Rule.for_reda_PriceReportCancellationV04);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceReportCancellationV04";
-				definition = "SCOPE\r\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReportCancellation message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to cancel previously sent prices.\n\r\nUSAGE\r\nThe PriceReportCancellation message is used to either:\n- cancel an entire PriceReport that was previously sent (by quoting the business reference of the original price report in the PriceReportIdentification element), or,\n- cancel one or more individual prices from a previously sent price report (by using the PriceDetailsToBeCancelled sequence).\nTechnically, it is possible to cancel all the prices individually by using the PriceDetailsToBeCancelled sequence, but this is not recommended.\nThe cancellation should not contain the cancellation of prices for more than one NAV date. \r\n\r\n";
+				definition = "SCOPE\r\nA report provider, for example, a transfer agent, fund accountant or market data provider, sends the PriceReportCancellation message to the report recipient, for example, a fund management company, transfer agent, market data provider, regulator or any other interested party to cancel previously sent prices.\n\r\nUSAGE\r\nThe PriceReportCancellation message is used to either: \n- cancel an entire PriceReport that was previously sent (by quoting the business reference of the original price report in the PriceReportIdentification element), or,\n- cancel one or more individual prices from a previously sent price report (by using the PriceDetailsToBeCancelled sequence).\nTechnically, it is possible to cancel all the prices individually by using the PriceDetailsToBeCancelled sequence, but this is not recommended.\nThe cancellation should not contain the cancellation of prices for more than one NAV date. \r\n\r\n";
 				rootElement = "Document";
 				xmlTag = "PricRptCxl";
 				businessArea_lazy = () -> ReferenceDataLatestVersion.mmObject();
@@ -635,106 +676,106 @@ public class PriceReportCancellationV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public PriceReportCancellationV04 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PoolRef")
-	public AdditionalReference3 getPoolReference() {
-		return poolReference;
+	public Optional<AdditionalReference3> getPoolReference() {
+		return poolReference == null ? Optional.empty() : Optional.of(poolReference);
 	}
 
-	public void setPoolReference(AdditionalReference3 poolReference) {
+	public PriceReportCancellationV04 setPoolReference(AdditionalReference3 poolReference) {
 		this.poolReference = poolReference;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsRef")
-	public AdditionalReference3 getPreviousReference() {
-		return previousReference;
+	public Optional<AdditionalReference3> getPreviousReference() {
+		return previousReference == null ? Optional.empty() : Optional.of(previousReference);
 	}
 
-	public void setPreviousReference(AdditionalReference3 previousReference) {
+	public PriceReportCancellationV04 setPreviousReference(AdditionalReference3 previousReference) {
 		this.previousReference = previousReference;
+		return this;
 	}
 
-	@XmlElement(name = "MsgPgntn", required = true)
 	public Pagination getMessagePagination() {
 		return messagePagination;
 	}
 
-	public void setMessagePagination(Pagination messagePagination) {
-		this.messagePagination = messagePagination;
+	public PriceReportCancellationV04 setMessagePagination(Pagination messagePagination) {
+		this.messagePagination = Objects.requireNonNull(messagePagination);
+		return this;
 	}
 
-	@XmlElement(name = "PricRptId", required = true)
 	public Max35Text getPriceReportIdentification() {
 		return priceReportIdentification;
 	}
 
-	public void setPriceReportIdentification(Max35Text priceReportIdentification) {
-		this.priceReportIdentification = priceReportIdentification;
+	public PriceReportCancellationV04 setPriceReportIdentification(Max35Text priceReportIdentification) {
+		this.priceReportIdentification = Objects.requireNonNull(priceReportIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CxlId", required = true)
 	public Max35Text getCancellationIdentification() {
 		return cancellationIdentification;
 	}
 
-	public void setCancellationIdentification(Max35Text cancellationIdentification) {
-		this.cancellationIdentification = cancellationIdentification;
+	public PriceReportCancellationV04 setCancellationIdentification(Max35Text cancellationIdentification) {
+		this.cancellationIdentification = Objects.requireNonNull(cancellationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CxlRsn")
-	public Max350Text getCancellationReason() {
-		return cancellationReason;
+	public Optional<Max350Text> getCancellationReason() {
+		return cancellationReason == null ? Optional.empty() : Optional.of(cancellationReason);
 	}
 
-	public void setCancellationReason(Max350Text cancellationReason) {
+	public PriceReportCancellationV04 setCancellationReason(Max350Text cancellationReason) {
 		this.cancellationReason = cancellationReason;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdPricCrrctnDt")
-	public DateAndDateTime1Choice getExpectedPriceCorrectionDate() {
-		return expectedPriceCorrectionDate;
+	public Optional<DateAndDateTime1Choice> getExpectedPriceCorrectionDate() {
+		return expectedPriceCorrectionDate == null ? Optional.empty() : Optional.of(expectedPriceCorrectionDate);
 	}
 
-	public void setExpectedPriceCorrectionDate(DateAndDateTime1Choice expectedPriceCorrectionDate) {
+	public PriceReportCancellationV04 setExpectedPriceCorrectionDate(DateAndDateTime1Choice expectedPriceCorrectionDate) {
 		this.expectedPriceCorrectionDate = expectedPriceCorrectionDate;
+		return this;
 	}
 
-	@XmlElement(name = "CmpltPricCxl", required = true)
 	public YesNoIndicator getCompletePriceCancellation() {
 		return completePriceCancellation;
 	}
 
-	public void setCompletePriceCancellation(YesNoIndicator completePriceCancellation) {
-		this.completePriceCancellation = completePriceCancellation;
+	public PriceReportCancellationV04 setCompletePriceCancellation(YesNoIndicator completePriceCancellation) {
+		this.completePriceCancellation = Objects.requireNonNull(completePriceCancellation);
+		return this;
 	}
 
-	@XmlElement(name = "CancPricValtnDtls")
 	public List<PriceReport3> getCancelledPriceValuationDetails() {
-		return cancelledPriceValuationDetails;
+		return cancelledPriceValuationDetails == null ? cancelledPriceValuationDetails = new ArrayList<>() : cancelledPriceValuationDetails;
 	}
 
-	public void setCancelledPriceValuationDetails(List<PriceReport3> cancelledPriceValuationDetails) {
-		this.cancelledPriceValuationDetails = cancelledPriceValuationDetails;
+	public PriceReportCancellationV04 setCancelledPriceValuationDetails(List<PriceReport3> cancelledPriceValuationDetails) {
+		this.cancelledPriceValuationDetails = Objects.requireNonNull(cancelledPriceValuationDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<Extension1> extension) {
-		this.extension = extension;
+	public PriceReportCancellationV04 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:reda.002.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.002.001.04")
 	static public class Document {
 		@XmlElement(name = "PricRptCxl", required = true)
 		public PriceReportCancellationV04 messageBody;

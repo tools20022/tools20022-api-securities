@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxableIncomePerShareCalculated2Code#FundCalculates
- * TaxableIncomePerShareCalculated2Code.mmFundCalculates}</li>
+ * TaxableIncomePerShareCalculated2Code.FundCalculates}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxableIncomePerShareCalculated2Code#FundDoesNotCalculate
- * TaxableIncomePerShareCalculated2Code.mmFundDoesNotCalculate}</li>
+ * TaxableIncomePerShareCalculated2Code.FundDoesNotCalculate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxableIncomePerShareCalculated2Code#FundCalculatesUnknown
- * TaxableIncomePerShareCalculated2Code.mmFundCalculatesUnknown}</li>
+ * TaxableIncomePerShareCalculated2Code.FundCalculatesUnknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,7 +156,7 @@ public class TaxableIncomePerShareCalculated2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TSIY");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxableIncomePerShareCalculated2Code";

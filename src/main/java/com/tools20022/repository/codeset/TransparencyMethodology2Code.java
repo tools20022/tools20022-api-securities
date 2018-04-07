@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransparencyMethodology2Code#Year
- * TransparencyMethodology2Code.mmYear}</li>
+ * TransparencyMethodology2Code.Year}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransparencyMethodology2Code#SystematicInternaliser
- * TransparencyMethodology2Code.mmSystematicInternaliser}</li>
+ * TransparencyMethodology2Code.SystematicInternaliser}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransparencyMethodology2Code#FirstFourWeeks
- * TransparencyMethodology2Code.mmFirstFourWeeks}</li>
+ * TransparencyMethodology2Code.FirstFourWeeks}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransparencyMethodology2Code#Estimated
- * TransparencyMethodology2Code.mmEstimated}</li>
+ * TransparencyMethodology2Code.Estimated}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class TransparencyMethodology2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransparencyMethodology2Code";
 				definition = "Specifies the methodology used for a transparency operation.";

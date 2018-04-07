@@ -38,49 +38,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#Blocked
- * SecuritiesEntryType2Code.mmBlocked}</li>
+ * SecuritiesEntryType2Code.Blocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#Eligible
- * SecuritiesEntryType2Code.mmEligible}</li>
+ * SecuritiesEntryType2Code.Eligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#PendingDelivery
- * SecuritiesEntryType2Code.mmPendingDelivery}</li>
+ * SecuritiesEntryType2Code.PendingDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#PendingReceipt
- * SecuritiesEntryType2Code.mmPendingReceipt}</li>
+ * SecuritiesEntryType2Code.PendingReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#Registered
- * SecuritiesEntryType2Code.mmRegistered}</li>
+ * SecuritiesEntryType2Code.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#Settled
- * SecuritiesEntryType2Code.mmSettled}</li>
+ * SecuritiesEntryType2Code.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#Borrowed
- * SecuritiesEntryType2Code.mmBorrowed}</li>
+ * SecuritiesEntryType2Code.Borrowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#OnLoan
- * SecuritiesEntryType2Code.mmOnLoan}</li>
+ * SecuritiesEntryType2Code.OnLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#StreetPosition
- * SecuritiesEntryType2Code.mmStreetPosition}</li>
+ * SecuritiesEntryType2Code.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#Traded
- * SecuritiesEntryType2Code.mmTraded}</li>
+ * SecuritiesEntryType2Code.Traded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#CollateralIn
- * SecuritiesEntryType2Code.mmCollateralIn}</li>
+ * SecuritiesEntryType2Code.CollateralIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#CollateralOut
- * SecuritiesEntryType2Code.mmCollateralOut}</li>
+ * SecuritiesEntryType2Code.CollateralOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#UninstructedBalance
- * SecuritiesEntryType2Code.mmUninstructedBalance}</li>
+ * SecuritiesEntryType2Code.UninstructedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#InstructedBalance
- * SecuritiesEntryType2Code.mmInstructedBalance}</li>
+ * SecuritiesEntryType2Code.InstructedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryType2Code#OutForRegistration
- * SecuritiesEntryType2Code.mmOutForRegistration}</li>
+ * SecuritiesEntryType2Code.OutForRegistration}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -89,8 +89,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -479,7 +479,7 @@ public class SecuritiesEntryType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BLOK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesEntryType2Code";

@@ -39,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#InvalidReference
- * RejectionReason2Code.mmInvalidReference}</li>
+ * RejectionReason2Code.InvalidReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#RejectedByIssuerOrRegistrar
- * RejectionReason2Code.mmRejectedByIssuerOrRegistrar}</li>
+ * RejectionReason2Code.RejectedByIssuerOrRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#InstructionIrrevocable
- * RejectionReason2Code.mmInstructionIrrevocable}</li>
+ * RejectionReason2Code.InstructionIrrevocable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#AccountServicerDeadlineMissed
- * RejectionReason2Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason2Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#MarketDeadlineMissed
- * RejectionReason2Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason2Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#RejectedSinceAlreadyCancelled
- * RejectionReason2Code.mmRejectedSinceAlreadyCancelled}</li>
+ * RejectionReason2Code.RejectedSinceAlreadyCancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason2Code#RejectedSinceInProgress
- * RejectionReason2Code.mmRejectedSinceInProgress}</li>
+ * RejectionReason2Code.RejectedSinceInProgress}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -266,7 +266,7 @@ public class RejectionReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ULNK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason2Code";

@@ -38,76 +38,76 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#AcceptAfterRegularSettlementDeadline
- * SettlementTransactionCondition10Code.mmAcceptAfterRegularSettlementDeadline}</li>
+ * SettlementTransactionCondition10Code.AcceptAfterRegularSettlementDeadline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Assignement
- * SettlementTransactionCondition10Code.mmAssignement}</li>
+ * SettlementTransactionCondition10Code.Assignement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#BuytoCover
- * SettlementTransactionCondition10Code.mmBuytoCover}</li>
+ * SettlementTransactionCondition10Code.BuytoCover}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Clean
- * SettlementTransactionCondition10Code.mmClean}</li>
+ * SettlementTransactionCondition10Code.Clean}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#DeliveryWithoutMatching
- * SettlementTransactionCondition10Code.mmDeliveryWithoutMatching}</li>
+ * SettlementTransactionCondition10Code.DeliveryWithoutMatching}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Dirty
- * SettlementTransactionCondition10Code.mmDirty}</li>
+ * SettlementTransactionCondition10Code.Dirty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Drawn
- * SettlementTransactionCondition10Code.mmDrawn}</li>
+ * SettlementTransactionCondition10Code.Drawn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Exercised
- * SettlementTransactionCondition10Code.mmExercised}</li>
+ * SettlementTransactionCondition10Code.Exercised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Expired
- * SettlementTransactionCondition10Code.mmExpired}</li>
+ * SettlementTransactionCondition10Code.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#FreeCleanSettlement
- * SettlementTransactionCondition10Code.mmFreeCleanSettlement}</li>
+ * SettlementTransactionCondition10Code.FreeCleanSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#KnockedOut
- * SettlementTransactionCondition10Code.mmKnockedOut}</li>
+ * SettlementTransactionCondition10Code.KnockedOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#NoAutomaticMarketClaim
- * SettlementTransactionCondition10Code.mmNoAutomaticMarketClaim}</li>
+ * SettlementTransactionCondition10Code.NoAutomaticMarketClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#NotAccountingRelated
- * SettlementTransactionCondition10Code.mmNotAccountingRelated}</li>
+ * SettlementTransactionCondition10Code.NotAccountingRelated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#PendingSale
- * SettlementTransactionCondition10Code.mmPendingSale}</li>
+ * SettlementTransactionCondition10Code.PendingSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Physical
- * SettlementTransactionCondition10Code.mmPhysical}</li>
+ * SettlementTransactionCondition10Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Rehypothecation
- * SettlementTransactionCondition10Code.mmRehypothecation}</li>
+ * SettlementTransactionCondition10Code.Rehypothecation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Reporting
- * SettlementTransactionCondition10Code.mmReporting}</li>
+ * SettlementTransactionCondition10Code.Reporting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Residual
- * SettlementTransactionCondition10Code.mmResidual}</li>
+ * SettlementTransactionCondition10Code.Residual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#ShortSell
- * SettlementTransactionCondition10Code.mmShortSell}</li>
+ * SettlementTransactionCondition10Code.ShortSell}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#SpecialDelivery
- * SettlementTransactionCondition10Code.mmSpecialDelivery}</li>
+ * SettlementTransactionCondition10Code.SpecialDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#SplitSettlement
- * SettlementTransactionCondition10Code.mmSplitSettlement}</li>
+ * SettlementTransactionCondition10Code.SplitSettlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Transformation
- * SettlementTransactionCondition10Code.mmTransformation}</li>
+ * SettlementTransactionCondition10Code.Transformation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#TripartySegregation
- * SettlementTransactionCondition10Code.mmTripartySegregation}</li>
+ * SettlementTransactionCondition10Code.TripartySegregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettlementTransactionCondition10Code#Unexposed
- * SettlementTransactionCondition10Code.mmUnexposed}</li>
+ * SettlementTransactionCondition10Code.Unexposed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -116,8 +116,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -717,7 +717,7 @@ public class SettlementTransactionCondition10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTransactionCondition10Code";
 				definition = "Specifies the conditions under which the order/trade is to be settled.";

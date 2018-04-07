@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +76,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +89,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides details about the reponse to the interest payment request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "InterestResponse1", propOrder = {"responseType", "rejectionReason", "rejectionReasonInformation", "interestPaymentRequestIdentification"})
 public class InterestResponse1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RspnTp", required = true)
 	protected Status4Code responseType;
 	/**
-	 * Provides the type of the response, either accepted or rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,10 +129,10 @@ public class InterestResponse1 {
 	 * "Provides the type of the response, either accepted or rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponseType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestResponse1, Status4Code> mmResponseType = new MMMessageAttribute<InterestResponse1, Status4Code>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmInstructionProcessingStatus;
-			componentContext_lazy = () -> InterestResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "RspnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,12 +142,22 @@ public class InterestResponse1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Status4Code.mmObject();
 		}
+
+		@Override
+		public Status4Code getValue(InterestResponse1 obj) {
+			return obj.getResponseType();
+		}
+
+		@Override
+		public void setValue(InterestResponse1 obj, Status4Code value) {
+			obj.setResponseType(value);
+		}
 	};
+	@XmlElement(name = "RjctnRsn")
 	protected RejectionReason21FormatChoice rejectionReason;
 	/**
-	 * Provides a reason for rejection identified using a code or a proprietary
-	 * format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,10 +190,10 @@ public class InterestResponse1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestResponse1, Optional<RejectionReason21FormatChoice>> mmRejectionReason = new MMMessageAttribute<InterestResponse1, Optional<RejectionReason21FormatChoice>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralStatus.mmInterestRejectionReason;
-			componentContext_lazy = () -> InterestResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,11 +203,22 @@ public class InterestResponse1 {
 			minOccurs = 0;
 			complexType_lazy = () -> RejectionReason21FormatChoice.mmObject();
 		}
+
+		@Override
+		public Optional<RejectionReason21FormatChoice> getValue(InterestResponse1 obj) {
+			return obj.getRejectionReason();
+		}
+
+		@Override
+		public void setValue(InterestResponse1 obj, Optional<RejectionReason21FormatChoice> value) {
+			obj.setRejectionReason(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RjctnRsnInf")
 	protected Max140Text rejectionReasonInformation;
 	/**
-	 * Provides additional information on the rejection reason.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,10 +248,10 @@ public class InterestResponse1 {
 	 * definition} = "Provides additional information on the rejection reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectionReasonInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestResponse1, Optional<Max140Text>> mmRejectionReasonInformation = new MMMessageAttribute<InterestResponse1, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> InterestResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "RjctnRsnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -237,11 +261,22 @@ public class InterestResponse1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(InterestResponse1 obj) {
+			return obj.getRejectionReasonInformation();
+		}
+
+		@Override
+		public void setValue(InterestResponse1 obj, Optional<Max140Text> value) {
+			obj.setRejectionReasonInformation(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IntrstPmtReqId", required = true)
 	protected Max35Text interestPaymentRequestIdentification;
 	/**
-	 * Provides the reference to the interest payment request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,9 +301,9 @@ public class InterestResponse1 {
 	 * definition} = "Provides the reference to the interest payment request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestPaymentRequestIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InterestResponse1, Max35Text> mmInterestPaymentRequestIdentification = new MMMessageAttribute<InterestResponse1, Max35Text>() {
 		{
-			componentContext_lazy = () -> InterestResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.InterestResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstPmtReqId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -278,15 +313,26 @@ public class InterestResponse1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(InterestResponse1 obj) {
+			return obj.getInterestPaymentRequestIdentification();
+		}
+
+		@Override
+		public void setValue(InterestResponse1 obj, Max35Text value) {
+			obj.setInterestPaymentRequestIdentification(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InterestResponse1.mmResponseType, InterestResponse1.mmRejectionReason, InterestResponse1.mmRejectionReasonInformation, InterestResponse1.mmInterestPaymentRequestIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestResponse1.mmResponseType, com.tools20022.repository.msg.InterestResponse1.mmRejectionReason,
+						com.tools20022.repository.msg.InterestResponse1.mmRejectionReasonInformation, com.tools20022.repository.msg.InterestResponse1.mmInterestPaymentRequestIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(InterestPaymentResponseV04.mmInterestResponse);
 				trace_lazy = () -> CollateralStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestResponse1";
 				definition = "Provides details about the reponse to the interest payment request.";
@@ -295,39 +341,39 @@ public class InterestResponse1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RspnTp", required = true)
 	public Status4Code getResponseType() {
 		return responseType;
 	}
 
-	public void setResponseType(Status4Code responseType) {
-		this.responseType = responseType;
+	public InterestResponse1 setResponseType(Status4Code responseType) {
+		this.responseType = Objects.requireNonNull(responseType);
+		return this;
 	}
 
-	@XmlElement(name = "RjctnRsn")
-	public RejectionReason21FormatChoice getRejectionReason() {
-		return rejectionReason;
+	public Optional<RejectionReason21FormatChoice> getRejectionReason() {
+		return rejectionReason == null ? Optional.empty() : Optional.of(rejectionReason);
 	}
 
-	public void setRejectionReason(RejectionReason21FormatChoice rejectionReason) {
+	public InterestResponse1 setRejectionReason(RejectionReason21FormatChoice rejectionReason) {
 		this.rejectionReason = rejectionReason;
+		return this;
 	}
 
-	@XmlElement(name = "RjctnRsnInf")
-	public Max140Text getRejectionReasonInformation() {
-		return rejectionReasonInformation;
+	public Optional<Max140Text> getRejectionReasonInformation() {
+		return rejectionReasonInformation == null ? Optional.empty() : Optional.of(rejectionReasonInformation);
 	}
 
-	public void setRejectionReasonInformation(Max140Text rejectionReasonInformation) {
+	public InterestResponse1 setRejectionReasonInformation(Max140Text rejectionReasonInformation) {
 		this.rejectionReasonInformation = rejectionReasonInformation;
+		return this;
 	}
 
-	@XmlElement(name = "IntrstPmtReqId", required = true)
 	public Max35Text getInterestPaymentRequestIdentification() {
 		return interestPaymentRequestIdentification;
 	}
 
-	public void setInterestPaymentRequestIdentification(Max35Text interestPaymentRequestIdentification) {
-		this.interestPaymentRequestIdentification = interestPaymentRequestIdentification;
+	public InterestResponse1 setInterestPaymentRequestIdentification(Max35Text interestPaymentRequestIdentification) {
+		this.interestPaymentRequestIdentification = Objects.requireNonNull(interestPaymentRequestIdentification);
+		return this;
 	}
 }

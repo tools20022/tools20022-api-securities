@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReasonCode#UnitsPartiallySettled
- * SettledStatusReasonCode.mmUnitsPartiallySettled}</li>
+ * SettledStatusReasonCode.UnitsPartiallySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReasonCode#CashPartiallySettled
- * SettledStatusReasonCode.mmCashPartiallySettled}</li>
+ * SettledStatusReasonCode.CashPartiallySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReasonCode#UnitsCashPartiallySettled
- * SettledStatusReasonCode.mmUnitsCashPartiallySettled}</li>
+ * SettledStatusReasonCode.UnitsCashPartiallySettled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReasonCode#GatedOneNAV
- * SettledStatusReasonCode.mmGatedOneNAV}</li>
+ * SettledStatusReasonCode.GatedOneNAV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SettledStatusReasonCode#GatedMultipleNAV
- * SettledStatusReasonCode.mmGatedMultipleNAV}</li>
+ * SettledStatusReasonCode.GatedMultipleNAV}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,7 +86,7 @@ public class SettledStatusReasonCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Units are partially settled
+	 * Units are partially settled.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -103,14 +103,14 @@ public class SettledStatusReasonCode extends MMCode {
 	 * name} = "UnitsPartiallySettled"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Units are partially settled"</li>
+	 * definition} = "Units are partially settled."</li>
 	 * </ul>
 	 */
 	public static final SettledStatusReasonCode UnitsPartiallySettled = new SettledStatusReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnitsPartiallySettled";
-			definition = "Units are partially settled";
+			definition = "Units are partially settled.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettledStatusReasonCode.mmObject();
 			codeName = "UPST";
 		}
@@ -194,7 +194,7 @@ public class SettledStatusReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Redemption has been gated, all settlement will be done at the same price. "
+	 * "Redemption has been gated, all settlement will be done at the same price."
 	 * </li>
 	 * </ul>
 	 */
@@ -202,7 +202,7 @@ public class SettledStatusReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GatedOneNAV";
-			definition = "Redemption has been gated, all settlement will be done at the same price. ";
+			definition = "Redemption has been gated, all settlement will be done at the same price.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SettledStatusReasonCode.mmObject();
 			codeName = "GAT1";
 		}
@@ -248,7 +248,7 @@ public class SettledStatusReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UPST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettledStatusReasonCode";

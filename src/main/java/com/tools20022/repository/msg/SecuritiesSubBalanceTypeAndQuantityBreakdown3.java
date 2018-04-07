@@ -24,9 +24,12 @@ import com.tools20022.repository.choice.SecuritiesBalanceType6Choice;
 import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.QuantityBreakdown32;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Quantity breakdown information for a specific securities balance."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesSubBalanceTypeAndQuantityBreakdown3", propOrder = {"type", "quantityBreakdown"})
 public class SecuritiesSubBalanceTypeAndQuantityBreakdown3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected SecuritiesBalanceType6Choice type;
 	/**
-	 * Specifies the securities sub balance type indicator (example restriction
-	 * type for a market infrastructure).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +113,10 @@ public class SecuritiesSubBalanceTypeAndQuantityBreakdown3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesSubBalanceTypeAndQuantityBreakdown3, SecuritiesBalanceType6Choice> mmType = new MMMessageAttribute<SecuritiesSubBalanceTypeAndQuantityBreakdown3, SecuritiesBalanceType6Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesBalanceType;
-			componentContext_lazy = () -> SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +126,22 @@ public class SecuritiesSubBalanceTypeAndQuantityBreakdown3 {
 			minOccurs = 1;
 			complexType_lazy = () -> SecuritiesBalanceType6Choice.mmObject();
 		}
+
+		@Override
+		public SecuritiesBalanceType6Choice getValue(SecuritiesSubBalanceTypeAndQuantityBreakdown3 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(SecuritiesSubBalanceTypeAndQuantityBreakdown3 obj, SecuritiesBalanceType6Choice value) {
+			obj.setType(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.QuantityBreakdown32> quantityBreakdown;
+	@XmlElement(name = "QtyBrkdwn")
+	protected List<QuantityBreakdown32> quantityBreakdown;
 	/**
-	 * Breakdown of a quantity into lots such as tax lots, instrument series.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,26 +173,36 @@ public class SecuritiesSubBalanceTypeAndQuantityBreakdown3 {
 	 * "Breakdown of a quantity into lots such as tax lots, instrument series."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmQuantityBreakdown = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesSubBalanceTypeAndQuantityBreakdown3, List<QuantityBreakdown32>> mmQuantityBreakdown = new MMMessageAttribute<SecuritiesSubBalanceTypeAndQuantityBreakdown3, List<QuantityBreakdown32>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmLotBreakdown;
-			componentContext_lazy = () -> SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "QtyBrkdwn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "QuantityBreakdown";
 			definition = "Breakdown of a quantity into lots such as tax lots, instrument series.";
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.QuantityBreakdown32.mmObject();
+			complexType_lazy = () -> QuantityBreakdown32.mmObject();
+		}
+
+		@Override
+		public List<QuantityBreakdown32> getValue(SecuritiesSubBalanceTypeAndQuantityBreakdown3 obj) {
+			return obj.getQuantityBreakdown();
+		}
+
+		@Override
+		public void setValue(SecuritiesSubBalanceTypeAndQuantityBreakdown3 obj, List<QuantityBreakdown32> value) {
+			obj.setQuantityBreakdown(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmType, SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmQuantityBreakdown);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmType, com.tools20022.repository.msg.SecuritiesSubBalanceTypeAndQuantityBreakdown3.mmQuantityBreakdown);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesSubBalanceTypeAndQuantityBreakdown3";
 				definition = "Quantity breakdown information for a specific securities balance.";
@@ -187,21 +211,21 @@ public class SecuritiesSubBalanceTypeAndQuantityBreakdown3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public SecuritiesBalanceType6Choice getType() {
 		return type;
 	}
 
-	public void setType(SecuritiesBalanceType6Choice type) {
-		this.type = type;
+	public SecuritiesSubBalanceTypeAndQuantityBreakdown3 setType(SecuritiesBalanceType6Choice type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "QtyBrkdwn")
 	public List<QuantityBreakdown32> getQuantityBreakdown() {
-		return quantityBreakdown;
+		return quantityBreakdown == null ? quantityBreakdown = new ArrayList<>() : quantityBreakdown;
 	}
 
-	public void setQuantityBreakdown(List<com.tools20022.repository.msg.QuantityBreakdown32> quantityBreakdown) {
-		this.quantityBreakdown = quantityBreakdown;
+	public SecuritiesSubBalanceTypeAndQuantityBreakdown3 setQuantityBreakdown(List<QuantityBreakdown32> quantityBreakdown) {
+		this.quantityBreakdown = Objects.requireNonNull(quantityBreakdown);
+		return this;
 	}
 }

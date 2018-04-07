@@ -24,9 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.NoReasonCode;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ClosurePendingStatusReason1;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * ClosedStatusReason1Choice}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ClosurePendingStatusReason1Choice", propOrder = {"noSpecifiedReason", "reason"})
 public class ClosurePendingStatusReason1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoSpcfdRsn", required = true)
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * There is no reason available or to report for the closure pending status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,9 +111,9 @@ public class ClosurePendingStatusReason1Choice {
 	 * ClosedStatusReason1Choice.mmNoSpecifiedReason}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClosurePendingStatusReason1Choice, NoReasonCode> mmNoSpecifiedReason = new MMMessageAttribute<ClosurePendingStatusReason1Choice, NoReasonCode>() {
 		{
-			componentContext_lazy = () -> ClosurePendingStatusReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClosurePendingStatusReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoSpcfdRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +124,22 @@ public class ClosurePendingStatusReason1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(ClosurePendingStatusReason1Choice obj) {
+			return obj.getNoSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(ClosurePendingStatusReason1Choice obj, NoReasonCode value) {
+			obj.setNoSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected List<ClosurePendingStatusReason1> reason;
 	/**
-	 * Reason for the closure pending status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -155,9 +169,9 @@ public class ClosurePendingStatusReason1Choice {
 	 * ClosedStatusReason1Choice.mmReason}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ClosurePendingStatusReason1Choice, List<ClosurePendingStatusReason1>> mmReason = new MMMessageAssociationEnd<ClosurePendingStatusReason1Choice, List<ClosurePendingStatusReason1>>() {
 		{
-			componentContext_lazy = () -> ClosurePendingStatusReason1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClosurePendingStatusReason1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,13 +182,23 @@ public class ClosurePendingStatusReason1Choice {
 			isComposite = true;
 			type_lazy = () -> ClosurePendingStatusReason1.mmObject();
 		}
+
+		@Override
+		public List<ClosurePendingStatusReason1> getValue(ClosurePendingStatusReason1Choice obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(ClosurePendingStatusReason1Choice obj, List<ClosurePendingStatusReason1> value) {
+			obj.setReason(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ClosurePendingStatusReason1Choice.mmNoSpecifiedReason, ClosurePendingStatusReason1Choice.mmReason);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ClosurePendingStatusReason1Choice.mmNoSpecifiedReason, com.tools20022.repository.choice.ClosurePendingStatusReason1Choice.mmReason);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClosurePendingStatusReason1Choice";
 				definition = "Choice of formats for a closure pending status reason.";
@@ -184,21 +208,21 @@ public class ClosurePendingStatusReason1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoSpcfdRsn", required = true)
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public ClosurePendingStatusReason1Choice setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public List<ClosurePendingStatusReason1> getReason() {
-		return reason;
+		return reason == null ? reason = new ArrayList<>() : reason;
 	}
 
-	public void setReason(List<ClosurePendingStatusReason1> reason) {
-		this.reason = reason;
+	public ClosurePendingStatusReason1Choice setReason(List<ClosurePendingStatusReason1> reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 }

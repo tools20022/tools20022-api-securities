@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,112 +39,112 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#DividendReinvestment
- * CorporateActionEventTypeCode.mmDividendReinvestment}</li>
+ * CorporateActionEventTypeCode.DividendReinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#CapitalGainsDistribution
- * CorporateActionEventTypeCode.mmCapitalGainsDistribution}</li>
+ * CorporateActionEventTypeCode.CapitalGainsDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#CashDividend
- * CorporateActionEventTypeCode.mmCashDividend}</li>
+ * CorporateActionEventTypeCode.CashDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#DividendOption
- * CorporateActionEventTypeCode.mmDividendOption}</li>
+ * CorporateActionEventTypeCode.DividendOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#StockDividend
- * CorporateActionEventTypeCode.mmStockDividend}</li>
+ * CorporateActionEventTypeCode.StockDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Liquidation
- * CorporateActionEventTypeCode.mmLiquidation}</li>
+ * CorporateActionEventTypeCode.Liquidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Merger
- * CorporateActionEventTypeCode.mmMerger}</li>
+ * CorporateActionEventTypeCode.Merger}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#NameChange
- * CorporateActionEventTypeCode.mmNameChange}</li>
+ * CorporateActionEventTypeCode.NameChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#SpinOff
- * CorporateActionEventTypeCode.mmSpinOff}</li>
+ * CorporateActionEventTypeCode.SpinOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#StockSplit
- * CorporateActionEventTypeCode.mmStockSplit}</li>
+ * CorporateActionEventTypeCode.StockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#ReverseStockSplit
- * CorporateActionEventTypeCode.mmReverseStockSplit}</li>
+ * CorporateActionEventTypeCode.ReverseStockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Tender
- * CorporateActionEventTypeCode.mmTender}</li>
+ * CorporateActionEventTypeCode.Tender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#BonusIssue
- * CorporateActionEventTypeCode.mmBonusIssue}</li>
+ * CorporateActionEventTypeCode.BonusIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#RightsDistribution
- * CorporateActionEventTypeCode.mmRightsDistribution}</li>
+ * CorporateActionEventTypeCode.RightsDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#CallOnRights
- * CorporateActionEventTypeCode.mmCallOnRights}</li>
+ * CorporateActionEventTypeCode.CallOnRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Change
- * CorporateActionEventTypeCode.mmChange}</li>
+ * CorporateActionEventTypeCode.Change}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Redenomination
- * CorporateActionEventTypeCode.mmRedenomination}</li>
+ * CorporateActionEventTypeCode.Redenomination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#ExchangeOption
- * CorporateActionEventTypeCode.mmExchangeOption}</li>
+ * CorporateActionEventTypeCode.ExchangeOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#ExchangeOffer
- * CorporateActionEventTypeCode.mmExchangeOffer}</li>
+ * CorporateActionEventTypeCode.ExchangeOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#DecreaseInValue
- * CorporateActionEventTypeCode.mmDecreaseInValue}</li>
+ * CorporateActionEventTypeCode.DecreaseInValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#EarlyRedemption
- * CorporateActionEventTypeCode.mmEarlyRedemption}</li>
+ * CorporateActionEventTypeCode.EarlyRedemption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#FinalMaturity
- * CorporateActionEventTypeCode.mmFinalMaturity}</li>
+ * CorporateActionEventTypeCode.FinalMaturity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#InterestPayment
- * CorporateActionEventTypeCode.mmInterestPayment}</li>
+ * CorporateActionEventTypeCode.InterestPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Prefunding
- * CorporateActionEventTypeCode.mmPrefunding}</li>
+ * CorporateActionEventTypeCode.Prefunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#PrincipalAndInterestPaydown
- * CorporateActionEventTypeCode.mmPrincipalAndInterestPaydown}</li>
+ * CorporateActionEventTypeCode.PrincipalAndInterestPaydown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Remarketing
- * CorporateActionEventTypeCode.mmRemarketing}</li>
+ * CorporateActionEventTypeCode.Remarketing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Subscription
- * CorporateActionEventTypeCode.mmSubscription}</li>
+ * CorporateActionEventTypeCode.Subscription}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Attachment
- * CorporateActionEventTypeCode.mmAttachment}</li>
+ * CorporateActionEventTypeCode.Attachment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Conversion
- * CorporateActionEventTypeCode.mmConversion}</li>
+ * CorporateActionEventTypeCode.Conversion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#Detachment
- * CorporateActionEventTypeCode.mmDetachment}</li>
+ * CorporateActionEventTypeCode.Detachment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#ScripDividend
- * CorporateActionEventTypeCode.mmScripDividend}</li>
+ * CorporateActionEventTypeCode.ScripDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#PariPassu
- * CorporateActionEventTypeCode.mmPariPassu}</li>
+ * CorporateActionEventTypeCode.PariPassu}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#PriorityIssue
- * CorporateActionEventTypeCode.mmPriorityIssue}</li>
+ * CorporateActionEventTypeCode.PriorityIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#BidRepurchaseOffer
- * CorporateActionEventTypeCode.mmBidRepurchaseOffer}</li>
+ * CorporateActionEventTypeCode.BidRepurchaseOffer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#CallOnWarrants
- * CorporateActionEventTypeCode.mmCallOnWarrants}</li>
+ * CorporateActionEventTypeCode.CallOnWarrants}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventTypeCode#OddLotSalePurchase
- * CorporateActionEventTypeCode.mmOddLotSalePurchase}</li>
+ * CorporateActionEventTypeCode.OddLotSalePurchase}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -157,8 +158,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -191,6 +192,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DRIP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//DRIP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -205,6 +209,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode DividendReinvestment = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//DRIP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendReinvestment";
 			definition = "Event is a dividend payment type where cash dividend is rolled over into additional shares in the issuing company.";
@@ -226,6 +231,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CAPG"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//CAPG</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -240,6 +248,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode CapitalGainsDistribution = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//CAPG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalGainsDistribution";
 			definition = "Event is the distribution of profits resulting from the sale of securities. Shareholders of mutual funds, unit trusts, or Sicavs are recipients of capital gains distributions and are often reinvested in additional shares of the fund.";
@@ -261,6 +270,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DVCA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//DVCA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -275,6 +287,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode CashDividend = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//DVCA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDividend";
 			definition = "Event is a distribution of cash to shareholders, in proportion to their equity holding. Ordinary dividends are recurring and regular. The shareholder must take cash and is not offered a choice in the form of distribution.";
@@ -295,6 +308,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DVOP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//DVOP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -309,6 +325,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode DividendOption = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//DVOP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendOption";
 			definition = "Event is a distribution of a dividend to shareholders with the choice of payment method. The shareholder must choose the form of payment - stock, cash, or both.";
@@ -329,6 +346,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DVSE"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//DVSE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -343,6 +363,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode StockDividend = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//DVSE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockDividend";
 			definition = "Event is a dividend paid to shareholders in the form of shares of stock in the issuing company or in another company. The shareholder must take stock and is not offered a choice in the form of distribution.";
@@ -365,6 +386,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LIQU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//LIQU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -379,6 +403,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode Liquidation = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//LIQU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Liquidation";
 			definition = "Event is a liquidating dividend or liquidation that consists of a distribution of cash, assets, or both. Debt may be paid in order of priority based on preferred claims to assets specified by the security. The security holder may be able to choose the form of liquidation distribution.";
@@ -399,6 +424,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MRGR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//MRGR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -413,6 +441,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode Merger = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//MRGR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Merger";
 			definition = "Event is a mandatory or voluntary exchange of outstanding securities as the result of two or more companies combining assets. Cash payments may accompany share exchange.";
@@ -433,6 +462,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NAME"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//NAME</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -447,6 +479,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode NameChange = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//NAME"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NameChange";
 			definition = "Event is a name change. The issuing company changes its name. The event shows the change from old name to new name and may involve surrendering physical shares with the old name to the registrar.";
@@ -469,6 +502,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SOFF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//SOFF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -483,6 +519,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode SpinOff = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//SOFF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpinOff";
 			definition = "Event is a demerger or distribution or an unbundling. It is a distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares. A spin-off represents a form of divestiture resulting in an independent company. Normally this is without cost to the parent issue shareholder.";
@@ -504,6 +541,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SPLF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//SPLF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -518,6 +558,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode StockSplit = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//SPLF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockSplit";
 			definition = "Event is a change in nominal value, a subdivision. It is an increase in a corporation's number of outstanding shares of stock without any change in the shareholder's equity or the aggregate market value at the time of the split. Stock price and nominal value are reduced accordingly.";
@@ -539,6 +580,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SPLR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//SPLR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -553,6 +597,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode ReverseStockSplit = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//SPLR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReverseStockSplit";
 			definition = "Event is a change in nominal value, a consolidation. It is a decrease in number of outstanding shares of stock without any change in the shareholder's equity or the aggregate market value at the time of the split. Stock price and nominal value are reduced accordingly.";
@@ -575,6 +620,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TEND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//TEND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -589,6 +637,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode Tender = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//TEND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tender";
 			definition = "Event is an acquisition or take-over or offre publique de retrait (FR) or purchase offer or buy-back. It is an offer made to shareholders requesting them to sell (tender) their shares for a specified price usually at a premium over prevailing market price. Generally, the objective of a tender offer is to take control of the target company.";
@@ -611,6 +660,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BONU"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//BONU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -625,6 +677,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode BonusIssue = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//BONU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BonusIssue";
 			definition = "Event is a bonus issue or scrip issue or capitalisation issue. Security holders are awarded additional assets free of payment from the issuer in proportion to their holding. A bonus issue is typically represented by shares, rights or warrants. Nominal value doesn't change. Holder may be offered choice of form.";
@@ -644,6 +697,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "RHDI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//RHDI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -658,6 +714,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode RightsDistribution = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//RHDI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RightsDistribution";
 			definition = "Event is the distribution of rights to shareholders, in proportion to their equity holding.";
@@ -679,6 +736,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EXRI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//EXRI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -693,6 +753,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode CallOnRights = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//EXRI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallOnRights";
 			definition = "Event is a call or exercise on nil-paid securities or rights resulting from a rights distribution (RHDI). This is to be used for the second event in those cases where the rights issue is dealt with in two events, the first event being the rights distribution (RHDI).";
@@ -713,6 +774,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CHAN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//CHAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -721,15 +785,16 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Event is a generic change. For example,  a change in the terms of an issue, a change in the identification of a security, change of a board lot, a change from global to definitive."
+	 * "Event is a generic change. For example, a change in the terms of an issue, a change in the identification of a security, change of a board lot, a change from global to definitive."
 	 * </li>
 	 * </ul>
 	 */
 	public static final CorporateActionEventTypeCode Change = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//CHAN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Change";
-			definition = "Event is a generic change. For example,  a change in the terms of an issue, a change in the identification of a security, change of a board lot, a change from global to definitive.";
+			definition = "Event is a generic change. For example, a change in the terms of an issue, a change in the identification of a security, change of a board lot, a change from global to definitive.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventTypeCode.mmObject();
 			codeName = "CHAN";
 		}
@@ -747,6 +812,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REDO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//CHAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -761,6 +829,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode Redenomination = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//CHAN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Redenomination";
 			definition = "Event by which the unit (currency and/or nominal) of a financial instrument is restated, eg, the debt in a national currency is restated in euro.";
@@ -782,6 +851,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EXOP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//EXOP</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -796,6 +868,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode ExchangeOption = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//EXOP"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeOption";
 			definition = "Event is an option for the shareholders to exchange their securities for other securities and/or cash. Exchange options are mentioned in the terms and conditions of a security and are valid during the whole lifetime of a security.";
@@ -817,6 +890,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EXOF"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//EXOF</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -831,6 +907,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode ExchangeOffer = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//EXOF"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeOffer";
 			definition = "Event is an exchange offer or capital reorganisation.\nIt is an offer to shareholders to exchange their holdings for other securities and/or cash. Exchange offers are usually voluntary involving the exchange of outstanding security for a different security or securities and/or cash.";
@@ -851,6 +928,9 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DECR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::CAEV//DECR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -865,6 +945,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	 */
 	public static final CorporateActionEventTypeCode DecreaseInValue = new CorporateActionEventTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::CAEV//DECR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecreaseInValue";
 			definition = "Event is a reduction of the share capital and face value of a single share. The number of the circulating shares remains unchanged. It may include a capital pay-out to shareholder.";
@@ -1422,7 +1503,7 @@ public class CorporateActionEventTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DRIP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventTypeCode";

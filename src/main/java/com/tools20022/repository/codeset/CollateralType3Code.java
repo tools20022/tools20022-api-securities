@@ -37,26 +37,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CollateralType3Code#Cash
- * CollateralType3Code.mmCash}</li>
+ * CollateralType3Code.Cash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CollateralType3Code#Securities
- * CollateralType3Code.mmSecurities}</li>
+ * CollateralType3Code.Securities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CollateralType3Code#PhysicalEntities
- * CollateralType3Code.mmPhysicalEntities}</li>
+ * CollateralType3Code.PhysicalEntities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CollateralType3Code#Insurance
- * CollateralType3Code.mmInsurance}</li>
+ * CollateralType3Code.Insurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CollateralType3Code#StockCertificate
- * CollateralType3Code.mmStockCertificate}</li>
+ * CollateralType3Code.StockCertificate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CollateralType3Code#Bond
- * CollateralType3Code.mmBond}</li>
+ * CollateralType3Code.Bond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CollateralType3Code#BankGuarantee
- * CollateralType3Code.mmBankGuarantee}</li>
+ * CollateralType3Code.BankGuarantee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CollateralType3Code#Other
- * CollateralType3Code.mmOther}</li>
+ * CollateralType3Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -287,7 +287,7 @@ public class CollateralType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CASH");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralType3Code";

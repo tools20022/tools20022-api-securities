@@ -29,6 +29,7 @@ import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DocumentToSend3", propOrder = {"type", "recipient", "methodOfTransmission"})
 public class DocumentToSend3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected Max140Text type;
 	/**
-	 * Type of document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,9 +117,9 @@ public class DocumentToSend3 {
 	 * definition} = "Type of document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentToSend3, Max140Text> mmType = new MMMessageAttribute<DocumentToSend3, Max140Text>() {
 		{
-			componentContext_lazy = () -> DocumentToSend3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentToSend3.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,11 +129,22 @@ public class DocumentToSend3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(DocumentToSend3 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(DocumentToSend3 obj, Max140Text value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Rcpt", required = true)
 	protected PartyIdentification70Choice recipient;
 	/**
-	 * Party that should receive the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,9 +170,9 @@ public class DocumentToSend3 {
 	 * definition} = "Party that should receive the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRecipient = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentToSend3, PartyIdentification70Choice> mmRecipient = new MMMessageAttribute<DocumentToSend3, PartyIdentification70Choice>() {
 		{
-			componentContext_lazy = () -> DocumentToSend3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentToSend3.mmObject();
 			isDerived = false;
 			xmlTag = "Rcpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,11 +182,22 @@ public class DocumentToSend3 {
 			minOccurs = 1;
 			complexType_lazy = () -> PartyIdentification70Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification70Choice getValue(DocumentToSend3 obj) {
+			return obj.getRecipient();
+		}
+
+		@Override
+		public void setValue(DocumentToSend3 obj, PartyIdentification70Choice value) {
+			obj.setRecipient(value);
+		}
 	};
+	@XmlElement(name = "MtdOfTrnsmssn", required = true)
 	protected CommunicationMethod3Choice methodOfTransmission;
 	/**
-	 * Communication method to be used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -198,9 +222,9 @@ public class DocumentToSend3 {
 	 * definition} = "Communication method to be used."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMethodOfTransmission = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<DocumentToSend3, CommunicationMethod3Choice> mmMethodOfTransmission = new MMMessageAssociationEnd<DocumentToSend3, CommunicationMethod3Choice>() {
 		{
-			componentContext_lazy = () -> DocumentToSend3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentToSend3.mmObject();
 			isDerived = false;
 			xmlTag = "MtdOfTrnsmssn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,14 +235,25 @@ public class DocumentToSend3 {
 			isComposite = true;
 			type_lazy = () -> CommunicationMethod3Choice.mmObject();
 		}
+
+		@Override
+		public CommunicationMethod3Choice getValue(DocumentToSend3 obj) {
+			return obj.getMethodOfTransmission();
+		}
+
+		@Override
+		public void setValue(DocumentToSend3 obj, CommunicationMethod3Choice value) {
+			obj.setMethodOfTransmission(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DocumentToSend3.mmType, DocumentToSend3.mmRecipient, DocumentToSend3.mmMethodOfTransmission);
+				messageElement_lazy = () -> Arrays
+						.asList(com.tools20022.repository.msg.DocumentToSend3.mmType, com.tools20022.repository.msg.DocumentToSend3.mmRecipient, com.tools20022.repository.msg.DocumentToSend3.mmMethodOfTransmission);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountDetailsConfirmationV07.mmServiceLevelAgreement, AccountOpeningInstructionV07.mmServiceLevelAgreement);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentToSend3";
 				definition = "Type of document and the type of communication method to be used to notify a party.";
@@ -227,30 +262,30 @@ public class DocumentToSend3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public Max140Text getType() {
 		return type;
 	}
 
-	public void setType(Max140Text type) {
-		this.type = type;
+	public DocumentToSend3 setType(Max140Text type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Rcpt", required = true)
 	public PartyIdentification70Choice getRecipient() {
 		return recipient;
 	}
 
-	public void setRecipient(PartyIdentification70Choice recipient) {
-		this.recipient = recipient;
+	public DocumentToSend3 setRecipient(PartyIdentification70Choice recipient) {
+		this.recipient = Objects.requireNonNull(recipient);
+		return this;
 	}
 
-	@XmlElement(name = "MtdOfTrnsmssn", required = true)
 	public CommunicationMethod3Choice getMethodOfTransmission() {
 		return methodOfTransmission;
 	}
 
-	public void setMethodOfTransmission(CommunicationMethod3Choice methodOfTransmission) {
-		this.methodOfTransmission = methodOfTransmission;
+	public DocumentToSend3 setMethodOfTransmission(CommunicationMethod3Choice methodOfTransmission) {
+		this.methodOfTransmission = Objects.requireNonNull(methodOfTransmission);
+		return this;
 	}
 }

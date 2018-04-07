@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Curve;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for benchmark curve name."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BenchmarkCurveName5Choice", propOrder = {"index", "name"})
 public class BenchmarkCurveName5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Indx", required = true)
 	protected BenchmarkCurveName2Code index;
 	/**
-	 * Index name where the underlying is an index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,10 +103,10 @@ public class BenchmarkCurveName5Choice {
 	 * definition} = "Index name where the underlying is an index."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIndex = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BenchmarkCurveName5Choice, BenchmarkCurveName2Code> mmIndex = new MMMessageAttribute<BenchmarkCurveName5Choice, BenchmarkCurveName2Code>() {
 		{
 			businessElementTrace_lazy = () -> Curve.mmName;
-			componentContext_lazy = () -> BenchmarkCurveName5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BenchmarkCurveName5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Indx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,12 +116,22 @@ public class BenchmarkCurveName5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> BenchmarkCurveName2Code.mmObject();
 		}
+
+		@Override
+		public BenchmarkCurveName2Code getValue(BenchmarkCurveName5Choice obj) {
+			return obj.getIndex();
+		}
+
+		@Override
+		public void setValue(BenchmarkCurveName5Choice obj, BenchmarkCurveName2Code value) {
+			obj.setIndex(value);
+		}
 	};
+	@XmlElement(name = "Nm", required = true)
 	protected Max25Text name;
 	/**
-	 * Provides the name that should be used where no ISIN or standardized name
-	 * of the index exists, including its term (such as ‘EURIBOR6M’, ‘LIBOR3M’).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +162,10 @@ public class BenchmarkCurveName5Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BenchmarkCurveName5Choice, Max25Text> mmName = new MMMessageAttribute<BenchmarkCurveName5Choice, Max25Text>() {
 		{
 			businessElementTrace_lazy = () -> Curve.mmName;
-			componentContext_lazy = () -> BenchmarkCurveName5Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.BenchmarkCurveName5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,13 +175,23 @@ public class BenchmarkCurveName5Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max25Text.mmObject();
 		}
+
+		@Override
+		public Max25Text getValue(BenchmarkCurveName5Choice obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(BenchmarkCurveName5Choice obj, Max25Text value) {
+			obj.setName(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BenchmarkCurveName5Choice.mmIndex, BenchmarkCurveName5Choice.mmName);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.BenchmarkCurveName5Choice.mmIndex, com.tools20022.repository.choice.BenchmarkCurveName5Choice.mmName);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BenchmarkCurveName5Choice";
 				definition = "Choice of format for benchmark curve name.";
@@ -178,21 +200,21 @@ public class BenchmarkCurveName5Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Indx", required = true)
 	public BenchmarkCurveName2Code getIndex() {
 		return index;
 	}
 
-	public void setIndex(BenchmarkCurveName2Code index) {
-		this.index = index;
+	public BenchmarkCurveName5Choice setIndex(BenchmarkCurveName2Code index) {
+		this.index = Objects.requireNonNull(index);
+		return this;
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max25Text getName() {
 		return name;
 	}
 
-	public void setName(Max25Text name) {
-		this.name = name;
+	public BenchmarkCurveName5Choice setName(Max25Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 }

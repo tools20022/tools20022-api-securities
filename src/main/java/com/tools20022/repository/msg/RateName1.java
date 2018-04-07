@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max8Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RateName1", propOrder = {"issuer", "rateName"})
 public class RateName1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Issr")
 	protected Max8Text issuer;
 	/**
-	 * Entity that assigns the identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -95,9 +98,9 @@ public class RateName1 {
 	 * definition} = "Entity that assigns the identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateName1, Optional<Max8Text>> mmIssuer = new MMMessageAttribute<RateName1, Optional<Max8Text>>() {
 		{
-			componentContext_lazy = () -> RateName1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateName1.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -107,12 +110,22 @@ public class RateName1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max8Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max8Text> getValue(RateName1 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(RateName1 obj, Optional<Max8Text> value) {
+			obj.setIssuer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RateNm", required = true)
 	protected Max35Text rateName;
 	/**
-	 * Rate Name specifies the reference rate or basis rate on which a variable
-	 * rate is based (ex: EONIA, EURIBOR, LIBOR, FEFUND, EURREPO).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,9 +151,9 @@ public class RateName1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRateName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RateName1, Max35Text> mmRateName = new MMMessageAttribute<RateName1, Max35Text>() {
 		{
-			componentContext_lazy = () -> RateName1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RateName1.mmObject();
 			isDerived = false;
 			xmlTag = "RateNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,13 +163,23 @@ public class RateName1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(RateName1 obj) {
+			return obj.getRateName();
+		}
+
+		@Override
+		public void setValue(RateName1 obj, Max35Text value) {
+			obj.setRateName(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RateName1.mmIssuer, RateName1.mmRateName);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RateName1.mmIssuer, com.tools20022.repository.msg.RateName1.mmRateName);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateName1";
 				definition = "Rate name specifies the reference rate or basis rate on which a variable rate is based (ex: EONIA, EURIBOR, LIBOR, FEFUND, EURREPO).";
@@ -165,21 +188,21 @@ public class RateName1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Issr")
-	public Max8Text getIssuer() {
-		return issuer;
+	public Optional<Max8Text> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(Max8Text issuer) {
+	public RateName1 setIssuer(Max8Text issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 
-	@XmlElement(name = "RateNm", required = true)
 	public Max35Text getRateName() {
 		return rateName;
 	}
 
-	public void setRateName(Max35Text rateName) {
-		this.rateName = rateName;
+	public RateName1 setRateName(Max35Text rateName) {
+		this.rateName = Objects.requireNonNull(rateName);
+		return this;
 	}
 }

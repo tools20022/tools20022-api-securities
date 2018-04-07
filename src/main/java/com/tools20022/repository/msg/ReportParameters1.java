@@ -30,6 +30,8 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -74,8 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintReportNumberRule#forReportParameters1
+ * ConstraintReportNumberRule.forReportParameters1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,16 +96,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Parameters related to the net position."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReportParameters1", propOrder = {"netPositionIdentification", "reportDateAndTime", "updateType", "frequency", "reportNumber", "activityIndicator"})
 public class ReportParameters1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NetPosId", required = true)
 	protected Max35Text netPositionIdentification;
 	/**
-	 * After netting, reference that is common to a net transaction to settle
-	 * and all its underlying trades.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,9 +132,9 @@ public class ReportParameters1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetPositionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters1, Max35Text> mmNetPositionIdentification = new MMMessageAttribute<ReportParameters1, Max35Text>() {
 		{
-			componentContext_lazy = () -> ReportParameters1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters1.mmObject();
 			isDerived = false;
 			xmlTag = "NetPosId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -134,11 +144,22 @@ public class ReportParameters1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ReportParameters1 obj) {
+			return obj.getNetPositionIdentification();
+		}
+
+		@Override
+		public void setValue(ReportParameters1 obj, Max35Text value) {
+			obj.setNetPositionIdentification(value);
+		}
 	};
+	@XmlElement(name = "RptDtAndTm", required = true)
 	protected DateAndDateTimeChoice reportDateAndTime;
 	/**
-	 * Date and time of the net position report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,9 +185,9 @@ public class ReportParameters1 {
 	 * definition} = "Date and time of the net position report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportDateAndTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters1, DateAndDateTimeChoice> mmReportDateAndTime = new MMMessageAttribute<ReportParameters1, DateAndDateTimeChoice>() {
 		{
-			componentContext_lazy = () -> ReportParameters1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters1.mmObject();
 			isDerived = false;
 			xmlTag = "RptDtAndTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,11 +197,22 @@ public class ReportParameters1 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(ReportParameters1 obj) {
+			return obj.getReportDateAndTime();
+		}
+
+		@Override
+		public void setValue(ReportParameters1 obj, DateAndDateTimeChoice value) {
+			obj.setReportDateAndTime(value);
+		}
 	};
+	@XmlElement(name = "UpdTp", required = true)
 	protected StatementUpdateType1Code updateType;
 	/**
-	 * Indicates whether the statement is complete or contains changes only.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,9 +239,9 @@ public class ReportParameters1 {
 	 * "Indicates whether the statement is complete or contains changes only."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUpdateType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters1, StatementUpdateType1Code> mmUpdateType = new MMMessageAttribute<ReportParameters1, StatementUpdateType1Code>() {
 		{
-			componentContext_lazy = () -> ReportParameters1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters1.mmObject();
 			isDerived = false;
 			xmlTag = "UpdTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,11 +251,22 @@ public class ReportParameters1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> StatementUpdateType1Code.mmObject();
 		}
+
+		@Override
+		public StatementUpdateType1Code getValue(ReportParameters1 obj) {
+			return obj.getUpdateType();
+		}
+
+		@Override
+		public void setValue(ReportParameters1 obj, StatementUpdateType1Code value) {
+			obj.setUpdateType(value);
+		}
 	};
+	@XmlElement(name = "Frqcy", required = true)
 	protected EventFrequency6Code frequency;
 	/**
-	 * Frequency of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,9 +292,9 @@ public class ReportParameters1 {
 	 * definition} = "Frequency of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFrequency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters1, EventFrequency6Code> mmFrequency = new MMMessageAttribute<ReportParameters1, EventFrequency6Code>() {
 		{
-			componentContext_lazy = () -> ReportParameters1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters1.mmObject();
 			isDerived = false;
 			xmlTag = "Frqcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -261,11 +304,22 @@ public class ReportParameters1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> EventFrequency6Code.mmObject();
 		}
+
+		@Override
+		public EventFrequency6Code getValue(ReportParameters1 obj) {
+			return obj.getFrequency();
+		}
+
+		@Override
+		public void setValue(ReportParameters1 obj, EventFrequency6Code value) {
+			obj.setFrequency(value);
+		}
 	};
+	@XmlElement(name = "RptNb")
 	protected Exact5NumericText reportNumber;
 	/**
-	 * Sequential number of the report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,9 +345,9 @@ public class ReportParameters1 {
 	 * definition} = "Sequential number of the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters1, Optional<Exact5NumericText>> mmReportNumber = new MMMessageAttribute<ReportParameters1, Optional<Exact5NumericText>>() {
 		{
-			componentContext_lazy = () -> ReportParameters1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters1.mmObject();
 			isDerived = false;
 			xmlTag = "RptNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -303,12 +357,22 @@ public class ReportParameters1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact5NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Exact5NumericText> getValue(ReportParameters1 obj) {
+			return obj.getReportNumber();
+		}
+
+		@Override
+		public void setValue(ReportParameters1 obj, Optional<Exact5NumericText> value) {
+			obj.setReportNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ActvtyInd", required = true)
 	protected YesNoIndicator activityIndicator;
 	/**
-	 * Indicates whether there is activity or information update reported in the
-	 * statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,9 +400,9 @@ public class ReportParameters1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmActivityIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ReportParameters1, YesNoIndicator> mmActivityIndicator = new MMMessageAttribute<ReportParameters1, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> ReportParameters1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ReportParameters1.mmObject();
 			isDerived = false;
 			xmlTag = "ActvtyInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -348,15 +412,27 @@ public class ReportParameters1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(ReportParameters1 obj) {
+			return obj.getActivityIndicator();
+		}
+
+		@Override
+		public void setValue(ReportParameters1 obj, YesNoIndicator value) {
+			obj.setActivityIndicator(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ReportParameters1.mmNetPositionIdentification, ReportParameters1.mmReportDateAndTime, ReportParameters1.mmUpdateType, ReportParameters1.mmFrequency,
-						ReportParameters1.mmReportNumber, ReportParameters1.mmActivityIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportParameters1.mmNetPositionIdentification, com.tools20022.repository.msg.ReportParameters1.mmReportDateAndTime,
+						com.tools20022.repository.msg.ReportParameters1.mmUpdateType, com.tools20022.repository.msg.ReportParameters1.mmFrequency, com.tools20022.repository.msg.ReportParameters1.mmReportNumber,
+						com.tools20022.repository.msg.ReportParameters1.mmActivityIndicator);
 				messageBuildingBlock_lazy = () -> Arrays.asList(NetPositionV03.mmReportParameters);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintReportNumberRule.forReportParameters1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportParameters1";
 				definition = "Parameters related to the net position.";
@@ -365,57 +441,57 @@ public class ReportParameters1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NetPosId", required = true)
 	public Max35Text getNetPositionIdentification() {
 		return netPositionIdentification;
 	}
 
-	public void setNetPositionIdentification(Max35Text netPositionIdentification) {
-		this.netPositionIdentification = netPositionIdentification;
+	public ReportParameters1 setNetPositionIdentification(Max35Text netPositionIdentification) {
+		this.netPositionIdentification = Objects.requireNonNull(netPositionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RptDtAndTm", required = true)
 	public DateAndDateTimeChoice getReportDateAndTime() {
 		return reportDateAndTime;
 	}
 
-	public void setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
-		this.reportDateAndTime = reportDateAndTime;
+	public ReportParameters1 setReportDateAndTime(DateAndDateTimeChoice reportDateAndTime) {
+		this.reportDateAndTime = Objects.requireNonNull(reportDateAndTime);
+		return this;
 	}
 
-	@XmlElement(name = "UpdTp", required = true)
 	public StatementUpdateType1Code getUpdateType() {
 		return updateType;
 	}
 
-	public void setUpdateType(StatementUpdateType1Code updateType) {
-		this.updateType = updateType;
+	public ReportParameters1 setUpdateType(StatementUpdateType1Code updateType) {
+		this.updateType = Objects.requireNonNull(updateType);
+		return this;
 	}
 
-	@XmlElement(name = "Frqcy", required = true)
 	public EventFrequency6Code getFrequency() {
 		return frequency;
 	}
 
-	public void setFrequency(EventFrequency6Code frequency) {
-		this.frequency = frequency;
+	public ReportParameters1 setFrequency(EventFrequency6Code frequency) {
+		this.frequency = Objects.requireNonNull(frequency);
+		return this;
 	}
 
-	@XmlElement(name = "RptNb")
-	public Exact5NumericText getReportNumber() {
-		return reportNumber;
+	public Optional<Exact5NumericText> getReportNumber() {
+		return reportNumber == null ? Optional.empty() : Optional.of(reportNumber);
 	}
 
-	public void setReportNumber(Exact5NumericText reportNumber) {
+	public ReportParameters1 setReportNumber(Exact5NumericText reportNumber) {
 		this.reportNumber = reportNumber;
+		return this;
 	}
 
-	@XmlElement(name = "ActvtyInd", required = true)
 	public YesNoIndicator getActivityIndicator() {
 		return activityIndicator;
 	}
 
-	public void setActivityIndicator(YesNoIndicator activityIndicator) {
-		this.activityIndicator = activityIndicator;
+	public ReportParameters1 setActivityIndicator(YesNoIndicator activityIndicator) {
+		this.activityIndicator = Objects.requireNonNull(activityIndicator);
+		return this;
 	}
 }

@@ -24,9 +24,9 @@ import com.tools20022.repository.choice.*;
 import com.tools20022.repository.entity.AccountStatus;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.OtherAccountStatus1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +67,40 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintClosedStatus1Rule#forAccountStatus2
+ * ConstraintClosedStatus1Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintEnabledDisabledStatus1Rule#forAccountStatus2
+ * ConstraintEnabledDisabledStatus1Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintEnabledDisabledStatus2Rule#forAccountStatus2
+ * ConstraintEnabledDisabledStatus2Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintClosedStatus3Rule#forAccountStatus2
+ * ConstraintClosedStatus3Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintClosedStatus2Rule#forAccountStatus2
+ * ConstraintClosedStatus2Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintClosedStatus4Rule#forAccountStatus2
+ * ConstraintClosedStatus4Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintClosedStatus5Rule#forAccountStatus2
+ * ConstraintClosedStatus5Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintClosedStatus6Rule#forAccountStatus2
+ * ConstraintClosedStatus6Rule.forAccountStatus2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintStatusElementRule#forAccountStatus2
+ * ConstraintStatusElementRule.forAccountStatus2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +111,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Status of an account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountStatus2", propOrder = {"enabled", "disabled", "pending", "pendingOpening", "proforma", "closed", "closurePending", "other"})
 public class AccountStatus2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Nbld")
 	protected EnabledStatusReason1Choice enabled;
 	/**
-	 * Account can be used for its intended purpose.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -113,28 +146,39 @@ public class AccountStatus2 {
 	 * name} = "Enabled"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Account can be used for its intended purpose. "</li>
+	 * definition} = "Account can be used for its intended purpose."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnabled = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<EnabledStatusReason1Choice>> mmEnabled = new MMMessageAssociationEnd<AccountStatus2, Optional<EnabledStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Nbld";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enabled";
-			definition = "Account can be used for its intended purpose. ";
+			definition = "Account can be used for its intended purpose.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> EnabledStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<EnabledStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getEnabled();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<EnabledStatusReason1Choice> value) {
+			obj.setEnabled(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Dsbld")
 	protected DisabledStatusReason1Choice disabled;
 	/**
-	 * Account cannot temporarily be used for its intended purpose.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -164,10 +208,10 @@ public class AccountStatus2 {
 	 * "Account cannot temporarily be used for its intended purpose."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDisabled = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<DisabledStatusReason1Choice>> mmDisabled = new MMMessageAssociationEnd<AccountStatus2, Optional<DisabledStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Dsbld";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -178,11 +222,22 @@ public class AccountStatus2 {
 			isComposite = true;
 			type_lazy = () -> DisabledStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DisabledStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getDisabled();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<DisabledStatusReason1Choice> value) {
+			obj.setDisabled(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Pdg")
 	protected PendingStatusReason1Choice pending;
 	/**
-	 * Account change is pending approval.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -211,10 +266,10 @@ public class AccountStatus2 {
 	 * definition} = "Account change is pending approval."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPending = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<PendingStatusReason1Choice>> mmPending = new MMMessageAssociationEnd<AccountStatus2, Optional<PendingStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Pdg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,11 +280,22 @@ public class AccountStatus2 {
 			isComposite = true;
 			type_lazy = () -> PendingStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PendingStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getPending();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<PendingStatusReason1Choice> value) {
+			obj.setPending(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PdgOpng")
 	protected PendingOpeningStatusReason1Choice pendingOpening;
 	/**
-	 * Account opening is pending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -258,10 +324,10 @@ public class AccountStatus2 {
 	 * definition} = "Account opening is pending."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPendingOpening = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<PendingOpeningStatusReason1Choice>> mmPendingOpening = new MMMessageAssociationEnd<AccountStatus2, Optional<PendingOpeningStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "PdgOpng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -272,13 +338,22 @@ public class AccountStatus2 {
 			isComposite = true;
 			type_lazy = () -> PendingOpeningStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PendingOpeningStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getPendingOpening();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<PendingOpeningStatusReason1Choice> value) {
+			obj.setPendingOpening(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Profrm")
 	protected ProformaStatusReason1Choice proforma;
 	/**
-	 * Account is temporary and can be partially used for its intended purpose.
-	 * The account will be fully available for use when the account servicer has
-	 * received all relevant documents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -309,10 +384,10 @@ public class AccountStatus2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProforma = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<ProformaStatusReason1Choice>> mmProforma = new MMMessageAssociationEnd<AccountStatus2, Optional<ProformaStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Profrm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -323,11 +398,22 @@ public class AccountStatus2 {
 			isComposite = true;
 			type_lazy = () -> ProformaStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ProformaStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getProforma();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<ProformaStatusReason1Choice> value) {
+			obj.setProforma(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Clsd")
 	protected ClosedStatusReason1Choice closed;
 	/**
-	 * Account is closed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -356,10 +442,10 @@ public class AccountStatus2 {
 	 * definition} = "Account is closed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosed = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<ClosedStatusReason1Choice>> mmClosed = new MMMessageAssociationEnd<AccountStatus2, Optional<ClosedStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Clsd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -370,11 +456,22 @@ public class AccountStatus2 {
 			isComposite = true;
 			type_lazy = () -> ClosedStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ClosedStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getClosed();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<ClosedStatusReason1Choice> value) {
+			obj.setClosed(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClsrPdg")
 	protected ClosurePendingStatusReason1Choice closurePending;
 	/**
-	 * Account closure is pending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -403,10 +500,10 @@ public class AccountStatus2 {
 	 * definition} = "Account closure is pending."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosurePending = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, Optional<ClosurePendingStatusReason1Choice>> mmClosurePending = new MMMessageAssociationEnd<AccountStatus2, Optional<ClosurePendingStatusReason1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Status.mmStatusReason;
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "ClsrPdg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -417,11 +514,22 @@ public class AccountStatus2 {
 			isComposite = true;
 			type_lazy = () -> ClosurePendingStatusReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ClosurePendingStatusReason1Choice> getValue(AccountStatus2 obj) {
+			return obj.getClosurePending();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, Optional<ClosurePendingStatusReason1Choice> value) {
+			obj.setClosurePending(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.OtherAccountStatus1> other;
+	@XmlElement(name = "Othr")
+	protected List<OtherAccountStatus1> other;
 	/**
-	 * Status is a bilaterally agreed status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -449,10 +557,10 @@ public class AccountStatus2 {
 	 * definition} = "Status is a bilaterally agreed status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountStatus2, List<OtherAccountStatus1>> mmOther = new MMMessageAssociationEnd<AccountStatus2, List<OtherAccountStatus1>>() {
 		{
 			businessComponentTrace_lazy = () -> AccountStatus.mmObject();
-			componentContext_lazy = () -> AccountStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -460,17 +568,33 @@ public class AccountStatus2 {
 			definition = "Status is a bilaterally agreed status.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OtherAccountStatus1.mmObject();
+			type_lazy = () -> OtherAccountStatus1.mmObject();
+		}
+
+		@Override
+		public List<OtherAccountStatus1> getValue(AccountStatus2 obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(AccountStatus2 obj, List<OtherAccountStatus1> value) {
+			obj.setOther(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountStatus2.mmEnabled, AccountStatus2.mmDisabled, AccountStatus2.mmPending, AccountStatus2.mmPendingOpening, AccountStatus2.mmProforma, AccountStatus2.mmClosed,
-						AccountStatus2.mmClosurePending, AccountStatus2.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountStatus2.mmEnabled, com.tools20022.repository.msg.AccountStatus2.mmDisabled, com.tools20022.repository.msg.AccountStatus2.mmPending,
+						com.tools20022.repository.msg.AccountStatus2.mmPendingOpening, com.tools20022.repository.msg.AccountStatus2.mmProforma, com.tools20022.repository.msg.AccountStatus2.mmClosed,
+						com.tools20022.repository.msg.AccountStatus2.mmClosurePending, com.tools20022.repository.msg.AccountStatus2.mmOther);
 				trace_lazy = () -> AccountStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintClosedStatus1Rule.forAccountStatus2, com.tools20022.repository.constraints.ConstraintEnabledDisabledStatus1Rule.forAccountStatus2,
+						com.tools20022.repository.constraints.ConstraintEnabledDisabledStatus2Rule.forAccountStatus2, com.tools20022.repository.constraints.ConstraintClosedStatus3Rule.forAccountStatus2,
+						com.tools20022.repository.constraints.ConstraintClosedStatus2Rule.forAccountStatus2, com.tools20022.repository.constraints.ConstraintClosedStatus4Rule.forAccountStatus2,
+						com.tools20022.repository.constraints.ConstraintClosedStatus5Rule.forAccountStatus2, com.tools20022.repository.constraints.ConstraintClosedStatus6Rule.forAccountStatus2,
+						com.tools20022.repository.constraints.ConstraintStatusElementRule.forAccountStatus2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatus2";
 				definition = "Status of an account.";
@@ -479,75 +603,75 @@ public class AccountStatus2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Nbld")
-	public EnabledStatusReason1Choice getEnabled() {
-		return enabled;
+	public Optional<EnabledStatusReason1Choice> getEnabled() {
+		return enabled == null ? Optional.empty() : Optional.of(enabled);
 	}
 
-	public void setEnabled(EnabledStatusReason1Choice enabled) {
+	public AccountStatus2 setEnabled(EnabledStatusReason1Choice enabled) {
 		this.enabled = enabled;
+		return this;
 	}
 
-	@XmlElement(name = "Dsbld")
-	public DisabledStatusReason1Choice getDisabled() {
-		return disabled;
+	public Optional<DisabledStatusReason1Choice> getDisabled() {
+		return disabled == null ? Optional.empty() : Optional.of(disabled);
 	}
 
-	public void setDisabled(DisabledStatusReason1Choice disabled) {
+	public AccountStatus2 setDisabled(DisabledStatusReason1Choice disabled) {
 		this.disabled = disabled;
+		return this;
 	}
 
-	@XmlElement(name = "Pdg")
-	public PendingStatusReason1Choice getPending() {
-		return pending;
+	public Optional<PendingStatusReason1Choice> getPending() {
+		return pending == null ? Optional.empty() : Optional.of(pending);
 	}
 
-	public void setPending(PendingStatusReason1Choice pending) {
+	public AccountStatus2 setPending(PendingStatusReason1Choice pending) {
 		this.pending = pending;
+		return this;
 	}
 
-	@XmlElement(name = "PdgOpng")
-	public PendingOpeningStatusReason1Choice getPendingOpening() {
-		return pendingOpening;
+	public Optional<PendingOpeningStatusReason1Choice> getPendingOpening() {
+		return pendingOpening == null ? Optional.empty() : Optional.of(pendingOpening);
 	}
 
-	public void setPendingOpening(PendingOpeningStatusReason1Choice pendingOpening) {
+	public AccountStatus2 setPendingOpening(PendingOpeningStatusReason1Choice pendingOpening) {
 		this.pendingOpening = pendingOpening;
+		return this;
 	}
 
-	@XmlElement(name = "Profrm")
-	public ProformaStatusReason1Choice getProforma() {
-		return proforma;
+	public Optional<ProformaStatusReason1Choice> getProforma() {
+		return proforma == null ? Optional.empty() : Optional.of(proforma);
 	}
 
-	public void setProforma(ProformaStatusReason1Choice proforma) {
+	public AccountStatus2 setProforma(ProformaStatusReason1Choice proforma) {
 		this.proforma = proforma;
+		return this;
 	}
 
-	@XmlElement(name = "Clsd")
-	public ClosedStatusReason1Choice getClosed() {
-		return closed;
+	public Optional<ClosedStatusReason1Choice> getClosed() {
+		return closed == null ? Optional.empty() : Optional.of(closed);
 	}
 
-	public void setClosed(ClosedStatusReason1Choice closed) {
+	public AccountStatus2 setClosed(ClosedStatusReason1Choice closed) {
 		this.closed = closed;
+		return this;
 	}
 
-	@XmlElement(name = "ClsrPdg")
-	public ClosurePendingStatusReason1Choice getClosurePending() {
-		return closurePending;
+	public Optional<ClosurePendingStatusReason1Choice> getClosurePending() {
+		return closurePending == null ? Optional.empty() : Optional.of(closurePending);
 	}
 
-	public void setClosurePending(ClosurePendingStatusReason1Choice closurePending) {
+	public AccountStatus2 setClosurePending(ClosurePendingStatusReason1Choice closurePending) {
 		this.closurePending = closurePending;
+		return this;
 	}
 
-	@XmlElement(name = "Othr")
 	public List<OtherAccountStatus1> getOther() {
-		return other;
+		return other == null ? other = new ArrayList<>() : other;
 	}
 
-	public void setOther(List<com.tools20022.repository.msg.OtherAccountStatus1> other) {
-		this.other = other;
+	public AccountStatus2 setOther(List<OtherAccountStatus1> other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

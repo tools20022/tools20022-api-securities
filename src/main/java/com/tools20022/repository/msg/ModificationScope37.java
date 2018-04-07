@@ -24,8 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.acmt.AccountModificationInstructionV07;
 import com.tools20022.repository.codeset.DataModification1Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.InvestmentPlan15;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ModificationScope37", propOrder = {"modificationScopeIndication", "investmentPlan"})
 public class ModificationScope37 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModScpIndctn", required = true)
 	protected DataModification1Code modificationScopeIndication;
 	/**
-	 * Type of modification to be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,9 +114,9 @@ public class ModificationScope37 {
 	 * definition} = "Type of modification to be applied."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationScopeIndication = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ModificationScope37, DataModification1Code> mmModificationScopeIndication = new MMMessageAttribute<ModificationScope37, DataModification1Code>() {
 		{
-			componentContext_lazy = () -> ModificationScope37.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope37.mmObject();
 			isDerived = false;
 			xmlTag = "ModScpIndctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,12 +126,22 @@ public class ModificationScope37 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DataModification1Code.mmObject();
 		}
+
+		@Override
+		public DataModification1Code getValue(ModificationScope37 obj) {
+			return obj.getModificationScopeIndication();
+		}
+
+		@Override
+		public void setValue(ModificationScope37 obj, DataModification1Code value) {
+			obj.setModificationScopeIndication(value);
+		}
 	};
+	@XmlElement(name = "InvstmtPlan", required = true)
 	protected InvestmentPlan15 investmentPlan;
 	/**
-	 * Plan that allows investors to schedule periodical investments or
-	 * divestments, according to pre-defined criteria.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -154,9 +167,9 @@ public class ModificationScope37 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvestmentPlan = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ModificationScope37, InvestmentPlan15> mmInvestmentPlan = new MMMessageAssociationEnd<ModificationScope37, InvestmentPlan15>() {
 		{
-			componentContext_lazy = () -> ModificationScope37.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope37.mmObject();
 			isDerived = false;
 			xmlTag = "InvstmtPlan";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,16 +178,26 @@ public class ModificationScope37 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentPlan15.mmObject();
+			type_lazy = () -> InvestmentPlan15.mmObject();
+		}
+
+		@Override
+		public InvestmentPlan15 getValue(ModificationScope37 obj) {
+			return obj.getInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(ModificationScope37 obj, InvestmentPlan15 value) {
+			obj.setInvestmentPlan(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ModificationScope37.mmModificationScopeIndication, ModificationScope37.mmInvestmentPlan);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ModificationScope37.mmModificationScopeIndication, com.tools20022.repository.msg.ModificationScope37.mmInvestmentPlan);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountModificationInstructionV07.mmModifiedSavingsInvestmentPlan, AccountModificationInstructionV07.mmModifiedWithdrawalInvestmentPlan);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationScope37";
 				definition = "Scope of the modification to be applied on an identified set of information.";
@@ -183,21 +206,21 @@ public class ModificationScope37 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModScpIndctn", required = true)
 	public DataModification1Code getModificationScopeIndication() {
 		return modificationScopeIndication;
 	}
 
-	public void setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
-		this.modificationScopeIndication = modificationScopeIndication;
+	public ModificationScope37 setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
+		this.modificationScopeIndication = Objects.requireNonNull(modificationScopeIndication);
+		return this;
 	}
 
-	@XmlElement(name = "InvstmtPlan", required = true)
 	public InvestmentPlan15 getInvestmentPlan() {
 		return investmentPlan;
 	}
 
-	public void setInvestmentPlan(com.tools20022.repository.msg.InvestmentPlan15 investmentPlan) {
-		this.investmentPlan = investmentPlan;
+	public ModificationScope37 setInvestmentPlan(InvestmentPlan15 investmentPlan) {
+		this.investmentPlan = Objects.requireNonNull(investmentPlan);
+		return this;
 	}
 }

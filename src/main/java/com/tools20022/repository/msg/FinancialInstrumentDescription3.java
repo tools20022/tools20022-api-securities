@@ -25,8 +25,11 @@ import com.tools20022.repository.datatype.MICIdentifier;
 import com.tools20022.repository.entity.SafekeepingPlace;
 import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.SecurityIdentification7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Description of the financial instrument."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentDescription3", propOrder = {"securityIdentification", "placeOfListing", "safekeepingPlace"})
 public class FinancialInstrumentDescription3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SctyId", required = true)
 	protected SecurityIdentification7 securityIdentification;
 	/**
-	 * Identifies the financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,10 +112,10 @@ public class FinancialInstrumentDescription3 {
 	 * definition} = "Identifies the financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecurityIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentDescription3, SecurityIdentification7> mmSecurityIdentification = new MMMessageAttribute<FinancialInstrumentDescription3, SecurityIdentification7>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmIdentification;
-			componentContext_lazy = () -> FinancialInstrumentDescription3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentDescription3.mmObject();
 			isDerived = false;
 			xmlTag = "SctyId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,13 +123,24 @@ public class FinancialInstrumentDescription3 {
 			definition = "Identifies the financial instrument.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
+			complexType_lazy = () -> SecurityIdentification7.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification7 getValue(FinancialInstrumentDescription3 obj) {
+			return obj.getSecurityIdentification();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentDescription3 obj, SecurityIdentification7 value) {
+			obj.setSecurityIdentification(value);
 		}
 	};
+	@XmlElement(name = "PlcOfListg")
 	protected MICIdentifier placeOfListing;
 	/**
-	 * Place where the referenced financial instrument is listed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +172,10 @@ public class FinancialInstrumentDescription3 {
 	 * "Place where the referenced financial instrument is listed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPlaceOfListing = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentDescription3, Optional<MICIdentifier>> mmPlaceOfListing = new MMMessageAttribute<FinancialInstrumentDescription3, Optional<MICIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmPlaceOfListing;
-			componentContext_lazy = () -> FinancialInstrumentDescription3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentDescription3.mmObject();
 			isDerived = false;
 			xmlTag = "PlcOfListg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +185,22 @@ public class FinancialInstrumentDescription3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> MICIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<MICIdentifier> getValue(FinancialInstrumentDescription3 obj) {
+			return obj.getPlaceOfListing();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentDescription3 obj, Optional<MICIdentifier> value) {
+			obj.setPlaceOfListing(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SfkpgPlc")
 	protected PartyIdentification2Choice safekeepingPlace;
 	/**
-	 * Identification of the place of safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,10 +231,10 @@ public class FinancialInstrumentDescription3 {
 	 * definition} = "Identification of the place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSafekeepingPlace = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialInstrumentDescription3, Optional<PartyIdentification2Choice>> mmSafekeepingPlace = new MMMessageAttribute<FinancialInstrumentDescription3, Optional<PartyIdentification2Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SafekeepingPlace.mmObject();
-			componentContext_lazy = () -> FinancialInstrumentDescription3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentDescription3.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgPlc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -218,14 +244,25 @@ public class FinancialInstrumentDescription3 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(FinancialInstrumentDescription3 obj) {
+			return obj.getSafekeepingPlace();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentDescription3 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setSafekeepingPlace(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialInstrumentDescription3.mmSecurityIdentification, FinancialInstrumentDescription3.mmPlaceOfListing, FinancialInstrumentDescription3.mmSafekeepingPlace);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FinancialInstrumentDescription3.mmSecurityIdentification, com.tools20022.repository.msg.FinancialInstrumentDescription3.mmPlaceOfListing,
+						com.tools20022.repository.msg.FinancialInstrumentDescription3.mmSafekeepingPlace);
 				trace_lazy = () -> Security.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentDescription3";
 				definition = "Description of the financial instrument.";
@@ -234,30 +271,30 @@ public class FinancialInstrumentDescription3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SctyId", required = true)
 	public SecurityIdentification7 getSecurityIdentification() {
 		return securityIdentification;
 	}
 
-	public void setSecurityIdentification(com.tools20022.repository.msg.SecurityIdentification7 securityIdentification) {
-		this.securityIdentification = securityIdentification;
+	public FinancialInstrumentDescription3 setSecurityIdentification(SecurityIdentification7 securityIdentification) {
+		this.securityIdentification = Objects.requireNonNull(securityIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PlcOfListg")
-	public MICIdentifier getPlaceOfListing() {
-		return placeOfListing;
+	public Optional<MICIdentifier> getPlaceOfListing() {
+		return placeOfListing == null ? Optional.empty() : Optional.of(placeOfListing);
 	}
 
-	public void setPlaceOfListing(MICIdentifier placeOfListing) {
+	public FinancialInstrumentDescription3 setPlaceOfListing(MICIdentifier placeOfListing) {
 		this.placeOfListing = placeOfListing;
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgPlc")
-	public PartyIdentification2Choice getSafekeepingPlace() {
-		return safekeepingPlace;
+	public Optional<PartyIdentification2Choice> getSafekeepingPlace() {
+		return safekeepingPlace == null ? Optional.empty() : Optional.of(safekeepingPlace);
 	}
 
-	public void setSafekeepingPlace(PartyIdentification2Choice safekeepingPlace) {
+	public FinancialInstrumentDescription3 setSafekeepingPlace(PartyIdentification2Choice safekeepingPlace) {
 		this.safekeepingPlace = safekeepingPlace;
+		return this;
 	}
 }

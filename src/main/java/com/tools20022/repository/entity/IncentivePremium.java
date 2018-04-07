@@ -21,11 +21,13 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.IncentivePremiumType1Choice;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.Distribution;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.IncentivePremium3;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Cash premium made available if the securities holder consents or participates
@@ -94,8 +96,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +115,8 @@ public class IncentivePremium {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Number perSecurity;
 	/**
-	 * Number of securities giving right to a premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +147,7 @@ public class IncentivePremium {
 	 * definition} = "Number of securities giving right to a premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPerSecurity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IncentivePremium, Number> mmPerSecurity = new MMBusinessAttribute<IncentivePremium, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IncentivePremiumType1Choice.mmPerSecurity);
 			isDerived = false;
@@ -158,18 +160,20 @@ public class IncentivePremium {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IncentivePremium.class.getMethod("getPerSecurity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(IncentivePremium obj) {
+			return obj.getPerSecurity();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, Number value) {
+			obj.setPerSecurity(value);
 		}
 	};
 	protected Number perVote;
 	/**
-	 * Number of votes giving right to a premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,7 +204,7 @@ public class IncentivePremium {
 	 * definition} = "Number of votes giving right to a premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPerVote = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IncentivePremium, Number> mmPerVote = new MMBusinessAttribute<IncentivePremium, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IncentivePremiumType1Choice.mmPerVote);
 			isDerived = false;
@@ -213,18 +217,20 @@ public class IncentivePremium {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IncentivePremium.class.getMethod("getPerVote", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(IncentivePremium obj) {
+			return obj.getPerVote();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, Number value) {
+			obj.setPerVote(value);
 		}
 	};
 	protected YesNoIndicator perAttendee;
 	/**
-	 * Indicates that the premium is given per attendee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,7 +262,7 @@ public class IncentivePremium {
 	 * definition} = "Indicates that the premium is given per attendee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPerAttendee = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IncentivePremium, YesNoIndicator> mmPerAttendee = new MMBusinessAttribute<IncentivePremium, YesNoIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IncentivePremiumType1Choice.mmPerAttendee);
 			isDerived = false;
@@ -269,18 +275,20 @@ public class IncentivePremium {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IncentivePremium.class.getMethod("getPerAttendee", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(IncentivePremium obj) {
+			return obj.getPerAttendee();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, YesNoIndicator value) {
+			obj.setPerAttendee(value);
 		}
 	};
 	protected Max350Text description;
 	/**
-	 * Description of the premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -311,7 +319,7 @@ public class IncentivePremium {
 	 * definition} = "Description of the premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IncentivePremium, Max350Text> mmDescription = new MMBusinessAttribute<IncentivePremium, Max350Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IncentivePremium3.mmDescription);
 			isDerived = false;
@@ -324,18 +332,20 @@ public class IncentivePremium {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IncentivePremium.class.getMethod("getDescription", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(IncentivePremium obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, Max350Text value) {
+			obj.setDescription(value);
 		}
 	};
 	protected CurrencyAndAmount premiumAmount;
 	/**
-	 * Cash premium paid per security, per vote or per attendee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -367,7 +377,7 @@ public class IncentivePremium {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IncentivePremium, CurrencyAndAmount> mmPremiumAmount = new MMBusinessAttribute<IncentivePremium, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IncentivePremium3.mmAmount);
 			isDerived = false;
@@ -380,18 +390,20 @@ public class IncentivePremium {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IncentivePremium.class.getMethod("getPremiumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(IncentivePremium obj) {
+			return obj.getPremiumAmount();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, CurrencyAndAmount value) {
+			obj.setPremiumAmount(value);
 		}
 	};
 	protected ISODateTime paymentDate;
 	/**
-	 * Date/time for the payment of the premium.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,7 +434,7 @@ public class IncentivePremium {
 	 * definition} = "Date/time for the payment of the premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IncentivePremium, ISODateTime> mmPaymentDate = new MMBusinessAttribute<IncentivePremium, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IncentivePremium3.mmPaymentDate);
 			isDerived = false;
@@ -435,18 +447,20 @@ public class IncentivePremium {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IncentivePremium.class.getMethod("getPaymentDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(IncentivePremium obj) {
+			return obj.getPaymentDate();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, ISODateTime value) {
+			obj.setPaymentDate(value);
 		}
 	};
 	protected Meeting meeting;
 	/**
-	 * Meeting for which an incentive premium is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -476,7 +490,7 @@ public class IncentivePremium {
 	 * definition} = "Meeting for which an incentive premium is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<IncentivePremium, Meeting> mmMeeting = new MMBusinessAssociationEnd<IncentivePremium, Meeting>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
@@ -485,15 +499,25 @@ public class IncentivePremium {
 			definition = "Meeting for which an incentive premium is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmIncentivePremium;
+			opposite_lazy = () -> Meeting.mmIncentivePremium;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public Meeting getValue(IncentivePremium obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, Meeting value) {
+			obj.setMeeting(value);
 		}
 	};
 	protected Distribution corporateActionDistribution;
 	/**
-	 * CorporateActionDistribution for which an incentive premium is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,7 +550,7 @@ public class IncentivePremium {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<IncentivePremium, Distribution> mmCorporateActionDistribution = new MMBusinessAssociationEnd<IncentivePremium, Distribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
@@ -535,20 +559,30 @@ public class IncentivePremium {
 			definition = "CorporateActionDistribution for which an incentive premium is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmIncentivePremium;
+			opposite_lazy = () -> Distribution.mmIncentivePremium;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
+			type_lazy = () -> Distribution.mmObject();
+		}
+
+		@Override
+		public Distribution getValue(IncentivePremium obj) {
+			return obj.getCorporateActionDistribution();
+		}
+
+		@Override
+		public void setValue(IncentivePremium obj, Distribution value) {
+			obj.setCorporateActionDistribution(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IncentivePremium";
 				definition = "Cash premium made available if the securities holder consents or participates to an event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmIncentivePremium, com.tools20022.repository.entity.Distribution.mmIncentivePremium);
+				associationDomain_lazy = () -> Arrays.asList(Meeting.mmIncentivePremium, Distribution.mmIncentivePremium);
 				derivationElement_lazy = () -> Arrays.asList(IncentivePremium3.mmType);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IncentivePremium.mmPerSecurity, com.tools20022.repository.entity.IncentivePremium.mmPerVote,
 						com.tools20022.repository.entity.IncentivePremium.mmPerAttendee, com.tools20022.repository.entity.IncentivePremium.mmDescription, com.tools20022.repository.entity.IncentivePremium.mmPremiumAmount,
@@ -568,63 +602,71 @@ public class IncentivePremium {
 		return perSecurity;
 	}
 
-	public void setPerSecurity(Number perSecurity) {
-		this.perSecurity = perSecurity;
+	public IncentivePremium setPerSecurity(Number perSecurity) {
+		this.perSecurity = Objects.requireNonNull(perSecurity);
+		return this;
 	}
 
 	public Number getPerVote() {
 		return perVote;
 	}
 
-	public void setPerVote(Number perVote) {
-		this.perVote = perVote;
+	public IncentivePremium setPerVote(Number perVote) {
+		this.perVote = Objects.requireNonNull(perVote);
+		return this;
 	}
 
 	public YesNoIndicator getPerAttendee() {
 		return perAttendee;
 	}
 
-	public void setPerAttendee(YesNoIndicator perAttendee) {
-		this.perAttendee = perAttendee;
+	public IncentivePremium setPerAttendee(YesNoIndicator perAttendee) {
+		this.perAttendee = Objects.requireNonNull(perAttendee);
+		return this;
 	}
 
 	public Max350Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max350Text description) {
-		this.description = description;
+	public IncentivePremium setDescription(Max350Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public CurrencyAndAmount getPremiumAmount() {
 		return premiumAmount;
 	}
 
-	public void setPremiumAmount(CurrencyAndAmount premiumAmount) {
-		this.premiumAmount = premiumAmount;
+	public IncentivePremium setPremiumAmount(CurrencyAndAmount premiumAmount) {
+		this.premiumAmount = Objects.requireNonNull(premiumAmount);
+		return this;
 	}
 
 	public ISODateTime getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(ISODateTime paymentDate) {
-		this.paymentDate = paymentDate;
+	public IncentivePremium setPaymentDate(ISODateTime paymentDate) {
+		this.paymentDate = Objects.requireNonNull(paymentDate);
+		return this;
 	}
 
 	public Meeting getMeeting() {
 		return meeting;
 	}
 
-	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
-		this.meeting = meeting;
+	public IncentivePremium setMeeting(Meeting meeting) {
+		this.meeting = Objects.requireNonNull(meeting);
+		return this;
 	}
 
 	public Distribution getCorporateActionDistribution() {
 		return corporateActionDistribution;
 	}
 
-	public void setCorporateActionDistribution(com.tools20022.repository.entity.Distribution corporateActionDistribution) {
-		this.corporateActionDistribution = corporateActionDistribution;
+	public IncentivePremium setCorporateActionDistribution(Distribution corporateActionDistribution) {
+		this.corporateActionDistribution = Objects.requireNonNull(corporateActionDistribution);
+		return this;
 	}
 }

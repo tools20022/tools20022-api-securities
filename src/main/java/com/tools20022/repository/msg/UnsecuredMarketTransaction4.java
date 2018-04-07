@@ -27,9 +27,11 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.FloatingRateNote2;
+import com.tools20022.repository.msg.Option12;
+import com.tools20022.repository.msg.SupplementaryData1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -116,8 +118,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintFloatingRateNotePresenceRule#forUnsecuredMarketTransaction4
+ * ConstraintFloatingRateNotePresenceRule.forUnsecuredMarketTransaction4}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintDealRatePresenceRule#forUnsecuredMarketTransaction4
+ * ConstraintDealRatePresenceRule.forUnsecuredMarketTransaction4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -129,21 +142,18 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides the details of each individual un\r\nsecured market transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnsecuredMarketTransaction4", propOrder = {"reportedTransactionStatus", "novationStatus", "branchIdentification", "uniqueTransactionIdentifier", "proprietaryTransactionIdentification",
 		"relatedProprietaryTransactionIdentification", "counterpartyProprietaryTransactionIdentification", "counterpartyIdentification", "tradeDate", "settlementDate", "maturityDate", "transactionType", "instrumentType",
 		"transactionNominalAmount", "dealPrice", "rateType", "dealRate", "floatingRateNote", "brokeredDeal", "callPutOption", "supplementaryData"})
 public class UnsecuredMarketTransaction4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptdTxSts", required = true)
 	protected TransactionOperationType1Code reportedTransactionStatus;
 	/**
-	 * Defines the status of the reported transaction, that is details on
-	 * whether the transaction is a new transaction, an amendment of a
-	 * previously reported transaction, a cancellation of a previously reported
-	 * transaction or a correction to a previously reported and rejected
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,9 +181,9 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReportedTransactionStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, TransactionOperationType1Code> mmReportedTransactionStatus = new MMMessageAttribute<UnsecuredMarketTransaction4, TransactionOperationType1Code>() {
 		{
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "RptdTxSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,11 +193,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TransactionOperationType1Code.mmObject();
 		}
+
+		@Override
+		public TransactionOperationType1Code getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getReportedTransactionStatus();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, TransactionOperationType1Code value) {
+			obj.setReportedTransactionStatus(value);
+		}
 	};
+	@XmlElement(name = "NvtnSts")
 	protected NovationStatus1Code novationStatus;
 	/**
-	 * Provides the novation status for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -218,10 +239,10 @@ public class UnsecuredMarketTransaction4 {
 	 * definition} = "Provides the novation status for the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNovationStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<NovationStatus1Code>> mmNovationStatus = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<NovationStatus1Code>>() {
 		{
 			businessElementTrace_lazy = () -> Novation.mmNovationStatus;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "NvtnSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -231,19 +252,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> NovationStatus1Code.mmObject();
 		}
+
+		@Override
+		public Optional<NovationStatus1Code> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getNovationStatus();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<NovationStatus1Code> value) {
+			obj.setNovationStatus(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BrnchId")
 	protected LEIIdentifier branchIdentification;
 	/**
-	 * Unique and unambiguous legal entity identification of the branch of the
-	 * reporting agent in which the transaction has been booked.<br>
-	 * <br>
-	 * Usage: This field must only be provided if the transaction has been
-	 * conducted and booked by a branch of the reporting agent and only if this
-	 * branch has its own LEI that the reporting agent can clearly identify. <br>
-	 * Where the transaction has been booked by the head office or the reporting
-	 * agent cannot be identified by a unique branch-specific LEI, the reporting
-	 * agent must provide the LEI of the head office.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,31 +296,39 @@ public class UnsecuredMarketTransaction4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Unique and unambiguous legal entity identification of  the branch of the reporting agent in which the transaction has been booked.\r\n\r\nUsage: This field must only be provided if the transaction has been conducted and booked by a branch of the reporting agent and only if this branch has its own LEI that the reporting agent can clearly identify. \r\nWhere the transaction has been booked by the head office or the reporting agent cannot be identified by a unique branch-specific LEI, the reporting agent must provide the LEI of the head office."
+	 * "Unique and unambiguous legal entity identification of the branch of the reporting agent in which the transaction has been booked.\r\n\r\nUsage: This field must only be provided if the transaction has been conducted and booked by a branch of the reporting agent and only if this branch has its own LEI that the reporting agent can clearly identify. \r\nWhere the transaction has been booked by the head office or the reporting agent cannot be identified by a unique branch-specific LEI, the reporting agent must provide the LEI of the head office."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBranchIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<LEIIdentifier>> mmBranchIdentification = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<LEIIdentifier>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmLEI;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "BrnchId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BranchIdentification";
-			definition = "Unique and unambiguous legal entity identification of  the branch of the reporting agent in which the transaction has been booked.\r\n\r\nUsage: This field must only be provided if the transaction has been conducted and booked by a branch of the reporting agent and only if this branch has its own LEI that the reporting agent can clearly identify. \r\nWhere the transaction has been booked by the head office or the reporting agent cannot be identified by a unique branch-specific LEI, the reporting agent must provide the LEI of the head office.";
+			definition = "Unique and unambiguous legal entity identification of the branch of the reporting agent in which the transaction has been booked.\r\n\r\nUsage: This field must only be provided if the transaction has been conducted and booked by a branch of the reporting agent and only if this branch has its own LEI that the reporting agent can clearly identify. \r\nWhere the transaction has been booked by the head office or the reporting agent cannot be identified by a unique branch-specific LEI, the reporting agent must provide the LEI of the head office.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getBranchIdentification();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<LEIIdentifier> value) {
+			obj.setBranchIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UnqTxIdr")
 	protected Max105Text uniqueTransactionIdentifier;
 	/**
-	 * Unique transaction identifier will be created at the time a transaction
-	 * is first executed, shared with all registered entities and counterparties
-	 * involved in the transaction, and used to track that particular
-	 * transaction during its lifetime.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,10 +360,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUniqueTransactionIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<Max105Text>> mmUniqueTransactionIdentifier = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<Max105Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmUniqueTradeIdentifier;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "UnqTxIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -341,12 +373,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max105Text> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getUniqueTransactionIdentifier();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<Max105Text> value) {
+			obj.setUniqueTransactionIdentifier(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtryTxId", required = true)
 	protected Max105Text proprietaryTransactionIdentification;
 	/**
-	 * Internal unique transaction identifier used by the reporting agent for
-	 * each transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,30 +416,39 @@ public class UnsecuredMarketTransaction4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Internal unique transaction identifier used by the reporting agent for each transaction. "
+	 * "Internal unique transaction identifier used by the reporting agent for each transaction."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Max105Text> mmProprietaryTransactionIdentification = new MMMessageAttribute<UnsecuredMarketTransaction4, Max105Text>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmIdentification;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProprietaryTransactionIdentification";
-			definition = "Internal unique transaction identifier used by the reporting agent for each transaction. ";
+			definition = "Internal unique transaction identifier used by the reporting agent for each transaction.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
+
+		@Override
+		public Max105Text getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getProprietaryTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Max105Text value) {
+			obj.setProprietaryTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "RltdPrtryTxId")
 	protected Max105Text relatedProprietaryTransactionIdentification;
 	/**
-	 * Original proprietary transaction identifier used by the reporting agent
-	 * to indicate the proprietary transaction identification of the transaction
-	 * which is novated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -429,10 +480,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRelatedProprietaryTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<Max105Text>> mmRelatedProprietaryTransactionIdentification = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<Max105Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmIdentification;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "RltdPrtryTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -442,12 +493,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max105Text> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getRelatedProprietaryTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<Max105Text> value) {
+			obj.setRelatedProprietaryTransactionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtrPtyPrtryTxId")
 	protected Max105Text counterpartyProprietaryTransactionIdentification;
 	/**
-	 * Internal unique proprietary transaction identifier as assigned by the
-	 * counterparty of the reporting agent for each transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,10 +540,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCounterpartyProprietaryTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<Max105Text>> mmCounterpartyProprietaryTransactionIdentification = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<Max105Text>>() {
 		{
 			businessElementTrace_lazy = () -> TradeIdentification.mmCounterpartyReference;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "CtrPtyPrtryTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -492,12 +553,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max105Text> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getCounterpartyProprietaryTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<Max105Text> value) {
+			obj.setCounterpartyProprietaryTransactionIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtrPtyId", required = true)
 	protected CounterpartyIdentification3Choice counterpartyIdentification;
 	/**
-	 * Identification of the counterparty of the reporting agent for the
-	 * reported transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -525,38 +596,40 @@ public class UnsecuredMarketTransaction4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Identification of the counterparty of the reporting agent for the reported transaction. "
+	 * "Identification of the counterparty of the reporting agent for the reported transaction."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCounterpartyIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnsecuredMarketTransaction4, CounterpartyIdentification3Choice> mmCounterpartyIdentification = new MMMessageAssociationEnd<UnsecuredMarketTransaction4, CounterpartyIdentification3Choice>() {
 		{
 			businessElementTrace_lazy = () -> CounterpartyRisk.mmParty;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "CtrPtyId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyIdentification";
-			definition = "Identification of the counterparty of the reporting agent for the reported transaction. ";
+			definition = "Identification of the counterparty of the reporting agent for the reported transaction.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> CounterpartyIdentification3Choice.mmObject();
 		}
+
+		@Override
+		public CounterpartyIdentification3Choice getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getCounterpartyIdentification();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, CounterpartyIdentification3Choice value) {
+			obj.setCounterpartyIdentification(value);
+		}
 	};
+	@XmlElement(name = "TradDt", required = true)
 	protected DateAndDateTimeChoice tradeDate;
 	/**
-	 * Date and time on which the parties entered into the reported transaction.<br>
-	 * <br>
-	 * Usage: when time is available, it must be reported.<br>
-	 * <br>
-	 * It is to be reported with only the date when the time of the transaction
-	 * is not available. <br>
-	 * <br>
-	 * The reported time is the execution time when available or otherwise the
-	 * time at which the transaction entered the trading system of the reporting
-	 * agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -584,36 +657,40 @@ public class UnsecuredMarketTransaction4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Date and time on which the parties entered into the reported transaction.\r\n\r\nUsage: when time is available, it must be reported.\r\n\r\nIt is to be reported with only the date when the time of the transaction is not available. \r\n\r\nThe reported time is the execution time when available or otherwise the time at which the transaction entered the trading system of the reporting agent. "
+	 * "Date and time on which the parties entered into the reported transaction.\r\n\r\nUsage: when time is available, it must be reported.\r\n\r\nIt is to be reported with only the date when the time of the transaction is not available. \r\n\r\nThe reported time is the execution time when available or otherwise the time at which the transaction entered the trading system of the reporting agent."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTradeDate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnsecuredMarketTransaction4, DateAndDateTimeChoice> mmTradeDate = new MMMessageAssociationEnd<UnsecuredMarketTransaction4, DateAndDateTimeChoice>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "TradDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradeDate";
-			definition = "Date and time on which the parties entered into the reported transaction.\r\n\r\nUsage: when time is available, it must be reported.\r\n\r\nIt is to be reported with only the date when the time of the transaction is not available. \r\n\r\nThe reported time is the execution time when available or otherwise the time at which the transaction entered the trading system of the reporting agent. ";
+			definition = "Date and time on which the parties entered into the reported transaction.\r\n\r\nUsage: when time is available, it must be reported.\r\n\r\nIt is to be reported with only the date when the time of the transaction is not available. \r\n\r\nThe reported time is the execution time when available or otherwise the time at which the transaction entered the trading system of the reporting agent.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getTradeDate();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, DateAndDateTimeChoice value) {
+			obj.setTradeDate(value);
+		}
 	};
+	@XmlElement(name = "SttlmDt", required = true)
 	protected ISODate settlementDate;
 	/**
-	 * Date on which the amount of money is exchanged by counterparties or on
-	 * which the purchase or sale of a debt instrument settles. <br>
-	 * With regard to call accounts and other unsecured borrowing/lending
-	 * redeemable at notice, it is the date on which the deposit is rolled over,
-	 * that is on which it would have been paid back if it had been called/not
-	 * rolled over. In the case of a settlement failure in which settlement
-	 * takes place on a different date than initially agreed, no transactional
-	 * amendment needs to be reported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -645,10 +722,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, ISODate> mmSettlementDate = new MMMessageAttribute<UnsecuredMarketTransaction4, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementDate;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -658,16 +735,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public ISODate getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getSettlementDate();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, ISODate value) {
+			obj.setSettlementDate(value);
+		}
 	};
+	@XmlElement(name = "MtrtyDt", required = true)
 	protected ISODate maturityDate;
 	/**
-	 * Date on which the amount of money is due to be repaid by the borrower to
-	 * the lender or on which a debt instrument matures and is due to be paid
-	 * back. In regards to callable and puttable instruments, the final maturity
-	 * date must be provided. For call accounts and other unsecured
-	 * borrowing/lending redeemable upon notice, the first date on which the
-	 * instrument may be redeemed must be provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -699,10 +782,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaturityDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, ISODate> mmMaturityDate = new MMMessageAttribute<UnsecuredMarketTransaction4, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Asset.mmMaturityDate;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "MtrtyDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -712,12 +795,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public ISODate getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getMaturityDate();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, ISODate value) {
+			obj.setMaturityDate(value);
+		}
 	};
+	@XmlElement(name = "TxTp", required = true)
 	protected MoneyMarketTransactionType1Code transactionType;
 	/**
-	 * Defines whether the transaction is a cash borrowing or cash lending
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -750,10 +843,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, MoneyMarketTransactionType1Code> mmTransactionType = new MMMessageAttribute<UnsecuredMarketTransaction4, MoneyMarketTransactionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTrade.mmTransactionType;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "TxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -763,12 +856,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> MoneyMarketTransactionType1Code.mmObject();
 		}
+
+		@Override
+		public MoneyMarketTransactionType1Code getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, MoneyMarketTransactionType1Code value) {
+			obj.setTransactionType(value);
+		}
 	};
+	@XmlElement(name = "InstrmTp", required = true)
 	protected FinancialInstrumentProductType1Code instrumentType;
 	/**
-	 * Defines the instrument via which the borrowing or lending transaction
-	 * takes place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -801,10 +904,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstrumentType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, FinancialInstrumentProductType1Code> mmInstrumentType = new MMMessageAttribute<UnsecuredMarketTransaction4, FinancialInstrumentProductType1Code>() {
 		{
 			businessElementTrace_lazy = () -> AssetClassification.mmProductType;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "InstrmTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -814,13 +917,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> FinancialInstrumentProductType1Code.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentProductType1Code getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getInstrumentType();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, FinancialInstrumentProductType1Code value) {
+			obj.setInstrumentType(value);
+		}
 	};
+	@XmlElement(name = "TxNmnlAmt", required = true)
 	protected ActiveCurrencyAndAmount transactionNominalAmount;
 	/**
-	 * Amount of money initially borrowed or lent on deposits. In the case of
-	 * debt securities, it is the nominal amount of the security issued or
-	 * purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -853,10 +965,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionNominalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, ActiveCurrencyAndAmount> mmTransactionNominalAmount = new MMMessageAttribute<UnsecuredMarketTransaction4, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmAmount;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "TxNmnlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -866,12 +978,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getTransactionNominalAmount();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, ActiveCurrencyAndAmount value) {
+			obj.setTransactionNominalAmount(value);
+		}
 	};
+	@XmlElement(name = "DealPric", required = true)
 	protected PercentageRate dealPrice;
 	/**
-	 * Dirty price at which the security is issued or traded in percentage
-	 * points, and which is to be reported as 100 for unsecured deposits.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -904,10 +1026,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDealPrice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, PercentageRate> mmDealPrice = new MMMessageAttribute<UnsecuredMarketTransaction4, PercentageRate>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmDealPrice;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "DealPric";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -917,14 +1039,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public PercentageRate getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getDealPrice();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, PercentageRate value) {
+			obj.setDealPrice(value);
+		}
 	};
+	@XmlElement(name = "RateTp", required = true)
 	protected InterestRateType1Code rateType;
 	/**
-	 * Fixed rate for deposits and debt instruments with fixed coupons or
-	 * variable rate for debt instruments for which the pay out at maturity or
-	 * period depends on observed value of some underlying reference rate as
-	 * well as for unsecured deposits paying interest at regular intervals. <br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -957,10 +1087,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRateType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, InterestRateType1Code> mmRateType = new MMMessageAttribute<UnsecuredMarketTransaction4, InterestRateType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmTypeOfInterest;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "RateTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -970,30 +1100,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> InterestRateType1Code.mmObject();
 		}
+
+		@Override
+		public InterestRateType1Code getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getRateType();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, InterestRateType1Code value) {
+			obj.setRateType(value);
+		}
 	};
+	@XmlElement(name = "DealRate")
 	protected PercentageRate dealRate;
 	/**
-	 * Interest rate expressed in accordance with the local money market
-	 * convention at which the repurchase agreement has been concluded and at
-	 * which the cash lent is remunerated.<br>
-	 * <br>
-	 * Usage:<br>
-	 * When the remuneration for securities lending transactions is represented
-	 * by a fee amount, the fee amount will be translated into a deal rate per
-	 * annum based on the ratio between the fee amount and the transaction
-	 * nominal amount times number of days based on relevant money market
-	 * convention divided by the number of days between the settlement date and
-	 * the maturity of the transaction. <br>
-	 * <br>
-	 * Only actual values, as opposed to estimated or default values, will be
-	 * reported for this variable.<br>
-	 * <br>
-	 * This value can be either positive or negative irrespective of whether the
-	 * cash is borrowed or lent. It represents the contractually agreed
-	 * remuneration rate on the transaction nominal amount regardless of the
-	 * transaction sign (that whether the transaction type is reported as
-	 * borrowed or lent).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1026,10 +1148,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDealRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<PercentageRate>> mmDealRate = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmRate;
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "DealRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1039,14 +1161,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getDealRate();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<PercentageRate> value) {
+			obj.setDealRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FltgRateNote")
 	protected FloatingRateNote2 floatingRateNote;
 	/**
-	 * Debt instrument in which the periodic interest payments are calculated on
-	 * the basis of the value (that is fixing of an underlying reference rate
-	 * such as EURIBOR) on predefined dates (that is fixing) dates and which has
-	 * a maturity of no more than one year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1076,10 +1206,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFloatingRateNote = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnsecuredMarketTransaction4, Optional<FloatingRateNote2>> mmFloatingRateNote = new MMMessageAssociationEnd<UnsecuredMarketTransaction4, Optional<FloatingRateNote2>>() {
 		{
 			businessComponentTrace_lazy = () -> Future.mmObject();
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "FltgRateNote";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1088,14 +1218,24 @@ public class UnsecuredMarketTransaction4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FloatingRateNote2.mmObject();
+			type_lazy = () -> FloatingRateNote2.mmObject();
+		}
+
+		@Override
+		public Optional<FloatingRateNote2> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getFloatingRateNote();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<FloatingRateNote2> value) {
+			obj.setFloatingRateNote(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "BrkrdDeal")
 	protected BrokeredDeal1Code brokeredDeal;
 	/**
-	 * Specifies whether the transaction is arranged via a third party broker or
-	 * not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1123,9 +1263,9 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBrokeredDeal = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnsecuredMarketTransaction4, Optional<BrokeredDeal1Code>> mmBrokeredDeal = new MMMessageAttribute<UnsecuredMarketTransaction4, Optional<BrokeredDeal1Code>>() {
 		{
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "BrkrdDeal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1135,12 +1275,22 @@ public class UnsecuredMarketTransaction4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BrokeredDeal1Code.mmObject();
 		}
+
+		@Override
+		public Optional<BrokeredDeal1Code> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getBrokeredDeal();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, Optional<BrokeredDeal1Code> value) {
+			obj.setBrokeredDeal(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.Option12> callPutOption;
+	@XmlElement(name = "CallPutOptn")
+	protected List<Option12> callPutOption;
 	/**
-	 * Provides the option details, when the transaction reported is a call/put
-	 * option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1169,10 +1319,10 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCallPutOption = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnsecuredMarketTransaction4, List<Option12>> mmCallPutOption = new MMMessageAssociationEnd<UnsecuredMarketTransaction4, List<Option12>>() {
 		{
 			businessComponentTrace_lazy = () -> Option.mmObject();
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "CallPutOptn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1181,14 +1331,24 @@ public class UnsecuredMarketTransaction4 {
 			maxOccurs = 2;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Option12.mmObject();
+			type_lazy = () -> Option12.mmObject();
+		}
+
+		@Override
+		public List<Option12> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getCallPutOption();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, List<Option12> value) {
+			obj.setCallPutOption(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
+	@XmlElement(name = "SplmtryData")
+	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1214,9 +1374,9 @@ public class UnsecuredMarketTransaction4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnsecuredMarketTransaction4, List<SupplementaryData1>> mmSupplementaryData = new MMMessageAssociationEnd<UnsecuredMarketTransaction4, List<SupplementaryData1>>() {
 		{
-			componentContext_lazy = () -> UnsecuredMarketTransaction4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1224,21 +1384,37 @@ public class UnsecuredMarketTransaction4 {
 			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
+			type_lazy = () -> SupplementaryData1.mmObject();
+		}
+
+		@Override
+		public List<SupplementaryData1> getValue(UnsecuredMarketTransaction4 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(UnsecuredMarketTransaction4 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnsecuredMarketTransaction4.mmReportedTransactionStatus, UnsecuredMarketTransaction4.mmNovationStatus, UnsecuredMarketTransaction4.mmBranchIdentification,
-						UnsecuredMarketTransaction4.mmUniqueTransactionIdentifier, UnsecuredMarketTransaction4.mmProprietaryTransactionIdentification, UnsecuredMarketTransaction4.mmRelatedProprietaryTransactionIdentification,
-						UnsecuredMarketTransaction4.mmCounterpartyProprietaryTransactionIdentification, UnsecuredMarketTransaction4.mmCounterpartyIdentification, UnsecuredMarketTransaction4.mmTradeDate,
-						UnsecuredMarketTransaction4.mmSettlementDate, UnsecuredMarketTransaction4.mmMaturityDate, UnsecuredMarketTransaction4.mmTransactionType, UnsecuredMarketTransaction4.mmInstrumentType,
-						UnsecuredMarketTransaction4.mmTransactionNominalAmount, UnsecuredMarketTransaction4.mmDealPrice, UnsecuredMarketTransaction4.mmRateType, UnsecuredMarketTransaction4.mmDealRate,
-						UnsecuredMarketTransaction4.mmFloatingRateNote, UnsecuredMarketTransaction4.mmBrokeredDeal, UnsecuredMarketTransaction4.mmCallPutOption, UnsecuredMarketTransaction4.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmReportedTransactionStatus, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmNovationStatus,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmBranchIdentification, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmUniqueTransactionIdentifier,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmProprietaryTransactionIdentification, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmRelatedProprietaryTransactionIdentification,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmCounterpartyProprietaryTransactionIdentification, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmCounterpartyIdentification,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmTradeDate, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmSettlementDate,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmMaturityDate, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmTransactionType,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmInstrumentType, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmTransactionNominalAmount,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmDealPrice, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmRateType, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmDealRate,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmFloatingRateNote, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmBrokeredDeal,
+						com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmCallPutOption, com.tools20022.repository.msg.UnsecuredMarketTransaction4.mmSupplementaryData);
 				trace_lazy = () -> Derivative.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintFloatingRateNotePresenceRule.forUnsecuredMarketTransaction4,
+						com.tools20022.repository.constraints.ConstraintDealRatePresenceRule.forUnsecuredMarketTransaction4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnsecuredMarketTransaction4";
 				definition = "Provides the details of each individual un\r\nsecured market transaction.";
@@ -1247,192 +1423,192 @@ public class UnsecuredMarketTransaction4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptdTxSts", required = true)
 	public TransactionOperationType1Code getReportedTransactionStatus() {
 		return reportedTransactionStatus;
 	}
 
-	public void setReportedTransactionStatus(TransactionOperationType1Code reportedTransactionStatus) {
-		this.reportedTransactionStatus = reportedTransactionStatus;
+	public UnsecuredMarketTransaction4 setReportedTransactionStatus(TransactionOperationType1Code reportedTransactionStatus) {
+		this.reportedTransactionStatus = Objects.requireNonNull(reportedTransactionStatus);
+		return this;
 	}
 
-	@XmlElement(name = "NvtnSts")
-	public NovationStatus1Code getNovationStatus() {
-		return novationStatus;
+	public Optional<NovationStatus1Code> getNovationStatus() {
+		return novationStatus == null ? Optional.empty() : Optional.of(novationStatus);
 	}
 
-	public void setNovationStatus(NovationStatus1Code novationStatus) {
+	public UnsecuredMarketTransaction4 setNovationStatus(NovationStatus1Code novationStatus) {
 		this.novationStatus = novationStatus;
+		return this;
 	}
 
-	@XmlElement(name = "BrnchId")
-	public LEIIdentifier getBranchIdentification() {
-		return branchIdentification;
+	public Optional<LEIIdentifier> getBranchIdentification() {
+		return branchIdentification == null ? Optional.empty() : Optional.of(branchIdentification);
 	}
 
-	public void setBranchIdentification(LEIIdentifier branchIdentification) {
+	public UnsecuredMarketTransaction4 setBranchIdentification(LEIIdentifier branchIdentification) {
 		this.branchIdentification = branchIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "UnqTxIdr")
-	public Max105Text getUniqueTransactionIdentifier() {
-		return uniqueTransactionIdentifier;
+	public Optional<Max105Text> getUniqueTransactionIdentifier() {
+		return uniqueTransactionIdentifier == null ? Optional.empty() : Optional.of(uniqueTransactionIdentifier);
 	}
 
-	public void setUniqueTransactionIdentifier(Max105Text uniqueTransactionIdentifier) {
+	public UnsecuredMarketTransaction4 setUniqueTransactionIdentifier(Max105Text uniqueTransactionIdentifier) {
 		this.uniqueTransactionIdentifier = uniqueTransactionIdentifier;
+		return this;
 	}
 
-	@XmlElement(name = "PrtryTxId", required = true)
 	public Max105Text getProprietaryTransactionIdentification() {
 		return proprietaryTransactionIdentification;
 	}
 
-	public void setProprietaryTransactionIdentification(Max105Text proprietaryTransactionIdentification) {
-		this.proprietaryTransactionIdentification = proprietaryTransactionIdentification;
+	public UnsecuredMarketTransaction4 setProprietaryTransactionIdentification(Max105Text proprietaryTransactionIdentification) {
+		this.proprietaryTransactionIdentification = Objects.requireNonNull(proprietaryTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RltdPrtryTxId")
-	public Max105Text getRelatedProprietaryTransactionIdentification() {
-		return relatedProprietaryTransactionIdentification;
+	public Optional<Max105Text> getRelatedProprietaryTransactionIdentification() {
+		return relatedProprietaryTransactionIdentification == null ? Optional.empty() : Optional.of(relatedProprietaryTransactionIdentification);
 	}
 
-	public void setRelatedProprietaryTransactionIdentification(Max105Text relatedProprietaryTransactionIdentification) {
+	public UnsecuredMarketTransaction4 setRelatedProprietaryTransactionIdentification(Max105Text relatedProprietaryTransactionIdentification) {
 		this.relatedProprietaryTransactionIdentification = relatedProprietaryTransactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CtrPtyPrtryTxId")
-	public Max105Text getCounterpartyProprietaryTransactionIdentification() {
-		return counterpartyProprietaryTransactionIdentification;
+	public Optional<Max105Text> getCounterpartyProprietaryTransactionIdentification() {
+		return counterpartyProprietaryTransactionIdentification == null ? Optional.empty() : Optional.of(counterpartyProprietaryTransactionIdentification);
 	}
 
-	public void setCounterpartyProprietaryTransactionIdentification(Max105Text counterpartyProprietaryTransactionIdentification) {
+	public UnsecuredMarketTransaction4 setCounterpartyProprietaryTransactionIdentification(Max105Text counterpartyProprietaryTransactionIdentification) {
 		this.counterpartyProprietaryTransactionIdentification = counterpartyProprietaryTransactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CtrPtyId", required = true)
 	public CounterpartyIdentification3Choice getCounterpartyIdentification() {
 		return counterpartyIdentification;
 	}
 
-	public void setCounterpartyIdentification(CounterpartyIdentification3Choice counterpartyIdentification) {
-		this.counterpartyIdentification = counterpartyIdentification;
+	public UnsecuredMarketTransaction4 setCounterpartyIdentification(CounterpartyIdentification3Choice counterpartyIdentification) {
+		this.counterpartyIdentification = Objects.requireNonNull(counterpartyIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "TradDt", required = true)
 	public DateAndDateTimeChoice getTradeDate() {
 		return tradeDate;
 	}
 
-	public void setTradeDate(DateAndDateTimeChoice tradeDate) {
-		this.tradeDate = tradeDate;
+	public UnsecuredMarketTransaction4 setTradeDate(DateAndDateTimeChoice tradeDate) {
+		this.tradeDate = Objects.requireNonNull(tradeDate);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmDt", required = true)
 	public ISODate getSettlementDate() {
 		return settlementDate;
 	}
 
-	public void setSettlementDate(ISODate settlementDate) {
-		this.settlementDate = settlementDate;
+	public UnsecuredMarketTransaction4 setSettlementDate(ISODate settlementDate) {
+		this.settlementDate = Objects.requireNonNull(settlementDate);
+		return this;
 	}
 
-	@XmlElement(name = "MtrtyDt", required = true)
 	public ISODate getMaturityDate() {
 		return maturityDate;
 	}
 
-	public void setMaturityDate(ISODate maturityDate) {
-		this.maturityDate = maturityDate;
+	public UnsecuredMarketTransaction4 setMaturityDate(ISODate maturityDate) {
+		this.maturityDate = Objects.requireNonNull(maturityDate);
+		return this;
 	}
 
-	@XmlElement(name = "TxTp", required = true)
 	public MoneyMarketTransactionType1Code getTransactionType() {
 		return transactionType;
 	}
 
-	public void setTransactionType(MoneyMarketTransactionType1Code transactionType) {
-		this.transactionType = transactionType;
+	public UnsecuredMarketTransaction4 setTransactionType(MoneyMarketTransactionType1Code transactionType) {
+		this.transactionType = Objects.requireNonNull(transactionType);
+		return this;
 	}
 
-	@XmlElement(name = "InstrmTp", required = true)
 	public FinancialInstrumentProductType1Code getInstrumentType() {
 		return instrumentType;
 	}
 
-	public void setInstrumentType(FinancialInstrumentProductType1Code instrumentType) {
-		this.instrumentType = instrumentType;
+	public UnsecuredMarketTransaction4 setInstrumentType(FinancialInstrumentProductType1Code instrumentType) {
+		this.instrumentType = Objects.requireNonNull(instrumentType);
+		return this;
 	}
 
-	@XmlElement(name = "TxNmnlAmt", required = true)
 	public ActiveCurrencyAndAmount getTransactionNominalAmount() {
 		return transactionNominalAmount;
 	}
 
-	public void setTransactionNominalAmount(ActiveCurrencyAndAmount transactionNominalAmount) {
-		this.transactionNominalAmount = transactionNominalAmount;
+	public UnsecuredMarketTransaction4 setTransactionNominalAmount(ActiveCurrencyAndAmount transactionNominalAmount) {
+		this.transactionNominalAmount = Objects.requireNonNull(transactionNominalAmount);
+		return this;
 	}
 
-	@XmlElement(name = "DealPric", required = true)
 	public PercentageRate getDealPrice() {
 		return dealPrice;
 	}
 
-	public void setDealPrice(PercentageRate dealPrice) {
-		this.dealPrice = dealPrice;
+	public UnsecuredMarketTransaction4 setDealPrice(PercentageRate dealPrice) {
+		this.dealPrice = Objects.requireNonNull(dealPrice);
+		return this;
 	}
 
-	@XmlElement(name = "RateTp", required = true)
 	public InterestRateType1Code getRateType() {
 		return rateType;
 	}
 
-	public void setRateType(InterestRateType1Code rateType) {
-		this.rateType = rateType;
+	public UnsecuredMarketTransaction4 setRateType(InterestRateType1Code rateType) {
+		this.rateType = Objects.requireNonNull(rateType);
+		return this;
 	}
 
-	@XmlElement(name = "DealRate")
-	public PercentageRate getDealRate() {
-		return dealRate;
+	public Optional<PercentageRate> getDealRate() {
+		return dealRate == null ? Optional.empty() : Optional.of(dealRate);
 	}
 
-	public void setDealRate(PercentageRate dealRate) {
+	public UnsecuredMarketTransaction4 setDealRate(PercentageRate dealRate) {
 		this.dealRate = dealRate;
+		return this;
 	}
 
-	@XmlElement(name = "FltgRateNote")
-	public FloatingRateNote2 getFloatingRateNote() {
-		return floatingRateNote;
+	public Optional<FloatingRateNote2> getFloatingRateNote() {
+		return floatingRateNote == null ? Optional.empty() : Optional.of(floatingRateNote);
 	}
 
-	public void setFloatingRateNote(com.tools20022.repository.msg.FloatingRateNote2 floatingRateNote) {
+	public UnsecuredMarketTransaction4 setFloatingRateNote(FloatingRateNote2 floatingRateNote) {
 		this.floatingRateNote = floatingRateNote;
+		return this;
 	}
 
-	@XmlElement(name = "BrkrdDeal")
-	public BrokeredDeal1Code getBrokeredDeal() {
-		return brokeredDeal;
+	public Optional<BrokeredDeal1Code> getBrokeredDeal() {
+		return brokeredDeal == null ? Optional.empty() : Optional.of(brokeredDeal);
 	}
 
-	public void setBrokeredDeal(BrokeredDeal1Code brokeredDeal) {
+	public UnsecuredMarketTransaction4 setBrokeredDeal(BrokeredDeal1Code brokeredDeal) {
 		this.brokeredDeal = brokeredDeal;
+		return this;
 	}
 
-	@XmlElement(name = "CallPutOptn")
 	public List<Option12> getCallPutOption() {
-		return callPutOption;
+		return callPutOption == null ? callPutOption = new ArrayList<>() : callPutOption;
 	}
 
-	public void setCallPutOption(List<com.tools20022.repository.msg.Option12> callPutOption) {
-		this.callPutOption = callPutOption;
+	public UnsecuredMarketTransaction4 setCallPutOption(List<Option12> callPutOption) {
+		this.callPutOption = Objects.requireNonNull(callPutOption);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public UnsecuredMarketTransaction4 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

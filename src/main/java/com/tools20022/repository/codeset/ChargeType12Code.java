@@ -38,27 +38,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#BackEndLoad
- * ChargeType12Code.mmBackEndLoad}</li>
+ * ChargeType12Code.BackEndLoad}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType12Code#Discount
- * ChargeType12Code.mmDiscount}</li>
+ * ChargeType12Code.Discount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#FrontEndLoad
- * ChargeType12Code.mmFrontEndLoad}</li>
+ * ChargeType12Code.FrontEndLoad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#PostageCharge
- * ChargeType12Code.mmPostageCharge}</li>
+ * ChargeType12Code.PostageCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#RegulatoryFee
- * ChargeType12Code.mmRegulatoryFee}</li>
+ * ChargeType12Code.RegulatoryFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#ShippingCharge
- * ChargeType12Code.mmShippingCharge}</li>
+ * ChargeType12Code.ShippingCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#SpecialConcessions
- * ChargeType12Code.mmSpecialConcessions}</li>
+ * ChargeType12Code.SpecialConcessions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType12Code#TransferFee
- * ChargeType12Code.mmTransferFee}</li>
+ * ChargeType12Code.TransferFee}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -288,7 +288,7 @@ public class ChargeType12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BEND");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeType12Code";

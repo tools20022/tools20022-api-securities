@@ -38,23 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType1Code#NegotiatedTransactionInIlliquidFinancialInstrument
- * ReportingWaiverType1Code.mmNegotiatedTransactionInIlliquidFinancialInstrument
- * }</li>
+ * ReportingWaiverType1Code.NegotiatedTransactionInIlliquidFinancialInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType1Code#NegotiatedTransactionInLiquidFinancialInstrument
- * ReportingWaiverType1Code.mmNegotiatedTransactionInLiquidFinancialInstrument}</li>
+ * ReportingWaiverType1Code.NegotiatedTransactionInLiquidFinancialInstrument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType1Code#NegotiatedTransactionWithConditions
- * ReportingWaiverType1Code.mmNegotiatedTransactionWithConditions}</li>
+ * ReportingWaiverType1Code.NegotiatedTransactionWithConditions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType1Code#IlliquidInstrumentTransaction
- * ReportingWaiverType1Code.mmIlliquidInstrumentTransaction}</li>
+ * ReportingWaiverType1Code.IlliquidInstrumentTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType1Code#ReferencePriceTransaction
- * ReportingWaiverType1Code.mmReferencePriceTransaction}</li>
+ * ReportingWaiverType1Code.ReferencePriceTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ReportingWaiverType1Code#AboveSpecificSizeTransaction
- * ReportingWaiverType1Code.mmAboveSpecificSizeTransaction}</li>
+ * ReportingWaiverType1Code.AboveSpecificSizeTransaction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -63,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -231,7 +230,7 @@ public class ReportingWaiverType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportingWaiverType1Code";
 				definition = "Specifies the type of regulatory reporting pre-trade waiver.";

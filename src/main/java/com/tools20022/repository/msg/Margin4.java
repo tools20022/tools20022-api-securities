@@ -25,8 +25,11 @@ import com.tools20022.repository.choice.MarginType1Choice;
 import com.tools20022.repository.codeset.CreditDebitCode;
 import com.tools20022.repository.entity.MarginCall;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Amount2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +56,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintVariationMarginTextualRule#forMargin4
+ * ConstraintVariationMarginTextualRule.forMargin4}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides details on the type of margin amounts."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Margin4", propOrder = {"type", "amount", "creditDebitIndicator"})
 public class Margin4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected MarginType1Choice type;
 	/**
-	 * Specifies the type of margin that is calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,10 +115,10 @@ public class Margin4 {
 	 * definition} = "Specifies the type of margin that is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Margin4, MarginType1Choice> mmType = new MMMessageAttribute<Margin4, MarginType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmMarginType;
-			componentContext_lazy = () -> Margin4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Margin4.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,12 +128,22 @@ public class Margin4 {
 			minOccurs = 1;
 			complexType_lazy = () -> MarginType1Choice.mmObject();
 		}
+
+		@Override
+		public MarginType1Choice getValue(Margin4 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Margin4 obj, MarginType1Choice value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected Amount2 amount;
 	/**
-	 * Provides the margin amount in the reporting currency and optionally in
-	 * the original currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -150,10 +172,10 @@ public class Margin4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Margin4, Amount2> mmAmount = new MMMessageAssociationEnd<Margin4, Amount2>() {
 		{
 			businessElementTrace_lazy = () -> MarginCall.mmTotalMarginAmount;
-			componentContext_lazy = () -> Margin4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Margin4.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,14 +184,24 @@ public class Margin4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Amount2.mmObject();
+			type_lazy = () -> Amount2.mmObject();
+		}
+
+		@Override
+		public Amount2 getValue(Margin4 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(Margin4 obj, Amount2 value) {
+			obj.setAmount(value);
 		}
 	};
+	@XmlElement(name = "CdtDbtInd")
 	protected CreditDebitCode creditDebitIndicator;
 	/**
-	 * Specifies whether the margin type position is short or long, that is,
-	 * whether the balance is a negative or positive balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,9 +228,9 @@ public class Margin4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Margin4, Optional<CreditDebitCode>> mmCreditDebitIndicator = new MMMessageAttribute<Margin4, Optional<CreditDebitCode>>() {
 		{
-			componentContext_lazy = () -> Margin4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Margin4.mmObject();
 			isDerived = false;
 			xmlTag = "CdtDbtInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -208,14 +240,25 @@ public class Margin4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
+
+		@Override
+		public Optional<CreditDebitCode> getValue(Margin4 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(Margin4 obj, Optional<CreditDebitCode> value) {
+			obj.setCreditDebitIndicator(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Margin4.mmType, Margin4.mmAmount, Margin4.mmCreditDebitIndicator);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Margin4.mmType, com.tools20022.repository.msg.Margin4.mmAmount, com.tools20022.repository.msg.Margin4.mmCreditDebitIndicator);
 				trace_lazy = () -> MarginCall.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintVariationMarginTextualRule.forMargin4);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Margin4";
 				definition = "Provides details on the type of margin amounts.";
@@ -224,30 +267,30 @@ public class Margin4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public MarginType1Choice getType() {
 		return type;
 	}
 
-	public void setType(MarginType1Choice type) {
-		this.type = type;
+	public Margin4 setType(MarginType1Choice type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public Amount2 getAmount() {
 		return amount;
 	}
 
-	public void setAmount(com.tools20022.repository.msg.Amount2 amount) {
-		this.amount = amount;
+	public Margin4 setAmount(Amount2 amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "CdtDbtInd")
-	public CreditDebitCode getCreditDebitIndicator() {
-		return creditDebitIndicator;
+	public Optional<CreditDebitCode> getCreditDebitIndicator() {
+		return creditDebitIndicator == null ? Optional.empty() : Optional.of(creditDebitIndicator);
 	}
 
-	public void setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
+	public Margin4 setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
 		this.creditDebitIndicator = creditDebitIndicator;
+		return this;
 	}
 }

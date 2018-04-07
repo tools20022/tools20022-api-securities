@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteris
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,19 +64,20 @@ import javax.xml.bind.annotation.XmlType;
  * "Forms"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Processing characteristics linked to the instrument, ie, not to  the market."
+ * "Processing characteristics linked to the instrument, ie, not to the market."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Forms", propOrder = {"applicationForm", "signatureType"})
 public class Forms {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ApplForm", required = true)
 	protected YesNoIndicator applicationForm;
 	/**
-	 * Physical application form is required.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,10 +107,10 @@ public class Forms {
 	 * definition} = "Physical application form is required."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApplicationForm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Forms, YesNoIndicator> mmApplicationForm = new MMMessageAttribute<Forms, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmApplicationForm;
-			componentContext_lazy = () -> Forms.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Forms.mmObject();
 			isDerived = false;
 			xmlTag = "ApplForm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class Forms {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(Forms obj) {
+			return obj.getApplicationForm();
+		}
+
+		@Override
+		public void setValue(Forms obj, YesNoIndicator value) {
+			obj.setApplicationForm(value);
+		}
 	};
+	@XmlElement(name = "SgntrTp", required = true)
 	protected SignatureType1Code signatureType;
 	/**
-	 * Type of signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +165,10 @@ public class Forms {
 	 * definition} = "Type of signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSignatureType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Forms, SignatureType1Code> mmSignatureType = new MMMessageAttribute<Forms, SignatureType1Code>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmSignatureRequired;
-			componentContext_lazy = () -> Forms.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Forms.mmObject();
 			isDerived = false;
 			xmlTag = "SgntrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,37 +178,47 @@ public class Forms {
 			minOccurs = 1;
 			simpleType_lazy = () -> SignatureType1Code.mmObject();
 		}
+
+		@Override
+		public SignatureType1Code getValue(Forms obj) {
+			return obj.getSignatureType();
+		}
+
+		@Override
+		public void setValue(Forms obj, SignatureType1Code value) {
+			obj.setSignatureType(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Forms.mmApplicationForm, Forms.mmSignatureType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Forms.mmApplicationForm, com.tools20022.repository.msg.Forms.mmSignatureType);
 				trace_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Forms";
-				definition = "Processing characteristics linked to the instrument, ie, not to  the market.";
+				definition = "Processing characteristics linked to the instrument, ie, not to the market.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ApplForm", required = true)
 	public YesNoIndicator getApplicationForm() {
 		return applicationForm;
 	}
 
-	public void setApplicationForm(YesNoIndicator applicationForm) {
-		this.applicationForm = applicationForm;
+	public Forms setApplicationForm(YesNoIndicator applicationForm) {
+		this.applicationForm = Objects.requireNonNull(applicationForm);
+		return this;
 	}
 
-	@XmlElement(name = "SgntrTp", required = true)
 	public SignatureType1Code getSignatureType() {
 		return signatureType;
 	}
 
-	public void setSignatureType(SignatureType1Code signatureType) {
-		this.signatureType = signatureType;
+	public Forms setSignatureType(SignatureType1Code signatureType) {
+		this.signatureType = Objects.requireNonNull(signatureType);
+		return this;
 	}
 }

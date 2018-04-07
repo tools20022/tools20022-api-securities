@@ -37,21 +37,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatus1Code#Divorced
- * CivilStatus1Code.mmDivorced}</li>
+ * CivilStatus1Code.Divorced}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CivilStatus1Code#LegallyDivorced
- * CivilStatus1Code.mmLegallyDivorced}</li>
+ * CivilStatus1Code.LegallyDivorced}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatus1Code#Married
- * CivilStatus1Code.mmMarried}</li>
+ * CivilStatus1Code.Married}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatus1Code#Separated
- * CivilStatus1Code.mmSeparated}</li>
+ * CivilStatus1Code.Separated}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatus1Code#Single
- * CivilStatus1Code.mmSingle}</li>
+ * CivilStatus1Code.Single}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CivilStatus1Code#StableUnion
- * CivilStatus1Code.mmStableUnion}</li>
+ * CivilStatus1Code.StableUnion}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CivilStatus1Code#Widow
- * CivilStatus1Code.mmWidow}</li>
+ * CivilStatus1Code.Widow}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -252,7 +252,7 @@ public class CivilStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CivilStatus1Code";
 				definition = "Specifies the civil status of a person.";

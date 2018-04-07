@@ -39,28 +39,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#AccountServicerDeadlineMissed
- * PendingProcessingReason3Code.mmAccountServicerDeadlineMissed}</li>
+ * PendingProcessingReason3Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#AccountBlocked
- * PendingProcessingReason3Code.mmAccountBlocked}</li>
+ * PendingProcessingReason3Code.AccountBlocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#MultipleSettlementAmount
- * PendingProcessingReason3Code.mmMultipleSettlementAmount}</li>
+ * PendingProcessingReason3Code.MultipleSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#NextProcess
- * PendingProcessingReason3Code.mmNextProcess}</li>
+ * PendingProcessingReason3Code.NextProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#MinimumSettlementAmount
- * PendingProcessingReason3Code.mmMinimumSettlementAmount}</li>
+ * PendingProcessingReason3Code.MinimumSettlementAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#Other
- * PendingProcessingReason3Code.mmOther}</li>
+ * PendingProcessingReason3Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#UnavailableDeliverableDenominatedQuantity
- * PendingProcessingReason3Code.mmUnavailableDeliverableDenominatedQuantity}</li>
+ * PendingProcessingReason3Code.UnavailableDeliverableDenominatedQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PendingProcessingReason3Code#WrongCertificatesNumbers
- * PendingProcessingReason3Code.mmWrongCertificatesNumbers}</li>
+ * PendingProcessingReason3Code.WrongCertificatesNumbers}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -69,8 +69,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -293,7 +293,7 @@ public class PendingProcessingReason3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PendingProcessingReason3Code";

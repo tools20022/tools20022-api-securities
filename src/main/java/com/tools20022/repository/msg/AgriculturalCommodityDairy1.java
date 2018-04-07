@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Commodity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AgriculturalCommodityDairy1", propOrder = {"baseProduct", "subProduct"})
 public class AgriculturalCommodityDairy1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "BasePdct", required = true)
 	protected AssetClassProductType1Code baseProduct;
 	/**
-	 * Base product for the underlying asset class as specified in the
-	 * classification of commodities derivatives table.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +111,10 @@ public class AgriculturalCommodityDairy1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AgriculturalCommodityDairy1, AssetClassProductType1Code> mmBaseProduct = new MMMessageAttribute<AgriculturalCommodityDairy1, AssetClassProductType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmBaseProduct;
-			componentContext_lazy = () -> AgriculturalCommodityDairy1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AgriculturalCommodityDairy1.mmObject();
 			isDerived = false;
 			xmlTag = "BasePdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +124,22 @@ public class AgriculturalCommodityDairy1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AssetClassProductType1Code.mmObject();
 		}
+
+		@Override
+		public AssetClassProductType1Code getValue(AgriculturalCommodityDairy1 obj) {
+			return obj.getBaseProduct();
+		}
+
+		@Override
+		public void setValue(AgriculturalCommodityDairy1 obj, AssetClassProductType1Code value) {
+			obj.setBaseProduct(value);
+		}
 	};
+	@XmlElement(name = "SubPdct", required = true)
 	protected AssetClassSubProductType20Code subProduct;
 	/**
-	 * Sub-product for the underlying asset class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +170,10 @@ public class AgriculturalCommodityDairy1 {
 	 * definition} = "Sub-product for the underlying asset class."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSubProduct = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AgriculturalCommodityDairy1, AssetClassSubProductType20Code> mmSubProduct = new MMMessageAttribute<AgriculturalCommodityDairy1, AssetClassSubProductType20Code>() {
 		{
 			businessElementTrace_lazy = () -> Commodity.mmSubProduct;
-			componentContext_lazy = () -> AgriculturalCommodityDairy1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AgriculturalCommodityDairy1.mmObject();
 			isDerived = false;
 			xmlTag = "SubPdct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +183,24 @@ public class AgriculturalCommodityDairy1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AssetClassSubProductType20Code.mmObject();
 		}
+
+		@Override
+		public AssetClassSubProductType20Code getValue(AgriculturalCommodityDairy1 obj) {
+			return obj.getSubProduct();
+		}
+
+		@Override
+		public void setValue(AgriculturalCommodityDairy1 obj, AssetClassSubProductType20Code value) {
+			obj.setSubProduct(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AgriculturalCommodityDairy1.mmBaseProduct, AgriculturalCommodityDairy1.mmSubProduct);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AgriculturalCommodityDairy1.mmBaseProduct, com.tools20022.repository.msg.AgriculturalCommodityDairy1.mmSubProduct);
 				trace_lazy = () -> Commodity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AgriculturalCommodityDairy1";
 				definition = "Defines commodity sub-product attributes of an agricultural derivative of type dairy.";
@@ -187,21 +209,21 @@ public class AgriculturalCommodityDairy1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "BasePdct", required = true)
 	public AssetClassProductType1Code getBaseProduct() {
 		return baseProduct;
 	}
 
-	public void setBaseProduct(AssetClassProductType1Code baseProduct) {
-		this.baseProduct = baseProduct;
+	public AgriculturalCommodityDairy1 setBaseProduct(AssetClassProductType1Code baseProduct) {
+		this.baseProduct = Objects.requireNonNull(baseProduct);
+		return this;
 	}
 
-	@XmlElement(name = "SubPdct", required = true)
 	public AssetClassSubProductType20Code getSubProduct() {
 		return subProduct;
 	}
 
-	public void setSubProduct(AssetClassSubProductType20Code subProduct) {
-		this.subProduct = subProduct;
+	public AgriculturalCommodityDairy1 setSubProduct(AssetClassSubProductType20Code subProduct) {
+		this.subProduct = Objects.requireNonNull(subProduct);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -26,8 +27,10 @@ import com.tools20022.repository.codeset.LegalFramework1Code;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -170,8 +173,11 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = ISO15022Synonym: Sequence E</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -183,7 +189,7 @@ import javax.xml.bind.annotation.XmlType;
  * "Details of the closing of the securities financing transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesFinancing10", propOrder = {"rateChangeDate", "rateType", "revaluation", "legalFramework", "interestComputationMethod", "variableRateSupport", "repurchaseRate", "stockLoanMargin", "securitiesHaircut",
 		"pricingRate", "spreadRate", "callableTradeIndicator", "transactionCallDelay", "accruedInterestAmount", "accruedInterestPercentage", "forfeitAmount", "premiumAmount", "closingAmountPerPiecesOfCollateral",
 		"totalNumberOfCollateralInstructions", "financingAgreement", "lendingTransactionMethod", "lendingWithCollateral", "borrowingReason", "collateralType", "contractTermsModificationChanged", "interestRate", "borrowingRate",
@@ -192,10 +198,11 @@ import javax.xml.bind.annotation.XmlType;
 public class SecuritiesFinancing10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RateChngDt")
 	protected ISODateTime rateChangeDate;
 	/**
-	 * Date/Time at which rate change has taken place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -225,10 +232,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Date/Time at which rate change has taken place."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRateChangeDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<ISODateTime>> mmRateChangeDate = new MMMessageAttribute<SecuritiesFinancing10, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmRateChangeDateTime;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "RateChngDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -238,11 +245,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(SecuritiesFinancing10 obj) {
+			return obj.getRateChangeDate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<ISODateTime> value) {
+			obj.setRateChangeDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RateTp")
 	protected RateType19Choice rateType;
 	/**
-	 * Specifies whether the rate is fixed or variable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,10 +291,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Specifies whether the rate is fixed or variable."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRateType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<RateType19Choice>> mmRateType = new MMMessageAttribute<SecuritiesFinancing10, Optional<RateType19Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmRateType;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "RateTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -286,12 +304,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> RateType19Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateType19Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getRateType();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<RateType19Choice> value) {
+			obj.setRateType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Rvaltn")
 	protected Revaluation2Choice revaluation;
 	/**
-	 * Specifies whether the collateral position should be subject to automatic
-	 * revaluation by the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,10 +352,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRevaluation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Revaluation2Choice>> mmRevaluation = new MMMessageAttribute<SecuritiesFinancing10, Optional<Revaluation2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmRevaluationIndicator;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "Rvaltn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -337,11 +365,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> Revaluation2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<Revaluation2Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getRevaluation();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Revaluation2Choice> value) {
+			obj.setRevaluation(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LglFrmwk")
 	protected LegalFramework1Code legalFramework;
 	/**
-	 * Legal framework of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,10 +411,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Legal framework of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLegalFramework = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<LegalFramework1Code>> mmLegalFramework = new MMMessageAttribute<SecuritiesFinancing10, Optional<LegalFramework1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTrade.mmLegalFramework;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "LglFrmwk";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -385,12 +424,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LegalFramework1Code.mmObject();
 		}
+
+		@Override
+		public Optional<LegalFramework1Code> getValue(SecuritiesFinancing10 obj) {
+			return obj.getLegalFramework();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<LegalFramework1Code> value) {
+			obj.setLegalFramework(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IntrstCmptnMtd")
 	protected InterestComputationMethod2Choice interestComputationMethod;
 	/**
-	 * Identifies the computation method of accrued interest of the related
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -423,10 +472,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestComputationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<InterestComputationMethod2Choice>> mmInterestComputationMethod = new MMMessageAttribute<SecuritiesFinancing10, Optional<InterestComputationMethod2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmDayCountBasis;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstCmptnMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -436,12 +485,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> InterestComputationMethod2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<InterestComputationMethod2Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getInterestComputationMethod();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<InterestComputationMethod2Choice> value) {
+			obj.setInterestComputationMethod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VarblRateSpprt")
 	protected RateName1 variableRateSupport;
 	/**
-	 * Index or support rate used together with the spread to calculate the
-	 * repurchase rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -471,10 +530,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmVariableRateSupport = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<RateName1>> mmVariableRateSupport = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<RateName1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmVariableRateSupport;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "VarblRateSpprt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -483,13 +542,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RateName1.mmObject();
+			type_lazy = () -> RateName1.mmObject();
+		}
+
+		@Override
+		public Optional<RateName1> getValue(SecuritiesFinancing10 obj) {
+			return obj.getVariableRateSupport();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<RateName1> value) {
+			obj.setVariableRateSupport(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RpRate")
 	protected Rate2 repurchaseRate;
 	/**
-	 * Repurchase rate used to calculate the repurchase amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -517,10 +587,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Repurchase rate used to calculate the repurchase amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRepurchaseRate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Rate2>> mmRepurchaseRate = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmRepurchaseRate;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "RpRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -529,14 +599,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			type_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getRepurchaseRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setRepurchaseRate(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "StockLnMrgn")
 	protected Rate2 stockLoanMargin;
 	/**
-	 * Percentage mark-up on a loan consideration used to reflect the lender's
-	 * risk.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -566,10 +646,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStockLoanMargin = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Rate2>> mmStockLoanMargin = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmStockLoanMargin;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "StockLnMrgn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -578,13 +658,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			type_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getStockLoanMargin();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setStockLoanMargin(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctiesHrcut")
 	protected Rate2 securitiesHaircut;
 	/**
-	 * Haircut or valuation factor on the security expressed as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -613,10 +704,10 @@ public class SecuritiesFinancing10 {
 	 * "Haircut or valuation factor on the security expressed as a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecuritiesHaircut = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Rate2>> mmSecuritiesHaircut = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
 			businessElementTrace_lazy = () -> AssetHolding.mmHaircut;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesHrcut";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -625,14 +716,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			type_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getSecuritiesHaircut();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setSecuritiesHaircut(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PricgRate")
 	protected RateOrName1Choice pricingRate;
 	/**
-	 * Interest rate to be paid on the transaction amount, as agreed between the
-	 * counterparties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -663,10 +764,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPricingRate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<RateOrName1Choice>> mmPricingRate = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<RateOrName1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmInterest;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "PricgRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -677,12 +778,22 @@ public class SecuritiesFinancing10 {
 			isComposite = true;
 			type_lazy = () -> RateOrName1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<RateOrName1Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getPricingRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<RateOrName1Choice> value) {
+			obj.setPricingRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SprdRate")
 	protected SpreadRate1 spreadRate;
 	/**
-	 * Margin over or under an index that determines the repurchase rate,
-	 * expressed as a rate or an amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -713,10 +824,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSpreadRate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<SpreadRate1>> mmSpreadRate = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<SpreadRate1>>() {
 		{
 			businessElementTrace_lazy = () -> Spread.mmSpreadRate;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "SprdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -725,13 +836,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SpreadRate1.mmObject();
+			type_lazy = () -> SpreadRate1.mmObject();
+		}
+
+		@Override
+		public Optional<SpreadRate1> getValue(SecuritiesFinancing10 obj) {
+			return obj.getSpreadRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<SpreadRate1> value) {
+			obj.setSpreadRate(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CllblTradInd")
 	protected YesNoIndicator callableTradeIndicator;
 	/**
-	 * Indicates whether or not the trade is callable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -762,10 +884,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Indicates whether or not the trade is callable."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCallableTradeIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmCallableTradeIndicator = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesLending.mmCallableTradeIndicator;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "CllblTradInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -775,12 +897,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getCallableTradeIndicator();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setCallableTradeIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxCallDely")
 	protected Max3NumericText transactionCallDelay;
 	/**
-	 * Minimum number of days' notice a counterparty needs for terminating the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -813,10 +945,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionCallDelay = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Max3NumericText>> mmTransactionCallDelay = new MMMessageAttribute<SecuritiesFinancing10, Optional<Max3NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmTransactionCallDelay;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "TxCallDely";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -826,12 +958,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max3NumericText> getValue(SecuritiesFinancing10 obj) {
+			return obj.getTransactionCallDelay();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Max3NumericText> value) {
+			obj.setTransactionCallDelay(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AcrdIntrstAmt")
 	protected AmountAndDirection5 accruedInterestAmount;
 	/**
-	 * Interest amount that has accrued in between two periods, for example, in
-	 * between interest payment periods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -862,10 +1004,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccruedInterestAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>> mmAccruedInterestAmount = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmAccruedInterestAmount;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "AcrdIntrstAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -874,13 +1016,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection5.mmObject();
+			type_lazy = () -> AmountAndDirection5.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection5> getValue(SecuritiesFinancing10 obj) {
+			return obj.getAccruedInterestAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<AmountAndDirection5> value) {
+			obj.setAccruedInterestAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AcrdIntrstPctg")
 	protected PercentageRate accruedInterestPercentage;
 	/**
-	 * Interest rate that has been accrued in between coupon payment periods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -912,10 +1065,10 @@ public class SecuritiesFinancing10 {
 	 * "Interest rate that has been accrued in between coupon payment periods."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccruedInterestPercentage = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<PercentageRate>> mmAccruedInterestPercentage = new MMMessageAttribute<SecuritiesFinancing10, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmRate;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "AcrdIntrstPctg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -925,12 +1078,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(SecuritiesFinancing10 obj) {
+			return obj.getAccruedInterestPercentage();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<PercentageRate> value) {
+			obj.setAccruedInterestPercentage(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FrftAmt")
 	protected AmountAndDirection5 forfeitAmount;
 	/**
-	 * Fixed amount of money that has to be paid (instead of interest) in the
-	 * case of a recall or at the closing date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -961,10 +1124,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForfeitAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>> mmForfeitAmount = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmForfeitRepurchaseAmount;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "FrftAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -973,14 +1136,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection5.mmObject();
+			type_lazy = () -> AmountAndDirection5.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection5> getValue(SecuritiesFinancing10 obj) {
+			return obj.getForfeitAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<AmountAndDirection5> value) {
+			obj.setForfeitAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrmAmt")
 	protected AmountAndDirection5 premiumAmount;
 	/**
-	 * Difference between the amount of money of the first leg and the amount of
-	 * the second leg of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1011,10 +1184,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPremiumAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>> mmPremiumAmount = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmPremiumAmount;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "PrmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1023,14 +1196,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection5.mmObject();
+			type_lazy = () -> AmountAndDirection5.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection5> getValue(SecuritiesFinancing10 obj) {
+			return obj.getPremiumAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<AmountAndDirection5> value) {
+			obj.setPremiumAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ClsgAmtPerPcsOfColl")
 	protected AmountAndDirection5 closingAmountPerPiecesOfCollateral;
 	/**
-	 * Amount of money to be settled per piece of collateral to close the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1061,10 +1244,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosingAmountPerPiecesOfCollateral = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>> mmClosingAmountPerPiecesOfCollateral = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<AmountAndDirection5>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmSecuritiesSettlement;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "ClsgAmtPerPcsOfColl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1073,14 +1256,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection5.mmObject();
+			type_lazy = () -> AmountAndDirection5.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection5> getValue(SecuritiesFinancing10 obj) {
+			return obj.getClosingAmountPerPiecesOfCollateral();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<AmountAndDirection5> value) {
+			obj.setClosingAmountPerPiecesOfCollateral(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TtlNbOfCollInstrs")
 	protected Max3NumericText totalNumberOfCollateralInstructions;
 	/**
-	 * Indicates the total Number of collateral instructions involved in the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1113,10 +1306,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalNumberOfCollateralInstructions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Max3NumericText>> mmTotalNumberOfCollateralInstructions = new MMMessageAttribute<SecuritiesFinancing10, Optional<Max3NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmTotalNumberOfCollateralInstructions;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNbOfCollInstrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1126,11 +1319,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max3NumericText> getValue(SecuritiesFinancing10 obj) {
+			return obj.getTotalNumberOfCollateralInstructions();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Max3NumericText> value) {
+			obj.setTotalNumberOfCollateralInstructions(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FincgAgrmt")
 	protected Agreement3 financingAgreement;
 	/**
-	 * Provides details for the securities financing transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1159,10 +1363,10 @@ public class SecuritiesFinancing10 {
 	 * "Provides details for the securities financing transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFinancingAgreement = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Agreement3>> mmFinancingAgreement = new MMMessageAssociationEnd<SecuritiesFinancing10, Optional<Agreement3>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesFinancing.mmFinancingAgreement;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "FincgAgrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1171,13 +1375,24 @@ public class SecuritiesFinancing10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Agreement3.mmObject();
+			type_lazy = () -> Agreement3.mmObject();
+		}
+
+		@Override
+		public Optional<Agreement3> getValue(SecuritiesFinancing10 obj) {
+			return obj.getFinancingAgreement();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Agreement3> value) {
+			obj.setFinancingAgreement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "LndgTxMtd")
 	protected LendingTransactionMethod1Choice lendingTransactionMethod;
 	/**
-	 * Method applied to a lending transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1208,10 +1423,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Method applied to a lending transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLendingTransactionMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<LendingTransactionMethod1Choice>> mmLendingTransactionMethod = new MMMessageAttribute<SecuritiesFinancing10, Optional<LendingTransactionMethod1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesLending.mmObject();
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "LndgTxMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1221,11 +1436,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> LendingTransactionMethod1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<LendingTransactionMethod1Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getLendingTransactionMethod();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<LendingTransactionMethod1Choice> value) {
+			obj.setLendingTransactionMethod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LndgWthColl")
 	protected YesNoIndicator lendingWithCollateral;
 	/**
-	 * Indicates if the contract is with or without an exchange of collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1258,10 +1484,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLendingWithCollateral = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmLendingWithCollateral = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesLending.mmLendingWithCollateral;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "LndgWthColl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1271,12 +1497,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getLendingWithCollateral();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setLendingWithCollateral(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BrrwgRsn")
 	protected BorrowingReason1Choice borrowingReason;
 	/**
-	 * Identifies the underlying reason for the borrowing, for instance, sale on
-	 * my behalf or on behalf of a third party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1304,9 +1540,9 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBorrowingReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<BorrowingReason1Choice>> mmBorrowingReason = new MMMessageAttribute<SecuritiesFinancing10, Optional<BorrowingReason1Choice>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "BrrwgRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1316,11 +1552,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> BorrowingReason1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<BorrowingReason1Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getBorrowingReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<BorrowingReason1Choice> value) {
+			obj.setBorrowingReason(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CollTp")
 	protected CollateralType1Choice collateralType;
 	/**
-	 * Indicates the type of collateral, for insatnce, security, bond, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1352,10 +1599,10 @@ public class SecuritiesFinancing10 {
 	 * "Indicates the type of collateral, for insatnce, security, bond, etc."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCollateralType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<CollateralType1Choice>> mmCollateralType = new MMMessageAttribute<SecuritiesFinancing10, Optional<CollateralType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmCollateralType;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "CollTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1365,11 +1612,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> CollateralType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<CollateralType1Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getCollateralType();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<CollateralType1Choice> value) {
+			obj.setCollateralType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtrctTermsModChngd")
 	protected YesNoIndicator contractTermsModificationChanged;
 	/**
-	 * Indicates whether or not the contract terms changed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1395,9 +1653,9 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Indicates whether or not the contract terms changed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContractTermsModificationChanged = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmContractTermsModificationChanged = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "CtrctTermsModChngd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1407,11 +1665,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getContractTermsModificationChanged();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setContractTermsModificationChanged(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "IntrstRate")
 	protected Rate2 interestRate;
 	/**
-	 * Interest rate to be paid as agreed between the counterparties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1441,10 +1710,10 @@ public class SecuritiesFinancing10 {
 	 * "Interest rate to be paid as agreed between the counterparties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterestRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>> mmInterestRate = new MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmRate;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "IntrstRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1452,14 +1721,24 @@ public class SecuritiesFinancing10 {
 			definition = "Interest rate to be paid as agreed between the counterparties.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			complexType_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getInterestRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setInterestRate(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "BrrwgRate")
 	protected Rate2 borrowingRate;
 	/**
-	 * Rate to be paid by the Borrower to the Lender for the securities
-	 * borrowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1490,10 +1769,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBorrowingRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>> mmBorrowingRate = new MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
 			businessElementTrace_lazy = () -> InterestCalculation.mmRate;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "BrrwgRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1501,13 +1780,24 @@ public class SecuritiesFinancing10 {
 			definition = "Rate to be paid by the Borrower to the Lender for the securities borrowed.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			complexType_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getBorrowingRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setBorrowingRate(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "StdCollRatio")
 	protected Rate2 standardCollateralRatio;
 	/**
-	 * Method used to calculate the standard collateral amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1531,9 +1821,9 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Method used to calculate the standard collateral amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStandardCollateralRatio = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>> mmStandardCollateralRatio = new MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "StdCollRatio";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1541,13 +1831,24 @@ public class SecuritiesFinancing10 {
 			definition = "Method used to calculate the standard collateral amount.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			complexType_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getStandardCollateralRatio();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setStandardCollateralRatio(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "DvddRatio")
 	protected Rate2 dividendRatio;
 	/**
-	 * Percentage of earnings paid to shareholders in dividends.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1577,10 +1878,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDividendRatio = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>> mmDividendRatio = new MMMessageAttribute<SecuritiesFinancing10, Optional<Rate2>>() {
 		{
 			businessElementTrace_lazy = () -> Dividend.mmRate;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "DvddRatio";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1588,14 +1889,24 @@ public class SecuritiesFinancing10 {
 			definition = "Percentage of earnings paid to shareholders in dividends.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Rate2.mmObject();
+			complexType_lazy = () -> Rate2.mmObject();
+		}
+
+		@Override
+		public Optional<Rate2> getValue(SecuritiesFinancing10 obj) {
+			return obj.getDividendRatio();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Rate2> value) {
+			obj.setDividendRatio(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NbOfDaysLndgBrrwg")
 	protected Number21Choice numberOfDaysLendingBorrowing;
 	/**
-	 * Number of days the securities are lent or borrowed where the contract has
-	 * an agreed closing date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1628,10 +1939,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfDaysLendingBorrowing = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Number21Choice>> mmNumberOfDaysLendingBorrowing = new MMMessageAttribute<SecuritiesFinancing10, Optional<Number21Choice>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesLending.mmNumberOfDaysLendingBorrowing;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfDaysLndgBrrwg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1641,11 +1952,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> Number21Choice.mmObject();
 		}
+
+		@Override
+		public Optional<Number21Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getNumberOfDaysLendingBorrowing();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Number21Choice> value) {
+			obj.setNumberOfDaysLendingBorrowing(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "StdCollAmt")
 	protected AmountAndDirection5 standardCollateralAmount;
 	/**
-	 * Specifies the standard collateral amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1671,9 +1993,9 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Specifies the standard collateral amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStandardCollateralAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<AmountAndDirection5>> mmStandardCollateralAmount = new MMMessageAttribute<SecuritiesFinancing10, Optional<AmountAndDirection5>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "StdCollAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1681,14 +2003,24 @@ public class SecuritiesFinancing10 {
 			definition = "Specifies the standard collateral amount.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection5.mmObject();
+			complexType_lazy = () -> AmountAndDirection5.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection5> getValue(SecuritiesFinancing10 obj) {
+			return obj.getStandardCollateralAmount();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<AmountAndDirection5> value) {
+			obj.setStandardCollateralAmount(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AcrdIntrstTax")
 	protected YesNoIndicator accruedInterestTax;
 	/**
-	 * Interest rate tax that has been accrued in between coupon payment
-	 * periods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1721,10 +2053,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccruedInterestTax = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmAccruedInterestTax = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> Interest.mmInterestTax;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "AcrdIntrstTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1734,11 +2066,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getAccruedInterestTax();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setAccruedInterestTax(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EndNbOfDaysAcrd")
 	protected Max3Number endNumberOfDaysAccrued;
 	/**
-	 * Number of days accrued at the instant of closing trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1763,9 +2106,9 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Number of days accrued at the instant of closing trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndNumberOfDaysAccrued = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Max3Number>> mmEndNumberOfDaysAccrued = new MMMessageAttribute<SecuritiesFinancing10, Optional<Max3Number>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "EndNbOfDaysAcrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1775,11 +2118,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3Number.mmObject();
 		}
+
+		@Override
+		public Optional<Max3Number> getValue(SecuritiesFinancing10 obj) {
+			return obj.getEndNumberOfDaysAccrued();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Max3Number> value) {
+			obj.setEndNumberOfDaysAccrued(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EndFctr")
 	protected BaseOneRate endFactor;
 	/**
-	 * End ratio of principal outstanding to the original balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1805,9 +2159,9 @@ public class SecuritiesFinancing10 {
 	 * "End ratio of principal outstanding to the original balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndFactor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<BaseOneRate>> mmEndFactor = new MMMessageAttribute<SecuritiesFinancing10, Optional<BaseOneRate>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "EndFctr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1817,11 +2171,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		@Override
+		public Optional<BaseOneRate> getValue(SecuritiesFinancing10 obj) {
+			return obj.getEndFactor();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<BaseOneRate> value) {
+			obj.setEndFactor(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SctiesLndgTp")
 	protected SecuritiesLendingType1Choice securitiesLendingType;
 	/**
-	 * Type of securities lending.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1852,10 +2217,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Type of securities lending."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritiesLendingType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<SecuritiesLendingType1Choice>> mmSecuritiesLendingType = new MMMessageAttribute<SecuritiesFinancing10, Optional<SecuritiesLendingType1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesLending.mmObject();
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "SctiesLndgTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1865,12 +2230,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> SecuritiesLendingType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesLendingType1Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getSecuritiesLendingType();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<SecuritiesLendingType1Choice> value) {
+			obj.setSecuritiesLendingType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Rvsbl")
 	protected Reversible1Choice reversible;
 	/**
-	 * Indicates the possibility to terminate the securitiesc lending contract
-	 * either by the borrower or lender before the expiration date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1903,10 +2278,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReversible = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<Reversible1Choice>> mmReversible = new MMMessageAttribute<SecuritiesFinancing10, Optional<Reversible1Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesLending.mmObject();
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "Rvsbl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1916,12 +2291,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			complexType_lazy = () -> Reversible1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<Reversible1Choice> getValue(SecuritiesFinancing10 obj) {
+			return obj.getReversible();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<Reversible1Choice> value) {
+			obj.setReversible(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MinDtForCallBck")
 	protected ISODate minimumDateForCallBack;
 	/**
-	 * This is the minimum date at which the Borrower is allowed to give back
-	 * the securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1953,10 +2338,10 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMinimumDateForCallBack = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<ISODate>> mmMinimumDateForCallBack = new MMMessageAttribute<SecuritiesFinancing10, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesLending.mmMinimumDateForCallBack;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "MinDtForCallBck";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1966,11 +2351,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(SecuritiesFinancing10 obj) {
+			return obj.getMinimumDateForCallBack();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<ISODate> value) {
+			obj.setMinimumDateForCallBack(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RollOver")
 	protected YesNoIndicator rollOver;
 	/**
-	 * Indicates that the contract can be rolled over.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2001,10 +2397,10 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Indicates that the contract can be rolled over."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRollOver = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmRollOver = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesLending.mmRollover;
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "RollOver";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2014,12 +2410,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getRollOver();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setRollOver(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrdcPmt")
 	protected YesNoIndicator periodicPayment;
 	/**
-	 * Indicates whether the securities lending fees can be paid periodically or
-	 * at the end of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2047,9 +2453,9 @@ public class SecuritiesFinancing10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPeriodicPayment = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmPeriodicPayment = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "PrdcPmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2059,11 +2465,22 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getPeriodicPayment();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setPeriodicPayment(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ExCpn")
 	protected YesNoIndicator exCoupon;
 	/**
-	 * Indicates whether the trade is executed ex coupon.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2089,9 +2506,9 @@ public class SecuritiesFinancing10 {
 	 * definition} = "Indicates whether the trade is executed ex coupon."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExCoupon = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>> mmExCoupon = new MMMessageAttribute<SecuritiesFinancing10, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> SecuritiesFinancing10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesFinancing10.mmObject();
 			isDerived = false;
 			xmlTag = "ExCpn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2101,23 +2518,43 @@ public class SecuritiesFinancing10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(SecuritiesFinancing10 obj) {
+			return obj.getExCoupon();
+		}
+
+		@Override
+		public void setValue(SecuritiesFinancing10 obj, Optional<YesNoIndicator> value) {
+			obj.setExCoupon(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesFinancing10.mmRateChangeDate, SecuritiesFinancing10.mmRateType, SecuritiesFinancing10.mmRevaluation, SecuritiesFinancing10.mmLegalFramework,
-						SecuritiesFinancing10.mmInterestComputationMethod, SecuritiesFinancing10.mmVariableRateSupport, SecuritiesFinancing10.mmRepurchaseRate, SecuritiesFinancing10.mmStockLoanMargin,
-						SecuritiesFinancing10.mmSecuritiesHaircut, SecuritiesFinancing10.mmPricingRate, SecuritiesFinancing10.mmSpreadRate, SecuritiesFinancing10.mmCallableTradeIndicator, SecuritiesFinancing10.mmTransactionCallDelay,
-						SecuritiesFinancing10.mmAccruedInterestAmount, SecuritiesFinancing10.mmAccruedInterestPercentage, SecuritiesFinancing10.mmForfeitAmount, SecuritiesFinancing10.mmPremiumAmount,
-						SecuritiesFinancing10.mmClosingAmountPerPiecesOfCollateral, SecuritiesFinancing10.mmTotalNumberOfCollateralInstructions, SecuritiesFinancing10.mmFinancingAgreement, SecuritiesFinancing10.mmLendingTransactionMethod,
-						SecuritiesFinancing10.mmLendingWithCollateral, SecuritiesFinancing10.mmBorrowingReason, SecuritiesFinancing10.mmCollateralType, SecuritiesFinancing10.mmContractTermsModificationChanged,
-						SecuritiesFinancing10.mmInterestRate, SecuritiesFinancing10.mmBorrowingRate, SecuritiesFinancing10.mmStandardCollateralRatio, SecuritiesFinancing10.mmDividendRatio,
-						SecuritiesFinancing10.mmNumberOfDaysLendingBorrowing, SecuritiesFinancing10.mmStandardCollateralAmount, SecuritiesFinancing10.mmAccruedInterestTax, SecuritiesFinancing10.mmEndNumberOfDaysAccrued,
-						SecuritiesFinancing10.mmEndFactor, SecuritiesFinancing10.mmSecuritiesLendingType, SecuritiesFinancing10.mmReversible, SecuritiesFinancing10.mmMinimumDateForCallBack, SecuritiesFinancing10.mmRollOver,
-						SecuritiesFinancing10.mmPeriodicPayment, SecuritiesFinancing10.mmExCoupon);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesFinancing10.mmRateChangeDate, com.tools20022.repository.msg.SecuritiesFinancing10.mmRateType,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmRevaluation, com.tools20022.repository.msg.SecuritiesFinancing10.mmLegalFramework,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmInterestComputationMethod, com.tools20022.repository.msg.SecuritiesFinancing10.mmVariableRateSupport,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmRepurchaseRate, com.tools20022.repository.msg.SecuritiesFinancing10.mmStockLoanMargin, com.tools20022.repository.msg.SecuritiesFinancing10.mmSecuritiesHaircut,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmPricingRate, com.tools20022.repository.msg.SecuritiesFinancing10.mmSpreadRate, com.tools20022.repository.msg.SecuritiesFinancing10.mmCallableTradeIndicator,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmTransactionCallDelay, com.tools20022.repository.msg.SecuritiesFinancing10.mmAccruedInterestAmount,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmAccruedInterestPercentage, com.tools20022.repository.msg.SecuritiesFinancing10.mmForfeitAmount,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmPremiumAmount, com.tools20022.repository.msg.SecuritiesFinancing10.mmClosingAmountPerPiecesOfCollateral,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmTotalNumberOfCollateralInstructions, com.tools20022.repository.msg.SecuritiesFinancing10.mmFinancingAgreement,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmLendingTransactionMethod, com.tools20022.repository.msg.SecuritiesFinancing10.mmLendingWithCollateral,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmBorrowingReason, com.tools20022.repository.msg.SecuritiesFinancing10.mmCollateralType,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmContractTermsModificationChanged, com.tools20022.repository.msg.SecuritiesFinancing10.mmInterestRate,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmBorrowingRate, com.tools20022.repository.msg.SecuritiesFinancing10.mmStandardCollateralRatio,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmDividendRatio, com.tools20022.repository.msg.SecuritiesFinancing10.mmNumberOfDaysLendingBorrowing,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmStandardCollateralAmount, com.tools20022.repository.msg.SecuritiesFinancing10.mmAccruedInterestTax,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmEndNumberOfDaysAccrued, com.tools20022.repository.msg.SecuritiesFinancing10.mmEndFactor,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmSecuritiesLendingType, com.tools20022.repository.msg.SecuritiesFinancing10.mmReversible,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmMinimumDateForCallBack, com.tools20022.repository.msg.SecuritiesFinancing10.mmRollOver, com.tools20022.repository.msg.SecuritiesFinancing10.mmPeriodicPayment,
+						com.tools20022.repository.msg.SecuritiesFinancing10.mmExCoupon);
 				trace_lazy = () -> SecuritiesFinancing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "Sequence E"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesFinancing10";
 				definition = "Details of the closing of the securities financing transaction.";
@@ -2126,363 +2563,363 @@ public class SecuritiesFinancing10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RateChngDt")
-	public ISODateTime getRateChangeDate() {
-		return rateChangeDate;
+	public Optional<ISODateTime> getRateChangeDate() {
+		return rateChangeDate == null ? Optional.empty() : Optional.of(rateChangeDate);
 	}
 
-	public void setRateChangeDate(ISODateTime rateChangeDate) {
+	public SecuritiesFinancing10 setRateChangeDate(ISODateTime rateChangeDate) {
 		this.rateChangeDate = rateChangeDate;
+		return this;
 	}
 
-	@XmlElement(name = "RateTp")
-	public RateType19Choice getRateType() {
-		return rateType;
+	public Optional<RateType19Choice> getRateType() {
+		return rateType == null ? Optional.empty() : Optional.of(rateType);
 	}
 
-	public void setRateType(RateType19Choice rateType) {
+	public SecuritiesFinancing10 setRateType(RateType19Choice rateType) {
 		this.rateType = rateType;
+		return this;
 	}
 
-	@XmlElement(name = "Rvaltn")
-	public Revaluation2Choice getRevaluation() {
-		return revaluation;
+	public Optional<Revaluation2Choice> getRevaluation() {
+		return revaluation == null ? Optional.empty() : Optional.of(revaluation);
 	}
 
-	public void setRevaluation(Revaluation2Choice revaluation) {
+	public SecuritiesFinancing10 setRevaluation(Revaluation2Choice revaluation) {
 		this.revaluation = revaluation;
+		return this;
 	}
 
-	@XmlElement(name = "LglFrmwk")
-	public LegalFramework1Code getLegalFramework() {
-		return legalFramework;
+	public Optional<LegalFramework1Code> getLegalFramework() {
+		return legalFramework == null ? Optional.empty() : Optional.of(legalFramework);
 	}
 
-	public void setLegalFramework(LegalFramework1Code legalFramework) {
+	public SecuritiesFinancing10 setLegalFramework(LegalFramework1Code legalFramework) {
 		this.legalFramework = legalFramework;
+		return this;
 	}
 
-	@XmlElement(name = "IntrstCmptnMtd")
-	public InterestComputationMethod2Choice getInterestComputationMethod() {
-		return interestComputationMethod;
+	public Optional<InterestComputationMethod2Choice> getInterestComputationMethod() {
+		return interestComputationMethod == null ? Optional.empty() : Optional.of(interestComputationMethod);
 	}
 
-	public void setInterestComputationMethod(InterestComputationMethod2Choice interestComputationMethod) {
+	public SecuritiesFinancing10 setInterestComputationMethod(InterestComputationMethod2Choice interestComputationMethod) {
 		this.interestComputationMethod = interestComputationMethod;
+		return this;
 	}
 
-	@XmlElement(name = "VarblRateSpprt")
-	public RateName1 getVariableRateSupport() {
-		return variableRateSupport;
+	public Optional<RateName1> getVariableRateSupport() {
+		return variableRateSupport == null ? Optional.empty() : Optional.of(variableRateSupport);
 	}
 
-	public void setVariableRateSupport(com.tools20022.repository.msg.RateName1 variableRateSupport) {
+	public SecuritiesFinancing10 setVariableRateSupport(RateName1 variableRateSupport) {
 		this.variableRateSupport = variableRateSupport;
+		return this;
 	}
 
-	@XmlElement(name = "RpRate")
-	public Rate2 getRepurchaseRate() {
-		return repurchaseRate;
+	public Optional<Rate2> getRepurchaseRate() {
+		return repurchaseRate == null ? Optional.empty() : Optional.of(repurchaseRate);
 	}
 
-	public void setRepurchaseRate(com.tools20022.repository.msg.Rate2 repurchaseRate) {
+	public SecuritiesFinancing10 setRepurchaseRate(Rate2 repurchaseRate) {
 		this.repurchaseRate = repurchaseRate;
+		return this;
 	}
 
-	@XmlElement(name = "StockLnMrgn")
-	public Rate2 getStockLoanMargin() {
-		return stockLoanMargin;
+	public Optional<Rate2> getStockLoanMargin() {
+		return stockLoanMargin == null ? Optional.empty() : Optional.of(stockLoanMargin);
 	}
 
-	public void setStockLoanMargin(com.tools20022.repository.msg.Rate2 stockLoanMargin) {
+	public SecuritiesFinancing10 setStockLoanMargin(Rate2 stockLoanMargin) {
 		this.stockLoanMargin = stockLoanMargin;
+		return this;
 	}
 
-	@XmlElement(name = "SctiesHrcut")
-	public Rate2 getSecuritiesHaircut() {
-		return securitiesHaircut;
+	public Optional<Rate2> getSecuritiesHaircut() {
+		return securitiesHaircut == null ? Optional.empty() : Optional.of(securitiesHaircut);
 	}
 
-	public void setSecuritiesHaircut(com.tools20022.repository.msg.Rate2 securitiesHaircut) {
+	public SecuritiesFinancing10 setSecuritiesHaircut(Rate2 securitiesHaircut) {
 		this.securitiesHaircut = securitiesHaircut;
+		return this;
 	}
 
-	@XmlElement(name = "PricgRate")
-	public RateOrName1Choice getPricingRate() {
-		return pricingRate;
+	public Optional<RateOrName1Choice> getPricingRate() {
+		return pricingRate == null ? Optional.empty() : Optional.of(pricingRate);
 	}
 
-	public void setPricingRate(RateOrName1Choice pricingRate) {
+	public SecuritiesFinancing10 setPricingRate(RateOrName1Choice pricingRate) {
 		this.pricingRate = pricingRate;
+		return this;
 	}
 
-	@XmlElement(name = "SprdRate")
-	public SpreadRate1 getSpreadRate() {
-		return spreadRate;
+	public Optional<SpreadRate1> getSpreadRate() {
+		return spreadRate == null ? Optional.empty() : Optional.of(spreadRate);
 	}
 
-	public void setSpreadRate(com.tools20022.repository.msg.SpreadRate1 spreadRate) {
+	public SecuritiesFinancing10 setSpreadRate(SpreadRate1 spreadRate) {
 		this.spreadRate = spreadRate;
+		return this;
 	}
 
-	@XmlElement(name = "CllblTradInd")
-	public YesNoIndicator getCallableTradeIndicator() {
-		return callableTradeIndicator;
+	public Optional<YesNoIndicator> getCallableTradeIndicator() {
+		return callableTradeIndicator == null ? Optional.empty() : Optional.of(callableTradeIndicator);
 	}
 
-	public void setCallableTradeIndicator(YesNoIndicator callableTradeIndicator) {
+	public SecuritiesFinancing10 setCallableTradeIndicator(YesNoIndicator callableTradeIndicator) {
 		this.callableTradeIndicator = callableTradeIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "TxCallDely")
-	public Max3NumericText getTransactionCallDelay() {
-		return transactionCallDelay;
+	public Optional<Max3NumericText> getTransactionCallDelay() {
+		return transactionCallDelay == null ? Optional.empty() : Optional.of(transactionCallDelay);
 	}
 
-	public void setTransactionCallDelay(Max3NumericText transactionCallDelay) {
+	public SecuritiesFinancing10 setTransactionCallDelay(Max3NumericText transactionCallDelay) {
 		this.transactionCallDelay = transactionCallDelay;
+		return this;
 	}
 
-	@XmlElement(name = "AcrdIntrstAmt")
-	public AmountAndDirection5 getAccruedInterestAmount() {
-		return accruedInterestAmount;
+	public Optional<AmountAndDirection5> getAccruedInterestAmount() {
+		return accruedInterestAmount == null ? Optional.empty() : Optional.of(accruedInterestAmount);
 	}
 
-	public void setAccruedInterestAmount(com.tools20022.repository.msg.AmountAndDirection5 accruedInterestAmount) {
+	public SecuritiesFinancing10 setAccruedInterestAmount(AmountAndDirection5 accruedInterestAmount) {
 		this.accruedInterestAmount = accruedInterestAmount;
+		return this;
 	}
 
-	@XmlElement(name = "AcrdIntrstPctg")
-	public PercentageRate getAccruedInterestPercentage() {
-		return accruedInterestPercentage;
+	public Optional<PercentageRate> getAccruedInterestPercentage() {
+		return accruedInterestPercentage == null ? Optional.empty() : Optional.of(accruedInterestPercentage);
 	}
 
-	public void setAccruedInterestPercentage(PercentageRate accruedInterestPercentage) {
+	public SecuritiesFinancing10 setAccruedInterestPercentage(PercentageRate accruedInterestPercentage) {
 		this.accruedInterestPercentage = accruedInterestPercentage;
+		return this;
 	}
 
-	@XmlElement(name = "FrftAmt")
-	public AmountAndDirection5 getForfeitAmount() {
-		return forfeitAmount;
+	public Optional<AmountAndDirection5> getForfeitAmount() {
+		return forfeitAmount == null ? Optional.empty() : Optional.of(forfeitAmount);
 	}
 
-	public void setForfeitAmount(com.tools20022.repository.msg.AmountAndDirection5 forfeitAmount) {
+	public SecuritiesFinancing10 setForfeitAmount(AmountAndDirection5 forfeitAmount) {
 		this.forfeitAmount = forfeitAmount;
+		return this;
 	}
 
-	@XmlElement(name = "PrmAmt")
-	public AmountAndDirection5 getPremiumAmount() {
-		return premiumAmount;
+	public Optional<AmountAndDirection5> getPremiumAmount() {
+		return premiumAmount == null ? Optional.empty() : Optional.of(premiumAmount);
 	}
 
-	public void setPremiumAmount(com.tools20022.repository.msg.AmountAndDirection5 premiumAmount) {
+	public SecuritiesFinancing10 setPremiumAmount(AmountAndDirection5 premiumAmount) {
 		this.premiumAmount = premiumAmount;
+		return this;
 	}
 
-	@XmlElement(name = "ClsgAmtPerPcsOfColl")
-	public AmountAndDirection5 getClosingAmountPerPiecesOfCollateral() {
-		return closingAmountPerPiecesOfCollateral;
+	public Optional<AmountAndDirection5> getClosingAmountPerPiecesOfCollateral() {
+		return closingAmountPerPiecesOfCollateral == null ? Optional.empty() : Optional.of(closingAmountPerPiecesOfCollateral);
 	}
 
-	public void setClosingAmountPerPiecesOfCollateral(com.tools20022.repository.msg.AmountAndDirection5 closingAmountPerPiecesOfCollateral) {
+	public SecuritiesFinancing10 setClosingAmountPerPiecesOfCollateral(AmountAndDirection5 closingAmountPerPiecesOfCollateral) {
 		this.closingAmountPerPiecesOfCollateral = closingAmountPerPiecesOfCollateral;
+		return this;
 	}
 
-	@XmlElement(name = "TtlNbOfCollInstrs")
-	public Max3NumericText getTotalNumberOfCollateralInstructions() {
-		return totalNumberOfCollateralInstructions;
+	public Optional<Max3NumericText> getTotalNumberOfCollateralInstructions() {
+		return totalNumberOfCollateralInstructions == null ? Optional.empty() : Optional.of(totalNumberOfCollateralInstructions);
 	}
 
-	public void setTotalNumberOfCollateralInstructions(Max3NumericText totalNumberOfCollateralInstructions) {
+	public SecuritiesFinancing10 setTotalNumberOfCollateralInstructions(Max3NumericText totalNumberOfCollateralInstructions) {
 		this.totalNumberOfCollateralInstructions = totalNumberOfCollateralInstructions;
+		return this;
 	}
 
-	@XmlElement(name = "FincgAgrmt")
-	public Agreement3 getFinancingAgreement() {
-		return financingAgreement;
+	public Optional<Agreement3> getFinancingAgreement() {
+		return financingAgreement == null ? Optional.empty() : Optional.of(financingAgreement);
 	}
 
-	public void setFinancingAgreement(com.tools20022.repository.msg.Agreement3 financingAgreement) {
+	public SecuritiesFinancing10 setFinancingAgreement(Agreement3 financingAgreement) {
 		this.financingAgreement = financingAgreement;
+		return this;
 	}
 
-	@XmlElement(name = "LndgTxMtd")
-	public LendingTransactionMethod1Choice getLendingTransactionMethod() {
-		return lendingTransactionMethod;
+	public Optional<LendingTransactionMethod1Choice> getLendingTransactionMethod() {
+		return lendingTransactionMethod == null ? Optional.empty() : Optional.of(lendingTransactionMethod);
 	}
 
-	public void setLendingTransactionMethod(LendingTransactionMethod1Choice lendingTransactionMethod) {
+	public SecuritiesFinancing10 setLendingTransactionMethod(LendingTransactionMethod1Choice lendingTransactionMethod) {
 		this.lendingTransactionMethod = lendingTransactionMethod;
+		return this;
 	}
 
-	@XmlElement(name = "LndgWthColl")
-	public YesNoIndicator getLendingWithCollateral() {
-		return lendingWithCollateral;
+	public Optional<YesNoIndicator> getLendingWithCollateral() {
+		return lendingWithCollateral == null ? Optional.empty() : Optional.of(lendingWithCollateral);
 	}
 
-	public void setLendingWithCollateral(YesNoIndicator lendingWithCollateral) {
+	public SecuritiesFinancing10 setLendingWithCollateral(YesNoIndicator lendingWithCollateral) {
 		this.lendingWithCollateral = lendingWithCollateral;
+		return this;
 	}
 
-	@XmlElement(name = "BrrwgRsn")
-	public BorrowingReason1Choice getBorrowingReason() {
-		return borrowingReason;
+	public Optional<BorrowingReason1Choice> getBorrowingReason() {
+		return borrowingReason == null ? Optional.empty() : Optional.of(borrowingReason);
 	}
 
-	public void setBorrowingReason(BorrowingReason1Choice borrowingReason) {
+	public SecuritiesFinancing10 setBorrowingReason(BorrowingReason1Choice borrowingReason) {
 		this.borrowingReason = borrowingReason;
+		return this;
 	}
 
-	@XmlElement(name = "CollTp")
-	public CollateralType1Choice getCollateralType() {
-		return collateralType;
+	public Optional<CollateralType1Choice> getCollateralType() {
+		return collateralType == null ? Optional.empty() : Optional.of(collateralType);
 	}
 
-	public void setCollateralType(CollateralType1Choice collateralType) {
+	public SecuritiesFinancing10 setCollateralType(CollateralType1Choice collateralType) {
 		this.collateralType = collateralType;
+		return this;
 	}
 
-	@XmlElement(name = "CtrctTermsModChngd")
-	public YesNoIndicator getContractTermsModificationChanged() {
-		return contractTermsModificationChanged;
+	public Optional<YesNoIndicator> getContractTermsModificationChanged() {
+		return contractTermsModificationChanged == null ? Optional.empty() : Optional.of(contractTermsModificationChanged);
 	}
 
-	public void setContractTermsModificationChanged(YesNoIndicator contractTermsModificationChanged) {
+	public SecuritiesFinancing10 setContractTermsModificationChanged(YesNoIndicator contractTermsModificationChanged) {
 		this.contractTermsModificationChanged = contractTermsModificationChanged;
+		return this;
 	}
 
-	@XmlElement(name = "IntrstRate")
-	public Rate2 getInterestRate() {
-		return interestRate;
+	public Optional<Rate2> getInterestRate() {
+		return interestRate == null ? Optional.empty() : Optional.of(interestRate);
 	}
 
-	public void setInterestRate(com.tools20022.repository.msg.Rate2 interestRate) {
+	public SecuritiesFinancing10 setInterestRate(Rate2 interestRate) {
 		this.interestRate = interestRate;
+		return this;
 	}
 
-	@XmlElement(name = "BrrwgRate")
-	public Rate2 getBorrowingRate() {
-		return borrowingRate;
+	public Optional<Rate2> getBorrowingRate() {
+		return borrowingRate == null ? Optional.empty() : Optional.of(borrowingRate);
 	}
 
-	public void setBorrowingRate(com.tools20022.repository.msg.Rate2 borrowingRate) {
+	public SecuritiesFinancing10 setBorrowingRate(Rate2 borrowingRate) {
 		this.borrowingRate = borrowingRate;
+		return this;
 	}
 
-	@XmlElement(name = "StdCollRatio")
-	public Rate2 getStandardCollateralRatio() {
-		return standardCollateralRatio;
+	public Optional<Rate2> getStandardCollateralRatio() {
+		return standardCollateralRatio == null ? Optional.empty() : Optional.of(standardCollateralRatio);
 	}
 
-	public void setStandardCollateralRatio(com.tools20022.repository.msg.Rate2 standardCollateralRatio) {
+	public SecuritiesFinancing10 setStandardCollateralRatio(Rate2 standardCollateralRatio) {
 		this.standardCollateralRatio = standardCollateralRatio;
+		return this;
 	}
 
-	@XmlElement(name = "DvddRatio")
-	public Rate2 getDividendRatio() {
-		return dividendRatio;
+	public Optional<Rate2> getDividendRatio() {
+		return dividendRatio == null ? Optional.empty() : Optional.of(dividendRatio);
 	}
 
-	public void setDividendRatio(com.tools20022.repository.msg.Rate2 dividendRatio) {
+	public SecuritiesFinancing10 setDividendRatio(Rate2 dividendRatio) {
 		this.dividendRatio = dividendRatio;
+		return this;
 	}
 
-	@XmlElement(name = "NbOfDaysLndgBrrwg")
-	public Number21Choice getNumberOfDaysLendingBorrowing() {
-		return numberOfDaysLendingBorrowing;
+	public Optional<Number21Choice> getNumberOfDaysLendingBorrowing() {
+		return numberOfDaysLendingBorrowing == null ? Optional.empty() : Optional.of(numberOfDaysLendingBorrowing);
 	}
 
-	public void setNumberOfDaysLendingBorrowing(Number21Choice numberOfDaysLendingBorrowing) {
+	public SecuritiesFinancing10 setNumberOfDaysLendingBorrowing(Number21Choice numberOfDaysLendingBorrowing) {
 		this.numberOfDaysLendingBorrowing = numberOfDaysLendingBorrowing;
+		return this;
 	}
 
-	@XmlElement(name = "StdCollAmt")
-	public AmountAndDirection5 getStandardCollateralAmount() {
-		return standardCollateralAmount;
+	public Optional<AmountAndDirection5> getStandardCollateralAmount() {
+		return standardCollateralAmount == null ? Optional.empty() : Optional.of(standardCollateralAmount);
 	}
 
-	public void setStandardCollateralAmount(com.tools20022.repository.msg.AmountAndDirection5 standardCollateralAmount) {
+	public SecuritiesFinancing10 setStandardCollateralAmount(AmountAndDirection5 standardCollateralAmount) {
 		this.standardCollateralAmount = standardCollateralAmount;
+		return this;
 	}
 
-	@XmlElement(name = "AcrdIntrstTax")
-	public YesNoIndicator getAccruedInterestTax() {
-		return accruedInterestTax;
+	public Optional<YesNoIndicator> getAccruedInterestTax() {
+		return accruedInterestTax == null ? Optional.empty() : Optional.of(accruedInterestTax);
 	}
 
-	public void setAccruedInterestTax(YesNoIndicator accruedInterestTax) {
+	public SecuritiesFinancing10 setAccruedInterestTax(YesNoIndicator accruedInterestTax) {
 		this.accruedInterestTax = accruedInterestTax;
+		return this;
 	}
 
-	@XmlElement(name = "EndNbOfDaysAcrd")
-	public Max3Number getEndNumberOfDaysAccrued() {
-		return endNumberOfDaysAccrued;
+	public Optional<Max3Number> getEndNumberOfDaysAccrued() {
+		return endNumberOfDaysAccrued == null ? Optional.empty() : Optional.of(endNumberOfDaysAccrued);
 	}
 
-	public void setEndNumberOfDaysAccrued(Max3Number endNumberOfDaysAccrued) {
+	public SecuritiesFinancing10 setEndNumberOfDaysAccrued(Max3Number endNumberOfDaysAccrued) {
 		this.endNumberOfDaysAccrued = endNumberOfDaysAccrued;
+		return this;
 	}
 
-	@XmlElement(name = "EndFctr")
-	public BaseOneRate getEndFactor() {
-		return endFactor;
+	public Optional<BaseOneRate> getEndFactor() {
+		return endFactor == null ? Optional.empty() : Optional.of(endFactor);
 	}
 
-	public void setEndFactor(BaseOneRate endFactor) {
+	public SecuritiesFinancing10 setEndFactor(BaseOneRate endFactor) {
 		this.endFactor = endFactor;
+		return this;
 	}
 
-	@XmlElement(name = "SctiesLndgTp")
-	public SecuritiesLendingType1Choice getSecuritiesLendingType() {
-		return securitiesLendingType;
+	public Optional<SecuritiesLendingType1Choice> getSecuritiesLendingType() {
+		return securitiesLendingType == null ? Optional.empty() : Optional.of(securitiesLendingType);
 	}
 
-	public void setSecuritiesLendingType(SecuritiesLendingType1Choice securitiesLendingType) {
+	public SecuritiesFinancing10 setSecuritiesLendingType(SecuritiesLendingType1Choice securitiesLendingType) {
 		this.securitiesLendingType = securitiesLendingType;
+		return this;
 	}
 
-	@XmlElement(name = "Rvsbl")
-	public Reversible1Choice getReversible() {
-		return reversible;
+	public Optional<Reversible1Choice> getReversible() {
+		return reversible == null ? Optional.empty() : Optional.of(reversible);
 	}
 
-	public void setReversible(Reversible1Choice reversible) {
+	public SecuritiesFinancing10 setReversible(Reversible1Choice reversible) {
 		this.reversible = reversible;
+		return this;
 	}
 
-	@XmlElement(name = "MinDtForCallBck")
-	public ISODate getMinimumDateForCallBack() {
-		return minimumDateForCallBack;
+	public Optional<ISODate> getMinimumDateForCallBack() {
+		return minimumDateForCallBack == null ? Optional.empty() : Optional.of(minimumDateForCallBack);
 	}
 
-	public void setMinimumDateForCallBack(ISODate minimumDateForCallBack) {
+	public SecuritiesFinancing10 setMinimumDateForCallBack(ISODate minimumDateForCallBack) {
 		this.minimumDateForCallBack = minimumDateForCallBack;
+		return this;
 	}
 
-	@XmlElement(name = "RollOver")
-	public YesNoIndicator getRollOver() {
-		return rollOver;
+	public Optional<YesNoIndicator> getRollOver() {
+		return rollOver == null ? Optional.empty() : Optional.of(rollOver);
 	}
 
-	public void setRollOver(YesNoIndicator rollOver) {
+	public SecuritiesFinancing10 setRollOver(YesNoIndicator rollOver) {
 		this.rollOver = rollOver;
+		return this;
 	}
 
-	@XmlElement(name = "PrdcPmt")
-	public YesNoIndicator getPeriodicPayment() {
-		return periodicPayment;
+	public Optional<YesNoIndicator> getPeriodicPayment() {
+		return periodicPayment == null ? Optional.empty() : Optional.of(periodicPayment);
 	}
 
-	public void setPeriodicPayment(YesNoIndicator periodicPayment) {
+	public SecuritiesFinancing10 setPeriodicPayment(YesNoIndicator periodicPayment) {
 		this.periodicPayment = periodicPayment;
+		return this;
 	}
 
-	@XmlElement(name = "ExCpn")
-	public YesNoIndicator getExCoupon() {
-		return exCoupon;
+	public Optional<YesNoIndicator> getExCoupon() {
+		return exCoupon == null ? Optional.empty() : Optional.of(exCoupon);
 	}
 
-	public void setExCoupon(YesNoIndicator exCoupon) {
+	public SecuritiesFinancing10 setExCoupon(YesNoIndicator exCoupon) {
 		this.exCoupon = exCoupon;
+		return this;
 	}
 }

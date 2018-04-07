@@ -38,91 +38,91 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Abstain
- * CorporateActionOption9Code.mmAbstain}</li>
+ * CorporateActionOption9Code.Abstain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#VoteAgainstManagement
- * CorporateActionOption9Code.mmVoteAgainstManagement}</li>
+ * CorporateActionOption9Code.VoteAgainstManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#BonusSharePlan
- * CorporateActionOption9Code.mmBonusSharePlan}</li>
+ * CorporateActionOption9Code.BonusSharePlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#BuyUp
- * CorporateActionOption9Code.mmBuyUp}</li>
+ * CorporateActionOption9Code.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#CashAndSecurity
- * CorporateActionOption9Code.mmCashAndSecurity}</li>
+ * CorporateActionOption9Code.CashAndSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Cash
- * CorporateActionOption9Code.mmCash}</li>
+ * CorporateActionOption9Code.Cash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Certification
- * CorporateActionOption9Code.mmCertification}</li>
+ * CorporateActionOption9Code.Certification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#ConsentAndExchange
- * CorporateActionOption9Code.mmConsentAndExchange}</li>
+ * CorporateActionOption9Code.ConsentAndExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#ConsentDenied
- * CorporateActionOption9Code.mmConsentDenied}</li>
+ * CorporateActionOption9Code.ConsentDenied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#ConsentGranted
- * CorporateActionOption9Code.mmConsentGranted}</li>
+ * CorporateActionOption9Code.ConsentGranted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#ConsentAndTender
- * CorporateActionOption9Code.mmConsentAndTender}</li>
+ * CorporateActionOption9Code.ConsentAndTender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Exercise
- * CorporateActionOption9Code.mmExercise}</li>
+ * CorporateActionOption9Code.Exercise}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Lapse
- * CorporateActionOption9Code.mmLapse}</li>
+ * CorporateActionOption9Code.Lapse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#MarkDown
- * CorporateActionOption9Code.mmMarkDown}</li>
+ * CorporateActionOption9Code.MarkDown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#MarkUp
- * CorporateActionOption9Code.mmMarkUp}</li>
+ * CorporateActionOption9Code.MarkUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#VoteWithManagement
- * CorporateActionOption9Code.mmVoteWithManagement}</li>
+ * CorporateActionOption9Code.VoteWithManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Retain
- * CorporateActionOption9Code.mmRetain}</li>
+ * CorporateActionOption9Code.Retain}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#NoAction
- * CorporateActionOption9Code.mmNoAction}</li>
+ * CorporateActionOption9Code.NoAction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#NonQualifiedInvestor
- * CorporateActionOption9Code.mmNonQualifiedInvestor}</li>
+ * CorporateActionOption9Code.NonQualifiedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#ProposedRate
- * CorporateActionOption9Code.mmProposedRate}</li>
+ * CorporateActionOption9Code.ProposedRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Other
- * CorporateActionOption9Code.mmOther}</li>
+ * CorporateActionOption9Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Oversubscribe
- * CorporateActionOption9Code.mmOversubscribe}</li>
+ * CorporateActionOption9Code.Oversubscribe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#ProxyCard
- * CorporateActionOption9Code.mmProxyCard}</li>
+ * CorporateActionOption9Code.ProxyCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#QualifiedInvestor
- * CorporateActionOption9Code.mmQualifiedInvestor}</li>
+ * CorporateActionOption9Code.QualifiedInvestor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#Security
- * CorporateActionOption9Code.mmSecurity}</li>
+ * CorporateActionOption9Code.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#SellEntitlement
- * CorporateActionOption9Code.mmSellEntitlement}</li>
+ * CorporateActionOption9Code.SellEntitlement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#SplitInstruction
- * CorporateActionOption9Code.mmSplitInstruction}</li>
+ * CorporateActionOption9Code.SplitInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#TaxInstruction
- * CorporateActionOption9Code.mmTaxInstruction}</li>
+ * CorporateActionOption9Code.TaxInstruction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionOption9Code#UnknownProceeds
- * CorporateActionOption9Code.mmUnknownProceeds}</li>
+ * CorporateActionOption9Code.UnknownProceeds}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -131,8 +131,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -857,7 +857,7 @@ public class CorporateActionOption9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ABST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionOption9Code";

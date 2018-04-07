@@ -26,8 +26,11 @@ import com.tools20022.repository.choice.PartyIdentification2Choice;
 import com.tools20022.repository.entity.ContactPersonRole;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ContactIdentification4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +80,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,16 +94,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContactPerson1", propOrder = {"contactPerson", "institutionIdentification"})
 public class ContactPerson1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CtctPrsn", required = true)
 	protected ContactIdentification4 contactPerson;
 	/**
-	 * Provides additional information regarding the party, eg, the contact unit
-	 * or person responsible for the transaction identified in the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -130,10 +133,10 @@ public class ContactPerson1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContactPerson = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ContactPerson1, ContactIdentification4> mmContactPerson = new MMMessageAssociationEnd<ContactPerson1, ContactIdentification4>() {
 		{
 			businessComponentTrace_lazy = () -> ContactPersonRole.mmObject();
-			componentContext_lazy = () -> ContactPerson1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactPerson1.mmObject();
 			isDerived = false;
 			xmlTag = "CtctPrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,13 +145,24 @@ public class ContactPerson1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContactIdentification4.mmObject();
+			type_lazy = () -> ContactIdentification4.mmObject();
+		}
+
+		@Override
+		public ContactIdentification4 getValue(ContactPerson1 obj) {
+			return obj.getContactPerson();
+		}
+
+		@Override
+		public void setValue(ContactPerson1 obj, ContactIdentification4 value) {
+			obj.setContactPerson(value);
 		}
 	};
+	@XmlElement(name = "InstnId")
 	protected PartyIdentification2Choice institutionIdentification;
 	/**
-	 * Identification of the institution that the contact person represents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,10 +193,10 @@ public class ContactPerson1 {
 	 * "Identification of the institution that the contact person represents."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstitutionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContactPerson1, Optional<PartyIdentification2Choice>> mmInstitutionIdentification = new MMMessageAttribute<ContactPerson1, Optional<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> ContactPerson1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContactPerson1.mmObject();
 			isDerived = false;
 			xmlTag = "InstnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,16 +206,26 @@ public class ContactPerson1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(ContactPerson1 obj) {
+			return obj.getInstitutionIdentification();
+		}
+
+		@Override
+		public void setValue(ContactPerson1 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setInstitutionIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContactPerson1.mmContactPerson, ContactPerson1.mmInstitutionIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContactPerson1.mmContactPerson, com.tools20022.repository.msg.ContactPerson1.mmInstitutionIdentification);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCANotificationAdviceV01.mmContactDetails, AgentCAElectionAdviceV01.mmContactDetails, AgentCAElectionAmendmentRequestV01.mmContactDetails,
 						AgentCAInformationAdviceV01.mmContactDetails, AgentCAStandingInstructionRequestV01.mmContactDetails);
 				trace_lazy = () -> ContactPersonRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContactPerson1";
 				definition = "Contains information about the contact responsible for the transaction identified in the message.";
@@ -210,21 +234,21 @@ public class ContactPerson1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CtctPrsn", required = true)
 	public ContactIdentification4 getContactPerson() {
 		return contactPerson;
 	}
 
-	public void setContactPerson(com.tools20022.repository.msg.ContactIdentification4 contactPerson) {
-		this.contactPerson = contactPerson;
+	public ContactPerson1 setContactPerson(ContactIdentification4 contactPerson) {
+		this.contactPerson = Objects.requireNonNull(contactPerson);
+		return this;
 	}
 
-	@XmlElement(name = "InstnId")
-	public PartyIdentification2Choice getInstitutionIdentification() {
-		return institutionIdentification;
+	public Optional<PartyIdentification2Choice> getInstitutionIdentification() {
+		return institutionIdentification == null ? Optional.empty() : Optional.of(institutionIdentification);
 	}
 
-	public void setInstitutionIdentification(PartyIdentification2Choice institutionIdentification) {
+	public ContactPerson1 setInstitutionIdentification(PartyIdentification2Choice institutionIdentification) {
 		this.institutionIdentification = institutionIdentification;
+		return this;
 	}
 }

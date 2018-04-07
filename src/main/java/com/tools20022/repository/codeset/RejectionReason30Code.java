@@ -38,109 +38,109 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#SafekeepingAccountRejection
- * RejectionReason30Code.mmSafekeepingAccountRejection}</li>
+ * RejectionReason30Code.SafekeepingAccountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#QuantityRejection
- * RejectionReason30Code.mmQuantityRejection}</li>
+ * RejectionReason30Code.QuantityRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#AccountServicerDeadlineMissed
- * RejectionReason30Code.mmAccountServicerDeadlineMissed}</li>
+ * RejectionReason30Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#InvalidSecurity
- * RejectionReason30Code.mmInvalidSecurity}</li>
+ * RejectionReason30Code.InvalidSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#MarketDeadlineMissed
- * RejectionReason30Code.mmMarketDeadlineMissed}</li>
+ * RejectionReason30Code.MarketDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#CashAccount
- * RejectionReason30Code.mmCashAccount}</li>
+ * RejectionReason30Code.CashAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#DealPrice
- * RejectionReason30Code.mmDealPrice}</li>
+ * RejectionReason30Code.DealPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#TradeDate
- * RejectionReason30Code.mmTradeDate}</li>
+ * RejectionReason30Code.TradeDate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#PlaceOfTrade
- * RejectionReason30Code.mmPlaceOfTrade}</li>
+ * RejectionReason30Code.PlaceOfTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ImpossibleToUseTheRTGSSystemInstructed
- * RejectionReason30Code.mmImpossibleToUseTheRTGSSystemInstructed}</li>
+ * RejectionReason30Code.ImpossibleToUseTheRTGSSystemInstructed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#SettlementAmountCurrencyRejection
- * RejectionReason30Code.mmSettlementAmountCurrencyRejection}</li>
+ * RejectionReason30Code.SettlementAmountCurrencyRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#PhysicalSettlementImpossible
- * RejectionReason30Code.mmPhysicalSettlementImpossible}</li>
+ * RejectionReason30Code.PhysicalSettlementImpossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ReferenceRejection
- * RejectionReason30Code.mmReferenceRejection}</li>
+ * RejectionReason30Code.ReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#SettlementAmountRejection
- * RejectionReason30Code.mmSettlementAmountRejection}</li>
+ * RejectionReason30Code.SettlementAmountRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#MinimumSettlementQuantity
- * RejectionReason30Code.mmMinimumSettlementQuantity}</li>
+ * RejectionReason30Code.MinimumSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ProcessingBatchRejection
- * RejectionReason30Code.mmProcessingBatchRejection}</li>
+ * RejectionReason30Code.ProcessingBatchRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#MultipleSettlementQuantity
- * RejectionReason30Code.mmMultipleSettlementQuantity}</li>
+ * RejectionReason30Code.MultipleSettlementQuantity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#TaxStatusRejection
- * RejectionReason30Code.mmTaxStatusRejection}</li>
+ * RejectionReason30Code.TaxStatusRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#SettlementSystemMethodRejection
- * RejectionReason30Code.mmSettlementSystemMethodRejection}</li>
+ * RejectionReason30Code.SettlementSystemMethodRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#CommonReferenceRejection
- * RejectionReason30Code.mmCommonReferenceRejection}</li>
+ * RejectionReason30Code.CommonReferenceRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#CorporateActionRejection
- * RejectionReason30Code.mmCorporateActionRejection}</li>
+ * RejectionReason30Code.CorporateActionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ImpossibleCashSettlementSystem
- * RejectionReason30Code.mmImpossibleCashSettlementSystem}</li>
+ * RejectionReason30Code.ImpossibleCashSettlementSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#SettlementDateRejection
- * RejectionReason30Code.mmSettlementDateRejection}</li>
+ * RejectionReason30Code.SettlementDateRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#SettlementTransactionRejection
- * RejectionReason30Code.mmSettlementTransactionRejection}</li>
+ * RejectionReason30Code.SettlementTransactionRejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#LackOfStampDuty
- * RejectionReason30Code.mmLackOfStampDuty}</li>
+ * RejectionReason30Code.LackOfStampDuty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#PlaceOfSafekeeping
- * RejectionReason30Code.mmPlaceOfSafekeeping}</li>
+ * RejectionReason30Code.PlaceOfSafekeeping}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#Other
- * RejectionReason30Code.mmOther}</li>
+ * RejectionReason30Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ReceivingDeliveringParty2
- * RejectionReason30Code.mmReceivingDeliveringParty2}</li>
+ * RejectionReason30Code.ReceivingDeliveringParty2}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ReceivingDeliveringParty1
- * RejectionReason30Code.mmReceivingDeliveringParty1}</li>
+ * RejectionReason30Code.ReceivingDeliveringParty1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ReceivingDeliveringDepository
- * RejectionReason30Code.mmReceivingDeliveringDepository}</li>
+ * RejectionReason30Code.ReceivingDeliveringDepository}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#ReceivingDeliveringParty3
- * RejectionReason30Code.mmReceivingDeliveringParty3}</li>
+ * RejectionReason30Code.ReceivingDeliveringParty3}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#InvalidBalance
- * RejectionReason30Code.mmInvalidBalance}</li>
+ * RejectionReason30Code.InvalidBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#InvalidLink
- * RejectionReason30Code.mmInvalidLink}</li>
+ * RejectionReason30Code.InvalidLink}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#InvalidLotNumber
- * RejectionReason30Code.mmInvalidLotNumber}</li>
+ * RejectionReason30Code.InvalidLotNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectionReason30Code#InvalidRule
- * RejectionReason30Code.mmInvalidRule}</li>
+ * RejectionReason30Code.InvalidRule}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -149,8 +149,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -198,7 +198,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#SafekeepingAccountRejection
-	 * RejectionReason37Code.mmSafekeepingAccountRejection}</li>
+	 * RejectionReason37Code.SafekeepingAccountRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -231,7 +231,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#QuantityRejection
-	 * RejectionReason37Code.mmQuantityRejection}</li>
+	 * RejectionReason37Code.QuantityRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -264,7 +264,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#AccountServicerDeadlineMissed
-	 * RejectionReason37Code.mmAccountServicerDeadlineMissed}</li>
+	 * RejectionReason37Code.AccountServicerDeadlineMissed}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -297,7 +297,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#InvalidSecurity
-	 * RejectionReason37Code.mmInvalidSecurity}</li>
+	 * RejectionReason37Code.InvalidSecurity}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -330,7 +330,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#MarketDeadlineMissed
-	 * RejectionReason37Code.mmMarketDeadlineMissed}</li>
+	 * RejectionReason37Code.MarketDeadlineMissed}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -363,7 +363,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#CashAccount
-	 * RejectionReason37Code.mmCashAccount}</li>
+	 * RejectionReason37Code.CashAccount}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -396,7 +396,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#DealPrice
-	 * RejectionReason37Code.mmDealPrice}</li>
+	 * RejectionReason37Code.DealPrice}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -429,7 +429,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#TradeDate
-	 * RejectionReason37Code.mmTradeDate}</li>
+	 * RejectionReason37Code.TradeDate}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -462,7 +462,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#PlaceOfTrade
-	 * RejectionReason37Code.mmPlaceOfTrade}</li>
+	 * RejectionReason37Code.PlaceOfTrade}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -495,7 +495,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ImpossibleToUseTheRTGSSystemInstructed
-	 * RejectionReason37Code.mmImpossibleToUseTheRTGSSystemInstructed}</li>
+	 * RejectionReason37Code.ImpossibleToUseTheRTGSSystemInstructed}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -528,7 +528,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#SettlementAmountCurrencyRejection
-	 * RejectionReason37Code.mmSettlementAmountCurrencyRejection}</li>
+	 * RejectionReason37Code.SettlementAmountCurrencyRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -561,7 +561,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#PhysicalSettlementImpossible
-	 * RejectionReason37Code.mmPhysicalSettlementImpossible}</li>
+	 * RejectionReason37Code.PhysicalSettlementImpossible}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -594,7 +594,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ReferenceRejection
-	 * RejectionReason37Code.mmReferenceRejection}</li>
+	 * RejectionReason37Code.ReferenceRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -627,7 +627,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#SettlementAmountRejection
-	 * RejectionReason37Code.mmSettlementAmountRejection}</li>
+	 * RejectionReason37Code.SettlementAmountRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -660,7 +660,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#MinimumSettlementQuantity
-	 * RejectionReason37Code.mmMinimumSettlementQuantity}</li>
+	 * RejectionReason37Code.MinimumSettlementQuantity}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -693,7 +693,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ProcessingBatchRejection
-	 * RejectionReason37Code.mmProcessingBatchRejection}</li>
+	 * RejectionReason37Code.ProcessingBatchRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -726,7 +726,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#MultipleSettlementQuantity
-	 * RejectionReason37Code.mmMultipleSettlementQuantity}</li>
+	 * RejectionReason37Code.MultipleSettlementQuantity}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -759,7 +759,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#TaxStatusRejection
-	 * RejectionReason37Code.mmTaxStatusRejection}</li>
+	 * RejectionReason37Code.TaxStatusRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -792,7 +792,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#SettlementSystemMethodRejection
-	 * RejectionReason37Code.mmSettlementSystemMethodRejection}</li>
+	 * RejectionReason37Code.SettlementSystemMethodRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -825,7 +825,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#CommonReferenceRejection
-	 * RejectionReason37Code.mmCommonReferenceRejection}</li>
+	 * RejectionReason37Code.CommonReferenceRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -858,7 +858,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#CorporateActionRejection
-	 * RejectionReason37Code.mmCorporateActionRejection}</li>
+	 * RejectionReason37Code.CorporateActionRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -891,7 +891,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ImpossibleCashSettlementSystem
-	 * RejectionReason37Code.mmImpossibleCashSettlementSystem}</li>
+	 * RejectionReason37Code.ImpossibleCashSettlementSystem}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -924,7 +924,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#SettlementDateRejection
-	 * RejectionReason37Code.mmSettlementDateRejection}</li>
+	 * RejectionReason37Code.SettlementDateRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -957,7 +957,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#SettlementTransactionRejection
-	 * RejectionReason37Code.mmSettlementTransactionRejection}</li>
+	 * RejectionReason37Code.SettlementTransactionRejection}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -990,7 +990,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#LackOfStampDuty
-	 * RejectionReason37Code.mmLackOfStampDuty}</li>
+	 * RejectionReason37Code.LackOfStampDuty}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1023,7 +1023,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#PlaceOfSafekeeping
-	 * RejectionReason37Code.mmPlaceOfSafekeeping}</li>
+	 * RejectionReason37Code.PlaceOfSafekeeping}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1056,7 +1056,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#Other
-	 * RejectionReason37Code.mmOther}</li>
+	 * RejectionReason37Code.Other}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1089,7 +1089,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ReceivingDeliveringParty2
-	 * RejectionReason37Code.mmReceivingDeliveringParty2}</li>
+	 * RejectionReason37Code.ReceivingDeliveringParty2}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1122,7 +1122,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ReceivingDeliveringParty1
-	 * RejectionReason37Code.mmReceivingDeliveringParty1}</li>
+	 * RejectionReason37Code.ReceivingDeliveringParty1}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1155,7 +1155,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ReceivingDeliveringDepository
-	 * RejectionReason37Code.mmReceivingDeliveringDepository}</li>
+	 * RejectionReason37Code.ReceivingDeliveringDepository}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1188,7 +1188,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#ReceivingDeliveringParty3
-	 * RejectionReason37Code.mmReceivingDeliveringParty3}</li>
+	 * RejectionReason37Code.ReceivingDeliveringParty3}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1221,7 +1221,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#InvalidBalance
-	 * RejectionReason37Code.mmInvalidBalance}</li>
+	 * RejectionReason37Code.InvalidBalance}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1254,7 +1254,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#InvalidLink
-	 * RejectionReason37Code.mmInvalidLink}</li>
+	 * RejectionReason37Code.InvalidLink}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1287,7 +1287,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#InvalidLotNumber
-	 * RejectionReason37Code.mmInvalidLotNumber}</li>
+	 * RejectionReason37Code.InvalidLotNumber}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1320,7 +1320,7 @@ public class RejectionReason30Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.RejectionReason37Code#InvalidRule
-	 * RejectionReason37Code.mmInvalidRule}</li>
+	 * RejectionReason37Code.InvalidRule}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -1342,7 +1342,7 @@ public class RejectionReason30Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SAFE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason30Code";

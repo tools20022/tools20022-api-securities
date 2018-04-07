@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#CertificateForeignIntermediary
- * FATCAFormType1Code.mmCertificateForeignIntermediary}</li>
+ * FATCAFormType1Code.CertificateForeignIntermediary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#CertificateForeignPersonsClaim
- * FATCAFormType1Code.mmCertificateForeignPersonsClaim}</li>
+ * FATCAFormType1Code.CertificateForeignPersonsClaim}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#CertificateForeignStatusBeneficialOwner
- * FATCAFormType1Code.mmCertificateForeignStatusBeneficialOwner}</li>
+ * FATCAFormType1Code.CertificateForeignStatusBeneficialOwner}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#CertificateLossNationality
- * FATCAFormType1Code.mmCertificateLossNationality}</li>
+ * FATCAFormType1Code.CertificateLossNationality}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#SelfCertification
- * FATCAFormType1Code.mmSelfCertification}</li>
+ * FATCAFormType1Code.SelfCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#SelfCertificationLossNationality
- * FATCAFormType1Code.mmSelfCertificationLossNationality}</li>
+ * FATCAFormType1Code.SelfCertificationLossNationality}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCAFormType1Code#TaxpayerIdentificationNumberRequest
- * FATCAFormType1Code.mmTaxpayerIdentificationNumberRequest}</li>
+ * FATCAFormType1Code.TaxpayerIdentificationNumberRequest}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -258,7 +258,7 @@ public class FATCAFormType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FATCAFormType1Code";
 				definition = "Specifies the type of Foreign Account Tax Compliance Act (FATCA) form.";

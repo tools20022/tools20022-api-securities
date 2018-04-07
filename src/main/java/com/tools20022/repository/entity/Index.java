@@ -25,12 +25,11 @@ import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Identifies the index.
@@ -108,8 +107,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,8 +124,8 @@ public class Index {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PercentageRate indexRateBasis;
 	/**
-	 * Specifies the reference rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,6 +145,12 @@ public class Index {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes64#mmIndexRateBasis
 	 * FinancialInstrumentAttributes64.mmIndexRateBasis}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes91#mmIndexRateBasis
+	 * FinancialInstrumentAttributes91.mmIndexRateBasis}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.FinancialInstrumentAttributes92#mmIndexRateBasis
+	 * FinancialInstrumentAttributes92.mmIndexRateBasis}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -163,9 +168,10 @@ public class Index {
 	 * definition} = "Specifies the reference rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndexRateBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, PercentageRate> mmIndexRateBasis = new MMBusinessAttribute<Index, PercentageRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes44.mmIndexRateBasis, FinancialInstrumentAttributes63.mmIndexRateBasis, FinancialInstrumentAttributes64.mmIndexRateBasis);
+			derivation_lazy = () -> Arrays.asList(FinancialInstrumentAttributes44.mmIndexRateBasis, FinancialInstrumentAttributes63.mmIndexRateBasis, FinancialInstrumentAttributes64.mmIndexRateBasis,
+					FinancialInstrumentAttributes91.mmIndexRateBasis, FinancialInstrumentAttributes92.mmIndexRateBasis);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -176,19 +182,20 @@ public class Index {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIndexRateBasis", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Index obj) {
+			return obj.getIndexRateBasis();
+		}
+
+		@Override
+		public void setValue(Index obj, PercentageRate value) {
+			obj.setIndexRateBasis(value);
 		}
 	};
 	protected RateAndAmount indexFactor;
 	/**
-	 * Index rate applied to the amount paid to adjust it for instance to
-	 * inflation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,14 +217,14 @@ public class Index {
 	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate2#mmIndexFactor
 	 * CorporateActionRate2.mmIndexFactor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate82#mmIndexFactor
-	 * CorporateActionRate82.mmIndexFactor}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate86#mmIndexFactor
+	 * CorporateActionRate86.mmIndexFactor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate80#mmIndexFactor
-	 * CorporateActionRate80.mmIndexFactor}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate87#mmIndexFactor
+	 * CorporateActionRate87.mmIndexFactor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate81#mmIndexFactor
-	 * CorporateActionRate81.mmIndexFactor}</li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateActionRate88#mmIndexFactor
+	 * CorporateActionRate88.mmIndexFactor}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -237,9 +244,9 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIndexFactor = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Index, RateAndAmount> mmIndexFactor = new MMBusinessAssociationEnd<Index, RateAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmIndexFactor, CorporateActionRate82.mmIndexFactor, CorporateActionRate80.mmIndexFactor, CorporateActionRate81.mmIndexFactor);
+			derivation_lazy = () -> Arrays.asList(CorporateActionRate2.mmIndexFactor, CorporateActionRate86.mmIndexFactor, CorporateActionRate87.mmIndexFactor, CorporateActionRate88.mmIndexFactor);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -247,15 +254,25 @@ public class Index {
 			definition = "Index rate applied to the amount paid to adjust it for instance to inflation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmIndex;
+			opposite_lazy = () -> RateAndAmount.mmIndex;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
+			type_lazy = () -> RateAndAmount.mmObject();
+		}
+
+		@Override
+		public RateAndAmount getValue(Index obj) {
+			return obj.getIndexFactor();
+		}
+
+		@Override
+		public void setValue(Index obj, RateAndAmount value) {
+			obj.setIndexFactor(value);
 		}
 	};
 	protected DecimalNumber indexPoints;
 	/**
-	 * Number of points above the index used to calculate a price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -308,7 +325,7 @@ public class Index {
 	 * "Number of points above the index used to calculate a price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndexPoints = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, DecimalNumber> mmIndexPoints = new MMBusinessAttribute<Index, DecimalNumber>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PriceFormat4Choice.mmIndexPoints, SecuritiesTransactionPrice2Choice.mmBasisPoints, PriceFormat48Choice.mmIndexPoints, PriceFormat51Choice.mmIndexPoints, PriceFormat49Choice.mmIndexPoints,
 					PriceFormat47Choice.mmIndexPoints, PriceFormat44Choice.mmIndexPoints, RateAndAmountFormat38Choice.mmIndexPoints);
@@ -322,18 +339,20 @@ public class Index {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIndexPoints", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(Index obj) {
+			return obj.getIndexPoints();
+		}
+
+		@Override
+		public void setValue(Index obj, DecimalNumber value) {
+			obj.setIndexPoints(value);
 		}
 	};
 	protected ISODateTime indexFixingDate;
 	/**
-	 * Date/time at which an index rate will be determined .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,7 +382,7 @@ public class Index {
 	 * definition} = "Date/time at which an index rate will be determined ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndexFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, ISODateTime> mmIndexFixingDate = new MMBusinessAttribute<Index, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CorporateActionDate2.mmIndexFixingDate);
 			isDerived = false;
@@ -376,18 +395,20 @@ public class Index {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIndexFixingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Index obj) {
+			return obj.getIndexFixingDate();
+		}
+
+		@Override
+		public void setValue(Index obj, ISODateTime value) {
+			obj.setIndexFixingDate(value);
 		}
 	};
 	protected Max35Text identification;
 	/**
-	 * Identifies the index by a name for instance LIBOR.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,7 +459,7 @@ public class Index {
 	 * definition} = "Identifies the index by a name for instance LIBOR."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, Max35Text> mmIdentification = new MMBusinessAttribute<Index, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(IdentificationReference8Choice.mmIndexIdentification, IdentificationReference11Choice.mmIndexIdentification, VariableInterest1Rate.mmIndex, Identification15.mmIndexIdentification,
 					FloatingRateNote2.mmReferenceRateIndex, FloatingInterestRate6.mmReferenceRate, FloatingInterestRate8.mmReferenceRate, CreditDefaultSwapDerivative3.mmUnderlyingIndexIdentification);
@@ -452,19 +473,20 @@ public class Index {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Index obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Index obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected Max35Text referenceSource;
 	/**
-	 * Identifies the reference source. The source can be the fixing agent or a
-	 * system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -496,7 +518,7 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReferenceSource = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, Max35Text> mmReferenceSource = new MMBusinessAttribute<Index, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditDefaultSwapDerivative3.mmIndexName);
 			isDerived = false;
@@ -509,20 +531,20 @@ public class Index {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getReferenceSource", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Index obj) {
+			return obj.getReferenceSource();
+		}
+
+		@Override
+		public void setValue(Index obj, Max35Text value) {
+			obj.setReferenceSource(value);
 		}
 	};
 	protected CurrencyCode indexRateCurrency;
 	/**
-	 * Specifies the currency of the reference rate for fixed income instruments
-	 * where the price of the instrument is indexed to the price of an
-	 * underlying benchmark.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -546,7 +568,7 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndexRateCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, CurrencyCode> mmIndexRateCurrency = new MMBusinessAttribute<Index, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
@@ -558,18 +580,20 @@ public class Index {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIndexRateCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(Index obj) {
+			return obj.getIndexRateCurrency();
+		}
+
+		@Override
+		public void setValue(Index obj, CurrencyCode value) {
+			obj.setIndexRateCurrency(value);
 		}
 	};
 	protected FrequencyCode indexRateFrequency;
 	/**
-	 * Frequency at which the index changes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -592,7 +616,7 @@ public class Index {
 	 * definition} = "Frequency at which the index changes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndexRateFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, FrequencyCode> mmIndexRateFrequency = new MMBusinessAttribute<Index, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
@@ -604,18 +628,20 @@ public class Index {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIndexRateFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(Index obj) {
+			return obj.getIndexRateFrequency();
+		}
+
+		@Override
+		public void setValue(Index obj, FrequencyCode value) {
+			obj.setIndexRateFrequency(value);
 		}
 	};
 	protected DecimalNumber indexRateMultiplier;
 	/**
-	 * Multiplier for the variable rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -646,7 +672,7 @@ public class Index {
 	 * definition} = "Multiplier for the variable rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndexRateMultiplier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Index, DecimalNumber> mmIndexRateMultiplier = new MMBusinessAttribute<Index, DecimalNumber>() {
 		{
 			derivation_lazy = () -> Arrays.asList(InterestRateContractTerm2.mmValue);
 			isDerived = false;
@@ -659,19 +685,20 @@ public class Index {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Index.class.getMethod("getIndexRateMultiplier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DecimalNumber getValue(Index obj) {
+			return obj.getIndexRateMultiplier();
+		}
+
+		@Override
+		public void setValue(Index obj, DecimalNumber value) {
+			obj.setIndexRateMultiplier(value);
 		}
 	};
 	protected Spread spread;
 	/**
-	 * Percentage to be added to or deducted from the index rate to calculate
-	 * the effective rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -701,7 +728,7 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Index, Optional<Spread>> mmSpread = new MMBusinessAssociationEnd<Index, Optional<Spread>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
@@ -710,15 +737,25 @@ public class Index {
 			definition = "Percentage to be added to or deducted from the index rate to calculate the effective rate.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmIndex;
+			opposite_lazy = () -> Spread.mmIndex;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			type_lazy = () -> Spread.mmObject();
+		}
+
+		@Override
+		public Optional<Spread> getValue(Index obj) {
+			return obj.getSpread();
+		}
+
+		@Override
+		public void setValue(Index obj, Optional<Spread> value) {
+			obj.setSpread(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark;
+	protected List<PortfolioBenchmark> portfolioBenchmark;
 	/**
-	 * Portfolio benchmark which uses an index for decomposition,
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -749,7 +786,7 @@ public class Index {
 	 * "Portfolio benchmark which uses an index for decomposition,"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPortfolioBenchmark = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Index, List<PortfolioBenchmark>> mmPortfolioBenchmark = new MMBusinessAssociationEnd<Index, List<PortfolioBenchmark>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
@@ -757,15 +794,25 @@ public class Index {
 			name = "PortfolioBenchmark";
 			definition = "Portfolio benchmark which uses an index for decomposition,";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioBenchmark.mmIndex;
+			opposite_lazy = () -> PortfolioBenchmark.mmIndex;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioBenchmark.mmObject();
+			type_lazy = () -> PortfolioBenchmark.mmObject();
+		}
+
+		@Override
+		public List<PortfolioBenchmark> getValue(Index obj) {
+			return obj.getPortfolioBenchmark();
+		}
+
+		@Override
+		public void setValue(Index obj, List<PortfolioBenchmark> value) {
+			obj.setPortfolioBenchmark(value);
 		}
 	};
 	protected VariableInterest variableInterest;
 	/**
-	 * Variable interest which uises the index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -795,7 +842,7 @@ public class Index {
 	 * definition} = "Variable interest which uises the index."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Index, VariableInterest> mmVariableInterest = new MMBusinessAssociationEnd<Index, VariableInterest>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
@@ -804,15 +851,25 @@ public class Index {
 			definition = "Variable interest which uises the index.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmIndex;
+			opposite_lazy = () -> VariableInterest.mmIndex;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
+			type_lazy = () -> VariableInterest.mmObject();
+		}
+
+		@Override
+		public VariableInterest getValue(Index obj) {
+			return obj.getVariableInterest();
+		}
+
+		@Override
+		public void setValue(Index obj, VariableInterest value) {
+			obj.setVariableInterest(value);
 		}
 	};
 	protected SecuritiesPricing securitiesPricing;
 	/**
-	 * Pricing which uses an index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -842,7 +899,7 @@ public class Index {
 	 * definition} = "Pricing which uses an index."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Index, SecuritiesPricing> mmSecuritiesPricing = new MMBusinessAssociationEnd<Index, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
@@ -851,21 +908,30 @@ public class Index {
 			definition = "Pricing which uses an index.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmIndex;
+			opposite_lazy = () -> SecuritiesPricing.mmIndex;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(Index obj) {
+			return obj.getSecuritiesPricing();
+		}
+
+		@Override
+		public void setValue(Index obj, SecuritiesPricing value) {
+			obj.setSecuritiesPricing(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Index";
 				definition = "Identifies the index.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmIndex, com.tools20022.repository.entity.VariableInterest.mmIndex, com.tools20022.repository.entity.RateAndAmount.mmIndex,
-						com.tools20022.repository.entity.Spread.mmIndex, com.tools20022.repository.entity.PortfolioBenchmark.mmIndex);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmIndex, VariableInterest.mmIndex, RateAndAmount.mmIndex, Spread.mmIndex, PortfolioBenchmark.mmIndex);
 				derivationElement_lazy = () -> Arrays.asList(CreditDefaultSwapDerivative3.mmIndex);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Index.mmIndexRateBasis, com.tools20022.repository.entity.Index.mmIndexFactor, com.tools20022.repository.entity.Index.mmIndexPoints,
 						com.tools20022.repository.entity.Index.mmIndexFixingDate, com.tools20022.repository.entity.Index.mmIdentification, com.tools20022.repository.entity.Index.mmReferenceSource,
@@ -887,103 +953,116 @@ public class Index {
 		return indexRateBasis;
 	}
 
-	public void setIndexRateBasis(PercentageRate indexRateBasis) {
-		this.indexRateBasis = indexRateBasis;
+	public Index setIndexRateBasis(PercentageRate indexRateBasis) {
+		this.indexRateBasis = Objects.requireNonNull(indexRateBasis);
+		return this;
 	}
 
 	public RateAndAmount getIndexFactor() {
 		return indexFactor;
 	}
 
-	public void setIndexFactor(com.tools20022.repository.entity.RateAndAmount indexFactor) {
-		this.indexFactor = indexFactor;
+	public Index setIndexFactor(RateAndAmount indexFactor) {
+		this.indexFactor = Objects.requireNonNull(indexFactor);
+		return this;
 	}
 
 	public DecimalNumber getIndexPoints() {
 		return indexPoints;
 	}
 
-	public void setIndexPoints(DecimalNumber indexPoints) {
-		this.indexPoints = indexPoints;
+	public Index setIndexPoints(DecimalNumber indexPoints) {
+		this.indexPoints = Objects.requireNonNull(indexPoints);
+		return this;
 	}
 
 	public ISODateTime getIndexFixingDate() {
 		return indexFixingDate;
 	}
 
-	public void setIndexFixingDate(ISODateTime indexFixingDate) {
-		this.indexFixingDate = indexFixingDate;
+	public Index setIndexFixingDate(ISODateTime indexFixingDate) {
+		this.indexFixingDate = Objects.requireNonNull(indexFixingDate);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Index setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Max35Text getReferenceSource() {
 		return referenceSource;
 	}
 
-	public void setReferenceSource(Max35Text referenceSource) {
-		this.referenceSource = referenceSource;
+	public Index setReferenceSource(Max35Text referenceSource) {
+		this.referenceSource = Objects.requireNonNull(referenceSource);
+		return this;
 	}
 
 	public CurrencyCode getIndexRateCurrency() {
 		return indexRateCurrency;
 	}
 
-	public void setIndexRateCurrency(CurrencyCode indexRateCurrency) {
-		this.indexRateCurrency = indexRateCurrency;
+	public Index setIndexRateCurrency(CurrencyCode indexRateCurrency) {
+		this.indexRateCurrency = Objects.requireNonNull(indexRateCurrency);
+		return this;
 	}
 
 	public FrequencyCode getIndexRateFrequency() {
 		return indexRateFrequency;
 	}
 
-	public void setIndexRateFrequency(FrequencyCode indexRateFrequency) {
-		this.indexRateFrequency = indexRateFrequency;
+	public Index setIndexRateFrequency(FrequencyCode indexRateFrequency) {
+		this.indexRateFrequency = Objects.requireNonNull(indexRateFrequency);
+		return this;
 	}
 
 	public DecimalNumber getIndexRateMultiplier() {
 		return indexRateMultiplier;
 	}
 
-	public void setIndexRateMultiplier(DecimalNumber indexRateMultiplier) {
-		this.indexRateMultiplier = indexRateMultiplier;
+	public Index setIndexRateMultiplier(DecimalNumber indexRateMultiplier) {
+		this.indexRateMultiplier = Objects.requireNonNull(indexRateMultiplier);
+		return this;
 	}
 
-	public Spread getSpread() {
-		return spread;
+	public Optional<Spread> getSpread() {
+		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+	public Index setSpread(Spread spread) {
 		this.spread = spread;
+		return this;
 	}
 
 	public List<PortfolioBenchmark> getPortfolioBenchmark() {
-		return portfolioBenchmark;
+		return portfolioBenchmark == null ? portfolioBenchmark = new ArrayList<>() : portfolioBenchmark;
 	}
 
-	public void setPortfolioBenchmark(List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark) {
-		this.portfolioBenchmark = portfolioBenchmark;
+	public Index setPortfolioBenchmark(List<PortfolioBenchmark> portfolioBenchmark) {
+		this.portfolioBenchmark = Objects.requireNonNull(portfolioBenchmark);
+		return this;
 	}
 
 	public VariableInterest getVariableInterest() {
 		return variableInterest;
 	}
 
-	public void setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
-		this.variableInterest = variableInterest;
+	public Index setVariableInterest(VariableInterest variableInterest) {
+		this.variableInterest = Objects.requireNonNull(variableInterest);
+		return this;
 	}
 
 	public SecuritiesPricing getSecuritiesPricing() {
 		return securitiesPricing;
 	}
 
-	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
-		this.securitiesPricing = securitiesPricing;
+	public Index setSecuritiesPricing(SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = Objects.requireNonNull(securitiesPricing);
+		return this;
 	}
 }

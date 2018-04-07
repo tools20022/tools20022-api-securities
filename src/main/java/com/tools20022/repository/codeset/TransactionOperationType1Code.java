@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationType1Code#Amendment
- * TransactionOperationType1Code.mmAmendment}</li>
+ * TransactionOperationType1Code.Amendment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationType1Code#Cancellation
- * TransactionOperationType1Code.mmCancellation}</li>
+ * TransactionOperationType1Code.Cancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationType1Code#Correction
- * TransactionOperationType1Code.mmCorrection}</li>
+ * TransactionOperationType1Code.Correction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionOperationType1Code#NewTransaction
- * TransactionOperationType1Code.mmNewTransaction}</li>
+ * TransactionOperationType1Code.NewTransaction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -177,7 +177,7 @@ public class TransactionOperationType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionOperationType1Code";
 				definition = "Specifies the type of process related to a specific transaction.";

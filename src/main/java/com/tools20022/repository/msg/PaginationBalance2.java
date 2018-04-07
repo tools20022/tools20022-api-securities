@@ -25,6 +25,7 @@ import com.tools20022.repository.choice.OpeningBalance3Choice;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,16 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Balance of a financial instrument for a specific statement page."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaginationBalance2", propOrder = {"openingBalance", "closingBalance"})
 public class PaginationBalance2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OpngBal")
 	protected OpeningBalance3Choice openingBalance;
 	/**
-	 * Opening balance of the financial instrument in the statement or of the
-	 * intermediary opening balance of the page of the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -99,9 +100,9 @@ public class PaginationBalance2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOpeningBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaginationBalance2, Optional<OpeningBalance3Choice>> mmOpeningBalance = new MMMessageAssociationEnd<PaginationBalance2, Optional<OpeningBalance3Choice>>() {
 		{
-			componentContext_lazy = () -> PaginationBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaginationBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "OpngBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,12 +113,22 @@ public class PaginationBalance2 {
 			isComposite = true;
 			type_lazy = () -> OpeningBalance3Choice.mmObject();
 		}
+
+		@Override
+		public Optional<OpeningBalance3Choice> getValue(PaginationBalance2 obj) {
+			return obj.getOpeningBalance();
+		}
+
+		@Override
+		public void setValue(PaginationBalance2 obj, Optional<OpeningBalance3Choice> value) {
+			obj.setOpeningBalance(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClsgBal")
 	protected ClosingBalance3Choice closingBalance;
 	/**
-	 * Closing balance of the financial instrument in the statement or of the
-	 * intermediary closing balance of the page of the statement
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -140,30 +151,40 @@ public class PaginationBalance2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Closing balance of the financial instrument in the statement or of the intermediary closing balance of the page of the statement"
+	 * "Closing balance of the financial instrument in the statement or of the intermediary closing balance of the page of the statement."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClosingBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaginationBalance2, Optional<ClosingBalance3Choice>> mmClosingBalance = new MMMessageAssociationEnd<PaginationBalance2, Optional<ClosingBalance3Choice>>() {
 		{
-			componentContext_lazy = () -> PaginationBalance2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaginationBalance2.mmObject();
 			isDerived = false;
 			xmlTag = "ClsgBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosingBalance";
-			definition = "Closing balance of the financial instrument in the statement or of the intermediary closing balance of the page of the statement";
+			definition = "Closing balance of the financial instrument in the statement or of the intermediary closing balance of the page of the statement.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> ClosingBalance3Choice.mmObject();
+		}
+
+		@Override
+		public Optional<ClosingBalance3Choice> getValue(PaginationBalance2 obj) {
+			return obj.getClosingBalance();
+		}
+
+		@Override
+		public void setValue(PaginationBalance2 obj, Optional<ClosingBalance3Choice> value) {
+			obj.setClosingBalance(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaginationBalance2.mmOpeningBalance, PaginationBalance2.mmClosingBalance);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaginationBalance2.mmOpeningBalance, com.tools20022.repository.msg.PaginationBalance2.mmClosingBalance);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaginationBalance2";
 				definition = "Balance of a financial instrument for a specific statement page.";
@@ -172,21 +193,21 @@ public class PaginationBalance2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OpngBal")
-	public OpeningBalance3Choice getOpeningBalance() {
-		return openingBalance;
+	public Optional<OpeningBalance3Choice> getOpeningBalance() {
+		return openingBalance == null ? Optional.empty() : Optional.of(openingBalance);
 	}
 
-	public void setOpeningBalance(OpeningBalance3Choice openingBalance) {
+	public PaginationBalance2 setOpeningBalance(OpeningBalance3Choice openingBalance) {
 		this.openingBalance = openingBalance;
+		return this;
 	}
 
-	@XmlElement(name = "ClsgBal")
-	public ClosingBalance3Choice getClosingBalance() {
-		return closingBalance;
+	public Optional<ClosingBalance3Choice> getClosingBalance() {
+		return closingBalance == null ? Optional.empty() : Optional.of(closingBalance);
 	}
 
-	public void setClosingBalance(ClosingBalance3Choice closingBalance) {
+	public PaginationBalance2 setClosingBalance(ClosingBalance3Choice closingBalance) {
 		this.closingBalance = closingBalance;
+		return this;
 	}
 }

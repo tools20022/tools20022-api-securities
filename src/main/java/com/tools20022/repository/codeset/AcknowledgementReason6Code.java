@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason6Code#AccountServicerDeadlineMissed
- * AcknowledgementReason6Code.mmAccountServicerDeadlineMissed}</li>
+ * AcknowledgementReason6Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason6Code#MarketPracticeRuleDiscrepency
- * AcknowledgementReason6Code.mmMarketPracticeRuleDiscrepency}</li>
+ * AcknowledgementReason6Code.MarketPracticeRuleDiscrepency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason6Code#Other
- * AcknowledgementReason6Code.mmOther}</li>
+ * AcknowledgementReason6Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason6Code#NotStraightThroughProcessing
- * AcknowledgementReason6Code.mmNotStraightThroughProcessing}</li>
+ * AcknowledgementReason6Code.NotStraightThroughProcessing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AcknowledgementReason6Code#MarketDeadlineMissed
- * AcknowledgementReason6Code.mmMarketDeadlineMissed}</li>
+ * AcknowledgementReason6Code.MarketDeadlineMissed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -210,7 +210,7 @@ public class AcknowledgementReason6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcknowledgementReason6Code";

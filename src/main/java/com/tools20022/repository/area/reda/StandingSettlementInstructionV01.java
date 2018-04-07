@@ -29,10 +29,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.AccountIdentification26;
 import com.tools20022.repository.msg.EffectiveDate1;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -56,7 +54,7 @@ import javax.xml.bind.annotation.*;
  * - an investment manager (executing broker)<br>
  * - a global custodian (executing broker, prime broker)<br>
  * • A vendor’s application communicating on behalf of the account owner or
- * counterparty
+ * counterparty.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -98,6 +96,15 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code reda.056.001.01}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCashPartiesCurrencyPresenceRule#for_reda_StandingSettlementInstructionV01
+ * ConstraintCashPartiesCurrencyPresenceRule.
+ * for_reda_StandingSettlementInstructionV01}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,19 +113,20 @@ import javax.xml.bind.annotation.*;
  * "StandingSettlementInstructionV01"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Scope\r\nAn instructing party sends the StandingSettlementInstruction (SSI) message to the receiver to create or update a standing cash or securities settlement instruction. The message can also be used to notify a counterparty of an SSI.\r\n\r\nUsage\r\nThe instructing party (initiator) is:\r\n•\tAn account servicer, for example, a global custodian or prime broker\r\n•\tA counterparty in a transaction, for example:\r\n-\tan investment manager (executing broker),\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of an account servicer or counterparty\r\nThe receiver is:\r\n•\tAn account owner, for example, an investment manager, hedge fund administrator or a party to which SSI operations have been outsourced\r\n•\tA counterparty, for example:\r\n-\tan investment manager (executing broker)\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of the account owner or counterparty"
+ * "Scope\r\nAn instructing party sends the StandingSettlementInstruction (SSI) message to the receiver to create or update a standing cash or securities settlement instruction. The message can also be used to notify a counterparty of an SSI.\r\n\r\nUsage\r\nThe instructing party (initiator) is:\r\n•\tAn account servicer, for example, a global custodian or prime broker\r\n•\tA counterparty in a transaction, for example:\r\n-\tan investment manager (executing broker),\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of an account servicer or counterparty\r\nThe receiver is:\r\n•\tAn account owner, for example, an investment manager, hedge fund administrator or a party to which SSI operations have been outsourced\r\n•\tA counterparty, for example:\r\n-\tan investment manager (executing broker)\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of the account owner or counterparty."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "StandingSettlementInstructionV01", propOrder = {"messageReferenceIdentification", "effectiveDateDetails", "accountIdentification", "marketIdentification", "settlementCurrency", "settlementDetails", "supplementaryData"})
 public class StandingSettlementInstructionV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgRefId", required = true)
 	protected Max35Text messageReferenceIdentification;
 	/**
-	 * Reference of this message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +146,7 @@ public class StandingSettlementInstructionV01 {
 	 * definition} = "Reference of this message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageReferenceIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, Max35Text> mmMessageReferenceIdentification = new MMMessageBuildingBlock<StandingSettlementInstructionV01, Max35Text>() {
 		{
 			xmlTag = "MsgRefId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,18 +157,21 @@ public class StandingSettlementInstructionV01 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getMessageReferenceIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getMessageReferenceIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, Max35Text value) {
+			obj.setMessageReferenceIdentification(value);
 		}
 	};
+	@XmlElement(name = "FctvDtDtls")
 	protected EffectiveDate1 effectiveDateDetails;
 	/**
-	 * Date on which the SSI is effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,7 +191,7 @@ public class StandingSettlementInstructionV01 {
 	 * definition} = "Date on which the SSI is effective."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmEffectiveDateDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, Optional<EffectiveDate1>> mmEffectiveDateDetails = new MMMessageBuildingBlock<StandingSettlementInstructionV01, Optional<EffectiveDate1>>() {
 		{
 			xmlTag = "FctvDtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,21 +202,21 @@ public class StandingSettlementInstructionV01 {
 			complexType_lazy = () -> EffectiveDate1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getEffectiveDateDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<EffectiveDate1> getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getEffectiveDateDetails();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, Optional<EffectiveDate1> value) {
+			obj.setEffectiveDateDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AcctId", required = true)
 	protected List<AccountIdentification26> accountIdentification;
 	/**
-	 * Unique and unambiguous master identification known to the sender (or its
-	 * authorised agent) and receiver (or its authorised agent), below which the
-	 * SSI will be lodged. This may be an account number or reference to a fund.<br>
-	 * If no account or reference is available then “NONREF” must be specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,7 +239,7 @@ public class StandingSettlementInstructionV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAccountIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, List<AccountIdentification26>> mmAccountIdentification = new MMMessageBuildingBlock<StandingSettlementInstructionV01, List<AccountIdentification26>>() {
 		{
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -238,18 +249,21 @@ public class StandingSettlementInstructionV01 {
 			complexType_lazy = () -> AccountIdentification26.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getAccountIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AccountIdentification26> getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, List<AccountIdentification26> value) {
+			obj.setAccountIdentification(value);
 		}
 	};
+	@XmlElement(name = "MktId", required = true)
 	protected MarketIdentificationOrCashPurpose1Choice marketIdentification;
 	/**
-	 * Identifies the market for the standing settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,32 +282,35 @@ public class StandingSettlementInstructionV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Identifies the market for the standing settlement instruction. "</li>
+	 * "Identifies the market for the standing settlement instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarketIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, MarketIdentificationOrCashPurpose1Choice> mmMarketIdentification = new MMMessageBuildingBlock<StandingSettlementInstructionV01, MarketIdentificationOrCashPurpose1Choice>() {
 		{
 			xmlTag = "MktId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketIdentification";
-			definition = "Identifies the market for the standing settlement instruction. ";
+			definition = "Identifies the market for the standing settlement instruction.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MarketIdentificationOrCashPurpose1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getMarketIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MarketIdentificationOrCashPurpose1Choice getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getMarketIdentification();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, MarketIdentificationOrCashPurpose1Choice value) {
+			obj.setMarketIdentification(value);
 		}
 	};
+	@XmlElement(name = "SttlmCcy")
 	protected ActiveCurrencyCode settlementCurrency;
 	/**
-	 * Currency for which the SSI is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,7 +331,7 @@ public class StandingSettlementInstructionV01 {
 	 * definition} = "Currency for which the SSI is specified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSettlementCurrency = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, Optional<ActiveCurrencyCode>> mmSettlementCurrency = new MMMessageBuildingBlock<StandingSettlementInstructionV01, Optional<ActiveCurrencyCode>>() {
 		{
 			xmlTag = "SttlmCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -325,18 +342,21 @@ public class StandingSettlementInstructionV01 {
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getSettlementCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setSettlementCurrency(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SttlmDtls", required = true)
 	protected SecuritiesOrCash1Choice settlementDetails;
 	/**
-	 * Settlement chain parties, accounts and other details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,33 +374,35 @@ public class StandingSettlementInstructionV01 {
 	 * name} = "SettlementDetails"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Settlement chain parties, accounts and other details. "</li>
+	 * definition} = "Settlement chain parties, accounts and other details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSettlementDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, SecuritiesOrCash1Choice> mmSettlementDetails = new MMMessageBuildingBlock<StandingSettlementInstructionV01, SecuritiesOrCash1Choice>() {
 		{
 			xmlTag = "SttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementDetails";
-			definition = "Settlement chain parties, accounts and other details. ";
+			definition = "Settlement chain parties, accounts and other details.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> SecuritiesOrCash1Choice.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getSettlementDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesOrCash1Choice getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getSettlementDetails();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, SecuritiesOrCash1Choice value) {
+			obj.setSettlementDetails(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -403,7 +425,7 @@ public class StandingSettlementInstructionV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<StandingSettlementInstructionV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<StandingSettlementInstructionV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -413,21 +435,24 @@ public class StandingSettlementInstructionV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return StandingSettlementInstructionV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(StandingSettlementInstructionV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(StandingSettlementInstructionV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCashPartiesCurrencyPresenceRule.for_reda_StandingSettlementInstructionV01);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StandingSettlementInstructionV01";
-				definition = "Scope\r\nAn instructing party sends the StandingSettlementInstruction (SSI) message to the receiver to create or update a standing cash or securities settlement instruction. The message can also be used to notify a counterparty of an SSI.\r\n\r\nUsage\r\nThe instructing party (initiator) is:\r\n•\tAn account servicer, for example, a global custodian or prime broker\r\n•\tA counterparty in a transaction, for example:\r\n-\tan investment manager (executing broker),\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of an account servicer or counterparty\r\nThe receiver is:\r\n•\tAn account owner, for example, an investment manager, hedge fund administrator or a party to which SSI operations have been outsourced\r\n•\tA counterparty, for example:\r\n-\tan investment manager (executing broker)\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of the account owner or counterparty";
+				definition = "Scope\r\nAn instructing party sends the StandingSettlementInstruction (SSI) message to the receiver to create or update a standing cash or securities settlement instruction. The message can also be used to notify a counterparty of an SSI.\r\n\r\nUsage\r\nThe instructing party (initiator) is:\r\n•\tAn account servicer, for example, a global custodian or prime broker\r\n•\tA counterparty in a transaction, for example:\r\n-\tan investment manager (executing broker),\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of an account servicer or counterparty\r\nThe receiver is:\r\n•\tAn account owner, for example, an investment manager, hedge fund administrator or a party to which SSI operations have been outsourced\r\n•\tA counterparty, for example:\r\n-\tan investment manager (executing broker)\r\n-\ta global custodian (executing broker, prime broker)\r\n•\tA vendor’s application communicating on behalf of the account owner or counterparty.";
 				rootElement = "Document";
 				xmlTag = "StgSttlmInstr";
 				businessArea_lazy = () -> ReferenceDataLatestVersion.mmObject();
@@ -453,70 +478,70 @@ public class StandingSettlementInstructionV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgRefId", required = true)
 	public Max35Text getMessageReferenceIdentification() {
 		return messageReferenceIdentification;
 	}
 
-	public void setMessageReferenceIdentification(Max35Text messageReferenceIdentification) {
-		this.messageReferenceIdentification = messageReferenceIdentification;
+	public StandingSettlementInstructionV01 setMessageReferenceIdentification(Max35Text messageReferenceIdentification) {
+		this.messageReferenceIdentification = Objects.requireNonNull(messageReferenceIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "FctvDtDtls")
-	public EffectiveDate1 getEffectiveDateDetails() {
-		return effectiveDateDetails;
+	public Optional<EffectiveDate1> getEffectiveDateDetails() {
+		return effectiveDateDetails == null ? Optional.empty() : Optional.of(effectiveDateDetails);
 	}
 
-	public void setEffectiveDateDetails(EffectiveDate1 effectiveDateDetails) {
+	public StandingSettlementInstructionV01 setEffectiveDateDetails(EffectiveDate1 effectiveDateDetails) {
 		this.effectiveDateDetails = effectiveDateDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AcctId", required = true)
 	public List<AccountIdentification26> getAccountIdentification() {
-		return accountIdentification;
+		return accountIdentification == null ? accountIdentification = new ArrayList<>() : accountIdentification;
 	}
 
-	public void setAccountIdentification(List<AccountIdentification26> accountIdentification) {
-		this.accountIdentification = accountIdentification;
+	public StandingSettlementInstructionV01 setAccountIdentification(List<AccountIdentification26> accountIdentification) {
+		this.accountIdentification = Objects.requireNonNull(accountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "MktId", required = true)
 	public MarketIdentificationOrCashPurpose1Choice getMarketIdentification() {
 		return marketIdentification;
 	}
 
-	public void setMarketIdentification(MarketIdentificationOrCashPurpose1Choice marketIdentification) {
-		this.marketIdentification = marketIdentification;
+	public StandingSettlementInstructionV01 setMarketIdentification(MarketIdentificationOrCashPurpose1Choice marketIdentification) {
+		this.marketIdentification = Objects.requireNonNull(marketIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmCcy")
-	public ActiveCurrencyCode getSettlementCurrency() {
-		return settlementCurrency;
+	public Optional<ActiveCurrencyCode> getSettlementCurrency() {
+		return settlementCurrency == null ? Optional.empty() : Optional.of(settlementCurrency);
 	}
 
-	public void setSettlementCurrency(ActiveCurrencyCode settlementCurrency) {
+	public StandingSettlementInstructionV01 setSettlementCurrency(ActiveCurrencyCode settlementCurrency) {
 		this.settlementCurrency = settlementCurrency;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmDtls", required = true)
 	public SecuritiesOrCash1Choice getSettlementDetails() {
 		return settlementDetails;
 	}
 
-	public void setSettlementDetails(SecuritiesOrCash1Choice settlementDetails) {
-		this.settlementDetails = settlementDetails;
+	public StandingSettlementInstructionV01 setSettlementDetails(SecuritiesOrCash1Choice settlementDetails) {
+		this.settlementDetails = Objects.requireNonNull(settlementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public StandingSettlementInstructionV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:reda.056.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.056.001.01")
 	static public class Document {
 		@XmlElement(name = "StgSttlmInstr", required = true)
 		public StandingSettlementInstructionV01 messageBody;

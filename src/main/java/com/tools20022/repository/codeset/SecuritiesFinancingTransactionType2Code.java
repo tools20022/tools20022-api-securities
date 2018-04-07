@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesFinancingTransactionType2Code#Repo
- * SecuritiesFinancingTransactionType2Code.mmRepo}</li>
+ * SecuritiesFinancingTransactionType2Code.Repo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesFinancingTransactionType2Code#ReverseRepo
- * SecuritiesFinancingTransactionType2Code.mmReverseRepo}</li>
+ * SecuritiesFinancingTransactionType2Code.ReverseRepo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesFinancingTransactionType2Code#SecuritiesBorrowing
- * SecuritiesFinancingTransactionType2Code.mmSecuritiesBorrowing}</li>
+ * SecuritiesFinancingTransactionType2Code.SecuritiesBorrowing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesFinancingTransactionType2Code#SecuritiesLending
- * SecuritiesFinancingTransactionType2Code.mmSecuritiesLending}</li>
+ * SecuritiesFinancingTransactionType2Code.SecuritiesLending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesFinancingTransactionType2Code#BuySellBack
- * SecuritiesFinancingTransactionType2Code.mmBuySellBack}</li>
+ * SecuritiesFinancingTransactionType2Code.BuySellBack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesFinancingTransactionType2Code#SellBuyBack
- * SecuritiesFinancingTransactionType2Code.mmSellBuyBack}</li>
+ * SecuritiesFinancingTransactionType2Code.SellBuyBack}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class SecuritiesFinancingTransactionType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("REPU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesFinancingTransactionType2Code";

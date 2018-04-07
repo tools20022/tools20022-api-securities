@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides information about the cash account."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashAccount18", propOrder = {"creditDebitIndicator", "accountOwnerIdentification", "accountIdentification", "balanceType"})
 public class CashAccount18 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CdtDbtInd", required = true)
 	protected CreditDebitCode creditDebitIndicator;
 	/**
-	 * Specifies whether the value is a debit or credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,10 +117,10 @@ public class CashAccount18 {
 	 * definition} = "Specifies whether the value is a debit or credit."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount18, CreditDebitCode> mmCreditDebitIndicator = new MMMessageAttribute<CashAccount18, CreditDebitCode>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmCreditDebitIndicator;
-			componentContext_lazy = () -> CashAccount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount18.mmObject();
 			isDerived = false;
 			xmlTag = "CdtDbtInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,11 +130,22 @@ public class CashAccount18 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
+
+		@Override
+		public CreditDebitCode getValue(CashAccount18 obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(CashAccount18 obj, CreditDebitCode value) {
+			obj.setCreditDebitIndicator(value);
+		}
 	};
+	@XmlElement(name = "AcctOwnrId")
 	protected PartyIdentification2Choice accountOwnerIdentification;
 	/**
-	 * Identification of the party that owns the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,10 +175,10 @@ public class CashAccount18 {
 	 * definition} = "Identification of the party that owns the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountOwnerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount18, Optional<PartyIdentification2Choice>> mmAccountOwnerIdentification = new MMMessageAttribute<CashAccount18, Optional<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CashAccount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount18.mmObject();
 			isDerived = false;
 			xmlTag = "AcctOwnrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,12 +188,22 @@ public class CashAccount18 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(CashAccount18 obj) {
+			return obj.getAccountOwnerIdentification();
+		}
+
+		@Override
+		public void setValue(CashAccount18 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setAccountOwnerIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AcctId", required = true)
 	protected AccountIdentification2Choice accountIdentification;
 	/**
-	 * Identification of the cash account or the securities account from which
-	 * the cash account is derived.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,10 +235,10 @@ public class CashAccount18 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccountIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount18, AccountIdentification2Choice> mmAccountIdentification = new MMMessageAttribute<CashAccount18, AccountIdentification2Choice>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> CashAccount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount18.mmObject();
 			isDerived = false;
 			xmlTag = "AcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,11 +248,22 @@ public class CashAccount18 {
 			minOccurs = 1;
 			complexType_lazy = () -> AccountIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public AccountIdentification2Choice getValue(CashAccount18 obj) {
+			return obj.getAccountIdentification();
+		}
+
+		@Override
+		public void setValue(CashAccount18 obj, AccountIdentification2Choice value) {
+			obj.setAccountIdentification(value);
+		}
 	};
+	@XmlElement(name = "BalTp")
 	protected CashBalanceType1FormatType balanceType;
 	/**
-	 * The cash balance type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,10 +293,10 @@ public class CashAccount18 {
 	 * definition} = "The cash balance type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBalanceType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccount18, Optional<CashBalanceType1FormatType>> mmBalanceType = new MMMessageAttribute<CashAccount18, Optional<CashBalanceType1FormatType>>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> CashAccount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CashAccount18.mmObject();
 			isDerived = false;
 			xmlTag = "BalTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -271,14 +306,25 @@ public class CashAccount18 {
 			minOccurs = 0;
 			complexType_lazy = () -> CashBalanceType1FormatType.mmObject();
 		}
+
+		@Override
+		public Optional<CashBalanceType1FormatType> getValue(CashAccount18 obj) {
+			return obj.getBalanceType();
+		}
+
+		@Override
+		public void setValue(CashAccount18 obj, Optional<CashBalanceType1FormatType> value) {
+			obj.setBalanceType(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashAccount18.mmCreditDebitIndicator, CashAccount18.mmAccountOwnerIdentification, CashAccount18.mmAccountIdentification, CashAccount18.mmBalanceType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccount18.mmCreditDebitIndicator, com.tools20022.repository.msg.CashAccount18.mmAccountOwnerIdentification,
+						com.tools20022.repository.msg.CashAccount18.mmAccountIdentification, com.tools20022.repository.msg.CashAccount18.mmBalanceType);
 				trace_lazy = () -> CashAccount.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccount18";
 				definition = "Provides information about the cash account.";
@@ -287,39 +333,39 @@ public class CashAccount18 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CdtDbtInd", required = true)
 	public CreditDebitCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public CashAccount18 setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "AcctOwnrId")
-	public PartyIdentification2Choice getAccountOwnerIdentification() {
-		return accountOwnerIdentification;
+	public Optional<PartyIdentification2Choice> getAccountOwnerIdentification() {
+		return accountOwnerIdentification == null ? Optional.empty() : Optional.of(accountOwnerIdentification);
 	}
 
-	public void setAccountOwnerIdentification(PartyIdentification2Choice accountOwnerIdentification) {
+	public CashAccount18 setAccountOwnerIdentification(PartyIdentification2Choice accountOwnerIdentification) {
 		this.accountOwnerIdentification = accountOwnerIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AcctId", required = true)
 	public AccountIdentification2Choice getAccountIdentification() {
 		return accountIdentification;
 	}
 
-	public void setAccountIdentification(AccountIdentification2Choice accountIdentification) {
-		this.accountIdentification = accountIdentification;
+	public CashAccount18 setAccountIdentification(AccountIdentification2Choice accountIdentification) {
+		this.accountIdentification = Objects.requireNonNull(accountIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "BalTp")
-	public CashBalanceType1FormatType getBalanceType() {
-		return balanceType;
+	public Optional<CashBalanceType1FormatType> getBalanceType() {
+		return balanceType == null ? Optional.empty() : Optional.of(balanceType);
 	}
 
-	public void setBalanceType(CashBalanceType1FormatType balanceType) {
+	public CashAccount18 setBalanceType(CashBalanceType1FormatType balanceType) {
 		this.balanceType = balanceType;
+		return this;
 	}
 }

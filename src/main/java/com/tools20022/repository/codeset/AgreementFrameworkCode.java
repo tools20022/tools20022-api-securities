@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#FBAAgreement
- * AgreementFrameworkCode.mmFBAAgreement}</li>
+ * AgreementFrameworkCode.FBAAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#BBAAgreement
- * AgreementFrameworkCode.mmBBAAgreement}</li>
+ * AgreementFrameworkCode.BBAAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#GermanRahmenvertragAgreement
- * AgreementFrameworkCode.mmGermanRahmenvertragAgreement}</li>
+ * AgreementFrameworkCode.GermanRahmenvertragAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#ISDAAgreement
- * AgreementFrameworkCode.mmISDAAgreement}</li>
+ * AgreementFrameworkCode.ISDAAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#NoReference
- * AgreementFrameworkCode.mmNoReference}</li>
+ * AgreementFrameworkCode.NoReference}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -244,7 +244,7 @@ public class AgreementFrameworkCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FBAA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AgreementFrameworkCode";

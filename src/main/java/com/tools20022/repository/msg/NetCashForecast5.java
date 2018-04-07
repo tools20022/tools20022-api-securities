@@ -27,8 +27,11 @@ import com.tools20022.repository.entity.FundsCashFlow;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.msg.NetCashForecast4 NetCashForecast4}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetCashForecast5", propOrder = {"cashSettlementDate", "netAmount", "netUnitsNumber", "flowDirection"})
 public class NetCashForecast5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CshSttlmDt")
 	protected ISODate cashSettlementDate;
 	/**
-	 * Date on which cash is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,10 +125,10 @@ public class NetCashForecast5 {
 	 * NetCashForecast4.mmCashSettlementDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast5, Optional<ISODate>> mmCashSettlementDate = new MMMessageAttribute<NetCashForecast5, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
-			componentContext_lazy = () -> NetCashForecast5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast5.mmObject();
 			isDerived = false;
 			xmlTag = "CshSttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,11 +139,22 @@ public class NetCashForecast5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(NetCashForecast5 obj) {
+			return obj.getCashSettlementDate();
+		}
+
+		@Override
+		public void setValue(NetCashForecast5 obj, Optional<ISODate> value) {
+			obj.setCashSettlementDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NetAmt")
 	protected ActiveOrHistoricCurrencyAndAmount netAmount;
 	/**
-	 * Net amount of the cash flow, expressed as an amount of money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,10 +191,10 @@ public class NetCashForecast5 {
 	 * NetCashForecast4.mmNetAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast5, Optional<ActiveOrHistoricCurrencyAndAmount>> mmNetAmount = new MMMessageAttribute<NetCashForecast5, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmAmount;
-			componentContext_lazy = () -> NetCashForecast5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast5.mmObject();
 			isDerived = false;
 			xmlTag = "NetAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,11 +205,22 @@ public class NetCashForecast5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(NetCashForecast5 obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(NetCashForecast5 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setNetAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NetUnitsNb")
 	protected FinancialInstrumentQuantity1 netUnitsNumber;
 	/**
-	 * Net amount, expressed as a number of units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,10 +256,10 @@ public class NetCashForecast5 {
 	 * NetCashForecast4.mmNetUnitsNumber}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetUnitsNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast5, Optional<FinancialInstrumentQuantity1>> mmNetUnitsNumber = new MMMessageAttribute<NetCashForecast5, Optional<FinancialInstrumentQuantity1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmUnit;
-			componentContext_lazy = () -> NetCashForecast5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast5.mmObject();
 			isDerived = false;
 			xmlTag = "NetUnitsNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,14 +268,24 @@ public class NetCashForecast5 {
 			previousVersion_lazy = () -> NetCashForecast4.mmNetUnitsNumber;
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentQuantity1.mmObject();
+			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(NetCashForecast5 obj) {
+			return obj.getNetUnitsNumber();
+		}
+
+		@Override
+		public void setValue(NetCashForecast5 obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setNetUnitsNumber(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "FlowDrctn", required = true)
 	protected FlowDirectionType1Code flowDirection;
 	/**
-	 * Specifies the direction of the cash flow from the perspective of the
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -287,10 +323,10 @@ public class NetCashForecast5 {
 	 * NetCashForecast4.mmFlowDirection}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFlowDirection = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetCashForecast5, FlowDirectionType1Code> mmFlowDirection = new MMMessageAttribute<NetCashForecast5, FlowDirectionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> FundsCashFlow.mmFlowDirection;
-			componentContext_lazy = () -> NetCashForecast5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetCashForecast5.mmObject();
 			isDerived = false;
 			xmlTag = "FlowDrctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -301,14 +337,25 @@ public class NetCashForecast5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> FlowDirectionType1Code.mmObject();
 		}
+
+		@Override
+		public FlowDirectionType1Code getValue(NetCashForecast5 obj) {
+			return obj.getFlowDirection();
+		}
+
+		@Override
+		public void setValue(NetCashForecast5 obj, FlowDirectionType1Code value) {
+			obj.setFlowDirection(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NetCashForecast5.mmCashSettlementDate, NetCashForecast5.mmNetAmount, NetCashForecast5.mmNetUnitsNumber, NetCashForecast5.mmFlowDirection);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NetCashForecast5.mmCashSettlementDate, com.tools20022.repository.msg.NetCashForecast5.mmNetAmount,
+						com.tools20022.repository.msg.NetCashForecast5.mmNetUnitsNumber, com.tools20022.repository.msg.NetCashForecast5.mmFlowDirection);
 				trace_lazy = () -> FundsCashFlow.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetCashForecast5";
 				definition = "Net cash movement to a fund as a result of investment funds transactions.";
@@ -318,39 +365,39 @@ public class NetCashForecast5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CshSttlmDt")
-	public ISODate getCashSettlementDate() {
-		return cashSettlementDate;
+	public Optional<ISODate> getCashSettlementDate() {
+		return cashSettlementDate == null ? Optional.empty() : Optional.of(cashSettlementDate);
 	}
 
-	public void setCashSettlementDate(ISODate cashSettlementDate) {
+	public NetCashForecast5 setCashSettlementDate(ISODate cashSettlementDate) {
 		this.cashSettlementDate = cashSettlementDate;
+		return this;
 	}
 
-	@XmlElement(name = "NetAmt")
-	public ActiveOrHistoricCurrencyAndAmount getNetAmount() {
-		return netAmount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getNetAmount() {
+		return netAmount == null ? Optional.empty() : Optional.of(netAmount);
 	}
 
-	public void setNetAmount(ActiveOrHistoricCurrencyAndAmount netAmount) {
+	public NetCashForecast5 setNetAmount(ActiveOrHistoricCurrencyAndAmount netAmount) {
 		this.netAmount = netAmount;
+		return this;
 	}
 
-	@XmlElement(name = "NetUnitsNb")
-	public FinancialInstrumentQuantity1 getNetUnitsNumber() {
-		return netUnitsNumber;
+	public Optional<FinancialInstrumentQuantity1> getNetUnitsNumber() {
+		return netUnitsNumber == null ? Optional.empty() : Optional.of(netUnitsNumber);
 	}
 
-	public void setNetUnitsNumber(com.tools20022.repository.msg.FinancialInstrumentQuantity1 netUnitsNumber) {
+	public NetCashForecast5 setNetUnitsNumber(FinancialInstrumentQuantity1 netUnitsNumber) {
 		this.netUnitsNumber = netUnitsNumber;
+		return this;
 	}
 
-	@XmlElement(name = "FlowDrctn", required = true)
 	public FlowDirectionType1Code getFlowDirection() {
 		return flowDirection;
 	}
 
-	public void setFlowDirection(FlowDirectionType1Code flowDirection) {
-		this.flowDirection = flowDirection;
+	public NetCashForecast5 setFlowDirection(FlowDirectionType1Code flowDirection) {
+		this.flowDirection = Objects.requireNonNull(flowDirection);
+		return this;
 	}
 }

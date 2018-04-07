@@ -28,9 +28,11 @@ import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Charge26;
+import com.tools20022.repository.msg.Commission21;
+import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +79,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,15 +93,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FundCashOutBreakdown3", propOrder = {"amount", "unitsNumber", "newAmountIndicator", "investmentFundTransactionOutType", "originalOrderQuantityType", "chargeDetails", "commissionDetails", "settlementCurrency"})
 public class FundCashOutBreakdown3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt")
 	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
-	 * Amount of cash flow out, expressed as an amount of money.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,10 +134,10 @@ public class FundCashOutBreakdown3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundCashOutBreakdown3, Optional<ActiveOrHistoricCurrencyAndAmount>> mmAmount = new MMMessageAttribute<FundCashOutBreakdown3, Optional<ActiveOrHistoricCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmAmount;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,11 +147,22 @@ public class FundCashOutBreakdown3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveOrHistoricCurrencyAndAmount> getValue(FundCashOutBreakdown3 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, Optional<ActiveOrHistoricCurrencyAndAmount> value) {
+			obj.setAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UnitsNb")
 	protected FinancialInstrumentQuantity1 unitsNumber;
 	/**
-	 * Amount of the cash flow out, expressed as a number of units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,10 +194,10 @@ public class FundCashOutBreakdown3 {
 	 * "Amount of the cash flow out, expressed as a number of units."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitsNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundCashOutBreakdown3, Optional<FinancialInstrumentQuantity1>> mmUnitsNumber = new MMMessageAttribute<FundCashOutBreakdown3, Optional<FinancialInstrumentQuantity1>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmUnit;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "UnitsNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,15 +205,24 @@ public class FundCashOutBreakdown3 {
 			definition = "Amount of the cash flow out, expressed as a number of units.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.FinancialInstrumentQuantity1.mmObject();
+			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
+		}
+
+		@Override
+		public Optional<FinancialInstrumentQuantity1> getValue(FundCashOutBreakdown3 obj) {
+			return obj.getUnitsNumber();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, Optional<FinancialInstrumentQuantity1> value) {
+			obj.setUnitsNumber(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NewAmtInd")
 	protected YesNoIndicator newAmountIndicator;
 	/**
-	 * Indicates whether the cash flow is an item that did not appear on the
-	 * previously sent report, for example, because it was received close to
-	 * cut-off time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,9 +250,9 @@ public class FundCashOutBreakdown3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewAmountIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundCashOutBreakdown3, Optional<YesNoIndicator>> mmNewAmountIndicator = new MMMessageAttribute<FundCashOutBreakdown3, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "NewAmtInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,12 +262,22 @@ public class FundCashOutBreakdown3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(FundCashOutBreakdown3 obj) {
+			return obj.getNewAmountIndicator();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, Optional<YesNoIndicator> value) {
+			obj.setNewAmountIndicator(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InvstmtFndTxOutTp", required = true)
 	protected InvestmentFundTransactionOutType1Choice investmentFundTransactionOutType;
 	/**
-	 * Type of transaction that resulted in the cash-out movement, for example,
-	 * redemption, switch-out.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -272,30 +305,40 @@ public class FundCashOutBreakdown3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Type of transaction that resulted in the cash-out movement, for example, redemption, switch-out. "
+	 * "Type of transaction that resulted in the cash-out movement, for example, redemption, switch-out."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvestmentFundTransactionOutType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundCashOutBreakdown3, InvestmentFundTransactionOutType1Choice> mmInvestmentFundTransactionOutType = new MMMessageAssociationEnd<FundCashOutBreakdown3, InvestmentFundTransactionOutType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmType;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "InvstmtFndTxOutTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestmentFundTransactionOutType";
-			definition = "Type of transaction that resulted in the cash-out movement, for example, redemption, switch-out. ";
+			definition = "Type of transaction that resulted in the cash-out movement, for example, redemption, switch-out.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> InvestmentFundTransactionOutType1Choice.mmObject();
 		}
+
+		@Override
+		public InvestmentFundTransactionOutType1Choice getValue(FundCashOutBreakdown3 obj) {
+			return obj.getInvestmentFundTransactionOutType();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, InvestmentFundTransactionOutType1Choice value) {
+			obj.setInvestmentFundTransactionOutType(value);
+		}
 	};
+	@XmlElement(name = "OrgnlOrdrQtyTp", required = true)
 	protected QuantityType1Choice originalOrderQuantityType;
 	/**
-	 * Specifies how the original order was expressed that resulted in the
-	 * cash-out movement, that is cash or units.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -326,10 +369,10 @@ public class FundCashOutBreakdown3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalOrderQuantityType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundCashOutBreakdown3, QuantityType1Choice> mmOriginalOrderQuantityType = new MMMessageAssociationEnd<FundCashOutBreakdown3, QuantityType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmQuantityType;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlOrdrQtyTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -340,11 +383,22 @@ public class FundCashOutBreakdown3 {
 			isComposite = true;
 			type_lazy = () -> QuantityType1Choice.mmObject();
 		}
+
+		@Override
+		public QuantityType1Choice getValue(FundCashOutBreakdown3 obj) {
+			return obj.getOriginalOrderQuantityType();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, QuantityType1Choice value) {
+			obj.setOriginalOrderQuantityType(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.Charge26> chargeDetails;
+	@XmlElement(name = "ChrgDtls")
+	protected List<Charge26> chargeDetails;
 	/**
-	 * Charge for the placement of an order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -372,10 +426,10 @@ public class FundCashOutBreakdown3 {
 	 * definition} = "Charge for the placement of an order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmChargeDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundCashOutBreakdown3, List<Charge26>> mmChargeDetails = new MMMessageAssociationEnd<FundCashOutBreakdown3, List<Charge26>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmTransactionCharge;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "ChrgDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -383,14 +437,24 @@ public class FundCashOutBreakdown3 {
 			definition = "Charge for the placement of an order.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Charge26.mmObject();
+			type_lazy = () -> Charge26.mmObject();
+		}
+
+		@Override
+		public List<Charge26> getValue(FundCashOutBreakdown3 obj) {
+			return obj.getChargeDetails();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, List<Charge26> value) {
+			obj.setChargeDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Commission21> commissionDetails;
+	@XmlElement(name = "ComssnDtls")
+	protected List<Commission21> commissionDetails;
 	/**
-	 * Information related to the commission applied to an order, for example,
-	 * back-end or front-end commission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -421,10 +485,10 @@ public class FundCashOutBreakdown3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommissionDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FundCashOutBreakdown3, List<Commission21>> mmCommissionDetails = new MMMessageAssociationEnd<FundCashOutBreakdown3, List<Commission21>>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeCommission;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "ComssnDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -432,13 +496,24 @@ public class FundCashOutBreakdown3 {
 			definition = "Information related to the commission applied to an order, for example, back-end or front-end commission.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Commission21.mmObject();
+			type_lazy = () -> Commission21.mmObject();
+		}
+
+		@Override
+		public List<Commission21> getValue(FundCashOutBreakdown3 obj) {
+			return obj.getCommissionDetails();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, List<Commission21> value) {
+			obj.setCommissionDetails(value);
 		}
 	};
+	@XmlElement(name = "SttlmCcy")
 	protected ActiveCurrencyCode settlementCurrency;
 	/**
-	 * Settlement currency for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -469,10 +544,10 @@ public class FundCashOutBreakdown3 {
 	 * definition} = "Settlement currency for the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FundCashOutBreakdown3, Optional<ActiveCurrencyCode>> mmSettlementCurrency = new MMMessageAttribute<FundCashOutBreakdown3, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmSettlementCurrency;
-			componentContext_lazy = () -> FundCashOutBreakdown3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FundCashOutBreakdown3.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -482,15 +557,27 @@ public class FundCashOutBreakdown3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(FundCashOutBreakdown3 obj) {
+			return obj.getSettlementCurrency();
+		}
+
+		@Override
+		public void setValue(FundCashOutBreakdown3 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setSettlementCurrency(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FundCashOutBreakdown3.mmAmount, FundCashOutBreakdown3.mmUnitsNumber, FundCashOutBreakdown3.mmNewAmountIndicator, FundCashOutBreakdown3.mmInvestmentFundTransactionOutType,
-						FundCashOutBreakdown3.mmOriginalOrderQuantityType, FundCashOutBreakdown3.mmChargeDetails, FundCashOutBreakdown3.mmCommissionDetails, FundCashOutBreakdown3.mmSettlementCurrency);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FundCashOutBreakdown3.mmAmount, com.tools20022.repository.msg.FundCashOutBreakdown3.mmUnitsNumber,
+						com.tools20022.repository.msg.FundCashOutBreakdown3.mmNewAmountIndicator, com.tools20022.repository.msg.FundCashOutBreakdown3.mmInvestmentFundTransactionOutType,
+						com.tools20022.repository.msg.FundCashOutBreakdown3.mmOriginalOrderQuantityType, com.tools20022.repository.msg.FundCashOutBreakdown3.mmChargeDetails,
+						com.tools20022.repository.msg.FundCashOutBreakdown3.mmCommissionDetails, com.tools20022.repository.msg.FundCashOutBreakdown3.mmSettlementCurrency);
 				trace_lazy = () -> FundsCashFlow.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundCashOutBreakdown3";
 				definition = "Breakdown of cash movements out of a fund as a result of investment funds transactions, eg, redemptions or switch-out.";
@@ -499,75 +586,75 @@ public class FundCashOutBreakdown3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt")
-	public ActiveOrHistoricCurrencyAndAmount getAmount() {
-		return amount;
+	public Optional<ActiveOrHistoricCurrencyAndAmount> getAmount() {
+		return amount == null ? Optional.empty() : Optional.of(amount);
 	}
 
-	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+	public FundCashOutBreakdown3 setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
 		this.amount = amount;
+		return this;
 	}
 
-	@XmlElement(name = "UnitsNb")
-	public FinancialInstrumentQuantity1 getUnitsNumber() {
-		return unitsNumber;
+	public Optional<FinancialInstrumentQuantity1> getUnitsNumber() {
+		return unitsNumber == null ? Optional.empty() : Optional.of(unitsNumber);
 	}
 
-	public void setUnitsNumber(com.tools20022.repository.msg.FinancialInstrumentQuantity1 unitsNumber) {
+	public FundCashOutBreakdown3 setUnitsNumber(FinancialInstrumentQuantity1 unitsNumber) {
 		this.unitsNumber = unitsNumber;
+		return this;
 	}
 
-	@XmlElement(name = "NewAmtInd")
-	public YesNoIndicator getNewAmountIndicator() {
-		return newAmountIndicator;
+	public Optional<YesNoIndicator> getNewAmountIndicator() {
+		return newAmountIndicator == null ? Optional.empty() : Optional.of(newAmountIndicator);
 	}
 
-	public void setNewAmountIndicator(YesNoIndicator newAmountIndicator) {
+	public FundCashOutBreakdown3 setNewAmountIndicator(YesNoIndicator newAmountIndicator) {
 		this.newAmountIndicator = newAmountIndicator;
+		return this;
 	}
 
-	@XmlElement(name = "InvstmtFndTxOutTp", required = true)
 	public InvestmentFundTransactionOutType1Choice getInvestmentFundTransactionOutType() {
 		return investmentFundTransactionOutType;
 	}
 
-	public void setInvestmentFundTransactionOutType(InvestmentFundTransactionOutType1Choice investmentFundTransactionOutType) {
-		this.investmentFundTransactionOutType = investmentFundTransactionOutType;
+	public FundCashOutBreakdown3 setInvestmentFundTransactionOutType(InvestmentFundTransactionOutType1Choice investmentFundTransactionOutType) {
+		this.investmentFundTransactionOutType = Objects.requireNonNull(investmentFundTransactionOutType);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlOrdrQtyTp", required = true)
 	public QuantityType1Choice getOriginalOrderQuantityType() {
 		return originalOrderQuantityType;
 	}
 
-	public void setOriginalOrderQuantityType(QuantityType1Choice originalOrderQuantityType) {
-		this.originalOrderQuantityType = originalOrderQuantityType;
+	public FundCashOutBreakdown3 setOriginalOrderQuantityType(QuantityType1Choice originalOrderQuantityType) {
+		this.originalOrderQuantityType = Objects.requireNonNull(originalOrderQuantityType);
+		return this;
 	}
 
-	@XmlElement(name = "ChrgDtls")
 	public List<Charge26> getChargeDetails() {
-		return chargeDetails;
+		return chargeDetails == null ? chargeDetails = new ArrayList<>() : chargeDetails;
 	}
 
-	public void setChargeDetails(List<com.tools20022.repository.msg.Charge26> chargeDetails) {
-		this.chargeDetails = chargeDetails;
+	public FundCashOutBreakdown3 setChargeDetails(List<Charge26> chargeDetails) {
+		this.chargeDetails = Objects.requireNonNull(chargeDetails);
+		return this;
 	}
 
-	@XmlElement(name = "ComssnDtls")
 	public List<Commission21> getCommissionDetails() {
-		return commissionDetails;
+		return commissionDetails == null ? commissionDetails = new ArrayList<>() : commissionDetails;
 	}
 
-	public void setCommissionDetails(List<com.tools20022.repository.msg.Commission21> commissionDetails) {
-		this.commissionDetails = commissionDetails;
+	public FundCashOutBreakdown3 setCommissionDetails(List<Commission21> commissionDetails) {
+		this.commissionDetails = Objects.requireNonNull(commissionDetails);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmCcy")
-	public ActiveCurrencyCode getSettlementCurrency() {
-		return settlementCurrency;
+	public Optional<ActiveCurrencyCode> getSettlementCurrency() {
+		return settlementCurrency == null ? Optional.empty() : Optional.of(settlementCurrency);
 	}
 
-	public void setSettlementCurrency(ActiveCurrencyCode settlementCurrency) {
+	public FundCashOutBreakdown3 setSettlementCurrency(ActiveCurrencyCode settlementCurrency) {
 		this.settlementCurrency = settlementCurrency;
+		return this;
 	}
 }

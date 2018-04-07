@@ -41,49 +41,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#ReverseRights
- * IntermediateSecurityDistributionTypeCode.mmReverseRights}</li>
+ * IntermediateSecurityDistributionTypeCode.ReverseRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#BonusRights
- * IntermediateSecurityDistributionTypeCode.mmBonusRights}</li>
+ * IntermediateSecurityDistributionTypeCode.BonusRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#DividendReinvestment
- * IntermediateSecurityDistributionTypeCode.mmDividendReinvestment}</li>
+ * IntermediateSecurityDistributionTypeCode.DividendReinvestment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#CashDividend
- * IntermediateSecurityDistributionTypeCode.mmCashDividend}</li>
+ * IntermediateSecurityDistributionTypeCode.CashDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#DividendOption
- * IntermediateSecurityDistributionTypeCode.mmDividendOption}</li>
+ * IntermediateSecurityDistributionTypeCode.DividendOption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#SubscriptionRights
- * IntermediateSecurityDistributionTypeCode.mmSubscriptionRights}</li>
+ * IntermediateSecurityDistributionTypeCode.SubscriptionRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#OpenOfferRights
- * IntermediateSecurityDistributionTypeCode.mmOpenOfferRights}</li>
+ * IntermediateSecurityDistributionTypeCode.OpenOfferRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#ScripDividendOrPayment
- * IntermediateSecurityDistributionTypeCode.mmScripDividendOrPayment}</li>
+ * IntermediateSecurityDistributionTypeCode.ScripDividendOrPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#StockDividend
- * IntermediateSecurityDistributionTypeCode.mmStockDividend}</li>
+ * IntermediateSecurityDistributionTypeCode.StockDividend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#InterestPayment
- * IntermediateSecurityDistributionTypeCode.mmInterestPayment}</li>
+ * IntermediateSecurityDistributionTypeCode.InterestPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#LiquidationDividendOrPayment
- * IntermediateSecurityDistributionTypeCode.mmLiquidationDividendOrPayment}</li>
+ * IntermediateSecurityDistributionTypeCode.LiquidationDividendOrPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#SpinOff
- * IntermediateSecurityDistributionTypeCode.mmSpinOff}</li>
+ * IntermediateSecurityDistributionTypeCode.SpinOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#StockSplit
- * IntermediateSecurityDistributionTypeCode.mmStockSplit}</li>
+ * IntermediateSecurityDistributionTypeCode.StockSplit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#Exchange
- * IntermediateSecurityDistributionTypeCode.mmExchange}</li>
+ * IntermediateSecurityDistributionTypeCode.Exchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode#Merger
- * IntermediateSecurityDistributionTypeCode.mmMerger}</li>
+ * IntermediateSecurityDistributionTypeCode.Merger}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -103,8 +103,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -464,7 +464,7 @@ public class IntermediateSecurityDistributionTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * A distribution of subsidiary stock to the shareholders
+	 * A distribution of subsidiary stock to the shareholders.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -481,14 +481,14 @@ public class IntermediateSecurityDistributionTypeCode extends MMCode {
 	 * name} = "SpinOff"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "A distribution of subsidiary stock to the shareholders"</li>
+	 * definition} = "A distribution of subsidiary stock to the shareholders."</li>
 	 * </ul>
 	 */
 	public static final IntermediateSecurityDistributionTypeCode SpinOff = new IntermediateSecurityDistributionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpinOff";
-			definition = "A distribution of subsidiary stock to the shareholders";
+			definition = "A distribution of subsidiary stock to the shareholders.";
 			owner_lazy = () -> com.tools20022.repository.codeset.IntermediateSecurityDistributionTypeCode.mmObject();
 			codeName = "SOFF";
 		}
@@ -606,7 +606,7 @@ public class IntermediateSecurityDistributionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BIDS");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IntermediateSecurityDistributionTypeCode";

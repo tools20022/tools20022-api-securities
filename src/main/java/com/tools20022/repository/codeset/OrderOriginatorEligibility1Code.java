@@ -40,13 +40,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderOriginatorEligibility1Code#Eligible
- * OrderOriginatorEligibility1Code.mmEligible}</li>
+ * OrderOriginatorEligibility1Code.Eligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderOriginatorEligibility1Code#Retail
- * OrderOriginatorEligibility1Code.mmRetail}</li>
+ * OrderOriginatorEligibility1Code.Retail}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OrderOriginatorEligibility1Code#Professional
- * OrderOriginatorEligibility1Code.mmProfessional}</li>
+ * OrderOriginatorEligibility1Code.Professional}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -55,8 +55,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -159,7 +159,7 @@ public class OrderOriginatorEligibility1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ELIG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrderOriginatorEligibility1Code";

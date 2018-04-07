@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#AntiMoneyLaundering
- * CertificateType2Code.mmAntiMoneyLaundering}</li>
+ * CertificateType2Code.AntiMoneyLaundering}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#DrivingLicense
- * CertificateType2Code.mmDrivingLicense}</li>
+ * CertificateType2Code.DrivingLicense}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#DueFormationAndOrganisation
- * CertificateType2Code.mmDueFormationAndOrganisation}</li>
+ * CertificateType2Code.DueFormationAndOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#GoodStanding
- * CertificateType2Code.mmGoodStanding}</li>
+ * CertificateType2Code.GoodStanding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#IdentityCard
- * CertificateType2Code.mmIdentityCard}</li>
+ * CertificateType2Code.IdentityCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#Incumbency
- * CertificateType2Code.mmIncumbency}</li>
+ * CertificateType2Code.Incumbency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#LetterOfReference
- * CertificateType2Code.mmLetterOfReference}</li>
+ * CertificateType2Code.LetterOfReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#Passport
- * CertificateType2Code.mmPassport}</li>
+ * CertificateType2Code.Passport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#ProofOfAddress
- * CertificateType2Code.mmProofOfAddress}</li>
+ * CertificateType2Code.ProofOfAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CertificateType2Code#PublicKeyInfrastructureCertificate
- * CertificateType2Code.mmPublicKeyInfrastructureCertificate}</li>
+ * CertificateType2Code.PublicKeyInfrastructureCertificate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -344,7 +344,7 @@ public class CertificateType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AMLC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CertificateType2Code";

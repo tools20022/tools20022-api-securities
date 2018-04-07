@@ -21,12 +21,14 @@ import com.tools20022.metamodel.MMBusinessAttribute;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Derivative;
+import com.tools20022.repository.entity.IssuerRole;
+import com.tools20022.repository.entity.Obligation;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CreditDefaultSwapSingleName2;
 import com.tools20022.repository.msg.SwapLegIdentification2;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Derivative contract through which two parties exchange financial instruments.
@@ -67,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +88,8 @@ public class Swaps extends Derivative {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected IssuerRole sovereignIssuer;
 	/**
-	 * Issuer is a national government within a given country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,7 +119,7 @@ public class Swaps extends Derivative {
 	 * definition} = "Issuer is a national government within a given country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSovereignIssuer = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Swaps, IssuerRole> mmSovereignIssuer = new MMBusinessAttribute<Swaps, IssuerRole>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditDefaultSwapSingleName2.mmSovereignIssuer);
 			isDerived = false;
@@ -127,21 +129,23 @@ public class Swaps extends Derivative {
 			definition = "Issuer is a national government within a given country.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.IssuerRole.mmObject();
+			complexType_lazy = () -> IssuerRole.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Swaps.class.getMethod("getSovereignIssuer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IssuerRole getValue(Swaps obj) {
+			return obj.getSovereignIssuer();
+		}
+
+		@Override
+		public void setValue(Swaps obj, IssuerRole value) {
+			obj.setSovereignIssuer(value);
 		}
 	};
 	protected Obligation obligation;
 	/**
-	 * Specific underlying debt upon which a swap is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,7 +167,7 @@ public class Swaps extends Derivative {
 	 * definition} = "Specific underlying debt upon which a swap is based."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmObligation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Swaps, com.tools20022.repository.entity.Obligation> mmObligation = new MMBusinessAttribute<Swaps, com.tools20022.repository.entity.Obligation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Swaps.mmObject();
@@ -175,19 +179,21 @@ public class Swaps extends Derivative {
 			complexType_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Swaps.class.getMethod("getObligation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public com.tools20022.repository.entity.Obligation getValue(Swaps obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(Swaps obj, com.tools20022.repository.entity.Obligation value) {
+			obj.setObligation(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Swaps";
 				definition = "Derivative contract through which two parties exchange financial instruments.";
@@ -209,15 +215,17 @@ public class Swaps extends Derivative {
 		return sovereignIssuer;
 	}
 
-	public void setSovereignIssuer(com.tools20022.repository.entity.IssuerRole sovereignIssuer) {
-		this.sovereignIssuer = sovereignIssuer;
+	public Swaps setSovereignIssuer(IssuerRole sovereignIssuer) {
+		this.sovereignIssuer = Objects.requireNonNull(sovereignIssuer);
+		return this;
 	}
 
 	public Obligation getObligation() {
 		return obligation;
 	}
 
-	public void setObligation(com.tools20022.repository.entity.Obligation obligation) {
-		this.obligation = obligation;
+	public Swaps setObligation(com.tools20022.repository.entity.Obligation obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 }

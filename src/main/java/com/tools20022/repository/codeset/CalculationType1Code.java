@@ -38,101 +38,101 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#AfterTax
- * CalculationType1Code.mmAfterTax}</li>
+ * CalculationType1Code.AfterTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#Annual
- * CalculationType1Code.mmAnnual}</li>
+ * CalculationType1Code.Annual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#AtIssue
- * CalculationType1Code.mmAtIssue}</li>
+ * CalculationType1Code.AtIssue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ToAverageMaturity
- * CalculationType1Code.mmToAverageMaturity}</li>
+ * CalculationType1Code.ToAverageMaturity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationType1Code#Book
- * CalculationType1Code.mmBook}</li>
+ * CalculationType1Code.Book}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#YieldToNextCall
- * CalculationType1Code.mmYieldToNextCall}</li>
+ * CalculationType1Code.YieldToNextCall}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ChangeSinceClose
- * CalculationType1Code.mmChangeSinceClose}</li>
+ * CalculationType1Code.ChangeSinceClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#Closing
- * CalculationType1Code.mmClosing}</li>
+ * CalculationType1Code.Closing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#Compound
- * CalculationType1Code.mmCompound}</li>
+ * CalculationType1Code.Compound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#CurrentYield
- * CalculationType1Code.mmCurrentYield}</li>
+ * CalculationType1Code.CurrentYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#TrueGross
- * CalculationType1Code.mmTrueGross}</li>
+ * CalculationType1Code.TrueGross}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#GovernmentEquivalent
- * CalculationType1Code.mmGovernmentEquivalent}</li>
+ * CalculationType1Code.GovernmentEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#InflationAssumption
- * CalculationType1Code.mmInflationAssumption}</li>
+ * CalculationType1Code.InflationAssumption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#InverseFloater
- * CalculationType1Code.mmInverseFloater}</li>
+ * CalculationType1Code.InverseFloater}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#LastClose
- * CalculationType1Code.mmLastClose}</li>
+ * CalculationType1Code.LastClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#LastMonth
- * CalculationType1Code.mmLastMonth}</li>
+ * CalculationType1Code.LastMonth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#LastQuarter
- * CalculationType1Code.mmLastQuarter}</li>
+ * CalculationType1Code.LastQuarter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#LastYear
- * CalculationType1Code.mmLastYear}</li>
+ * CalculationType1Code.LastYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#LongestAverageLife
- * CalculationType1Code.mmLongestAverageLife}</li>
+ * CalculationType1Code.LongestAverageLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#MarkToMarket
- * CalculationType1Code.mmMarkToMarket}</li>
+ * CalculationType1Code.MarkToMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#YieldToMaturity
- * CalculationType1Code.mmYieldToMaturity}</li>
+ * CalculationType1Code.YieldToMaturity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ToNextRefund
- * CalculationType1Code.mmToNextRefund}</li>
+ * CalculationType1Code.ToNextRefund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#OpenAverage
- * CalculationType1Code.mmOpenAverage}</li>
+ * CalculationType1Code.OpenAverage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ToNextPut
- * CalculationType1Code.mmToNextPut}</li>
+ * CalculationType1Code.ToNextPut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#PreviousClose
- * CalculationType1Code.mmPreviousClose}</li>
+ * CalculationType1Code.PreviousClose}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#Proceeds
- * CalculationType1Code.mmProceeds}</li>
+ * CalculationType1Code.Proceeds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#SemiAnnual
- * CalculationType1Code.mmSemiAnnual}</li>
+ * CalculationType1Code.SemiAnnual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ShortestAverageLife
- * CalculationType1Code.mmShortestAverageLife}</li>
+ * CalculationType1Code.ShortestAverageLife}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#Simple
- * CalculationType1Code.mmSimple}</li>
+ * CalculationType1Code.Simple}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#TaxEquivalent
- * CalculationType1Code.mmTaxEquivalent}</li>
+ * CalculationType1Code.TaxEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ToTenderDate
- * CalculationType1Code.mmToTenderDate}</li>
+ * CalculationType1Code.ToTenderDate}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CalculationType1Code#True
- * CalculationType1Code.mmTrue}</li>
+ * CalculationType1Code.True}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CalculationType1Code#ToWorstConvention
- * CalculationType1Code.mmToWorstConvention}</li>
+ * CalculationType1Code.ToWorstConvention}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -141,8 +141,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -963,7 +963,7 @@ public class CalculationType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AFTX");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CalculationType1Code";

@@ -38,40 +38,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Discount
- * PriceValueType7Code.mmDiscount}</li>
+ * PriceValueType7Code.Discount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Premium
- * PriceValueType7Code.mmPremium}</li>
+ * PriceValueType7Code.Premium}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Par
- * PriceValueType7Code.mmPar}</li>
+ * PriceValueType7Code.Par}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Yield
- * PriceValueType7Code.mmYield}</li>
+ * PriceValueType7Code.Yield}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Spread
- * PriceValueType7Code.mmSpread}</li>
+ * PriceValueType7Code.Spread}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#PerUnit
- * PriceValueType7Code.mmPerUnit}</li>
+ * PriceValueType7Code.PerUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Absolute
- * PriceValueType7Code.mmAbsolute}</li>
+ * PriceValueType7Code.Absolute}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#TEDPrice
- * PriceValueType7Code.mmTEDPrice}</li>
+ * PriceValueType7Code.TEDPrice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#TEDYield
- * PriceValueType7Code.mmTEDYield}</li>
+ * PriceValueType7Code.TEDYield}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#FixedCabinetTrade
- * PriceValueType7Code.mmFixedCabinetTrade}</li>
+ * PriceValueType7Code.FixedCabinetTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#VariableCabinetTrade
- * PriceValueType7Code.mmVariableCabinetTrade}</li>
+ * PriceValueType7Code.VariableCabinetTrade}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#Percentage
- * PriceValueType7Code.mmPercentage}</li>
+ * PriceValueType7Code.Percentage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PriceValueType7Code#ActualAmount
- * PriceValueType7Code.mmActualAmount}</li>
+ * PriceValueType7Code.ActualAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -422,7 +422,7 @@ public class PriceValueType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DISC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriceValueType7Code";

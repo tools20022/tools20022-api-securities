@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType2Code#CER
- * EmissionAllowanceProductType2Code.mmCER}</li>
+ * EmissionAllowanceProductType2Code.CER}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType2Code#ERU
- * EmissionAllowanceProductType2Code.mmERU}</li>
+ * EmissionAllowanceProductType2Code.ERU}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType2Code#EUA
- * EmissionAllowanceProductType2Code.mmEUA}</li>
+ * EmissionAllowanceProductType2Code.EUA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EmissionAllowanceProductType2Code#EUAA
- * EmissionAllowanceProductType2Code.mmEUAA}</li>
+ * EmissionAllowanceProductType2Code.EUAA}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class EmissionAllowanceProductType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EmissionAllowanceProductType2Code";
 				definition = "Specifies an mission allowance type.";

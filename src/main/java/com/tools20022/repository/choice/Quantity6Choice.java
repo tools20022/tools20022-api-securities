@@ -20,11 +20,13 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.FinancialInstrumentQuantity1Choice;
 import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.OriginalAndCurrentQuantities1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,16 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of format for the quantity."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Quantity6Choice", propOrder = {"quantity", "originalAndCurrentFace"})
 public class Quantity6Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Qty", required = true)
 	protected FinancialInstrumentQuantity1Choice quantity;
 	/**
-	 * Quantity of financial instrument in units, original face amount or
-	 * current face amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -105,10 +107,10 @@ public class Quantity6Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmQuantity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Quantity6Choice, FinancialInstrumentQuantity1Choice> mmQuantity = new MMMessageAssociationEnd<Quantity6Choice, FinancialInstrumentQuantity1Choice>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> Quantity6Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Quantity6Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Qty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,13 +119,24 @@ public class Quantity6Choice {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.choice.FinancialInstrumentQuantity1Choice.mmObject();
+			type_lazy = () -> FinancialInstrumentQuantity1Choice.mmObject();
+		}
+
+		@Override
+		public FinancialInstrumentQuantity1Choice getValue(Quantity6Choice obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(Quantity6Choice obj, FinancialInstrumentQuantity1Choice value) {
+			obj.setQuantity(value);
 		}
 	};
+	@XmlElement(name = "OrgnlAndCurFace", required = true)
 	protected OriginalAndCurrentQuantities1 originalAndCurrentFace;
 	/**
-	 * Original and current value of an asset-back instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,10 +166,10 @@ public class Quantity6Choice {
 	 * definition} = "Original and current value of an asset-back instrument."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOriginalAndCurrentFace = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Quantity6Choice, OriginalAndCurrentQuantities1> mmOriginalAndCurrentFace = new MMMessageAssociationEnd<Quantity6Choice, OriginalAndCurrentQuantities1>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesQuantity.mmObject();
-			componentContext_lazy = () -> Quantity6Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Quantity6Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlAndCurFace";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,14 +180,24 @@ public class Quantity6Choice {
 			isComposite = true;
 			type_lazy = () -> OriginalAndCurrentQuantities1.mmObject();
 		}
+
+		@Override
+		public OriginalAndCurrentQuantities1 getValue(Quantity6Choice obj) {
+			return obj.getOriginalAndCurrentFace();
+		}
+
+		@Override
+		public void setValue(Quantity6Choice obj, OriginalAndCurrentQuantities1 value) {
+			obj.setOriginalAndCurrentFace(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Quantity6Choice.mmQuantity, Quantity6Choice.mmOriginalAndCurrentFace);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Quantity6Choice.mmQuantity, com.tools20022.repository.choice.Quantity6Choice.mmOriginalAndCurrentFace);
 				trace_lazy = () -> SecuritiesQuantity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Quantity6Choice";
 				definition = "Choice of format for the quantity.";
@@ -183,21 +206,21 @@ public class Quantity6Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Qty", required = true)
 	public FinancialInstrumentQuantity1Choice getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(com.tools20022.repository.choice.FinancialInstrumentQuantity1Choice quantity) {
-		this.quantity = quantity;
+	public Quantity6Choice setQuantity(FinancialInstrumentQuantity1Choice quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
-	@XmlElement(name = "OrgnlAndCurFace", required = true)
 	public OriginalAndCurrentQuantities1 getOriginalAndCurrentFace() {
 		return originalAndCurrentFace;
 	}
 
-	public void setOriginalAndCurrentFace(OriginalAndCurrentQuantities1 originalAndCurrentFace) {
-		this.originalAndCurrentFace = originalAndCurrentFace;
+	public Quantity6Choice setOriginalAndCurrentFace(OriginalAndCurrentQuantities1 originalAndCurrentFace) {
+		this.originalAndCurrentFace = Objects.requireNonNull(originalAndCurrentFace);
+		return this;
 	}
 }

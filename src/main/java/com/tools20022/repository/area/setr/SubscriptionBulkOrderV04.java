@@ -23,10 +23,8 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.SecuritiesTradeLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -82,6 +80,14 @@ import javax.xml.bind.annotation.*;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code setr.007.001.04}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintAccountIdentificationRule#for_setr_SubscriptionBulkOrderV04
+ * ConstraintAccountIdentificationRule.for_setr_SubscriptionBulkOrderV04}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,16 +100,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SubscriptionBulkOrderV04", propOrder = {"messageIdentification", "poolReference", "previousReference", "bulkOrderDetails", "copyDetails", "extension"})
 public class SubscriptionBulkOrderV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies the message from a business
-	 * application standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,33 +128,36 @@ public class SubscriptionBulkOrderV04 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Reference that uniquely identifies the message from a business application standpoint. "
+	 * "Reference that uniquely identifies the message from a business application standpoint."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionBulkOrderV04, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<SubscriptionBulkOrderV04, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
-			definition = "Reference that uniquely identifies the message from a business application standpoint. ";
+			definition = "Reference that uniquely identifies the message from a business application standpoint.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionBulkOrderV04.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(SubscriptionBulkOrderV04 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(SubscriptionBulkOrderV04 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "PoolRef")
 	protected AdditionalReference9 poolReference;
 	/**
-	 * Collective reference identifying a set of messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,7 +178,7 @@ public class SubscriptionBulkOrderV04 {
 	 * definition} = "Collective reference identifying a set of messages."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPoolReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionBulkOrderV04, Optional<AdditionalReference9>> mmPoolReference = new MMMessageBuildingBlock<SubscriptionBulkOrderV04, Optional<AdditionalReference9>>() {
 		{
 			xmlTag = "PoolRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,18 +189,21 @@ public class SubscriptionBulkOrderV04 {
 			complexType_lazy = () -> AdditionalReference9.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionBulkOrderV04.class.getMethod("getPoolReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<AdditionalReference9> getValue(SubscriptionBulkOrderV04 obj) {
+			return obj.getPoolReference();
+		}
+
+		@Override
+		public void setValue(SubscriptionBulkOrderV04 obj, Optional<AdditionalReference9> value) {
+			obj.setPoolReference(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PrvsRef")
 	protected List<AdditionalReference8> previousReference;
 	/**
-	 * Reference to a linked message that was previously sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -212,7 +224,7 @@ public class SubscriptionBulkOrderV04 {
 	 * definition} = "Reference to a linked message that was previously sent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmPreviousReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionBulkOrderV04, List<AdditionalReference8>> mmPreviousReference = new MMMessageBuildingBlock<SubscriptionBulkOrderV04, List<AdditionalReference8>>() {
 		{
 			xmlTag = "PrvsRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,18 +234,21 @@ public class SubscriptionBulkOrderV04 {
 			complexType_lazy = () -> AdditionalReference8.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionBulkOrderV04.class.getMethod("getPreviousReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AdditionalReference8> getValue(SubscriptionBulkOrderV04 obj) {
+			return obj.getPreviousReference();
+		}
+
+		@Override
+		public void setValue(SubscriptionBulkOrderV04 obj, List<AdditionalReference8> value) {
+			obj.setPreviousReference(value);
 		}
 	};
+	@XmlElement(name = "BlkOrdrDtls", required = true)
 	protected SubscriptionBulkOrder5 bulkOrderDetails;
 	/**
-	 * General information related to the orders.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,7 +269,7 @@ public class SubscriptionBulkOrderV04 {
 	 * definition} = "General information related to the orders."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmBulkOrderDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionBulkOrderV04, SubscriptionBulkOrder5> mmBulkOrderDetails = new MMMessageBuildingBlock<SubscriptionBulkOrderV04, SubscriptionBulkOrder5>() {
 		{
 			xmlTag = "BlkOrdrDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -265,18 +280,21 @@ public class SubscriptionBulkOrderV04 {
 			complexType_lazy = () -> SubscriptionBulkOrder5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionBulkOrderV04.class.getMethod("getBulkOrderDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SubscriptionBulkOrder5 getValue(SubscriptionBulkOrderV04 obj) {
+			return obj.getBulkOrderDetails();
+		}
+
+		@Override
+		public void setValue(SubscriptionBulkOrderV04 obj, SubscriptionBulkOrder5 value) {
+			obj.setBulkOrderDetails(value);
 		}
 	};
+	@XmlElement(name = "CpyDtls")
 	protected CopyInformation4 copyDetails;
 	/**
-	 * Information provided when the message is a copy of a previous message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,7 +316,7 @@ public class SubscriptionBulkOrderV04 {
 	 * "Information provided when the message is a copy of a previous message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCopyDetails = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionBulkOrderV04, Optional<CopyInformation4>> mmCopyDetails = new MMMessageBuildingBlock<SubscriptionBulkOrderV04, Optional<CopyInformation4>>() {
 		{
 			xmlTag = "CpyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -309,19 +327,21 @@ public class SubscriptionBulkOrderV04 {
 			complexType_lazy = () -> CopyInformation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionBulkOrderV04.class.getMethod("getCopyDetails", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<CopyInformation4> getValue(SubscriptionBulkOrderV04 obj) {
+			return obj.getCopyDetails();
+		}
+
+		@Override
+		public void setValue(SubscriptionBulkOrderV04 obj, Optional<CopyInformation4> value) {
+			obj.setCopyDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Xtnsn")
 	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,7 +363,7 @@ public class SubscriptionBulkOrderV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExtension = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<SubscriptionBulkOrderV04, List<Extension1>> mmExtension = new MMMessageBuildingBlock<SubscriptionBulkOrderV04, List<Extension1>>() {
 		{
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -353,18 +373,21 @@ public class SubscriptionBulkOrderV04 {
 			complexType_lazy = () -> Extension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SubscriptionBulkOrderV04.class.getMethod("getExtension", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Extension1> getValue(SubscriptionBulkOrderV04 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(SubscriptionBulkOrderV04 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintAccountIdentificationRule.for_setr_SubscriptionBulkOrderV04);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SubscriptionBulkOrderV04";
 				definition = "Scope\r\nThe SubscriptionBulkOrder message is sent by an instructing party, for example, an investment manager or its authorised representative, to the executing party, for example, a transfer agent, to instruct a subscription to a financial instrument for two or more accounts.\r\nUsage\r\nThe SubscriptionBulkOrder message is used to bulk several individual orders into one bulk order. The individual orders come from different instructing parties, that is, account owners, but are for the same financial instrument. This message will typically be used by a party collecting orders and bulking these individual orders into one bulk order before sending it to another party.\r\nFor a single subscription order, the SubscriptionOrder message, not the SubscriptionBulkOrder message, must be used.";
@@ -392,61 +415,61 @@ public class SubscriptionBulkOrderV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public SubscriptionBulkOrderV04 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "PoolRef")
-	public AdditionalReference9 getPoolReference() {
-		return poolReference;
+	public Optional<AdditionalReference9> getPoolReference() {
+		return poolReference == null ? Optional.empty() : Optional.of(poolReference);
 	}
 
-	public void setPoolReference(AdditionalReference9 poolReference) {
+	public SubscriptionBulkOrderV04 setPoolReference(AdditionalReference9 poolReference) {
 		this.poolReference = poolReference;
+		return this;
 	}
 
-	@XmlElement(name = "PrvsRef")
 	public List<AdditionalReference8> getPreviousReference() {
-		return previousReference;
+		return previousReference == null ? previousReference = new ArrayList<>() : previousReference;
 	}
 
-	public void setPreviousReference(List<AdditionalReference8> previousReference) {
-		this.previousReference = previousReference;
+	public SubscriptionBulkOrderV04 setPreviousReference(List<AdditionalReference8> previousReference) {
+		this.previousReference = Objects.requireNonNull(previousReference);
+		return this;
 	}
 
-	@XmlElement(name = "BlkOrdrDtls", required = true)
 	public SubscriptionBulkOrder5 getBulkOrderDetails() {
 		return bulkOrderDetails;
 	}
 
-	public void setBulkOrderDetails(SubscriptionBulkOrder5 bulkOrderDetails) {
-		this.bulkOrderDetails = bulkOrderDetails;
+	public SubscriptionBulkOrderV04 setBulkOrderDetails(SubscriptionBulkOrder5 bulkOrderDetails) {
+		this.bulkOrderDetails = Objects.requireNonNull(bulkOrderDetails);
+		return this;
 	}
 
-	@XmlElement(name = "CpyDtls")
-	public CopyInformation4 getCopyDetails() {
-		return copyDetails;
+	public Optional<CopyInformation4> getCopyDetails() {
+		return copyDetails == null ? Optional.empty() : Optional.of(copyDetails);
 	}
 
-	public void setCopyDetails(CopyInformation4 copyDetails) {
+	public SubscriptionBulkOrderV04 setCopyDetails(CopyInformation4 copyDetails) {
 		this.copyDetails = copyDetails;
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<Extension1> extension) {
-		this.extension = extension;
+	public SubscriptionBulkOrderV04 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:setr.007.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:setr.007.001.04")
 	static public class Document {
 		@XmlElement(name = "SbcptBlkOrdr", required = true)
 		public SubscriptionBulkOrderV04 messageBody;

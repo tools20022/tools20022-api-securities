@@ -39,19 +39,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentification2Code#AlienRegistrationNumber
- * TypeOfIdentification2Code.mmAlienRegistrationNumber}</li>
+ * TypeOfIdentification2Code.AlienRegistrationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentification2Code#TaxExemptIdentificationNumber
- * TypeOfIdentification2Code.mmTaxExemptIdentificationNumber}</li>
+ * TypeOfIdentification2Code.TaxExemptIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentification2Code#CorporateIdentification
- * TypeOfIdentification2Code.mmCorporateIdentification}</li>
+ * TypeOfIdentification2Code.CorporateIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentification2Code#ForeignInvestmentIdentityNumber
- * TypeOfIdentification2Code.mmForeignInvestmentIdentityNumber}</li>
+ * TypeOfIdentification2Code.ForeignInvestmentIdentityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfIdentification2Code#TaxIdentificationNumber
- * TypeOfIdentification2Code.mmTaxIdentificationNumber}</li>
+ * TypeOfIdentification2Code.TaxIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -212,7 +212,7 @@ public class TypeOfIdentification2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ARNU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfIdentification2Code";

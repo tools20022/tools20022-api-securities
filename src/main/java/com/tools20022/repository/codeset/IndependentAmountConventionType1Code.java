@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IndependentAmountConventionType1Code#NettedBeforeThreshold
- * IndependentAmountConventionType1Code.mmNettedBeforeThreshold}</li>
+ * IndependentAmountConventionType1Code.NettedBeforeThreshold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IndependentAmountConventionType1Code#NettedAfterThreshold
- * IndependentAmountConventionType1Code.mmNettedAfterThreshold}</li>
+ * IndependentAmountConventionType1Code.NettedAfterThreshold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.IndependentAmountConventionType1Code#Segregated
- * IndependentAmountConventionType1Code.mmSegregated}</li>
+ * IndependentAmountConventionType1Code.Segregated}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -157,7 +157,7 @@ public class IndependentAmountConventionType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NBTR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IndependentAmountConventionType1Code";

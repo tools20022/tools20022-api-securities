@@ -24,10 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.MessageReportHeader4;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -70,17 +71,22 @@ import javax.xml.bind.annotation.*;
  * definition} =
  * "The FinancialInstrumentReportingStatusAdvice message is sent by the national competent authority to the reporting agent to provide a status advice for the correctness, issues or errors that arise from the submitted report."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.area.other.FinancialInstrumentReportingStatusAdviceV01
+ * FinancialInstrumentReportingStatusAdviceV01}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingStatusAdviceV01", propOrder = {"statusAdvice", "supplementaryData"})
 public class FinancialInstrumentReportingStatusAdviceV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StsAdvc", required = true)
 	protected List<MessageReportHeader4> statusAdvice;
 	/**
-	 * Status advice report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,31 +105,39 @@ public class FinancialInstrumentReportingStatusAdviceV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Status advice report."</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.area.other.FinancialInstrumentReportingStatusAdviceV01#mmStatusAdvice
+	 * FinancialInstrumentReportingStatusAdviceV01.mmStatusAdvice}</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatusAdvice = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingStatusAdviceV01, List<MessageReportHeader4>> mmStatusAdvice = new MMMessageBuildingBlock<FinancialInstrumentReportingStatusAdviceV01, List<MessageReportHeader4>>() {
 		{
 			xmlTag = "StsAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatusAdvice";
 			definition = "Status advice report.";
+			previousVersion_lazy = () -> com.tools20022.repository.area.other.FinancialInstrumentReportingStatusAdviceV01.mmStatusAdvice;
 			minOccurs = 1;
 			complexType_lazy = () -> MessageReportHeader4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingStatusAdviceV01.class.getMethod("getStatusAdvice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<MessageReportHeader4> getValue(FinancialInstrumentReportingStatusAdviceV01 obj) {
+			return obj.getStatusAdvice();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingStatusAdviceV01 obj, List<MessageReportHeader4> value) {
+			obj.setStatusAdvice(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,24 +158,32 @@ public class FinancialInstrumentReportingStatusAdviceV01 {
 	 * definition} =
 	 * "Additional information that can not be captured in the structured fields and/or any other specific block."
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.area.other.FinancialInstrumentReportingStatusAdviceV01#mmSupplementaryData
+	 * FinancialInstrumentReportingStatusAdviceV01.mmSupplementaryData}</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingStatusAdviceV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingStatusAdviceV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
+			previousVersion_lazy = () -> com.tools20022.repository.area.other.FinancialInstrumentReportingStatusAdviceV01.mmSupplementaryData;
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingStatusAdviceV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingStatusAdviceV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingStatusAdviceV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -171,6 +193,7 @@ public class FinancialInstrumentReportingStatusAdviceV01 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentReportingStatusAdviceV01";
 				definition = "The FinancialInstrumentReportingStatusAdvice message is sent by the national competent authority to the reporting agent to provide a status advice for the correctness, issues or errors that arise from the submitted report.";
+				previousVersion_lazy = () -> com.tools20022.repository.area.other.FinancialInstrumentReportingStatusAdviceV01.mmObject();
 				rootElement = "Document";
 				xmlTag = "FinInstrmRptgStsAdvc";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
@@ -194,25 +217,25 @@ public class FinancialInstrumentReportingStatusAdviceV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StsAdvc", required = true)
 	public List<MessageReportHeader4> getStatusAdvice() {
-		return statusAdvice;
+		return statusAdvice == null ? statusAdvice = new ArrayList<>() : statusAdvice;
 	}
 
-	public void setStatusAdvice(List<MessageReportHeader4> statusAdvice) {
-		this.statusAdvice = statusAdvice;
+	public FinancialInstrumentReportingStatusAdviceV01 setStatusAdvice(List<MessageReportHeader4> statusAdvice) {
+		this.statusAdvice = Objects.requireNonNull(statusAdvice);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingStatusAdviceV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.031.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.031.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgStsAdvc", required = true)
 		public FinancialInstrumentReportingStatusAdviceV01 messageBody;

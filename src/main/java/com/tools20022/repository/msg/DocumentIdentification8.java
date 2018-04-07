@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -218,8 +220,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -232,15 +234,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DocumentIdentification8", propOrder = {"identification", "creationDateTime"})
 public class DocumentIdentification8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Unique identification of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -270,10 +273,10 @@ public class DocumentIdentification8 {
 	 * definition} = "Unique identification of the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification8, Max35Text> mmIdentification = new MMMessageAttribute<DocumentIdentification8, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> DocumentIdentification8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification8.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,11 +286,22 @@ public class DocumentIdentification8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(DocumentIdentification8 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification8 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "CreDtTm")
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date/time of the creation of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,10 +331,10 @@ public class DocumentIdentification8 {
 	 * definition} = "Date/time of the creation of the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification8, Optional<ISODateTime>> mmCreationDateTime = new MMMessageAttribute<DocumentIdentification8, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
-			componentContext_lazy = () -> DocumentIdentification8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification8.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -330,12 +344,22 @@ public class DocumentIdentification8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(DocumentIdentification8 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification8 obj, Optional<ISODateTime> value) {
+			obj.setCreationDateTime(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DocumentIdentification8.mmIdentification, DocumentIdentification8.mmCreationDateTime);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentIdentification8.mmIdentification, com.tools20022.repository.msg.DocumentIdentification8.mmCreationDateTime);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AgentCANotificationAdviceV01.mmIdentification, AgentCANotificationCancellationRequestV01.mmIdentification, AgentCANotificationStatusAdviceV01.mmIdentification,
 						AgentCANotificationStatusAdviceV01.mmAgentCANotificationAdviceIdentification, AgentCANotificationStatusAdviceV01.mmAgentCANotificationCancellationRequestIdentification, AgentCAElectionAdviceV01.mmIdentification,
 						AgentCAElectionAmendmentRequestV01.mmIdentification, AgentCAElectionAmendmentRequestV01.mmAgentCAElectionAdviceIdentification, AgentCAElectionCancellationRequestV01.mmIdentification,
@@ -355,7 +379,7 @@ public class DocumentIdentification8 {
 						AgentCADeactivationCancellationRequestV01.mmIdentification, AgentCADeactivationCancellationRequestV01.mmAgentCADeactivationInstructionIdentification, AgentCADeactivationStatusAdviceV01.mmIdentification,
 						AgentCADeactivationStatusAdviceV01.mmAgentCADeactivationInstructionIdentification, AgentCADeactivationStatusAdviceV01.mmAgentCADeactivationCancellationRequestIdentification);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentIdentification8";
 				definition = "Identifies the document by providing a unique identification and optionally the date/time of the creation of the document.";
@@ -364,21 +388,21 @@ public class DocumentIdentification8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public DocumentIdentification8 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm")
-	public ISODateTime getCreationDateTime() {
-		return creationDateTime;
+	public Optional<ISODateTime> getCreationDateTime() {
+		return creationDateTime == null ? Optional.empty() : Optional.of(creationDateTime);
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
+	public DocumentIdentification8 setCreationDateTime(ISODateTime creationDateTime) {
 		this.creationDateTime = creationDateTime;
+		return this;
 	}
 }

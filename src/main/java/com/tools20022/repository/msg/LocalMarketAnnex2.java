@@ -24,9 +24,15 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashAccount22;
+import com.tools20022.repository.msg.ContactAttributes1;
+import com.tools20022.repository.msg.ProcessingCharacteristics2;
+import com.tools20022.repository.msg.ProcessingCharacteristics3;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LocalMarketAnnex2", propOrder = {"country", "localOrderDesk", "subscriptionProcessingCharacteristics", "redemptionProcessingCharacteristics", "settlementDetails"})
 public class LocalMarketAnnex2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctry", required = true)
 	protected List<CountryCode> country;
 	/**
-	 * Country in which the processing characteristic applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,10 +123,10 @@ public class LocalMarketAnnex2 {
 	 * definition} = "Country in which the processing characteristic applies."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LocalMarketAnnex2, List<CountryCode>> mmCountry = new MMMessageAttribute<LocalMarketAnnex2, List<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> Country.mmCode;
-			componentContext_lazy = () -> LocalMarketAnnex2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LocalMarketAnnex2.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,11 +135,22 @@ public class LocalMarketAnnex2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public List<CountryCode> getValue(LocalMarketAnnex2 obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(LocalMarketAnnex2 obj, List<CountryCode> value) {
+			obj.setCountry(value);
+		}
 	};
+	@XmlElement(name = "LclOrdrDsk", required = true)
 	protected ContactAttributes1 localOrderDesk;
 	/**
-	 * Organisation established primarily to provide financial services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -162,10 +180,10 @@ public class LocalMarketAnnex2 {
 	 * "Organisation established primarily to provide financial services."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLocalOrderDesk = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LocalMarketAnnex2, ContactAttributes1> mmLocalOrderDesk = new MMMessageAssociationEnd<LocalMarketAnnex2, ContactAttributes1>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmContactPoint;
-			componentContext_lazy = () -> LocalMarketAnnex2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LocalMarketAnnex2.mmObject();
 			isDerived = false;
 			xmlTag = "LclOrdrDsk";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,14 +192,24 @@ public class LocalMarketAnnex2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContactAttributes1.mmObject();
+			type_lazy = () -> ContactAttributes1.mmObject();
+		}
+
+		@Override
+		public ContactAttributes1 getValue(LocalMarketAnnex2 obj) {
+			return obj.getLocalOrderDesk();
+		}
+
+		@Override
+		public void setValue(LocalMarketAnnex2 obj, ContactAttributes1 value) {
+			obj.setLocalOrderDesk(value);
 		}
 	};
+	@XmlElement(name = "SbcptPrcgChrtcs", required = true)
 	protected ProcessingCharacteristics2 subscriptionProcessingCharacteristics;
 	/**
-	 * Processing characteristics linked to the instrument, ie, not to the
-	 * market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -209,30 +237,40 @@ public class LocalMarketAnnex2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Processing characteristics linked to the instrument, ie, not to  the market."
+	 * "Processing characteristics linked to the instrument, ie, not to the market."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubscriptionProcessingCharacteristics = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LocalMarketAnnex2, ProcessingCharacteristics2> mmSubscriptionProcessingCharacteristics = new MMMessageAssociationEnd<LocalMarketAnnex2, ProcessingCharacteristics2>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmProcessingCharacteristics;
-			componentContext_lazy = () -> LocalMarketAnnex2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LocalMarketAnnex2.mmObject();
 			isDerived = false;
 			xmlTag = "SbcptPrcgChrtcs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SubscriptionProcessingCharacteristics";
-			definition = "Processing characteristics linked to the instrument, ie, not to  the market.";
+			definition = "Processing characteristics linked to the instrument, ie, not to the market.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ProcessingCharacteristics2.mmObject();
+			type_lazy = () -> ProcessingCharacteristics2.mmObject();
+		}
+
+		@Override
+		public ProcessingCharacteristics2 getValue(LocalMarketAnnex2 obj) {
+			return obj.getSubscriptionProcessingCharacteristics();
+		}
+
+		@Override
+		public void setValue(LocalMarketAnnex2 obj, ProcessingCharacteristics2 value) {
+			obj.setSubscriptionProcessingCharacteristics(value);
 		}
 	};
+	@XmlElement(name = "RedPrcgChrtcs", required = true)
 	protected ProcessingCharacteristics3 redemptionProcessingCharacteristics;
 	/**
-	 * Processing characteristics linked to the instrument, ie, not to the
-	 * market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -260,29 +298,40 @@ public class LocalMarketAnnex2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Processing characteristics linked to the instrument, ie, not to  the market."
+	 * "Processing characteristics linked to the instrument, ie, not to the market."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRedemptionProcessingCharacteristics = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LocalMarketAnnex2, ProcessingCharacteristics3> mmRedemptionProcessingCharacteristics = new MMMessageAssociationEnd<LocalMarketAnnex2, ProcessingCharacteristics3>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmProcessingCharacteristics;
-			componentContext_lazy = () -> LocalMarketAnnex2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LocalMarketAnnex2.mmObject();
 			isDerived = false;
 			xmlTag = "RedPrcgChrtcs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RedemptionProcessingCharacteristics";
-			definition = "Processing characteristics linked to the instrument, ie, not to  the market.";
+			definition = "Processing characteristics linked to the instrument, ie, not to the market.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ProcessingCharacteristics3.mmObject();
+			type_lazy = () -> ProcessingCharacteristics3.mmObject();
+		}
+
+		@Override
+		public ProcessingCharacteristics3 getValue(LocalMarketAnnex2 obj) {
+			return obj.getRedemptionProcessingCharacteristics();
+		}
+
+		@Override
+		public void setValue(LocalMarketAnnex2 obj, ProcessingCharacteristics3 value) {
+			obj.setRedemptionProcessingCharacteristics(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CashAccount22> settlementDetails;
+	@XmlElement(name = "SttlmDtls", required = true)
+	protected List<CashAccount22> settlementDetails;
 	/**
-	 * Account to or from which a cash entry is made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -311,10 +360,10 @@ public class LocalMarketAnnex2 {
 	 * definition} = "Account to or from which a cash entry is made."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<LocalMarketAnnex2, List<CashAccount22>> mmSettlementDetails = new MMMessageAssociationEnd<LocalMarketAnnex2, List<CashAccount22>>() {
 		{
 			businessElementTrace_lazy = () -> CashSettlement.mmSettlementAccount;
-			componentContext_lazy = () -> LocalMarketAnnex2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LocalMarketAnnex2.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -322,17 +371,28 @@ public class LocalMarketAnnex2 {
 			definition = "Account to or from which a cash entry is made.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CashAccount22.mmObject();
+			type_lazy = () -> CashAccount22.mmObject();
+		}
+
+		@Override
+		public List<CashAccount22> getValue(LocalMarketAnnex2 obj) {
+			return obj.getSettlementDetails();
+		}
+
+		@Override
+		public void setValue(LocalMarketAnnex2 obj, List<CashAccount22> value) {
+			obj.setSettlementDetails(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LocalMarketAnnex2.mmCountry, LocalMarketAnnex2.mmLocalOrderDesk, LocalMarketAnnex2.mmSubscriptionProcessingCharacteristics, LocalMarketAnnex2.mmRedemptionProcessingCharacteristics,
-						LocalMarketAnnex2.mmSettlementDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LocalMarketAnnex2.mmCountry, com.tools20022.repository.msg.LocalMarketAnnex2.mmLocalOrderDesk,
+						com.tools20022.repository.msg.LocalMarketAnnex2.mmSubscriptionProcessingCharacteristics, com.tools20022.repository.msg.LocalMarketAnnex2.mmRedemptionProcessingCharacteristics,
+						com.tools20022.repository.msg.LocalMarketAnnex2.mmSettlementDetails);
 				trace_lazy = () -> TradingMarket.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocalMarketAnnex2";
 				definition = "Context, or geographic environment, in which trading parties may meet in order to negotiate and execute trades among themselves.";
@@ -341,48 +401,48 @@ public class LocalMarketAnnex2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctry", required = true)
 	public List<CountryCode> getCountry() {
-		return country;
+		return country == null ? country = new ArrayList<>() : country;
 	}
 
-	public void setCountry(List<CountryCode> country) {
-		this.country = country;
+	public LocalMarketAnnex2 setCountry(List<CountryCode> country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
-	@XmlElement(name = "LclOrdrDsk", required = true)
 	public ContactAttributes1 getLocalOrderDesk() {
 		return localOrderDesk;
 	}
 
-	public void setLocalOrderDesk(com.tools20022.repository.msg.ContactAttributes1 localOrderDesk) {
-		this.localOrderDesk = localOrderDesk;
+	public LocalMarketAnnex2 setLocalOrderDesk(ContactAttributes1 localOrderDesk) {
+		this.localOrderDesk = Objects.requireNonNull(localOrderDesk);
+		return this;
 	}
 
-	@XmlElement(name = "SbcptPrcgChrtcs", required = true)
 	public ProcessingCharacteristics2 getSubscriptionProcessingCharacteristics() {
 		return subscriptionProcessingCharacteristics;
 	}
 
-	public void setSubscriptionProcessingCharacteristics(com.tools20022.repository.msg.ProcessingCharacteristics2 subscriptionProcessingCharacteristics) {
-		this.subscriptionProcessingCharacteristics = subscriptionProcessingCharacteristics;
+	public LocalMarketAnnex2 setSubscriptionProcessingCharacteristics(ProcessingCharacteristics2 subscriptionProcessingCharacteristics) {
+		this.subscriptionProcessingCharacteristics = Objects.requireNonNull(subscriptionProcessingCharacteristics);
+		return this;
 	}
 
-	@XmlElement(name = "RedPrcgChrtcs", required = true)
 	public ProcessingCharacteristics3 getRedemptionProcessingCharacteristics() {
 		return redemptionProcessingCharacteristics;
 	}
 
-	public void setRedemptionProcessingCharacteristics(com.tools20022.repository.msg.ProcessingCharacteristics3 redemptionProcessingCharacteristics) {
-		this.redemptionProcessingCharacteristics = redemptionProcessingCharacteristics;
+	public LocalMarketAnnex2 setRedemptionProcessingCharacteristics(ProcessingCharacteristics3 redemptionProcessingCharacteristics) {
+		this.redemptionProcessingCharacteristics = Objects.requireNonNull(redemptionProcessingCharacteristics);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmDtls", required = true)
 	public List<CashAccount22> getSettlementDetails() {
-		return settlementDetails;
+		return settlementDetails == null ? settlementDetails = new ArrayList<>() : settlementDetails;
 	}
 
-	public void setSettlementDetails(List<com.tools20022.repository.msg.CashAccount22> settlementDetails) {
-		this.settlementDetails = settlementDetails;
+	public LocalMarketAnnex2 setSettlementDetails(List<CashAccount22> settlementDetails) {
+		this.settlementDetails = Objects.requireNonNull(settlementDetails);
+		return this;
 	}
 }

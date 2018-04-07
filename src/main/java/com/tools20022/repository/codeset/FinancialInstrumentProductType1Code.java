@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#CertificateOfDeposit
- * FinancialInstrumentProductType1Code.mmCertificateOfDeposit}</li>
+ * FinancialInstrumentProductType1Code.CertificateOfDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#CommercialPaper
- * FinancialInstrumentProductType1Code.mmCommercialPaper}</li>
+ * FinancialInstrumentProductType1Code.CommercialPaper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#OtherShortTermDebtSecurities
- * FinancialInstrumentProductType1Code.mmOtherShortTermDebtSecurities}</li>
+ * FinancialInstrumentProductType1Code.OtherShortTermDebtSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#AssetBackedCommercialPaper
- * FinancialInstrumentProductType1Code.mmAssetBackedCommercialPaper}</li>
+ * FinancialInstrumentProductType1Code.AssetBackedCommercialPaper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#FloatingRateNote
- * FinancialInstrumentProductType1Code.mmFloatingRateNote}</li>
+ * FinancialInstrumentProductType1Code.FloatingRateNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#CallAccountCallMoney
- * FinancialInstrumentProductType1Code.mmCallAccountCallMoney}</li>
+ * FinancialInstrumentProductType1Code.CallAccountCallMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductType1Code#Deposit
- * FinancialInstrumentProductType1Code.mmDeposit}</li>
+ * FinancialInstrumentProductType1Code.Deposit}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -257,7 +257,7 @@ public class FinancialInstrumentProductType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentProductType1Code";
 				definition = "Specifies the type of product or financial instrument.";

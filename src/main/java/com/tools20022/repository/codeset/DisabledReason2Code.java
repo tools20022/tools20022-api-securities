@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#AccountClosingInProcess
- * DisabledReason2Code.mmAccountClosingInProcess}</li>
+ * DisabledReason2Code.AccountClosingInProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Bankruptcy
- * DisabledReason2Code.mmBankruptcy}</li>
+ * DisabledReason2Code.Bankruptcy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Commitment
- * DisabledReason2Code.mmCommitment}</li>
+ * DisabledReason2Code.Commitment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Confiscation
- * DisabledReason2Code.mmConfiscation}</li>
+ * DisabledReason2Code.Confiscation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#MortisCausa
- * DisabledReason2Code.mmMortisCausa}</li>
+ * DisabledReason2Code.MortisCausa}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#PendingComplianceVerification
- * DisabledReason2Code.mmPendingComplianceVerification}</li>
+ * DisabledReason2Code.PendingComplianceVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Pledged
- * DisabledReason2Code.mmPledged}</li>
+ * DisabledReason2Code.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Reregistration
- * DisabledReason2Code.mmReregistration}</li>
+ * DisabledReason2Code.Reregistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Sanctions
- * DisabledReason2Code.mmSanctions}</li>
+ * DisabledReason2Code.Sanctions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Transfer
- * DisabledReason2Code.mmTransfer}</li>
+ * DisabledReason2Code.Transfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DisabledReason2Code#Rejected
- * DisabledReason2Code.mmRejected}</li>
+ * DisabledReason2Code.Rejected}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -365,7 +365,7 @@ public class DisabledReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisabledReason2Code";
 				definition = "Specifies the reason an account is disabled.";

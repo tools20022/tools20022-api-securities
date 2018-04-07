@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification30;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DisputeResolutionType1Choice", propOrder = {"code", "proprietaryIdentification"})
 public class DisputeResolutionType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected DisputeResolutionType1Code code;
 	/**
-	 * Code to specify the type of dispute that is to be resolved regarding the
-	 * disputed collateral amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,10 +112,10 @@ public class DisputeResolutionType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DisputeResolutionType1Choice, DisputeResolutionType1Code> mmCode = new MMMessageAttribute<DisputeResolutionType1Choice, DisputeResolutionType1Code>() {
 		{
 			businessElementTrace_lazy = () -> DisputeManagement.mmDisputeResolutionType;
-			componentContext_lazy = () -> DisputeResolutionType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DisputeResolutionType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -124,12 +125,22 @@ public class DisputeResolutionType1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> DisputeResolutionType1Code.mmObject();
 		}
+
+		@Override
+		public DisputeResolutionType1Code getValue(DisputeResolutionType1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(DisputeResolutionType1Choice obj, DisputeResolutionType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "PrtryId", required = true)
 	protected GenericIdentification30 proprietaryIdentification;
 	/**
-	 * Proprietary identification of the type of dispute that is to be resolved
-	 * regarding the disputed collateral amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,10 +173,10 @@ public class DisputeResolutionType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietaryIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DisputeResolutionType1Choice, GenericIdentification30> mmProprietaryIdentification = new MMMessageAttribute<DisputeResolutionType1Choice, GenericIdentification30>() {
 		{
 			businessElementTrace_lazy = () -> DisputeManagement.mmDisputeResolutionType;
-			componentContext_lazy = () -> DisputeResolutionType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.DisputeResolutionType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrtryId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,14 +186,24 @@ public class DisputeResolutionType1Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification30.mmObject();
 		}
+
+		@Override
+		public GenericIdentification30 getValue(DisputeResolutionType1Choice obj) {
+			return obj.getProprietaryIdentification();
+		}
+
+		@Override
+		public void setValue(DisputeResolutionType1Choice obj, GenericIdentification30 value) {
+			obj.setProprietaryIdentification(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DisputeResolutionType1Choice.mmCode, DisputeResolutionType1Choice.mmProprietaryIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.DisputeResolutionType1Choice.mmCode, com.tools20022.repository.choice.DisputeResolutionType1Choice.mmProprietaryIdentification);
 				trace_lazy = () -> DisputeManagement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisputeResolutionType1Choice";
 				definition = "Choice between a code or a proprietary code as to the nature of the dispute about the collateral amount.";
@@ -191,21 +212,21 @@ public class DisputeResolutionType1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public DisputeResolutionType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(DisputeResolutionType1Code code) {
-		this.code = code;
+	public DisputeResolutionType1Choice setCode(DisputeResolutionType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "PrtryId", required = true)
 	public GenericIdentification30 getProprietaryIdentification() {
 		return proprietaryIdentification;
 	}
 
-	public void setProprietaryIdentification(GenericIdentification30 proprietaryIdentification) {
-		this.proprietaryIdentification = proprietaryIdentification;
+	public DisputeResolutionType1Choice setProprietaryIdentification(GenericIdentification30 proprietaryIdentification) {
+		this.proprietaryIdentification = Objects.requireNonNull(proprietaryIdentification);
+		return this;
 	}
 }

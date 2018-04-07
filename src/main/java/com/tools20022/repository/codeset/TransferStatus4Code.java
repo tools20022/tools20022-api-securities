@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#Accepted
- * TransferStatus4Code.mmAccepted}</li>
+ * TransferStatus4Code.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#AlreadyExecuted
- * TransferStatus4Code.mmAlreadyExecuted}</li>
+ * TransferStatus4Code.AlreadyExecuted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#Matched
- * TransferStatus4Code.mmMatched}</li>
+ * TransferStatus4Code.Matched}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#Received
- * TransferStatus4Code.mmReceived}</li>
+ * TransferStatus4Code.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#SentToNextParty
- * TransferStatus4Code.mmSentToNextParty}</li>
+ * TransferStatus4Code.SentToNextParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#Settled
- * TransferStatus4Code.mmSettled}</li>
+ * TransferStatus4Code.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code#Complete
- * TransferStatus4Code.mmComplete}</li>
+ * TransferStatus4Code.Complete}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,6 +91,9 @@ public class TransferStatus4Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code
 	 * TransferStatus4Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::IPRC//PACK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -99,6 +103,7 @@ public class TransferStatus4Code extends MMCode {
 	 */
 	public static final TransferStatus4Code Accepted = new TransferStatus4Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::IPRC//PACK"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Accepted";
 			owner_lazy = () -> com.tools20022.repository.codeset.TransferStatus4Code.mmObject();
@@ -114,6 +119,9 @@ public class TransferStatus4Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code
 	 * TransferStatus4Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::IPRC//COSE</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -123,6 +131,7 @@ public class TransferStatus4Code extends MMCode {
 	 */
 	public static final TransferStatus4Code AlreadyExecuted = new TransferStatus4Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::IPRC//COSE"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AlreadyExecuted";
 			owner_lazy = () -> com.tools20022.repository.codeset.TransferStatus4Code.mmObject();
@@ -138,6 +147,9 @@ public class TransferStatus4Code extends MMCode {
 	 * {@linkplain com.tools20022.repository.codeset.TransferStatus4Code
 	 * TransferStatus4Code}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :25D::MTCH//MACH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -147,6 +159,7 @@ public class TransferStatus4Code extends MMCode {
 	 */
 	public static final TransferStatus4Code Matched = new TransferStatus4Code() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":25D::MTCH//MACH"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Matched";
 			owner_lazy = () -> com.tools20022.repository.codeset.TransferStatus4Code.mmObject();
@@ -257,7 +270,7 @@ public class TransferStatus4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransferStatus4Code";
 				definition = "Specifies the transfer or settlement instruction status.";

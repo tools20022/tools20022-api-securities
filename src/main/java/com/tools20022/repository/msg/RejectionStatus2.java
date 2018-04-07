@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Provides a rejection reason and additional information."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RejectionStatus2", propOrder = {"rejectedReason", "additionalInformation"})
 public class RejectionStatus2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RjctdRsn", required = true)
 	protected RejectionReasonV021Code rejectedReason;
 	/**
-	 * Provides the rejection reason using a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +109,10 @@ public class RejectionStatus2 {
 	 * definition} = "Provides the rejection reason using a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectionStatus2, RejectionReasonV021Code> mmRejectedReason = new MMMessageAttribute<RejectionStatus2, RejectionReasonV021Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> RejectionStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RejectionStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "RjctdRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +122,22 @@ public class RejectionStatus2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> RejectionReasonV021Code.mmObject();
 		}
+
+		@Override
+		public RejectionReasonV021Code getValue(RejectionStatus2 obj) {
+			return obj.getRejectedReason();
+		}
+
+		@Override
+		public void setValue(RejectionStatus2 obj, RejectionReasonV021Code value) {
+			obj.setRejectedReason(value);
+		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected Max35Text additionalInformation;
 	/**
-	 * Allows to provides additional information to the rejection reason code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,10 +169,10 @@ public class RejectionStatus2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectionStatus2, Optional<Max35Text>> mmAdditionalInformation = new MMMessageAttribute<RejectionStatus2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmReason;
-			componentContext_lazy = () -> RejectionStatus2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RejectionStatus2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +182,24 @@ public class RejectionStatus2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(RejectionStatus2 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(RejectionStatus2 obj, Optional<Max35Text> value) {
+			obj.setAdditionalInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RejectionStatus2.mmRejectedReason, RejectionStatus2.mmAdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RejectionStatus2.mmRejectedReason, com.tools20022.repository.msg.RejectionStatus2.mmAdditionalInformation);
 				trace_lazy = () -> CollateralStatus.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionStatus2";
 				definition = "Provides a rejection reason and additional information.";
@@ -184,21 +208,21 @@ public class RejectionStatus2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RjctdRsn", required = true)
 	public RejectionReasonV021Code getRejectedReason() {
 		return rejectedReason;
 	}
 
-	public void setRejectedReason(RejectionReasonV021Code rejectedReason) {
-		this.rejectedReason = rejectedReason;
+	public RejectionStatus2 setRejectedReason(RejectionReasonV021Code rejectedReason) {
+		this.rejectedReason = Objects.requireNonNull(rejectedReason);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
-	public Max35Text getAdditionalInformation() {
-		return additionalInformation;
+	public Optional<Max35Text> getAdditionalInformation() {
+		return additionalInformation == null ? Optional.empty() : Optional.of(additionalInformation);
 	}
 
-	public void setAdditionalInformation(Max35Text additionalInformation) {
+	public RejectionStatus2 setAdditionalInformation(Max35Text additionalInformation) {
 		this.additionalInformation = additionalInformation;
+		return this;
 	}
 }

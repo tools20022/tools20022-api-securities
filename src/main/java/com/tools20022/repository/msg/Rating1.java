@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.Rating;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Assessment of securities credit and investment risk."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Rating1", propOrder = {"ratingScheme", "valueDate", "valueIdentification"})
 public class Rating1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RatgSchme", required = true)
 	protected Max35Text ratingScheme;
 	/**
-	 * Information regarding the entity that assigns the rating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,10 +106,10 @@ public class Rating1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRatingScheme = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Rating1, Max35Text> mmRatingScheme = new MMMessageAttribute<Rating1, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Rating.mmRatingScheme;
-			componentContext_lazy = () -> Rating1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Rating1.mmObject();
 			isDerived = false;
 			xmlTag = "RatgSchme";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,11 +119,22 @@ public class Rating1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Rating1 obj) {
+			return obj.getRatingScheme();
+		}
+
+		@Override
+		public void setValue(Rating1 obj, Max35Text value) {
+			obj.setRatingScheme(value);
+		}
 	};
+	@XmlElement(name = "ValDt", required = true)
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time as from which the rating is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,10 +163,10 @@ public class Rating1 {
 	 * definition} = "Date/time as from which the rating is valid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Rating1, ISODateTime> mmValueDate = new MMMessageAttribute<Rating1, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> Rating.mmValueDate;
-			componentContext_lazy = () -> Rating1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Rating1.mmObject();
 			isDerived = false;
 			xmlTag = "ValDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,12 +176,22 @@ public class Rating1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(Rating1 obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(Rating1 obj, ISODateTime value) {
+			obj.setValueDate(value);
+		}
 	};
+	@XmlElement(name = "ValId", required = true)
 	protected RatingValueIdentifier valueIdentification;
 	/**
-	 * Specifies the rating, which has been assigned to a security by a rating
-	 * agency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,10 +223,10 @@ public class Rating1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValueIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Rating1, RatingValueIdentifier> mmValueIdentification = new MMMessageAttribute<Rating1, RatingValueIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> Rating.mmValue;
-			componentContext_lazy = () -> Rating1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Rating1.mmObject();
 			isDerived = false;
 			xmlTag = "ValId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -213,14 +236,24 @@ public class Rating1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> RatingValueIdentifier.mmObject();
 		}
+
+		@Override
+		public RatingValueIdentifier getValue(Rating1 obj) {
+			return obj.getValueIdentification();
+		}
+
+		@Override
+		public void setValue(Rating1 obj, RatingValueIdentifier value) {
+			obj.setValueIdentification(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Rating1.mmRatingScheme, Rating1.mmValueDate, Rating1.mmValueIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Rating1.mmRatingScheme, com.tools20022.repository.msg.Rating1.mmValueDate, com.tools20022.repository.msg.Rating1.mmValueIdentification);
 				trace_lazy = () -> Rating.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Rating1";
 				definition = "Assessment of securities credit and investment risk.";
@@ -229,30 +262,30 @@ public class Rating1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RatgSchme", required = true)
 	public Max35Text getRatingScheme() {
 		return ratingScheme;
 	}
 
-	public void setRatingScheme(Max35Text ratingScheme) {
-		this.ratingScheme = ratingScheme;
+	public Rating1 setRatingScheme(Max35Text ratingScheme) {
+		this.ratingScheme = Objects.requireNonNull(ratingScheme);
+		return this;
 	}
 
-	@XmlElement(name = "ValDt", required = true)
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public Rating1 setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
-	@XmlElement(name = "ValId", required = true)
 	public RatingValueIdentifier getValueIdentification() {
 		return valueIdentification;
 	}
 
-	public void setValueIdentification(RatingValueIdentifier valueIdentification) {
-		this.valueIdentification = valueIdentification;
+	public Rating1 setValueIdentification(RatingValueIdentifier valueIdentification) {
+		this.valueIdentification = Objects.requireNonNull(valueIdentification);
+		return this;
 	}
 }

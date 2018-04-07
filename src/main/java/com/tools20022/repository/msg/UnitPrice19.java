@@ -24,8 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.UnitPriceType2Choice;
 import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PriceValue1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Amount of money for which goods or services are offered, sold, or bought."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "UnitPrice19", propOrder = {"priceType", "value"})
 public class UnitPrice19 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PricTp", required = true)
 	protected UnitPriceType2Choice priceType;
 	/**
-	 * Type of price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -102,10 +105,10 @@ public class UnitPrice19 {
 	 * definition} = "Type of price."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPriceType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<UnitPrice19, UnitPriceType2Choice> mmPriceType = new MMMessageAssociationEnd<UnitPrice19, UnitPriceType2Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmPriceType;
-			componentContext_lazy = () -> UnitPrice19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnitPrice19.mmObject();
 			isDerived = false;
 			xmlTag = "PricTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +119,22 @@ public class UnitPrice19 {
 			isComposite = true;
 			type_lazy = () -> UnitPriceType2Choice.mmObject();
 		}
+
+		@Override
+		public UnitPriceType2Choice getValue(UnitPrice19 obj) {
+			return obj.getPriceType();
+		}
+
+		@Override
+		public void setValue(UnitPrice19 obj, UnitPriceType2Choice value) {
+			obj.setPriceType(value);
+		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected PriceValue1 value;
 	/**
-	 * Value of the price, that is, as a currency and value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,10 +163,10 @@ public class UnitPrice19 {
 	 * definition} = "Value of the price, that is, as a currency and value."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UnitPrice19, PriceValue1> mmValue = new MMMessageAttribute<UnitPrice19, PriceValue1>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmPrice;
-			componentContext_lazy = () -> UnitPrice19.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UnitPrice19.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,16 +174,26 @@ public class UnitPrice19 {
 			definition = "Value of the price, that is, as a currency and value.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.PriceValue1.mmObject();
+			complexType_lazy = () -> PriceValue1.mmObject();
+		}
+
+		@Override
+		public PriceValue1 getValue(UnitPrice19 obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(UnitPrice19 obj, PriceValue1 value) {
+			obj.setValue(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UnitPrice19.mmPriceType, UnitPrice19.mmValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnitPrice19.mmPriceType, com.tools20022.repository.msg.UnitPrice19.mmValue);
 				trace_lazy = () -> SecuritiesPricing.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnitPrice19";
 				definition = "Amount of money for which goods or services are offered, sold, or bought.";
@@ -178,21 +202,21 @@ public class UnitPrice19 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PricTp", required = true)
 	public UnitPriceType2Choice getPriceType() {
 		return priceType;
 	}
 
-	public void setPriceType(UnitPriceType2Choice priceType) {
-		this.priceType = priceType;
+	public UnitPrice19 setPriceType(UnitPriceType2Choice priceType) {
+		this.priceType = Objects.requireNonNull(priceType);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public PriceValue1 getValue() {
 		return value;
 	}
 
-	public void setValue(com.tools20022.repository.msg.PriceValue1 value) {
-		this.value = value;
+	public UnitPrice19 setValue(PriceValue1 value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 }

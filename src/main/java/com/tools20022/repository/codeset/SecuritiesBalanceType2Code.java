@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType2Code#TaxExempt
- * SecuritiesBalanceType2Code.mmTaxExempt}</li>
+ * SecuritiesBalanceType2Code.TaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType2Code#NonTaxExempt
- * SecuritiesBalanceType2Code.mmNonTaxExempt}</li>
+ * SecuritiesBalanceType2Code.NonTaxExempt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType2Code#Registered
- * SecuritiesBalanceType2Code.mmRegistered}</li>
+ * SecuritiesBalanceType2Code.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType2Code#Unclassified
- * SecuritiesBalanceType2Code.mmUnclassified}</li>
+ * SecuritiesBalanceType2Code.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType2Code#StreetPosition
- * SecuritiesBalanceType2Code.mmStreetPosition}</li>
+ * SecuritiesBalanceType2Code.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType2Code#Unregistered
- * SecuritiesBalanceType2Code.mmUnregistered}</li>
+ * SecuritiesBalanceType2Code.Unregistered}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -237,7 +237,7 @@ public class SecuritiesBalanceType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CLEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType2Code";

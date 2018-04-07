@@ -24,8 +24,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.acmt.AccountModificationInstructionV07;
 import com.tools20022.repository.codeset.DataModification1Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Intermediary36;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ModificationScope38", propOrder = {"modificationScopeIndication", "intermediary"})
 public class ModificationScope38 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ModScpIndctn", required = true)
 	protected DataModification1Code modificationScopeIndication;
 	/**
-	 * Type of modification to be applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,9 +111,9 @@ public class ModificationScope38 {
 	 * definition} = "Type of modification to be applied."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModificationScopeIndication = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ModificationScope38, DataModification1Code> mmModificationScopeIndication = new MMMessageAttribute<ModificationScope38, DataModification1Code>() {
 		{
-			componentContext_lazy = () -> ModificationScope38.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope38.mmObject();
 			isDerived = false;
 			xmlTag = "ModScpIndctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +123,22 @@ public class ModificationScope38 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DataModification1Code.mmObject();
 		}
+
+		@Override
+		public DataModification1Code getValue(ModificationScope38 obj) {
+			return obj.getModificationScopeIndication();
+		}
+
+		@Override
+		public void setValue(ModificationScope38 obj, DataModification1Code value) {
+			obj.setModificationScopeIndication(value);
+		}
 	};
+	@XmlElement(name = "Intrmy", required = true)
 	protected Intermediary36 intermediary;
 	/**
-	 * Intermediary or other party related to the management of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -149,9 +163,9 @@ public class ModificationScope38 {
 	 * "Intermediary or other party related to the management of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIntermediary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ModificationScope38, Intermediary36> mmIntermediary = new MMMessageAssociationEnd<ModificationScope38, Intermediary36>() {
 		{
-			componentContext_lazy = () -> ModificationScope38.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ModificationScope38.mmObject();
 			isDerived = false;
 			xmlTag = "Intrmy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,16 +174,26 @@ public class ModificationScope38 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Intermediary36.mmObject();
+			type_lazy = () -> Intermediary36.mmObject();
+		}
+
+		@Override
+		public Intermediary36 getValue(ModificationScope38 obj) {
+			return obj.getIntermediary();
+		}
+
+		@Override
+		public void setValue(ModificationScope38 obj, Intermediary36 value) {
+			obj.setIntermediary(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ModificationScope38.mmModificationScopeIndication, ModificationScope38.mmIntermediary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ModificationScope38.mmModificationScopeIndication, com.tools20022.repository.msg.ModificationScope38.mmIntermediary);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountModificationInstructionV07.mmModifiedIntermediaries);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationScope38";
 				definition = "Scope of the modification to be applied on an identified set of information.";
@@ -178,21 +202,21 @@ public class ModificationScope38 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ModScpIndctn", required = true)
 	public DataModification1Code getModificationScopeIndication() {
 		return modificationScopeIndication;
 	}
 
-	public void setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
-		this.modificationScopeIndication = modificationScopeIndication;
+	public ModificationScope38 setModificationScopeIndication(DataModification1Code modificationScopeIndication) {
+		this.modificationScopeIndication = Objects.requireNonNull(modificationScopeIndication);
+		return this;
 	}
 
-	@XmlElement(name = "Intrmy", required = true)
 	public Intermediary36 getIntermediary() {
 		return intermediary;
 	}
 
-	public void setIntermediary(com.tools20022.repository.msg.Intermediary36 intermediary) {
-		this.intermediary = intermediary;
+	public ModificationScope38 setIntermediary(Intermediary36 intermediary) {
+		this.intermediary = Objects.requireNonNull(intermediary);
+		return this;
 	}
 }

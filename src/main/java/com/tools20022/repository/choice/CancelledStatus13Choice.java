@@ -30,6 +30,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +78,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Reason for the cancelled status."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CancelledStatus13Choice", propOrder = {"noSpecifiedReason", "reason", "extendedReason", "dataSourceScheme"})
 public class CancelledStatus13Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NoSpcfdRsn", required = true)
 	protected NoReasonCode noSpecifiedReason;
 	/**
-	 * Indicates that there is no reason available or to report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,10 +118,10 @@ public class CancelledStatus13Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNoSpecifiedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CancelledStatus13Choice, NoReasonCode> mmNoSpecifiedReason = new MMMessageAttribute<CancelledStatus13Choice, NoReasonCode>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmNoSpecifiedReason;
-			componentContext_lazy = () -> CancelledStatus13Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CancelledStatus13Choice.mmObject();
 			isDerived = false;
 			xmlTag = "NoSpcfdRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,11 +131,22 @@ public class CancelledStatus13Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		@Override
+		public NoReasonCode getValue(CancelledStatus13Choice obj) {
+			return obj.getNoSpecifiedReason();
+		}
+
+		@Override
+		public void setValue(CancelledStatus13Choice obj, NoReasonCode value) {
+			obj.setNoSpecifiedReason(value);
+		}
 	};
+	@XmlElement(name = "Rsn", required = true)
 	protected CancelledStatusReason3Code reason;
 	/**
-	 * Reason for the cancelled status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,10 +177,10 @@ public class CancelledStatus13Choice {
 	 * definition} = "Reason for the cancelled status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CancelledStatus13Choice, CancelledStatusReason3Code> mmReason = new MMMessageAttribute<CancelledStatus13Choice, CancelledStatusReason3Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmCancellationReason;
-			componentContext_lazy = () -> CancelledStatus13Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CancelledStatus13Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,11 +190,22 @@ public class CancelledStatus13Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> CancelledStatusReason3Code.mmObject();
 		}
+
+		@Override
+		public CancelledStatusReason3Code getValue(CancelledStatus13Choice obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(CancelledStatus13Choice obj, CancelledStatusReason3Code value) {
+			obj.setReason(value);
+		}
 	};
+	@XmlElement(name = "XtndedRsn", required = true)
 	protected Extended350Code extendedReason;
 	/**
-	 * Reason for the cancelled status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,9 +231,9 @@ public class CancelledStatus13Choice {
 	 * definition} = "Reason for the cancelled status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExtendedReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CancelledStatus13Choice, Extended350Code> mmExtendedReason = new MMMessageAttribute<CancelledStatus13Choice, Extended350Code>() {
 		{
-			componentContext_lazy = () -> CancelledStatus13Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CancelledStatus13Choice.mmObject();
 			isDerived = false;
 			xmlTag = "XtndedRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -219,11 +243,22 @@ public class CancelledStatus13Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Extended350Code.mmObject();
 		}
+
+		@Override
+		public Extended350Code getValue(CancelledStatus13Choice obj) {
+			return obj.getExtendedReason();
+		}
+
+		@Override
+		public void setValue(CancelledStatus13Choice obj, Extended350Code value) {
+			obj.setExtendedReason(value);
+		}
 	};
+	@XmlElement(name = "DataSrcSchme", required = true)
 	protected GenericIdentification1 dataSourceScheme;
 	/**
-	 * Proprietary identification of the reason for the cancelled status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -253,10 +288,10 @@ public class CancelledStatus13Choice {
 	 * "Proprietary identification of the reason for the cancelled status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDataSourceScheme = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CancelledStatus13Choice, GenericIdentification1> mmDataSourceScheme = new MMMessageAssociationEnd<CancelledStatus13Choice, GenericIdentification1>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmDataSourceScheme;
-			componentContext_lazy = () -> CancelledStatus13Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CancelledStatus13Choice.mmObject();
 			isDerived = false;
 			xmlTag = "DataSrcSchme";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,14 +302,25 @@ public class CancelledStatus13Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification1.mmObject();
 		}
+
+		@Override
+		public GenericIdentification1 getValue(CancelledStatus13Choice obj) {
+			return obj.getDataSourceScheme();
+		}
+
+		@Override
+		public void setValue(CancelledStatus13Choice obj, GenericIdentification1 value) {
+			obj.setDataSourceScheme(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CancelledStatus13Choice.mmNoSpecifiedReason, CancelledStatus13Choice.mmReason, CancelledStatus13Choice.mmExtendedReason, CancelledStatus13Choice.mmDataSourceScheme);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CancelledStatus13Choice.mmNoSpecifiedReason, com.tools20022.repository.choice.CancelledStatus13Choice.mmReason,
+						com.tools20022.repository.choice.CancelledStatus13Choice.mmExtendedReason, com.tools20022.repository.choice.CancelledStatus13Choice.mmDataSourceScheme);
 				trace_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancelledStatus13Choice";
 				definition = "Reason for the cancelled status.";
@@ -283,39 +329,39 @@ public class CancelledStatus13Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NoSpcfdRsn", required = true)
 	public NoReasonCode getNoSpecifiedReason() {
 		return noSpecifiedReason;
 	}
 
-	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
-		this.noSpecifiedReason = noSpecifiedReason;
+	public CancelledStatus13Choice setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = Objects.requireNonNull(noSpecifiedReason);
+		return this;
 	}
 
-	@XmlElement(name = "Rsn", required = true)
 	public CancelledStatusReason3Code getReason() {
 		return reason;
 	}
 
-	public void setReason(CancelledStatusReason3Code reason) {
-		this.reason = reason;
+	public CancelledStatus13Choice setReason(CancelledStatusReason3Code reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
-	@XmlElement(name = "XtndedRsn", required = true)
 	public Extended350Code getExtendedReason() {
 		return extendedReason;
 	}
 
-	public void setExtendedReason(Extended350Code extendedReason) {
-		this.extendedReason = extendedReason;
+	public CancelledStatus13Choice setExtendedReason(Extended350Code extendedReason) {
+		this.extendedReason = Objects.requireNonNull(extendedReason);
+		return this;
 	}
 
-	@XmlElement(name = "DataSrcSchme", required = true)
 	public GenericIdentification1 getDataSourceScheme() {
 		return dataSourceScheme;
 	}
 
-	public void setDataSourceScheme(GenericIdentification1 dataSourceScheme) {
-		this.dataSourceScheme = dataSourceScheme;
+	public CancelledStatus13Choice setDataSourceScheme(GenericIdentification1 dataSourceScheme) {
+		this.dataSourceScheme = Objects.requireNonNull(dataSourceScheme);
+		return this;
 	}
 }

@@ -26,9 +26,9 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -186,8 +186,25 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintOrderOriginatorEligibility3Rule#forRedemptionExecution16
+ * ConstraintOrderOriginatorEligibility3Rule.forRedemptionExecution16}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPriceDifferenceReasonRule#forRedemptionExecution16
+ * ConstraintPriceDifferenceReasonRule.forRedemptionExecution16}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails1Rule#forRedemptionExecution16
+ * ConstraintPhysicalDeliveryDetails1Rule.forRedemptionExecution16}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails2Rule#forRedemptionExecution16
+ * ConstraintPhysicalDeliveryDetails2Rule.forRedemptionExecution16}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -198,7 +215,7 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Execution of a redemption order."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RedemptionExecution16", propOrder = {"orderReference", "clientReference", "dealReference", "orderType", "beneficiaryDetails", "unitsNumber", "rounding", "netAmount", "investmentAccountDetails", "holdingsRedemptionRate",
 		"grossAmount", "tradeDateTime", "settlementAmount", "cashSettlementDate", "settlementMethod", "dealingPriceDetails", "informativePriceDetails", "partiallyExecutedIndicator", "bestExecution", "cumDividendIndicator",
 		"interimProfitAmount", "foreignExchangeDetails", "incomePreference", "group1Or2Units", "transactionOverhead", "informativeTaxDetails", "staffClientBreakdown", "settlementAndCustodyDetails", "physicalDeliveryIndicator",
@@ -207,11 +224,11 @@ import javax.xml.bind.annotation.XmlType;
 public class RedemptionExecution16 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "OrdrRef", required = true)
 	protected Max35Text orderReference;
 	/**
-	 * Unique and unambiguous identifier for the order, as assigned by the
-	 * instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,10 +260,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOrderReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Max35Text> mmOrderReference = new MMMessageAttribute<RedemptionExecution16, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesOrder.mmIdentification;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -256,13 +273,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(RedemptionExecution16 obj) {
+			return obj.getOrderReference();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Max35Text value) {
+			obj.setOrderReference(value);
+		}
 	};
+	@XmlElement(name = "ClntRef")
 	protected Max35Text clientReference;
 	/**
-	 * Unique and unambiguous investor's identification of the order. This
-	 * reference can typically be used in a hub scenario to give the reference
-	 * of the order as assigned by the underlying client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,10 +320,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<Max35Text>> mmClientReference = new MMMessageAttribute<RedemptionExecution16, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmClientReference;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "ClntRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -307,12 +333,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(RedemptionExecution16 obj) {
+			return obj.getClientReference();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<Max35Text> value) {
+			obj.setClientReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DealRef", required = true)
 	protected Max35Text dealReference;
 	/**
-	 * Unique and unambiguous identifier for the order execution, as assigned by
-	 * the confirming party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,10 +380,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDealReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Max35Text> mmDealReference = new MMMessageAttribute<RedemptionExecution16, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmDealIdentification;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "DealRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -357,11 +393,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(RedemptionExecution16 obj) {
+			return obj.getDealReference();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Max35Text value) {
+			obj.setDealReference(value);
+		}
 	};
+	@XmlElement(name = "OrdrTp")
 	protected List<FundOrderType4Choice> orderType;
 	/**
-	 * Category of the investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -391,10 +438,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Category of the investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrderType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, List<FundOrderType4Choice>> mmOrderType = new MMMessageAssociationEnd<RedemptionExecution16, List<FundOrderType4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderType;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -405,11 +452,22 @@ public class RedemptionExecution16 {
 			isComposite = true;
 			type_lazy = () -> FundOrderType4Choice.mmObject();
 		}
+
+		@Override
+		public List<FundOrderType4Choice> getValue(RedemptionExecution16 obj) {
+			return obj.getOrderType();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, List<FundOrderType4Choice> value) {
+			obj.setOrderType(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.IndividualPerson32> beneficiaryDetails;
+	@XmlElement(name = "BnfcryDtls")
+	protected List<IndividualPerson32> beneficiaryDetails;
 	/**
-	 * Additional information about the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -437,10 +495,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Additional information about the investor."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBeneficiaryDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, List<IndividualPerson32>> mmBeneficiaryDetails = new MMMessageAssociationEnd<RedemptionExecution16, List<IndividualPerson32>>() {
 		{
 			businessComponentTrace_lazy = () -> Person.mmObject();
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "BnfcryDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -448,13 +506,24 @@ public class RedemptionExecution16 {
 			definition = "Additional information about the investor.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.IndividualPerson32.mmObject();
+			type_lazy = () -> IndividualPerson32.mmObject();
+		}
+
+		@Override
+		public List<IndividualPerson32> getValue(RedemptionExecution16 obj) {
+			return obj.getBeneficiaryDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, List<IndividualPerson32> value) {
+			obj.setBeneficiaryDetails(value);
 		}
 	};
+	@XmlElement(name = "UnitsNb", required = true)
 	protected DecimalNumber unitsNumber;
 	/**
-	 * Number of investment funds units redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -485,10 +554,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Number of investment funds units redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitsNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, DecimalNumber> mmUnitsNumber = new MMMessageAttribute<RedemptionExecution16, DecimalNumber>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmUnitsNumber;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "UnitsNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -498,11 +567,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public DecimalNumber getValue(RedemptionExecution16 obj) {
+			return obj.getUnitsNumber();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, DecimalNumber value) {
+			obj.setUnitsNumber(value);
+		}
 	};
+	@XmlElement(name = "Rndg")
 	protected RoundingDirection2Code rounding;
 	/**
-	 * Indicates the rounding direction applied to nearest unit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -534,10 +614,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRounding = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<RoundingDirection2Code>> mmRounding = new MMMessageAttribute<RedemptionExecution16, Optional<RoundingDirection2Code>>() {
 		{
 			businessElementTrace_lazy = () -> RoundingParameters.mmRoundingDirection;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "Rndg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -547,12 +627,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> RoundingDirection2Code.mmObject();
 		}
+
+		@Override
+		public Optional<RoundingDirection2Code> getValue(RedemptionExecution16 obj) {
+			return obj.getRounding();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<RoundingDirection2Code> value) {
+			obj.setRounding(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NetAmt")
 	protected ActiveCurrencyAndAmount netAmount;
 	/**
-	 * Amount of money paid to the investor when redeeming fund units. <br>
-	 * Net amount = (Quantity * Price) – (Fees + Taxes).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -585,10 +675,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNetAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<ActiveCurrencyAndAmount>> mmNetAmount = new MMMessageAttribute<RedemptionExecution16, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> RedemptionExecution.mmRedeemedNetAmount;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "NetAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -598,11 +688,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(RedemptionExecution16 obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setNetAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InvstmtAcctDtls", required = true)
 	protected InvestmentAccount58 investmentAccountDetails;
 	/**
-	 * Account impacted by the investment fund order execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -631,10 +732,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Account impacted by the investment fund order execution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInvestmentAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, InvestmentAccount58> mmInvestmentAccountDetails = new MMMessageAssociationEnd<RedemptionExecution16, InvestmentAccount58>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmInvestmentAccount;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "InvstmtAcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -643,13 +744,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentAccount58.mmObject();
+			type_lazy = () -> InvestmentAccount58.mmObject();
+		}
+
+		@Override
+		public InvestmentAccount58 getValue(RedemptionExecution16 obj) {
+			return obj.getInvestmentAccountDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, InvestmentAccount58 value) {
+			obj.setInvestmentAccountDetails(value);
 		}
 	};
+	@XmlElement(name = "HldgsRedRate")
 	protected PercentageRate holdingsRedemptionRate;
 	/**
-	 * Portion of the investor's holdings redeemed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -680,10 +792,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Portion of the investor's holdings redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHoldingsRedemptionRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<PercentageRate>> mmHoldingsRedemptionRate = new MMMessageAttribute<RedemptionExecution16, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> RedemptionOrder.mmHoldingsRedemptionRate;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "HldgsRedRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -693,12 +805,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(RedemptionExecution16 obj) {
+			return obj.getHoldingsRedemptionRate();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<PercentageRate> value) {
+			obj.setHoldingsRedemptionRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "GrssAmt")
 	protected ActiveCurrencyAndAmount grossAmount;
 	/**
-	 * Amount of money redeemed from the fund. <br>
-	 * Gross Amount = Quantity * Price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -731,10 +853,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGrossAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<ActiveCurrencyAndAmount>> mmGrossAmount = new MMMessageAttribute<RedemptionExecution16, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmGrossAmount;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "GrssAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -744,12 +866,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(RedemptionExecution16 obj) {
+			return obj.getGrossAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setGrossAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TradDtTm", required = true)
 	protected DateAndDateTimeChoice tradeDateTime;
 	/**
-	 * Date and time at which a price is applied, according to the terms stated
-	 * in the prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -782,10 +914,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTradeDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, DateAndDateTimeChoice> mmTradeDateTime = new MMMessageAttribute<RedemptionExecution16, DateAndDateTimeChoice>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradeDateTime;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "TradDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -795,12 +927,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			complexType_lazy = () -> DateAndDateTimeChoice.mmObject();
 		}
+
+		@Override
+		public DateAndDateTimeChoice getValue(RedemptionExecution16 obj) {
+			return obj.getTradeDateTime();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, DateAndDateTimeChoice value) {
+			obj.setTradeDateTime(value);
+		}
 	};
+	@XmlElement(name = "SttlmAmt", required = true)
 	protected ActiveCurrencyAndAmount settlementAmount;
 	/**
-	 * Total amount of money paid /to be paid or received in exchange for the
-	 * financial instrument in the individual order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -833,10 +975,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, ActiveCurrencyAndAmount> mmSettlementAmount = new MMMessageAttribute<RedemptionExecution16, ActiveCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmInstructedAmount;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -846,11 +988,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(RedemptionExecution16 obj) {
+			return obj.getSettlementAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, ActiveCurrencyAndAmount value) {
+			obj.setSettlementAmount(value);
+		}
 	};
+	@XmlElement(name = "CshSttlmDt")
 	protected ISODate cashSettlementDate;
 	/**
-	 * Date on which cash is available.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -880,10 +1033,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Date on which cash is available."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<ISODate>> mmCashSettlementDate = new MMMessageAttribute<RedemptionExecution16, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "CshSttlmDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -893,11 +1046,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(RedemptionExecution16 obj) {
+			return obj.getCashSettlementDate();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<ISODate> value) {
+			obj.setCashSettlementDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SttlmMtd")
 	protected DeliveryReceiptType2Code settlementMethod;
 	/**
-	 * Method by which the transaction is settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -928,10 +1092,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Method by which the transaction is settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSettlementMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<DeliveryReceiptType2Code>> mmSettlementMethod = new MMMessageAttribute<RedemptionExecution16, Optional<DeliveryReceiptType2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesSettlement.mmSettlementType;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -941,11 +1105,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DeliveryReceiptType2Code.mmObject();
 		}
+
+		@Override
+		public Optional<DeliveryReceiptType2Code> getValue(RedemptionExecution16 obj) {
+			return obj.getSettlementMethod();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<DeliveryReceiptType2Code> value) {
+			obj.setSettlementMethod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DealgPricDtls", required = true)
 	protected UnitPrice22 dealingPriceDetails;
 	/**
-	 * Price at which the order was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -974,10 +1149,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Price at which the order was executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDealingPriceDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, UnitPrice22> mmDealingPriceDetails = new MMMessageAssociationEnd<RedemptionExecution16, UnitPrice22>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmExecutedTradePrice;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "DealgPricDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -986,13 +1161,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.UnitPrice22.mmObject();
+			type_lazy = () -> UnitPrice22.mmObject();
+		}
+
+		@Override
+		public UnitPrice22 getValue(RedemptionExecution16 obj) {
+			return obj.getDealingPriceDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, UnitPrice22 value) {
+			obj.setDealingPriceDetails(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.UnitPrice22> informativePriceDetails;
+	@XmlElement(name = "InftvPricDtls")
+	protected List<UnitPrice22> informativePriceDetails;
 	/**
-	 * Other quoted price than the one at which the order was executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1022,10 +1208,10 @@ public class RedemptionExecution16 {
 	 * "Other quoted price than the one at which the order was executed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInformativePriceDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, List<UnitPrice22>> mmInformativePriceDetails = new MMMessageAssociationEnd<RedemptionExecution16, List<UnitPrice22>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmInformativePrice;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "InftvPricDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1034,15 +1220,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 2;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.UnitPrice22.mmObject();
+			type_lazy = () -> UnitPrice22.mmObject();
+		}
+
+		@Override
+		public List<UnitPrice22> getValue(RedemptionExecution16 obj) {
+			return obj.getInformativePriceDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, List<UnitPrice22> value) {
+			obj.setInformativePriceDetails(value);
 		}
 	};
+	@XmlElement(name = "PrtlyExctdInd", required = true)
 	protected YesNoIndicator partiallyExecutedIndicator;
 	/**
-	 * Indicates whether the order has been partially executed, that is, the
-	 * confirmed quantity does not match the ordered quantity for a given
-	 * financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1075,10 +1270,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartiallyExecutedIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, YesNoIndicator> mmPartiallyExecutedIndicator = new MMMessageAttribute<RedemptionExecution16, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmPartiallyExecutedIndicator;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlyExctdInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1088,12 +1283,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(RedemptionExecution16 obj) {
+			return obj.getPartiallyExecutedIndicator();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, YesNoIndicator value) {
+			obj.setPartiallyExecutedIndicator(value);
+		}
 	};
+	@XmlElement(name = "BestExctn")
 	protected BestExecution1Code bestExecution;
 	/**
-	 * Specifies that the execution was subject to best execution rules as
-	 * defined by MiFID.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1126,10 +1331,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBestExecution = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<BestExecution1Code>> mmBestExecution = new MMMessageAttribute<RedemptionExecution16, Optional<BestExecution1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmBestExecution;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "BestExctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1139,13 +1344,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BestExecution1Code.mmObject();
 		}
+
+		@Override
+		public Optional<BestExecution1Code> getValue(RedemptionExecution16 obj) {
+			return obj.getBestExecution();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<BestExecution1Code> value) {
+			obj.setBestExecution(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CumDvddInd", required = true)
 	protected YesNoIndicator cumDividendIndicator;
 	/**
-	 * Indicates whether the dividend is included, that is, cum-dividend, in the
-	 * executed price. When the dividend is not included, the price will be
-	 * ex-dividend.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1178,10 +1392,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCumDividendIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, YesNoIndicator> mmCumDividendIndicator = new MMMessageAttribute<RedemptionExecution16, YesNoIndicator>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesPricing.mmCumDividendIndicator;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "CumDvddInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1191,12 +1405,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(RedemptionExecution16 obj) {
+			return obj.getCumDividendIndicator();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, YesNoIndicator value) {
+			obj.setCumDividendIndicator(value);
+		}
 	};
+	@XmlElement(name = "IntrmPrftAmt")
 	protected ProfitAndLoss2Choice interimProfitAmount;
 	/**
-	 * Part of the price deemed as accrued income or profit rather than capital.
-	 * The interim profit amount is used for tax purposes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1229,10 +1453,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInterimProfitAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<ProfitAndLoss2Choice>> mmInterimProfitAmount = new MMMessageAttribute<RedemptionExecution16, Optional<ProfitAndLoss2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmInterimProfitAmount;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "IntrmPrftAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1242,23 +1466,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			complexType_lazy = () -> ProfitAndLoss2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ProfitAndLoss2Choice> getValue(RedemptionExecution16 obj) {
+			return obj.getInterimProfitAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<ProfitAndLoss2Choice> value) {
+			obj.setInterimProfitAmount(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.ForeignExchangeTerms33> foreignExchangeDetails;
+	@XmlElement(name = "FXDtls")
+	protected List<ForeignExchangeTerms33> foreignExchangeDetails;
 	/**
-	 * Information needed to process a currency exchange or conversion.<br>
-	 * How the exchange rate is expressed determines which currency is the Unit
-	 * Currency and Quoted Currency. If the amounts concerned are EUR 1000 and
-	 * USD 1300, the exchange rate may be expressed as per either of the
-	 * following examples:<br>
-	 * EXAMPLE 1 <br>
-	 * UnitCurrency EUR<br>
-	 * QuotedCurrency USD<br>
-	 * ExchangeRate 1.300<br>
-	 * EXAMPLE 2<br>
-	 * UnitCurrency USD<br>
-	 * QuotedCurrency EUR<br>
-	 * ExchangeRate 0.769
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1285,29 +1508,39 @@ public class RedemptionExecution16 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency  EUR\r\nQuotedCurrency  USD\r\nExchangeRate  1.300\r\nEXAMPLE 2\r\nUnitCurrency  USD\r\nQuotedCurrency  EUR\r\nExchangeRate  0.769"
+	 * "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency EUR\r\nQuotedCurrency USD\r\nExchangeRate 1.300\r\nEXAMPLE 2\r\nUnitCurrency USD\r\nQuotedCurrency EUR\r\nExchangeRate 0.769."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmForeignExchangeDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, List<ForeignExchangeTerms33>> mmForeignExchangeDetails = new MMMessageAssociationEnd<RedemptionExecution16, List<ForeignExchangeTerms33>>() {
 		{
 			businessElementTrace_lazy = () -> ForeignExchangeTrade.mmAgreedRate;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "FXDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForeignExchangeDetails";
-			definition = "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency  EUR\r\nQuotedCurrency  USD\r\nExchangeRate  1.300\r\nEXAMPLE 2\r\nUnitCurrency  USD\r\nQuotedCurrency  EUR\r\nExchangeRate  0.769";
+			definition = "Information needed to process a currency exchange or conversion.\r\nHow the exchange rate is expressed determines which currency is the Unit Currency and Quoted Currency. If the amounts concerned are EUR 1000 and USD 1300, the exchange rate may be expressed as per either of the following examples:\r\nEXAMPLE 1 \r\nUnitCurrency EUR\r\nQuotedCurrency USD\r\nExchangeRate 1.300\r\nEXAMPLE 2\r\nUnitCurrency USD\r\nQuotedCurrency EUR\r\nExchangeRate 0.769.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ForeignExchangeTerms33.mmObject();
+			type_lazy = () -> ForeignExchangeTerms33.mmObject();
+		}
+
+		@Override
+		public List<ForeignExchangeTerms33> getValue(RedemptionExecution16 obj) {
+			return obj.getForeignExchangeDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, List<ForeignExchangeTerms33> value) {
+			obj.setForeignExchangeDetails(value);
 		}
 	};
+	@XmlElement(name = "IncmPref")
 	protected IncomePreference1Code incomePreference;
 	/**
-	 * Dividend option chosen by the account owner based on the options offered
-	 * in the prospectus.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1340,10 +1573,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIncomePreference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<IncomePreference1Code>> mmIncomePreference = new MMMessageAttribute<RedemptionExecution16, Optional<IncomePreference1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentAccountService.mmIncomePreference;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "IncmPref";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1353,13 +1586,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> IncomePreference1Code.mmObject();
 		}
+
+		@Override
+		public Optional<IncomePreference1Code> getValue(RedemptionExecution16 obj) {
+			return obj.getIncomePreference();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<IncomePreference1Code> value) {
+			obj.setIncomePreference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Grp1Or2Units")
 	protected UKTaxGroupUnit1Code group1Or2Units;
 	/**
-	 * Tax group to which the purchased investment fund units belong. The
-	 * investor indicates to the intermediary operating pooled nominees, which
-	 * type of unit is to be sold.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1392,10 +1634,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGroup1Or2Units = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<UKTaxGroupUnit1Code>> mmGroup1Or2Units = new MMMessageAttribute<RedemptionExecution16, Optional<UKTaxGroupUnit1Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesQuantity.mmGroup1Or2Units;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "Grp1Or2Units";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1405,13 +1647,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> UKTaxGroupUnit1Code.mmObject();
 		}
+
+		@Override
+		public Optional<UKTaxGroupUnit1Code> getValue(RedemptionExecution16 obj) {
+			return obj.getGroup1Or2Units();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<UKTaxGroupUnit1Code> value) {
+			obj.setGroup1Or2Units(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxOvrhd")
 	protected TotalFeesAndTaxes40 transactionOverhead;
 	/**
-	 * Fees (charges/commission) and taxes that are taken into consideration for
-	 * the transaction, so that the total difference between the net amount and
-	 * gross amount is known, without taking into account equalisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1442,10 +1693,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionOverhead = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<TotalFeesAndTaxes40>> mmTransactionOverhead = new MMMessageAssociationEnd<RedemptionExecution16, Optional<TotalFeesAndTaxes40>>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentFundTax.mmObject();
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "TxOvrhd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1454,14 +1705,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TotalFeesAndTaxes40.mmObject();
+			type_lazy = () -> TotalFeesAndTaxes40.mmObject();
+		}
+
+		@Override
+		public Optional<TotalFeesAndTaxes40> getValue(RedemptionExecution16 obj) {
+			return obj.getTransactionOverhead();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<TotalFeesAndTaxes40> value) {
+			obj.setTransactionOverhead(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "InftvTaxDtls")
 	protected InformativeTax1 informativeTaxDetails;
 	/**
-	 * Additional information about tax that does not have an impact on the
-	 * transaction overhead.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1492,10 +1753,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInformativeTaxDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<InformativeTax1>> mmInformativeTaxDetails = new MMMessageAssociationEnd<RedemptionExecution16, Optional<InformativeTax1>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesTax.mmObject();
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "InftvTaxDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1504,13 +1765,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InformativeTax1.mmObject();
+			type_lazy = () -> InformativeTax1.mmObject();
+		}
+
+		@Override
+		public Optional<InformativeTax1> getValue(RedemptionExecution16 obj) {
+			return obj.getInformativeTaxDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<InformativeTax1> value) {
+			obj.setInformativeTaxDetails(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2> staffClientBreakdown;
+	@XmlElement(name = "StffClntBrkdwn")
+	protected List<InvestmentFundsOrderBreakdown2> staffClientBreakdown;
 	/**
-	 * Breakdown of the net amount per type of order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1540,10 +1812,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Breakdown of the net amount per type of order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStaffClientBreakdown = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, List<InvestmentFundsOrderBreakdown2>> mmStaffClientBreakdown = new MMMessageAssociationEnd<RedemptionExecution16, List<InvestmentFundsOrderBreakdown2>>() {
 		{
 			businessComponentTrace_lazy = () -> RedemptionOrder.mmObject();
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "StffClntBrkdwn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1552,13 +1824,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 4;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2.mmObject();
+			type_lazy = () -> InvestmentFundsOrderBreakdown2.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFundsOrderBreakdown2> getValue(RedemptionExecution16 obj) {
+			return obj.getStaffClientBreakdown();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, List<InvestmentFundsOrderBreakdown2> value) {
+			obj.setStaffClientBreakdown(value);
 		}
 	};
+	@XmlElement(name = "SttlmAndCtdyDtls")
 	protected FundSettlementParameters11 settlementAndCustodyDetails;
 	/**
-	 * Parameters used to execute the settlement of an investment fund order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1589,10 +1872,10 @@ public class RedemptionExecution16 {
 	 * "Parameters used to execute the settlement of an investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSettlementAndCustodyDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<FundSettlementParameters11>> mmSettlementAndCustodyDetails = new MMMessageAssociationEnd<RedemptionExecution16, Optional<FundSettlementParameters11>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTradeExecution.mmSecuritiesSettlement;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "SttlmAndCtdyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1601,13 +1884,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.FundSettlementParameters11.mmObject();
+			type_lazy = () -> FundSettlementParameters11.mmObject();
+		}
+
+		@Override
+		public Optional<FundSettlementParameters11> getValue(RedemptionExecution16 obj) {
+			return obj.getSettlementAndCustodyDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<FundSettlementParameters11> value) {
+			obj.setSettlementAndCustodyDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PhysDlvryInd", required = true)
 	protected YesNoIndicator physicalDeliveryIndicator;
 	/**
-	 * Indicates whether the financial instrument is to be physically delivered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1635,9 +1929,9 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPhysicalDeliveryIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, YesNoIndicator> mmPhysicalDeliveryIndicator = new MMMessageAttribute<RedemptionExecution16, YesNoIndicator>() {
 		{
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "PhysDlvryInd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1647,11 +1941,22 @@ public class RedemptionExecution16 {
 			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public YesNoIndicator getValue(RedemptionExecution16 obj) {
+			return obj.getPhysicalDeliveryIndicator();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, YesNoIndicator value) {
+			obj.setPhysicalDeliveryIndicator(value);
+		}
 	};
+	@XmlElement(name = "PhysDlvryDtls")
 	protected DeliveryParameters3 physicalDeliveryDetails;
 	/**
-	 * Information related to the physical delivery of the securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1681,10 +1986,10 @@ public class RedemptionExecution16 {
 	 * "Information related to the physical delivery of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPhysicalDeliveryDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<DeliveryParameters3>> mmPhysicalDeliveryDetails = new MMMessageAssociationEnd<RedemptionExecution16, Optional<DeliveryParameters3>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesTransfer.mmPhysicalDelivery;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "PhysDlvryDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1693,13 +1998,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DeliveryParameters3.mmObject();
+			type_lazy = () -> DeliveryParameters3.mmObject();
+		}
+
+		@Override
+		public Optional<DeliveryParameters3> getValue(RedemptionExecution16 obj) {
+			return obj.getPhysicalDeliveryDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<DeliveryParameters3> value) {
+			obj.setPhysicalDeliveryDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CshSttlmDtls")
 	protected PaymentTransaction72 cashSettlementDetails;
 	/**
-	 * Payment process for the transfer of cash from the debtor to the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -1730,10 +2046,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCashSettlementDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<PaymentTransaction72>> mmCashSettlementDetails = new MMMessageAssociationEnd<RedemptionExecution16, Optional<PaymentTransaction72>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentObligation.mmPaymentOffset;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "CshSttlmDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1742,14 +2058,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PaymentTransaction72.mmObject();
+			type_lazy = () -> PaymentTransaction72.mmObject();
+		}
+
+		@Override
+		public Optional<PaymentTransaction72> getValue(RedemptionExecution16 obj) {
+			return obj.getCashSettlementDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<PaymentTransaction72> value) {
+			obj.setCashSettlementDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "NonStdSttlmInf")
 	protected Max350Text nonStandardSettlementInformation;
 	/**
-	 * Additional specific settlement information for non-regulated traded
-	 * funds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1781,10 +2107,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNonStandardSettlementInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<Max350Text>> mmNonStandardSettlementInformation = new MMMessageAttribute<RedemptionExecution16, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmNonStandardSettlementInformation;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "NonStdSttlmInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1794,11 +2120,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(RedemptionExecution16 obj) {
+			return obj.getNonStandardSettlementInformation();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<Max350Text> value) {
+			obj.setNonStandardSettlementInformation(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtlSttlmOfUnits")
 	protected PercentageRate partialSettlementOfUnits;
 	/**
-	 * Percentage of units partially settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1829,10 +2166,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Percentage of units partially settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartialSettlementOfUnits = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<PercentageRate>> mmPartialSettlementOfUnits = new MMMessageAttribute<RedemptionExecution16, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmPartialSettlementOfUnits;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlSttlmOfUnits";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1842,11 +2179,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(RedemptionExecution16 obj) {
+			return obj.getPartialSettlementOfUnits();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<PercentageRate> value) {
+			obj.setPartialSettlementOfUnits(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtlSttlmOfCsh")
 	protected PercentageRate partialSettlementOfCash;
 	/**
-	 * Percentage of cash partially settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1877,10 +2225,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Percentage of cash partially settled."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartialSettlementOfCash = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<PercentageRate>> mmPartialSettlementOfCash = new MMMessageAttribute<RedemptionExecution16, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmPartialSettlementOfCash;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlSttlmOfCsh";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1890,12 +2238,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(RedemptionExecution16 obj) {
+			return obj.getPartialSettlementOfCash();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<PercentageRate> value) {
+			obj.setPartialSettlementOfCash(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtlRedWhldgAmt")
 	protected ActiveCurrencyAndAmount partialRedemptionWithholdingAmount;
 	/**
-	 * Amount retained by the fund and paid out later at a time decided by the
-	 * fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1928,10 +2286,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPartialRedemptionWithholdingAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<ActiveCurrencyAndAmount>> mmPartialRedemptionWithholdingAmount = new MMMessageAttribute<RedemptionExecution16, Optional<ActiveCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> RedemptionExecution.mmPartialRedemptionWithholdingAmount;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "PrtlRedWhldgAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1941,12 +2299,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(RedemptionExecution16 obj) {
+			return obj.getPartialRedemptionWithholdingAmount();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setPartialRedemptionWithholdingAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FinAdvc")
 	protected FinancialAdvice1Code financialAdvice;
 	/**
-	 * Specifies if advice has been received from an independent financial
-	 * advisor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1979,10 +2347,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinancialAdvice = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<FinancialAdvice1Code>> mmFinancialAdvice = new MMMessageAttribute<RedemptionExecution16, Optional<FinancialAdvice1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmFinancialAdvice;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "FinAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -1992,11 +2360,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> FinancialAdvice1Code.mmObject();
 		}
+
+		@Override
+		public Optional<FinancialAdvice1Code> getValue(RedemptionExecution16 obj) {
+			return obj.getFinancialAdvice();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<FinancialAdvice1Code> value) {
+			obj.setFinancialAdvice(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NgtdTrad")
 	protected NegotiatedTrade1Code negotiatedTrade;
 	/**
-	 * Specifies whether the trade is negotiated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2027,10 +2406,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Specifies whether the trade is negotiated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNegotiatedTrade = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<NegotiatedTrade1Code>> mmNegotiatedTrade = new MMMessageAttribute<RedemptionExecution16, Optional<NegotiatedTrade1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmNegotiatedTrade;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "NgtdTrad";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2040,11 +2419,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> NegotiatedTrade1Code.mmObject();
 		}
+
+		@Override
+		public Optional<NegotiatedTrade1Code> getValue(RedemptionExecution16 obj) {
+			return obj.getNegotiatedTrade();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<NegotiatedTrade1Code> value) {
+			obj.setNegotiatedTrade(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LateRpt")
 	protected LateReport1Code lateReport;
 	/**
-	 * Specifies whether the order execution confirmation is late.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2076,10 +2466,10 @@ public class RedemptionExecution16 {
 	 * "Specifies whether the order execution confirmation is late."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLateReport = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<LateReport1Code>> mmLateReport = new MMMessageAttribute<RedemptionExecution16, Optional<LateReport1Code>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrderExecution.mmLateReport;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "LateRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2089,11 +2479,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LateReport1Code.mmObject();
 		}
+
+		@Override
+		public Optional<LateReport1Code> getValue(RedemptionExecution16 obj) {
+			return obj.getLateReport();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<LateReport1Code> value) {
+			obj.setLateReport(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.Intermediary39> relatedPartyDetails;
+	@XmlElement(name = "RltdPtyDtls")
+	protected List<Intermediary39> relatedPartyDetails;
 	/**
-	 * Party related to the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -2122,10 +2523,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Party related to the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRelatedPartyDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, List<Intermediary39>> mmRelatedPartyDetails = new MMMessageAssociationEnd<RedemptionExecution16, List<Intermediary39>>() {
 		{
 			businessElementTrace_lazy = () -> Trade.mmTradePartyRole;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "RltdPtyDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2134,15 +2535,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 10;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Intermediary39.mmObject();
+			type_lazy = () -> Intermediary39.mmObject();
+		}
+
+		@Override
+		public List<Intermediary39> getValue(RedemptionExecution16 obj) {
+			return obj.getRelatedPartyDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, List<Intermediary39> value) {
+			obj.setRelatedPartyDetails(value);
 		}
 	};
+	@XmlElement(name = "Equlstn")
 	protected Equalisation1 equalisation;
 	/**
-	 * Part of an investor's subscription amount that was held by the fund in
-	 * order to pay incentive/performance fees at the end of the fiscal year,
-	 * and is returned due to the redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -2173,10 +2583,10 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEqualisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<Equalisation1>> mmEqualisation = new MMMessageAssociationEnd<RedemptionExecution16, Optional<Equalisation1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmEqualisation;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "Equlstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2185,14 +2595,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Equalisation1.mmObject();
+			type_lazy = () -> Equalisation1.mmObject();
+		}
+
+		@Override
+		public Optional<Equalisation1> getValue(RedemptionExecution16 obj) {
+			return obj.getEqualisation();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<Equalisation1> value) {
+			obj.setEqualisation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CstmrCndctClssfctn")
 	protected CustomerConductClassification1Choice customerConductClassification;
 	/**
-	 * Assessment of the customer’s behaviour at the time of the account opening
-	 * application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2220,9 +2640,9 @@ public class RedemptionExecution16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCustomerConductClassification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<CustomerConductClassification1Choice>> mmCustomerConductClassification = new MMMessageAttribute<RedemptionExecution16, Optional<CustomerConductClassification1Choice>>() {
 		{
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "CstmrCndctClssfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2232,12 +2652,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			complexType_lazy = () -> CustomerConductClassification1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<CustomerConductClassification1Choice> getValue(RedemptionExecution16 obj) {
+			return obj.getCustomerConductClassification();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<CustomerConductClassification1Choice> value) {
+			obj.setCustomerConductClassification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxChanlTp")
 	protected TransactionChannelType1Choice transactionChannelType;
 	/**
-	 * Means by which the investor or account owner submits the open account
-	 * form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -2265,29 +2695,40 @@ public class RedemptionExecution16 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Means by which the investor or account owner submits the open account form. "
+	 * "Means by which the investor or account owner submits the open account form."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionChannelType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<TransactionChannelType1Choice>> mmTransactionChannelType = new MMMessageAssociationEnd<RedemptionExecution16, Optional<TransactionChannelType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> AccountContract.mmTransactionChannel;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "TxChanlTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionChannelType";
-			definition = "Means by which the investor or account owner submits the open account form. ";
+			definition = "Means by which the investor or account owner submits the open account form.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
 			type_lazy = () -> TransactionChannelType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TransactionChannelType1Choice> getValue(RedemptionExecution16 obj) {
+			return obj.getTransactionChannelType();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<TransactionChannelType1Choice> value) {
+			obj.setTransactionChannelType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SgntrTp")
 	protected SignatureType1Choice signatureType;
 	/**
-	 * Type of signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -2318,10 +2759,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Type of signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSignatureType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RedemptionExecution16, Optional<SignatureType1Choice>> mmSignatureType = new MMMessageAttribute<RedemptionExecution16, Optional<SignatureType1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmSignatureRequired;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "SgntrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2331,11 +2772,22 @@ public class RedemptionExecution16 {
 			minOccurs = 0;
 			complexType_lazy = () -> SignatureType1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SignatureType1Choice> getValue(RedemptionExecution16 obj) {
+			return obj.getSignatureType();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<SignatureType1Choice> value) {
+			obj.setSignatureType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "OrdrWvrDtls")
 	protected OrderWaiver1 orderWaiverDetails;
 	/**
-	 * Information about a non-standard order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -2364,10 +2816,10 @@ public class RedemptionExecution16 {
 	 * definition} = "Information about a non-standard order."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOrderWaiverDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<OrderWaiver1>> mmOrderWaiverDetails = new MMMessageAssociationEnd<RedemptionExecution16, Optional<OrderWaiver1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundOrder.mmOrderWaiverReason;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "OrdrWvrDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2376,13 +2828,24 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OrderWaiver1.mmObject();
+			type_lazy = () -> OrderWaiver1.mmObject();
+		}
+
+		@Override
+		public Optional<OrderWaiver1> getValue(RedemptionExecution16 obj) {
+			return obj.getOrderWaiverDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<OrderWaiver1> value) {
+			obj.setOrderWaiverDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "GtgOrHldBckDtls")
 	protected HoldBackInformation2 gatingOrHoldBackDetails;
 	/**
-	 * Information about gating and hold back of redemption proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -2412,10 +2875,10 @@ public class RedemptionExecution16 {
 	 * "Information about gating and hold back of redemption proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGatingOrHoldBackDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<RedemptionExecution16, Optional<HoldBackInformation2>> mmGatingOrHoldBackDetails = new MMMessageAssociationEnd<RedemptionExecution16, Optional<HoldBackInformation2>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmInvestmentFundClass;
-			componentContext_lazy = () -> RedemptionExecution16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RedemptionExecution16.mmObject();
 			isDerived = false;
 			xmlTag = "GtgOrHldBckDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -2424,26 +2887,49 @@ public class RedemptionExecution16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.HoldBackInformation2.mmObject();
+			type_lazy = () -> HoldBackInformation2.mmObject();
+		}
+
+		@Override
+		public Optional<HoldBackInformation2> getValue(RedemptionExecution16 obj) {
+			return obj.getGatingOrHoldBackDetails();
+		}
+
+		@Override
+		public void setValue(RedemptionExecution16 obj, Optional<HoldBackInformation2> value) {
+			obj.setGatingOrHoldBackDetails(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RedemptionExecution16.mmOrderReference, RedemptionExecution16.mmClientReference, RedemptionExecution16.mmDealReference, RedemptionExecution16.mmOrderType,
-						RedemptionExecution16.mmBeneficiaryDetails, RedemptionExecution16.mmUnitsNumber, RedemptionExecution16.mmRounding, RedemptionExecution16.mmNetAmount, RedemptionExecution16.mmInvestmentAccountDetails,
-						RedemptionExecution16.mmHoldingsRedemptionRate, RedemptionExecution16.mmGrossAmount, RedemptionExecution16.mmTradeDateTime, RedemptionExecution16.mmSettlementAmount, RedemptionExecution16.mmCashSettlementDate,
-						RedemptionExecution16.mmSettlementMethod, RedemptionExecution16.mmDealingPriceDetails, RedemptionExecution16.mmInformativePriceDetails, RedemptionExecution16.mmPartiallyExecutedIndicator,
-						RedemptionExecution16.mmBestExecution, RedemptionExecution16.mmCumDividendIndicator, RedemptionExecution16.mmInterimProfitAmount, RedemptionExecution16.mmForeignExchangeDetails,
-						RedemptionExecution16.mmIncomePreference, RedemptionExecution16.mmGroup1Or2Units, RedemptionExecution16.mmTransactionOverhead, RedemptionExecution16.mmInformativeTaxDetails,
-						RedemptionExecution16.mmStaffClientBreakdown, RedemptionExecution16.mmSettlementAndCustodyDetails, RedemptionExecution16.mmPhysicalDeliveryIndicator, RedemptionExecution16.mmPhysicalDeliveryDetails,
-						RedemptionExecution16.mmCashSettlementDetails, RedemptionExecution16.mmNonStandardSettlementInformation, RedemptionExecution16.mmPartialSettlementOfUnits, RedemptionExecution16.mmPartialSettlementOfCash,
-						RedemptionExecution16.mmPartialRedemptionWithholdingAmount, RedemptionExecution16.mmFinancialAdvice, RedemptionExecution16.mmNegotiatedTrade, RedemptionExecution16.mmLateReport,
-						RedemptionExecution16.mmRelatedPartyDetails, RedemptionExecution16.mmEqualisation, RedemptionExecution16.mmCustomerConductClassification, RedemptionExecution16.mmTransactionChannelType,
-						RedemptionExecution16.mmSignatureType, RedemptionExecution16.mmOrderWaiverDetails, RedemptionExecution16.mmGatingOrHoldBackDetails);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RedemptionExecution16.mmOrderReference, com.tools20022.repository.msg.RedemptionExecution16.mmClientReference,
+						com.tools20022.repository.msg.RedemptionExecution16.mmDealReference, com.tools20022.repository.msg.RedemptionExecution16.mmOrderType, com.tools20022.repository.msg.RedemptionExecution16.mmBeneficiaryDetails,
+						com.tools20022.repository.msg.RedemptionExecution16.mmUnitsNumber, com.tools20022.repository.msg.RedemptionExecution16.mmRounding, com.tools20022.repository.msg.RedemptionExecution16.mmNetAmount,
+						com.tools20022.repository.msg.RedemptionExecution16.mmInvestmentAccountDetails, com.tools20022.repository.msg.RedemptionExecution16.mmHoldingsRedemptionRate,
+						com.tools20022.repository.msg.RedemptionExecution16.mmGrossAmount, com.tools20022.repository.msg.RedemptionExecution16.mmTradeDateTime, com.tools20022.repository.msg.RedemptionExecution16.mmSettlementAmount,
+						com.tools20022.repository.msg.RedemptionExecution16.mmCashSettlementDate, com.tools20022.repository.msg.RedemptionExecution16.mmSettlementMethod,
+						com.tools20022.repository.msg.RedemptionExecution16.mmDealingPriceDetails, com.tools20022.repository.msg.RedemptionExecution16.mmInformativePriceDetails,
+						com.tools20022.repository.msg.RedemptionExecution16.mmPartiallyExecutedIndicator, com.tools20022.repository.msg.RedemptionExecution16.mmBestExecution,
+						com.tools20022.repository.msg.RedemptionExecution16.mmCumDividendIndicator, com.tools20022.repository.msg.RedemptionExecution16.mmInterimProfitAmount,
+						com.tools20022.repository.msg.RedemptionExecution16.mmForeignExchangeDetails, com.tools20022.repository.msg.RedemptionExecution16.mmIncomePreference,
+						com.tools20022.repository.msg.RedemptionExecution16.mmGroup1Or2Units, com.tools20022.repository.msg.RedemptionExecution16.mmTransactionOverhead,
+						com.tools20022.repository.msg.RedemptionExecution16.mmInformativeTaxDetails, com.tools20022.repository.msg.RedemptionExecution16.mmStaffClientBreakdown,
+						com.tools20022.repository.msg.RedemptionExecution16.mmSettlementAndCustodyDetails, com.tools20022.repository.msg.RedemptionExecution16.mmPhysicalDeliveryIndicator,
+						com.tools20022.repository.msg.RedemptionExecution16.mmPhysicalDeliveryDetails, com.tools20022.repository.msg.RedemptionExecution16.mmCashSettlementDetails,
+						com.tools20022.repository.msg.RedemptionExecution16.mmNonStandardSettlementInformation, com.tools20022.repository.msg.RedemptionExecution16.mmPartialSettlementOfUnits,
+						com.tools20022.repository.msg.RedemptionExecution16.mmPartialSettlementOfCash, com.tools20022.repository.msg.RedemptionExecution16.mmPartialRedemptionWithholdingAmount,
+						com.tools20022.repository.msg.RedemptionExecution16.mmFinancialAdvice, com.tools20022.repository.msg.RedemptionExecution16.mmNegotiatedTrade, com.tools20022.repository.msg.RedemptionExecution16.mmLateReport,
+						com.tools20022.repository.msg.RedemptionExecution16.mmRelatedPartyDetails, com.tools20022.repository.msg.RedemptionExecution16.mmEqualisation,
+						com.tools20022.repository.msg.RedemptionExecution16.mmCustomerConductClassification, com.tools20022.repository.msg.RedemptionExecution16.mmTransactionChannelType,
+						com.tools20022.repository.msg.RedemptionExecution16.mmSignatureType, com.tools20022.repository.msg.RedemptionExecution16.mmOrderWaiverDetails,
+						com.tools20022.repository.msg.RedemptionExecution16.mmGatingOrHoldBackDetails);
 				trace_lazy = () -> RedemptionExecution.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintOrderOriginatorEligibility3Rule.forRedemptionExecution16,
+						com.tools20022.repository.constraints.ConstraintPriceDifferenceReasonRule.forRedemptionExecution16, com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails1Rule.forRedemptionExecution16,
+						com.tools20022.repository.constraints.ConstraintPhysicalDeliveryDetails2Rule.forRedemptionExecution16);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RedemptionExecution16";
 				definition = "Execution of a redemption order.";
@@ -2452,408 +2938,408 @@ public class RedemptionExecution16 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "OrdrRef", required = true)
 	public Max35Text getOrderReference() {
 		return orderReference;
 	}
 
-	public void setOrderReference(Max35Text orderReference) {
-		this.orderReference = orderReference;
+	public RedemptionExecution16 setOrderReference(Max35Text orderReference) {
+		this.orderReference = Objects.requireNonNull(orderReference);
+		return this;
 	}
 
-	@XmlElement(name = "ClntRef")
-	public Max35Text getClientReference() {
-		return clientReference;
+	public Optional<Max35Text> getClientReference() {
+		return clientReference == null ? Optional.empty() : Optional.of(clientReference);
 	}
 
-	public void setClientReference(Max35Text clientReference) {
+	public RedemptionExecution16 setClientReference(Max35Text clientReference) {
 		this.clientReference = clientReference;
+		return this;
 	}
 
-	@XmlElement(name = "DealRef", required = true)
 	public Max35Text getDealReference() {
 		return dealReference;
 	}
 
-	public void setDealReference(Max35Text dealReference) {
-		this.dealReference = dealReference;
+	public RedemptionExecution16 setDealReference(Max35Text dealReference) {
+		this.dealReference = Objects.requireNonNull(dealReference);
+		return this;
 	}
 
-	@XmlElement(name = "OrdrTp")
 	public List<FundOrderType4Choice> getOrderType() {
-		return orderType;
+		return orderType == null ? orderType = new ArrayList<>() : orderType;
 	}
 
-	public void setOrderType(List<FundOrderType4Choice> orderType) {
-		this.orderType = orderType;
+	public RedemptionExecution16 setOrderType(List<FundOrderType4Choice> orderType) {
+		this.orderType = Objects.requireNonNull(orderType);
+		return this;
 	}
 
-	@XmlElement(name = "BnfcryDtls")
 	public List<IndividualPerson32> getBeneficiaryDetails() {
-		return beneficiaryDetails;
+		return beneficiaryDetails == null ? beneficiaryDetails = new ArrayList<>() : beneficiaryDetails;
 	}
 
-	public void setBeneficiaryDetails(List<com.tools20022.repository.msg.IndividualPerson32> beneficiaryDetails) {
-		this.beneficiaryDetails = beneficiaryDetails;
+	public RedemptionExecution16 setBeneficiaryDetails(List<IndividualPerson32> beneficiaryDetails) {
+		this.beneficiaryDetails = Objects.requireNonNull(beneficiaryDetails);
+		return this;
 	}
 
-	@XmlElement(name = "UnitsNb", required = true)
 	public DecimalNumber getUnitsNumber() {
 		return unitsNumber;
 	}
 
-	public void setUnitsNumber(DecimalNumber unitsNumber) {
-		this.unitsNumber = unitsNumber;
+	public RedemptionExecution16 setUnitsNumber(DecimalNumber unitsNumber) {
+		this.unitsNumber = Objects.requireNonNull(unitsNumber);
+		return this;
 	}
 
-	@XmlElement(name = "Rndg")
-	public RoundingDirection2Code getRounding() {
-		return rounding;
+	public Optional<RoundingDirection2Code> getRounding() {
+		return rounding == null ? Optional.empty() : Optional.of(rounding);
 	}
 
-	public void setRounding(RoundingDirection2Code rounding) {
+	public RedemptionExecution16 setRounding(RoundingDirection2Code rounding) {
 		this.rounding = rounding;
+		return this;
 	}
 
-	@XmlElement(name = "NetAmt")
-	public ActiveCurrencyAndAmount getNetAmount() {
-		return netAmount;
+	public Optional<ActiveCurrencyAndAmount> getNetAmount() {
+		return netAmount == null ? Optional.empty() : Optional.of(netAmount);
 	}
 
-	public void setNetAmount(ActiveCurrencyAndAmount netAmount) {
+	public RedemptionExecution16 setNetAmount(ActiveCurrencyAndAmount netAmount) {
 		this.netAmount = netAmount;
+		return this;
 	}
 
-	@XmlElement(name = "InvstmtAcctDtls", required = true)
 	public InvestmentAccount58 getInvestmentAccountDetails() {
 		return investmentAccountDetails;
 	}
 
-	public void setInvestmentAccountDetails(com.tools20022.repository.msg.InvestmentAccount58 investmentAccountDetails) {
-		this.investmentAccountDetails = investmentAccountDetails;
+	public RedemptionExecution16 setInvestmentAccountDetails(InvestmentAccount58 investmentAccountDetails) {
+		this.investmentAccountDetails = Objects.requireNonNull(investmentAccountDetails);
+		return this;
 	}
 
-	@XmlElement(name = "HldgsRedRate")
-	public PercentageRate getHoldingsRedemptionRate() {
-		return holdingsRedemptionRate;
+	public Optional<PercentageRate> getHoldingsRedemptionRate() {
+		return holdingsRedemptionRate == null ? Optional.empty() : Optional.of(holdingsRedemptionRate);
 	}
 
-	public void setHoldingsRedemptionRate(PercentageRate holdingsRedemptionRate) {
+	public RedemptionExecution16 setHoldingsRedemptionRate(PercentageRate holdingsRedemptionRate) {
 		this.holdingsRedemptionRate = holdingsRedemptionRate;
+		return this;
 	}
 
-	@XmlElement(name = "GrssAmt")
-	public ActiveCurrencyAndAmount getGrossAmount() {
-		return grossAmount;
+	public Optional<ActiveCurrencyAndAmount> getGrossAmount() {
+		return grossAmount == null ? Optional.empty() : Optional.of(grossAmount);
 	}
 
-	public void setGrossAmount(ActiveCurrencyAndAmount grossAmount) {
+	public RedemptionExecution16 setGrossAmount(ActiveCurrencyAndAmount grossAmount) {
 		this.grossAmount = grossAmount;
+		return this;
 	}
 
-	@XmlElement(name = "TradDtTm", required = true)
 	public DateAndDateTimeChoice getTradeDateTime() {
 		return tradeDateTime;
 	}
 
-	public void setTradeDateTime(DateAndDateTimeChoice tradeDateTime) {
-		this.tradeDateTime = tradeDateTime;
+	public RedemptionExecution16 setTradeDateTime(DateAndDateTimeChoice tradeDateTime) {
+		this.tradeDateTime = Objects.requireNonNull(tradeDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAmt", required = true)
 	public ActiveCurrencyAndAmount getSettlementAmount() {
 		return settlementAmount;
 	}
 
-	public void setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
-		this.settlementAmount = settlementAmount;
+	public RedemptionExecution16 setSettlementAmount(ActiveCurrencyAndAmount settlementAmount) {
+		this.settlementAmount = Objects.requireNonNull(settlementAmount);
+		return this;
 	}
 
-	@XmlElement(name = "CshSttlmDt")
-	public ISODate getCashSettlementDate() {
-		return cashSettlementDate;
+	public Optional<ISODate> getCashSettlementDate() {
+		return cashSettlementDate == null ? Optional.empty() : Optional.of(cashSettlementDate);
 	}
 
-	public void setCashSettlementDate(ISODate cashSettlementDate) {
+	public RedemptionExecution16 setCashSettlementDate(ISODate cashSettlementDate) {
 		this.cashSettlementDate = cashSettlementDate;
+		return this;
 	}
 
-	@XmlElement(name = "SttlmMtd")
-	public DeliveryReceiptType2Code getSettlementMethod() {
-		return settlementMethod;
+	public Optional<DeliveryReceiptType2Code> getSettlementMethod() {
+		return settlementMethod == null ? Optional.empty() : Optional.of(settlementMethod);
 	}
 
-	public void setSettlementMethod(DeliveryReceiptType2Code settlementMethod) {
+	public RedemptionExecution16 setSettlementMethod(DeliveryReceiptType2Code settlementMethod) {
 		this.settlementMethod = settlementMethod;
+		return this;
 	}
 
-	@XmlElement(name = "DealgPricDtls", required = true)
 	public UnitPrice22 getDealingPriceDetails() {
 		return dealingPriceDetails;
 	}
 
-	public void setDealingPriceDetails(com.tools20022.repository.msg.UnitPrice22 dealingPriceDetails) {
-		this.dealingPriceDetails = dealingPriceDetails;
+	public RedemptionExecution16 setDealingPriceDetails(UnitPrice22 dealingPriceDetails) {
+		this.dealingPriceDetails = Objects.requireNonNull(dealingPriceDetails);
+		return this;
 	}
 
-	@XmlElement(name = "InftvPricDtls")
 	public List<UnitPrice22> getInformativePriceDetails() {
-		return informativePriceDetails;
+		return informativePriceDetails == null ? informativePriceDetails = new ArrayList<>() : informativePriceDetails;
 	}
 
-	public void setInformativePriceDetails(List<com.tools20022.repository.msg.UnitPrice22> informativePriceDetails) {
-		this.informativePriceDetails = informativePriceDetails;
+	public RedemptionExecution16 setInformativePriceDetails(List<UnitPrice22> informativePriceDetails) {
+		this.informativePriceDetails = Objects.requireNonNull(informativePriceDetails);
+		return this;
 	}
 
-	@XmlElement(name = "PrtlyExctdInd", required = true)
 	public YesNoIndicator getPartiallyExecutedIndicator() {
 		return partiallyExecutedIndicator;
 	}
 
-	public void setPartiallyExecutedIndicator(YesNoIndicator partiallyExecutedIndicator) {
-		this.partiallyExecutedIndicator = partiallyExecutedIndicator;
+	public RedemptionExecution16 setPartiallyExecutedIndicator(YesNoIndicator partiallyExecutedIndicator) {
+		this.partiallyExecutedIndicator = Objects.requireNonNull(partiallyExecutedIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "BestExctn")
-	public BestExecution1Code getBestExecution() {
-		return bestExecution;
+	public Optional<BestExecution1Code> getBestExecution() {
+		return bestExecution == null ? Optional.empty() : Optional.of(bestExecution);
 	}
 
-	public void setBestExecution(BestExecution1Code bestExecution) {
+	public RedemptionExecution16 setBestExecution(BestExecution1Code bestExecution) {
 		this.bestExecution = bestExecution;
+		return this;
 	}
 
-	@XmlElement(name = "CumDvddInd", required = true)
 	public YesNoIndicator getCumDividendIndicator() {
 		return cumDividendIndicator;
 	}
 
-	public void setCumDividendIndicator(YesNoIndicator cumDividendIndicator) {
-		this.cumDividendIndicator = cumDividendIndicator;
+	public RedemptionExecution16 setCumDividendIndicator(YesNoIndicator cumDividendIndicator) {
+		this.cumDividendIndicator = Objects.requireNonNull(cumDividendIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "IntrmPrftAmt")
-	public ProfitAndLoss2Choice getInterimProfitAmount() {
-		return interimProfitAmount;
+	public Optional<ProfitAndLoss2Choice> getInterimProfitAmount() {
+		return interimProfitAmount == null ? Optional.empty() : Optional.of(interimProfitAmount);
 	}
 
-	public void setInterimProfitAmount(ProfitAndLoss2Choice interimProfitAmount) {
+	public RedemptionExecution16 setInterimProfitAmount(ProfitAndLoss2Choice interimProfitAmount) {
 		this.interimProfitAmount = interimProfitAmount;
+		return this;
 	}
 
-	@XmlElement(name = "FXDtls")
 	public List<ForeignExchangeTerms33> getForeignExchangeDetails() {
-		return foreignExchangeDetails;
+		return foreignExchangeDetails == null ? foreignExchangeDetails = new ArrayList<>() : foreignExchangeDetails;
 	}
 
-	public void setForeignExchangeDetails(List<com.tools20022.repository.msg.ForeignExchangeTerms33> foreignExchangeDetails) {
-		this.foreignExchangeDetails = foreignExchangeDetails;
+	public RedemptionExecution16 setForeignExchangeDetails(List<ForeignExchangeTerms33> foreignExchangeDetails) {
+		this.foreignExchangeDetails = Objects.requireNonNull(foreignExchangeDetails);
+		return this;
 	}
 
-	@XmlElement(name = "IncmPref")
-	public IncomePreference1Code getIncomePreference() {
-		return incomePreference;
+	public Optional<IncomePreference1Code> getIncomePreference() {
+		return incomePreference == null ? Optional.empty() : Optional.of(incomePreference);
 	}
 
-	public void setIncomePreference(IncomePreference1Code incomePreference) {
+	public RedemptionExecution16 setIncomePreference(IncomePreference1Code incomePreference) {
 		this.incomePreference = incomePreference;
+		return this;
 	}
 
-	@XmlElement(name = "Grp1Or2Units")
-	public UKTaxGroupUnit1Code getGroup1Or2Units() {
-		return group1Or2Units;
+	public Optional<UKTaxGroupUnit1Code> getGroup1Or2Units() {
+		return group1Or2Units == null ? Optional.empty() : Optional.of(group1Or2Units);
 	}
 
-	public void setGroup1Or2Units(UKTaxGroupUnit1Code group1Or2Units) {
+	public RedemptionExecution16 setGroup1Or2Units(UKTaxGroupUnit1Code group1Or2Units) {
 		this.group1Or2Units = group1Or2Units;
+		return this;
 	}
 
-	@XmlElement(name = "TxOvrhd")
-	public TotalFeesAndTaxes40 getTransactionOverhead() {
-		return transactionOverhead;
+	public Optional<TotalFeesAndTaxes40> getTransactionOverhead() {
+		return transactionOverhead == null ? Optional.empty() : Optional.of(transactionOverhead);
 	}
 
-	public void setTransactionOverhead(com.tools20022.repository.msg.TotalFeesAndTaxes40 transactionOverhead) {
+	public RedemptionExecution16 setTransactionOverhead(TotalFeesAndTaxes40 transactionOverhead) {
 		this.transactionOverhead = transactionOverhead;
+		return this;
 	}
 
-	@XmlElement(name = "InftvTaxDtls")
-	public InformativeTax1 getInformativeTaxDetails() {
-		return informativeTaxDetails;
+	public Optional<InformativeTax1> getInformativeTaxDetails() {
+		return informativeTaxDetails == null ? Optional.empty() : Optional.of(informativeTaxDetails);
 	}
 
-	public void setInformativeTaxDetails(com.tools20022.repository.msg.InformativeTax1 informativeTaxDetails) {
+	public RedemptionExecution16 setInformativeTaxDetails(InformativeTax1 informativeTaxDetails) {
 		this.informativeTaxDetails = informativeTaxDetails;
+		return this;
 	}
 
-	@XmlElement(name = "StffClntBrkdwn")
 	public List<InvestmentFundsOrderBreakdown2> getStaffClientBreakdown() {
-		return staffClientBreakdown;
+		return staffClientBreakdown == null ? staffClientBreakdown = new ArrayList<>() : staffClientBreakdown;
 	}
 
-	public void setStaffClientBreakdown(List<com.tools20022.repository.msg.InvestmentFundsOrderBreakdown2> staffClientBreakdown) {
-		this.staffClientBreakdown = staffClientBreakdown;
+	public RedemptionExecution16 setStaffClientBreakdown(List<InvestmentFundsOrderBreakdown2> staffClientBreakdown) {
+		this.staffClientBreakdown = Objects.requireNonNull(staffClientBreakdown);
+		return this;
 	}
 
-	@XmlElement(name = "SttlmAndCtdyDtls")
-	public FundSettlementParameters11 getSettlementAndCustodyDetails() {
-		return settlementAndCustodyDetails;
+	public Optional<FundSettlementParameters11> getSettlementAndCustodyDetails() {
+		return settlementAndCustodyDetails == null ? Optional.empty() : Optional.of(settlementAndCustodyDetails);
 	}
 
-	public void setSettlementAndCustodyDetails(com.tools20022.repository.msg.FundSettlementParameters11 settlementAndCustodyDetails) {
+	public RedemptionExecution16 setSettlementAndCustodyDetails(FundSettlementParameters11 settlementAndCustodyDetails) {
 		this.settlementAndCustodyDetails = settlementAndCustodyDetails;
+		return this;
 	}
 
-	@XmlElement(name = "PhysDlvryInd", required = true)
 	public YesNoIndicator getPhysicalDeliveryIndicator() {
 		return physicalDeliveryIndicator;
 	}
 
-	public void setPhysicalDeliveryIndicator(YesNoIndicator physicalDeliveryIndicator) {
-		this.physicalDeliveryIndicator = physicalDeliveryIndicator;
+	public RedemptionExecution16 setPhysicalDeliveryIndicator(YesNoIndicator physicalDeliveryIndicator) {
+		this.physicalDeliveryIndicator = Objects.requireNonNull(physicalDeliveryIndicator);
+		return this;
 	}
 
-	@XmlElement(name = "PhysDlvryDtls")
-	public DeliveryParameters3 getPhysicalDeliveryDetails() {
-		return physicalDeliveryDetails;
+	public Optional<DeliveryParameters3> getPhysicalDeliveryDetails() {
+		return physicalDeliveryDetails == null ? Optional.empty() : Optional.of(physicalDeliveryDetails);
 	}
 
-	public void setPhysicalDeliveryDetails(com.tools20022.repository.msg.DeliveryParameters3 physicalDeliveryDetails) {
+	public RedemptionExecution16 setPhysicalDeliveryDetails(DeliveryParameters3 physicalDeliveryDetails) {
 		this.physicalDeliveryDetails = physicalDeliveryDetails;
+		return this;
 	}
 
-	@XmlElement(name = "CshSttlmDtls")
-	public PaymentTransaction72 getCashSettlementDetails() {
-		return cashSettlementDetails;
+	public Optional<PaymentTransaction72> getCashSettlementDetails() {
+		return cashSettlementDetails == null ? Optional.empty() : Optional.of(cashSettlementDetails);
 	}
 
-	public void setCashSettlementDetails(com.tools20022.repository.msg.PaymentTransaction72 cashSettlementDetails) {
+	public RedemptionExecution16 setCashSettlementDetails(PaymentTransaction72 cashSettlementDetails) {
 		this.cashSettlementDetails = cashSettlementDetails;
+		return this;
 	}
 
-	@XmlElement(name = "NonStdSttlmInf")
-	public Max350Text getNonStandardSettlementInformation() {
-		return nonStandardSettlementInformation;
+	public Optional<Max350Text> getNonStandardSettlementInformation() {
+		return nonStandardSettlementInformation == null ? Optional.empty() : Optional.of(nonStandardSettlementInformation);
 	}
 
-	public void setNonStandardSettlementInformation(Max350Text nonStandardSettlementInformation) {
+	public RedemptionExecution16 setNonStandardSettlementInformation(Max350Text nonStandardSettlementInformation) {
 		this.nonStandardSettlementInformation = nonStandardSettlementInformation;
+		return this;
 	}
 
-	@XmlElement(name = "PrtlSttlmOfUnits")
-	public PercentageRate getPartialSettlementOfUnits() {
-		return partialSettlementOfUnits;
+	public Optional<PercentageRate> getPartialSettlementOfUnits() {
+		return partialSettlementOfUnits == null ? Optional.empty() : Optional.of(partialSettlementOfUnits);
 	}
 
-	public void setPartialSettlementOfUnits(PercentageRate partialSettlementOfUnits) {
+	public RedemptionExecution16 setPartialSettlementOfUnits(PercentageRate partialSettlementOfUnits) {
 		this.partialSettlementOfUnits = partialSettlementOfUnits;
+		return this;
 	}
 
-	@XmlElement(name = "PrtlSttlmOfCsh")
-	public PercentageRate getPartialSettlementOfCash() {
-		return partialSettlementOfCash;
+	public Optional<PercentageRate> getPartialSettlementOfCash() {
+		return partialSettlementOfCash == null ? Optional.empty() : Optional.of(partialSettlementOfCash);
 	}
 
-	public void setPartialSettlementOfCash(PercentageRate partialSettlementOfCash) {
+	public RedemptionExecution16 setPartialSettlementOfCash(PercentageRate partialSettlementOfCash) {
 		this.partialSettlementOfCash = partialSettlementOfCash;
+		return this;
 	}
 
-	@XmlElement(name = "PrtlRedWhldgAmt")
-	public ActiveCurrencyAndAmount getPartialRedemptionWithholdingAmount() {
-		return partialRedemptionWithholdingAmount;
+	public Optional<ActiveCurrencyAndAmount> getPartialRedemptionWithholdingAmount() {
+		return partialRedemptionWithholdingAmount == null ? Optional.empty() : Optional.of(partialRedemptionWithholdingAmount);
 	}
 
-	public void setPartialRedemptionWithholdingAmount(ActiveCurrencyAndAmount partialRedemptionWithholdingAmount) {
+	public RedemptionExecution16 setPartialRedemptionWithholdingAmount(ActiveCurrencyAndAmount partialRedemptionWithholdingAmount) {
 		this.partialRedemptionWithholdingAmount = partialRedemptionWithholdingAmount;
+		return this;
 	}
 
-	@XmlElement(name = "FinAdvc")
-	public FinancialAdvice1Code getFinancialAdvice() {
-		return financialAdvice;
+	public Optional<FinancialAdvice1Code> getFinancialAdvice() {
+		return financialAdvice == null ? Optional.empty() : Optional.of(financialAdvice);
 	}
 
-	public void setFinancialAdvice(FinancialAdvice1Code financialAdvice) {
+	public RedemptionExecution16 setFinancialAdvice(FinancialAdvice1Code financialAdvice) {
 		this.financialAdvice = financialAdvice;
+		return this;
 	}
 
-	@XmlElement(name = "NgtdTrad")
-	public NegotiatedTrade1Code getNegotiatedTrade() {
-		return negotiatedTrade;
+	public Optional<NegotiatedTrade1Code> getNegotiatedTrade() {
+		return negotiatedTrade == null ? Optional.empty() : Optional.of(negotiatedTrade);
 	}
 
-	public void setNegotiatedTrade(NegotiatedTrade1Code negotiatedTrade) {
+	public RedemptionExecution16 setNegotiatedTrade(NegotiatedTrade1Code negotiatedTrade) {
 		this.negotiatedTrade = negotiatedTrade;
+		return this;
 	}
 
-	@XmlElement(name = "LateRpt")
-	public LateReport1Code getLateReport() {
-		return lateReport;
+	public Optional<LateReport1Code> getLateReport() {
+		return lateReport == null ? Optional.empty() : Optional.of(lateReport);
 	}
 
-	public void setLateReport(LateReport1Code lateReport) {
+	public RedemptionExecution16 setLateReport(LateReport1Code lateReport) {
 		this.lateReport = lateReport;
+		return this;
 	}
 
-	@XmlElement(name = "RltdPtyDtls")
 	public List<Intermediary39> getRelatedPartyDetails() {
-		return relatedPartyDetails;
+		return relatedPartyDetails == null ? relatedPartyDetails = new ArrayList<>() : relatedPartyDetails;
 	}
 
-	public void setRelatedPartyDetails(List<com.tools20022.repository.msg.Intermediary39> relatedPartyDetails) {
-		this.relatedPartyDetails = relatedPartyDetails;
+	public RedemptionExecution16 setRelatedPartyDetails(List<Intermediary39> relatedPartyDetails) {
+		this.relatedPartyDetails = Objects.requireNonNull(relatedPartyDetails);
+		return this;
 	}
 
-	@XmlElement(name = "Equlstn")
-	public Equalisation1 getEqualisation() {
-		return equalisation;
+	public Optional<Equalisation1> getEqualisation() {
+		return equalisation == null ? Optional.empty() : Optional.of(equalisation);
 	}
 
-	public void setEqualisation(com.tools20022.repository.msg.Equalisation1 equalisation) {
+	public RedemptionExecution16 setEqualisation(Equalisation1 equalisation) {
 		this.equalisation = equalisation;
+		return this;
 	}
 
-	@XmlElement(name = "CstmrCndctClssfctn")
-	public CustomerConductClassification1Choice getCustomerConductClassification() {
-		return customerConductClassification;
+	public Optional<CustomerConductClassification1Choice> getCustomerConductClassification() {
+		return customerConductClassification == null ? Optional.empty() : Optional.of(customerConductClassification);
 	}
 
-	public void setCustomerConductClassification(CustomerConductClassification1Choice customerConductClassification) {
+	public RedemptionExecution16 setCustomerConductClassification(CustomerConductClassification1Choice customerConductClassification) {
 		this.customerConductClassification = customerConductClassification;
+		return this;
 	}
 
-	@XmlElement(name = "TxChanlTp")
-	public TransactionChannelType1Choice getTransactionChannelType() {
-		return transactionChannelType;
+	public Optional<TransactionChannelType1Choice> getTransactionChannelType() {
+		return transactionChannelType == null ? Optional.empty() : Optional.of(transactionChannelType);
 	}
 
-	public void setTransactionChannelType(TransactionChannelType1Choice transactionChannelType) {
+	public RedemptionExecution16 setTransactionChannelType(TransactionChannelType1Choice transactionChannelType) {
 		this.transactionChannelType = transactionChannelType;
+		return this;
 	}
 
-	@XmlElement(name = "SgntrTp")
-	public SignatureType1Choice getSignatureType() {
-		return signatureType;
+	public Optional<SignatureType1Choice> getSignatureType() {
+		return signatureType == null ? Optional.empty() : Optional.of(signatureType);
 	}
 
-	public void setSignatureType(SignatureType1Choice signatureType) {
+	public RedemptionExecution16 setSignatureType(SignatureType1Choice signatureType) {
 		this.signatureType = signatureType;
+		return this;
 	}
 
-	@XmlElement(name = "OrdrWvrDtls")
-	public OrderWaiver1 getOrderWaiverDetails() {
-		return orderWaiverDetails;
+	public Optional<OrderWaiver1> getOrderWaiverDetails() {
+		return orderWaiverDetails == null ? Optional.empty() : Optional.of(orderWaiverDetails);
 	}
 
-	public void setOrderWaiverDetails(com.tools20022.repository.msg.OrderWaiver1 orderWaiverDetails) {
+	public RedemptionExecution16 setOrderWaiverDetails(OrderWaiver1 orderWaiverDetails) {
 		this.orderWaiverDetails = orderWaiverDetails;
+		return this;
 	}
 
-	@XmlElement(name = "GtgOrHldBckDtls")
-	public HoldBackInformation2 getGatingOrHoldBackDetails() {
-		return gatingOrHoldBackDetails;
+	public Optional<HoldBackInformation2> getGatingOrHoldBackDetails() {
+		return gatingOrHoldBackDetails == null ? Optional.empty() : Optional.of(gatingOrHoldBackDetails);
 	}
 
-	public void setGatingOrHoldBackDetails(com.tools20022.repository.msg.HoldBackInformation2 gatingOrHoldBackDetails) {
+	public RedemptionExecution16 setGatingOrHoldBackDetails(HoldBackInformation2 gatingOrHoldBackDetails) {
 		this.gatingOrHoldBackDetails = gatingOrHoldBackDetails;
+		return this;
 	}
 }

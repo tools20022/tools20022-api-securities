@@ -25,10 +25,11 @@ import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.SecuritiesMarketReportHeader1;
 import com.tools20022.repository.msg.SecuritiesReferenceDataReport5;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -76,15 +77,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialInstrumentReportingReferenceDataReportV01", propOrder = {"reportHeader", "referenceData", "supplementaryData"})
 public class FinancialInstrumentReportingReferenceDataReportV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RptHdr", required = true)
 	protected SecuritiesMarketReportHeader1 reportHeader;
 	/**
-	 * Header information related to the global report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +107,7 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 	 * definition} = "Header information related to the global report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingReferenceDataReportV01, SecuritiesMarketReportHeader1> mmReportHeader = new MMMessageBuildingBlock<FinancialInstrumentReportingReferenceDataReportV01, SecuritiesMarketReportHeader1>() {
 		{
 			xmlTag = "RptHdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,18 +118,21 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 			complexType_lazy = () -> SecuritiesMarketReportHeader1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingReferenceDataReportV01.class.getMethod("getReportHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SecuritiesMarketReportHeader1 getValue(FinancialInstrumentReportingReferenceDataReportV01 obj) {
+			return obj.getReportHeader();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingReferenceDataReportV01 obj, SecuritiesMarketReportHeader1 value) {
+			obj.setReportHeader(value);
 		}
 	};
+	@XmlElement(name = "RefData", required = true)
 	protected List<SecuritiesReferenceDataReport5> referenceData;
 	/**
-	 * Details of the reference data reported by the trading venue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +154,7 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 	 * "Details of the reference data reported by the trading venue."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReferenceData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingReferenceDataReportV01, List<SecuritiesReferenceDataReport5>> mmReferenceData = new MMMessageBuildingBlock<FinancialInstrumentReportingReferenceDataReportV01, List<SecuritiesReferenceDataReport5>>() {
 		{
 			xmlTag = "RefData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,19 +164,21 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 			complexType_lazy = () -> SecuritiesReferenceDataReport5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingReferenceDataReportV01.class.getMethod("getReferenceData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SecuritiesReferenceDataReport5> getValue(FinancialInstrumentReportingReferenceDataReportV01 obj) {
+			return obj.getReferenceData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingReferenceDataReportV01 obj, List<SecuritiesReferenceDataReport5> value) {
+			obj.setReferenceData(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -194,7 +201,7 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FinancialInstrumentReportingReferenceDataReportV01, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<FinancialInstrumentReportingReferenceDataReportV01, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,12 +211,14 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FinancialInstrumentReportingReferenceDataReportV01.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(FinancialInstrumentReportingReferenceDataReportV01 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(FinancialInstrumentReportingReferenceDataReportV01 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -242,34 +251,34 @@ public class FinancialInstrumentReportingReferenceDataReportV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RptHdr", required = true)
 	public SecuritiesMarketReportHeader1 getReportHeader() {
 		return reportHeader;
 	}
 
-	public void setReportHeader(SecuritiesMarketReportHeader1 reportHeader) {
-		this.reportHeader = reportHeader;
+	public FinancialInstrumentReportingReferenceDataReportV01 setReportHeader(SecuritiesMarketReportHeader1 reportHeader) {
+		this.reportHeader = Objects.requireNonNull(reportHeader);
+		return this;
 	}
 
-	@XmlElement(name = "RefData", required = true)
 	public List<SecuritiesReferenceDataReport5> getReferenceData() {
-		return referenceData;
+		return referenceData == null ? referenceData = new ArrayList<>() : referenceData;
 	}
 
-	public void setReferenceData(List<SecuritiesReferenceDataReport5> referenceData) {
-		this.referenceData = referenceData;
+	public FinancialInstrumentReportingReferenceDataReportV01 setReferenceData(List<SecuritiesReferenceDataReport5> referenceData) {
+		this.referenceData = Objects.requireNonNull(referenceData);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public FinancialInstrumentReportingReferenceDataReportV01 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.017.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:auth.017.001.01")
 	static public class Document {
 		@XmlElement(name = "FinInstrmRptgRefDataRpt", required = true)
 		public FinancialInstrumentReportingReferenceDataReportV01 messageBody;

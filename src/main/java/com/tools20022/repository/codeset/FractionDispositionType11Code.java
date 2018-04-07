@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType11Code#BuyUp
- * FractionDispositionType11Code.mmBuyUp}</li>
+ * FractionDispositionType11Code.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType11Code#CashInLieuOfFraction
- * FractionDispositionType11Code.mmCashInLieuOfFraction}</li>
+ * FractionDispositionType11Code.CashInLieuOfFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType11Code#IssueFraction
- * FractionDispositionType11Code.mmIssueFraction}</li>
+ * FractionDispositionType11Code.IssueFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType11Code#RoundDown
- * FractionDispositionType11Code.mmRoundDown}</li>
+ * FractionDispositionType11Code.RoundDown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType11Code#RoundToNearest
- * FractionDispositionType11Code.mmRoundToNearest}</li>
+ * FractionDispositionType11Code.RoundToNearest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType11Code#RoundUp
- * FractionDispositionType11Code.mmRoundUp}</li>
+ * FractionDispositionType11Code.RoundUp}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -237,7 +237,7 @@ public class FractionDispositionType11Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FractionDispositionType11Code";

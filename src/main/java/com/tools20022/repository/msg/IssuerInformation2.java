@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Unique and unambiguous way to identify an organisation."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "IssuerInformation2", propOrder = {"identification", "URLAddress"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "IssuerInformation2", propOrder = {"identification", "uRLAddress"})
 public class IssuerInformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected PartyIdentification40Choice identification;
 	/**
-	 * Unique and unambiguous way to identify the organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -117,10 +120,10 @@ public class IssuerInformation2 {
 	 * definition} = "Unique and unambiguous way to identify the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<IssuerInformation2, PartyIdentification40Choice> mmIdentification = new MMMessageAssociationEnd<IssuerInformation2, PartyIdentification40Choice>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> IssuerInformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IssuerInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,12 +134,22 @@ public class IssuerInformation2 {
 			isComposite = true;
 			type_lazy = () -> PartyIdentification40Choice.mmObject();
 		}
+
+		@Override
+		public PartyIdentification40Choice getValue(IssuerInformation2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(IssuerInformation2 obj, PartyIdentification40Choice value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "URLAdr")
 	protected Max256Text uRLAddress;
 	/**
-	 * Address for the Universal Resource Locator (URL), for example, used over
-	 * the www (HTTP) service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,10 +181,10 @@ public class IssuerInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmURLAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<IssuerInformation2, Optional<Max256Text>> mmURLAddress = new MMMessageAttribute<IssuerInformation2, Optional<Max256Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmURLAddress;
-			componentContext_lazy = () -> IssuerInformation2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.IssuerInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "URLAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,15 +194,25 @@ public class IssuerInformation2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(IssuerInformation2 obj) {
+			return obj.getURLAddress();
+		}
+
+		@Override
+		public void setValue(IssuerInformation2 obj, Optional<Max256Text> value) {
+			obj.setURLAddress(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(IssuerInformation2.mmIdentification, IssuerInformation2.mmURLAddress);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IssuerInformation2.mmIdentification, com.tools20022.repository.msg.IssuerInformation2.mmURLAddress);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MeetingNotificationV05.mmIssuer);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IssuerInformation2";
 				definition = "Unique and unambiguous way to identify an organisation.";
@@ -198,21 +221,21 @@ public class IssuerInformation2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public PartyIdentification40Choice getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(PartyIdentification40Choice identification) {
-		this.identification = identification;
+	public IssuerInformation2 setIdentification(PartyIdentification40Choice identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "URLAdr")
-	public Max256Text getURLAddress() {
-		return uRLAddress;
+	public Optional<Max256Text> getURLAddress() {
+		return uRLAddress == null ? Optional.empty() : Optional.of(uRLAddress);
 	}
 
-	public void setURLAddress(Max256Text uRLAddress) {
+	public IssuerInformation2 setURLAddress(Max256Text uRLAddress) {
 		this.uRLAddress = uRLAddress;
+		return this;
 	}
 }

@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
@@ -31,8 +33,12 @@ import com.tools20022.repository.entity.Commission;
 import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AmountAndDirection29;
+import com.tools20022.repository.msg.PartyIdentification54;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -69,8 +75,11 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: Comm</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +91,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "Commission16", propOrder = {"type", "commission", "recipientIdentification", "calculationDate", "totalCommission", "totalVATAmount", "VATRate"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "Commission16", propOrder = {"type", "commission", "recipientIdentification", "calculationDate", "totalCommission", "totalVATAmount", "vATRate"})
 public class Commission16 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected CommissionType2Choice type;
 	/**
-	 * Specification of the commission type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -109,6 +119,9 @@ public class Commission16 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Tp"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 13</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -119,12 +132,13 @@ public class Commission16 {
 	 * definition} = "Specification of the commission type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Commission16, CommissionType2Choice> mmType = new MMMessageAssociationEnd<Commission16, CommissionType2Choice>() {
 		{
 			businessElementTrace_lazy = () -> Commission.mmCommissionType;
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "13"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specification of the commission type.";
@@ -133,11 +147,22 @@ public class Commission16 {
 			isComposite = true;
 			type_lazy = () -> CommissionType2Choice.mmObject();
 		}
+
+		@Override
+		public CommissionType2Choice getValue(Commission16 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, CommissionType2Choice value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Comssn", required = true)
 	protected AmountOrRate2Choice commission;
 	/**
-	 * Amount of money due to a party as compensation for a service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,6 +181,9 @@ public class Commission16 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "Comssn"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 12, FIXSynonym: 479</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -167,12 +195,13 @@ public class Commission16 {
 	 * "Amount of money due to a party as compensation for a service."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCommission = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Commission16, AmountOrRate2Choice> mmCommission = new MMMessageAttribute<Commission16, AmountOrRate2Choice>() {
 		{
 			businessComponentTrace_lazy = () -> Commission.mmObject();
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "Comssn";
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "12"), new FIXSynonym(this, "479"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Commission";
 			definition = "Amount of money due to a party as compensation for a service.";
@@ -180,12 +209,22 @@ public class Commission16 {
 			minOccurs = 1;
 			complexType_lazy = () -> AmountOrRate2Choice.mmObject();
 		}
+
+		@Override
+		public AmountOrRate2Choice getValue(Commission16 obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, AmountOrRate2Choice value) {
+			obj.setCommission(value);
+		}
 	};
+	@XmlElement(name = "RcptId")
 	protected PartyIdentification54 recipientIdentification;
 	/**
-	 * Information related to an identification, eg, party identification or
-	 * account identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -203,6 +242,9 @@ public class Commission16 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "RcptId"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ISO, value=15022</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -215,26 +257,37 @@ public class Commission16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRecipientIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Commission16, Optional<PartyIdentification54>> mmRecipientIdentification = new MMMessageAssociationEnd<Commission16, Optional<PartyIdentification54>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "RcptId";
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ISO"}, new String[]{"value", "15022"}));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RecipientIdentification";
 			definition = "Information related to an identification, eg, party identification or account identification.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification54.mmObject();
+			type_lazy = () -> PartyIdentification54.mmObject();
+		}
+
+		@Override
+		public Optional<PartyIdentification54> getValue(Commission16 obj) {
+			return obj.getRecipientIdentification();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, Optional<PartyIdentification54> value) {
+			obj.setRecipientIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ClctnDt")
 	protected ISODate calculationDate;
 	/**
-	 * Date at which an operation is triggered to calculate, for instance, a
-	 * commission, fee, asset values, etc.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,10 +318,10 @@ public class Commission16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculationDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Commission16, Optional<ISODate>> mmCalculationDate = new MMMessageAttribute<Commission16, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Commission.mmCalculationDate;
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "ClctnDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -278,11 +331,22 @@ public class Commission16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(Commission16 obj) {
+			return obj.getCalculationDate();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, Optional<ISODate> value) {
+			obj.setCalculationDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlComssn")
 	protected AmountAndDirection29 totalCommission;
 	/**
-	 * Total value of the commissions for a specific trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,10 +376,10 @@ public class Commission16 {
 	 * definition} = "Total value of the commissions for a specific trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalCommission = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Commission16, Optional<AmountAndDirection29>> mmTotalCommission = new MMMessageAttribute<Commission16, Optional<AmountAndDirection29>>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "TtlComssn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -323,14 +387,24 @@ public class Commission16 {
 			definition = "Total value of the commissions for a specific trade.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection29.mmObject();
+			complexType_lazy = () -> AmountAndDirection29.mmObject();
+		}
+
+		@Override
+		public Optional<AmountAndDirection29> getValue(Commission16 obj) {
+			return obj.getTotalCommission();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, Optional<AmountAndDirection29> value) {
+			obj.setTotalCommission(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TtlVATAmt")
 	protected ActiveCurrencyAndAmount totalVATAmount;
 	/**
-	 * Amount that results of the calculation of VAT on net fees, according to
-	 * the transaction current tariffs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,9 +431,9 @@ public class Commission16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalVATAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Commission16, Optional<ActiveCurrencyAndAmount>> mmTotalVATAmount = new MMMessageAttribute<Commission16, Optional<ActiveCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "TtlVATAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -369,11 +443,22 @@ public class Commission16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(Commission16 obj) {
+			return obj.getTotalVATAmount();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalVATAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VATRate")
 	protected BaseOneRate vATRate;
 	/**
-	 * Specifies the VAT rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -401,10 +486,10 @@ public class Commission16 {
 	 * definition} = "Specifies the VAT rate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVATRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Commission16, Optional<BaseOneRate>> mmVATRate = new MMMessageAttribute<Commission16, Optional<BaseOneRate>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> Commission16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Commission16.mmObject();
 			isDerived = false;
 			xmlTag = "VATRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -414,15 +499,27 @@ public class Commission16 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		@Override
+		public Optional<BaseOneRate> getValue(Commission16 obj) {
+			return obj.getVATRate();
+		}
+
+		@Override
+		public void setValue(Commission16 obj, Optional<BaseOneRate> value) {
+			obj.setVATRate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Commission16.mmType, Commission16.mmCommission, Commission16.mmRecipientIdentification, Commission16.mmCalculationDate, Commission16.mmTotalCommission,
-						Commission16.mmTotalVATAmount, Commission16.mmVATRate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Commission16.mmType, com.tools20022.repository.msg.Commission16.mmCommission, com.tools20022.repository.msg.Commission16.mmRecipientIdentification,
+						com.tools20022.repository.msg.Commission16.mmCalculationDate, com.tools20022.repository.msg.Commission16.mmTotalCommission, com.tools20022.repository.msg.Commission16.mmTotalVATAmount,
+						com.tools20022.repository.msg.Commission16.mmVATRate);
 				trace_lazy = () -> Commission.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "Comm"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Commission16";
 				definition = "Amount of money due to a party as compensation for a service.";
@@ -431,66 +528,66 @@ public class Commission16 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public CommissionType2Choice getType() {
 		return type;
 	}
 
-	public void setType(CommissionType2Choice type) {
-		this.type = type;
+	public Commission16 setType(CommissionType2Choice type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Comssn", required = true)
 	public AmountOrRate2Choice getCommission() {
 		return commission;
 	}
 
-	public void setCommission(AmountOrRate2Choice commission) {
-		this.commission = commission;
+	public Commission16 setCommission(AmountOrRate2Choice commission) {
+		this.commission = Objects.requireNonNull(commission);
+		return this;
 	}
 
-	@XmlElement(name = "RcptId")
-	public PartyIdentification54 getRecipientIdentification() {
-		return recipientIdentification;
+	public Optional<PartyIdentification54> getRecipientIdentification() {
+		return recipientIdentification == null ? Optional.empty() : Optional.of(recipientIdentification);
 	}
 
-	public void setRecipientIdentification(com.tools20022.repository.msg.PartyIdentification54 recipientIdentification) {
+	public Commission16 setRecipientIdentification(PartyIdentification54 recipientIdentification) {
 		this.recipientIdentification = recipientIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ClctnDt")
-	public ISODate getCalculationDate() {
-		return calculationDate;
+	public Optional<ISODate> getCalculationDate() {
+		return calculationDate == null ? Optional.empty() : Optional.of(calculationDate);
 	}
 
-	public void setCalculationDate(ISODate calculationDate) {
+	public Commission16 setCalculationDate(ISODate calculationDate) {
 		this.calculationDate = calculationDate;
+		return this;
 	}
 
-	@XmlElement(name = "TtlComssn")
-	public AmountAndDirection29 getTotalCommission() {
-		return totalCommission;
+	public Optional<AmountAndDirection29> getTotalCommission() {
+		return totalCommission == null ? Optional.empty() : Optional.of(totalCommission);
 	}
 
-	public void setTotalCommission(com.tools20022.repository.msg.AmountAndDirection29 totalCommission) {
+	public Commission16 setTotalCommission(AmountAndDirection29 totalCommission) {
 		this.totalCommission = totalCommission;
+		return this;
 	}
 
-	@XmlElement(name = "TtlVATAmt")
-	public ActiveCurrencyAndAmount getTotalVATAmount() {
-		return totalVATAmount;
+	public Optional<ActiveCurrencyAndAmount> getTotalVATAmount() {
+		return totalVATAmount == null ? Optional.empty() : Optional.of(totalVATAmount);
 	}
 
-	public void setTotalVATAmount(ActiveCurrencyAndAmount totalVATAmount) {
+	public Commission16 setTotalVATAmount(ActiveCurrencyAndAmount totalVATAmount) {
 		this.totalVATAmount = totalVATAmount;
+		return this;
 	}
 
-	@XmlElement(name = "VATRate")
-	public BaseOneRate getVATRate() {
-		return vATRate;
+	public Optional<BaseOneRate> getVATRate() {
+		return vATRate == null ? Optional.empty() : Optional.of(vATRate);
 	}
 
-	public void setVATRate(BaseOneRate vATRate) {
+	public Commission16 setVATRate(BaseOneRate vATRate) {
 		this.vATRate = vATRate;
+		return this;
 	}
 }

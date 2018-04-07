@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#BuyUp
- * FractionDispositionType8Code.mmBuyUp}</li>
+ * FractionDispositionType8Code.BuyUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#CashInLieuOfFraction
- * FractionDispositionType8Code.mmCashInLieuOfFraction}</li>
+ * FractionDispositionType8Code.CashInLieuOfFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#IssueFraction
- * FractionDispositionType8Code.mmIssueFraction}</li>
+ * FractionDispositionType8Code.IssueFraction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#RoundDown
- * FractionDispositionType8Code.mmRoundDown}</li>
+ * FractionDispositionType8Code.RoundDown}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#RoundToNearest
- * FractionDispositionType8Code.mmRoundToNearest}</li>
+ * FractionDispositionType8Code.RoundToNearest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#RoundUp
- * FractionDispositionType8Code.mmRoundUp}</li>
+ * FractionDispositionType8Code.RoundUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FractionDispositionType8Code#Unknown
- * FractionDispositionType8Code.mmUnknown}</li>
+ * FractionDispositionType8Code.Unknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -264,7 +264,7 @@ public class FractionDispositionType8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUYU");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FractionDispositionType8Code";

@@ -38,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Status7Code#CancelledBySubcustodian
- * Status7Code.mmCancelledBySubcustodian}</li>
+ * Status7Code.CancelledBySubcustodian}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Status7Code#Accepted
- * Status7Code.mmAccepted}</li>
+ * Status7Code.Accepted}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Status7Code#Cancelled
- * Status7Code.mmCancelled}</li>
+ * Status7Code.Cancelled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Status7Code#Completed
- * Status7Code.mmCompleted}</li>
+ * Status7Code.Completed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Status7Code#NotReceived
- * Status7Code.mmNotReceived}</li>
+ * Status7Code.NotReceived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Status7Code#ReceivedByIssuerOrRegistrar
- * Status7Code.mmReceivedByIssuerOrRegistrar}</li>
+ * Status7Code.ReceivedByIssuerOrRegistrar}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Status7Code#StandingInstruction
- * Status7Code.mmStandingInstruction}</li>
+ * Status7Code.StandingInstruction}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -245,7 +245,7 @@ public class Status7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Status7Code";
 				definition = "Specifies the status of an instruction/vote.";

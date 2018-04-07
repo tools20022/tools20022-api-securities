@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Blocked
- * SecuritiesBalanceType13Code.mmBlocked}</li>
+ * SecuritiesBalanceType13Code.Blocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#AvailableWithNoAdditionalStatus
- * SecuritiesBalanceType13Code.mmAvailableWithNoAdditionalStatus}</li>
+ * SecuritiesBalanceType13Code.AvailableWithNoAdditionalStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Available
- * SecuritiesBalanceType13Code.mmAvailable}</li>
+ * SecuritiesBalanceType13Code.Available}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Registered
- * SecuritiesBalanceType13Code.mmRegistered}</li>
+ * SecuritiesBalanceType13Code.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Pledged
- * SecuritiesBalanceType13Code.mmPledged}</li>
+ * SecuritiesBalanceType13Code.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#OutForRegistration
- * SecuritiesBalanceType13Code.mmOutForRegistration}</li>
+ * SecuritiesBalanceType13Code.OutForRegistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Restricted
- * SecuritiesBalanceType13Code.mmRestricted}</li>
+ * SecuritiesBalanceType13Code.Restricted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Unclassified
- * SecuritiesBalanceType13Code.mmUnclassified}</li>
+ * SecuritiesBalanceType13Code.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#StreetPosition
- * SecuritiesBalanceType13Code.mmStreetPosition}</li>
+ * SecuritiesBalanceType13Code.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Unregistered
- * SecuritiesBalanceType13Code.mmUnregistered}</li>
+ * SecuritiesBalanceType13Code.Unregistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#Issued
- * SecuritiesBalanceType13Code.mmIssued}</li>
+ * SecuritiesBalanceType13Code.Issued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#QuasiIssued
- * SecuritiesBalanceType13Code.mmQuasiIssued}</li>
+ * SecuritiesBalanceType13Code.QuasiIssued}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType13Code#EligibleForCollateralPurposes
- * SecuritiesBalanceType13Code.mmEligibleForCollateralPurposes}</li>
+ * SecuritiesBalanceType13Code.EligibleForCollateralPurposes}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -426,7 +426,7 @@ public class SecuritiesBalanceType13Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BLOK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType13Code";

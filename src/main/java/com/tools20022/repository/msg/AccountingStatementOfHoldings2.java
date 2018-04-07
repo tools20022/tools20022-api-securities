@@ -24,9 +24,9 @@ import com.tools20022.repository.area.semt.AccountingStatementOfHoldingsCancella
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -76,8 +76,17 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintBalanceForAccountOrSubAccountDetailsRule#forAccountingStatementOfHoldings2
+ * ConstraintBalanceForAccountOrSubAccountDetailsRule.
+ * forAccountingStatementOfHoldings2}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,16 +97,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information about an accounting statement of holdings."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountingStatementOfHoldings2", propOrder = {"statementGeneralDetails", "accountDetails", "balanceForAccount", "subAccountDetails", "totalValues", "extension"})
 public class AccountingStatementOfHoldings2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StmtGnlDtls")
 	protected Statement6 statementGeneralDetails;
 	/**
-	 * General information related to the custody statement of holdings that is
-	 * being cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -122,9 +131,9 @@ public class AccountingStatementOfHoldings2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStatementGeneralDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountingStatementOfHoldings2, Optional<Statement6>> mmStatementGeneralDetails = new MMMessageAssociationEnd<AccountingStatementOfHoldings2, Optional<Statement6>>() {
 		{
-			componentContext_lazy = () -> AccountingStatementOfHoldings2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmObject();
 			isDerived = false;
 			xmlTag = "StmtGnlDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,14 +142,24 @@ public class AccountingStatementOfHoldings2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Statement6.mmObject();
+			type_lazy = () -> Statement6.mmObject();
+		}
+
+		@Override
+		public Optional<Statement6> getValue(AccountingStatementOfHoldings2 obj) {
+			return obj.getStatementGeneralDetails();
+		}
+
+		@Override
+		public void setValue(AccountingStatementOfHoldings2 obj, Optional<Statement6> value) {
+			obj.setStatementGeneralDetails(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AcctDtls")
 	protected SafekeepingAccount2 accountDetails;
 	/**
-	 * The safekeeping or investment account of the statement that is being
-	 * cancelled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -171,10 +190,10 @@ public class AccountingStatementOfHoldings2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountingStatementOfHoldings2, Optional<SafekeepingAccount2>> mmAccountDetails = new MMMessageAssociationEnd<AccountingStatementOfHoldings2, Optional<SafekeepingAccount2>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesAccount;
-			componentContext_lazy = () -> AccountingStatementOfHoldings2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmObject();
 			isDerived = false;
 			xmlTag = "AcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,14 +202,24 @@ public class AccountingStatementOfHoldings2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SafekeepingAccount2.mmObject();
+			type_lazy = () -> SafekeepingAccount2.mmObject();
+		}
+
+		@Override
+		public Optional<SafekeepingAccount2> getValue(AccountingStatementOfHoldings2 obj) {
+			return obj.getAccountDetails();
+		}
+
+		@Override
+		public void setValue(AccountingStatementOfHoldings2 obj, Optional<SafekeepingAccount2> value) {
+			obj.setAccountDetails(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.AggregateBalanceInformation3> balanceForAccount;
+	@XmlElement(name = "BalForAcct")
+	protected List<AggregateBalanceInformation3> balanceForAccount;
 	/**
-	 * Net position of a segregated holding, in a single security, within the
-	 * overall position held in a securities account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -222,10 +251,10 @@ public class AccountingStatementOfHoldings2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBalanceForAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountingStatementOfHoldings2, List<AggregateBalanceInformation3>> mmBalanceForAccount = new MMMessageAssociationEnd<AccountingStatementOfHoldings2, List<AggregateBalanceInformation3>>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesBalance.mmObject();
-			componentContext_lazy = () -> AccountingStatementOfHoldings2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmObject();
 			isDerived = false;
 			xmlTag = "BalForAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,13 +262,24 @@ public class AccountingStatementOfHoldings2 {
 			definition = "Net position of a segregated holding, in a single security, within the overall position held in a securities account.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AggregateBalanceInformation3.mmObject();
+			type_lazy = () -> AggregateBalanceInformation3.mmObject();
+		}
+
+		@Override
+		public List<AggregateBalanceInformation3> getValue(AccountingStatementOfHoldings2 obj) {
+			return obj.getBalanceForAccount();
+		}
+
+		@Override
+		public void setValue(AccountingStatementOfHoldings2 obj, List<AggregateBalanceInformation3> value) {
+			obj.setBalanceForAccount(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.SubAccountIdentification3> subAccountDetails;
+	@XmlElement(name = "SubAcctDtls")
+	protected List<SubAccountIdentification3> subAccountDetails;
 	/**
-	 * The sub-account of the safekeeping or investment account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -270,10 +310,10 @@ public class AccountingStatementOfHoldings2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubAccountDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountingStatementOfHoldings2, List<SubAccountIdentification3>> mmSubAccountDetails = new MMMessageAssociationEnd<AccountingStatementOfHoldings2, List<SubAccountIdentification3>>() {
 		{
 			businessElementTrace_lazy = () -> Account.mmIdentification;
-			componentContext_lazy = () -> AccountingStatementOfHoldings2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmObject();
 			isDerived = false;
 			xmlTag = "SubAcctDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -281,13 +321,24 @@ public class AccountingStatementOfHoldings2 {
 			definition = "The sub-account of the safekeeping or investment account.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SubAccountIdentification3.mmObject();
+			type_lazy = () -> SubAccountIdentification3.mmObject();
+		}
+
+		@Override
+		public List<SubAccountIdentification3> getValue(AccountingStatementOfHoldings2 obj) {
+			return obj.getSubAccountDetails();
+		}
+
+		@Override
+		public void setValue(AccountingStatementOfHoldings2 obj, List<SubAccountIdentification3> value) {
+			obj.setSubAccountDetails(value);
 		}
 	};
+	@XmlElement(name = "TtlVals")
 	protected TotalValueInPageAndStatement totalValues;
 	/**
-	 * Value of total holdings reported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -312,9 +363,9 @@ public class AccountingStatementOfHoldings2 {
 	 * definition} = "Value of total holdings reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTotalValues = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountingStatementOfHoldings2, Optional<TotalValueInPageAndStatement>> mmTotalValues = new MMMessageAssociationEnd<AccountingStatementOfHoldings2, Optional<TotalValueInPageAndStatement>>() {
 		{
-			componentContext_lazy = () -> AccountingStatementOfHoldings2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlVals";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -323,14 +374,24 @@ public class AccountingStatementOfHoldings2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TotalValueInPageAndStatement.mmObject();
+			type_lazy = () -> TotalValueInPageAndStatement.mmObject();
+		}
+
+		@Override
+		public Optional<TotalValueInPageAndStatement> getValue(AccountingStatementOfHoldings2 obj) {
+			return obj.getTotalValues();
+		}
+
+		@Override
+		public void setValue(AccountingStatementOfHoldings2 obj, Optional<TotalValueInPageAndStatement> value) {
+			obj.setTotalValues(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.Extension1> extension;
+	@XmlElement(name = "Xtnsn")
+	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -355,9 +416,9 @@ public class AccountingStatementOfHoldings2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExtension = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AccountingStatementOfHoldings2, List<Extension1>> mmExtension = new MMMessageAssociationEnd<AccountingStatementOfHoldings2, List<Extension1>>() {
 		{
-			componentContext_lazy = () -> AccountingStatementOfHoldings2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmObject();
 			isDerived = false;
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -365,18 +426,30 @@ public class AccountingStatementOfHoldings2 {
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Extension1.mmObject();
+			type_lazy = () -> Extension1.mmObject();
+		}
+
+		@Override
+		public List<Extension1> getValue(AccountingStatementOfHoldings2 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(AccountingStatementOfHoldings2 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AccountingStatementOfHoldings2.mmStatementGeneralDetails, AccountingStatementOfHoldings2.mmAccountDetails, AccountingStatementOfHoldings2.mmBalanceForAccount,
-						AccountingStatementOfHoldings2.mmSubAccountDetails, AccountingStatementOfHoldings2.mmTotalValues, AccountingStatementOfHoldings2.mmExtension);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmStatementGeneralDetails, com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmAccountDetails,
+						com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmBalanceForAccount, com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmSubAccountDetails,
+						com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmTotalValues, com.tools20022.repository.msg.AccountingStatementOfHoldings2.mmExtension);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountingStatementOfHoldingsCancellationV02.mmStatementToBeCancelled);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintBalanceForAccountOrSubAccountDetailsRule.forAccountingStatementOfHoldings2);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountingStatementOfHoldings2";
 				definition = "Information about an accounting statement of holdings.";
@@ -385,57 +458,57 @@ public class AccountingStatementOfHoldings2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StmtGnlDtls")
-	public Statement6 getStatementGeneralDetails() {
-		return statementGeneralDetails;
+	public Optional<Statement6> getStatementGeneralDetails() {
+		return statementGeneralDetails == null ? Optional.empty() : Optional.of(statementGeneralDetails);
 	}
 
-	public void setStatementGeneralDetails(com.tools20022.repository.msg.Statement6 statementGeneralDetails) {
+	public AccountingStatementOfHoldings2 setStatementGeneralDetails(Statement6 statementGeneralDetails) {
 		this.statementGeneralDetails = statementGeneralDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AcctDtls")
-	public SafekeepingAccount2 getAccountDetails() {
-		return accountDetails;
+	public Optional<SafekeepingAccount2> getAccountDetails() {
+		return accountDetails == null ? Optional.empty() : Optional.of(accountDetails);
 	}
 
-	public void setAccountDetails(com.tools20022.repository.msg.SafekeepingAccount2 accountDetails) {
+	public AccountingStatementOfHoldings2 setAccountDetails(SafekeepingAccount2 accountDetails) {
 		this.accountDetails = accountDetails;
+		return this;
 	}
 
-	@XmlElement(name = "BalForAcct")
 	public List<AggregateBalanceInformation3> getBalanceForAccount() {
-		return balanceForAccount;
+		return balanceForAccount == null ? balanceForAccount = new ArrayList<>() : balanceForAccount;
 	}
 
-	public void setBalanceForAccount(List<com.tools20022.repository.msg.AggregateBalanceInformation3> balanceForAccount) {
-		this.balanceForAccount = balanceForAccount;
+	public AccountingStatementOfHoldings2 setBalanceForAccount(List<AggregateBalanceInformation3> balanceForAccount) {
+		this.balanceForAccount = Objects.requireNonNull(balanceForAccount);
+		return this;
 	}
 
-	@XmlElement(name = "SubAcctDtls")
 	public List<SubAccountIdentification3> getSubAccountDetails() {
-		return subAccountDetails;
+		return subAccountDetails == null ? subAccountDetails = new ArrayList<>() : subAccountDetails;
 	}
 
-	public void setSubAccountDetails(List<com.tools20022.repository.msg.SubAccountIdentification3> subAccountDetails) {
-		this.subAccountDetails = subAccountDetails;
+	public AccountingStatementOfHoldings2 setSubAccountDetails(List<SubAccountIdentification3> subAccountDetails) {
+		this.subAccountDetails = Objects.requireNonNull(subAccountDetails);
+		return this;
 	}
 
-	@XmlElement(name = "TtlVals")
-	public TotalValueInPageAndStatement getTotalValues() {
-		return totalValues;
+	public Optional<TotalValueInPageAndStatement> getTotalValues() {
+		return totalValues == null ? Optional.empty() : Optional.of(totalValues);
 	}
 
-	public void setTotalValues(com.tools20022.repository.msg.TotalValueInPageAndStatement totalValues) {
+	public AccountingStatementOfHoldings2 setTotalValues(TotalValueInPageAndStatement totalValues) {
 		this.totalValues = totalValues;
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<com.tools20022.repository.msg.Extension1> extension) {
-		this.extension = extension;
+	public AccountingStatementOfHoldings2 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 }

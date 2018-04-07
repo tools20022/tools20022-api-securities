@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ProxyAppointmentInformation3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of proxy allowance."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Proxy2Choice", propOrder = {"proxy", "proxyNotAllowed"})
 public class Proxy2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prxy", required = true)
 	protected ProxyAppointmentInformation3 proxy;
 	/**
-	 * Specifies the elements required to assign a proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -104,10 +106,10 @@ public class Proxy2Choice {
 	 * definition} = "Specifies the elements required to assign a proxy."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProxy = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Proxy2Choice, ProxyAppointmentInformation3> mmProxy = new MMMessageAssociationEnd<Proxy2Choice, ProxyAppointmentInformation3>() {
 		{
 			businessComponentTrace_lazy = () -> ProxyAppointmentCondition.mmObject();
-			componentContext_lazy = () -> Proxy2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Proxy2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prxy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class Proxy2Choice {
 			isComposite = true;
 			type_lazy = () -> ProxyAppointmentInformation3.mmObject();
 		}
+
+		@Override
+		public ProxyAppointmentInformation3 getValue(Proxy2Choice obj) {
+			return obj.getProxy();
+		}
+
+		@Override
+		public void setValue(Proxy2Choice obj, ProxyAppointmentInformation3 value) {
+			obj.setProxy(value);
+		}
 	};
+	@XmlElement(name = "PrxyNotAllwd", required = true)
 	protected ProxyNotAllowedCode proxyNotAllowed;
 	/**
-	 * Indicates that no proxy is allowed for a meeting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,9 +160,9 @@ public class Proxy2Choice {
 	 * definition} = "Indicates that no proxy is allowed for a meeting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProxyNotAllowed = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Proxy2Choice, ProxyNotAllowedCode> mmProxyNotAllowed = new MMMessageAttribute<Proxy2Choice, ProxyNotAllowedCode>() {
 		{
-			componentContext_lazy = () -> Proxy2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Proxy2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrxyNotAllwd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,14 +172,24 @@ public class Proxy2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ProxyNotAllowedCode.mmObject();
 		}
+
+		@Override
+		public ProxyNotAllowedCode getValue(Proxy2Choice obj) {
+			return obj.getProxyNotAllowed();
+		}
+
+		@Override
+		public void setValue(Proxy2Choice obj, ProxyNotAllowedCode value) {
+			obj.setProxyNotAllowed(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Proxy2Choice.mmProxy, Proxy2Choice.mmProxyNotAllowed);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Proxy2Choice.mmProxy, com.tools20022.repository.choice.Proxy2Choice.mmProxyNotAllowed);
 				trace_lazy = () -> ProxyAppointmentCondition.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Proxy2Choice";
 				definition = "Choice of proxy allowance.";
@@ -175,21 +198,21 @@ public class Proxy2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prxy", required = true)
 	public ProxyAppointmentInformation3 getProxy() {
 		return proxy;
 	}
 
-	public void setProxy(ProxyAppointmentInformation3 proxy) {
-		this.proxy = proxy;
+	public Proxy2Choice setProxy(ProxyAppointmentInformation3 proxy) {
+		this.proxy = Objects.requireNonNull(proxy);
+		return this;
 	}
 
-	@XmlElement(name = "PrxyNotAllwd", required = true)
 	public ProxyNotAllowedCode getProxyNotAllowed() {
 		return proxyNotAllowed;
 	}
 
-	public void setProxyNotAllowed(ProxyNotAllowedCode proxyNotAllowed) {
-		this.proxyNotAllowed = proxyNotAllowed;
+	public Proxy2Choice setProxyNotAllowed(ProxyNotAllowedCode proxyNotAllowed) {
+		this.proxyNotAllowed = Objects.requireNonNull(proxyNotAllowed);
+		return this;
 	}
 }

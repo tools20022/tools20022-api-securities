@@ -27,10 +27,8 @@ import com.tools20022.repository.msg.Agreement4;
 import com.tools20022.repository.msg.CollateralConfirmation1;
 import com.tools20022.repository.msg.Obligation4;
 import com.tools20022.repository.msg.SupplementaryData1;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -107,16 +105,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CollateralSubstitutionConfirmationV04", propOrder = {"transactionIdentification", "obligation", "agreement", "substitutionConfirmation", "supplementaryData"})
 public class CollateralSubstitutionConfirmationV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected Max35Text transactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as know by the instructing
-	 * party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +136,7 @@ public class CollateralSubstitutionConfirmationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmTransactionIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, Max35Text> mmTransactionIdentification = new MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, Max35Text>() {
 		{
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,20 +147,21 @@ public class CollateralSubstitutionConfirmationV04 {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralSubstitutionConfirmationV04.class.getMethod("getTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(CollateralSubstitutionConfirmationV04 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionConfirmationV04 obj, Max35Text value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "Oblgtn", required = true)
 	protected Obligation4 obligation;
 	/**
-	 * Provides information like the identification of the party or parties
-	 * associated with the collateral agreement, the exposure type and the
-	 * valuation date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,7 +183,7 @@ public class CollateralSubstitutionConfirmationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmObligation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, Obligation4> mmObligation = new MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, Obligation4>() {
 		{
 			xmlTag = "Oblgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -195,18 +194,21 @@ public class CollateralSubstitutionConfirmationV04 {
 			complexType_lazy = () -> Obligation4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralSubstitutionConfirmationV04.class.getMethod("getObligation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Obligation4 getValue(CollateralSubstitutionConfirmationV04 obj) {
+			return obj.getObligation();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionConfirmationV04 obj, Obligation4 value) {
+			obj.setObligation(value);
 		}
 	};
+	@XmlElement(name = "Agrmt")
 	protected Agreement4 agreement;
 	/**
-	 * Agreement details for the over the counter market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,7 +228,7 @@ public class CollateralSubstitutionConfirmationV04 {
 	 * definition} = "Agreement details for the over the counter market."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, Optional<Agreement4>> mmAgreement = new MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, Optional<Agreement4>>() {
 		{
 			xmlTag = "Agrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -237,18 +239,21 @@ public class CollateralSubstitutionConfirmationV04 {
 			complexType_lazy = () -> Agreement4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralSubstitutionConfirmationV04.class.getMethod("getAgreement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Agreement4> getValue(CollateralSubstitutionConfirmationV04 obj) {
+			return obj.getAgreement();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionConfirmationV04 obj, Optional<Agreement4> value) {
+			obj.setAgreement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SbstitnConf", required = true)
 	protected CollateralConfirmation1 substitutionConfirmation;
 	/**
-	 * Provides the status about the collateral substitution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,7 +274,7 @@ public class CollateralSubstitutionConfirmationV04 {
 	 * definition} = "Provides the status about the collateral substitution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSubstitutionConfirmation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, CollateralConfirmation1> mmSubstitutionConfirmation = new MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, CollateralConfirmation1>() {
 		{
 			xmlTag = "SbstitnConf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -280,19 +285,21 @@ public class CollateralSubstitutionConfirmationV04 {
 			complexType_lazy = () -> CollateralConfirmation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralSubstitutionConfirmationV04.class.getMethod("getSubstitutionConfirmation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CollateralConfirmation1 getValue(CollateralSubstitutionConfirmationV04 obj) {
+			return obj.getSubstitutionConfirmation();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionConfirmationV04 obj, CollateralConfirmation1 value) {
+			obj.setSubstitutionConfirmation(value);
 		}
 	};
+	@XmlElement(name = "SplmtryData")
 	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information that can not be captured in the structured fields
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,7 +322,7 @@ public class CollateralSubstitutionConfirmationV04 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, List<SupplementaryData1>> mmSupplementaryData = new MMMessageBuildingBlock<CollateralSubstitutionConfirmationV04, List<SupplementaryData1>>() {
 		{
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -325,12 +332,14 @@ public class CollateralSubstitutionConfirmationV04 {
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralSubstitutionConfirmationV04.class.getMethod("getSupplementaryData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<SupplementaryData1> getValue(CollateralSubstitutionConfirmationV04 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(CollateralSubstitutionConfirmationV04 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
@@ -364,52 +373,52 @@ public class CollateralSubstitutionConfirmationV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public Max35Text getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(Max35Text transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public CollateralSubstitutionConfirmationV04 setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Oblgtn", required = true)
 	public Obligation4 getObligation() {
 		return obligation;
 	}
 
-	public void setObligation(Obligation4 obligation) {
-		this.obligation = obligation;
+	public CollateralSubstitutionConfirmationV04 setObligation(Obligation4 obligation) {
+		this.obligation = Objects.requireNonNull(obligation);
+		return this;
 	}
 
-	@XmlElement(name = "Agrmt")
-	public Agreement4 getAgreement() {
-		return agreement;
+	public Optional<Agreement4> getAgreement() {
+		return agreement == null ? Optional.empty() : Optional.of(agreement);
 	}
 
-	public void setAgreement(Agreement4 agreement) {
+	public CollateralSubstitutionConfirmationV04 setAgreement(Agreement4 agreement) {
 		this.agreement = agreement;
+		return this;
 	}
 
-	@XmlElement(name = "SbstitnConf", required = true)
 	public CollateralConfirmation1 getSubstitutionConfirmation() {
 		return substitutionConfirmation;
 	}
 
-	public void setSubstitutionConfirmation(CollateralConfirmation1 substitutionConfirmation) {
-		this.substitutionConfirmation = substitutionConfirmation;
+	public CollateralSubstitutionConfirmationV04 setSubstitutionConfirmation(CollateralConfirmation1 substitutionConfirmation) {
+		this.substitutionConfirmation = Objects.requireNonNull(substitutionConfirmation);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public CollateralSubstitutionConfirmationV04 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:colr.012.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:colr.012.001.04")
 	static public class Document {
 		@XmlElement(name = "CollSbstitnConf", required = true)
 		public CollateralSubstitutionConfirmationV04 messageBody;

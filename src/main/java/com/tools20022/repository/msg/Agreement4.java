@@ -31,6 +31,8 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -101,8 +103,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,16 +115,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Agreement details for the over the counter market."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Agreement4", propOrder = {"agreementDetails", "agreementIdentification", "agreementDate", "baseCurrency", "agreementFramework"})
 public class Agreement4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AgrmtDtls", required = true)
 	protected Max140Text agreementDetails;
 	/**
-	 * Full details of the supporting legal agreement under which the margin
-	 * call can be issued and/or governed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,10 +155,10 @@ public class Agreement4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAgreementDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Agreement4, Max140Text> mmAgreementDetails = new MMMessageAttribute<Agreement4, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDescription;
-			componentContext_lazy = () -> Agreement4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Agreement4.mmObject();
 			isDerived = false;
 			xmlTag = "AgrmtDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,11 +168,22 @@ public class Agreement4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(Agreement4 obj) {
+			return obj.getAgreementDetails();
+		}
+
+		@Override
+		public void setValue(Agreement4 obj, Max140Text value) {
+			obj.setAgreementDetails(value);
+		}
 	};
+	@XmlElement(name = "AgrmtId")
 	protected Max140Text agreementIdentification;
 	/**
-	 * Common reference to the agreement between the two counterparties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,10 +213,10 @@ public class Agreement4 {
 	 * "Common reference to the agreement between the two counterparties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAgreementIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Agreement4, Optional<Max140Text>> mmAgreementIdentification = new MMMessageAttribute<Agreement4, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> Agreement4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Agreement4.mmObject();
 			isDerived = false;
 			xmlTag = "AgrmtId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -213,11 +226,22 @@ public class Agreement4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(Agreement4 obj) {
+			return obj.getAgreementIdentification();
+		}
+
+		@Override
+		public void setValue(Agreement4 obj, Optional<Max140Text> value) {
+			obj.setAgreementIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AgrmtDt", required = true)
 	protected ISODate agreementDate;
 	/**
-	 * Date on which the collateral agreement was signed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -246,10 +270,10 @@ public class Agreement4 {
 	 * definition} = "Date on which the collateral agreement was signed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAgreementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Agreement4, ISODate> mmAgreementDate = new MMMessageAttribute<Agreement4, ISODate>() {
 		{
 			businessElementTrace_lazy = () -> Agreement.mmDateSigned;
-			componentContext_lazy = () -> Agreement4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Agreement4.mmObject();
 			isDerived = false;
 			xmlTag = "AgrmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -259,11 +283,22 @@ public class Agreement4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public ISODate getValue(Agreement4 obj) {
+			return obj.getAgreementDate();
+		}
+
+		@Override
+		public void setValue(Agreement4 obj, ISODate value) {
+			obj.setAgreementDate(value);
+		}
 	};
+	@XmlElement(name = "BaseCcy", required = true)
 	protected ActiveCurrencyCode baseCurrency;
 	/**
-	 * Denomination currency as specified in the collateral agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,10 +329,10 @@ public class Agreement4 {
 	 * "Denomination currency as specified in the collateral agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Agreement4, ActiveCurrencyCode> mmBaseCurrency = new MMMessageAttribute<Agreement4, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> CollateralAgreement.mmBaseCurrency;
-			componentContext_lazy = () -> Agreement4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Agreement4.mmObject();
 			isDerived = false;
 			xmlTag = "BaseCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -307,11 +342,22 @@ public class Agreement4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyCode getValue(Agreement4 obj) {
+			return obj.getBaseCurrency();
+		}
+
+		@Override
+		public void setValue(Agreement4 obj, ActiveCurrencyCode value) {
+			obj.setBaseCurrency(value);
+		}
 	};
+	@XmlElement(name = "AgrmtFrmwk")
 	protected AgreementFramework1Choice agreementFramework;
 	/**
-	 * Specifies the underlying master agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -341,10 +387,10 @@ public class Agreement4 {
 	 * definition} = "Specifies the underlying master agreement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAgreementFramework = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Agreement4, Optional<AgreementFramework1Choice>> mmAgreementFramework = new MMMessageAttribute<Agreement4, Optional<AgreementFramework1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralAgreement.mmAssociatedMasterAgreement;
-			componentContext_lazy = () -> Agreement4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Agreement4.mmObject();
 			isDerived = false;
 			xmlTag = "AgrmtFrmwk";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,17 +400,28 @@ public class Agreement4 {
 			minOccurs = 0;
 			complexType_lazy = () -> AgreementFramework1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<AgreementFramework1Choice> getValue(Agreement4 obj) {
+			return obj.getAgreementFramework();
+		}
+
+		@Override
+		public void setValue(Agreement4 obj, Optional<AgreementFramework1Choice> value) {
+			obj.setAgreementFramework(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Agreement4.mmAgreementDetails, Agreement4.mmAgreementIdentification, Agreement4.mmAgreementDate, Agreement4.mmBaseCurrency, Agreement4.mmAgreementFramework);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Agreement4.mmAgreementDetails, com.tools20022.repository.msg.Agreement4.mmAgreementIdentification,
+						com.tools20022.repository.msg.Agreement4.mmAgreementDate, com.tools20022.repository.msg.Agreement4.mmBaseCurrency, com.tools20022.repository.msg.Agreement4.mmAgreementFramework);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MarginCallRequestV04.mmAgreement, InterestPaymentResponseV04.mmAgreement, CollateralSubstitutionResponseV04.mmAgreement, MarginCallResponseV04.mmAgreement,
 						InterestPaymentStatementV04.mmAgreement, CollateralSubstitutionConfirmationV04.mmAgreement, InterestPaymentRequestV04.mmAgreement, CollateralSubstitutionRequestV04.mmAgreement,
 						CollateralAndExposureReportV03.mmAgreement, CollateralProposalV05.mmAgreement);
 				trace_lazy = () -> CollateralAgreement.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Agreement4";
 				definition = "Agreement details for the over the counter market.";
@@ -373,48 +430,48 @@ public class Agreement4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AgrmtDtls", required = true)
 	public Max140Text getAgreementDetails() {
 		return agreementDetails;
 	}
 
-	public void setAgreementDetails(Max140Text agreementDetails) {
-		this.agreementDetails = agreementDetails;
+	public Agreement4 setAgreementDetails(Max140Text agreementDetails) {
+		this.agreementDetails = Objects.requireNonNull(agreementDetails);
+		return this;
 	}
 
-	@XmlElement(name = "AgrmtId")
-	public Max140Text getAgreementIdentification() {
-		return agreementIdentification;
+	public Optional<Max140Text> getAgreementIdentification() {
+		return agreementIdentification == null ? Optional.empty() : Optional.of(agreementIdentification);
 	}
 
-	public void setAgreementIdentification(Max140Text agreementIdentification) {
+	public Agreement4 setAgreementIdentification(Max140Text agreementIdentification) {
 		this.agreementIdentification = agreementIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "AgrmtDt", required = true)
 	public ISODate getAgreementDate() {
 		return agreementDate;
 	}
 
-	public void setAgreementDate(ISODate agreementDate) {
-		this.agreementDate = agreementDate;
+	public Agreement4 setAgreementDate(ISODate agreementDate) {
+		this.agreementDate = Objects.requireNonNull(agreementDate);
+		return this;
 	}
 
-	@XmlElement(name = "BaseCcy", required = true)
 	public ActiveCurrencyCode getBaseCurrency() {
 		return baseCurrency;
 	}
 
-	public void setBaseCurrency(ActiveCurrencyCode baseCurrency) {
-		this.baseCurrency = baseCurrency;
+	public Agreement4 setBaseCurrency(ActiveCurrencyCode baseCurrency) {
+		this.baseCurrency = Objects.requireNonNull(baseCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "AgrmtFrmwk")
-	public AgreementFramework1Choice getAgreementFramework() {
-		return agreementFramework;
+	public Optional<AgreementFramework1Choice> getAgreementFramework() {
+		return agreementFramework == null ? Optional.empty() : Optional.of(agreementFramework);
 	}
 
-	public void setAgreementFramework(AgreementFramework1Choice agreementFramework) {
+	public Agreement4 setAgreementFramework(AgreementFramework1Choice agreementFramework) {
 		this.agreementFramework = agreementFramework;
+		return this;
 	}
 }

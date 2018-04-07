@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.OptionNumberCode#Unsolicited
- * OptionNumberCode.mmUnsolicited}</li>
+ * OptionNumberCode.Unsolicited}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -51,8 +51,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -74,8 +74,8 @@ public class OptionNumberCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * The CorporateActionInstruction is unsolicited, ie, the instruction has
-	 * not been preceded by an CorporateActionNotification.
+	 * The corporate action instruction is unsolicited, that is, the instruction
+	 * has not been preceded by a corporate action notification.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -93,7 +93,7 @@ public class OptionNumberCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "The CorporateActionInstruction is unsolicited, ie, the instruction has not been preceded by an CorporateActionNotification."
+	 * "The corporate action instruction is unsolicited, that is, the instruction has not been preceded by a corporate action notification."
 	 * </li>
 	 * </ul>
 	 */
@@ -101,7 +101,7 @@ public class OptionNumberCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unsolicited";
-			definition = "The CorporateActionInstruction is unsolicited, ie, the instruction has not been preceded by an CorporateActionNotification.";
+			definition = "The corporate action instruction is unsolicited, that is, the instruction has not been preceded by a corporate action notification.";
 			owner_lazy = () -> com.tools20022.repository.codeset.OptionNumberCode.mmObject();
 			codeName = "UNSO";
 		}
@@ -114,7 +114,7 @@ public class OptionNumberCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNSO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionNumberCode";

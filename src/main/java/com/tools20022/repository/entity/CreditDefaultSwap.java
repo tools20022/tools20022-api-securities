@@ -30,9 +30,9 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CreditDefaultSwapDerivative4;
 import com.tools20022.repository.msg.CreditDefaultSwapIndex2;
 import com.tools20022.repository.msg.CreditDefaultSwapSingleName2;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Credit default swap is a particular type of swap designed to transfer the
@@ -100,8 +100,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,8 +119,8 @@ public class CreditDefaultSwap extends Swaps {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODate rollDate;
 	/**
-	 * Roll date of the underlying asset as established by the asset issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +152,7 @@ public class CreditDefaultSwap extends Swaps {
 	 * "Roll date of the underlying asset as established by the asset issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRollDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CreditDefaultSwap, ISODate> mmRollDate = new MMBusinessAttribute<CreditDefaultSwap, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditDefaultSwapIndex2.mmNextRollDate);
 			isDerived = false;
@@ -165,18 +165,20 @@ public class CreditDefaultSwap extends Swaps {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditDefaultSwap.class.getMethod("getRollDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(CreditDefaultSwap obj) {
+			return obj.getRollDate();
+		}
+
+		@Override
+		public void setValue(CreditDefaultSwap obj, ISODate value) {
+			obj.setRollDate(value);
 		}
 	};
 	protected ISOYearMonth rollMonth;
 	/**
-	 * Roll month of the underlying asset as established by the asset issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,7 +203,7 @@ public class CreditDefaultSwap extends Swaps {
 	 * "Roll month of the underlying asset as established by the asset issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRollMonth = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CreditDefaultSwap, ISOYearMonth> mmRollMonth = new MMBusinessAttribute<CreditDefaultSwap, ISOYearMonth>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditDefaultSwap.mmObject();
@@ -213,18 +215,20 @@ public class CreditDefaultSwap extends Swaps {
 			simpleType_lazy = () -> ISOYearMonth.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditDefaultSwap.class.getMethod("getRollMonth", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISOYearMonth getValue(CreditDefaultSwap obj) {
+			return obj.getRollMonth();
+		}
+
+		@Override
+		public void setValue(CreditDefaultSwap obj, ISOYearMonth value) {
+			obj.setRollMonth(value);
 		}
 	};
 	protected Number series;
 	/**
-	 * Series number of the composition of the derivative if applicable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,7 +260,7 @@ public class CreditDefaultSwap extends Swaps {
 	 * "Series number of the composition of the derivative if applicable."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSeries = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CreditDefaultSwap, Number> mmSeries = new MMBusinessAttribute<CreditDefaultSwap, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CreditDefaultSwapIndex2.mmSeries);
 			isDerived = false;
@@ -269,19 +273,21 @@ public class CreditDefaultSwap extends Swaps {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditDefaultSwap.class.getMethod("getSeries", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(CreditDefaultSwap obj) {
+			return obj.getSeries();
+		}
+
+		@Override
+		public void setValue(CreditDefaultSwap obj, Number value) {
+			obj.setSeries(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditDefaultSwap";
 				definition = "Credit default swap is a particular type of swap designed to transfer the credit exposure of fixed income products between two or more parties. ";
@@ -304,23 +310,26 @@ public class CreditDefaultSwap extends Swaps {
 		return rollDate;
 	}
 
-	public void setRollDate(ISODate rollDate) {
-		this.rollDate = rollDate;
+	public CreditDefaultSwap setRollDate(ISODate rollDate) {
+		this.rollDate = Objects.requireNonNull(rollDate);
+		return this;
 	}
 
 	public ISOYearMonth getRollMonth() {
 		return rollMonth;
 	}
 
-	public void setRollMonth(ISOYearMonth rollMonth) {
-		this.rollMonth = rollMonth;
+	public CreditDefaultSwap setRollMonth(ISOYearMonth rollMonth) {
+		this.rollMonth = Objects.requireNonNull(rollMonth);
+		return this;
 	}
 
 	public Number getSeries() {
 		return series;
 	}
 
-	public void setSeries(Number series) {
-		this.series = series;
+	public CreditDefaultSwap setSeries(Number series) {
+		this.series = Objects.requireNonNull(series);
+		return this;
 	}
 }

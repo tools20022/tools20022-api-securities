@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,28 +39,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#Margin
- * SecuritiesAccountPurposeTypeCode.mmMargin}</li>
+ * SecuritiesAccountPurposeTypeCode.Margin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#ShortSale
- * SecuritiesAccountPurposeTypeCode.mmShortSale}</li>
+ * SecuritiesAccountPurposeTypeCode.ShortSale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#Abroad
- * SecuritiesAccountPurposeTypeCode.mmAbroad}</li>
+ * SecuritiesAccountPurposeTypeCode.Abroad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#Centralised
- * SecuritiesAccountPurposeTypeCode.mmCentralised}</li>
+ * SecuritiesAccountPurposeTypeCode.Centralised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#CashDVP
- * SecuritiesAccountPurposeTypeCode.mmCashDVP}</li>
+ * SecuritiesAccountPurposeTypeCode.CashDVP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#Physical
- * SecuritiesAccountPurposeTypeCode.mmPhysical}</li>
+ * SecuritiesAccountPurposeTypeCode.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#Fungible
- * SecuritiesAccountPurposeTypeCode.mmFungible}</li>
+ * SecuritiesAccountPurposeTypeCode.Fungible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesAccountPurposeTypeCode#NonFungible
- * SecuritiesAccountPurposeTypeCode.mmNonFungible}</li>
+ * SecuritiesAccountPurposeTypeCode.NonFungible}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -73,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -106,6 +107,9 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MARG"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::SAFE//MARG</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -118,6 +122,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 */
 	public static final SecuritiesAccountPurposeTypeCode Margin = new SecuritiesAccountPurposeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::SAFE//MARG"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Margin";
 			definition = "Account is used when financing is done by the broker.";
@@ -136,6 +141,9 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SHOR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::SAFE//SHOR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -148,6 +156,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 */
 	public static final SecuritiesAccountPurposeTypeCode ShortSale = new SecuritiesAccountPurposeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::SAFE//SHOR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortSale";
 			definition = "Account is used for short sale orders.";
@@ -167,6 +176,9 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ABRD"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::SAFE//ABRD</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -181,6 +193,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 */
 	public static final SecuritiesAccountPurposeTypeCode Abroad = new SecuritiesAccountPurposeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::SAFE//ABRD"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Abroad";
 			definition = "Account is located in a financial institution outside the country where the transaction is taking place.";
@@ -199,6 +212,9 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CEND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::SAFE//CEND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -212,6 +228,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 */
 	public static final SecuritiesAccountPurposeTypeCode Centralised = new SecuritiesAccountPurposeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::SAFE//CEND"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Centralised";
 			definition = "Account and all its related positions are held in one location.";
@@ -231,6 +248,9 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DVPA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::SAFE//DVPA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -245,6 +265,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 */
 	public static final SecuritiesAccountPurposeTypeCode CashDVP = new SecuritiesAccountPurposeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::SAFE//DVPA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDVP";
 			definition = "Account is used for settlement upon delivery, or a collection on a delivery basis.";
@@ -263,6 +284,9 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PHYS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::SAFE//PHYS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -275,6 +299,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	 */
 	public static final SecuritiesAccountPurposeTypeCode Physical = new SecuritiesAccountPurposeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::SAFE//PHYS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Physical";
 			definition = "Account is used for physical domestic safekeeping.";
@@ -352,7 +377,7 @@ public class SecuritiesAccountPurposeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MARG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesAccountPurposeTypeCode";

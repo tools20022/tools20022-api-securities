@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSafekeepingPlaceFormatOrLEIRule#forSafeKeepingPlace1
+ * ConstraintSafekeepingPlaceFormatOrLEIRule.forSafeKeepingPlace1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "SafeKeepingPlace1", propOrder = {"safekeepingPlaceFormat", "LEI"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "SafeKeepingPlace1", propOrder = {"safekeepingPlaceFormat", "lEI"})
 public class SafeKeepingPlace1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SfkpgPlcFrmt")
 	protected SafekeepingPlaceFormat10Choice safekeepingPlaceFormat;
 	/**
-	 * Unique identification of the party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -109,10 +119,10 @@ public class SafeKeepingPlace1 {
 	 * definition} = "Unique identification of the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSafekeepingPlaceFormat = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SafeKeepingPlace1, Optional<SafekeepingPlaceFormat10Choice>> mmSafekeepingPlaceFormat = new MMMessageAssociationEnd<SafeKeepingPlace1, Optional<SafekeepingPlaceFormat10Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
-			componentContext_lazy = () -> SafeKeepingPlace1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafeKeepingPlace1.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgPlcFrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,12 +133,22 @@ public class SafeKeepingPlace1 {
 			isComposite = true;
 			type_lazy = () -> SafekeepingPlaceFormat10Choice.mmObject();
 		}
+
+		@Override
+		public Optional<SafekeepingPlaceFormat10Choice> getValue(SafeKeepingPlace1 obj) {
+			return obj.getSafekeepingPlaceFormat();
+		}
+
+		@Override
+		public void setValue(SafeKeepingPlace1 obj, Optional<SafekeepingPlaceFormat10Choice> value) {
+			obj.setSafekeepingPlaceFormat(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LEI")
 	protected LEIIdentifier lEI;
 	/**
-	 * Legal entity identification as an alternate identification for a place of
-	 * safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,9 +176,9 @@ public class SafeKeepingPlace1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLEI = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafeKeepingPlace1, Optional<LEIIdentifier>> mmLEI = new MMMessageAttribute<SafeKeepingPlace1, Optional<LEIIdentifier>>() {
 		{
-			componentContext_lazy = () -> SafeKeepingPlace1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafeKeepingPlace1.mmObject();
 			isDerived = false;
 			xmlTag = "LEI";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,14 +188,25 @@ public class SafeKeepingPlace1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
 		}
+
+		@Override
+		public Optional<LEIIdentifier> getValue(SafeKeepingPlace1 obj) {
+			return obj.getLEI();
+		}
+
+		@Override
+		public void setValue(SafeKeepingPlace1 obj, Optional<LEIIdentifier> value) {
+			obj.setLEI(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SafeKeepingPlace1.mmSafekeepingPlaceFormat, SafeKeepingPlace1.mmLEI);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SafeKeepingPlace1.mmSafekeepingPlaceFormat, com.tools20022.repository.msg.SafeKeepingPlace1.mmLEI);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSafekeepingPlaceFormatOrLEIRule.forSafeKeepingPlace1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafeKeepingPlace1";
 				definition = "Place where the securities are safe-kept, physically or notionally. This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD).";
@@ -184,21 +215,21 @@ public class SafeKeepingPlace1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SfkpgPlcFrmt")
-	public SafekeepingPlaceFormat10Choice getSafekeepingPlaceFormat() {
-		return safekeepingPlaceFormat;
+	public Optional<SafekeepingPlaceFormat10Choice> getSafekeepingPlaceFormat() {
+		return safekeepingPlaceFormat == null ? Optional.empty() : Optional.of(safekeepingPlaceFormat);
 	}
 
-	public void setSafekeepingPlaceFormat(SafekeepingPlaceFormat10Choice safekeepingPlaceFormat) {
+	public SafeKeepingPlace1 setSafekeepingPlaceFormat(SafekeepingPlaceFormat10Choice safekeepingPlaceFormat) {
 		this.safekeepingPlaceFormat = safekeepingPlaceFormat;
+		return this;
 	}
 
-	@XmlElement(name = "LEI")
-	public LEIIdentifier getLEI() {
-		return lEI;
+	public Optional<LEIIdentifier> getLEI() {
+		return lEI == null ? Optional.empty() : Optional.of(lEI);
 	}
 
-	public void setLEI(LEIIdentifier lEI) {
+	public SafeKeepingPlace1 setLEI(LEIIdentifier lEI) {
 		this.lEI = lEI;
+		return this;
 	}
 }

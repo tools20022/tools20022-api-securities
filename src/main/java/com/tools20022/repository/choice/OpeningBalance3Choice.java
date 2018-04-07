@@ -24,13 +24,14 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FinancialInstrumentQuantity1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * Choice of opening and intermediary balances
+ * Choice of opening and intermediary balances.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,18 +59,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "OpeningBalance3Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of opening and intermediary balances"</li>
+ * definition} = "Choice of opening and intermediary balances."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "OpeningBalance3Choice", propOrder = {"firstOpeningBalance", "intermediaryOpeningBalance"})
 public class OpeningBalance3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrstOpngBal", required = true)
 	protected FinancialInstrumentQuantity1 firstOpeningBalance;
 	/**
-	 * Opening balance of the financial instrument in the statement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class OpeningBalance3Choice {
 	 * "Opening balance of the financial instrument in the statement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstOpeningBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OpeningBalance3Choice, FinancialInstrumentQuantity1> mmFirstOpeningBalance = new MMMessageAttribute<OpeningBalance3Choice, FinancialInstrumentQuantity1>() {
 		{
-			componentContext_lazy = () -> OpeningBalance3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.OpeningBalance3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "FrstOpngBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,12 +110,22 @@ public class OpeningBalance3Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1 getValue(OpeningBalance3Choice obj) {
+			return obj.getFirstOpeningBalance();
+		}
+
+		@Override
+		public void setValue(OpeningBalance3Choice obj, FinancialInstrumentQuantity1 value) {
+			obj.setFirstOpeningBalance(value);
+		}
 	};
+	@XmlElement(name = "IntrmyOpngBal", required = true)
 	protected FinancialInstrumentQuantity1 intermediaryOpeningBalance;
 	/**
-	 * Opening balance of this page only. It must be the intermediary closing
-	 * balance of the previous page (part of the same statement).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,9 +153,9 @@ public class OpeningBalance3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIntermediaryOpeningBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<OpeningBalance3Choice, FinancialInstrumentQuantity1> mmIntermediaryOpeningBalance = new MMMessageAttribute<OpeningBalance3Choice, FinancialInstrumentQuantity1>() {
 		{
-			componentContext_lazy = () -> OpeningBalance3Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.OpeningBalance3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IntrmyOpngBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,36 +165,46 @@ public class OpeningBalance3Choice {
 			minOccurs = 1;
 			complexType_lazy = () -> FinancialInstrumentQuantity1.mmObject();
 		}
+
+		@Override
+		public FinancialInstrumentQuantity1 getValue(OpeningBalance3Choice obj) {
+			return obj.getIntermediaryOpeningBalance();
+		}
+
+		@Override
+		public void setValue(OpeningBalance3Choice obj, FinancialInstrumentQuantity1 value) {
+			obj.setIntermediaryOpeningBalance(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(OpeningBalance3Choice.mmFirstOpeningBalance, OpeningBalance3Choice.mmIntermediaryOpeningBalance);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.OpeningBalance3Choice.mmFirstOpeningBalance, com.tools20022.repository.choice.OpeningBalance3Choice.mmIntermediaryOpeningBalance);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OpeningBalance3Choice";
-				definition = "Choice of opening and intermediary balances";
+				definition = "Choice of opening and intermediary balances.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrstOpngBal", required = true)
 	public FinancialInstrumentQuantity1 getFirstOpeningBalance() {
 		return firstOpeningBalance;
 	}
 
-	public void setFirstOpeningBalance(FinancialInstrumentQuantity1 firstOpeningBalance) {
-		this.firstOpeningBalance = firstOpeningBalance;
+	public OpeningBalance3Choice setFirstOpeningBalance(FinancialInstrumentQuantity1 firstOpeningBalance) {
+		this.firstOpeningBalance = Objects.requireNonNull(firstOpeningBalance);
+		return this;
 	}
 
-	@XmlElement(name = "IntrmyOpngBal", required = true)
 	public FinancialInstrumentQuantity1 getIntermediaryOpeningBalance() {
 		return intermediaryOpeningBalance;
 	}
 
-	public void setIntermediaryOpeningBalance(FinancialInstrumentQuantity1 intermediaryOpeningBalance) {
-		this.intermediaryOpeningBalance = intermediaryOpeningBalance;
+	public OpeningBalance3Choice setIntermediaryOpeningBalance(FinancialInstrumentQuantity1 intermediaryOpeningBalance) {
+		this.intermediaryOpeningBalance = Objects.requireNonNull(intermediaryOpeningBalance);
+		return this;
 	}
 }

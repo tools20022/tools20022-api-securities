@@ -29,6 +29,8 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecuritiesInstrumentClassification2", propOrder = {"identifier", "modification", "validityPeriod", "lastUpdated"})
 public class SecuritiesInstrumentClassification2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Idr", required = true)
 	protected CFIOct2015Identifier identifier;
 	/**
-	 * Identifier of the financial instrument classification type code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,9 +123,9 @@ public class SecuritiesInstrumentClassification2 {
 	 * "Identifier of the financial instrument classification type code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesInstrumentClassification2, CFIOct2015Identifier> mmIdentifier = new MMMessageAttribute<SecuritiesInstrumentClassification2, CFIOct2015Identifier>() {
 		{
-			componentContext_lazy = () -> SecuritiesInstrumentClassification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmObject();
 			isDerived = false;
 			xmlTag = "Idr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,11 +135,22 @@ public class SecuritiesInstrumentClassification2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CFIOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public CFIOct2015Identifier getValue(SecuritiesInstrumentClassification2 obj) {
+			return obj.getIdentifier();
+		}
+
+		@Override
+		public void setValue(SecuritiesInstrumentClassification2 obj, CFIOct2015Identifier value) {
+			obj.setIdentifier(value);
+		}
 	};
+	@XmlElement(name = "Mod")
 	protected Modification1Code modification;
 	/**
-	 * Modification status for the record compared to the previous report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,9 +177,9 @@ public class SecuritiesInstrumentClassification2 {
 	 * "Modification status for the record compared to the previous report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesInstrumentClassification2, Optional<Modification1Code>> mmModification = new MMMessageAttribute<SecuritiesInstrumentClassification2, Optional<Modification1Code>>() {
 		{
-			componentContext_lazy = () -> SecuritiesInstrumentClassification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmObject();
 			isDerived = false;
 			xmlTag = "Mod";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,15 +189,22 @@ public class SecuritiesInstrumentClassification2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
+
+		@Override
+		public Optional<Modification1Code> getValue(SecuritiesInstrumentClassification2 obj) {
+			return obj.getModification();
+		}
+
+		@Override
+		public void setValue(SecuritiesInstrumentClassification2 obj, Optional<Modification1Code> value) {
+			obj.setModification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VldtyPrd", required = true)
 	protected Period4Choice validityPeriod;
 	/**
-	 * Details the validity of the specific record.<br>
-	 * <br>
-	 * Usage:<br>
-	 * Within MiFIR, the FromDate is populated while the instrument is valid.
-	 * From Date To Date is only populated when the record is being invalidated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -205,28 +226,39 @@ public class SecuritiesInstrumentClassification2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Details the validity of the specific record.\r\n\r\nUsage:\r\nWithin MiFIR, the FromDate is populated while the instrument is valid.  From Date To Date is only populated when the record is being invalidated."
+	 * "Details the validity of the specific record.\r\n\r\nUsage:\r\nWithin MiFIR, the FromDate is populated while the instrument is valid. From Date To Date is only populated when the record is being invalidated."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmValidityPeriod = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SecuritiesInstrumentClassification2, Period4Choice> mmValidityPeriod = new MMMessageAssociationEnd<SecuritiesInstrumentClassification2, Period4Choice>() {
 		{
-			componentContext_lazy = () -> SecuritiesInstrumentClassification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmObject();
 			isDerived = false;
 			xmlTag = "VldtyPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidityPeriod";
-			definition = "Details the validity of the specific record.\r\n\r\nUsage:\r\nWithin MiFIR, the FromDate is populated while the instrument is valid.  From Date To Date is only populated when the record is being invalidated.";
+			definition = "Details the validity of the specific record.\r\n\r\nUsage:\r\nWithin MiFIR, the FromDate is populated while the instrument is valid. From Date To Date is only populated when the record is being invalidated.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Period4Choice.mmObject();
 		}
+
+		@Override
+		public Period4Choice getValue(SecuritiesInstrumentClassification2 obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesInstrumentClassification2 obj, Period4Choice value) {
+			obj.setValidityPeriod(value);
+		}
 	};
+	@XmlElement(name = "LastUpdtd")
 	protected ISODate lastUpdated;
 	/**
-	 * Date when this record was last modified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -251,9 +283,9 @@ public class SecuritiesInstrumentClassification2 {
 	 * definition} = "Date when this record was last modified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLastUpdated = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecuritiesInstrumentClassification2, Optional<ISODate>> mmLastUpdated = new MMMessageAttribute<SecuritiesInstrumentClassification2, Optional<ISODate>>() {
 		{
-			componentContext_lazy = () -> SecuritiesInstrumentClassification2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmObject();
 			isDerived = false;
 			xmlTag = "LastUpdtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -263,15 +295,25 @@ public class SecuritiesInstrumentClassification2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(SecuritiesInstrumentClassification2 obj) {
+			return obj.getLastUpdated();
+		}
+
+		@Override
+		public void setValue(SecuritiesInstrumentClassification2 obj, Optional<ISODate> value) {
+			obj.setLastUpdated(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecuritiesInstrumentClassification2.mmIdentifier, SecuritiesInstrumentClassification2.mmModification, SecuritiesInstrumentClassification2.mmValidityPeriod,
-						SecuritiesInstrumentClassification2.mmLastUpdated);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmIdentifier, com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmModification,
+						com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmValidityPeriod, com.tools20022.repository.msg.SecuritiesInstrumentClassification2.mmLastUpdated);
 				messageBuildingBlock_lazy = () -> Arrays.asList(FinancialInstrumentReportingInstrumentClassificationReportV01.mmInstrumentClassification);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesInstrumentClassification2";
 				definition = "Details an individuation of the classification type of the financial instrument.";
@@ -280,39 +322,39 @@ public class SecuritiesInstrumentClassification2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Idr", required = true)
 	public CFIOct2015Identifier getIdentifier() {
 		return identifier;
 	}
 
-	public void setIdentifier(CFIOct2015Identifier identifier) {
-		this.identifier = identifier;
+	public SecuritiesInstrumentClassification2 setIdentifier(CFIOct2015Identifier identifier) {
+		this.identifier = Objects.requireNonNull(identifier);
+		return this;
 	}
 
-	@XmlElement(name = "Mod")
-	public Modification1Code getModification() {
-		return modification;
+	public Optional<Modification1Code> getModification() {
+		return modification == null ? Optional.empty() : Optional.of(modification);
 	}
 
-	public void setModification(Modification1Code modification) {
+	public SecuritiesInstrumentClassification2 setModification(Modification1Code modification) {
 		this.modification = modification;
+		return this;
 	}
 
-	@XmlElement(name = "VldtyPrd", required = true)
 	public Period4Choice getValidityPeriod() {
 		return validityPeriod;
 	}
 
-	public void setValidityPeriod(Period4Choice validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public SecuritiesInstrumentClassification2 setValidityPeriod(Period4Choice validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 
-	@XmlElement(name = "LastUpdtd")
-	public ISODate getLastUpdated() {
-		return lastUpdated;
+	public Optional<ISODate> getLastUpdated() {
+		return lastUpdated == null ? Optional.empty() : Optional.of(lastUpdated);
 	}
 
-	public void setLastUpdated(ISODate lastUpdated) {
+	public SecuritiesInstrumentClassification2 setLastUpdated(ISODate lastUpdated) {
 		this.lastUpdated = lastUpdated;
+		return this;
 	}
 }

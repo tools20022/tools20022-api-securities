@@ -38,18 +38,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason3Code#AccountServicerDeadlineMissed
- * DeniedReason3Code.mmAccountServicerDeadlineMissed}</li>
+ * DeniedReason3Code.AccountServicerDeadlineMissed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason3Code#CallDeniedSinceAlreadyApplied
- * DeniedReason3Code.mmCallDeniedSinceAlreadyApplied}</li>
+ * DeniedReason3Code.CallDeniedSinceAlreadyApplied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason3Code#DeniedSinceNotAllowed
- * DeniedReason3Code.mmDeniedSinceNotAllowed}</li>
+ * DeniedReason3Code.DeniedSinceNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DeniedReason3Code#MarketDeadlineMissed
- * DeniedReason3Code.mmMarketDeadlineMissed}</li>
+ * DeniedReason3Code.MarketDeadlineMissed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DeniedReason3Code#Other
- * DeniedReason3Code.mmOther}</li>
+ * DeniedReason3Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -208,7 +208,7 @@ public class DeniedReason3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADEA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeniedReason3Code";

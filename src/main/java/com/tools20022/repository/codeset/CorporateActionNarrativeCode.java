@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrativeCode#TaxationConditions
- * CorporateActionNarrativeCode.mmTaxationConditions}</li>
+ * CorporateActionNarrativeCode.TaxationConditions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrativeCode#RegistrationDetails
- * CorporateActionNarrativeCode.mmRegistrationDetails}</li>
+ * CorporateActionNarrativeCode.RegistrationDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrativeCode#WithholdingTaxReliefCertification
- * CorporateActionNarrativeCode.mmWithholdingTaxReliefCertification}</li>
+ * CorporateActionNarrativeCode.WithholdingTaxReliefCertification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrativeCode#ICSDRefusalOfMarkUpDownConfirmation
- * CorporateActionNarrativeCode.mmICSDRefusalOfMarkUpDownConfirmation}</li>
+ * CorporateActionNarrativeCode.ICSDRefusalOfMarkUpDownConfirmation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrativeCode#ChasingOfPriorAuthorization
- * CorporateActionNarrativeCode.mmChasingOfPriorAuthorization}</li>
+ * CorporateActionNarrativeCode.ChasingOfPriorAuthorization}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionNarrativeCode#ConfirmationOfHoldingTransfer
- * CorporateActionNarrativeCode.mmConfirmationOfHoldingTransfer}</li>
+ * CorporateActionNarrativeCode.ConfirmationOfHoldingTransfer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -67,8 +67,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -207,7 +207,7 @@ public class CorporateActionNarrativeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "In the context of  a corporate action, an International Central Securities Depository (ICSD)  refuses a mark-up/mark-down confirmation sent by the account servicer."
+	 * "In the context of a corporate action, an International Central Securities Depository (ICSD) refuses a mark-up/mark-down confirmation sent by the account servicer."
 	 * </li>
 	 * </ul>
 	 */
@@ -215,7 +215,7 @@ public class CorporateActionNarrativeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ICSDRefusalOfMarkUpDownConfirmation";
-			definition = "In the context of  a corporate action, an International Central Securities Depository (ICSD)  refuses a mark-up/mark-down confirmation sent by the account servicer.";
+			definition = "In the context of a corporate action, an International Central Securities Depository (ICSD) refuses a mark-up/mark-down confirmation sent by the account servicer.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionNarrativeCode.mmObject();
 			codeName = "RFMC";
 		}
@@ -295,7 +295,7 @@ public class CorporateActionNarrativeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TAXE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNarrativeCode";

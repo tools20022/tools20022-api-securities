@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.ProceedsDefinition;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies corporate action dates."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionDate5", propOrder = {"foreignExchangeRateFixingDate", "valueDate", "paymentDate", "earliestPaymentDate"})
 public class CorporateActionDate5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FXRateFxgDt")
 	protected DateFormat4Choice foreignExchangeRateFixingDate;
 	/**
-	 * Date/time at which a foreign exchange rate will be determined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,10 +116,10 @@ public class CorporateActionDate5 {
 	 * "Date/time at which a foreign exchange rate will be determined."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmForeignExchangeRateFixingDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>> mmForeignExchangeRateFixingDate = new MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> FixingCondition.mmFixingDateTime;
-			componentContext_lazy = () -> CorporateActionDate5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionDate5.mmObject();
 			isDerived = false;
 			xmlTag = "FXRateFxgDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,13 +129,22 @@ public class CorporateActionDate5 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat4Choice> getValue(CorporateActionDate5 obj) {
+			return obj.getForeignExchangeRateFixingDate();
+		}
+
+		@Override
+		public void setValue(CorporateActionDate5 obj, Optional<DateFormat4Choice> value) {
+			obj.setForeignExchangeRateFixingDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ValDt")
 	protected DateFormat4Choice valueDate;
 	/**
-	 * Date/time at which assets become available to the account owner (in a
-	 * credit entry), or cease to be available to the account owner (in a debit
-	 * entry).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,10 +177,10 @@ public class CorporateActionDate5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>> mmValueDate = new MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> ProceedsDefinition.mmValueDate;
-			componentContext_lazy = () -> CorporateActionDate5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionDate5.mmObject();
 			isDerived = false;
 			xmlTag = "ValDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,12 +190,22 @@ public class CorporateActionDate5 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat4Choice> getValue(CorporateActionDate5 obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(CorporateActionDate5 obj, Optional<DateFormat4Choice> value) {
+			obj.setValueDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PmtDt")
 	protected DateFormat4Choice paymentDate;
 	/**
-	 * Date/time at which the distribution is due to take place (cash and/or
-	 * securities).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,10 +238,10 @@ public class CorporateActionDate5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPaymentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>> mmPaymentDate = new MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionDistribution.mmMovementDate;
-			componentContext_lazy = () -> CorporateActionDate5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionDate5.mmObject();
 			isDerived = false;
 			xmlTag = "PmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -230,12 +251,22 @@ public class CorporateActionDate5 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat4Choice> getValue(CorporateActionDate5 obj) {
+			return obj.getPaymentDate();
+		}
+
+		@Override
+		public void setValue(CorporateActionDate5 obj, Optional<DateFormat4Choice> value) {
+			obj.setPaymentDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EarlstPmtDt")
 	protected DateFormat4Choice earliestPaymentDate;
 	/**
-	 * Date/time at which a payment can be made, eg, if payment date is a
-	 * non-business day or to indicate the first payment date of an offer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,10 +299,10 @@ public class CorporateActionDate5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEarliestPaymentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>> mmEarliestPaymentDate = new MMMessageAttribute<CorporateActionDate5, Optional<DateFormat4Choice>>() {
 		{
 			businessElementTrace_lazy = () -> ProceedsDefinition.mmEarliestPaymentDate;
-			componentContext_lazy = () -> CorporateActionDate5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionDate5.mmObject();
 			isDerived = false;
 			xmlTag = "EarlstPmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -281,14 +312,25 @@ public class CorporateActionDate5 {
 			minOccurs = 0;
 			complexType_lazy = () -> DateFormat4Choice.mmObject();
 		}
+
+		@Override
+		public Optional<DateFormat4Choice> getValue(CorporateActionDate5 obj) {
+			return obj.getEarliestPaymentDate();
+		}
+
+		@Override
+		public void setValue(CorporateActionDate5 obj, Optional<DateFormat4Choice> value) {
+			obj.setEarliestPaymentDate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionDate5.mmForeignExchangeRateFixingDate, CorporateActionDate5.mmValueDate, CorporateActionDate5.mmPaymentDate, CorporateActionDate5.mmEarliestPaymentDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionDate5.mmForeignExchangeRateFixingDate, com.tools20022.repository.msg.CorporateActionDate5.mmValueDate,
+						com.tools20022.repository.msg.CorporateActionDate5.mmPaymentDate, com.tools20022.repository.msg.CorporateActionDate5.mmEarliestPaymentDate);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionDate5";
 				definition = "Specifies corporate action dates.";
@@ -297,39 +339,39 @@ public class CorporateActionDate5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FXRateFxgDt")
-	public DateFormat4Choice getForeignExchangeRateFixingDate() {
-		return foreignExchangeRateFixingDate;
+	public Optional<DateFormat4Choice> getForeignExchangeRateFixingDate() {
+		return foreignExchangeRateFixingDate == null ? Optional.empty() : Optional.of(foreignExchangeRateFixingDate);
 	}
 
-	public void setForeignExchangeRateFixingDate(DateFormat4Choice foreignExchangeRateFixingDate) {
+	public CorporateActionDate5 setForeignExchangeRateFixingDate(DateFormat4Choice foreignExchangeRateFixingDate) {
 		this.foreignExchangeRateFixingDate = foreignExchangeRateFixingDate;
+		return this;
 	}
 
-	@XmlElement(name = "ValDt")
-	public DateFormat4Choice getValueDate() {
-		return valueDate;
+	public Optional<DateFormat4Choice> getValueDate() {
+		return valueDate == null ? Optional.empty() : Optional.of(valueDate);
 	}
 
-	public void setValueDate(DateFormat4Choice valueDate) {
+	public CorporateActionDate5 setValueDate(DateFormat4Choice valueDate) {
 		this.valueDate = valueDate;
+		return this;
 	}
 
-	@XmlElement(name = "PmtDt")
-	public DateFormat4Choice getPaymentDate() {
-		return paymentDate;
+	public Optional<DateFormat4Choice> getPaymentDate() {
+		return paymentDate == null ? Optional.empty() : Optional.of(paymentDate);
 	}
 
-	public void setPaymentDate(DateFormat4Choice paymentDate) {
+	public CorporateActionDate5 setPaymentDate(DateFormat4Choice paymentDate) {
 		this.paymentDate = paymentDate;
+		return this;
 	}
 
-	@XmlElement(name = "EarlstPmtDt")
-	public DateFormat4Choice getEarliestPaymentDate() {
-		return earliestPaymentDate;
+	public Optional<DateFormat4Choice> getEarliestPaymentDate() {
+		return earliestPaymentDate == null ? Optional.empty() : Optional.of(earliestPaymentDate);
 	}
 
-	public void setEarliestPaymentDate(DateFormat4Choice earliestPaymentDate) {
+	public CorporateActionDate5 setEarliestPaymentDate(DateFormat4Choice earliestPaymentDate) {
 		this.earliestPaymentDate = earliestPaymentDate;
+		return this;
 	}
 }

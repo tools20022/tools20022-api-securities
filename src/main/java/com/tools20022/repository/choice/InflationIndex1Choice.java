@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.SecuritiesIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidISINRule#forInflationIndex1Choice
+ * ConstraintValidISINRule.forInflationIndex1Choice}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,19 +70,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "InflationIndex1Choice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of an inflation index identification. "</li>
+ * definition} = "Choice of an inflation index identification."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "InflationIndex1Choice", propOrder = {"ISIN", "name"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "InflationIndex1Choice", propOrder = {"iSIN", "name"})
 public class InflationIndex1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ISIN", required = true)
 	protected ISINOct2015Identifier iSIN;
 	/**
-	 * International Securities Identification Number (ISIN) of the inflation
-	 * index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,10 +115,10 @@ public class InflationIndex1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmISIN = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InflationIndex1Choice, ISINOct2015Identifier> mmISIN = new MMMessageAttribute<InflationIndex1Choice, ISINOct2015Identifier>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesIdentification.mmSecurityIdentification;
-			componentContext_lazy = () -> InflationIndex1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InflationIndex1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "ISIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,11 +128,22 @@ public class InflationIndex1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
+
+		@Override
+		public ISINOct2015Identifier getValue(InflationIndex1Choice obj) {
+			return obj.getISIN();
+		}
+
+		@Override
+		public void setValue(InflationIndex1Choice obj, ISINOct2015Identifier value) {
+			obj.setISIN(value);
+		}
 	};
+	@XmlElement(name = "Nm", required = true)
 	protected Max25Text name;
 	/**
-	 * Standardised name of the index.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +172,10 @@ public class InflationIndex1Choice {
 	 * definition} = "Standardised name of the index."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<InflationIndex1Choice, Max25Text> mmName = new MMMessageAttribute<InflationIndex1Choice, Max25Text>() {
 		{
 			businessElementTrace_lazy = () -> Curve.mmName;
-			componentContext_lazy = () -> InflationIndex1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.InflationIndex1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,36 +185,47 @@ public class InflationIndex1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max25Text.mmObject();
 		}
+
+		@Override
+		public Max25Text getValue(InflationIndex1Choice obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(InflationIndex1Choice obj, Max25Text value) {
+			obj.setName(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(InflationIndex1Choice.mmISIN, InflationIndex1Choice.mmName);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InflationIndex1Choice.mmISIN, com.tools20022.repository.choice.InflationIndex1Choice.mmName);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidISINRule.forInflationIndex1Choice);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InflationIndex1Choice";
-				definition = "Choice of an inflation index identification. ";
+				definition = "Choice of an inflation index identification.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ISIN", required = true)
 	public ISINOct2015Identifier getISIN() {
 		return iSIN;
 	}
 
-	public void setISIN(ISINOct2015Identifier iSIN) {
-		this.iSIN = iSIN;
+	public InflationIndex1Choice setISIN(ISINOct2015Identifier iSIN) {
+		this.iSIN = Objects.requireNonNull(iSIN);
+		return this;
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max25Text getName() {
 		return name;
 	}
 
-	public void setName(Max25Text name) {
-		this.name = name;
+	public InflationIndex1Choice setName(Max25Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 }

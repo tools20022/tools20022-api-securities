@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Futures
- * AssetClassTransactionTypeCode.mmFutures}</li>
+ * AssetClassTransactionTypeCode.Futures}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Options
- * AssetClassTransactionTypeCode.mmOptions}</li>
+ * AssetClassTransactionTypeCode.Options}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#TAPOS
- * AssetClassTransactionTypeCode.mmTAPOS}</li>
+ * AssetClassTransactionTypeCode.TAPOS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Swaps
- * AssetClassTransactionTypeCode.mmSwaps}</li>
+ * AssetClassTransactionTypeCode.Swaps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Minis
- * AssetClassTransactionTypeCode.mmMinis}</li>
+ * AssetClassTransactionTypeCode.Minis}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#OTC
- * AssetClassTransactionTypeCode.mmOTC}</li>
+ * AssetClassTransactionTypeCode.OTC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Outright
- * AssetClassTransactionTypeCode.mmOutright}</li>
+ * AssetClassTransactionTypeCode.Outright}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Crack
- * AssetClassTransactionTypeCode.mmCrack}</li>
+ * AssetClassTransactionTypeCode.Crack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Differential
- * AssetClassTransactionTypeCode.mmDifferential}</li>
+ * AssetClassTransactionTypeCode.Differential}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassTransactionTypeCode#Other
- * AssetClassTransactionTypeCode.mmOther}</li>
+ * AssetClassTransactionTypeCode.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -79,8 +79,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,7 +89,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "AssetClassTransactionTypeCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Code list of transaction type as specified by the trading venue. "</li>
+ * "Code list of transaction type as specified by the trading venue."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -324,14 +324,14 @@ public class AssetClassTransactionTypeCode extends MMCode {
 	 * name} = "Crack"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Crack. "</li>
+	 * definition} = "Crack."</li>
 	 * </ul>
 	 */
 	public static final AssetClassTransactionTypeCode Crack = new AssetClassTransactionTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Crack";
-			definition = "Crack. ";
+			definition = "Crack.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AssetClassTransactionTypeCode.mmObject();
 			codeName = "CRCK";
 		}
@@ -404,10 +404,10 @@ public class AssetClassTransactionTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassTransactionTypeCode";
-				definition = "Code list of transaction type as specified by the trading venue. ";
+				definition = "Code list of transaction type as specified by the trading venue.";
 				derivation_lazy = () -> Arrays.asList(AssetClassTransactionType1Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AssetClassTransactionTypeCode.Futures, com.tools20022.repository.codeset.AssetClassTransactionTypeCode.Options,
 						com.tools20022.repository.codeset.AssetClassTransactionTypeCode.TAPOS, com.tools20022.repository.codeset.AssetClassTransactionTypeCode.Swaps, com.tools20022.repository.codeset.AssetClassTransactionTypeCode.Minis,

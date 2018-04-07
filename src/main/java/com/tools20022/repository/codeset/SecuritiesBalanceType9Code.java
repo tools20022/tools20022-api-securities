@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType9Code#Available
- * SecuritiesBalanceType9Code.mmAvailable}</li>
+ * SecuritiesBalanceType9Code.Available}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType9Code#Elected
- * SecuritiesBalanceType9Code.mmElected}</li>
+ * SecuritiesBalanceType9Code.Elected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType9Code#Unelected
- * SecuritiesBalanceType9Code.mmUnelected}</li>
+ * SecuritiesBalanceType9Code.Unelected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType9Code#ReservedForDistribution
- * SecuritiesBalanceType9Code.mmReservedForDistribution}</li>
+ * SecuritiesBalanceType9Code.ReservedForDistribution}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesBalanceType9Code#ReservedForRemoval
- * SecuritiesBalanceType9Code.mmReservedForRemoval}</li>
+ * SecuritiesBalanceType9Code.ReservedForRemoval}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class SecuritiesBalanceType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AVLB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesBalanceType9Code";

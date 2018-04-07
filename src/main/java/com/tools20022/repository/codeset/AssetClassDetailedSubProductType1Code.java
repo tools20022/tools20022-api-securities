@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType1Code#FeedWheat
- * AssetClassDetailedSubProductType1Code.mmFeedWheat}</li>
+ * AssetClassDetailedSubProductType1Code.FeedWheat}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType1Code#Soybeans
- * AssetClassDetailedSubProductType1Code.mmSoybeans}</li>
+ * AssetClassDetailedSubProductType1Code.Soybeans}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType1Code#Rapeseed
- * AssetClassDetailedSubProductType1Code.mmRapeseed}</li>
+ * AssetClassDetailedSubProductType1Code.Rapeseed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType1Code#Other
- * AssetClassDetailedSubProductType1Code.mmOther}</li>
+ * AssetClassDetailedSubProductType1Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType1Code#Maize
- * AssetClassDetailedSubProductType1Code.mmMaize}</li>
+ * AssetClassDetailedSubProductType1Code.Maize}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType1Code#Rice
- * AssetClassDetailedSubProductType1Code.mmRice}</li>
+ * AssetClassDetailedSubProductType1Code.Rice}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -231,7 +231,7 @@ public class AssetClassDetailedSubProductType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassDetailedSubProductType1Code";
 				definition = "Further sub product code list for commodity derivative Grains Oil Seeds.";

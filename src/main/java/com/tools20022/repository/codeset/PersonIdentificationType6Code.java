@@ -39,49 +39,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#AlienRegistrationNumber
- * PersonIdentificationType6Code.mmAlienRegistrationNumber}</li>
+ * PersonIdentificationType6Code.AlienRegistrationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#CPFAccountNumber
- * PersonIdentificationType6Code.mmCPFAccountNumber}</li>
+ * PersonIdentificationType6Code.CPFAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#DriversLicenseNumber
- * PersonIdentificationType6Code.mmDriversLicenseNumber}</li>
+ * PersonIdentificationType6Code.DriversLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#EmployerIdentificationNumber
- * PersonIdentificationType6Code.mmEmployerIdentificationNumber}</li>
+ * PersonIdentificationType6Code.EmployerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#IdentityCardNumber
- * PersonIdentificationType6Code.mmIdentityCardNumber}</li>
+ * PersonIdentificationType6Code.IdentityCardNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#NationalRegistrationIdentificationNumber
- * PersonIdentificationType6Code.mmNationalRegistrationIdentificationNumber}</li>
+ * PersonIdentificationType6Code.NationalRegistrationIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#Other
- * PersonIdentificationType6Code.mmOther}</li>
+ * PersonIdentificationType6Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#PassportNumber
- * PersonIdentificationType6Code.mmPassportNumber}</li>
+ * PersonIdentificationType6Code.PassportNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#PostOfficeCardNumber
- * PersonIdentificationType6Code.mmPostOfficeCardNumber}</li>
+ * PersonIdentificationType6Code.PostOfficeCardNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#SocialSecurityNumber
- * PersonIdentificationType6Code.mmSocialSecurityNumber}</li>
+ * PersonIdentificationType6Code.SocialSecurityNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#SRSAccountNumber
- * PersonIdentificationType6Code.mmSRSAccountNumber}</li>
+ * PersonIdentificationType6Code.SRSAccountNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#GunLicenseNumber
- * PersonIdentificationType6Code.mmGunLicenseNumber}</li>
+ * PersonIdentificationType6Code.GunLicenseNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#AdoptionTaxpayerIdentificationNumber
- * PersonIdentificationType6Code.mmAdoptionTaxpayerIdentificationNumber}</li>
+ * PersonIdentificationType6Code.AdoptionTaxpayerIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#GenericTaxIdentificationNumber
- * PersonIdentificationType6Code.mmGenericTaxIdentificationNumber}</li>
+ * PersonIdentificationType6Code.GenericTaxIdentificationNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PersonIdentificationType6Code#IndividualTaxpayerIdentificationNumber
- * PersonIdentificationType6Code.mmIndividualTaxpayerIdentificationNumber}</li>
+ * PersonIdentificationType6Code.IndividualTaxpayerIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -90,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -482,7 +482,7 @@ public class PersonIdentificationType6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AREG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentificationType6Code";

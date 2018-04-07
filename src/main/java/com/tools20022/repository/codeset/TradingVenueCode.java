@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#NationalCompetentAuthority
- * TradingVenueCode.mmNationalCompetentAuthority}</li>
+ * TradingVenueCode.NationalCompetentAuthority}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#ApprovedPublicationArrangement
- * TradingVenueCode.mmApprovedPublicationArrangement}</li>
+ * TradingVenueCode.ApprovedPublicationArrangement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#SystematicInternaliser
- * TradingVenueCode.mmSystematicInternaliser}</li>
+ * TradingVenueCode.SystematicInternaliser}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#TradingVenue
- * TradingVenueCode.mmTradingVenue}</li>
+ * TradingVenueCode.TradingVenue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#MultilateralTradingFacility
- * TradingVenueCode.mmMultilateralTradingFacility}</li>
+ * TradingVenueCode.MultilateralTradingFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#OrganisedTradingFacility
- * TradingVenueCode.mmOrganisedTradingFacility}</li>
+ * TradingVenueCode.OrganisedTradingFacility}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#ConsolidatedTapeProvider
- * TradingVenueCode.mmConsolidatedTapeProvider}</li>
+ * TradingVenueCode.ConsolidatedTapeProvider}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TradingVenueCode#RegulatedMarket
- * TradingVenueCode.mmRegulatedMarket}</li>
+ * TradingVenueCode.RegulatedMarket}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -370,7 +370,7 @@ public class TradingVenueCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingVenueCode";
 				definition = "Specifies the type of a trading venue.";

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.msg;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -27,6 +28,8 @@ import com.tools20022.repository.entity.SafekeepingPlace;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * SafekeepingPlaceTypeAndText2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SafekeepingPlaceTypeAndText6", propOrder = {"safekeepingPlaceType", "identification"})
 public class SafekeepingPlaceTypeAndText6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SfkpgPlcTp", required = true)
 	protected SafekeepingPlace2Code safekeepingPlaceType;
 	/**
-	 * Place of safekeeping as a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,6 +107,9 @@ public class SafekeepingPlaceTypeAndText6 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
 	 * xmlTag} = "SfkpgPlcTp"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :94B::4!c//4!c</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -118,12 +125,13 @@ public class SafekeepingPlaceTypeAndText6 {
 	 * SafekeepingPlaceTypeAndText2.mmSafekeepingPlaceType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSafekeepingPlaceType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceTypeAndText6, SafekeepingPlace2Code> mmSafekeepingPlaceType = new MMMessageAttribute<SafekeepingPlaceTypeAndText6, SafekeepingPlace2Code>() {
 		{
 			businessElementTrace_lazy = () -> SafekeepingPlace.mmSafekeepingPlaceType;
-			componentContext_lazy = () -> SafekeepingPlaceTypeAndText6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafekeepingPlaceTypeAndText6.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgPlcTp";
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":94B::4!c//4!c"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SafekeepingPlaceType";
 			definition = "Place of safekeeping as a code.";
@@ -132,11 +140,22 @@ public class SafekeepingPlaceTypeAndText6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> SafekeepingPlace2Code.mmObject();
 		}
+
+		@Override
+		public SafekeepingPlace2Code getValue(SafekeepingPlaceTypeAndText6 obj) {
+			return obj.getSafekeepingPlaceType();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceTypeAndText6 obj, SafekeepingPlace2Code value) {
+			obj.setSafekeepingPlaceType(value);
+		}
 	};
+	@XmlElement(name = "Id")
 	protected Max35Text identification;
 	/**
-	 * Additional information about the place of safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,10 +190,10 @@ public class SafekeepingPlaceTypeAndText6 {
 	 * SafekeepingPlaceTypeAndText2.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SafekeepingPlaceTypeAndText6, Optional<Max35Text>> mmIdentification = new MMMessageAttribute<SafekeepingPlaceTypeAndText6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> SafekeepingPlaceTypeAndText6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SafekeepingPlaceTypeAndText6.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,14 +204,24 @@ public class SafekeepingPlaceTypeAndText6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SafekeepingPlaceTypeAndText6 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlaceTypeAndText6 obj, Optional<Max35Text> value) {
+			obj.setIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SafekeepingPlaceTypeAndText6.mmSafekeepingPlaceType, SafekeepingPlaceTypeAndText6.mmIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SafekeepingPlaceTypeAndText6.mmSafekeepingPlaceType, com.tools20022.repository.msg.SafekeepingPlaceTypeAndText6.mmIdentification);
 				trace_lazy = () -> SafekeepingPlace.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlaceTypeAndText6";
 				definition = "Identification of the place of safekeeping expressed as a code and a narrative description.";
@@ -202,21 +231,21 @@ public class SafekeepingPlaceTypeAndText6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SfkpgPlcTp", required = true)
 	public SafekeepingPlace2Code getSafekeepingPlaceType() {
 		return safekeepingPlaceType;
 	}
 
-	public void setSafekeepingPlaceType(SafekeepingPlace2Code safekeepingPlaceType) {
-		this.safekeepingPlaceType = safekeepingPlaceType;
+	public SafekeepingPlaceTypeAndText6 setSafekeepingPlaceType(SafekeepingPlace2Code safekeepingPlaceType) {
+		this.safekeepingPlaceType = Objects.requireNonNull(safekeepingPlaceType);
+		return this;
 	}
 
-	@XmlElement(name = "Id")
-	public Max35Text getIdentification() {
-		return identification;
+	public Optional<Max35Text> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(Max35Text identification) {
+	public SafekeepingPlaceTypeAndText6 setIdentification(Max35Text identification) {
 		this.identification = identification;
+		return this;
 	}
 }

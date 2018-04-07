@@ -38,76 +38,76 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Bakken
- * AssetClassDetailedSubProductType7Code.mmBakken}</li>
+ * AssetClassDetailedSubProductType7Code.Bakken}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Biodiesel
- * AssetClassDetailedSubProductType7Code.mmBiodiesel}</li>
+ * AssetClassDetailedSubProductType7Code.Biodiesel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Brent
- * AssetClassDetailedSubProductType7Code.mmBrent}</li>
+ * AssetClassDetailedSubProductType7Code.Brent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#BrentNX
- * AssetClassDetailedSubProductType7Code.mmBrentNX}</li>
+ * AssetClassDetailedSubProductType7Code.BrentNX}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Canadian
- * AssetClassDetailedSubProductType7Code.mmCanadian}</li>
+ * AssetClassDetailedSubProductType7Code.Canadian}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Condensate
- * AssetClassDetailedSubProductType7Code.mmCondensate}</li>
+ * AssetClassDetailedSubProductType7Code.Condensate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Diesel
- * AssetClassDetailedSubProductType7Code.mmDiesel}</li>
+ * AssetClassDetailedSubProductType7Code.Diesel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Dubai
- * AssetClassDetailedSubProductType7Code.mmDubai}</li>
+ * AssetClassDetailedSubProductType7Code.Dubai}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#ESPO
- * AssetClassDetailedSubProductType7Code.mmESPO}</li>
+ * AssetClassDetailedSubProductType7Code.ESPO}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Ethanol
- * AssetClassDetailedSubProductType7Code.mmEthanol}</li>
+ * AssetClassDetailedSubProductType7Code.Ethanol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Fuel
- * AssetClassDetailedSubProductType7Code.mmFuel}</li>
+ * AssetClassDetailedSubProductType7Code.Fuel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#FuelOil
- * AssetClassDetailedSubProductType7Code.mmFuelOil}</li>
+ * AssetClassDetailedSubProductType7Code.FuelOil}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Gasoil
- * AssetClassDetailedSubProductType7Code.mmGasoil}</li>
+ * AssetClassDetailedSubProductType7Code.Gasoil}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Gasoline
- * AssetClassDetailedSubProductType7Code.mmGasoline}</li>
+ * AssetClassDetailedSubProductType7Code.Gasoline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#HeatingOil
- * AssetClassDetailedSubProductType7Code.mmHeatingOil}</li>
+ * AssetClassDetailedSubProductType7Code.HeatingOil}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#JetFuel
- * AssetClassDetailedSubProductType7Code.mmJetFuel}</li>
+ * AssetClassDetailedSubProductType7Code.JetFuel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Kerosene
- * AssetClassDetailedSubProductType7Code.mmKerosene}</li>
+ * AssetClassDetailedSubProductType7Code.Kerosene}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#LightLouisianaSweet
- * AssetClassDetailedSubProductType7Code.mmLightLouisianaSweet}</li>
+ * AssetClassDetailedSubProductType7Code.LightLouisianaSweet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Mars
- * AssetClassDetailedSubProductType7Code.mmMars}</li>
+ * AssetClassDetailedSubProductType7Code.Mars}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Naphta
- * AssetClassDetailedSubProductType7Code.mmNaphta}</li>
+ * AssetClassDetailedSubProductType7Code.Naphta}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#NGL
- * AssetClassDetailedSubProductType7Code.mmNGL}</li>
+ * AssetClassDetailedSubProductType7Code.NGL}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Tapis
- * AssetClassDetailedSubProductType7Code.mmTapis}</li>
+ * AssetClassDetailedSubProductType7Code.Tapis}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#WTI
- * AssetClassDetailedSubProductType7Code.mmWTI}</li>
+ * AssetClassDetailedSubProductType7Code.WTI}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AssetClassDetailedSubProductType7Code#Urals
- * AssetClassDetailedSubProductType7Code.mmUrals}</li>
+ * AssetClassDetailedSubProductType7Code.Urals}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -116,8 +116,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -716,7 +716,7 @@ public class AssetClassDetailedSubProductType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassDetailedSubProductType7Code";
 				definition = "Further sub product code list for commodity derivative Oil.";

@@ -26,9 +26,9 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.SecurityIdentification7;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SecurityIdentification1", propOrder = {"identification", "name", "classType", "umbrellaName", "baseCurrency", "countryOfDomicile", "registeredDistributionCountry"})
 public class SecurityIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected SecurityIdentification7 identification;
 	/**
-	 * Identification of a security by an ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,10 +127,10 @@ public class SecurityIdentification1 {
 	 * definition} = "Identification of a security by an ISIN."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, SecurityIdentification7> mmIdentification = new MMMessageAttribute<SecurityIdentification1, SecurityIdentification7>() {
 		{
 			businessComponentTrace_lazy = () -> SecuritiesIdentification.mmObject();
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,13 +138,24 @@ public class SecurityIdentification1 {
 			definition = "Identification of a security by an ISIN.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.SecurityIdentification7.mmObject();
+			complexType_lazy = () -> SecurityIdentification7.mmObject();
+		}
+
+		@Override
+		public SecurityIdentification7 getValue(SecurityIdentification1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, SecurityIdentification7 value) {
+			obj.setIdentification(value);
 		}
 	};
+	@XmlElement(name = "Nm", required = true)
 	protected Max350Text name;
 	/**
-	 * Name of the financial instrument in free format text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,10 +185,10 @@ public class SecurityIdentification1 {
 	 * definition} = "Name of the financial instrument in free format text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, Max350Text> mmName = new MMMessageAttribute<SecurityIdentification1, Max350Text>() {
 		{
 			businessElementTrace_lazy = () -> LocalName.mmFullName;
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -186,15 +198,22 @@ public class SecurityIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Max350Text getValue(SecurityIdentification1 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, Max350Text value) {
+			obj.setName(value);
+		}
 	};
+	@XmlElement(name = "ClssTp")
 	protected Max35Text classType;
 	/**
-	 * Features of units offered by a fund. For example, a unit may have a
-	 * specific load structure, eg, front end or back end, an income policy, eg,
-	 * pay out or accumulate, or a trailer policy, eg, with or without. Fund
-	 * classes are typically denoted by a single character, eg, 'Class A',
-	 * 'Class 2'.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,10 +245,10 @@ public class SecurityIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClassType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, Optional<Max35Text>> mmClassType = new MMMessageAttribute<SecurityIdentification1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmClassType;
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "ClssTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,11 +258,22 @@ public class SecurityIdentification1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecurityIdentification1 obj) {
+			return obj.getClassType();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, Optional<Max35Text> value) {
+			obj.setClassType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UmbrllNm")
 	protected Max35Text umbrellaName;
 	/**
-	 * Name of the umbrella fund in which financial instrument is contained.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,10 +304,10 @@ public class SecurityIdentification1 {
 	 * "Name of the umbrella fund in which financial instrument is contained."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUmbrellaName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, Optional<Max35Text>> mmUmbrellaName = new MMMessageAttribute<SecurityIdentification1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> UmbrellaFund.mmName;
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "UmbrllNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -287,11 +317,22 @@ public class SecurityIdentification1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(SecurityIdentification1 obj) {
+			return obj.getUmbrellaName();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, Optional<Max35Text> value) {
+			obj.setUmbrellaName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BaseCcy", required = true)
 	protected ActiveCurrencyCode baseCurrency;
 	/**
-	 * Currency of the investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -322,10 +363,10 @@ public class SecurityIdentification1 {
 	 * definition} = "Currency of the investment fund class."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBaseCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, ActiveCurrencyCode> mmBaseCurrency = new MMMessageAttribute<SecurityIdentification1, ActiveCurrencyCode>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundClass.mmTradingCurrency;
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "BaseCcy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -335,12 +376,22 @@ public class SecurityIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyCode getValue(SecurityIdentification1 obj) {
+			return obj.getBaseCurrency();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, ActiveCurrencyCode value) {
+			obj.setBaseCurrency(value);
+		}
 	};
+	@XmlElement(name = "CtryOfDmcl", required = true)
 	protected CountryCode countryOfDomicile;
 	/**
-	 * Country where the fund has legal domicile as reflected in the ISIN
-	 * classification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,10 +423,10 @@ public class SecurityIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountryOfDomicile = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, CountryCode> mmCountryOfDomicile = new MMMessageAttribute<SecurityIdentification1, CountryCode>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFund.mmDomicileCountry;
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "CtryOfDmcl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -385,11 +436,22 @@ public class SecurityIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public CountryCode getValue(SecurityIdentification1 obj) {
+			return obj.getCountryOfDomicile();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, CountryCode value) {
+			obj.setCountryOfDomicile(value);
+		}
 	};
+	@XmlElement(name = "RegdDstrbtnCtry", required = true)
 	protected List<CountryCode> registeredDistributionCountry;
 	/**
-	 * Countries where the fund is registered for distribution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,10 +481,10 @@ public class SecurityIdentification1 {
 	 * definition} = "Countries where the fund is registered for distribution."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRegisteredDistributionCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SecurityIdentification1, List<CountryCode>> mmRegisteredDistributionCountry = new MMMessageAttribute<SecurityIdentification1, List<CountryCode>>() {
 		{
 			businessElementTrace_lazy = () -> Security.mmRegisteredDistributionCountry;
-			componentContext_lazy = () -> SecurityIdentification1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SecurityIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "RegdDstrbtnCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -431,15 +493,26 @@ public class SecurityIdentification1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		@Override
+		public List<CountryCode> getValue(SecurityIdentification1 obj) {
+			return obj.getRegisteredDistributionCountry();
+		}
+
+		@Override
+		public void setValue(SecurityIdentification1 obj, List<CountryCode> value) {
+			obj.setRegisteredDistributionCountry(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SecurityIdentification1.mmIdentification, SecurityIdentification1.mmName, SecurityIdentification1.mmClassType, SecurityIdentification1.mmUmbrellaName,
-						SecurityIdentification1.mmBaseCurrency, SecurityIdentification1.mmCountryOfDomicile, SecurityIdentification1.mmRegisteredDistributionCountry);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SecurityIdentification1.mmIdentification, com.tools20022.repository.msg.SecurityIdentification1.mmName,
+						com.tools20022.repository.msg.SecurityIdentification1.mmClassType, com.tools20022.repository.msg.SecurityIdentification1.mmUmbrellaName, com.tools20022.repository.msg.SecurityIdentification1.mmBaseCurrency,
+						com.tools20022.repository.msg.SecurityIdentification1.mmCountryOfDomicile, com.tools20022.repository.msg.SecurityIdentification1.mmRegisteredDistributionCountry);
 				trace_lazy = () -> SecuritiesIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityIdentification1";
 				definition = "Security that is a sub-set of an investment fund, and is governed by the same investment fund policy, eg, dividend option or valuation currency.";
@@ -448,66 +521,66 @@ public class SecurityIdentification1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public SecurityIdentification7 getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(com.tools20022.repository.msg.SecurityIdentification7 identification) {
-		this.identification = identification;
+	public SecurityIdentification1 setIdentification(SecurityIdentification7 identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Nm", required = true)
 	public Max350Text getName() {
 		return name;
 	}
 
-	public void setName(Max350Text name) {
-		this.name = name;
+	public SecurityIdentification1 setName(Max350Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
-	@XmlElement(name = "ClssTp")
-	public Max35Text getClassType() {
-		return classType;
+	public Optional<Max35Text> getClassType() {
+		return classType == null ? Optional.empty() : Optional.of(classType);
 	}
 
-	public void setClassType(Max35Text classType) {
+	public SecurityIdentification1 setClassType(Max35Text classType) {
 		this.classType = classType;
+		return this;
 	}
 
-	@XmlElement(name = "UmbrllNm")
-	public Max35Text getUmbrellaName() {
-		return umbrellaName;
+	public Optional<Max35Text> getUmbrellaName() {
+		return umbrellaName == null ? Optional.empty() : Optional.of(umbrellaName);
 	}
 
-	public void setUmbrellaName(Max35Text umbrellaName) {
+	public SecurityIdentification1 setUmbrellaName(Max35Text umbrellaName) {
 		this.umbrellaName = umbrellaName;
+		return this;
 	}
 
-	@XmlElement(name = "BaseCcy", required = true)
 	public ActiveCurrencyCode getBaseCurrency() {
 		return baseCurrency;
 	}
 
-	public void setBaseCurrency(ActiveCurrencyCode baseCurrency) {
-		this.baseCurrency = baseCurrency;
+	public SecurityIdentification1 setBaseCurrency(ActiveCurrencyCode baseCurrency) {
+		this.baseCurrency = Objects.requireNonNull(baseCurrency);
+		return this;
 	}
 
-	@XmlElement(name = "CtryOfDmcl", required = true)
 	public CountryCode getCountryOfDomicile() {
 		return countryOfDomicile;
 	}
 
-	public void setCountryOfDomicile(CountryCode countryOfDomicile) {
-		this.countryOfDomicile = countryOfDomicile;
+	public SecurityIdentification1 setCountryOfDomicile(CountryCode countryOfDomicile) {
+		this.countryOfDomicile = Objects.requireNonNull(countryOfDomicile);
+		return this;
 	}
 
-	@XmlElement(name = "RegdDstrbtnCtry", required = true)
 	public List<CountryCode> getRegisteredDistributionCountry() {
-		return registeredDistributionCountry;
+		return registeredDistributionCountry == null ? registeredDistributionCountry = new ArrayList<>() : registeredDistributionCountry;
 	}
 
-	public void setRegisteredDistributionCountry(List<CountryCode> registeredDistributionCountry) {
-		this.registeredDistributionCountry = registeredDistributionCountry;
+	public SecurityIdentification1 setRegisteredDistributionCountry(List<CountryCode> registeredDistributionCountry) {
+		this.registeredDistributionCountry = Objects.requireNonNull(registeredDistributionCountry);
+		return this;
 	}
 }

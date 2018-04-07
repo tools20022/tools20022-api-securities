@@ -26,9 +26,10 @@ import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.entity.InvestmentFundTax;
 import com.tools20022.repository.entity.InvestmentFundTransaction;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.Fee1;
+import com.tools20022.repository.msg.Tax30;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +59,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintFeeTaxElementRule#forFeeAndTax1
+ * ConstraintFeeTaxElementRule.forFeeAndTax1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,19 +77,24 @@ import javax.xml.bind.annotation.XmlType;
  * "FeeAndTax1"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Amount of money associated with a service."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Fees1 Fees1}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FeeAndTax1", propOrder = {"commercialAgreementReference", "individualFee", "individualTax"})
 public class FeeAndTax1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ComrclAgrmtRef")
 	protected Max35Text commercialAgreementReference;
 	/**
-	 * Reference to the agreement established between the fund and another
-	 * party. This element, amongst others, defines the conditions of the
-	 * commissions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,26 +123,46 @@ public class FeeAndTax1 {
 	 * definition} =
 	 * "Reference to the agreement established between the fund and another party. This element, amongst others, defines the conditions of the commissions."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Fees1#mmCommercialAgreementReference
+	 * Fees1.mmCommercialAgreementReference}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCommercialAgreementReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FeeAndTax1, Optional<Max35Text>> mmCommercialAgreementReference = new MMMessageAttribute<FeeAndTax1, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> CashAccount.mmCommission;
-			componentContext_lazy = () -> FeeAndTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FeeAndTax1.mmObject();
 			isDerived = false;
 			xmlTag = "ComrclAgrmtRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CommercialAgreementReference";
 			definition = "Reference to the agreement established between the fund and another party. This element, amongst others, defines the conditions of the commissions.";
+			nextVersions_lazy = () -> Arrays.asList(Fees1.mmCommercialAgreementReference);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(FeeAndTax1 obj) {
+			return obj.getCommercialAgreementReference();
+		}
+
+		@Override
+		public void setValue(FeeAndTax1 obj, Optional<Max35Text> value) {
+			obj.setCommercialAgreementReference(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.Fee1> individualFee;
+	@XmlElement(name = "IndvFee")
+	protected List<Fee1> individualFee;
 	/**
-	 * Individual fee (charge/commission).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -153,6 +187,13 @@ public class FeeAndTax1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Individual fee (charge/commission)."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.Fees1#mmIndividualFee
+	 * Fees1.mmIndividualFee}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -160,25 +201,37 @@ public class FeeAndTax1 {
 	 * TotalFeesAndTaxes40.mmIndividualFee}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndividualFee = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FeeAndTax1, List<Fee1>> mmIndividualFee = new MMMessageAssociationEnd<FeeAndTax1, List<Fee1>>() {
 		{
 			businessElementTrace_lazy = () -> InvestmentFundTransaction.mmTransactionCharge;
-			componentContext_lazy = () -> FeeAndTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FeeAndTax1.mmObject();
 			isDerived = false;
 			xmlTag = "IndvFee";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndividualFee";
 			definition = "Individual fee (charge/commission).";
+			nextVersions_lazy = () -> Arrays.asList(Fees1.mmIndividualFee);
 			previousVersion_lazy = () -> TotalFeesAndTaxes40.mmIndividualFee;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Fee1.mmObject();
+			type_lazy = () -> Fee1.mmObject();
+		}
+
+		@Override
+		public List<Fee1> getValue(FeeAndTax1 obj) {
+			return obj.getIndividualFee();
+		}
+
+		@Override
+		public void setValue(FeeAndTax1 obj, List<Fee1> value) {
+			obj.setIndividualFee(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Tax30> individualTax;
+	@XmlElement(name = "IndvTax")
+	protected List<Tax30> individualTax;
 	/**
-	 * Individual tax amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -210,10 +263,10 @@ public class FeeAndTax1 {
 	 * TotalFeesAndTaxes40.mmIndividualTax}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndividualTax = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<FeeAndTax1, List<Tax30>> mmIndividualTax = new MMMessageAssociationEnd<FeeAndTax1, List<Tax30>>() {
 		{
 			businessComponentTrace_lazy = () -> InvestmentFundTax.mmObject();
-			componentContext_lazy = () -> FeeAndTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.FeeAndTax1.mmObject();
 			isDerived = false;
 			xmlTag = "IndvTax";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -222,48 +275,61 @@ public class FeeAndTax1 {
 			previousVersion_lazy = () -> TotalFeesAndTaxes40.mmIndividualTax;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Tax30.mmObject();
+			type_lazy = () -> Tax30.mmObject();
+		}
+
+		@Override
+		public List<Tax30> getValue(FeeAndTax1 obj) {
+			return obj.getIndividualTax();
+		}
+
+		@Override
+		public void setValue(FeeAndTax1 obj, List<Tax30> value) {
+			obj.setIndividualTax(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FeeAndTax1.mmCommercialAgreementReference, FeeAndTax1.mmIndividualFee, FeeAndTax1.mmIndividualTax);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FeeAndTax1.mmCommercialAgreementReference, com.tools20022.repository.msg.FeeAndTax1.mmIndividualFee,
+						com.tools20022.repository.msg.FeeAndTax1.mmIndividualTax);
 				trace_lazy = () -> InvestmentFundTax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintFeeTaxElementRule.forFeeAndTax1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FeeAndTax1";
 				definition = "Amount of money associated with a service.";
+				nextVersions_lazy = () -> Arrays.asList(Fees1.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ComrclAgrmtRef")
-	public Max35Text getCommercialAgreementReference() {
-		return commercialAgreementReference;
+	public Optional<Max35Text> getCommercialAgreementReference() {
+		return commercialAgreementReference == null ? Optional.empty() : Optional.of(commercialAgreementReference);
 	}
 
-	public void setCommercialAgreementReference(Max35Text commercialAgreementReference) {
+	public FeeAndTax1 setCommercialAgreementReference(Max35Text commercialAgreementReference) {
 		this.commercialAgreementReference = commercialAgreementReference;
+		return this;
 	}
 
-	@XmlElement(name = "IndvFee")
 	public List<Fee1> getIndividualFee() {
-		return individualFee;
+		return individualFee == null ? individualFee = new ArrayList<>() : individualFee;
 	}
 
-	public void setIndividualFee(List<com.tools20022.repository.msg.Fee1> individualFee) {
-		this.individualFee = individualFee;
+	public FeeAndTax1 setIndividualFee(List<Fee1> individualFee) {
+		this.individualFee = Objects.requireNonNull(individualFee);
+		return this;
 	}
 
-	@XmlElement(name = "IndvTax")
 	public List<Tax30> getIndividualTax() {
-		return individualTax;
+		return individualTax == null ? individualTax = new ArrayList<>() : individualTax;
 	}
 
-	public void setIndividualTax(List<com.tools20022.repository.msg.Tax30> individualTax) {
-		this.individualTax = individualTax;
+	public FeeAndTax1 setIndividualTax(List<Tax30> individualTax) {
+		this.individualTax = Objects.requireNonNull(individualTax);
+		return this;
 	}
 }

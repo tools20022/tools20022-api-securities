@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessedStatus3Code#Received
- * ProcessedStatus3Code.mmReceived}</li>
+ * ProcessedStatus3Code.Received}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessedStatus3Code#Pending
- * ProcessedStatus3Code.mmPending}</li>
+ * ProcessedStatus3Code.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessedStatus3Code#Accepted
- * ProcessedStatus3Code.mmAccepted}</li>
+ * ProcessedStatus3Code.Accepted}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,7 +156,7 @@ public class ProcessedStatus3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RECE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessedStatus3Code";

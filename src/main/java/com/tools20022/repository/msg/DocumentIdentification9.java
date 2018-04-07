@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,31 +54,31 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionNotificationV07#mmInstructionIdentification
- * CorporateActionNotificationV07.mmInstructionIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementConfirmationV08#mmInstructionIdentification
- * CorporateActionMovementConfirmationV08.mmInstructionIdentification}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.seev.CorporateActionEventProcessingStatusAdviceV06#mmNotificationIdentification
  * CorporateActionEventProcessingStatusAdviceV06.mmNotificationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceV08#mmInstructionIdentification
- * CorporateActionMovementPreliminaryAdviceV08.mmInstructionIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionNotificationV08#mmInstructionIdentification
+ * CorporateActionNotificationV08.mmInstructionIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionCancellationRequestStatusAdviceV07#mmInstructionCancellationRequestIdentification
- * CorporateActionInstructionCancellationRequestStatusAdviceV07.
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementConfirmationV09#mmInstructionIdentification
+ * CorporateActionMovementConfirmationV09.mmInstructionIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionMovementPreliminaryAdviceV09#mmInstructionIdentification
+ * CorporateActionMovementPreliminaryAdviceV09.mmInstructionIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionStatusAdviceV09#mmInstructionIdentification
+ * CorporateActionInstructionStatusAdviceV09.mmInstructionIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionCancellationRequestStatusAdviceV08#mmInstructionCancellationRequestIdentification
+ * CorporateActionInstructionCancellationRequestStatusAdviceV08.
  * mmInstructionCancellationRequestIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.seev.CorporateActionInstructionStatusAdviceV08#mmInstructionIdentification
- * CorporateActionInstructionStatusAdviceV08.mmInstructionIdentification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,15 +89,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Identifies a document by a unique identification."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DocumentIdentification9", propOrder = "identification")
 public class DocumentIdentification9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Identifies the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,10 +128,10 @@ public class DocumentIdentification9 {
 	 * definition} = "Identifies the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification9, Max35Text> mmIdentification = new MMMessageAttribute<DocumentIdentification9, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> DocumentIdentification9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification9.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,17 +141,27 @@ public class DocumentIdentification9 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(DocumentIdentification9 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification9 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DocumentIdentification9.mmIdentification);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionNotificationV07.mmInstructionIdentification, CorporateActionMovementConfirmationV08.mmInstructionIdentification,
-						CorporateActionEventProcessingStatusAdviceV06.mmNotificationIdentification, CorporateActionMovementPreliminaryAdviceV08.mmInstructionIdentification,
-						CorporateActionInstructionCancellationRequestStatusAdviceV07.mmInstructionCancellationRequestIdentification, CorporateActionInstructionStatusAdviceV08.mmInstructionIdentification);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentIdentification9.mmIdentification);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CorporateActionEventProcessingStatusAdviceV06.mmNotificationIdentification, CorporateActionNotificationV08.mmInstructionIdentification,
+						CorporateActionMovementConfirmationV09.mmInstructionIdentification, CorporateActionMovementPreliminaryAdviceV09.mmInstructionIdentification, CorporateActionInstructionStatusAdviceV09.mmInstructionIdentification,
+						CorporateActionInstructionCancellationRequestStatusAdviceV08.mmInstructionCancellationRequestIdentification);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentIdentification9";
 				definition = "Identifies a document by a unique identification.";
@@ -158,12 +170,12 @@ public class DocumentIdentification9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public DocumentIdentification9 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 }

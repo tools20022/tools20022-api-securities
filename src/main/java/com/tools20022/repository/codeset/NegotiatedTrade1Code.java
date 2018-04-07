@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NegotiatedTrade1Code#Negotiated
- * NegotiatedTrade1Code.mmNegotiated}</li>
+ * NegotiatedTrade1Code.Negotiated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NegotiatedTrade1Code#NotNegotiated
- * NegotiatedTrade1Code.mmNotNegotiated}</li>
+ * NegotiatedTrade1Code.NotNegotiated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NegotiatedTrade1Code#Unknown
- * NegotiatedTrade1Code.mmUnknown}</li>
+ * NegotiatedTrade1Code.Unknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -155,7 +155,7 @@ public class NegotiatedTrade1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NEGO");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NegotiatedTrade1Code";

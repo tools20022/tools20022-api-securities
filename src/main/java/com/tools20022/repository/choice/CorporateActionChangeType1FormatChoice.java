@@ -26,6 +26,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,18 +64,19 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "CorporateActionChangeType1FormatChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of formats to  express the type of changes."</li>
+ * definition} = "Choice of formats to express the type of changes."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CorporateActionChangeType1FormatChoice", propOrder = {"code", "proprietary"})
 public class CorporateActionChangeType1FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CorporateActionChangeType1Code code;
 	/**
-	 * Standard code to specify the type of changes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,27 +104,38 @@ public class CorporateActionChangeType1FormatChoice {
 	 * name} = "Code"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Standard code to  specify the type of changes."</li>
+	 * definition} = "Standard code to specify the type of changes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionChangeType1FormatChoice, CorporateActionChangeType1Code> mmCode = new MMMessageAttribute<CorporateActionChangeType1FormatChoice, CorporateActionChangeType1Code>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesModification.mmChangeType;
-			componentContext_lazy = () -> CorporateActionChangeType1FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateActionChangeType1FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
-			definition = "Standard code to  specify the type of changes.";
+			definition = "Standard code to specify the type of changes.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionChangeType1Code.mmObject();
 		}
+
+		@Override
+		public CorporateActionChangeType1Code getValue(CorporateActionChangeType1FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CorporateActionChangeType1FormatChoice obj, CorporateActionChangeType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the type of changes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,53 +163,63 @@ public class CorporateActionChangeType1FormatChoice {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Proprietary code to  express the type of changes."</li>
+	 * definition} = "Proprietary code to express the type of changes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionChangeType1FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<CorporateActionChangeType1FormatChoice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesModification.mmChangeType;
-			componentContext_lazy = () -> CorporateActionChangeType1FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CorporateActionChangeType1FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express the type of changes.";
+			definition = "Proprietary code to express the type of changes.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(CorporateActionChangeType1FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CorporateActionChangeType1FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionChangeType1FormatChoice.mmCode, CorporateActionChangeType1FormatChoice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CorporateActionChangeType1FormatChoice.mmCode, com.tools20022.repository.choice.CorporateActionChangeType1FormatChoice.mmProprietary);
 				trace_lazy = () -> SecuritiesModification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionChangeType1FormatChoice";
-				definition = "Choice of formats to  express the type of changes.";
+				definition = "Choice of formats to express the type of changes.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CorporateActionChangeType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(CorporateActionChangeType1Code code) {
-		this.code = code;
+	public CorporateActionChangeType1FormatChoice setCode(CorporateActionChangeType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public CorporateActionChangeType1FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

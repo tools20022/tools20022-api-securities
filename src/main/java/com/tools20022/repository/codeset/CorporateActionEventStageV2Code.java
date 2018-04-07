@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#Approved
- * CorporateActionEventStageV2Code.mmApproved}</li>
+ * CorporateActionEventStageV2Code.Approved}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#Deactivated
- * CorporateActionEventStageV2Code.mmDeactivated}</li>
+ * CorporateActionEventStageV2Code.Deactivated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#CancellationAndReRun
- * CorporateActionEventStageV2Code.mmCancellationAndReRun}</li>
+ * CorporateActionEventStageV2Code.CancellationAndReRun}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#Lapsed
- * CorporateActionEventStageV2Code.mmLapsed}</li>
+ * CorporateActionEventStageV2Code.Lapsed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#SupplementalCancellationAndReRun
- * CorporateActionEventStageV2Code.mmSupplementalCancellationAndReRun}</li>
+ * CorporateActionEventStageV2Code.SupplementalCancellationAndReRun}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#ActionPeriod
- * CorporateActionEventStageV2Code.mmActionPeriod}</li>
+ * CorporateActionEventStageV2Code.ActionPeriod}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#SupplementalCancellation
- * CorporateActionEventStageV2Code.mmSupplementalCancellation}</li>
+ * CorporateActionEventStageV2Code.SupplementalCancellation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#SubjectToApproval
- * CorporateActionEventStageV2Code.mmSubjectToApproval}</li>
+ * CorporateActionEventStageV2Code.SubjectToApproval}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#UnconditionalAsToAcceptance
- * CorporateActionEventStageV2Code.mmUnconditionalAsToAcceptance}</li>
+ * CorporateActionEventStageV2Code.UnconditionalAsToAcceptance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionEventStageV2Code#WhollyUnconditional
- * CorporateActionEventStageV2Code.mmWhollyUnconditional}</li>
+ * CorporateActionEventStageV2Code.WhollyUnconditional}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -82,8 +82,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -251,7 +251,7 @@ public class CorporateActionEventStageV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Cancellation and re-run of a supplemental lottery only.  A subsequent new supplemental lottery will be performed under the original event."
+	 * "Cancellation and re-run of a supplemental lottery only. A subsequent new supplemental lottery will be performed under the original event."
 	 * </li>
 	 * </ul>
 	 */
@@ -259,7 +259,7 @@ public class CorporateActionEventStageV2Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementalCancellationAndReRun";
-			definition = "Cancellation and re-run of a supplemental lottery only.  A subsequent new supplemental lottery will be performed under the original event.";
+			definition = "Cancellation and re-run of a supplemental lottery only. A subsequent new supplemental lottery will be performed under the original event.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventStageV2Code.mmObject();
 			codeName = "PART";
 		}
@@ -317,7 +317,7 @@ public class CorporateActionEventStageV2Code extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "A supplemental lottery is being cancelled by the issuer. No subsequent lottery will be performed. "
+	 * "A supplemental lottery is being cancelled by the issuer. No subsequent lottery will be performed."
 	 * </li>
 	 * </ul>
 	 */
@@ -325,7 +325,7 @@ public class CorporateActionEventStageV2Code extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementalCancellation";
-			definition = "A supplemental lottery is being cancelled by the issuer. No subsequent lottery will be performed. ";
+			definition = "A supplemental lottery is being cancelled by the issuer. No subsequent lottery will be performed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionEventStageV2Code.mmObject();
 			codeName = "RESC";
 		}
@@ -435,7 +435,7 @@ public class CorporateActionEventStageV2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("APPD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventStageV2Code";

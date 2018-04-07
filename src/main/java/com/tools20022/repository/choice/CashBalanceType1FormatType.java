@@ -25,8 +25,12 @@ import com.tools20022.repository.entity.Balance;
 import com.tools20022.repository.entity.CashBalance;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,27 +59,29 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = March 3, 2019</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "CashBalanceType1FormatType"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Choice of formats to  express the type of cash balance."</li>
+ * definition} = "Choice of formats to express the type of cash balance."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CashBalanceType1FormatType", propOrder = {"code", "proprietary"})
 public class CashBalanceType1FormatType {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected CashBalanceType1Code code;
 	/**
-	 * Standard code to specify the type of cash balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,27 +109,38 @@ public class CashBalanceType1FormatType {
 	 * name} = "Code"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Standard code to  specify the type of cash balance."</li>
+	 * definition} = "Standard code to specify the type of cash balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashBalanceType1FormatType, CashBalanceType1Code> mmCode = new MMMessageAttribute<CashBalanceType1FormatType, CashBalanceType1Code>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> CashBalanceType1FormatType.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CashBalanceType1FormatType.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
-			definition = "Standard code to  specify the type of cash balance.";
+			definition = "Standard code to specify the type of cash balance.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> CashBalanceType1Code.mmObject();
 		}
+
+		@Override
+		public CashBalanceType1Code getValue(CashBalanceType1FormatType obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(CashBalanceType1FormatType obj, CashBalanceType1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the type of cash balance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,53 +168,70 @@ public class CashBalanceType1FormatType {
 	 * name} = "Proprietary"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Proprietary code to  express the type of cash balance."</li>
+	 * definition} = "Proprietary code to express the type of cash balance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashBalanceType1FormatType, GenericIdentification13> mmProprietary = new MMMessageAttribute<CashBalanceType1FormatType, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> Balance.mmType;
-			componentContext_lazy = () -> CashBalanceType1FormatType.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CashBalanceType1FormatType.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express the type of cash balance.";
+			definition = "Proprietary code to express the type of cash balance.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(CashBalanceType1FormatType obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CashBalanceType1FormatType obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashBalanceType1FormatType.mmCode, CashBalanceType1FormatType.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CashBalanceType1FormatType.mmCode, com.tools20022.repository.choice.CashBalanceType1FormatType.mmProprietary);
 				trace_lazy = () -> CashBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("March 3, 2019");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "CashBalanceType1FormatType";
-				definition = "Choice of formats to  express the type of cash balance.";
+				definition = "Choice of formats to express the type of cash balance.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public CashBalanceType1Code getCode() {
 		return code;
 	}
 
-	public void setCode(CashBalanceType1Code code) {
-		this.code = code;
+	public CashBalanceType1FormatType setCode(CashBalanceType1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public CashBalanceType1FormatType setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

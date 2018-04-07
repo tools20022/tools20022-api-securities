@@ -28,8 +28,13 @@ import com.tools20022.repository.entity.CollateralManagement;
 import com.tools20022.repository.entity.ExpectedCollateralType;
 import com.tools20022.repository.entity.MarginCall;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CollateralAccount2;
+import com.tools20022.repository.msg.MarginCall1;
+import com.tools20022.repository.msg.MarginCallResult3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -84,8 +89,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,17 +103,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MarginCall2", propOrder = {"collateralAccountIdentification", "marginCallResult", "marginDetailDueToA", "marginDetailDueToB", "requirementDetailsDueToA", "requirementDetailsDueToB", "expectedCollateralDueToA",
 		"expectedCollateralDueToB"})
 public class MarginCall2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CollAcctId")
 	protected CollateralAccount2 collateralAccountIdentification;
 	/**
-	 * Provides additional information on the collateral account of the party
-	 * delivering/receiving the collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -138,10 +143,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCollateralAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<CollateralAccount2>> mmCollateralAccountIdentification = new MMMessageAssociationEnd<MarginCall2, Optional<CollateralAccount2>>() {
 		{
 			businessElementTrace_lazy = () -> Collateral.mmCollateralAccount;
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "CollAcctId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -150,16 +155,24 @@ public class MarginCall2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CollateralAccount2.mmObject();
+			type_lazy = () -> CollateralAccount2.mmObject();
+		}
+
+		@Override
+		public Optional<CollateralAccount2> getValue(MarginCall2 obj) {
+			return obj.getCollateralAccountIdentification();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<CollateralAccount2> value) {
+			obj.setCollateralAccountIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MrgnCallRslt", required = true)
 	protected MarginCallResult3 marginCallResult;
 	/**
-	 * Summation of the call amounts per margin type. It is provided for the
-	 * purposes of carrying forward for future messages that are used to compare
-	 * the margin call results to determine whether a call is agreed or
-	 * full/partially disputed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -188,10 +201,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginCallResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, MarginCallResult3> mmMarginCallResult = new MMMessageAssociationEnd<MarginCall2, MarginCallResult3>() {
 		{
 			businessComponentTrace_lazy = () -> MarginCall.mmObject();
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnCallRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,14 +213,24 @@ public class MarginCall2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MarginCallResult3.mmObject();
+			type_lazy = () -> MarginCallResult3.mmObject();
+		}
+
+		@Override
+		public MarginCallResult3 getValue(MarginCall2 obj) {
+			return obj.getMarginCallResult();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, MarginCallResult3 value) {
+			obj.setMarginCallResult(value);
 		}
 	};
+	@XmlElement(name = "MrgnDtlDueToA")
 	protected MarginCall1 marginDetailDueToA;
 	/**
-	 * Provides details about the margin calculation that would be due to party
-	 * A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -236,10 +259,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginDetailDueToA = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<MarginCall1>> mmMarginDetailDueToA = new MMMessageAssociationEnd<MarginCall2, Optional<MarginCall1>>() {
 		{
 			businessComponentTrace_lazy = () -> MarginCall.mmObject();
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnDtlDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -248,14 +271,24 @@ public class MarginCall2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MarginCall1.mmObject();
+			type_lazy = () -> MarginCall1.mmObject();
+		}
+
+		@Override
+		public Optional<MarginCall1> getValue(MarginCall2 obj) {
+			return obj.getMarginDetailDueToA();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<MarginCall1> value) {
+			obj.setMarginDetailDueToA(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MrgnDtlDueToB")
 	protected MarginCall1 marginDetailDueToB;
 	/**
-	 * Provides details about the margin calculation that would be due to party
-	 * B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -284,10 +317,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmMarginDetailDueToB = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<MarginCall1>> mmMarginDetailDueToB = new MMMessageAssociationEnd<MarginCall2, Optional<MarginCall1>>() {
 		{
 			businessComponentTrace_lazy = () -> MarginCall.mmObject();
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "MrgnDtlDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -296,14 +329,24 @@ public class MarginCall2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.MarginCall1.mmObject();
+			type_lazy = () -> MarginCall1.mmObject();
+		}
+
+		@Override
+		public Optional<MarginCall1> getValue(MarginCall2 obj) {
+			return obj.getMarginDetailDueToB();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<MarginCall1> value) {
+			obj.setMarginDetailDueToB(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RqrmntDtlsDueToA")
 	protected MarginRequirement1Choice requirementDetailsDueToA;
 	/**
-	 * Amount of expected margin that will be either delivered to party A by
-	 * party B or recalled to party A from party B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -334,10 +377,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRequirementDetailsDueToA = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<MarginRequirement1Choice>> mmRequirementDetailsDueToA = new MMMessageAssociationEnd<MarginCall2, Optional<MarginRequirement1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralManagement.mmRiskToCover;
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "RqrmntDtlsDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -348,12 +391,22 @@ public class MarginCall2 {
 			isComposite = true;
 			type_lazy = () -> MarginRequirement1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<MarginRequirement1Choice> getValue(MarginCall2 obj) {
+			return obj.getRequirementDetailsDueToA();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<MarginRequirement1Choice> value) {
+			obj.setRequirementDetailsDueToA(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RqrmntDtlsDueToB")
 	protected MarginRequirement1Choice requirementDetailsDueToB;
 	/**
-	 * Amount of expected margin that will be either delivered to party B by
-	 * party A or recalled to party B from party A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -384,10 +437,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRequirementDetailsDueToB = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<MarginRequirement1Choice>> mmRequirementDetailsDueToB = new MMMessageAssociationEnd<MarginCall2, Optional<MarginRequirement1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> CollateralManagement.mmRiskToCover;
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "RqrmntDtlsDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -398,12 +451,22 @@ public class MarginCall2 {
 			isComposite = true;
 			type_lazy = () -> MarginRequirement1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<MarginRequirement1Choice> getValue(MarginCall2 obj) {
+			return obj.getRequirementDetailsDueToB();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<MarginRequirement1Choice> value) {
+			obj.setRequirementDetailsDueToB(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpctdCollDueToA")
 	protected ExpectedCollateral2Choice expectedCollateralDueToA;
 	/**
-	 * Provides details about the type of collateral that will be either
-	 * delivered to party A by party B or recalled to party A from party B.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -434,10 +497,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExpectedCollateralDueToA = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<ExpectedCollateral2Choice>> mmExpectedCollateralDueToA = new MMMessageAssociationEnd<MarginCall2, Optional<ExpectedCollateral2Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> ExpectedCollateralType.mmObject();
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdCollDueToA";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -448,12 +511,22 @@ public class MarginCall2 {
 			isComposite = true;
 			type_lazy = () -> ExpectedCollateral2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ExpectedCollateral2Choice> getValue(MarginCall2 obj) {
+			return obj.getExpectedCollateralDueToA();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<ExpectedCollateral2Choice> value) {
+			obj.setExpectedCollateralDueToA(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpctdCollDueToB")
 	protected ExpectedCollateral2Choice expectedCollateralDueToB;
 	/**
-	 * Provides details about the type of collateral that will be either
-	 * delivered to party B by party A or recalled to party B from party A.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -484,10 +557,10 @@ public class MarginCall2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmExpectedCollateralDueToB = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MarginCall2, Optional<ExpectedCollateral2Choice>> mmExpectedCollateralDueToB = new MMMessageAssociationEnd<MarginCall2, Optional<ExpectedCollateral2Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> ExpectedCollateralType.mmObject();
-			componentContext_lazy = () -> MarginCall2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MarginCall2.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdCollDueToB";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -498,16 +571,27 @@ public class MarginCall2 {
 			isComposite = true;
 			type_lazy = () -> ExpectedCollateral2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<ExpectedCollateral2Choice> getValue(MarginCall2 obj) {
+			return obj.getExpectedCollateralDueToB();
+		}
+
+		@Override
+		public void setValue(MarginCall2 obj, Optional<ExpectedCollateral2Choice> value) {
+			obj.setExpectedCollateralDueToB(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MarginCall2.mmCollateralAccountIdentification, MarginCall2.mmMarginCallResult, MarginCall2.mmMarginDetailDueToA, MarginCall2.mmMarginDetailDueToB,
-						MarginCall2.mmRequirementDetailsDueToA, MarginCall2.mmRequirementDetailsDueToB, MarginCall2.mmExpectedCollateralDueToA, MarginCall2.mmExpectedCollateralDueToB);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MarginCall2.mmCollateralAccountIdentification, com.tools20022.repository.msg.MarginCall2.mmMarginCallResult,
+						com.tools20022.repository.msg.MarginCall2.mmMarginDetailDueToA, com.tools20022.repository.msg.MarginCall2.mmMarginDetailDueToB, com.tools20022.repository.msg.MarginCall2.mmRequirementDetailsDueToA,
+						com.tools20022.repository.msg.MarginCall2.mmRequirementDetailsDueToB, com.tools20022.repository.msg.MarginCall2.mmExpectedCollateralDueToA, com.tools20022.repository.msg.MarginCall2.mmExpectedCollateralDueToB);
 				messageBuildingBlock_lazy = () -> Arrays.asList(MarginCallRequestV04.mmMarginCallDetails);
 				trace_lazy = () -> MarginCall.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginCall2";
 				definition = "Specifies the calculation and the resulting margin and independent amount needed to cover the risk exposure of one party versus another.";
@@ -516,75 +600,75 @@ public class MarginCall2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CollAcctId")
-	public CollateralAccount2 getCollateralAccountIdentification() {
-		return collateralAccountIdentification;
+	public Optional<CollateralAccount2> getCollateralAccountIdentification() {
+		return collateralAccountIdentification == null ? Optional.empty() : Optional.of(collateralAccountIdentification);
 	}
 
-	public void setCollateralAccountIdentification(com.tools20022.repository.msg.CollateralAccount2 collateralAccountIdentification) {
+	public MarginCall2 setCollateralAccountIdentification(CollateralAccount2 collateralAccountIdentification) {
 		this.collateralAccountIdentification = collateralAccountIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnCallRslt", required = true)
 	public MarginCallResult3 getMarginCallResult() {
 		return marginCallResult;
 	}
 
-	public void setMarginCallResult(com.tools20022.repository.msg.MarginCallResult3 marginCallResult) {
-		this.marginCallResult = marginCallResult;
+	public MarginCall2 setMarginCallResult(MarginCallResult3 marginCallResult) {
+		this.marginCallResult = Objects.requireNonNull(marginCallResult);
+		return this;
 	}
 
-	@XmlElement(name = "MrgnDtlDueToA")
-	public MarginCall1 getMarginDetailDueToA() {
-		return marginDetailDueToA;
+	public Optional<MarginCall1> getMarginDetailDueToA() {
+		return marginDetailDueToA == null ? Optional.empty() : Optional.of(marginDetailDueToA);
 	}
 
-	public void setMarginDetailDueToA(com.tools20022.repository.msg.MarginCall1 marginDetailDueToA) {
+	public MarginCall2 setMarginDetailDueToA(MarginCall1 marginDetailDueToA) {
 		this.marginDetailDueToA = marginDetailDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "MrgnDtlDueToB")
-	public MarginCall1 getMarginDetailDueToB() {
-		return marginDetailDueToB;
+	public Optional<MarginCall1> getMarginDetailDueToB() {
+		return marginDetailDueToB == null ? Optional.empty() : Optional.of(marginDetailDueToB);
 	}
 
-	public void setMarginDetailDueToB(com.tools20022.repository.msg.MarginCall1 marginDetailDueToB) {
+	public MarginCall2 setMarginDetailDueToB(MarginCall1 marginDetailDueToB) {
 		this.marginDetailDueToB = marginDetailDueToB;
+		return this;
 	}
 
-	@XmlElement(name = "RqrmntDtlsDueToA")
-	public MarginRequirement1Choice getRequirementDetailsDueToA() {
-		return requirementDetailsDueToA;
+	public Optional<MarginRequirement1Choice> getRequirementDetailsDueToA() {
+		return requirementDetailsDueToA == null ? Optional.empty() : Optional.of(requirementDetailsDueToA);
 	}
 
-	public void setRequirementDetailsDueToA(MarginRequirement1Choice requirementDetailsDueToA) {
+	public MarginCall2 setRequirementDetailsDueToA(MarginRequirement1Choice requirementDetailsDueToA) {
 		this.requirementDetailsDueToA = requirementDetailsDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "RqrmntDtlsDueToB")
-	public MarginRequirement1Choice getRequirementDetailsDueToB() {
-		return requirementDetailsDueToB;
+	public Optional<MarginRequirement1Choice> getRequirementDetailsDueToB() {
+		return requirementDetailsDueToB == null ? Optional.empty() : Optional.of(requirementDetailsDueToB);
 	}
 
-	public void setRequirementDetailsDueToB(MarginRequirement1Choice requirementDetailsDueToB) {
+	public MarginCall2 setRequirementDetailsDueToB(MarginRequirement1Choice requirementDetailsDueToB) {
 		this.requirementDetailsDueToB = requirementDetailsDueToB;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdCollDueToA")
-	public ExpectedCollateral2Choice getExpectedCollateralDueToA() {
-		return expectedCollateralDueToA;
+	public Optional<ExpectedCollateral2Choice> getExpectedCollateralDueToA() {
+		return expectedCollateralDueToA == null ? Optional.empty() : Optional.of(expectedCollateralDueToA);
 	}
 
-	public void setExpectedCollateralDueToA(ExpectedCollateral2Choice expectedCollateralDueToA) {
+	public MarginCall2 setExpectedCollateralDueToA(ExpectedCollateral2Choice expectedCollateralDueToA) {
 		this.expectedCollateralDueToA = expectedCollateralDueToA;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdCollDueToB")
-	public ExpectedCollateral2Choice getExpectedCollateralDueToB() {
-		return expectedCollateralDueToB;
+	public Optional<ExpectedCollateral2Choice> getExpectedCollateralDueToB() {
+		return expectedCollateralDueToB == null ? Optional.empty() : Optional.of(expectedCollateralDueToB);
 	}
 
-	public void setExpectedCollateralDueToB(ExpectedCollateral2Choice expectedCollateralDueToB) {
+	public MarginCall2 setExpectedCollateralDueToB(ExpectedCollateral2Choice expectedCollateralDueToB) {
 		this.expectedCollateralDueToB = expectedCollateralDueToB;
+		return this;
 	}
 }

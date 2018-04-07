@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "HoldingBalance8", propOrder = {"balance", "balanceType", "safekeepingPlace"})
 public class HoldingBalance8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Bal", required = true)
 	protected UnitOrFaceAmountOrCode1Choice balance;
 	/**
-	 * Total quantity of financial instrument for the referenced holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,10 +115,10 @@ public class HoldingBalance8 {
 	 * "Total quantity of financial instrument for the referenced holding."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldingBalance8, UnitOrFaceAmountOrCode1Choice> mmBalance = new MMMessageAttribute<HoldingBalance8, UnitOrFaceAmountOrCode1Choice>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmAggregateQuantity;
-			componentContext_lazy = () -> HoldingBalance8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldingBalance8.mmObject();
 			isDerived = false;
 			xmlTag = "Bal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,13 +128,22 @@ public class HoldingBalance8 {
 			minOccurs = 1;
 			complexType_lazy = () -> UnitOrFaceAmountOrCode1Choice.mmObject();
 		}
+
+		@Override
+		public UnitOrFaceAmountOrCode1Choice getValue(HoldingBalance8 obj) {
+			return obj.getBalance();
+		}
+
+		@Override
+		public void setValue(HoldingBalance8 obj, UnitOrFaceAmountOrCode1Choice value) {
+			obj.setBalance(value);
+		}
 	};
+	@XmlElement(name = "BalTp")
 	protected SecuritiesEntryType2Code balanceType;
 	/**
-	 * Reason a security is not available or additional information about the
-	 * financial instrument for which the balance is given, for example,
-	 * unregistered, registered in nominee name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,10 +176,10 @@ public class HoldingBalance8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBalanceType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldingBalance8, Optional<SecuritiesEntryType2Code>> mmBalanceType = new MMMessageAttribute<HoldingBalance8, Optional<SecuritiesEntryType2Code>>() {
 		{
 			businessElementTrace_lazy = () -> SecuritiesBalance.mmSecuritiesBalanceType;
-			componentContext_lazy = () -> HoldingBalance8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldingBalance8.mmObject();
 			isDerived = false;
 			xmlTag = "BalTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,14 +189,22 @@ public class HoldingBalance8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> SecuritiesEntryType2Code.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesEntryType2Code> getValue(HoldingBalance8 obj) {
+			return obj.getBalanceType();
+		}
+
+		@Override
+		public void setValue(HoldingBalance8 obj, Optional<SecuritiesEntryType2Code> value) {
+			obj.setBalanceType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SfkpgPlc")
 	protected SafekeepingPlaceFormat2Choice safekeepingPlace;
 	/**
-	 * Place where the securities are safe-kept, physically or notionally. This
-	 * place can be, for example, a local custodian, a Central Securities
-	 * Depository (CSD) or an International Central Securities Depository
-	 * (ICSD).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,31 +233,42 @@ public class HoldingBalance8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Place where the securities are safe-kept, physically or notionally.  This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD)."
+	 * "Place where the securities are safe-kept, physically or notionally. This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD)."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSafekeepingPlace = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HoldingBalance8, Optional<SafekeepingPlaceFormat2Choice>> mmSafekeepingPlace = new MMMessageAttribute<HoldingBalance8, Optional<SafekeepingPlaceFormat2Choice>>() {
 		{
 			businessComponentTrace_lazy = () -> SafekeepingPlace.mmObject();
-			componentContext_lazy = () -> HoldingBalance8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HoldingBalance8.mmObject();
 			isDerived = false;
 			xmlTag = "SfkpgPlc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SafekeepingPlace";
-			definition = "Place where the securities are safe-kept, physically or notionally.  This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD).";
+			definition = "Place where the securities are safe-kept, physically or notionally. This place can be, for example, a local custodian, a Central Securities Depository (CSD) or an International Central Securities Depository (ICSD).";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> SafekeepingPlaceFormat2Choice.mmObject();
+		}
+
+		@Override
+		public Optional<SafekeepingPlaceFormat2Choice> getValue(HoldingBalance8 obj) {
+			return obj.getSafekeepingPlace();
+		}
+
+		@Override
+		public void setValue(HoldingBalance8 obj, Optional<SafekeepingPlaceFormat2Choice> value) {
+			obj.setSafekeepingPlace(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(HoldingBalance8.mmBalance, HoldingBalance8.mmBalanceType, HoldingBalance8.mmSafekeepingPlace);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.HoldingBalance8.mmBalance, com.tools20022.repository.msg.HoldingBalance8.mmBalanceType,
+						com.tools20022.repository.msg.HoldingBalance8.mmSafekeepingPlace);
 				trace_lazy = () -> SecuritiesBalance.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldingBalance8";
 				definition = "Net position of a segregated holding of a single security within the overall position held in the securities account,for example, sub-balance per status.";
@@ -246,30 +277,30 @@ public class HoldingBalance8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Bal", required = true)
 	public UnitOrFaceAmountOrCode1Choice getBalance() {
 		return balance;
 	}
 
-	public void setBalance(UnitOrFaceAmountOrCode1Choice balance) {
-		this.balance = balance;
+	public HoldingBalance8 setBalance(UnitOrFaceAmountOrCode1Choice balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
-	@XmlElement(name = "BalTp")
-	public SecuritiesEntryType2Code getBalanceType() {
-		return balanceType;
+	public Optional<SecuritiesEntryType2Code> getBalanceType() {
+		return balanceType == null ? Optional.empty() : Optional.of(balanceType);
 	}
 
-	public void setBalanceType(SecuritiesEntryType2Code balanceType) {
+	public HoldingBalance8 setBalanceType(SecuritiesEntryType2Code balanceType) {
 		this.balanceType = balanceType;
+		return this;
 	}
 
-	@XmlElement(name = "SfkpgPlc")
-	public SafekeepingPlaceFormat2Choice getSafekeepingPlace() {
-		return safekeepingPlace;
+	public Optional<SafekeepingPlaceFormat2Choice> getSafekeepingPlace() {
+		return safekeepingPlace == null ? Optional.empty() : Optional.of(safekeepingPlace);
 	}
 
-	public void setSafekeepingPlace(SafekeepingPlaceFormat2Choice safekeepingPlace) {
+	public HoldingBalance8 setSafekeepingPlace(SafekeepingPlaceFormat2Choice safekeepingPlace) {
 		this.safekeepingPlace = safekeepingPlace;
+		return this;
 	}
 }

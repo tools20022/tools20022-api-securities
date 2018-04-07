@@ -26,6 +26,8 @@ import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Value of total holdings reported."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TotalValueInPageAndStatement", propOrder = {"totalHoldingsValueOfPage", "totalHoldingsValueOfStatement"})
 public class TotalValueInPageAndStatement {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TtlHldgsValOfPg")
 	protected ActiveCurrencyAndAmount totalHoldingsValueOfPage;
 	/**
-	 * Total value of positions reported in this message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,9 +112,9 @@ public class TotalValueInPageAndStatement {
 	 * definition} = "Total value of positions reported in this message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalHoldingsValueOfPage = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TotalValueInPageAndStatement, Optional<ActiveCurrencyAndAmount>> mmTotalHoldingsValueOfPage = new MMMessageAttribute<TotalValueInPageAndStatement, Optional<ActiveCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> TotalValueInPageAndStatement.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalValueInPageAndStatement.mmObject();
 			isDerived = false;
 			xmlTag = "TtlHldgsValOfPg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,12 +124,22 @@ public class TotalValueInPageAndStatement {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyAndAmount> getValue(TotalValueInPageAndStatement obj) {
+			return obj.getTotalHoldingsValueOfPage();
+		}
+
+		@Override
+		public void setValue(TotalValueInPageAndStatement obj, Optional<ActiveCurrencyAndAmount> value) {
+			obj.setTotalHoldingsValueOfPage(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlHldgsValOfStmt", required = true)
 	protected ActiveCurrencyAndAmount totalHoldingsValueOfStatement;
 	/**
-	 * Total value of positions reported in this statement (a statement may
-	 * comprise one or more messages).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,9 +167,9 @@ public class TotalValueInPageAndStatement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalHoldingsValueOfStatement = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TotalValueInPageAndStatement, ActiveCurrencyAndAmount> mmTotalHoldingsValueOfStatement = new MMMessageAttribute<TotalValueInPageAndStatement, ActiveCurrencyAndAmount>() {
 		{
-			componentContext_lazy = () -> TotalValueInPageAndStatement.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TotalValueInPageAndStatement.mmObject();
 			isDerived = false;
 			xmlTag = "TtlHldgsValOfStmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,14 +179,24 @@ public class TotalValueInPageAndStatement {
 			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ActiveCurrencyAndAmount getValue(TotalValueInPageAndStatement obj) {
+			return obj.getTotalHoldingsValueOfStatement();
+		}
+
+		@Override
+		public void setValue(TotalValueInPageAndStatement obj, ActiveCurrencyAndAmount value) {
+			obj.setTotalHoldingsValueOfStatement(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TotalValueInPageAndStatement.mmTotalHoldingsValueOfPage, TotalValueInPageAndStatement.mmTotalHoldingsValueOfStatement);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TotalValueInPageAndStatement.mmTotalHoldingsValueOfPage, com.tools20022.repository.msg.TotalValueInPageAndStatement.mmTotalHoldingsValueOfStatement);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AccountingStatementOfHoldingsV02.mmTotalValues, CustodyStatementOfHoldingsV02.mmTotalValues);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TotalValueInPageAndStatement";
 				definition = "Value of total holdings reported.";
@@ -182,21 +205,21 @@ public class TotalValueInPageAndStatement {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TtlHldgsValOfPg")
-	public ActiveCurrencyAndAmount getTotalHoldingsValueOfPage() {
-		return totalHoldingsValueOfPage;
+	public Optional<ActiveCurrencyAndAmount> getTotalHoldingsValueOfPage() {
+		return totalHoldingsValueOfPage == null ? Optional.empty() : Optional.of(totalHoldingsValueOfPage);
 	}
 
-	public void setTotalHoldingsValueOfPage(ActiveCurrencyAndAmount totalHoldingsValueOfPage) {
+	public TotalValueInPageAndStatement setTotalHoldingsValueOfPage(ActiveCurrencyAndAmount totalHoldingsValueOfPage) {
 		this.totalHoldingsValueOfPage = totalHoldingsValueOfPage;
+		return this;
 	}
 
-	@XmlElement(name = "TtlHldgsValOfStmt", required = true)
 	public ActiveCurrencyAndAmount getTotalHoldingsValueOfStatement() {
 		return totalHoldingsValueOfStatement;
 	}
 
-	public void setTotalHoldingsValueOfStatement(ActiveCurrencyAndAmount totalHoldingsValueOfStatement) {
-		this.totalHoldingsValueOfStatement = totalHoldingsValueOfStatement;
+	public TotalValueInPageAndStatement setTotalHoldingsValueOfStatement(ActiveCurrencyAndAmount totalHoldingsValueOfStatement) {
+		this.totalHoldingsValueOfStatement = Objects.requireNonNull(totalHoldingsValueOfStatement);
+		return this;
 	}
 }

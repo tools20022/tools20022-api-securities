@@ -24,10 +24,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.ReferenceDataLatestVersion;
 import com.tools20022.repository.msg.FundProcessingPassport1;
 import com.tools20022.repository.msg.MessageIdentification1;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -94,16 +95,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FundProcessingPassportReportV02", propOrder = {"messageIdentification", "fundProcessingPassport"})
 public class FundProcessingPassportReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies a message from a business application
-	 * standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -126,7 +127,7 @@ public class FundProcessingPassportReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FundProcessingPassportReportV02, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<FundProcessingPassportReportV02, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -137,21 +138,21 @@ public class FundProcessingPassportReportV02 {
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FundProcessingPassportReportV02.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(FundProcessingPassportReportV02 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(FundProcessingPassportReportV02 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "FPP", required = true)
 	protected List<FundProcessingPassport1> fundProcessingPassport;
 	/**
-	 * Fund Processing Passsport (FPP) is a fully harmonised document with all
-	 * key operational information that fund promoters<br>
-	 * should provide on their investment funds in order to facilitate their
-	 * trading.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,26 +171,28 @@ public class FundProcessingPassportReportV02 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "    Fund Processing Passsport (FPP) is a fully harmonised document with all key operational information that fund promoters\r\n    should provide on their investment funds in order to facilitate their trading. "
+	 * " Fund Processing Passsport (FPP) is a fully harmonised document with all key operational information that fund promoters\r\n should provide on their investment funds in order to facilitate their trading."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFundProcessingPassport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<FundProcessingPassportReportV02, List<FundProcessingPassport1>> mmFundProcessingPassport = new MMMessageBuildingBlock<FundProcessingPassportReportV02, List<FundProcessingPassport1>>() {
 		{
 			xmlTag = "FPP";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FundProcessingPassport";
-			definition = "    Fund Processing Passsport (FPP) is a fully harmonised document with all key operational information that fund promoters\r\n    should provide on their investment funds in order to facilitate their trading. ";
+			definition = " Fund Processing Passsport (FPP) is a fully harmonised document with all key operational information that fund promoters\r\n should provide on their investment funds in order to facilitate their trading.";
 			minOccurs = 1;
 			complexType_lazy = () -> FundProcessingPassport1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FundProcessingPassportReportV02.class.getMethod("getFundProcessingPassport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<FundProcessingPassport1> getValue(FundProcessingPassportReportV02 obj) {
+			return obj.getFundProcessingPassport();
+		}
+
+		@Override
+		public void setValue(FundProcessingPassportReportV02 obj, List<FundProcessingPassport1> value) {
+			obj.setFundProcessingPassport(value);
 		}
 	};
 
@@ -222,25 +225,25 @@ public class FundProcessingPassportReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public FundProcessingPassportReportV02 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "FPP", required = true)
 	public List<FundProcessingPassport1> getFundProcessingPassport() {
-		return fundProcessingPassport;
+		return fundProcessingPassport == null ? fundProcessingPassport = new ArrayList<>() : fundProcessingPassport;
 	}
 
-	public void setFundProcessingPassport(List<FundProcessingPassport1> fundProcessingPassport) {
-		this.fundProcessingPassport = fundProcessingPassport;
+	public FundProcessingPassportReportV02 setFundProcessingPassport(List<FundProcessingPassport1> fundProcessingPassport) {
+		this.fundProcessingPassport = Objects.requireNonNull(fundProcessingPassport);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:reda.004.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:reda.004.001.02")
 	static public class Document {
 		@XmlElement(name = "FndPrcgPsptRpt", required = true)
 		public FundProcessingPassportReportV02 messageBody;

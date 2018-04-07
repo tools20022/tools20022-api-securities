@@ -38,10 +38,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceCode#LifeInsurance
- * InsuranceCode.mmLifeInsurance}</li>
+ * InsuranceCode.LifeInsurance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InsuranceCode#PermanentDisabilityInsurance
- * InsuranceCode.mmPermanentDisabilityInsurance}</li>
+ * InsuranceCode.PermanentDisabilityInsurance}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -54,8 +54,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -77,7 +77,7 @@ public class InsuranceCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Life insurance
+	 * Life insurance.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -94,14 +94,14 @@ public class InsuranceCode extends MMCode {
 	 * name} = "LifeInsurance"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Life insurance"</li>
+	 * definition} = "Life insurance."</li>
 	 * </ul>
 	 */
 	public static final InsuranceCode LifeInsurance = new InsuranceCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LifeInsurance";
-			definition = "Life insurance";
+			definition = "Life insurance.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InsuranceCode.mmObject();
 			codeName = "LIFE";
 		}
@@ -144,7 +144,7 @@ public class InsuranceCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("LIFE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsuranceCode";

@@ -21,12 +21,15 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashClearingSystem;
 import com.tools20022.repository.entity.CashSettlementInstructionPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Identification of a specific system or set of rules and/or processes to be
@@ -63,8 +66,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,10 +83,10 @@ import java.util.List;
 public class SettlementInstructionSystemRole extends CashSettlementInstructionPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.CashClearingSystem> system;
+	protected List<CashClearingSystem> system;
 	/**
-	 * Specifies the system which plays a role in the settlement of a payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,38 +108,41 @@ public class SettlementInstructionSystemRole extends CashSettlementInstructionPa
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails43#mmCashClearingSystem
 	 * SettlementDetails43.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails96#mmCashClearingSystem
-	 * SettlementDetails96.mmCashClearingSystem}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails97#mmCashClearingSystem
 	 * SettlementDetails97.mmCashClearingSystem}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.SettlementDetails98#mmCashClearingSystem
 	 * SettlementDetails98.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails128#mmCashClearingSystem
-	 * SettlementDetails128.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails147#mmCashClearingSystem
+	 * SettlementDetails147.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails120#mmCashClearingSystem
-	 * SettlementDetails120.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails142#mmCashClearingSystem
+	 * SettlementDetails142.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails119#mmCashClearingSystem
-	 * SettlementDetails119.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails144#mmCashClearingSystem
+	 * SettlementDetails144.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails125#mmCashClearingSystem
-	 * SettlementDetails125.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails148#mmCashClearingSystem
+	 * SettlementDetails148.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails126#mmCashClearingSystem
-	 * SettlementDetails126.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails141#mmCashClearingSystem
+	 * SettlementDetails141.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails122#mmCashClearingSystem
-	 * SettlementDetails122.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails145#mmCashClearingSystem
+	 * SettlementDetails145.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails127#mmCashClearingSystem
-	 * SettlementDetails127.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails146#mmCashClearingSystem
+	 * SettlementDetails146.mmCashClearingSystem}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementDetails121#mmCashClearingSystem
-	 * SettlementDetails121.mmCashClearingSystem}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails143#mmCashClearingSystem
+	 * SettlementDetails143.mmCashClearingSystem}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails149#mmCashClearingSystem
+	 * SettlementDetails149.mmCashClearingSystem}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementDetails150#mmCashClearingSystem
+	 * SettlementDetails150.mmCashClearingSystem}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -157,31 +163,41 @@ public class SettlementInstructionSystemRole extends CashSettlementInstructionPa
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SettlementInstructionSystemRole, List<CashClearingSystem>> mmSystem = new MMBusinessAssociationEnd<SettlementInstructionSystemRole, List<CashClearingSystem>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(SettlementDetails43.mmCashClearingSystem, SettlementDetails96.mmCashClearingSystem, SettlementDetails97.mmCashClearingSystem, SettlementDetails98.mmCashClearingSystem,
-					SettlementDetails128.mmCashClearingSystem, SettlementDetails120.mmCashClearingSystem, SettlementDetails119.mmCashClearingSystem, SettlementDetails125.mmCashClearingSystem, SettlementDetails126.mmCashClearingSystem,
-					SettlementDetails122.mmCashClearingSystem, SettlementDetails127.mmCashClearingSystem, SettlementDetails121.mmCashClearingSystem);
+			derivation_lazy = () -> Arrays.asList(SettlementDetails43.mmCashClearingSystem, SettlementDetails97.mmCashClearingSystem, SettlementDetails98.mmCashClearingSystem, SettlementDetails147.mmCashClearingSystem,
+					SettlementDetails142.mmCashClearingSystem, SettlementDetails144.mmCashClearingSystem, SettlementDetails148.mmCashClearingSystem, SettlementDetails141.mmCashClearingSystem, SettlementDetails145.mmCashClearingSystem,
+					SettlementDetails146.mmCashClearingSystem, SettlementDetails143.mmCashClearingSystem, SettlementDetails149.mmCashClearingSystem, SettlementDetails150.mmCashClearingSystem);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementInstructionSystemRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "Specifies the system which plays a role in the settlement of a payment.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmSystemRole;
+			opposite_lazy = () -> CashClearingSystem.mmSystemRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.mmObject();
+			type_lazy = () -> CashClearingSystem.mmObject();
+		}
+
+		@Override
+		public List<CashClearingSystem> getValue(SettlementInstructionSystemRole obj) {
+			return obj.getSystem();
+		}
+
+		@Override
+		public void setValue(SettlementInstructionSystemRole obj, List<CashClearingSystem> value) {
+			obj.setSystem(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementInstructionSystemRole";
 				definition = "Identification of a specific system or set of rules and/or processes to be applied at the settlement place.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashClearingSystem.mmSystemRole);
+				associationDomain_lazy = () -> Arrays.asList(CashClearingSystem.mmSystemRole);
 				superType_lazy = () -> CashSettlementInstructionPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SettlementInstructionSystemRole.mmSystem);
 			}
@@ -195,10 +211,11 @@ public class SettlementInstructionSystemRole extends CashSettlementInstructionPa
 	}
 
 	public List<CashClearingSystem> getSystem() {
-		return system;
+		return system == null ? system = new ArrayList<>() : system;
 	}
 
-	public void setSystem(List<com.tools20022.repository.entity.CashClearingSystem> system) {
-		this.system = system;
+	public SettlementInstructionSystemRole setSystem(List<CashClearingSystem> system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 }

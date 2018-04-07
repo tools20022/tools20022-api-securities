@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#CertificateIdentificationGovernment
- * CRSFormType1Code.mmCertificateIdentificationGovernment}</li>
+ * CRSFormType1Code.CertificateIdentificationGovernment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#CertificateOfResidence
- * CRSFormType1Code.mmCertificateOfResidence}</li>
+ * CRSFormType1Code.CertificateOfResidence}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#OfficialDocumentGovernmentForEntity
- * CRSFormType1Code.mmOfficialDocumentGovernmentForEntity}</li>
+ * CRSFormType1Code.OfficialDocumentGovernmentForEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#OtherDocumentOrReport
- * CRSFormType1Code.mmOtherDocumentOrReport}</li>
+ * CRSFormType1Code.OtherDocumentOrReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#PublicInformationEntity
- * CRSFormType1Code.mmPublicInformationEntity}</li>
+ * CRSFormType1Code.PublicInformationEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#SelfCertificationSeparateDocument
- * CRSFormType1Code.mmSelfCertificationSeparateDocument}</li>
+ * CRSFormType1Code.SelfCertificationSeparateDocument}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#SelfCertificationWithAccountOpeningContract
- * CRSFormType1Code.mmSelfCertificationWithAccountOpeningContract}</li>
+ * CRSFormType1Code.SelfCertificationWithAccountOpeningContract}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CRSFormType1Code#Standardised
- * CRSFormType1Code.mmStandardised}</li>
+ * CRSFormType1Code.Standardised}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,7 +77,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "CRSFormType1Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Specifies the type of Common Reporting Standard  (CRS) form."</li>
+ * definition} = "Specifies the type of Common Reporting Standard (CRS) form."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -284,10 +284,10 @@ public class CRSFormType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CRSFormType1Code";
-				definition = "Specifies the type of Common Reporting Standard  (CRS) form.";
+				definition = "Specifies the type of Common Reporting Standard (CRS) form.";
 				trace_lazy = () -> CRSFormTypeCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CRSFormType1Code.CertificateIdentificationGovernment, com.tools20022.repository.codeset.CRSFormType1Code.CertificateOfResidence,
 						com.tools20022.repository.codeset.CRSFormType1Code.OfficialDocumentGovernmentForEntity, com.tools20022.repository.codeset.CRSFormType1Code.OtherDocumentOrReport,

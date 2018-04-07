@@ -23,10 +23,8 @@ import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -92,16 +90,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AccountManagementStatusReportV06", propOrder = {"messageIdentification", "relatedReference", "statusReport", "marketPracticeVersion", "extension"})
 public class AccountManagementStatusReportV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgId", required = true)
 	protected MessageIdentification1 messageIdentification;
 	/**
-	 * Reference that uniquely identifies the message from a business
-	 * application standpoint.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,7 +122,7 @@ public class AccountManagementStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMessageIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountManagementStatusReportV06, MessageIdentification1> mmMessageIdentification = new MMMessageBuildingBlock<AccountManagementStatusReportV06, MessageIdentification1>() {
 		{
 			xmlTag = "MsgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,18 +133,21 @@ public class AccountManagementStatusReportV06 {
 			complexType_lazy = () -> MessageIdentification1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountManagementStatusReportV06.class.getMethod("getMessageIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MessageIdentification1 getValue(AccountManagementStatusReportV06 obj) {
+			return obj.getMessageIdentification();
+		}
+
+		@Override
+		public void setValue(AccountManagementStatusReportV06 obj, MessageIdentification1 value) {
+			obj.setMessageIdentification(value);
 		}
 	};
+	@XmlElement(name = "RltdRef", required = true)
 	protected List<AdditionalReference6> relatedReference;
 	/**
-	 * Reference to a linked message that was previously received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +169,7 @@ public class AccountManagementStatusReportV06 {
 	 * "Reference to a linked message that was previously received."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmRelatedReference = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountManagementStatusReportV06, List<AdditionalReference6>> mmRelatedReference = new MMMessageBuildingBlock<AccountManagementStatusReportV06, List<AdditionalReference6>>() {
 		{
 			xmlTag = "RltdRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,19 +180,21 @@ public class AccountManagementStatusReportV06 {
 			complexType_lazy = () -> AdditionalReference6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountManagementStatusReportV06.class.getMethod("getRelatedReference", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<AdditionalReference6> getValue(AccountManagementStatusReportV06 obj) {
+			return obj.getRelatedReference();
+		}
+
+		@Override
+		public void setValue(AccountManagementStatusReportV06 obj, List<AdditionalReference6> value) {
+			obj.setRelatedReference(value);
 		}
 	};
+	@XmlElement(name = "StsRpt", required = true)
 	protected AccountManagementStatusAndReason5 statusReport;
 	/**
-	 * Status report details of the account management instruction that was
-	 * previously received.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +217,7 @@ public class AccountManagementStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmStatusReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountManagementStatusReportV06, AccountManagementStatusAndReason5> mmStatusReport = new MMMessageBuildingBlock<AccountManagementStatusReportV06, AccountManagementStatusAndReason5>() {
 		{
 			xmlTag = "StsRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -225,18 +228,21 @@ public class AccountManagementStatusReportV06 {
 			complexType_lazy = () -> AccountManagementStatusAndReason5.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountManagementStatusReportV06.class.getMethod("getStatusReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AccountManagementStatusAndReason5 getValue(AccountManagementStatusReportV06 obj) {
+			return obj.getStatusReport();
+		}
+
+		@Override
+		public void setValue(AccountManagementStatusReportV06 obj, AccountManagementStatusAndReason5 value) {
+			obj.setStatusReport(value);
 		}
 	};
+	@XmlElement(name = "MktPrctcVrsn")
 	protected MarketPracticeVersion1 marketPracticeVersion;
 	/**
-	 * Identifies the market practice to which the message conforms.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,7 +264,7 @@ public class AccountManagementStatusReportV06 {
 	 * "Identifies the market practice to which the message conforms."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMarketPracticeVersion = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountManagementStatusReportV06, Optional<MarketPracticeVersion1>> mmMarketPracticeVersion = new MMMessageBuildingBlock<AccountManagementStatusReportV06, Optional<MarketPracticeVersion1>>() {
 		{
 			xmlTag = "MktPrctcVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -269,19 +275,21 @@ public class AccountManagementStatusReportV06 {
 			complexType_lazy = () -> MarketPracticeVersion1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountManagementStatusReportV06.class.getMethod("getMarketPracticeVersion", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<MarketPracticeVersion1> getValue(AccountManagementStatusReportV06 obj) {
+			return obj.getMarketPracticeVersion();
+		}
+
+		@Override
+		public void setValue(AccountManagementStatusReportV06 obj, Optional<MarketPracticeVersion1> value) {
+			obj.setMarketPracticeVersion(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Xtnsn")
 	protected List<Extension1> extension;
 	/**
-	 * Additional information that cannot be captured in the structured elements
-	 * and/or any other specific block.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -303,7 +311,7 @@ public class AccountManagementStatusReportV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmExtension = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AccountManagementStatusReportV06, List<Extension1>> mmExtension = new MMMessageBuildingBlock<AccountManagementStatusReportV06, List<Extension1>>() {
 		{
 			xmlTag = "Xtnsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -313,12 +321,14 @@ public class AccountManagementStatusReportV06 {
 			complexType_lazy = () -> Extension1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountManagementStatusReportV06.class.getMethod("getExtension", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public List<Extension1> getValue(AccountManagementStatusReportV06 obj) {
+			return obj.getExtension();
+		}
+
+		@Override
+		public void setValue(AccountManagementStatusReportV06 obj, List<Extension1> value) {
+			obj.setExtension(value);
 		}
 	};
 
@@ -352,52 +362,52 @@ public class AccountManagementStatusReportV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgId", required = true)
 	public MessageIdentification1 getMessageIdentification() {
 		return messageIdentification;
 	}
 
-	public void setMessageIdentification(MessageIdentification1 messageIdentification) {
-		this.messageIdentification = messageIdentification;
+	public AccountManagementStatusReportV06 setMessageIdentification(MessageIdentification1 messageIdentification) {
+		this.messageIdentification = Objects.requireNonNull(messageIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RltdRef", required = true)
 	public List<AdditionalReference6> getRelatedReference() {
-		return relatedReference;
+		return relatedReference == null ? relatedReference = new ArrayList<>() : relatedReference;
 	}
 
-	public void setRelatedReference(List<AdditionalReference6> relatedReference) {
-		this.relatedReference = relatedReference;
+	public AccountManagementStatusReportV06 setRelatedReference(List<AdditionalReference6> relatedReference) {
+		this.relatedReference = Objects.requireNonNull(relatedReference);
+		return this;
 	}
 
-	@XmlElement(name = "StsRpt", required = true)
 	public AccountManagementStatusAndReason5 getStatusReport() {
 		return statusReport;
 	}
 
-	public void setStatusReport(AccountManagementStatusAndReason5 statusReport) {
-		this.statusReport = statusReport;
+	public AccountManagementStatusReportV06 setStatusReport(AccountManagementStatusAndReason5 statusReport) {
+		this.statusReport = Objects.requireNonNull(statusReport);
+		return this;
 	}
 
-	@XmlElement(name = "MktPrctcVrsn")
-	public MarketPracticeVersion1 getMarketPracticeVersion() {
-		return marketPracticeVersion;
+	public Optional<MarketPracticeVersion1> getMarketPracticeVersion() {
+		return marketPracticeVersion == null ? Optional.empty() : Optional.of(marketPracticeVersion);
 	}
 
-	public void setMarketPracticeVersion(MarketPracticeVersion1 marketPracticeVersion) {
+	public AccountManagementStatusReportV06 setMarketPracticeVersion(MarketPracticeVersion1 marketPracticeVersion) {
 		this.marketPracticeVersion = marketPracticeVersion;
+		return this;
 	}
 
-	@XmlElement(name = "Xtnsn")
 	public List<Extension1> getExtension() {
-		return extension;
+		return extension == null ? extension = new ArrayList<>() : extension;
 	}
 
-	public void setExtension(List<Extension1> extension) {
-		this.extension = extension;
+	public AccountManagementStatusReportV06 setExtension(List<Extension1> extension) {
+		this.extension = Objects.requireNonNull(extension);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.006.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.006.001.06")
 	static public class Document {
 		@XmlElement(name = "AcctMgmtStsRpt", required = true)
 		public AccountManagementStatusReportV06 messageBody;

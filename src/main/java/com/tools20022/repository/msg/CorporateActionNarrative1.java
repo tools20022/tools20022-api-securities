@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,17 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Provides addtional information such as the taxation conditions."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "CorporateActionNarrative1", propOrder = {"informationConditions", "informationToComplyWith", "taxationConditions", "newCompanyName", "offeror", "URLAddress", "additionalText"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "CorporateActionNarrative1", propOrder = {"informationConditions", "informationToComplyWith", "taxationConditions", "newCompanyName", "offeror", "uRLAddress", "additionalText"})
 public class CorporateActionNarrative1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InfConds")
 	protected Max350Text informationConditions;
 	/**
-	 * Provides conditional information related to the event, eg, an offer is
-	 * subject to 50% acceptance, the offeror allows the securities holder to
-	 * set some conditions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,10 +125,10 @@ public class CorporateActionNarrative1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformationConditions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>> mmInformationConditions = new MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> CorporateActionEvent.mmInformationConditions;
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "InfConds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,13 +138,22 @@ public class CorporateActionNarrative1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative1 obj) {
+			return obj.getInformationConditions();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<Max350Text> value) {
+			obj.setInformationConditions(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InfToCmplyWth")
 	protected Max350Text informationToComplyWith;
 	/**
-	 * Provides information conditions to the account owner that are to be
-	 * complied with, eg, not open to US/Canadian residents, QIB or SIL to be
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,10 +185,10 @@ public class CorporateActionNarrative1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformationToComplyWith = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>> mmInformationToComplyWith = new MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> BiddingConditions.mmInformationToComplyWith;
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "InfToCmplyWth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,12 +198,22 @@ public class CorporateActionNarrative1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative1 obj) {
+			return obj.getInformationToComplyWith();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<Max350Text> value) {
+			obj.setInformationToComplyWith(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxtnConds")
 	protected Max350Text taxationConditions;
 	/**
-	 * Provides taxation conditions that cannot be included within the
-	 * structured fields of this message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,10 +245,10 @@ public class CorporateActionNarrative1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxationConditions = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>> mmTaxationConditions = new MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmTaxationConditions;
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxtnConds";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,11 +258,22 @@ public class CorporateActionNarrative1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative1 obj) {
+			return obj.getTaxationConditions();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<Max350Text> value) {
+			obj.setTaxationConditions(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NewCpnyNm")
 	protected Max350Text newCompanyName;
 	/**
-	 * Provide the new name of a company following a name change
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,27 +296,37 @@ public class CorporateActionNarrative1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Provide  the new name of a company following a name change"</li>
+	 * "Provide the new name of a company following a name change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNewCompanyName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>> mmNewCompanyName = new MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "NewCpnyNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NewCompanyName";
-			definition = "Provide  the new name of a company following a name change";
+			definition = "Provide the new name of a company following a name change.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative1 obj) {
+			return obj.getNewCompanyName();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<Max350Text> value) {
+			obj.setNewCompanyName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Offerr")
 	protected PartyIdentification2Choice offeror;
 	/**
-	 * Provides the entity making the offer and is different from the issuing
-	 * company.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,10 +359,10 @@ public class CorporateActionNarrative1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOfferor = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<PartyIdentification2Choice>> mmOfferor = new MMMessageAttribute<CorporateActionNarrative1, Optional<PartyIdentification2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "Offerr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -332,12 +372,22 @@ public class CorporateActionNarrative1 {
 			minOccurs = 0;
 			complexType_lazy = () -> PartyIdentification2Choice.mmObject();
 		}
+
+		@Override
+		public Optional<PartyIdentification2Choice> getValue(CorporateActionNarrative1 obj) {
+			return obj.getOfferor();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<PartyIdentification2Choice> value) {
+			obj.setOfferor(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "URLAdr")
 	protected Max256Text uRLAddress;
 	/**
-	 * Provides the web address published for the event, ie the address for the
-	 * Universal Resource Locator (URL), eg, used over the www (HTTP) service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -369,10 +419,10 @@ public class CorporateActionNarrative1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmURLAddress = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<Max256Text>> mmURLAddress = new MMMessageAttribute<CorporateActionNarrative1, Optional<Max256Text>>() {
 		{
 			businessElementTrace_lazy = () -> ElectronicAddress.mmURLAddress;
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "URLAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -382,12 +432,22 @@ public class CorporateActionNarrative1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(CorporateActionNarrative1 obj) {
+			return obj.getURLAddress();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<Max256Text> value) {
+			obj.setURLAddress(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlTxt")
 	protected Max350Text additionalText;
 	/**
-	 * Provides additional information or specifies in more detail the content
-	 * of a message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -414,9 +474,9 @@ public class CorporateActionNarrative1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalText = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>> mmAdditionalText = new MMMessageAttribute<CorporateActionNarrative1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> CorporateActionNarrative1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CorporateActionNarrative1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlTxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -426,15 +486,26 @@ public class CorporateActionNarrative1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(CorporateActionNarrative1 obj) {
+			return obj.getAdditionalText();
+		}
+
+		@Override
+		public void setValue(CorporateActionNarrative1 obj, Optional<Max350Text> value) {
+			obj.setAdditionalText(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CorporateActionNarrative1.mmInformationConditions, CorporateActionNarrative1.mmInformationToComplyWith, CorporateActionNarrative1.mmTaxationConditions,
-						CorporateActionNarrative1.mmNewCompanyName, CorporateActionNarrative1.mmOfferor, CorporateActionNarrative1.mmURLAddress, CorporateActionNarrative1.mmAdditionalText);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateActionNarrative1.mmInformationConditions, com.tools20022.repository.msg.CorporateActionNarrative1.mmInformationToComplyWith,
+						com.tools20022.repository.msg.CorporateActionNarrative1.mmTaxationConditions, com.tools20022.repository.msg.CorporateActionNarrative1.mmNewCompanyName,
+						com.tools20022.repository.msg.CorporateActionNarrative1.mmOfferor, com.tools20022.repository.msg.CorporateActionNarrative1.mmURLAddress, com.tools20022.repository.msg.CorporateActionNarrative1.mmAdditionalText);
 				trace_lazy = () -> CorporateActionEvent.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNarrative1";
 				definition = "Provides addtional information such as the taxation conditions.";
@@ -443,66 +514,66 @@ public class CorporateActionNarrative1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InfConds")
-	public Max350Text getInformationConditions() {
-		return informationConditions;
+	public Optional<Max350Text> getInformationConditions() {
+		return informationConditions == null ? Optional.empty() : Optional.of(informationConditions);
 	}
 
-	public void setInformationConditions(Max350Text informationConditions) {
+	public CorporateActionNarrative1 setInformationConditions(Max350Text informationConditions) {
 		this.informationConditions = informationConditions;
+		return this;
 	}
 
-	@XmlElement(name = "InfToCmplyWth")
-	public Max350Text getInformationToComplyWith() {
-		return informationToComplyWith;
+	public Optional<Max350Text> getInformationToComplyWith() {
+		return informationToComplyWith == null ? Optional.empty() : Optional.of(informationToComplyWith);
 	}
 
-	public void setInformationToComplyWith(Max350Text informationToComplyWith) {
+	public CorporateActionNarrative1 setInformationToComplyWith(Max350Text informationToComplyWith) {
 		this.informationToComplyWith = informationToComplyWith;
+		return this;
 	}
 
-	@XmlElement(name = "TaxtnConds")
-	public Max350Text getTaxationConditions() {
-		return taxationConditions;
+	public Optional<Max350Text> getTaxationConditions() {
+		return taxationConditions == null ? Optional.empty() : Optional.of(taxationConditions);
 	}
 
-	public void setTaxationConditions(Max350Text taxationConditions) {
+	public CorporateActionNarrative1 setTaxationConditions(Max350Text taxationConditions) {
 		this.taxationConditions = taxationConditions;
+		return this;
 	}
 
-	@XmlElement(name = "NewCpnyNm")
-	public Max350Text getNewCompanyName() {
-		return newCompanyName;
+	public Optional<Max350Text> getNewCompanyName() {
+		return newCompanyName == null ? Optional.empty() : Optional.of(newCompanyName);
 	}
 
-	public void setNewCompanyName(Max350Text newCompanyName) {
+	public CorporateActionNarrative1 setNewCompanyName(Max350Text newCompanyName) {
 		this.newCompanyName = newCompanyName;
+		return this;
 	}
 
-	@XmlElement(name = "Offerr")
-	public PartyIdentification2Choice getOfferor() {
-		return offeror;
+	public Optional<PartyIdentification2Choice> getOfferor() {
+		return offeror == null ? Optional.empty() : Optional.of(offeror);
 	}
 
-	public void setOfferor(PartyIdentification2Choice offeror) {
+	public CorporateActionNarrative1 setOfferor(PartyIdentification2Choice offeror) {
 		this.offeror = offeror;
+		return this;
 	}
 
-	@XmlElement(name = "URLAdr")
-	public Max256Text getURLAddress() {
-		return uRLAddress;
+	public Optional<Max256Text> getURLAddress() {
+		return uRLAddress == null ? Optional.empty() : Optional.of(uRLAddress);
 	}
 
-	public void setURLAddress(Max256Text uRLAddress) {
+	public CorporateActionNarrative1 setURLAddress(Max256Text uRLAddress) {
 		this.uRLAddress = uRLAddress;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlTxt")
-	public Max350Text getAdditionalText() {
-		return additionalText;
+	public Optional<Max350Text> getAdditionalText() {
+		return additionalText == null ? Optional.empty() : Optional.of(additionalText);
 	}
 
-	public void setAdditionalText(Max350Text additionalText) {
+	public CorporateActionNarrative1 setAdditionalText(Max350Text additionalText) {
 		this.additionalText = additionalText;
+		return this;
 	}
 }

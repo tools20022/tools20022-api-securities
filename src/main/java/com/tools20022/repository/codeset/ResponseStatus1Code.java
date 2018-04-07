@@ -40,16 +40,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResponseStatus1Code#PartlyAccepted
- * ResponseStatus1Code.mmPartlyAccepted}</li>
+ * ResponseStatus1Code.PartlyAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResponseStatus1Code#Accepted
- * ResponseStatus1Code.mmAccepted}</li>
+ * ResponseStatus1Code.Accepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResponseStatus1Code#Rejected
- * ResponseStatus1Code.mmRejected}</li>
+ * ResponseStatus1Code.Rejected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResponseStatus1Code#SubstitutionAccepted
- * ResponseStatus1Code.mmSubstitutionAccepted}</li>
+ * ResponseStatus1Code.SubstitutionAccepted}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -186,7 +186,7 @@ public class ResponseStatus1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACCP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseStatus1Code";

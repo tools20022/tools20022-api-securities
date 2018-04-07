@@ -37,22 +37,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType14Code#ADRFee
- * ChargeType14Code.mmADRFee}</li>
+ * ChargeType14Code.ADRFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType14Code#IssuanceCancellationFee
- * ChargeType14Code.mmIssuanceCancellationFee}</li>
+ * ChargeType14Code.IssuanceCancellationFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType14Code#CustodyFee
- * ChargeType14Code.mmCustodyFee}</li>
+ * ChargeType14Code.CustodyFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType14Code#ServiceProvisionFee
- * ChargeType14Code.mmServiceProvisionFee}</li>
+ * ChargeType14Code.ServiceProvisionFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType14Code#MiscellaneousFee
- * ChargeType14Code.mmMiscellaneousFee}</li>
+ * ChargeType14Code.MiscellaneousFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType14Code#IssuanceFee
- * ChargeType14Code.mmIssuanceFee}</li>
+ * ChargeType14Code.IssuanceFee}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -234,7 +234,7 @@ public class ChargeType14Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADRF");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeType14Code";

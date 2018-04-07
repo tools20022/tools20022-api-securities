@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,70 +39,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Blocked
- * SecuritiesEntryTypeCode.mmBlocked}</li>
+ * SecuritiesEntryTypeCode.Blocked}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Borrowed
- * SecuritiesEntryTypeCode.mmBorrowed}</li>
+ * SecuritiesEntryTypeCode.Borrowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#CollateralIn
- * SecuritiesEntryTypeCode.mmCollateralIn}</li>
+ * SecuritiesEntryTypeCode.CollateralIn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#CollateralOut
- * SecuritiesEntryTypeCode.mmCollateralOut}</li>
+ * SecuritiesEntryTypeCode.CollateralOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#OnLoan
- * SecuritiesEntryTypeCode.mmOnLoan}</li>
+ * SecuritiesEntryTypeCode.OnLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#PendingDelivery
- * SecuritiesEntryTypeCode.mmPendingDelivery}</li>
+ * SecuritiesEntryTypeCode.PendingDelivery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#PendingReceipt
- * SecuritiesEntryTypeCode.mmPendingReceipt}</li>
+ * SecuritiesEntryTypeCode.PendingReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Pledged
- * SecuritiesEntryTypeCode.mmPledged}</li>
+ * SecuritiesEntryTypeCode.Pledged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#OutForRegistration
- * SecuritiesEntryTypeCode.mmOutForRegistration}</li>
+ * SecuritiesEntryTypeCode.OutForRegistration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Unclassified
- * SecuritiesEntryTypeCode.mmUnclassified}</li>
+ * SecuritiesEntryTypeCode.Unclassified}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#InTransshipment
- * SecuritiesEntryTypeCode.mmInTransshipment}</li>
+ * SecuritiesEntryTypeCode.InTransshipment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Eligible
- * SecuritiesEntryTypeCode.mmEligible}</li>
+ * SecuritiesEntryTypeCode.Eligible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Registered
- * SecuritiesEntryTypeCode.mmRegistered}</li>
+ * SecuritiesEntryTypeCode.Registered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#StreetPosition
- * SecuritiesEntryTypeCode.mmStreetPosition}</li>
+ * SecuritiesEntryTypeCode.StreetPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Unregistered
- * SecuritiesEntryTypeCode.mmUnregistered}</li>
+ * SecuritiesEntryTypeCode.Unregistered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#WaitingDocumentation
- * SecuritiesEntryTypeCode.mmWaitingDocumentation}</li>
+ * SecuritiesEntryTypeCode.WaitingDocumentation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#SettlementPosition
- * SecuritiesEntryTypeCode.mmSettlementPosition}</li>
+ * SecuritiesEntryTypeCode.SettlementPosition}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#BeingTransferred
- * SecuritiesEntryTypeCode.mmBeingTransferred}</li>
+ * SecuritiesEntryTypeCode.BeingTransferred}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Settled
- * SecuritiesEntryTypeCode.mmSettled}</li>
+ * SecuritiesEntryTypeCode.Settled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#Traded
- * SecuritiesEntryTypeCode.mmTraded}</li>
+ * SecuritiesEntryTypeCode.Traded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#UninstructedBalance
- * SecuritiesEntryTypeCode.mmUninstructedBalance}</li>
+ * SecuritiesEntryTypeCode.UninstructedBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.SecuritiesEntryTypeCode#InstructedBalance
- * SecuritiesEntryTypeCode.mmInstructedBalance}</li>
+ * SecuritiesEntryTypeCode.InstructedBalance}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -114,8 +115,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -149,6 +150,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BLOK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::BLOK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -163,6 +167,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode Blocked = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::BLOK"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Blocked";
 			definition = "Balance of securities that are blocked or frozen. A financial instrument may be unavailable due to external circumstances such as a court order, death of beneficiary or account owner, or bankruptcy.";
@@ -181,6 +186,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BORR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::BORR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -194,6 +202,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode Borrowed = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::BORR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Borrowed";
 			definition = "Balance of securities that have been borrowed from another party.";
@@ -213,6 +222,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "COLI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::COLI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -227,6 +239,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode CollateralIn = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::COLI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralIn";
 			definition = "Balance of securities that belong to a third party and that are held for the purpose of collateralisation.";
@@ -247,6 +260,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "COLO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::COLO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -261,6 +277,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode CollateralOut = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::COLO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralOut";
 			definition = "Balance of securities that belong to the safekeeping account indicated within this message, and are deposited with a third party for the purpose of collateralisation.";
@@ -279,6 +296,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LOAN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::LOAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -292,6 +312,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode OnLoan = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::LOAN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OnLoan";
 			definition = "Balance of securities that have been loaned to a third party.";
@@ -310,6 +331,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PEND"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::PEND</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -322,6 +346,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode PendingDelivery = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::PEND"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PendingDelivery";
 			definition = "Balance of securities that are pending delivery.";
@@ -340,6 +365,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PENR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::PENR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -352,6 +380,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode PendingReceipt = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::PENR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PendingReceipt";
 			definition = "Balance of securities that are pending receipt.";
@@ -372,6 +401,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "PLED"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::PLED</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -386,6 +418,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode Pledged = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::PLED"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pledged";
 			definition = "Balance of securities that are pledged, for example, a financial instrument is unavailable because it has been used or given as a guarantee.";
@@ -406,6 +439,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "REGO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::REGO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -420,6 +456,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode OutForRegistration = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::REGO"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OutForRegistration";
 			definition = "Balance of securities currently being processed by the institution responsible for registering the new beneficial owner (or nominee) of securities after a transaction has settled.";
@@ -439,6 +476,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OTHR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::OTHR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -447,15 +487,16 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Balance of securities that is unclassified, ie, is  not identified with one of the existing sub-balance types."
+	 * "Balance of securities that is unclassified, ie, is not identified with one of the existing sub-balance types."
 	 * </li>
 	 * </ul>
 	 */
 	public static final SecuritiesEntryTypeCode Unclassified = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::OTHR"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unclassified";
-			definition = "Balance of securities that is unclassified, ie, is  not identified with one of the existing sub-balance types.";
+			definition = "Balance of securities that is unclassified, ie, is not identified with one of the existing sub-balance types.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesEntryTypeCode.mmObject();
 			codeName = "OTHR";
 		}
@@ -472,6 +513,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TRAN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::TRAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -486,6 +530,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode InTransshipment = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::TRAN"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InTransshipment";
 			definition = "Balance of physical securities that are in transshipment, eg, in the process of being transferred from one depository or agent to another.";
@@ -535,6 +580,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "NOMI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::NOMI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -549,6 +597,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode Registered = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::NOMI"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Registered";
 			definition = "Balance of securities that are registered (in the name of a nominee or of the beneficial owner).";
@@ -568,6 +617,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SPOS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::SPOS</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -582,6 +634,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode StreetPosition = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::SPOS"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StreetPosition";
 			definition = "Balance of securities that remain registered in the name of the prior beneficial owner of securities.";
@@ -601,6 +654,9 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "UNRG"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :93a::UNRG</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -615,6 +671,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 */
 	public static final SecuritiesEntryTypeCode Unregistered = new SecuritiesEntryTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":93a::UNRG"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unregistered";
 			definition = "Balance of securities that could not be registered due to foreign ownership limitation.";
@@ -723,7 +780,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Balance of securities representing only settled transactions
+	 * Balance of securities representing only settled transactions.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -741,20 +798,20 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Balance of securities representing only settled transactions"</li>
+	 * "Balance of securities representing only settled transactions."</li>
 	 * </ul>
 	 */
 	public static final SecuritiesEntryTypeCode Settled = new SecuritiesEntryTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Settled";
-			definition = "Balance of securities representing only settled transactions";
+			definition = "Balance of securities representing only settled transactions.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesEntryTypeCode.mmObject();
 			codeName = "SETD";
 		}
 	};
 	/**
-	 * Balance of securities representing traded transactions
+	 * Balance of securities representing traded transactions.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -771,14 +828,14 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	 * name} = "Traded"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Balance of securities representing traded transactions"</li>
+	 * definition} = "Balance of securities representing traded transactions."</li>
 	 * </ul>
 	 */
 	public static final SecuritiesEntryTypeCode Traded = new SecuritiesEntryTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Traded";
-			definition = "Balance of securities representing traded transactions";
+			definition = "Balance of securities representing traded transactions.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SecuritiesEntryTypeCode.mmObject();
 			codeName = "TRAD";
 		}
@@ -851,7 +908,7 @@ public class SecuritiesEntryTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BLOK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesEntryTypeCode";

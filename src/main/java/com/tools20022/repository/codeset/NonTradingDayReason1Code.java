@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReason1Code#TradingHoliday
- * NonTradingDayReason1Code.mmTradingHoliday}</li>
+ * NonTradingDayReason1Code.TradingHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReason1Code#Other
- * NonTradingDayReason1Code.mmOther}</li>
+ * NonTradingDayReason1Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReason1Code#HalfDay
- * NonTradingDayReason1Code.mmHalfDay}</li>
+ * NonTradingDayReason1Code.HalfDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReason1Code#PublicHoliday
- * NonTradingDayReason1Code.mmPublicHoliday}</li>
+ * NonTradingDayReason1Code.PublicHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReason1Code#BankHoliday
- * NonTradingDayReason1Code.mmBankHoliday}</li>
+ * NonTradingDayReason1Code.BankHoliday}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.NonTradingDayReason1Code#Weekend
- * NonTradingDayReason1Code.mmWeekend}</li>
+ * NonTradingDayReason1Code.Weekend}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -230,7 +230,7 @@ public class NonTradingDayReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NonTradingDayReason1Code";
 				definition = "Specifies the reason capturing a non trading day.";

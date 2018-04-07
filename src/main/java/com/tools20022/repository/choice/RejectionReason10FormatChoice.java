@@ -27,6 +27,7 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,20 +68,20 @@ import javax.xml.bind.annotation.XmlType;
  * "RejectionReason10FormatChoice"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Choice of formats to  express the reason of a rejection of a standing instruction cancellation request."
+ * "Choice of formats to express the reason of a rejection of a standing instruction cancellation request."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RejectionReason10FormatChoice", propOrder = {"code", "proprietary"})
 public class RejectionReason10FormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected RejectionReason10Code code;
 	/**
-	 * Standard code to specify the reason of a rejection of a standing
-	 * instruction cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +114,10 @@ public class RejectionReason10FormatChoice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectionReason10FormatChoice, RejectionReason10Code> mmCode = new MMMessageAttribute<RejectionReason10FormatChoice, RejectionReason10Code>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> RejectionReason10FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RejectionReason10FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,12 +127,22 @@ public class RejectionReason10FormatChoice {
 			minOccurs = 1;
 			simpleType_lazy = () -> RejectionReason10Code.mmObject();
 		}
+
+		@Override
+		public RejectionReason10Code getValue(RejectionReason10FormatChoice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(RejectionReason10FormatChoice obj, RejectionReason10Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected GenericIdentification13 proprietary;
 	/**
-	 * Proprietary code to express the reason of a rejection of a standing
-	 * instruction cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,54 +171,64 @@ public class RejectionReason10FormatChoice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Proprietary code to  express the reason of a rejection of a standing instruction cancellation request."
+	 * "Proprietary code to express the reason of a rejection of a standing instruction cancellation request."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RejectionReason10FormatChoice, GenericIdentification13> mmProprietary = new MMMessageAttribute<RejectionReason10FormatChoice, GenericIdentification13>() {
 		{
 			businessElementTrace_lazy = () -> StatusReason.mmRejectionReason;
-			componentContext_lazy = () -> RejectionReason10FormatChoice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.RejectionReason10FormatChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
-			definition = "Proprietary code to  express the reason of a rejection of a standing instruction cancellation request.";
+			definition = "Proprietary code to express the reason of a rejection of a standing instruction cancellation request.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> GenericIdentification13.mmObject();
+		}
+
+		@Override
+		public GenericIdentification13 getValue(RejectionReason10FormatChoice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(RejectionReason10FormatChoice obj, GenericIdentification13 value) {
+			obj.setProprietary(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RejectionReason10FormatChoice.mmCode, RejectionReason10FormatChoice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RejectionReason10FormatChoice.mmCode, com.tools20022.repository.choice.RejectionReason10FormatChoice.mmProprietary);
 				trace_lazy = () -> CorporateActionStatusReason.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReason10FormatChoice";
-				definition = "Choice of formats to  express the reason of a rejection of a standing instruction cancellation request.";
+				definition = "Choice of formats to express the reason of a rejection of a standing instruction cancellation request.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public RejectionReason10Code getCode() {
 		return code;
 	}
 
-	public void setCode(RejectionReason10Code code) {
-		this.code = code;
+	public RejectionReason10FormatChoice setCode(RejectionReason10Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public GenericIdentification13 getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(GenericIdentification13 proprietary) {
-		this.proprietary = proprietary;
+	public RejectionReason10FormatChoice setProprietary(GenericIdentification13 proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

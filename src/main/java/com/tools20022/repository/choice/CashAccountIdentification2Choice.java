@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,20 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Unique identifier of an account, as assigned by the account servicer."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "CashAccountIdentification2Choice", propOrder = {"IBAN", "proprietary"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "CashAccountIdentification2Choice", propOrder = {"iBAN", "proprietary"})
 public class CashAccountIdentification2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "IBAN", required = true)
 	protected IBANIdentifier iBAN;
 	/**
-	 * International Bank Account Number (IBAN) - identifier used
-	 * internationally by financial institutions to uniquely identify the
-	 * account of a customer. Further specifications of the format and content
-	 * of the IBAN can be found in the standard ISO 13616
-	 * "Banking and related financial services - International Bank Account Number (IBAN)"
-	 * version 1997-10-01, or later revisions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +110,10 @@ public class CashAccountIdentification2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIBAN = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccountIdentification2Choice, IBANIdentifier> mmIBAN = new MMMessageAttribute<CashAccountIdentification2Choice, IBANIdentifier>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmIBAN;
-			componentContext_lazy = () -> CashAccountIdentification2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CashAccountIdentification2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "IBAN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,12 +123,22 @@ public class CashAccountIdentification2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> IBANIdentifier.mmObject();
 		}
+
+		@Override
+		public IBANIdentifier getValue(CashAccountIdentification2Choice obj) {
+			return obj.getIBAN();
+		}
+
+		@Override
+		public void setValue(CashAccountIdentification2Choice obj, IBANIdentifier value) {
+			obj.setIBAN(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected Max34Text proprietary;
 	/**
-	 * Unique identifier for an account. It is assigned by the account servicer
-	 * using a proprietary identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,10 +170,10 @@ public class CashAccountIdentification2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CashAccountIdentification2Choice, Max34Text> mmProprietary = new MMMessageAttribute<CashAccountIdentification2Choice, Max34Text>() {
 		{
 			businessElementTrace_lazy = () -> AccountIdentification.mmProprietaryIdentification;
-			componentContext_lazy = () -> CashAccountIdentification2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.CashAccountIdentification2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -176,14 +183,24 @@ public class CashAccountIdentification2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max34Text.mmObject();
 		}
+
+		@Override
+		public Max34Text getValue(CashAccountIdentification2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(CashAccountIdentification2Choice obj, Max34Text value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CashAccountIdentification2Choice.mmIBAN, CashAccountIdentification2Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CashAccountIdentification2Choice.mmIBAN, com.tools20022.repository.choice.CashAccountIdentification2Choice.mmProprietary);
 				trace_lazy = () -> AccountIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountIdentification2Choice";
 				definition = "Unique identifier of an account, as assigned by the account servicer.";
@@ -192,21 +209,21 @@ public class CashAccountIdentification2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "IBAN", required = true)
 	public IBANIdentifier getIBAN() {
 		return iBAN;
 	}
 
-	public void setIBAN(IBANIdentifier iBAN) {
-		this.iBAN = iBAN;
+	public CashAccountIdentification2Choice setIBAN(IBANIdentifier iBAN) {
+		this.iBAN = Objects.requireNonNull(iBAN);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public Max34Text getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(Max34Text proprietary) {
-		this.proprietary = proprietary;
+	public CashAccountIdentification2Choice setProprietary(Max34Text proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }
